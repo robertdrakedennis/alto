@@ -1,0 +1,2825 @@
+client/src/main/java/com/jagex/graphics/glx/GlxSurface.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-109
+client/src/main/java/com/jagex/graphics/GpuImageRelated.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-16
+client/src/main/java/com/jagex/game/client/ClientDynamicProvider.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-26
+client/src/main/java/com/jagex/game/config/vartype/BaseVarTypeLong.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-13
+client/src/main/java/com/jagex/game/clientoptions/options/PreferencesAntiAliasing.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-52
+client/src/main/java/com/jagex/game/world/entity/PlayerStatProvider.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-10
+client/src/main/java/com/jagex/graphics/FrameBufferInterface.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-16
+client/src/main/java/com/jagex/game/client/KeyBinding.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-39
+client/src/main/java/com/jagex/game/group/PlayerGroupDelta.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-368
+client/src/main/java/com/jagex/game/config/quickchatcattype/QuickChatCatTypeList.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-54
+client/src/main/java/com/jagex/audio/stream/SoundBaseInterface.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-10
+client/src/main/java/com/jagex/game/cutscene/EntityAnimCutsceneAction.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-49
+client/src/main/java/com/jagex/graphics/ProgramDefineData.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-19
+client/src/main/java/com/jagex/core/utils/Base64.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-107
+client/src/main/java/com/jagex/graphics/camera/CameraManager.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-127
+client/src/main/java/com/jagex/graphics/glx/GlxVolumeTexture.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-50
+client/src/main/java/com/jagex/game/script/SubInterfaceActivePlayer.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-29
+client/src/main/java/com/jagex/graphics/camera/CameraTrackableType.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-31
+client/src/main/java/com/jagex/graphics/safe/PureJavaFont1.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-74
+client/src/main/java/com/jagex/graphics/Texture2.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-10
+client/src/main/java/com/jagex/game/config/questtype/QuestTypeFactory.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-20
+client/src/main/java/com/jagex/game/config/objtype/ObjTypeList.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-66
+client/src/main/java/com/jagex/game/group/PlayerGroup.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-268
+client/src/main/java/com/jagex/game/script/SubInterfaceActiveNpc.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-30
+client/src/main/java/com/jagex/graphics/ModelParticleEffector.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-46
+client/src/main/java/com/jagex/graphics/safe/PureJavaModel.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-3825
+client/src/main/java/com/jagex/graphics/FrameBuffer.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-19
+client/src/main/java/com/jagex/game/config/questtype/QuestTypeList.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-21
+client/src/main/java/com/jagex/graphics/gl/GlSprite.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-539
+server/README.md
+  s_a6ab0e671e93f2::t_d941682aa6c0ec 1-27
+client/src/main/java/com/jagex/core/utils/PrioritizedCache.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-164
+client/src/main/java/com/jagex/game/client/NoiseGenerator.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-236
+client/src/main/java/com/jagex/game/client/ClientMessage.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-72
+client/src/main/java/com/jagex/game/config/seqgrouptype/SeqGroupTypeList.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-17
+client/src/main/java/com/jagex/game/client/ClientFontFactory.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-16
+client/src/main/java/com/jagex/graphics/GpuRendererRelated6.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-344
+client/src/main/java/com/jagex/game/script/ClientTriggerType_Sub1.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-11
+client/src/main/java/com/jagex/game/config/headbartype/HeadbarTypeList.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-34
+client/src/main/java/com/jagex/game/clientoptions/options/PreferencesUnused0.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-44
+client/src/main/java/com/jagex/graphics/glx/GlxBuffer.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-123
+client/src/main/java/com/jagex/game/shared/framework/gwc/GWC.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-125
+client/src/main/java/com/jagex/game/client/NoiseGenerator3D_Sub1.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-52
+client/src/main/java/com/jagex/audio/backend/DummySoundBackend.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-316
+client/src/main/java/com/jagex/game/config/vartype/BaseVarTypeString.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-13
+client/src/main/java/com/jagex/core/utils/GpuByteArrayUtil.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-33
+client/src/main/java/com/jagex/core/constants/ModeWhere.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-86
+client/src/main/java/com/jagex/graphics/SkyboxRelated.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-395
+client/src/main/java/com/jagex/game/clientoptions/options/PreferencesUnknown6.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-43
+client/src/main/java/com/jagex/game/config/hitmarktype/HitmarkType.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-290
+client/src/main/java/com/jagex/graphics/EnvironmentManager.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-439
+client/src/main/java/com/jagex/game/cutscene/SoundSongCutsceneAction.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-32
+client/src/main/java/com/jagex/game/client/MapAlignmentX.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-38
+client/src/main/java/com/jagex/graphics/scenegraph/WallLayerEntity.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-102
+client/src/main/java/com/jagex/graphics/Light.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-198
+client/src/main/java/com/jagex/game/client/RebuildRequest.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-19
+client/src/main/java/com/jagex/core/constants/NamespaceUtil.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-171
+client/src/main/java/com/jagex/graphics/safe/PureJavaTexture.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-150
+client/src/main/java/com/jagex/game/world/WorldMapRelated.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-55
+client/src/main/java/com/jagex/game/client/ReceivePlayerPositions.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-822
+client/src/main/java/com/jagex/game/config/defaults/SkillDefaults.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-105
+client/src/main/java/com/jagex/game/client/GameCanvas.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-25
+client/src/main/java/com/jagex/core/datastruct/LinkListIterator.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-63
+client/src/main/java/com/jagex/game/config/db/DBUtils.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-36
+client/src/main/java/com/jagex/game/load/LoadingScreenRenderer.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-193
+client/src/main/java/com/jagex/core/io/SendablePacket.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-10
+client/src/main/java/com/jagex/game/network/ServerConnection.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-159
+client/src/main/java/com/jagex/game/config/CachingConfigTypeListIterator.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-39
+client/src/main/java/com/jagex/game/world/entity/ObjTypeCustomisation.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-127
+client/src/main/java/com/jagex/graphics/GpuWaterRelated.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-126
+client/src/main/java/com/jagex/audio/api/SubBussType.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-49
+client/src/main/java/com/jagex/game/config/defaults/CutsceneDefaults.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-32
+client/src/main/java/com/jagex/graphics/dx/DxGraphicsDeletable_Sub1.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-75
+client/src/main/java/com/jagex/game/shared/framework/input/Mouse.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-50
+client/src/main/java/com/jagex/core/utils/Timer.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-37
+client/src/main/java/com/jagex/game/client/CursorManager.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-32
+client/src/main/java/com/jagex/game/config/questtype/QuestType.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-372
+.gitattributes
+  s_a6ab0e671e93f2::t_a52f556759360f 1-2
+  s_a6ab0e671e93f2::t_b7b6a98bf30ddf 3-21
+client/src/main/java/com/jagex/game/world/entity/EntityChatLine.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-47
+client/src/main/java/com/jagex/audio/vorbis/VorbisCodebook.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-230
+client/src/main/java/com/jagex/game/camera/LookatOrientation.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-212
+client/src/main/java/com/jagex/game/config/objtype/DerivedObjType.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-19
+client/src/main/java/com/jagex/game/config/vartype/bit/VarBitType.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-118
+client/src/main/java/com/jagex/audio/api/AudioFormat.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-29
+client/src/main/java/com/jagex/graphics/safe/PureJavaSurface.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-83
+client/src/main/java/com/jagex/audio/vorbis/VorbisResidue.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-150
+client/src/main/java/com/jagex/core/datastruct/Serializable.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-17
+client/src/main/java/com/jagex/audio/stream/SoundVolume.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-44
+client/src/main/java/com/jagex/graphics/gl/GlModelRelated2.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-50
+client/src/main/java/com/jagex/game/clientoptions/options/PreferencesRemoveRoofs.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-46
+client/src/main/java/com/jagex/game/ClientWorldMap.java
+  s_a6ab0e671e93f2::t_3b05c478c75398 955,958,961,964,967
+  s_a6ab0e671e93f2::t_a52f556759360f 1-954,956-957,959-960,962-963,965-966,968-1282
+client/src/main/java/com/jagex/graphics/GpuRendererRelated2.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-39
+client/src/main/java/com/jagex/audio/api/VolumeProvider.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-10
+client/src/main/java/com/jagex/graphics/dx/DxVertexDeclaration.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-84
+client/src/main/java/com/jagex/graphics/glx/GlxIndexBuffer.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-52
+client/src/main/java/com/jagex/graphics/FixedFunctionModelShader.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-80
+client/src/main/java/com/jagex/graphics/gl/GlCubeTexture.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-55
+client/src/main/java/com/jagex/graphics/SpriteDataProvider.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-154
+client/src/main/java/com/jagex/audio/api/AudioApi.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-1139
+client/src/main/java/com/jagex/game/config/structtype/StructTypeList.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-17
+client/src/main/java/com/jagex/graphics/camera/Camera.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-603
+client/src/main/java/com/jagex/graphics/DeletableResource2.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-13
+client/src/main/java/com/jagex/game/load/LoadingRelated1.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-22
+client/src/main/java/com/jagex/graphics/gl/GlRelated4.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-38
+client/src/main/java/com/jagex/game/config/loctype/LocTypeFactory.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-127
+client/src/main/java/com/jagex/graphics/safe/PureJavaModelRelated1.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-25
+client/src/main/java/com/jagex/game/config/ParticleEffectorType.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-109
+client/src/main/java/com/jagex/game/client/HardwarePlatformLoader.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-237
+client/src/main/java/com/jagex/game/clientoptions/options/PreferencesUnknown7.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-58
+client/src/main/java/com/jagex/graphics/camera/CameraMode1.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-123
+client/src/main/java/com/jagex/graphics/gl/GlHardShadow.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-475
+client/src/main/java/com/jagex/game/client/NativeMouseTask.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-15
+client/src/main/java/com/jagex/game/config/vartype/VarConfigType.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-8
+client/src/main/java/com/jagex/graphics/scenegraph/ObjLayerEntity.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-53
+client/src/main/java/com/jagex/graphics/FloorHardShadows.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-369
+client/src/main/java/com/jagex/game/config/BasicParticleEmitterTypeList.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-41
+client/src/main/java/com/jagex/audio/backend/JavaSoundBackend.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-670
+client/src/main/java/com/jagex/graphics/DrawDistance.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-44
+client/src/main/java/com/jagex/game/load/LoadingScreenRelated1.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-34
+client/src/main/java/com/jagex/game/client/JavConfigParameter.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-184
+client/src/main/java/com/jagex/game/client/HardShadow.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-8
+client/src/main/java/com/jagex/core/datastruct/DualLinkQueue.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-65
+client/src/main/java/com/jagex/game/clientoptions/options/PreferencesTextures.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-60
+client/src/main/java/com/jagex/game/camera/LookatSpline_Sub1.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-44
+client/src/main/java/com/jagex/game/client/NativeLibraries.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-35
+client/src/main/java/com/jagex/core/io/BufferedFile.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-282
+client/src/main/java/com/jagex/game/client/NativeMouse.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-72
+client/src/main/java/com/jagex/game/config/vartype/BaseConfigTypeList.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-22
+client/src/main/java/com/jagex/game/script/ClientTriggerType.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-106
+client/src/main/java/com/jagex/core/utils/ArrayUtil.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-124
+client/src/main/java/com/jagex/graphics/gl/GlFloorModelRelated3.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-360
+client/src/main/java/com/jagex/graphics/GpuRendererWeakReference.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-20
+client/src/main/java/com/jagex/graphics/safe/PureJavaOpaqueFont.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-331
+client/src/main/java/com/jagex/graphics/ShaderException.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-11
+client/src/main/java/com/jagex/game/client/MouseBinding.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-59
+client/src/main/java/com/jagex/game/clientoptions/options/PreferencesVolume.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-43
+client/src/main/java/com/jagex/game/config/cursortype/BasicCursorTypeFactory.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-25
+client/src/main/java/com/jagex/game/config/structtype/StructType.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-81
+client/src/main/java/com/jagex/game/clientoptions/options/PreferencesUnused5.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-43
+client/src/main/java/com/jagex/game/script/CommunityPartnerType.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-38
+client/src/main/java/com/jagex/game/clientoptions/options/PreferencesAnimDetail.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-48
+client/src/main/java/com/jagex/graphics/Environment.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-417
+client/src/main/java/com/jagex/graphics/glx/GlxProgramUniform.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-41
+client/src/main/java/com/jagex/core/io/PacketBit.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-90
+client/src/main/java/com/jagex/game/client/RawCpuInfo.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-34
+client/src/main/java/com/jagex/graphics/safe/PureJavaSpritePaletted.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-3308
+client/src/main/java/com/jagex/core/datastruct/Link.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-23
+client/src/main/java/com/jagex/audio/stream/Sound.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-404
+client/src/main/java/com/jagex/game/config/vartype/constants/VarTransmitLevel.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-34
+client/src/main/java/com/jagex/game/client/StockmarketSlot.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-79
+client/src/main/java/com/jagex/graphics/FullscreenImpl.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-130
+client/src/main/java/com/jagex/graphics/EnvMappedWaterShader.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-198
+client/src/main/java/com/jagex/graphics/GpuModel.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-3984
+client/src/main/java/com/jagex/graphics/AnimFrame.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-169
+client/src/main/java/com/jagex/game/client/PlayerSkill.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-93
+client/src/main/java/com/jagex/game/config/vartype/VarDomainTypeNpc.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-19
+client/src/main/java/com/jagex/graphics/ShaderDataException.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-15
+client/src/main/java/com/jagex/game/config/vartype/BaseVarTypeCodec.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-11
+client/src/main/java/com/jagex/game/client/TwitchRelated2.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-31
+client/src/main/java/com/jagex/game/client/ServerPorts.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-33
+client/src/main/java/com/jagex/game/world/entity/ProjectileEntityNode.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-16
+client/src/main/java/com/jagex/game/world/entity/PlayerVisibility.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-44
+client/src/main/java/com/jagex/graphics/AnimBase.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-86
+client/src/main/java/com/jagex/core/utils/StringHelper.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-35
+client/src/main/java/com/jagex/graphics/glx/GlxToolkit.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-1636
+client/src/main/java/com/jagex/game/camera/position/Position.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-44
+client/src/main/java/com/jagex/graphics/GraphicsDeletable.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-10
+client/src/main/java/com/jagex/graphics/GraphicsPacketQueue.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-69
+client/src/main/java/com/jagex/game/network/protocol/LoginProt.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-65
+client/src/main/java/com/jagex/graphics/PostProcessingFilter.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-65
+client/src/main/java/com/jagex/game/config/meltype/MapElementTypeFactory.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-21
+client/src/main/java/com/jagex/graphics/Model.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-1098
+client/src/main/java/com/jagex/game/world/BuildAreaRelated.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-32
+client/src/main/java/com/jagex/game/client/MovingParticle.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-466
+client/src/main/java/com/jagex/graphics/GpuTriangleNormal.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-16
+client/src/main/java/com/jagex/game/client/TwitchCommands.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-270
+client/src/main/java/com/jagex/game/client/HardwarePlatformLoaderException.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-23
+client/src/main/java/com/jagex/game/config/vartype/SparseVarDomain.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-65
+client/src/main/java/com/jagex/graphics/glx/GlxVertexBuffer.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-52
+client/src/main/java/com/jagex/game/clientoptions/options/PreferencesPreset.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-43
+client/src/main/java/com/jagex/core/datastruct/Pair.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-55
+client/src/main/java/com/jagex/game/load/LoadingScreenNewsDisplayConfig.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-76
+client/src/main/java/com/jagex/game/load/LoadingScreenNewsEntry.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-22
+client/src/main/java/com/jagex/game/shared/movement/CoordGrid.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-87
+client/src/main/java/com/jagex/graphics/FrameSetLoader.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-82
+client/src/main/java/com/jagex/graphics/ProgramNotFoundException.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-11
+client/src/main/java/com/jagex/game/config/defaults/WorldMapDefaults.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-68
+client/src/main/java/AppletViewer.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-135
+client/src/main/java/com/jagex/game/config/Js5ConfigGroup.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-268
+client/src/main/java/com/jagex/game/config/ConfigType.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-14
+client/src/main/java/com/jagex/graphics/camera/CameraLinearMovementMode.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-40
+client/src/main/java/com/jagex/core/utils/MillisTimer.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-90
+client/src/main/java/com/jagex/game/world/WorldMapElement.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-33
+client/src/main/java/com/jagex/game/config/npctype/NPCTypeCustomisation.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-105
+client/src/main/java/com/jagex/game/client/Js5DllResourceLoader.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-56
+client/src/main/java/com/jagex/graphics/GpuModelRelated4.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-36
+client/src/main/java/com/jagex/graphics/ProgramManagerException.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-11
+client/src/main/java/com/jagex/graphics/gl/GlVertexNormal.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-19
+tools/verify-provenance.sh
+  s_a6ab0e671e93f2::t_c25ea5134ea110 1-30
+client/src/main/java/com/jagex/game/client/RuneScapeSetupStatus.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-26
+client/src/main/java/com/jagex/graphics/GpuFloorModel.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-1028
+client/src/main/java/com/jagex/game/config/quickchatphrasetype/QuickChatPhraseType.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-142
+client/src/main/java/com/jagex/graphics/gl/effects/GlUnderwaterEffect.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-147
+client/src/main/java/com/jagex/graphics/KeyFrameSet.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-155
+client/src/main/java/com/jagex/game/config/defaults/WearposDefaults.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-65
+client/src/main/java/com/jagex/audio/api/BussType.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-37
+client/src/main/java/com/jagex/core/utils/StringComparator.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-227
+client/src/main/java/com/jagex/game/client/GpuPostProcessManager.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-373
+client/src/main/java/com/jagex/graphics/EnvironmentSampler.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-7
+client/src/main/java/rs2/client/login/LoginManager.java
+  s_a6ab0e671e93f2::t_e89f93ef9da366 1270-1286
+  s_a6ab0e671e93f2::t_644c535a63add9 1267-1269
+  s_a6ab0e671e93f2::t_8b0b5ba0cbf382 1287-1289
+client/src/main/java/com/jagex/core/datastruct/SortedQueueEntry.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-18
+client/src/main/java/com/jagex/core/datastruct/SortedQueueIterator.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-43
+client/src/main/java/com/jagex/game/world/entity/Location.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-32
+client/src/main/java/com/jagex/game/client/HttpRequest.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-31
+client/src/main/java/com/jagex/graphics/gl/GlFloorModelRelated5.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-340
+client/src/main/java/com/jagex/game/load/LoadingScreenProgressDisplay.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-99
+client/src/main/java/com/jagex/game/clientoptions/options/PreferencesUnused13.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-43
+client/src/main/java/com/jagex/game/config/vartype/constants/BaseVarType.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-87
+client/src/main/java/com/jagex/graphics/SkyBoxFillMode.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-31
+client/src/main/java/com/jagex/graphics/SpriteData.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-67
+client/src/main/java/com/jagex/game/MiniMap.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-1020
+client/src/main/java/com/jagex/graphics/gl/GlFloorModelRelated2_Sub2.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-42
+client/src/main/java/com/jagex/game/config/skydecortype/SkyDecorType.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-85
+client/src/main/java/com/jagex/game/client/FriendRelated.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-22
+client/src/main/java/com/jagex/game/world/WorldMapRelated2.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-267
+client/src/main/java/com/jagex/game/world/WorldMapUpperLevelTileData.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-38
+client/src/main/java/com/jagex/graphics/BillboardPlacement.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-68
+client/src/main/java/com/jagex/game/script/TriggerType.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-8
+client/src/main/java/com/jagex/game/config/defaults/GraphicsDefaults.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-276
+client/src/main/java/com/jagex/graphics/FontFactory.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-10
+client/src/main/java/com/jagex/graphics/gl/GlFrameBuffer.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-200
+client/src/main/java/com/jagex/game/cutscene/SetVarbitCutsceneAction.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-36
+client/src/main/java/com/jagex/audio/stream/AudioProcessingUnit.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-898
+client/src/main/java/com/jagex/game/shared/framework/input/Keyboard.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-27
+client/src/main/java/com/jagex/game/clientoptions/options/PreferencesUnused9.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-41
+client/src/main/java/com/jagex/graphics/GpuFloorModelRelated.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-383
+client/src/main/java/com/jagex/core/datastruct/SceneLevelTileFlags.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-63
+client/src/main/java/com/jagex/graphics/EnvironmentProperty.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-38
+client/src/main/java/com/jagex/game/config/vartype/player/VarPlayerTypeListClient.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-105
+client/src/main/java/com/jagex/game/world/entity/PickableEntity.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-72
+client/src/main/java/com/jagex/game/world/entity/StaticPointLight.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-242
+client/src/main/java/com/jagex/game/cutscene/CutsceneLoadingStage.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-16
+client/src/main/java/com/jagex/graphics/dx/DxTexture_Sub1.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-120
+client/src/main/java/com/jagex/game/world/WorldMapFlash.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-13
+client/src/main/java/com/jagex/game/script/activepointers/ActiveComponent.java
+  s_a6ab0e671e93f2::t_5c84b1682efb60 23
+  s_a6ab0e671e93f2::t_a52f556759360f 1-22,24-39
+client/src/main/java/com/jagex/game/clientoptions/options/PreferencesLoadingScreen.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-40
+client/src/main/java/com/jagex/graphics/MaterialQualityMode.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-34
+client/src/main/java/com/jagex/graphics/GpuFont.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-157
+client/src/main/java/com/jagex/graphics/gl/GlEnvironmentSampler_Sub1.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-176
+client/src/main/java/com/jagex/game/clientoptions/options/PreferencesUnused6.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-45
+client/src/main/java/com/jagex/graphics/safe/PureJavaToolkitFactory.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-23
+client/src/main/java/com/jagex/game/cutscene/CutsceneEntity.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-120
+client/src/main/java/com/jagex/game/config/loctype/LocTypeList.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-44
+client/src/main/java/com/jagex/graphics/particles/ParticleEmitterRelated.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-48
+client/src/main/java/com/jagex/audio/vorbis/LookResidue0.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-34
+client/src/main/java/com/jagex/audio/api/SoundBackend.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-37
+client/src/main/java/com/jagex/game/clientoptions/options/PreferencesLightingDetail.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-43
+client/src/main/java/com/jagex/graphics/KeyFrameSetLoader.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-49
+client/src/main/java/com/jagex/game/group/PlayerGroupDeltaEncodingKey.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-71
+client/src/main/java/com/jagex/game/clientoptions/options/PreferencesOrthographic.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-48
+client/src/main/java/com/jagex/game/client/BrowserControl.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-28
+client/src/main/java/com/jagex/game/config/hitmarktype/BasicHitmarkTypeFactory.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-25
+client/src/main/java/com/jagex/core/datastruct/LinkList.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-242
+client/src/main/java/com/jagex/game/config/invtype/InvTypeList.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-17
+client/src/main/java/com/jagex/game/shared/framework/gwc/GWCLocation.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-13
+client/src/main/java/com/jagex/graphics/GpuRelated2.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-43
+client/src/main/java/com/jagex/game/client/QuickChatDynamicProvider.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-11
+client/src/main/java/com/jagex/game/config/vartype/VarClanSettingsDomain.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-63
+client/src/main/java/com/jagex/game/config/objtype/ObjType.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-1199
+client/src/main/java/com/jagex/game/client/HostNameProvider.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-28
+client/src/main/java/com/jagex/game/cutscene/TextCoordCutsceneAction.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-38
+client/src/main/java/com/jagex/game/world/entity/NPCHeadIconCustomisation.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-34
+client/src/main/java/com/jagex/game/client/GameShellStub.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-23
+client/src/main/java/com/jagex/graphics/safe/PureJavaToolkitContext.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-167
+client/src/main/java/rs2/client/clientscript/ScriptRunner.java
+  s_a6ab0e671e93f2::t_aa6a9555f65f33 13561
+  s_a6ab0e671e93f2::t_ec612008729032 13564
+  s_a6ab0e671e93f2::t_cb4b760e5d9a17 1-13560,13562-13563,13565-17451
+client/src/main/java/com/jagex/game/client/NoiseGenerator3D_Sub2_Sub1.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-31
+client/src/main/java/com/jagex/game/client/ComponentHook.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-35
+client/src/main/java/com/jagex/graphics/ColourRemapper.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-7
+client/src/main/java/com/jagex/game/config/defaults/SkillDefaultsIterator.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-31
+client/src/main/java/com/jagex/game/config/hitmarktype/HitmarkTypeList.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-34
+client/src/main/java/com/jagex/graphics/BaseTexture.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-16
+client/src/main/java/com/jagex/graphics/glx/GlxFrameBuffer.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-191
+client/src/main/java/com/jagex/game/config/vartype/player/VarPlayerType.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-31
+client/src/main/java/com/jagex/graphics/ModelUnlit.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-1204
+docs/retail-provenance.md
+  s_a6ab0e671e93f2::t_384b810f93043e 1-66
+client/src/main/java/com/jagex/game/client/DataType.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-45
+client/src/main/java/com/jagex/core/utils/VarValue.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-36
+client/src/main/java/com/jagex/game/client/ServerAddress.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-55
+client/src/main/java/com/jagex/game/cutscene/SoundVorbisCutsceneAction.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-57
+client/src/main/java/com/jagex/game/config/effectanimtype/EffectAnimType.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-283
+client/src/main/java/com/jagex/game/config/seqtype/SeqTypeFactory.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-78
+client/src/main/java/com/jagex/game/telemetry/grid/TelemetryGrid.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-62
+client/src/main/java/com/jagex/graphics/dx/DxVertexBuffer.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-108
+client/src/main/java/com/jagex/game/client/DiskStore.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-274
+client/src/main/java/com/jagex/game/config/hitmarktype/HitmarkTypeFactory.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-43
+client/src/main/java/com/jagex/graphics/gl/GlSpriteRelated.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-30
+client/src/main/java/com/jagex/graphics/GpuVolumeTexture.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-7
+client/src/main/java/com/jagex/graphics/gl/GlToolkit.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-3403
+docs/setup.md
+  s_a6ab0e671e93f2::t_be5d2f4ed877de 1-112
+client/src/main/java/com/jagex/game/cutscene/CutsceneCommand.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-129
+client/src/main/java/com/jagex/graphics/safe/PureJavaFloorModel.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-1756
+client/src/main/java/com/jagex/game/load/LoadingScreenAlignmentX.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-36
+client/src/main/java/com/jagex/game/client/BasicKeyboardEvent.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-48
+client/src/main/java/com/jagex/game/config/npctype/NPCTypeFactory.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-102
+client/src/main/java/com/jagex/game/cutscene/CamMoveCutsceneAction.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-40
+client/src/main/java/com/jagex/game/client/ResourceLoader.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-13
+client/src/main/java/com/jagex/game/clientoptions/options/PreferencesGroundBlending.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-66
+client/src/main/java/com/jagex/graphics/FullscreenMode.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-19
+client/src/main/java/com/jagex/game/client/PrivateChatFilter.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-40
+client/src/main/java/com/jagex/game/config/seqtype/BasicSeqTypeFactory.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-24
+client/src/main/java/com/jagex/audio/vorbis/VorbisInterface2.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-10
+client/src/main/java/com/jagex/game/world/entity/LocShape.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-118
+client/src/main/java/com/jagex/graphics/Font.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-582
+client/src/main/java/com/jagex/game/camera/effects/Shake.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-73
+client/src/main/java/com/jagex/game/client/NativeMouseEvent.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-184
+client/src/main/java/com/jagex/graphics/MaterialTextureProvider.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-85
+client/src/main/java/com/jagex/graphics/gl/GlFloorModel.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-886
+client/src/main/java/com/jagex/game/MiniMenuEntry.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-9,11-12,14-15,17-18,20-21,23-24,26-33,35-36,38-39,41-45,47,55-56,61-63,66-68,71-72
+  s_a6ab0e671e93f2::t_80e5f6f01607a8 22,40,48-54,57-60,69-70
+  s_a6ab0e671e93f2::t_64762fed4e5654 19,25,34,37,46,64-65
+  s_56c3bec5427304::t_cd01f98ce60015 10,13,16
+client/src/main/java/com/jagex/game/world/entity/Obj.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-19
+client/src/main/java/com/jagex/game/config/vartype/VarPlayerDomain.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-121
+client/src/main/java/com/jagex/core/constants/PublicKeys.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-29
+client/src/main/java/com/jagex/core/io/BrokenOutputStream.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-13
+client/src/main/java/com/jagex/core/utils/MonotonicTime.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-27
+client/src/main/java/com/jagex/game/world/entity/PrimaryLayerEntityPredicate.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-11
+client/src/main/java/com/jagex/graphics/KeyFrame.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-40
+client/src/main/java/com/jagex/graphics/GpuModelRelated5.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-53
+client/src/main/java/com/jagex/game/config/lighttype/LightType.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-54
+client/src/main/java/com/jagex/graphics/DefaultSprites.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-246
+client/src/main/java/com/jagex/graphics/gl/effects/GlLightAbsorbEffect.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-42
+client/src/main/java/com/jagex/graphics/postprocess/effects/ColourGradingBloomEffect.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-213
+client/src/main/java/com/jagex/graphics/RenderTarget.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-22
+client/src/main/java/com/jagex/game/config/quickchatphrasetype/QuickChatPhraseTypeList.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-78
+client/src/main/java/com/jagex/graphics/Occluder.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-71
+client/src/main/java/com/jagex/game/client/ServerType.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-16
+client/src/main/java/com/jagex/core/io/BZip2.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-651
+client/src/main/java/com/jagex/game/config/vartype/bit/BasicVarBitTypeFactory.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-24
+client/src/main/java/com/jagex/core/datastruct/HashMap.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-80
+client/src/main/java/com/jagex/core/utils/ReflectionCheckNode.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-34
+client/src/main/java/com/jagex/game/clientoptions/options/Preference.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-40
+client/src/main/java/com/jagex/game/clientoptions/options/PreferencesShadowQuality.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-48
+client/src/main/java/com/jagex/game/load/LoadingScreenClear.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-32
+client/src/main/java/com/jagex/game/load/LoadingScreenElementFactory.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-74
+client/src/main/java/com/jagex/game/world/WorldMapAreaMetadata.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-145
+client/src/main/java/com/jagex/graphics/camera/CameraSettingType.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-59
+client/src/main/java/com/jagex/game/script/ClientScriptState.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-106
+client/src/main/java/com/jagex/graphics/safe/DefaultPureJavaSurface.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-56
+client/src/main/java/com/jagex/graphics/DeletableResource.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-10
+client/src/main/java/com/jagex/game/client/MoveSpeed.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-49
+client/src/main/java/com/jagex/game/config/quickchatphrasetype/QuickChatPhrase.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-26
+client/src/main/java/com/jagex/graphics/gl/GlFloorModelRelated4.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-173
+client/src/main/java/com/jagex/core/utils/JagException.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-154
+client/src/main/java/com/jagex/game/client/TwitchRelated.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-26
+client/src/main/java/com/jagex/audio/stream/AudioProcessingInterface.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-53
+client/src/main/java/com/jagex/core/utils/NanoTimer.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-87
+client/src/main/java/com/jagex/game/client/ClientPlayerGroupResourceProvider.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-32
+client/src/main/java/com/jagex/graphics/safe/PureJavaDepthBuffer.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-37
+client/src/main/java/com/jagex/game/config/vartype/VarType.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-87
+client/src/main/java/com/jagex/game/world/entity/ObjReference.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-40
+client/src/main/java/com/jagex/game/config/db/DBTableIndex.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-54
+client/src/main/java/com/jagex/graphics/dx/DxFrameBufferInterface_Sub1.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-71
+client/src/main/java/com/jagex/graphics/ShaderDataReaderException.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-7
+client/src/main/java/com/jagex/game/config/db/dbtabletype/DBTableType.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-65
+client/src/main/java/com/jagex/graphics/EnvironmentOverrideProperty.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-149
+client/src/main/java/com/jagex/graphics/gl/GlTexture_Sub2.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-48
+client/src/main/java/com/jagex/graphics/gl/GlModelBindingRelated.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-10
+client/src/main/java/com/jagex/game/world/entity/SceneManager.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-63
+client/src/main/java/com/jagex/graphics/ProgrammableSpriteShader.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-116
+client/src/main/java/com/jagex/game/camera/Lookat.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-37
+client/src/main/java/com/jagex/game/config/vartype/BaseVarTypeCoordFine.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-14
+client/src/main/java/com/jagex/game/script/HookRequest.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-42
+client/src/main/java/com/jagex/game/player/AttackOpPriority.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-41
+client/src/main/java/com/jagex/graphics/glx/GlxTexture.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-247
+client/src/main/java/com/jagex/graphics/GpuVertexNormal.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-19
+client/src/main/java/com/jagex/core/datastruct/IntHashTable.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-44
+client/build.gradle
+  s_a6ab0e671e93f2::t_a52f556759360f 1-42
+client/src/main/java/com/jagex/graphics/Billboard.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-42
+client/src/main/java/com/jagex/game/config/headbartype/BasicHeadbarTypeFactory.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-25
+client/src/main/java/com/jagex/graphics/dx/DxTexture.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-287
+client/src/main/java/com/jagex/game/client/EasedAngle.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-98
+client/src/main/java/com/jagex/game/camera/LookatSpline_Sub4.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-55
+client/src/main/java/com/jagex/game/client/KeyHeldBinding.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-39
+client/src/main/java/com/jagex/game/load/LoadingScreenClearConfig.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-26
+client/src/main/java/com/jagex/game/clientoptions/options/PreferencesWaterDetail.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-48
+client/src/main/java/com/jagex/core/utils/URLWrapper.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-11
+client/src/main/java/com/jagex/game/script/ScriptFrame.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-22
+client/src/main/java/com/jagex/graphics/dx/DxSurface.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-177
+client/src/main/java/com/jagex/game/config/ParticleEffectorTypeList.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-10
+client/src/main/java/com/jagex/game/config/vartype/VarTypeList.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-148
+client/src/main/java/com/jagex/graphics/gl/GlEffect_Sub1.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-165
+client/src/main/java/com/jagex/game/config/iftype/componentproperties/ServerKeyProperties.java
+  s_a6ab0e671e93f2::t_857b3227707a82 16
+  s_a6ab0e671e93f2::t_ac49e095b1df1b 13-15
+  s_a6ab0e671e93f2::t_6d6d163622d8a1 17-19
+client/src/main/java/com/jagex/graphics/safe/PureJavaFrameBuffer.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-154
+client/src/main/java/com/jagex/game/world/entity/PlayerEntity.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-713
+client/src/main/java/com/jagex/game/client/NoiseGenerator3D_Sub2.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-87
+client/src/main/java/com/jagex/audio/api/SoundBackendType.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-13
+client/src/main/java/com/jagex/game/cutscene/SoundJingleCutsceneAction.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-26
+client/src/main/java/com/jagex/graphics/GpuFrameBuffer.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-27
+client/src/main/java/com/jagex/core/datastruct/Heap.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-7
+client/src/main/java/com/jagex/graphics/safe/PureJavaColorBuffer.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-41
+client/src/main/java/com/jagex/audio/stream/SoundType.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-46
+client/src/main/java/com/jagex/game/config/meltype/BasicMapElementTypeFactory.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-24
+client/src/main/java/com/jagex/graphics/GpuSurface.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-27
+client/src/main/java/com/jagex/game/client/TextCoord.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-29
+client/src/main/java/com/jagex/game/config/enumtype/EnumType.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-210
+client/src/main/java/com/jagex/game/client/NativeMouseListener.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-13
+client/src/main/java/com/jagex/game/cutscene/CutsceneRoute.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-51
+client/src/main/java/com/jagex/game/client/HttpClient.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-83
+client/src/main/java/com/jagex/game/cutscene/EntityLookCutsceneAction.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-25
+client/src/main/java/com/jagex/game/client/MapAlignmentY.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-38
+client/src/main/java/com/jagex/core/utils/PreciseSleep.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-32
+client/src/main/java/com/jagex/game/client/PlayerSkillXPTable.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-66
+client/src/main/java/com/jagex/graphics/AbstractEffect1.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-10
+client/src/main/java/com/jagex/game/load/Loading.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-634
+client/src/main/java/com/jagex/graphics/GpuModelUnknown.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-15
+client/src/main/java/com/jagex/graphics/camera/CameraMode2.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-131
+client/src/main/java/com/jagex/core/utils/StringTools.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-331
+client/src/main/java/com/jagex/game/client/BasicCamera.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-152
+client/src/main/java/com/jagex/graphics/GlRenderList.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-31
+.env.example
+  s_a6ab0e671e93f2::t_fe6a27a103e143 1-2
+client/src/main/java/com/jagex/game/group/PlayerGroupDeltaEntry2.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-7
+client/src/main/java/com/jagex/core/datastruct/SerializableEnums.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-81
+client/src/main/java/com/jagex/graphics/ModelBillboard.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-31
+client/src/main/java/com/jagex/game/world/entity/Scene.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-1627
+client/src/main/java/com/jagex/game/script/SubInterface.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-24
+client/src/main/java/com/jagex/game/clientoptions/options/PreferencesMaxScreenSize.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-43
+client/src/main/java/com/jagex/game/camera/PositionSpline_Sub3.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-55
+client/src/main/java/com/jagex/game/world/entity/StaticWallDecorEntity.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-246
+client/src/main/java/com/jagex/graphics/safe/PureJavaSpriteNormal.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-2304
+client/src/main/java/com/jagex/game/load/MessageBox.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-197
+client/src/main/java/com/jagex/game/cutscene/EntitySpotAnimCutsceneAction.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-29
+client/src/main/java/com/jagex/game/client/MouseLogger.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-170
+client/src/main/java/com/jagex/game/config/db/dbrowtype/DBRowType.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-69
+client/src/main/java/com/jagex/graphics/gl/GlEnvironmentSampler_Sub2.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-58
+client/src/main/java/com/jagex/core/datastruct/TimestampMessage.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-22
+client/src/main/java/com/jagex/game/client/HeadbarUpdate.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-35
+client/src/main/java/com/jagex/game/config/idktype/IDKTypeList.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-16
+client/src/main/java/com/jagex/game/config/defaults/Bindings.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-29
+client/src/main/java/com/jagex/game/world/entity/Tile.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-54
+client/src/main/java/com/jagex/graphics/PalettedSpriteData.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-464
+client/src/main/java/com/jagex/game/clientoptions/options/PreferencesUnused2.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-43
+client/src/main/java/com/jagex/game/config/seqgrouptype/SeqGroupType.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-50
+client/src/main/java/com/jagex/game/client/ClientJs5TcpClient.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-320
+client/src/main/java/com/jagex/graphics/camera/CameraProjectionMode.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-36
+client/src/main/java/com/jagex/graphics/gl/effects/GlEnvironmentMapEffect.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-201
+client/src/main/java/com/jagex/core/constants/ModeGame.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-57
+client/src/main/java/com/jagex/game/client/AutoSetupResult.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-36
+client/src/main/java/com/jagex/graphics/GpuProgram.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-70
+client/src/main/java/com/jagex/graphics/safe/PureJavaVertexNormal.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-29
+client/src/main/java/com/jagex/graphics/particles/ParticleSystemRenderer.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-153
+client/src/main/java/com/jagex/game/clientoptions/options/PreferencesStereo.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-43
+client/src/main/java/com/jagex/game/load/LoadingStage.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-106
+client/src/main/java/com/jagex/game/client/JavaKeyboard.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-202
+client/src/main/java/com/jagex/core/io/SocketStreamReader.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-176
+client/src/main/java/com/jagex/game/cutscene/EntitySayCutsceneAction.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-33
+client/src/main/java/com/jagex/game/network/protocol/ServerProt.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-608
+client/src/main/java/com/jagex/game/config/vartype/VarDomainTypeWorld.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-19
+client/src/main/java/com/jagex/game/client/KeyboardEvent.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-22
+client/src/main/java/com/jagex/graphics/dx/DxCubeTexture.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-49
+client/src/main/java/com/jagex/graphics/dx/DxInterface1.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-16
+client/src/main/java/com/jagex/game/config/quickchatcattype/QuickChatCatType.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-102
+client/src/main/java/com/jagex/game/clientoptions/options/PreferencesUnused1.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-43
+client/src/main/java/com/jagex/graphics/gl/GlShaderCompiler.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-42
+client/src/main/java/com/jagex/graphics/gl/GlModelRelated1.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-19
+client/src/main/java/com/jagex/graphics/gl/GlPostProcessingRelated.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-12
+client/src/main/java/com/jagex/graphics/gl/GlFloorModelRelated2_Sub1.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-26
+client/src/main/java/com/jagex/game/group/PlayerGroupMember.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-187
+client/src/main/java/com/jagex/graphics/GpuIndexBuffer.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-17
+client/src/main/java/com/jagex/core/datastruct/SoftReferenceNode.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-26
+client/src/main/java/com/jagex/graphics/AmbientOcclusionValue.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-29
+client/src/main/java/com/jagex/game/clientoptions/options/PreferencesUnused12.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-43
+client/src/main/java/com/jagex/graphics/ShaderData.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-48
+client/src/main/java/com/jagex/game/group/PlayerGroupResourceProvider.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-22
+client/src/main/java/com/jagex/core/utils/ArchiveUtil.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-30
+client/src/main/java/com/jagex/game/world/entity/PlayerStat.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-96
+client/src/main/java/com/jagex/graphics/gl/GlToolkitFactory.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-23
+client/src/main/java/com/jagex/game/clientoptions/options/PreferencesDrawDistance.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-49
+client/src/main/java/com/jagex/game/world/WorldMapRenderer.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-40
+client/src/main/java/com/jagex/graphics/camera/CameraTrackableProvider.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-10
+client/src/main/java/com/jagex/game/world/entity/SceneDebugging.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-16
+client/src/main/java/com/jagex/core/datastruct/HashMapValue.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-13
+client/src/main/java/com/jagex/game/cutscene/CutsceneAction_Sub1.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-35
+client/src/main/java/com/jagex/graphics/FixedFunctionBatchedSpriteShader.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-24
+client/src/main/java/com/jagex/graphics/glx/GlxRendererFactory.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-45
+client/src/main/java/com/jagex/game/config/flutype/FloorUnderlayTypeList.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-17
+client/src/main/java/com/jagex/graphics/gl/GlAbstractEffect1.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-89
+client/src/main/java/com/jagex/core/utils/TotpType.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-36
+client/src/main/java/com/jagex/game/MiniMenuSubMenu.java
+  s_a6ab0e671e93f2::t_d4f6b33905bda7 35
+  s_a6ab0e671e93f2::t_5db778dd1cab49 25-26,37,40,43-44
+  s_a6ab0e671e93f2::t_70fdc39358d9df 58
+  s_a6ab0e671e93f2::t_ed9896142c0591 59
+  s_a6ab0e671e93f2::t_a52f556759360f 1-10,12-13,15-16,18-19,22-24,27-29,31-32,34,36,38-39,41-42,45-48,51,55-57,60-62
+  s_a6ab0e671e93f2::t_cef540780e3cc0 20-21,49-50,52-54
+  s_4ef42e9377ab2e::t_2bf95027a94f5d 11,14,17,30,33
+client/src/main/java/com/jagex/game/HintTrailPoint.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-84
+client/src/main/java/com/jagex/graphics/safe/PureJavaSprite.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-339
+client/src/main/java/com/jagex/game/config/BasicTextureList.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-39
+client/src/main/java/com/jagex/game/world/entity/PlayerGameState.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-82
+client/src/main/java/com/jagex/core/utils/ByteArrayCopier.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-65
+client/src/main/java/com/jagex/game/load/LoadingScreenRelated4_Sub1.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-28
+client/src/main/java/com/jagex/game/clientoptions/options/PreferencesFog.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-60
+client/src/main/java/com/jagex/audio/vorbis/VorbisFloor.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-339
+client/src/main/java/com/jagex/game/cutscene/LocAnimCutsceneAction.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-35
+client/src/main/java/com/jagex/graphics/BatchedSpriteShader.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-20
+client/src/main/java/com/jagex/game/cutscene/CamMoveAlongCutsceneAction.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-53
+client/src/main/java/com/jagex/game/clientoptions/options/PreferencesUnused8.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-43
+client/src/main/java/com/jagex/core/datastruct/HashTableIterator.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-79
+client/src/main/java/com/jagex/game/config/loctype/LocType.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-1096
+client/src/main/java/com/jagex/graphics/dx/DxToolkit.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-1424
+client/src/main/java/com/jagex/graphics/EffectInterface.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-10
+client/src/main/java/com/jagex/core/utils/Cp1252.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-291
+client/src/main/java/com/jagex/game/config/defaults/MiniMenuDefaults.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-82
+client/src/main/java/com/jagex/game/world/entity/SpotShadowFactory.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-199
+client/src/main/java/com/jagex/game/world/entity/LocTypeRelated.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-34
+client/src/main/java/com/jagex/game/config/skyboxtype/SkyBoxType.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-85
+client/src/main/java/com/jagex/game/camera/LookatSpline_Sub2.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-73
+client/src/main/java/com/jagex/game/MiniMenu.java
+  s_a6ab0e671e93f2::t_df6e54119c9165 1029,1061,1068,1404
+  s_a6ab0e671e93f2::t_be1fbd109ef62a 1-1028,1030-1060,1062-1067,1069-1403,1405-2420
+client/src/main/java/com/jagex/game/scene/World.java
+  s_a6ab0e671e93f2::t_9ab8bd1d5df4f8 937
+  s_a6ab0e671e93f2::t_a52f556759360f 1-936,938-1475
+client/src/main/java/com/jagex/graphics/dx/DxGraphicsDeletable.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-17
+client/src/main/java/com/jagex/game/network/protocol/ZoneProt.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-60
+client/src/main/java/com/jagex/graphics/glx/GlxSomethingFramebuffer.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-38
+client/src/main/java/com/jagex/core/utils/Utf8.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-100
+client/src/main/java/com/jagex/game/client/Graphic.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-46
+client/src/main/java/com/jagex/game/world/entity/StaticSceneryEntity.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-298
+client/src/main/java/com/jagex/game/world/entity/ObjectNode.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-15
+client/src/main/java/com/jagex/graphics/gl/effects/GlReflectionEffect.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-103
+client/src/main/java/com/jagex/graphics/postprocess/effects/LevelsFilterEffect.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-162
+client/src/main/java/com/jagex/game/cutscene/SubtitleCutsceneAction.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-29
+client/src/main/java/com/jagex/graphics/dx/DxProgram.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-410
+client/src/main/java/com/jagex/graphics/dx/DxVolumeTexture.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-56
+client/src/main/java/com/jagex/graphics/gl/GlSurface.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-120
+client/src/main/java/com/jagex/game/client/ClientAutoSetupResult.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-64
+client/src/main/java/com/jagex/graphics/glx/GlxRenderBuffer.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-93
+client/src/main/java/com/jagex/game/config/CachingConfigTypeList.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-112
+client/src/main/java/com/jagex/game/cutscene/CutsceneAction.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-124
+client/src/main/java/com/jagex/game/client/GroupUserKind.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-42
+client/src/main/java/com/jagex/graphics/dx/DxRelated1.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-64
+client/src/main/java/com/jagex/graphics/GpuModelRelated2.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-46
+client/src/main/java/com/jagex/audio/backend/SoundBackendConfig.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-27
+client/src/main/java/com/jagex/graphics/OcclusionManager.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-682
+client/src/main/java/com/jagex/graphics/particles/ParticleEmitter.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-300
+client/src/main/java/com/jagex/game/config/bastype/BASTypeList.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-20
+client/src/main/java/com/jagex/game/shared/framework/chat/QuickChatDynamicCommand.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-95
+client/src/main/java/com/jagex/graphics/GpuSprite.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-549
+client/src/main/java/com/jagex/game/load/LoadingScreenAlignmentY.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-36
+client/src/main/java/com/jagex/graphics/FloorHardShadowsBlock.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-218
+client/src/main/java/com/jagex/game/clientoptions/options/PreferencesBrightness.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-43
+client/src/main/java/com/jagex/core/datastruct/IntNode.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-14
+client/src/main/java/com/jagex/audio/stream/BussManager.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-52
+client/src/main/java/com/jagex/game/config/defaults/CustomizationDefaults.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-37
+client/src/main/java/com/jagex/graphics/SpriteShader.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-48
+client/src/main/java/com/jagex/graphics/ProgrammableParticleShader.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-111
+client/src/main/java/com/jagex/graphics/FixedFunctionSpriteShader.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-60
+client/src/main/java/com/jagex/game/client/MapLogicRelated.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-42
+client/src/main/java/com/jagex/game/config/bastype/BASType.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-501
+client/src/main/java/com/jagex/graphics/gl/GlTexture.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-300
+client/src/main/java/com/jagex/game/load/LoadingScreenElementConfig.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-10
+client/src/main/java/com/jagex/graphics/particles/ParticleEffector.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-52
+client/src/main/java/com/jagex/core/datastruct/SecondaryLinkedList.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-117
+client/src/main/java/com/jagex/game/group/PlayerGroupBanned.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-27
+client/src/main/java/com/jagex/game/client/HardwarePlatform.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-382
+client/src/main/java/com/jagex/graphics/OcclusionSomething.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-659
+client/src/main/java/com/jagex/graphics/RendererInfo.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-30
+client/src/main/java/com/jagex/graphics/GpuTextureRelated.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-13
+client/src/main/java/com/jagex/game/config/vartype/bit/VarBitTypeList.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-17
+client/src/main/java/com/jagex/game/config/npctype/NPCTypeList.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-45
+client/src/main/java/com/jagex/encryption/Whirlpool.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-240
+client/src/main/java/com/jagex/game/clientoptions/options/PreferencesBuildArea.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-75
+client/src/main/java/com/jagex/game/config/loctype/BasicLocTypeFactory.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-47
+client/src/main/java/com/jagex/game/world/WorldMapSubarea.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-76
+client/src/main/java/com/jagex/graphics/gl/GlCubeTextureRelated.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-42
+client/src/main/java/com/jagex/core/utils/TotpPreferences.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-118
+client/src/main/java/com/jagex/game/config/enumtype/EnumTypeList.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-17
+client/src/main/java/com/jagex/graphics/gl/GlColourRemappingFilter.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-136
+client/src/main/java/com/jagex/game/script/ClientTriggerType_Sub2.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-11
+client/src/main/java/com/jagex/game/clientoptions/options/PreferencesCpuUsage.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-43
+client/src/main/java/com/jagex/game/clientoptions/options/PreferencesUnused4.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-44
+client/src/main/java/com/jagex/graphics/gl/GlShader.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-53
+client/src/main/java/com/jagex/core/io/Packet.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-817
+client/src/main/java/com/jagex/game/world/entity/PickableEntityList.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-77
+client/src/main/java/com/jagex/graphics/gl/GlProgram.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-58
+client/src/main/java/com/jagex/game/script/ClientScript.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-173
+client/src/main/java/com/jagex/game/script/ScriptVarProperty.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-35
+client/src/main/java/com/jagex/game/client/HardCacheEntry.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-27
+client/src/main/java/com/jagex/game/script/ClientScriptHelpers.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-112
+client/src/main/java/com/jagex/graphics/FontProvider.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-220
+client/src/main/java/com/jagex/game/client/ClientNativeLibraryFailure.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-51
+client/src/main/java/com/jagex/game/config/BillboardType.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-63
+client/src/main/java/com/jagex/game/world/entity/AsyncRebuild.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-93
+client/src/main/java/com/jagex/game/client/ClientMapBuildStuck.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-29
+client/src/main/java/com/jagex/graphics/safe/PureJavaRasteriser.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-4191
+client/src/main/java/com/jagex/game/clientoptions/options/PreferencesSkyboxes.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-49
+client/src/main/java/com/jagex/graphics/GpuHeap.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-21
+client/src/main/java/com/jagex/graphics/gl/GlTexture_Sub1_Sub1.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-187
+client/src/main/java/com/jagex/game/config/vartype/constants/VarDomainType.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-89
+client/src/main/java/com/jagex/core/utils/TimeFormatter.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-119
+client/src/main/java/com/jagex/game/client/NativeLibraryConfig.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-64
+client/src/main/java/com/jagex/game/HintTrailPointPrimaryLayerEntityPredicate.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-21
+client/src/main/java/com/jagex/game/client/NativeLibraryLoader.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-16
+client/src/main/java/rs2/client/scene/entities/NpcEntity.java
+  s_a6ab0e671e93f2::t_283e79599bbe43 129
+  s_a6ab0e671e93f2::t_e974148a54caaf 126-128
+  s_a6ab0e671e93f2::t_7062694b7866a4 130-132
+client/src/main/java/com/jagex/game/config/objtype/ObjTypeFactory.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-181
+client/src/main/java/com/jagex/game/world/entity/DynamicWallEntity.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-187
+client/src/main/java/com/jagex/game/cutscene/MapAnimCutsceneAction.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-40
+client/src/main/java/com/jagex/game/config/vartype/bit/VarBitTypeEncodingKey.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-74
+client/src/main/java/com/jagex/game/clientoptions/options/PreferencesIdleAnimations.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-47
+client/src/main/java/com/jagex/game/config/vartype/constants/ScriptVarType.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-639
+client/src/main/java/com/jagex/game/cutscene/CutsceneVarDomain.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-24
+client/src/main/java/com/jagex/graphics/glx/GlxBaseTexture.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-326
+client/src/main/java/com/jagex/audio/stream/SoundRelatedType2.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-45
+client/src/main/java/com/jagex/graphics/CompressedTextureFormat.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-185
+client/src/main/java/com/jagex/graphics/GpuBuffer.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-19
+client/README.md
+  s_a6ab0e671e93f2::t_cbbe0556da9936 1-23
+client/src/main/java/com/jagex/game/clientoptions/options/PreferencesUnused3.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-43
+client/src/main/java/com/jagex/game/config/paramtype/ParamTypeList.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-17
+client/src/main/java/com/jagex/game/compression/huffman/Huffman.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-244
+client/src/main/java/com/jagex/game/config/vartype/bit/VarBitOverflowException.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-11
+client/src/main/java/com/jagex/game/clientoptions/options/PreferencesUnknown8.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-43
+client/src/main/java/com/jagex/game/world/entity/LocTypeCustomisation.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-26
+client/src/main/java/com/jagex/game/script/SubInterfaceActiveLoc.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-29
+client/src/main/java/com/jagex/game/client/LoadableResource.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-130
+client/src/main/java/com/jagex/graphics/PostProcessingRelated.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-99
+client/src/main/java/com/jagex/core/utils/TimeZones.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-109
+client/src/main/java/com/jagex/graphics/FrameSet.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-116
+client/src/main/java/com/jagex/game/world/entity/LocTint.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-38
+client/src/main/java/com/jagex/core/io/SocketStream.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-68
+client/src/main/java/com/jagex/game/camera/Lookat_Sub2.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-83
+client/src/main/java/com/jagex/game/world/entity/StaticGroundDecorEntity.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-270
+client/src/main/java/com/jagex/core/io/BrokenInputStream.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-14
+client/src/main/java/com/jagex/game/world/entity/PathingEntityVarDomain.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-59
+client/src/main/java/com/jagex/game/camera/effects/ZTilt.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-44
+client/src/main/java/com/jagex/game/client/LocalisedText.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-554
+client/src/main/java/com/jagex/game/clientoptions/options/PreferencesFlickeringEffects.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-43
+client/src/main/java/com/jagex/core/datastruct/HashTable.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-150
+client/src/main/java/com/jagex/core/datastruct/SoftLruHashTableRemovalListener.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-10
+client/src/main/java/com/jagex/game/config/vartype/VarDomainTypePlayer.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-19
+settings.gradle
+  s_a6ab0e671e93f2::t_8fa1643e3f821d 1-14
+client/src/main/java/com/jagex/game/world/entity/ObjStackEntity.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-311
+client/src/main/java/com/jagex/game/config/msitype/BasicMSITypeFactory.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-24
+client/src/main/java/com/jagex/game/client/CpuProfiling.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-35
+client/src/main/java/com/jagex/game/config/iftype/Component.java
+  s_a6ab0e671e93f2::t_5facf27cc6fb66 401,703,967
+  s_a6ab0e671e93f2::t_a52f556759360f 1-202,204-205,207-400,402-702,704-946,948-951,955,959-966,968-1496
+  s_a6ab0e671e93f2::t_f445dbf3d6e8ac 203,206,952-954,956-958
+  s_a6ab0e671e93f2::t_d85d2491280ff5 947
+client/src/main/java/com/jagex/game/shared/movement/CoordFine.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-177
+client/src/main/java/com/jagex/game/config/defaults/Binding.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-13
+client/src/main/java/com/jagex/game/world/WorldMapNode.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-19
+client/src/main/java/com/jagex/graphics/BlendedTexturedTileData.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-40
+client/src/main/java/com/jagex/game/load/LoadingScreenElement.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-16
+client/src/main/java/com/jagex/game/script/ScriptVarInterface.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-7
+client/src/main/java/com/jagex/game/config/flotype/FloorOverlayType.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-122
+client/src/main/java/com/jagex/graphics/GpuTexture.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-49
+client/src/main/java/com/jagex/game/config/msitype/MSIType.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-132
+client/src/main/java/com/jagex/graphics/GpuModelFlags.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-186
+client/src/main/java/com/jagex/game/config/invtype/InvType.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-57
+client/src/main/java/com/jagex/audio/api/AudioEndianness.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-13
+client/src/main/java/com/jagex/audio/stream/AudioStreamRelated.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-19
+client/src/main/java/com/jagex/game/network/protocol/ClientProt.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-390
+client/src/main/java/com/jagex/graphics/ProgramUniformData.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-48
+server/.env.example
+  s_a6ab0e671e93f2::t_4d3f3c530bb319 1
+docs/reverse-engineering.md
+  s_a6ab0e671e93f2::t_f9fe3cfa2ee3bb 1-62
+client/src/main/java/com/jagex/game/config/BasicBillboardTypeList.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-35
+client/src/main/java/com/jagex/core/constants/BuildAreaSize.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-53
+client/src/main/java/com/jagex/core/constants/ModeAccountType.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-25
+client/src/main/java/com/jagex/game/config/skyboxtype/SkyBoxTypeList.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-17
+client/src/main/java/com/jagex/graphics/EnvironmentOverride.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-343
+client/src/main/java/com/jagex/game/config/idktype/IDKTypeFactory.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-28
+.github/workflows/server.yml
+  s_a6ab0e671e93f2::t_e71cafb4e17c4b 1-24
+client/src/main/java/com/jagex/audio/stream/AudioStream.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-124
+client/src/main/java/com/jagex/game/camera/LookatMode.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-65
+client/src/main/java/com/jagex/graphics/gl/GlRelated3.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-26
+client/src/main/java/com/jagex/game/config/BasicTextureListInner.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-217
+client/src/main/java/com/jagex/graphics/gl/GlException.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-11
+client/src/main/java/com/jagex/graphics/GpuParticleRenderer.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-463
+client/src/main/java/com/jagex/game/cutscene/EntityHitmarkCutsceneAction.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-59
+client/src/main/java/com/jagex/game/script/ClientScriptCommand.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-4322
+client/src/main/java/com/jagex/game/load/LoadingScreen.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-25
+client/src/main/java/com/jagex/core/datastruct/ClientScriptCache.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-66
+client/src/main/java/com/jagex/game/client/ScreenBoundingBox.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-119
+client/src/main/java/com/jagex/game/HintTrail.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-151
+client/src/main/java/com/jagex/core/io/ProxySocket.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-153
+client/src/main/java/com/jagex/game/clientoptions/options/PreferencesScreenSize.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-49
+client/src/main/java/com/jagex/game/clientoptions/options/PreferencesCustomCursors.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-43
+client/src/main/java/com/jagex/game/load/LoadingScreenSprite.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-44
+client/src/main/java/com/jagex/game/camera/PositionSpline_Sub2.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-78
+client/src/main/java/com/jagex/game/config/vartype/VariableTypeProviderClient.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-21
+client/src/main/java/com/jagex/graphics/AnimationNode.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-481
+client/src/main/java/com/jagex/graphics/camera/CameraException.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-7
+client/src/main/java/com/jagex/game/config/BasicTypeFactory.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-32
+client/src/main/java/com/jagex/graphics/gl/GlColourRemapper.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-49
+client/src/main/java/com/jagex/game/client/NoiseGeneratorNode.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-11
+client/src/main/java/com/jagex/game/config/BillboardTypeList.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-10
+client/src/main/java/com/jagex/audio/stream/SoundShape.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-22
+client/src/main/java/com/jagex/game/client/RebuildType.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-52
+client/src/main/java/com/jagex/graphics/GpuHardShadow.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-475
+client/src/main/java/com/jagex/game/shared/console/DeveloperConsole.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-787
+client/src/main/java/com/jagex/graphics/Surface.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-16
+client/src/main/java/com/jagex/game/client/RuneScapeSetup.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-75
+client/src/main/java/com/jagex/core/utils/ByteArrayPool.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-112
+client/src/main/java/com/jagex/core/datastruct/SortedQueue.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-189
+client/src/main/java/com/jagex/game/config/cursortype/CursorTypeFactory.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-43
+client/src/main/java/com/jagex/game/config/vartype/VarDomainTypeClient.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-19
+client/src/main/java/com/jagex/graphics/glx/GlxProgramManager.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-96
+client/src/main/java/com/jagex/game/world/entity/PlayerModel.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-668
+client/src/main/java/com/jagex/graphics/scenegraph/WallDecorLayerEntity.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-79
+client/src/main/java/com/jagex/graphics/safe/PureJavaSpriteAlpha.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-2283
+client/src/main/java/com/jagex/graphics/gl/GlLevelsFilter.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-94
+client/src/main/java/com/jagex/game/config/flotype/FloorOverlayTypeList.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-17
+client/src/main/java/com/jagex/game/config/lighttype/LightTypeList.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-17
+client/src/main/java/com/jagex/game/clientoptions/options/PreferencesParticles.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-55
+client/src/main/java/com/jagex/game/client/LoadableResourceManager.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-130
+client/src/main/java/com/jagex/core/constants/SerializableEnum.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-10
+client/src/main/java/com/jagex/graphics/gl/GlModelFlags.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-189
+client/src/main/java/com/jagex/game/config/vartype/general/VarBasicTypeListClient.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-84
+client/src/main/java/com/jagex/graphics/GpuCubeTexture.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-7
+client/src/main/java/com/jagex/game/config/cursortype/CursorTypeList.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-34
+client/src/main/java/com/jagex/core/utils/ColourUtils.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-346
+client/src/main/java/com/jagex/game/camera/PositionSpline_Sub1.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-44
+client/src/main/java/com/jagex/game/config/flutype/FloorUnderlayType.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-136
+client/src/main/java/com/jagex/game/clientoptions/options/PreferencesUnused11.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-43
+client/src/main/java/com/jagex/game/client/ClientCameraTrackableProvider.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-26
+package.json
+  s_a6ab0e671e93f2::t_79fde40a3b5c20 1-27
+client/src/main/java/com/jagex/game/load/LoadingScreenSpriteConfig.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-46
+client/src/main/java/com/jagex/audio/backend/AudioMixer.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-103
+client/src/main/java/com/jagex/game/client/ProxyAuthenticationRequiredException.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-12
+client/src/main/java/com/jagex/game/client/MapElementContainer.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-49
+client/src/main/java/com/jagex/game/client/NativeMouseLogger.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-63
+client/src/main/java/com/jagex/game/script/ScriptCommand.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-7
+client/src/main/java/com/jagex/game/load/LoadingScreenProgressDisplayConfig.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-78
+client/src/main/java/com/jagex/graphics/camera/CameraControlMode.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-31
+client/src/main/java/com/jagex/core/utils/SecureRandomProvider.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-32
+client/src/main/java/com/jagex/game/world/entity/EntityBounds.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-79
+client/src/main/java/com/jagex/graphics/ParticleShader.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-44
+client/src/main/java/com/jagex/game/load/LoadingScreenRelated5.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-45
+client/src/main/java/com/jagex/graphics/GpuPacket.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-31
+client/src/main/java/com/jagex/graphics/gl/GlRelated2.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-88
+client/src/main/java/com/jagex/game/clientoptions/ClientOptions.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-767
+client/src/main/java/com/jagex/graphics/gl/GlUnderwaterTexture.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-29
+client/src/main/java/com/jagex/graphics/dx/DxProgramManager.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-90
+client/src/main/java/com/jagex/graphics/SkyBox.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-354
+client/src/main/java/com/jagex/game/client/AppletMouseLogger.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-64
+client/src/main/java/com/jagex/game/load/LoadingScreenNewsManager.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-67
+client/src/main/java/com/jagex/core/utils/PingRequest.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-17
+client/src/main/java/com/jagex/core/datastruct/CacheEntry.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-24
+client/src/main/java/com/jagex/game/world/entity/PrimaryLayerLocEntityPredicate.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-13
+client/src/main/java/com/jagex/game/camera/CameraEffect.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-42
+client/src/main/java/com/jagex/game/client/Browser.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-113
+client/src/main/java/com/jagex/graphics/safe/PureJavaToolkit.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-2703
+client/src/main/java/com/jagex/game/client/GameShell.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-1141
+client/src/main/java/com/jagex/graphics/GpuRendererRelated3.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-16
+client/src/main/java/com/jagex/game/client/PrimitiveType.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-32
+client/src/main/java/com/jagex/game/world/entity/StaticWallEntity.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-290
+client/src/main/java/com/jagex/game/world/entity/LocTypeRelated3.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-43
+client/src/main/java/com/jagex/encryption/Isaac.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-208
+client/src/main/java/com/jagex/graphics/camera/CameraMode3.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-47
+client/src/main/java/com/jagex/game/config/vartype/VarDomain.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-33
+client/src/main/java/com/jagex/game/config/ParticleEmitterTypeList.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-10
+client/src/main/java/com/jagex/graphics/gl/GlBufferRelated_Sub2.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-47
+client/src/main/java/com/jagex/game/config/vartype/general/VarBasicType.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-22
+client/src/main/java/com/jagex/game/config/seqtype/SeqTypeList.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-47
+client/src/main/java/com/jagex/graphics/Sprite.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-161
+client/src/main/java/com/jagex/graphics/gl/GlFloorModelRelated1.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-222
+client/src/main/java/com/jagex/graphics/SimpleToolkitChange.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-25
+client/src/main/java/com/jagex/graphics/GpuColourRemapper.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-53
+client/src/main/java/com/jagex/game/client/NoiseGenerator3D.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-190
+client/src/main/java/com/jagex/game/config/vartype/general/VarBasicTypeListClientIterator.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-32
+client/src/main/java/com/jagex/game/config/vartype/VarIntDomain.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-14
+client/src/main/java/com/jagex/graphics/gl/GlEnvironmentSampler.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-11
+client/src/main/java/com/jagex/core/utils/SecureRandomTask.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-20
+client/src/main/java/com/jagex/game/config/ConfigTypeFactory.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-13
+client/src/main/java/com/jagex/graphics/ProgrammableBatchedSpriteShader.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-36
+client/src/main/java/com/jagex/game/client/JavascriptFunction.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-84
+client/src/main/java/com/jagex/game/camera/LookatEntity.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-121
+client/src/main/java/com/jagex/graphics/particles/ParticleSystem.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-293
+client/src/main/java/com/jagex/game/client/TwitchVar.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-7
+client/src/main/java/com/jagex/game/world/WorldMap.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-1550
+client/src/main/java/com/jagex/graphics/safe/PureJavaFont2.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-336
+client/src/main/java/com/jagex/game/cutscene/ProjAnimCutsceneAction.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-133
+client/src/main/java/com/jagex/graphics/BlendMode.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-26
+client/src/main/java/com/jagex/game/config/vartype/BaseVarTypeComponentHook.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-14
+client/src/main/java/com/jagex/game/client/DefaultVarValueProvider.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-10
+client/src/main/java/com/jagex/game/config/Js5Archive.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-177
+client/src/main/java/com/jagex/game/world/entity/ObjIconRequest.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-35
+client/src/main/java/com/jagex/core/utils/WebTools.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-41
+client/src/main/java/com/jagex/graphics/gl/GlTexture_Sub1.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-210
+client/src/main/java/com/jagex/graphics/gl/GlWaterRelated.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-94
+client/src/main/java/com/jagex/game/client/TwitchEventSubject.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-50
+client/src/main/java/com/jagex/graphics/glx/GlxProgram.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-360
+client/src/main/java/com/jagex/graphics/Joint.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-68
+client/src/main/java/com/jagex/game/config/effectanimtype/BasicEffectAnimTypeFactory.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-24
+client/src/main/java/com/jagex/graphics/postprocess/effects/ColourRemappingFilter.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-185
+client/src/main/java/com/jagex/graphics/MaterialRaw.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-253
+client/src/main/java/com/jagex/graphics/gl/GlFloorModelRelated2.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-35
+client/src/main/java/com/jagex/game/world/entity/ObjIconFactory.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-72
+client/src/main/java/com/jagex/game/config/effectanimtype/EffectAnimTypeList.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-39
+client/src/main/java/com/jagex/game/cutscene/LocDelCutsceneAction.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-21
+client/src/main/java/com/jagex/graphics/camera/ShakeMode.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-51
+client/src/main/java/com/jagex/graphics/FullSpriteData.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-296
+client/src/main/java/com/jagex/core/datastruct/HardReferenceNode.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-25
+client/src/main/java/com/jagex/game/client/NoiseGenerator3D_Sub1_Sub1.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-31
+client/src/main/java/com/jagex/game/client/TwitchHardwarePlatform.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-718
+client/src/main/java/com/jagex/graphics/dx/DxIndexBuffer.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-109
+client/src/main/java/com/jagex/game/load/LoadingScreenElementType.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-52
+client/src/main/java/com/jagex/core/constants/ModeWhat.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-50
+client/src/main/java/com/jagex/core/constants/Namespace.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-64
+client/src/main/java/com/jagex/game/client/HardwarePlatformLoaderRelated.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-11
+client/src/main/java/com/jagex/game/config/defaults/BindingType.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-40
+client/src/main/java/com/jagex/game/cutscene/CutsceneLocation.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-71
+client/src/main/java/com/jagex/core/datastruct/SecondaryLinkedListIterator.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-59
+client/src/main/java/com/jagex/graphics/gl/effects/GlHDWaterEffect.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-103
+client/src/main/java/com/jagex/game/config/headbartype/HeadbarType.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-132
+client/src/main/java/com/jagex/core/datastruct/SecondaryNode.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-26
+client/src/main/java/com/jagex/game/camera/LookatSpline.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-180
+client/src/main/java/com/jagex/core/utils/Algorithms.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-267
+client/src/main/java/com/jagex/game/cutscene/CutsceneManager.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-237
+client/src/main/java/com/jagex/graphics/gl/effects/GlLakeWaterEffect.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-118
+client/src/main/java/com/jagex/graphics/scenegraph/GraphNode.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-196
+client/src/main/java/com/jagex/core/datastruct/IntegerBox.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-14
+client/src/main/java/com/jagex/core/datastruct/IconCache.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-136
+client/src/main/java/com/jagex/game/config/idktype/IDKType.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-237
+client/src/main/java/com/jagex/graphics/gl/GlFont.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-183
+client/src/main/java/com/jagex/graphics/GpuEnvironmentSampler.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-10
+client/src/main/java/com/jagex/audio/stream/SoundAdjuster.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-10
+client/src/main/java/com/jagex/graphics/gl/effects/GlHDWaterWaveEffect.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-109
+client/src/main/java/com/jagex/core/datastruct/Node.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-31
+.editorconfig
+  s_a6ab0e671e93f2::t_e599e5a730f722 1-25
+client/src/main/java/com/jagex/game/config/msitype/MSITypeList.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-40
+client/src/main/java/com/jagex/game/client/MapCoordUtil.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-105
+client/src/main/java/com/jagex/game/HintArrow.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-101
+client/src/main/java/com/jagex/game/world/entity/PositionMode.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-55
+client/src/main/java/com/jagex/graphics/FontGlyph.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-10
+client/src/main/java/com/jagex/graphics/FixedFunctionParticleShader.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-46
+client/src/main/java/com/jagex/game/config/defaults/DefaultsGroup.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-47
+client/src/main/java/com/jagex/graphics/dx/DxBaseTexture.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-65
+client/src/main/java/com/jagex/graphics/gl/GlInterfaceRelated.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-19
+client/src/main/java/com/jagex/game/cutscene/EntityMoveCutsceneAction.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-38
+client/src/main/java/rs2/client/Client.java
+  s_a6ab0e671e93f2::t_8c6bf116d72e17 1631,8667,8673-9185,9191-9195,12094,12135,12156,13401,14546-14556
+  s_a6ab0e671e93f2::t_108684ca04d82b 1472,1487-1490,12308,12310-12311,12316-12317,13082-13083,13292-13293,13443,13455,13852,13870,13872-13873,13878-13879,13890-13891
+  s_a6ab0e671e93f2::t_018c0abd3552e3 12168,14597
+  s_a6ab0e671e93f2::t_986b46a80f1033 13461,13938
+  s_a6ab0e671e93f2::t_08c031add54ef3 12084,13968,14560
+  s_a6ab0e671e93f2::t_8cfd0e0c6dad96 1475,1496,12309,12319-12320,13085,13295,13444,13456,13853,13871,13881-13882
+  s_a6ab0e671e93f2::t_cff403ca51c0b7 1493,12313-12314,13084,13294,13875-13876
+  s_a6ab0e671e93f2::t_a27b1e808e6638 6001
+  s_a6ab0e671e93f2::t_cccae3b9103109 13252,14608
+  s_a6ab0e671e93f2::t_2b93b6c14ed95b 1505-1523,4261,13139,13153,13309,13441,13447-13453,13460,13462,13464-13467,13896
+  s_a6ab0e671e93f2::t_048f5cde033802 3970,4266
+  s_a6ab0e671e93f2::t_44be96ec53a591 3680-3881,4056,9206-11314,13157,13328
+  s_a6ab0e671e93f2::t_1183da456bf743 12063,12090,12110,13250,13403,13911
+  s_a6ab0e671e93f2::t_f2f26eddd8c8e2 14152
+  s_a6ab0e671e93f2::t_d3e1d773e9e5c5 1424,1430,13257,13405,13976
+  s_a6ab0e671e93f2::t_400decc1f08522 1418-1421,1427,12038-12046,12081-12082,13253-13255,13400
+  s_a6ab0e671e93f2::t_2bc5e37d496fe0 13978,14565
+  s_a6ab0e671e93f2::t_c5bd02c2267983 5802,5838,13329
+  s_a6ab0e671e93f2::t_5ddf06b044276e 13189,13410-13412
+  s_a6ab0e671e93f2::t_27cf47c30f29f5 1466-1469,1478,3963,4223,4263,12255-12278,12298,13080,13134-13136,13150-13151,13282-13284,13287-13290,13306,13847-13851,13865,13886,13894,13897-13906,13912-13935,13943-13948
+  s_a6ab0e671e93f2::t_4165fc330e8d07 2959,12155,13248
+  s_a6ab0e671e93f2::t_68351752b0d387 5801,5837
+  s_a6ab0e671e93f2::t_9fff46b0ab5639 8108,12054,12130
+  s_a6ab0e671e93f2::t_266b85d83b35ad 8670,9188,12295,12299,12322,13001-13053,13286,13980,14562,14581
+  s_a6ab0e671e93f2::t_29de2d34ba222a 12085,12870-12893,14570
+  s_a6ab0e671e93f2::t_7f55758f76c13c 12118,13936
+  s_a6ab0e671e93f2::t_e0e2eac72d4182 1391,14057
+  s_a6ab0e671e93f2::t_7972febfba599f 13463,13940
+  s_a6ab0e671e93f2::t_9af6f61f962bda 1502,13138,13895,13939,13941
+  s_4ef42e9377ab2e::t_34a4676c657133 1-1390,1392-1417,1422-1423,1425-1426,1428-1429,1431-1465,1470-1471,1473-1474,1476-1477,1479-1486,1491-1492,1494-1495,1497-1501,1503-1504,1524-1630,1632-2958,2960-3679,3882-3962,3964-3969,3971-4055,4057-4222,4224-4260,4262,4264-4265,4267-5800,5803-5836,5839-6000,6002-8107,8109-8666,8668-8669,8671-8672,9186-9187,9189-9190,9196-9205,11315-12037,12047-12053,12055-12062,12064-12080,12083,12086-12089,12091-12093,12095-12109,12111-12117,12119-12129,12131-12134,12136-12154,12157-12167,12169-12254,12279-12294,12296-12297,12300-12307,12312,12315,12318,12321,12323-12869,12894-13000,13054-13079,13081,13086-13133,13137,13140-13149,13152,13154-13156,13158-13188,13190-13247,13249,13251,13256,13258-13281,13285,13291,13296-13305,13307-13308,13310-13327,13330-13399,13402,13404,13406-13409,13413-13440,13442,13445-13446,13454,13457-13459,13468-13846,13854-13864,13866-13869,13874,13877,13880,13883-13885,13887-13889,13892-13893,13907-13910,13937,13942,13949-13967,13969-13975,13977,13979,13981-14056,14058-14151,14153-14545,14557-14559,14561,14563-14564,14566-14569,14571-14580,14582-14596,14598-14607,14609-14863
+client/src/main/java/com/jagex/core/io/GZip.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-47
+client/src/main/java/com/jagex/game/config/seqtype/SeqType.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-304
+client/src/main/java/com/jagex/graphics/FloorModel.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-108
+client/src/main/java/com/jagex/game/clientoptions/options/PreferencesBloom.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-56
+client/src/main/java/com/jagex/audio/stream/SoundRelatedType1.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-41
+client/src/main/java/com/jagex/game/config/npctype/NPCType.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-1019
+client/src/main/java/com/jagex/game/config/headbartype/HeadbarTypeFactory.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-43
+client/src/main/java/com/jagex/graphics/gl/GlToolkitRelated.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-601
+client/src/main/java/com/jagex/game/config/vartype/VarContainer.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-31
+client/src/main/java/com/jagex/graphics/AlphaMode.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-34
+client/src/main/java/com/jagex/game/load/LoadingScreenType.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-54
+client/src/main/java/com/jagex/game/group/PlayerGroupDeltaEntry.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-10
+client/src/main/java/com/jagex/game/group/PlayerGroupMemberStatus.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-41
+client/src/main/java/com/jagex/graphics/camera/CameraEffectType.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-31
+client/src/main/java/com/jagex/game/client/PreLoadingScreen.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-301
+client/src/main/java/com/jagex/graphics/particles/ParticleLimits.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-17
+client/src/main/java/com/jagex/graphics/gl/GlBufferRelated_Sub1.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-31
+client/src/main/java/com/jagex/graphics/FontIconProvider.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-13
+client/src/main/java/com/jagex/graphics/ShaderRelated.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-14
+docs/cache.md
+  s_a6ab0e671e93f2::t_06a74f607b11ae 1-40
+client/src/main/java/com/jagex/graphics/scenegraph/PrimaryLayerEntity.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-189
+client/src/main/java/com/jagex/graphics/RendererException.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-19
+client/src/main/java/com/jagex/graphics/SpriteRelated.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-7
+client/src/main/java/com/jagex/game/client/ClientDirectXFailure.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-24
+client/src/main/java/com/jagex/graphics/FacetMode.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-43
+client/src/main/java/com/jagex/core/utils/TextUtil.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-45
+client/src/main/java/com/jagex/game/load/LoadingScreenRelated6.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-111
+client/src/main/java/com/jagex/graphics/gl/GlModel.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-3776
+client/src/main/java/com/jagex/game/client/MutableConfig.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-10
+client/src/main/java/com/jagex/graphics/gl/GlEffectList.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-107
+client/src/main/java/com/jagex/audio/vorbis/VorbisMapping.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-99
+client/src/main/java/com/jagex/game/cutscene/CutsceneSpline.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-66
+client/src/main/java/com/jagex/graphics/glx/GlxCubeTexture.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-47
+client/src/main/java/com/jagex/graphics/ShaderDataReader.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-41
+client/src/main/java/com/jagex/game/scene/ChangeLocationRequest.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-265
+client/src/main/java/com/jagex/core/datastruct/ReferenceNode.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-20
+client/src/main/java/com/jagex/game/config/vartype/VarContainerSparse.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-119
+client/src/main/java/com/jagex/graphics/safe/PureJavaTranslucentFont.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-235
+client/src/main/java/com/jagex/graphics/FloorModelNode.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-15
+client/src/main/java/com/jagex/graphics/dx/DxProgramUniform.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-51
+client/src/main/java/com/jagex/core/utils/ReflectionCheck.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-238
+client/src/main/java/com/jagex/game/config/vartype/constants/VarLifetime.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-34
+client/src/main/java/com/jagex/game/compression/huffman/WordPack.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-50
+client/src/main/java/com/jagex/game/cutscene/FinishCutsceneAction.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-17
+client/src/main/java/com/jagex/graphics/ProgramData.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-41
+client/src/main/java/com/jagex/game/load/LoadingRelated2.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-18
+client/src/main/java/com/jagex/graphics/ProgramUniform.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-69
+client/src/main/java/com/jagex/game/config/ConfigTypeList.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-13
+client/src/main/java/com/jagex/game/world/entity/LocPositionAdjustment.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-50
+client/src/main/java/com/jagex/game/camera/PositionSpline.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-175
+client/src/main/java/com/jagex/game/camera/LookatPoint.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-77
+client/src/main/java/com/jagex/graphics/camera/CameraRelated.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-16
+docs/architecture.md
+  s_a6ab0e671e93f2::t_0d6bbdf6ad52be 1-52
+client/src/main/java/com/jagex/graphics/GpuToolkit.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-2561
+client/src/main/java/com/jagex/game/client/JavaGraphicsRelated3.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-19
+client/src/main/java/com/jagex/core/datastruct/HashMapKey.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-10
+client/src/main/java/com/jagex/game/client/NativeLibraryFailureType.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-26
+client/src/main/java/com/jagex/core/datastruct/LinkQueue.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-103
+client/src/main/java/com/jagex/game/world/entity/DynamicLoc.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-348
+client/src/main/java/com/jagex/core/utils/FileUtil.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-43
+client/src/main/java/com/jagex/game/world/entity/PositionPoint.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-128
+client/src/main/java/com/jagex/game/client/MouseEvent.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-31
+client/src/main/java/com/jagex/core/datastruct/DualLink.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-23
+client/src/main/java/com/jagex/graphics/BlendedUntexturedTileData1.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-40
+client/src/main/java/com/jagex/game/config/paramtype/ParamType.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-66
+client/src/main/java/com/jagex/graphics/gl/effects/GlWaterEffect.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-178
+client/src/main/java/com/jagex/graphics/gl/GlHeap.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-21
+client/src/main/java/com/jagex/game/shared/framework/gwc/GWCWorld.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-40
+client/src/main/java/com/jagex/game/fullscreen/Fullscreen.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-63
+client/src/main/java/com/jagex/game/world/entity/DynamicWallDecorEntity.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-163
+client/src/main/java/com/jagex/game/config/vartype/player/VarPlayerTypeEncodingKey.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-83
+client/src/main/java/com/jagex/game/clientoptions/Preferences.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-387
+client/src/main/java/com/jagex/game/cutscene/LocCreateCutsceneAction.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-38
+client/src/main/java/com/jagex/game/config/vartype/VarDomainTypeController.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-19
+client/src/main/java/com/jagex/graphics/GpuPostProcessEffect.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-68
+client/src/main/java/com/jagex/game/world/entity/SpotAnimEntityNode.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-16
+README.md
+  s_a6ab0e671e93f2::t_e9125bfd240efe 1-86,88-94
+  s_a6ab0e671e93f2::t_163c0ea3989d29 87
+ref/README.md
+  s_a6ab0e671e93f2::t_d4cf8108a498ca 1-18,49-58
+  s_a6ab0e671e93f2::t_f1bddee50c5f2a 19-48
+client/src/main/java/com/jagex/game/script/ClientVarDomain.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-252
+client/src/main/java/com/jagex/graphics/GpuShader.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-272
+client/src/main/java/com/jagex/game/ClientWatch.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-251
+client/src/main/java/com/jagex/game/clientoptions/options/PreferencesCharacterShadows.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-48
+client/src/main/java/com/jagex/game/clientoptions/options/PreferencesUnused10.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-41
+client/src/main/java/com/jagex/game/cutscene/EntityRouteCutsceneAction.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-31
+client/src/main/java/com/jagex/audio/vorbis/VorbisSound.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-1538
+client/src/main/java/com/jagex/core/utils/Base37.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-85
+client/src/main/java/com/jagex/graphics/gl/effects/GlEffect.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-34
+client/src/main/java/com/jagex/graphics/particles/ParticleList.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-11
+client/src/main/java/com/jagex/game/config/BasicParticleEffectorTypeList.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-42
+client/src/main/java/com/jagex/game/config/vartype/bit/VarBitTypeFactory.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-16
+client/src/main/java/com/jagex/game/world/entity/EntitySpotAnim.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-28
+client/src/main/java/com/jagex/game/client/MapLoader.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-1645
+client/src/main/java/com/jagex/core/io/SocketStreamWriter.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-159
+client/src/main/java/com/jagex/game/client/Headbar.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-68
+client/src/main/java/com/jagex/graphics/ModelShader.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-118
+client/src/main/java/com/jagex/graphics/GpuModelRelated3.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-19
+client/src/main/java/com/jagex/game/client/BasicMouseEvent.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-92
+client/src/main/java/com/jagex/game/client/JavaMouse.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-217
+client/src/main/java/com/jagex/game/client/CoverMarkerClickbox.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-51
+client/src/main/java/com/jagex/game/client/NativeMouseLoggerNativeMouseListener.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-23
+client/src/main/java/com/jagex/game/config/meltype/MapElementTypeList.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-41
+client/src/main/java/com/jagex/game/world/entity/PrimaryLayerEntityList.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-45
+client/src/main/java/com/jagex/graphics/BlendedUntexturedTileData2.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-40
+client/src/main/java/com/jagex/game/client/QuestCommands.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-171
+client/src/main/java/com/jagex/core/datastruct/CacheKey.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-13
+client/src/main/java/com/jagex/core/datastruct/SoftCacheEntry.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-26
+client/src/main/java/com/jagex/core/utils/PingProvider.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-63
+client/src/main/java/com/jagex/game/telemetry/grid/TelemetryGroup.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-215
+client/src/main/java/com/jagex/game/client/NoiseGeneratorRelated.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-77
+client/src/main/java/com/jagex/game/client/LoadableResourceType.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-19
+client/src/main/java/com/jagex/graphics/ProgrammableModelShader.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-174
+client/src/main/java/com/jagex/audio/api/AudioBuss.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-116
+client/src/main/java/com/jagex/core/datastruct/SoftLruHashTable.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-205
+client/src/main/java/com/jagex/game/clientoptions/options/PreferencesHardwareInfo.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-55
+client/src/main/java/com/jagex/game/shared/framework/chat/ChatCrownType.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-64
+client/src/main/java/com/jagex/game/world/entity/LocReference.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-64
+client/src/main/java/com/jagex/core/constants/ModeWhereProperty.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-16
+client/src/main/java/com/jagex/game/client/LowResPlayerInfo.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-23
+client/src/main/java/com/jagex/game/clientoptions/options/PreferencesSceneryShadows.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-51
+client/src/main/java/com/jagex/game/cutscene/CutsceneActionOp31.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-57
+client/src/main/java/com/jagex/game/world/WorldMapTileShapes.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-400
+client/src/main/java/com/jagex/game/world/entity/EntityWalkAnimationNode.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-29
+client/src/main/java/com/jagex/game/config/npctype/BasicNPCTypeFactory.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-26
+client/src/main/java/com/jagex/graphics/scenegraph/GroundDecorLayerEntity.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-60
+client/src/main/java/com/jagex/graphics/gl/GlBufferRelated.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-77
+client/src/main/java/com/jagex/game/client/ClientInvCache.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-367
+client/src/main/java/com/jagex/game/config/vartype/VariableTypeProvider.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-15
+client/src/main/java/com/jagex/audio/backend/AudioMixerRelated.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-14
+client/src/main/java/com/jagex/game/config/effectanimtype/EffectAnimTypeFactory.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-56
+client/src/main/java/com/jagex/graphics/gl/GlBinding.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-16
+client/src/main/java/com/jagex/audio/vorbis/VorbisRelated.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-28
+client/src/main/java/com/jagex/graphics/camera/CameraHelpers.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-67
+client/src/main/java/com/jagex/graphics/Particle.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-32
+.gitignore
+  s_a6ab0e671e93f2::t_cf80de0d3983c7 1-76
+client/src/main/java/com/jagex/graphics/gl/GlColourGradingBloomFilter.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-325
+client/src/main/java/com/jagex/graphics/GpuModelRelated.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-36
+client/src/main/java/com/jagex/graphics/glx/GlxRelated2.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-12
+client/src/main/java/com/jagex/core/io/AbstractSocket.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-31
+client/src/main/java/com/jagex/game/client/IconCacheKey.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-73
+client/src/main/java/com/jagex/game/client/NativeLibraryException.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-23
+client/src/main/java/com/jagex/game/shared/framework/gwc/GWCBasicWorld.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-36
+client/src/main/java/com/jagex/game/client/MapBuildStuck.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-46
+client/src/main/java/com/jagex/graphics/gl/GlEffectRelated1.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-83
+client/src/main/java/com/jagex/game/config/objtype/BasicObjTypeFactory.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-26
+client/src/main/java/com/jagex/game/load/LoadingRelated3.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-142
+client/src/main/java/com/jagex/game/load/LoadingScreenNewsDisplay.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-59
+client/src/main/java/com/jagex/graphics/ModelParticleEmitter.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-76
+client/src/main/java/com/jagex/game/client/InterfaceAnimationNode.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-19
+client/src/main/java/com/jagex/game/client/FileOnDisk.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-98
+client/src/main/java/com/jagex/graphics/gl/GlModelRelated3.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-53
+client/src/main/java/com/jagex/graphics/PrimitiveVertexBuffer.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-43
+client/src/main/java/com/jagex/graphics/GpuRendererRelated.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-135
+client/src/main/java/com/jagex/game/config/meltype/MapElementType.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-478
+client/src/main/java/com/jagex/core/constants/Language.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-97
+client/src/main/java/com/jagex/game/load/LoadingScreenRelated4.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-40
+client/src/main/java/com/jagex/game/clientoptions/options/PreferencesGroundDecoration.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-52
+client/src/main/java/com/jagex/core/utils/PrioritizedCacheEntry.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-50
+client/src/main/java/com/jagex/game/config/msitype/MSITypeFactory.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-50
+client/src/main/java/com/jagex/game/cutscene/EntityDelCutsceneAction.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-21
+client/src/main/java/com/jagex/graphics/GlPostProcessing.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-389
+client/src/main/java/com/jagex/game/clientoptions/options/PreferencesDisplayMode.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-67
+client/src/main/java/com/jagex/graphics/camera/CameraTrackable.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-25
+client/src/main/java/com/jagex/audio/vorbis/VorbisInterface.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-58
+client/src/main/java/com/jagex/game/world/entity/LocTypeRelated2.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-34
+client/src/main/java/com/jagex/graphics/FontMetrics.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-660
+client/src/main/java/com/jagex/core/utils/PrioritizedCacheMode.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-20
+client/src/main/java/com/jagex/game/client/MainLoadingScreen.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-171
+client/src/main/java/com/jagex/game/config/cursortype/CursorType.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-65
+client/src/main/java/com/jagex/game/config/skydecortype/SkyDecorTypeList.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-17
+client/src/main/java/com/jagex/graphics/scenegraph/GraphEntity.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-138
+client/src/main/java/com/jagex/core/io/Stream.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-37
+client/src/main/java/com/jagex/graphics/GpuFloorModelRelated1.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-200
+client/src/main/java/com/jagex/game/world/entity/EntityAnimationNode.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-24
+client/src/main/java/com/jagex/game/config/iftype/Interface.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-44
+client/src/main/java/com/jagex/game/world/entity/DynamicSceneryEntity.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-182
+client/src/main/java/com/jagex/game/clientoptions/options/PreferencesUnused7.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-43
+client/src/main/java/com/jagex/game/world/entity/PositionedSound.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-541
+client/src/main/java/com/jagex/core/utils/CacheUtil.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-73
+client/src/main/java/com/jagex/game/world/entity/DynamicGroundDecorEntity.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-175
+client/src/main/java/com/jagex/graphics/dx/DxFrameBuffer.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-193
+client/src/main/java/com/jagex/graphics/CompassPoint.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-77
+client/src/main/java/com/jagex/graphics/glx/GlxError.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-12
+client/src/main/java/com/jagex/game/client/InetAddressLookupRequest.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-89
+client/src/main/java/com/jagex/game/client/RebuildStage.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-19
+client/src/main/java/com/jagex/game/config/ParticleEmitterType.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-416
+client/src/main/java/com/jagex/graphics/MaterialList.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-56
+client/src/main/java/com/jagex/game/script/SubInterfaceActiveObj.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-29
+client/src/main/java/com/jagex/game/cutscene/CutsceneTemplate.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-49
+client/src/main/java/com/jagex/game/config/vartype/VarTypeEncodingKey.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-50
+client/src/main/java/com/jagex/game/config/vartype/BaseVarTypeInteger.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-13
+client/src/main/java/com/jagex/graphics/dx/DxToolkitFactory.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-36
+client/src/main/java/com/jagex/game/cutscene/FadeCutsceneAction.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-35
+client/src/main/java/com/jagex/graphics/GpuEnvironmentSampler_Sub1.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-52
+client/src/main/java/com/jagex/game/camera/position/PositionEntity.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-280
+client/src/main/java/com/jagex/audio/stream/AudioStream2.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-248
+client/src/main/java/com/jagex/game/client/ClientMapLoader.java
+  s_a6ab0e671e93f2::t_a52f556759360f 1-1118
+.github/workflows/client.yml
+  s_a6ab0e671e93f2::t_8d78d62588ab61 1-27
+LICENSE
+  s_a6ab0e671e93f2::t_32f13365b0d50f 1-21
+client/src/main/java/com/jagex/Unused1.java
+  s_a6ab0e671e93f2::t_401bef84371fed 1-11
+client/src/main/java/com/jagex/Unused10.java
+  s_a6ab0e671e93f2::t_4772742dc07d6d 1-11
+client/src/main/java/com/jagex/Unused11.java
+  s_a6ab0e671e93f2::t_12785b12528a9a 1-11
+client/src/main/java/com/jagex/Unused12.java
+  s_a6ab0e671e93f2::t_d6ba58d6724d64 1-11
+client/src/main/java/com/jagex/Unused13.java
+  s_a6ab0e671e93f2::t_b782a604b593b2 1-11
+client/src/main/java/com/jagex/Unused14.java
+  s_a6ab0e671e93f2::t_36129021644137 1-11
+client/src/main/java/com/jagex/Unused15.java
+  s_a6ab0e671e93f2::t_eb2936f6617068 1-11
+client/src/main/java/com/jagex/Unused16.java
+  s_a6ab0e671e93f2::t_53d79ab56960c3 1-11
+client/src/main/java/com/jagex/Unused17.java
+  s_a6ab0e671e93f2::t_d6a0f6de54aff0 1-11
+client/src/main/java/com/jagex/Unused18.java
+  s_a6ab0e671e93f2::t_f0744867f0153e 1-11
+client/src/main/java/com/jagex/Unused19.java
+  s_a6ab0e671e93f2::t_c67d57951f93c1 1-11
+client/src/main/java/com/jagex/Unused2.java
+  s_a6ab0e671e93f2::t_fcb088c59ed27f 1-11
+client/src/main/java/com/jagex/Unused20.java
+  s_a6ab0e671e93f2::t_8819b055254727 1-11
+client/src/main/java/com/jagex/Unused21.java
+  s_a6ab0e671e93f2::t_0c6dcb3884c66c 1-15
+client/src/main/java/com/jagex/Unused22.java
+  s_a6ab0e671e93f2::t_0d2f596271ae2e 1-11
+client/src/main/java/com/jagex/Unused23.java
+  s_a6ab0e671e93f2::t_dd468c2ef933e7 1-11
+client/src/main/java/com/jagex/Unused24.java
+  s_a6ab0e671e93f2::t_992eb4faa58ff4 1-18
+client/src/main/java/com/jagex/Unused25.java
+  s_a6ab0e671e93f2::t_20df3067079060 1-7
+client/src/main/java/com/jagex/Unused27.java
+  s_a6ab0e671e93f2::t_5f26414984f0cd 1-11
+client/src/main/java/com/jagex/Unused28.java
+  s_a6ab0e671e93f2::t_868f380a69bb93 1-11
+client/src/main/java/com/jagex/Unused29.java
+  s_a6ab0e671e93f2::t_ee10e5c8c1a869 1-11
+client/src/main/java/com/jagex/Unused3.java
+  s_a6ab0e671e93f2::t_d19cdfa43ff681 1-11
+client/src/main/java/com/jagex/Unused30.java
+  s_a6ab0e671e93f2::t_f567793cedf8f0 1-11
+client/src/main/java/com/jagex/Unused31.java
+  s_a6ab0e671e93f2::t_aad2de236e0f02 1-7
+client/src/main/java/com/jagex/Unused32.java
+  s_a6ab0e671e93f2::t_879fad4c6d9450 1-11
+client/src/main/java/com/jagex/Unused33.java
+  s_a6ab0e671e93f2::t_4b83546693c7d6 1-11
+client/src/main/java/com/jagex/Unused4.java
+  s_a6ab0e671e93f2::t_cfdf8569588535 1-11
+client/src/main/java/com/jagex/Unused5.java
+  s_a6ab0e671e93f2::t_122173cf6b6abd 1-11
+client/src/main/java/com/jagex/Unused6.java
+  s_a6ab0e671e93f2::t_a32ae72c6166a7 1-11
+client/src/main/java/com/jagex/Unused7.java
+  s_a6ab0e671e93f2::t_bb580a0c335db9 1-11
+client/src/main/java/com/jagex/Unused8.java
+  s_a6ab0e671e93f2::t_f8cf70713ceeb0 1-11
+client/src/main/java/com/jagex/Unused9.java
+  s_a6ab0e671e93f2::t_e979b45bd0ae83 1-11
+client/src/main/java/com/jagex/graphics/TextureCombineMode.java
+  s_a6ab0e671e93f2::t_02f023b99d93b0 1-29
+client/src/main/java/com/jagex/graphics/TextureCombiner.java
+  s_a6ab0e671e93f2::t_2b8459a40c4a39 1-26
+client/src/main/java/com/jagex/graphics/TextureFormat.java
+  s_a6ab0e671e93f2::t_d72d5fe2341b05 1-48
+client/src/main/java/com/jagex/graphics/TextureList.java
+  s_a6ab0e671e93f2::t_51c9fff7295c57 1-22
+client/src/main/java/com/jagex/graphics/TextureRelated1.java
+  s_a6ab0e671e93f2::t_3b8261df338acd 1-19
+client/src/main/java/com/jagex/graphics/TextureRelated2.java
+  s_a6ab0e671e93f2::t_711d9e60ff4c50 1-19
+client/src/main/java/com/jagex/graphics/TextureTramsformType.java
+  s_a6ab0e671e93f2::t_50f9556e47b7e7 1-32
+client/src/main/java/com/jagex/graphics/Toolkit.java
+  s_a6ab0e671e93f2::t_1de66fe82581ae 1-786
+client/src/main/java/com/jagex/graphics/ToolkitType.java
+  s_a6ab0e671e93f2::t_e467bf867c0018 1-62
+client/src/main/java/com/jagex/graphics/TransformComponentType.java
+  s_a6ab0e671e93f2::t_169e0387a3a058 1-99
+client/src/main/java/com/jagex/graphics/TransformInfinityType.java
+  s_a6ab0e671e93f2::t_5e5f75c3cd088d 1-54
+client/src/main/java/com/jagex/graphics/TransformType.java
+  s_a6ab0e671e93f2::t_bc58a92dd7dafc 1-63
+client/src/main/java/com/jagex/graphics/TriangleNormal.java
+  s_a6ab0e671e93f2::t_49e1f96a40791f 1-16
+client/src/main/java/com/jagex/graphics/UnblendedTileData1.java
+  s_a6ab0e671e93f2::t_395df6451c81fc 1-28
+client/src/main/java/com/jagex/graphics/UnblendedTileData2.java
+  s_a6ab0e671e93f2::t_da56c8584a0ab1 1-49
+client/src/main/java/com/jagex/graphics/UniformNotFoundException.java
+  s_a6ab0e671e93f2::t_10fed0ab157c9f 1-15
+client/src/main/java/com/jagex/graphics/UniformType.java
+  s_a6ab0e671e93f2::t_81ede2d9202304 1-394
+client/src/main/java/com/jagex/graphics/UnknownEntityAnimationNode.java
+  s_a6ab0e671e93f2::t_a07dcf77df6c0b 1-16
+client/src/main/java/com/jagex/graphics/VertexBuffer.java
+  s_a6ab0e671e93f2::t_b8b3dbf1337c3d 1-13
+client/src/main/java/com/jagex/graphics/VertexDeclaration.java
+  s_a6ab0e671e93f2::t_ee7c08332e169f 1-14
+client/src/main/java/com/jagex/graphics/VertexDeclarationElement.java
+  s_a6ab0e671e93f2::t_a872e6e39933a8 1-44
+client/src/main/java/com/jagex/graphics/VertexDeclarationElementComponent.java
+  s_a6ab0e671e93f2::t_763444cdd99dfb 1-96
+client/src/main/java/com/jagex/graphics/VertexDeclaration_Sub1.java
+  s_a6ab0e671e93f2::t_a99d1cce8bcedd 1-15
+client/src/main/java/com/jagex/graphics/WaterBillowGenerator.java
+  s_a6ab0e671e93f2::t_0ed6cc1dbd43fc 1-32
+client/src/main/java/com/jagex/graphics/WaterFogData.java
+  s_a6ab0e671e93f2::t_543e901f3c0d33 1-46
+client/src/main/java/com/jagex/graphics/WaterRelated5.java
+  s_a6ab0e671e93f2::t_b7a9b8dd782b79 1-49
+client/src/main/java/com/jagex/graphics/WaterShader.java
+  s_a6ab0e671e93f2::t_1846aa03a8bf66 1-311
+client/src/main/java/com/jagex/graphics/WaterUnknownGenerator.java
+  s_a6ab0e671e93f2::t_e8bddddbf57d07 1-32
+client/src/main/java/com/jagex/graphics/WaterfallShader.java
+  s_a6ab0e671e93f2::t_c99edb4abcec31 1-138
+client/src/main/java/com/jagex/js5/ConfigTypeListPreload.java
+  s_a6ab0e671e93f2::t_a7db3601fbb4ee 1-110
+client/src/main/java/com/jagex/js5/Js5.java
+  s_a6ab0e671e93f2::t_3702d4f27070f8 1-631
+client/src/main/java/com/jagex/js5/Js5ArchiveResourceLoader.java
+  s_a6ab0e671e93f2::t_d5a44a8843a418 1-26
+client/src/main/java/com/jagex/js5/Js5CompressionType.java
+  s_a6ab0e671e93f2::t_9641f098f5477a 1-41
+client/src/main/java/com/jagex/js5/Js5FileResourceLoader.java
+  s_a6ab0e671e93f2::t_848e363706f1fc 1-30
+client/src/main/java/com/jagex/js5/Js5GroupResourceLoader.java
+  s_a6ab0e671e93f2::t_63ed380abf97e6 1-30
+client/src/main/java/com/jagex/js5/Js5MapFile.java
+  s_a6ab0e671e93f2::t_74e329f9fc1bd6 1-41
+client/src/main/java/com/jagex/js5/Js5Request.java
+  s_a6ab0e671e93f2::t_72162a4e9a03a9 1-23
+client/src/main/java/com/jagex/js5/Js5ResourceProvider.java
+  s_a6ab0e671e93f2::t_0aa8e1624d4ce0 1-20
+client/src/main/java/com/jagex/js5/Js5WorldMapGroup.java
+  s_a6ab0e671e93f2::t_5bbe852ee45f5b 1-35
+client/src/main/java/com/jagex/js5/caching/Js5DiskCache.java
+  s_a6ab0e671e93f2::t_10e98fcaf06641 1-137
+client/src/main/java/com/jagex/js5/index/Js5Index.java
+  s_a6ab0e671e93f2::t_01b6b88e2ca778 1-243
+client/src/main/java/com/jagex/js5/index/Js5MasterIndex.java
+  s_a6ab0e671e93f2::t_b5d0318657ae4b 1-50
+client/src/main/java/com/jagex/js5/index/Js5MasterIndexArchiveData.java
+  s_a6ab0e671e93f2::t_33cbfdbad1e0c5 1-26
+client/src/main/java/com/jagex/js5/network/JS5CompressionHeader.java
+  s_a6ab0e671e93f2::t_20672e6ab71430 1-45
+client/src/main/java/com/jagex/js5/network/Js5Client.java
+  s_a6ab0e671e93f2::t_84d7a6e926db7a 1-161
+client/src/main/java/com/jagex/js5/network/Js5HttpClient.java
+  s_a6ab0e671e93f2::t_24959b02a5e881 1-192
+client/src/main/java/com/jagex/js5/network/Js5HttpRequest.java
+  s_a6ab0e671e93f2::t_56b28d0d4ce9fd 1-50
+client/src/main/java/com/jagex/js5/network/Js5NetRequest.java
+  s_a6ab0e671e93f2::t_434cf16df742f5 1-28
+client/src/main/java/com/jagex/js5/network/Js5NetResourceProvider.java
+  s_a6ab0e671e93f2::t_2bfa2d04990101 1-582
+client/src/main/java/com/jagex/js5/network/Js5TcpClient.java
+  s_a6ab0e671e93f2::t_da3217bf0d6111 1-118
+client/src/main/java/com/jagex/js5/worker/Js5WorkerRequest.java
+  s_a6ab0e671e93f2::t_d7174aabbf57f9 1-31
+client/src/main/java/com/jagex/math/Cuboid.java
+  s_a6ab0e671e93f2::t_54aa948ff6d39e 1-100
+client/src/main/java/com/jagex/math/Curve.java
+  s_a6ab0e671e93f2::t_ad39f3ad8fb8c6 1-161
+client/src/main/java/com/jagex/math/CurveEvaluator.java
+  s_a6ab0e671e93f2::t_e9e23190dd5c28 1-306
+client/src/main/java/com/jagex/math/CurveType.java
+  s_a6ab0e671e93f2::t_325d0b8e8d2ee5 1-66
+client/src/main/java/com/jagex/math/GlTrig.java
+  s_a6ab0e671e93f2::t_61c2540653a83d 1-25
+client/src/main/java/com/jagex/math/IntMath.java
+  s_a6ab0e671e93f2::t_89a8c4e9ade455 1-157
+client/src/main/java/com/jagex/math/Matrix3x3.java
+  s_a6ab0e671e93f2::t_9885bef544e7fb 1-59
+client/src/main/java/com/jagex/math/Matrix4x3.java
+  s_a6ab0e671e93f2::t_48329768b0b2d1 1-565
+client/src/main/java/com/jagex/math/Matrix4x4.java
+  s_a6ab0e671e93f2::t_a6bbbcb3987ff0 1-761
+client/src/main/java/com/jagex/math/Polynomial.java
+  s_a6ab0e671e93f2::t_6bd07dc4a87fa9 1-206
+client/src/main/java/com/jagex/math/Quaternion.java
+  s_a6ab0e671e93f2::t_4642c2fe8b63f3 1-280
+client/src/main/java/com/jagex/math/RayTracing.java
+  s_a6ab0e671e93f2::t_f6a8a006a65d87 1-36
+client/src/main/java/com/jagex/math/ScaleRotTrans.java
+  s_a6ab0e671e93f2::t_763a3613a8b1fa 1-134
+client/src/main/java/com/jagex/math/Spline.java
+  s_a6ab0e671e93f2::t_ad076a168fd257 1-124
+client/src/main/java/com/jagex/math/SplineRelated.java
+  s_a6ab0e671e93f2::t_b4d1de201aa024 1-130
+client/src/main/java/com/jagex/math/Trig1.java
+  s_a6ab0e671e93f2::t_936348f18bc67a 1-46
+client/src/main/java/com/jagex/math/TrigMatrix.java
+  s_a6ab0e671e93f2::t_6bd56b65c87f62 1-25
+client/src/main/java/com/jagex/math/Vector3.java
+  s_a6ab0e671e93f2::t_8098827e1f12af 1-332
+client/src/main/java/com/jagex/math/Vector3i.java
+  s_a6ab0e671e93f2::t_66c138a510c165 1-16
+client/src/main/java/com/jagex/math/Vector4.java
+  s_a6ab0e671e93f2::t_5623d216a5e174 1-85
+client/src/main/java/com/jagex/twitchtv/TwitchEvent.java
+  s_a6ab0e671e93f2::t_baa7f51612393f 1-19
+client/src/main/java/com/jagex/twitchtv/TwitchEventChatMessage.java
+  s_a6ab0e671e93f2::t_6f48ca790e9817 1-40
+client/src/main/java/com/jagex/twitchtv/TwitchEventChatUserInfo.java
+  s_a6ab0e671e93f2::t_246a24941ea5cb 1-38
+client/src/main/java/com/jagex/twitchtv/TwitchEventLiveStreams.java
+  s_a6ab0e671e93f2::t_5b572e52a1181f 1-51
+client/src/main/java/com/jagex/twitchtv/TwitchEventReport.java
+  s_a6ab0e671e93f2::t_c080c321df5a22 1-25
+client/src/main/java/com/jagex/twitchtv/TwitchEventResult.java
+  s_a6ab0e671e93f2::t_1d946053179cc3 1-25
+client/src/main/java/com/jagex/twitchtv/TwitchTV.java
+  s_a6ab0e671e93f2::t_31eab8936b26e9 1-70
+client/src/main/java/com/jagex/twitchtv/TwitchWebcamDevice.java
+  s_a6ab0e671e93f2::t_ba70a94a695d33 1-53
+client/src/main/java/com/jagex/twitchtv/TwitchWebcamDeviceCapability.java
+  s_a6ab0e671e93f2::t_c4703a670cc28b 1-29
+client/src/main/java/com/jagex/twitchtv/TwitchWebcamFrameData.java
+  s_a6ab0e671e93f2::t_ba7344d223ba04 1-48
+client/src/main/java/deob/ObfuscatedName.java
+  s_a6ab0e671e93f2::t_ea4129b11a55a6 1-6
+client/src/main/java/deob/Statics.java
+  s_a6ab0e671e93f2::t_a98dfccfe786b0 1-7
+client/src/main/java/jaclib/hardware_info/HardwareInfo.java
+  s_a6ab0e671e93f2::t_a813f9de9b3767 1-18
+client/src/main/java/jaclib/memory/Buffer.java
+  s_a6ab0e671e93f2::t_0d811721d12f75 1-15
+client/src/main/java/jaclib/memory/DirectBufferHelper.java
+  s_a6ab0e671e93f2::t_4406e2c8a4012e 1-10
+client/src/main/java/jaclib/memory/NativeBuffer.java
+  s_a6ab0e671e93f2::t_7a2788c63ee274 1-34
+client/src/main/java/jaclib/memory/Source.java
+  s_a6ab0e671e93f2::t_2e32efcaa798a8 1-4
+client/src/main/java/jaclib/memory/Stream.java
+  s_a6ab0e671e93f2::t_695cf9ba52b0b7 1-117
+client/src/main/java/jaclib/memory/heap/NativeHeap.java
+  s_a6ab0e671e93f2::t_5d4b73b4f65f1e 1-62
+client/src/main/java/jaclib/memory/heap/NativeHeapBuffer.java
+  s_a6ab0e671e93f2::t_00ef31865e5bf8 1-62
+client/src/main/java/jaclib/nanotime/QueryPerformanceCounter.java
+  s_a6ab0e671e93f2::t_82ac7e68626f7a 1-14
+client/src/main/java/jaclib/ping/IcmpService.java
+  s_a6ab0e671e93f2::t_316eeccfb9522e 1-14
+client/src/main/java/jaclib/ping/Ping.java
+  s_a6ab0e671e93f2::t_fc7d1ad2be7959 1-25
+client/src/main/java/jagdx/D3DADAPTER_IDENTIFIER.java
+  s_a6ab0e671e93f2::t_06dab8d572e0ba 1-22
+client/src/main/java/jagdx/D3DCAPS.java
+  s_a6ab0e671e93f2::t_466423027c18e0 1-191
+client/src/main/java/jagdx/D3DDISPLAYMODE.java
+  s_a6ab0e671e93f2::t_5677e47481d578 1-12
+client/src/main/java/jagdx/D3DFORMAT.java
+  s_a6ab0e671e93f2::t_a188beb8bbd3e0 1-61
+client/src/main/java/jagdx/D3DLIGHT.java
+  s_a6ab0e671e93f2::t_75c75b21110c7c 1-30
+client/src/main/java/jagdx/D3DPRESENT_PARAMETERS.java
+  s_a6ab0e671e93f2::t_d2487bc6557ab7 1-42
+client/src/main/java/jagdx/D3DPSHADERCAPS2_0.java
+  s_a6ab0e671e93f2::t_30ad9e0a30c9e5 1-17
+client/src/main/java/jagdx/D3DSURFACE_DESC.java
+  s_a6ab0e671e93f2::t_386bf7acf0b9a3 1-24
+client/src/main/java/jagdx/D3DVSHADERCAPS2_0.java
+  s_a6ab0e671e93f2::t_f92a0408ea3f8c 1-12
+client/src/main/java/jagdx/HRESULT.java
+  s_a6ab0e671e93f2::t_f8c818929f9f2f 1-33
+client/src/main/java/jagdx/IDirect3D.java
+  s_a6ab0e671e93f2::t_ef3351cdab1c84 1-30
+client/src/main/java/jagdx/IDirect3DBaseTexture.java
+  s_a6ab0e671e93f2::t_7afc6d0ab1af5b 1-8
+client/src/main/java/jagdx/IDirect3DCubeTexture.java
+  s_a6ab0e671e93f2::t_d1e9ccc4a46009 1-12
+client/src/main/java/jagdx/IDirect3DDevice.java
+  s_a6ab0e671e93f2::t_74678995aa12b4 1-118
+client/src/main/java/jagdx/IDirect3DEventQuery.java
+  s_a6ab0e671e93f2::t_6b94523963a2ed 1-12
+client/src/main/java/jagdx/IDirect3DIndexBuffer.java
+  s_a6ab0e671e93f2::t_9d4331c3c27028 1-16
+client/src/main/java/jagdx/IDirect3DSurface.java
+  s_a6ab0e671e93f2::t_39d4492d697564 1-14
+client/src/main/java/jagdx/IDirect3DSwapChain.java
+  s_a6ab0e671e93f2::t_32f89fc2db1bd7 1-12
+client/src/main/java/jagdx/IDirect3DTexture.java
+  s_a6ab0e671e93f2::t_3e30ed6ce9f069 1-14
+client/src/main/java/jagdx/IDirect3DVertexBuffer.java
+  s_a6ab0e671e93f2::t_14b5a635e1f712 1-16
+client/src/main/java/jagdx/IDirect3DVolumeTexture.java
+  s_a6ab0e671e93f2::t_ae9837a1ba10a5 1-12
+client/src/main/java/jagdx/IUnknown.java
+  s_a6ab0e671e93f2::t_aaf0a5d8c8826e 1-12
+client/src/main/java/jagdx/JagDXException.java
+  s_a6ab0e671e93f2::t_7cadf17a0f133e 1-11
+client/src/main/java/jagdx/class1.java
+  s_a6ab0e671e93f2::t_9eca5558899f29 1-23
+client/src/main/java/jagdx/class3.java
+  s_a6ab0e671e93f2::t_39cbbb35c154ff 1-23
+client/src/main/java/jagdx/class4.java
+  s_a6ab0e671e93f2::t_ac7b2004fcad64 1-29
+client/src/main/java/jagdx/class5.java
+  s_a6ab0e671e93f2::t_323d8db40308e2 1-14
+client/src/main/java/jagdx/class6.java
+  s_a6ab0e671e93f2::t_8a5ad2db74e629 1-341
+client/src/main/java/jaggl/MapBuffer.java
+  s_a6ab0e671e93f2::t_8e79141ca7196c 1-18
+client/src/main/java/jaggl/OpenGL.java
+  s_a6ab0e671e93f2::t_2fdb6cc9df80e8 1-468
+client/src/main/java/lzma/sdk/lz/OutWindow.java
+  s_a6ab0e671e93f2::t_267317a34779c8 1-102
+client/src/main/java/lzma/sdk/lzma/Base.java
+  s_a6ab0e671e93f2::t_bc01b6dbf2a850 1-53
+client/src/main/java/lzma/sdk/lzma/Decoder.java
+  s_a6ab0e671e93f2::t_2930e5cf48e8ec 1-376
+client/src/main/java/lzma/sdk/lzma/Encoder.java
+  s_a6ab0e671e93f2::t_a8f4ac40731893 1-84
+client/src/main/java/lzma/sdk/lzma/LZMA.java
+  s_a6ab0e671e93f2::t_33c3d166b9e54c 1-49
+client/src/main/java/lzma/sdk/rangecoder/BitTreeDecoder.java
+  s_a6ab0e671e93f2::t_3e0faa6086c83a 1-46
+client/src/main/java/lzma/sdk/rangecoder/BitTreeEncoder.java
+  s_a6ab0e671e93f2::t_8d1fb415110503 1-10
+client/src/main/java/lzma/sdk/rangecoder/Decoder.java
+  s_a6ab0e671e93f2::t_0e4b9ec9c09ce8 1-83
+client/src/main/java/lzma/sdk/rangecoder/Encoder.java
+  s_a6ab0e671e93f2::t_dae5ca265feb66 1-21
+client/src/main/java/rs2/client/clientscript/emoji/Emoji.java
+  s_a6ab0e671e93f2::t_5640623b4dbfc8 1-22
+client/src/main/java/rs2/client/clientscript/emoji/EmojiList.java
+  s_a6ab0e671e93f2::t_519e430b6a64b1 1-137
+client/src/main/java/rs2/client/logic/DelayedStateChange.java
+  s_a6ab0e671e93f2::t_43fa57f69c7868 1-394
+client/src/main/java/rs2/client/logic/chat/ChatHistory.java
+  s_a6ab0e671e93f2::t_80c5a1331aa1a6 1-116
+client/src/main/java/rs2/client/logic/chat/ChatLine.java
+  s_a6ab0e671e93f2::t_40c34fcce248c8 1-70
+client/src/main/java/rs2/client/logic/chat/TypeChatLines.java
+  s_a6ab0e671e93f2::t_9b316a86b52eb8 1-46
+client/src/main/java/rs2/client/logic/clans/ClanChannel.java
+  s_a6ab0e671e93f2::t_7c31481d6cb82e 1-141
+client/src/main/java/rs2/client/logic/clans/ClanChannelDelta.java
+  s_a6ab0e671e93f2::t_ece00f106a8369 1-213
+client/src/main/java/rs2/client/logic/clans/ClanChannelDeltaEntry.java
+  s_a6ab0e671e93f2::t_bb63bea81328df 1-15
+client/src/main/java/rs2/client/logic/clans/ClanChannelUser.java
+  s_a6ab0e671e93f2::t_91861305074427 1-16
+client/src/main/java/rs2/client/logic/clans/ClanSettings.java
+  s_a6ab0e671e93f2::t_97b87d035241b6 1-613
+client/src/main/java/rs2/client/logic/clans/ClanSettingsDelta.java
+  s_a6ab0e671e93f2::t_b0333708056419 1-403
+client/src/main/java/rs2/client/logic/clans/ClanSettingsDeltaEntry.java
+  s_a6ab0e671e93f2::t_c032da31e7a707 1-15
+client/src/main/java/rs2/client/logic/clans/LongNode.java
+  s_a6ab0e671e93f2::t_ba24d85af6206d 1-15
+client/src/main/java/rs2/client/logic/friendchat/Friend.java
+  s_a6ab0e671e93f2::t_36006ba65782f8 1-37
+client/src/main/java/rs2/client/logic/friendchat/FriendChatUser.java
+  s_a6ab0e671e93f2::t_7cd865b53a79b0 1-25
+client/src/main/java/rs2/client/logic/friendchat/Ignore.java
+  s_a6ab0e671e93f2::t_3187567b755a52 1-19
+client/src/main/java/rs2/client/login/AccountAppealLogin.java
+  s_a6ab0e671e93f2::t_a2628f7276d267 1-163
+client/src/main/java/rs2/client/login/AccountCreationManager.java
+  s_a6ab0e671e93f2::t_644e3461fc7a33 1-332
+client/src/main/java/rs2/client/login/CheckEmailReply.java
+  s_a6ab0e671e93f2::t_7cbf2246c84822 1-43
+client/src/main/java/rs2/client/login/CheckNameReply.java
+  s_a6ab0e671e93f2::t_5d8c823383e3fe 1-52
+client/src/main/java/rs2/client/login/ConnectReply.java
+  s_a6ab0e671e93f2::t_7ed76f2bbab2fa 1-55
+client/src/main/java/rs2/client/login/CreateAccountReply.java
+  s_a6ab0e671e93f2::t_c1ace03214e32f 1-82
+client/src/main/java/rs2/client/login/CreateConnectStage.java
+  s_a6ab0e671e93f2::t_59729c6ed9b606 1-13
+client/src/main/java/rs2/client/login/LoginRelated1.java
+  s_a6ab0e671e93f2::t_00b96dad676d7d 1-86
+client/src/main/java/rs2/client/login/LoginRelated2.java
+  s_a6ab0e671e93f2::t_67edc6456a9a98 1-59
+client/src/main/java/rs2/client/login/LoginRelated3.java
+  s_a6ab0e671e93f2::t_702583833847d6 1-60
+client/src/main/java/rs2/client/login/LoginRelated4.java
+  s_a6ab0e671e93f2::t_683d7b81f6fd2b 1-60
+client/src/main/java/rs2/client/login/LoginRelated5.java
+  s_a6ab0e671e93f2::t_d03394f37d2d8d 1-28
+client/src/main/java/rs2/client/login/LoginRelated6.java
+  s_a6ab0e671e93f2::t_d5f01c21eee1db 1-90
+client/src/main/java/rs2/client/login/LoginRelated9.java
+  s_a6ab0e671e93f2::t_e238d835b3a5bc 1-22
+client/src/main/java/rs2/client/login/LoginScreenRelated2.java
+  s_a6ab0e671e93f2::t_d497de1bda6701 1-37
+client/src/main/java/rs2/client/login/LoginScreenRelated3.java
+  s_a6ab0e671e93f2::t_4fb04e28f642bb 1-32
+client/src/main/java/rs2/client/login/LoginScreenRelated7.java
+  s_a6ab0e671e93f2::t_070eea02b41c17 1-27
+client/src/main/java/rs2/client/login/LoginScreenRelated8.java
+  s_a6ab0e671e93f2::t_1a6d649d03d85a 1-25
+client/src/main/java/rs2/client/login/LogoutReason.java
+  s_a6ab0e671e93f2::t_27de60533ba880 1-71
+client/src/main/java/rs2/client/login/SuggestNameReply.java
+  s_a6ab0e671e93f2::t_c921fd5695dbdc 1-40
+client/src/main/java/rs2/client/login/WorldSwitcher.java
+  s_a6ab0e671e93f2::t_6e1d2fea200c62 1-243
+client/src/main/java/rs2/client/scene/ObjStackList.java
+  s_a6ab0e671e93f2::t_e86d37af6015e1 1-12
+client/src/main/java/rs2/client/scene/entities/PathingEntity.java
+  s_a6ab0e671e93f2::t_bb6fb4c1636093 1-1023
+client/src/main/java/rs2/client/scene/entities/ProjectileAnimation.java
+  s_a6ab0e671e93f2::t_56b60421ed604b 1-344
+client/src/main/java/rs2/client/scene/entities/SpotAnimation.java
+  s_a6ab0e671e93f2::t_d673b9966a63e0 1-184
+gradle.properties
+  s_a6ab0e671e93f2::t_c5bed52b2f058b 1
+gradle/libs.versions.toml
+  s_a6ab0e671e93f2::t_673d7b4877fdad 1-2
+gradle/wrapper/gradle-wrapper.properties
+  s_a6ab0e671e93f2::t_601e5ba6657d2f 1-7
+gradlew
+  s_a6ab0e671e93f2::t_624c7a821e45bc 1-249
+gradlew.bat
+  s_a6ab0e671e93f2::t_eabd4f61a6256e 1-92
+ref/client/deob.toml
+  s_a6ab0e671e93f2::t_403ba9f62125f0 1-59
+ref/client/innerpack.patched/AppletViewer.j
+  s_a6ab0e671e93f2::t_2f486518448c95 1-550
+ref/client/innerpack.patched/aav.j
+  s_a6ab0e671e93f2::t_cb72f237723938 1-4423
+ref/client/innerpack.patched/alw.j
+  s_a6ab0e671e93f2::t_443edb9f8ef032 1-16472
+ref/client/innerpack.patched/px.j
+  s_a6ab0e671e93f2::t_7a295288cb4891 1-2072
+ref/client/innerpack.patched/sk.j
+  s_a6ab0e671e93f2::t_be3087558a4588 1-13307
+ref/client/obforder.txt
+  s_a6ab0e671e93f2::t_55e6b37baf8615 1-1432
+ref/client/parameters.txt
+  s_a6ab0e671e93f2::t_82c3a0b4c65d49 1-62
+ref/client/run-orig.bat
+  s_a6ab0e671e93f2::t_4fc297f1584f04 1-2
+ref/server/jav_config.java.ws
+  s_a6ab0e671e93f2::t_6b68fe43107103 1-102
+ref/server/jav_config.nxt.ws
+  s_a6ab0e671e93f2::t_c86e841b83aa87 1-122
+server/.eslintignore
+  s_a6ab0e671e93f2::t_c8ed045fd7f9ba 1-2
+server/.eslintrc.cjs
+  s_a6ab0e671e93f2::t_dba7bab66f9285 1-80
+server/.prettierrc
+  s_a6ab0e671e93f2::t_0d6a43d56dc163 1-11
+server/data/src/defaults/audio.defaults
+  s_a6ab0e671e93f2::t_f3df97561b4e46 1-3
+server/data/src/pack/interface.pack
+  s_a6ab0e671e93f2::t_773d2fcc188db2 1-101603
+server/data/src/pack/varbit.pack
+  s_a6ab0e671e93f2::t_e59d51d119dfc2 1-45601
+server/data/src/pack/varc.pack
+  s_a6ab0e671e93f2::t_adcce4a433f633 1-6744
+server/data/src/pack/varcon.pack
+  s_a6ab0e671e93f2::t_a7dc37d1fef893 1-2963
+server/data/src/pack/varglobal.pack
+  s_a6ab0e671e93f2::t_73eb0907cb11fc 1-514
+server/data/src/pack/varn.pack
+  s_a6ab0e671e93f2::t_2bbe0d4398fc47 1-546
+server/data/src/pack/varobj.pack
+  s_a6ab0e671e93f2::t_7026ff8e342db5 1-5
+server/data/src/pack/varp.pack
+  s_a6ab0e671e93f2::t_0db22ab657ba2e 1-9114
+server/data/src/pack/varregion.pack
+  s_a6ab0e671e93f2::t_03ca332c7b7786 1-463
+server/data/src/pack/vars.pack
+  s_a6ab0e671e93f2::t_91488e42f24170 1-1803
+server/data/src/scripts/engine.rs2
+  s_a6ab0e671e93f2::t_42b84339b2a4d9 1-11
+server/data/src/scripts/lobby/login.rs2
+  s_a6ab0e671e93f2::t_771846232673cb 1-22
+server/data/src/scripts/login.rs2
+  s_a6ab0e671e93f2::t_db9081620b334d 1-6
+server/data/src/scripts/world/login.rs2
+  s_a6ab0e671e93f2::t_dfe99df74d0b13 1-9
+server/jest.config.ts
+  s_a6ab0e671e93f2::t_f29aff70a69698 1-18
+server/neptune.toml
+  s_a6ab0e671e93f2::t_c190f205da65a7 1-7
+server/nodemon.json
+  s_a6ab0e671e93f2::t_4dcb4459138391 1-6
+server/package-lock.json
+  s_a6ab0e671e93f2::t_19d22f546c0d4e 1-8420
+server/package.json
+  s_a6ab0e671e93f2::t_d897f68296af4f 1-63
+server/src/jagex/bytepacking/Packet.ts
+  s_a6ab0e671e93f2::t_a2eaecc60320ef 1-649
+server/src/jagex/compression/Bzip2Decompressor.ts
+  s_a6ab0e671e93f2::t_8a4b6d0f5af47e 1-16
+server/src/jagex/compression/GzipDecompressor.ts
+  s_a6ab0e671e93f2::t_6b11c7e1280eba 1-17
+server/src/jagex/compression/LzmaDecompressor.ts
+  s_a6ab0e671e93f2::t_d7023f014943e8 1-27
+server/src/jagex/config/ConfigType.ts
+  s_a6ab0e671e93f2::t_b2a80d439b46f7 1-25
+server/src/jagex/config/Js5Archive.ts
+  s_a6ab0e671e93f2::t_9ba93608b0c520 1-140
+server/src/jagex/config/Js5ConfigGroup.ts
+  s_a6ab0e671e93f2::t_d0f59332177c06 1-100
+server/src/jagex/config/ParamHelper.ts
+  s_a6ab0e671e93f2::t_a5e6e7d0b39699 1-21
+server/src/jagex/config/db/DBUtils.ts
+  s_a6ab0e671e93f2::t_b5a9c28dcf77ff 1-14
+server/src/jagex/config/db/dbrowtype/DBRowType.ts
+  s_a6ab0e671e93f2::t_fc817b249be8fb 1-47
+server/src/jagex/config/db/dbtabletype/DBTableType.ts
+  s_a6ab0e671e93f2::t_29c7259a4876e1 1-54
+server/src/jagex/config/defaults/AudioDefaults.ts
+  s_a6ab0e671e93f2::t_0f95b07f40a630 1-66
+server/src/jagex/config/enumtype/EnumType.ts
+  s_a6ab0e671e93f2::t_5cd3e02713f533 1-78
+server/src/jagex/config/loctype/LocType.ts
+  s_a6ab0e671e93f2::t_512d3904bc6c69 1-431
+server/src/jagex/config/paramtype/ParamType.ts
+  s_a6ab0e671e93f2::t_635b0f3c87d8b0 1-49
+server/src/jagex/config/structtype/StructType.ts
+  s_a6ab0e671e93f2::t_974dc7aa7e40ae 1-28
+server/src/jagex/config/vartype/VarBasicType.ts
+  s_a6ab0e671e93f2::t_511d5a23ff784a 1-21
+server/src/jagex/config/vartype/VarBitType.ts
+  s_a6ab0e671e93f2::t_2200a0ab08bbc8 1-44
+server/src/jagex/config/vartype/VarPlayerType.ts
+  s_a6ab0e671e93f2::t_00d7e9709f16ea 1-30
+server/src/jagex/config/vartype/VarType.ts
+  s_a6ab0e671e93f2::t_1f28ffd7f6b3be 1-34
+server/src/jagex/config/vartype/constants/BaseVarType.ts
+  s_a6ab0e671e93f2::t_acd04a732ec330 1-49
+server/src/jagex/config/vartype/constants/BaseVarTypeCodec.ts
+  s_a6ab0e671e93f2::t_bec6cdc1bfc372 1-6
+server/src/jagex/config/vartype/constants/BaseVarTypeCoordFine.ts
+  s_a6ab0e671e93f2::t_f47727ed4f32d9 1-12
+server/src/jagex/config/vartype/constants/BaseVarTypeInteger.ts
+  s_a6ab0e671e93f2::t_3fe43514dee975 1-12
+server/src/jagex/config/vartype/constants/BaseVarTypeLong.ts
+  s_a6ab0e671e93f2::t_7dce6472aa7333 1-12
+server/src/jagex/config/vartype/constants/BaseVarTypeString.ts
+  s_a6ab0e671e93f2::t_1cd875b3b74adf 1-12
+server/src/jagex/config/vartype/constants/ScriptVarType.ts
+  s_a6ab0e671e93f2::t_d271da5b47e33f 1-263
+server/src/jagex/config/vartype/constants/VarDomainType.ts
+  s_a6ab0e671e93f2::t_4d73bf50051391 1-50
+server/src/jagex/config/vartype/constants/VarLifetime.ts
+  s_a6ab0e671e93f2::t_748cd10976db9b 1-28
+server/src/jagex/config/vartype/constants/VarTransmitLevel.ts
+  s_a6ab0e671e93f2::t_41d445a888d864 1-28
+server/src/jagex/core/constants/BuidlAreaSize.ts
+  s_a6ab0e671e93f2::t_4b880e4e5140e1 1-34
+server/src/jagex/datastruct/Hashable.ts
+  s_a6ab0e671e93f2::t_1619b54a09e2a8 1-22
+server/src/jagex/datastruct/LinkList.ts
+  s_a6ab0e671e93f2::t_fc3c8e00e52b96 1-97
+server/src/jagex/datastruct/Linkable.ts
+  s_a6ab0e671e93f2::t_e5248ddb8ed538 1-21
+server/src/jagex/datastruct/Stack.ts
+  s_a6ab0e671e93f2::t_d49701b5634d37 1-54
+server/src/jagex/encryption/Whirlpool.ts
+  s_a6ab0e671e93f2::t_761de6856aba41 1-7
+server/src/jagex/js5/Cache.ts
+  s_a6ab0e671e93f2::t_a71c928ac81a91 1-156
+server/src/jagex/js5/Js5.ts
+  s_a6ab0e671e93f2::t_7ea0d7b788affe 1-630
+server/src/jagex/js5/Js5MapFile.ts
+  s_a6ab0e671e93f2::t_328bbb91c82858 1-13
+server/src/jagex/js5/caching/DiskStore.ts
+  s_a6ab0e671e93f2::t_f87f14a4f4bfed 1-113
+server/src/jagex/js5/caching/FlatDiskStore.ts
+  s_a6ab0e671e93f2::t_e3155804c67d00 1-35
+server/src/jagex/js5/index/Js5Index.ts
+  s_a6ab0e671e93f2::t_da0dc117b19cc7 1-446
+server/src/jagex/network/ClientMessage.ts
+  s_a6ab0e671e93f2::t_202995bf7e0e16 1-13
+server/src/jagex/network/ServerMessage.ts
+  s_a6ab0e671e93f2::t_91fdce84ab2afa 1-45
+server/src/jagex/network/protocol/ClientProt.ts
+  s_a6ab0e671e93f2::t_75e549958a0243 1-274
+server/src/jagex/network/protocol/LoginProt.ts
+  s_a6ab0e671e93f2::t_2b30ae28af1a28 1-52
+server/src/jagex/network/protocol/ServerProt.ts
+  s_a6ab0e671e93f2::t_265b2a82e92a9b 1-668
+server/src/jagex/util/RandomAccessFile.ts
+  s_a6ab0e671e93f2::t_40a9c2f6f6c577 1-47
+server/src/jagex/util/StringUtils.ts
+  s_a6ab0e671e93f2::t_96aa31ac79e507 1-18
+server/src/lostcity/app.ts
+  s_a6ab0e671e93f2::t_d4cb2d07a2fcff 1-9
+server/src/lostcity/engine/Lobby.ts
+  s_a6ab0e671e93f2::t_7fd019a7c7c58f 1-539
+server/src/lostcity/engine/NewLobby.ts
+  s_a6ab0e671e93f2::t_2809ea92695a18 1-249
+server/src/lostcity/engine/World.ts
+  s_a6ab0e671e93f2::t_3665a7242cc635 1-348
+server/src/lostcity/engine/collision/CollisionManager.ts
+  s_a6ab0e671e93f2::t_0b61183098a961 1-218
+server/src/lostcity/entity/Entity.ts
+  s_a6ab0e671e93f2::t_faa5d8e0bcbec5 1-24
+server/src/lostcity/entity/EntityList.ts
+  s_a6ab0e671e93f2::t_c2e56e2e120177 1-104
+server/src/lostcity/entity/Npc.ts
+  s_a6ab0e671e93f2::t_614a5b2f510928 1-10
+server/src/lostcity/entity/Player.ts
+  s_a6ab0e671e93f2::t_4be61f6209ef78 1-114
+server/src/lostcity/entity/Viewport.ts
+  s_a6ab0e671e93f2::t_cdd25a88dff272 1-41
+server/src/lostcity/lobby.ts
+  s_a6ab0e671e93f2::t_8866302a85e649 1-3
+server/src/lostcity/network/ClientSocket.ts
+  s_a6ab0e671e93f2::t_bb3de11d12b407 1-51
+server/src/lostcity/network/ConnectionState.ts
+  s_a6ab0e671e93f2::t_e1179c8426b8fd 1-8
+server/src/lostcity/network/TcpServer.ts
+  s_a6ab0e671e93f2::t_1c5ca782f83ca7 1-103
+server/src/lostcity/script/ScriptRunner.ts
+  s_a6ab0e671e93f2::t_1ca7cdd09c968b 1-44
+server/src/lostcity/script/ServerScript.ts
+  s_a6ab0e671e93f2::t_cec1279c3286aa 1-137
+server/src/lostcity/script/ServerScriptCommands.ts
+  s_a6ab0e671e93f2::t_2ba008d2b9cd8d 1-109
+server/src/lostcity/script/ServerScriptList.ts
+  s_a6ab0e671e93f2::t_58df963aa973b5 1-71
+server/src/lostcity/script/ServerScriptState.ts
+  s_a6ab0e671e93f2::t_6863b86bbdf34e 1-130
+server/src/lostcity/script/ServerTriggerType.ts
+  s_a6ab0e671e93f2::t_f2045552231c72 1-160
+server/src/lostcity/script/handlers/CoreOps.ts
+  s_a6ab0e671e93f2::t_94d8f5642ae520 1-188
+server/src/lostcity/script/handlers/PlayerOps.ts
+  s_a6ab0e671e93f2::t_bd178d630deca6 1-15
+server/src/lostcity/script/handlers/ServerOps.ts
+  s_a6ab0e671e93f2::t_ca1e1337d06998 1-6
+server/src/lostcity/server/CacheProvider.ts
+  s_a6ab0e671e93f2::t_282dc33abc8ba1 1-5
+server/src/lostcity/server/LobbyProvider.ts
+  s_a6ab0e671e93f2::t_b1f9563b7398e9 1-3
+server/src/lostcity/server/WorldProvider.ts
+  s_a6ab0e671e93f2::t_d507e89f69535c 1-3
+server/src/lostcity/tools/client/decryptGamepack.ts
+  s_a6ab0e671e93f2::t_d0f90fe8a1bd57 1-58
+server/src/lostcity/tools/client/multiplier.js
+  s_a6ab0e671e93f2::t_2fd37bd23a8f67 1-7
+server/src/lostcity/tools/client/nxtdwarf.ts
+  s_a6ab0e671e93f2::t_64ecca1161287c 1-50
+server/src/lostcity/tools/client/obfclass.ts
+  s_a6ab0e671e93f2::t_04e476301564ed 1-123
+server/src/lostcity/tools/js5pack/dat2.ts
+  s_a6ab0e671e93f2::t_8e52df16fcff15 1-47
+server/src/lostcity/tools/js5pack/dat2m.ts
+  s_a6ab0e671e93f2::t_51eb00dbcb7b53 1-48
+server/src/lostcity/tools/js5pack/dat2split.ts
+  s_a6ab0e671e93f2::t_4028d5fcb272a0 1-49
+server/src/lostcity/tools/js5pack/flat.ts
+  s_a6ab0e671e93f2::t_a964717eacbb24 1-14
+server/src/lostcity/tools/js5pack/openrs2.ts
+  s_a6ab0e671e93f2::t_e82d17ea6cb975 1-16
+server/src/lostcity/tools/js5pack/verify.ts
+  s_a6ab0e671e93f2::t_b2cdcf3ef7f34a 1-39
+server/src/lostcity/tools/pack/all.ts
+  s_a6ab0e671e93f2::t_7412d477512eb1 1-130
+server/src/lostcity/tools/pack/defaults.ts
+  s_a6ab0e671e93f2::t_72e01a7b968837 1-40
+server/src/lostcity/tools/unpack/defaults/audio.ts
+  s_a6ab0e671e93f2::t_f47e888029ad0a 1-14
+server/src/lostcity/tools/unpack/iftype/symbols.ts
+  s_a6ab0e671e93f2::t_10d8cccebf00c2 1-27
+server/src/lostcity/tools/unpack/symbols.ts
+  s_a6ab0e671e93f2::t_60829e8f027779 1-12
+server/src/lostcity/tools/unpack/vartype/symbols.ts
+  s_a6ab0e671e93f2::t_b4dbd71dcea4e5 1-173
+server/src/lostcity/util/DownloadUtils.ts
+  s_a6ab0e671e93f2::t_76707198894e04 1-68
+server/src/lostcity/util/FileUtils.ts
+  s_a6ab0e671e93f2::t_4e909be3e4623d 1-10
+server/src/lostcity/util/OpenRS2.ts
+  s_a6ab0e671e93f2::t_0319f616c7e2b9 1-151
+server/src/lostcity/web.ts
+  s_a6ab0e671e93f2::t_84b8f7ddefe9cc 1-3
+server/src/lostcity/web/app.ts
+  s_a6ab0e671e93f2::t_741ea8e0b8bb0e 1-235
+server/src/lostcity/world.ts
+  s_a6ab0e671e93f2::t_63d0537b275136 1-3
+server/src/seek-bzip.d.ts
+  s_a6ab0e671e93f2::t_d1b979287f389d 1
+server/src/tar.d.ts
+  s_a6ab0e671e93f2::t_46004e82b896ea 1
+server/tsconfig.json
+  s_a6ab0e671e93f2::t_b565f8c357ce77 1-41
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.2",
+  "base_commit_sha": "7bbfdf7fab8defef5d2736411e439701866b0f61",
+  "prompts": {},
+  "sessions": {
+    "s_4ef42e9377ab2e": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a08281-c3ba-7e42-b5fe-d5566bbf437b",
+        "model": "gpt-6-astra"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    },
+    "s_56c3bec5427304": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "26827eeb-5d5c-4522-987a-a5ba2d12a108",
+        "model": "claude-fable-5-1"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    },
+    "s_a6ab0e671e93f2": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_f7d973b81ffeleQWRxBj7eNya3",
+        "model": "muse-spark-1.3-contributor"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
