@@ -1,0 +1,1831 @@
+docs/port-completion/research/window-resize-verification.json
+  s_3cd88bfdbce5e7::t_7da0cdf869c9cf 1-148
+docs/port-completion/settings-cutover.md
+  s_3cd88bfdbce5e7::t_ab73ae25b89ede 1-8,10-12,16-17,19-24,30-32,35-40,43-50,52-96
+  s_3cd88bfdbce5e7::t_2fefbae29a758e 9,18,25-29,33-34,41-42,51
+  s_3cd88bfdbce5e7::t_cf2cfb45d87754 13-15
+server/src/lostcity/engine/World.ts
+  s_3cd88bfdbce5e7::t_155d049c3e4cc0 231
+  s_3cd88bfdbce5e7::t_5338084ea7cb81 469,474-477
+  s_3cd88bfdbce5e7::t_b1862cbd6d737a 206-211
+  s_3cd88bfdbce5e7::t_894dd0ac41b217 41,45,403-408,410,416-420,422
+  s_3cd88bfdbce5e7::t_737039dc1dd438 265-266,268-269,271-272
+  s_3cd88bfdbce5e7::t_fcf75abb25e53f 288
+  s_3cd88bfdbce5e7::t_1af8f2054e7600 141,143
+  s_3cd88bfdbce5e7::t_70cf776fa89ed9 63-64
+  s_3cd88bfdbce5e7::t_f9d212e9a3ad07 385
+  s_3cd88bfdbce5e7::t_6a153fca7a899c 33,117,120-124,140
+  s_3cd88bfdbce5e7::t_1be5ba6b4da498 190-192,227-228
+  s_3cd88bfdbce5e7::t_23e6d80e215726 68,70-71
+  s_3cd88bfdbce5e7::t_faf9286531b685 196,263-264,267,270,273,277-278,295-304
+  s_3cd88bfdbce5e7::t_f239882da93c57 2,8,25,34-36,69,76-78,81,86-105,114-116,125,150,153-178,351,364,512-518,521-523,530-534
+  s_3cd88bfdbce5e7::t_d75bc8028f7f06 329
+  s_3cd88bfdbce5e7::t_80f4795ba3cbad 392-395,433,435-437,449
+  s_3cd88bfdbce5e7::t_f2e87a325c002d 118-119,215-216,222-223,471
+  s_3cd88bfdbce5e7::t_05f86a7b364efa 291-294
+  s_3cd88bfdbce5e7::t_a6626b08763bc5 438-448,456,465,487,519-520,524-525
+  s_3cd88bfdbce5e7::t_f7c6fc824f3d20 199-204
+  s_3cd88bfdbce5e7::t_432faa98ac1352 110,205,212-214
+  s_3cd88bfdbce5e7::t_d80be753d40b55 219-220
+  s_3cd88bfdbce5e7::t_3524dc352120a6 229-230,287,289-290
+  s_3cd88bfdbce5e7::t_9fc8364509fc8f 217-218,221,224-226,232-234
+  s_3cd88bfdbce5e7::t_9be95d2a1f50aa 37-40,42-44,46-50,52-62,65-66,379-380,384,386-391,396-398,400-402,409,412-415,423-427,432,450-452,454-455,464,466,470,472-473,479-481,489-490,498-499
+  s_3cd88bfdbce5e7::t_4d6b589be84374 184,245-251,322,511
+  s_3cd88bfdbce5e7::t_65a980430b3e36 453
+  s_3cd88bfdbce5e7::t_14c5e194fd477e 23,252-262,459-461
+  s_ce51cca42e0bed::t_f4d9487dfdac19 193-195,274-276,478
+tools/client910/tests/phase-g/animation-dump.rs
+  s_3cd88bfdbce5e7::t_d9b606cbc29f72 30-33
+docs/port-completion/research/wave-6-wiki.json
+  s_3cd88bfdbce5e7::t_d5525e2d2183f4 1-3,171,198
+  s_3cd88bfdbce5e7::t_e39f3a7178aede 24,178-179,193-194,196
+  s_3cd88bfdbce5e7::t_cbce6d6d482b44 4-23,25-170,172-177,180-192,195,197
+tools/client910/src/floorpass.rs
+  s_3cd88bfdbce5e7::t_761869918b8916 354-355,391,398-403
+  s_3cd88bfdbce5e7::t_6f36a29cbb2fc6 199-201,257,333
+tools/client910/src/proto.rs
+  s_3cd88bfdbce5e7::t_818d47b82cccb7 153,184
+tools/client910/src/ui_host.rs
+  s_3cd88bfdbce5e7::t_41058b8da19614 89-90
+  s_3cd88bfdbce5e7::t_abea042bca67d4 7,14,21,37
+docs/port-completion/areas/09-session.md
+  s_3cd88bfdbce5e7::t_afa94de7ed7772 72-95
+  s_3cd88bfdbce5e7::t_d737f37ae33424 96-99
+  s_3cd88bfdbce5e7::t_86cd93c4fbf24a 1-71
+docs/port-completion/README.md
+  s_3cd88bfdbce5e7::t_8f4be1e8d8550c 72-77,134-139,176,180,189,201-202,213-220
+  s_3cd88bfdbce5e7::t_8b51ad46924140 68-71
+  s_3cd88bfdbce5e7::t_5ca88fe2f3f6ae 42-50
+  s_3cd88bfdbce5e7::t_7b433b6b537f5f 22-25
+  s_3cd88bfdbce5e7::t_e5a56501abe9af 66-67
+  s_3cd88bfdbce5e7::t_fe36ead3343117 30-33
+  s_3cd88bfdbce5e7::t_cf2cfb45d87754 163-165
+  s_3cd88bfdbce5e7::t_56d7c0c22005aa 38-41
+  s_3cd88bfdbce5e7::t_b9b6089ad8361c 8-13,129-130,258-263
+  s_3cd88bfdbce5e7::t_eaafb9824d61cf 18-21
+  s_3cd88bfdbce5e7::t_e5c07e59a84d1b 34-37
+  s_3cd88bfdbce5e7::t_3531e96b66bd77 51-55
+  s_3cd88bfdbce5e7::t_bf9612ebb9e8e0 56-60
+  s_3cd88bfdbce5e7::t_a044abfbf6ab52 26-29
+  s_3cd88bfdbce5e7::t_ab73ae25b89ede 162,166-169,178,181,184-188,190
+  s_3cd88bfdbce5e7::t_431b36539c1b25 1-7,83-128,131-133,140-161,170-174,177,179,182-183,191-197,203-212,221-257
+  s_3cd88bfdbce5e7::t_172b5b2d026dd0 61-65
+  s_3cd88bfdbce5e7::t_713a29f627e162 78-82,175,198-200
+  s_3cd88bfdbce5e7::t_6327ee4938c094 14-17
+tools/client910/src/ui_model_animation.rs
+  s_3cd88bfdbce5e7::t_8e0d1ecb1643f7 5,23,26,104-199
+  s_3cd88bfdbce5e7::t_ded43f4e33ba04 62-68,71-72,75,77,81,89
+  s_3cd88bfdbce5e7::t_51550d8ca4548f 3-4,6-7,16-20,29-31
+  s_3cd88bfdbce5e7::t_891d305ad66b82 28
+  s_3cd88bfdbce5e7::t_e14e3ae422ef33 1-2,8-15,21-22,24-25,27,34,100,201
+  s_3cd88bfdbce5e7::t_d5089f5da5167e 35-61,69-70,73-74,76,78-80,82-88,90-99,200
+  s_3cd88bfdbce5e7::t_4188c8816c4215 32-33,101-103
+docs/port-completion/research/graphics-consumer-map.md
+  s_3cd88bfdbce5e7::t_8b51ad46924140 26
+  s_3cd88bfdbce5e7::t_e5a56501abe9af 1-24,30-37,40-45,50-62,74-83,87-90,93-111
+  s_3cd88bfdbce5e7::t_66f92222123a6f 27,38-39,91-92
+  s_3cd88bfdbce5e7::t_02431b7d7e6f0a 28,63-65
+  s_3cd88bfdbce5e7::t_bab4393b179e83 46-49,84-86
+  s_3cd88bfdbce5e7::t_503beb67865fb6 70-73
+  s_3cd88bfdbce5e7::t_e63814bc1bb75e 25,29,66-69
+tools/client910/src/ui_preferences_mutations.rs
+  s_3cd88bfdbce5e7::t_ecf711738e71dd 99-100,144
+  s_3cd88bfdbce5e7::t_1314738740b02d 20,113,149-154,179-180,274-275
+  s_1b49a0261481f5::t_edfdef529e14b7 119-121
+  s_3cd88bfdbce5e7::t_2f7e1c0dfb43c4 45
+  s_3cd88bfdbce5e7::t_701d3673c9a7fc 186
+  s_1b49a0261481f5::t_d5fa087a56d077 207-208
+  s_3cd88bfdbce5e7::t_8e3ece2216d031 276-280,287,335,337-338
+  s_3cd88bfdbce5e7::t_bc935ff6267262 55-56,64-65,69-71
+  s_3cd88bfdbce5e7::t_8e2d1b8ff8298a 54
+  s_1b49a0261481f5::t_c66cd89b6bc82f 1-6
+  s_1b49a0261481f5::t_f42414a628f032 31,37,72-87,90-93
+  s_3cd88bfdbce5e7::t_7704fbecf98037 97
+  s_3cd88bfdbce5e7::t_b07d04d5c65920 9,29,88,112,114,147-148,155,181
+  s_3cd88bfdbce5e7::t_593e9aad76818b 7-8,10-15,21-28,38,40,52-53,57-63,66-68,89,94-95,101-111,115,122-143,145-146,156-178,182-183,185,187,273,281-286,288-334,336
+  s_1b49a0261481f5::t_5e9cc7224fded2 262,268
+  s_3cd88bfdbce5e7::t_3dfa51af8096bf 16-19
+  s_3cd88bfdbce5e7::t_bc1f204af2f763 116-118
+  s_3cd88bfdbce5e7::t_04e915b66afa09 39,41-44,46-51
+  s_3cd88bfdbce5e7::t_761869918b8916 96,98
+  s_1b49a0261481f5::t_93269cabb4f178 239,241,244,248-253,258
+  s_1b49a0261481f5::t_bcfc8878bfa884 184,188-206,209-238,240,242-243,245-247,254-257,259-261,263-267,269-272
+  s_1b49a0261481f5::t_297b3dcb060867 32-36
+docs/port-completion/research/wave-11-animation-content.json
+  s_3cd88bfdbce5e7::t_07ec693f0afa3c 13
+  s_3cd88bfdbce5e7::t_3b472a980165e4 1,3,136
+  s_3cd88bfdbce5e7::t_53ee010a790bff 2,4-12,14-133,135
+  s_3cd88bfdbce5e7::t_da2d4cd5ada55b 134
+server/src/lostcity/tools/verify-potion-settings.ts
+  s_3cd88bfdbce5e7::t_07a31fefa90286 1-40
+docs/port-completion/implementation-wave-1.md
+  s_3cd88bfdbce5e7::t_501c0d33316a23 51,53-54,60-126,129-130
+  s_3cd88bfdbce5e7::t_6327ee4938c094 1-50,52,55,127-128,133-135
+  s_3cd88bfdbce5e7::t_00d5b8c3a219d8 131-132
+  s_3cd88bfdbce5e7::t_a49c893e7c3118 56-59
+docs/port-completion/research/route-audit-current.json
+  s_3cd88bfdbce5e7::t_0158beab3d0a34 9-10,14-15,320-322
+  s_3cd88bfdbce5e7::t_f61cc32af1e5b9 1,3-8,11-13,16-319,323-1775
+  s_3cd88bfdbce5e7::t_1639f1c420faac 2
+server/src/lostcity/entity/Player.ts
+  s_3cd88bfdbce5e7::t_52ceb45b3ee551 326-328
+  s_3cd88bfdbce5e7::t_14c5e194fd477e 24,103-104,246,695,703,711,732,739,743
+  s_3cd88bfdbce5e7::t_b152c0e27193dd 16,59-60,241,428-429,535-537,549-551,565-571,573-577
+  s_3cd88bfdbce5e7::t_40df914c3b59f6 10,606-617,620-622,625-627,636
+  s_3cd88bfdbce5e7::t_9fc8364509fc8f 46-47,147,163,215-219,578,597-603
+  s_3cd88bfdbce5e7::t_9252127ea1b4a6 411
+  s_3cd88bfdbce5e7::t_14c5a2a391ef41 528
+  s_3cd88bfdbce5e7::t_474e1b345b69d6 541-543
+  s_3cd88bfdbce5e7::t_c7f8af56729175 15,58
+  s_3cd88bfdbce5e7::t_155d049c3e4cc0 64,231,412,447,450,489-494,496-499,501,503-518,521-522,676-680
+  s_3cd88bfdbce5e7::t_437eba3ad886e7 635
+  s_3cd88bfdbce5e7::t_ec2a428af0ff83 235,238
+  s_3cd88bfdbce5e7::t_05f86a7b364efa 27
+  s_3cd88bfdbce5e7::t_88e6f1951bcaa6 220-221,314
+  s_3cd88bfdbce5e7::t_faf9286531b685 49,149-152,165,225,227,232,604-605,618-619,623-624,628-629
+  s_3cd88bfdbce5e7::t_1be5ba6b4da498 222,255,261,265-280,283-289,313,330-337
+  s_3cd88bfdbce5e7::t_9f63939e93540a 18,67,101,139,171,205,223-224,697-698,710,733-736,746
+  s_3cd88bfdbce5e7::t_fcf75abb25e53f 22,69-70,306-312,315,317-325,329,338-343,345-352,418,420,425
+  s_3cd88bfdbce5e7::t_d80be753d40b55 639-649,653-655,670-675,681-692
+  s_3cd88bfdbce5e7::t_1b52b9c4e87262 2,41-42,118,120-121,124,128,178-179
+  s_3cd88bfdbce5e7::t_9712b253fb5c11 656-669
+  s_3cd88bfdbce5e7::t_3524dc352120a6 21,23,68,71-72,140,157,172,206,290-305,316,344,353-389,424,495,500,502
+  s_3cd88bfdbce5e7::t_97267fa0a6fb2b 207,553,579-583
+  s_3cd88bfdbce5e7::t_e97d6a379eb855 20,99,796
+  s_3cd88bfdbce5e7::t_f36e4ce20472a1 572
+  s_3cd88bfdbce5e7::t_c28fb06080b32f 13-14,485-488
+  s_3cd88bfdbce5e7::t_f2e87a325c002d 5-9,11-12,50-53,56-57,61-63,65-66,135-137,141-146,155-156,159,166-169,173,195,226,233-234,239-240,247,250-254,256-260,262,415-417,419,421-423,426-427,431,435-446,448-449,451-484,523-527,529-531,534,538-540,544-548,552,554-564,758,760,797
+  s_3cd88bfdbce5e7::t_243d3aa996a939 17,54-55,138,170,242,403,584-596
+  s_3cd88bfdbce5e7::t_fe3bf1c0e6d439 236-237,263-264,390-402,404-408,414
+  s_3cd88bfdbce5e7::t_03ec02e8ab639b 434
+  s_3cd88bfdbce5e7::t_f239882da93c57 3,119,122-123,130,160,176-177,181-184,186-188
+  s_3cd88bfdbce5e7::t_57176971245f4c 210-214,634,637,728,764-789,791-793,795,798-808
+  s_3cd88bfdbce5e7::t_a923ff64f0e635 409-410,413
+  s_3cd88bfdbce5e7::t_8c23cf4a3f5328 430
+  s_3cd88bfdbce5e7::t_346802ba07a000 432-433,532-533
+  s_3cd88bfdbce5e7::t_4d6b589be84374 19,98,105-108,245,694,696,699-702,704-709,712-727,737-738,740-741,744,747
+  s_3cd88bfdbce5e7::t_432faa98ac1352 4,48,148,164
+  s_3cd88bfdbce5e7::t_a229b7654c6d9d 243-244
+  s_3cd88bfdbce5e7::t_8afa6522b2972b 228-230,630-633,638,693,729
+server/src/lostcity/definitions/EnergyPotionDefinitions.ts
+  s_3cd88bfdbce5e7::t_a0809ecffa9ef1 1-99
+docs/port-completion/implementation-wave-4.md
+  s_3cd88bfdbce5e7::t_a044abfbf6ab52 1-91
+server/src/lostcity/tools/pack/verify-login.ts
+  s_3cd88bfdbce5e7::t_3b99cb85fbd73a 59
+  s_3cd88bfdbce5e7::t_812b79f1fc06f6 35-36,43,57-58,60-62
+tools/client910/src/ui_lifecycle.rs
+  s_3cd88bfdbce5e7::t_51550d8ca4548f 285-288,344-346,351-357,359-364,367-372,374-379,381,383-392,394,396-402,404,406-415,417,658,671-672
+  s_3cd88bfdbce5e7::t_8e700428eb0839 403,405,416,418-419,578
+  s_3cd88bfdbce5e7::t_80c3eda4971094 198,200-203
+  s_3cd88bfdbce5e7::t_5421d9b56264d6 541
+  s_3cd88bfdbce5e7::t_72a2bed1c0214d 142-143,199,204,659-670
+  s_3cd88bfdbce5e7::t_345ba50fb2d46d 358,365-366,373
+  s_3cd88bfdbce5e7::t_9c23d5235b5740 380,382,393,395
+  s_3cd88bfdbce5e7::t_6150711f0f1e20 561,568-577,579-580
+docs/port-completion/research/settings-cutover-verification.json
+  s_3cd88bfdbce5e7::t_4042d220f08f4a 1-206
+tools/client910/src/ui_chat.rs
+  s_3cd88bfdbce5e7::t_461838e8344e99 35-37,46-67,72-81,83-86,88-95,97-100,102-107,112-114,117-123,128-130,132-134,136-138,140-142,144-148,158-160,165-166,172-179
+  s_3cd88bfdbce5e7::t_b020340972f179 1-3,5-17,19-34,38-41,43-45,68-69,71,87,101,108-111,115-116,124,127,131,135,139,143,149-157,161-162,167-171,180-181
+  s_3cd88bfdbce5e7::t_53d6a3c15d60e5 182-185
+  s_3cd88bfdbce5e7::t_8e41ce152c68e0 4,18,42,70,82,96,125-126,163-164
+server/src/lostcity/entity/PlayerMovement.ts
+  s_3cd88bfdbce5e7::t_818d47b82cccb7 14-15,21,32-34,43
+  s_3cd88bfdbce5e7::t_6c52830ea2364c 46
+  s_3cd88bfdbce5e7::t_4f00c3133753bb 1-8,10-11,16,18,20,22-23,26,28-31,35-37,47,49-58
+  s_3cd88bfdbce5e7::t_dd678aa587e7a3 12-13,17,27,48
+  s_3cd88bfdbce5e7::t_14c5e194fd477e 19,24
+  s_3cd88bfdbce5e7::t_81e9ffe8f9c0a4 9,25,38-42,44-45
+docs/port-completion/research/cache-profile-audit.json
+  s_3cd88bfdbce5e7::t_43b146d4560b1f 1-22
+server/src/lostcity/script/ScriptRunner.ts
+  s_3cd88bfdbce5e7::t_d8cb07cb356685 50
+  s_3cd88bfdbce5e7::t_b6963d456c59c6 12,17-21,23-24,26,28-31,39,43,48-49,51-52
+  s_3cd88bfdbce5e7::t_3bb60d6609f73a 25
+  s_3cd88bfdbce5e7::t_03ddf16d89caef 53
+server/src/lostcity/tools/verify-inventory.ts
+  s_3cd88bfdbce5e7::t_900e0f1c6643c9 1-8,10-19
+  s_3cd88bfdbce5e7::t_beb50716a9bdcb 9
+server/src/lostcity/entity/PlayerResources.test.ts
+  s_3cd88bfdbce5e7::t_e3d493222d24ab 1-22
+server/src/lostcity/entity/PotionPreferences.ts
+  s_3cd88bfdbce5e7::t_3fa89749fcca3f 1-13
+docs/port-completion/implementation-wave-2.md
+  s_3cd88bfdbce5e7::t_d57add9e9b2bac 78,83-86
+  s_3cd88bfdbce5e7::t_eaafb9824d61cf 1-77,79-82,87-105
+tools/oracle/UiInteractionOracle.java
+  s_3cd88bfdbce5e7::t_91c50f32a2f31e 1-43
+docs/port-completion/research/route-audit.json
+  s_3cd88bfdbce5e7::t_ddb7b2b680457d 1-1778
+docs/port-completion/evidence.md
+  s_3cd88bfdbce5e7::t_a429c706fb7fca 137-138
+  s_3cd88bfdbce5e7::t_4b82b564da714d 1-9,19-35,53-97,99-102,104-136,139-149
+  s_3cd88bfdbce5e7::t_287d6f500d1290 10-13,98,103
+  s_3cd88bfdbce5e7::t_713a29f627e162 14-18
+  s_3cd88bfdbce5e7::t_b9b6089ad8361c 36-52
+server/src/lostcity/entity/InterfaceSessions.test.ts
+  s_3cd88bfdbce5e7::t_8ee258193c9036 8,12,14
+  s_3cd88bfdbce5e7::t_b323448ab5a608 16-18
+  s_3cd88bfdbce5e7::t_4729f803cd9592 1-4,6-7,9-11,13,15,19-29
+  s_3cd88bfdbce5e7::t_ec2a428af0ff83 5
+server/src/lostcity/entity/PlayerFollow.ts
+  s_3cd88bfdbce5e7::t_14c5e194fd477e 1-26,28
+  s_3cd88bfdbce5e7::t_d80be753d40b55 27
+tools/client910/src/main.rs
+  s_3cd88bfdbce5e7::t_abea042bca67d4 6
+  s_3cd88bfdbce5e7::t_f1d2125b59c059 41
+  s_3cd88bfdbce5e7::t_949eb3c7da8e42 56-58
+  s_3cd88bfdbce5e7::t_be7c49d8c1386b 80-81
+  s_3cd88bfdbce5e7::t_28190f791640d5 5
+  s_3cd88bfdbce5e7::t_b838a0b585881e 78-79
+  s_3cd88bfdbce5e7::t_fdd8b324fa4f90 36
+  s_3cd88bfdbce5e7::t_761869918b8916 175-176
+  s_3cd88bfdbce5e7::t_ecf711738e71dd 10-12
+  s_3cd88bfdbce5e7::t_eb89951661edb6 35
+  s_3cd88bfdbce5e7::t_8f2420a02e8e95 7
+  s_3cd88bfdbce5e7::t_7704fbecf98037 8
+  s_3cd88bfdbce5e7::t_aec683e11ecd14 37-40
+  s_3cd88bfdbce5e7::t_9f4f808de7aac7 44,50,82-83
+  s_3cd88bfdbce5e7::t_05ef91c1022cf0 9
+  s_3cd88bfdbce5e7::t_6cde3097e3d3e4 22
+  s_3cd88bfdbce5e7::t_c8c1dec6baf42e 54
+  s_3cd88bfdbce5e7::t_df3e16bfec35db 53
+  s_3cd88bfdbce5e7::t_7ff10aceb7a917 13-14,42-43,45,48,51
+server/src/jagex/config/enumtype/EnumType.ts
+  s_3cd88bfdbce5e7::t_ffae9af5791c35 73-75,103-109,114-120
+  s_3cd88bfdbce5e7::t_af043a65c706d8 34,67,95
+  s_3cd88bfdbce5e7::t_d918849d70b726 8-14,43,55,79
+  s_3cd88bfdbce5e7::t_990a8aae864fb5 30,63-64,71,92-94,96-102,110-113,121-125
+  s_3cd88bfdbce5e7::t_dfb948d603dee5 126-129
+tools/client910/src/ui_chat_oracle.rs
+  s_3cd88bfdbce5e7::t_53d6a3c15d60e5 15-16,19,21,36,48,50,54,56
+  s_3cd88bfdbce5e7::t_de8929a4345475 31,33-35,40-41,43-45
+  s_3cd88bfdbce5e7::t_87530b85f42cd9 1-14,17-18,20,22-30,32,37-39,42,46-47,49,51-53,55
+docs/port-completion/research/wave-6-verification.json
+  s_3cd88bfdbce5e7::t_edb1d66944bacd 104-134,159,179-348
+  s_3cd88bfdbce5e7::t_d2ca5d3d27b23c 1-103,135-158,160-178,349-350
+docs/port-completion/research/wave-9-verification.json
+  s_3cd88bfdbce5e7::t_a0adae370d5c37 1-265
+tools/client910/src/ui_inv.rs
+  s_3cd88bfdbce5e7::t_69e37afe1fd324 7,9,17,21-23,25,67,86,92-100,102-106,114-116,120-126,133,146-159,161-167,169-183,185-219,221-257,259-271,273,368,412
+  s_3cd88bfdbce5e7::t_5da8853faa7b8c 5,90,272,293,296,305-322,324-328,330-355,357-367,369,371-372,393,403,410-411
+  s_3cd88bfdbce5e7::t_e391dc5d4ea4b1 6,24,45-49,56-60,65-66,84-85,101,160,168,184,220,258,274,294-295,323,329,356,370,373-392,394-402,404-409
+tools/client910/src/player_picking.rs
+  s_3cd88bfdbce5e7::t_5145f49adcf922 1-44,48-50,53-61,72,81-82
+  s_3cd88bfdbce5e7::t_c2cc7fb25a6905 45-47
+  s_3cd88bfdbce5e7::t_52c87a3d8f0367 51-52
+  s_3cd88bfdbce5e7::t_ca11172a4a2a90 62-64,69-71
+  s_3cd88bfdbce5e7::t_a44cd8e577436d 73-75,78-80
+docs/port-completion/research/settings-cutover-inventory.json
+  s_3cd88bfdbce5e7::t_46503eaadc70b8 1-12873,12877-12880,12884-12894,12898-12929,12933-13160,13164-13174,13178-13251,13253-15033
+  s_3cd88bfdbce5e7::t_798330af7e1714 12874-12876,12881-12883,12895-12897,12930-12932,13161-13163,13175-13177,13252
+server/src/jagex/config/db/dbrowtype/DBRowType.test.ts
+  s_3cd88bfdbce5e7::t_40d123d529f114 1-2,4-5,7-12,14-15,25-30
+  s_3cd88bfdbce5e7::t_25215856e76fa6 3,6,13,16-24
+server/src/lostcity/network/fixtures/game-login.json
+  s_3cd88bfdbce5e7::t_c6f8f5fb0b9d83 1-2
+docs/port-completion/tools/audit-enums.mjs
+  s_3cd88bfdbce5e7::t_2e7002dae9b9a3 1-49
+tools/client910/src/protocol910/mod.rs
+  s_3cd88bfdbce5e7::t_949eb3c7da8e42 45-46,61,255,695
+server/src/jagex/network/protocol/ServerProt.test.ts
+  s_3cd88bfdbce5e7::t_812b79f1fc06f6 23,25
+  s_3cd88bfdbce5e7::t_9c6a272f387da6 1-17,19-22,24,38-52
+  s_3cd88bfdbce5e7::t_18a2cbb7b8c397 63-78
+  s_3cd88bfdbce5e7::t_dc3ed9e7633cb1 18,26-37
+  s_3cd88bfdbce5e7::t_c399f23c08626c 62,79-82,84-87
+  s_3cd88bfdbce5e7::t_14c34eb0229820 83
+  s_3cd88bfdbce5e7::t_5b2905f08359cb 53-61
+tools/client910/src/ui_stats.rs
+  s_3cd88bfdbce5e7::t_c715affd0a129c 285
+  s_3cd88bfdbce5e7::t_1af4a71d97698a 273-284,286-287
+  s_3cd88bfdbce5e7::t_9bbaed8cb7899a 346-367
+  s_3cd88bfdbce5e7::t_1038b40395095e 5-6
+docs/port-completion/research/custom-cursors-verification.json
+  s_3cd88bfdbce5e7::t_494e3dea79e32e 1-1081
+tools/oracle/graphics-presets-java-differential.py
+  s_3cd88bfdbce5e7::t_e212a26c4c928e 1-18,22-24,26-53,60-61
+  s_3cd88bfdbce5e7::t_8f1165a69c41f7 54-59
+  s_3cd88bfdbce5e7::t_03cd24afb261c3 19-21
+  s_3cd88bfdbce5e7::t_4c7d78d0775ed8 25
+tools/oracle/generate-client-options.py
+  s_3cd88bfdbce5e7::t_2a3d7afffd41c8 77-90,92-114,116-137
+  s_3cd88bfdbce5e7::t_a38e4d1fb0cbdf 36
+  s_3cd88bfdbce5e7::t_b9a4c79a215f43 27,91
+  s_3cd88bfdbce5e7::t_374156bf7c1eab 40,44-46,75,115
+  s_3cd88bfdbce5e7::t_dec77f158921f3 5,58
+  s_3cd88bfdbce5e7::t_077675bb730011 1-4,6-26,28-35,37-39,41-43,47-57,59-74,76
+docs/port-completion/research/wave-12-settings.json
+  s_3cd88bfdbce5e7::t_1a1fcabf3b228f 1-133
+tools/client910/src/ui_bas.rs
+  s_3cd88bfdbce5e7::t_fdd8b324fa4f90 1,3-7,23-24,36,73
+  s_3cd88bfdbce5e7::t_c8522729bb89c2 11-14,18-22
+  s_3cd88bfdbce5e7::t_2bb411fc483305 74-80,91,107-108,110,147
+  s_3cd88bfdbce5e7::t_d5089f5da5167e 39-63,112-146
+  s_3cd88bfdbce5e7::t_1c66f2dc2f3b6e 2,8-10,15-17,25-35,37-38,64-72,81-90,92-105
+  s_3cd88bfdbce5e7::t_c4b4b9b6b9580a 106,109,111
+docs/port-completion/implementation-wave-5.md
+  s_3cd88bfdbce5e7::t_05d9073aea82c8 1-114
+tools/oracle/PlayerAppearancePayloadOracle.java
+  s_3cd88bfdbce5e7::t_6a0ec7739110ac 19
+  s_3cd88bfdbce5e7::t_9885b69d394f71 21,25
+  s_3cd88bfdbce5e7::t_6b660a605477e5 30
+  s_3cd88bfdbce5e7::t_6b92b89d8200e1 20
+  s_3cd88bfdbce5e7::t_1f9506a6f3c60b 4,11-13,22-24,26-29,34
+  s_3cd88bfdbce5e7::t_95bb164485150c 18
+  s_3cd88bfdbce5e7::t_009a5e22b8057d 1-3,5-10,14-17,31-33,35-39
+server/src/lostcity/entity/PlayerMovement.test.ts
+  s_3cd88bfdbce5e7::t_2ce1f4ac16e9ee 1-12,14-22,55-56
+  s_3cd88bfdbce5e7::t_18a2cbb7b8c397 13,40-54
+  s_3cd88bfdbce5e7::t_a157391b4ddba0 23-39
+tools/client910/src/model_lights.rs
+  s_3cd88bfdbce5e7::t_ed06d62282f8cb 222
+  s_3cd88bfdbce5e7::t_761869918b8916 11,22,170-174,184,198,224
+  s_3cd88bfdbce5e7::t_934c4bc9cf1c33 219-221
+  s_3cd88bfdbce5e7::t_9c569d8bf166da 223
+  s_3cd88bfdbce5e7::t_c2a951219f7bef 225-227
+server/src/lostcity/entity/Run.integration.test.ts
+  s_3cd88bfdbce5e7::t_23ae9426bfc8ee 1-66
+server/src/lostcity/entity/PlayerAnimations.ts
+  s_3cd88bfdbce5e7::t_5338084ea7cb81 20-21,26-28
+  s_3cd88bfdbce5e7::t_e97d6a379eb855 1-19,22-25,29-50
+server/src/lostcity/entity/PlayerAnimations.test.ts
+  s_3cd88bfdbce5e7::t_2e51c2f957af1c 1-28
+server/src/lostcity/network/ClientSocket.ts
+  s_3cd88bfdbce5e7::t_5080ab62ca7e66 33,74,86,115,117,119,139
+  s_3cd88bfdbce5e7::t_ffaa0678503f6d 27,130
+  s_3cd88bfdbce5e7::t_8b8a49dad5ebc1 128-129
+  s_3cd88bfdbce5e7::t_ecb44987a7a0f3 111-112
+  s_3cd88bfdbce5e7::t_4e76ff1d47932b 9,120-127,131-138,140-141,143-146
+  s_3cd88bfdbce5e7::t_cd6d44c71396f4 142
+  s_3cd88bfdbce5e7::t_ecea964a8ceac1 48-50
+  s_3cd88bfdbce5e7::t_c877d526311a40 109,113-114,118
+  s_3cd88bfdbce5e7::t_f7c6fc824f3d20 24-25
+  s_3cd88bfdbce5e7::t_b7725b44c4beca 26
+  s_3cd88bfdbce5e7::t_9ec8cf2d91b6f8 13-15,34,43,98-100,103-104,107-108
+  s_3cd88bfdbce5e7::t_77277e253278ed 28-31,54,58-67,73,77-85,87-88,90-94,147,170,172,175
+  s_3cd88bfdbce5e7::t_d41aab6f06e5f8 35,55-57,75-76,89,95-97,101-102,116,149-151,155-158,160-165,168-169,171,174,214
+  s_3cd88bfdbce5e7::t_3c76ac2e3af76b 179-192,196-213
+  s_3cd88bfdbce5e7::t_ec293995baf4ff 110
+  s_3cd88bfdbce5e7::t_b37e76c7b3a139 105-106
+  s_3cd88bfdbce5e7::t_374b0d3c85f7c6 8,32,68-72
+server/src/lostcity/inventory/Equipment.ts
+  s_3cd88bfdbce5e7::t_4ebe50c6498614 34,44-47,66
+  s_3cd88bfdbce5e7::t_847311f74cd820 73
+  s_3cd88bfdbce5e7::t_55aa97d0097894 92
+  s_3cd88bfdbce5e7::t_3fcab74abc998c 1-33,35-43,48-65,75-77,80-91,93-95
+  s_3cd88bfdbce5e7::t_cee0f6a887bbe5 67-68,72,74,78-79
+  s_3cd88bfdbce5e7::t_14c5a2a391ef41 69-71
+tools/oracle/run-enumtype-oracle.sh
+  s_3cd88bfdbce5e7::t_c894f694f2a59d 1-7
+docs/port-completion/research/source-manifest.json
+  s_3cd88bfdbce5e7::t_5b2a10d20c3c3f 1-91
+tools/client910/src/ui_preferences.rs
+  s_3cd88bfdbce5e7::t_593e9aad76818b 82-85,88-90
+  s_3cd88bfdbce5e7::t_bc1f204af2f763 62-64
+  s_3cd88bfdbce5e7::t_1314738740b02d 23-26,46,50-51
+  s_3cd88bfdbce5e7::t_9a536f5cb60785 2-3,6-12,14,16-17,20-21,29,33-39,41-44,47,53-55,57-58,61,65-66,68-74,77-81,91-126,128-138,142-143
+  s_3cd88bfdbce5e7::t_301a420c635541 18-19,30-32
+  s_3cd88bfdbce5e7::t_abea042bca67d4 1,4-5,13,27-28,48-49,56,59-60,67,75-76,127,139-141
+  s_3cd88bfdbce5e7::t_04e915b66afa09 22,45
+  s_3cd88bfdbce5e7::t_b07d04d5c65920 52
+  s_3cd88bfdbce5e7::t_1ddd1bd6cd2b64 15,40,86-87
+docs/port-completion/research/wave-7-wiki.json
+  s_3cd88bfdbce5e7::t_38c9ee71954ad1 1-11,16-23,28-30,61-64,67-68
+  s_3cd88bfdbce5e7::t_309aa915c4e3a1 12-15,24-27,31-60,65-66
+docs/rust-port/43-live-inventory.md
+  s_3cd88bfdbce5e7::t_9f6554d3bda1b3 77-80
+  s_3cd88bfdbce5e7::t_1b4cef14da3335 1-76,81-132
+tools/oracle/run-consumable-buttons.sh
+  s_3cd88bfdbce5e7::t_7a064f04d964f0 1-4,6-11,13-16,18,26,29-30
+  s_3cd88bfdbce5e7::t_53b824ea4ab3d8 20-22
+  s_3cd88bfdbce5e7::t_b3d6b7fc2a012f 5
+  s_3cd88bfdbce5e7::t_2f83b195c5b2c6 17,19,27-28
+  s_3cd88bfdbce5e7::t_6ba93bd88b0136 12,23-25
+tools/oracle/UiPlayerModelOracle.java
+  s_3cd88bfdbce5e7::t_7ea012d28b5b63 1-3,5,33
+  s_3cd88bfdbce5e7::t_7faadd9b3eb4b3 4,6-32
+docs/port-completion/tools/pin-wiki.mjs
+  s_3cd88bfdbce5e7::t_7fa67266b54c40 1-6,10-17,19-25,31-34,39-65,67-69,71-73
+  s_3cd88bfdbce5e7::t_93464317e5c238 70,74-78
+  s_3cd88bfdbce5e7::t_ba4096acb43d56 26-30
+  s_3cd88bfdbce5e7::t_05c1c4710b8b3e 7-9,18,35-38,66
+docs/port-completion/research/graphics-settings-verification.json
+  s_3cd88bfdbce5e7::t_503beb67865fb6 1-98,101-129,134-146
+  s_3cd88bfdbce5e7::t_2a005548feff8e 99-100,130-133
+server/src/lostcity/tools/verify-player-skills.ts
+  s_3cd88bfdbce5e7::t_0c04b354aedc9f 1-17
+docs/port-completion/research/wave-9-cache.json
+  s_3cd88bfdbce5e7::t_e527efdb8df79f 1-37
+tools/oracle/run-client-options.sh
+  s_3cd88bfdbce5e7::t_fbbf7230565ae7 8-18,22-23,25
+  s_3cd88bfdbce5e7::t_9a536f5cb60785 19-21
+  s_3cd88bfdbce5e7::t_d89092ea5e9657 24
+  s_3cd88bfdbce5e7::t_fecbb6e2904e0a 1-3,7
+  s_3cd88bfdbce5e7::t_7744dc311df624 4-6,26-30
+tools/oracle/run-ui-bas-query.sh
+  s_3cd88bfdbce5e7::t_a044abfbf6ab52 6-7
+  s_3cd88bfdbce5e7::t_9c123500f99476 1-5,8-15
+tools/client910/src/ui_cursor.rs
+  s_3cd88bfdbce5e7::t_7704fbecf98037 1-6,8-14,16-36,38-44,46-50,52-55,57,59-68,70-77,79-87,89-100,102-112,114-122,124-125,127-140,142-144,146-155,157-171,175-184,186-191,193-203,205-214
+  s_3cd88bfdbce5e7::t_a5f2bbbcc9b60a 7,15,37,45,51,56,58,69,78,88,101,113,123,126,141,145,156,172-174,185,192,204
+tools/oracle/UiBasQueryOracle.java
+  s_3cd88bfdbce5e7::t_9c123500f99476 19
+  s_3cd88bfdbce5e7::t_d6550b54717848 1-18,20-21
+docs/port-completion/implementation-wave-9.md
+  s_3cd88bfdbce5e7::t_5ca88fe2f3f6ae 1-108
+server/src/lostcity/script/handlers/CoreOps.ts
+  s_3cd88bfdbce5e7::t_edf9a53f8d02f4 104,111,118,125,132,139
+  s_3cd88bfdbce5e7::t_74acf4fad99779 82-83,90-92,95,182
+  s_3cd88bfdbce5e7::t_cbddbf6d79ae27 7-31,34,37-39,103,110,117,124,131,138,164,168,172,176,185-186
+  s_3cd88bfdbce5e7::t_a6626b08763bc5 93-94
+  s_3cd88bfdbce5e7::t_79623197053102 51,56,61,66,71,75
+server/src/lostcity/definitions/EquipmentDefinitions.test.ts
+  s_3cd88bfdbce5e7::t_221289d917b8a1 11
+  s_3cd88bfdbce5e7::t_e0418c3b5f3d90 10,14,16
+  s_3cd88bfdbce5e7::t_bad66a795c7bb5 1-9,12-13,15,17-33
+docs/port-completion/areas/08-world-map.md
+  s_3cd88bfdbce5e7::t_86cd93c4fbf24a 1-64
+  s_3cd88bfdbce5e7::t_afa94de7ed7772 65-78
+  s_3cd88bfdbce5e7::t_d737f37ae33424 79-82
+tools/client910/src/client_options_oracle.rs
+  s_3cd88bfdbce5e7::t_af453b7af93219 1-2,15,18,71,105,120-121
+  s_3cd88bfdbce5e7::t_9a536f5cb60785 3-14,16-17,19-70,72-104,106-119
+docs/port-completion/research/wave-1-verification.json
+  s_3cd88bfdbce5e7::t_d030b74f82259d 1-79
+server/jest.config.ts
+  s_3cd88bfdbce5e7::t_817b519e9711cb 7-8
+server/src/lostcity/entity/EquipmentStats.test.ts
+  s_3cd88bfdbce5e7::t_2f594741abe632 43-44
+  s_3cd88bfdbce5e7::t_729dce72bf7190 19,24,30-31
+  s_3cd88bfdbce5e7::t_344f9ee4b796b3 1-12,14-18,20-23,25-29,48-57
+  s_3cd88bfdbce5e7::t_cb86c44263c2af 32-34
+  s_3cd88bfdbce5e7::t_3df8fb8172f324 13,35-42,45-47
+server/src/lostcity/network/GameLogin.test.ts
+  s_3cd88bfdbce5e7::t_891bfb851377c6 2,29,31-36
+  s_3cd88bfdbce5e7::t_ac55568531a001 6
+  s_3cd88bfdbce5e7::t_5e3108745aa201 49
+  s_3cd88bfdbce5e7::t_8716ff3632dc9b 30
+  s_3cd88bfdbce5e7::t_d0a3d2cef72e37 10-28
+  s_3cd88bfdbce5e7::t_900d5f5bbb69b9 47
+  s_3cd88bfdbce5e7::t_ec7466d251bd2d 48
+  s_3cd88bfdbce5e7::t_ed09cf63987c56 41
+  s_3cd88bfdbce5e7::t_2c0c8c67a8c189 1,3-5,7-9,37-40,42-46,50-51
+tools/oracle/generate-preference-commands.py
+  s_3cd88bfdbce5e7::t_abea042bca67d4 1-6,8-25,27-40
+  s_3cd88bfdbce5e7::t_dec77f158921f3 26
+  s_3cd88bfdbce5e7::t_b8d67ae80df2bc 7
+server/src/lostcity/tools/verify-cache-profile.ts
+  s_3cd88bfdbce5e7::t_58b20ba84ffdc9 1-26
+tools/oracle/run-ui-player-model.sh
+  s_3cd88bfdbce5e7::t_7ea012d28b5b63 1-9
+docs/port-completion/implementation-wave-3.md
+  s_3cd88bfdbce5e7::t_8262a52f026afd 1-51,54-74,85-89,91-98
+  s_3cd88bfdbce5e7::t_7f7ef067320ab0 52-53,75-84,90
+tools/client910/src/player_renderer.rs
+  s_3cd88bfdbce5e7::t_e0d230287883f6 2,67,253-254,256-269,307-309,311-319,321-337
+  s_3cd88bfdbce5e7::t_1245864f0ed690 132-133,138
+  s_3cd88bfdbce5e7::t_bbb21f63737505 52-58,339
+  s_3cd88bfdbce5e7::t_2a7c814b2f967c 255
+  s_3cd88bfdbce5e7::t_ece97887626f49 310
+  s_3cd88bfdbce5e7::t_eb15b63b525aee 320
+  s_3cd88bfdbce5e7::t_79e8a806c89312 338
+tools/client910/src/client_options.rs
+  s_3cd88bfdbce5e7::t_af453b7af93219 571-572
+  s_3cd88bfdbce5e7::t_b9a4c79a215f43 69,90,167,206,316,480
+  s_3cd88bfdbce5e7::t_a38e4d1fb0cbdf 6
+  s_3cd88bfdbce5e7::t_374156bf7c1eab 10,15-17,573-574
+  s_3cd88bfdbce5e7::t_077675bb730011 1-3,5,7-9,11-14,18-68,70-89,91-166,168-205,207-278,280-315,317-479,481-567,570
+  s_3cd88bfdbce5e7::t_fc80deceff3997 4,279,568-569
+tools/client910/src/ui_player_options.rs
+  s_3cd88bfdbce5e7::t_fcfd83102e743e 44-46,135-139,162-169
+  s_3cd88bfdbce5e7::t_e5cc669417ffca 98
+  s_3cd88bfdbce5e7::t_4ffd166d4bb143 156-161,170-172
+  s_3cd88bfdbce5e7::t_4a7788c32473ca 1,49-51,80,82-83,96-97,99-101,103-104,144-148,150
+  s_3cd88bfdbce5e7::t_9456c7b916537f 16-17,73,141-143,154
+  s_3cd88bfdbce5e7::t_55fa3b1f4ca182 55,93-95,102,149,151-153
+  s_3cd88bfdbce5e7::t_5d903399918ce7 2-7,14-15,18-24,27-43,47-48,52-54,56,64-67,71-72,76,84,90-92,105-107,123-128,132,155
+  s_3cd88bfdbce5e7::t_447cd4489a81e9 25-26,59
+  s_3cd88bfdbce5e7::t_768c90bf7f4914 173-176
+  s_3cd88bfdbce5e7::t_96c72f79ff06ae 8-13,57-58,60-63,68-70,74-75,77-79,81,85-89,108-122,129-131,133-134,140
+tools/oracle/ui-interaction-reference.py
+  s_3cd88bfdbce5e7::t_91c50f32a2f31e 1-38
+docs/port-completion/tools/probe-cache.mjs
+  s_3cd88bfdbce5e7::t_1dca6ebc74aa58 1-66
+tools/oracle/run-ui-interaction.sh
+  s_3cd88bfdbce5e7::t_91c50f32a2f31e 1-12
+tools/client910/src/ui_equipment_replay.rs
+  s_3cd88bfdbce5e7::t_b838a0b585881e 1-4,10-11,14-19,21,27,36,41-45,68,71,79,121-124,146,159-161
+  s_3cd88bfdbce5e7::t_e544e971b90e61 30-31,35
+  s_3cd88bfdbce5e7::t_f1d51e05a0457a 559-560,581-583,589-593,597-603,607-611,613-620,679-690
+  s_3cd88bfdbce5e7::t_213316e69a38db 633-634,692-703
+  s_3cd88bfdbce5e7::t_f5b0bfb302fb63 70
+  s_3cd88bfdbce5e7::t_0e11b426df0bed 20,48,55-57,67
+  s_3cd88bfdbce5e7::t_8e0d1ecb1643f7 153,164-417,708
+  s_3cd88bfdbce5e7::t_c64446e1b4cd25 24-26
+  s_3cd88bfdbce5e7::t_0ec152caa54db7 94-96,120
+  s_3cd88bfdbce5e7::t_cd4ed1ae0ea311 651-652
+  s_3cd88bfdbce5e7::t_3a40e7fa40620f 5-9,12-13,22-23,28-29,32-34,37-40,46-47,51-54,58-66,69,72-78,80-93,97-119,125-145,147-152,154-158
+  s_3cd88bfdbce5e7::t_656df76b7a7bf6 163,418,420,423-432,446,572-574,579,629-632,643-645,677-678,691,709
+  s_3cd88bfdbce5e7::t_58909e5f274160 621-623,628,647-650,662,671-676
+  s_3cd88bfdbce5e7::t_fb4070fced9da9 433-445,447-472,475-558,561-571,575-578,580,584-588,594-596,604-606,612,635-642,646,704-707
+  s_3cd88bfdbce5e7::t_0c84110663ad3a 473
+  s_3cd88bfdbce5e7::t_09444c6f75c87a 49-50
+  s_3cd88bfdbce5e7::t_eba67a09513d7d 624-627,653-661,663-670
+  s_3cd88bfdbce5e7::t_8e135ab052aeda 162,419,421-422,474
+tools/oracle/bloom-settings-reference.py
+  s_3cd88bfdbce5e7::t_2361f4f5ef6ee2 24,39
+  s_3cd88bfdbce5e7::t_790af4259ffc1e 1-20,22-23,25-34,36-38,40-49,53-56
+  s_3cd88bfdbce5e7::t_d1e5732ce204cd 50-52
+  s_3cd88bfdbce5e7::t_3235af12dc8d13 21,35
+tools/oracle/PlayerOptionsOracle.java
+  s_3cd88bfdbce5e7::t_be03309d2a7d55 1-13,15-18
+  s_3cd88bfdbce5e7::t_d2853e1a5e9cad 14
+tools/client910/src/scene_target.rs
+  s_3cd88bfdbce5e7::t_8552658822024d 1-21,23,25-29,31-38,40-46,48-49,51-54,56-57,59-62,64-73,75,77-78,80,83,85-98,101,108-113,115-122,125-146,150-198,200-210,213-223
+  s_3cd88bfdbce5e7::t_8816601792c64b 22,24,30,39,47,50,55,58,63,74,76,79,81-82,84,99-100,102-107,114,123-124,147-149,199,211-212,224-227
+tools/oracle/EnumTypeOracle.java
+  s_3cd88bfdbce5e7::t_728270aea8e7c1 1-38,40-51
+  s_3cd88bfdbce5e7::t_540f9f84d90d3a 39
+docs/port-completion/settings-cutover-progress.md
+  s_3cd88bfdbce5e7::t_e5a56501abe9af 3-5,51-56,81-82,87,100
+  s_3cd88bfdbce5e7::t_e63814bc1bb75e 57-60
+  s_3cd88bfdbce5e7::t_66f92222123a6f 64-67
+  s_1b49a0261481f5::t_3fe823fee9045d 68-80
+  s_1b49a0261481f5::t_3ba1908a272277 83-86
+  s_1b49a0261481f5::t_2e47c8729b657c 89
+  s_3cd88bfdbce5e7::t_02431b7d7e6f0a 61-63
+  s_3cd88bfdbce5e7::t_cf2cfb45d87754 1-2,6-9,11-16,21-23,26-32,34-37,41-50,88,90-99,101-126,128-134
+  s_3cd88bfdbce5e7::t_0c8c7298a6bd8a 10,17-20,24-25,33,38-40,127
+server/src/lostcity/entity/PlayerAppearance.ts
+  s_3cd88bfdbce5e7::t_40df914c3b59f6 86-91
+  s_3cd88bfdbce5e7::t_b323448ab5a608 65,107
+  s_3cd88bfdbce5e7::t_2962740692cb4d 1,3,7-17,19,22-28,30-34,93-99,111-120,123,125-132,134-144
+  s_3cd88bfdbce5e7::t_31f01aacdaef4b 2,4-6,18,20-21,29,42-60,66-78,80,85,92,101-106,108-110,121-122,124
+  s_3cd88bfdbce5e7::t_5b45756fc58984 39,61-63
+  s_3cd88bfdbce5e7::t_3d21a55c4e9fab 35,40-41,100,133
+  s_3cd88bfdbce5e7::t_a70d4325c1ca3f 64
+  s_3cd88bfdbce5e7::t_e92d808a9b7144 36-38
+  s_3cd88bfdbce5e7::t_e5402e06adbf1b 79,81-84
+server/src/lostcity/inventory/EquipmentRules.ts
+  s_3cd88bfdbce5e7::t_a89ea851e20795 1,3-8,10-12,14-15,18-20,22-23,28-31
+  s_3cd88bfdbce5e7::t_ca94cb187959b9 2,9,13,16,21,24-27,32
+  s_3cd88bfdbce5e7::t_e92d808a9b7144 17
+docs/port-completion/areas/02-gameplay-interfaces.md
+  s_3cd88bfdbce5e7::t_be0b6763846a79 1-7,15-72,87-99
+  s_3cd88bfdbce5e7::t_fe36ead3343117 9,12-14
+  s_3cd88bfdbce5e7::t_e5c07e59a84d1b 8,10-11
+  s_3cd88bfdbce5e7::t_d737f37ae33424 130-133
+  s_3cd88bfdbce5e7::t_b9b6089ad8361c 73-86
+  s_3cd88bfdbce5e7::t_afa94de7ed7772 100-129
+tools/client910/src/ui_player_options_oracle.rs
+  s_3cd88bfdbce5e7::t_e5cc669417ffca 26-27
+  s_3cd88bfdbce5e7::t_768c90bf7f4914 1-25,28-32
+tools/oracle/light-animation-reference.py
+  s_3cd88bfdbce5e7::t_52be986a5b41f1 1-58
+docs/port-completion/window-resize-fix.md
+  s_3cd88bfdbce5e7::t_6e5b0f0e5334c9 6,8
+  s_3cd88bfdbce5e7::t_91c9e9278ecd0f 1-5,7,9-44
+tools/client910/src/ui_loop.rs
+  s_3cd88bfdbce5e7::t_fa9644fb6d739b 97,105,112
+  s_3cd88bfdbce5e7::t_4a7788c32473ca 533
+  s_3cd88bfdbce5e7::t_5a5c6b8edac06e 248,260,264-266,283-285,475-478,485,496-499,509,761-762
+  s_3cd88bfdbce5e7::t_2d0e93ea2fb6af 365
+  s_3cd88bfdbce5e7::t_b14e08d064bdac 45-46,352-353,364,368,392,395,420-424,472-473,731-732
+  s_3cd88bfdbce5e7::t_41642968de8dc2 766
+  s_3cd88bfdbce5e7::t_7d4da970cab8a2 8-9,299
+  s_3cd88bfdbce5e7::t_34f481078f8873 33-34,62-65,133-136,144-147,171-173,184-190,203-208,219-224,249-252,261-263,310-351,366-367,369-391,393-394,396-419,425-471,474,479-484,486-495,525-530,534-546,557-560,565-567,616-663,729-730,733-739,749-760,767-778,787-791,793-796
+  s_3cd88bfdbce5e7::t_37498356717e85 532,547
+docs/port-completion/research/wave-8-wiki.json
+  s_3cd88bfdbce5e7::t_b5a1965b150c2f 1-45
+tools/client910/src/ui_interaction.rs
+  s_3cd88bfdbce5e7::t_1ae9870fcff04d 11-13
+  s_3cd88bfdbce5e7::t_b14e08d064bdac 173-178,180,244-247,249,393-396,398
+  s_3cd88bfdbce5e7::t_df3e16bfec35db 1-10,14-20,22-24,26-28,30-33,35-58,60,64-76,81-88,121-172,181-196,198-205,207-220,222-223,225-243,250-254,256-257,259-269,271-273,281-291,293-304,306-308,315-338,340-347,366-376,378-381,386-392,399,401-409,416,420-430,432-452,454-459,461-497,499-509
+  s_3cd88bfdbce5e7::t_aa70cd096d2ae5 274-280
+  s_3cd88bfdbce5e7::t_3cc5ab487efabc 61-63,79
+  s_3cd88bfdbce5e7::t_7582285b934f3d 59
+  s_3cd88bfdbce5e7::t_f8347a59e71299 77-78,80,377,382-385
+  s_3cd88bfdbce5e7::t_3023a9b247bca4 89-94,96-120
+  s_71039cacf5face::t_01c4a0fe0d7e58 21,25,29,34,95,179,197,206,221,224,248,255,258,270,292,305,309-314,339,348-365,397,400,410-415,417-419,431,453,460,498
+server/src/lostcity/server/CacheProvider.ts
+  s_3cd88bfdbce5e7::t_58b20ba84ffdc9 3-24
+server/src/lostcity/entity/EquipmentPreview.ts
+  s_3cd88bfdbce5e7::t_7bdc7578bb5138 1-8,10,17
+  s_3cd88bfdbce5e7::t_97267fa0a6fb2b 9,11-16
+server/src/jagex/config/db/dbrowtype/DBRowType.ts
+  s_3cd88bfdbce5e7::t_25215856e76fa6 39,45
+  s_3cd88bfdbce5e7::t_2f36b40b734751 35-38
+  s_3cd88bfdbce5e7::t_c7f8af56729175 50-51
+server/src/lostcity/script/handlers/PlayerOps.ts
+  s_3cd88bfdbce5e7::t_f2e87a325c002d 7,14
+tools/client910/src/rebuild.rs
+  s_3cd88bfdbce5e7::t_044988f5e3a532 59-60,72-73,79-99,376,393,454
+server/src/lostcity/inventory/EquipmentRules.test.ts
+  s_3cd88bfdbce5e7::t_31cb2de042c115 1-16
+tools/client910/src/ui_consumable_replay.rs
+  s_3cd88bfdbce5e7::t_a5408e6a22dcd4 31,50
+  s_3cd88bfdbce5e7::t_32ce91aff0726e 9-18,40,42,46-49,59,62,91,107-119,124-125
+  s_3cd88bfdbce5e7::t_9a9eb7a2fe5752 88-90,94-98,106
+  s_3cd88bfdbce5e7::t_a65e3fde314d31 27,43-45,120-123,127-129
+  s_3cd88bfdbce5e7::t_ab31e1c841e10e 55-58,60-61,99
+  s_3cd88bfdbce5e7::t_9b4b11852a847c 26,29-30,32-39,41,52-54,63,65,84,131-132
+  s_3cd88bfdbce5e7::t_ce0876fd730669 66
+  s_3cd88bfdbce5e7::t_29f0de88d3411a 80-81
+  s_3cd88bfdbce5e7::t_08195d10f91f73 51,64,92-93,100,103-105
+  s_3cd88bfdbce5e7::t_6e09e0cec082a3 1-8,19-25,28,67-79,82-83,85-87,101-102,126,130,133-134
+tools/client910/src/bloom_tests.rs
+  s_3cd88bfdbce5e7::t_8c8fd7939e5cd8 245-259
+  s_3cd88bfdbce5e7::t_1a363a275d080c 17,21,23,37-38,41,81,104,114,133,153,157-158,188,190,232-233,235,238-244,260-302
+  s_3cd88bfdbce5e7::t_957c99327d6a52 1-16,18-20,22,24-36,39-40,42-80,82-103,105-113,115-132,134-152,154-156,159-187,189,191-231,234,236-237
+docs/port-completion/research/recheck-manifest.json
+  s_3cd88bfdbce5e7::t_fb2ce51d9e0fe8 1-189
+server/src/lostcity/script/ServerScriptState.ts
+  s_3cd88bfdbce5e7::t_3bb60d6609f73a 114-117,121-123
+  s_3cd88bfdbce5e7::t_cbddbf6d79ae27 59-60,65-71,73,75-85,89,91-93,95-96,98-99,103-107,109-110,170-171,194-199
+  s_3cd88bfdbce5e7::t_6fbc335b33c6bb 185-187
+  s_3cd88bfdbce5e7::t_0b6d575297143c 37
+  s_3cd88bfdbce5e7::t_45735921385dcc 62-64,72,74,97,100-102
+  s_3cd88bfdbce5e7::t_fe073aa1c62836 29,36,127-128,132-133,146-147,151-152,164-169,172-181
+  s_3cd88bfdbce5e7::t_0ba8d934497cc3 61
+  s_3cd88bfdbce5e7::t_af74721235462a 182
+server/src/lostcity/entity/InterfaceSessions.ts
+  s_3cd88bfdbce5e7::t_1af8f2054e7600 29
+  s_3cd88bfdbce5e7::t_1be5ba6b4da498 19-27,32-77,79
+  s_3cd88bfdbce5e7::t_24ba43eee3b17e 1-18,28,30-31,78,80
+tools/client910/src/ui_minimenu.rs
+  s_3cd88bfdbce5e7::t_7d4da970cab8a2 14-16,25
+  s_3cd88bfdbce5e7::t_2c202069d5d0eb 23-24,64-66,97
+  s_3cd88bfdbce5e7::t_36276298e16d90 249-251,595-598
+tools/client910/src/ui_draw.rs
+  s_3cd88bfdbce5e7::t_df3e16bfec35db 73
+server/src/lostcity/engine/World.test.ts
+  s_3cd88bfdbce5e7::t_52ca1cd7bd2a5e 6,51,60,62-64,126,129
+  s_3cd88bfdbce5e7::t_f2e87a325c002d 61
+  s_3cd88bfdbce5e7::t_ac7b48125d41de 260
+  s_3cd88bfdbce5e7::t_b37e76c7b3a139 1-5,7-11,15-25,32-50,52-59,65-125,127-128,130-166,279-280
+  s_3cd88bfdbce5e7::t_ac8e4479281f27 26-31,167-170,175-178,181,188-193,195-207,209-211,214-220,236,238-241,245-246
+  s_3cd88bfdbce5e7::t_ee1505f7e8e51f 12,237,243-244
+  s_3cd88bfdbce5e7::t_eb90d514d6a55d 13-14,171-174,179-180,182-187,194,208,212-213,224,233,242,248-259,261-278
+  s_3cd88bfdbce5e7::t_0eda3e71c4cb30 247
+  s_3cd88bfdbce5e7::t_4160b89976d0a1 221-223,225-232,234-235
+docs/port-completion/research/wave-11-emote-fallback.json
+  s_3cd88bfdbce5e7::t_446e8f79dce4db 1,14,16
+  s_3cd88bfdbce5e7::t_da2d4cd5ada55b 2-13,15
+server/src/lostcity/tools/verify-client-varcs.ts
+  s_3cd88bfdbce5e7::t_818ac02dc857d3 1-30
+docs/rust-port/45-audit-2026-09-12.md
+  s_4903f2dfae6f29::t_68e2fa0ac74232 1-52
+tools/oracle/run-player-stat-oracle.sh
+  s_3cd88bfdbce5e7::t_6bcf7993f7f050 1-7
+tools/client910/src/ui_preferences_queries.rs
+  s_3cd88bfdbce5e7::t_dec77f158921f3 73
+  s_3cd88bfdbce5e7::t_abea042bca67d4 1-72,75-134
+  s_3cd88bfdbce5e7::t_131cc115f2c842 74
+tools/client910/src/ui_window.rs
+  s_3cd88bfdbce5e7::t_814488b6dbe850 145,155,165-166,170-175,178
+  s_3cd88bfdbce5e7::t_3f28307d404a97 64,70,89,109,113-114,149,169,184,205-206,234,237,256-258
+  s_3cd88bfdbce5e7::t_593e9aad76818b 6,33-42,44-47,49-54,56-60,65-69,71-88,90-108,110-112,148,152-154,156-161,164,167-168,176-177,179-183,185-188,191-204,208-212,216-217,220-233,235-236,238-255,261,263-265,270-273,278,280-285,303-308,312-323,327-334,339,348-386,390-418,427-436
+  s_3cd88bfdbce5e7::t_e798a3650d2b3c 1-5,25-27,29-32,43,61,143-144,147,151,163,207,213-215,259-260,262,266-269,274-277,279,309,311,324-326,335,338,347,389
+  s_3cd88bfdbce5e7::t_8bdc6ab5aec913 9-23,117-138,189-190,286-302,446-474
+  s_3cd88bfdbce5e7::t_79bfeaadbb0b88 7-8,24,28,55,62-63,146,150,162,218-219,337,340-345,387,419-420
+  s_3cd88bfdbce5e7::t_863d710b31f0e2 48,310,336,346,388
+  s_3cd88bfdbce5e7::t_8e3ece2216d031 139,141,421-426,437-440,442-443,475
+  s_3cd88bfdbce5e7::t_6423b0dde86c7c 115-116,140,142,441,444-445
+docs/port-completion/research/wave-8-pick-java.jsonl
+  s_3cd88bfdbce5e7::t_e5cc669417ffca 6-54
+  s_3cd88bfdbce5e7::t_2f8e56baf258c3 1-5
+tools/client910/src/client_options_tests.rs
+  s_3cd88bfdbce5e7::t_7ffa0168ab1425 1,3,16-26,28-30,43-45,47,52-63,67-78,81-83
+  s_3cd88bfdbce5e7::t_faaa4ea7fe7c8d 2,27,46
+  s_3cd88bfdbce5e7::t_9a536f5cb60785 4-15,31-42,48-51,65-66,79-80
+  s_3cd88bfdbce5e7::t_eb39193f02ff2f 64,84-85
+docs/port-completion/implementation-wave-12.md
+  s_3cd88bfdbce5e7::t_8c74efdd200084 1-94
+tools/oracle/client-options-fixtures.py
+  s_3cd88bfdbce5e7::t_4bfbf84bc9ba2b 1-47
+tools/client910/src/window_canvas.rs
+  s_3cd88bfdbce5e7::t_6970153d175cfb 29-33,52-59,64-76,80,86-89
+  s_3cd88bfdbce5e7::t_593e9aad76818b 40-41,105-172,174-193
+  s_3cd88bfdbce5e7::t_49fc05f1015b83 1-28,34-39,42-44,46,48-51,60-62,77-79,81-85,90-95,196-197
+  s_3cd88bfdbce5e7::t_9ebb29435d5ceb 45,47,63
+  s_3cd88bfdbce5e7::t_3cb546af0da2eb 96-104,173,194-195
+server/src/lostcity/tools/verify-settings-inventory.ts
+  s_3cd88bfdbce5e7::t_02431b7d7e6f0a 46
+  s_3cd88bfdbce5e7::t_2fefbae29a758e 8,31
+  s_3cd88bfdbce5e7::t_2f7e1c0dfb43c4 44-45,95,98
+  s_3cd88bfdbce5e7::t_9a536f5cb60785 38-41,61-63,65-73,75,101
+  s_3cd88bfdbce5e7::t_b8cb87422ba47d 1-7,9-30,32-37,76-88,92-94,99-100,102-103
+  s_3cd88bfdbce5e7::t_bab4393b179e83 42-43,49-60,64,74
+  s_3cd88bfdbce5e7::t_ab73ae25b89ede 89-91
+  s_3cd88bfdbce5e7::t_e63814bc1bb75e 47-48,96-97
+tools/client910/src/ui_scene_options.rs
+  s_3cd88bfdbce5e7::t_910beb92bd9d68 175,217
+  s_3cd88bfdbce5e7::t_8ac1b38265e621 214-216,218
+  s_3cd88bfdbce5e7::t_818d47b82cccb7 11-12
+  s_3cd88bfdbce5e7::t_4a7788c32473ca 18
+  s_3cd88bfdbce5e7::t_a4f930b3a742b4 172-174,176-177
+  s_3cd88bfdbce5e7::t_cca145087c7dbd 9-10
+tools/oracle/run-player-options.sh
+  s_3cd88bfdbce5e7::t_0523663f19e37b 1-9,12
+  s_3cd88bfdbce5e7::t_3e1467286c9779 10-11,13
+tools/oracle/ClientOptionsOracle.java
+  s_3cd88bfdbce5e7::t_4bfbf84bc9ba2b 35
+  s_3cd88bfdbce5e7::t_fecbb6e2904e0a 1-3,6-7,12-13,15,49,52
+  s_3cd88bfdbce5e7::t_af453b7af93219 4-5,8-11,14,16-34,36-48,50-51
+tools/client910/src/session.rs
+  s_3cd88bfdbce5e7::t_9a60dfbaf55906 1174
+  s_3cd88bfdbce5e7::t_2557fe51ab92a1 1528-1529
+  s_3cd88bfdbce5e7::t_6c165b8fd0be21 2298,2405-2407,2416,2418-2420,2423-2424
+  s_3cd88bfdbce5e7::t_395bfee71c121a 1418-1419
+  s_3cd88bfdbce5e7::t_cc0d1046dfe721 434,715,1172-1173,1175-1176
+  s_3cd88bfdbce5e7::t_16fe8774db4bd9 2421-2422
+  s_3cd88bfdbce5e7::t_43bc48faf0f9c7 222,440-441,1864-1869
+  s_3cd88bfdbce5e7::t_f698337f69fb41 409-410,1434-1435,1544-1545
+  s_3cd88bfdbce5e7::t_4d3ee777fad9fa 631-633
+  s_3cd88bfdbce5e7::t_5fb3aa8bbaefff 348-349,717-718,1135-1142
+  s_3cd88bfdbce5e7::t_9c23d5235b5740 341,414,639,1190-1191,1196-1197,1427,1537
+  s_3cd88bfdbce5e7::t_afc8cba48c88ba 713-714,716
+  s_3cd88bfdbce5e7::t_4c04695caf55fb 431-433
+  s_3cd88bfdbce5e7::t_7d4fa26ffa1c16 1147
+  s_3cd88bfdbce5e7::t_c715affd0a129c 2382-2404
+  s_3cd88bfdbce5e7::t_cf4cf68ee62093 2365,2367
+  s_3cd88bfdbce5e7::t_21000279edb581 253-255
+  s_3cd88bfdbce5e7::t_d89092ea5e9657 339-340,1425-1426,1535-1536
+  s_3cd88bfdbce5e7::t_428e102a065aec 640-641,1202,1204-1208
+  s_3cd88bfdbce5e7::t_65d66f3638081f 412-413,635-638,1143-1146,1148-1160
+  s_3cd88bfdbce5e7::t_7976be1b3f6f78 1162-1163,1166-1171,1177-1182,1186-1187
+  s_3cd88bfdbce5e7::t_a70c6eb21a8409 347,1433,1543
+  s_3cd88bfdbce5e7::t_ba8b2caec8a6f5 1164-1165
+  s_3cd88bfdbce5e7::t_b701f0a4995d05 1183-1185
+  s_3cd88bfdbce5e7::t_c656a486f59697 2359-2364,2366,2368-2381
+  s_3cd88bfdbce5e7::t_8377d9c338e258 2299,2301,2303-2308
+  s_3cd88bfdbce5e7::t_3d7d52a8293b53 2417
+  s_3cd88bfdbce5e7::t_a229b7654c6d9d 342-346,405,407,629-630,1119-1122,1124-1125,1161,1428-1432,1538-1542
+  s_3cd88bfdbce5e7::t_4ef312a0a00f4e 408,1126-1134
+  s_3cd88bfdbce5e7::t_77899fbced3e8d 2275-2284
+  s_3cd88bfdbce5e7::t_78132faeecff95 2300,2302
+  s_3cd88bfdbce5e7::t_284ed85ef6f956 1201,2408-2415
+  s_3cd88bfdbce5e7::t_9f9545d55b959b 1192-1195
+  s_3cd88bfdbce5e7::t_0f2a0271939b4b 85,350-355,406,411,415,458,628,634,790,1198-1200,1203,1339-1342,1436-1440,1546
+tools/client910/src/loading_connection.rs
+  s_3cd88bfdbce5e7::t_593e9aad76818b 6-71
+  s_3cd88bfdbce5e7::t_e036040cd6ce2a 1-5,72-108
+server/src/lostcity/entity/PlayerRunState.test.ts
+  s_3cd88bfdbce5e7::t_8965c0689c05a2 1-12
+server/src/lostcity/entity/Navigation.integration.test.ts
+  s_3cd88bfdbce5e7::t_d75bc8028f7f06 1-69,71,73-114
+  s_3cd88bfdbce5e7::t_818d47b82cccb7 70,72
+tools/client910/src/ui_menu_render.rs
+  s_3cd88bfdbce5e7::t_c8c1dec6baf42e 1-22,26-32,34-36,38,49-52,54-68,78-83,85-106,108-109,111-117,119-125,127-159,161-167,175-179
+  s_3cd88bfdbce5e7::t_ccc85dfc7b4ee2 160
+  s_3cd88bfdbce5e7::t_a8813b6d10040a 23,25,39-48,69-77,168-172,174
+  s_71039cacf5face::t_3b47e55293455e 24,33,37,53,84,107,110,118,126,173
+docs/port-completion/areas/03-dynamic-world.md
+  s_3cd88bfdbce5e7::t_d737f37ae33424 94-97
+  s_3cd88bfdbce5e7::t_be0b6763846a79 1-75
+  s_3cd88bfdbce5e7::t_afa94de7ed7772 76-93
+server/src/lostcity/entity/Viewport.ts
+  s_3cd88bfdbce5e7::t_e97d6a379eb855 14,36-37,51
+  s_3cd88bfdbce5e7::t_54ef6c8bb1c9e5 9-12,31-33,44,50,55
+  s_3cd88bfdbce5e7::t_72cb31e7907f95 13,34-35
+docs/rust-port/42-current-port-coverage.md
+  s_3cd88bfdbce5e7::t_0d2796ce206bc1 22,57-59,70-75
+  s_3cd88bfdbce5e7::t_4b82b564da714d 8-9,11
+  s_3cd88bfdbce5e7::t_172b5b2d026dd0 10,21
+  s_3cd88bfdbce5e7::t_cf2cfb45d87754 20,43-44
+  s_3cd88bfdbce5e7::t_02431b7d7e6f0a 17
+  s_3cd88bfdbce5e7::t_e5a56501abe9af 38,45,49
+  s_3cd88bfdbce5e7::t_7426a944c0a467 50-55
+  s_3cd88bfdbce5e7::t_ab73ae25b89ede 26-37
+  s_3cd88bfdbce5e7::t_09e780c13c2ba5 2-7,12-14,16,18,23-25,39
+  s_3cd88bfdbce5e7::t_501c0d33316a23 62-69
+  s_3cd88bfdbce5e7::t_e63814bc1bb75e 46
+  s_3cd88bfdbce5e7::t_713a29f627e162 56,60-61
+  s_3cd88bfdbce5e7::t_bf9612ebb9e8e0 1,15
+  s_3cd88bfdbce5e7::t_66f92222123a6f 47-48
+  s_3cd88bfdbce5e7::t_2aa4868e2afec8 19,40-42
+docs/port-completion/recheck.md
+  s_3cd88bfdbce5e7::t_287d6f500d1290 1-131
+server/src/lostcity/entity/Equipment.integration.test.ts
+  s_3cd88bfdbce5e7::t_eeee21057ee1b0 169,180-187
+  s_3cd88bfdbce5e7::t_b4b2c3fea6fce3 226
+  s_3cd88bfdbce5e7::t_ecb618cf25d317 236
+  s_3cd88bfdbce5e7::t_72a2bed1c0214d 205-220,325
+  s_3cd88bfdbce5e7::t_8ee258193c9036 173
+  s_3cd88bfdbce5e7::t_14c5a2a391ef41 176,190
+  s_3cd88bfdbce5e7::t_e310a766c46929 237-238,249-250,261-262,267-268,270
+  s_3cd88bfdbce5e7::t_44f56d5e632235 129,132,221-222,280-288,292-300
+  s_3cd88bfdbce5e7::t_398003297b0700 239-241,248
+  s_3cd88bfdbce5e7::t_ec2a428af0ff83 51
+  s_3cd88bfdbce5e7::t_52a9779abb4df1 138-159
+  s_3cd88bfdbce5e7::t_0ec152caa54db7 77-78
+  s_3cd88bfdbce5e7::t_dc62869c50315b 228
+  s_3cd88bfdbce5e7::t_a54186e8566c68 225,244-245
+  s_3cd88bfdbce5e7::t_8c23cf4a3f5328 8,289-291,301-324
+  s_3cd88bfdbce5e7::t_c8535817baa411 1-7,9-17,19-50,52-76,79-128,130-131,133-135,204
+  s_3cd88bfdbce5e7::t_61bd64e9383e52 18,136-137,160-168,170-172,174-175,177-179,188-189,191-203
+  s_3cd88bfdbce5e7::t_0ea18965f41c67 223-224,227,229-235,242-243,246-247,251-260,263-266,269,271-272
+  s_3cd88bfdbce5e7::t_a600cb58914ab8 273-279
+tools/client910/src/config.rs
+  s_3cd88bfdbce5e7::t_a90e926e3b88ec 1194-1214,1216-1222
+  s_3cd88bfdbce5e7::t_7889d080f79053 929,962-977,1000,1008-1009
+  s_3cd88bfdbce5e7::t_14d36d3680c1ff 1048-1049,1052,1054,1057,1061,1064,1073,1095,1103,1116,1120,1123,1126,1130,1133-1134,1140,1156,1164,1166,1168,1174-1175,1178,1181-1183,1232-1235
+  s_3cd88bfdbce5e7::t_4eddeb8bfbd9d8 1040,1215
+server/package.json
+  s_3cd88bfdbce5e7::t_782e7f48aa7512 19
+server/src/lostcity/network/GameLogin.ts
+  s_3cd88bfdbce5e7::t_4515aea6a871d5 2-9,11-13,16-23,25-26,40-41,44-45,48-49,51
+  s_3cd88bfdbce5e7::t_ba20483b7ffc01 30-39,42-43,46-47
+  s_3cd88bfdbce5e7::t_1c8c9a2a0daddd 28-29
+  s_3cd88bfdbce5e7::t_b2b1b254dfc1a1 24,27
+  s_3cd88bfdbce5e7::t_fb5441b523b80a 1,10,14-15,50
+server/src/lostcity/entity/PlayerSkills.test.ts
+  s_3cd88bfdbce5e7::t_92290c409268be 18
+  s_3cd88bfdbce5e7::t_0c04b354aedc9f 2,4,12-16,20-35,42
+  s_3cd88bfdbce5e7::t_07dcc0f83f97ed 17
+  s_3cd88bfdbce5e7::t_b323448ab5a608 1,3,5-11,36-41
+  s_3cd88bfdbce5e7::t_5cf42e55e77514 19
+docs/port-completion/areas/04-world-loading.md
+  s_3cd88bfdbce5e7::t_d737f37ae33424 86-89
+  s_3cd88bfdbce5e7::t_afa94de7ed7772 69-85
+  s_3cd88bfdbce5e7::t_be0b6763846a79 1-68
+tools/client910/src/ui_world_list.rs
+  s_3cd88bfdbce5e7::t_289af4a8cc617b 4,6,15,20,64,66,91-92,336-337,401
+  s_3cd88bfdbce5e7::t_9a536f5cb60785 2-3,5,7-14,16-19,21-62,65,67-75,78-90,95-107,111-118,120-124,126-131,133-145,147-182,184-187,191-208,210-226,228-261,263-276,280-287,289-334,341-399
+  s_3cd88bfdbce5e7::t_3d3420aa351ea8 63,76,108,146,183,188,209,262,278-279,335,338-340,400
+  s_3cd88bfdbce5e7::t_eea559b7f6311f 1,77,93-94,109-110,119,125,132,189-190,227,277,288
+tools/client910/src/bloom_settings_tests.rs
+  s_3cd88bfdbce5e7::t_52dfc5f9b92508 1-4,8-14,20-30
+  s_3cd88bfdbce5e7::t_dc7a6d4c295688 5-7,15-19
+tools/client910/src/player_animation_replay.rs
+  s_3cd88bfdbce5e7::t_d2e55823353002 80-82
+  s_3cd88bfdbce5e7::t_28dd0b22238daf 65-66
+  s_3cd88bfdbce5e7::t_40711d16aaa404 83
+  s_3cd88bfdbce5e7::t_9bb206a058d050 16-21,48-64,67-75
+  s_3cd88bfdbce5e7::t_04ed07478dee60 45
+  s_3cd88bfdbce5e7::t_9f4f808de7aac7 1-15,22-36,47,76-79,84-89
+  s_3cd88bfdbce5e7::t_0411593dfdd9f7 37-44,46
+docs/port-completion/research/wave-12-cache.json
+  s_3cd88bfdbce5e7::t_f60caeb4b463a1 1-315,318-322,333-334
+  s_3cd88bfdbce5e7::t_7a0247c3b792ac 316-317,323-332
+tools/client910/src/iface.rs
+  s_3cd88bfdbce5e7::t_d05ea6e65a9a88 5039
+tools/client910/src/app.rs
+  s_3cd88bfdbce5e7::t_da4b6c85a81834 3622,4730,4818
+  s_3cd88bfdbce5e7::t_4a7788c32473ca 3617-3621,3623-3629,5026-5029,5031
+  s_3cd88bfdbce5e7::t_82bcae261f23c8 962,2868,3270,3797,4708,4727,4731-4733,4873,4884-4891,4893-4897
+  s_3cd88bfdbce5e7::t_5421d9b56264d6 2594
+  s_3cd88bfdbce5e7::t_40023f980ddbb5 3867,4686-4689
+  s_3cd88bfdbce5e7::t_1500aac0225e51 3875-3876
+  s_3cd88bfdbce5e7::t_bfec7e6c1c2ae4 808,3996
+  s_3cd88bfdbce5e7::t_9c23d5235b5740 2493
+  s_3cd88bfdbce5e7::t_1051bcd816999e 3496
+  s_3cd88bfdbce5e7::t_3adbaeb0a85345 387,633,647,655-659,696,996,3541-3546,4553-4558
+  s_3cd88bfdbce5e7::t_f7b4fa267643df 4663-4669,4671
+  s_3cd88bfdbce5e7::t_814488b6dbe850 3578-3579,4892
+  s_3cd88bfdbce5e7::t_76ffcf702829df 2489-2490
+  s_3cd88bfdbce5e7::t_abea042bca67d4 954-956,4684-4685
+  s_3cd88bfdbce5e7::t_b031afd8ebca0c 957
+  s_3cd88bfdbce5e7::t_03da7525118e12 4644-4645,4658-4661,4701,4812,4817,5045-5046
+  s_3cd88bfdbce5e7::t_7704fbecf98037 2738-2740,3192-3193,3798-3801,3803-3804,3806-3813,3815-3824,3826-3828,3830,3832-3835,3837,4858
+  s_3cd88bfdbce5e7::t_2d0e93ea2fb6af 5020-5022,5032-5033
+  s_3cd88bfdbce5e7::t_04e915b66afa09 3853-3854,4648-4649
+  s_3cd88bfdbce5e7::t_3bfdfdd43728c0 964,3905-3907,3939,3950-3951,3972-3977,3981,3995,4000-4001,4874
+  s_3cd88bfdbce5e7::t_ecf711738e71dd 3840-3844,3855-3857,4646-4647,5044
+  s_3cd88bfdbce5e7::t_8d7d175e9fcf6a 4872,4920-4921,4938-4939,4946,4948,4952-4964
+  s_3cd88bfdbce5e7::t_eb8ce1d8c19d34 4743-4744,4773,4805-4806,4808
+  s_3cd88bfdbce5e7::t_7b433b6b537f5f 2491-2492
+  s_3cd88bfdbce5e7::t_c630dbe9a67d29 3497-3500
+  s_3cd88bfdbce5e7::t_c0ea8b1ff338ec 2487
+  s_3cd88bfdbce5e7::t_22d36ea63aa987 802-803,2741,3194-3195,3595-3596,3604-3606,3785-3787,3793,3795-3796
+  s_3cd88bfdbce5e7::t_bc1ac480c87218 3858,3878,3883-3884,3893-3894,3898-3900,3902-3904,3928-3931
+  s_3cd88bfdbce5e7::t_761869918b8916 3492-3495,3859-3866,3868-3874,3877,3879-3882,3885-3892,3895-3897,3901,3908-3927,3932-3938,3940-3949,3952-3971,3978-3980,3982-3994,3997-3999,4859-4861
+  s_3cd88bfdbce5e7::t_654367498a7af7 3845-3852,4650-4657,4900-4911,4943
+  s_3cd88bfdbce5e7::t_a229b7654c6d9d 2485,4807,4820,4832,4839-4841,4844-4845,4922-4936,4949-4951
+  s_3cd88bfdbce5e7::t_01c99456bd1035 386,842-843,953,958-961,963,981,995,2484,2486,2488,2494,2747,3220,3366,3762-3764,3802,3805,3814,3825,3829,3836,4706-4707,4867-4871,4875,4937,4940-4942,4944-4945,4947,5023-5025,5030
+docs/port-completion/research/recheck-cache.json
+  s_3cd88bfdbce5e7::t_a9851ec34792d4 1-1332
+docs/port-completion/implementation-wave-6.md
+  s_3cd88bfdbce5e7::t_1b5c150c74c24f 74-91
+  s_3cd88bfdbce5e7::t_e5c07e59a84d1b 1-73,92-101
+docs/port-completion/implementation-wave-7.md
+  s_3cd88bfdbce5e7::t_56d7c0c22005aa 1-90
+server/src/lostcity/entity/Consumables.integration.test.ts
+  s_3cd88bfdbce5e7::t_c28fb06080b32f 18,129
+  s_3cd88bfdbce5e7::t_51bb9071df07f3 55-62,171,175-178,181-182,185-186,188
+  s_3cd88bfdbce5e7::t_d9f059a47ac5c2 192-271
+  s_3cd88bfdbce5e7::t_d624b48f6197e7 1-17,19-54,63-128,130-170,172-174,179-180,183-184,187,189-191
+  s_3cd88bfdbce5e7::t_b3d6b7fc2a012f 272-297
+tools/client910/src/ui_var_store.rs
+  s_3cd88bfdbce5e7::t_6cde3097e3d3e4 1-2,6-10,12-34,36-39,48-53,55-78,80-89,91-93,95-97,99-109,111-112,114,116-139,141-142,144-146,148-152,154-159,161,164-166,172,174-200
+  s_3cd88bfdbce5e7::t_409219fd046625 228-230,232
+  s_3cd88bfdbce5e7::t_a144c6e45cb0d0 201-218,220-227,233-285
+  s_3cd88bfdbce5e7::t_18a75e78944e0b 3-5,11,35,40-47,54,79,90,94,98,110,113,115,140,143,147,153,160,162-163,167-171,173,219,231
+docs/port-completion/research/wave-10-cache.json
+  s_3cd88bfdbce5e7::t_cf7fb67df02472 1-8,70-75,82-83,91,106-112,119-120,128,143-145,183,213
+  s_3cd88bfdbce5e7::t_5bc913f5e7b0f1 203
+  s_3cd88bfdbce5e7::t_ca1f4dbd5c0e7b 184-202,204-212
+  s_3cd88bfdbce5e7::t_43f57381a657fa 9-69,76-81,84-90,92-105,113-118,121-127,129-142,146-182
+server/src/lostcity/definitions/EnergyPotionDefinitions.test.ts
+  s_3cd88bfdbce5e7::t_1761c03d3ca74d 61
+  s_3cd88bfdbce5e7::t_1ebfba0200bd88 1-21,24-29,32-34,38-60,62-73,93,95-96,98-100,102-108
+  s_3cd88bfdbce5e7::t_3f22343851fbd5 22-23,74-92,94,97,101
+  s_3cd88bfdbce5e7::t_43d3d469d1c225 30-31,35-37
+tools/client910/src/ui_cam2.rs
+  s_3cd88bfdbce5e7::t_a229b7654c6d9d 14-15,1077-1078,1124-1125
+  s_3cd88bfdbce5e7::t_ef8a4e4667297f 617-618,629,642
+tools/client910/src/bloom.rs
+  s_3cd88bfdbce5e7::t_1a363a275d080c 67,156,214,272-306,309
+  s_3cd88bfdbce5e7::t_16cc85fcd7c464 1-4,6-16,18-21,23-40,43-49,54-58,60-63,65,68-71,74-80,82,84-93,95-101,103,107-110,112-114,116,118-124,126-133,136-140,142,144-146,148-155,157-161,179,199,205-211,213,215,229,233,237,241,256,271,311-312
+  s_3cd88bfdbce5e7::t_65621939c83f70 41
+  s_3cd88bfdbce5e7::t_542d37a621f2fe 5,17,22,42,50-53,66,72-73,162,307-308,310
+  s_3cd88bfdbce5e7::t_dbf97505847bf2 59,64,81,83,94,102,104-106,111,115,117,125,134-135,141,143,147,163-178,180-198,200-204,212,216-228,230-232,234-236,238-240,242-255,257-270
+tools/client910/src/player_model.rs
+  s_3cd88bfdbce5e7::t_bbb21f63737505 98-107
+tools/oracle/bloom-reference.py
+  s_3cd88bfdbce5e7::t_6a8b1bc6a2a66d 1-6,9-10,12-29,31-35,37,70-73
+  s_3cd88bfdbce5e7::t_d2f31ce4e225bd 7-8,11,30,36,38-69
+server/src/lostcity/inventory/EquipmentContent.ts
+  s_3cd88bfdbce5e7::t_ca94cb187959b9 1-6,9-14,16-18,24-32,39-42
+  s_3cd88bfdbce5e7::t_84d4a86633cb13 7-8,15,19-23
+  s_3cd88bfdbce5e7::t_adbf7918b7b132 33-38
+docs/rust-port/44-camera-controls.md
+  s_3cd88bfdbce5e7::t_7acca0bae744da 34-36
+  s_3cd88bfdbce5e7::t_6ab1baea2dafa8 1-33,37-66
+docs/port-completion/research/wave-5-wiki.json
+  s_3cd88bfdbce5e7::t_93ac4d9b6c3435 1-3,5-10,90-91,112-113,121-123
+  s_3cd88bfdbce5e7::t_3a2b23dc0123f2 4,11-89,92-111,114-120
+docs/port-completion/research/wave-12-verification.json
+  s_3cd88bfdbce5e7::t_8c74efdd200084 1-100
+docs/port-completion/areas/07-chat-social.md
+  s_3cd88bfdbce5e7::t_86cd93c4fbf24a 1-65
+  s_3cd88bfdbce5e7::t_d737f37ae33424 85-88
+  s_3cd88bfdbce5e7::t_afa94de7ed7772 66-84
+tools/client910/src/animation_assets.rs
+  s_3cd88bfdbce5e7::t_8e0d1ecb1643f7 156-185
+tools/client910/src/ui_runtime.rs
+  s_3cd88bfdbce5e7::t_a229b7654c6d9d 964-976,1073-1075
+  s_3cd88bfdbce5e7::t_b701f0a4995d05 1022-1025,1071,1382-1387
+  s_3cd88bfdbce5e7::t_a8813b6d10040a 1298
+  s_3cd88bfdbce5e7::t_5b555232db07f5 1656-1657
+  s_3cd88bfdbce5e7::t_818d47b82cccb7 112,115
+  s_3cd88bfdbce5e7::t_fdd8b324fa4f90 54-55,164,234-237,328
+  s_3cd88bfdbce5e7::t_1c34de996aa379 828
+  s_3cd88bfdbce5e7::t_aec683e11ecd14 874-876,891
+  s_3cd88bfdbce5e7::t_c0aa9afee58fbd 997,1008,1026-1027
+  s_3cd88bfdbce5e7::t_206ba80979898a 1141-1143,1145-1149,1162-1163,1171-1172,1268-1276,1292-1296,1299-1310,1312-1318,1320-1322,1324,1326-1329,1331-1332,1344,1356-1359,1395,1403-1408,1446
+  s_3cd88bfdbce5e7::t_508ac81fc6ff0b 1469-1474,1545-1556,1558-1569,1585-1586,1662
+  s_3cd88bfdbce5e7::t_d250f13eb52bd7 24-26,147-149,638,1070,1102-1103,1183,1213,1220,1223-1243,1245-1260,1346-1355
+  s_3cd88bfdbce5e7::t_24c7a6a3a26d71 28-29,150
+  s_3cd88bfdbce5e7::t_45735921385dcc 991
+  s_3cd88bfdbce5e7::t_ef8a4e4667297f 886,1434-1436
+  s_3cd88bfdbce5e7::t_41058b8da19614 78-80,175-176,504-517
+  s_3cd88bfdbce5e7::t_8d7d175e9fcf6a 1173-1175
+  s_3cd88bfdbce5e7::t_2d0e93ea2fb6af 1319
+  s_3cd88bfdbce5e7::t_dd2a4319f8fda2 984-990,992-996
+  s_3cd88bfdbce5e7::t_1fc08786299723 1570-1584
+  s_3cd88bfdbce5e7::t_7e7493b552e45e 1477,1479,1542-1544
+  s_3cd88bfdbce5e7::t_eb89951661edb6 53,258,327,879
+  s_3cd88bfdbce5e7::t_7f6b06d5ced022 1154-1159
+  s_3cd88bfdbce5e7::t_b9a4c79a215f43 1671
+  s_3cd88bfdbce5e7::t_9e076416a53bea 1597-1598,1602-1603
+  s_3cd88bfdbce5e7::t_ca6aa8196e2754 1635
+  s_3cd88bfdbce5e7::t_5da8853faa7b8c 52
+  s_3cd88bfdbce5e7::t_16fe8774db4bd9 1009-1016
+  s_3cd88bfdbce5e7::t_3f28307d404a97 274
+  s_3cd88bfdbce5e7::t_99bcea4c3105fd 1557,1589-1594,1596,1600-1601,1604-1608,1639,1651-1652
+  s_3cd88bfdbce5e7::t_e1d7f87de381ca 1595
+  s_3cd88bfdbce5e7::t_14d36d3680c1ff 85,180,209-212,291,602-605,607-608,739,977-983
+  s_3cd88bfdbce5e7::t_abea042bca67d4 273,1165
+  s_3cd88bfdbce5e7::t_d7c320d8fdedb5 30,329-334,336-339,342,344-345
+  s_3cd88bfdbce5e7::t_2e28b01cad1a9f 340-341,343,381
+  s_3cd88bfdbce5e7::t_7704fbecf98037 935,1277-1283,1285-1288,1290-1291
+  s_3cd88bfdbce5e7::t_6e12638e49876a 1072,1475-1476,1478,1480-1541
+  s_3cd88bfdbce5e7::t_2a5c52dbd0d843 358,383,518,609,642,647,733,740,882,936-937,963,1030,1077,1169,1587-1588,1609-1634,1636-1638,1640-1650,1653-1655,1658-1661
+  s_3cd88bfdbce5e7::t_4a7788c32473ca 1216,1218
+  s_3cd88bfdbce5e7::t_9c23d5235b5740 31,151,213-220,1297,1335,1399
+  s_3cd88bfdbce5e7::t_9337031b1f3d5d 335,346,641,1337-1339
+  s_3cd88bfdbce5e7::t_ce0876fd730669 1672-1673
+  s_3cd88bfdbce5e7::t_fcea27029da567 1664,1668,1674-1676
+  s_3cd88bfdbce5e7::t_dec77f158921f3 81,177,503
+  s_3cd88bfdbce5e7::t_603df0f2ff37e8 1057-1060
+  s_3cd88bfdbce5e7::t_cc0d1046dfe721 1017-1021
+  s_3cd88bfdbce5e7::t_5b79388ff7fdb6 1381,1388-1391
+  s_3cd88bfdbce5e7::t_b5f0a87785b39a 998,1000-1003,1005-1007
+  s_3cd88bfdbce5e7::t_41642968de8dc2 1206-1212
+  s_3cd88bfdbce5e7::t_3acf555555a55d 1599
+  s_3cd88bfdbce5e7::t_a0fd78d7fd1e15 27,195,202-203,868,896,1056,1398,1417,1433
+  s_3cd88bfdbce5e7::t_6bae1cf847c2aa 42-43,106,109-110,157-158,189,191,355-357,359-361,378-380,382,402,420,427-429,587-588,593,595-597,601,606,628-630,632-637,639-640,643-646,648-650,730-732,734-738,741-754,880-881,899-934,941,961-962,999,1004,1028-1029,1061-1069,1076,1107,1111-1112,1133-1140,1164,1166-1168,1170,1244,1284,1289,1663,1665-1667,1669-1670
+tools/client910/src/render.rs
+  s_3cd88bfdbce5e7::t_04e915b66afa09 3551,3553
+  s_3cd88bfdbce5e7::t_d18185157581be 2872-2878,3187-3188,3281,3294,3315,3350,3363,3382,3396,3409,3428,3437,3450,3469,3478,3491,3510,3515-3539,3685-3704,4482-4484,4503,4508,4544-4545,4548,4558,4577,4592,4608,4621,4631,4640,4649,4658,4668-4674,4677-4679
+  s_3cd88bfdbce5e7::t_9bfc7a0fb02ba5 4531-4533,4683
+  s_3cd88bfdbce5e7::t_6ecb83861351e6 2950,2985-2987,2989,3135
+  s_3cd88bfdbce5e7::t_16cc85fcd7c464 4676
+  s_3cd88bfdbce5e7::t_05ef91c1022cf0 2945-2946,3588-3589,3654-3655,3665,3671-3675,3678-3679,3681-3684,3705
+  s_3cd88bfdbce5e7::t_1051bcd816999e 3706,4423-4428
+  s_3cd88bfdbce5e7::t_82bcae261f23c8 3646
+  s_ce51cca42e0bed::t_afafecb6566ea8 2956-2957,2988,3676-3677,3680,3707,4539,4675,4681
+tools/client910/src/ui_client_state_oracle.rs
+  s_3cd88bfdbce5e7::t_abea042bca67d4 177
+docs/port-completion/research/graphics-runtime-verification.json
+  s_3cd88bfdbce5e7::t_de1e763785b98e 1-133
+tools/oracle/chat-history-reference.py
+  s_3cd88bfdbce5e7::t_0957269a783ade 30-31,34
+  s_3cd88bfdbce5e7::t_3981337cdff23b 1-29,32-33,35-37
+.gitignore
+  s_3cd88bfdbce5e7::t_f70138cdc1bd0b 49
+  s_3cd88bfdbce5e7::t_a044abfbf6ab52 82-85
+tools/client910/src/ui_layout.rs
+  s_3cd88bfdbce5e7::t_428e102a065aec 14
+docs/port-completion/areas/10-settings.md
+  s_3cd88bfdbce5e7::t_86cd93c4fbf24a 1-5,14-79
+  s_3cd88bfdbce5e7::t_d737f37ae33424 95-98
+  s_3cd88bfdbce5e7::t_ab73ae25b89ede 6-13
+  s_3cd88bfdbce5e7::t_afa94de7ed7772 80-94
+tools/client910/src/ui_properties.rs
+  s_3cd88bfdbce5e7::t_a8813b6d10040a 50,55
+  s_3cd88bfdbce5e7::t_8e9263d94d12b8 78
+  s_3cd88bfdbce5e7::t_547b08041db69d 266
+  s_3cd88bfdbce5e7::t_7f6b06d5ced022 468
+  s_3cd88bfdbce5e7::t_8b5f24bee0d23a 859
+  s_3cd88bfdbce5e7::t_5da8853faa7b8c 867
+  s_3cd88bfdbce5e7::t_3023a9b247bca4 467,469
+  s_3cd88bfdbce5e7::t_80c3eda4971094 713,844,852,854
+  s_3cd88bfdbce5e7::t_129222acadbfea 98-99
+  s_3cd88bfdbce5e7::t_51550d8ca4548f 9,37,40-41,43-44,48,51,53,56-70,72,79-81,128,269-272,457-463,465-466,471-486,491-519,651-658,758-764,846-851,868-874,880-909
+  s_3cd88bfdbce5e7::t_df3e16bfec35db 82
+  s_3cd88bfdbce5e7::t_8bcb3f16fd2514 265,839-843,845,853,855-858
+  s_3cd88bfdbce5e7::t_5f930493ce1a9a 860-866
+  s_3cd88bfdbce5e7::t_cbf9d981792b78 89
+tools/client910/src/ui_model_gpu.rs
+  s_3cd88bfdbce5e7::t_aed50db53d4570 1,6,8-12,14-21,29,50,66,115,125-127,171,179,207-208,364-365
+  s_3cd88bfdbce5e7::t_d5089f5da5167e 2-5,7,13,22-28,31-32,36,43,49,51-65,68-114,117-124,128-148,151-156,158-170,172-178,180-206,212-230,235-251,253-362
+  s_3cd88bfdbce5e7::t_19acf0c99ef837 67,116
+  s_3cd88bfdbce5e7::t_8e0d1ecb1643f7 231-234
+  s_3cd88bfdbce5e7::t_95634d61fe58c2 30,33-35,37-42,44-48,149-150,157,209-211,252,363
+docs/port-completion/areas/05-graphics-cameras.md
+  s_3cd88bfdbce5e7::t_d737f37ae33424 91-94
+  s_3cd88bfdbce5e7::t_be0b6763846a79 1-72
+  s_3cd88bfdbce5e7::t_afa94de7ed7772 73-90
+server/src/lostcity/entity/PlayerRunState.ts
+  s_3cd88bfdbce5e7::t_9f63939e93540a 1-26
+docs/port-completion/research/wave-8-verification.json
+  s_3cd88bfdbce5e7::t_95a88c4f9f2be1 1-316
+docs/rust-port/41-interface-interaction.md
+  s_3cd88bfdbce5e7::t_09e780c13c2ba5 1-105
+docs/port-completion/historical-wiki.md
+  s_3cd88bfdbce5e7::t_295ce3e02bed26 1-25,28-191
+  s_3cd88bfdbce5e7::t_0f3835c4bdca42 26-27
+docs/port-completion/research/native-xref.txt
+  s_3cd88bfdbce5e7::t_8f6fbb12b4120a 1-52
+server/src/lostcity/inventory/EnergyPotions.ts
+  s_3cd88bfdbce5e7::t_c28fb06080b32f 1,16,24,26,32,36
+  s_3cd88bfdbce5e7::t_5ab194d17cc1c5 2-15,17-23,25,27-31,33-35,37-38
+tools/client910/src/floor_render.rs
+  s_3cd88bfdbce5e7::t_6f36a29cbb2fc6 365-368,392-502,504,508-512,514-516,636-637,1185,2406,2706
+  s_3cd88bfdbce5e7::t_5315671eefe576 2166,2242-2243,2290,2308-2313,2329,2374
+  s_3cd88bfdbce5e7::t_d18185157581be 369-370,505-507,683
+  s_3cd88bfdbce5e7::t_3e52f950db6bc4 2188,2228,2238-2239
+  s_3cd88bfdbce5e7::t_9e8c751ede051a 2301,2314-2315
+  s_3cd88bfdbce5e7::t_d3f304575f4162 2263
+  s_3cd88bfdbce5e7::t_761869918b8916 2531
+  s_3ed0313a1a7b88::t_c257b9e0a2c640 2690-2705,2707
+tools/client910/src/light_animation_tests.rs
+  s_3cd88bfdbce5e7::t_52be986a5b41f1 1-19,21-36,38-43,45-58,60-68
+  s_3cd88bfdbce5e7::t_61868fe1cd6cb9 20,37,44,59
+tools/client910/src/ui_obj_queries.rs
+  s_3cd88bfdbce5e7::t_eb89951661edb6 1-2,8-10,12-54,56-66,70-75,77-81,83-115,117-121,124-125
+  s_3cd88bfdbce5e7::t_e5fbb4f0969165 68
+  s_3cd88bfdbce5e7::t_18db88f29a0960 3-7,11,55,67,69,76,82,116,122-123
+tools/client910/src/equipment_observer_replay.rs
+  s_3cd88bfdbce5e7::t_dbd1dc8b45bd60 24,116-124,129,162-166,169-170,205,219
+  s_3cd88bfdbce5e7::t_0dc86363c6df81 7,10-19,21-23,25,114-115,147-151,154,171-177,179-183,186-192,194-203,227-233,239-248
+  s_3cd88bfdbce5e7::t_3a40e7fa40620f 3,142-143,145-146,157-159,234-238
+  s_3cd88bfdbce5e7::t_2061217b9eb168 26,110,130
+  s_3cd88bfdbce5e7::t_c64446e1b4cd25 144
+  s_3cd88bfdbce5e7::t_14c5a2a391ef41 155-156,160
+  s_3cd88bfdbce5e7::t_997003e8b727c7 91-94,167-168,206-218
+  s_3cd88bfdbce5e7::t_e90cf24c57f6f6 20,220,226
+  s_3cd88bfdbce5e7::t_c4ec53a9e6f4e9 1-2,4-6,8-9,111-113,131-134,141,161,178,193,204,249-253
+  s_3cd88bfdbce5e7::t_cc0d1046dfe721 125-128
+  s_3cd88bfdbce5e7::t_229ea096ef8890 27-77,88-90,95-109,138,152-153
+  s_3cd88bfdbce5e7::t_556e0ff6f75071 135-137,139-140,184-185
+  s_3cd88bfdbce5e7::t_f1d51e05a0457a 78-87,221-225
+docs/port-completion/cache-workflow.md
+  s_3cd88bfdbce5e7::t_287d6f500d1290 130-137
+  s_3cd88bfdbce5e7::t_b9b6089ad8361c 29-36,160-165
+  s_3cd88bfdbce5e7::t_4b82b564da714d 1-4,21-28,37-129,138-159,166-189
+  s_3cd88bfdbce5e7::t_713a29f627e162 5,10-13
+  s_3cd88bfdbce5e7::t_00d5b8c3a219d8 6-9
+  s_3cd88bfdbce5e7::t_501c0d33316a23 14-20
+tools/client910/src/ui_model_transform.rs
+  s_3cd88bfdbce5e7::t_8bd7525abfc47a 1-4,23-24,30,139
+  s_3cd88bfdbce5e7::t_d5089f5da5167e 5-22,25-29,31-59,61-78,81-82,85,87-134,136-137
+  s_3cd88bfdbce5e7::t_7faadd9b3eb4b3 60,79-80,83-84,86,135,138
+docs/port-completion/custom-cursors-progress.md
+  s_3cd88bfdbce5e7::t_02431b7d7e6f0a 1-61,70-88
+  s_3cd88bfdbce5e7::t_4a08f2b97f38da 62-67
+  s_3cd88bfdbce5e7::t_46901a62c1ff9b 68-69
+server/src/lostcity/tools/verify-player-facing.ts
+  s_3cd88bfdbce5e7::t_e075e874ca7eff 7,10,18-20
+  s_3cd88bfdbce5e7::t_9e795104528408 1-5,11-17,21-40,45-48,62-63,67
+  s_3cd88bfdbce5e7::t_3a7025870b1651 6,8-9,49-61,64-66
+  s_3cd88bfdbce5e7::t_6b3724afb6445e 41-44
+tools/client910/src/scene_player_pick.rs
+  s_3cd88bfdbce5e7::t_6dd41d1d509574 283-307,309
+  s_3cd88bfdbce5e7::t_e5cc669417ffca 313,317,327,368,371,421
+  s_3cd88bfdbce5e7::t_e059a20a5db629 30,39,146,150,154-155,184-188,192,199,203
+  s_3cd88bfdbce5e7::t_4fd5ef1d602397 4-7,9-14,16-19,21-28,31-38,54-58,69,73-74,78-79,95,99-100,104-116,197-198,200-202,204-242,245-247,252-262,264-270,272-277,279-280
+  s_3cd88bfdbce5e7::t_3b32eabfcbf8ad 41,52,132-133,190
+  s_3cd88bfdbce5e7::t_f53051166ce062 308
+  s_3cd88bfdbce5e7::t_e94e4d06eba4e9 47,61-64,72,77,87
+  s_3cd88bfdbce5e7::t_5b786201edc40c 263
+  s_3cd88bfdbce5e7::t_6683feb2184077 311-312,337-340,381,418-420,422-423
+  s_3cd88bfdbce5e7::t_b98a8480282ad7 88-92
+  s_3cd88bfdbce5e7::t_92c24034871439 281-282,310
+  s_3cd88bfdbce5e7::t_37fd77d7361cb9 65-68,70-71,75-76,81-86,147-149,151-153,158-161,164-169,172-177
+  s_3cd88bfdbce5e7::t_aa9fd2c0512952 183
+  s_3cd88bfdbce5e7::t_bac3ef68cfc66e 271,278,379
+  s_3cd88bfdbce5e7::t_f3cf5e4398c7dd 315-316,318-326,328-336,341-367,369-370,372-378,380,382-417
+  s_3cd88bfdbce5e7::t_3ca4e1f740e413 93-94,101-103
+  s_3cd88bfdbce5e7::t_aa00424ca7b6f8 119-122,130-131,189,193-195
+  s_3cd88bfdbce5e7::t_0217997c29031c 156-157,162-163,170-171,178
+  s_3cd88bfdbce5e7::t_7970b80c174c16 179-180
+  s_3cd88bfdbce5e7::t_36451b1a34369d 42-46,48-51,123-129,134-145
+  s_3cd88bfdbce5e7::t_6769de91ccac79 1-3,8,15,20,29,40,117-118,196,243-244,424
+  s_3cd88bfdbce5e7::t_84829f99a78280 181-182,191
+  s_3cd88bfdbce5e7::t_fb1da92297fe9c 248-251
+  s_3cd88bfdbce5e7::t_56e25301523db7 53
+  s_3cd88bfdbce5e7::t_435775ccbfc16b 59-60
+  s_3cd88bfdbce5e7::t_c3fac3f02e14cc 80
+  s_3cd88bfdbce5e7::t_281d9fda62d4bc 96-98
+  s_3cd88bfdbce5e7::t_862aeb2d06397c 314
+server/src/lostcity/entity/PlayerAppearance.test.ts
+  s_3cd88bfdbce5e7::t_61352f9945c67d 1-6,12-21,23-24,41
+  s_3cd88bfdbce5e7::t_5b45756fc58984 9-10
+  s_3cd88bfdbce5e7::t_be7c49d8c1386b 11
+  s_3cd88bfdbce5e7::t_a70d4325c1ca3f 25-33,38-40
+  s_3cd88bfdbce5e7::t_e92d808a9b7144 34-37
+  s_3cd88bfdbce5e7::t_12f77b62a68ab9 8,22
+  s_3cd88bfdbce5e7::t_41a1ad893adcde 7
+server/src/lostcity/tools/verify-stat-feed.ts
+  s_3cd88bfdbce5e7::t_6bcf7993f7f050 1-42
+server/src/lostcity/tools/verify-equipment-definitions.ts
+  s_3cd88bfdbce5e7::t_1ef6a4dcd52c43 25
+  s_3cd88bfdbce5e7::t_08f1f829f2d630 32,34-35
+  s_3cd88bfdbce5e7::t_50e872999da6e5 16-17
+  s_3cd88bfdbce5e7::t_f2113494666f0a 3-4,7,18-19
+  s_3cd88bfdbce5e7::t_0b8e9aa78d8a9f 36-37
+  s_3cd88bfdbce5e7::t_cf47a90bd3110c 1,5,8-14,20-24,28-31,33,38-42
+  s_3cd88bfdbce5e7::t_16faff7146dd9b 2,6,15
+  s_3cd88bfdbce5e7::t_08002c44b19b65 26-27
+server/src/lostcity/tools/gamevals/backport910.ts
+  s_4903f2dfae6f29::t_aa5e0be90081fa 348
+  s_4903f2dfae6f29::t_90c28551786e69 305
+  s_4903f2dfae6f29::t_11b0b502540cc1 1-19,27-276,286-304,306-312,325-326,330-347,349-367,377-425
+  s_4903f2dfae6f29::t_56c06e258a36fb 313-324,327-329
+  s_4903f2dfae6f29::t_c99d356d383a93 368-376
+  s_4903f2dfae6f29::t_b5efa524c86517 20-26
+  s_4903f2dfae6f29::t_4d9c206423e3d2 277-285
+tools/oracle/graphics-settings-reference.py
+  s_1b49a0261481f5::t_66eb4945b1167f 18
+  s_3cd88bfdbce5e7::t_320c07f3f72e02 30
+  s_1b49a0261481f5::t_9b4062be79c304 15-17
+  s_3cd88bfdbce5e7::t_b46ad2ef184704 31-33
+tools/oracle/PlayerFacingOracle.java
+  s_3cd88bfdbce5e7::t_3a7025870b1651 23-24
+  s_3cd88bfdbce5e7::t_9e795104528408 1-22,25-32
+tools/client910/src/client_options_codec.rs
+  s_3cd88bfdbce5e7::t_374156bf7c1eab 70
+  s_3cd88bfdbce5e7::t_b9a4c79a215f43 182-183
+  s_3cd88bfdbce5e7::t_2a3d7afffd41c8 1-69,71-181,184-275
+tools/oracle/PlayerOptionsMenuOracle.java
+  s_3cd88bfdbce5e7::t_b002b7e9d2844c 1-3,5-6,8,10,40-42
+  s_3cd88bfdbce5e7::t_768c90bf7f4914 4,7,9,11-39
+tools/oracle/run-player-pick.sh
+  s_3cd88bfdbce5e7::t_aaaaa140e7f590 1-9
+server/src/lostcity/inventory/Container.test.ts
+  s_3cd88bfdbce5e7::t_fea45a2a6f394d 2-18,23-27
+  s_3cd88bfdbce5e7::t_aac87c2db11c0d 19-22
+  s_3cd88bfdbce5e7::t_a31f64524b3347 28-29,37-44
+  s_3cd88bfdbce5e7::t_11bd5fbc31aec0 1,30-36
+server/src/lostcity/network/fixtures/settings-keybind.json
+  s_3cd88bfdbce5e7::t_301a420c635541 48-49,100,113-114,116
+  s_3cd88bfdbce5e7::t_327504a5d965e0 1-47,50-99,101-112,115
+tools/client910/src/graphics_runtime.rs
+  s_3cd88bfdbce5e7::t_761869918b8916 1-16
+docs/port-completion/implementation-wave-10.md
+  s_3cd88bfdbce5e7::t_4fbdae79acf290 1-64,75-83
+  s_3cd88bfdbce5e7::t_dd9116acbe4044 65-74
+docs/port-completion/implementation-wave-11.md
+  s_3cd88bfdbce5e7::t_e86a4cc1039b10 1-92
+tools/client910/src/ui_icon_raster_generated.rs
+  s_3cd88bfdbce5e7::t_b6c68eaa4aa0d2 1-12151
+docs/port-completion/research/wave-7-verification.json
+  s_3cd88bfdbce5e7::t_d72219dce1fa61 1-60,63-67,69-93,99-192
+  s_3cd88bfdbce5e7::t_c2a7aa36094487 61-62,68,94-98
+tools/oracle/PlayerPickOracle.java
+  s_3cd88bfdbce5e7::t_aaaaa140e7f590 1-3,5-15,17-18,20-25,28,30-34
+  s_3cd88bfdbce5e7::t_e5cc669417ffca 26-27,29
+  s_3cd88bfdbce5e7::t_0b8ce338f2894f 4,16
+  s_3cd88bfdbce5e7::t_c5c294aac0e695 19
+docs/port-completion/research/wave-9-wiki.json
+  s_3cd88bfdbce5e7::t_e527efdb8df79f 3-79
+  s_3cd88bfdbce5e7::t_74bfb9f168283e 1-2,80
+docs/port-completion/research/wave-10-verification.json
+  s_3cd88bfdbce5e7::t_782bbbb1683e6e 1-420
+server/src/lostcity/entity/EntityList.test.ts
+  s_3cd88bfdbce5e7::t_c30bc4589fe584 11-23
+  s_3cd88bfdbce5e7::t_5bd3d6a4db202d 1-10
+tools/oracle/ConsumableButtonOracle.java
+  s_3cd88bfdbce5e7::t_7a064f04d964f0 1-2,4-9,11
+  s_3cd88bfdbce5e7::t_58347ff2793058 3
+  s_3cd88bfdbce5e7::t_6ba93bd88b0136 10
+docs/port-completion/research/wiki-2019-manifest.json
+  s_3cd88bfdbce5e7::t_0b3bcac7f22b03 11-12,14-25,29-30,32-45,49-50,52-63,67-68,70-83,87-88,90-101,105-106,108-121,125-126,128-141,145-146,148-161,165,167-168,172-173,175-204,208-209,211-224,228-229,231-242,246-247,249-262,266-267,269-282,286,288-289,293,295-296,300-301,303-316,320-321,323-334,338-339,341-354,358-359,361-374,378-379,381-392,396-397,399-410,414-415,417-428,432-433,435-448,452-453,455-466,470-471,473-484,488-489,491-502,506-507,509-520,524-525,527-540,544-545,547-558,562-563,565-576,580-581,583-594,598,600-601,605-606,608-619,623-624,626-637,641-642,644-655,659-660,662-673,677-678,680-691,695-696,698-709,713-714,716-727
+  s_3cd88bfdbce5e7::t_e783458f2beb65 2,728-823
+  s_3cd88bfdbce5e7::t_ae3463f93f5183 469
+  s_3cd88bfdbce5e7::t_bb6a4351ec4623 1,3-10,13,26-28,31,46-48,51,64-66,69,84-86,89,102-104,107,122-124,127,142-144,147,162-164,166,169-171,174,205-207,210,225-227,230,243-245,248,263-265,268,283-285,287,290-292,294,297-299,302,317-319,322,335-337,340,355-357,360,375-377,380,393-395,398,411-413,416,429-431,434,449-451,454,467-468,472,485-487,490,503-505,508,521-523,526,541-543,546,559-561,564,577-579,582,595-597,599,602-604,607,620-622,625,638-640,643,656-658,661,674-676,679,692-694,697,710-712,715,824-826
+docs/port-completion/research/wave-11-verification.json
+  s_3cd88bfdbce5e7::t_8c0a9fbc79a670 1-763
+server/src/lostcity/entity/PotionPreferences.test.ts
+  s_3cd88bfdbce5e7::t_d9f059a47ac5c2 1-7
+server/src/lostcity/tools/enum-cache-verification.ts
+  s_3cd88bfdbce5e7::t_7fd296f379e266 86-87,89
+  s_3cd88bfdbce5e7::t_782e7f48aa7512 19,142-143
+  s_3cd88bfdbce5e7::t_1a06f4e368c990 105
+  s_3cd88bfdbce5e7::t_19234fd92a198c 137-140
+  s_3cd88bfdbce5e7::t_672ebdb483f70c 155
+  s_3cd88bfdbce5e7::t_8eb2a1e3fcc966 26-64,68-73,78,97-102,132-133,135-136,141,144-153,172
+  s_3cd88bfdbce5e7::t_238f4f8dc22d40 2
+  s_3cd88bfdbce5e7::t_f3feccbcc2d824 11,74-77,96
+  s_3cd88bfdbce5e7::t_4ccabd5cf07748 13-16
+  s_3cd88bfdbce5e7::t_44e22e6b8379fe 134
+  s_3cd88bfdbce5e7::t_dfad9906759b0f 128-131,171
+  s_3cd88bfdbce5e7::t_cb9b7db3eab008 67
+  s_3cd88bfdbce5e7::t_3d3e874142ae82 12,17-18,20-21,156-157
+  s_3cd88bfdbce5e7::t_ebac24cea92fcc 1,3-5,7-10,22-25,113,115-127,154,158-163,166-170,173
+  s_3cd88bfdbce5e7::t_296fba7061dc71 114
+  s_3cd88bfdbce5e7::t_c5165e323b1fa5 6
+  s_3cd88bfdbce5e7::t_32a95e5dfc08bc 83,88,93
+  s_3cd88bfdbce5e7::t_842743c124e077 109-111
+  s_3cd88bfdbce5e7::t_c64bccefb476bb 65-66,79-82,84-85,90-92,94-95,103-104,106-108,112,164-165,174-175
+docs/port-completion/tools/audit-cache-profiles.mjs
+  s_3cd88bfdbce5e7::t_83607d4bb29e60 1-22
+tools/client910/src/floorlight.rs
+  s_3cd88bfdbce5e7::t_761869918b8916 39-40,81,164-166,246
+docs/port-completion/tools/survey-scripts.py
+  s_3cd88bfdbce5e7::t_fb6de5d13c2883 1-10,12,14-19,22-24,26-46
+  s_3cd88bfdbce5e7::t_4b82b564da714d 11,13,20
+  s_3cd88bfdbce5e7::t_e9fd3789d5bd0e 21,25
+docs/port-completion/research/script-survey.json
+  s_3cd88bfdbce5e7::t_fb6de5d13c2883 1-7,16-20,22-55,76-77,79,81-91,93,95-108,119,124-127,129,132-133,136,138-152,155-168,170-174,176-199,201,203-235,237-264,277,279-340,342-510,512-520,522-581,583-593,595-639,642-644,646-652,654-724,727-800,802-870,872-894,896-898,900-907,909-912,914-919,921-925,927-959,962-1012,1022-1050,1052-1822,1827-1836,1844-1860,1862-1879,1886-1903,1905,1907-2025,2030-2519,2523-2525,2527-2588,2590-5596,5598-6157,6159-6518,6520-6531,6533-11004,11006-20982,20993-20994,20996-21008,21014-21048,21050-21056,21058-21073,21087-21088,21093-21094,21096-21098,21101-21104,21107-21108,21110,21114,21116-21117,21120-21130,21132-21133,21137-21186,21190-21191,21194,21196-21199,21201-21214,21216-21218,21220-21231,21233-21298,21308-21315,21319-21332,21351-21363,21365-21383,21385,21388-21405,21407-21419,21421-21423,21426-21430,21433-21438,21440,21445,21448-21449,21453-21470,21472-21473,21476-21482,21484-21488,21490-21492,21495-21502,21504-21508,21510-21513,21515-21525,21531-21565,21567-21572,21574-21577,21580-21581,21585,21587-21589,21592,21600-21604,21606-21609,21611-21662,21664-25705,25712-26100,26117-26263,26268,26270-63360
+  s_3cd88bfdbce5e7::t_4345b0e9fc51dc 56-75,78,80,92,94,109-118,120-123,128,130-131,134-135,137,153-154,175,200,202,236,265-276,278,341,511,521,582,594,640-641,645,653,725-726,801,908,913,960-961,1013-1021,1051,1823-1826,1837-1843,1861,1880-1885,1904,1906,2026-2029,2520-2522,2526,2589,5597,6158,6519,6532,11005,20983-20992,20995,21009-21013,21049,21057,21074-21086,21089-21092,21095,21099-21100,21105-21106,21109,21111-21113,21115,21118-21119,21131,21134-21136,21187-21189,21192-21193,21195,21200,21215,21219,21232,21299-21307,21316-21318,21333-21350,21364,21384,21386-21387,21406,21420,21424-21425,21431-21432,21439,21441-21444,21446-21447,21450-21452,21471,21474-21475,21483,21489,21493-21494,21503,21509,21514,21526-21530,21566,21573,21578-21579,21582-21584,21586,21590-21591,21593-21599,21605,21610,21663,25706-25711,26101-26116,26264-26267,26269
+  s_3cd88bfdbce5e7::t_9dc501fe804b68 8-15,21,169,871,895,899,920,926
+docs/port-completion/research/wave-5-verification.json
+  s_3cd88bfdbce5e7::t_d806aad0ac9a76 1-193
+server/src/lostcity/script/ServerScriptCommands.ts
+  s_3cd88bfdbce5e7::t_a6626b08763bc5 70
+docs/port-completion/graphics-aa-bloom-progress.md
+  s_3cd88bfdbce5e7::t_6e5b0f0e5334c9 79-82
+  s_3cd88bfdbce5e7::t_8678634e7bab88 28-33,64-65,89
+  s_3cd88bfdbce5e7::t_38131d161494ed 1-12,17-27,34-63,69-78,83-88,90-92,94-99
+  s_3cd88bfdbce5e7::t_4dadd48f6b0e82 13-16,66-68,93
+server/data/src/gamevals/README.md
+  s_4903f2dfae6f29::t_d8a73f6fdc0243 1-46
+tools/client910/src/ui_player_state.rs
+  s_3cd88bfdbce5e7::t_0162d8482042af 62-74,76-77,92,96
+  s_3cd88bfdbce5e7::t_04c972cf63c618 22-23,75,93-95
+tools/oracle/GenerateIconRaster.java
+  s_3cd88bfdbce5e7::t_b6c68eaa4aa0d2 1-45,47-110,112-115
+  s_3cd88bfdbce5e7::t_f1d2125b59c059 46
+  s_3cd88bfdbce5e7::t_d8e7820abe4e2e 111
+server/src/lostcity/entity/Settings.integration.test.ts
+  s_3cd88bfdbce5e7::t_88e6f1951bcaa6 56
+  s_3cd88bfdbce5e7::t_bb7d71069cbe62 1-27,29-30,32-48,50-55,57,69
+  s_3cd88bfdbce5e7::t_b1862cbd6d737a 28,31,58-68
+  s_3cd88bfdbce5e7::t_301a420c635541 76
+  s_3cd88bfdbce5e7::t_327504a5d965e0 70-75,77-79
+  s_3cd88bfdbce5e7::t_bac59733244aa9 80-94
+  s_3cd88bfdbce5e7::t_cccd3ea3482938 49
+docs/port-completion/research/wave-4-verification.json
+  s_3cd88bfdbce5e7::t_73ca09b80195ca 1-266
+server/src/lostcity/definitions/SettingsWindowDefinitions.ts
+  s_3cd88bfdbce5e7::t_fcf75abb25e53f 1-39
+server/src/lostcity/entity/EntityList.ts
+  s_3cd88bfdbce5e7::t_14c5e194fd477e 5-6,14,22,64,69-77,79,86,92
+tools/client910/src/player_shadow.rs
+  s_3cd88bfdbce5e7::t_bbb21f63737505 187,195-201,237
+  s_3cd88bfdbce5e7::t_602ebe717a83b2 188-193
+  s_3cd88bfdbce5e7::t_7f15d543cc89c6 194
+tools/client910/src/entities910/animation_state.rs
+  s_3cd88bfdbce5e7::t_faa85a11904cf1 347-376
+  s_3cd88bfdbce5e7::t_29b2dd10ac49a2 149-159,164
+docs/port-completion/research/wave-2-verification.json
+  s_3cd88bfdbce5e7::t_ff29fe491598a3 1-95
+tools/client910/src/ui_paint.rs
+  s_3cd88bfdbce5e7::t_19acf0c99ef837 436
+  s_3cd88bfdbce5e7::t_6ecb83861351e6 375-377
+  s_3cd88bfdbce5e7::t_420c6f4a9de2a8 374,378-383
+  s_3cd88bfdbce5e7::t_c8b09c453723fe 373
+server/src/lostcity/entity/Animations.integration.test.ts
+  s_3cd88bfdbce5e7::t_d631906e02e543 70,82-84,86-91,93-94
+  s_3cd88bfdbce5e7::t_40711d16aaa404 80
+  s_3cd88bfdbce5e7::t_2e51c2f957af1c 1-69,71-79,81,92,95-100
+  s_3cd88bfdbce5e7::t_baaa8f41b2ae5b 85
+docs/port-completion/tools/pin-inputs.mjs
+  s_3cd88bfdbce5e7::t_01d12f98f3d7ce 40-41,59-60
+  s_3cd88bfdbce5e7::t_9436a3e9f69bf5 1-39,42-58,61-70
+tools/client910/src/net.rs
+  s_3cd88bfdbce5e7::t_021647fff7776a 1444,1446,1459
+  s_3cd88bfdbce5e7::t_ef4527ae66c54e 829,838,878,880,905,907,923-924,928-929
+  s_3cd88bfdbce5e7::t_90fea7211406fd 95-105,155,158,161,166,174,176,178,182-185
+  s_3cd88bfdbce5e7::t_06037fd2612a7c 33-36,43-45,201,205-206,209,817,821-823,985,1234,1443
+  s_3cd88bfdbce5e7::t_3b2cbf0c1896eb 830,858-860,865-870,895-897,1021-1023
+  s_3cd88bfdbce5e7::t_f7f2d59cb6b4fc 837,1514
+  s_3cd88bfdbce5e7::t_65b5d46bed5bbf 1968,1984-2013
+  s_3cd88bfdbce5e7::t_0145ce6d628f59 186,737-748,756-757
+  s_3cd88bfdbce5e7::t_2c4c1509fd9fbd 144-151
+  s_3cd88bfdbce5e7::t_b42c7e6a751c29 37-38,1965-1967
+  s_3cd88bfdbce5e7::t_cffeda69604507 1236
+  s_3cd88bfdbce5e7::t_540d8401e5e7eb 1292,1500,1543
+  s_3cd88bfdbce5e7::t_c3f2bb2e0b2282 798,801
+  s_3cd88bfdbce5e7::t_014b794da6092d 1303,1316,1319,1515-1517,1519-1521,1554,1556,1572,1575
+  s_3cd88bfdbce5e7::t_7c693dd3e86458 160,163,168-170
+  s_3cd88bfdbce5e7::t_22b20fc8c2f9fb 1238,1251
+  s_3cd88bfdbce5e7::t_a1c8c3c133aaae 902-904
+  s_3cd88bfdbce5e7::t_7ad29e61598eac 964
+  s_3cd88bfdbce5e7::t_c98bf86dd368f6 715-717,720-721,724-727,791
+  s_3cd88bfdbce5e7::t_26bc072a521652 111,120,131-139,718,749-755
+  s_3cd88bfdbce5e7::t_9a0faa709cceb3 933,935,949,952,986,988,1002,1005,1027,1029
+  s_3cd88bfdbce5e7::t_c65bf300ce11da 1166
+  s_3cd88bfdbce5e7::t_949dbe0d69ec8e 719,722
+  s_3cd88bfdbce5e7::t_ff2a1c6cb54f85 106-110,112-119,121-130,141-143,152-154
+  s_3cd88bfdbce5e7::t_c894e752a70bab 723
+  s_3cd88bfdbce5e7::t_ea7d92160d3b4c 1167,1264,1286,1291,1472,1494,1499,1542
+  s_3cd88bfdbce5e7::t_5810cabc32d0d5 1523,2015-2033
+  s_3cd88bfdbce5e7::t_d4f5bcd2f35c94 1159
+  s_3cd88bfdbce5e7::t_ae6db02444423a 1970-1983,2014
+  s_3cd88bfdbce5e7::t_2d0e93ea2fb6af 2119-2121,2246
+  s_3cd88bfdbce5e7::t_1191f81b551ec0 167
+  s_3cd88bfdbce5e7::t_918e2b9a452a03 187
+  s_3cd88bfdbce5e7::t_e395ca3c22ebd4 1511-1513
+  s_3cd88bfdbce5e7::t_c5228111a04976 1522
+  s_3cd88bfdbce5e7::t_51a320f4b03b72 1524-1526
+  s_3cd88bfdbce5e7::t_f4ed345eeb7ebe 1969
+tools/client910/src/ui_interaction_tests.rs
+  s_3cd88bfdbce5e7::t_7368b4f3efea83 335-380,382-392
+  s_3cd88bfdbce5e7::t_1ae9870fcff04d 1-8,12-16,18-61,63-75,77-98,100-108,110-121,123-131,133-147,149-156,158-166,168-185,187-207,209-217,219-246,249-272,274-276,278,280-294,296,298-302,304-306,393
+  s_3cd88bfdbce5e7::t_8a61d4f8d04898 394-444
+  s_3cd88bfdbce5e7::t_168894ce1533c8 9,11,307-334
+  s_3cd88bfdbce5e7::t_ccc85dfc7b4ee2 303
+  s_71039cacf5face::t_060d72652e4128 10,17,62,76,99,109,122,132,148,157,167,186,208,218,247-248,273,277,279,295,297,381
+tools/client910/src/live_scene.rs
+  s_3cd88bfdbce5e7::t_e7d2eeb5e7ee73 67-69,71
+  s_3cd88bfdbce5e7::t_044988f5e3a532 16-18,44-45,102-104
+tools/oracle/run-animation-updates.sh
+  s_3cd88bfdbce5e7::t_c023206f525c46 1-36
+server/src/lostcity/definitions/GameplaySettingsDefinitions.ts
+  s_3cd88bfdbce5e7::t_a9c8c708d6fdef 5,38-40,46,48
+  s_3cd88bfdbce5e7::t_3fa89749fcca3f 1-4,6-37,41-45,47,49-67
+server/src/lostcity/network/ClientSocket.test.ts
+  s_3cd88bfdbce5e7::t_f08e3140691c04 4,83-94,98-103
+  s_3cd88bfdbce5e7::t_cfd4cbd24d9106 29-43,45-51,53-54,56-82,135
+  s_3cd88bfdbce5e7::t_782e7f48aa7512 2
+  s_3cd88bfdbce5e7::t_0b0b37b91acf11 145
+  s_3cd88bfdbce5e7::t_6c8290e2d73439 44,52,55
+  s_3cd88bfdbce5e7::t_45d1b56857a7a6 95-97,104-107,120-134
+  s_3cd88bfdbce5e7::t_212d5de97415b5 1,3,6-28,149
+  s_3cd88bfdbce5e7::t_ecea964a8ceac1 108-119
+  s_3cd88bfdbce5e7::t_81aae1727c0d65 146
+  s_3cd88bfdbce5e7::t_f9e57b2d440068 136-144,147-148
+  s_3cd88bfdbce5e7::t_d57add9e9b2bac 5
+server/src/lostcity/entity/EquipmentPreview.test.ts
+  s_3cd88bfdbce5e7::t_7bdc7578bb5138 1
+  s_3cd88bfdbce5e7::t_213316e69a38db 2-19
+tools/oracle/phase-g/animation-fixtures.py
+  s_3cd88bfdbce5e7::t_1931b9b90ff157 12-17
+server/src/lostcity/entity/ClientVarStore.ts
+  s_3cd88bfdbce5e7::t_409219fd046625 44,49
+  s_3cd88bfdbce5e7::t_432faa98ac1352 1-43,45-48,50-56,65-94
+  s_3cd88bfdbce5e7::t_b1862cbd6d737a 57-64
+server/src/lostcity/definitions/GameplaySettingsDefinitions.test.ts
+  s_3cd88bfdbce5e7::t_b3d6b7fc2a012f 1-14
+tools/client910/src/ui_vars_oracle.rs
+  s_3cd88bfdbce5e7::t_abea042bca67d4 460,466-467
+server/src/lostcity/inventory/Container.ts
+  s_3cd88bfdbce5e7::t_f0b0e258867d92 52-57,132-137,139-140,142-145
+  s_3cd88bfdbce5e7::t_b70132da0cbe9b 77-78,123,128-131,163
+  s_3cd88bfdbce5e7::t_b3d4009b94ef9c 152
+  s_3cd88bfdbce5e7::t_099ed2cfa549a4 90,92-93,99-100,138
+  s_3cd88bfdbce5e7::t_14c5a2a391ef41 141
+  s_3cd88bfdbce5e7::t_fd4eb50eb75994 1-51,58-76,79-89,91,94-98,101-122,124-127,146-151,153-162,164-166
+server/src/lostcity/entity/Player.test.ts
+  s_3cd88bfdbce5e7::t_22ef87284e7124 1-60
+server/src/lostcity/entity/Follow.integration.test.ts
+  s_3cd88bfdbce5e7::t_c30bc4589fe584 96-125,127-129
+  s_3cd88bfdbce5e7::t_ccab2758161d53 83
+  s_3cd88bfdbce5e7::t_12d8a0437f2865 94
+  s_3cd88bfdbce5e7::t_40829591e869be 13
+  s_3cd88bfdbce5e7::t_2a3db927ff3b53 17-20,25-26
+  s_3cd88bfdbce5e7::t_6d41afc826b51a 77-79,82,87
+  s_3cd88bfdbce5e7::t_129dbf0bb530f3 29,31-33
+  s_3cd88bfdbce5e7::t_9a60dfbaf55906 1-4,27-28,30,80-81,85-86,88-93
+  s_3cd88bfdbce5e7::t_515772f2953142 8
+  s_3cd88bfdbce5e7::t_7f321e11864e37 24
+  s_3cd88bfdbce5e7::t_13b9343ddfdf68 59
+  s_3cd88bfdbce5e7::t_5bd3d6a4db202d 5-7,21-23,34-58,68,95
+  s_3cd88bfdbce5e7::t_a3ab0b9bd2c1a9 63
+  s_3cd88bfdbce5e7::t_f247201f22abbe 65
+  s_3cd88bfdbce5e7::t_3731f7da8bbf3f 84
+  s_3cd88bfdbce5e7::t_df330d7b35a7dc 69-76
+  s_3cd88bfdbce5e7::t_33a8342727fa55 9-12,14-16,60-62,64,66-67
+  s_3cd88bfdbce5e7::t_5199a3f3ccccee 126
+server/src/lostcity/engine/Lobby.ts
+  s_3cd88bfdbce5e7::t_58b20ba84ffdc9 467
+tools/oracle/PlayerStatOracle.java
+  s_3cd88bfdbce5e7::t_6bcf7993f7f050 1-61
+tools/client910/src/protocol910/pack_runtime.rs
+  s_3cd88bfdbce5e7::t_ef8a4e4667297f 24
+server/src/lostcity/entity/EquipmentStats.ts
+  s_3cd88bfdbce5e7::t_c64414b502fc71 33-37
+  s_3cd88bfdbce5e7::t_81371a08745588 53-55
+  s_3cd88bfdbce5e7::t_656df76b7a7bf6 28-32
+  s_3cd88bfdbce5e7::t_0fccc65b589584 1-6,8-12,14-22,24-27,38-50,52,62,69,96,105,128,135-142
+  s_3cd88bfdbce5e7::t_f36e4ce20472a1 7,13,51,56-61,63-68,70-95,97-104,106-127,129-134
+  s_3cd88bfdbce5e7::t_97267fa0a6fb2b 23
+tools/client910/src/dynamic_scene.rs
+  s_3cd88bfdbce5e7::t_1245864f0ed690 48,332-338
+  s_3cd88bfdbce5e7::t_e7d2eeb5e7ee73 49,64-69,91-93,106,321
+  s_3cd88bfdbce5e7::t_bbb21f63737505 47,119,369
+tools/client910/src/light_animation.rs
+  s_3cd88bfdbce5e7::t_761869918b8916 1-35,37-97,99-110
+  s_3cd88bfdbce5e7::t_52be986a5b41f1 36,98
+tools/client910/src/ui_backend.rs
+  s_3cd88bfdbce5e7::t_d1e906f1b3b312 20,27,30-32,35,45-46,71-72,74,89-93,253,267,310,315-322
+server/src/lostcity/entity/PlayerResources.ts
+  s_3cd88bfdbce5e7::t_e3d493222d24ab 1,3-7,10-24,29-32
+  s_3cd88bfdbce5e7::t_9e6d2a436a4e4b 26
+  s_3cd88bfdbce5e7::t_1a1b6926cba905 25,27-28
+  s_3cd88bfdbce5e7::t_1dd99013933673 2,8-9
+tools/oracle/UiIconRasterOracle.java
+  s_3cd88bfdbce5e7::t_50a31710b8a7f7 1-31
+server/src/lostcity/tools/verify-player-appearance.ts
+  s_3cd88bfdbce5e7::t_fabcfa23a6fa81 1,5,7,10-16,18-29,40-42,44-54
+  s_3cd88bfdbce5e7::t_d5624e01ed7939 2-4,6,9
+  s_3cd88bfdbce5e7::t_6c2ae51549cfee 17,30,35,43
+  s_3cd88bfdbce5e7::t_6c1e25411f769b 8,31
+  s_3cd88bfdbce5e7::t_5657c2c0ebd694 32-34,36-39
+docs/port-completion/areas/01-world-interactions.md
+  s_3cd88bfdbce5e7::t_4b82b564da714d 31-33
+  s_3cd88bfdbce5e7::t_56d7c0c22005aa 8-12
+  s_3cd88bfdbce5e7::t_afa94de7ed7772 76-89
+  s_3cd88bfdbce5e7::t_be0b6763846a79 1-7,13-30,34-75
+  s_3cd88bfdbce5e7::t_d737f37ae33424 90-93
+docs/port-completion/research/enum-audit.json
+  s_3cd88bfdbce5e7::t_c211e931c138f0 1-55936
+tools/client910/src/ui_leaf.rs
+  s_3cd88bfdbce5e7::t_c8c1dec6baf42e 103-108
+  s_3cd88bfdbce5e7::t_a8813b6d10040a 109-118
+tools/client910/src/ui_icon_raster.rs
+  s_3cd88bfdbce5e7::t_50a31710b8a7f7 147-166,168-172,175-181,183-197,199-214,216-231,233-262,264-276
+  s_3cd88bfdbce5e7::t_f1d2125b59c059 1-3,5-31,33-45,47-122,124-134,136-139,141-143,145-146
+  s_3cd88bfdbce5e7::t_f357f9c63f54da 4,32,46,123,135,140,144,167,173-174,182,198,215,232,263
+docs/port-completion/tools/recheck-cache.mjs
+  s_3cd88bfdbce5e7::t_caedf5a9f6e87e 1-65
+docs/port-completion/graphics-runtime-progress.md
+  s_3cd88bfdbce5e7::t_de1e763785b98e 1-74
+docs/port-completion/audit-3.md
+  s_3cd88bfdbce5e7::t_7ed2f9bd9d55c2 1-173
+server/src/jagex/network/protocol/ServerProt.ts
+  s_3cd88bfdbce5e7::t_f967f61891cf14 229,231-240,244-248
+  s_3cd88bfdbce5e7::t_a229b7654c6d9d 426-438
+  s_3cd88bfdbce5e7::t_e0ac1ba6204cdc 767-768,770,772,796,798-801
+  s_3cd88bfdbce5e7::t_1af8f2054e7600 769
+  s_3cd88bfdbce5e7::t_3d21a55c4e9fab 797
+  s_3cd88bfdbce5e7::t_b37e76c7b3a139 241-243
+  s_3cd88bfdbce5e7::t_da65410fccd0c0 410-415
+  s_3cd88bfdbce5e7::t_d80be753d40b55 292-301
+  s_3cd88bfdbce5e7::t_faf9286531b685 423-424,440-446,449-461
+  s_3cd88bfdbce5e7::t_7acca0bae744da 439
+  s_3cd88bfdbce5e7::t_2d26fb1396a609 466-468,478
+  s_3cd88bfdbce5e7::t_750911cf1262d3 585,751,756
+  s_3cd88bfdbce5e7::t_8a54e32dbb8e76 607-617,671-682,687,691,726,728,747-750,752-755,757
+  s_3cd88bfdbce5e7::t_243d3aa996a939 402-409
+  s_3cd88bfdbce5e7::t_8ef52bbea84340 224-228,249
+  s_3cd88bfdbce5e7::t_5338084ea7cb81 7,623-624,684,688-689,774-775,786-791
+  s_3cd88bfdbce5e7::t_72cb31e7907f95 58,87,625,660,683,773,792-794
+  s_3cd88bfdbce5e7::t_dc3ed9e7633cb1 278-291
+  s_3cd88bfdbce5e7::t_428e102a065aec 418-420,422
+  s_3cd88bfdbce5e7::t_6c52830ea2364c 253-277
+  s_ce51cca42e0bed::t_bd168046f0b086 425,758
+tools/client910/src/ui_components.rs
+  s_3cd88bfdbce5e7::t_d0f5500e3694e1 30-31,55
+server/src/lostcity/script/ScriptRunner.test.ts
+  s_3cd88bfdbce5e7::t_d01743fdf693d1 54-57
+  s_3cd88bfdbce5e7::t_eb90d514d6a55d 3-6,149-171
+  s_3cd88bfdbce5e7::t_834f3cb3d20113 1,7-10,12-15,18-23,25-53,58-62,115
+  s_3cd88bfdbce5e7::t_dc9fa3e5c637f1 2,16-17,65-101,104-106,109-114,117,119,122-129,141-148
+  s_3cd88bfdbce5e7::t_42522d6b13a12d 11,24,63-64,102-103,107-108
+  s_3cd88bfdbce5e7::t_75161c0884adbb 116,118,120-121,172
+  s_3cd88bfdbce5e7::t_45735921385dcc 130-140
+docs/port-completion/areas/06-audio.md
+  s_3cd88bfdbce5e7::t_86cd93c4fbf24a 1-65
+  s_3cd88bfdbce5e7::t_afa94de7ed7772 66-82
+  s_3cd88bfdbce5e7::t_d737f37ae33424 83-86
+docs/port-completion/research/graphics-aa-bloom-verification.json
+  s_3cd88bfdbce5e7::t_632fe5a0fc33a7 1-518
+docs/port-completion/tools/audit-routes.mjs
+  s_3cd88bfdbce5e7::t_a49c893e7c3118 45-46
+  s_3cd88bfdbce5e7::t_67a37c063b6b61 1-44,47
+tools/client910/src/ui_menu_input.rs
+  s_3cd88bfdbce5e7::t_a8813b6d10040a 24-33,108,110-118,120
+  s_3cd88bfdbce5e7::t_2c202069d5d0eb 1-18,20-23,34-39,73-83,85-93,95-97,99-107,121-125,127-138,140-151,158-162,164-197,199-231,237-263,265-270
+  s_3cd88bfdbce5e7::t_7582285b934f3d 232-233,236
+  s_3cd88bfdbce5e7::t_7704fbecf98037 40-65,67-68,70-72,234-235
+  s_3cd88bfdbce5e7::t_ea18a2f24a126f 152-157
+  s_3cd88bfdbce5e7::t_38b072191c5ab4 19,66,69,84,94,98,109,119,126,139,163,198,264
+server/src/lostcity/entity/PlayerSkills.ts
+  s_3cd88bfdbce5e7::t_3793d5dfc5cabc 1-92,103
+  s_3cd88bfdbce5e7::t_346802ba07a000 93-102
+server/src/lostcity/definitions/EquipmentDefinitions.ts
+  s_3cd88bfdbce5e7::t_52fc73bfef1052 180-183,189-193,197
+  s_3cd88bfdbce5e7::t_97f94fc0ae0261 88-89,102-103
+  s_3cd88bfdbce5e7::t_6d2f92815eab21 150-151,157-163
+  s_3cd88bfdbce5e7::t_e6bcaaa68d99fb 44,82,110,184,186,188,194
+  s_3cd88bfdbce5e7::t_e0418c3b5f3d90 132-138
+  s_3cd88bfdbce5e7::t_16faff7146dd9b 60-63,145,153
+  s_3cd88bfdbce5e7::t_2fe412274b94d6 195
+  s_3cd88bfdbce5e7::t_453cee9ec1e71f 4,206
+  s_3cd88bfdbce5e7::t_04ecf601290e99 185
+  s_3cd88bfdbce5e7::t_a2a61afe8cf600 53-54,97,107
+  s_3cd88bfdbce5e7::t_425a5ed374a708 152,154-155
+  s_3cd88bfdbce5e7::t_90aed15512e190 207-208
+  s_3cd88bfdbce5e7::t_502f1e62fad5d2 164-168,171-172,175-176,198-199,201-202
+  s_3cd88bfdbce5e7::t_677bff8ce64258 79,196
+  s_3cd88bfdbce5e7::t_ef679f0a7f429b 35-36,78,127-128
+  s_3cd88bfdbce5e7::t_3293368dcab435 1-3,5-32,37,45-52,68-77,83-87,90-96,98-101,104-106,108-109,111-124,130,140-144,146-149,156,169-170,203-205,209-214
+  s_3cd88bfdbce5e7::t_3495d4c24859b7 200
+  s_3cd88bfdbce5e7::t_8bf24b22c2bc72 131
+  s_3cd88bfdbce5e7::t_bc79a491e5e238 177-179,187
+  s_3cd88bfdbce5e7::t_2b7b11450433ad 43,81,129
+  s_3cd88bfdbce5e7::t_5a928138e0e7fc 38-42,55-59,64-67,80,125,139
+  s_3cd88bfdbce5e7::t_c461aa9d207484 33-34,126,173-174
+server/src/lostcity/inventory/Equipment.test.ts
+  s_3cd88bfdbce5e7::t_52a9779abb4df1 7-14
+  s_3cd88bfdbce5e7::t_a2d5d6032f60d2 19,23,25
+  s_3cd88bfdbce5e7::t_a31f64524b3347 34-43
+  s_3cd88bfdbce5e7::t_748b590c552be1 24,26
+  s_3cd88bfdbce5e7::t_c2313d1cd43b24 1-6,15-18,20-22,27-33
+tools/client910/src/ui_vars.rs
+  s_3cd88bfdbce5e7::t_6cde3097e3d3e4 68,125
+  s_3cd88bfdbce5e7::t_1fc08786299723 139,146,163
+docs/port-completion/research/wave-10-wiki.json
+  s_3cd88bfdbce5e7::t_92836f4714f1ff 80-81,85-88,92
+  s_3cd88bfdbce5e7::t_1d82ad0b3e0731 1-4,10-13,25-26,33-36,93-94,96
+  s_3cd88bfdbce5e7::t_5cef7b2f517342 5-9,14-24,27-32,37-47,50-52,57-63,66-68,73-79,82-84,89-91,95
+  s_3cd88bfdbce5e7::t_f9ab92421afd7c 48-49,53-56,64-65,69-72
+tools/client910/src/game_runtime.rs
+  s_3cd88bfdbce5e7::t_e7d2eeb5e7ee73 289
+tools/client910/src/ui_hook_host.rs
+  s_3cd88bfdbce5e7::t_2a4228eb6120a0 397-403,419-421
+  s_3cd88bfdbce5e7::t_ab4986629f8b94 138
+  s_3cd88bfdbce5e7::t_bd264b1fb69ac6 309
+  s_3cd88bfdbce5e7::t_737e87e35afeb9 426-433,450-452,495-498
+  s_3cd88bfdbce5e7::t_c05fc5fa1e622b 54,56-59,61-63,67-68,74-76,84,94,104,117-120,310-311,318-319,321-322,343
+  s_3cd88bfdbce5e7::t_8de097c8eb2188 55
+  s_3cd88bfdbce5e7::t_0996bac54368b7 141-150
+  s_3cd88bfdbce5e7::t_206ba80979898a 60
+  s_3cd88bfdbce5e7::t_51550d8ca4548f 64-66,69-73,77-83,85-93,95-103,105-116,123-135,170-173,175-179,181-186,307-308,312-317,323-332,335-336,339-342,434-449,453-494
+  s_3cd88bfdbce5e7::t_3a62fbcd8d3eab 164-166
+  s_3cd88bfdbce5e7::t_1c34de996aa379 284-285,333-334,348-349
+tools/client910/src/player_picking_tests.rs
+  s_3cd88bfdbce5e7::t_a7a3bd75a6de60 4-5,89
+  s_3cd88bfdbce5e7::t_80dc1f5d2af5ff 1-3
+  s_3cd88bfdbce5e7::t_0286a75f01d4a5 6-8,86-88
+docs/port-completion/research/wave-3-verification.json
+  s_3cd88bfdbce5e7::t_3c3719b3a362b6 101-102,141-149,163-168
+  s_3cd88bfdbce5e7::t_7152f31c5c11c6 1-100,103-140,150-162,169-260
+tools/client910/src/ui_settings_replay.rs
+  s_3cd88bfdbce5e7::t_9a536f5cb60785 3-23,26-36,41-46,48-74,120-144,146-151,153-168,172-175,180-208,210-257,259-266,269-276,280-294,299-323,325-333,347,358-364,370-392,394-395,397-421,425-443,447-492,494-495,497-512,515-532,534-538,540-543,546-548,550,552-558,560-570,572-573,580-600,619,621,624,686,704-705,776,792-793,801,809-810,818,832,835-836,844,867,869-870
+  s_3cd88bfdbce5e7::t_c0d2904861567a 178-179,209,267-268,279,295-296
+  s_3cd88bfdbce5e7::t_5e486bce2c2624 277,549,551,559
+  s_3cd88bfdbce5e7::t_7800c78a14daa3 96,98-100,109-111
+  s_3cd88bfdbce5e7::t_b7fcb59154d59d 87,90-95,97,101-106,114
+  s_3cd88bfdbce5e7::t_e9d0080b8084fc 445-446,575,577,871-872
+  s_3cd88bfdbce5e7::t_fcea27029da567 1-2,24-25,37-40,47,75-79,145,152,170-171,176-177
+  s_3cd88bfdbce5e7::t_52504642a3685c 606,622-623,646,654-669,673-675,706,737,766,794,845,847,852,854
+  s_3cd88bfdbce5e7::t_52ceb45b3ee551 258
+  s_3cd88bfdbce5e7::t_96cf1f6d8f57c0 755
+  s_3cd88bfdbce5e7::t_0d38b5e4e4d5c2 169
+  s_3cd88bfdbce5e7::t_a6bf1eb08a7081 80-86,88-89,107-108,112-113,115-119,578
+  s_3cd88bfdbce5e7::t_d7dc7f81171dc5 625-636,647-648,650-653
+  s_3cd88bfdbce5e7::t_cccd3ea3482938 334-336,338-344,346,348-354,356,365-369
+  s_3cd88bfdbce5e7::t_1691db065796af 357
+  s_3cd88bfdbce5e7::t_4cb78fee7c46e8 278
+  s_3cd88bfdbce5e7::t_bb7d71069cbe62 297-298,324,393,396,422-424,444,618
+  s_3cd88bfdbce5e7::t_0922c773a8a050 337,345,355,493,496,513-514,533,539,544-545,571,574,576,579,601-605,607-617,620,637-645,649,670-672,676-685,687-703,707-736,738-754,756-765,767-775,777-791,795-800,802-808,811-817,819-831,833-834,837-843,846,848-851,853,855-866,868
+docs/port-completion/backend.md
+  s_3cd88bfdbce5e7::t_b9b6089ad8361c 4,6-11
+  s_3cd88bfdbce5e7::t_fe36ead3343117 15-18,25
+  s_3cd88bfdbce5e7::t_e5c07e59a84d1b 19-21
+  s_3cd88bfdbce5e7::t_56d7c0c22005aa 22-24
+  s_3cd88bfdbce5e7::t_431b36539c1b25 1-3,5,12-14,26-39,42-46,57-88,92-164,172-204
+  s_3cd88bfdbce5e7::t_713a29f627e162 40-41,51-55
+  s_3cd88bfdbce5e7::t_8f4be1e8d8550c 47-50,56,89-91,165-171
+tools/client910/src/ui_models.rs
+  s_3cd88bfdbce5e7::t_d5089f5da5167e 2-11,13-17,31,46,51-59,61,74-96,101-109,117-136,138-184,188-204,208-216,218-242,247-257,259-268,270-271,274-285
+  s_3cd88bfdbce5e7::t_1245864f0ed690 111-112
+  s_3cd88bfdbce5e7::t_776b312869c936 1,12,18-30,32-45,48-50,62,73,97-100,110,114-116,137,217,243-246,258,269,272-273,286
+  s_3cd88bfdbce5e7::t_42143c20bff2b7 47,60,63-72,113
+  s_3cd88bfdbce5e7::t_8e0d1ecb1643f7 185-187,205-207
+docs/port-completion/implementation-wave-8.md
+  s_3cd88bfdbce5e7::t_9b365ebe6ceb63 1-102
+docs/port-completion/research/cache-survey.json
+  s_3cd88bfdbce5e7::t_45381a8f897d7f 1-29881
+docs/rust-port/12-client-completion.md
+  s_3cd88bfdbce5e7::t_94aaa64f4583d3 3-5
+server/data/players/accounts/1b70e8d6d0a21df7eaf6f847f224a1111a9fadf804b93f93c8206051b3bff003.json
+  s_3cd88bfdbce5e7::t_12f369fe86d87f 1
+server/data/players/player.json
+  s_4903f2dfae6f29::t_3c63a044595fd4 1
+server/data/src/gamevals/bas.pack
+  s_4903f2dfae6f29::t_ae8d5d73ad7629 1-4426
+server/data/src/gamevals/category.pack
+  s_4903f2dfae6f29::t_ab0241f1056791 1-2
+server/data/src/gamevals/clientscript.pack
+  s_4903f2dfae6f29::t_92d3565ae7d9df 1-4367
+server/data/src/gamevals/cursor.pack
+  s_4903f2dfae6f29::t_a8a61384ef3e0c 1-170
+server/data/src/gamevals/dbrow.pack
+  s_4903f2dfae6f29::t_223e127bf2f093 1-1328
+server/data/src/gamevals/dbtable.pack
+  s_4903f2dfae6f29::t_4e6cf6067e5369 1-44
+server/data/src/gamevals/enum.pack
+  s_4903f2dfae6f29::t_d11901a3cb910b 1-7770
+server/data/src/gamevals/fontmetrics.pack
+  s_4903f2dfae6f29::t_6a09c387a50ab4 1-2
+server/data/src/gamevals/graphic.pack
+  s_4903f2dfae6f29::t_92b3c03988148b 1-7287
+server/data/src/gamevals/headbar.pack
+  s_4903f2dfae6f29::t_77b63a6def2b5c 1-12
+server/data/src/gamevals/hitmark.pack
+  s_4903f2dfae6f29::t_e8310cf01ce9a3 1-287
+server/data/src/gamevals/inv.pack
+  s_4903f2dfae6f29::t_ac1ff90eeadf3c 1-820
+server/data/src/gamevals/loc.pack
+  s_4903f2dfae6f29::t_8595dda010351d 1-39297
+server/data/src/gamevals/loc.unverified.pack
+  s_4903f2dfae6f29::t_c112e608b7eda1 1-74949
+server/data/src/gamevals/mapelement.pack
+  s_4903f2dfae6f29::t_5e84a116f7d967 1-4598
+server/data/src/gamevals/material.pack
+  s_4903f2dfae6f29::t_096ce565c05709 1-11790
+server/data/src/gamevals/model.pack
+  s_4903f2dfae6f29::t_e89fec4776aba6 1-117217
+server/data/src/gamevals/npc.pack
+  s_4903f2dfae6f29::t_b2b60a2609c889 1-22812
+server/data/src/gamevals/npc.unverified.pack
+  s_4903f2dfae6f29::t_73e62c41f9be1c 1-3495
+server/data/src/gamevals/obj.pack
+  s_4903f2dfae6f29::t_40ac7b8e07d1af 1-30504
+server/data/src/gamevals/obj.unverified.pack
+  s_4903f2dfae6f29::t_39f863247b4e45 1-15939
+server/data/src/gamevals/param.pack
+  s_4903f2dfae6f29::t_0fae77c3b8855e 1-5019
+server/data/src/gamevals/quest.pack
+  s_4903f2dfae6f29::t_99b9c956c4c015 1-455
+server/data/src/gamevals/report.json
+  s_4903f2dfae6f29::t_2a4e174e259032 1-247
+server/data/src/gamevals/review/loc.mismatch.tsv
+  s_4903f2dfae6f29::t_e54a6e293d9085 1-402
+server/data/src/gamevals/review/npc.mismatch.tsv
+  s_4903f2dfae6f29::t_314a737cff2dcf 1-419
+server/data/src/gamevals/review/obj.mismatch.tsv
+  s_4903f2dfae6f29::t_e0ac1ff5fda4a6 1-2530
+server/data/src/gamevals/seq.pack
+  s_4903f2dfae6f29::t_3d0a939c4e844b 1-32987
+server/data/src/gamevals/struct.pack
+  s_4903f2dfae6f29::t_969443b998e63f 1-27160
+server/data/src/scripts/world/login.rs2
+  s_3cd88bfdbce5e7::t_cb79566ad524f8 10
+tools/client910/Cargo.lock
+  s_3cd88bfdbce5e7::t_6042be9522b057 365
+tools/client910/Cargo.toml
+  s_3cd88bfdbce5e7::t_e0279251129e01 21
+tools/client910/src/env.rs
+  s_3cd88bfdbce5e7::t_31bddf2a6c5c94 271-272,302
+tools/client910/src/scene_target_tests.rs
+  s_3cd88bfdbce5e7::t_2a984a97e1eb74 1-152
+tools/client910/src/texture.rs
+  s_3cd88bfdbce5e7::t_5888284cf603bb 1576-1577
+tools/client910/src/ui_cam2_packet.rs
+  s_3cd88bfdbce5e7::t_07676a0b954758 1-301
+tools/client910/src/ui_camera_controls_tests.rs
+  s_3cd88bfdbce5e7::t_b0b21e75f44d89 1-238
+tools/client910/src/ui_cursor_menu_tests.rs
+  s_3cd88bfdbce5e7::t_0aa42882498c45 1-70
+tools/client910/src/ui_cursor_tests.rs
+  s_3cd88bfdbce5e7::t_5229b5a8a2b0a2 1-179
+tools/client910/src/ui_icon_model.rs
+  s_3cd88bfdbce5e7::t_340242d5590976 1-570
+tools/client910/src/ui_icons.rs
+  s_3cd88bfdbce5e7::t_36679e9cb64b72 1-292
+tools/client910/src/ui_mouse.rs
+  s_3cd88bfdbce5e7::t_269d5f0bf30c52 1-46
+tools/client910/src/ui_obj_oracle.rs
+  s_3cd88bfdbce5e7::t_5f2883a398241d 1-67
+tools/client910/src/ui_properties_oracle.rs
+  s_3cd88bfdbce5e7::t_a9c8d09666e51f 205-213,274,296-298
+tools/client910/src/ui_run_replay.rs
+  s_3cd88bfdbce5e7::t_12977b2cbdb5d5 1-54
+tools/client910/src/ui_time.rs
+  s_3cd88bfdbce5e7::t_6710805fcebf6c 5-25,52-59,62-69,83-86,90-108
+tools/client910/tests/phase-g/session-checks.rs
+  s_3cd88bfdbce5e7::t_ee1e0e0846525c 94-96
+tools/oracle/CameraPacketOracle.java
+  s_3cd88bfdbce5e7::t_d198a4d2633270 1-38
+tools/oracle/UiIconModelOracle.java
+  s_3cd88bfdbce5e7::t_7f15a6a774af4c 1-38
+tools/oracle/UiObjectsOracle.java
+  s_3cd88bfdbce5e7::t_e3396b7410da0f 1-22
+tools/oracle/UiPropertiesOracle.java
+  s_3cd88bfdbce5e7::t_4d96c5ea0dec8f 20-21,64
+tools/oracle/cursor-reference.py
+  s_3cd88bfdbce5e7::t_7d27e5cfa7ee16 1-107
+tools/oracle/generate-icon-raster.sh
+  s_3cd88bfdbce5e7::t_19cc96dc3e92d5 1-13
+tools/oracle/run-camera-packets.sh
+  s_3cd88bfdbce5e7::t_871b1beeefd758 1-40
+tools/oracle/run-ui-icon-model.sh
+  s_3cd88bfdbce5e7::t_a64eb8dee6d2a8 1-11
+tools/oracle/run-ui-icon-raster.sh
+  s_3cd88bfdbce5e7::t_7023af465dccf1 1-12
+tools/oracle/run-ui-objects.sh
+  s_3cd88bfdbce5e7::t_a0445220b23f58 1-11
+tools/oracle/run-ui-properties.sh
+  s_3cd88bfdbce5e7::t_8b23d84f886cc2 27
+tools/oracle/ui-properties-reference.py
+  s_3cd88bfdbce5e7::t_aaf4bb2688e8e2 27
+tools/oracle/verify-inventory-proof.py
+  s_3cd88bfdbce5e7::t_d54a34e73300c9 1-20
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "d9a9be03746fc8b50cf3f03e147ef18947f5e040",
+  "prompts": {},
+  "sessions": {
+    "s_1b49a0261481f5": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_f62122b43ffed1mDZpslfmOt4J",
+        "model": "muse-spark-1.3-contributor"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    },
+    "s_3cd88bfdbce5e7": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a09407-505e-7d61-b937-4355768fe24a",
+        "model": "gpt-6-astra"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    },
+    "s_3ed0313a1a7b88": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a08d06-9603-7072-b879-f2dbf0aacaff",
+        "model": "gpt-6-astra"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    },
+    "s_4903f2dfae6f29": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "7526a676-d65f-42b1-88d4-db75835c1347",
+        "model": "claude-fable-5-1"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    },
+    "s_71039cacf5face": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0920b-a400-7e43-8cc7-b0b39a41a570",
+        "model": "gpt-6-astra"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    },
+    "s_ce51cca42e0bed": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a08920-c06e-7341-9e27-c1c8640fe492",
+        "model": "gpt-6-astra"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
