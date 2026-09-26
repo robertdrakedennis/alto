@@ -1,0 +1,322 @@
+tools/client910/src/app/tests.rs
+  s_bf99a93e97ab76::t_3bd78db91eaf49 1-433
+tools/oracle/run-actors.sh
+  s_bf99a93e97ab76::t_3bd78db91eaf49 34
+docs/port-completion/settings-cutover-progress.md
+  s_bf99a93e97ab76::t_3bd78db91eaf49 118,121,127
+tools/refactor/steps/q04-no-pack-ignore.py
+  s_bf99a93e97ab76::t_3bd78db91eaf49 16
+tools/oracle/run-ui-icon-model.sh
+  s_bf99a93e97ab76::t_3bd78db91eaf49 8
+tools/client910/src/loading/tests.rs
+  s_bf99a93e97ab76::t_3bd78db91eaf49 1-533
+docs/port-completion/graphics-runtime-progress.md
+  s_bf99a93e97ab76::t_3bd78db91eaf49 65-68
+tools/client910/src/world_map.rs
+  s_bf99a93e97ab76::t_2b4f1f7a667d9b 2479
+docs/rust-port/44-camera-controls.md
+  s_bf99a93e97ab76::t_3bd78db91eaf49 40
+tools/client910/src/ui_paint_tests.rs
+  s_bf99a93e97ab76::t_3bd78db91eaf49 149,178
+tools/oracle/run-font-layout.sh
+  s_bf99a93e97ab76::t_3bd78db91eaf49 8
+tools/oracle/run-camera-follow.sh
+  s_bf99a93e97ab76::t_3bd78db91eaf49 20
+tools/client910/src/world_map_client/tests.rs
+  s_bf99a93e97ab76::t_3bd78db91eaf49 1-317
+tools/client910/src/protocol910/live/tests.rs
+  s_bf99a93e97ab76::t_3bd78db91eaf49 1-366
+tools/client910/src/test_support.rs
+  s_bf99a93e97ab76::t_3bd78db91eaf49 3
+tools/oracle/run-ui-properties.sh
+  s_bf99a93e97ab76::t_3bd78db91eaf49 17
+tools/oracle/run-animation.sh
+  s_bf99a93e97ab76::t_3bd78db91eaf49 19
+tools/client910/src/session/tests.rs
+  s_bf99a93e97ab76::t_3bd78db91eaf49 1-1310
+tools/client910/src/config/tests.rs
+  s_bf99a93e97ab76::t_3bd78db91eaf49 1-341
+tools/client910/src/world_map/tests.rs
+  s_bf99a93e97ab76::t_3bd78db91eaf49 1-156,158-303
+  s_bf99a93e97ab76::t_2b4f1f7a667d9b 157
+tools/client910/src/session/client_debug_packet_tests.rs
+  s_bf99a93e97ab76::t_3bd78db91eaf49 1-137
+tools/client910/src/app.rs
+  s_bf99a93e97ab76::t_3bd78db91eaf49 213,768-769,822-824,833-841,845-854,870,876,895,898-907,3452,3468,3494,4784,5666-5667,5696,6251,6406,6561,6699,7428,7753,8105,8230,8603,9962-9963,10225-10226,10230,10714-10725,10763-10774,11337,11792-11793,11796,12120,12797
+tools/refactor/test-removals.txt
+  s_bf99a93e97ab76::t_3bd78db91eaf49 5
+tools/client910/src/ui_scene_options/tests.rs
+  s_bf99a93e97ab76::t_3bd78db91eaf49 1-417
+tools/client910/src/entity_elements.rs
+  s_bf99a93e97ab76::t_2b4f1f7a667d9b 1182
+tools/client910/src/ui_host_game.rs
+  s_bf99a93e97ab76::t_2b4f1f7a667d9b 2200-2201
+tools/oracle/run-ui-draw.sh
+  s_bf99a93e97ab76::t_3bd78db91eaf49 9
+tools/oracle/run-ui-bas-query.sh
+  s_bf99a93e97ab76::t_3bd78db91eaf49 18
+tools/client910/src/entity_elements/tests.rs
+  s_bf99a93e97ab76::t_2b4f1f7a667d9b 86-90
+  s_bf99a93e97ab76::t_3bd78db91eaf49 1-85,91-606
+docs/rust-port/42-current-port-coverage.md
+  s_bf99a93e97ab76::t_3bd78db91eaf49 286
+tools/client910/src/positioned_sound.rs
+  s_bf99a93e97ab76::t_3bd78db91eaf49 1115
+docs/rust-port/41-interface-interaction.md
+  s_bf99a93e97ab76::t_3bd78db91eaf49 73-74
+tools/oracle/run-ui-player-model.sh
+  s_bf99a93e97ab76::t_3bd78db91eaf49 9
+tools/client910/src/model/tests.rs
+  s_bf99a93e97ab76::t_3bd78db91eaf49 1-430
+docs/rust-port/40-ui-scaling-hidpi.md
+  s_bf99a93e97ab76::t_3bd78db91eaf49 57,59
+tools/client910/src/cutscene.rs
+  s_bf99a93e97ab76::t_3bd78db91eaf49 2187
+tools/oracle/run-ui-lifecycle.sh
+  s_bf99a93e97ab76::t_3bd78db91eaf49 9
+tools/refactor/README.md
+  s_bf99a93e97ab76::t_3bd78db91eaf49 23,54-55,124-125
+tools/oracle/run-ui-leaf.sh
+  s_bf99a93e97ab76::t_3bd78db91eaf49 19
+tools/oracle/run-camera-packets.sh
+  s_bf99a93e97ab76::t_3bd78db91eaf49 36
+tools/client910/src/positioned_sound/tests.rs
+  s_bf99a93e97ab76::t_3bd78db91eaf49 1-400
+tools/client910/src/skybox/tests.rs
+  s_bf99a93e97ab76::t_3bd78db91eaf49 1-337
+tools/client910/src/session.rs
+  s_bf99a93e97ab76::t_3bd78db91eaf49 247,674-684,695-702,711,717,726,731-738,3393,3957,3964
+tools/client910/src/protocol910/live.rs
+  s_bf99a93e97ab76::t_3bd78db91eaf49 625
+tools/client910/src/js5net/tests.rs
+  s_bf99a93e97ab76::t_2b4f1f7a667d9b 6-12,79,235,292
+  s_bf99a93e97ab76::t_3bd78db91eaf49 1-5,13-78,80-234,236-291,293-693
+tools/oracle/run-server-rebuild.sh
+  s_bf99a93e97ab76::t_3bd78db91eaf49 18
+README.md
+  s_bf99a93e97ab76::t_3bd78db91eaf49 54
+tools/client910/src/input_script.rs
+  s_bf99a93e97ab76::t_3bd78db91eaf49 385
+tools/client910/src/ui_runtime/no_op_host_tests.rs
+  s_bf99a93e97ab76::t_3bd78db91eaf49 1-949
+tools/oracle/run-client-commands.sh
+  s_bf99a93e97ab76::t_3bd78db91eaf49 13
+tools/client910/src/ui_opkey_java_trace.rs
+  s_bf99a93e97ab76::t_3bd78db91eaf49 23
+tools/client910/src/js5net.rs
+  s_bf99a93e97ab76::t_2b4f1f7a667d9b 3455
+tools/oracle/run-console.sh
+  s_bf99a93e97ab76::t_3bd78db91eaf49 32
+docs/rust-port/08-phase-e-draw.md
+  s_bf99a93e97ab76::t_3bd78db91eaf49 757,870
+tools/client910/src/ui_runtime/scene_query_tests.rs
+  s_bf99a93e97ab76::t_3bd78db91eaf49 1-357
+tools/oracle/run-server-teleports.sh
+  s_bf99a93e97ab76::t_3bd78db91eaf49 18
+tools/client910/src/cutscene/tests.rs
+  s_bf99a93e97ab76::t_3bd78db91eaf49 1-354
+docs/port-completion/implementation-wave-1.md
+  s_bf99a93e97ab76::t_3bd78db91eaf49 100-102
+tools/client910/src/scenario_tests.rs
+  s_bf99a93e97ab76::t_3bd78db91eaf49 1043-1055,1070
+tools/oracle/run-player-poses.sh
+  s_bf99a93e97ab76::t_3bd78db91eaf49 21
+tools/client910/src/anim.rs
+  s_bf99a93e97ab76::t_2b4f1f7a667d9b 1008
+docs/rust-port/43-live-inventory.md
+  s_bf99a93e97ab76::t_3bd78db91eaf49 94
+tools/refactor/test-inventory.py
+  s_bf99a93e97ab76::t_3bd78db91eaf49 4-6
+tools/client910/src/minimap.rs
+  s_bf99a93e97ab76::t_3bd78db91eaf49 2096
+tools/client910/src/ui_runtime/menu_state_tests.rs
+  s_bf99a93e97ab76::t_3bd78db91eaf49 1-158
+tools/client910/src/ui_runtime/player_target_tests.rs
+  s_bf99a93e97ab76::t_3bd78db91eaf49 1-67
+tools/client910/src/ui_runtime.rs
+  s_bf99a93e97ab76::t_3bd78db91eaf49 864-867,3395,6138-6156,7795,7798,7801,7804,7806-7807,7810,7812-7813,7815-7816,7819,7896-7897,7899-7900,7902-7908
+tools/client910/src/ui_runtime/social_host_tests.rs
+  s_bf99a93e97ab76::t_3bd78db91eaf49 1-90
+tools/client910/src/floor_render/tests.rs
+  s_bf99a93e97ab76::t_3bd78db91eaf49 1-85,93-222,224-227,229-456,458-725,731-991
+  s_bf99a93e97ab76::t_2b4f1f7a667d9b 86-92,223,228,457,726-730
+tools/client910/src/ui_scene_options.rs
+  s_bf99a93e97ab76::t_3bd78db91eaf49 696
+tools/client910/src/scene_player_pick/tests.rs
+  s_bf99a93e97ab76::t_3bd78db91eaf49 1-295
+tools/client910/src/ui_runtime/chat_host_tests.rs
+  s_bf99a93e97ab76::t_3bd78db91eaf49 1-119
+tools/oracle/run-material-pixels.sh
+  s_bf99a93e97ab76::t_3bd78db91eaf49 12
+tools/client910/src/net/tests.rs
+  s_bf99a93e97ab76::t_2b4f1f7a667d9b 54,531-536,571-576,610-615
+  s_bf99a93e97ab76::t_36239b073be9f2 722
+  s_bf99a93e97ab76::t_3bd78db91eaf49 1-53,55-530,537-570,577-609,616-721,723-1005
+tools/oracle/run-map-install.sh
+  s_bf99a93e97ab76::t_3bd78db91eaf49 7
+tools/client910/src/texture.rs
+  s_bf99a93e97ab76::t_2b4f1f7a667d9b 2127
+tools/oracle/run-text-render.sh
+  s_bf99a93e97ab76::t_3bd78db91eaf49 20,29
+tools/client910/src/world_map_client.rs
+  s_bf99a93e97ab76::t_3bd78db91eaf49 1336
+tools/client910/src/texture/tests.rs
+  s_bf99a93e97ab76::t_2b4f1f7a667d9b 530,543-545
+  s_bf99a93e97ab76::t_3bd78db91eaf49 1-529,531-542,546-609
+tools/client910/src/minimap/tests.rs
+  s_bf99a93e97ab76::t_3bd78db91eaf49 1-494
+tools/client910/src/main.rs
+  s_bf99a93e97ab76::t_3bd78db91eaf49 1-2,5
+tools/oracle/run-dynamic.sh
+  s_bf99a93e97ab76::t_3bd78db91eaf49 14
+tools/oracle/run-goldens.sh
+  s_bf99a93e97ab76::t_3bd78db91eaf49 86
+tools/oracle/run-framing.sh
+  s_bf99a93e97ab76::t_3bd78db91eaf49 27
+tools/client910/src/input_script/tests.rs
+  s_bf99a93e97ab76::t_3bd78db91eaf49 1-337
+tools/oracle/run-font-atlas.sh
+  s_bf99a93e97ab76::t_3bd78db91eaf49 15
+tools/client910/src/ui_command_spec.rs
+  s_bf99a93e97ab76::t_3bd78db91eaf49 13
+tools/oracle/run-sprite-draw.sh
+  s_bf99a93e97ab76::t_3bd78db91eaf49 21,34
+.github/workflows/client.yml
+  s_bf99a93e97ab76::t_3bd78db91eaf49 51
+  s_bf99a93e97ab76::t_bc495565df1861 40-41
+docs/port-completion/graphics-aa-bloom-progress.md
+  s_bf99a93e97ab76::t_3bd78db91eaf49 90-94
+tools/client910/src/loading.rs
+  s_bf99a93e97ab76::t_3bd78db91eaf49 2441
+tools/client910/src/net.rs
+  s_bf99a93e97ab76::t_2b4f1f7a667d9b 2534
+tools/client910/src/ui_host_game/tests.rs
+  s_bf99a93e97ab76::t_2b4f1f7a667d9b 361-373,531-536
+  s_bf99a93e97ab76::t_3bd78db91eaf49 1-360,374-530,537-828
+tools/client910/Cargo.toml
+  s_bf99a93e97ab76::t_3bd78db91eaf49 10-18,22-38
+tools/client910/src/anim/tests.rs
+  s_bf99a93e97ab76::t_2b4f1f7a667d9b 51-52,89-90
+  s_bf99a93e97ab76::t_3bd78db91eaf49 1-50,53-88,91-375
+tools/client910/src/entity_apply_bench.rs
+  s_bf99a93e97ab76::t_3bd78db91eaf49 18
+tools/client910/src/ui_cam2.rs
+  s_bf99a93e97ab76::t_3bd78db91eaf49 3627
+tools/refactor/steps/p1-lib-bin.py
+  s_bf99a93e97ab76::t_3bd78db91eaf49 1-163
+tools/oracle/run-all-local.sh
+  s_bf99a93e97ab76::t_3bd78db91eaf49 39
+tools/oracle/run-ui-vars.sh
+  s_bf99a93e97ab76::t_3bd78db91eaf49 17
+tools/client910/src/ui_social.rs
+  s_bf99a93e97ab76::t_2b4f1f7a667d9b 3176
+tools/oracle/run-ui-fonts.sh
+  s_bf99a93e97ab76::t_3bd78db91eaf49 9
+tools/client910/src/ui_runtime/menu_action_dispatch_tests.rs
+  s_bf99a93e97ab76::t_3bd78db91eaf49 1-237
+tools/client910/src/map/tests.rs
+  s_bf99a93e97ab76::t_2b4f1f7a667d9b 73,111,247-248
+  s_bf99a93e97ab76::t_3bd78db91eaf49 1-72,74-110,112-246,249-381
+tools/client910/src/ui_cam2/tests.rs
+  s_bf99a93e97ab76::t_3bd78db91eaf49 1-634
+tools/oracle/run-ui-icon-raster.sh
+  s_bf99a93e97ab76::t_3bd78db91eaf49 9
+tools/client910/src/particle.rs
+  s_bf99a93e97ab76::t_2b4f1f7a667d9b 2333
+tools/oracle/run-font-metrics.sh
+  s_bf99a93e97ab76::t_3bd78db91eaf49 15
+tools/client910/src/ui_runtime/stat_packet_tests.rs
+  s_bf99a93e97ab76::t_3bd78db91eaf49 1-912
+docs/rust-port/50-code-quality-programme.md
+  s_bf99a93e97ab76::t_3bd78db91eaf49 206-222
+tools/oracle/run-ui-configs.sh
+  s_bf99a93e97ab76::t_3bd78db91eaf49 9
+tools/oracle/run-ui-sprites.sh
+  s_bf99a93e97ab76::t_3bd78db91eaf49 10-11
+docs/port-completion/custom-cursors-progress.md
+  s_bf99a93e97ab76::t_3bd78db91eaf49 81-83
+tools/client910/src/render/tests.rs
+  s_bf99a93e97ab76::t_3bd78db91eaf49 1-32
+tools/client910/fixtures/account_creation_lobby_frames.json
+  s_bf99a93e97ab76::t_3bd78db91eaf49 48
+tools/oracle/run-ui-objects.sh
+  s_bf99a93e97ab76::t_3bd78db91eaf49 8
+docs/port-completion/implementation-wave-2.md
+  s_bf99a93e97ab76::t_3bd78db91eaf49 73-74
+tools/oracle/run-player-models.sh
+  s_bf99a93e97ab76::t_3bd78db91eaf49 17
+tools/client910/src/config.rs
+  s_bf99a93e97ab76::t_3bd78db91eaf49 2430
+tools/client910/fixtures/cs2-commands/README.md
+  s_bf99a93e97ab76::t_3bd78db91eaf49 16
+tools/client910/src/particle/tests.rs
+  s_bf99a93e97ab76::t_3bd78db91eaf49 1-95,100-710
+  s_bf99a93e97ab76::t_2b4f1f7a667d9b 96-99
+tools/client910/src/model.rs
+  s_bf99a93e97ab76::t_3bd78db91eaf49 1518
+tools/oracle/run-actor-frames.sh
+  s_bf99a93e97ab76::t_3bd78db91eaf49 9
+tools/client910/src/render.rs
+  s_bf99a93e97ab76::t_3bd78db91eaf49 1709,2002,2243,2246,2299
+tools/client910/src/lib.rs
+  s_bf99a93e97ab76::t_3bd78db91eaf49 1-287
+tools/client910/src/ui_social/tests.rs
+  s_bf99a93e97ab76::t_3bd78db91eaf49 1-351,359-371
+  s_bf99a93e97ab76::t_2b4f1f7a667d9b 352-358
+tools/oracle/run-ui-client-state.sh
+  s_bf99a93e97ab76::t_3bd78db91eaf49 9
+tools/oracle/run-ui-hooks.sh
+  s_bf99a93e97ab76::t_3bd78db91eaf49 9-10
+tools/client910/src/bin/drawdiff.rs
+  s_bf99a93e97ab76::t_3bd78db91eaf49 1
+tools/client910/src/map.rs
+  s_bf99a93e97ab76::t_2b4f1f7a667d9b 1049
+tools/oracle/run-ui-interaction.sh
+  s_bf99a93e97ab76::t_3bd78db91eaf49 10
+tools/refactor/clippy-baseline.txt
+  s_bf99a93e97ab76::t_f3bd0b064da1b0 3
+tools/client910/src/ui_runtime/audio_host_tests.rs
+  s_bf99a93e97ab76::t_3bd78db91eaf49 1-52
+tools/oracle/run-ui-components.sh
+  s_bf99a93e97ab76::t_3bd78db91eaf49 22
+tools/client910/src/skybox.rs
+  s_bf99a93e97ab76::t_3bd78db91eaf49 931
+tools/oracle/run-player-scene.sh
+  s_bf99a93e97ab76::t_3bd78db91eaf49 9
+tools/refactor/replay-gate.txt
+  s_bf99a93e97ab76::t_3bd78db91eaf49 3
+tools/client910/src/app/actor_spot_tests.rs
+  s_bf99a93e97ab76::t_3bd78db91eaf49 1-37
+tools/client910/fixtures/create_account_connect.json
+  s_bf99a93e97ab76::t_3bd78db91eaf49 34
+tools/oracle/run-game-runtime.sh
+  s_bf99a93e97ab76::t_3bd78db91eaf49 26
+tools/oracle/phase-g/run-live.sh
+  s_bf99a93e97ab76::t_3bd78db91eaf49 9
+tools/client910/src/scene_player_pick.rs
+  s_bf99a93e97ab76::t_3bd78db91eaf49 494
+tools/client910/src/floor_render.rs
+  s_bf99a93e97ab76::t_2b4f1f7a667d9b 2317
+tools/oracle/run-ui-scripts.sh
+  s_bf99a93e97ab76::t_3bd78db91eaf49 9
+tools/refactor/gate.sh
+  s_bf99a93e97ab76::t_3bd78db91eaf49 96,99,111
+tools/refactor/steps/p1-extract-tests.py
+  s_bf99a93e97ab76::t_0a224d8845e31a 1-213
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "efc8ee9b4395d12fbf754800f411c51538956786",
+  "prompts": {},
+  "sessions": {
+    "s_bf99a93e97ab76": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "3306d217-ef25-4a58-aa1a-8bdfdb5da12f",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
