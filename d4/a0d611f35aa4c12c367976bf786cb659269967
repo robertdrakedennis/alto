@@ -1,0 +1,291 @@
+tools/client910/src/dynamic_scene.rs
+  s_bf99a93e97ab76::t_e72adafb188a80 286-289,304,345-348,385-388,432-435
+tools/client910/src/ui_lifecycle.rs
+  s_bf99a93e97ab76::t_e72adafb188a80 588-590,600,613-615,625
+tools/client910/src/camera.rs
+  s_bf99a93e97ab76::t_e72adafb188a80 126-129,263,275-278,394-396
+tools/client910/src/ui_cam2.rs
+  s_bf99a93e97ab76::t_e72adafb188a80 410-413,892,1365-1368,1378-1380,1492-1494,1540-1541,1551,2836-2837,2946
+tools/client910/src/actor_oracle.rs
+  s_bf99a93e97ab76::t_e72adafb188a80 86-90,344-347,350-353
+tools/client910/src/skybox.rs
+  s_bf99a93e97ab76::t_e72adafb188a80 370,372,576-579,838-841
+tools/client910/src/ui_icon_model.rs
+  s_bf99a93e97ab76::t_e72adafb188a80 6,85-86,90-95,101,106,135-138,367-372,391,403-404,486-487
+tools/client910/src/obj_stack.rs
+  s_bf99a93e97ab76::t_e72adafb188a80 68
+tools/client910/src/env.rs
+  s_bf99a93e97ab76::t_e72adafb188a80 348-351,754,828,935
+tools/client910/src/ui_preferences_mutations.rs
+  s_bf99a93e97ab76::t_e72adafb188a80 40,52,67,95,110,164,348-351,410-413,427-430,463-466,497-500,523-529,531
+tools/client910/src/anim.rs
+  s_bf99a93e97ab76::t_e72adafb188a80 974,976,1059-1060,1097-1098
+tools/client910/src/cutscene.rs
+  s_bf99a93e97ab76::t_e72adafb188a80 1378-1384,1666-1669
+tools/client910/src/font_layout.rs
+  s_bf99a93e97ab76::t_e72adafb188a80 258-261,284-287,325-328,357-360,681,683,891-894
+tools/client910/src/roof.rs
+  s_bf99a93e97ab76::t_e72adafb188a80 263-266,300-303,353,355
+tools/client910/src/protocol910/pack_terrain.rs
+  s_bf99a93e97ab76::t_e72adafb188a80 58-59,122,124-125
+tools/client910/src/animation_curve.rs
+  s_bf99a93e97ab76::t_e72adafb188a80 73-75,179-184
+tools/client910/src/maploader.rs
+  s_bf99a93e97ab76::t_e72adafb188a80 472,1527,1595,1873,1881,2079-2082
+tools/client910/src/wordpack.rs
+  s_bf99a93e97ab76::t_e72adafb188a80 55-57
+tools/client910/src/ui_model_animation.rs
+  s_bf99a93e97ab76::t_e72adafb188a80 119-122
+tools/client910/src/ui_models.rs
+  s_bf99a93e97ab76::t_e72adafb188a80 372-377,878,880,913-916,1260-1265,1307-1310,1313-1317,1361-1364,1370-1374
+tools/client910/src/ui_db.rs
+  s_bf99a93e97ab76::t_e72adafb188a80 320
+tools/client910/src/ui_player_options.rs
+  s_bf99a93e97ab76::t_e72adafb188a80 117-120
+tools/client910/src/ui_backend.rs
+  s_bf99a93e97ab76::t_e72adafb188a80 71,77-84,461,812,816-820,969-979,1011-1021,1056-1066
+tools/client910/src/protocol910/rebuild_state.rs
+  s_bf99a93e97ab76::t_e72adafb188a80 333-336,466-469
+tools/client910/src/animation_assets.rs
+  s_bf99a93e97ab76::t_e72adafb188a80 94-95,190-191
+tools/client910/src/ui_hooks_oracle.rs
+  s_bf99a93e97ab76::t_e72adafb188a80 277-278
+tools/refactor/clippy-baseline.txt
+  s_bf99a93e97ab76::t_e72adafb188a80 3,6-11,14-22
+tools/client910/src/net.rs
+  s_bf99a93e97ab76::t_e72adafb188a80 564-565,1262-1273,1285,1294-1299,1591-1602,1643-1650,1657-1660,1672-1679,1687,1694,1727,1732-1739,1808-1813,2179-2186,2193-2196,2208-2215,2223,2230,2271,2276-2283,2350-2355,2426-2431,2588,3067-3072,3107-3112,3146-3151
+tools/client910/src/ui_fonts_oracle.rs
+  s_bf99a93e97ab76::t_e72adafb188a80 389-392
+tools/client910/src/minimap.rs
+  s_bf99a93e97ab76::t_e72adafb188a80 1677
+tools/client910/src/actor_matrix.rs
+  s_bf99a93e97ab76::t_e72adafb188a80 15-16,28-29,132-133,145-146
+tools/client910/src/ui_client_state_oracle.rs
+  s_bf99a93e97ab76::t_e72adafb188a80 55,103
+tools/client910/src/modelunlit.rs
+  s_bf99a93e97ab76::t_e72adafb188a80 522,531,671,1273,1275,1277
+tools/oracle/generate-client-options.py
+  s_bf99a93e97ab76::t_e72adafb188a80 4-10,12,26-32,41,47-52,61-65,67,99-100,106,115-116,119,125-139,157,167-172,176-179,187-199
+tools/client910/src/flo.rs
+  s_bf99a93e97ab76::t_e72adafb188a80 194-195,228-229
+tools/client910/src/floor_render.rs
+  s_bf99a93e97ab76::t_e72adafb188a80 417-445,849-855,1007-1013,1037-1043,1120,1135,1496,1499,1505,1579-1585,1641,1737,1775-1778,1851,1966,2085-2315,2403-2409,2540,2545,2772,3041-3045
+tools/client910/src/rebuild.rs
+  s_bf99a93e97ab76::t_e72adafb188a80 502-505,599-602,724-727
+tools/client910/src/postprocess.rs
+  s_bf99a93e97ab76::t_e72adafb188a80 660,662
+tools/client910/src/positioned_sound.rs
+  s_bf99a93e97ab76::t_e72adafb188a80 539-542,883
+tools/client910/src/particle_render.rs
+  s_bf99a93e97ab76::t_e72adafb188a80 115-117
+tools/client910/src/ui_cursor_menu_tests.rs
+  s_bf99a93e97ab76::t_e72adafb188a80 10-33
+tools/client910/src/avatar.rs
+  s_bf99a93e97ab76::t_e72adafb188a80 561
+tools/client910/src/player_scene_oracle.rs
+  s_bf99a93e97ab76::t_e72adafb188a80 39-42
+tools/client910/src/audio_vorbis.rs
+  s_bf99a93e97ab76::t_e72adafb188a80 399,419,450-452,458,918-919,944-945,958-959,1045-1046,2211,2214-2216,2222,2292-2293
+tools/client910/src/ui_loop.rs
+  s_bf99a93e97ab76::t_e72adafb188a80 262,985,992,1066-1069
+tools/client910/src/client_options.rs
+  s_bf99a93e97ab76::t_e72adafb188a80 7-8,106-115,1293-1302,1308-1309
+tools/client910/src/ui_properties.rs
+  s_bf99a93e97ab76::t_e72adafb188a80 533-534,540
+tools/client910/src/protocol910/npc_custom.rs
+  s_bf99a93e97ab76::t_e72adafb188a80 42-44
+tools/client910/src/client_options_codec.rs
+  s_bf99a93e97ab76::t_e72adafb188a80 16,43,59,68,263
+tools/client910/src/client_watch.rs
+  s_bf99a93e97ab76::t_e72adafb188a80 126-128
+tools/client910/src/material.rs
+  s_bf99a93e97ab76::t_e72adafb188a80 226-229,300
+tools/client910/src/model.rs
+  s_bf99a93e97ab76::t_e72adafb188a80 564,684,741,1006,1077-1078,1274,1279,1351
+tools/client910/src/ui_hooks.rs
+  s_bf99a93e97ab76::t_e72adafb188a80 213,215
+tools/client910/src/light_animation.rs
+  s_bf99a93e97ab76::t_e72adafb188a80 63
+tools/client910/src/floorlight.rs
+  s_bf99a93e97ab76::t_e72adafb188a80 115-117,123,135-137,143,280,282,284
+tools/client910/src/console.rs
+  s_bf99a93e97ab76::t_e72adafb188a80 190-191,194
+tools/client910/src/ui_sprites.rs
+  s_bf99a93e97ab76::t_e72adafb188a80 295
+tools/client910/src/draw.rs
+  s_bf99a93e97ab76::t_e72adafb188a80 338-341,357-360,388-391
+tools/client910/src/ui_quests.rs
+  s_bf99a93e97ab76::t_e72adafb188a80 426-436,439-440,442-447
+tools/client910/src/colour.rs
+  s_bf99a93e97ab76::t_e72adafb188a80 93-94,138
+tools/client910/src/ui_social.rs
+  s_bf99a93e97ab76::t_e72adafb188a80 3528-3534
+tools/client910/src/cover_marker.rs
+  s_bf99a93e97ab76::t_e72adafb188a80 99,101
+tools/client910/src/app_loading.rs
+  s_bf99a93e97ab76::t_e72adafb188a80 722
+tools/client910/src/ui_configs.rs
+  s_bf99a93e97ab76::t_e72adafb188a80 364-367
+tools/client910/src/ui_keyboard.rs
+  s_bf99a93e97ab76::t_e72adafb188a80 189-190
+tools/client910/src/ui_leaf.rs
+  s_bf99a93e97ab76::t_e72adafb188a80 156-159,228-231,354-357,459-462,543-546
+tools/client910/src/ui_sprites_oracle.rs
+  s_bf99a93e97ab76::t_e72adafb188a80 128,224-234,239,241,349-352,363-373,378-383,435-438
+tools/client910/src/world_map.rs
+  s_bf99a93e97ab76::t_e72adafb188a80 975,1037,1365,2636
+tools/client910/src/player_body.rs
+  s_bf99a93e97ab76::t_e72adafb188a80 175-178
+tools/client910/src/gpumodel.rs
+  s_bf99a93e97ab76::t_e72adafb188a80 224,226,564-567,665-666,761-763,1593,1796-1797,1814-1815,2320,2504-2505
+tools/client910/src/loading.rs
+  s_bf99a93e97ab76::t_e72adafb188a80 1187,1190
+tools/client910/src/ui_host_builtins.rs
+  s_bf99a93e97ab76::t_e72adafb188a80 169,1129,1135
+tools/client910/src/ui_cache.rs
+  s_bf99a93e97ab76::t_e72adafb188a80 6-8,169,171
+tools/client910/src/scene.rs
+  s_bf99a93e97ab76::t_e72adafb188a80 768-769,773-774,958-961
+tools/client910/src/floor.rs
+  s_bf99a93e97ab76::t_e72adafb188a80 388,1043,1050,1300,1473-1515,1562
+tools/client910/src/protocol910/pack_runtime.rs
+  s_bf99a93e97ab76::t_e72adafb188a80 103
+tools/client910/src/hardshadow.rs
+  s_bf99a93e97ab76::t_e72adafb188a80 1243-1245,1257,1263-1264
+tools/client910/src/ui_hook_host.rs
+  s_bf99a93e97ab76::t_e72adafb188a80 25,27,128,406-409
+tools/client910/src/proto.rs
+  s_bf99a93e97ab76::t_e72adafb188a80 16-17
+tools/client910/src/player_model.rs
+  s_bf99a93e97ab76::t_e72adafb188a80 146,152,274-277,415,417,419
+tools/client910/src/bloom_settings_tests.rs
+  s_bf99a93e97ab76::t_e72adafb188a80 11-15
+tools/client910/src/locs.rs
+  s_bf99a93e97ab76::t_e72adafb188a80 1313-1319,1330
+tools/client910/src/ui_model_gpu.rs
+  s_bf99a93e97ab76::t_e72adafb188a80 242-245
+tools/client910/src/protocol910/zone_state.rs
+  s_bf99a93e97ab76::t_e72adafb188a80 122,125-126,294,298,375,377,379-380
+tools/client910/src/ui_host_game.rs
+  s_bf99a93e97ab76::t_e72adafb188a80 404,2561-2573,2731-2736
+tools/client910/src/ui_draw.rs
+  s_bf99a93e97ab76::t_e72adafb188a80 324-327,348,358-361,513,618,659-662
+tools/client910/src/ui_model_transform.rs
+  s_bf99a93e97ab76::t_e72adafb188a80 101-118
+tools/client910/src/cache.rs
+  s_bf99a93e97ab76::t_e72adafb188a80 729-731,741,1038
+tools/client910/src/ui_preferences_queries.rs
+  s_bf99a93e97ab76::t_e72adafb188a80 318-320
+tools/client910/src/ui_paint.rs
+  s_bf99a93e97ab76::t_e72adafb188a80 677-679
+tools/client910/src/ui_preferences_toolkit.rs
+  s_bf99a93e97ab76::t_e72adafb188a80 215-220
+tools/client910/src/game_runtime.rs
+  s_bf99a93e97ab76::t_e72adafb188a80 745-880
+  s_bf99a93e97ab76::t_cecee9d2350b47 881-882
+tools/client910/src/occlusion.rs
+  s_bf99a93e97ab76::t_e72adafb188a80 87-88,338-341,646-649
+tools/client910/src/whirlpool.rs
+  s_bf99a93e97ab76::t_e72adafb188a80 52,56,58,107,117
+tools/client910/src/player_pose_oracle.rs
+  s_bf99a93e97ab76::t_e72adafb188a80 27-35,173,446
+tools/client910/src/player_renderer.rs
+  s_bf99a93e97ab76::t_e72adafb188a80 71,91,140-143,291,344,461,463,617,635
+tools/client910/src/scene_player_pick.rs
+  s_bf99a93e97ab76::t_e72adafb188a80 192
+tools/client910/src/map.rs
+  s_bf99a93e97ab76::t_e72adafb188a80 233,526,555,699,1122,1160,1296-1297
+tools/client910/src/protocol910/combat.rs
+  s_bf99a93e97ab76::t_e72adafb188a80 218
+tools/client910/src/protocol910/live.rs
+  s_bf99a93e97ab76::t_e72adafb188a80 123,449,511,513,517-518
+tools/client910/src/floorpass.rs
+  s_bf99a93e97ab76::t_e72adafb188a80 568-569,814,900-929
+  s_bf99a93e97ab76::t_631fa64e3da5d4 930
+tools/client910/src/iface.rs
+  s_bf99a93e97ab76::t_e72adafb188a80 7,794
+tools/client910/src/postprocess_tests.rs
+  s_bf99a93e97ab76::t_e72adafb188a80 267-275,461-466,861-863
+tools/client910/src/js5net.rs
+  s_bf99a93e97ab76::t_e72adafb188a80 20,882-891,893-923,926-949,1133,2399-2400,3461-3467,3534,3691,3751
+tools/client910/src/texture.rs
+  s_bf99a93e97ab76::t_e72adafb188a80 403,405,547,551,2655,2668-2670
+tools/client910/src/config.rs
+  s_bf99a93e97ab76::t_e72adafb188a80 1121,1201,1269,1288,2200,2258
+tools/client910/src/sprite_draw_oracle.rs
+  s_bf99a93e97ab76::t_e72adafb188a80 65-66
+tools/client910/src/entities910/walk_animation.rs
+  s_bf99a93e97ab76::t_e72adafb188a80 121
+tools/client910/src/ui_menu_input.rs
+  s_bf99a93e97ab76::t_e72adafb188a80 81,154-157
+tools/client910/src/world_map_client.rs
+  s_bf99a93e97ab76::t_e72adafb188a80 475-479
+tools/client910/src/particle.rs
+  s_bf99a93e97ab76::t_e72adafb188a80 1672,1942,1947,1978,2246-2254,2275-2280,2324-2326,2429-2432
+tools/client910/src/animation_oracle.rs
+  s_bf99a93e97ab76::t_e72adafb188a80 317,319,403
+tools/client910/src/ui_preferences_autosetup.rs
+  s_bf99a93e97ab76::t_e72adafb188a80 347-350
+tools/client910/src/debug_overlay.rs
+  s_bf99a93e97ab76::t_e72adafb188a80 287-293
+tools/client910/src/entities910/animation_state.rs
+  s_bf99a93e97ab76::t_e72adafb188a80 243-246,359-380,423-426
+tools/client910/src/actor.rs
+  s_bf99a93e97ab76::t_e72adafb188a80 457-460,632-635
+tools/client910/src/occlusion_raster.rs
+  s_bf99a93e97ab76::t_e72adafb188a80 24-27,46,588,815,821-824
+tools/client910/src/ui_vars.rs
+  s_bf99a93e97ab76::t_e72adafb188a80 93-98
+tools/client910/src/protocol910/terrain.rs
+  s_bf99a93e97ab76::t_e72adafb188a80 170-173
+tools/client910/src/entity_elements.rs
+  s_bf99a93e97ab76::t_e72adafb188a80 66,542-544,841-844,853,888-895,1268-1272
+tools/client910/src/loctype.rs
+  s_bf99a93e97ab76::t_e72adafb188a80 350-351,460-463
+tools/client910/src/gpumodel_anim.rs
+  s_bf99a93e97ab76::t_e72adafb188a80 82-85,111-114
+tools/client910/src/animation_skeletal.rs
+  s_bf99a93e97ab76::t_e72adafb188a80 133-134
+tools/client910/src/ui_dialogue.rs
+  s_bf99a93e97ab76::t_e72adafb188a80 22-26,136
+tools/client910/src/applet_params.rs
+  s_bf99a93e97ab76::t_e72adafb188a80 211
+tools/client910/src/player_shadow.rs
+  s_bf99a93e97ab76::t_e72adafb188a80 76,104,106,126,135,143,157-158
+tools/client910/src/billboard_render.rs
+  s_bf99a93e97ab76::t_e72adafb188a80 122-123
+tools/client910/src/player_pose.rs
+  s_bf99a93e97ab76::t_e72adafb188a80 135-138
+tools/client910/src/ui_components_oracle.rs
+  s_bf99a93e97ab76::t_e72adafb188a80 112,126
+tools/client910/src/logging.rs
+  s_bf99a93e97ab76::t_e72adafb188a80 62
+tools/client910/src/ui_bas.rs
+  s_bf99a93e97ab76::t_e72adafb188a80 81-96
+tools/client910/src/dynamic_loc.rs
+  s_bf99a93e97ab76::t_e72adafb188a80 64-67,116-119,142-145,187-190
+tools/client910/src/ui_time.rs
+  s_bf99a93e97ab76::t_e72adafb188a80 72-90
+tools/client910/src/roof_fixtures.rs
+  s_bf99a93e97ab76::t_e72adafb188a80 345
+tools/client910/src/ui_chat.rs
+  s_bf99a93e97ab76::t_e72adafb188a80 75-78
+tools/client910/src/client_options_presets.rs
+  s_bf99a93e97ab76::t_189b5842255bbb 1-168
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "d4a0d611f35aa4c12c367976bf786cb659269967",
+  "prompts": {},
+  "sessions": {
+    "s_bf99a93e97ab76": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "3306d217-ef25-4a58-aa1a-8bdfdb5da12f",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
