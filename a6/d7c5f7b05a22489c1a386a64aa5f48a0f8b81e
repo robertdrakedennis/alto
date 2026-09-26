@@ -1,0 +1,47 @@
+tools/refactor/dag-baseline.txt
+  s_bf99a93e97ab76::t_0f39a52c5cc5e2 1-139
+tools/refactor/gate.sh
+  s_bf99a93e97ab76::t_0f39a52c5cc5e2 1-144
+tools/refactor/rsscan/Cargo.toml
+  s_bf99a93e97ab76::t_0f39a52c5cc5e2 1-17
+tools/refactor/layers.txt
+  s_bf99a93e97ab76::t_0f39a52c5cc5e2 1-215
+tools/refactor/rsscan/src/main.rs
+  s_bf99a93e97ab76::t_0f39a52c5cc5e2 1-1575
+tools/refactor/test-removals.txt
+  s_bf99a93e97ab76::t_0f39a52c5cc5e2 1-4
+tools/refactor/fn-hash.py
+  s_bf99a93e97ab76::t_0f39a52c5cc5e2 1-293
+tools/refactor/dag-check.py
+  s_bf99a93e97ab76::t_0f39a52c5cc5e2 1-369
+.github/workflows/client.yml
+  s_bf99a93e97ab76::t_0f39a52c5cc5e2 24,31-37,52-56
+tools/refactor/test-inventory.txt
+  s_bf99a93e97ab76::t_0f39a52c5cc5e2 1-1518
+tools/refactor/README.md
+  s_bf99a93e97ab76::t_0f39a52c5cc5e2 1-213
+docs/rust-port/50-code-quality-programme.md
+  s_bf99a93e97ab76::t_0f39a52c5cc5e2 196-201
+tools/refactor/replay-gate.txt
+  s_bf99a93e97ab76::t_0f39a52c5cc5e2 1-48
+tools/refactor/test-inventory.py
+  s_bf99a93e97ab76::t_0f39a52c5cc5e2 1-492
+tools/refactor/rsscan/Cargo.lock
+  s_bf99a93e97ab76::t_fe605b93c59863 1-47
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "a6d7c5f7b05a22489c1a386a64aa5f48a0f8b81e",
+  "prompts": {},
+  "sessions": {
+    "s_bf99a93e97ab76": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "3306d217-ef25-4a58-aa1a-8bdfdb5da12f",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
