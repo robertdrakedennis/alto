@@ -1,0 +1,73 @@
+docs/rust-port/50-code-quality-programme.md
+  s_bf99a93e97ab76::t_e737186903e956 916-970
+tools/Cargo.lock
+  s_bf99a93e97ab76::t_d573f2db7ab412 406,1921-1936
+tools/Cargo.toml
+  s_bf99a93e97ab76::t_dc4256070ca373 17
+tools/README.md
+  s_bf99a93e97ab76::t_e6d657b70ad676 23,156-158,187-190
+tools/client910/Cargo.toml
+  s_bf99a93e97ab76::t_f2f1581a557d7d 83-86,123-127,134
+tools/client910/crates/rs910-client/Cargo.toml
+  s_bf99a93e97ab76::t_88c2c596ca1de9 1-48
+tools/client910/crates/rs910-client/src/client_debug_flags.rs
+  s_bf99a93e97ab76::t_5aec8710d2e1be 1-65
+tools/client910/crates/rs910-client/src/lib.rs
+  s_bf99a93e97ab76::t_b03706e6341aea 1-48
+tools/client910/crates/rs910-client/src/login_worker.rs
+  s_bf99a93e97ab76::t_c48b02253ddbf1 1-256
+tools/client910/crates/rs910-client/src/net/tests.rs
+  s_bf99a93e97ab76::t_b79290a9031937 715-716
+tools/client910/crates/rs910-client/src/session.rs
+  s_bf99a93e97ab76::t_14919eca723df2 182
+tools/client910/crates/rs910-client/src/session_record.rs
+  s_bf99a93e97ab76::t_7a2a3105e66256 52,134,209,219
+tools/client910/crates/rs910-client/src/toolkit_caps.rs
+  s_bf99a93e97ab76::t_3bc0ee3e525b2f 1-12
+tools/client910/src/app.rs
+  s_bf99a93e97ab76::t_a861f1487e0240 767-769,2410-2411,3109,10852,11186,11244,12274
+tools/client910/src/debug_flags.rs
+  s_bf99a93e97ab76::t_8cfde2a8f46483 13-14,23-24
+tools/client910/src/lib.rs
+  s_bf99a93e97ab76::t_b85c4cef72558e 46,67,268-275,289
+tools/oracle/phase-g/run-live.sh
+  s_bf99a93e97ab76::t_a7ee99b918d6ff 9
+tools/oracle/run-framing.sh
+  s_bf99a93e97ab76::t_c6f14578ebdcd4 20,27
+tools/refactor/README.md
+  s_bf99a93e97ab76::t_bc702e4b2a39a7 286-300
+tools/refactor/dag-baseline.txt
+  s_bf99a93e97ab76::t_4f2dc00a1ab306 2
+tools/refactor/layers.txt
+  s_bf99a93e97ab76::t_2f292d2a0442e9 66-68,93-97,123-128,390-395,402-408
+tools/refactor/steps/p4-client-1-flags.py
+  s_bf99a93e97ab76::t_88cadaa8f50bb9 1-169
+tools/refactor/steps/p4-client-2-seams.py
+  s_bf99a93e97ab76::t_0b7867cf14eb3b 1-126
+tools/refactor/steps/p4-client-3-move.py
+  s_bf99a93e97ab76::t_81d1e5eef03cf2 1-225
+tools/refactor/steps/p4-client-fnhash-allow.txt
+  s_bf99a93e97ab76::t_0fb56680d1a5be 1-53
+tools/refactor/steps/p4-client-verify.py
+  s_bf99a93e97ab76::t_edf41734c2235b 1-137
+tools/refactor/steps/p4_client_common.py
+  s_bf99a93e97ab76::t_405047622a2c1e 1-15
+tools/refactor/test-inventory.txt
+  s_bf99a93e97ab76::t_ecd9d5bd488483 4,33,577-640
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "ed0aa52a1df7cbe5a1122ae116b2810479b9e54e",
+  "prompts": {},
+  "sessions": {
+    "s_bf99a93e97ab76": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "3306d217-ef25-4a58-aa1a-8bdfdb5da12f",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
