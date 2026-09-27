@@ -1,0 +1,161 @@
+tools/client910/src/sw_toolkit/model.rs
+  s_bf99a93e97ab76::t_ecba98633d4041 248
+tools/refactor/steps/p3-toolkit-wire.py
+  s_bf99a93e97ab76::t_ecba98633d4041 1-187
+tools/refactor/README.md
+  s_bf99a93e97ab76::t_ecba98633d4041 254-270
+tools/client910/src/sw_toolkit/tests.rs
+  s_bf99a93e97ab76::t_ecba98633d4041 88,561,682
+tools/client910/crates/rs910-config/src/lib.rs
+  s_bf99a93e97ab76::t_ecba98633d4041 35,43
+tools/client910/src/ui_runtime.rs
+  s_bf99a93e97ab76::t_ecba98633d4041 7867
+tools/client910/src/ui_defaults.rs
+  s_bf99a93e97ab76::t_ecba98633d4041 129
+tools/client910/src/cutscene.rs
+  s_bf99a93e97ab76::t_ecba98633d4041 428
+tools/client910/crates/rs910-config/src/sprite_sheet.rs
+  s_bf99a93e97ab76::t_ecba98633d4041 1-442
+tools/client910/src/console_render.rs
+  s_bf99a93e97ab76::t_ecba98633d4041 9-10,33,44,47-48
+tools/client910/src/window_canvas.rs
+  s_bf99a93e97ab76::t_ecba98633d4041 15,50
+tools/client910/crates/rs910-toolkit/src/frame_plan_tests.rs
+  s_bf99a93e97ab76::t_ecba98633d4041 1-125
+tools/client910/src/font_atlas_oracle.rs
+  s_bf99a93e97ab76::t_ecba98633d4041 1,52,54
+tools/client910/Cargo.toml
+  s_bf99a93e97ab76::t_ecba98633d4041 69-72,109
+tools/client910/src/ui_sprites_oracle.rs
+  s_bf99a93e97ab76::t_ecba98633d4041 240
+tools/client910/src/ui_fonts_oracle.rs
+  s_bf99a93e97ab76::t_ecba98633d4041 124,132,383
+tools/client910/crates/rs910-model/src/line_dashes.rs
+  s_bf99a93e97ab76::t_ecba98633d4041 1-150
+tools/client910/src/text_render_oracle.rs
+  s_bf99a93e97ab76::t_ecba98633d4041 55-59,205,207
+tools/client910/crates/rs910-config/src/font_atlas.rs
+  s_bf99a93e97ab76::t_ecba98633d4041 3
+tools/client910/src/ui_properties.rs
+  s_bf99a93e97ab76::t_ecba98633d4041 71
+tools/client910/src/sw_toolkit/console.rs
+  s_bf99a93e97ab76::t_ecba98633d4041 9
+tools/client910/src/ui_paint_gpu.rs
+  s_bf99a93e97ab76::t_ecba98633d4041 1-231
+tools/client910/src/audio_runtime.rs
+  s_bf99a93e97ab76::t_ecba98633d4041 481
+tools/client910/src/ui_paint_tests.rs
+  s_bf99a93e97ab76::t_ecba98633d4041 2-3,151,180
+tools/client910/src/sw_toolkit/frame.rs
+  s_bf99a93e97ab76::t_ecba98633d4041 5,7-9,89-91,99,113-126,128,131,136
+tools/client910/src/text_render_gpu.rs
+  s_bf99a93e97ab76::t_ecba98633d4041 1-6,68,82
+tools/refactor/dag-baseline.txt
+  s_bf99a93e97ab76::t_ecba98633d4041 2
+tools/refactor/steps/p3-toolkit-fnhash-allow.txt
+  s_bf99a93e97ab76::t_ecba98633d4041 1-149
+tools/client910/crates/rs910-toolkit/src/toolkit.rs
+  s_bf99a93e97ab76::t_ecba98633d4041 1-680
+tools/refactor/test-inventory.txt
+  s_bf99a93e97ab76::t_ecba98633d4041 4,33,37,39-40,436-438,987-988,1093-1094,1244-1248
+tools/client910/crates/rs910-js5/src/js5_fetch.rs
+  s_bf99a93e97ab76::t_ecba98633d4041 1-25
+tools/client910/src/console_oracle.rs
+  s_bf99a93e97ab76::t_ecba98633d4041 54,61
+tools/client910/crates/rs910-toolkit/Cargo.toml
+  s_bf99a93e97ab76::t_ecba98633d4041 1-30
+tools/client910/crates/rs910-toolkit/src/ui_paint.rs
+  s_bf99a93e97ab76::t_ecba98633d4041 4,6,11,22,30,39,45,61,80,529,549,551
+tools/client910/src/ui_icons.rs
+  s_bf99a93e97ab76::t_ecba98633d4041 46-47
+tools/client910/src/sw_toolkit/paint.rs
+  s_bf99a93e97ab76::t_ecba98633d4041 5,7-8,99-136,138-154,156-175,177-204,212-232,234-249,252-272,275,277-311
+tools/client910/crates/rs910-toolkit/src/sprite_draw.rs
+  s_bf99a93e97ab76::t_ecba98633d4041 6
+tools/client910/crates/rs910-js5/src/lib.rs
+  s_bf99a93e97ab76::t_ecba98633d4041 19
+tools/client910/src/iface.rs
+  s_bf99a93e97ab76::t_ecba98633d4041 1-8
+tools/client910/src/ui_backend.rs
+  s_bf99a93e97ab76::t_ecba98633d4041 13,55-67
+  s_bf99a93e97ab76::t_6f43ace4293fd7 68
+tools/refactor/steps/p3-toolkit-move.py
+  s_bf99a93e97ab76::t_ecba98633d4041 1-684
+tools/client910/src/sprite_draw_gpu.rs
+  s_bf99a93e97ab76::t_ecba98633d4041 1-54
+tools/client910/src/ui_stats.rs
+  s_bf99a93e97ab76::t_ecba98633d4041 122
+tools/client910/src/sw_toolkit/sprite.rs
+  s_bf99a93e97ab76::t_ecba98633d4041 129
+tools/refactor/steps/p3-toolkit-verify.py
+  s_bf99a93e97ab76::t_ecba98633d4041 1-103
+tools/client910/crates/rs910-toolkit/src/lib.rs
+  s_bf99a93e97ab76::t_ecba98633d4041 1-84
+tools/client910/src/ui_leaf_oracle.rs
+  s_bf99a93e97ab76::t_ecba98633d4041 133,138
+tools/client910/crates/rs910-toolkit/src/font.rs
+  s_bf99a93e97ab76::t_ecba98633d4041 1-51
+tools/refactor/layers.txt
+  s_bf99a93e97ab76::t_ecba98633d4041 52-54,111-112,161-164,166-169,217-219,296-300,302-306,316-319
+tools/client910/src/render.rs
+  s_bf99a93e97ab76::t_ecba98633d4041 215,220,259,290,331,452,581,784,825
+tools/client910/src/sprite_draw_oracle.rs
+  s_bf99a93e97ab76::t_ecba98633d4041 233,491-492
+tools/Cargo.toml
+  s_bf99a93e97ab76::t_ecba98633d4041 17
+tools/client910/src/ui_fonts.rs
+  s_bf99a93e97ab76::t_ecba98633d4041 9,12,111
+tools/client910/src/world_map.rs
+  s_bf99a93e97ab76::t_ecba98633d4041 112
+tools/client910/src/ui_preferences_autosetup.rs
+  s_bf99a93e97ab76::t_ecba98633d4041 330
+tools/client910/src/lib.rs
+  s_bf99a93e97ab76::t_ecba98633d4041 98,104,165,268-276
+  s_bf99a93e97ab76::t_5268762c9a8db8 277
+tools/client910/src/cutscene/tests.rs
+  s_bf99a93e97ab76::t_ecba98633d4041 208
+tools/client910/crates/rs910-toolkit/src/frame_plan.rs
+  s_bf99a93e97ab76::t_ecba98633d4041 1-107
+docs/rust-port/50-code-quality-programme.md
+  s_bf99a93e97ab76::t_ecba98633d4041 595-663
+tools/client910/crates/rs910-model/src/lib.rs
+  s_bf99a93e97ab76::t_ecba98633d4041 29
+tools/client910/src/postprocess.rs
+  s_bf99a93e97ab76::t_ecba98633d4041 503
+tools/client910/src/font_layout_oracle.rs
+  s_bf99a93e97ab76::t_ecba98633d4041 62
+tools/client910/src/ui_model_gpu.rs
+  s_bf99a93e97ab76::t_ecba98633d4041 249,310,342,392
+tools/client910/src/sw_toolkit/mod.rs
+  s_bf99a93e97ab76::t_ecba98633d4041 102
+docs/rust-port/quality/target-architecture.md
+  s_bf99a93e97ab76::t_ecba98633d4041 72-82,153-162
+tools/README.md
+  s_bf99a93e97ab76::t_ecba98633d4041 19,70-74,94-95
+tools/client910/crates/rs910-scene/src/world_map_polygon.rs
+  s_bf99a93e97ab76::t_ecba98633d4041 14-15
+tools/client910/crates/rs910-toolkit/src/toolkit_tests.rs
+  s_bf99a93e97ab76::t_ecba98633d4041 1-206
+tools/client910/src/sw_toolkit/font.rs
+  s_bf99a93e97ab76::t_ecba98633d4041 89
+tools/client910/crates/rs910-toolkit/src/text_render.rs
+  s_bf99a93e97ab76::t_ecba98633d4041 1-113
+tools/Cargo.lock
+  s_bf99a93e97ab76::t_ad00e2b4158e93 412,1991-2001
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "a228f417ba89e71a2ef4090a866694dfaac55fd8",
+  "prompts": {},
+  "sessions": {
+    "s_bf99a93e97ab76": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "3306d217-ef25-4a58-aa1a-8bdfdb5da12f",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
