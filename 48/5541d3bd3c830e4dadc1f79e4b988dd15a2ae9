@@ -1,0 +1,53 @@
+docs/rust-port/renderer/nxt-renderer-plan.md
+  s_bf99a93e97ab76::t_2a24c5e3c9b2bf 512-513,534-624
+  s_bf99a93e97ab76::t_041b95154c0cc3 625
+tools/client910/crates/rs910-render-nxt/src/nxt_shaders.rs
+  s_bf99a93e97ab76::t_2a24c5e3c9b2bf 26-36,130-142,148,167,177,212-233,239-240,246-262,264-273,304-311
+tools/client910/src/active_toolkit.rs
+  s_bf99a93e97ab76::t_2a24c5e3c9b2bf 276-290
+tools/client910/crates/rs910-render-nxt/src/nxt_render/tests.rs
+  s_bf99a93e97ab76::t_2a24c5e3c9b2bf 2-3,6-8,33-44,79,421-858
+tools/client910/crates/rs910-render-nxt/src/nxt_render/resources.rs
+  s_bf99a93e97ab76::t_2a24c5e3c9b2bf 203,206,212,241-243
+tools/client910/crates/rs910-render-nxt/src/nxt_debug_flags.rs
+  s_bf99a93e97ab76::t_2a24c5e3c9b2bf 14-18,26
+docs/rust-port/50-code-quality-programme.md
+  s_bf99a93e97ab76::t_2a24c5e3c9b2bf 1226-1245
+docs/rust-port/renderer/nxt-data-formats.md
+  s_bf99a93e97ab76::t_2a24c5e3c9b2bf 238-248
+tools/client910/crates/rs910-render-nxt/src/nxt_texture.rs
+  s_bf99a93e97ab76::t_2a24c5e3c9b2bf 1-6,13-69,72,76-77,106-262,267-281,290-293,296-303,306,309-312,317,334-335,337,348-349,352-353,365,409-675,722-731,735-736,738,740,743-744,746,748-753,773-786,803-806,811-812,818-819,826-828,830,846-887,906-981,1011-1025,1030-1031,1036-1041,1044-1051,1059-1063,1066-1067,1087,1109
+tools/refactor/steps/m2-codemod.py
+  s_bf99a93e97ab76::t_2a24c5e3c9b2bf 1-27
+docs/rust-port/42-current-port-coverage.md
+  s_bf99a93e97ab76::t_2a24c5e3c9b2bf 59-60
+tools/client910/crates/rs910-gpu-device/src/gpu_device.rs
+  s_bf99a93e97ab76::t_2a24c5e3c9b2bf 61-74,103-104
+  s_bf99a93e97ab76::t_56c7f19b8e6b58 60
+tools/client910/crates/rs910-render-nxt/src/nxt_mesh.rs
+  s_bf99a93e97ab76::t_2a24c5e3c9b2bf 17-20,33-92,135,139-144,146,169-170,190
+tools/client910/crates/rs910-render-nxt/src/nxt_render.rs
+  s_bf99a93e97ab76::t_2a24c5e3c9b2bf 45-49,51,243-245,288-290,691-704,887-888,948,958-964
+tools/refactor/test-inventory.txt
+  s_bf99a93e97ab76::t_4586b8e5bd8bf9 41,930,932-938,941-942
+tools/refactor/steps/m2-fnhash-allow.txt
+  s_bf99a93e97ab76::t_2a24c5e3c9b2bf 1-87
+tools/client910/crates/rs910-render-nxt/src/nxt_texture/tests.rs
+  s_bf99a93e97ab76::t_2a24c5e3c9b2bf 1-404
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "485541d3bd3c830e4dadc1f79e4b988dd15a2ae9",
+  "prompts": {},
+  "sessions": {
+    "s_bf99a93e97ab76": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "3306d217-ef25-4a58-aa1a-8bdfdb5da12f",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
