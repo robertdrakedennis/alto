@@ -1,0 +1,141 @@
+docs/rust-port/50-code-quality-programme.md
+  s_bf99a93e97ab76::t_4d77ba036c1039 519-590
+docs/rust-port/quality/target-architecture.md
+  s_bf99a93e97ab76::t_fa7c9762362857 60-71
+tools/Cargo.lock
+  s_bf99a93e97ab76::t_7384d1393d851e 411,1974-1989
+tools/Cargo.toml
+  s_bf99a93e97ab76::t_efac41e0409ef4 17
+tools/README.md
+  s_bf99a93e97ab76::t_e78b7576a6c081 18,85-88,108-113
+tools/client910/Cargo.toml
+  s_bf99a93e97ab76::t_d31230326d3197 65-68,99,105
+tools/client910/crates/rs910-config/src/landscape_packet.rs
+  s_bf99a93e97ab76::t_5f7e555c89a254 1-80
+tools/client910/crates/rs910-config/src/lib.rs
+  s_bf99a93e97ab76::t_73e8446a3fd55c 36-38,40
+tools/client910/crates/rs910-config/src/loc_sound.rs
+  s_bf99a93e97ab76::t_67f49d3a4c910d 1-155
+tools/client910/crates/rs910-config/src/npc_customisation.rs
+  s_bf99a93e97ab76::t_60be8f0f99e7da 1-76
+tools/client910/crates/rs910-config/src/skybox_types.rs
+  s_bf99a93e97ab76::t_8f6e8448a35a5b 1-240
+tools/client910/crates/rs910-core/src/lib.rs
+  s_bf99a93e97ab76::t_d67f8a1fc8bb7d 33
+tools/client910/crates/rs910-core/src/vector_math.rs
+  s_bf99a93e97ab76::t_4a11ea7aa94dbe 1-291
+tools/client910/crates/rs910-model/src/lib.rs
+  s_bf99a93e97ab76::t_f95c77bf88127c 30,34,39
+tools/client910/crates/rs910-model/src/mesh_billboards.rs
+  s_bf99a93e97ab76::t_2e21bce7a48a15 1-97
+tools/client910/crates/rs910-model/src/sprite.rs
+  s_bf99a93e97ab76::t_0c7ca9bfbb745f 1-66
+tools/client910/crates/rs910-scene/Cargo.toml
+  s_bf99a93e97ab76::t_98c94a6075a007 1-49
+tools/client910/crates/rs910-scene/src/animation_assets.rs
+  s_bf99a93e97ab76::t_c8f50c71d831f9 61
+tools/client910/crates/rs910-scene/src/cam2_scene.rs
+  s_bf99a93e97ab76::t_ac0225dfd98a83 1-140
+tools/client910/crates/rs910-scene/src/draw.rs
+  s_bf99a93e97ab76::t_7c90598ddc69bc 8,10,1019,1030,1257,1278,1322-1345,1349-1350,1352-1368,1372
+tools/client910/crates/rs910-scene/src/draw_entity.rs
+  s_bf99a93e97ab76::t_8e25a1cad9cce3 1-176
+tools/client910/crates/rs910-scene/src/dynamic_scene.rs
+  s_bf99a93e97ab76::t_c180f5fc5a5200 56,66,252,323
+tools/client910/crates/rs910-scene/src/entity_elements.rs
+  s_bf99a93e97ab76::t_334594a5d46d24 15
+tools/client910/crates/rs910-scene/src/env.rs
+  s_bf99a93e97ab76::t_15dfbb7ce2013a 22
+tools/client910/crates/rs910-scene/src/lib.rs
+  s_bf99a93e97ab76::t_2676ef69cf04b9 1-100
+tools/client910/crates/rs910-scene/src/locs.rs
+  s_bf99a93e97ab76::t_715e8f3aa33d30 100,235
+tools/client910/crates/rs910-scene/src/map.rs
+  s_bf99a93e97ab76::t_25e6b96e3d6cba 364,367,824
+tools/client910/crates/rs910-scene/src/maploader.rs
+  s_bf99a93e97ab76::t_939501a0bf4300 38,709,715,809
+tools/client910/crates/rs910-scene/src/minimap.rs
+  s_bf99a93e97ab76::t_7b66adcd4ba6b0 41
+tools/client910/crates/rs910-scene/src/model_lights.rs
+  s_bf99a93e97ab76::t_addef5f8825c97 4
+tools/client910/crates/rs910-scene/src/npc_type_model.rs
+  s_bf99a93e97ab76::t_14675080b19e05 18,463-465
+tools/client910/crates/rs910-scene/src/player_model.rs
+  s_bf99a93e97ab76::t_a8ad75e53ae77a 100
+tools/client910/crates/rs910-scene/src/player_picking.rs
+  s_bf99a93e97ab76::t_f15ae5bcc292ef 74
+tools/client910/crates/rs910-scene/src/rebuild.rs
+  s_bf99a93e97ab76::t_b43e301e7426cd 156,182,213,234,874,941,943
+tools/client910/crates/rs910-scene/src/scene.rs
+  s_bf99a93e97ab76::t_8f164f6bdc7934 161
+tools/client910/crates/rs910-scene/src/scene_debug_flags.rs
+  s_bf99a93e97ab76::t_94e10e3c212104 1-78
+tools/client910/crates/rs910-scene/src/scene_player_pick.rs
+  s_bf99a93e97ab76::t_2920febc4d94ba 476
+tools/client910/crates/rs910-scene/src/scene_player_pick/tests.rs
+  s_bf99a93e97ab76::t_8cdb0bed06f51b 183-184
+tools/client910/crates/rs910-scene/src/skybox.rs
+  s_bf99a93e97ab76::t_18671be1e32c7e 28
+tools/client910/crates/rs910-scene/src/skybox/tests.rs
+  s_bf99a93e97ab76::t_c6d1f58fd8e857 2,81,139,246-247
+tools/client910/crates/rs910-scene/src/ui_icon_model.rs
+  s_bf99a93e97ab76::t_d20cf7e2e5c137 457
+tools/client910/src/billboard_render.rs
+  s_bf99a93e97ab76::t_ba8d48d58c7cd3 38-41
+tools/client910/src/floor_render.rs
+  s_bf99a93e97ab76::t_abeecb407ab85f 1386,1629,1765
+tools/client910/src/floorpass.rs
+  s_bf99a93e97ab76::t_9b50ef5064cf8d 28
+tools/client910/src/game_runtime.rs
+  s_bf99a93e97ab76::t_e5a96dae69d8e6 7
+tools/client910/src/game_scene.rs
+  s_bf99a93e97ab76::t_ec68f7343a463c 1-120
+tools/client910/src/lib.rs
+  s_bf99a93e97ab76::t_249f41bf8b029d 57,89-90,224-225,228-229,235-238,240,251-268,276
+tools/client910/src/positioned_sound.rs
+  s_bf99a93e97ab76::t_e435989fc83ab9 27
+tools/client910/src/scene_goldens.rs
+  s_bf99a93e97ab76::t_fa45dc311f066e 1-705
+tools/client910/src/ui_cam2.rs
+  s_bf99a93e97ab76::t_261b8300de18fa 18,21
+tools/client910/src/ui_models.rs
+  s_bf99a93e97ab76::t_b9b4a394004f0f 15
+tools/client910/src/ui_sprites.rs
+  s_bf99a93e97ab76::t_d1fe8d4ada85cc 11
+tools/oracle/run-ui-icon-model.sh
+  s_bf99a93e97ab76::t_4900c1395b8234 8
+tools/refactor/README.md
+  s_bf99a93e97ab76::t_616240bfefefa4 233-253,272-276
+tools/refactor/dag-baseline.txt
+  s_bf99a93e97ab76::t_94e0eb27c1e900 2-3
+tools/refactor/layers.txt
+  s_bf99a93e97ab76::t_b4cba3e58a31c3 49-51,90-91,148-155,159-160,182-184,205-213,215-218,247-265
+tools/refactor/replay-gate.txt
+  s_bf99a93e97ab76::t_2ce5b0014afe5f 41-45
+tools/refactor/steps/p2-scene-fnhash-allow.txt
+  s_bf99a93e97ab76::t_d0e6d84f1eff09 1-165
+tools/refactor/steps/p2-scene-move.py
+  s_bf99a93e97ab76::t_34a8002bb40b4e 1-656
+tools/refactor/steps/p2-scene-split.py
+  s_bf99a93e97ab76::t_d61ef65472ba62 1-589
+tools/refactor/steps/p2-scene-verify.py
+  s_bf99a93e97ab76::t_4ed41d8660f7d0 1-161
+tools/refactor/test-inventory.txt
+  s_bf99a93e97ab76::t_26e278f8a165bf 4,39,272-286,1136-1242
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "6b2522778505597f77aba138f901b9db9b2c5f74",
+  "prompts": {},
+  "sessions": {
+    "s_bf99a93e97ab76": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "3306d217-ef25-4a58-aa1a-8bdfdb5da12f",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
