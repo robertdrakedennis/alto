@@ -1,0 +1,51 @@
+docs/rust-port/42-current-port-coverage.md
+  s_bf99a93e97ab76::t_7ea27ce98fc683 51
+docs/rust-port/50-code-quality-programme.md
+  s_bf99a93e97ab76::t_0102186babdcd0 1078-1122,1181-1190
+docs/rust-port/quality/architecture-map.md
+  s_bf99a93e97ab76::t_0c1c74e31ffdd0 215
+docs/rust-port/quality/target-architecture.md
+  s_bf99a93e97ab76::t_16d8f4770a1f66 476-478
+tools/client910/crates/rs910-client/src/login_worker.rs
+  s_bf99a93e97ab76::t_4f1fc434ba3de9 12,88,107,132,144-150,156,162-166,168-179
+tools/client910/crates/rs910-client/src/net.rs
+  s_bf99a93e97ab76::t_55acea8334cd85 18-30,64,85-97,122-151,206-245,428-455,650-652,656-657,664-665,693,697-699,704-705,740,743,748,751,1288-1294,1297-1304,1307-1310,1313-1317,1320-1324,1328-1339,1347,1357-1369,1376,1382-1396,1398-1399,1403-1405,1415,1422,1428-1440,1444,1448,1451,1456,1460-1466,1468-1482,1484-1487,1507,1550,1557-1558,1568,1633-1668,1683-1687,1752-1762,1764,1767-1772,1774-1777,1780-1785,1788,1808,1884,1941,1946,1948-1949
+tools/client910/crates/rs910-client/src/net/tests.rs
+  s_bf99a93e97ab76::t_ac7278faed4679 3-24,65-67,86,111,137,154-164,174-175,188-197,205-214,224-226,229-231,350-362,380-381,688-689,693,726,848-849,853,875,895,900-918,937,961,988,1003,1032,1038-1520
+tools/client910/crates/rs910-client/src/session.rs
+  s_bf99a93e97ab76::t_0b7742c8970482 30-43,79-80,82-90,169-171,188,190,200-285,295,299-300,304-305,307,309,314,321,324,326,329-353,362-364,374,434-438,494-498,512-558,560-566,568,570-602,729-733,736,744-745,776,795-796,799-800,876-921
+tools/client910/crates/rs910-client/src/session/tests.rs
+  s_bf99a93e97ab76::t_8134d8b81bb9be 1360-1837
+tools/client910/src/app.rs
+  s_bf99a93e97ab76::t_ef2cf3f35166d9 1274-1279,1291-1295,1341-1346,1881-1900,1902,1904-1905,2301-2332,2341,2471-2473,3092-3103,3106,3109,3140,3143,3150-3151,3153,3156,3162,3168,3214-3218,3222-3224,3231,3268,3272-3273,3277-3278,9909,9958,10600-10601,10603-10605,10689-10696,10718-10725,10745-10749,10753-10755,10758,10761,10764,10769,10779-10780,10784-10785,10802,10804,10807-10814,10817
+tools/client910/src/scenario_tests.rs
+  s_bf99a93e97ab76::t_17420b771d79ba 1051,1320-1324,1329,1332,1335-1341,1355-1359,1369,1373-1376
+tools/refactor/steps/p4-session-1-login-api.py
+  s_bf99a93e97ab76::t_21ea6611c60e67 1-2248
+tools/refactor/steps/p4-session-2-io-seam.py
+  s_bf99a93e97ab76::t_01d4cd6d57c348 1-1553
+tools/refactor/steps/p4-session-3-state.py
+  s_bf99a93e97ab76::t_aab9fe5c6cc35f 1-1703
+tools/refactor/steps/p4-session-fnhash-allow.txt
+  s_bf99a93e97ab76::t_fe7a98331dc6ea 1-142
+tools/refactor/steps/p4_session_common.py
+  s_bf99a93e97ab76::t_eb072f6f03eec5 1-20
+tools/refactor/test-inventory.txt
+  s_bf99a93e97ab76::t_23473ea80ee584 33,601-603,636,646-647
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "467a4f316492b292663641cc1586413e2545472a",
+  "prompts": {},
+  "sessions": {
+    "s_bf99a93e97ab76": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "3306d217-ef25-4a58-aa1a-8bdfdb5da12f",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
