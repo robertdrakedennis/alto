@@ -1,0 +1,79 @@
+tools/client910/crates/rs910-render-gpu/src/lib.rs
+  s_bf99a93e97ab76::t_530c86e05ef618 3-6,17-18
+tools/client910/src/render_goldens/sw_toolkit.rs
+  s_bf99a93e97ab76::t_530c86e05ef618 134
+tools/client910/crates/rs910-render-sw/src/sw_toolkit/model.rs
+  s_bf99a93e97ab76::t_530c86e05ef618 242-244,555,562,578,608,1621
+tools/client910/crates/rs910-scene/src/scene_snapshot.rs
+  s_bf99a93e97ab76::t_530c86e05ef618 20-24,35-119,145-147
+tools/refactor/steps/prem1-codemod.py
+  s_bf99a93e97ab76::t_530c86e05ef618 1-6342
+tools/client910/src/active_toolkit.rs
+  s_bf99a93e97ab76::t_530c86e05ef618 2-4,9-17,38-43,125-127,174,180-181,184,255,276,287,317-325,357-358,379-381,398-401,423,430,436,456-462,470-538
+tools/client910/crates/rs910-render-sw/src/sw_toolkit/tests.rs
+  s_bf99a93e97ab76::t_530c86e05ef618 562
+tools/client910/crates/rs910-render-gpu/src/render.rs
+  s_bf99a93e97ab76::t_530c86e05ef618 7,12-19,142-144,214-222,290,328,330-331,337,343-344,351-352,361-362,392-396,400,405,420-421,429,432,446,474-475,479,481,491,503,509,516,522,530,532-537,555,575-578,581,595,601,615,640,646,649,707-708,725,727,730-741,747-748,753,770-774,777-779,787,794,804-809,882-885,888,890,893,896-897,901,905,916,922,934,939,942,945,973,987-988,1018,1023,1037,1111-1112,1123,1129-1130,1139,1154,1158,1164,1169,1175-1178,1186,1193,1198,1206,1214,1222-1223,1227-1230,1252-1256,1259-1260,1268,1273-1276,1284,1288,1350-1353,1359,1363-1368,1390,1393,1395,1402,1409,1432-1439,1445,1452,1460-1461,1478,1486,1493,1499,1507,1514-1515,1526,1534-1535,1554,1569,1571,1583-1584,1624,1639,1642-1643,1658,1664,1672,1876-1877,1884,1889,1892,1897,1906,1912,1922-1923,1932,1935,1940-1941,1968,1974,1977,1991,1995,1998,2008-2009,2013,2015
+tools/client910/src/app.rs
+  s_bf99a93e97ab76::t_530c86e05ef618 226-228,4720,4755,4952,5014,5028,6702,6902,6930,6951,8359-8363,8413,8513,8547,8616-8617,8651-8664,9260-9261,12282-12289
+docs/rust-port/50-code-quality-programme.md
+  s_bf99a93e97ab76::t_530c86e05ef618 1044-1076,1136-1142
+tools/README.md
+  s_bf99a93e97ab76::t_530c86e05ef618 25
+tools/client910/crates/rs910-gpu-device/src/gpu_device.rs
+  s_bf99a93e97ab76::t_530c86e05ef618 6-15,191-240
+  s_bf99a93e97ab76::t_bbf0288a1af178 241
+tools/client910/crates/rs910-scene/src/sky_frame.rs
+  s_bf99a93e97ab76::t_530c86e05ef618 1-17,19-29,41-322
+tools/client910/crates/rs910-scene/src/floor_uniforms.rs
+  s_bf99a93e97ab76::t_530c86e05ef618 4-8
+tools/client910/crates/rs910-scene/src/lib.rs
+  s_bf99a93e97ab76::t_530c86e05ef618 20-21,34-35
+tools/refactor/test-inventory.txt
+  s_bf99a93e97ab76::t_530c86e05ef618 38,40,42,811,813,915,1023
+tools/client910/crates/rs910-model/src/floor.rs
+  s_bf99a93e97ab76::t_530c86e05ef618 575,1144-1146,1148,1150,1152,1156,1321-1391,1448-1496,1629-1730
+  s_bf99a93e97ab76::t_0f8582eda740ed 1731
+tools/client910/crates/rs910-toolkit/src/lib.rs
+  s_bf99a93e97ab76::t_530c86e05ef618 78-79,82-85
+docs/rust-port/renderer/nxt-renderer-plan.md
+  s_bf99a93e97ab76::t_530c86e05ef618 210-212,215,267-273,308-327,347-348,351-375,392-393
+tools/client910/crates/rs910-render-gpu/src/ui_model_gpu.rs
+  s_bf99a93e97ab76::t_530c86e05ef618 3-4,22-68,181,187,220,253,542-641
+tools/client910/crates/rs910-render-gpu/src/scene_meshes.rs
+  s_bf99a93e97ab76::t_530c86e05ef618 103,123,155,174,190,205,216,252,300,355,379,393-400,430,436,445,456,475,482-489,525,549-550,571,589,608,617,632-637,652,664,678,687,710,733,741,756,764,786,804-811,888,955,966
+tools/client910/crates/rs910-scene/src/interface_model.rs
+  s_bf99a93e97ab76::t_530c86e05ef618 3-5,9-16,71-73,93-94,96-97,99-103
+tools/client910/crates/rs910-ui/src/lib.rs
+  s_bf99a93e97ab76::t_530c86e05ef618 118-120
+tools/client910/crates/rs910-scene/src/player_draw.rs
+  s_bf99a93e97ab76::t_530c86e05ef618 2-8,20-23,26
+tools/refactor/steps/prem1-fnhash-allow.txt
+  s_bf99a93e97ab76::t_530c86e05ef618 1-123
+tools/client910/crates/rs910-render-sw/src/lib.rs
+  s_bf99a93e97ab76::t_530c86e05ef618 17
+tools/client910/crates/rs910-render-gpu/src/player_renderer.rs
+  s_bf99a93e97ab76::t_530c86e05ef618 39-40,53-55,59-65,69-70,171,322,328,384,390,449-450,456
+tools/client910/crates/rs910-ui/src/ui_models.rs
+  s_bf99a93e97ab76::t_530c86e05ef618 970
+tools/client910/crates/rs910-model/src/gpumodel.rs
+  s_bf99a93e97ab76::t_530c86e05ef618 2390-2408,2416
+tools/client910/crates/rs910-render-gpu/src/skybox_render.rs
+  s_bf99a93e97ab76::t_530c86e05ef618 11-16,25-31,119-125,134,138,141,143,145,148,159-174,178-180,186,215-219,222,293-294,436-439,445,454,501-504,508-511,516-517,530-531,533-535
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "0ef7dfe2cbcdad6d9af9a483a13cc0b1cc322ebb",
+  "prompts": {},
+  "sessions": {
+    "s_bf99a93e97ab76": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "3306d217-ef25-4a58-aa1a-8bdfdb5da12f",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
