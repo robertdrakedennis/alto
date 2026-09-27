@@ -1,0 +1,89 @@
+tools/refactor/layers.txt
+  s_bf99a93e97ab76::t_dd936839883cad 42-43,83-86,112,119-132
+tools/client910/crates/rs910-config/src/anim.rs
+  s_bf99a93e97ab76::t_dd936839883cad 859,917
+tools/client910/src/ui_components_oracle.rs
+  s_bf99a93e97ab76::t_dd936839883cad 1
+tools/client910/crates/rs910-core/src/test_support.rs
+  s_bf99a93e97ab76::t_dd936839883cad 1-73
+tools/refactor/steps/p2-config-fnhash-allow.txt
+  s_bf99a93e97ab76::t_dd936839883cad 1-56
+tools/oracle/component-fields.py
+  s_bf99a93e97ab76::t_dd936839883cad 6-15,19-20,44-50,57-59,62-86
+tools/client910/crates/rs910-core/src/lib.rs
+  s_bf99a93e97ab76::t_dd936839883cad 28-29
+tools/client910/src/config_goldens.rs
+  s_bf99a93e97ab76::t_dd936839883cad 1-249
+tools/client910/crates/rs910-config/src/lib.rs
+  s_bf99a93e97ab76::t_dd936839883cad 1-46
+tools/client910/crates/rs910-config/src/texture.rs
+  s_bf99a93e97ab76::t_dd936839883cad 184,270,603,1815-1818
+tools/refactor/steps/p2-config-test-support.py
+  s_bf99a93e97ab76::t_dd936839883cad 1-167
+tools/client910/crates/rs910-js5/src/test_support.rs
+  s_bf99a93e97ab76::t_dd936839883cad 1-37
+tools/client910/crates/rs910-config/src/ui_component_fields.rs
+  s_bf99a93e97ab76::t_dd936839883cad 360
+tools/oracle/run-all-local.sh
+  s_bf99a93e97ab76::t_dd936839883cad 18-19,41-48,86
+tools/client910/src/lib.rs
+  s_bf99a93e97ab76::t_dd936839883cad 31-32,171-172,278-284
+  s_bf99a93e97ab76::t_b25b30b76e069b 285
+tools/client910/crates/rs910-js5/Cargo.toml
+  s_bf99a93e97ab76::t_dd936839883cad 32-35
+tools/client910/Cargo.toml
+  s_bf99a93e97ab76::t_dd936839883cad 54-57,76-78,84-85
+  s_bf99a93e97ab76::t_fa7c040bd50574 91
+tools/client910/crates/rs910-core/Cargo.toml
+  s_bf99a93e97ab76::t_dd936839883cad 19-20
+tools/client910/crates/rs910-config/src/billboard.rs
+  s_bf99a93e97ab76::t_dd936839883cad 142
+tools/refactor/gate.sh
+  s_bf99a93e97ab76::t_dd936839883cad 8,74-88,170
+tools/client910/crates/rs910-config/src/config.rs
+  s_bf99a93e97ab76::t_dd936839883cad 177,943,1389,2035,2225,2311,2384-2386
+tools/oracle/ui-legacy-types.py
+  s_bf99a93e97ab76::t_dd936839883cad 1-8,10,41-46
+tools/oracle/generate-client-options.py
+  s_bf99a93e97ab76::t_dd936839883cad 5-6,101,188
+tools/client910/src/ui_component_fields_snapshot.rs
+  s_bf99a93e97ab76::t_dd936839883cad 1-127
+tools/client910/crates/rs910-js5/src/lib.rs
+  s_bf99a93e97ab76::t_dd936839883cad 20-21
+tools/refactor/README.md
+  s_bf99a93e97ab76::t_dd936839883cad 20
+tools/Cargo.toml
+  s_bf99a93e97ab76::t_fa7c040bd50574 17
+tools/refactor/test-inventory.txt
+  s_bf99a93e97ab76::t_e869ba94412a85 4,33,101-104,1108-1195
+tools/README.md
+  s_bf99a93e97ab76::t_dd936839883cad 15,73-92
+tools/client910/crates/rs910-config/Cargo.toml
+  s_bf99a93e97ab76::t_dd936839883cad 1-39
+docs/rust-port/50-code-quality-programme.md
+  s_bf99a93e97ab76::t_dd936839883cad 385-414,498-501
+tools/refactor/dag-baseline.txt
+  s_bf99a93e97ab76::t_e869ba94412a85 2
+tools/client910/src/test_support.rs
+  s_bf99a93e97ab76::t_dd936839883cad 14-16,112-114
+tools/refactor/steps/p2-config-move.py
+  s_bf99a93e97ab76::t_dd936839883cad 1-391
+tools/Cargo.lock
+  s_bf99a93e97ab76::t_1bb6015aca1eda 405,1911-1921
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "c0556fc8f280464ab7233106cbded0760160b419",
+  "prompts": {},
+  "sessions": {
+    "s_bf99a93e97ab76": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "3306d217-ef25-4a58-aa1a-8bdfdb5da12f",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
