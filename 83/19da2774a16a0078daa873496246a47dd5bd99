@@ -1,0 +1,97 @@
+docs/rust-port/quality/target-architecture.md
+  s_bf99a93e97ab76::t_14ba52c42be101 498-500,506-507
+tools/refactor/steps/p4-app-3-session-ui.py
+  s_bf99a93e97ab76::t_14ba52c42be101 1-241
+tools/refactor/test-inventory.txt
+  s_bf99a93e97ab76::t_14ba52c42be101 4,69,73
+tools/refactor/steps/p4-app-1-session-io.py
+  s_bf99a93e97ab76::t_14ba52c42be101 1-407
+tools/client910/src/app/tests.rs
+  s_bf99a93e97ab76::t_14ba52c42be101 434-517
+tools/client910/src/app/environment.rs
+  s_bf99a93e97ab76::t_14ba52c42be101 1-481
+tools/refactor/steps/p4-app-6-modules.py
+  s_bf99a93e97ab76::t_14ba52c42be101 1-261
+tools/refactor/steps/p4-app-5-phases.py
+  s_bf99a93e97ab76::t_14ba52c42be101 1-79
+tools/client910/src/app/particle_host.rs
+  s_bf99a93e97ab76::t_14ba52c42be101 1-525
+tools/refactor/steps/p4-app-7-owners.py
+  s_bf99a93e97ab76::t_14ba52c42be101 1-121
+tools/client910/src/app/lifecycle.rs
+  s_bf99a93e97ab76::t_14ba52c42be101 1-22
+tools/client910/src/app/diagnostics.rs
+  s_bf99a93e97ab76::t_14ba52c42be101 1-19
+tools/client910/src/app/session_controller.rs
+  s_bf99a93e97ab76::t_14ba52c42be101 1-1721
+tools/client910/src/app/input_router.rs
+  s_bf99a93e97ab76::t_14ba52c42be101 1-63
+tools/client910/src/app/startup.rs
+  s_bf99a93e97ab76::t_14ba52c42be101 1-901
+tools/refactor/steps/p4-app-fnhash-allow.txt
+  s_bf99a93e97ab76::t_14ba52c42be101 1-178
+tools/client910/src/app/redraw.rs
+  s_bf99a93e97ab76::t_14ba52c42be101 1-625
+tools/client910/src/app/effects.rs
+  s_bf99a93e97ab76::t_14ba52c42be101 1-152
+tools/refactor/steps/p4_app_common.py
+  s_bf99a93e97ab76::t_14ba52c42be101 1-165
+tools/client910/src/app_loading.rs
+  s_bf99a93e97ab76::t_14ba52c42be101 210,220,234-235,412,466,494-496,597,600,604-615,637,681,688-690,698,726,750,766,782,805
+tools/client910/src/app/session_slot.rs
+  s_bf99a93e97ab76::t_14ba52c42be101 1-30
+tools/refactor/steps/p4-app-2-fields.py
+  s_bf99a93e97ab76::t_14ba52c42be101 1-223
+tools/refactor/steps/p4-app-verify.py
+  s_bf99a93e97ab76::t_14ba52c42be101 1-68
+tools/client910/src/app/console_host.rs
+  s_bf99a93e97ab76::t_14ba52c42be101 1-658
+tools/client910/src/session_replay.rs
+  s_bf99a93e97ab76::t_14ba52c42be101 19,108-109,344-355,398-407,569-575,592,610-619,622-624,627,640,648,676,943-947,951-956,1214,1240,1311,1326,1507,1513
+tools/client910/src/app/positioned_audio.rs
+  s_bf99a93e97ab76::t_14ba52c42be101 1-203
+docs/rust-port/50-code-quality-programme.md
+  s_bf99a93e97ab76::t_14ba52c42be101 1247-1320,1342
+tools/client910/src/app/entity_renderer.rs
+  s_bf99a93e97ab76::t_14ba52c42be101 1-2003
+tools/client910/src/app.rs
+  s_bf99a93e97ab76::t_14ba52c42be101 224-280,383,497-498,500-503,505-506,508-510,512-522,524-580,583-595,597-738,743-746,750,778,801,826,834,837,840,843-846,861,873,876,898-906,912,919,925,935,939,941,952,964,972,974-975,985-995,1012,1014-1015,1018-1019,1027,1030,1048-1050,1053,1060,1067-1068,1070,1076-1083,1095-1096,1098,1100,1103-1108,1112
+tools/client910/src/app/view_camera.rs
+  s_bf99a93e97ab76::t_14ba52c42be101 1-288
+tools/client910/src/app/session_core.rs
+  s_bf99a93e97ab76::t_14ba52c42be101 1-1928
+tools/client910/src/app/session_io.rs
+  s_bf99a93e97ab76::t_14ba52c42be101 1-46
+tools/client910/src/app/scene_host.rs
+  s_bf99a93e97ab76::t_14ba52c42be101 1-1532
+tools/refactor/steps/p4-app-4-effects.py
+  s_bf99a93e97ab76::t_14ba52c42be101 1-119
+tools/client910/src/app/mainloop.rs
+  s_bf99a93e97ab76::t_14ba52c42be101 1-435
+tools/refactor/steps/p4_app_hunks.py
+  s_bf99a93e97ab76::t_14ba52c42be101 1-94
+tools/client910/src/scenario_woodcutting.rs
+  s_bf99a93e97ab76::t_14ba52c42be101 186,828,841
+tools/client910/src/app/frame_clock.rs
+  s_bf99a93e97ab76::t_14ba52c42be101 1-42
+tools/client910/src/app/preferences.rs
+  s_bf99a93e97ab76::t_14ba52c42be101 1-148
+tools/client910/src/scenario_tests.rs
+  s_bf99a93e97ab76::t_14ba52c42be101 7,19,67
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "8319da2774a16a0078daa873496246a47dd5bd99",
+  "prompts": {},
+  "sessions": {
+    "s_bf99a93e97ab76": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "3306d217-ef25-4a58-aa1a-8bdfdb5da12f",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
