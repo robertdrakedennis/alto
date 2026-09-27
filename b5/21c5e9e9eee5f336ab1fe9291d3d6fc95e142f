@@ -1,0 +1,141 @@
+docs/rust-port/renderer/nxt-renderer-plan.md
+  s_bf99a93e97ab76::t_76a9fa2addb800 215,232-246,253-258,283
+tools/refactor/steps/p3-render-4-shell.py
+  s_bf99a93e97ab76::t_76a9fa2addb800 1-519
+tools/client910/crates/rs910-render-gpu/src/skybox_render.rs
+  s_bf99a93e97ab76::t_76a9fa2addb800 40,121,141,624
+tools/client910/src/render_goldens/sw_toolkit.rs
+  s_bf99a93e97ab76::t_76a9fa2addb800 1-225
+tools/client910/crates/rs910-gpu-device/src/software_present.rs
+  s_bf99a93e97ab76::t_76a9fa2addb800 7-11
+tools/client910/crates/rs910-render-sw/src/sw_toolkit/tests.rs
+  s_bf99a93e97ab76::t_76a9fa2addb800 475-476,614-615,685-686,858-859
+tools/client910/crates/rs910-gpu-device/src/test_support.rs
+  s_bf99a93e97ab76::t_76a9fa2addb800 1-13
+tools/client910/crates/rs910-render-gpu/src/ui_model_gpu.rs
+  s_bf99a93e97ab76::t_76a9fa2addb800 338,349,415
+tools/refactor/steps/p3-render-2-down.py
+  s_bf99a93e97ab76::t_76a9fa2addb800 1-247
+tools/oracle/generate-sw-toolkit.sh
+  s_bf99a93e97ab76::t_76a9fa2addb800 2,13,15
+tools/oracle/run-material-pixels.sh
+  s_bf99a93e97ab76::t_76a9fa2addb800 12
+tools/client910/crates/rs910-render-gpu/src/render.rs
+  s_bf99a93e97ab76::t_76a9fa2addb800 10-11,156-159,316-317,323,329-330,337-338,347-348,376-378,382,387,402-403,411,414-416,431,459-460,464,466,487,493,500,506,514,516-522,540,559-560,599,605,619,644,650,654,712-714,731,733,736-748,754-755,760,780-782,796,805-821,823,825,830,832,837-839,861,875-880,896-897,927,943,946,949,991,1025,1062,1112-1113,1129-1130,1153,1162,1172-1179,1193,1205,1213,1222-1224,1229-1234,1259-1265,1273,1278-1281,1293,1324-1325,1327,1341-1342,1344,1346-1347,1349,1373,1376,1378,1385,1392,1416-1419,1430,1435,1441-1442,1448,1453,1467-1468,1493,1510,1524-1525,1543-1544,1577,1591,1593,1632,1647,1650-1653,1669,1675,1683,1757-1758,1887-1888,1895,1900,1903,1908,1917-1923,1929,1939-1940,1949,1952,1957-1958,1976-2063
+tools/client910/crates/rs910-render-gpu/src/frame_profile.rs
+  s_bf99a93e97ab76::t_76a9fa2addb800 23,55
+tools/client910/src/active_toolkit.rs
+  s_bf99a93e97ab76::t_76a9fa2addb800 1-268
+tools/refactor/steps/p3_render_common.py
+  s_bf99a93e97ab76::t_76a9fa2addb800 1-93
+tools/client910/crates/rs910-render-sw/src/sw_debug_flags.rs
+  s_bf99a93e97ab76::t_76a9fa2addb800 1-50
+tools/client910/crates/rs910-render-sw/src/sw_toolkit/frame.rs
+  s_bf99a93e97ab76::t_76a9fa2addb800 4,11-15,39-40,70-71,74,85,88,188-191,194
+tools/client910/crates/rs910-scene/src/sky_frame.rs
+  s_bf99a93e97ab76::t_76a9fa2addb800 1-25
+tools/client910/crates/rs910-toolkit/src/performance_metric.rs
+  s_bf99a93e97ab76::t_76a9fa2addb800 16
+tools/refactor/layers.txt
+  s_bf99a93e97ab76::t_76a9fa2addb800 25-27,61-65,69,87-89,302-305,369-370,372-381,384-385
+tools/client910/crates/rs910-render-gpu/Cargo.toml
+  s_bf99a93e97ab76::t_76a9fa2addb800 1-53
+tools/Cargo.toml
+  s_bf99a93e97ab76::t_76a9fa2addb800 17
+tools/client910/crates/rs910-render-gpu/src/window_canvas.rs
+  s_bf99a93e97ab76::t_76a9fa2addb800 10
+tools/client910/crates/rs910-gpu-device/src/lib.rs
+  s_bf99a93e97ab76::t_76a9fa2addb800 1-31
+tools/client910/crates/rs910-toolkit/src/lib.rs
+  s_bf99a93e97ab76::t_76a9fa2addb800 72-77
+tools/client910/crates/rs910-render-sw/src/sw_toolkit/model.rs
+  s_bf99a93e97ab76::t_76a9fa2addb800 44-46,97,118,202,287,816,825
+tools/client910/crates/rs910-ui/src/lib.rs
+  s_bf99a93e97ab76::t_76a9fa2addb800 9-13
+tools/oracle/verify-submissions.py
+  s_bf99a93e97ab76::t_76a9fa2addb800 82-83
+tools/refactor/replay-gate.txt
+  s_bf99a93e97ab76::t_76a9fa2addb800 52
+tools/refactor/steps/p3-render-3-device.py
+  s_bf99a93e97ab76::t_76a9fa2addb800 1-355
+tools/client910/crates/rs910-gpu-device/src/gpu_device.rs
+  s_bf99a93e97ab76::t_76a9fa2addb800 1-271
+tools/client910/crates/rs910-render-gpu/src/postprocess_tests.rs
+  s_bf99a93e97ab76::t_76a9fa2addb800 491,581-582,929-930
+tools/refactor/steps/p3-render-6-oracle.py
+  s_bf99a93e97ab76::t_76a9fa2addb800 1-13
+tools/client910/src/debug_flags.rs
+  s_bf99a93e97ab76::t_76a9fa2addb800 18-22,145
+tools/client910/src/render_goldens/ui_preferences_metric_gpu.rs
+  s_bf99a93e97ab76::t_76a9fa2addb800 1-21
+tools/client910/src/render_goldens.rs
+  s_bf99a93e97ab76::t_76a9fa2addb800 1-10
+tools/refactor/steps/p3-render-verify.py
+  s_bf99a93e97ab76::t_76a9fa2addb800 1-168
+tools/client910/crates/rs910-render-sw/src/sw_toolkit/mod.rs
+  s_bf99a93e97ab76::t_76a9fa2addb800 15-17
+tools/client910/crates/rs910-render-sw/Cargo.toml
+  s_bf99a93e97ab76::t_76a9fa2addb800 1-41
+tools/refactor/steps/p3-render-1-flags.py
+  s_bf99a93e97ab76::t_76a9fa2addb800 1-226
+tools/client910/crates/rs910-render-sw/src/lib.rs
+  s_bf99a93e97ab76::t_76a9fa2addb800 1-45
+tools/oracle/verify-material-pixels.py
+  s_bf99a93e97ab76::t_76a9fa2addb800 21-22,32-33,36
+tools/client910/crates/rs910-gpu-device/Cargo.toml
+  s_bf99a93e97ab76::t_76a9fa2addb800 1-36
+tools/client910/crates/rs910-render-gpu/src/lib.rs
+  s_bf99a93e97ab76::t_76a9fa2addb800 1-87
+tools/refactor/dag-baseline.txt
+  s_bf99a93e97ab76::t_76a9fa2addb800 2,8
+docs/rust-port/50-code-quality-programme.md
+  s_bf99a93e97ab76::t_76a9fa2addb800 830-915
+tools/refactor/steps/p3-render-fnhash-allow.txt
+  s_bf99a93e97ab76::t_76a9fa2addb800 1-191
+tools/client910/crates/rs910-render-gpu/src/floor_render.rs
+  s_bf99a93e97ab76::t_76a9fa2addb800 441,588,1637
+tools/client910/Cargo.toml
+  s_bf99a93e97ab76::t_76a9fa2addb800 77-82,116-120,126
+tools/oracle/run-ui-icon-raster.sh
+  s_bf99a93e97ab76::t_76a9fa2addb800 9
+tools/client910/crates/rs910-render-sw/src/sw_toolkit/console.rs
+  s_bf99a93e97ab76::t_76a9fa2addb800 11,22-27
+tools/client910/src/lib.rs
+  s_bf99a93e97ab76::t_76a9fa2addb800 5,68-69,135-137,166-168,180-182,212-213,217-218,221,228,230,232-234,238,259-271,283-284
+tools/client910/crates/rs910-render-gpu/src/render_debug_flags.rs
+  s_bf99a93e97ab76::t_76a9fa2addb800 1-80
+tools/README.md
+  s_bf99a93e97ab76::t_76a9fa2addb800 22,77-80,89-93,120,123-126,154-155,179-185
+tools/client910/crates/rs910-scene/src/player_draw.rs
+  s_bf99a93e97ab76::t_76a9fa2addb800 1-30
+tools/client910/crates/rs910-scene/src/lib.rs
+  s_bf99a93e97ab76::t_76a9fa2addb800 7,19-20,27-28,70,82
+tools/client910/src/app.rs
+  s_bf99a93e97ab76::t_76a9fa2addb800 46,52,2799,3778,9291,12095,12534,13012
+tools/refactor/steps/p3-render-5-move.py
+  s_bf99a93e97ab76::t_76a9fa2addb800 1-625
+docs/rust-port/quality/target-architecture.md
+  s_bf99a93e97ab76::t_76a9fa2addb800 97-111,141-142,147-148,194-203,311-312
+tools/refactor/test-inventory.txt
+  s_bf99a93e97ab76::t_76a9fa2addb800 4,39-40,200-202,873-927
+tools/client910/crates/rs910-render-gpu/src/player_renderer.rs
+  s_bf99a93e97ab76::t_76a9fa2addb800 53-71,240,432
+tools/Cargo.lock
+  s_bf99a93e97ab76::t_07b0e6b9ef867d 409,413-414,1948-1961,1995-2030
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "b521c5e9e9eee5f336ab1fe9291d3d6fc95e142f",
+  "prompts": {},
+  "sessions": {
+    "s_bf99a93e97ab76": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "3306d217-ef25-4a58-aa1a-8bdfdb5da12f",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
