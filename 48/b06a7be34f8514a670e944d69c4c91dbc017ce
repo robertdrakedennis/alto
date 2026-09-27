@@ -1,0 +1,122 @@
+tools/client910/src/app_loading.rs
+  s_bf99a93e97ab76::t_a804e436dad7db 210,220,230,234,258,265,314,460,496,512,627,741-742,765
+tools/client910/src/app/session_core.rs
+  s_bf99a93e97ab76::t_a804e436dad7db 1-3,66
+tools/refactor/steps/p5-3-io-phases.py
+  s_bf99a93e97ab76::t_a804e436dad7db 1-1861
+tools/client910/src/app/view_camera.rs
+  s_bf99a93e97ab76::t_a804e436dad7db 24,40,61,139,175,194
+tools/refactor/layers.txt
+  s_bf99a93e97ab76::t_a804e436dad7db 429-431
+docs/rust-port/quality/target-architecture.md
+  s_bf99a93e97ab76::t_a804e436dad7db 218-234,534-549
+  s_bf99a93e97ab76::t_217a0bb9be86a5 550
+tools/refactor/steps/p5-5-redraw-golden.py
+  s_bf99a93e97ab76::t_a804e436dad7db 1-1383
+tools/client910/crates/rs910-client/src/session.rs
+  s_bf99a93e97ab76::t_a804e436dad7db 31-33
+tools/client910/crates/rs910-client/src/client_core/session_core.rs
+  s_bf99a93e97ab76::t_a804e436dad7db 1-1879
+tools/client910/src/app/effects.rs
+  s_bf99a93e97ab76::t_a804e436dad7db 1-4,29
+tools/client910/src/app/redraw.rs
+  s_bf99a93e97ab76::t_aee58b18a2a61d 596
+  s_bf99a93e97ab76::t_a804e436dad7db 1,3-6,8-20,22,24,26-30,32-37,53-54,56,58,73,79,95-96,112-118,128-132,136-137,179,203,232,254,264,285,292,305,406,454,521,530,538,542,554,558
+tools/client910/src/lib.rs
+  s_bf99a93e97ab76::t_a804e436dad7db 142-143,145,163-164,166,191,247-249,253-255,274-275,277
+tools/client910/src/app/preferences.rs
+  s_bf99a93e97ab76::t_a804e436dad7db 8-9,38,129
+tools/client910/crates/rs910-client/src/client_core/session_slot.rs
+  s_bf99a93e97ab76::t_a804e436dad7db 8
+tools/client910/src/app/scene_host.rs
+  s_bf99a93e97ab76::t_a804e436dad7db 316-317,329,420,428,460,486,797,821,855,960,968,975,1012,1048,1071,1098-1099,1106,1129,1193,1199,1227,1243,1516,1521,1527
+tools/client910/src/app.rs
+  s_bf99a93e97ab76::t_a804e436dad7db 31-34,437-440,448,461-468,576-578,580-585,725,749,773-774,788,796,804-805,825,847,861,874,884,897-898,913,921,930-931,934,944,963,968,988-989,1002,1025,1044-1045,1048-1063
+tools/client910/crates/rs910-client/src/client_core/persistence.rs
+  s_bf99a93e97ab76::t_a804e436dad7db 1-134
+tools/client910/src/debug_flags.rs
+  s_bf99a93e97ab76::t_a804e436dad7db 14-15
+tools/refactor/steps/p5-fnhash-allow.txt
+  s_bf99a93e97ab76::t_a804e436dad7db 1-161
+tools/client910/crates/rs910-client/src/client_core/io.rs
+  s_bf99a93e97ab76::t_a804e436dad7db 1-513
+docs/rust-port/50-code-quality-programme.md
+  s_bf99a93e97ab76::t_a804e436dad7db 1340-1420,1434-1437,1445,1482-1543
+  s_bf99a93e97ab76::t_fc4a91309907e5 1544
+tools/client910/src/app/console_host.rs
+  s_bf99a93e97ab76::t_a804e436dad7db 59,87,147,159,262,324,338,361,370,388,407,423,445,453,463,481,502,509,620,644
+tools/client910/crates/rs910-client/src/client_core/redraw.rs
+  s_bf99a93e97ab76::t_a804e436dad7db 1-19,24-25,28,30,33-141,147,319,321-323
+tools/client910/src/app/environment.rs
+  s_bf99a93e97ab76::t_a804e436dad7db 249,257,362,371
+tools/refactor/steps/p5_hunks.py
+  s_bf99a93e97ab76::t_a804e436dad7db 1-122
+tools/client910/src/app/input_router.rs
+  s_bf99a93e97ab76::t_a804e436dad7db 22
+tools/client910/src/app/entity_renderer.rs
+  s_bf99a93e97ab76::t_a804e436dad7db 175,230,236,251,282,312,319,340,981,1028,1046,1322,1435,1492,1527,1837
+tools/client910/crates/rs910-client/Cargo.toml
+  s_bf99a93e97ab76::t_a804e436dad7db 18-21
+tools/refactor/steps/p5_common.py
+  s_bf99a93e97ab76::t_a804e436dad7db 1-91
+tools/client910/src/scenario_tests.rs
+  s_bf99a93e97ab76::t_a804e436dad7db 7,16-23,26,74
+tools/refactor/steps/p5-2-core-state.py
+  s_bf99a93e97ab76::t_a804e436dad7db 1-142
+tools/client910/crates/rs910-js5/src/cache.rs
+  s_bf99a93e97ab76::t_a804e436dad7db 963-1001,1130-1131,1375-1376
+tools/client910/src/app/frame_clock.rs
+  s_bf99a93e97ab76::t_a804e436dad7db 4-5,26
+tools/client910/crates/rs910-client/src/lib.rs
+  s_bf99a93e97ab76::t_a804e436dad7db 20-23,25-27,31,43-48,50-51
+tools/refactor/steps/p5-4-headless.py
+  s_bf99a93e97ab76::t_a804e436dad7db 1-1060
+tools/client910/crates/rs910-client/src/client_core.rs
+  s_bf99a93e97ab76::t_a804e436dad7db 1-54
+tools/client910/src/scenario_woodcutting.rs
+  s_bf99a93e97ab76::t_a804e436dad7db 186-188,663-670,835,844
+tools/client910/crates/rs910-client/src/client_debug_flags.rs
+  s_bf99a93e97ab76::t_a804e436dad7db 2-4,21-29,49,53-60,76-77,82-88
+tools/refactor/steps/p5-1-core-move.py
+  s_bf99a93e97ab76::t_a804e436dad7db 1-297
+tools/client910/src/app/particle_host.rs
+  s_bf99a93e97ab76::t_a804e436dad7db 161,170,178,204,222
+tools/client910/src/app/session_controller.rs
+  s_bf99a93e97ab76::t_a804e436dad7db 18,33,70,87,108,137,168-169,218,267,290,298,317,329,337,360,382,402,415,429,438,446,455,463,477,486,508,533,545,550,566,580,583,634,643,691,742,781,799,825,864,905,924,952,976,992,1003,1018,1062,1073,1085,1092,1114,1171,1205,1224,1237,1325,1346,1372,1424,1428,1435,1445,1447,1455,1459,1487,1522,1535,1550,1560,1568,1571-1572,1594,1609
+tools/refactor/test-inventory.txt
+  s_bf99a93e97ab76::t_a804e436dad7db 4,33,62-64,67,585-588
+tools/client910/src/session_replay.rs
+  s_bf99a93e97ab76::t_a804e436dad7db 31,112-116,119-120,123-125,215-225,442-443,448-449,464,468-472,474-482,485-486,491-492,494,501,508-511,527-530,533-548,555,558,561-581,583-585,587-590,598-599,604-608,617,626,631-756,1111,1293,1302,1318,1388,1401,1465,1587,1593,1648-2010
+tools/client910/src/app/diagnostics.rs
+  s_bf99a93e97ab76::t_a804e436dad7db 5-6
+tools/refactor/replay-gate.txt
+  s_bf99a93e97ab76::t_a804e436dad7db 59-64
+tools/refactor/dag-baseline.txt
+  s_bf99a93e97ab76::t_a804e436dad7db 2
+tools/client910/crates/rs910-client/src/client_core/session_io.rs
+  s_bf99a93e97ab76::t_a804e436dad7db 9-10,15,18,21,24,27,32,35,38,40,43,45
+tools/client910/src/app/mainloop.rs
+  s_bf99a93e97ab76::t_a804e436dad7db 1-5,7-9,11,13-14,16-24,27-30,33-79,94-99,113,125-128,132-133,145,151-156,160-163,166-167,171,177,186,195-198,201-202,204,252,254-255,272
+tools/client910/crates/rs910-client/src/client_core/phases.rs
+  s_bf99a93e97ab76::t_a804e436dad7db 1-590
+tools/client910/crates/rs910-client/src/client_core/effects.rs
+  s_bf99a93e97ab76::t_a804e436dad7db 1-110
+tools/Cargo.lock
+  s_bf99a93e97ab76::t_c5cc53945fd45b 1929,1932
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "48b06a7be34f8514a670e944d69c4c91dbc017ce",
+  "prompts": {},
+  "sessions": {
+    "s_bf99a93e97ab76": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "3306d217-ef25-4a58-aa1a-8bdfdb5da12f",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
