@@ -1,0 +1,23 @@
+.github/workflows/client.yml
+  s_bf99a93e97ab76::t_23d82db4ec8717 59-80
+tools/refactor/replay-overlay.sh
+  s_bf99a93e97ab76::t_7ab4cdaa7652d8 1-43
+tools/refactor/README.md
+  s_bf99a93e97ab76::t_ffa7a0c193d708 349-357
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "21ba16304057fb46864d79c20a07daa070af37de",
+  "prompts": {},
+  "sessions": {
+    "s_bf99a93e97ab76": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "3306d217-ef25-4a58-aa1a-8bdfdb5da12f",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
