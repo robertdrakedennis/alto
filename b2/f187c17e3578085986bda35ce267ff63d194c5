@@ -1,0 +1,21 @@
+AGENTS.md
+  s_bf99a93e97ab76::t_c05dd16858c7c7 24
+docs/rust-port/50-code-quality-programme.md
+  s_bf99a93e97ab76::t_20c1c5e1715e96 56-80
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "b2f187c17e3578085986bda35ce267ff63d194c5",
+  "prompts": {},
+  "sessions": {
+    "s_bf99a93e97ab76": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "3306d217-ef25-4a58-aa1a-8bdfdb5da12f",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
