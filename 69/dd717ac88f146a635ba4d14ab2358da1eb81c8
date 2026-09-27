@@ -1,0 +1,48 @@
+tools/refactor/layers.txt
+  s_bf99a93e97ab76::t_2ecd7b7bb8bb57 169-170
+docs/rust-port/renderer/nxt-renderer-plan.md
+  s_bf99a93e97ab76::t_2ecd7b7bb8bb57 155-159
+tools/client910/crates/rs910-config/src/nxt/material.rs
+  s_bf99a93e97ab76::t_2ecd7b7bb8bb57 1-245
+docs/rust-port/renderer/nxt-data-formats.md
+  s_bf99a93e97ab76::t_2ecd7b7bb8bb57 1-258
+tools/client910/crates/rs910-config/src/nxt/tests.rs
+  s_bf99a93e97ab76::t_2ecd7b7bb8bb57 1-900
+tools/client910/crates/rs910-config/src/nxt/map_terrain.rs
+  s_bf99a93e97ab76::t_2ecd7b7bb8bb57 1-152
+tools/client910/crates/rs910-config/src/nxt/mod.rs
+  s_bf99a93e97ab76::t_2ecd7b7bb8bb57 1-175
+tools/client910/crates/rs910-config/src/nxt/texture_header.rs
+  s_bf99a93e97ab76::t_2ecd7b7bb8bb57 1-367
+tools/client910/crates/rs910-config/src/nxt/map_lights.rs
+  s_bf99a93e97ab76::t_2ecd7b7bb8bb57 1-106
+tools/client910/crates/rs910-config/src/lib.rs
+  s_bf99a93e97ab76::t_2ecd7b7bb8bb57 22-24,44
+tools/refactor/steps/nxtdata-fnhash-allow.txt
+  s_bf99a93e97ab76::t_2ecd7b7bb8bb57 1-121
+tools/client910/crates/rs910-config/src/nxt/map_environment.rs
+  s_bf99a93e97ab76::t_2ecd7b7bb8bb57 1-172
+tools/refactor/test-inventory.txt
+  s_bf99a93e97ab76::t_2ecd7b7bb8bb57 984-996
+  s_bf99a93e97ab76::t_688f0beac4fced 33
+docs/port-completion/areas/04-world-loading.md
+  s_bf99a93e97ab76::t_2ecd7b7bb8bb57 76-78
+tools/client910/crates/rs910-config/src/nxt/map_water.rs
+  s_bf99a93e97ab76::t_2ecd7b7bb8bb57 1-91
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "69dd717ac88f146a635ba4d14ab2358da1eb81c8",
+  "prompts": {},
+  "sessions": {
+    "s_bf99a93e97ab76": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "3306d217-ef25-4a58-aa1a-8bdfdb5da12f",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
