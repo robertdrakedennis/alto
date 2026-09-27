@@ -1,0 +1,82 @@
+tools/refactor/steps/m1-codemod.py
+  s_bf99a93e97ab76::t_9b0e4fd6f8e5a3 1-1022
+tools/client910/crates/rs910-render-gpu/src/render.rs
+  s_bf99a93e97ab76::t_9b0e4fd6f8e5a3 20-26,230-243,278-300,1683-1684,1687,1693,1933,1935,1949,1972-2126
+  s_bf99a93e97ab76::t_cb40d8093b4f89 2127
+tools/client910/crates/rs910-render-nxt/src/nxt_texture.rs
+  s_bf99a93e97ab76::t_9b0e4fd6f8e5a3 1-492
+tools/client910/crates/rs910-render-nxt/src/nxt_render.rs
+  s_bf99a93e97ab76::t_9b0e4fd6f8e5a3 1-1148
+tools/refactor/steps/m1-fnhash-allow.txt
+  s_bf99a93e97ab76::t_9b0e4fd6f8e5a3 1-173
+tools/client910/crates/rs910-render-nxt/src/nxt_tonemap.rs
+  s_bf99a93e97ab76::t_9b0e4fd6f8e5a3 1-137
+tools/client910/crates/rs910-render-nxt/src/nxt_render/sky.rs
+  s_bf99a93e97ab76::t_9b0e4fd6f8e5a3 1-290
+tools/refactor/dag-baseline.txt
+  s_bf99a93e97ab76::t_9b0e4fd6f8e5a3 2
+tools/client910/crates/rs910-render-nxt/src/nxt_mesh.rs
+  s_bf99a93e97ab76::t_9b0e4fd6f8e5a3 1-133
+docs/rust-port/42-current-port-coverage.md
+  s_bf99a93e97ab76::t_9b0e4fd6f8e5a3 59
+tools/client910/Cargo.toml
+  s_bf99a93e97ab76::t_9b0e4fd6f8e5a3 83-85,137
+tools/client910/crates/rs910-render-nxt/src/nxt_render/resources.rs
+  s_bf99a93e97ab76::t_9b0e4fd6f8e5a3 1-388
+tools/client910/src/app.rs
+  s_bf99a93e97ab76::t_9b0e4fd6f8e5a3 422-424
+tools/client910/src/session_replay.rs
+  s_bf99a93e97ab76::t_9b0e4fd6f8e5a3 1462-1463,1520-1521
+tools/client910/crates/rs910-render-nxt/src/nxt_debug_flags.rs
+  s_bf99a93e97ab76::t_9b0e4fd6f8e5a3 1-22
+tools/client910/crates/rs910-render-nxt/src/nxt_draw_list.rs
+  s_bf99a93e97ab76::t_9b0e4fd6f8e5a3 1-245
+tools/refactor/layers.txt
+  s_bf99a93e97ab76::t_9b0e4fd6f8e5a3 28-31,33,70-71,78,388-392
+  s_bf99a93e97ab76::t_716518403835ce 393
+docs/rust-port/50-code-quality-programme.md
+  s_bf99a93e97ab76::t_9b0e4fd6f8e5a3 1122-1154,1231-1238
+tools/client910/crates/rs910-render-nxt/src/lib.rs
+  s_bf99a93e97ab76::t_9b0e4fd6f8e5a3 1-53
+docs/rust-port/quality/target-architecture.md
+  s_bf99a93e97ab76::t_9b0e4fd6f8e5a3 204-207
+tools/client910/crates/rs910-render-nxt/src/nxt_shaders.rs
+  s_bf99a93e97ab76::t_9b0e4fd6f8e5a3 1-341
+tools/Cargo.toml
+  s_bf99a93e97ab76::t_9b0e4fd6f8e5a3 17
+tools/README.md
+  s_bf99a93e97ab76::t_9b0e4fd6f8e5a3 26
+tools/client910/src/active_toolkit.rs
+  s_bf99a93e97ab76::t_9b0e4fd6f8e5a3 36-39,41-48,71-73,94-96,110-112,164-252,284,291-312,329-330,357-363,385,518-539,552-553
+tools/client910/crates/rs910-render-gpu/src/floor_render.rs
+  s_bf99a93e97ab76::t_9b0e4fd6f8e5a3 1916-1926
+tools/client910/crates/rs910-render-nxt/src/nxt_render/tests.rs
+  s_bf99a93e97ab76::t_9b0e4fd6f8e5a3 1-405
+tools/refactor/test-inventory.txt
+  s_bf99a93e97ab76::t_9b0e4fd6f8e5a3 41,927-934
+tools/client910/crates/rs910-render-gpu/src/scene_meshes.rs
+  s_bf99a93e97ab76::t_9b0e4fd6f8e5a3 29-41,892-936
+  s_bf99a93e97ab76::t_06cbcc9aaed596 937-938
+docs/rust-port/renderer/nxt-renderer-plan.md
+  s_bf99a93e97ab76::t_9b0e4fd6f8e5a3 376-379,412-520
+tools/client910/crates/rs910-render-nxt/Cargo.toml
+  s_bf99a93e97ab76::t_9b0e4fd6f8e5a3 1-44
+tools/Cargo.lock
+  s_bf99a93e97ab76::t_d422bfb315ace2 415,2034-2051
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "57ff481f5de42126cc38bf4b363ec3be39c5cc3b",
+  "prompts": {},
+  "sessions": {
+    "s_bf99a93e97ab76": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "3306d217-ef25-4a58-aa1a-8bdfdb5da12f",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
