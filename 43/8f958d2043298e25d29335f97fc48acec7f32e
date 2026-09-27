@@ -1,0 +1,64 @@
+tools/refactor/steps/p2-core-edge-paths.py
+  s_bf99a93e97ab76::t_fb516898c530fb 44-45
+tools/client910/crates/rs910-core/src/lib.rs
+  s_bf99a93e97ab76::t_fb516898c530fb 19
+docs/rust-port/50-code-quality-programme.md
+  s_bf99a93e97ab76::t_fb516898c530fb 303-325
+tools/refactor/steps/p2-js5-client-state.py
+  s_bf99a93e97ab76::t_fb516898c530fb 1-87
+tools/client910/src/lib.rs
+  s_bf99a93e97ab76::t_fb516898c530fb 93-94,276,279-282
+  s_bf99a93e97ab76::t_90d7f61c8f51cb 283
+tools/README.md
+  s_bf99a93e97ab76::t_fb516898c530fb 12,69-75
+tools/refactor/README.md
+  s_bf99a93e97ab76::t_fb516898c530fb 191-200
+tools/client910/crates/rs910-js5/src/lib.rs
+  s_bf99a93e97ab76::t_fb516898c530fb 1-19
+tools/refactor/layers.txt
+  s_bf99a93e97ab76::t_fb516898c530fb 34-36,71-72,87
+tools/client910/src/logging.rs
+  s_bf99a93e97ab76::t_fb516898c530fb 3-4,23-24,84-104
+tools/refactor/test-inventory.txt
+  s_bf99a93e97ab76::t_fb516898c530fb 4,33,258,279,1219-1233
+tools/client910/Cargo.toml
+  s_bf99a93e97ab76::t_fb516898c530fb 45-47,76
+tools/refactor/steps/p2-js5-move.py
+  s_bf99a93e97ab76::t_fb516898c530fb 1-283
+tools/Cargo.toml
+  s_bf99a93e97ab76::t_fb516898c530fb 17
+tools/refactor/steps/p2-js5-fnhash-allow.txt
+  s_bf99a93e97ab76::t_fb516898c530fb 1-31
+tools/client910/crates/rs910-js5/src/js5net.rs
+  s_bf99a93e97ab76::t_fb516898c530fb 51,762,774,973,1108,1150,1327,1364,1766,1902,2792-2793,2846,2887,2900,2919-2921
+tools/refactor/dag-baseline.txt
+  s_bf99a93e97ab76::t_fb516898c530fb 2
+tools/client910/crates/rs910-js5/Cargo.toml
+  s_bf99a93e97ab76::t_fb516898c530fb 1-34
+tools/client910/crates/rs910-js5/src/js5net/tests.rs
+  s_bf99a93e97ab76::t_fb516898c530fb 89,252
+tools/client910/src/login_state.rs
+  s_bf99a93e97ab76::t_fb516898c530fb 27-30,421
+tools/client910/src/js5_goldens.rs
+  s_bf99a93e97ab76::t_fb516898c530fb 1-25
+tools/client910/crates/rs910-core/src/client_state.rs
+  s_bf99a93e97ab76::t_fb516898c530fb 1-37
+tools/Cargo.lock
+  s_bf99a93e97ab76::t_c5ee59637967a7 406,1903-1914
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "438f958d2043298e25d29335f97fc48acec7f32e",
+  "prompts": {},
+  "sessions": {
+    "s_bf99a93e97ab76": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "3306d217-ef25-4a58-aa1a-8bdfdb5da12f",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
