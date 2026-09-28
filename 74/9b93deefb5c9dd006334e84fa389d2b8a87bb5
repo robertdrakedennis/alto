@@ -1,0 +1,56 @@
+tools/client910/crates/rs910-render-nxt/src/nxt_render/sprites.rs
+  s_bf99a93e97ab76::t_dfc847601ce0d2 176-177,181
+tools/client910/crates/rs910-render-nxt/src/lib.rs
+  s_bf99a93e97ab76::t_dfc847601ce0d2 37-38,53
+docs/rust-port/50-code-quality-programme.md
+  s_bf99a93e97ab76::t_dfc847601ce0d2 1356-1378
+tools/refactor/steps/m8-fnhash-allow.txt
+  s_bf99a93e97ab76::t_b28a52df5c8a41 158-160
+  s_bf99a93e97ab76::t_dfc847601ce0d2 1-157
+tools/client910/crates/rs910-render-nxt/src/nxt_render/water.rs
+  s_bf99a93e97ab76::t_319a89f5499272 480-487
+tools/client910/crates/rs910-render-nxt/src/nxt_shaders.rs
+  s_bf99a93e97ab76::t_dfc847601ce0d2 163-169,186,189-190,487-491,535,588-593
+  s_bf99a93e97ab76::t_b4678a62cb218f 594
+tools/client910/crates/rs910-render-nxt/src/nxt_render/post.rs
+  s_bf99a93e97ab76::t_dfc847601ce0d2 1-980
+tools/refactor/test-inventory.txt
+  s_bf99a93e97ab76::t_b28a52df5c8a41 42,956-970
+tools/refactor/dag-baseline.txt
+  s_bf99a93e97ab76::t_b28a52df5c8a41 2
+tools/client910/crates/rs910-render-nxt/src/nxt_render/tests.rs
+  s_bf99a93e97ab76::t_dfc847601ce0d2 23,33,39,109,209,227,271,346-347,875,1271-1272,1316-1329
+tools/client910/crates/rs910-render-nxt/src/nxt_post.rs
+  s_bf99a93e97ab76::t_dfc847601ce0d2 1-485
+tools/client910/crates/rs910-render-nxt/src/nxt_render/post/tests.rs
+  s_bf99a93e97ab76::t_dfc847601ce0d2 1-575
+docs/rust-port/42-current-port-coverage.md
+  s_bf99a93e97ab76::t_dfc847601ce0d2 66-67
+tools/client910/crates/rs910-render-nxt/src/nxt_render.rs
+  s_bf99a93e97ab76::t_7342c4b73eeedd 1562-1563
+  s_bf99a93e97ab76::t_dfc847601ce0d2 68-73,75,368-369,462-471,473-475,488-490,792-799,845,989-991,1074-1082,1179,1616-1617,1641,1649
+docs/rust-port/renderer/nxt-renderer-plan.md
+  s_bf99a93e97ab76::t_dfc847601ce0d2 530,1215-1362
+tools/client910/crates/rs910-render-nxt/src/nxt_post/wgsl.rs
+  s_bf99a93e97ab76::t_dfc847601ce0d2 1-499
+tools/client910/src/active_toolkit.rs
+  s_bf99a93e97ab76::t_dfc847601ce0d2 578-582,932,936-960,1002
+tools/client910/crates/rs910-render-nxt/src/nxt_post/tests.rs
+  s_bf99a93e97ab76::t_dfc847601ce0d2 1-151
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "749b93deefb5c9dd006334e84fa389d2b8a87bb5",
+  "prompts": {},
+  "sessions": {
+    "s_bf99a93e97ab76": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "3306d217-ef25-4a58-aa1a-8bdfdb5da12f",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
