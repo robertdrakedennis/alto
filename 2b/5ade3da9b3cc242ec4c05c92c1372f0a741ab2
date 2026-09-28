@@ -1,0 +1,34 @@
+tools/client910/crates/rs910-render-nxt/src/nxt_terrain/shade.rs
+  s_bf99a93e97ab76::t_6432a76acd239d 1-176
+tools/refactor/test-inventory.txt
+  s_bf99a93e97ab76::t_6432a76acd239d 42,1007-1009,1074
+tools/client910/crates/rs910-render-nxt/src/nxt_terrain.rs
+  s_bf99a93e97ab76::t_6432a76acd239d 41-46,56,335-337,348,662-677,689-692,724,745,965-970,975,1060,1106-1118,1149-1150,1167,1170,1182,1190
+tools/client910/crates/rs910-render-nxt/src/nxt_render.rs
+  s_bf99a93e97ab76::t_6432a76acd239d 1840-1841
+docs/rust-port/renderer/nxt-renderer-plan.md
+  s_bf99a93e97ab76::t_6432a76acd239d 36-37,45-47,2305-2306,2438-2534
+  s_bf99a93e97ab76::t_a331ecd4e68333 2535
+docs/rust-port/42-current-port-coverage.md
+  s_bf99a93e97ab76::t_6432a76acd239d 78
+tools/client910/crates/rs910-render-nxt/src/nxt_render/floor_tests.rs
+  s_bf99a93e97ab76::t_6432a76acd239d 1-354
+tools/refactor/steps/floor-fnhash-allow.txt
+  s_bf99a93e97ab76::t_6432a76acd239d 1-48
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "2b5ade3da9b3cc242ec4c05c92c1372f0a741ab2",
+  "prompts": {},
+  "sessions": {
+    "s_bf99a93e97ab76": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "3306d217-ef25-4a58-aa1a-8bdfdb5da12f",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
