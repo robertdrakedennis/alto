@@ -1,0 +1,60 @@
+tools/native910/src/pam.rs
+  s_bf99a93e97ab76::t_eacc3f94d54a93 1-148
+tools/native910/src/csource.rs
+  s_bf99a93e97ab76::t_f0b6184d95833b 1-1005
+  s_bf99a93e97ab76::t_43e626464dd0b1 1006-1067
+tools/native910/src/whirlpool.rs
+  s_bf99a93e97ab76::t_a447727fdddb10 1-179,182-190
+  s_bf99a93e97ab76::t_f577d3ba4e28d1 180-181
+  s_bf99a93e97ab76::t_4dc7d036cdef69 191-194
+tools/native910/src/container.rs
+  s_bf99a93e97ab76::t_07b4c0f38d066f 1-431
+  s_bf99a93e97ab76::t_d10f6996b8a16b 432-435
+tools/native910/src/archive.rs
+  s_bf99a93e97ab76::t_07a495e236ff28 1-1603,1606,1609-1610
+  s_bf99a93e97ab76::t_0237771727375f 1604-1605,1607-1608,1611-1674
+tools/native910/src/project.rs
+  s_bf99a93e97ab76::t_34279e462a45fa 1-39,41,47,53-54,65-74,76-147,149-185,187-188,192-288,290-292,294-323,325,327-338,340-356,358-400,402,406-408,424-425,449,451,454,462-467,519-613,615-679,681-988,996,998-1042,1045-1076,1078,1089-1195,1225-1459,1486-1507,1512-1514
+  s_bf99a93e97ab76::t_3ed8e35fa408fb 1508-1511,1515-1555
+tools/native910/src/refs.rs
+  s_bf99a93e97ab76::t_a39bc929dc68b9 1-386
+tools/native910/src/repack.rs
+  s_bf99a93e97ab76::t_ff57fa75bbd7b9 1-12,15-16,22-23,35-46,50-51,54,57-61,63-80,83-114,116-120,122-154,157-168
+tools/native910/tests/content_pipeline.rs
+  s_bf99a93e97ab76::t_15ec32d8a373e2 1-517
+  s_bf99a93e97ab76::t_f80e79cf91327f 518-560
+docs/rust-port/42-current-port-coverage.md
+  s_bf99a93e97ab76::t_85801f6e015c22 69
+docs/studio-roadmap.md
+  s_bf99a93e97ab76::t_c5b5088d1dbbd7 25-26,51-52,55-56,151-152
+tools/native910/Cargo.toml
+  s_bf99a93e97ab76::t_5156e67a47ba4a 11-16
+tools/native910/src/cli.rs
+  s_bf99a93e97ab76::t_cb70e972033d76 4-7,120,122-126,133-134,141-174,177-190,493-539,559,564-568,574,577-585,587-596,598-599,601-608,610-613,617-667,708-734
+tools/native910/src/lib.rs
+  s_bf99a93e97ab76::t_b7915c7ad4705c 18,22-23,37,39,48
+tools/native910/tests/project_build.rs
+  s_bf99a93e97ab76::t_6e03033fc5f40a 1-2,13,15-19,21-22,75
+tools/native910/tests/repack_scripts.rs
+  s_bf99a93e97ab76::t_ec0c7a6924b1df 1-2,15,17,44-50
+tools/refactor/steps/e-s1-fnhash-allow.txt
+  s_bf99a93e97ab76::t_71a52fb89a6a31 1-293
+tools/refactor/test-inventory.txt
+  s_bf99a93e97ab76::t_99561da23bad07 5,9,24-25,266-270,274-277,280-281,326,342-345,420,477-483,564,566
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "a9194538d33a96ce232937347caf03a4c7307b4b",
+  "prompts": {},
+  "sessions": {
+    "s_bf99a93e97ab76": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "3306d217-ef25-4a58-aa1a-8bdfdb5da12f",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
