@@ -1,0 +1,33 @@
+tools/perf/nxt-performance-plan.md
+  s_bf99a93e97ab76::t_b391959e26b6b9 1-555
+tools/perf/nxt_bench.sh
+  s_bf99a93e97ab76::t_ca26e30d973933 1-56
+tools/perf/nxt_bench_sum.py
+  s_bf99a93e97ab76::t_55f726328174d2 1-222
+tools/perf/nxt_online.sh
+  s_bf99a93e97ab76::t_732bf4ebb19a43 1-77
+tools/perf/nxt_online_sum.py
+  s_bf99a93e97ab76::t_a4af8e8dc28fff 1-46
+tools/perf/nxt_perf_bench.rs
+  s_bf99a93e97ab76::t_cb440173f55a0f 1-647
+tools/perf/nxt_perf_hook.rs
+  s_bf99a93e97ab76::t_109cee5daba896 1-766
+tools/perf/nxt_stage.py
+  s_bf99a93e97ab76::t_d3f4341845d68d 1-240
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "b5a93c8212897a61fc72097a605fee78cb4ddc76",
+  "prompts": {},
+  "sessions": {
+    "s_bf99a93e97ab76": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "3306d217-ef25-4a58-aa1a-8bdfdb5da12f",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
