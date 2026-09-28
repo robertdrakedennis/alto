@@ -1,0 +1,47 @@
+docs/rust-port/42-current-port-coverage.md
+  s_bf99a93e97ab76::t_435a6961670a5d 85
+docs/rust-port/50-code-quality-programme.md
+  s_bf99a93e97ab76::t_51ddf6bcc8350b 1658-1685
+docs/rust-port/renderer/nxt-949-verified.md
+  s_bf99a93e97ab76::t_683d95d410d4d7 70,189-192,293-312
+docs/rust-port/renderer/nxt-renderer-plan.md
+  s_bf99a93e97ab76::t_26b422cbc0242f 3399-3406,3506-3633
+tools/client910/crates/rs910-render-nxt/src/lib.rs
+  s_bf99a93e97ab76::t_d21aeaabf979c5 76-77,86
+tools/client910/crates/rs910-render-nxt/src/nxt_env_look.rs
+  s_bf99a93e97ab76::t_1f628b31d1a713 1-401
+tools/client910/crates/rs910-render-nxt/src/nxt_environment.rs
+  s_bf99a93e97ab76::t_17542d4e491355 293-304
+tools/client910/crates/rs910-render-nxt/src/nxt_look949.rs
+  s_bf99a93e97ab76::t_5d29f778520eb9 103-105
+tools/client910/crates/rs910-render-nxt/src/nxt_render.rs
+  s_bf99a93e97ab76::t_6ce1e17f19505d 415-417,921-925,1185-1189,1559-1565,1604-1606,1941-1942
+tools/client910/crates/rs910-render-nxt/src/nxt_render/atmos.rs
+  s_bf99a93e97ab76::t_13858ee8c27b80 405-415
+tools/client910/crates/rs910-render-nxt/src/nxt_render/env_look_tests.rs
+  s_bf99a93e97ab76::t_a5d27b8e5b01fa 1-57
+tools/client910/crates/rs910-render-nxt/src/nxt_render/look949_tests.rs
+  s_bf99a93e97ab76::t_2c43a4442ca57b 153-154,248,308-319
+tools/refactor/dag-baseline.txt
+  s_bf99a93e97ab76::t_055f106412508b 2
+tools/refactor/steps/950light-fnhash-allow.txt
+  s_bf99a93e97ab76::t_50252bce68ef3f 1-61
+tools/refactor/test-inventory.txt
+  s_bf99a93e97ab76::t_cbb13d773b2cb0 43,912,963
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "f6240348a8dd40ad518c392531217fdbafe20e7d",
+  "prompts": {},
+  "sessions": {
+    "s_bf99a93e97ab76": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "3306d217-ef25-4a58-aa1a-8bdfdb5da12f",
+        "model": "unknown"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
