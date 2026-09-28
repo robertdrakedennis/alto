@@ -1,0 +1,78 @@
+tools/client910/crates/rs910-render-nxt/src/nxt_terrain.rs
+  s_bf99a93e97ab76::t_3873a4b4902318 321,462-467,488-497,650-653,834-837,852-855,992,1163-1239
+tools/client910/crates/rs910-js5/src/js5net/tests.rs
+  s_bf99a93e97ab76::t_3873a4b4902318 483-498
+  s_bf99a93e97ab76::t_70f5fc368cc177 480-482
+tools/client910/crates/rs910-far-scene/src/far_debug_flags.rs
+  s_bf99a93e97ab76::t_3873a4b4902318 1-53
+tools/client910/crates/rs910-render-nxt/src/nxt_render/terrain.rs
+  s_bf99a93e97ab76::t_3873a4b4902318 52-53,55,57,60,67,303,644-645
+docs/rust-port/42-current-port-coverage.md
+  s_bf99a93e97ab76::t_3873a4b4902318 81
+docs/rust-port/renderer/nxt-renderer-plan.md
+  s_bf99a93e97ab76::t_3873a4b4902318 2935-3081
+  s_bf99a93e97ab76::t_fe29a15f63d216 3082
+tools/client910/crates/rs910-js5/src/cache.rs
+  s_bf99a93e97ab76::t_3873a4b4902318 1241-1302
+tools/client910/crates/rs910-render-nxt/src/nxt_render/far_tests.rs
+  s_bf99a93e97ab76::t_3873a4b4902318 1-366
+tools/client910/crates/rs910-render-nxt/src/nxt_render/far.rs
+  s_bf99a93e97ab76::t_3873a4b4902318 1-1037
+tools/client910/crates/rs910-far-scene/Cargo.toml
+  s_bf99a93e97ab76::t_3873a4b4902318 1-33
+tools/client910/crates/rs910-far-scene/src/far_ring.rs
+  s_bf99a93e97ab76::t_3873a4b4902318 1-187
+tools/client910/crates/rs910-render-nxt/src/lib.rs
+  s_bf99a93e97ab76::t_3873a4b4902318 67-70
+tools/client910/crates/rs910-render-nxt/Cargo.toml
+  s_bf99a93e97ab76::t_3873a4b4902318 25-26,43
+tools/client910/crates/rs910-render-nxt/src/nxt_terrain/tests.rs
+  s_bf99a93e97ab76::t_3873a4b4902318 134-250
+tools/Cargo.toml
+  s_bf99a93e97ab76::t_3873a4b4902318 17
+tools/refactor/layers.txt
+  s_bf99a93e97ab76::t_3873a4b4902318 31-36,77-78,406-408
+tools/client910/crates/rs910-far-scene/src/far_world.rs
+  s_bf99a93e97ab76::t_3873a4b4902318 1-260
+docs/rust-port/renderer/nxt-render-distance.md
+  s_bf99a93e97ab76::t_3873a4b4902318 399-419
+tools/client910/crates/rs910-render-nxt/src/nxt_render.rs
+  s_bf99a93e97ab76::t_3873a4b4902318 402-403,913,1199-1200,1247,1301,1872,1898
+  s_bf99a93e97ab76::t_581359a3274f99 1165-1166
+  s_bf99a93e97ab76::t_e18569a324a5e8 1899
+tools/refactor/steps/far1-fnhash-allow.txt
+  s_bf99a93e97ab76::t_3873a4b4902318 1-153
+tools/README.md
+  s_bf99a93e97ab76::t_3873a4b4902318 27
+tools/refactor/dag-baseline.txt
+  s_bf99a93e97ab76::t_581359a3274f99 2
+docs/rust-port/50-code-quality-programme.md
+  s_bf99a93e97ab76::t_3873a4b4902318 1627-1651
+  s_bf99a93e97ab76::t_7551d6a53a4e9d 1652
+tools/client910/crates/rs910-far-scene/src/far_level.rs
+  s_bf99a93e97ab76::t_3873a4b4902318 1-201
+tools/client910/crates/rs910-far-scene/src/lib.rs
+  s_bf99a93e97ab76::t_3873a4b4902318 1-40
+tools/client910/crates/rs910-far-scene/src/far_terrain.rs
+  s_bf99a93e97ab76::t_3873a4b4902318 1-134
+tools/Cargo.lock
+  s_bf99a93e97ab76::t_be6bf48ac376ce 1956-1965,2058
+tools/refactor/test-inventory.txt
+  s_bf99a93e97ab76::t_e2865fab6e6236 36,39,43,806-815,855,1029-1031,1114
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "fceec457c7e2653fa8cce91a4a71d39db2bd860a",
+  "prompts": {},
+  "sessions": {
+    "s_bf99a93e97ab76": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "3306d217-ef25-4a58-aa1a-8bdfdb5da12f",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
