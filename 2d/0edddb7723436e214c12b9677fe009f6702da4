@@ -1,0 +1,52 @@
+tools/client910/crates/rs910-render-nxt/src/nxt_look949.rs
+  s_bf99a93e97ab76::t_70072141b3f9d3 645-646
+  s_bf99a93e97ab76::t_3fbdeabba46877 53-83,105-127,130-148,190-192,215,252-298,327,348-352,355-358,372-375,379-402,450-493,495-497,503,506-512,551-553,557-562,576-578,581,639-644,647-685
+  s_bf99a93e97ab76::t_1ff7bf67cf4292 98-104,128-129
+  s_bf99a93e97ab76::t_69d93c1f48b859 686
+tools/refactor/test-removals.txt
+  s_bf99a93e97ab76::t_3fbdeabba46877 155-156
+tools/refactor/test-inventory.txt
+  s_bf99a93e97ab76::t_3fbdeabba46877 752,914,937
+  s_bf99a93e97ab76::t_d8fbeef6ae11c1 43
+tools/client910/crates/rs910-render-nxt/src/nxt_render/look949_tests.rs
+  s_bf99a93e97ab76::t_3fbdeabba46877 106,109,126,152,272-278,288
+tools/refactor/steps/vlook-fnhash-allow.txt
+  s_bf99a93e97ab76::t_3fbdeabba46877 1-77
+tools/client910/crates/rs910-render-nxt/src/nxt_post.rs
+  s_bf99a93e97ab76::t_3fbdeabba46877 351-424,545-546
+docs/rust-port/50-code-quality-programme.md
+  s_bf99a93e97ab76::t_3fbdeabba46877 1658-1684
+  s_bf99a93e97ab76::t_e12828e29f9326 1685
+tools/client910/crates/rs910-render-nxt/src/nxt_render.rs
+  s_bf99a93e97ab76::t_3fbdeabba46877 917,1171-1176
+docs/rust-port/renderer/nxt-renderer-plan.md
+  s_bf99a93e97ab76::t_f66b433552970f 3395-3398
+  s_bf99a93e97ab76::t_3fbdeabba46877 3393-3394,3399-3496
+  s_bf99a93e97ab76::t_bc1a82d5ea8a30 3497
+tools/client910/crates/rs910-render-nxt/src/nxt_environment.rs
+  s_bf99a93e97ab76::t_3fbdeabba46877 54-58,150-226,233,293-324,509-531
+tools/client910/crates/rs910-far-scene/src/far_level.rs
+  s_bf99a93e97ab76::t_3fbdeabba46877 15-24,26,29-61,95,98,122-128,131,187,191-192,199-209
+docs/rust-port/renderer/nxt-949-verified.md
+  s_bf99a93e97ab76::t_3fbdeabba46877 63-66,70,73-81,136-137,141,150,180-183,186,189-190,200
+docs/rust-port/42-current-port-coverage.md
+  s_bf99a93e97ab76::t_3fbdeabba46877 84
+tools/refactor/dag-baseline.txt
+  s_bf99a93e97ab76::t_7bd84b9c733607 2
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "2d0edddb7723436e214c12b9677fe009f6702da4",
+  "prompts": {},
+  "sessions": {
+    "s_bf99a93e97ab76": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "3306d217-ef25-4a58-aa1a-8bdfdb5da12f",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
