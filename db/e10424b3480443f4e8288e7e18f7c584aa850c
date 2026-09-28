@@ -1,0 +1,49 @@
+docs/rust-port/50-code-quality-programme.md
+  s_bf99a93e97ab76::t_0e784003bc4df1 1309-1336
+tools/refactor/test-inventory.txt
+  s_bf99a93e97ab76::t_0e784003bc4df1 42,941-943,953-954,959
+tools/client910/src/active_toolkit.rs
+  s_bf99a93e97ab76::t_0e784003bc4df1 48-53,154-157,262-515,563,792-793,796-798,814-818,926-928,970-972,975-976,983-985
+tools/client910/crates/rs910-render-nxt/src/nxt_render/sprites.rs
+  s_bf99a93e97ab76::t_0e784003bc4df1 1-556
+docs/rust-port/renderer/nxt-renderer-plan.md
+  s_bf99a93e97ab76::t_0e784003bc4df1 531,984-1107
+  s_bf99a93e97ab76::t_9105d546434d84 1108
+docs/rust-port/42-current-port-coverage.md
+  s_bf99a93e97ab76::t_0e784003bc4df1 64
+tools/client910/crates/rs910-render-nxt/src/nxt_render/tests.rs
+  s_bf99a93e97ab76::t_0e784003bc4df1 1169-1368
+tools/client910/crates/rs910-render-nxt/src/nxt_render/resources.rs
+  s_bf99a93e97ab76::t_0e784003bc4df1 52-54,367
+tools/client910/crates/rs910-render-nxt/src/nxt_debug_flags.rs
+  s_bf99a93e97ab76::t_0e784003bc4df1 36-41,59-60
+tools/client910/crates/rs910-render-nxt/src/nxt_shaders.rs
+  s_bf99a93e97ab76::t_0e784003bc4df1 50-55,514-576
+  s_bf99a93e97ab76::t_d34bc9ccbc51ef 577
+tools/client910/crates/rs910-render-nxt/src/lib.rs
+  s_bf99a93e97ab76::t_0e784003bc4df1 35-36,41,48,57,60
+tools/client910/crates/rs910-render-nxt/src/nxt_particles.rs
+  s_bf99a93e97ab76::t_0e784003bc4df1 1-214
+tools/client910/crates/rs910-render-nxt/src/nxt_render.rs
+  s_bf99a93e97ab76::t_0e784003bc4df1 34-40,68-69,280-299,351-361,374-378,571,825-829,837-838,873-913,1139-1142,1144,1146-1149,1151-1160,1162-1166,1251,1274-1279,1544-1551,1561-1563,1593,1599
+tools/client910/crates/rs910-render-nxt/src/nxt_billboards.rs
+  s_bf99a93e97ab76::t_0e784003bc4df1 1-405
+tools/refactor/steps/m9-fnhash-allow.txt
+  s_bf99a93e97ab76::t_0e784003bc4df1 1-103
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "dbe10424b3480443f4e8288e7e18f7c584aa850c",
+  "prompts": {},
+  "sessions": {
+    "s_bf99a93e97ab76": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "3306d217-ef25-4a58-aa1a-8bdfdb5da12f",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
