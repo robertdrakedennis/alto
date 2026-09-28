@@ -1,0 +1,23 @@
+AGENTS.md
+  s_bf99a93e97ab76::t_52efa2dc2beed7 27-32
+docs/studio-roadmap.md
+  s_bf99a93e97ab76::t_46cce045a8e2f5 5-6
+docs/rust-port/51-engine-and-studio.md
+  s_bf99a93e97ab76::t_0ed13ddbf4a576 1-911
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "33f8c829c7df1fe8550cafc89b319435d6e3284d",
+  "prompts": {},
+  "sessions": {
+    "s_bf99a93e97ab76": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "3306d217-ef25-4a58-aa1a-8bdfdb5da12f",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
