@@ -1,0 +1,40 @@
+tools/client910/crates/rs910-scene/src/npc_type_model.rs
+  s_bf99a93e97ab76::t_e661fe5045d812 123-154,185-187,192,265,276-278,282,317,500-631,662,667-669,679,703-706,711,760
+docs/rust-port/50-code-quality-programme.md
+  s_bf99a93e97ab76::t_e661fe5045d812 2084-2106
+tools/refactor/steps/npcanim-fnhash-allow.txt
+  s_bf99a93e97ab76::t_918a54e46523db 59-61
+  s_bf99a93e97ab76::t_e661fe5045d812 1-58
+tools/client910/crates/rs910-scene/src/player_body.rs
+  s_bf99a93e97ab76::t_e661fe5045d812 244-248,250-273
+tools/client910/crates/rs910-render-nxt/src/nxt_rt7_anim/tests.rs
+  s_bf99a93e97ab76::t_c15882835860bf 57-67
+tools/client910/crates/rs910-scene/src/loctype.rs
+  s_bf99a93e97ab76::t_e661fe5045d812 324-340,347,365,383-410,535-639
+tools/client910/src/app/entity_renderer.rs
+  s_bf99a93e97ab76::t_e661fe5045d812 108-110,125-127,1043-1061,1063-1064,1079,1103-1107,1183-1208,1216,1227-1233,1249-1252,1257-1261
+tools/client910/crates/rs910-ui/src/ui_models.rs
+  s_bf99a93e97ab76::t_e661fe5045d812 2,293-301,554-556,561,571-583,585,590-594,599,609-622,624,825-833,835,914-921,926,1025-1055,1225,1232,1238-1329,1374,1383,1401-1404
+tools/refactor/dag-baseline.txt
+  s_bf99a93e97ab76::t_d9e03d740d539f 2
+docs/rust-port/42-current-port-coverage.md
+  s_bf99a93e97ab76::t_e661fe5045d812 75
+tools/refactor/test-inventory.txt
+  s_bf99a93e97ab76::t_742f3a43956da5 44,46,1129,1163,1165,1321
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "384ebd2adbf81d3b041d3f2033391b7a7a0330c4",
+  "prompts": {},
+  "sessions": {
+    "s_bf99a93e97ab76": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "3306d217-ef25-4a58-aa1a-8bdfdb5da12f",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
