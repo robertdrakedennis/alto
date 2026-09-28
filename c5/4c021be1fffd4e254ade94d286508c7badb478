@@ -1,0 +1,45 @@
+tools/client910/crates/rs910-render-nxt/src/nxt_texture.rs
+  s_bf99a93e97ab76::t_3eb7d771f01606 707-708
+tools/client910/crates/rs910-render-nxt/src/nxt_render/fin_tests.rs
+  s_bf99a93e97ab76::t_3eb7d771f01606 175-178,194,204-205,228-229
+tools/client910/crates/rs910-render-nxt/src/nxt_probes.rs
+  s_bf99a93e97ab76::t_3eb7d771f01606 226-228
+tools/client910/crates/rs910-render-nxt/src/nxt_terrain.rs
+  s_bf99a93e97ab76::t_3eb7d771f01606 302-303,875-880
+tools/client910/crates/rs910-render-nxt/src/lib.rs
+  s_bf99a93e97ab76::t_3eb7d771f01606 74
+tools/refactor/test-inventory.txt
+  s_bf99a93e97ab76::t_3eb7d771f01606 42,977-980,1015-1019
+tools/client910/crates/rs910-render-nxt/src/nxt_look2.rs
+  s_bf99a93e97ab76::t_3eb7d771f01606 1-349
+tools/client910/crates/rs910-render-nxt/src/nxt_render.rs
+  s_bf99a93e97ab76::t_3eb7d771f01606 188-190,1189-1191,1842
+  s_bf99a93e97ab76::t_31b0e1ff1fea95 1843
+tools/client910/crates/rs910-render-nxt/src/nxt_render/look2_tests.rs
+  s_bf99a93e97ab76::t_3eb7d771f01606 1-377
+docs/rust-port/50-code-quality-programme.md
+  s_bf99a93e97ab76::t_3eb7d771f01606 1554-1579
+docs/rust-port/renderer/nxt-renderer-plan.md
+  s_bf99a93e97ab76::t_3eb7d771f01606 34-52,2295,2299-2300,2304-2305,2317-2435
+  s_bf99a93e97ab76::t_0c2a7cb8e875f4 2436
+docs/rust-port/42-current-port-coverage.md
+  s_bf99a93e97ab76::t_3eb7d771f01606 76-77
+tools/refactor/steps/look2-fnhash-allow.txt
+  s_bf99a93e97ab76::t_3eb7d771f01606 1-62
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "c54c021be1fffd4e254ade94d286508c7badb478",
+  "prompts": {},
+  "sessions": {
+    "s_bf99a93e97ab76": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "3306d217-ef25-4a58-aa1a-8bdfdb5da12f",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
