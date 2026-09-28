@@ -1,0 +1,19 @@
+docs/rust-port/renderer/nxt-renderer-plan.md
+  s_bf99a93e97ab76::t_17962de210dcf4 1146-1157
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "e68df789c51c17cba5a30cb8de0b1c227ad46218",
+  "prompts": {},
+  "sessions": {
+    "s_bf99a93e97ab76": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "3306d217-ef25-4a58-aa1a-8bdfdb5da12f",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
