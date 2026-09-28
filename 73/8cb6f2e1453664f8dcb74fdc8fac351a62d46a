@@ -1,0 +1,51 @@
+docs/rust-port/50-code-quality-programme.md
+  s_bf99a93e97ab76::t_b32656e38e28e0 1653-1676
+tools/client910/crates/rs910-render-nxt/src/nxt_render/atmos.rs
+  s_bf99a93e97ab76::t_b32656e38e28e0 175-176
+tools/client910/crates/rs910-render-nxt/src/nxt_render.rs
+  s_bf99a93e97ab76::t_b32656e38e28e0 1912-1913
+tools/client910/crates/rs910-render-nxt/src/nxt_shaderaudit/tests.rs
+  s_bf99a93e97ab76::t_b32656e38e28e0 1-60
+tools/client910/crates/rs910-render-nxt/src/nxt_shaders.rs
+  s_bf99a93e97ab76::t_b32656e38e28e0 155-160
+tools/client910/crates/rs910-render-nxt/src/nxt_water.rs
+  s_bf99a93e97ab76::t_b32656e38e28e0 900-907,946-953
+tools/client910/crates/rs910-render-nxt/src/nxt_sky949.rs
+  s_bf99a93e97ab76::t_b32656e38e28e0 310-313
+docs/rust-port/renderer/nxt-renderer-plan.md
+  s_bf99a93e97ab76::t_b32656e38e28e0 3083-3208
+tools/client910/crates/rs910-render-nxt/src/lib.rs
+  s_bf99a93e97ab76::t_b32656e38e28e0 71-72,95
+tools/refactor/steps/shaderaudit-fnhash-allow.txt
+  s_bf99a93e97ab76::t_b32656e38e28e0 1-67
+tools/client910/crates/rs910-render-nxt/src/nxt_shaderaudit.rs
+  s_bf99a93e97ab76::t_b32656e38e28e0 1-562
+docs/rust-port/42-current-port-coverage.md
+  s_bf99a93e97ab76::t_b32656e38e28e0 82
+tools/client910/crates/rs910-render-nxt/src/nxt_texture.rs
+  s_bf99a93e97ab76::t_b32656e38e28e0 709-710
+tools/client910/crates/rs910-render-nxt/src/nxt_render/shaderaudit_tests.rs
+  s_bf99a93e97ab76::t_b32656e38e28e0 1-322
+tools/refactor/test-inventory.txt
+  s_bf99a93e97ab76::t_b32656e38e28e0 43,1003-1005,1034
+tools/client910/crates/rs910-render-nxt/src/nxt_render/look949_tests.rs
+  s_bf99a93e97ab76::t_b32656e38e28e0 61
+tools/refactor/dag-baseline.txt
+  s_bf99a93e97ab76::t_0bad70c769266f 2
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "738cb6f2e1453664f8dcb74fdc8fac351a62d46a",
+  "prompts": {},
+  "sessions": {
+    "s_bf99a93e97ab76": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "3306d217-ef25-4a58-aa1a-8bdfdb5da12f",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
