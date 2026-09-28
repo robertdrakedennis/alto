@@ -1,0 +1,19 @@
+docs/rust-port/renderer/nxt-render-distance.md
+  s_bf99a93e97ab76::t_aa96b4f4d6f8db 1-443
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "236ae5dfc6ae2b78e7abc46597e16b776a1201fe",
+  "prompts": {},
+  "sessions": {
+    "s_bf99a93e97ab76": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "3306d217-ef25-4a58-aa1a-8bdfdb5da12f",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
