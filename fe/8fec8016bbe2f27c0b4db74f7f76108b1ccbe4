@@ -1,0 +1,55 @@
+tools/client910/crates/rs910-render-nxt/src/nxt_render/shadow949_tests.rs
+  s_bf99a93e97ab76::t_991f945b2676c0 1-454
+docs/rust-port/renderer/nxt-renderer-plan.md
+  s_bf99a93e97ab76::t_991f945b2676c0 716-718,2586,3211-3391
+  s_bf99a93e97ab76::t_4527aa729b5f29 3392
+tools/client910/crates/rs910-render-nxt/src/nxt_render/atmos.rs
+  s_bf99a93e97ab76::t_991f945b2676c0 169-174,176
+tools/refactor/steps/shadow949-fnhash-allow.txt
+  s_bf99a93e97ab76::t_991f945b2676c0 1-113
+tools/client910/crates/rs910-render-nxt/src/nxt_render/look949_tests.rs
+  s_bf99a93e97ab76::t_991f945b2676c0 152
+tools/client910/crates/rs910-render-nxt/src/nxt_render/point_shadow.rs
+  s_bf99a93e97ab76::t_991f945b2676c0 1-483
+tools/client910/crates/rs910-render-nxt/src/nxt_render/lights.rs
+  s_bf99a93e97ab76::t_991f945b2676c0 16-17,56-57,84-85,120,123,145-146,166-175,188,192-211,237,260
+docs/rust-port/42-current-port-coverage.md
+  s_bf99a93e97ab76::t_991f945b2676c0 83
+tools/client910/crates/rs910-render-nxt/src/nxt_render/shadow.rs
+  s_bf99a93e97ab76::t_991f945b2676c0 145-151,161-162,227-235
+tools/client910/crates/rs910-render-nxt/src/nxt_shadow.rs
+  s_bf99a93e97ab76::t_991f945b2676c0 159-162,166-167,176,208-224,235,245-249,648,652-653,692-696,701
+tools/client910/crates/rs910-render-nxt/src/nxt_shadow_casters.rs
+  s_bf99a93e97ab76::t_991f945b2676c0 55-57,71
+docs/rust-port/50-code-quality-programme.md
+  s_bf99a93e97ab76::t_991f945b2676c0 1627-1657
+tools/client910/crates/rs910-render-nxt/src/lib.rs
+  s_bf99a93e97ab76::t_991f945b2676c0 31-33,101
+tools/client910/crates/rs910-render-nxt/src/nxt_shadow949.rs
+  s_bf99a93e97ab76::t_991f945b2676c0 1-837
+tools/client910/crates/rs910-render-nxt/src/nxt_render.rs
+  s_bf99a93e97ab76::t_991f945b2676c0 311-314,456-460,972-974,982,1523-1525,1719-1720,1891,1931
+  s_bf99a93e97ab76::t_8fc32d9d8bfed1 1932
+tools/client910/crates/rs910-render-nxt/src/nxt_shaders.rs
+  s_bf99a93e97ab76::t_045d43e9ed6d89 155,158-159
+tools/refactor/dag-baseline.txt
+  s_bf99a93e97ab76::t_beeb742b2df964 2
+tools/refactor/test-inventory.txt
+  s_bf99a93e97ab76::t_fd0d90254f659d 43,1006-1008,1038-1040
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "fe8fec8016bbe2f27c0b4db74f7f76108b1ccbe4",
+  "prompts": {},
+  "sessions": {
+    "s_bf99a93e97ab76": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "3306d217-ef25-4a58-aa1a-8bdfdb5da12f",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
