@@ -1,0 +1,55 @@
+docs/rust-port/42-current-port-coverage.md
+  s_bf99a93e97ab76::t_50a33e3c2dd801 70
+tools/refactor/steps/fx-fnhash-allow.txt
+  s_bf99a93e97ab76::t_9f1490d467245f 86
+  s_bf99a93e97ab76::t_50a33e3c2dd801 1-85
+docs/rust-port/50-code-quality-programme.md
+  s_bf99a93e97ab76::t_50a33e3c2dd801 1398-1417
+tools/client910/crates/rs910-render-nxt/src/lib.rs
+  s_bf99a93e97ab76::t_50a33e3c2dd801 29-30,49-50,69,74
+tools/client910/crates/rs910-render-nxt/src/nxt_particles.rs
+  s_bf99a93e97ab76::t_50a33e3c2dd801 23-40,109-155,240-266
+  s_bf99a93e97ab76::t_6bc95bb3e892c5 267
+tools/client910/crates/rs910-render-nxt/src/nxt_render/water.rs
+  s_bf99a93e97ab76::t_50a33e3c2dd801 50-51,166-172,311,368-369,392,655-663,671,858-892,1027,1039-1098
+tools/client910/crates/rs910-render-nxt/src/nxt_post.rs
+  s_bf99a93e97ab76::t_50a33e3c2dd801 140-153
+tools/client910/crates/rs910-render-nxt/src/nxt_render.rs
+  s_bf99a93e97ab76::t_50a33e3c2dd801 306-308,350-352,399-402,857,884-885,1092,1234-1253,1271-1272,1541-1543,1722-1723
+tools/client910/crates/rs910-render-nxt/src/nxt_water.rs
+  s_bf99a93e97ab76::t_50a33e3c2dd801 115-117,825-827,829,847-863,888-889,1178-1179,1241-1242,1256
+tools/client910/crates/rs910-render-nxt/src/nxt_shadow_casters.rs
+  s_bf99a93e97ab76::t_50a33e3c2dd801 1-189
+tools/refactor/dag-baseline.txt
+  s_bf99a93e97ab76::t_d7e17ef666bd03 2
+tools/client910/crates/rs910-render-nxt/src/nxt_draw_list.rs
+  s_bf99a93e97ab76::t_50a33e3c2dd801 153-155
+docs/rust-port/renderer/nxt-renderer-plan.md
+  s_bf99a93e97ab76::t_50a33e3c2dd801 1660-1807
+  s_bf99a93e97ab76::t_4fd0913df0f624 1808
+tools/client910/crates/rs910-render-nxt/src/nxt_water_fx.rs
+  s_bf99a93e97ab76::t_50a33e3c2dd801 1-419
+tools/client910/crates/rs910-render-nxt/src/nxt_render/sprites.rs
+  s_bf99a93e97ab76::t_50a33e3c2dd801 210,223,254-263,267,276,278-279,288,290-291
+tools/refactor/test-inventory.txt
+  s_bf99a93e97ab76::t_d7e17ef666bd03 42,967,977-981,1021-1022,1051-1054
+tools/client910/crates/rs910-render-nxt/src/nxt_render/fx_tests.rs
+  s_bf99a93e97ab76::t_50a33e3c2dd801 1-31,38-434
+  s_bf99a93e97ab76::t_1b8288795902be 32-37
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "10ff26109e9595e3052ada5908681112e0ad72e3",
+  "prompts": {},
+  "sessions": {
+    "s_bf99a93e97ab76": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "3306d217-ef25-4a58-aa1a-8bdfdb5da12f",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
