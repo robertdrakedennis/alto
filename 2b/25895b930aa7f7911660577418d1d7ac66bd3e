@@ -1,0 +1,65 @@
+tools/client910/crates/rs910-render-nxt/src/nxt_shaders.rs
+  s_bf99a93e97ab76::t_53b40937677c60 154-156
+tools/refactor/test-inventory.txt
+  s_bf99a93e97ab76::t_bce359e5facbb0 42
+  s_bf99a93e97ab76::t_53b40937677c60 958-961,968,1011-1016,1094-1097,1118-1119
+tools/client910/crates/rs910-render-nxt/src/nxt_environment.rs
+  s_bf99a93e97ab76::t_53b40937677c60 196-212
+tools/client910/crates/rs910-render-nxt/src/nxt_volumetrics.rs
+  s_bf99a93e97ab76::t_53b40937677c60 1-329
+tools/client910/crates/rs910-render-nxt/src/nxt_render.rs
+  s_bf99a93e97ab76::t_53b40937677c60 81-86,412-413,914,1180-1182,1503,1506,1700-1701,1706-1707,1746-1747,1836-1837,1862,1885-1886
+tools/client910/crates/rs910-render-nxt/src/nxt_sky949.rs
+  s_bf99a93e97ab76::t_7d3b8c9c7fb370 298
+  s_bf99a93e97ab76::t_53b40937677c60 1-297,299-385
+tools/refactor/steps/949atmos-fnhash-allow.txt
+  s_bf99a93e97ab76::t_53b40937677c60 1-175
+  s_bf99a93e97ab76::t_6208c5e9568143 176-184
+tools/client910/crates/rs910-render-nxt/src/nxt_dof.rs
+  s_bf99a93e97ab76::t_53b40937677c60 1-268
+tools/client910/crates/rs910-render-nxt/src/nxt_render/tests.rs
+  s_bf99a93e97ab76::t_53b40937677c60 109-124
+tools/client910/crates/rs910-render-nxt/src/nxt_terrain.rs
+  s_bf99a93e97ab76::t_53b40937677c60 311-312
+tools/client910/crates/rs910-render-nxt/src/nxt_water.rs
+  s_bf99a93e97ab76::t_53b40937677c60 898-900,939
+tools/client910/crates/rs910-render-nxt/src/nxt_atmosphere/tests.rs
+  s_bf99a93e97ab76::t_53b40937677c60 1-93
+tools/client910/crates/rs910-render-nxt/src/nxt_render/atmos_tests.rs
+  s_bf99a93e97ab76::t_53b40937677c60 1-379,381-384,386-761
+  s_bf99a93e97ab76::t_47d094e020393b 380
+  s_bf99a93e97ab76::t_d1217abe5a2298 385
+tools/client910/crates/rs910-render-nxt/src/lib.rs
+  s_bf99a93e97ab76::t_53b40937677c60 63-66,69,73,92,96
+docs/rust-port/42-current-port-coverage.md
+  s_bf99a93e97ab76::t_53b40937677c60 80
+tools/refactor/dag-baseline.txt
+  s_bf99a93e97ab76::t_bce359e5facbb0 2
+docs/rust-port/renderer/nxt-renderer-plan.md
+  s_bf99a93e97ab76::t_53b40937677c60 48-51,66-69,1515,1518,2322,2722-2933
+  s_bf99a93e97ab76::t_29d03f9a33d737 2934
+docs/rust-port/50-code-quality-programme.md
+  s_bf99a93e97ab76::t_53b40937677c60 1601-1625
+  s_bf99a93e97ab76::t_7562130397206d 1626
+tools/client910/crates/rs910-render-nxt/src/nxt_atmosphere.rs
+  s_bf99a93e97ab76::t_53b40937677c60 1-314,318-386,390-404,406-498
+  s_bf99a93e97ab76::t_7d3b8c9c7fb370 315-317,387-389,405
+tools/client910/crates/rs910-render-nxt/src/nxt_render/atmos.rs
+  s_bf99a93e97ab76::t_53b40937677c60 1-727
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "2b25895b930aa7f7911660577418d1d7ac66bd3e",
+  "prompts": {},
+  "sessions": {
+    "s_bf99a93e97ab76": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "3306d217-ef25-4a58-aa1a-8bdfdb5da12f",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
