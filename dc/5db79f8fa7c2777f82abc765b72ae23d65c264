@@ -1,0 +1,81 @@
+tools/client910/crates/rs910-render-modern/src/far/jobs.rs
+  s_bf99a93e97ab76::t_14589345c58194 1-555
+tools/client910/crates/rs910-render-modern/src/frame/submit.rs
+  s_bf99a93e97ab76::t_14589345c58194 37-38,47,53-55,100,214-218
+  s_bf99a93e97ab76::t_3816eae8581e15 219
+tools/client910/crates/rs910-render-modern/src/far/lod.rs
+  s_bf99a93e97ab76::t_14589345c58194 1-358
+tools/client910/crates/rs910-far-scene/Cargo.toml
+  s_bf99a93e97ab76::t_14589345c58194 21-24
+docs/rust-port/renderer/nxt-render-distance.md
+  s_bf99a93e97ab76::t_14589345c58194 420-500
+tools/client910/crates/rs910-far-scene/src/lib.rs
+  s_bf99a93e97ab76::t_14589345c58194 3,20-29,38,40
+tools/client910/crates/rs910-config/src/config.rs
+  s_bf99a93e97ab76::t_14589345c58194 416-421,542,884-885,887
+docs/rust-port/42-current-port-coverage.md
+  s_bf99a93e97ab76::t_14589345c58194 59
+docs/rust-port/50-code-quality-programme.md
+  s_bf99a93e97ab76::t_14589345c58194 1920-1963
+tools/client910/crates/rs910-render-modern/src/models/rt7.rs
+  s_bf99a93e97ab76::t_4356ed3c8f5ae5 368,455
+tools/perf/modern_perf_bench.rs
+  s_bf99a93e97ab76::t_14589345c58194 96-101,145-152,293-295,356-359,367-371,380-385,395
+tools/client910/crates/rs910-far-scene/src/far_world.rs
+  s_bf99a93e97ab76::t_14589345c58194 2-5,8-12,14,19-21,31,37-40,43,45-46,48-49,56,64,71-73,89-95,98-111,114-125,130,135,141,147-148,155,157-158,166-171,174-176,178-185,187-191,193-199,201-202,204-206,210-211,213,215-227
+docs/rust-port/renderer/modern-renderer.md
+  s_bf99a93e97ab76::t_14589345c58194 41-68,283-290
+tools/client910/crates/rs910-far-scene/src/far_locs.rs
+  s_bf99a93e97ab76::t_14589345c58194 1-643
+tools/perf/modern-performance-plan.md
+  s_bf99a93e97ab76::t_14589345c58194 722-788
+tools/client910/crates/rs910-render-modern/src/far/mod.rs
+  s_bf99a93e97ab76::t_14589345c58194 1-18
+tools/client910/crates/rs910-far-scene/src/far_level.rs
+  s_bf99a93e97ab76::t_14589345c58194 2-4,9-16,21-26,79-81,84-85,89-93,104,108-237,299,303-341
+tools/refactor/test-inventory.txt
+  s_bf99a93e97ab76::t_14589345c58194 36,43,750,753,755-756,761-762,905,909-910,912
+tools/client910/crates/rs910-render-modern/src/far/batch.rs
+  s_bf99a93e97ab76::t_14589345c58194 1-393
+tools/client910/crates/rs910-render-modern/src/frame/tests/far.rs
+  s_bf99a93e97ab76::t_14589345c58194 1-6,156-363
+tools/client910/crates/rs910-render-modern/src/lib.rs
+  s_bf99a93e97ab76::t_14589345c58194 40-42,45
+tools/refactor/test-removals.txt
+  s_bf99a93e97ab76::t_14589345c58194 313-315
+tools/client910/crates/rs910-far-scene/src/far_jobs.rs
+  s_bf99a93e97ab76::t_14589345c58194 1-286
+tools/client910/crates/rs910-render-modern/src/frame/gpu/far.rs
+  s_bf99a93e97ab76::t_14589345c58194 1-3,5-8,11-46,49-58,61-66,68-70,72-73,75-77,83-87,92-94,108-109,112-133,150-151,158-159,179-335,346-356,359-365,367-370,372-379,388,391-400,405-415,418,423-446,454-455,457,464-497,584-619,667,676-725,734,754-758,764,769-772,785-789,791-792,794-797,800,802,808-810,812-820,822,848-852,854-855,857-860,865,870-873,877-881,886-1144,1149-1150,1152-1159,1161-1279,1281-1367,1373-1415,1432,1462-1465,1469,1474,1556-1589,1603-1605,1611-1619,1666-1669,1671-1698,1700-1704,1706-1809,1819-1944,1947-1952,1973-1979,2015-2020,2024-2026,2054-2062,2068-2069,2101-2106,2120-2126,2130-2133,2138-2141,2148-2151,2153-2186,2198-2260
+  s_bf99a93e97ab76::t_0b11045ebe62ea 2261
+tools/client910/crates/rs910-far-scene/src/far_terrain.rs
+  s_bf99a93e97ab76::t_14589345c58194 7-9,106-154
+  s_bf99a93e97ab76::t_49bc42f1df8bfa 155-156
+tools/client910/crates/rs910-render-modern/src/frame/mod.rs
+  s_bf99a93e97ab76::t_14589345c58194 208-224
+docs/rust-port/renderer/modern-renderer-verified-facts.md
+  s_bf99a93e97ab76::t_14589345c58194 334-359
+tools/refactor/steps/p6-fnhash-allow.txt
+  s_bf99a93e97ab76::t_4356ed3c8f5ae5 250-253
+  s_bf99a93e97ab76::t_14589345c58194 1-98,100-170,172-248
+tools/Cargo.lock
+  s_bf99a93e97ab76::t_55bb2ba9a3532d 1964-1965
+tools/refactor/dag-baseline.txt
+  s_bf99a93e97ab76::t_be78bd40cd2e79 2
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "dc5db79f8fa7c2777f82abc765b72ae23d65c264",
+  "prompts": {},
+  "sessions": {
+    "s_bf99a93e97ab76": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "3306d217-ef25-4a58-aa1a-8bdfdb5da12f",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
