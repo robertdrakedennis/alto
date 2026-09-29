@@ -1,0 +1,171 @@
+tools/client910/crates/rs910-game/src/entities910/transient.rs
+  s_bf99a93e97ab76::t_59c9c5d362336a 1,3,88
+tools/client910/crates/rs910-client/src/client_core/environment.rs
+  s_bf99a93e97ab76::t_59c9c5d362336a 1,3-4,14,21,23,25,28-29,38,43,45,60,94,119,143,170,188,196,205-209,231,279,289,293,297,305-306,317,336,360-362
+tools/client910/crates/rs910-client/src/client_core/phases.rs
+  s_bf99a93e97ab76::t_59c9c5d362336a 4-5,7-8,14,16-25,27,29-30,38,74,105,111,126-127,130-131,134,136,160,164,184,188-189,215-216,229,238-239,288,314-315,401,451,600
+tools/client910/crates/rs910-client/src/net/tests.rs
+  s_bf99a93e97ab76::t_59c9c5d362336a 25,58,103,121,152,168,218,258,329-330,334,336,368,372,462,472,474,514,618-619,685,700,704,749,761-762,765,772,774-777,783,797,847,856,865,932,972,997,1040,1065,1067,1074-1075,1085,1098,1151-1152,1155-1159,1162,1164,1166,1173,1175-1176,1183,1196,1201-1208,1216,1222,1224,1227-1228,1236,1240,1247,1249-1250,1252,1254-1255,1258-1259,1261,1267,1284
+tools/client910/crates/rs910-ui/src/ui_models.rs
+  s_bf99a93e97ab76::t_59c9c5d362336a 633
+tools/client910/crates/rs910-game/src/protocol910/pack_variables.rs
+  s_bf99a93e97ab76::t_59c9c5d362336a 1
+tools/refactor/test-inventory.txt
+  s_bf99a93e97ab76::t_9d46d6624a0605 773
+tools/client910/crates/rs910-client/src/client_core/io.rs
+  s_bf99a93e97ab76::t_59c9c5d362336a 9,25,28,30,51,93
+tools/client910/crates/rs910-game/src/protocol910/pack_locs.rs
+  s_bf99a93e97ab76::t_59c9c5d362336a 1
+tools/client910/crates/rs910-game/src/protocol910/walk_animation.rs
+  s_bf99a93e97ab76::t_59c9c5d362336a 1,50-51,113
+tools/client910/src/app/entity_renderer.rs
+  s_bf99a93e97ab76::t_59c9c5d362336a 52
+tools/client910/crates/rs910-client/src/loading_connection.rs
+  s_bf99a93e97ab76::t_59c9c5d362336a 2-3,78
+tools/client910/crates/rs910-game/src/entities910/appearance.rs
+  s_bf99a93e97ab76::t_59c9c5d362336a 1,16-17
+tools/client910/crates/rs910-game/src/protocol910/pack_runtime.rs
+  s_bf99a93e97ab76::t_59c9c5d362336a 2,122-123,129,162,341-343,367-368,377-379
+tools/client910/crates/rs910-game/src/protocol910/terrain.rs
+  s_bf99a93e97ab76::t_59c9c5d362336a 1-2,22-33,179,182-191,228-234,250-253,258,260,263-264,267-270,272-273,275-276,278-286,288-289,407
+tools/client910/crates/rs910-client/src/session/client_debug_packet_tests.rs
+  s_bf99a93e97ab76::t_59c9c5d362336a 4
+tools/client910/crates/rs910-game/src/cutscene.rs
+  s_bf99a93e97ab76::t_59c9c5d362336a 1-2,4-9,17,25,33,39,43,52-53,58,74,87,98-99,103,105,107,109,118,120,128-129,137,139,141,143,145,147,149,155,157,161-163,168-169,194,196,199,201,203,205,207,209,211,214,222,225,228,233,267,291,300,307,323,327,376,386,419,430,455,469,489-490,501,536,544,619,643-644,659,678-689,715,721,747-748,809-810,834,871-875,929,977,1002,1024,1089,1104,1127,1156-1161,1177,1179,1214,1246-1256,1262,1350-1351,1356,1387-1396
+tools/client910/crates/rs910-client/src/net.rs
+  s_bf99a93e97ab76::t_59c9c5d362336a 4-6,10-11,13-14,33-34,40-47,73,83-84,89-90,93,95,97,99,101,103,105,107,109,111-113,117,124,129,138,146,168-169,194-196,200-201,210,212,215,240,244-245,248,250,253-255,307,312,315-316,320,334,340,346,349,351-352,355,359-360,362,364-365,367,371-372,374,377,381,401,405,454-455,464,470,476-477,563,636,643,649,654,656,664,668,672,681,688,696-698,703,745,748,750,755-756,765,768,770-771,774-775,790-791,794-796,798,800,804,909,953-954,956-958,999-1000,1007,1012,1042-1043,1109,1116,1124-1126,1158-1159,1163-1164,1241-1242,1250,1265,1284,1290,1298,1352,1376-1377,1406,1443,1537,1571,1652,1655,1657-1659,1663,1665,1667,1673-1674,1691,1716,1740,1750,1799,1843
+tools/client910/crates/rs910-game/src/entities910/chat.rs
+  s_bf99a93e97ab76::t_59c9c5d362336a 1
+tools/client910/crates/rs910-game/src/protocol910/rebuild_state.rs
+  s_bf99a93e97ab76::t_59c9c5d362336a 1-2,43,48,50,62,86,111,115-117,193-204,222,225,308-319,333-363,478-479,481
+tools/refactor/test-removals.txt
+  s_bf99a93e97ab76::t_59c9c5d362336a 344-345
+tools/client910/crates/rs910-game/src/ui_changes.rs
+  s_bf99a93e97ab76::t_59c9c5d362336a 1
+tools/client910/crates/rs910-game/src/protocol910/npc_custom.rs
+  s_bf99a93e97ab76::t_59c9c5d362336a 1
+tools/client910/crates/rs910-game/src/protocol910/npc.rs
+  s_bf99a93e97ab76::t_59c9c5d362336a 1,12-13,16,28,165,171-172,431,546
+tools/client910/crates/rs910-game/src/lib.rs
+  s_bf99a93e97ab76::t_59c9c5d362336a 3-5,12-13,15-20,23
+tools/client910/crates/rs910-game/src/entities910/combat.rs
+  s_bf99a93e97ab76::t_59c9c5d362336a 1
+tools/client910/crates/rs910-client/src/client_core/redraw.rs
+  s_bf99a93e97ab76::t_59c9c5d362336a 1-2,4-6,9,11,13,17,19,21-22,24-36,38,40,43-44,48,50,57-60,86,88,116,118,136,144,152-153,158,160,164-165,168,172-175,203-204,212,215,260,268-269,291-292,300-302,314-317,338-342,366,375,403,421,583,599,603-605,609,619-620,629,632-633,640-642,651,657-658
+tools/client910/crates/rs910-game/src/protocol910/pack_combat.rs
+  s_bf99a93e97ab76::t_59c9c5d362336a 1
+tools/client910/crates/rs910-game/src/protocol910/live.rs
+  s_bf99a93e97ab76::t_59c9c5d362336a 1-2,67-68,118-119,491
+tools/client910/crates/rs910-game/src/protocol910/animation.rs
+  s_bf99a93e97ab76::t_59c9c5d362336a 1-2,4-7,74-80
+tools/client910/crates/rs910-game/src/entities910/mod.rs
+  s_bf99a93e97ab76::t_59c9c5d362336a 1,19,25,27,29-32,34-35,117,133,169,229
+tools/client910/crates/rs910-game/src/protocol910/variables.rs
+  s_bf99a93e97ab76::t_59c9c5d362336a 1-2
+tools/client910/crates/rs910-client/src/client_core/persistence.rs
+  s_bf99a93e97ab76::t_59c9c5d362336a 1,41-42,54,67,113-116
+tools/client910/crates/rs910-game/src/login_state.rs
+  s_bf99a93e97ab76::t_59c9c5d362336a 1,5,7-13,15-16,18-19,21-25,29,31-32,34,37,40,42,44,46,48,50,52,54,56,58,60,62-63,65,67,69,71,74-75,81,95,109,119,142-143,148-149,162-163,176-177,184,190,196-197,210,219-222,224-226,228,230-231,233-235,237-238,240-241,243-245,249,252,254,256,258,260,264,268,273,283,294-295,331,345,359,369-370,393,405-408,449,484,631-632,642,655,666,693
+tools/client910/crates/rs910-client/src/client_core/session_core.rs
+  s_bf99a93e97ab76::t_59c9c5d362336a 3,7-8,73,81,83,85,87,89,91,94-95,99,101,103-105,107,111,149,160,178,184,195,217-218,237,255-256,290-291,416-418,455-456,693-694,707,719,734-736,748-751,768-771,798,897-899,901,911-912,930-931,941-942,948-949,957,994,1018,1106,1165,1226,1278,1280,1399,1447,1522,1630-1631,1654,1669,1709,1712,1725-1726,1730,1732,1740,1769,1771,1782,1789-1790,1799-1800,1805,1814,1822,1827,1851-1854,1863
+tools/client910/crates/rs910-game/src/camera_follow.rs
+  s_bf99a93e97ab76::t_59c9c5d362336a 1,55,68,81,127-129,161
+tools/client910/crates/rs910-game/src/entities910/walk_animation.rs
+  s_bf99a93e97ab76::t_59c9c5d362336a 1,3
+tools/client910/crates/rs910-client/src/client_core.rs
+  s_bf99a93e97ab76::t_59c9c5d362336a 8,14-17
+tools/client910/crates/rs910-game/src/protocol910/pack_animation.rs
+  s_bf99a93e97ab76::t_59c9c5d362336a 31
+tools/client910/crates/rs910-ui/src/audio_runtime.rs
+  s_bf99a93e97ab76::t_59c9c5d362336a 407,476,478,676
+tools/client910/fixtures/create_account_connect.json
+  s_bf99a93e97ab76::t_59c9c5d362336a 2
+tools/client910/crates/rs910-game/src/protocol910/pack_bas.rs
+  s_bf99a93e97ab76::t_59c9c5d362336a 1
+tools/client910/crates/rs910-game/src/entities910/scene_state.rs
+  s_bf99a93e97ab76::t_59c9c5d362336a 1
+tools/client910/crates/rs910-game/src/entities910/npc_custom.rs
+  s_bf99a93e97ab76::t_59c9c5d362336a 1
+tools/refactor/provenance-baseline.tsv
+  s_bf99a93e97ab76::t_9d46d6624a0605 3,6,10,19
+tools/client910/crates/rs910-game/src/protocol910/masks.rs
+  s_bf99a93e97ab76::t_59c9c5d362336a 1
+tools/client910/crates/rs910-game/src/entities910/animation_state.rs
+  s_bf99a93e97ab76::t_59c9c5d362336a 7-17,35-36,119,154-155,240-248,331,352
+tools/client910/crates/rs910-client/src/login_worker.rs
+  s_bf99a93e97ab76::t_59c9c5d362336a 1-2,58,81,189
+tools/client910/crates/rs910-game/src/ui_var_store.rs
+  s_bf99a93e97ab76::t_59c9c5d362336a 21,53,122,237
+tools/client910/crates/rs910-game/src/protocol910/transient.rs
+  s_bf99a93e97ab76::t_59c9c5d362336a 1,16
+tools/client910/crates/rs910-game/src/animation_playback.rs
+  s_bf99a93e97ab76::t_59c9c5d362336a 1,47
+tools/client910/tests/phase-g/rebuild-checks.rs
+  s_bf99a93e97ab76::t_59c9c5d362336a 124-135
+tools/client910/crates/rs910-game/src/protocol910/combat.rs
+  s_bf99a93e97ab76::t_59c9c5d362336a 1,119,202
+tools/client910/crates/rs910-game/src/entities910/movement.rs
+  s_bf99a93e97ab76::t_59c9c5d362336a 1-2,17,64-65,237,297-298,399-400
+tools/client910/crates/rs910-game/src/protocol910/zone.rs
+  s_bf99a93e97ab76::t_59c9c5d362336a 1,76
+tools/client910/crates/rs910-game/src/protocol910/varp.rs
+  s_bf99a93e97ab76::t_59c9c5d362336a 1-2,11
+tools/client910/crates/rs910-client/src/client_core/effects.rs
+  s_bf99a93e97ab76::t_59c9c5d362336a 16,36,38,45,47,49
+tools/client910/crates/rs910-game/src/protocol910/zone_state.rs
+  s_bf99a93e97ab76::t_59c9c5d362336a 1-2,34,58,60,69,73,75-76,79,140,288-290,321-322,448,475,485,604-605,646
+tools/client910/crates/rs910-game/src/actor.rs
+  s_bf99a93e97ab76::t_59c9c5d362336a 1-2,28-30,34,46,54-56,65-66,69,71,73-74,76,80-81,88-89,92,118-119,135,145,149,156,165,172,199,234,297,359,417-418,441,443,448-449,452-469,473,476,478-484,621-623,628,641-655,658,662-663,665-666,691-692,703,715,730,746,772-776,781-782,785,811,827,838,850,913,938,983
+tools/client910/crates/rs910-game/src/protocol910/appearance.rs
+  s_bf99a93e97ab76::t_59c9c5d362336a 1,13,154-155,323
+tools/client910/crates/rs910-game/src/protocol910/mod.rs
+  s_bf99a93e97ab76::t_59c9c5d362336a 1,36-40,49-50,59-60,144,333,700
+tools/client910/crates/rs910-client/src/client_core/session_slot.rs
+  s_bf99a93e97ab76::t_59c9c5d362336a 9
+tools/client910/crates/rs910-game/src/client_vars.rs
+  s_bf99a93e97ab76::t_59c9c5d362336a 1,9,32,58,81,101,105
+tools/client910/src/app/redraw.rs
+  s_bf99a93e97ab76::t_59c9c5d362336a 10,79,550,646,727
+tools/client910/crates/rs910-client/src/session/tests.rs
+  s_bf99a93e97ab76::t_59c9c5d362336a 3-4,44,175-176,232-233,253,270,286,301,321,331,346,358,372-373,491-492,588,1172-1175,1212
+tools/client910/crates/rs910-game/src/protocol910/pack_appearance.rs
+  s_bf99a93e97ab76::t_59c9c5d362336a 1
+tools/client910/crates/rs910-client/src/client_core/session_io.rs
+  s_bf99a93e97ab76::t_59c9c5d362336a 1-2,5,16,29,37,39
+tools/client910/crates/rs910-game/src/entities910/varps.rs
+  s_bf99a93e97ab76::t_59c9c5d362336a 1-2,127
+tools/client910/crates/rs910-client/src/lib.rs
+  s_bf99a93e97ab76::t_59c9c5d362336a 1-2
+tools/client910/crates/rs910-client/src/graphics_runtime.rs
+  s_bf99a93e97ab76::t_59c9c5d362336a 1-5,27-28
+tools/client910/crates/rs910-client/src/session.rs
+  s_bf99a93e97ab76::t_59c9c5d362336a 4,9,14,23-24,82,185,227,728,750
+tools/client910/crates/rs910-game/src/protocol910/pack_terrain.rs
+  s_bf99a93e97ab76::t_59c9c5d362336a 1,8,31,45,153-161
+tools/client910/crates/rs910-game/src/protocol910/chat.rs
+  s_bf99a93e97ab76::t_59c9c5d362336a 1
+tools/client910/crates/rs910-game/src/screen_fade.rs
+  s_bf99a93e97ab76::t_59c9c5d362336a 1-3,15
+tools/refactor/steps/rn-game-fnhash-allow.txt
+  s_bf99a93e97ab76::t_59c9c5d362336a 1-48
+tools/client910/src/session_replay.rs
+  s_bf99a93e97ab76::t_59c9c5d362336a 1730,1755,1759
+tools/client910/crates/rs910-game/src/game_runtime.rs
+  s_bf99a93e97ab76::t_59c9c5d362336a 1,34-35,37,49-50,53-54,61,69,89-98,103,126,132-133,170,273,306,315-316,324,326,386-388,408,432,446-447,488,492,503-504,540-541,563-564,600,603-605
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "a476cc6d7662cbc9fc5286f037f8f3bc508d0993",
+  "prompts": {},
+  "sessions": {
+    "s_bf99a93e97ab76": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "3306d217-ef25-4a58-aa1a-8bdfdb5da12f",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
