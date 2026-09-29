@@ -1,0 +1,29 @@
+tools/refactor/README.md
+  s_bf99a93e97ab76::t_ce81fbba72c38e 14,24,27,101,129-205,422
+tools/refactor/fn-hash.py
+  s_bf99a93e97ab76::t_5e85af01e3538b 36,39-62,69,150-156,158-159,163-280,348-385,398-419,487-490,495,497-498,504-505
+tools/refactor/gate.sh
+  s_bf99a93e97ab76::t_494413944cd789 6-7,9-13,21,29,33,141-142,172,187
+tools/refactor/provenance-baseline.tsv
+  s_bf99a93e97ab76::t_ef8fc9e11bb3d3 1-20
+tools/refactor/provenance.py
+  s_bf99a93e97ab76::t_f5fe266462ca38 1-291
+tools/refactor/rsscan/src/main.rs
+  s_bf99a93e97ab76::t_ec653a54c91f18 14-19,305-505,733-734,810,841-842,1349-1351,1353-1357,1359-1370,1825-1890
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "5ad5f07475491081de350a6db48f7005f963e0a7",
+  "prompts": {},
+  "sessions": {
+    "s_bf99a93e97ab76": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "3306d217-ef25-4a58-aa1a-8bdfdb5da12f",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
