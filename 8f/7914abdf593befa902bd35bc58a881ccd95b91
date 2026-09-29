@@ -1,0 +1,114 @@
+tools/refactor/steps/modern-3-names.py
+  s_bf99a93e97ab76::t_ca6ff54636ba29 1-131
+  s_bf99a93e97ab76::t_936505c5540dc5 132-136
+tools/client910/crates/rs910-render-modern/src/atmosphere/depth_multi.wgsl
+  s_bf99a93e97ab76::t_b330530cf36415 1-2
+tools/client910/crates/rs910-render-modern/src/atmosphere/depth_single.wgsl
+  s_bf99a93e97ab76::t_1c1dae2744d74b 1-2
+tools/client910/crates/rs910-render-modern/src/atmosphere/fog.wgsl
+  s_bf99a93e97ab76::t_a9abb7844b0e9a 1-19
+tools/client910/crates/rs910-render-modern/src/atmosphere/gpu.rs
+  s_bf99a93e97ab76::t_8b179f0e8536a5 38,55,72,122,145,176,181,215,223,232,251,309,355,365,373,376,379-381,405,408,465,510-513,536,558,573,610,623,628,636,638,663,665,683,686-688,691,696,711
+tools/client910/crates/rs910-render-modern/src/atmosphere/mod.rs
+  s_bf99a93e97ab76::t_8485be28016b6f 29-30
+tools/client910/crates/rs910-render-modern/src/atmosphere/passes.wgsl
+  s_bf99a93e97ab76::t_7e935b770b233d 13,18-38
+tools/client910/crates/rs910-render-modern/src/atmosphere/scattering.wgsl
+  s_bf99a93e97ab76::t_fd19d0959ba1d2 8,17-18,38,45
+tools/client910/crates/rs910-render-modern/src/atmosphere/sky.wgsl
+  s_bf99a93e97ab76::t_2f7a5b509a45a1 2-21,23,26,28-55,57
+tools/client910/crates/rs910-render-modern/src/atmosphere/volumetrics.wgsl
+  s_bf99a93e97ab76::t_63920f01dce0ac 1-113
+tools/client910/crates/rs910-render-modern/src/frame/forward_io.wgsl
+  s_bf99a93e97ab76::t_da721ba99cf521 31
+tools/client910/crates/rs910-render-modern/src/frame/mod.rs
+  s_bf99a93e97ab76::t_7b3384b3213915 431-432,563-564,694,786-788,970,978,1039,1400-1402,1446-1447,1597,1643
+tools/client910/crates/rs910-render-modern/src/frame/pipelines.rs
+  s_bf99a93e97ab76::t_c56a039e0c0d78 53,64,70,87-89,91,94,97,100,103,106,109,112
+tools/client910/crates/rs910-render-modern/src/frame/resources.rs
+  s_bf99a93e97ab76::t_b4f1cc3e879ae2 224-226,469-470,479
+tools/client910/crates/rs910-render-modern/src/lighting/environment.rs
+  s_bf99a93e97ab76::t_6ca396ee00beb1 174,176-180,195
+tools/client910/crates/rs910-render-modern/src/lighting/environment_record.rs
+  s_bf99a93e97ab76::t_a0834635f34780 286,298
+tools/client910/crates/rs910-render-modern/src/lighting/look.rs
+  s_bf99a93e97ab76::t_fc54f67c6241c6 56,137,187,195,206,211
+tools/client910/crates/rs910-render-modern/src/lighting/mod.rs
+  s_bf99a93e97ab76::t_c5a847ec41b1e0 4
+tools/client910/crates/rs910-render-modern/src/lighting/point_lights.wgsl
+  s_bf99a93e97ab76::t_53a45881a7521a 5,30,55-106
+tools/client910/crates/rs910-render-modern/src/lighting/probes.wgsl
+  s_bf99a93e97ab76::t_1e88377ebaef89 116,119,127,132,147,158,216,220,222,226
+tools/client910/crates/rs910-render-modern/src/lighting/probes_gpu.rs
+  s_bf99a93e97ab76::t_b77015dbf73797 377,485,911,919,1888-1890,1897,1938-1939,2106,2114,2119
+tools/client910/crates/rs910-render-modern/src/models/geometry.wgsl
+  s_bf99a93e97ab76::t_c0fa678e58b251 26-82
+tools/client910/crates/rs910-render-modern/src/models/materials.rs
+  s_bf99a93e97ab76::t_475392a1a75165 770,777,784,791,962,977,989,1012,1116
+tools/client910/crates/rs910-render-modern/src/models/shading.rs
+  s_bf99a93e97ab76::t_1daefa8b022fc8 69
+tools/client910/crates/rs910-render-modern/src/models/shading.wgsl
+  s_bf99a93e97ab76::t_38ad5ec4327163 2,6,14,23,31,36,47,59,84,88,90,94
+tools/client910/crates/rs910-render-modern/src/models/surface.wgsl
+  s_bf99a93e97ab76::t_a2d57c0acfeb34 40,49-50,96-214
+tools/client910/crates/rs910-render-modern/src/post/dof.wgsl
+  s_bf99a93e97ab76::t_bca8a770b8b36f 3-4,9-10,63,65,88-89,104,106,111,119,146-147
+tools/client910/crates/rs910-render-modern/src/post/geometry.wgsl
+  s_bf99a93e97ab76::t_2d21916a37c13d 16
+tools/client910/crates/rs910-render-modern/src/post/gpu.rs
+  s_bf99a93e97ab76::t_75babc0fce104f 357-358,365,367-368,486-487,490,496-500,502,846,852,862,875,888,899,910,951,962,974,985,1000,1010,1021
+tools/client910/crates/rs910-render-modern/src/post/mod.rs
+  s_bf99a93e97ab76::t_e8a0e1a4c95824 289-293,308
+tools/client910/crates/rs910-render-modern/src/post/post.wgsl
+  s_bf99a93e97ab76::t_596f48ed0984ee 295
+tools/client910/crates/rs910-render-modern/src/post/tone_map_calibrated.wgsl
+  s_bf99a93e97ab76::t_918d67ee52f4ce 2-5
+tools/client910/crates/rs910-render-modern/src/post/tone_map_verified.wgsl
+  s_bf99a93e97ab76::t_da40d58a08dac0 1-35
+tools/client910/crates/rs910-render-modern/src/shaders/mod.rs
+  s_bf99a93e97ab76::t_42520d506e084b 35,38-39,41,48-51,57,60-62,65-67,128,131-132,135,145,147-148,150,153-154,168-179,184,186-187,189,227-265
+tools/client910/crates/rs910-render-modern/src/shadows/mod.rs
+  s_bf99a93e97ab76::t_4556c1024488b5 134,544-545,664,666
+tools/client910/crates/rs910-render-modern/src/shadows/point.wgsl
+  s_bf99a93e97ab76::t_3aec47971c4b45 25,37,39,46,55,63,72,80,90,100,108,160,170-171,175
+tools/client910/crates/rs910-render-modern/src/shadows/presets.rs
+  s_bf99a93e97ab76::t_9cf26c24f47192 33,75,166
+tools/client910/crates/rs910-render-modern/src/shadows/sun.wgsl
+  s_bf99a93e97ab76::t_c82727066fffcc 12,52,88,138-244
+tools/client910/crates/rs910-render-modern/src/sprites/gpu.rs
+  s_bf99a93e97ab76::t_2cc282ae50c105 179,407,413
+tools/client910/crates/rs910-render-modern/src/sprites/sprites.wgsl
+  s_bf99a93e97ab76::t_d590039909d53e 13-14,19-21,27,30-31,36-39,56-62,69-77,79-81,83
+tools/client910/crates/rs910-render-modern/src/terrain/gpu.rs
+  s_bf99a93e97ab76::t_f641006bb24d3f 199-200,278
+tools/client910/crates/rs910-render-modern/src/terrain/terrain.wgsl
+  s_bf99a93e97ab76::t_ce4aac608751f1 3,6,9,222
+tools/client910/crates/rs910-render-modern/src/water_body/depth_multi.wgsl
+  s_bf99a93e97ab76::t_cd4b75d83313d8 2
+tools/client910/crates/rs910-render-modern/src/water_body/depth_single.wgsl
+  s_bf99a93e97ab76::t_f443b358bdd48c 2
+tools/client910/crates/rs910-render-modern/src/water_body/env.wgsl
+  s_bf99a93e97ab76::t_048d3b8b74e5a9 6
+tools/client910/crates/rs910-render-modern/src/water_body/extinction.wgsl
+  s_bf99a93e97ab76::t_bfd9a63c97d7c5 9
+tools/client910/crates/rs910-render-modern/src/water_body/gpu.rs
+  s_bf99a93e97ab76::t_2636d46aa8820a 454-457,459,499,501,511,522,534-535,830-832,922,930,937
+tools/client910/crates/rs910-render-modern/src/water_body/water.wgsl
+  s_bf99a93e97ab76::t_3e58e446967f23 2-27,249-454
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "8f7914abdf593befa902bd35bc58a881ccd95b91",
+  "prompts": {},
+  "sessions": {
+    "s_bf99a93e97ab76": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "3306d217-ef25-4a58-aa1a-8bdfdb5da12f",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
