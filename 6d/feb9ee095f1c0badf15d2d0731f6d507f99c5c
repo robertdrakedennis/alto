@@ -1,0 +1,87 @@
+tools/client910/crates/rs910-audio/src/audio_vorbis/floor.rs
+  s_bf99a93e97ab76::t_b33798f85e4622 1-4,6-7,10-11,13-15,17-23,27-33,36-37,39-41,45-48,50-64,67-71,75-78,81-87,89-91,96-97,99,102-116,118,120,122,124,127-128,130-131,133-135,139-149,152,166,180,184,186-187,190-191,198,202,207,210,213-214,220,229-236,238,243-244,246-248,250-262,273-277,282-284,290,294,296,299-301,303-304,306-310,313,323-324,330-333,337-341,343-348,351-352,359-360,363
+tools/client910/crates/rs910-audio/src/audio_vorbis/codebook.rs
+  s_bf99a93e97ab76::t_b33798f85e4622 1-340
+tools/refactor/provenance-baseline.tsv
+  s_bf99a93e97ab76::t_b33798f85e4622 3,5,19
+tools/refactor/test-inventory.txt
+  s_bf99a93e97ab76::t_b33798f85e4622 4,32,83-85,544,547-554
+tools/client910/crates/rs910-audio/src/audio_adjust.rs
+  s_bf99a93e97ab76::t_b33798f85e4622 1-2,4-5,14,18,20-21,23-24,26,28,32-33,50-52,77-78,92-93,96,104,120,126-127,131-134,146,159-160
+tools/client910/src/audio_corpus.rs
+  s_bf99a93e97ab76::t_b33798f85e4622 1-305
+tools/client910/crates/rs910-audio/src/audio_voice.rs
+  s_bf99a93e97ab76::t_b33798f85e4622 1-3,5-6,11-13,16-17,20-45,50,52,54,57,59,61,63,68,74-90,93,95-97,99,101,103,108-111,113-116,119-120,122,125,127,131-133,136,141-142,145-146,150-151,159-160,162-163,166,170,175,178,189,202,204,208,210,215-216,220-222,224-227,235-251,256,260-263,268,270,273-274,276,279-282,284,288,304-305,320-321,328,343,346-347,377-378,393-395,397-398,400,410,412,415,418-464,468,470,489,505,511-512,515,518-522,525-536,539-540,542-544,546,549-550,558-560,569,573,576-578,582-584,588,590,592-593,597-602,606,608-609,616-617,620,624-625,627,630
+tools/refactor/steps/rn-audio-fnhash-allow.txt
+  s_bf99a93e97ab76::t_b33798f85e4622 1-431
+tools/client910/crates/rs910-audio/src/audio_sound_file.rs
+  s_bf99a93e97ab76::t_b33798f85e4622 1-131
+tools/client910/crates/rs910-audio/src/audio_vorbis/block.rs
+  s_bf99a93e97ab76::t_b33798f85e4622 1-302
+tools/client910/crates/rs910-audio/src/audio_sink.rs
+  s_bf99a93e97ab76::t_b33798f85e4622 1-7,22,24,26
+tools/client910/crates/rs910-audio/src/audio_api.rs
+  s_bf99a93e97ab76::t_b33798f85e4622 1-3,9,17-18,34,50-51,55,64,75,78,80,84-122,124,126,128,131,133-134,138,140,142,145,149,153-154,156,158,163-164,184,193-195,273-276,421,430,450,459,471,481,491,506,513,524,537,544,559,564-565,582,588-603,647-651,656,663,670,678,685,690-693,704,711,718,727,736-737,739-741,748,753,758,763,770-771,818-831,833,854,862,879,902-903,905-907
+tools/client910/crates/rs910-ui/src/positioned_sound/tests.rs
+  s_bf99a93e97ab76::t_b33798f85e4622 4,7-8
+tools/client910/crates/rs910-audio/src/lib.rs
+  s_bf99a93e97ab76::t_b33798f85e4622 1,5-17,19-21,29
+tools/client910/crates/rs910-audio/Cargo.toml
+  s_bf99a93e97ab76::t_b33798f85e4622 6,18
+tools/client910/fixtures/audio/corpus-digest.tsv
+  s_bf99a93e97ab76::t_b33798f85e4622 1-53253
+tools/client910/crates/rs910-ui/src/audio_runtime.rs
+  s_bf99a93e97ab76::t_b33798f85e4622 11,13,41,57,60,72,223-234,267-278,283-294,313-324,336-347,353-364,369-380,390-401,425-439,446-457,540,565-569,581,589-600
+tools/client910/crates/rs910-audio/src/audio_vorbis/residue.rs
+  s_bf99a93e97ab76::t_b33798f85e4622 1-180
+tools/client910/crates/rs910-audio/src/audio_vorbis/mod.rs
+  s_bf99a93e97ab76::t_b33798f85e4622 1-82
+tools/client910/crates/rs910-audio/src/audio_vorbis/windows.rs
+  s_bf99a93e97ab76::t_b33798f85e4622 1-92
+tools/refactor/test-removals.txt
+  s_bf99a93e97ab76::t_b33798f85e4622 338-341
+tools/client910/crates/rs910-ui/src/positioned_sound.rs
+  s_bf99a93e97ab76::t_b33798f85e4622 24,895-906,930-933,935-939,941
+tools/client910/crates/rs910-audio/src/audio_vorbis/bits.rs
+  s_bf99a93e97ab76::t_b33798f85e4622 1-152
+tools/client910/crates/rs910-audio/src/audio_vorbis/setup.rs
+  s_bf99a93e97ab76::t_b33798f85e4622 1-165
+tools/client910/src/lib.rs
+  s_bf99a93e97ab76::t_b33798f85e4622 14-15
+tools/refactor/steps/rn-audio-renames.txt
+  s_bf99a93e97ab76::t_b33798f85e4622 1-28
+tools/client910/crates/rs910-audio/src/audio_vorbis/imdct.rs
+  s_bf99a93e97ab76::t_b33798f85e4622 1-206
+tools/client910/crates/rs910-audio/src/audio_mixer.rs
+  s_bf99a93e97ab76::t_b33798f85e4622 1-3,6,12-13,18,20,22,28-29,50-51,53,55-56,63,66,81,86,103-104,164,172-173,191-192,194,201,218-219,224,232,247,257,264,287-290,292,301-302,309,350-351,355-445
+tools/client910/crates/rs910-audio/src/audio_bus.rs
+  s_bf99a93e97ab76::t_b33798f85e4622 1-2,6-7,18,33,36,38,40,42,44,48,71-72,79,82,101-102,130,135,145,151,158,165-166,183,188,199,211,224-226,299,301
+tools/client910/src/audio_goldens.rs
+  s_bf99a93e97ab76::t_b33798f85e4622 1,3,5-8,10,12,45-47,49-50,64-65,79,83-94,102-113,118,122-133,160-161,163-164,170-173,177,179,181-182,184-185,190,196-198,206,208,213-218,220,222,224-225,229,251-254,264,266,269-270,273,275,280,282,300-301,303,307-312,315
+tools/refactor/layers.txt
+  s_bf99a93e97ab76::t_b33798f85e4622 345
+tools/client910/crates/rs910-audio/src/audio_vorbis/decoder.rs
+  s_bf99a93e97ab76::t_b33798f85e4622 1-665
+tools/client910/crates/rs910-audio/src/audio_backend.rs
+  s_bf99a93e97ab76::t_b33798f85e4622 1-3,5-7,11,22,30,37-38,51-52,63,75-76,80,86-87,91,133,136-138,141-143,181,187,193-195,215,248,263
+tools/client910/crates/rs910-audio/src/audio_stream.rs
+  s_bf99a93e97ab76::t_b33798f85e4622 1-4,6-7,11,16,41-42,45,53-56,63,75,91,96,133-134,167,175,180,185,190-192,195,198,200,206,216-217,237,242-243,254-255,260,262,264,266,269,273,277,282,284,286,288,290,292,296,300,303-305,310,316-317,321,323,328-330,356,378,385,400,414,430-431,465,476,491-492,509-510,528,531,534,538-540,542-546,607-608,614,620,630-631,655,663
+tools/client910/crates/rs910-audio/src/audio_vorbis/mapping.rs
+  s_bf99a93e97ab76::t_b33798f85e4622 1-69
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "6dfeb9ee095f1c0badf15d2d0731f6d507f99c5c",
+  "prompts": {},
+  "sessions": {
+    "s_bf99a93e97ab76": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "3306d217-ef25-4a58-aa1a-8bdfdb5da12f",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
