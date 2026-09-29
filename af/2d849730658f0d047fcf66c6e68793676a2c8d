@@ -1,0 +1,204 @@
+tools/refactor/steps/modern-1-rename.py
+  s_bf99a93e97ab76::t_89a3a9ec49e347 1-102
+  s_bf99a93e97ab76::t_cde11c29743a80 103
+tools/Cargo.lock
+  s_bf99a93e97ab76::t_68c65ff5520919 416,2048
+tools/Cargo.toml
+  s_bf99a93e97ab76::t_cbb32c625692ae 17
+tools/client910/Cargo.toml
+  s_bf99a93e97ab76::t_76cd4ee1d5a97a 83,85,143
+tools/client910/crates/rs910-config/src/texture.rs
+  s_bf99a93e97ab76::t_a337941ae6bbe8 1479
+tools/client910/crates/rs910-far-scene/Cargo.toml
+  s_bf99a93e97ab76::t_3bc1c733e385e1 6,28
+tools/client910/crates/rs910-far-scene/src/far_debug_flags.rs
+  s_bf99a93e97ab76::t_dfdb9c54b6cb9a 13,17,23,36-37
+tools/client910/crates/rs910-far-scene/src/far_level.rs
+  s_bf99a93e97ab76::t_621d946ae70cbc 20,32,34,44,48
+tools/client910/crates/rs910-far-scene/src/far_terrain.rs
+  s_bf99a93e97ab76::t_038368adeafa07 3
+tools/client910/crates/rs910-far-scene/src/lib.rs
+  s_bf99a93e97ab76::t_5314c8a531636a 7,12-13,17,27
+tools/client910/crates/rs910-gpu-device/src/gpu_device.rs
+  s_bf99a93e97ab76::t_fe04122fe8f042 11
+tools/client910/crates/rs910-model/src/modelunlit.rs
+  s_bf99a93e97ab76::t_64ba012a45433e 154
+tools/client910/crates/rs910-render-gpu/src/floor_render.rs
+  s_bf99a93e97ab76::t_e29ba847ca8c41 2035
+tools/client910/crates/rs910-render-gpu/src/scene_meshes.rs
+  s_bf99a93e97ab76::t_bd7b7f62f469b4 941
+tools/client910/crates/rs910-render-modern/Cargo.toml
+  s_bf99a93e97ab76::t_ead8a3db354325 2,6
+tools/client910/crates/rs910-render-modern/src/lib.rs
+  s_bf99a93e97ab76::t_075038150f8a10 1-2,19,32-33,50,60,63,65,68,72,75,77,80-81
+tools/client910/crates/rs910-render-modern/src/nxt_ao950.rs
+  s_bf99a93e97ab76::t_5093633f8e69e4 40,193,203,250-251
+tools/client910/crates/rs910-render-modern/src/nxt_atmosphere.rs
+  s_bf99a93e97ab76::t_41a21aa516eb44 4,94-95,159-162,165,183,193,254
+tools/client910/crates/rs910-render-modern/src/nxt_billboards.rs
+  s_bf99a93e97ab76::t_9d675b70c05bf7 5
+tools/client910/crates/rs910-render-modern/src/nxt_caustics.rs
+  s_bf99a93e97ab76::t_55ab5b0f1d94f5 43,45-46,61
+tools/client910/crates/rs910-render-modern/src/nxt_debug_flags.rs
+  s_bf99a93e97ab76::t_a79e8c32306f4d 9,14,19,24,28,32,36,48-50,53-55,59-60
+tools/client910/crates/rs910-render-modern/src/nxt_dof.rs
+  s_bf99a93e97ab76::t_247b4058cda2e9 4,32,52,266
+tools/client910/crates/rs910-render-modern/src/nxt_env_look.rs
+  s_bf99a93e97ab76::t_c505d515226ab4 66,75,80
+tools/client910/crates/rs910-render-modern/src/nxt_environment.rs
+  s_bf99a93e97ab76::t_732bdefd142276 257,268
+tools/client910/crates/rs910-render-modern/src/nxt_fidelity.rs
+  s_bf99a93e97ab76::t_dd3f2924e3bfb0 101,136,141
+tools/client910/crates/rs910-render-modern/src/nxt_grading.rs
+  s_bf99a93e97ab76::t_16f5077e8548d3 215
+tools/client910/crates/rs910-render-modern/src/nxt_interior.rs
+  s_bf99a93e97ab76::t_11ede05ca947c2 41,60,64,187
+tools/client910/crates/rs910-render-modern/src/nxt_lights.rs
+  s_bf99a93e97ab76::t_c37b005ad9f746 92
+tools/client910/crates/rs910-render-modern/src/nxt_look2.rs
+  s_bf99a93e97ab76::t_3e78e9ff0385c0 62,108,112,114
+tools/client910/crates/rs910-render-modern/src/nxt_look949.rs
+  s_bf99a93e97ab76::t_e4763a64dfb1b9 44,51,59,83,91,96,99,126,144,148
+tools/client910/crates/rs910-render-modern/src/nxt_particles.rs
+  s_bf99a93e97ab76::t_46615674a24630 26,114,118
+tools/client910/crates/rs910-render-modern/src/nxt_post.rs
+  s_bf99a93e97ab76::t_a78ac62fafd019 125,181,212,232,268,274,277
+tools/client910/crates/rs910-render-modern/src/nxt_probes.rs
+  s_bf99a93e97ab76::t_543ae5f43fa73d 99,166,185
+tools/client910/crates/rs910-render-modern/src/nxt_render.rs
+  s_bf99a93e97ab76::t_5a5246bc18bd82 1,72,78,318,333,402,405,426,455,526,538,576,582,603,607,623,644,657,667,684,701,705,741,746,775,898,928,1053,1431,1451,1457,1477,1521,1581,1667,1722,1780,1813,1859
+tools/client910/crates/rs910-render-modern/src/nxt_render/aoenv_tests.rs
+  s_bf99a93e97ab76::t_e0515bbdb07e09 75,92,97,105,181,343,359
+tools/client910/crates/rs910-render-modern/src/nxt_render/atmos.rs
+  s_bf99a93e97ab76::t_8233474205cef0 121,144,188,192,197,231,239,248,281,554
+tools/client910/crates/rs910-render-modern/src/nxt_render/atmos_tests.rs
+  s_bf99a93e97ab76::t_e2daca583f6252 136,259,264,284,354,356,581,587,613,708
+tools/client910/crates/rs910-render-modern/src/nxt_render/far.rs
+  s_bf99a93e97ab76::t_4651d7d1a089bc 7,10,20,45,252,269-270,283,374,440,504,565,598,841,851,855,1043,1048
+tools/client910/crates/rs910-render-modern/src/nxt_render/far_tests.rs
+  s_bf99a93e97ab76::t_e2fc31bbcedc4b 194,207,332
+tools/client910/crates/rs910-render-modern/src/nxt_render/fin_tests.rs
+  s_bf99a93e97ab76::t_2a4810b8748239 44-45,185,365,446,465,475,514,549,569,609,639
+tools/client910/crates/rs910-render-modern/src/nxt_render/floor_tests.rs
+  s_bf99a93e97ab76::t_6ec6d7ac2725fb 71,217,222,239,315,320,337
+tools/client910/crates/rs910-render-modern/src/nxt_render/fx_tests.rs
+  s_bf99a93e97ab76::t_ab819feda80438 26,28,297,345,415
+tools/client910/crates/rs910-render-modern/src/nxt_render/interior.rs
+  s_bf99a93e97ab76::t_04b0cc06b03f52 35,40,42,78,90,94,131
+tools/client910/crates/rs910-render-modern/src/nxt_render/interior/tests.rs
+  s_bf99a93e97ab76::t_c2496c49a238b6 55,89,120-121,145
+tools/client910/crates/rs910-render-modern/src/nxt_render/lifetime_tests.rs
+  s_bf99a93e97ab76::t_9c686f22ff4155 22,34
+tools/client910/crates/rs910-render-modern/src/nxt_render/lights.rs
+  s_bf99a93e97ab76::t_5fa14ff08640be 21,105,113,133,170,250,291,295
+tools/client910/crates/rs910-render-modern/src/nxt_render/look2_tests.rs
+  s_bf99a93e97ab76::t_a76d44d24f495f 36,45,50,118,120,223,342
+tools/client910/crates/rs910-render-modern/src/nxt_render/look949_tests.rs
+  s_bf99a93e97ab76::t_d6d3bad806aa96 107,143-144,150,171-173,182-185,189,191
+tools/client910/crates/rs910-render-modern/src/nxt_render/point_shadow.rs
+  s_bf99a93e97ab76::t_ebcdd77dd241e8 70,121,162,197,212,218,235,242,289,435,469
+tools/client910/crates/rs910-render-modern/src/nxt_render/post.rs
+  s_bf99a93e97ab76::t_857267b75e3a7d 8,47,75,200,224,255,261,314,330,335,489,591,614-615,645,862
+tools/client910/crates/rs910-render-modern/src/nxt_render/post/tests.rs
+  s_bf99a93e97ab76::t_2ddfb1e6a2e1c6 92,131,247,266,301,376,461,463,538,579,662
+tools/client910/crates/rs910-render-modern/src/nxt_render/probes.rs
+  s_bf99a93e97ab76::t_2fb04c9bf9dd88 175,179,212,244,272,285,318,344,357,378,397,403,670,789,1014,1148,1216,1225,1256,1279,1297,1348,1372,1379,1519,1524,1656,1707,1742,1751,1761,1828,1835,1839,1900,1904,1909,1940,1946,1991,1994,2005,2010,2047,2090
+tools/client910/crates/rs910-render-modern/src/nxt_render/probes/tests.rs
+  s_bf99a93e97ab76::t_0162e50def10bc 38,187,278,361,421
+tools/client910/crates/rs910-render-modern/src/nxt_render/resources.rs
+  s_bf99a93e97ab76::t_1e70bfa0bba0ca 239,259,325,330,341,351
+tools/client910/crates/rs910-render-modern/src/nxt_render/rt5env.rs
+  s_bf99a93e97ab76::t_549cf5e6c9288a 55,119,195,199,251
+tools/client910/crates/rs910-render-modern/src/nxt_render/rt7_anim_tests.rs
+  s_bf99a93e97ab76::t_d62065f4b6e834 214,263
+tools/client910/crates/rs910-render-modern/src/nxt_render/samples.rs
+  s_bf99a93e97ab76::t_f2472169c6ecea 116,152,180
+tools/client910/crates/rs910-render-modern/src/nxt_render/shaderaudit_tests.rs
+  s_bf99a93e97ab76::t_7979a95dc90291 43,61,67,75,191,268
+tools/client910/crates/rs910-render-modern/src/nxt_render/shadow.rs
+  s_bf99a93e97ab76::t_82befd75087136 14,60,75,81,87,99,106,137,178,193,213
+tools/client910/crates/rs910-render-modern/src/nxt_render/shadow949_tests.rs
+  s_bf99a93e97ab76::t_6b4d512e0fec11 106,134-135,284,290,387
+tools/client910/crates/rs910-render-modern/src/nxt_render/sky.rs
+  s_bf99a93e97ab76::t_573c0ad6b63220 42,217,235
+tools/client910/crates/rs910-render-modern/src/nxt_render/sprites.rs
+  s_bf99a93e97ab76::t_0d7079a82a496f 102,410,533,556
+tools/client910/crates/rs910-render-modern/src/nxt_render/terrain.rs
+  s_bf99a93e97ab76::t_b7e74d4d55a2a4 10,89,126,183,189,195,219,235,259,369,426,428,441,446,454,461,509,515,527,542,575,589,595,667,671
+tools/client910/crates/rs910-render-modern/src/nxt_render/tests.rs
+  s_bf99a93e97ab76::t_e2a0b34b97b97b 224,361,432,470,500,528,628,856,905,933,942,1015,1088-1089,1232,1270,1378,1445,1514,1517,1659,1753,2140,2208,2228,2261
+tools/client910/crates/rs910-render-modern/src/nxt_render/water.rs
+  s_bf99a93e97ab76::t_549e222d64bb51 60,63,193,231,369,415,420,425,447,647,797,934,962,1133,1191,1203,1226,1232,1239,1299,1361,1408,1430
+tools/client910/crates/rs910-render-modern/src/nxt_render/water/caustics.rs
+  s_bf99a93e97ab76::t_d25d9690c06393 41,47,53,60,85,102,106,109,120,180,203,208,240,293,325,345,366
+tools/client910/crates/rs910-render-modern/src/nxt_render/water/tests.rs
+  s_bf99a93e97ab76::t_46fbd530b0f560 15-16
+tools/client910/crates/rs910-render-modern/src/nxt_rt5env950.rs
+  s_bf99a93e97ab76::t_bd6b04f2d182c3 30,58-59,82,129,131
+tools/client910/crates/rs910-render-modern/src/nxt_rt7.rs
+  s_bf99a93e97ab76::t_8ffb8ddeaa0c1f 50,52,71,75,112,256,352
+tools/client910/crates/rs910-render-modern/src/nxt_rt7_anim.rs
+  s_bf99a93e97ab76::t_bf124b63d49e30 59,61,77,82,123,125,769,902,909,916
+tools/client910/crates/rs910-render-modern/src/nxt_shaderaudit.rs
+  s_bf99a93e97ab76::t_0eef05c74a495b 52,74,77-78,93,154,157,171,176,188,272,280
+tools/client910/crates/rs910-render-modern/src/nxt_shaders.rs
+  s_bf99a93e97ab76::t_8c1db10c2be2d2 150
+tools/client910/crates/rs910-render-modern/src/nxt_shadow.rs
+  s_bf99a93e97ab76::t_9c33ba3a96ffe5 166
+tools/client910/crates/rs910-render-modern/src/nxt_shadow949.rs
+  s_bf99a93e97ab76::t_910d7fce6eb974 118,120-121,128,135,140,145
+tools/client910/crates/rs910-render-modern/src/nxt_shadow_casters.rs
+  s_bf99a93e97ab76::t_9500cbc3a11ce0 28,44,49,173
+tools/client910/crates/rs910-render-modern/src/nxt_sky949.rs
+  s_bf99a93e97ab76::t_563db2cc6f7701 2,56
+tools/client910/crates/rs910-render-modern/src/nxt_terrain.rs
+  s_bf99a93e97ab76::t_599f068e977283 45,53,70,87,247
+tools/client910/crates/rs910-render-modern/src/nxt_terrain/shade.rs
+  s_bf99a93e97ab76::t_1cf24b2b2a82b9 27,31,38
+tools/client910/crates/rs910-render-modern/src/nxt_terrain/wgsl.rs
+  s_bf99a93e97ab76::t_e8c089a995fd86 99
+tools/client910/crates/rs910-render-modern/src/nxt_texture.rs
+  s_bf99a93e97ab76::t_50ff98e2da2533 133,741,804,820,884,888,937,994,1012,1023,1035
+tools/client910/crates/rs910-render-modern/src/nxt_volumetrics.rs
+  s_bf99a93e97ab76::t_e94344464bd107 4,42,79
+tools/client910/crates/rs910-render-modern/src/nxt_water.rs
+  s_bf99a93e97ab76::t_1a050605421c85 280,294,313
+tools/client910/crates/rs910-render-modern/src/nxt_water_fx.rs
+  s_bf99a93e97ab76::t_5b7b3a177f3d97 10,29,50,117,120,123,130,137
+tools/client910/crates/rs910-scene/src/scene_snapshot.rs
+  s_bf99a93e97ab76::t_f7731137e5286c 42
+tools/client910/src/active_toolkit.rs
+  s_bf99a93e97ab76::t_e38230c8bccb2f 36-38,47,76,78-79,102,116,118,160,162,178,186,191,194,200,218,223,227,233,239,245,247-248,257,260-261,268,270,272-273,310,358,369,373,403,419,439,448,489,498,504,511,552,560,576,578,588-589,592,600,610,613,615-616,618,637,664,667,669,692,812,826-827,829,831-832,835-836,850-851,896,899,905-907,925,1000,1010,1012,1014-1017,1023,1025-1027,1029,1079,1084,1091-1093
+tools/client910/src/app/redraw.rs
+  s_bf99a93e97ab76::t_820da89c7ab6f9 638
+tools/client910/src/session_replay.rs
+  s_bf99a93e97ab76::t_e6426f9919213c 1648
+tools/perf/nxt_bench.sh
+  s_bf99a93e97ab76::t_89fafe825d99f7 29-30,46
+tools/perf/nxt_online.sh
+  s_bf99a93e97ab76::t_f93d88caf6970e 5,14-15,74
+tools/perf/nxt_perf_bench.rs
+  s_bf99a93e97ab76::t_c0f04863c07a8d 58,100,232,278,303,315,723
+tools/perf/nxt_perf_hook.rs
+  s_bf99a93e97ab76::t_6e5d2b49187034 3,5,13,140,475,547,582
+tools/perf/nxt_stage.py
+  s_bf99a93e97ab76::t_69a1884c74412a 9-10,16,42,261,264
+tools/refactor/layers.txt
+  s_bf99a93e97ab76::t_e05335d4cb395c 36,38,76,85,401,405
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "af2d849730658f0d047fcf66c6e68793676a2c8d",
+  "prompts": {},
+  "sessions": {
+    "s_bf99a93e97ab76": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "3306d217-ef25-4a58-aa1a-8bdfdb5da12f",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
