@@ -1,0 +1,33 @@
+docs/rust-port/50-code-quality-programme.md
+  s_bf99a93e97ab76::t_2f75988572b978 1779-1824
+tools/client910/crates/rs910-render-modern/src/frame/gpu/caustics.rs
+  s_bf99a93e97ab76::t_02bf999cfeee04 110
+tools/client910/crates/rs910-render-modern/src/frame/gpu/interior.rs
+  s_bf99a93e97ab76::t_f9eb4a003cd88e 44
+tools/client910/crates/rs910-render-modern/src/frame/gpu/post.rs
+  s_bf99a93e97ab76::t_09f99c264e0499 230-231,239-242
+tools/client910/crates/rs910-render-modern/src/frame/mod.rs
+  s_bf99a93e97ab76::t_b9d6a8c2fdc433 671-679
+tools/client910/crates/rs910-render-modern/src/frame/passes.rs
+  s_bf99a93e97ab76::t_15bf27c742ffb6 141-142,147,175,184,193,202,211,220,229,238,247,256,265,274,283,292,301,310,319,328,343,358,372,381,390,399,408,417,426,435,444,453,462,471
+tools/client910/crates/rs910-render-modern/src/frame/tests/atmosphere.rs
+  s_bf99a93e97ab76::t_5e532fd96653c9 83
+tools/client910/crates/rs910-render-modern/src/shadows/presets.rs
+  s_bf99a93e97ab76::t_60be5426862eb5 48-49
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "519d5edca3df5216147f0088747cc3e045f87010",
+  "prompts": {},
+  "sessions": {
+    "s_bf99a93e97ab76": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "3306d217-ef25-4a58-aa1a-8bdfdb5da12f",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
