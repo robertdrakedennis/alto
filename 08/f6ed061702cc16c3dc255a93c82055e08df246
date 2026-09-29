@@ -1,0 +1,47 @@
+docs/rust-port/42-current-port-coverage.md
+  s_9153132460b199::t_47b72d6b899e0b 87
+docs/rust-port/50-code-quality-programme.md
+  s_9153132460b199::t_2749abc5f80362 1719
+tools/perf/modern-performance-plan.md
+  s_9153132460b199::t_8d92e77f0556bf 61-63,70,75,77-78,80,99-104,109,183,192,505-506,514-515,521,587,590-591
+tools/perf/modern_bench.sh
+  s_bf99a93e97ab76::t_eba3dacce79626 2-3,5-15,18,23-24,30-31,34,36,40-41,50-60,65
+tools/perf/modern_bench_sum.py
+  s_bf99a93e97ab76::t_63973db7062e5f 2,4,6,9,194,196
+tools/perf/modern_online.sh
+  s_bf99a93e97ab76::t_dce8e95e1d22f4 2,4-5,9,11,41,66,70
+tools/perf/modern_online_sum.py
+  s_bf99a93e97ab76::t_11a5456821ec38 2-3,6
+tools/perf/modern_perf_bench.rs
+  s_9153132460b199::t_0d410531072645 1-3,5-7,15,17-18,20-21,23-25,58,79,98-108,110,112,129,141,188-189,196,271-282,285-286,311,548-549,561-563,570-573,597,602,647,652,656-657,661-662,697,713,741
+tools/perf/modern_perf_hook.rs
+  s_bf99a93e97ab76::t_1e01139d34e38a 1-3,17,28,32,46,51,514,521,526,532,773
+tools/perf/modern_stage.py
+  s_9153132460b199::t_38006f4d09896e 2-3,5,10,18-19,22,42-43,45,48-50,61,119-120,122-124,131,141,144,157,193,196-198,200,202,206-209,218,228,230,233,242-243,245,248,251,254,257,259,266-267,278
+tools/refactor/test-removals.txt
+  s_bf99a93e97ab76::t_6756df53de49cb 166,168,200,230-231,282,299,309
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "08f6ed061702cc16c3dc255a93c82055e08df246",
+  "prompts": {},
+  "sessions": {
+    "s_9153132460b199": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "1ae97d8a-0afd-42e2-b2aa-4de0341485a8",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    },
+    "s_bf99a93e97ab76": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "3306d217-ef25-4a58-aa1a-8bdfdb5da12f",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
