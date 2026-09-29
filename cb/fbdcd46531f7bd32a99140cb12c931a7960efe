@@ -1,0 +1,392 @@
+tools/client910/src/core_goldens.rs
+  s_bf99a93e97ab76::t_3a17158c337dd2 48
+tools/native910/tests/fixtures/java-contracts/component-slots.txt
+  s_bf99a93e97ab76::t_3a17158c337dd2 1
+tools/client910/src/scene_golden.rs
+  s_bf99a93e97ab76::t_3a17158c337dd2 3-5
+tools/client910/fixtures/recorded/cursors/menu.blk
+  s_bf99a93e97ab76::t_3a17158c337dd2 1-285
+tools/client910/src/test_support.rs
+  s_bf99a93e97ab76::t_3a17158c337dd2 8-10,16
+tools/client910/src/ui_resources_oracle.rs
+  s_bf99a93e97ab76::t_3a17158c337dd2 74,76-77,232
+tools/client910/fixtures/recorded/player-poses/java.blk
+  s_bf99a93e97ab76::t_3a17158c337dd2 1-1850
+tools/client910/fixtures/recorded/font-metrics/java.blk
+  s_bf99a93e97ab76::t_3a17158c337dd2 1-199
+tools/client910/fixtures/recorded/ui-draw/java.blk
+  s_bf99a93e97ab76::t_3a17158c337dd2 1-2039
+tools/client910/src/ui_components_oracle.rs
+  s_bf99a93e97ab76::t_3a17158c337dd2 98,101-102,218-221
+tools/client910/fixtures/recorded/light-animation/cpu.csv
+  s_bf99a93e97ab76::t_3a17158c337dd2 1-6
+tools/client910/fixtures/recorded/ui-objects/java.blk
+  s_bf99a93e97ab76::t_3a17158c337dd2 1-653
+tools/client910/fixtures/java-goldens/scene-draw-lumbridge.txt
+  s_bf99a93e97ab76::t_3a17158c337dd2 1-2
+tools/client910/src/java_golden.rs
+  s_bf99a93e97ab76::t_3a17158c337dd2 1-2,4-9,66
+tools/native910/tests/fixtures/java-frozen/cs2-instruction-mix.trace
+  s_bf99a93e97ab76::t_3a17158c337dd2 1-31
+tools/client910/fixtures/java-goldens/occlusion-raster.txt
+  s_bf99a93e97ab76::t_3a17158c337dd2 1-2
+tools/client910/src/player_scene_oracle.rs
+  s_bf99a93e97ab76::t_3a17158c337dd2 21-22,299
+tools/client910/fixtures/recorded/client-options/particles-input.bin
+  s_bf99a93e97ab76::t_3a17158c337dd2 1-532
+tools/native910/tests/fixtures/java-frozen/timer-edited.trace
+  s_bf99a93e97ab76::t_3a17158c337dd2 1-64
+tools/client910/src/ui_sprites_oracle.rs
+  s_bf99a93e97ab76::t_3a17158c337dd2 212,214-215,219-220,223-235,589
+tools/native910/src/dataflow.rs
+  s_bf99a93e97ab76::t_3a17158c337dd2 545
+tools/native910/src/xref.rs
+  s_bf99a93e97ab76::t_3a17158c337dd2 160-163
+tools/client910/crates/rs910-ui/src/ui_player_options_oracle.rs
+  s_bf99a93e97ab76::t_3a17158c337dd2 100,116-119
+tools/client910/crates/rs910-config/src/client_options_oracle.rs
+  s_bf99a93e97ab76::t_3a17158c337dd2 2-6,103-120
+tools/client910/fixtures/recorded/ui-lifecycle/java.blk
+  s_bf99a93e97ab76::t_3a17158c337dd2 1-2391
+tools/oracle/run-gpu-pixels.sh
+  s_bf99a93e97ab76::t_3a17158c337dd2 2-5,7,9-10,14-19,21-22,24-40,42-46
+tools/client910/fixtures/recorded/ui-configs/host.blk
+  s_bf99a93e97ab76::t_3a17158c337dd2 1-1269
+tools/client910/src/ui_goldens/stat_packet_tests.rs
+  s_bf99a93e97ab76::t_3a17158c337dd2 831-833,835,837-839,858-859
+tools/java-reference/java-reference.json
+  s_bf99a93e97ab76::t_3a17158c337dd2 2
+tools/client910/crates/rs910-ui/src/ui_bas.rs
+  s_bf99a93e97ab76::t_3a17158c337dd2 119,131-134,138-141,143
+tools/client910/crates/rs910-scene/src/occlusion_fixtures.rs
+  s_bf99a93e97ab76::t_3a17158c337dd2 2
+tools/client910/src/ui_vars_oracle.rs
+  s_bf99a93e97ab76::t_3a17158c337dd2 77,80-81,277-285
+tools/client910/Cargo.toml
+  s_bf99a93e97ab76::t_3a17158c337dd2 5,22
+tools/client910/fixtures/java-goldens/minimap-lumbridge.txt
+  s_bf99a93e97ab76::t_3a17158c337dd2 1-2
+tools/client910/fixtures/recorded/font-atlas/java.blk
+  s_bf99a93e97ab76::t_3a17158c337dd2 1-2516
+tools/client910/fixtures/recorded/graphics-settings/canvas-java.csv
+  s_bf99a93e97ab76::t_3a17158c337dd2 1-90
+tools/native910/tests/fixtures/java-decode-golden/scripts.golden
+  s_bf99a93e97ab76::t_3a17158c337dd2 1
+tools/client910/src/ui_scripts_oracle.rs
+  s_bf99a93e97ab76::t_3a17158c337dd2 60-61,247
+tools/client910/fixtures/recorded/actors/java.blk
+  s_bf99a93e97ab76::t_3a17158c337dd2 1-1000
+tools/client910/crates/rs910-scene/src/draw.rs
+  s_bf99a93e97ab76::t_3a17158c337dd2 917
+tools/client910/fixtures/recorded/sprite-draw/quads.blk
+  s_bf99a93e97ab76::t_3a17158c337dd2 1-779
+tools/client910/crates/rs910-scene/src/rebuild.rs
+  s_bf99a93e97ab76::t_3a17158c337dd2 1109-1110
+tools/refactor/gate.sh
+  s_bf99a93e97ab76::t_3a17158c337dd2 79-81,83-84
+tools/client910/fixtures/recorded/player-poses/shadow.blk
+  s_bf99a93e97ab76::t_3a17158c337dd2 1-166
+tools/refactor/provenance-baseline.tsv
+  s_bf99a93e97ab76::t_3a17158c337dd2 3-4,6-8,15,17,19
+tools/client910/fixtures/recorded/ui-client-state/java.blk
+  s_bf99a93e97ab76::t_3a17158c337dd2 1-587
+tools/native910/tests/java_differential.rs
+  s_bf99a93e97ab76::t_3a17158c337dd2 1-7,10,97,101,107-110,114,121-122,124-127,148,152,161-165
+tools/client910/fixtures/recorded/light-animation/noise.txt
+  s_bf99a93e97ab76::t_3a17158c337dd2 1-2048
+tools/README.md
+  s_bf99a93e97ab76::t_3a17158c337dd2 118,120,131-132,142-147
+tools/native910/tests/timer_acceptance.rs
+  s_bf99a93e97ab76::t_3a17158c337dd2 1-6,41,45,59,61-66,109-111,119-123,126
+tools/client910/tests/phase-g/checks.rs
+  s_bf99a93e97ab76::t_3a17158c337dd2 126
+tools/client910/src/server_rebuild_oracle.rs
+  s_bf99a93e97ab76::t_3a17158c337dd2 14-17,102
+tools/client910/fixtures/recorded/stat-feed/expected.csv
+  s_bf99a93e97ab76::t_3a17158c337dd2 1-10024
+tools/client910/src/player_model_oracle.rs
+  s_bf99a93e97ab76::t_3a17158c337dd2 81,84-85,312
+tools/client910/crates/rs910-client/src/net/tests.rs
+  s_bf99a93e97ab76::t_3a17158c337dd2 258-299,302,324
+tools/client910/src/animation_oracle.rs
+  s_bf99a93e97ab76::t_3a17158c337dd2 118,211,384,477-485,487,489,690
+tools/client910/fixtures/recorded/player-scene/java.blk
+  s_bf99a93e97ab76::t_3a17158c337dd2 1-491
+tools/client910/src/scenario_tests.rs
+  s_bf99a93e97ab76::t_3a17158c337dd2 692
+tools/client910/src/server_teleport_oracle.rs
+  s_bf99a93e97ab76::t_3a17158c337dd2 16,21-24,137
+tools/client910/src/camera_follow_oracle.rs
+  s_bf99a93e97ab76::t_3a17158c337dd2 33-34,181
+tools/client910/crates/rs910-ui/src/ui_preferences_mutations.rs
+  s_bf99a93e97ab76::t_3a17158c337dd2 515-516
+tools/client910/crates/rs910-ui/src/ui_interaction_tests.rs
+  s_bf99a93e97ab76::t_3a17158c337dd2 543
+tools/client910/fixtures/cs2-commands/README.md
+  s_bf99a93e97ab76::t_3a17158c337dd2 3-12
+tools/client910/src/ui_lifecycle_oracle.rs
+  s_bf99a93e97ab76::t_3a17158c337dd2 402-403,578
+tools/client910/crates/rs910-client/Cargo.toml
+  s_bf99a93e97ab76::t_3a17158c337dd2 32
+tools/client910/crates/rs910-render-gpu/src/floor_render/tests.rs
+  s_bf99a93e97ab76::t_3a17158c337dd2 5,7-9
+tools/client910/crates/rs910-render-gpu/src/postprocess_tests.rs
+  s_bf99a93e97ab76::t_3a17158c337dd2 503
+tools/client910/fixtures/recorded/dynamic/java.blk
+  s_bf99a93e97ab76::t_3a17158c337dd2 1-3605
+tools/client910/fixtures/recorded/graphics-settings/java.txt
+  s_bf99a93e97ab76::t_3a17158c337dd2 1-260
+tools/client910/src/scene_goldens.rs
+  s_bf99a93e97ab76::t_3a17158c337dd2 68,72,252,278-279,345,367,474-476,478,495,497,499-500,503-505,537-541,544,559
+tools/client910/fixtures/recorded/ui-scripts/java.blk
+  s_bf99a93e97ab76::t_3a17158c337dd2 1-19
+tools/client910/fixtures/recorded/font-layout/java.blk
+  s_bf99a93e97ab76::t_3a17158c337dd2 1-1431
+tools/client910/fixtures/recorded/framing/recording.blk
+  s_bf99a93e97ab76::t_3a17158c337dd2 1-225
+tools/client910/src/ui_draw_oracle.rs
+  s_bf99a93e97ab76::t_3a17158c337dd2 272-273,410-416,463
+server/src/lostcity/network/SocketE2E.testkit.ts
+  s_bf99a93e97ab76::t_3a17158c337dd2 24
+tools/native910/tests/fixtures/java-contracts/hook-installers.txt
+  s_bf99a93e97ab76::t_3a17158c337dd2 1
+tools/client910/crates/rs910-scene/src/floorlight.rs
+  s_bf99a93e97ab76::t_3a17158c337dd2 436
+tools/native910/src/project.rs
+  s_bf99a93e97ab76::t_3a17158c337dd2 232
+tools/client910/src/ui_hooks_oracle.rs
+  s_bf99a93e97ab76::t_3a17158c337dd2 421-422,636
+tools/native910/tests/fixtures/java-decode-golden/sprites.golden
+  s_bf99a93e97ab76::t_3a17158c337dd2 1
+tools/client910/crates/rs910-ui/src/ui_cursor_menu_tests.rs
+  s_bf99a93e97ab76::t_3a17158c337dd2 56-59,61-106,108
+tools/client910/src/ui_equipment_replay.rs
+  s_bf99a93e97ab76::t_3a17158c337dd2 162,431,437
+tools/native910/src/cs2_stack_contracts.rs
+  s_bf99a93e97ab76::t_3a17158c337dd2 1-4
+tools/native910/tests/java_decode_golden.rs
+  s_bf99a93e97ab76::t_3a17158c337dd2 1,4-6,11,23,248,471,722-723,759,763
+tools/client910/crates/rs910-config/src/client_options_presets.rs
+  s_bf99a93e97ab76::t_3a17158c337dd2 2
+tools/client910/fixtures/recorded/ui-configs/java.blk
+  s_bf99a93e97ab76::t_3a17158c337dd2 1-1331
+tools/client910/src/client_command_oracle.rs
+  s_bf99a93e97ab76::t_3a17158c337dd2 4-5,61
+tools/client910/fixtures/java-goldens/README.md
+  s_bf99a93e97ab76::t_3a17158c337dd2 3-6,8,10-11,13,15-22
+tools/client910/fixtures/recorded/README.md
+  s_bf99a93e97ab76::t_3a17158c337dd2 1-51
+tools/client910/fixtures/recorded/server-teleports/java.blk
+  s_bf99a93e97ab76::t_3a17158c337dd2 1-180
+tools/native910/README.md
+  s_bf99a93e97ab76::t_3a17158c337dd2 129-141,147-148,150-151,182,187-189
+tools/client910/src/font_atlas_oracle.rs
+  s_bf99a93e97ab76::t_3a17158c337dd2 44,47-48,114-115
+tools/client910/fixtures/recorded/graphics-settings/input.txt
+  s_bf99a93e97ab76::t_3a17158c337dd2 1-260
+tools/client910/src/console_oracle.rs
+  s_bf99a93e97ab76::t_3a17158c337dd2 45,48-49,371-372
+tools/client910/fixtures/java-goldens/particles-torch.txt
+  s_bf99a93e97ab76::t_3a17158c337dd2 1-2
+tools/client910/fixtures/java-goldens/floor-oracle.txt
+  s_bf99a93e97ab76::t_3a17158c337dd2 1-2
+README.md
+  s_bf99a93e97ab76::t_3a17158c337dd2 19,25-30
+tools/client910/crates/rs910-ui/src/ui_model_transform.rs
+  s_bf99a93e97ab76::t_3a17158c337dd2 86-87,90,92-93
+tools/client910/src/font_layout_oracle.rs
+  s_bf99a93e97ab76::t_3a17158c337dd2 54,57-58,486
+tools/client910/fixtures/recorded/ui-bas-query/java.blk
+  s_bf99a93e97ab76::t_3a17158c337dd2 1-4
+tools/client910/crates/rs910-ui/src/ui_cursor_tests.rs
+  s_bf99a93e97ab76::t_3a17158c337dd2 31-32,116-117,119-120,125-127,137,139
+tools/client910/crates/rs910-ui/src/ui_cam2_packet.rs
+  s_bf99a93e97ab76::t_3a17158c337dd2 210,297
+tools/client910/fixtures/recorded/ui-interaction/java.bin
+  s_bf99a93e97ab76::t_3a17158c337dd2 1-320
+tools/client910/src/actor_oracle.rs
+  s_bf99a93e97ab76::t_3a17158c337dd2 286-287,326,419-421
+tools/native910/tests/fixtures/java-frozen/script-1258-setting-0.trace
+  s_bf99a93e97ab76::t_3a17158c337dd2 1-5
+tools/client910/fixtures/recorded/player-poses/body.blk
+  s_bf99a93e97ab76::t_3a17158c337dd2 1-1851
+tools/client910/fixtures/recorded/ui-sprites/requests.tsv
+  s_bf99a93e97ab76::t_3a17158c337dd2 1-6070
+tools/client910/src/phase_g_checks.rs
+  s_bf99a93e97ab76::t_3a17158c337dd2 6
+tools/client910/fixtures/recorded/ui-properties/layout.blk
+  s_bf99a93e97ab76::t_3a17158c337dd2 1-1544
+tools/client910/fixtures/recorded/client-options/state.blk
+  s_bf99a93e97ab76::t_3a17158c337dd2 1-309
+tools/client910/fixtures/recorded/ui-icon-model/colours.blk
+  s_bf99a93e97ab76::t_3a17158c337dd2 1-53
+tools/client910/fixtures/java-goldens/lumbridge-scene.txt
+  s_bf99a93e97ab76::t_3a17158c337dd2 1-2
+tools/client910/src/protocol_goldens.rs
+  s_bf99a93e97ab76::t_3a17158c337dd2 11-12
+tools/client910/crates/rs910-config/Cargo.toml
+  s_bf99a93e97ab76::t_3a17158c337dd2 23-25
+tools/client910/fixtures/recorded/ui-components/graph.blk
+  s_bf99a93e97ab76::t_3a17158c337dd2 1-272
+tools/refactor/steps/freeze-oracles-fnhash-allow.txt
+  s_bf99a93e97ab76::t_3a17158c337dd2 1-20,22-179
+tools/native910/verify.sh
+  s_bf99a93e97ab76::t_3a17158c337dd2 16,23
+tools/client910/src/ui_component_fields_snapshot.rs
+  s_bf99a93e97ab76::t_3a17158c337dd2 2
+tools/client910/src/ui_leaf_oracle.rs
+  s_bf99a93e97ab76::t_3a17158c337dd2 48,50-51,193-195
+tools/native910/tests/fixtures/java-frozen/db-tuple.txt
+  s_bf99a93e97ab76::t_3a17158c337dd2 1-12
+tools/client910/crates/rs910-scene/src/env.rs
+  s_bf99a93e97ab76::t_3a17158c337dd2 1150
+tools/client910/src/ui_fonts_oracle.rs
+  s_bf99a93e97ab76::t_3a17158c337dd2 113,115-116,546
+tools/client910/fixtures/recorded/animation/java.blk
+  s_bf99a93e97ab76::t_3a17158c337dd2 1-307
+tools/refactor/test-inventory.txt
+  s_bf99a93e97ab76::t_3a17158c337dd2 4,10,12,19-21,28,32-33,41,45,47-49,89-90,94,105,111-113,119,159-161,172,177-180,182,185-187,189,194,207,221-222,228,230,232,236,238,240,302,341,438,486-487,517,523,574,627,887,1139,1141,1159,1162,1172,1192,1200,1207,1217-1218,1283
+tools/native910/src/vm.rs
+  s_bf99a93e97ab76::t_3a17158c337dd2 2550-2554,2556,2592,2599,2605
+tools/client910/fixtures/recorded/ui-sprites/java.blk
+  s_bf99a93e97ab76::t_3a17158c337dd2 1-3312
+tools/client910/src/game_goldens.rs
+  s_bf99a93e97ab76::t_3a17158c337dd2 18,22-23,34
+server/src/lostcity/tools/export-js5-raw.ts
+  s_bf99a93e97ab76::t_3a17158c337dd2 6
+tools/client910/fixtures/recorded/client-options/input.bin
+  s_bf99a93e97ab76::t_3a17158c337dd2 1-4284
+tools/native910/tests/fixtures/java-frozen/script-1258-setting-10858.trace
+  s_bf99a93e97ab76::t_3a17158c337dd2 1-10
+tools/native910/tests/fixtures/java-decode-golden/configs.golden
+  s_bf99a93e97ab76::t_3a17158c337dd2 1
+tools/client910/src/lib.rs
+  s_bf99a93e97ab76::t_3a17158c337dd2 254
+tools/client910/src/player_pose_oracle.rs
+  s_bf99a93e97ab76::t_3a17158c337dd2 12,15-16,57,459-468
+tools/client910/fixtures/recorded/bloom-passes/passes.txt
+  s_bf99a93e97ab76::t_3a17158c337dd2 1-24
+tools/client910/crates/rs910-core/src/test_support.rs
+  s_bf99a93e97ab76::t_3a17158c337dd2 6-155
+AGENTS.md
+  s_bf99a93e97ab76::t_3a17158c337dd2 36,43
+tools/client910/crates/rs910-config/src/client_options.rs
+  s_bf99a93e97ab76::t_3a17158c337dd2 1,7
+tools/client910/src/dynamic_oracle.rs
+  s_bf99a93e97ab76::t_3a17158c337dd2 12-26,28,37,149-150
+tools/client910/fixtures/recorded/chat-history/java.txt
+  s_bf99a93e97ab76::t_3a17158c337dd2 1-5
+tools/client910/crates/rs910-ui/src/ui_command_spec.rs
+  s_bf99a93e97ab76::t_3a17158c337dd2 10,12,49,2730,2790
+tools/refactor/test-removals.txt
+  s_bf99a93e97ab76::t_3a17158c337dd2 411-434
+tools/client910/fixtures/recorded/bloom-settings/java.txt
+  s_bf99a93e97ab76::t_3a17158c337dd2 1-24
+tools/native910/tests/fixtures/java-decode-golden/interfaces.golden
+  s_bf99a93e97ab76::t_3a17158c337dd2 1
+tools/native910/tests/db_differential.rs
+  s_bf99a93e97ab76::t_3a17158c337dd2 1-53,56-62,64-65,67-90,92-100,102-104
+tools/client910/fixtures/recorded/cursors/assets.blk
+  s_bf99a93e97ab76::t_3a17158c337dd2 1-47
+tools/client910/fixtures/recorded/ui-hooks/resources.blk
+  s_bf99a93e97ab76::t_3a17158c337dd2 1-2581
+tools/client910/fixtures/recorded/ui-properties/java.blk
+  s_bf99a93e97ab76::t_3a17158c337dd2 1-2237
+tools/client910/crates/rs910-ui/src/bloom_settings_tests.rs
+  s_bf99a93e97ab76::t_3a17158c337dd2 5
+tools/native910/tests/fixtures/java-frozen/timer-baseline.trace
+  s_bf99a93e97ab76::t_3a17158c337dd2 1-64
+tools/refactor/README.md
+  s_bf99a93e97ab76::t_3a17158c337dd2 20,417,421-422,424-425
+tools/client910/src/ui_configs_oracle.rs
+  s_bf99a93e97ab76::t_3a17158c337dd2 74,76-77,282-284
+  s_bf99a93e97ab76::t_c37a74f5d85d60 285
+tools/client910/crates/rs910-config/src/ui_legacy_types.rs
+  s_bf99a93e97ab76::t_3a17158c337dd2 1
+tools/client910/fixtures/recorded/client-options/particles-state.blk
+  s_bf99a93e97ab76::t_3a17158c337dd2 1-22
+tools/client910/src/text_render_oracle.rs
+  s_bf99a93e97ab76::t_3a17158c337dd2 132-142,144,146-148,197-200,205,207
+tools/client910/src/actor_render_oracle.rs
+  s_bf99a93e97ab76::t_3a17158c337dd2 5-6,63
+tools/client910/crates/rs910-scene/src/scene_debug_flags.rs
+  s_bf99a93e97ab76::t_3a17158c337dd2 15
+tools/client910/crates/rs910-config/src/ui_component_fields.rs
+  s_bf99a93e97ab76::t_3a17158c337dd2 1
+tools/native910/src/semantics.rs
+  s_bf99a93e97ab76::t_3a17158c337dd2 3-4,74,533,535,538,540,542,774,786,788,790
+tools/client910/fixtures/recorded/console/java.blk
+  s_bf99a93e97ab76::t_3a17158c337dd2 1-1265
+tools/client910/src/ui_properties_oracle.rs
+  s_bf99a93e97ab76::t_3a17158c337dd2 198-207,209,211-212,253-255,491-501
+tools/client910/crates/rs910-ui/src/ui_chat_oracle.rs
+  s_bf99a93e97ab76::t_3a17158c337dd2 52
+tools/client910/crates/rs910-ui/src/ui_window.rs
+  s_bf99a93e97ab76::t_3a17158c337dd2 415-416
+tools/client910/fixtures/recorded/ui-vars/java.blk
+  s_bf99a93e97ab76::t_3a17158c337dd2 1-401
+tools/client910/fixtures/recorded/ui-components/java.blk
+  s_bf99a93e97ab76::t_3a17158c337dd2 1-2978
+tools/native910/tests/java_contracts.rs
+  s_bf99a93e97ab76::t_3a17158c337dd2 1-2,4-5,9,11,34,51,77,84,87-89,95-96,110,116,118,125,130
+tools/client910/fixtures/recorded/ui-icon-model/renders.blk
+  s_bf99a93e97ab76::t_3a17158c337dd2 1-10
+tools/client910/src/font_metrics_oracle.rs
+  s_bf99a93e97ab76::t_3a17158c337dd2 46,49-50,54,191
+tools/native910/src/vars.rs
+  s_bf99a93e97ab76::t_3a17158c337dd2 106
+tools/client910/fixtures/recorded/player-models/java.blk
+  s_bf99a93e97ab76::t_3a17158c337dd2 1-2178
+tools/client910/fixtures/recorded/player-poses/ops.bin
+  s_bf99a93e97ab76::t_3a17158c337dd2 1-26
+tools/client910/fixtures/recorded/text-render/quads.blk
+  s_bf99a93e97ab76::t_3a17158c337dd2 1-4
+tools/client910/tests/phase-g/rebuild-checks.rs
+  s_bf99a93e97ab76::t_3a17158c337dd2 21
+tools/client910/src/ui_client_state_oracle.rs
+  s_bf99a93e97ab76::t_3a17158c337dd2 33-34,351
+tools/client910/fixtures/java-goldens/scene-draw-cameras.txt
+  s_bf99a93e97ab76::t_3a17158c337dd2 1
+tools/client910/fixtures/recorded/camera-follow/java.blk
+  s_bf99a93e97ab76::t_3a17158c337dd2 1-34
+tools/client910/fixtures/recorded/ui-hooks/hooks.blk
+  s_bf99a93e97ab76::t_3a17158c337dd2 1-223
+tools/client910/src/ui_obj_oracle.rs
+  s_bf99a93e97ab76::t_3a17158c337dd2 1-2,4,6,13,57
+tools/client910/src/app.rs
+  s_bf99a93e97ab76::t_3a17158c337dd2 154
+tools/native910/tests/tooling_contracts.rs
+  s_bf99a93e97ab76::t_3a17158c337dd2 28-32,34,50,54-58,69
+tools/native910/src/lib.rs
+  s_bf99a93e97ab76::t_3a17158c337dd2 63-64,66
+tools/native910/tests/cs2_java_traces.rs
+  s_bf99a93e97ab76::t_3a17158c337dd2 2-3,10-15,22-23,28,30,39,84,100,168,180,196,200-202
+tools/client910/fixtures/recorded/ui-fonts/java.blk
+  s_bf99a93e97ab76::t_3a17158c337dd2 1-1632
+tools/client910/fixtures/recorded/light-animation/lights.csv
+  s_bf99a93e97ab76::t_3a17158c337dd2 1-3024
+tools/client910/src/ui_opkey_java_trace.rs
+  s_bf99a93e97ab76::t_3a17158c337dd2 5
+tools/client910/src/sprite_draw_oracle.rs
+  s_bf99a93e97ab76::t_3a17158c337dd2 162-164,222-228,393-399,401-403,405,407-410,476-479,485,487,503,608
+tools/client910/fixtures/recorded/ui-leaf/java.blk
+  s_bf99a93e97ab76::t_3a17158c337dd2 1-18
+tools/client910/fixtures/recorded/player-options/packets.bin
+  s_bf99a93e97ab76::t_acedfd3944bceb 1
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "cbfbdcd46531f7bd32a99140cb12c931a7960efe",
+  "prompts": {},
+  "sessions": {
+    "s_bf99a93e97ab76": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "3306d217-ef25-4a58-aa1a-8bdfdb5da12f",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
