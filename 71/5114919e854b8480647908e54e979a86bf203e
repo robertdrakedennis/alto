@@ -1,0 +1,56 @@
+docs/rust-port/42-current-port-coverage.md
+  h_d26e211304196f 59
+docs/rust-port/50-code-quality-programme.md
+  h_d26e211304196f 1866-1913
+docs/rust-port/renderer/modern-renderer.md
+  h_d26e211304196f 82,128-130,135-140,147-182,198-199,311-313
+tools/client910/crates/rs910-render-modern/src/frame/gpu/mod.rs
+  h_d26e211304196f 14
+tools/client910/crates/rs910-render-modern/src/frame/gpu/point_shadows.rs
+  h_d26e211304196f 15-23,165-167,180-181,277,349-350,352,363,365,374-375,384-390,398,401-406,410-431,451-452,459-463,472-474,478-482
+tools/client910/crates/rs910-render-modern/src/frame/gpu/shadow_cache.rs
+  h_d26e211304196f 1-806
+tools/client910/crates/rs910-render-modern/src/frame/gpu/sun_shadows.rs
+  h_d26e211304196f 2-3,58,164,217-221,243,249-252,256-262
+tools/client910/crates/rs910-render-modern/src/frame/mod.rs
+  h_d26e211304196f 276-281,454-455,574,1074,1164,1189-1192,1236,1245,1250-1254,1349-1355,1473-1475
+tools/client910/crates/rs910-render-modern/src/frame/passes.rs
+  h_d26e211304196f 31,106-107,173,219-227,233
+tools/client910/crates/rs910-render-modern/src/frame/submit.rs
+  h_d26e211304196f 23-25,79,85,92,106-109,113,116,123-124
+tools/client910/crates/rs910-render-modern/src/frame/tests/scene.rs
+  h_d26e211304196f 268-269,272
+tools/client910/crates/rs910-render-modern/src/frame/tests/shadows.rs
+  h_d26e211304196f 2-3,222,225,235-411
+tools/client910/crates/rs910-render-modern/src/shaders/mod.rs
+  h_d26e211304196f 71,101-102,120,198,250
+tools/client910/crates/rs910-render-modern/src/shadows/cache.rs
+  h_d26e211304196f 1-372
+tools/client910/crates/rs910-render-modern/src/shadows/fill.wgsl
+  h_d26e211304196f 1-16
+tools/client910/crates/rs910-render-modern/src/shadows/mod.rs
+  h_d26e211304196f 73-76,562-575,581-608,616,688
+tools/perf/modern-baseline.tsv
+  h_d26e211304196f 2-5
+tools/perf/modern-performance-plan.md
+  h_d26e211304196f 531-534,792-915
+tools/perf/modern_bench.sh
+  h_d26e211304196f 17-21,32,72-80
+tools/perf/modern_perf_bench.rs
+  h_d26e211304196f 91-97,331-339,396-397,407,411-412,414,492,952-1081
+tools/refactor/steps/p3-fnhash-allow.txt
+  h_d26e211304196f 1-114
+tools/refactor/test-inventory.txt
+  h_d26e211304196f 43,924,926
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "715114919e854b8480647908e54e979a86bf203e",
+  "prompts": {},
+  "humans": {
+    "h_d26e211304196f": {
+      "author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
