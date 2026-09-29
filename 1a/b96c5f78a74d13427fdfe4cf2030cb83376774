@@ -1,0 +1,70 @@
+docs/rust-port/42-current-port-coverage.md
+  h_d26e211304196f 87
+docs/rust-port/50-code-quality-programme.md
+  h_d26e211304196f 1717-1778
+tools/client910/crates/rs910-render-nxt/src/nxt_render.rs
+  h_d26e211304196f 346-349,381-382,384,386-393,571-574,577,595,648-655,792,796,798-805,819-820,845-848,854,1034-1072,1197-1198,1246,1248-1253,1291-1292,1315,1340-1345,1418,1600,1889,1900,1922-1923
+tools/client910/crates/rs910-render-nxt/src/nxt_render/atmos.rs
+  h_d26e211304196f 23-24,69-71,266,349-359
+tools/client910/crates/rs910-render-nxt/src/nxt_render/far.rs
+  h_d26e211304196f 218-225,235-268,646-651,673-678,680-685,809,811,816
+tools/client910/crates/rs910-render-nxt/src/nxt_render/lifetime_tests.rs
+  h_d26e211304196f 1-76
+tools/client910/crates/rs910-render-nxt/src/nxt_render/point_shadow.rs
+  h_d26e211304196f 191,231-232
+tools/client910/crates/rs910-render-nxt/src/nxt_render/post.rs
+  h_d26e211304196f 252,257
+tools/client910/crates/rs910-render-nxt/src/nxt_render/probes.rs
+  h_d26e211304196f 576-577,924-934,1836-1837,1855,1861
+tools/client910/crates/rs910-render-nxt/src/nxt_render/resources.rs
+  h_d26e211304196f 11-13,21-32,35-38,40-50,54-101,104-117,119,121-122,124,240-244,255,268-282,440-442,449,452-453,464-484,486,488,492,496,499,502-503,513,517,521-523,537,554
+tools/client910/crates/rs910-render-nxt/src/nxt_render/samples.rs
+  h_d26e211304196f 1-185
+tools/client910/crates/rs910-render-nxt/src/nxt_render/shadow.rs
+  h_d26e211304196f 53,149
+tools/client910/crates/rs910-render-nxt/src/nxt_render/sprites.rs
+  h_d26e211304196f 135,378,400-402,407,451-462,464
+tools/client910/crates/rs910-render-nxt/src/nxt_render/terrain.rs
+  h_d26e211304196f 53-54,56-59,213-214,270-273,283-357,482,484-487
+tools/client910/crates/rs910-render-nxt/src/nxt_render/tests.rs
+  h_d26e211304196f 125-195
+tools/client910/crates/rs910-render-nxt/src/nxt_render/water.rs
+  h_d26e211304196f 111-112,155-157,341,496,498,590,717-727,740
+tools/client910/crates/rs910-render-nxt/src/nxt_shadow_casters.rs
+  h_d26e211304196f 149,168
+tools/client910/crates/rs910-scene/src/live_scene.rs
+  h_d26e211304196f 15-19,97,123-134
+tools/client910/crates/rs910-scene/src/scene_snapshot.rs
+  h_d26e211304196f 158-161,166,184
+tools/client910/src/active_toolkit.rs
+  h_d26e211304196f 158-161,567,575,577-579,583-586,588-599,604-618,811,904,1007-1010,1014-1017,1024-1033,1090
+tools/client910/src/app/scene_host.rs
+  h_d26e211304196f 635,679,954
+tools/perf/nxt-performance-plan.md
+  h_d26e211304196f 556-602
+tools/perf/nxt_online.sh
+  h_d26e211304196f 18-19,68-69,76
+tools/perf/nxt_online_sum.py
+  h_d26e211304196f 37-40
+tools/perf/nxt_perf_bench.rs
+  h_d26e211304196f 277-291,320,653-798
+tools/perf/nxt_perf_hook.rs
+  h_d26e211304196f 28-55,89-92,126-127,243,249,586
+tools/perf/nxt_stage.py
+  h_d26e211304196f 200-223,252,256-265
+tools/refactor/steps/p1-fnhash-allow.txt
+  h_d26e211304196f 1-113
+tools/refactor/test-inventory.txt
+  h_d26e211304196f 43,991
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "1ab96c5f78a74d13427fdfe4cf2030cb83376774",
+  "prompts": {},
+  "humans": {
+    "h_d26e211304196f": {
+      "author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
