@@ -1,0 +1,69 @@
+tools/client910/fixtures/icon-goldens/raster-scenes.txt
+  s_bf99a93e97ab76::t_8a1211f5ad1060 1-3001
+tools/refactor/gate.sh
+  s_bf99a93e97ab76::t_8a1211f5ad1060 79-81
+tools/client910/fixtures/icon-goldens/icons.txt
+  s_bf99a93e97ab76::t_8a1211f5ad1060 1-418
+tools/client910/src/lib.rs
+  s_bf99a93e97ab76::t_8a1211f5ad1060 180
+tools/client910/crates/rs910-ui/src/ui_icons/tests.rs
+  s_bf99a93e97ab76::t_8a1211f5ad1060 1-164
+tools/client910/crates/rs910-model/src/icon_raster/textured.rs
+  s_bf99a93e97ab76::t_8a1211f5ad1060 1-125
+tools/refactor/README.md
+  s_bf99a93e97ab76::t_8a1211f5ad1060 20
+tools/client910/crates/rs910-ui/src/lib.rs
+  s_bf99a93e97ab76::t_8a1211f5ad1060 113
+tools/refactor/test-removals.txt
+  s_bf99a93e97ab76::t_8a1211f5ad1060 342-343
+tools/client910/crates/rs910-model/src/icon_raster/scan.rs
+  s_bf99a93e97ab76::t_8a1211f5ad1060 1-229
+tools/client910/crates/rs910-scene/src/lib.rs
+  s_bf99a93e97ab76::t_8a1211f5ad1060 108-109
+tools/client910/crates/rs910-model/src/lib.rs
+  s_bf99a93e97ab76::t_8a1211f5ad1060 14-15,28
+tools/refactor/steps/icon-raster-fnhash-allow.txt
+  s_bf99a93e97ab76::t_8a1211f5ad1060 1-261
+tools/client910/crates/rs910-model/src/icon_raster/attributes.rs
+  s_bf99a93e97ab76::t_8a1211f5ad1060 1-217
+tools/client910/crates/rs910-model/src/icon_raster/fill.rs
+  s_bf99a93e97ab76::t_8a1211f5ad1060 1-184
+tools/refactor/layers.txt
+  s_bf99a93e97ab76::t_8a1211f5ad1060 257-258
+tools/client910/crates/rs910-ui/src/ui_icons.rs
+  s_bf99a93e97ab76::t_8a1211f5ad1060 301-303
+tools/client910/fixtures/icon-goldens/pipeline.txt
+  s_bf99a93e97ab76::t_8a1211f5ad1060 1-205
+tools/client910/crates/rs910-scene/src/ui_icon_model.rs
+  s_bf99a93e97ab76::t_8a1211f5ad1060 1-2,7-9,138-139,171,184,188,190-191,193,195-197,199,290-294,297-304,306,308-309,311,315,363-367,369-390,392-403,446-448
+tools/client910/crates/rs910-model/src/icon_raster/mod.rs
+  s_bf99a93e97ab76::t_8a1211f5ad1060 1-16,18-39,41-50,52-66,68-70,73-80,82-92,94-103,105-110,112-116,119-149,151-164,166-168,170-172,174-178,180-182,184-186,188-193,195-197,199-394
+tools/client910/crates/rs910-ui/src/ui_preferences_autosetup.rs
+  s_bf99a93e97ab76::t_8a1211f5ad1060 79-82,84,87,89,92-100,343-344,346-349
+tools/client910/crates/rs910-model/src/icon_raster/tests.rs
+  s_bf99a93e97ab76::t_8a1211f5ad1060 1-387
+tools/client910/crates/rs910-scene/src/ui_icon_model/tests.rs
+  s_bf99a93e97ab76::t_8a1211f5ad1060 1-402
+docs/rust-port/43-live-inventory.md
+  s_bf99a93e97ab76::t_8a1211f5ad1060 33-39,110-111
+tools/refactor/provenance-baseline.tsv
+  s_bf99a93e97ab76::t_bd460cdb15171c 3,13,17,19
+tools/refactor/test-inventory.txt
+  s_bf99a93e97ab76::t_96cde24b4cd2bc 4,40,44,46,834-837,1100-1103,1177-1178,1226
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "e3adca5fe90fe62a85147706f168f0caddca3c7d",
+  "prompts": {},
+  "sessions": {
+    "s_bf99a93e97ab76": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "3306d217-ef25-4a58-aa1a-8bdfdb5da12f",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
