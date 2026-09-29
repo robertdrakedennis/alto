@@ -1,0 +1,117 @@
+tools/client910/crates/rs910-render-modern/src/settings.rs
+  s_bf99a93e97ab76::t_8f1ab721a3cc17 1-213
+tools/client910/crates/rs910-render-modern/src/nxt_debug_flags.rs
+  s_bf99a93e97ab76::t_503f2cbeddae31 1-3,7-27,30-31,33-34,37,40,42-50,54-82
+tools/client910/crates/rs910-far-scene/src/far_debug_flags.rs
+  s_bf99a93e97ab76::t_6f23a6ac0ed6c5 1-5,12-14
+tools/client910/crates/rs910-far-scene/src/far_level.rs
+  s_bf99a93e97ab76::t_62cdc1123198d1 1-2,4-9,11-18,21-22,24,27,30,52-53,152,156,161,163-167
+tools/client910/crates/rs910-far-scene/src/lib.rs
+  s_bf99a93e97ab76::t_2843d509f4bffb 12-13
+tools/client910/crates/rs910-render-modern/src/lib.rs
+  s_bf99a93e97ab76::t_c44668724a988d 118
+tools/client910/crates/rs910-render-modern/src/nxt_ao950.rs
+  s_bf99a93e97ab76::t_cf3bbdf006a512 40,42,44-51,53,55-59,73-74,303
+tools/client910/crates/rs910-render-modern/src/nxt_atmosphere.rs
+  s_bf99a93e97ab76::t_5c6f3cfacf2e02 4,138,141,143,145,346,359
+tools/client910/crates/rs910-render-modern/src/nxt_atmosphere/tests.rs
+  s_bf99a93e97ab76::t_50473fad5464f6 1
+tools/client910/crates/rs910-render-modern/src/nxt_caustics.rs
+  s_bf99a93e97ab76::t_a49d52c598d69d 93
+tools/client910/crates/rs910-render-modern/src/nxt_dof.rs
+  s_bf99a93e97ab76::t_2fad85c45d7eff 56-57
+tools/client910/crates/rs910-render-modern/src/nxt_env_look.rs
+  s_bf99a93e97ab76::t_cc4038c70901f6 66-68,287,299,301,303
+tools/client910/crates/rs910-render-modern/src/nxt_fidelity.rs
+  s_bf99a93e97ab76::t_47b43f326e09de 129,141-142,144-145
+tools/client910/crates/rs910-render-modern/src/nxt_look2.rs
+  s_bf99a93e97ab76::t_47fe676eb1f8a4 77-78,94,96,124,147
+tools/client910/crates/rs910-render-modern/src/nxt_look949.rs
+  s_bf99a93e97ab76::t_292c7f6a9ff67d 55-56,80,85,190-193,195,197-201,205-206,208-212,431,433,438,446
+tools/client910/crates/rs910-render-modern/src/nxt_particles.rs
+  s_bf99a93e97ab76::t_e12d077a02344f 125,233-234,236,247-248
+tools/client910/crates/rs910-render-modern/src/nxt_post.rs
+  s_bf99a93e97ab76::t_a263354e966b5d 182-183,191-193,195-202
+tools/client910/crates/rs910-render-modern/src/nxt_post/tests.rs
+  s_bf99a93e97ab76::t_3e99c736448bbf 1,3,5-7,9-10,12-13,15-16,19-23,25-28,31-35
+tools/client910/crates/rs910-render-modern/src/nxt_probes.rs
+  s_bf99a93e97ab76::t_64e2c25724334a 164-165,174,177-179,183,186,202,205-209
+tools/client910/crates/rs910-render-modern/src/nxt_render.rs
+  s_bf99a93e97ab76::t_890cfd989df721 195,354,422-425,427,526,528-529,719,782-784,810-812,815,818,839-840,843-844,848,945-954,959-963,1028-1031,1034-1036,1040-1043,1045-1047,1051,1204,1396,1442,1446,1525,1725-1726
+tools/client910/crates/rs910-render-modern/src/nxt_render/atmos.rs
+  s_bf99a93e97ab76::t_871e38f874c627 325-327,414
+tools/client910/crates/rs910-render-modern/src/nxt_render/far.rs
+  s_bf99a93e97ab76::t_8063a491c347d9 149-151,269,271,275-277,346,403,791
+tools/client910/crates/rs910-render-modern/src/nxt_render/interior.rs
+  s_bf99a93e97ab76::t_7c25bca5cb6541 39,44
+tools/client910/crates/rs910-render-modern/src/nxt_render/lights.rs
+  s_bf99a93e97ab76::t_b2c65f8ae0229b 273,293,308,318
+tools/client910/crates/rs910-render-modern/src/nxt_render/point_shadow.rs
+  s_bf99a93e97ab76::t_13bc1f44a30463 157,224,263,293,414
+tools/client910/crates/rs910-render-modern/src/nxt_render/post.rs
+  s_bf99a93e97ab76::t_5d28701a7e0db2 7,198-199,222-223,232-233,248,339-340,403,432,460,464,601,603,619-621,623,630-631,649,699,710,719-724,806,863-866,897,900-901,942,948-949,951,955,958
+tools/client910/crates/rs910-render-modern/src/nxt_render/probes.rs
+  s_bf99a93e97ab76::t_39d2e12e4a19b5 342,674
+tools/client910/crates/rs910-render-modern/src/nxt_render/resources.rs
+  s_bf99a93e97ab76::t_85bb3c4795b6c8 457-459,524-525
+tools/client910/crates/rs910-render-modern/src/nxt_render/rt5env.rs
+  s_bf99a93e97ab76::t_1ff419d86e14af 252
+tools/client910/crates/rs910-render-modern/src/nxt_render/shadow.rs
+  s_bf99a93e97ab76::t_75d1660e76994e 228
+tools/client910/crates/rs910-render-modern/src/nxt_render/sky.rs
+  s_bf99a93e97ab76::t_a43d0e9c394e90 58
+tools/client910/crates/rs910-render-modern/src/nxt_render/sprites.rs
+  s_bf99a93e97ab76::t_085c5822b103fe 256-257,360-363,449
+tools/client910/crates/rs910-render-modern/src/nxt_render/terrain.rs
+  s_bf99a93e97ab76::t_073e6b423f62d4 445,714-716
+tools/client910/crates/rs910-render-modern/src/nxt_render/water.rs
+  s_bf99a93e97ab76::t_ea1c1bf7d0ffb0 63,305-309,321,402,471,664-665,686,916,918,973-975,985-987,1051
+tools/client910/crates/rs910-render-modern/src/nxt_render/water/caustics.rs
+  s_bf99a93e97ab76::t_403abb84789f11 245
+tools/client910/crates/rs910-render-modern/src/nxt_rt5env950.rs
+  s_bf99a93e97ab76::t_c1852dbbf85ae1 58-59,78-80,82-86,95,131-136
+tools/client910/crates/rs910-render-modern/src/nxt_rt7_anim.rs
+  s_bf99a93e97ab76::t_997fa227fa7b17 874
+tools/client910/crates/rs910-render-modern/src/nxt_shaderaudit.rs
+  s_bf99a93e97ab76::t_f501ab2145adfb 61-64,66,68,121,130,152-153,190-194
+tools/client910/crates/rs910-render-modern/src/nxt_shaders.rs
+  s_bf99a93e97ab76::t_618ebbf7b7e7d9 152-160
+tools/client910/crates/rs910-render-modern/src/nxt_shadow.rs
+  s_bf99a93e97ab76::t_884fbbe7eae198 97-99,198,205,276-280,283,294
+tools/client910/crates/rs910-render-modern/src/nxt_shadow/tests.rs
+  s_bf99a93e97ab76::t_7ee0f88e1134a8 1-2,21,33-34,38,40-49
+tools/client910/crates/rs910-render-modern/src/nxt_shadow949.rs
+  s_bf99a93e97ab76::t_8089cdd1498124 116,118-119,121
+tools/client910/crates/rs910-render-modern/src/nxt_shadow_casters.rs
+  s_bf99a93e97ab76::t_110da02918c5c5 173
+tools/client910/crates/rs910-render-modern/src/nxt_sky949.rs
+  s_bf99a93e97ab76::t_3098ed754c382e 166
+tools/client910/crates/rs910-render-modern/src/nxt_terrain.rs
+  s_bf99a93e97ab76::t_039821a2b59e9e 69-70,73-74,280,282,620-623,636-638,641,823,1047,1065,1140
+tools/client910/crates/rs910-render-modern/src/nxt_texture.rs
+  s_bf99a93e97ab76::t_766597432eaa5c 308-309,710,839,913-917
+tools/client910/crates/rs910-render-modern/src/nxt_volumetrics.rs
+  s_bf99a93e97ab76::t_ec12ccc2a1e8fa 126-127,160,164,167
+tools/client910/crates/rs910-render-modern/src/nxt_water.rs
+  s_bf99a93e97ab76::t_3e73c1b1dc5091 313-320,858-862,864,878-883
+tools/client910/crates/rs910-render-modern/src/nxt_water_fx.rs
+  s_bf99a93e97ab76::t_ea0096ce43bdb0 110-111,116
+tools/client910/src/active_toolkit.rs
+  s_bf99a93e97ab76::t_78f9c8484794e9 584,587-589,607,610,619-621,1018,1031
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "e13c4db9f092c3b65b3cfd53b1270a5dc434926b",
+  "prompts": {},
+  "sessions": {
+    "s_bf99a93e97ab76": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "3306d217-ef25-4a58-aa1a-8bdfdb5da12f",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
