@@ -1,0 +1,132 @@
+tools/client910/src/app_loading.rs
+  s_bf99a93e97ab76::t_c6b3a19ff52d39 349
+  s_bf99a93e97ab76::t_6d1d6ff44a4347 331,347-348,351,704,751
+tools/client910/src/app/session_controller.rs
+  s_bf99a93e97ab76::t_c6b3a19ff52d39 203
+  s_bf99a93e97ab76::t_a07677d49f25c3 197,204-205,305
+tools/client910/crates/rs910-toolkit/src/font.rs
+  s_bf99a93e97ab76::t_c6b3a19ff52d39 18
+  s_bf99a93e97ab76::t_b8e249b6aac09b 4
+tools/client910/src/active_toolkit.rs
+  s_bf99a93e97ab76::t_c6b3a19ff52d39 998,1000,1002-1003
+  s_bf99a93e97ab76::t_329c3f7e048ded 5-6,18-20,24-34,37-38,66,105-106,136-137,139,545,602,614,619-627,630-634,639-640,658-659,667,715,766-767,800,879-882,993,995,997,1005,1011,1016
+tools/client910/crates/rs910-toolkit/src/capability.rs
+  s_bf99a93e97ab76::t_c6b3a19ff52d39 80-85
+  s_bf99a93e97ab76::t_0a7bf5158ad4b4 14-23,59-79,86-99
+tools/client910/crates/rs910-toolkit/src/toolkit.rs
+  s_bf99a93e97ab76::t_c6b3a19ff52d39 9
+  s_bf99a93e97ab76::t_f586f134d82c8f 10-12,39-40,52,61,224
+tools/refactor/provenance-baseline.tsv
+  s_bf99a93e97ab76::t_aa0afc515bfdc2 3,6-8,11,15,17-19
+tools/client910/src/render_goldens/console.rs
+  s_bf99a93e97ab76::t_b8288a55d8ec52 20-58,137
+  s_bf99a93e97ab76::t_c6b3a19ff52d39 1,113
+  s_bf99a93e97ab76::t_e45250ab9f003c 2-6,10-16,19,59-110,112,114-135,138-157
+tools/client910/src/session_replay.rs
+  s_bf99a93e97ab76::t_c6b3a19ff52d39 1617
+  s_bf99a93e97ab76::t_4a690fe3f1b586 206-209,214-216,219,229,339-347,454,1603-1616,1618-1620,1626,1630-1634,1661-1662,1666-1672,1674,1676-1691,1693-1707,1709-1712,1714-1716,1721,1723,2316-2320
+docs/rust-port/42-current-port-coverage.md
+  s_bf99a93e97ab76::t_9601f293a122e4 124-131
+docs/rust-port/50-code-quality-programme.md
+  s_bf99a93e97ab76::t_c7fd26d7630049 99-101,147,153-154,2689-2715
+docs/rust-port/renderer/modern-renderer.md
+  s_bf99a93e97ab76::t_bb327006362bdd 10-14
+rust-toolchain.toml
+  s_bf99a93e97ab76::t_5dbcfc235f4182 3-4
+tools/Cargo.toml
+  s_bf99a93e97ab76::t_c75c82f1803840 17,58-59
+tools/README.md
+  s_bf99a93e97ab76::t_1aa218b7a5aaf8 22,24,95-96,126-129,157
+tools/client910/Cargo.toml
+  s_bf99a93e97ab76::t_2994f66d6268ec 77-78,142
+tools/client910/crates/rs910-client/src/client_core/session_core.rs
+  s_bf99a93e97ab76::t_ef37ce06bc0cb1 1730-1732
+tools/client910/crates/rs910-config/src/billboard.rs
+  s_bf99a93e97ab76::t_15b887fc0eb747 7
+tools/client910/crates/rs910-core/src/logic_clock.rs
+  s_bf99a93e97ab76::t_5fb99d5971579c 65
+tools/client910/crates/rs910-gpu-device/Cargo.toml
+  s_bf99a93e97ab76::t_eef909bd14deff 6
+tools/client910/crates/rs910-gpu-device/src/gpu_device.rs
+  s_bf99a93e97ab76::t_0df07c6178819f 9-10
+tools/client910/crates/rs910-gpu-device/src/lib.rs
+  s_bf99a93e97ab76::t_c7ab82cfad2c09 4
+tools/client910/crates/rs910-model/src/floor.rs
+  s_bf99a93e97ab76::t_2f5ec43722b07f 419-420,1443
+tools/client910/crates/rs910-render-gpu/src/lib.rs
+  s_bf99a93e97ab76::t_52bbba1f1a2a7a 5-6,9-10,64
+tools/client910/crates/rs910-render-gpu/src/render.rs
+  s_bf99a93e97ab76::t_49285d9c75b14f 9-10
+tools/client910/crates/rs910-render-gpu/src/render/frame.rs
+  s_bf99a93e97ab76::t_8b21a28cec0ad2 5
+tools/client910/crates/rs910-render-gpu/src/render/minimap.rs
+  s_bf99a93e97ab76::t_13fcf08eae625c 208
+tools/client910/crates/rs910-render-gpu/src/render/ui.rs
+  s_bf99a93e97ab76::t_f37809d38dc4bd 160
+tools/client910/crates/rs910-scene/src/interface_model.rs
+  s_bf99a93e97ab76::t_3143cf671a913c 6-7,14
+tools/client910/crates/rs910-scene/src/rebuild.rs
+  s_bf99a93e97ab76::t_c3fedb63113df8 1075-1076
+tools/client910/crates/rs910-scene/src/scene_snapshot.rs
+  s_bf99a93e97ab76::t_a8d3df404ac37b 31-32,40-41
+tools/client910/crates/rs910-toolkit/src/frame_plan.rs
+  s_bf99a93e97ab76::t_3e5d07975440a1 11-12,76-77
+tools/client910/crates/rs910-toolkit/src/lib.rs
+  s_bf99a93e97ab76::t_2ee65a6f9c8964 6,29,40-46,57,81-83
+tools/client910/crates/rs910-toolkit/src/ui_output.rs
+  s_bf99a93e97ab76::t_78af5c4f4c72ff 15,24-25
+tools/client910/crates/rs910-toolkit/src/ui_paint.rs
+  s_bf99a93e97ab76::t_96306f7a908ba7 106-108,211
+tools/client910/crates/rs910-ui/src/ui_preferences_toolkit.rs
+  s_bf99a93e97ab76::t_f30992c27ded9f 11-14,19
+tools/client910/src/app.rs
+  s_bf99a93e97ab76::t_d1b092fa0c5182 199-204
+tools/client910/src/app/mainloop.rs
+  s_bf99a93e97ab76::t_2a843117b230f3 157-160
+tools/client910/src/app/preferences.rs
+  s_bf99a93e97ab76::t_44e9bb82b4510e 93-95,116-117
+tools/client910/src/app/redraw.rs
+  s_bf99a93e97ab76::t_2ccae34ff41d60 203-204
+tools/client910/src/debug_flags.rs
+  s_bf99a93e97ab76::t_193e0831766562 23
+tools/client910/src/java_golden.rs
+  s_bf99a93e97ab76::t_6efb3d8a06b939 13
+tools/client910/src/lib.rs
+  s_bf99a93e97ab76::t_b16b0ba526ced9 230,232,256-257,260
+tools/client910/src/render_goldens.rs
+  s_bf99a93e97ab76::t_7514e5d52301f3 1-6,8-26
+tools/client910/src/render_goldens/fixed_clock.rs
+  s_bf99a93e97ab76::t_b91e396e9eab42 1-16,20,79,112-138,140,143-145,148,150-151,154,156-161,163-165,167-168
+tools/refactor/README.md
+  s_bf99a93e97ab76::t_48746d691835ed 20
+tools/refactor/dag-baseline.txt
+  s_bf99a93e97ab76::t_a7eeb3eb1255ea 2
+tools/refactor/gate.sh
+  s_bf99a93e97ab76::t_8d4fa40b11c6b2 80-81,92
+tools/refactor/layers.txt
+  s_bf99a93e97ab76::t_c1818b1da2ae87 37,421-423,432-433
+tools/refactor/replay-gate.txt
+  s_bf99a93e97ab76::t_51d4948f24ccff 50-52,57
+tools/refactor/steps/drop-sw-fnhash-allow.txt
+  s_bf99a93e97ab76::t_e16142ddc8c1e8 1-410
+tools/refactor/test-inventory.txt
+  s_bf99a93e97ab76::t_755adf29c97bd4 166-167
+tools/refactor/test-removals.txt
+  s_bf99a93e97ab76::t_6ed6588f66600e 316-319
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "f160913c8dcafd5a18a396170912cd4c17ccd836",
+  "prompts": {},
+  "sessions": {
+    "s_bf99a93e97ab76": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "3306d217-ef25-4a58-aa1a-8bdfdb5da12f",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
