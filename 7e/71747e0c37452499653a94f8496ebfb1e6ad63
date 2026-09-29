@@ -1,0 +1,60 @@
+tools/client910/crates/rs910-render-modern/src/frame/tests/scene.rs
+  s_bf99a93e97ab76::t_02376dad64223b 1-165
+  s_bf99a93e97ab76::t_d5adfbe24bde3c 166-232
+tools/client910/crates/rs910-render-modern/src/frame/tests/post.rs
+  s_bf99a93e97ab76::t_4e558e9469fd61 1-95
+  s_bf99a93e97ab76::t_f557c4ec9b9f20 96-117
+tools/client910/crates/rs910-render-modern/src/frame/tests/mod.rs
+  s_bf99a93e97ab76::t_82634b43e73a1d 1-674
+  s_bf99a93e97ab76::t_fb6119df4188bf 675
+tools/client910/crates/rs910-render-modern/src/frame/tests/shadows.rs
+  s_bf99a93e97ab76::t_864b93e1e1b1e5 1-195
+  s_bf99a93e97ab76::t_b1c7aebf1c77a9 196-233
+tools/client910/crates/rs910-render-modern/src/frame/tests/lighting.rs
+  s_bf99a93e97ab76::t_56aefe6d72b00a 1-60
+  s_bf99a93e97ab76::t_28933545788b50 61
+tools/client910/crates/rs910-render-modern/src/frame/tests/water.rs
+  s_bf99a93e97ab76::t_ab6ab108702223 1-184
+  s_bf99a93e97ab76::t_8ee96dec636074 185-204
+tools/client910/crates/rs910-render-modern/src/frame/tests/atmosphere.rs
+  s_bf99a93e97ab76::t_4b23524a3e4eab 1-159
+  s_bf99a93e97ab76::t_e07c579fc46248 160-191
+tools/client910/crates/rs910-far-scene/src/far_terrain.rs
+  s_bf99a93e97ab76::t_b742ad1b9a4a75 107-108,110
+tools/client910/crates/rs910-render-modern/src/frame/gpu/atmosphere.rs
+  s_bf99a93e97ab76::t_e4b7ed76d4171d 79-81,301-306
+tools/client910/crates/rs910-render-modern/src/frame/gpu/far.rs
+  s_bf99a93e97ab76::t_d738baa1de1c67 936,953
+tools/client910/crates/rs910-render-modern/src/frame/gpu/post.rs
+  s_bf99a93e97ab76::t_a8237eb78a2ac6 357,360,488
+tools/client910/crates/rs910-render-modern/src/frame/gpu/probes.rs
+  s_bf99a93e97ab76::t_0f4016c5c5ed26 1275
+tools/client910/crates/rs910-render-modern/src/frame/mod.rs
+  s_bf99a93e97ab76::t_03a1ff541bb516 959,1052,1700-1701
+tools/client910/crates/rs910-render-modern/src/frame/passes.rs
+  s_bf99a93e97ab76::t_bd69bfaa66aecc 534-536
+tools/client910/crates/rs910-render-modern/src/frame/tests/far.rs
+  s_bf99a93e97ab76::t_e6226e8e01f9eb 1-151
+tools/client910/crates/rs910-render-modern/src/frame/tests/models.rs
+  s_bf99a93e97ab76::t_aa54bcb64b7c8a 1-237
+tools/refactor/test-inventory.txt
+  s_bf99a93e97ab76::t_92d946b2fda309 36,43,751,755,900-963
+tools/refactor/test-removals.txt
+  s_bf99a93e97ab76::t_9ae17cd8ca9349 157-312
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "7e71747e0c37452499653a94f8496ebfb1e6ad63",
+  "prompts": {},
+  "sessions": {
+    "s_bf99a93e97ab76": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "3306d217-ef25-4a58-aa1a-8bdfdb5da12f",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
