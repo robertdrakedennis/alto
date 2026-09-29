@@ -1,0 +1,19 @@
+tools/refactor/test-removals.txt
+  s_bf99a93e97ab76::t_db5fadbe39c497 163,170-171,174,179-180,182,192,195,203,206,213,224,236,239,241,249-250,255-257,259,261,267,273-276,278,285,294-295,300,303,305-306,308,311
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "58f4b367fa41c696d8ed42461c04d5f137fd7b54",
+  "prompts": {},
+  "sessions": {
+    "s_bf99a93e97ab76": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "3306d217-ef25-4a58-aa1a-8bdfdb5da12f",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
