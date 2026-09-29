@@ -1,0 +1,81 @@
+tools/refactor/steps/p5-hitches-fnhash-allow.txt
+  s_bf99a93e97ab76::t_f97d50ed24bf9c 1-151
+tools/client910/crates/rs910-render-modern/src/terrain/mod.rs
+  s_bf99a93e97ab76::t_f97d50ed24bf9c 826-841,894-895,927-938
+  s_bf99a93e97ab76::t_9303df5d3beaee 825,939-940
+tools/client910/crates/rs910-render-modern/src/frame/prebuild.rs
+  s_bf99a93e97ab76::t_f97d50ed24bf9c 1-217
+tools/perf/modern_perf_bench.rs
+  s_bf99a93e97ab76::t_f97d50ed24bf9c 1147-1391
+tools/client910/crates/rs910-render-modern/src/frame/arenas.rs
+  s_bf99a93e97ab76::t_f97d50ed24bf9c 17-25,121-130,135-136,141-149,151-185,193-194,197-199,238-241,245-248,255-258
+tools/perf/modern_bench.sh
+  s_bf99a93e97ab76::t_f97d50ed24bf9c 22-23,94-104
+  s_bf99a93e97ab76::t_1d5794c3e92557 105-106
+tools/perf/modern_hitch_sum.py
+  s_bf99a93e97ab76::t_f97d50ed24bf9c 1-86
+tools/client910/crates/rs910-render-modern/src/frame/mod.rs
+  s_bf99a93e97ab76::t_f97d50ed24bf9c 389-391,467-470,787,828-829,836,1093-1094,1167-1169,1467-1469,1876,1879
+tools/client910/crates/rs910-render-modern/src/models/rt7.rs
+  s_bf99a93e97ab76::t_f97d50ed24bf9c 156,170-172,179-261,263,269,271,274,276-280,286-290,293,303-347,372,374-423,426-427,430-435,446,450-463,471,475-495
+  s_bf99a93e97ab76::t_e591c9ac7d8b27 496
+tools/client910/crates/rs910-render-modern/src/frame/gpu/shadow_cache.rs
+  s_bf99a93e97ab76::t_f97d50ed24bf9c 262-264
+tools/client910/crates/rs910-render-modern/src/frame/tests/lifecycle.rs
+  s_bf99a93e97ab76::t_f97d50ed24bf9c 1-94
+docs/rust-port/50-code-quality-programme.md
+  s_bf99a93e97ab76::t_f97d50ed24bf9c 1914-1958
+docs/rust-port/renderer/modern-renderer.md
+  s_bf99a93e97ab76::t_f97d50ed24bf9c 28,337-370,471-477,527-532
+tools/client910/crates/rs910-render-modern/src/frame/resources.rs
+  s_bf99a93e97ab76::t_f97d50ed24bf9c 230-231,393-404
+tools/perf/perf_probe.rs
+  s_bf99a93e97ab76::t_f97d50ed24bf9c 328-331
+tools/client910/crates/rs910-render-modern/src/frame/pipelines.rs
+  s_bf99a93e97ab76::t_f97d50ed24bf9c 208-242
+tools/client910/src/active_toolkit.rs
+  s_bf99a93e97ab76::t_f97d50ed24bf9c 163-166,581,583-586,596,607-615,1041-1059
+tools/client910/crates/rs910-render-modern/src/frame/gpu/terrain.rs
+  s_bf99a93e97ab76::t_f97d50ed24bf9c 487-493
+tools/client910/crates/rs910-render-modern/src/frame/startup.rs
+  s_bf99a93e97ab76::t_f97d50ed24bf9c 1-165
+docs/rust-port/42-current-port-coverage.md
+  s_bf99a93e97ab76::t_f97d50ed24bf9c 59
+tools/client910/crates/rs910-render-modern/src/models/materials.rs
+  s_bf99a93e97ab76::t_f97d50ed24bf9c 305-306,839,900-901,913-989,1005-1022,1025-1041,1045-1069,1071-1089,1099-1102,1105,1165-1225,1228,1252
+tools/perf/modern-baseline.tsv
+  s_bf99a93e97ab76::t_f97d50ed24bf9c 2-5
+tools/perf/modern_perf_hook.rs
+  s_bf99a93e97ab76::t_f97d50ed24bf9c 94-98,134-135,234-246,249-264,268-285,306-307,311,315,627
+tools/refactor/test-inventory.txt
+  s_bf99a93e97ab76::t_f97d50ed24bf9c 43,915-916
+tools/client910/crates/rs910-render-modern/src/frame/tests/mod.rs
+  s_bf99a93e97ab76::t_f97d50ed24bf9c 15
+tools/client910/crates/rs910-gpu-device/src/gpu_device.rs
+  s_bf99a93e97ab76::t_f97d50ed24bf9c 47-51,187-188
+tools/client910/crates/rs910-render-modern/src/frame/gpu/water.rs
+  s_bf99a93e97ab76::t_f97d50ed24bf9c 292-296,300
+tools/perf/modern-performance-plan.md
+  s_bf99a93e97ab76::t_f97d50ed24bf9c 9,1178-1322
+  s_bf99a93e97ab76::t_383e2b1c92abd5 1323
+tools/perf/modern_stage.py
+  s_bf99a93e97ab76::t_f97d50ed24bf9c 222-236,282,291-301
+tools/client910/crates/rs910-render-modern/src/frame/gpu/probes.rs
+  s_bf99a93e97ab76::t_f97d50ed24bf9c 1075-1083
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "3f78f52b0f57f99b26e08eb3a4587e308c1f2cb1",
+  "prompts": {},
+  "sessions": {
+    "s_bf99a93e97ab76": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "3306d217-ef25-4a58-aa1a-8bdfdb5da12f",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
