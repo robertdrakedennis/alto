@@ -1,0 +1,94 @@
+tools/client910/crates/rs910-render-modern/src/frame/gpu/water.rs
+  s_bf99a93e97ab76::t_45602e17d5ef98 1146-1149
+tools/client910/crates/rs910-scene/src/lib.rs
+  s_bf99a93e97ab76::t_45602e17d5ef98 20-21,90,92
+tools/client910/src/model_goldens.rs
+  s_bf99a93e97ab76::t_45602e17d5ef98 219-417
+tools/client910/crates/rs910-scene/src/skybox.rs
+  s_bf99a93e97ab76::t_45602e17d5ef98 4-7,58-60,83,100-110,119-126,131-133,195,272-274,329-345,412-427,547,713-732
+  s_bf99a93e97ab76::t_6b764197d781eb 733-734
+tools/client910/crates/rs910-scene/src/cover_marker.rs
+  s_bf99a93e97ab76::t_45602e17d5ef98 165-208,307-327
+  s_bf99a93e97ab76::t_b68d17c317c8db 328
+tools/client910/crates/rs910-render-modern/src/frame/tests/underwater.rs
+  s_bf99a93e97ab76::t_45602e17d5ef98 1-95
+tools/client910/crates/rs910-scene/src/sky_decor/tests.rs
+  s_bf99a93e97ab76::t_45602e17d5ef98 1-318
+tools/client910/fixtures/recorded/README.md
+  s_bf99a93e97ab76::t_45602e17d5ef98 42,56
+tools/client910/crates/rs910-config/src/skybox_types.rs
+  s_bf99a93e97ab76::t_45602e17d5ef98 249-266,278-283
+tools/client910/crates/rs910-render-modern/src/frame/tests/mod.rs
+  s_bf99a93e97ab76::t_45602e17d5ef98 22-23,84-94,98,112,298-308,340-359,609-618
+  s_bf99a93e97ab76::t_d9d24c678801dc 619-620
+docs/client-status.md
+  s_bf99a93e97ab76::t_45602e17d5ef98 27
+tools/refactor/layers.txt
+  s_bf99a93e97ab76::t_45602e17d5ef98 330-331
+tools/client910/crates/rs910-scene/fixtures/sky-decor.tsv
+  s_bf99a93e97ab76::t_45602e17d5ef98 1-4
+tools/client910/src/debug_flags.rs
+  s_bf99a93e97ab76::t_45602e17d5ef98 63-67,111-123,147,149
+tools/client910/crates/rs910-ui/src/ui_host_game.rs
+  s_bf99a93e97ab76::t_45602e17d5ef98 1969
+tools/client910/crates/rs910-scene/src/sky_decor.rs
+  s_bf99a93e97ab76::t_45602e17d5ef98 1-355
+tools/client910/src/app/environment.rs
+  s_bf99a93e97ab76::t_45602e17d5ef98 84-100
+tools/client910/crates/rs910-scene/src/sky_texture.rs
+  s_bf99a93e97ab76::t_45602e17d5ef98 1-87
+tools/client910/crates/rs910-render-modern/src/frame/mod.rs
+  s_bf99a93e97ab76::t_45602e17d5ef98 353,382-383,786,1218-1219,1264-1265,1274-1281,1877-1879,1900
+tools/client910/src/app/entity_renderer.rs
+  s_bf99a93e97ab76::t_45602e17d5ef98 29-31,1943-1947,1959-1960,1962,1966,1969,1973-1980,2013-2014,2029-2030,2046-2064,2068
+tools/client910/fixtures/recorded/cutscene-viewport/recording.bin
+  s_bf99a93e97ab76::t_45602e17d5ef98 1-120
+tools/client910/crates/rs910-ui/src/ui_backend.rs
+  s_bf99a93e97ab76::t_45602e17d5ef98 1417,1446-1472,1677-1787
+  s_bf99a93e97ab76::t_11e95a12dbffd2 1788
+tools/client910/crates/rs910-ui/src/ui_properties.rs
+  s_bf99a93e97ab76::t_45602e17d5ef98 150-167
+docs/renderer/modern-renderer.md
+  s_bf99a93e97ab76::t_45602e17d5ef98 26,130-146,456-459
+tools/client910/crates/rs910-render-modern/src/frame/gpu/probes.rs
+  s_bf99a93e97ab76::t_45602e17d5ef98 518,632-634,1464-1466,1487-1489,1520
+tools/client910/crates/rs910-scene/src/player_scene.rs
+  s_bf99a93e97ab76::t_45602e17d5ef98 280-339
+tools/client910/crates/rs910-render-modern/src/atmosphere/sky_layers.wgsl
+  s_bf99a93e97ab76::t_45602e17d5ef98 5,31-36
+tools/client910/crates/rs910-render-modern/src/frame/gpu/sky_layers.rs
+  s_bf99a93e97ab76::t_45602e17d5ef98 23-30,37,54-128,289,320-365
+tools/client910/crates/rs910-render-modern/src/frame/tests/sky.rs
+  s_bf99a93e97ab76::t_45602e17d5ef98 1-138
+tools/client910/crates/rs910-render-modern/src/frame/resources.rs
+  s_bf99a93e97ab76::t_45602e17d5ef98 194
+tools/client910/crates/rs910-scene/src/sky_frame.rs
+  s_bf99a93e97ab76::t_45602e17d5ef98 15-16,29-32,41-44,124-155,205-212
+  s_bf99a93e97ab76::t_4a957fcf0e1fc0 213-214
+tools/client910/crates/rs910-ui/src/ui_models.rs
+  s_bf99a93e97ab76::t_45602e17d5ef98 196-197
+tools/client910/src/app.rs
+  s_bf99a93e97ab76::t_45602e17d5ef98 661
+tools/client910/crates/rs910-render-gpu/src/skybox_render.rs
+  s_bf99a93e97ab76::t_45602e17d5ef98 34-41,125-128,137,302-306,313-363,405,508-514
+tools/client910/crates/rs910-render-modern/src/frame/underwater.rs
+  s_bf99a93e97ab76::t_45602e17d5ef98 1-234
+tools/client910/fixtures/recorded/sky-decor-placement/recording.bin
+  s_bf99a93e97ab76::t_45602e17d5ef98 1-1500
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "658c12169d9b79bd61db3aa78df66f4fb524254e",
+  "prompts": {},
+  "sessions": {
+    "s_bf99a93e97ab76": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "3306d217-ef25-4a58-aa1a-8bdfdb5da12f",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
