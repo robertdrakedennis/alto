@@ -1,0 +1,63 @@
+docs/renderer/modern-renderer.md
+  s_bf99a93e97ab76::t_2619eaf460db51 27,32,74,192-239,446,505-508
+tools/client910/crates/rs910-render-modern/src/frame/gpu/ambient.rs
+  s_bf99a93e97ab76::t_d100dd2cbaff87 1-778
+tools/client910/crates/rs910-render-modern/src/frame/gpu/mod.rs
+  s_bf99a93e97ab76::t_c8c5d7bd74a6c0 5
+tools/client910/crates/rs910-render-modern/src/frame/gpu/point_lights.rs
+  s_bf99a93e97ab76::t_c3b7f222396c6b 13-14,16,64,131,160
+tools/client910/crates/rs910-render-modern/src/frame/gpu/probes.rs
+  s_bf99a93e97ab76::t_2d7a1f9c751765 33-37,64-66,110-117,131-132,451,459,463-464,486-489,577-589,592,763-768,815,840-841,926-930,935,969-974,1002,1021,1053,1193-1199,1403,1428-1429,1451,1505,1562,1610,1614,1663-2008,2286-2287,2289
+tools/client910/crates/rs910-render-modern/src/frame/mod.rs
+  s_bf99a93e97ab76::t_b385553302f5d9 436-437,836,1358,1500-1501,1643,1661-1664
+tools/client910/crates/rs910-render-modern/src/frame/passes.rs
+  s_bf99a93e97ab76::t_14490568945234 33,191,237-245
+tools/client910/crates/rs910-render-modern/src/frame/tests/ambient.rs
+  s_bf99a93e97ab76::t_1b6fa7aea6260e 1-293
+tools/client910/crates/rs910-render-modern/src/frame/tests/mod.rs
+  s_bf99a93e97ab76::t_c5d15af3ebce2e 13
+tools/client910/crates/rs910-render-modern/src/frame/units.rs
+  s_bf99a93e97ab76::t_e8d6a3658107a7 21,78
+tools/client910/crates/rs910-render-modern/src/lighting/ambient.rs
+  s_bf99a93e97ab76::t_b960f50c34c532 1-501
+tools/client910/crates/rs910-render-modern/src/lighting/ambient.wgsl
+  s_bf99a93e97ab76::t_552a74bb710017 1-23
+tools/client910/crates/rs910-render-modern/src/lighting/ambient_schedule.rs
+  s_bf99a93e97ab76::t_6e1865abfc749f 1-627
+tools/client910/crates/rs910-render-modern/src/lighting/look.rs
+  s_bf99a93e97ab76::t_11e1b9772ab74f 54-55
+tools/client910/crates/rs910-render-modern/src/lighting/mod.rs
+  s_bf99a93e97ab76::t_b2bf00fa4b4d72 3-6,8-9
+tools/client910/crates/rs910-render-modern/src/lighting/probes.rs
+  s_bf99a93e97ab76::t_8eb4fe683a4b95 83-87
+tools/client910/crates/rs910-render-modern/src/lighting/probes.wgsl
+  s_bf99a93e97ab76::t_efb620025a7dc9 10-11,65-69
+tools/client910/crates/rs910-render-modern/src/settings.rs
+  s_bf99a93e97ab76::t_9ac35e29190bd6 75-77,81-89
+tools/client910/crates/rs910-render-modern/src/shaders/mod.rs
+  s_bf99a93e97ab76::t_f279c9af7af431 43,143
+tools/perf/README.md
+  s_bf99a93e97ab76::t_c052a215b7e552 16
+tools/perf/modern_bench.sh
+  s_bf99a93e97ab76::t_bb526f9939d7ff 22-24,37,97-107
+tools/perf/modern_perf_bench.rs
+  s_bf99a93e97ab76::t_c91a51dcaea9d4 848-851,855,858,1017-1133
+tools/refactor/test-inventory.txt
+  s_bf99a93e97ab76::t_3c0a6400035710 42,972-974,1005-1021
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "90822ec36909172748169599da60e7a8f93d2daf",
+  "prompts": {},
+  "sessions": {
+    "s_bf99a93e97ab76": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "3306d217-ef25-4a58-aa1a-8bdfdb5da12f",
+        "model": "unknown"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
