@@ -1,0 +1,31 @@
+tools/client910/crates/rs910-audio/src/audio_vorbis/mod.rs
+  s_bf99a93e97ab76::t_3a2bd80ed1148d 24-33
+tools/client910/fixtures/recorded/README.md
+  s_bf99a93e97ab76::t_9dc409a6fcf619 33
+tools/client910/fixtures/recorded/audio-vorbis/effect-356.blk
+  s_bf99a93e97ab76::t_79d0308edb1cbc 1-499
+tools/client910/fixtures/recorded/audio-vorbis/song-2.blk
+  s_bf99a93e97ab76::t_7aca9d14d391d8 1-45
+tools/client910/src/audio_corpus.rs
+  s_bf99a93e97ab76::t_bb562124690625 69-76,82-83,85,88-89,91,98,101,104-111,316-342
+tools/refactor/provenance-baseline.tsv
+  s_bf99a93e97ab76::t_3ec2cd99e0b8a4 3,5
+tools/refactor/test-inventory.txt
+  s_bf99a93e97ab76::t_b42c75ff55beaa 4,85
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "ee98ab69ab904c3fc05c994fd9b426c3c74ce8c1",
+  "prompts": {},
+  "sessions": {
+    "s_bf99a93e97ab76": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "3306d217-ef25-4a58-aa1a-8bdfdb5da12f",
+        "model": "unknown"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
