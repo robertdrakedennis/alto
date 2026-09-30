@@ -1,0 +1,96 @@
+tools/client910/crates/rs910-render-gpu/src/player_renderer.rs
+  s_bf99a93e97ab76::t_5146a5299b1877 282
+tools/client910/crates/rs910-ui/src/world_map_client.rs
+  s_bf99a93e97ab76::t_5146a5299b1877 314
+tools/client910/src/ui_goldens/settings_matrix.rs
+  s_bf99a93e97ab76::t_5146a5299b1877 1-541
+tools/client910/src/app_loading.rs
+  s_bf99a93e97ab76::t_5146a5299b1877 166,311,792-793
+tools/client910/crates/rs910-core/src/hardware.rs
+  s_bf99a93e97ab76::t_5146a5299b1877 1-511
+tools/client910/crates/rs910-ui/src/world_map_client/tests.rs
+  s_bf99a93e97ab76::t_5146a5299b1877 249-271
+tools/client910/src/app/input_router.rs
+  s_bf99a93e97ab76::t_5146a5299b1877 33-34
+tools/client910/crates/rs910-ui/src/audio_runtime.rs
+  s_bf99a93e97ab76::t_5146a5299b1877 150-155
+tools/refactor/layers.txt
+  s_bf99a93e97ab76::t_5146a5299b1877 133-134
+tools/client910/crates/rs910-client/src/net.rs
+  s_bf99a93e97ab76::t_5146a5299b1877 60,357-381,397-401,429-430,883,885-898,901,903-911,913-915,921-925,931-938,968,971-972,988-990,1010,1014-1015,1097-1098,1122,1145
+tools/client910/crates/rs910-ui/src/ui_preferences.rs
+  s_bf99a93e97ab76::t_5146a5299b1877 19-21,81,132-144,244-274
+tools/refactor/test-inventory.txt
+  s_bf99a93e97ab76::t_4aeafb04e8048f 4,32-34,45-46,73,207-217,584,595,667,771-774,1276,1364,1374
+tools/client910/src/app/startup.rs
+  s_bf99a93e97ab76::t_5146a5299b1877 362,498-501
+tools/client910/src/app/session_controller.rs
+  s_bf99a93e97ab76::t_5146a5299b1877 667-668,725-726,897,1274-1277
+tools/client910/crates/rs910-ui/src/ui_host_builtins.rs
+  s_bf99a93e97ab76::t_5146a5299b1877 1556-1565
+tools/client910/src/ui_goldens/settings_world.rs
+  s_bf99a93e97ab76::t_5146a5299b1877 1-421
+tools/client910/crates/rs910-config/src/client_options.rs
+  s_bf99a93e97ab76::t_5146a5299b1877 7-8,1306-1307,1313
+tools/client910/src/app/redraw.rs
+  s_bf99a93e97ab76::t_5146a5299b1877 300-301,392-393,630,635-636,638-640
+tools/client910/fixtures/settings-run/run.sh
+  s_bf99a93e97ab76::t_5146a5299b1877 1-67
+tools/client910/crates/rs910-client/src/net/tests.rs
+  s_bf99a93e97ab76::t_5146a5299b1877 123-200,983
+tools/client910/src/ui_window_winit.rs
+  s_bf99a93e97ab76::t_5146a5299b1877 6-8,12,19-37,40-55,66-80,83
+tools/client910/src/app/scene_host.rs
+  s_bf99a93e97ab76::t_5146a5299b1877 963-967
+tools/client910/src/app/preferences.rs
+  s_bf99a93e97ab76::t_5146a5299b1877 63-64,108-110
+tools/client910/src/app.rs
+  s_bf99a93e97ab76::t_5146a5299b1877 725,855-856,943-944,1039
+server/src/lostcity/engine/World.ts
+  s_bf99a93e97ab76::t_5146a5299b1877 442,444,486
+docs/client-status.md
+  s_bf99a93e97ab76::t_5146a5299b1877 22
+tools/refactor/provenance-baseline.tsv
+  s_bf99a93e97ab76::t_4aeafb04e8048f 3,6-8,19
+tools/client910/crates/rs910-ui/src/ui_command_spec.rs
+  s_bf99a93e97ab76::t_5146a5299b1877 2082-2099
+tools/client910/crates/rs910-core/src/lib.rs
+  s_bf99a93e97ab76::t_5146a5299b1877 24
+tools/client910/crates/rs910-config/src/client_options_live.rs
+  s_bf99a93e97ab76::t_5146a5299b1877 1-163
+server/src/lostcity/entity/Settings.integration.test.ts
+  s_bf99a93e97ab76::t_5146a5299b1877 231-248
+tools/client910/src/session_replay.rs
+  s_bf99a93e97ab76::t_5146a5299b1877 1344-1391
+server/src/lostcity/entity/Player.ts
+  s_bf99a93e97ab76::t_5146a5299b1877 672-680,1167-1180,1182
+  s_bf99a93e97ab76::t_6f764b2ece6c82 1181,1183
+tools/client910/crates/rs910-client/src/client_core/session_core.rs
+  s_bf99a93e97ab76::t_5146a5299b1877 1746-1753,1836,1870-1897,1922-1924,1950
+tools/client910/crates/rs910-ui/src/ui_runtime/engine.rs
+  s_bf99a93e97ab76::t_5146a5299b1877 594-596,622
+tools/client910/crates/rs910-ui/src/ui_hook_host.rs
+  s_bf99a93e97ab76::t_5146a5299b1877 167
+tools/client910/crates/rs910-ui/src/ui_window.rs
+  s_bf99a93e97ab76::t_5146a5299b1877 244
+tools/client910/src/app/environment.rs
+  s_bf99a93e97ab76::t_5146a5299b1877 127-129,242,246-248
+tools/client910/src/ui_goldens.rs
+  s_bf99a93e97ab76::t_5146a5299b1877 13-14
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "3ea174788e104e82daaf11d117429dec69d6e131",
+  "prompts": {},
+  "sessions": {
+    "s_bf99a93e97ab76": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "3306d217-ef25-4a58-aa1a-8bdfdb5da12f",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
