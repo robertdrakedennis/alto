@@ -1,0 +1,25 @@
+docs/client-status.md
+  s_bf99a93e97ab76::t_7b3d995081292a 22
+tools/client910/crates/rs910-client/src/net.rs
+  s_bf99a93e97ab76::t_7b3d995081292a 397-399
+tools/client910/src/app/session_controller.rs
+  s_bf99a93e97ab76::t_7b3d995081292a 667-668,726-727,899-900
+tools/client910/src/app/startup.rs
+  s_bf99a93e97ab76::t_7b3d995081292a 362-363
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "2fe404758464eb832af47373282d69356ba33d8e",
+  "prompts": {},
+  "sessions": {
+    "s_bf99a93e97ab76": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "3306d217-ef25-4a58-aa1a-8bdfdb5da12f",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
