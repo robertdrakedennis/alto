@@ -1,0 +1,39 @@
+docs/client-status.md
+  s_bf99a93e97ab76::t_0faa2508a787bd 22
+tools/client910/crates/rs910-client/src/net.rs
+  s_bf99a93e97ab76::t_70d580a21fce68 908-909
+tools/client910/crates/rs910-config/src/client_options.rs
+  s_bf99a93e97ab76::t_6ee2ef5c62c464 10-19,37
+tools/client910/crates/rs910-ui/src/ui_command_spec.rs
+  s_bf99a93e97ab76::t_30f5aedfc149d5 82-84,131-142,224-225,252,334-341,513,968-1005
+tools/client910/crates/rs910-ui/src/ui_preferences_autosetup.rs
+  s_bf99a93e97ab76::t_7bc53945669d99 230-231
+tools/client910/crates/rs910-ui/src/ui_preferences_toolkit.rs
+  s_bf99a93e97ab76::t_8377ebdc8f89b4 10-22,45-46,121-123,258-317
+tools/client910/fixtures/cs2-commands/README.md
+  s_bf99a93e97ab76::t_1977a1313dfee0 22-28
+tools/client910/fixtures/cs2-commands/recorded.tsv
+  s_bf99a93e97ab76::t_e2d70e667a52d9 351-365
+tools/client910/src/ui_goldens/settings_matrix.rs
+  s_bf99a93e97ab76::t_3f72063951e19e 55-56,112-164
+tools/refactor/provenance-baseline.tsv
+  s_bf99a93e97ab76::t_cbb804328e4a0e 3,6-7,19
+tools/refactor/test-inventory.txt
+  s_bf99a93e97ab76::t_2a4466311f7d44 4,45,212,1304,1306
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "893fa608fb8d8c72cb0e9a4f7b729d8467920275",
+  "prompts": {},
+  "sessions": {
+    "s_bf99a93e97ab76": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "3306d217-ef25-4a58-aa1a-8bdfdb5da12f",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
