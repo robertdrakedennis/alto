@@ -1,0 +1,390 @@
+server/src/lostcity/entity/LocObjOp.integration.test.ts
+  s_bf99a93e97ab76::t_d5b28b0799b780 12,15-17,20
+server/src/lostcity/entity/Equipment.integration.test.ts
+  s_bf99a93e97ab76::t_d5b28b0799b780 12,15-18
+server/src/lostcity/tools/js5pack/openrs2.ts
+  s_bf99a93e97ab76::t_d5b28b0799b780 1-2
+server/src/lostcity/entity/Follow.integration.test.ts
+  s_bf99a93e97ab76::t_d5b28b0799b780 12-15,20
+server/src/lostcity/entity/Navigation.integration.test.ts
+  s_bf99a93e97ab76::t_d5b28b0799b780 9,12-15
+server/src/lostcity/engine/World.test.ts
+  s_bf99a93e97ab76::t_d5b28b0799b780 10,12-13
+server/src/formats/network/protocol/ClientProt.ts
+  s_bf99a93e97ab76::t_d5b28b0799b780 1
+server/src/lostcity/tools/gamevals/backport910.ts
+  s_bf99a93e97ab76::t_d5b28b0799b780 6-10,17,19
+server/src/lostcity/engine/Dialogue.integration.test.ts
+  s_bf99a93e97ab76::t_d5b28b0799b780 7-9,92
+server/src/lostcity/tools/pack/defaults.ts
+  s_bf99a93e97ab76::t_d5b28b0799b780 3-6,9
+server/src/formats/network/protocol/ServerProt.test.ts
+  s_bf99a93e97ab76::t_d5b28b0799b780 3
+server/src/formats/config/paramtype/ParamType.ts
+  s_bf99a93e97ab76::t_d5b28b0799b780 1-6
+tools/native910/tests/fixtures/cs2-traces/traces/script1602.dig
+  s_bf99a93e97ab76::t_d5b28b0799b780 1-45
+server/src/lostcity/engine/Social.ts
+  s_bf99a93e97ab76::t_d5b28b0799b780 3-4
+server/src/lostcity/entity/PlayerSkills.test.ts
+  s_bf99a93e97ab76::t_d5b28b0799b780 3
+tools/native910/tests/fixtures/recorded/timer-edited.dig
+  s_bf99a93e97ab76::t_d5b28b0799b780 1-64
+tools/native910/tests/fixtures/cs2-traces/traces/script1814.dig
+  s_bf99a93e97ab76::t_d5b28b0799b780 1-535
+tools/native910/tests/fixtures/cs2-traces/traces/script7442.dig
+  s_bf99a93e97ab76::t_d5b28b0799b780 1-38
+server/src/lostcity/engine/NewLobby.ts
+  s_bf99a93e97ab76::t_d5b28b0799b780 4,8-9
+tools/native910/tests/fixtures/cs2-traces/traces/script3382.dig
+  s_bf99a93e97ab76::t_d5b28b0799b780 1-48
+server/src/lostcity/tools/unpack/iftype/symbols.ts
+  s_bf99a93e97ab76::t_d5b28b0799b780 4-5
+server/src/formats/config/db/dbrowtype/DBRowType.test.ts
+  s_bf99a93e97ab76::t_d5b28b0799b780 1
+server/src/lostcity/entity/Animations.integration.test.ts
+  s_bf99a93e97ab76::t_d5b28b0799b780 10,13-16
+tools/native910/tests/fixtures/cs2-traces/traces/script10848.dig
+  s_bf99a93e97ab76::t_d5b28b0799b780 1-41
+tools/native910/tests/fixtures/cs2-traces/traces/script5564.dig
+  s_bf99a93e97ab76::t_d5b28b0799b780 1-32
+server/src/lostcity/tools/pack/verify-login.ts
+  s_bf99a93e97ab76::t_d5b28b0799b780 7-9
+tools/native910/tests/timer_acceptance.rs
+  s_bf99a93e97ab76::t_d5b28b0799b780 3,119-126
+tools/native910/tests/fixtures/recorded/timer-baseline.dig
+  s_bf99a93e97ab76::t_d5b28b0799b780 1-64
+server/src/lostcity/entity/TargetOp.integration.test.ts
+  s_bf99a93e97ab76::t_d5b28b0799b780 12,15-17,115
+server/src/formats/config/vartype/VarBasicType.ts
+  s_bf99a93e97ab76::t_d5b28b0799b780 1-4,6
+server/src/lostcity/entity/PlayerAppearance.ts
+  s_bf99a93e97ab76::t_d5b28b0799b780 1
+server/src/formats/js5/index/Js5Index.ts
+  s_bf99a93e97ab76::t_d5b28b0799b780 1,3,5
+server/src/lostcity/engine/zone/MapSquare.ts
+  s_bf99a93e97ab76::t_d5b28b0799b780 1
+server/src/formats/config/vartype/constants/ScriptVarType.ts
+  s_bf99a93e97ab76::t_d5b28b0799b780 1
+server/src/lostcity/tools/js5pack/verify.ts
+  s_bf99a93e97ab76::t_d5b28b0799b780 1-3
+server/src/lostcity/definitions/EnergyPotionDefinitions.test.ts
+  s_bf99a93e97ab76::t_d5b28b0799b780 3-4
+tools/native910/tests/fixtures/decode-golden/interfaces.golden
+  s_bf99a93e97ab76::t_d5b28b0799b780 2-46
+tools/native910/tests/fixtures/cs2-traces/traces/script9507.dig
+  s_bf99a93e97ab76::t_d5b28b0799b780 1-43
+server/src/formats/config/db/dbtabletype/DBTableType.ts
+  s_bf99a93e97ab76::t_d5b28b0799b780 1-7
+server/src/lostcity/entity/NpcOp.integration.test.ts
+  s_bf99a93e97ab76::t_d5b28b0799b780 12,15-17,19-20
+server/src/formats/js5/caching/FlatDiskStore.ts
+  s_bf99a93e97ab76::t_d5b28b0799b780 3
+tools/native910/tests/decode_golden.rs
+  s_bf99a93e97ab76::t_d5b28b0799b780 3-21,37-38,42,47-105,112-116,118-125,183,186-189,191-194,200-210,790,796,802,809
+server/src/formats/bytepacking/Packet.test.ts
+  s_bf99a93e97ab76::t_d5b28b0799b780 1
+tools/client910/crates/rs910-client/src/session.rs
+  s_bf99a93e97ab76::t_d5b28b0799b780 4,9
+server/src/lostcity/tools/pack/all.ts
+  s_bf99a93e97ab76::t_d5b28b0799b780 13-20
+server/src/lostcity/tools/js5pack/dat2m.ts
+  s_bf99a93e97ab76::t_d5b28b0799b780 3,5-6
+server/src/lostcity/entity/PlayerAnimations.ts
+  s_bf99a93e97ab76::t_d5b28b0799b780 1
+server/src/formats/js5/caching/DiskStore.ts
+  s_bf99a93e97ab76::t_d5b28b0799b780 1-2
+server/src/formats/config/db/dbrowtype/DBRowType.ts
+  s_bf99a93e97ab76::t_d5b28b0799b780 1-5,7-8
+server/src/lostcity/inventory/Trade.test.ts
+  s_bf99a93e97ab76::t_d5b28b0799b780 2-3
+server/src/formats/config/enumtype/EnumType.ts
+  s_bf99a93e97ab76::t_d5b28b0799b780 1,3,5-6
+server/src/lostcity/script/handlers/PlayerOps.ts
+  s_bf99a93e97ab76::t_d5b28b0799b780 1
+server/src/lostcity/tools/unpack/vartype/symbols.ts
+  s_bf99a93e97ab76::t_d5b28b0799b780 4-6
+server/src/formats/util/RandomAccessFile.ts
+  s_bf99a93e97ab76::t_d5b28b0799b780 3
+server/package.json
+  s_bf99a93e97ab76::t_d5b28b0799b780 7,26,31
+tools/native910/tests/fixtures/cs2-traces/traces/script362.dig
+  s_bf99a93e97ab76::t_d5b28b0799b780 1-29
+tools/native910/tests/fixtures/cs2-traces/traces/script6702.dig
+  s_bf99a93e97ab76::t_d5b28b0799b780 1-14
+docs/architecture.md
+  s_bf99a93e97ab76::t_d5b28b0799b780 20,28,34-36
+server/src/lostcity/engine/LocInteraction.ts
+  s_bf99a93e97ab76::t_d5b28b0799b780 2
+server/src/lostcity/engine/LobbyAccountCreation.ts
+  s_bf99a93e97ab76::t_d5b28b0799b780 1-4
+server/src/lostcity/entity/EquipmentStats.ts
+  s_bf99a93e97ab76::t_d5b28b0799b780 1-5
+server/src/lostcity/tools/js5pack/dat2.ts
+  s_bf99a93e97ab76::t_d5b28b0799b780 3,5-6
+server/src/lostcity/script/handlers/ServerPermVarcs.ts
+  s_bf99a93e97ab76::t_d5b28b0799b780 1-3
+tools/client910/src/ui_opkey_trace.rs
+  s_bf99a93e97ab76::t_d5b28b0799b780 14,16-23,78-85,227,233-238,240-245,247-248,252-253,255,258
+server/src/lostcity/entity/Settings.integration.test.ts
+  s_bf99a93e97ab76::t_d5b28b0799b780 10,13,15-16
+server/src/lostcity/entity/TradeCommit.integration.test.ts
+  s_bf99a93e97ab76::t_d5b28b0799b780 10,13-16,26-28
+server/src/formats/bytepacking/Packet.ts
+  s_bf99a93e97ab76::t_d5b28b0799b780 6-7
+server/src/formats/config/seqtype/SeqType.ts
+  s_bf99a93e97ab76::t_d5b28b0799b780 1-4
+server/src/lostcity/entity/ShopCommit.integration.test.ts
+  s_bf99a93e97ab76::t_d5b28b0799b780 10,13-16,372-373
+tools/native910/tests/fixtures/cs2-traces/cache-scripts.txt
+  s_bf99a93e97ab76::t_d5b28b0799b780 1-31
+server/src/lostcity/entity/Player.ts
+  s_bf99a93e97ab76::t_d5b28b0799b780 86-88,164-165,203-205
+tools/client910/crates/rs910-protocol/src/proto.rs
+  s_bf99a93e97ab76::t_d5b28b0799b780 7
+server/src/formats/config/vartype/constants/BaseVarTypeString.ts
+  s_bf99a93e97ab76::t_d5b28b0799b780 1-2
+server/src/lostcity/script/handlers/CoreOps.ts
+  s_bf99a93e97ab76::t_d5b28b0799b780 1
+server/src/lostcity/server/CacheProvider.ts
+  s_bf99a93e97ab76::t_d5b28b0799b780 1
+tools/native910/tests/fixtures/cs2-traces/traces/script2332.dig
+  s_bf99a93e97ab76::t_d5b28b0799b780 1-37
+tools/native910/tests/fixtures/cs2-traces/traces/script4582.dig
+  s_bf99a93e97ab76::t_d5b28b0799b780 1-25
+server/src/lostcity/network/SocketE2E.integration.test.ts
+  s_bf99a93e97ab76::t_d5b28b0799b780 35
+tools/native910/tests/fixtures/cs2-traces/traces/script12377.dig
+  s_bf99a93e97ab76::t_d5b28b0799b780 1-10
+tools/client910/src/scenario_woodcutting.rs
+  s_bf99a93e97ab76::t_d5b28b0799b780 26
+server/src/lostcity/inventory/Bank.ts
+  s_bf99a93e97ab76::t_d5b28b0799b780 30-31,33
+server/src/formats/config/vartype/VarPlayerType.ts
+  s_bf99a93e97ab76::t_d5b28b0799b780 1-3,5-6
+tools/native910/tests/fixtures/cs2-traces/traces/script13566.dig
+  s_bf99a93e97ab76::t_d5b28b0799b780 1-32
+tools/native910/tests/fixtures/cs2-traces/traces/script669.dig
+  s_bf99a93e97ab76::t_d5b28b0799b780 1-43
+tools/refactor/steps/hyg-data-fnhash-allow.txt
+  s_bf99a93e97ab76::t_d5b28b0799b780 1-28
+server/src/lostcity/engine/World.ts
+  s_bf99a93e97ab76::t_d5b28b0799b780 7,12,14,17-19,25-26,36,389,392-393
+server/src/formats/datastruct/Stack.ts
+  s_bf99a93e97ab76::t_d5b28b0799b780 1
+server/src/lostcity/tools/verify-inventory.ts
+  s_bf99a93e97ab76::t_d5b28b0799b780 2,4
+docs/cache.md
+  s_bf99a93e97ab76::t_d5b28b0799b780 36-38
+server/src/lostcity/engine/collision/CollisionManager.ts
+  s_bf99a93e97ab76::t_d5b28b0799b780 1-174
+server/src/lostcity/entity/NpcInfo.test.ts
+  s_bf99a93e97ab76::t_d5b28b0799b780 5,7-8
+server/src/lostcity/entity/ClientVarStore.ts
+  s_bf99a93e97ab76::t_d5b28b0799b780 1-4
+tools/native910/tests/fixtures/cs2-traces/traces/script8941.dig
+  s_bf99a93e97ab76::t_d5b28b0799b780 1-489
+server/src/lostcity/entity/PlayerAnimations.test.ts
+  s_bf99a93e97ab76::t_d5b28b0799b780 1
+server/src/formats/compression/Bzip2Decompressor.ts
+  s_bf99a93e97ab76::t_d5b28b0799b780 3
+tools/refactor/test-removals.txt
+  s_bf99a93e97ab76::t_d5b28b0799b780 602-608
+server/src/lostcity/engine/Social.test.ts
+  s_bf99a93e97ab76::t_d5b28b0799b780 3
+tools/native910/tests/fixtures/cs2-traces/traces/script13291.dig
+  s_bf99a93e97ab76::t_d5b28b0799b780 1-16
+server/src/lostcity/network/WoodcuttingE2E.integration.test.ts
+  s_bf99a93e97ab76::t_d5b28b0799b780 12-14,41
+server/src/lostcity/network/ClientSocket.test.ts
+  s_bf99a93e97ab76::t_d5b28b0799b780 3,5
+server/src/lostcity/tools/verify-cache-profile.ts
+  s_bf99a93e97ab76::t_d5b28b0799b780 5
+server/src/formats/network/ClientMessage.ts
+  s_bf99a93e97ab76::t_d5b28b0799b780 1-3
+server/src/formats/network/ServerMessage.ts
+  s_bf99a93e97ab76::t_d5b28b0799b780 1-2
+server/src/formats/config/structtype/StructType.ts
+  s_bf99a93e97ab76::t_d5b28b0799b780 1,3,5-6
+server/src/lostcity/engine/collision/CollisionManager.test.ts
+  s_bf99a93e97ab76::t_d5b28b0799b780 22
+server/src/lostcity/engine/zone/LocRegistry.ts
+  s_bf99a93e97ab76::t_d5b28b0799b780 1-5
+tools/native910/tests/recorded_differential.rs
+  s_bf99a93e97ab76::t_d5b28b0799b780 161-167
+server/src/lostcity/tools/unpack/iftype/dump.ts
+  s_bf99a93e97ab76::t_d5b28b0799b780 1-2
+tools/client910/src/session_replay.rs
+  s_bf99a93e97ab76::t_d5b28b0799b780 1365-1367
+server/tsconfig.json
+  s_bf99a93e97ab76::t_d5b28b0799b780 13
+server/src/formats/config/db/DBUtils.ts
+  s_bf99a93e97ab76::t_d5b28b0799b780 1-2
+server/src/lostcity/network/LocOpE2E.integration.test.ts
+  s_bf99a93e97ab76::t_d5b28b0799b780 36
+server/src/lostcity/entity/Run.integration.test.ts
+  s_bf99a93e97ab76::t_d5b28b0799b780 11,14-17
+server/src/lostcity/tools/branding/make-splash.py
+  s_bf99a93e97ab76::t_d5b28b0799b780 1-61
+server/src/lostcity/script/ScriptRunner.test.ts
+  s_bf99a93e97ab76::t_d5b28b0799b780 4,6
+server/src/lostcity/tools/unpack/defaults/audio.ts
+  s_bf99a93e97ab76::t_d5b28b0799b780 3-5
+tools/native910/tests/fixtures/decode-golden/sprites.golden
+  s_bf99a93e97ab76::t_d5b28b0799b780 2-20
+server/src/formats/compression/GzipDecompressor.ts
+  s_bf99a93e97ab76::t_d5b28b0799b780 3
+server/src/formats/config/npctype/NpcType.ts
+  s_bf99a93e97ab76::t_d5b28b0799b780 1-5
+tools/native910/README.md
+  s_bf99a93e97ab76::t_d5b28b0799b780 137-141
+server/src/formats/config/vartype/constants/BaseVarTypeInteger.ts
+  s_bf99a93e97ab76::t_d5b28b0799b780 1-2
+tools/refactor/test-inventory.txt
+  s_bf99a93e97ab76::t_d5b28b0799b780 4,10,15,46,231,416,452-453,455-456,1396,1575,1585
+.gitignore
+  s_bf99a93e97ab76::t_d5b28b0799b780 46,102-108
+  s_bf99a93e97ab76::t_02b1274db9174d 109
+server/src/lostcity/web/app.ts
+  s_bf99a93e97ab76::t_d5b28b0799b780 37,51,74,93-96,100,123,200
+server/src/formats/config/seqtype/SeqType.test.ts
+  s_bf99a93e97ab76::t_d5b28b0799b780 11-12
+server/src/lostcity/definitions/EquipmentDefinitions.ts
+  s_bf99a93e97ab76::t_d5b28b0799b780 1-4
+server/src/formats/config/vartype/constants/BaseVarTypeLong.ts
+  s_bf99a93e97ab76::t_d5b28b0799b780 1-2
+server/src/lostcity/tools/gamevals/README.md
+  s_bf99a93e97ab76::t_d5b28b0799b780 1,4-10,35,41-42,46-47
+tools/client910/fixtures/cs2-opkey-recorded/traces/setopkey_clear.dig
+  s_bf99a93e97ab76::t_d5b28b0799b780 1-11
+server/src/lostcity/content/Woodcutting.ts
+  s_bf99a93e97ab76::t_d5b28b0799b780 1-5,19-24,37,55,71-74,92-124,128,143,159,161-166,168,170,175,178,278
+tools/native910/tests/fixtures/cs2-traces/traces/script12292.dig
+  s_bf99a93e97ab76::t_d5b28b0799b780 1-24
+tools/client910/fixtures/cs2-opkey-recorded/traces/setopkey_row.dig
+  s_bf99a93e97ab76::t_d5b28b0799b780 1-43
+tools/native910/tests/common/mod.rs
+  s_bf99a93e97ab76::t_d5b28b0799b780 90-133
+server/src/lostcity/engine/zone/ZoneSync.ts
+  s_bf99a93e97ab76::t_d5b28b0799b780 1
+tools/native910/tests/cs2_traces.rs
+  s_bf99a93e97ab76::t_d5b28b0799b780 8-12,15-20,22-27,87-89,92-116,120-121,178,186,188-191,193,197,208
+server/src/lostcity/entity/BankCommit.integration.test.ts
+  s_bf99a93e97ab76::t_d5b28b0799b780 10,13
+server/src/lostcity/engine/LobbyAccountCreation.test.ts
+  s_bf99a93e97ab76::t_d5b28b0799b780 4,8
+server/src/lostcity/tools/export-js5-raw.ts
+  s_bf99a93e97ab76::t_d5b28b0799b780 9
+server/src/lostcity/script/ServerScript.ts
+  s_bf99a93e97ab76::t_d5b28b0799b780 3
+server/src/lostcity/network/ClientSocket.ts
+  s_bf99a93e97ab76::t_d5b28b0799b780 3,6-9
+tools/native910/tests/fixtures/recorded/script-1258-setting-0.dig
+  s_bf99a93e97ab76::t_d5b28b0799b780 1-5
+server/src/lostcity/tools/js5pack/dat2split.ts
+  s_bf99a93e97ab76::t_d5b28b0799b780 3,5-6
+server/src/formats/js5/Js5.ts
+  s_bf99a93e97ab76::t_d5b28b0799b780 4,6-8,10,12,14-15
+server/src/lostcity/entity/MenuMovement.integration.test.ts
+  s_bf99a93e97ab76::t_d5b28b0799b780 11,14-17
+server/src/lostcity/network/TcpServer.ts
+  s_bf99a93e97ab76::t_d5b28b0799b780 1
+tools/client910/crates/rs910-protocol/src/server_prot.rs
+  s_bf99a93e97ab76::t_d5b28b0799b780 136,157
+server/src/lostcity/tools/js5pack/flat.ts
+  s_bf99a93e97ab76::t_d5b28b0799b780 3-4
+tools/native910/tests/fixtures/recorded/script-1258-setting-10858.dig
+  s_bf99a93e97ab76::t_d5b28b0799b780 1-10
+server/src/lostcity/tools/js5pack/verify-scripts.ts
+  s_bf99a93e97ab76::t_d5b28b0799b780 2-3
+server/src/lostcity/engine/NpcSimulation.ts
+  s_bf99a93e97ab76::t_d5b28b0799b780 2-3
+server/src/lostcity/entity/Consumables.integration.test.ts
+  s_bf99a93e97ab76::t_d5b28b0799b780 11,14-17
+server/src/formats/config/ConfigType.ts
+  s_bf99a93e97ab76::t_d5b28b0799b780 1
+server/src/lostcity/definitions/EnergyPotionDefinitions.ts
+  s_bf99a93e97ab76::t_d5b28b0799b780 1-5
+tools/client910/fixtures/cs2-opkey-recorded/traces/setopkey_enter.dig
+  s_bf99a93e97ab76::t_d5b28b0799b780 1-11
+server/src/lostcity/tools/verify-client-varcs.ts
+  s_bf99a93e97ab76::t_d5b28b0799b780 3
+server/src/lostcity/inventory/Shop.ts
+  s_bf99a93e97ab76::t_d5b28b0799b780 29-31,50-53,78
+server/src/formats/config/vartype/constants/VarDomainType.ts
+  s_bf99a93e97ab76::t_d5b28b0799b780 1
+server/src/formats/network/protocol/ServerProt.ts
+  s_bf99a93e97ab76::t_d5b28b0799b780 1-2
+tools/client910/crates/rs910-js5/src/cache.rs
+  s_bf99a93e97ab76::t_d5b28b0799b780 3,28,75,77,134,302
+server/src/formats/compression/LzmaDecompressor.ts
+  s_bf99a93e97ab76::t_d5b28b0799b780 3
+server/src/formats/config/loctype/LocType.ts
+  s_bf99a93e97ab76::t_d5b28b0799b780 1-430
+tools/native910/tests/fixtures/cs2-traces/traces/script11076.dig
+  s_bf99a93e97ab76::t_d5b28b0799b780 1-62
+server/src/lostcity/entity/Npc.ts
+  s_bf99a93e97ab76::t_d5b28b0799b780 1-174
+server/src/formats/config/vartype/constants/BaseVarType.ts
+  s_bf99a93e97ab76::t_d5b28b0799b780 1-6
+server/src/formats/config/vartype/VarBitType.ts
+  s_bf99a93e97ab76::t_d5b28b0799b780 1-4,6-8
+server/src/lostcity/engine/Lobby.ts
+  s_bf99a93e97ab76::t_d5b28b0799b780 4,8,10,12,14,18
+server/src/lostcity/definitions/GameplaySettingsDefinitions.ts
+  s_bf99a93e97ab76::t_d5b28b0799b780 1-5
+server/src/formats/js5/Cache.ts
+  s_bf99a93e97ab76::t_d5b28b0799b780 3-5,7,9
+tools/native910/tests/fixtures/cs2-traces/traces/script4338.dig
+  s_bf99a93e97ab76::t_d5b28b0799b780 1-16
+server/jest.config.ts
+  s_bf99a93e97ab76::t_d5b28b0799b780 15
+server/src/formats/config/defaults/AudioDefaults.ts
+  s_bf99a93e97ab76::t_d5b28b0799b780 1
+server/src/lostcity/entity/FollowRestOp.integration.test.ts
+  s_bf99a93e97ab76::t_d5b28b0799b780 11,14-16,122
+server/README.md
+  s_bf99a93e97ab76::t_d5b28b0799b780 10,12,15,19-34,39
+server/src/lostcity/script/ServerScriptList.ts
+  s_bf99a93e97ab76::t_d5b28b0799b780 1-2
+server/src/lostcity/tools/export-fixtures.ts
+  s_bf99a93e97ab76::t_d5b28b0799b780 24,27-30
+server/src/lostcity/definitions/SettingsWindowDefinitions.ts
+  s_bf99a93e97ab76::t_d5b28b0799b780 1-3
+server/src/lostcity/inventory/Trade.ts
+  s_bf99a93e97ab76::t_d5b28b0799b780 21-27
+server/src/formats/config/vartype/VarType.ts
+  s_bf99a93e97ab76::t_d5b28b0799b780 1-6
+server/src/formats/config/vartype/constants/BaseVarTypeCodec.ts
+  s_bf99a93e97ab76::t_d5b28b0799b780 1
+server/src/lostcity/tools/pack/scripts.ts
+  s_bf99a93e97ab76::t_d5b28b0799b780 6-8
+server/src/formats/config/vartype/constants/BaseVarTypeCoordFine.ts
+  s_bf99a93e97ab76::t_d5b28b0799b780 1-2
+server/src/lostcity/content/Woodcutting.test.ts
+  s_bf99a93e97ab76::t_d5b28b0799b780 2-3,5-6,8-9,14-16,25,31-35,39-53,66-67,74-83
+tools/native910/tests/fixtures/decode-golden/scripts.golden
+  s_bf99a93e97ab76::t_d5b28b0799b780 2-26
+server/src/formats/config/ParamHelper.ts
+  s_bf99a93e97ab76::t_d5b28b0799b780 1
+server/src/lostcity/entity/PlayerSkills.ts
+  s_bf99a93e97ab76::t_d5b28b0799b780 1-2
+tools/native910/tests/fixtures/decode-golden/configs.golden
+  s_bf99a93e97ab76::t_d5b28b0799b780 2-116
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "08de62898f82f7fd92f72166a08a421720ad65a7",
+  "prompts": {},
+  "sessions": {
+    "s_bf99a93e97ab76": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "3306d217-ef25-4a58-aa1a-8bdfdb5da12f",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
