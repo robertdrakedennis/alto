@@ -1,0 +1,88 @@
+tools/client910/crates/rs910-render-gpu/src/player_renderer.rs
+  s_bf99a93e97ab76::t_4a88a15daf4c3f 304
+tools/client910/crates/rs910-scene/src/npc_draw.rs
+  s_bf99a93e97ab76::t_4a88a15daf4c3f 1-905
+tools/client910/src/scenario_entities.rs
+  s_bf99a93e97ab76::t_4a88a15daf4c3f 1-141
+tools/client910/src/app.rs
+  s_bf99a93e97ab76::t_4a88a15daf4c3f 224-227,655-656
+tools/client910/crates/rs910-render-modern/src/models/draw_list.rs
+  s_bf99a93e97ab76::t_4a88a15daf4c3f 191-195,198
+tools/client910/crates/rs910-scene/src/player_body.rs
+  s_bf99a93e97ab76::t_4a88a15daf4c3f 120-142,163
+server/src/lostcity/engine/World.ts
+  s_bf99a93e97ab76::t_4a88a15daf4c3f 29-30,1055-1119
+tools/client910/src/app/entity_renderer.rs
+  s_bf99a93e97ab76::t_4a88a15daf4c3f 20-24,99-106,211-212,220-230,358,395,427,471,529-587,602-610,654-658,824,1002,1116,1133-1134,1139-1145,1147-1148,1150-1169,1171-1180,1182-1197,1199-1202,1220-1234,1245-1247,1251,1259,1406-1408,1426,1475-1476,1478-1484,2076,2079,2082,2096-2097,2099
+tools/client910/crates/rs910-scene/src/scene.rs
+  s_bf99a93e97ab76::t_4a88a15daf4c3f 88-90
+tools/client910/fixtures/session-replay/entities/server-trace.jsonl
+  s_bf99a93e97ab76::t_4a88a15daf4c3f 1-94
+server/src/lostcity/entity/Player.ts
+  s_bf99a93e97ab76::t_4a88a15daf4c3f 50-55,209-213,907-923,1376-1379
+tools/refactor/provenance-baseline.tsv
+  s_bf99a93e97ab76::t_99001865b38b15 3,7,13,15-17
+tools/client910/crates/rs910-scene/src/lib.rs
+  s_bf99a93e97ab76::t_4a88a15daf4c3f 69
+tools/client910/crates/rs910-config/fixtures/config-corpus.tsv
+  s_bf99a93e97ab76::t_4a88a15daf4c3f 5
+tools/refactor/replay-gate.txt
+  s_bf99a93e97ab76::t_4a88a15daf4c3f 14
+server/src/formats/bytepacking/Packet.ts
+  s_bf99a93e97ab76::t_4a88a15daf4c3f 306-312
+tools/refactor/test-inventory.txt
+  s_bf99a93e97ab76::t_99001865b38b15 4,33,42-43,53,693,977,1104-1111
+docs/client-status.md
+  s_bf99a93e97ab76::t_4a88a15daf4c3f 17-18,41
+  s_bf99a93e97ab76::t_2f1464a19801ef 42
+tools/refactor/layers.txt
+  s_bf99a93e97ab76::t_4a88a15daf4c3f 315
+tools/client910/crates/rs910-render-modern/src/frame/tests/models.rs
+  s_bf99a93e97ab76::t_4a88a15daf4c3f 85-118
+tools/client910/crates/rs910-scene/src/player_scene.rs
+  s_bf99a93e97ab76::t_4a88a15daf4c3f 95
+tools/client910/crates/rs910-render-modern/src/frame/tests/mod.rs
+  s_bf99a93e97ab76::t_4a88a15daf4c3f 217,258
+tools/client910/src/lib.rs
+  s_bf99a93e97ab76::t_4a88a15daf4c3f 206-208,211
+tools/client910/crates/rs910-render-gpu/src/scene_meshes.rs
+  s_bf99a93e97ab76::t_4a88a15daf4c3f 638,644
+tools/client910/src/player_pose_oracle.rs
+  s_bf99a93e97ab76::t_4a88a15daf4c3f 412
+tools/client910/crates/rs910-scene/src/player_shadow.rs
+  s_bf99a93e97ab76::t_4a88a15daf4c3f 4-5,9,11,16,179-196,225
+tools/client910/src/scenario_tests.rs
+  s_bf99a93e97ab76::t_4a88a15daf4c3f 243-266
+tools/client910/crates/rs910-config/src/config/tests.rs
+  s_bf99a93e97ab76::t_4a88a15daf4c3f 227-292
+  s_bf99a93e97ab76::t_8a1809b90a6054 226
+tools/client910/src/app/redraw.rs
+  s_bf99a93e97ab76::t_4a88a15daf4c3f 486
+tools/client910/fixtures/entity-run/run.sh
+  s_bf99a93e97ab76::t_4a88a15daf4c3f 1-95
+tools/client910/fixtures/session-replay/entities/record.sh
+  s_bf99a93e97ab76::t_4a88a15daf4c3f 1-48
+server/src/formats/network/protocol/ServerProt.ts
+  s_bf99a93e97ab76::t_4a88a15daf4c3f 874,944,1033-1038,1077,1085-1114,1123-1140
+  s_bf99a93e97ab76::t_202d31fdd14c1b 1141
+tools/client910/crates/rs910-model/src/gpumodel/colour.rs
+  s_bf99a93e97ab76::t_4a88a15daf4c3f 55-63
+tools/client910/crates/rs910-config/src/config/npc.rs
+  s_bf99a93e97ab76::t_4a88a15daf4c3f 109-136,185-196,249-263,265-268,270-273,309,311-314,316,326-342
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "ba0a71bb8db8a53f0040d74b2e4277f40a8b685e",
+  "prompts": {},
+  "sessions": {
+    "s_bf99a93e97ab76": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "3306d217-ef25-4a58-aa1a-8bdfdb5da12f",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
