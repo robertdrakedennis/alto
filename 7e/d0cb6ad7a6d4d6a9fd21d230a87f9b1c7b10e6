@@ -1,0 +1,29 @@
+tools/client910/src/text_render_oracle.rs
+  s_bf99a93e97ab76::t_655f8e57b169c8 69
+tools/refactor/provenance.py
+  s_bf99a93e97ab76::t_9e71a10ad11454 86-89,268-277,280,293
+  s_bf99a93e97ab76::t_858d047b13ca63 33-35
+  s_bf99a93e97ab76::t_50f49e90ba2694 73
+tools/refactor/provenance-baseline.tsv
+  s_bf99a93e97ab76::t_c02a5243129725 2-19
+tools/refactor/README.md
+  s_bf99a93e97ab76::t_b3ea63f94d4ef6 195
+tools/refactor/steps/exempt-fnhash-allow.txt
+  s_bf99a93e97ab76::t_c30f6a533f2851 1
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "7ed0cb6ad7a6d4d6a9fd21d230a87f9b1c7b10e6",
+  "prompts": {},
+  "sessions": {
+    "s_bf99a93e97ab76": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "3306d217-ef25-4a58-aa1a-8bdfdb5da12f",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
