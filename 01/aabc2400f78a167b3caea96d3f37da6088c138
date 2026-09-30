@@ -1,0 +1,35 @@
+tools/client910/crates/rs910-model/src/gpumodel/transform.rs
+  s_bf99a93e97ab76::t_76a53467fa7464 205-209,220-226,229-230,232-233,245,247-267,273-277,281,285,287-295,313,315-318,320-321,325-328,330-331,334-336
+tools/client910/crates/rs910-model/src/gpumodel/texture_mapping.rs
+  s_bf99a93e97ab76::t_76a53467fa7464 185-190,192,202-204,226,276,323-332,334-336,338-340,346-367,370,526,535-540
+tools/client910/crates/rs910-model/src/corpus.rs
+  s_bf99a93e97ab76::t_76a53467fa7464 1008-1136
+tools/client910/crates/rs910-model/fixtures/model-corpus.tsv
+  s_bf99a93e97ab76::t_76a53467fa7464 6,13,15
+tools/client910/crates/rs910-model/src/gpumodel/normals.rs
+  s_bf99a93e97ab76::t_76a53467fa7464 10-15,100-102
+tools/refactor/test-inventory.txt
+  s_bf99a93e97ab76::t_cba9c68cd5dac5 39,805,807-808,810-811
+tools/refactor/provenance-baseline.tsv
+  s_bf99a93e97ab76::t_d0b910fbd1dae0 13
+tools/client910/crates/rs910-model/src/gpumodel/build.rs
+  s_bf99a93e97ab76::t_76a53467fa7464 480
+tools/client910/crates/rs910-model/src/floor.rs
+  s_bf99a93e97ab76::t_76a53467fa7464 207-215
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "01aabc2400f78a167b3caea96d3f37da6088c138",
+  "prompts": {},
+  "sessions": {
+    "s_bf99a93e97ab76": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "3306d217-ef25-4a58-aa1a-8bdfdb5da12f",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
