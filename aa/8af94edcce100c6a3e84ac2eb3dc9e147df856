@@ -1,0 +1,217 @@
+tools/client910/src/ui_obj_oracle.rs
+  s_bf99a93e97ab76::t_cf9198c5fda746 5,57
+tools/client910/src/app/entity_renderer.rs
+  s_bf99a93e97ab76::t_cf9198c5fda746 5,7,13-14,18-19,41,43,45,47,50-51,95,105-106,123-124,126,165,172-173,196,202,204,206,218,224,245,267,313,456-460,464-465,510,686-688,731,747,749-750,765-766,783,800,809,875,878-880,905,908,982-985,1001,1049-1050,1073,1108-1110,1136,1138-1139,1141,1146-1147,1190-1191,1234,1249,1255,1263,1272-1273,1313,1357-1358,1466-1469,1523,1525,1545-1546,1574-1575,1635-1636,1660,1673,1692,1730,1739-1740,1746,1852-1854,1857-1858,1895,1956,1960-1962,1992
+tools/client910/src/ui_scripts_oracle.rs
+  s_bf99a93e97ab76::t_cf9198c5fda746 247
+tools/client910/src/game_goldens/cutscene.rs
+  s_bf99a93e97ab76::t_cf9198c5fda746 9-10,74,157-158,160,205-209,225,227,229,246,308,325,329-332,361
+tools/client910/src/ui_components_oracle.rs
+  s_bf99a93e97ab76::t_cf9198c5fda746 111,220
+tools/client910/src/ui_goldens/ui_consumable_replay.rs
+  s_bf99a93e97ab76::t_cf9198c5fda746 256
+tools/client910/src/ui_draw_oracle.rs
+  s_bf99a93e97ab76::t_cf9198c5fda746 467
+tools/client910/src/recorded_golden.rs
+  s_bf99a93e97ab76::t_cf9198c5fda746 2,12,48,52,109,128,135,143
+tools/client910/src/render_goldens/fixed_clock.rs
+  s_bf99a93e97ab76::t_cf9198c5fda746 8
+tools/client910/src/server_rebuild_oracle.rs
+  s_bf99a93e97ab76::t_cf9198c5fda746 1,56,102
+tools/client910/src/app/console_host.rs
+  s_bf99a93e97ab76::t_cf9198c5fda746 4-6,49,74,78,124,239,241,247,262,284,310,361,377-378,381,400,405,407,409,416-417,424,428,435,454,461-462,472-474,483-484,486,493,501-502,509-510,515-517,539,546,560,562,569,616
+tools/client910/src/actor_oracle.rs
+  s_bf99a93e97ab76::t_cf9198c5fda746 1,390,421
+tools/client910/src/app/frame_clock.rs
+  s_bf99a93e97ab76::t_cf9198c5fda746 4-7,14
+tools/client910/src/app/startup.rs
+  s_bf99a93e97ab76::t_cf9198c5fda746 4,16-17,98,154-156,167-169,183-184,192-193,215-216,252,278,546,552,561,567,569,582,584,611,689
+tools/client910/src/app/preferences.rs
+  s_bf99a93e97ab76::t_cf9198c5fda746 3,14,18,33-34,45,86,92,101,118,121
+tools/client910/src/render_goldens.rs
+  s_bf99a93e97ab76::t_cf9198c5fda746 3
+tools/client910/src/session_replay.rs
+  s_bf99a93e97ab76::t_cf9198c5fda746 323,340,775-777,789,798,834,902-903,923,972,981,1018,1037,1099-1100,1118,1191,1218,1224,1243,1259,1275,1281-1282,1304-1305,1309,1311-1312,1314-1318,1353,1477,1479,1495,1518,1611,1614-1615,1694,1704,1714,1718-1722,1731,1738,1740,1748,1755,1760,1803-1804,1809,2144
+tools/refactor/layers.txt
+  s_bf99a93e97ab76::t_cf9198c5fda746 143-144
+tools/client910/src/player_pose_oracle.rs
+  s_bf99a93e97ab76::t_cf9198c5fda746 1,152,252,476
+tools/README.md
+  s_bf99a93e97ab76::t_cf9198c5fda746 112,118-119
+tools/client910/src/server_teleport_oracle.rs
+  s_bf99a93e97ab76::t_cf9198c5fda746 137
+tools/client910/src/bin/drawdiff.rs
+  s_bf99a93e97ab76::t_cf9198c5fda746 7
+tools/client910/src/ui_properties_oracle.rs
+  s_bf99a93e97ab76::t_cf9198c5fda746 491
+tools/client910/src/ui_configs_oracle.rs
+  s_bf99a93e97ab76::t_cf9198c5fda746 284
+tools/client910/src/bin/floordiff.rs
+  s_bf99a93e97ab76::t_cf9198c5fda746 2,10,15,212,236-237,243
+tools/refactor/replay-gate.txt
+  s_bf99a93e97ab76::t_cf9198c5fda746 15-16,18,39,42,44-48,71
+tools/refactor/test-removals.txt
+  s_bf99a93e97ab76::t_cf9198c5fda746 554-588
+tools/client910/fixtures/recorded-goldens/particles-torch.txt
+  s_bf99a93e97ab76::t_cf9198c5fda746 2
+tools/client910/src/app/actor_spot_tests.rs
+  s_bf99a93e97ab76::t_cf9198c5fda746 22-23
+tools/client910/src/scene_goldens.rs
+  s_bf99a93e97ab76::t_cf9198c5fda746 2,67-68,76-77,80,96-97,109,116,252,254,256,258-259,268,283,285,307-308,312,348,355,369,371,373-374,401-403,405-406,425-427,429-430,453-455,457-458,482,539,570
+tools/refactor/test-inventory.txt
+  s_bf99a93e97ab76::t_da807d0814d06b 52,55,57,59,79,96-99,102-103,118,122-124,135-136,138,163-164,166-169,172-177,206-207,230-231
+tools/client910/src/console_oracle.rs
+  s_bf99a93e97ab76::t_cf9198c5fda746 372
+tools/client910/src/scenario_tests.rs
+  s_bf99a93e97ab76::t_cf9198c5fda746 71,154-156,184-191,195,208,250,254-257,276,294,297-306,309-310,318,366,456-460,462-465,469-471,520,527-529,650-651,653,655,657,686,689-699,702-704,734,795,798,824,826,828-834,854-860,906,952,963-964,966,981,999-1000,1008,1150-1153,1190,1198-1204,1269,1272,1291,1508-1523,1525-1527,1588,1636
+tools/client910/src/ui_mouse.rs
+  s_bf99a93e97ab76::t_cf9198c5fda746 1-2
+tools/client910/tests/phase-g/context-checks.rs
+  s_bf99a93e97ab76::t_cf9198c5fda746 9,27,61
+tools/client910/src/animation_oracle.rs
+  s_bf99a93e97ab76::t_cf9198c5fda746 1,690
+tools/client910/src/ui_cursor_winit.rs
+  s_bf99a93e97ab76::t_cf9198c5fda746 2-3
+tools/client910/src/app/input_router.rs
+  s_bf99a93e97ab76::t_cf9198c5fda746 5,7,37
+tools/client910/src/bin/scenediff.rs
+  s_bf99a93e97ab76::t_cf9198c5fda746 1-2
+tools/client910/src/active_toolkit.rs
+  s_bf99a93e97ab76::t_cf9198c5fda746 1-2,23-24,57,66,69,106,117,136,619-620,637,666,695,713,766,851,854,863,886,917,931,958,975-976,989-991,997,1002,1007,1013
+tools/client910/src/app/environment.rs
+  s_bf99a93e97ab76::t_cf9198c5fda746 11,13,17-18,31,37,49,57,75-77,106-107,133-134,164,218-219,227,242-244
+tools/refactor/steps/shell-fnhash-allow.txt
+  s_bf99a93e97ab76::t_cf9198c5fda746 1-69
+tools/client910/src/app/mainloop.rs
+  s_bf99a93e97ab76::t_cf9198c5fda746 2,13-21,24,27,30,109,130-132,146,157-159,185-186,208,275-276
+tools/client910/fixtures/recorded-goldens/lumbridge-scene.txt
+  s_bf99a93e97ab76::t_cf9198c5fda746 2
+tools/client910/src/app/view_camera.rs
+  s_bf99a93e97ab76::t_cf9198c5fda746 4,13,15,35,55-57,88-89,121,128,155-156,168,184,202-204,208,223,227-228
+tools/client910/src/ui_fonts_oracle.rs
+  s_bf99a93e97ab76::t_cf9198c5fda746 1,502,548
+tools/client910/src/ui_goldens/ui_settings_replay.rs
+  s_bf99a93e97ab76::t_cf9198c5fda746 229,290-291,626-627,878-880,963-964,1045-1047,1049,1163,1440-1441,1445,1449,1511,1645
+tools/client910/fixtures/recorded-goldens/README.md
+  s_bf99a93e97ab76::t_cf9198c5fda746 1,6,8,15-20
+tools/client910/fixtures/recorded/README.md
+  s_bf99a93e97ab76::t_cf9198c5fda746 8,12-13,33,39,44,51
+tools/client910/src/render_goldens/console.rs
+  s_bf99a93e97ab76::t_cf9198c5fda746 5,10,19,22-23,37,47,57,71,81,99,107,112,117,154
+tools/client910/src/ui_leaf_oracle.rs
+  s_bf99a93e97ab76::t_cf9198c5fda746 1,195
+tools/client910/src/app/effects.rs
+  s_bf99a93e97ab76::t_cf9198c5fda746 39
+tools/client910/src/core_goldens.rs
+  s_bf99a93e97ab76::t_cf9198c5fda746 1-2,5-6,12-13,15-16,30,32-33,35-36,49,53-54,56-58,60,63-65,67-70,91,96-98,104,107-109,111,120-122,126,133,135,153,155-159,165,175-176,191,207,233
+tools/client910/src/protocol_goldens.rs
+  s_bf99a93e97ab76::t_cf9198c5fda746 2,9-14,21,23,35-36,39,42-43,46-48,55,58-59,61,70,80,82
+tools/client910/src/game_goldens.rs
+  s_bf99a93e97ab76::t_cf9198c5fda746 14-16,39-40,68-69,73
+tools/client910/fixtures/recorded-goldens/scene-draw-lumbridge.txt
+  s_bf99a93e97ab76::t_cf9198c5fda746 2
+tools/client910/src/app/diagnostics.rs
+  s_bf99a93e97ab76::t_cf9198c5fda746 4
+tools/client910/src/ui_keyboard_winit.rs
+  s_bf99a93e97ab76::t_cf9198c5fda746 3,5
+tools/client910/fixtures/cs2-opkey-recorded/cases.txt
+  s_bf99a93e97ab76::t_cf9198c5fda746 1
+tools/client910/src/app/scene_host.rs
+  s_bf99a93e97ab76::t_cf9198c5fda746 4,10,26-27,36,39,48-49,58-60,92,94,248,263-264,270,332,376,411,474-482,525,582,598,626,672,727-728,750,772-773,813,819-820,844,942,1070-1073,1106,1127-1128,1164,1237-1238,1268-1269,1273,1275,1282,1292,1296,1341,1364,1478
+tools/client910/src/scenario_woodcutting.rs
+  s_bf99a93e97ab76::t_cf9198c5fda746 11,26-28,30-31,42-45,90,92,105,107,113,116,135,137,145,147,152-153,249,272-273,279,300,334,389,448-453,458-459,466,477,508,517,724-727,734,747,777-782
+tools/client910/src/ui_component_fields_snapshot.rs
+  s_bf99a93e97ab76::t_cf9198c5fda746 1-2
+tools/client910/src/shutdown_signal.rs
+  s_bf99a93e97ab76::t_cf9198c5fda746 9
+tools/client910/src/app/lifecycle.rs
+  s_bf99a93e97ab76::t_cf9198c5fda746 4-7,9,13,15-16,19-20
+tools/client910/src/ui_goldens/stat_packet_tests.rs
+  s_bf99a93e97ab76::t_cf9198c5fda746 7,46,85,104,115,131,133-134,231,536-537,746,815,835
+tools/refactor/provenance-baseline.tsv
+  s_bf99a93e97ab76::t_da807d0814d06b 3,13
+tools/client910/src/ui_client_state_oracle.rs
+  s_bf99a93e97ab76::t_cf9198c5fda746 353
+tools/client910/src/player_model_oracle.rs
+  s_bf99a93e97ab76::t_cf9198c5fda746 1,90,122,316
+tools/client910/fixtures/recorded-goldens/occlusion-raster.txt
+  s_bf99a93e97ab76::t_cf9198c5fda746 2
+tools/client910/src/ui_goldens/player_picking_tests.rs
+  s_bf99a93e97ab76::t_cf9198c5fda746 171-172
+tools/client910/src/ui_opkey_trace.rs
+  s_bf99a93e97ab76::t_cf9198c5fda746 4-5,7-8,14,18-19,35-36,40,76,97,130,216,221,227-229,234,239,243-247
+tools/client910/src/font_atlas_oracle.rs
+  s_bf99a93e97ab76::t_cf9198c5fda746 115
+tools/client910/tests/phase-g/checks.rs
+  s_bf99a93e97ab76::t_cf9198c5fda746 19,78,277
+tools/client910/fixtures/recorded-goldens/minimap-lumbridge.txt
+  s_bf99a93e97ab76::t_cf9198c5fda746 2
+tools/client910/src/lib.rs
+  s_bf99a93e97ab76::t_cf9198c5fda746 1,59-60,107,227
+tools/client910/src/actor_render_oracle.rs
+  s_bf99a93e97ab76::t_cf9198c5fda746 1,63
+tools/client910/src/model_goldens.rs
+  s_bf99a93e97ab76::t_cf9198c5fda746 2,12,14-16,18,45,64-65,68,70-71,77-79,82,84-86,96-98,100-101,138,212
+tools/client910/src/player_scene_oracle.rs
+  s_bf99a93e97ab76::t_cf9198c5fda746 1,303
+tools/client910/src/dynamic_oracle.rs
+  s_bf99a93e97ab76::t_cf9198c5fda746 1,152
+tools/client910/src/app_loading.rs
+  s_bf99a93e97ab76::t_cf9198c5fda746 1,5,8,51,60,63-64,70,89-90,93,105,115,121,139,147,163,322,330-331,339,347-348,354-355,378,386,394-395,400-401,403,417-419,421,461,479,501,507,522,549,559,567,570,588,632,647-648,664,684,703,759,762,772,795,809,823,829,854
+tools/client910/src/app/tests.rs
+  s_bf99a93e97ab76::t_cf9198c5fda746 61-62,102,138-139,154,225-227,261
+tools/client910/src/ui_vars_oracle.rs
+  s_bf99a93e97ab76::t_cf9198c5fda746 281,468,615
+tools/client910/src/ui_lifecycle_oracle.rs
+  s_bf99a93e97ab76::t_cf9198c5fda746 578,613,756
+tools/client910/src/font_layout_oracle.rs
+  s_bf99a93e97ab76::t_cf9198c5fda746 486
+tools/client910/src/app/particle_host.rs
+  s_bf99a93e97ab76::t_cf9198c5fda746 4-5,7,17,19,26-27,34,92,128-131,174,204-205,207,220-222,224,288,372,418,424
+tools/client910/Cargo.toml
+  s_bf99a93e97ab76::t_cf9198c5fda746 97
+tools/client910/src/sprite_draw_oracle.rs
+  s_bf99a93e97ab76::t_cf9198c5fda746 1,73,134,195
+tools/client910/crates/rs910-model/src/floor.rs
+  s_bf99a93e97ab76::t_cf9198c5fda746 1245
+tools/client910/src/app/redraw.rs
+  s_bf99a93e97ab76::t_cf9198c5fda746 2-3,8,16,18,20-32,34,36,56,60,65,75-76,81-84,121,151,171-172,183-184,205,227-228,230,260-262,316-317,497-498,563,565,587,629,663,675-676
+tools/client910/src/text_render_oracle.rs
+  s_bf99a93e97ab76::t_cf9198c5fda746 68-69
+tools/client910/src/client_command_oracle.rs
+  s_bf99a93e97ab76::t_cf9198c5fda746 61
+tools/client910/src/font_metrics_oracle.rs
+  s_bf99a93e97ab76::t_cf9198c5fda746 191
+tools/client910/fixtures/recorded-goldens/floor-oracle.txt
+  s_bf99a93e97ab76::t_cf9198c5fda746 2-6
+tools/client910/src/app/session_core.rs
+  s_bf99a93e97ab76::t_cf9198c5fda746 87,101
+tools/client910/src/ui_sprites_oracle.rs
+  s_bf99a93e97ab76::t_cf9198c5fda746 589
+tools/client910/src/camera_follow_oracle.rs
+  s_bf99a93e97ab76::t_cf9198c5fda746 1,181
+tools/client910/src/app.rs
+  s_bf99a93e97ab76::t_cf9198c5fda746 9-10,26,81-82,85,88,91-92,95,97,111,120,124,145,176,198,201,220,254,260,264,283,359-361,366,381-382,447,452,464,476,480-481,483-484,487,489,491-493,496,501,506,508,511-512,514,517-518,521,524,527,529,731,735-738,789,806-807,817-818,842-843,860,902,943,1001,1010-1012,1014-1015,1026,1052,1060
+tools/client910/src/test_support.rs
+  s_bf99a93e97ab76::t_cf9198c5fda746 57-58
+tools/client910/src/app/session_controller.rs
+  s_bf99a93e97ab76::t_cf9198c5fda746 1-4,8,10-11,13,24,26,49-53,56-60,68,76,86-87,93,102,121,154-156,202,217,251-252,298-299,319-320,340,364,383,396,430,447,456,469,483,490,519,562,571,576,586,588-590,593-594,606,610,615,623-624,670-671,720-722,747,750,752,758,761,766,778-779,784,803-805,842-843,880-881,900,931,996-997,1001,1019,1027,1057,1079,1085-1086,1104-1105,1143,1158,1169,1175,1216,1246,1248,1261,1290-1291,1356-1357,1360,1373-1374,1376,1393,1398,1449,1457-1458
+tools/client910/src/scene_golden.rs
+  s_bf99a93e97ab76::t_cf9198c5fda746 1,9,14,21,195,260-261,265,293,300,315
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "aa8af94edcce100c6a3e84ac2eb3dc9e147df856",
+  "prompts": {},
+  "sessions": {
+    "s_bf99a93e97ab76": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "3306d217-ef25-4a58-aa1a-8bdfdb5da12f",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
