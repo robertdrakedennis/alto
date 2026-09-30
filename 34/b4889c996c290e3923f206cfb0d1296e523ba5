@@ -1,0 +1,32 @@
+docs/client-status.md
+  s_bf99a93e97ab76::t_bfaf1fb48a20ad 20
+tools/client910/fixtures/cs2-commands/recorded.tsv
+  s_bf99a93e97ab76::t_bfaf1fb48a20ad 344-350
+tools/client910/crates/rs910-js5/src/cache.rs
+  s_bf99a93e97ab76::t_bfaf1fb48a20ad 768-773
+tools/client910/crates/rs910-ui/src/ui_command_spec.rs
+  s_bf99a93e97ab76::t_bfaf1fb48a20ad 26-29,216-217,240,328,492,1912-2013,2183,2595-2608,3313-3412
+  s_bf99a93e97ab76::t_12dacf8aed7482 3413
+tools/client910/fixtures/cs2-commands/README.md
+  s_bf99a93e97ab76::t_bfaf1fb48a20ad 16-21
+tools/client910/crates/rs910-ui/src/ui_host_builtins.rs
+  s_bf99a93e97ab76::t_bfaf1fb48a20ad 143-144,165,188-313,937-942,947,975-978,981,983-984,1510-1517,1954-1957
+tools/refactor/provenance-baseline.tsv
+  s_bf99a93e97ab76::t_ab00cf07f92394 12,19
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "34b4889c996c290e3923f206cfb0d1296e523ba5",
+  "prompts": {},
+  "sessions": {
+    "s_bf99a93e97ab76": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "3306d217-ef25-4a58-aa1a-8bdfdb5da12f",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
