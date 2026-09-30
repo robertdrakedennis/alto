@@ -1,0 +1,82 @@
+tools/client910/src/app.rs
+  s_bf99a93e97ab76::t_e0855729b23a81 220-223
+tools/refactor/test-removals.txt
+  s_bf99a93e97ab76::t_e0855729b23a81 642-718
+server/src/lostcity/entity/BankSession.ts
+  s_bf99a93e97ab76::t_e0855729b23a81 1-403
+server/src/lostcity/engine/Trading.ts
+  s_bf99a93e97ab76::t_e0855729b23a81 3,5-6,8-9,11-21,23-29,31-45,47-60,62-69,72-73,75,77,79-110,112-129,131-148,150-155,157-164,166-170,172-187,189-207,210-213,215-218,220-229,231-422
+server/src/lostcity/inventory/Bank.test.ts
+  s_bf99a93e97ab76::t_e0855729b23a81 1-43
+tools/client910/fixtures/session-replay/bank/server-trace.jsonl
+  s_bf99a93e97ab76::t_e0855729b23a81 1-108
+server/src/lostcity/engine/World.ts
+  s_bf99a93e97ab76::t_e0855729b23a81 26-27,35,39,62-63,68-69,355,362-363,490-492,494-498,533-535,785,927-942,946,1106-1112,1134-1135,1138-1143,1145-1146,1402-1404,1409-1410,1482
+server/src/lostcity/inventory/Shop.ts
+  s_bf99a93e97ab76::t_e0855729b23a81 1,4,6-10,12,15-29,32-38,40,42-49,52-56,59-61,64-67,70-78,81-89,93-94,96-106,109,112-115
+tools/client910/src/scenario_inventory.rs
+  s_bf99a93e97ab76::t_e0855729b23a81 1-356
+server/src/lostcity/entity/BankSession.integration.test.ts
+  s_bf99a93e97ab76::t_e0855729b23a81 14-15,17-19,30,41-44,51,54-58,60-61,64-68,71-83,86-92,94-96,98-115,117-119,122-157,159-163,165,169-186,189-199
+tools/client910/fixtures/session-replay/trade/server-trace.jsonl
+  s_bf99a93e97ab76::t_e0855729b23a81 1-124
+server/src/lostcity/engine/Shops.ts
+  s_bf99a93e97ab76::t_e0855729b23a81 1-82
+tools/client910/fixtures/session-replay/shop/server-trace.jsonl
+  s_bf99a93e97ab76::t_e0855729b23a81 1-102
+server/src/lostcity/network/InventoryFlows.integration.test.ts
+  s_bf99a93e97ab76::t_e0855729b23a81 1-11,15,17,22,24-149,156-158,160,162-163,165-167,170-177,180,182-205,207-228,231-284,287-317,320-338,340-361,364-413
+server/src/lostcity/entity/ShopSession.ts
+  s_bf99a93e97ab76::t_e0855729b23a81 1-310
+tools/client910/fixtures/session-replay/trade/record.sh
+  s_bf99a93e97ab76::t_e0855729b23a81 1-22
+tools/client910/fixtures/session-replay/bank/record.sh
+  s_bf99a93e97ab76::t_e0855729b23a81 1-28
+server/src/lostcity/inventory/Trade.test.ts
+  s_bf99a93e97ab76::t_e0855729b23a81 1-28
+server/src/lostcity/inventory/Shop.test.ts
+  s_bf99a93e97ab76::t_e0855729b23a81 1-28
+server/src/lostcity/entity/Player.ts
+  s_bf99a93e97ab76::t_e0855729b23a81 11-15,113-115,118-121,141-142,144-145,147,271-272,276-281,283,285,289-291,306,322-323,363-365,367-370,373-377,379-396,400-401,403-404,406-416,420-440,483,500-505,547,868,943,980,1005-1007,1011-1013,1015-1030,1033-1038,1041-1043,1045,1048-1051,1054,1098
+server/src/lostcity/network/SocketE2E.integration.test.ts
+  s_bf99a93e97ab76::t_e0855729b23a81 308,313
+tools/client910/fixtures/session-replay/shop/record.sh
+  s_bf99a93e97ab76::t_e0855729b23a81 1-17
+docs/client-status.md
+  s_bf99a93e97ab76::t_e0855729b23a81 21,34-35
+  s_bf99a93e97ab76::t_26e8151a91349b 36-38
+server/src/lostcity/entity/FollowRestOp.integration.test.ts
+  s_bf99a93e97ab76::t_e0855729b23a81 142-143,145-148,162,168-169,190,199
+server/src/lostcity/inventory/Trade.ts
+  s_bf99a93e97ab76::t_e0855729b23a81 1,4-5,7-11,14-16,18,20-24,26,28-32,35-37,40-42,45,47-51,53-60,62-65,67-70,72,75-86,89-91,94-115,118-136,139-151,154,157-163,165,168-182,184-186,188-189,191-199
+tools/client910/src/session_replay.rs
+  s_bf99a93e97ab76::t_e0855729b23a81 2118-2124
+server/src/lostcity/engine/NpcSimulation.ts
+  s_bf99a93e97ab76::t_e0855729b23a81 50-52,173-175,203-204
+tools/client910/fixtures/session-replay/postprocess.py
+  s_bf99a93e97ab76::t_e0855729b23a81 8-10,70-71,73-74,76-80
+tools/client910/fixtures/session-replay/flow-lib.sh
+  s_bf99a93e97ab76::t_e0855729b23a81 1-58
+server/src/lostcity/inventory/Bank.ts
+  s_bf99a93e97ab76::t_e0855729b23a81 1,4,6-11,13-15,18-36,38,40-44,46-50,53-56,59-108,112-114,116-127,129-137,139-154,156-159,161-170,172-190,192-213,216,218-219,221-240,242-245,247-250
+tools/refactor/provenance-baseline.tsv
+  s_bf99a93e97ab76::t_42cc4509b6d7b5 3
+tools/refactor/test-inventory.txt
+  s_bf99a93e97ab76::t_9cc00f41ca547c 4,46,53-55,1422-1423,1427-1428,1445-1446,1459,1514,1519,1521,1528,1548,1558,1580,1582-1583,1602-1603
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "c2f60a8407bdcb4a45a21019fa0e5b86d9f482ce",
+  "prompts": {},
+  "sessions": {
+    "s_bf99a93e97ab76": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "3306d217-ef25-4a58-aa1a-8bdfdb5da12f",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
