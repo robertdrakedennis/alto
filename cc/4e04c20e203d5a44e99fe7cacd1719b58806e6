@@ -1,0 +1,130 @@
+tools/client910/fixtures/session-hop/proxy.py
+  s_bf99a93e97ab76::t_b4f7584e7d1fcc 1-77
+tools/client910/crates/rs910-client/src/login_worker.rs
+  s_bf99a93e97ab76::t_b4f7584e7d1fcc 42-43,61-64,105,122-123,155,171,185
+tools/client910/crates/rs910-ui/src/ui_command_spec.rs
+  s_bf99a93e97ab76::t_155790ddb5acfe 3406
+  s_bf99a93e97ab76::t_b4f7584e7d1fcc 679-723,727-736,2334
+tools/client910/fixtures/social_login_variants.json
+  s_bf99a93e97ab76::t_b4f7584e7d1fcc 1-66
+tools/client910/crates/rs910-ui/src/ui_runtime/engine.rs
+  s_bf99a93e97ab76::t_b4f7584e7d1fcc 409-417,469-471
+tools/client910/src/session_replay.rs
+  s_bf99a93e97ab76::t_b4f7584e7d1fcc 2093-2094,2208-2558
+  s_bf99a93e97ab76::t_e8ec5e09f80a84 2559
+tools/client910/src/app/effects.rs
+  s_bf99a93e97ab76::t_b4f7584e7d1fcc 39-48
+server/src/lostcity/engine/DevWorlds.ts
+  s_bf99a93e97ab76::t_b4f7584e7d1fcc 1-49
+tools/refactor/provenance-baseline.tsv
+  s_bf99a93e97ab76::t_71456978975014 3,6,10,14,19
+server/src/lostcity/network/SocialLogin.ts
+  s_bf99a93e97ab76::t_b4f7584e7d1fcc 1-98
+tools/client910/fixtures/session-hop/run.sh
+  s_bf99a93e97ab76::t_b4f7584e7d1fcc 1-87
+tools/client910/crates/rs910-client/src/net/tests/session_tests.rs
+  s_bf99a93e97ab76::t_b4f7584e7d1fcc 1-659
+tools/client910/fixtures/world_list_1_2.hex
+  s_bf99a93e97ab76::t_b4f7584e7d1fcc 1
+tools/client910/crates/rs910-client/src/net/tests.rs
+  s_bf99a93e97ab76::t_b4f7584e7d1fcc 25-37,48,729,732,736,740,742-743,770,775,805,809,812,1114-1119,1505-1506
+tools/client910/src/app/session_controller.rs
+  s_bf99a93e97ab76::t_b4f7584e7d1fcc 650-651,660,667-669,703-707,716,723-725,756,851-856,943,1016-1020,1028,1073-1102,1116
+server/src/lostcity/network/SocketE2E.testkit.ts
+  s_bf99a93e97ab76::t_b4f7584e7d1fcc 420-438
+tools/client910/crates/rs910-game/src/protocol910/live.rs
+  s_bf99a93e97ab76::t_b4f7584e7d1fcc 31-39
+tools/client910/src/app/tests.rs
+  s_bf99a93e97ab76::t_b4f7584e7d1fcc 225-261,329
+server/src/lostcity/engine/World.ts
+  s_bf99a93e97ab76::t_b4f7584e7d1fcc 10-12,28,76-77,107,124-133,174-187,189-197,201-215,268-358,477,1026-1037,1693-1695
+docs/client-status.md
+  s_bf99a93e97ab76::t_b4f7584e7d1fcc 23,35-37,40-42
+  s_bf99a93e97ab76::t_4ae53f38b9a5b1 43
+tools/client910/fixtures/recorded/social-login/account.txt
+  s_bf99a93e97ab76::t_b4f7584e7d1fcc 1-2
+server/src/lostcity/network/GameLogin.ts
+  s_bf99a93e97ab76::t_b4f7584e7d1fcc 12-71,76-77,80,82,84-87,89,91,95-99,101-127
+tools/client910/crates/rs910-ui/src/ui_runtime/commands/login.rs
+  s_bf99a93e97ab76::t_b4f7584e7d1fcc 47
+server/src/lostcity/network/ClientSocket.ts
+  s_bf99a93e97ab76::t_b4f7584e7d1fcc 28-29
+server/src/lostcity/network/WorldSession.integration.test.ts
+  s_bf99a93e97ab76::t_b4f7584e7d1fcc 1-252
+server/src/lostcity/engine/Lobby.ts
+  s_bf99a93e97ab76::t_b4f7584e7d1fcc 21-22,24,60,88,96,104,113,137,154-162,164,167,169-184,186-198,204-372,436,553-558,644-651
+tools/client910/crates/rs910-client/src/client_core/session_core.rs
+  s_bf99a93e97ab76::t_b4f7584e7d1fcc 142-146,158-159,212-253,256,1085-1091,1117-1227,1237-1238,1246-1250,2043-2045
+tools/refactor/test-inventory.txt
+  s_bf99a93e97ab76::t_71456978975014 4,32,36,45-46,63,75-76,153,551-552,586-598,793,1323,1427,1592-1594,1620-1626,1663-1664
+tools/client910/fixtures/recorded/social-login/rsa-blocks.txt
+  s_bf99a93e97ab76::t_b4f7584e7d1fcc 1-3
+tools/client910/src/scenario_tests.rs
+  s_bf99a93e97ab76::t_b4f7584e7d1fcc 1062,1067,1232
+tools/client910/crates/rs910-ui/src/ui_runtime.rs
+  s_bf99a93e97ab76::t_b4f7584e7d1fcc 54-56
+tools/client910/crates/rs910-ui/src/ui_world_list.rs
+  s_bf99a93e97ab76::t_b4f7584e7d1fcc 529-552
+tools/client910/crates/rs910-game/src/game_runtime.rs
+  s_bf99a93e97ab76::t_b4f7584e7d1fcc 374-389
+tools/client910/crates/rs910-client/src/client_core/persistence.rs
+  s_bf99a93e97ab76::t_b4f7584e7d1fcc 110-115,131-136
+server/src/formats/network/protocol/ServerProt.ts
+  s_bf99a93e97ab76::t_b4f7584e7d1fcc 678-685,702-713,721-724,728-744,746-749,752-755,758-772
+  s_bf99a93e97ab76::t_4428dfc3f84307 773
+tools/client910/src/app_loading.rs
+  s_bf99a93e97ab76::t_b4f7584e7d1fcc 284
+tools/client910/crates/rs910-game/src/login_state.rs
+  s_bf99a93e97ab76::t_b4f7584e7d1fcc 379-382,634-658
+  s_bf99a93e97ab76::t_3d6a37d12d026a 659-660
+tools/client910/crates/rs910-client/src/client_core.rs
+  s_bf99a93e97ab76::t_b4f7584e7d1fcc 49
+tools/client910/crates/rs910-game/src/protocol910/rebuild_state.rs
+  s_bf99a93e97ab76::t_b4f7584e7d1fcc 222-246
+tools/client910/crates/rs910-ui/src/ui_host_builtins.rs
+  s_bf99a93e97ab76::t_b4f7584e7d1fcc 1932-1940,1943-1949,1951-1952,1954-1976
+tools/client910/crates/rs910-client/src/net.rs
+  s_bf99a93e97ab76::t_b4f7584e7d1fcc 54-55,87-91,173-184,217-355,371-381,386-387,398-401,428-430,440,446-453,492-493,527-528,530-532,541-543,545-547,551,555-556,558,566,577,592-594,621,719-722,724-726,728,733-736,753-774,776-777,782-794,798-849,915-923,930,932-933,941-942,945,948,953-954,961-969,974,977-978,991,993-1006,1010-1017,1252-1254,1259-1316,1320-1324,1326-1327,1336-1337,1339,1344,1347,1350-1357,1368-1372,1375,1379-1397,1459-1460,1466,1502-1504,1507,1512-1519,1522,1524,1526,1557,1582-1584,1692-1694,1699-1705,1711-1712,1719-1723,1756,1832-1833,1835-1842,1859-1960,1965,1978-1995,1999,2009,2012,2017,2021-2029,2066,2279,2293-2310,2314,2324,2327,2332,2336-2350,2355-2360,2412,2415,2420,2422-2423,2425-2427,2438-2445,2486
+tools/client910/fixtures/recorded/README.md
+  s_bf99a93e97ab76::t_b4f7584e7d1fcc 49
+server/src/lostcity/network/SocketE2E.integration.test.ts
+  s_bf99a93e97ab76::t_b4f7584e7d1fcc 41,141-161,411-413,419-420,424-438
+tools/client910/crates/rs910-client/src/session.rs
+  s_bf99a93e97ab76::t_b4f7584e7d1fcc 729,736-744
+tools/client910/src/app.rs
+  s_bf99a93e97ab76::t_b4f7584e7d1fcc 33
+tools/client910/src/app/startup.rs
+  s_bf99a93e97ab76::t_b4f7584e7d1fcc 344-345
+server/src/lostcity/network/SocialLogin.test.ts
+  s_bf99a93e97ab76::t_b4f7584e7d1fcc 1-70
+tools/client910/crates/rs910-client/src/client_core/effects.rs
+  s_bf99a93e97ab76::t_b4f7584e7d1fcc 15,47-50
+server/src/lostcity/engine/LobbySession.integration.test.ts
+  s_bf99a93e97ab76::t_b4f7584e7d1fcc 1-161
+tools/client910/crates/rs910-protocol/src/framing.rs
+  s_bf99a93e97ab76::t_b4f7584e7d1fcc 75-81
+tools/client910/crates/rs910-client/src/client_core/session_core/tests.rs
+  s_bf99a93e97ab76::t_b4f7584e7d1fcc 1-62
+server/src/lostcity/entity/Viewport.ts
+  s_bf99a93e97ab76::t_b4f7584e7d1fcc 52-72
+tools/client910/fixtures/recorded/social-login/connect.txt
+  s_bf99a93e97ab76::t_b4f7584e7d1fcc 1-3
+tools/client910/tests/phase-g/rebuild-checks.rs
+  s_bf99a93e97ab76::t_b4f7584e7d1fcc 175-237
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "cc4e04c20e203d5a44e99fe7cacd1719b58806e6",
+  "prompts": {},
+  "sessions": {
+    "s_bf99a93e97ab76": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "3306d217-ef25-4a58-aa1a-8bdfdb5da12f",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
