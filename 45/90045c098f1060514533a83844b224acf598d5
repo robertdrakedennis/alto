@@ -1,0 +1,43 @@
+tools/refactor/replay-overlay.sh
+  s_bf99a93e97ab76::t_b3b98f25bd7135 7,13
+tools/README.md
+  s_bf99a93e97ab76::t_b3b98f25bd7135 49-51
+tools/refactor/README.md
+  s_bf99a93e97ab76::t_b3b98f25bd7135 31-37,202,206-208
+.gitignore
+  s_bf99a93e97ab76::t_b3b98f25bd7135 112-119
+server/jest.config.ts
+  s_bf99a93e97ab76::t_b3b98f25bd7135 1-2,5-47,63
+docs/README.md
+  s_bf99a93e97ab76::t_b3b98f25bd7135 20,22
+.github/workflows/client.yml
+  s_bf99a93e97ab76::t_b3b98f25bd7135 1-2,9-15,17-20,25,39,43,47-51,56-58,61-62,65-74
+README.md
+  s_bf99a93e97ab76::t_b3b98f25bd7135 87-88,97-98
+THIRD_PARTY_LICENSES.md
+  s_bf99a93e97ab76::t_b3b98f25bd7135 1-14346
+CONTRIBUTING.md
+  s_bf99a93e97ab76::t_b3b98f25bd7135 1-86
+tools/licenses.py
+  s_bf99a93e97ab76::t_b3b98f25bd7135 1-562
+NOTICE
+  s_bf99a93e97ab76::t_b3b98f25bd7135 49-50,56-62
+.github/workflows/server.yml
+  s_bf99a93e97ab76::t_b3b98f25bd7135 1-2,9-15,17-19,23,36-39
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "4590045c098f1060514533a83844b224acf598d5",
+  "prompts": {},
+  "sessions": {
+    "s_bf99a93e97ab76": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "3306d217-ef25-4a58-aa1a-8bdfdb5da12f",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
