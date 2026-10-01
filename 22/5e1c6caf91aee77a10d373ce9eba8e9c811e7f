@@ -1,0 +1,94 @@
+docs/README.md
+  s_bf99a93e97ab76::t_e3d4739a0bddd6 10
+tools/client910/crates/rs910-render-modern/Cargo.toml
+  s_bf99a93e97ab76::t_e3d4739a0bddd6 6
+tools/client910/src/lib.rs
+  s_bf99a93e97ab76::t_e3d4739a0bddd6 46
+tools/client910/crates/rs910-render-gpu/src/render/frame.rs
+  s_bf99a93e97ab76::t_e3d4739a0bddd6 23-46,232-237,244
+tools/client910/crates/rs910-render-gpu/src/render/ui.rs
+  s_bf99a93e97ab76::t_e3d4739a0bddd6 206-211,218
+tools/client910/crates/rs910-render-modern/src/frame/scale.rs
+  s_bf99a93e97ab76::t_e3d4739a0bddd6 17-67
+tools/client910/crates/rs910-render-modern/src/shaders/mod.rs
+  s_bf99a93e97ab76::t_e3d4739a0bddd6 192,259
+tools/perf/views.sh
+  s_bf99a93e97ab76::t_e3d4739a0bddd6 12-14,41
+tools/client910/fixtures/entity-run/run.sh
+  s_bf99a93e97ab76::t_e3d4739a0bddd6 13-14,23,25
+README.md
+  s_bf99a93e97ab76::t_e3d4739a0bddd6 61,64-74
+  s_bf99a93e97ab76::t_67986b43978a28 75
+tools/client910/src/app/console_host.rs
+  s_bf99a93e97ab76::t_e3d4739a0bddd6 78-111
+tools/client910/crates/rs910-render-modern/src/lib.rs
+  s_bf99a93e97ab76::t_e3d4739a0bddd6 1
+tools/client910/Cargo.toml
+  s_bf99a93e97ab76::t_e3d4739a0bddd6 80
+docs/architecture.md
+  s_bf99a93e97ab76::t_e3d4739a0bddd6 66
+tools/client910/crates/rs910-render-modern/src/frame/mod.rs
+  s_bf99a93e97ab76::t_e3d4739a0bddd6 448-450,802,919-927,1117-1122
+tools/client910/src/modern_display.rs
+  s_bf99a93e97ab76::t_e3d4739a0bddd6 1-76
+tools/client910/crates/rs910-render-modern/src/lighting/look.rs
+  s_bf99a93e97ab76::t_e3d4739a0bddd6 11,38-39,61-64,70-75,119-124,148-149,201-239,243-244
+tools/client910/crates/rs910-render-modern/src/frame/gpu/atmosphere.rs
+  s_bf99a93e97ab76::t_e3d4739a0bddd6 443-444,592-598
+tools/perf/online.sh
+  s_bf99a93e97ab76::t_e3d4739a0bddd6 13-15,55
+tools/client910/crates/rs910-render-modern/src/atmosphere/mod.rs
+  s_bf99a93e97ab76::t_e3d4739a0bddd6 62,78-79,89,103-112,126,139
+tools/client910/crates/rs910-render-modern/src/frame/tests/scale.rs
+  s_bf99a93e97ab76::t_e3d4739a0bddd6 115
+tools/refactor/layers.txt
+  s_bf99a93e97ab76::t_e3d4739a0bddd6 110-111
+AGENTS.md
+  s_bf99a93e97ab76::t_e3d4739a0bddd6 19
+docs/client-status.md
+  s_bf99a93e97ab76::t_e3d4739a0bddd6 28
+tools/client910/crates/rs910-render-modern/src/frame/tests/ambient.rs
+  s_bf99a93e97ab76::t_e3d4739a0bddd6 78-82
+tools/perf/modern_perf_bench.rs
+  s_bf99a93e97ab76::t_e3d4739a0bddd6 154,235-261,892
+docs/renderer/modern-renderer.md
+  s_bf99a93e97ab76::t_e3d4739a0bddd6 3-5,14-22,147-148,307,309-345,499-500,516-536,632,634,656,710
+tools/perf/look_stats.py
+  s_bf99a93e97ab76::t_e3d4739a0bddd6 1-48
+tools/client910/src/active_toolkit.rs
+  s_bf99a93e97ab76::t_e3d4739a0bddd6 29-33,70-71,76-78,154-158,555-556,590,604-610,614-636
+  s_bf99a93e97ab76::t_a98d910e9454df 637
+tools/client910/src/app.rs
+  s_bf99a93e97ab76::t_e3d4739a0bddd6 197-204,745-749
+tools/client910/crates/rs910-render-modern/src/settings.rs
+  s_bf99a93e97ab76::t_e3d4739a0bddd6 27,29,74-79,81-85,117-121,165-167,169-174,194-214,245,247,331-337,342,351-377
+  s_bf99a93e97ab76::t_da13204e2db383 378-379
+tools/perf/README.md
+  s_bf99a93e97ab76::t_e3d4739a0bddd6 29
+tools/refactor/test-inventory.txt
+  s_bf99a93e97ab76::t_e3d4739a0bddd6 4,42,138,1068
+tools/client910/crates/rs910-render-modern/src/atmosphere/volumetrics.rs
+  s_bf99a93e97ab76::t_e3d4739a0bddd6 50,148-149,156,162
+docs/engine-and-studio.md
+  s_bf99a93e97ab76::t_e3d4739a0bddd6 13
+docs/setup.md
+  s_bf99a93e97ab76::t_e3d4739a0bddd6 68
+tools/client910/crates/rs910-render-modern/src/frame/tests/scene.rs
+  s_bf99a93e97ab76::t_e3d4739a0bddd6 78,145,147,154,178-202,221-231
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "225e1c6caf91aee77a10d373ce9eba8e9c811e7f",
+  "prompts": {},
+  "sessions": {
+    "s_bf99a93e97ab76": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "3306d217-ef25-4a58-aa1a-8bdfdb5da12f",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
