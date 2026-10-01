@@ -1,0 +1,49 @@
+tools/client910/crates/rs910-js5/src/cache.rs
+  s_bf99a93e97ab76::t_ae5af453055004 58-59
+tools/refactor/test-inventory.txt
+  s_bf99a93e97ab76::t_ae5af453055004 4,43,163,1155-1159
+tools/client910/crates/rs910-scene/src/map_npcs.rs
+  s_bf99a93e97ab76::t_ae5af453055004 1-172
+tools/client910/crates/rs910-scene/fixtures/map-npcs.tsv
+  s_bf99a93e97ab76::t_ae5af453055004 1-45
+tools/client910/crates/rs910-scene/src/map_npcs/tests.rs
+  s_bf99a93e97ab76::t_ae5af453055004 1-361
+tools/client910/src/app_loading.rs
+  s_bf99a93e97ab76::t_ae5af453055004 807-811,813-821,825-858
+  s_bf99a93e97ab76::t_b50850c76b4faa 859-860
+tools/client910/crates/rs910-game/src/protocol910/rebuild_state.rs
+  s_bf99a93e97ab76::t_ae5af453055004 376-402,404,406-407,412-413,416,424,433,435,438-439,441-443,445-470
+docs/client-status.md
+  s_bf99a93e97ab76::t_ae5af453055004 18
+tools/client910/crates/rs910-config/src/types910/config_types.rs
+  s_bf99a93e97ab76::t_ae5af453055004 366-367,408,456-457,538-541
+tools/client910/crates/rs910-scene/src/lib.rs
+  s_bf99a93e97ab76::t_ae5af453055004 8-9,68
+tools/client910/tests/phase-g/rebuild-checks.rs
+  s_bf99a93e97ab76::t_ae5af453055004 238-370
+tools/refactor/layers.txt
+  s_bf99a93e97ab76::t_ae5af453055004 282
+tools/client910/crates/rs910-scene/src/title_world.rs
+  s_bf99a93e97ab76::t_ae5af453055004 4-10,26-32,50-51,61-62,67-116,178,186,190-252
+  s_bf99a93e97ab76::t_0057b18b2e0ad2 253
+tools/client910/crates/rs910-config/src/types910/npc.rs
+  s_bf99a93e97ab76::t_ae5af453055004 13-17
+tools/client910/crates/rs910-config/fixtures/config-corpus.tsv
+  s_bf99a93e97ab76::t_ae5af453055004 10,12
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "e959cf3170d871bd803900d94327c6e32040b257",
+  "prompts": {},
+  "sessions": {
+    "s_bf99a93e97ab76": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "3306d217-ef25-4a58-aa1a-8bdfdb5da12f",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
