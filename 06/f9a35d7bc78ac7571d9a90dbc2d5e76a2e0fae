@@ -1,0 +1,191 @@
+tools/client910/crates/rs910-client/src/net/tests.rs
+  s_bf99a93e97ab76::t_fc918560a7648f 343,1010
+tools/client910/crates/rs910-client/src/net/tests/session_tests.rs
+  s_bf99a93e97ab76::t_410fcac5d2c244 535
+tools/client910/crates/rs910-config/src/config/members_tests.rs
+  s_bf99a93e97ab76::t_3c0a82f5b33470 6
+tools/client910/crates/rs910-config/src/corpus.rs
+  s_bf99a93e97ab76::t_5a6577fe2c2e03 117
+tools/client910/crates/rs910-config/src/ui_defaults.rs
+  s_bf99a93e97ab76::t_393a695855ac43 248
+tools/client910/crates/rs910-core/src/test_support.rs
+  s_bf99a93e97ab76::t_af97da75e1542a 8-63,92,94,214-262
+tools/client910/crates/rs910-js5/Cargo.toml
+  s_bf99a93e97ab76::t_017019f90f29fa 23-24,36
+tools/client910/crates/rs910-js5/src/test_support.rs
+  s_bf99a93e97ab76::t_4036e59eb17dbf 10,14
+tools/client910/crates/rs910-model/src/corpus.rs
+  s_bf99a93e97ab76::t_ab69e06a81b755 889
+tools/client910/crates/rs910-model/src/icon_raster/tests.rs
+  s_bf99a93e97ab76::t_637ceb038d825c 310
+tools/client910/crates/rs910-scene/src/corpus.rs
+  s_bf99a93e97ab76::t_87284f57b3eacb 1051
+tools/client910/crates/rs910-scene/src/loctype.rs
+  s_bf99a93e97ab76::t_21bae0a604ae56 564
+tools/client910/crates/rs910-scene/src/map_npcs/tests.rs
+  s_bf99a93e97ab76::t_5ae8c44f48bef6 87
+tools/client910/crates/rs910-scene/src/npc_type_model.rs
+  s_bf99a93e97ab76::t_0050c69d1bf496 616
+tools/client910/crates/rs910-scene/src/sky_decor/tests.rs
+  s_bf99a93e97ab76::t_15a560b74e4930 233-234
+tools/client910/crates/rs910-scene/src/ui_icon_model/tests.rs
+  s_bf99a93e97ab76::t_b90b5331daa48d 44
+tools/client910/crates/rs910-ui/src/ui_bas.rs
+  s_bf99a93e97ab76::t_dca70a92ec6f4a 125
+tools/client910/crates/rs910-ui/src/ui_command_spec.rs
+  s_bf99a93e97ab76::t_45e4b5a1d48e5a 2923
+tools/client910/crates/rs910-ui/src/ui_cursor_tests.rs
+  s_bf99a93e97ab76::t_31913227c9c50e 121
+tools/client910/crates/rs910-ui/src/ui_icons/tests.rs
+  s_bf99a93e97ab76::t_47c9e0cfae0aa4 34
+tools/client910/crates/rs910-ui/src/ui_model_animation.rs
+  s_bf99a93e97ab76::t_7bbc5e0fc6f92b 125
+tools/client910/crates/rs910-ui/src/ui_models.rs
+  s_bf99a93e97ab76::t_b2c2972de2bc20 1440-1441,1495-1496,1542-1543,1625-1626,1709-1710
+tools/client910/crates/rs910-ui/src/ui_obj_queries.rs
+  s_bf99a93e97ab76::t_03e1e9f596ed81 144
+tools/client910/crates/rs910-ui/src/ui_preferences_autosetup.rs
+  s_bf99a93e97ab76::t_cf467faa18ca05 507,519
+tools/client910/crates/rs910-ui/src/ui_runtime/menu_action_dispatch_tests.rs
+  s_bf99a93e97ab76::t_482d77b96a7729 24
+tools/client910/crates/rs910-ui/src/ui_runtime/no_op_host_tests.rs
+  s_bf99a93e97ab76::t_619138f699736c 83
+tools/client910/crates/rs910-ui/src/ui_runtime/player_target_tests.rs
+  s_bf99a93e97ab76::t_1b9c911ec257fb 7
+tools/client910/src/animation_oracle.rs
+  s_bf99a93e97ab76::t_4cad9e7c8e9dc0 386
+tools/client910/src/app/console_tests.rs
+  s_bf99a93e97ab76::t_451ee540ca5d5e 14
+tools/client910/src/audio_corpus.rs
+  s_bf99a93e97ab76::t_6342c75bdfeafc 46
+tools/client910/src/console_oracle.rs
+  s_bf99a93e97ab76::t_55624e7cfdb778 47
+tools/client910/src/dynamic_oracle.rs
+  s_bf99a93e97ab76::t_ff9a6888e32fa3 30
+tools/client910/src/font_atlas_oracle.rs
+  s_bf99a93e97ab76::t_9891336b2be85e 46
+tools/client910/src/font_layout_oracle.rs
+  s_bf99a93e97ab76::t_668701ec04ef8e 56
+tools/client910/src/font_metrics_oracle.rs
+  s_bf99a93e97ab76::t_c2dff7a623e94f 48
+tools/client910/src/game_goldens.rs
+  s_bf99a93e97ab76::t_7b53e515924fb2 20
+tools/client910/src/player_model_oracle.rs
+  s_bf99a93e97ab76::t_11f71c324aeade 83
+tools/client910/src/player_pose_oracle.rs
+  s_bf99a93e97ab76::t_5ffd9f29edbb7b 14
+tools/client910/src/protocol_goldens.rs
+  s_bf99a93e97ab76::t_0fd73ac2fc5fa6 15-16
+tools/client910/src/recorded_golden.rs
+  s_bf99a93e97ab76::t_32c0449c1c0298 17,51
+tools/client910/src/scenario_entities.rs
+  s_bf99a93e97ab76::t_28b880c3e17a53 23
+tools/client910/src/scenario_inventory.rs
+  s_bf99a93e97ab76::t_ac670cb862d62c 101
+tools/client910/src/scenario_npc_combat.rs
+  s_bf99a93e97ab76::t_4f42fb0c5419a9 76
+tools/client910/src/scenario_skills.rs
+  s_bf99a93e97ab76::t_80150a558c8f52 512,641
+tools/client910/src/scenario_tests.rs
+  s_bf99a93e97ab76::t_08294d95333a54 132,614,976,1028,1858
+tools/client910/src/scenario_woodcutting.rs
+  s_bf99a93e97ab76::t_71f1dae5d5000f 450
+tools/client910/src/scene_goldens.rs
+  s_bf99a93e97ab76::t_64d07e3bf6b94e 483
+tools/client910/src/server_teleport_oracle.rs
+  s_bf99a93e97ab76::t_fb719768303dab 18
+tools/client910/src/session_replay.rs
+  s_bf99a93e97ab76::t_f991564ee11a1a 1023,1371,1417,1659,1725,1862,1945,2187,2249,2294,2458,2647,2686,2765,2857,2901
+tools/client910/src/sprite_draw_oracle.rs
+  s_bf99a93e97ab76::t_afe7d2ec054fd5 229
+tools/client910/src/test_support.rs
+  s_bf99a93e97ab76::t_7351741bb6894b 12,24
+tools/client910/src/text_render_oracle.rs
+  s_bf99a93e97ab76::t_d5d4ff87ba8a05 18,220
+tools/client910/src/ui_components_oracle.rs
+  s_bf99a93e97ab76::t_f67b55cf1dfe5c 100
+tools/client910/src/ui_configs_oracle.rs
+  s_bf99a93e97ab76::t_22793dbcf110e9 78
+tools/client910/src/ui_fonts_oracle.rs
+  s_bf99a93e97ab76::t_c9e31630c57384 117
+tools/client910/src/ui_goldens/social_packet_tests.rs
+  s_bf99a93e97ab76::t_23128ed82b34cd 259
+tools/client910/src/ui_goldens/stat_packet_tests.rs
+  s_bf99a93e97ab76::t_772dfaabc438c3 13,40,84,171,196,233,313,380,787,843
+tools/client910/src/ui_leaf_oracle.rs
+  s_bf99a93e97ab76::t_85d85e568fea49 130
+tools/client910/src/ui_obj_oracle.rs
+  s_bf99a93e97ab76::t_fbc8aa700295af 6
+tools/client910/src/ui_opkey_trace.rs
+  s_bf99a93e97ab76::t_e07f85dd4c1223 36,44
+tools/client910/src/ui_properties_oracle.rs
+  s_bf99a93e97ab76::t_733b638af16b8b 213
+tools/client910/src/ui_resources_oracle.rs
+  s_bf99a93e97ab76::t_65ca6c2b90d55a 78
+tools/client910/src/ui_sprites_oracle.rs
+  s_bf99a93e97ab76::t_32fe32e98b1b02 216
+tools/client910/src/ui_vars_oracle.rs
+  s_bf99a93e97ab76::t_d92f03ce125e5a 79
+tools/client910/tests/phase-g/checks.rs
+  s_bf99a93e97ab76::t_612866c2845353 130
+tools/client910/tests/phase-g/rebuild-checks.rs
+  s_bf99a93e97ab76::t_af80ff2618b693 23
+tools/native910/examples/semantic_coverage.rs
+  s_bf99a93e97ab76::t_316862c169a952 2-3,9
+tools/native910/src/vars.rs
+  s_bf99a93e97ab76::t_8c86b5f6f35721 108
+tools/native910/tests/asset_corpus.rs
+  s_bf99a93e97ab76::t_f3df3e1ab9e601 20
+tools/native910/tests/common/mod.rs
+  s_bf99a93e97ab76::t_b9b509b7a872ca 13-34,36-43,70
+tools/native910/tests/component_refs.rs
+  s_bf99a93e97ab76::t_da88d6b52e6887 27
+tools/native910/tests/config_corpus.rs
+  s_bf99a93e97ab76::t_9a4663f419b111 24
+tools/native910/tests/corpus_910.rs
+  s_bf99a93e97ab76::t_d638c87a728300 14
+tools/native910/tests/dataflow.rs
+  s_bf99a93e97ab76::t_ec617687ac9cc1 1,245,327
+tools/native910/tests/dbindex_corpus.rs
+  s_bf99a93e97ab76::t_c76f3d15a0416b 1,10
+tools/native910/tests/dbtable_corpus.rs
+  s_bf99a93e97ab76::t_1214e2e2e6d048 22
+tools/native910/tests/inames_corpus.rs
+  s_bf99a93e97ab76::t_13770fcded4285 23
+tools/native910/tests/interface_corpus.rs
+  s_bf99a93e97ab76::t_861604d6297f8f 18,69
+tools/native910/tests/interface_text.rs
+  s_bf99a93e97ab76::t_08b645c334e796 30
+tools/native910/tests/project_build.rs
+  s_bf99a93e97ab76::t_2dd57900fc0966 1,14-15
+tools/native910/tests/repack_scripts.rs
+  s_bf99a93e97ab76::t_97c4e5f0e72d4c 1,16,43
+tools/native910/tests/semantic_coverage.rs
+  s_bf99a93e97ab76::t_55f7f127c7e14a 2,6,10,43
+tools/native910/tests/source_roundtrip.rs
+  s_bf99a93e97ab76::t_297f97c501739b 32,36
+tools/native910/tests/sprite_corpus.rs
+  s_bf99a93e97ab76::t_6d9c3178393911 20,88
+tools/native910/tests/timer_acceptance.rs
+  s_bf99a93e97ab76::t_38b876c287c2c1 111
+tools/native910/tests/xref_corpus.rs
+  s_bf99a93e97ab76::t_890de37f6ba07f 32
+tools/refactor/test-inventory.txt
+  s_bf99a93e97ab76::t_6162e4b9129a1c 34,860
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "06f9a35d7bc78ac7571d9a90dbc2d5e76a2e0fae",
+  "prompts": {},
+  "sessions": {
+    "s_bf99a93e97ab76": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "3306d217-ef25-4a58-aa1a-8bdfdb5da12f",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
