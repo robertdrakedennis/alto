@@ -1,0 +1,158 @@
+tools/client910/crates/rs910-ui/src/ui_cam2/commands.rs
+  s_bf99a93e97ab76::t_915a2ae5d6ce2c 1-700
+tools/client910/crates/rs910-ui/src/world_map/chunk_cache.rs
+  s_bf99a93e97ab76::t_915a2ae5d6ce2c 1-122
+tools/client910/crates/rs910-protocol/src/server_prot/event_decode.rs
+  s_bf99a93e97ab76::t_915a2ae5d6ce2c 1-1184
+tools/client910/crates/rs910-ui/src/loading/elements.rs
+  s_bf99a93e97ab76::t_915a2ae5d6ce2c 1-639
+tools/client910/crates/rs910-ui/src/ui_social/quick_chat.rs
+  s_bf99a93e97ab76::t_915a2ae5d6ce2c 1-411
+tools/client910/crates/rs910-scene/src/maploader/landscape.rs
+  s_bf99a93e97ab76::t_915a2ae5d6ce2c 1-366
+tools/client910/crates/rs910-render-gpu/src/floor_render.rs
+  s_bf99a93e97ab76::t_915a2ae5d6ce2c 40-44,47-63
+  s_bf99a93e97ab76::t_5052a83511673a 64
+tools/client910/crates/rs910-ui/src/ui_command_spec/client_cases.rs
+  s_bf99a93e97ab76::t_915a2ae5d6ce2c 1-484
+tools/client910/crates/rs910-ui/src/world_map/tile_shapes.rs
+  s_bf99a93e97ab76::t_915a2ae5d6ce2c 1-88
+tools/client910/crates/rs910-protocol/src/server_prot/interface_packets.rs
+  s_bf99a93e97ab76::t_915a2ae5d6ce2c 1-191
+tools/client910/crates/rs910-ui/src/ui_command_spec/partition.rs
+  s_bf99a93e97ab76::t_915a2ae5d6ce2c 1-328
+tools/client910/crates/rs910-ui/src/ui_social/channels.rs
+  s_bf99a93e97ab76::t_915a2ae5d6ce2c 1-289
+tools/client910/crates/rs910-protocol/src/server_prot/rebuild.rs
+  s_bf99a93e97ab76::t_915a2ae5d6ce2c 1-118
+tools/client910/crates/rs910-ui/src/ui_cam2/scene.rs
+  s_bf99a93e97ab76::t_915a2ae5d6ce2c 1-128
+tools/client910/crates/rs910-ui/src/loading.rs
+  s_bf99a93e97ab76::t_915a2ae5d6ce2c 18-46,48,51-52
+tools/client910/crates/rs910-render-gpu/src/floor_render/textures.rs
+  s_bf99a93e97ab76::t_915a2ae5d6ce2c 1-306
+tools/client910/crates/rs910-scene/src/maploader/tile_mesh.rs
+  s_bf99a93e97ab76::t_915a2ae5d6ce2c 1-777
+tools/client910/crates/rs910-js5/src/js5net/provider.rs
+  s_bf99a93e97ab76::t_915a2ae5d6ce2c 1-665
+tools/client910/crates/rs910-ui/src/ui_command_spec/platform_cases.rs
+  s_bf99a93e97ab76::t_915a2ae5d6ce2c 1-421
+tools/client910/crates/rs910-ui/src/loading/startup.rs
+  s_bf99a93e97ab76::t_915a2ae5d6ce2c 1-472
+tools/client910/crates/rs910-ui/src/ui_cam2/free_camera.rs
+  s_bf99a93e97ab76::t_915a2ae5d6ce2c 1-110
+tools/client910/crates/rs910-js5/src/js5net/requests.rs
+  s_bf99a93e97ab76::t_915a2ae5d6ce2c 1-155
+tools/client910/crates/rs910-ui/src/ui_social/player_groups.rs
+  s_bf99a93e97ab76::t_915a2ae5d6ce2c 1-403
+tools/client910/crates/rs910-scene/src/maploader/ground.rs
+  s_bf99a93e97ab76::t_915a2ae5d6ce2c 1-649
+tools/client910/crates/rs910-js5/src/js5net/disk.rs
+  s_bf99a93e97ab76::t_915a2ae5d6ce2c 1-226
+tools/client910/crates/rs910-js5/src/js5net.rs
+  s_bf99a93e97ab76::t_915a2ae5d6ce2c 37-70,72,74-76,81-83,87,90,93,96,99,102,105,108,112,115
+tools/client910/crates/rs910-ui/src/ui_cam2.rs
+  s_bf99a93e97ab76::t_915a2ae5d6ce2c 12-13,15-41,44-46,49,52,55,57,60,102,114-118,120-121,123-146,157,376,380,502,683
+tools/client910/crates/rs910-render-gpu/src/floor_render/material_bindings.rs
+  s_bf99a93e97ab76::t_915a2ae5d6ce2c 1-241
+tools/client910/crates/rs910-ui/src/world_map/area_tiles.rs
+  s_bf99a93e97ab76::t_915a2ae5d6ce2c 1-368
+tools/client910/crates/rs910-ui/src/world_map/area.rs
+  s_bf99a93e97ab76::t_915a2ae5d6ce2c 1-145
+tools/client910/crates/rs910-ui/src/world_map/map_scenes.rs
+  s_bf99a93e97ab76::t_915a2ae5d6ce2c 1-126
+tools/client910/crates/rs910-client/src/net/login_transport.rs
+  s_bf99a93e97ab76::t_915a2ae5d6ce2c 1-1434
+tools/client910/crates/rs910-render-gpu/src/floor_render/shader.rs
+  s_bf99a93e97ab76::t_915a2ae5d6ce2c 1-253
+tools/client910/crates/rs910-protocol/src/server_prot/audio_packets.rs
+  s_bf99a93e97ab76::t_915a2ae5d6ce2c 1-239
+tools/client910/crates/rs910-render-gpu/src/floor_render/mesh.rs
+  s_bf99a93e97ab76::t_915a2ae5d6ce2c 1-840
+tools/client910/crates/rs910-ui/src/ui_social/names.rs
+  s_bf99a93e97ab76::t_915a2ae5d6ce2c 1-239
+tools/client910/crates/rs910-ui/src/ui_cam2/position.rs
+  s_bf99a93e97ab76::t_915a2ae5d6ce2c 1-284
+tools/client910/crates/rs910-js5/src/js5net/tcp.rs
+  s_bf99a93e97ab76::t_915a2ae5d6ce2c 1-529
+tools/client910/crates/rs910-protocol/src/server_prot/environment.rs
+  s_bf99a93e97ab76::t_915a2ae5d6ce2c 1-152
+tools/client910/crates/rs910-ui/src/ui_command_spec.rs
+  s_bf99a93e97ab76::t_915a2ae5d6ce2c 26-62,69,74,76,80,82,84,87,89
+tools/client910/crates/rs910-render-gpu/src/floor_render/pipeline.rs
+  s_bf99a93e97ab76::t_915a2ae5d6ce2c 1-759
+tools/client910/crates/rs910-ui/src/ui_cam2/spline.rs
+  s_bf99a93e97ab76::t_915a2ae5d6ce2c 1-361
+tools/client910/crates/rs910-js5/src/js5net/resources.rs
+  s_bf99a93e97ab76::t_915a2ae5d6ce2c 1-117
+tools/client910/crates/rs910-js5/src/js5net/http.rs
+  s_bf99a93e97ab76::t_915a2ae5d6ce2c 1-289
+tools/client910/crates/rs910-ui/src/ui_command_spec/camera_cases.rs
+  s_bf99a93e97ab76::t_915a2ae5d6ce2c 1-421
+tools/client910/crates/rs910-ui/src/loading/resources.rs
+  s_bf99a93e97ab76::t_915a2ae5d6ce2c 1-264
+tools/client910/crates/rs910-ui/src/ui_cam2/legacy.rs
+  s_bf99a93e97ab76::t_915a2ae5d6ce2c 1-291
+tools/client910/crates/rs910-ui/src/loading/images.rs
+  s_bf99a93e97ab76::t_915a2ae5d6ce2c 1-166
+tools/client910/crates/rs910-ui/src/ui_command_spec/component_cases.rs
+  s_bf99a93e97ab76::t_915a2ae5d6ce2c 1-497
+tools/client910/crates/rs910-ui/src/ui_social/mutations.rs
+  s_bf99a93e97ab76::t_915a2ae5d6ce2c 1-316
+tools/client910/crates/rs910-ui/src/ui_cam2/movement.rs
+  s_bf99a93e97ab76::t_915a2ae5d6ce2c 1-369
+tools/client910/crates/rs910-ui/src/ui_social/queries.rs
+  s_bf99a93e97ab76::t_915a2ae5d6ce2c 1-754
+tools/client910/crates/rs910-protocol/src/server_prot.rs
+  s_bf99a93e97ab76::t_915a2ae5d6ce2c 12-44,127,151,169
+tools/client910/crates/rs910-ui/src/loading/progress_bar.rs
+  s_bf99a93e97ab76::t_915a2ae5d6ce2c 1-86
+tools/client910/crates/rs910-js5/src/js5net/archive.rs
+  s_bf99a93e97ab76::t_915a2ae5d6ce2c 1-344
+tools/client910/crates/rs910-js5/src/js5net/indexes.rs
+  s_bf99a93e97ab76::t_915a2ae5d6ce2c 1-90
+tools/client910/crates/rs910-client/src/net.rs
+  s_bf99a93e97ab76::t_915a2ae5d6ce2c 56-82,84,86,88,91-92,95-97
+tools/client910/crates/rs910-ui/src/ui_social/clan_settings.rs
+  s_bf99a93e97ab76::t_915a2ae5d6ce2c 1-333
+tools/client910/crates/rs910-client/src/net/login_packets.rs
+  s_bf99a93e97ab76::t_915a2ae5d6ce2c 1-626
+tools/client910/crates/rs910-scene/src/maploader/floor_types.rs
+  s_bf99a93e97ab76::t_915a2ae5d6ce2c 1-201
+tools/client910/crates/rs910-ui/src/ui_social/friends.rs
+  s_bf99a93e97ab76::t_915a2ae5d6ce2c 1-160
+tools/client910/crates/rs910-ui/src/ui_social.rs
+  s_bf99a93e97ab76::t_915a2ae5d6ce2c 6-20,22,24
+tools/client910/crates/rs910-ui/src/world_map.rs
+  s_bf99a93e97ab76::t_915a2ae5d6ce2c 12-32,34,36,38-39,44,46,48,50,52,54,56,61,63,65,80,106,164
+tools/client910/crates/rs910-ui/src/world_map/chunk_painter.rs
+  s_bf99a93e97ab76::t_915a2ae5d6ce2c 1-800
+tools/client910/crates/rs910-ui/src/loading/screen_config.rs
+  s_bf99a93e97ab76::t_915a2ae5d6ce2c 1-516
+tools/client910/crates/rs910-scene/src/maploader/shape_tables.rs
+  s_bf99a93e97ab76::t_915a2ae5d6ce2c 1-354
+tools/client910/crates/rs910-ui/src/ui_command_spec/engine_cases.rs
+  s_bf99a93e97ab76::t_915a2ae5d6ce2c 1-368
+tools/client910/crates/rs910-scene/src/maploader.rs
+  s_bf99a93e97ab76::t_915a2ae5d6ce2c 22-29,31-36,38,42,44,494,498
+tools/client910/crates/rs910-js5/src/js5net/client.rs
+  s_bf99a93e97ab76::t_915a2ae5d6ce2c 1-188
+tools/client910/crates/rs910-ui/src/ui_cam2/focus.rs
+  s_bf99a93e97ab76::t_915a2ae5d6ce2c 1-388
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "ff6f912d0f3688810b449d7686319e3b74224939",
+  "prompts": {},
+  "sessions": {
+    "s_bf99a93e97ab76": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "3306d217-ef25-4a58-aa1a-8bdfdb5da12f",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
