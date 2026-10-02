@@ -1,0 +1,329 @@
+server/src/lostcity/systems/vars/Vars.ts
+  s_bf99a93e97ab76::t_c8990c9f04ea9b 1-96
+server/jest.config.ts
+  s_bf99a93e97ab76::t_6601641888d12c 27,35,41-42
+server/src/formats/network/protocol/ServerProt.ts
+  s_bf99a93e97ab76::t_30037ca54219da 7,1060,1069,1080,1095-1100,1105,1119,1182-1187,1283,1289-1290,1294,1296,1298,1300,1326-1327,1333,1335,1341,1343,1353,1363,1365,1369,1390,1399,1401
+server/src/lostcity/content/interfaces/index.ts
+  s_bf99a93e97ab76::t_9a7f30cd376c48 1-4,15,23,32
+server/src/lostcity/content/npcs/ops.ts
+  s_bf99a93e97ab76::t_ff55e889ea9af7 34
+server/src/lostcity/content/objs/take.ts
+  s_bf99a93e97ab76::t_d7ffaf833c0114 4,20,26
+server/src/lostcity/content/players/ops.ts
+  s_bf99a93e97ab76::t_b69faf5da75218 24
+server/src/lostcity/content/skills/cooking/cooking.ts
+  s_bf99a93e97ab76::t_c4216568adc40a 31,67
+server/src/lostcity/content/skills/firemaking/data.ts
+  s_bf99a93e97ab76::t_0503af234bdebc 2-3
+server/src/lostcity/content/skills/firemaking/firemaking.ts
+  s_bf99a93e97ab76::t_f83884544da770 34,42,63,65,89,113
+server/src/lostcity/content/skills/fishing/data.ts
+  s_bf99a93e97ab76::t_51ee6c0b26eb01 2-3
+server/src/lostcity/content/skills/fishing/fishing.ts
+  s_bf99a93e97ab76::t_871b8d831f3527 55,65
+server/src/lostcity/content/skills/mining/data.ts
+  s_bf99a93e97ab76::t_297c8497a41c43 2-3
+server/src/lostcity/content/skills/mining/mining.test.ts
+  s_bf99a93e97ab76::t_504e78e10c94a6 11,26
+server/src/lostcity/content/skills/mining/mining.ts
+  s_bf99a93e97ab76::t_2a4b426bb73566 7,49,93,96
+server/src/lostcity/content/skills/woodcutting/data.ts
+  s_bf99a93e97ab76::t_75a1dbf95796a7 2-3
+server/src/lostcity/content/skills/woodcutting/woodcutting.ts
+  s_bf99a93e97ab76::t_81580971e269cc 78
+server/src/lostcity/engine/Dialogue.integration.test.ts
+  s_bf99a93e97ab76::t_64cf1fcb507c45 46-47,50,81,93,122,135,161,176,179,183,185,188-189,191,205-206,218,221,273-274,277,336,350,377,396,428,431,451,465,469,472,477
+server/src/lostcity/engine/Lobby.ts
+  s_bf99a93e97ab76::t_979a8d2b6b9338 377,616
+server/src/lostcity/engine/NpcCombat.integration.test.ts
+  s_bf99a93e97ab76::t_6ff1a59996a328 81-82,149,163-164,184
+server/src/lostcity/engine/NpcCombat.ts
+  s_bf99a93e97ab76::t_85a8b2102f0702 48,90,95-96,99,102,108-109,141,151,156,208,210,254-255
+server/src/lostcity/engine/Social.test.ts
+  s_bf99a93e97ab76::t_ef0c1a02fede41 205-208,220
+server/src/lostcity/engine/Social.ts
+  s_bf99a93e97ab76::t_4e70692998633f 400,414
+server/src/lostcity/engine/World.test.ts
+  s_bf99a93e97ab76::t_6a7a413064e068 9,82-83,125,130-131,199,202,204,214,223
+server/src/lostcity/engine/World.ts
+  s_bf99a93e97ab76::t_977d744ca997a7 17-18,20-21,40,84-87,143,145,328-329,332,334
+server/src/lostcity/engine/WorldContent.ts
+  s_bf99a93e97ab76::t_9b5b0cfe11ec61 5-6
+server/src/lostcity/engine/devcommands/EntityCommands.ts
+  s_bf99a93e97ab76::t_7b2ade6a6f27c5 14,16-17,24-26,47,88,99,105,113,115,122
+server/src/lostcity/engine/devcommands/InterfaceCommands.ts
+  s_bf99a93e97ab76::t_933e2acbe6aa64 17,71
+server/src/lostcity/engine/devcommands/PlayerCommands.ts
+  s_bf99a93e97ab76::t_025d61ea85a997 10,14,18,22,26,35,39,52,61-62,75,86,94-97,112,125,156,166
+server/src/lostcity/engine/devcommands/SessionCommands.ts
+  s_bf99a93e97ab76::t_09f68a00eb1f0b 37,70
+server/src/lostcity/engine/dialogue/DialogueResume.ts
+  s_bf99a93e97ab76::t_3c77a41d7c5bdf 14,20,24,35,41,44
+server/src/lostcity/engine/interaction/Interactions.ts
+  s_bf99a93e97ab76::t_5ba9b3aecfc675 55,73,85,98,114,119,123,148,154,166
+server/src/lostcity/engine/interaction/behaviours/held.ts
+  s_bf99a93e97ab76::t_ec0a407d359508 8,12
+server/src/lostcity/engine/interaction/behaviours/loc.ts
+  s_bf99a93e97ab76::t_e9d880da2a3a26 16,31,37,44
+server/src/lostcity/engine/interaction/behaviours/npc.ts
+  s_bf99a93e97ab76::t_f0176ca88ad583 37,45
+server/src/lostcity/engine/interaction/behaviours/obj.ts
+  s_bf99a93e97ab76::t_cfb1afb25637a1 15,22
+server/src/lostcity/engine/interaction/behaviours/player.ts
+  s_bf99a93e97ab76::t_d4b71e868e0880 20
+server/src/lostcity/engine/interaction/behaviours/tile.ts
+  s_bf99a93e97ab76::t_f91bfc2a5c7e61 12
+server/src/lostcity/engine/tick/InboundPhase.ts
+  s_bf99a93e97ab76::t_0990971a78aac7 6,81
+server/src/lostcity/engine/tick/InfoPhase.ts
+  s_bf99a93e97ab76::t_40728c8d14b1ab 25,31-32,41,43
+server/src/lostcity/engine/tick/WorldPhases.ts
+  s_bf99a93e97ab76::t_43fdcfd6872eb3 33
+server/src/lostcity/engine/triggers/ContentData.ts
+  s_bf99a93e97ab76::t_d08af81e49b90e 2,4
+server/src/lostcity/engine/zone/ZoneSync.ts
+  s_bf99a93e97ab76::t_0903c593937f3e 11,13,16,88-89
+server/src/lostcity/entity/Animations.integration.test.ts
+  s_bf99a93e97ab76::t_726c6c6026844c 63-64,86,90-91,93-94,97,111-112,116,128
+server/src/lostcity/entity/BankSession.integration.test.ts
+  s_bf99a93e97ab76::t_09c0054944a530 15,76-77,102,107-111,139-140,145-149,154,158,162,165,178,184-188,190,193,195,199,202-203,207,213,216,219-220,222,224,226,231-233,235-236,238,243-245,247,253,255,258,265-267,270,273-274,278-279
+server/src/lostcity/entity/Consumables.integration.test.ts
+  s_bf99a93e97ab76::t_6a768385efc7d7 7,51-53,68-70,110,112-115,118-121,126-127,129-131,135-136,143-145,152,155-156,166-167,170,172-173,177,179-181,183-184,189,191-193,195-198,201,211-212,217-219,221-222,227-228,230-231,233-234,237-240,242,244-245,247,249,251,257-258,265,272,275-276,278,285,288,291-294,297-299,301-302,307,316-317,320-322,324,336,339,342-343,347-348,352-353,356-357,360,363,366-369
+server/src/lostcity/entity/Equipment.integration.test.ts
+  s_bf99a93e97ab76::t_a4334086cc0a1b 7-8,66-67,89,91,93-97,101-104,106-108,117-121,124-125,127-129,132,134-136,143-144,146-148,153-154,156-158,160-161,166,168-172,175,178,183,185-186,188-191,193-194,199,201,206,210-212,217-218,222,224,234,238,252-260,263-266,278-279,283-284,287-290,296-297,299,302,304,312,324,326,333,336,341-347,352,354,360-366,370-372,379-386
+server/src/lostcity/entity/Follow.integration.test.ts
+  s_bf99a93e97ab76::t_3a80b4498ea582 6,80-81,115,124-125,150,164,166,171,173-176,189,199,202,211,214,223,254-255,290,292,294,297,299,316,325,351,356,365,381-382,390,393,397,413,425,427,433-434,436-437,440-441
+server/src/lostcity/entity/FollowRestOp.integration.test.ts
+  s_bf99a93e97ab76::t_e10aa33b4b7e9e 8,97-98,180,187-191,194-195,198,206,209-210,212,276,279,299,306-308,326,330-331,342,346,348-350,362,368,385,395,403
+server/src/lostcity/entity/LocObjOp.integration.test.ts
+  s_bf99a93e97ab76::t_410cd2e422e45a 76-77,164,170,172-173,210,213,233,294,351,356,358-359,367,419,453-454,470-472,489,501,512,518
+server/src/lostcity/entity/MenuMovement.integration.test.ts
+  s_bf99a93e97ab76::t_364da2538b7243 74-75,220,257,265,267,269,295,327,334,338,341
+server/src/lostcity/entity/Navigation.integration.test.ts
+  s_bf99a93e97ab76::t_337c1e4f1029aa 60-61,88,97,99,102,110-111,114,121-122,124,128,130-133,137,139-141,145-146,150-152
+server/src/lostcity/entity/Npc.ts
+  s_bf99a93e97ab76::t_d94419a58d1adb 4
+server/src/lostcity/entity/NpcInfo.test.ts
+  s_bf99a93e97ab76::t_bbb2996a94b9f3 317,334,342-343
+server/src/lostcity/entity/NpcOp.integration.test.ts
+  s_bf99a93e97ab76::t_1b6c1162f6979d 76-77,145,202,207,243,271
+server/src/lostcity/entity/Player.test.ts
+  s_bf99a93e97ab76::t_1adf872e90b54b 23,27-31,33,35-36,41-44,50,60-61,65,70
+server/src/lostcity/entity/Player.ts
+  s_bf99a93e97ab76::t_6ec8f62188eb8a 1,5-6,8-30,36-37,44-57,60-62,64-69,76-79,82-84
+server/src/lostcity/entity/Run.integration.test.ts
+  s_bf99a93e97ab76::t_6e4f27dd494e88 73-74,96-97,100-101,104,106-108,110-113,116,119-124,126-129,139-140,142-143,145,148-149,152-153,155,158-159,169,174,177,179,182
+server/src/lostcity/entity/Settings.integration.test.ts
+  s_bf99a93e97ab76::t_382e7128e82671 8,66-67,74-75,83,85-86,88,91-93,95,116,146,148,153-155,162-164,203,224-226,228-230,241,245,248-249,295-296,315-316,319,323-324,349,362,364,377,383,385-386,388,390,399,404,436,448,451-452,457-461
+server/src/lostcity/entity/TargetOp.integration.test.ts
+  s_bf99a93e97ab76::t_f5f13d7be9c7a3 87-88,214,268,281,283-284,376,421-422,425,511,549,556
+server/src/lostcity/network/InventoryFlows.integration.test.ts
+  s_bf99a93e97ab76::t_03892c7ea35f79 303,309,320,370,381-382,388,391,458,462,483,504,508,554,558-559,568,574-575,577-579,593
+server/src/lostcity/network/LocOpE2E.integration.test.ts
+  s_bf99a93e97ab76::t_42d85a4a3fa277 221,527,532,538,552-553,564,589,641,649,654
+server/src/lostcity/network/SkillsE2E.integration.test.ts
+  s_bf99a93e97ab76::t_694b2f13d897c5 189,193,242-244,249-252,260,293,295
+server/src/lostcity/network/WoodcuttingE2E.integration.test.ts
+  s_bf99a93e97ab76::t_3218068d1d3177 674-676,679
+server/src/lostcity/protocol/handlers/Dialogue.ts
+  s_bf99a93e97ab76::t_f8fb69ddd9b7ce 15
+server/src/lostcity/protocol/handlers/Interaction.ts
+  s_bf99a93e97ab76::t_92f4390b355fcf 42,55
+server/src/lostcity/protocol/handlers/Interface.ts
+  s_bf99a93e97ab76::t_b674e4fa8dbdbc 22-24,31-36,42,62
+server/src/lostcity/protocol/handlers/Movement.ts
+  s_bf99a93e97ab76::t_d0c878c0ac08cb 5-6
+server/src/lostcity/protocol/handlers/Session.ts
+  s_bf99a93e97ab76::t_786da05bfb3f33 10,38
+server/src/lostcity/protocol/handlers/UseOn.ts
+  s_bf99a93e97ab76::t_25cc73fc0688a1 45
+server/src/lostcity/protocol/outbound/AppearanceBlock.ts
+  s_bf99a93e97ab76::t_0d0015634ca93b 2
+server/src/lostcity/script/ScriptRunner.test.ts
+  s_bf99a93e97ab76::t_a624af242cc037 210
+server/src/lostcity/script/handlers/CoreOps.ts
+  s_bf99a93e97ab76::t_6b034002cbd676 85,94
+server/src/lostcity/script/handlers/PlayerOps.ts
+  s_bf99a93e97ab76::t_8509fb87013ee5 7,14
+server/src/lostcity/script/handlers/ServerPermVarcs.ts
+  s_bf99a93e97ab76::t_531479be351721 110,116,120,122,124,130,147,149,152,154
+server/src/lostcity/systems/appearance/Animations.test.ts
+  s_bf99a93e97ab76::t_9ab0235da3a98f 2,5,8,18,38
+server/src/lostcity/systems/appearance/Animations.ts
+  s_bf99a93e97ab76::t_937fa4172dc0bb 13
+server/src/lostcity/systems/appearance/Look.ts
+  s_bf99a93e97ab76::t_96bb43bad6dac7 1-74
+server/src/lostcity/systems/appearance/PlayerAppearance.test.ts
+  s_bf99a93e97ab76::t_78783e08258363 17
+server/src/lostcity/systems/appearance/PlayerAppearance.ts
+  s_bf99a93e97ab76::t_5a9dcb7935b4b2 4,18-19,35,40,44-54,69-70,73-99,105,140,142
+server/src/lostcity/systems/appearance/PresentationEvents.ts
+  s_bf99a93e97ab76::t_ef3f404e07954b 1-63
+server/src/lostcity/systems/bank/BankInterface.ts
+  s_bf99a93e97ab76::t_4c86d98c96c55e 1-64
+server/src/lostcity/systems/bank/BankSession.ts
+  s_bf99a93e97ab76::t_08d0af67ebe430 3-32,45-47,50-59,62,69,71,75,78,85-86,89-93,98-104,106,109-116,118-132,134-135,138-140,143-185,188-193,195-198,201-205,207-209,211-214,217,219,255,261,264-265,270,281,287,295-296,299-300,303,308-309,311-312,333,337-338,340
+server/src/lostcity/systems/bank/BankSettings.ts
+  s_bf99a93e97ab76::t_d5a771da713902 1-39
+server/src/lostcity/systems/bank/BankTransfers.ts
+  s_bf99a93e97ab76::t_4d90e93aeac80b 1-154
+server/src/lostcity/systems/consumables/Consumables.ts
+  s_bf99a93e97ab76::t_b03b67f06129fa 1-66
+server/src/lostcity/systems/consumables/EnergyPotions.ts
+  s_bf99a93e97ab76::t_5c31b9fa939b48 2-3,14-19
+server/src/lostcity/systems/equipment/Equipment.test.ts
+  s_bf99a93e97ab76::t_4fda03c94fe9bf 1
+server/src/lostcity/systems/equipment/Equipment.ts
+  s_bf99a93e97ab76::t_86cc542d48386f 1,63-70
+server/src/lostcity/systems/equipment/EquipmentPreview.ts
+  s_bf99a93e97ab76::t_7cb632aa5b2ce0 17,19
+server/src/lostcity/systems/equipment/EquipmentRules.ts
+  s_bf99a93e97ab76::t_aa55d1313048e7 3,11
+server/src/lostcity/systems/equipment/EquipmentStats.test.ts
+  s_bf99a93e97ab76::t_43f3f0aafdae83 4-5,11,20,24,56,106
+server/src/lostcity/systems/equipment/EquipmentStats.ts
+  s_bf99a93e97ab76::t_8ad26ef6edba3d 4-5,77,79,86,202,204
+server/src/lostcity/systems/equipment/LoadoutWindow.ts
+  s_bf99a93e97ab76::t_67189080ba477c 1-55
+server/src/lostcity/systems/equipment/PlayerEquipment.ts
+  s_bf99a93e97ab76::t_c62ae47ee9a7e1 1-189
+server/src/lostcity/systems/interfaces/Interfaces.test.ts
+  s_bf99a93e97ab76::t_fe26fc7bd9b341 1,4,9,19,21,25,32,34-35,37
+server/src/lostcity/systems/interfaces/Interfaces.ts
+  s_bf99a93e97ab76::t_36b92de3310d9c 1-7,16,22-40,43-123,130-131,135,140-141,146,148,155,160,162-166,170,196
+server/src/lostcity/systems/interfaces/SettingsWindow.ts
+  s_bf99a93e97ab76::t_3cf11ead7f886f 1-238
+server/src/lostcity/systems/interfaces/Slots.ts
+  s_bf99a93e97ab76::t_cbae9bb980106f 1-7
+server/src/lostcity/systems/interfaces/WorldMap.ts
+  s_bf99a93e97ab76::t_2ce8fcf143014e 1-55
+server/src/lostcity/systems/inventory/Bank.test.ts
+  s_bf99a93e97ab76::t_f61300b387c65f 11,71
+server/src/lostcity/systems/inventory/Bank.ts
+  s_bf99a93e97ab76::t_ad4b1f7835fcea 51-52,91,284
+server/src/lostcity/systems/inventory/Container.test.ts
+  s_bf99a93e97ab76::t_52023a29582dd6 1
+server/src/lostcity/systems/inventory/Inventories.ts
+  s_bf99a93e97ab76::t_1fd02cfdf19a47 1-305
+server/src/lostcity/systems/inventory/Inventory.ts
+  s_bf99a93e97ab76::t_2692e6af277e0f 1-101
+server/src/lostcity/systems/inventory/InventoryOperation.ts
+  s_bf99a93e97ab76::t_12c7f0537763a8 2,5-8,10-11,13,15,17
+server/src/lostcity/systems/inventory/ObjStacking.ts
+  s_bf99a93e97ab76::t_385e5c13de7bbf 2
+server/src/lostcity/systems/inventory/Shop.test.ts
+  s_bf99a93e97ab76::t_fc05790104b3ee 58,61
+server/src/lostcity/systems/inventory/Shop.ts
+  s_bf99a93e97ab76::t_8b678206ff209d 56,59,83,92,110
+server/src/lostcity/systems/inventory/Trade.test.ts
+  s_bf99a93e97ab76::t_2dc7150724067b 5,82-83
+server/src/lostcity/systems/inventory/Trade.ts
+  s_bf99a93e97ab76::t_a930c180ecae37 52
+server/src/lostcity/systems/movement/BuildArea.ts
+  s_bf99a93e97ab76::t_5f584df782851f 1-3,5-6,8-15,17,19-21,23-24,26-27,29,32-34,36-39,42-44,46
+server/src/lostcity/systems/movement/Follow.ts
+  s_bf99a93e97ab76::t_e72b95120f576c 1-2,31,48,50,57-58
+server/src/lostcity/systems/movement/Movement.ts
+  s_bf99a93e97ab76::t_918f5eb23b129c 1-179
+server/src/lostcity/systems/movement/Route.test.ts
+  s_bf99a93e97ab76::t_34f1c5a63cdb76 2,10,20,29,38,49,62
+server/src/lostcity/systems/movement/Route.ts
+  s_bf99a93e97ab76::t_f10837eb6fffd0 2,17,52
+server/src/lostcity/systems/movement/RunEnergy.ts
+  s_bf99a93e97ab76::t_d8d776f878b950 1-70
+server/src/lostcity/systems/movement/RunState.test.ts
+  s_bf99a93e97ab76::t_b54b4939e748f9 1,4,10,16,20-27
+server/src/lostcity/systems/movement/RunState.ts
+  s_bf99a93e97ab76::t_ab048a6c6a8e4a 6-9,12,15-16,20-21,23,31-32,34-35
+server/src/lostcity/systems/scripts/PlayerScripts.ts
+  s_bf99a93e97ab76::t_fd006ae6c8d273 1-23,26-28,30-38,40-43,46,49-63
+server/src/lostcity/systems/session/Account.ts
+  s_bf99a93e97ab76::t_e722a587027e69 1-163
+server/src/lostcity/systems/session/AccountFile.test.ts
+  s_bf99a93e97ab76::t_77c175e208a0e5 1-4,7-31,33-42
+server/src/lostcity/systems/session/AccountFile.ts
+  s_bf99a93e97ab76::t_3b40779389299e 1-135
+server/src/lostcity/systems/session/AccountPaths.ts
+  s_bf99a93e97ab76::t_2d8d440bc53856 1-19
+server/src/lostcity/systems/session/LoginHandshake.ts
+  s_bf99a93e97ab76::t_aeac5b0d961597 1-139
+server/src/lostcity/systems/session/LoginInterfaces.ts
+  s_bf99a93e97ab76::t_040616eace4174 1-87
+server/src/lostcity/systems/session/Session.ts
+  s_bf99a93e97ab76::t_12273006eed502 1-3,6-11,13-14,16,18-21,23-42,45-48,50,52-54,56-60,64,66-68,71,74-81,84-86,88-89,91-93,95-97,99-100,102-103,105-106,108,111
+server/src/lostcity/systems/session/Sessions.ts
+  s_bf99a93e97ab76::t_d9d17c74facbd2 1-188
+server/src/lostcity/systems/settings/Preferences.ts
+  s_bf99a93e97ab76::t_372fdc25a60148 1-119
+server/src/lostcity/systems/shop/ShopBackpack.ts
+  s_bf99a93e97ab76::t_33be1374215cdb 1-77
+server/src/lostcity/systems/shop/ShopInterface.ts
+  s_bf99a93e97ab76::t_eeed5a41a8e663 1-44
+server/src/lostcity/systems/shop/ShopSession.ts
+  s_bf99a93e97ab76::t_40244b47ee4c4c 5-29,41,52,64,74-82,87,93,101,115,147,157-160,166,169-171,179,181,189-190,194,196,203,212,225,238,244,253,261,267,276,279,285,288,295,301,308,314
+server/src/lostcity/systems/shop/Shops.ts
+  s_bf99a93e97ab76::t_0eaad83b927464 2,4,71
+server/src/lostcity/systems/skilling/Backpack.ts
+  s_bf99a93e97ab76::t_d0c830ac092d46 2,15,23,44,86
+server/src/lostcity/systems/skilling/Gathering.ts
+  s_bf99a93e97ab76::t_a8077462620e1e 4,94,122,139,147,149,162
+server/src/lostcity/systems/skilling/Production.ts
+  s_bf99a93e97ab76::t_06926cf8bd6182 2-3,9,233-234,240,255,260-261,263-264,266-268,294,296-297,309,345,371,380
+server/src/lostcity/systems/skilling/Tools.ts
+  s_bf99a93e97ab76::t_463e7f2653b865 21,72,74,78
+server/src/lostcity/systems/stats/Resources.test.ts
+  s_bf99a93e97ab76::t_4f38e2bdbe5a9b 1,11,17-25
+server/src/lostcity/systems/stats/Resources.ts
+  s_bf99a93e97ab76::t_efcad9ef83d96f 10-11,17,31,33,38-42
+server/src/lostcity/systems/stats/SkillSet.test.ts
+  s_bf99a93e97ab76::t_7a4030d41631ec 1-2,16,26,29,32,41,43
+server/src/lostcity/systems/stats/SkillSet.ts
+  s_bf99a93e97ab76::t_086ccf01d8272a 72,113-114,118,120,126,146,152,159,162
+server/src/lostcity/systems/stats/Stats.ts
+  s_bf99a93e97ab76::t_21d0b1141f3873 1-220
+server/src/lostcity/systems/trade/PendingSettlement.ts
+  s_bf99a93e97ab76::t_24087bb2f22fbd 1-52
+server/src/lostcity/systems/trade/TradeInterface.ts
+  s_bf99a93e97ab76::t_196ba3c7ddcf90 1-56
+server/src/lostcity/systems/trade/TradeRecovery.ts
+  s_bf99a93e97ab76::t_5f5d2b703bea81 1-43
+server/src/lostcity/systems/trade/TradeSession.ts
+  s_bf99a93e97ab76::t_a0cd3e1eba80a3 1,3-13,15-16
+server/src/lostcity/systems/trade/TradeView.ts
+  s_bf99a93e97ab76::t_c446c23b5e8e2e 1-19
+server/src/lostcity/systems/trade/TradeWindows.ts
+  s_bf99a93e97ab76::t_05dfb06bcd6a6b 1-152
+server/src/lostcity/systems/trade/Trading.ts
+  s_bf99a93e97ab76::t_aaed63c7534930 4-11,71,80-81,86,108,125,170,185,193,205,208,213-214,222,230,233,249,252-253,260,272,283,287-293,302,313-314,328,330-331,362
+server/src/lostcity/systems/vars/ClientVarStore.ts
+  s_bf99a93e97ab76::t_0173c6c7d789e7 5-22,36
+server/src/lostcity/tools/export-fixtures.ts
+  s_bf99a93e97ab76::t_c942afa1808916 20,71-72,161,163,173,175,179,184,224-225,230-231,238,245,248,251,256,259,262,265,268,271,273,282,285,288,302,317-318,323-324,340,344,348,350,352-353,359,367-368,375-376,378,390,392,396,402,426,433,435,438,441,444,452-453,457,459,464,468,497,502,515,523,527,529,555,585,587,592,609,620,622,633,635,667,670,704,721,738,758,768,790,792,811-813,815,836,838,844,849,859,861,866,880,886,902,904,907,911,915
+server/src/lostcity/tools/pack/verify-login.ts
+  s_bf99a93e97ab76::t_c2ba48bf432391 83,93
+server/src/lostcity/tools/verify-client-varcs.ts
+  s_bf99a93e97ab76::t_bce80b4caa344c 2
+server/src/lostcity/tools/verify-inventory.ts
+  s_bf99a93e97ab76::t_6eacdadb606e86 36,40,42,44,46,48,50,52,54,56,60,62,64,66,68,72,74,76,78
+tools/refactor/oxlint-baseline.txt
+  s_bf99a93e97ab76::t_091383f2e4c84c 3-13,15-16,144
+tools/refactor/test-inventory.txt
+  s_bf99a93e97ab76::t_d6912e9a8624a7 47,1652,1672
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "b7d11fbbdc80f691f291b007024e62abaaf3c84a",
+  "prompts": {},
+  "sessions": {
+    "s_bf99a93e97ab76": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "3306d217-ef25-4a58-aa1a-8bdfdb5da12f",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
