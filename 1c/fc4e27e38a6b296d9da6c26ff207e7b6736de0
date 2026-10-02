@@ -1,0 +1,63 @@
+docs/server-architecture.md
+  s_bf99a93e97ab76::t_4b6a1111f3fcee 8,79-94,96,101,127
+server/README.md
+  s_bf99a93e97ab76::t_b1828529b05d6b 11
+server/src/lostcity/engine/NpcCombat.integration.test.ts
+  s_bf99a93e97ab76::t_8f08189ff47e7a 21,71
+server/src/lostcity/entity/Animations.integration.test.ts
+  s_bf99a93e97ab76::t_049a11c398fe43 17,51
+server/src/lostcity/entity/BankSession.integration.test.ts
+  s_bf99a93e97ab76::t_ff977b62f7b17a 15,64
+server/src/lostcity/entity/Consumables.integration.test.ts
+  s_bf99a93e97ab76::t_5edded15a33240 18,56
+server/src/lostcity/entity/Equipment.integration.test.ts
+  s_bf99a93e97ab76::t_bdbb452a8ef0c4 19,54,366
+server/src/lostcity/entity/Follow.integration.test.ts
+  s_bf99a93e97ab76::t_72950366ec22ac 20,68,219,245
+server/src/lostcity/entity/FollowRestOp.integration.test.ts
+  s_bf99a93e97ab76::t_8a731e0052df6d 18,85
+server/src/lostcity/entity/LocObjOp.integration.test.ts
+  s_bf99a93e97ab76::t_c48de99a338bb2 21,64
+server/src/lostcity/entity/MenuMovement.integration.test.ts
+  s_bf99a93e97ab76::t_2099fe6dd4609f 19,62,194
+server/src/lostcity/entity/Navigation.integration.test.ts
+  s_bf99a93e97ab76::t_b815bdfc06e5d0 16,48
+server/src/lostcity/entity/NpcOp.integration.test.ts
+  s_bf99a93e97ab76::t_9eda281af4afb7 21,64
+server/src/lostcity/entity/Player.ts
+  s_bf99a93e97ab76::t_f2426b78682752 87-88
+server/src/lostcity/entity/Run.integration.test.ts
+  s_bf99a93e97ab76::t_0d54d269c698e2 18,61
+server/src/lostcity/entity/Settings.integration.test.ts
+  s_bf99a93e97ab76::t_4be6feab8a1d59 21,54
+server/src/lostcity/entity/TargetOp.integration.test.ts
+  s_bf99a93e97ab76::t_4d80c10c8732d9 18,75
+server/src/lostcity/network/RecordingSocket.testkit.ts
+  s_bf99a93e97ab76::t_dc6fdf2eccce3f 1-13
+server/src/lostcity/network/SocketE2E.integration.test.ts
+  s_bf99a93e97ab76::t_0162af5063620b 9
+server/src/lostcity/network/SocketE2E.testkit.ts
+  s_bf99a93e97ab76::t_f70e45ba2acf0c 535
+server/src/lostcity/protocol/handlers/Interface.ts
+  s_bf99a93e97ab76::t_4661f1afc91b4c 17,22
+server/src/lostcity/systems/skilling/Backpack.ts
+  s_bf99a93e97ab76::t_e431bd29c509cc 8
+tools/refactor/oxlint-baseline.txt
+  s_bf99a93e97ab76::t_8dea6252e39b9a 3-5,10,30-32,34,127,132-136,138-139
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "1cfc4e27e38a6b296d9da6c26ff207e7b6736de0",
+  "prompts": {},
+  "sessions": {
+    "s_bf99a93e97ab76": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "3306d217-ef25-4a58-aa1a-8bdfdb5da12f",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
