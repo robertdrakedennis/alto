@@ -1,0 +1,122 @@
+tools/client910/crates/rs910-client/src/net/tests/network_packets.rs
+  s_bf99a93e97ab76::t_32e915972d935f 1-182
+tools/client910/fixtures/recorded/network-packets/client-packets.txt
+  s_bf99a93e97ab76::t_32e915972d935f 1-19
+tools/client910/crates/rs910-js5/src/js5net/tests.rs
+  s_bf99a93e97ab76::t_32e915972d935f 437-470
+tools/refactor/layers.txt
+  s_bf99a93e97ab76::t_32e915972d935f 78,469-470,500-501
+tools/client910/crates/rs910-client/src/net.rs
+  s_bf99a93e97ab76::t_32e915972d935f 382-415,437-444,474-476,906-907,912,989-993,1012-1014,1020-1025,1027,1036-1043,1059,1063,1066-1083,1086,1150-1152,1171-1172,1176-1177,1179,1191-1197,1199-1205
+tools/client910/crates/rs910-client/src/connection_upkeep.rs
+  s_bf99a93e97ab76::t_32e915972d935f 1-314
+server/src/lostcity/engine/World.ts
+  s_bf99a93e97ab76::t_32e915972d935f 444-463
+tools/client910/crates/rs910-client/src/client_core/redraw.rs
+  s_bf99a93e97ab76::t_32e915972d935f 320-323
+server/src/lostcity/network/GameLogin.test.ts
+  s_bf99a93e97ab76::t_32e915972d935f 50-52
+server/src/lostcity/network/ClientSocket.ts
+  s_bf99a93e97ab76::t_32e915972d935f 26-31
+tools/client910/src/app/console_host.rs
+  s_bf99a93e97ab76::t_32e915972d935f 626-634,637-638
+server/src/lostcity/engine/Lobby.ts
+  s_bf99a93e97ab76::t_32e915972d935f 470-473
+tools/client910/fixtures/recorded/network-packets/login-bodies.txt
+  s_bf99a93e97ab76::t_32e915972d935f 1-4
+server/src/lostcity/network/GameLogin.ts
+  s_bf99a93e97ab76::t_32e915972d935f 60-64
+tools/refactor/test-inventory.txt
+  s_bf99a93e97ab76::t_ceb030bf870f61 4,32,34,36,38,45-46,68-69,72,77-79,89,99,600-602,631-634,667,687,807,861,898,1298,1794
+tools/client910/crates/rs910-ui/src/ui_runtime/packets/session.rs
+  s_bf99a93e97ab76::t_32e915972d935f 28-32,42-47
+tools/client910/crates/rs910-ui/src/ui_runtime/packets/scene.rs
+  s_bf99a93e97ab76::t_32e915972d935f 61-62
+tools/client910/crates/rs910-ui/src/host_name.rs
+  s_bf99a93e97ab76::t_32e915972d935f 1-161
+tools/client910/crates/rs910-client/src/net/tests.rs
+  s_bf99a93e97ab76::t_32e915972d935f 351-355,359,365-386,1001-1004,1021-1022,1062-1066,1088-1092,1106-1110,1619
+tools/client910/src/scenario_tests.rs
+  s_bf99a93e97ab76::t_32e915972d935f 175-451,2334,2485-2487,2502-2505
+tools/client910/crates/rs910-client/src/client_core/session_core.rs
+  s_bf99a93e97ab76::t_32e915972d935f 601,609-611,660,699-705,712-719,744-776,817-818,826,831-833,842,880-881,883-884,919-950,1213,1486-1490,1805,1964-1989
+  s_bf99a93e97ab76::t_6f1d01635daf2f 1990
+tools/client910/fixtures/recorded/README.md
+  s_bf99a93e97ab76::t_32e915972d935f 53
+tools/client910/src/app/startup.rs
+  s_bf99a93e97ab76::t_32e915972d935f 295-297,367-370
+docs/client-status.md
+  s_bf99a93e97ab76::t_32e915972d935f 23
+tools/client910/crates/rs910-js5/src/js5net.rs
+  s_bf99a93e97ab76::t_32e915972d935f 2194-2200,2239-2245,3037-3051
+  s_bf99a93e97ab76::t_bae184e561933e 3052
+server/src/lostcity/engine/World.test.ts
+  s_bf99a93e97ab76::t_32e915972d935f 193-216
+tools/client910/crates/rs910-client/src/client_core/session_io.rs
+  s_bf99a93e97ab76::t_32e915972d935f 37-42
+tools/client910/src/lib.rs
+  s_bf99a93e97ab76::t_32e915972d935f 265-266
+tools/client910/crates/rs910-ui/src/ui_runtime/commands/login.rs
+  s_bf99a93e97ab76::t_32e915972d935f 432-439
+tools/client910/crates/rs910-ui/src/ui_runtime/packets/menu.rs
+  s_bf99a93e97ab76::t_32e915972d935f 20-21
+tools/client910/crates/rs910-protocol/src/server_prot.rs
+  s_bf99a93e97ab76::t_32e915972d935f 848-854
+tools/client910/fixtures/game_login_variants.json
+  s_bf99a93e97ab76::t_32e915972d935f 31-37
+tools/client910/src/ui_lifecycle_oracle.rs
+  s_bf99a93e97ab76::t_32e915972d935f 908-909
+tools/client910/crates/rs910-client/Cargo.toml
+  s_bf99a93e97ab76::t_32e915972d935f 30-31
+tools/client910/crates/rs910-ui/src/ui_runtime/packets.rs
+  s_bf99a93e97ab76::t_32e915972d935f 125-126
+tools/client910/crates/rs910-ui/src/ui_lifecycle.rs
+  s_bf99a93e97ab76::t_32e915972d935f 497,507-510,972-973
+tools/client910/crates/rs910-game/src/login_state.rs
+  s_bf99a93e97ab76::t_32e915972d935f 119-141,150-151,162,202-221,316-318,327,338,491,538,576,592,603,618,635,652,666,684,704,715,740,753,761-787
+  s_bf99a93e97ab76::t_40a6a78cfb6278 788
+tools/client910/crates/rs910-core/src/applet_params.rs
+  s_bf99a93e97ab76::t_32e915972d935f 12-13,15-16,22,24,28,31-32,35,103-112,214-272,416-460
+tools/client910/crates/rs910-client/src/session.rs
+  s_bf99a93e97ab76::t_32e915972d935f 22-25,148,150,153-155,320-325,327,337,529-545,564,703,767-776,783-784,786-789
+tools/client910/crates/rs910-ui/src/ui_runtime/engine.rs
+  s_bf99a93e97ab76::t_32e915972d935f 451-453,460-464,498-499,502-503
+tools/client910/src/app/session_controller.rs
+  s_bf99a93e97ab76::t_32e915972d935f 348-379,701-703,763-765,813-814,936,1343-1348,1387-1388,1496-1507
+  s_bf99a93e97ab76::t_88d881954215ad 1508-1509
+tools/client910/src/scenario_woodcutting.rs
+  s_bf99a93e97ab76::t_32e915972d935f 413-427
+tools/client910/crates/rs910-protocol/src/framing.rs
+  s_bf99a93e97ab76::t_32e915972d935f 137-206
+tools/client910/src/session_replay.rs
+  s_bf99a93e97ab76::t_32e915972d935f 35-37,144-183,334,419-423,513,942-944,956-957,1283-1285,1289-1290,2631-2736
+  s_bf99a93e97ab76::t_8fc6499b8793b9 2737
+tools/client910/crates/rs910-client/src/client_core/phases.rs
+  s_bf99a93e97ab76::t_32e915972d935f 318-320,326,328,331,334,336-353,356-358,364,369-371,408
+tools/client910/crates/rs910-ui/src/lib.rs
+  s_bf99a93e97ab76::t_32e915972d935f 42,104-105
+tools/client910/crates/rs910-client/src/session/tests.rs
+  s_bf99a93e97ab76::t_32e915972d935f 134-136,141,1255-1341,1354-1355
+tools/client910/crates/rs910-client/src/lib.rs
+  s_bf99a93e97ab76::t_32e915972d935f 13-14,34,46
+tools/refactor/provenance-baseline.tsv
+  s_bf99a93e97ab76::t_ceb030bf870f61 3,6,8,10,12,14,19
+tools/Cargo.lock
+  s_bf99a93e97ab76::t_df4c60d397c3f0 1917
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "10ad87e946359d8089e097e196cbdec72a6ba122",
+  "prompts": {},
+  "sessions": {
+    "s_bf99a93e97ab76": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "3306d217-ef25-4a58-aa1a-8bdfdb5da12f",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
