@@ -1,0 +1,57 @@
+docs/server-architecture.md
+  s_bf99a93e97ab76::t_a9613a5412758e 8,51-52,75,80,93-96,99,125
+server/README.md
+  s_bf99a93e97ab76::t_19608735b26f8d 11,160-162
+server/src/formats/network/protocol/ServerProt.ts
+  s_bf99a93e97ab76::t_082ca38d427be4 5
+server/src/lostcity/engine/interaction/LocObjOp.integration.test.ts
+  s_bf99a93e97ab76::t_e8622fda50e52a 6-7,247,250
+server/src/lostcity/engine/interaction/MenuMovement.integration.test.ts
+  s_bf99a93e97ab76::t_974775d2af5d5f 6,18,144-148,308
+server/src/lostcity/engine/interaction/NpcOp.integration.test.ts
+  s_bf99a93e97ab76::t_b23aa976d9807b 6,8
+server/src/lostcity/engine/interaction/TargetOp.integration.test.ts
+  s_bf99a93e97ab76::t_6f4bd230da349f 6-7,195-196,249-258,380,412,423,514
+server/src/lostcity/entity/Player.ts
+  s_bf99a93e97ab76::t_601a7a2c634f50 5
+server/src/lostcity/systems/appearance/Animations.integration.test.ts
+  s_bf99a93e97ab76::t_da27555f5a55a7 5
+server/src/lostcity/systems/bank/BankSession.integration.test.ts
+  s_bf99a93e97ab76::t_71cf9ed06fdb8b 1,6,54,79
+server/src/lostcity/systems/consumables/Consumables.integration.test.ts
+  s_bf99a93e97ab76::t_eb4c87ae00c7c8 5-6
+server/src/lostcity/systems/equipment/Equipment.integration.test.ts
+  s_bf99a93e97ab76::t_832379fbe2a5d9 5-7,81,253,263,269-271,278
+server/src/lostcity/systems/movement/Follow.integration.test.ts
+  s_bf99a93e97ab76::t_028361bfbe41ff 5-7,22,105,140,179,206
+server/src/lostcity/systems/movement/FollowRestOp.integration.test.ts
+  s_bf99a93e97ab76::t_dc5dc1f7d154e9 6,66-76,118,132-134,136-137,224,227,382
+server/src/lostcity/systems/movement/Navigation.integration.test.ts
+  s_bf99a93e97ab76::t_b90b159f513e28 3
+server/src/lostcity/systems/movement/Run.integration.test.ts
+  s_bf99a93e97ab76::t_9caa46c1641535 6
+server/src/lostcity/systems/scripts/PlayerScripts.test.ts
+  s_bf99a93e97ab76::t_4169d1c79223c7 2
+server/src/lostcity/systems/session/Viewport.ts
+  s_bf99a93e97ab76::t_f076d5d536ef1d 48-49
+server/src/lostcity/systems/settings/Settings.integration.test.ts
+  s_bf99a93e97ab76::t_f1886b223fa8be 6-8,71,76-78,84,166-168,170-173,226,230,246,296-297,369-375,455
+tools/refactor/oxlint-baseline.txt
+  s_bf99a93e97ab76::t_52ffadaca8f04d 3-13
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "6f233033babdc675356e2f424330da857ac38ba3",
+  "prompts": {},
+  "sessions": {
+    "s_bf99a93e97ab76": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "3306d217-ef25-4a58-aa1a-8bdfdb5da12f",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
