@@ -1,0 +1,129 @@
+tools/client910/src/app.rs
+  s_bf99a93e97ab76::t_8e79277f2180ac 107-108,111-131,232-258
+  s_bf99a93e97ab76::t_f25e40ac765df8 259
+tools/client910/crates/rs910-client/src/net/tests.rs
+  s_bf99a93e97ab76::t_8e79277f2180ac 1006,1622-1624
+tools/client910/crates/rs910-client/src/client_core/session_io.rs
+  s_bf99a93e97ab76::t_8e79277f2180ac 17
+server/src/lostcity/network/LoginCrypto.ts
+  s_bf99a93e97ab76::t_8e79277f2180ac 1-416
+tools/client910/crates/rs910-client/src/wire_stream.rs
+  s_bf99a93e97ab76::t_8e79277f2180ac 1-361
+tools/client910/crates/rs910-client/src/client_core/io.rs
+  s_bf99a93e97ab76::t_8e79277f2180ac 23,60,70,101,110,144,158,375,393,429,433
+server/src/lostcity/engine/LobbyAccountCreation.ts
+  s_bf99a93e97ab76::t_8e79277f2180ac 6,13-15,120-127,189-190
+tools/refactor/test-inventory.txt
+  s_bf99a93e97ab76::t_8e79277f2180ac 32,40,46,608-611,646-652,700-701,974-975,979-982,992-996,1578-1579,1602-1604,1630,1634,1638,1678,1727-1729,1781,1789-1791,1798
+server/jest.config.ts
+  s_bf99a93e97ab76::t_8e79277f2180ac 40,44-48
+server/src/lostcity/engine/Lobby.ts
+  s_bf99a93e97ab76::t_8e79277f2180ac 23,87-88,99-104,108-114,122,132,135,140,142,144-145,147,154-157,161-162,164,179,181,192-194,196,211,213,444,525,563-564
+tools/client910/crates/rs910-client/src/net.rs
+  s_bf99a93e97ab76::t_8e79277f2180ac 1,13-19,37,68,70-71,262-265,281,292,356-395,508-510,536,855-857,859-860,864-865,891-892,904,906,950-984,989-990,997-998,1009-1010,1019-1035,1109-1114,1118-1120,1123,1163-1168,1173-1175,1178,1220-1229,1235-1240,1245-1253,1256,1274-1286,1291-1303,1322-1323,1339,1343-1344,1346-1349,1351-1357,1359-1361,1365,1367-1372,1375,1377-1378,1395-1409,1412-1414,1417-1419,1424-1425,1444-1447,1602,1811,1990,1997,2005-2008,2031-2033,2185,2194,2229-2232,2271-2273,2277,2300,2310-2317,2320,2328,2384,2409,2621,2631-2638,2641,2649,2810
+tools/client910/fixtures/recorded/login-crypto/logins.txt
+  s_bf99a93e97ab76::t_8e79277f2180ac 1-29
+.gitignore
+  s_bf99a93e97ab76::t_8e79277f2180ac 50-51
+tools/client910/crates/rs910-client/src/client_core/session_core.rs
+  s_bf99a93e97ab76::t_8e79277f2180ac 145-147
+server/README.md
+  s_bf99a93e97ab76::t_8e79277f2180ac 29
+docs/client-status.md
+  s_bf99a93e97ab76::t_8e79277f2180ac 23
+package.json
+  s_bf99a93e97ab76::t_8e79277f2180ac 20
+tools/client910/crates/rs910-client/src/login_worker.rs
+  s_bf99a93e97ab76::t_8e79277f2180ac 23,41,47,243-245
+tools/client910/crates/rs910-client/src/net/tests/secure_login_tests.rs
+  s_bf99a93e97ab76::t_8e79277f2180ac 1-597
+tools/client910/crates/rs910-client/src/session.rs
+  s_bf99a93e97ab76::t_8e79277f2180ac 92,894-898
+server/src/lostcity/network/SocketE2E.testkit.ts
+  s_bf99a93e97ab76::t_8e79277f2180ac 15-19,24-25,314-316,319-324,339-341,367-391,413,420,422,424,466,471,473,475
+tools/client910/crates/rs910-protocol/src/lib.rs
+  s_bf99a93e97ab76::t_8e79277f2180ac 15,19,21,23
+tools/client910/crates/rs910-client/src/login_crypto.rs
+  s_bf99a93e97ab76::t_8e79277f2180ac 1-397
+tools/client910/src/app/startup.rs
+  s_bf99a93e97ab76::t_8e79277f2180ac 243,348,360,373,563-564
+tools/client910/crates/rs910-client/Cargo.toml
+  s_bf99a93e97ab76::t_8e79277f2180ac 32-33
+server/src/lostcity/network/LoginCrypto.test.ts
+  s_bf99a93e97ab76::t_8e79277f2180ac 1-189
+server/.env.example
+  s_bf99a93e97ab76::t_8e79277f2180ac 2-7
+server/src/lostcity/tools/login-keys.ts
+  s_bf99a93e97ab76::t_8e79277f2180ac 1-11
+tools/client910/crates/rs910-protocol/src/wire_cipher.rs
+  s_bf99a93e97ab76::t_8e79277f2180ac 1-527
+tools/client910/src/lib.rs
+  s_bf99a93e97ab76::t_8e79277f2180ac 269-270
+server/src/lostcity/network/LoginCrypto.integration.test.ts
+  s_bf99a93e97ab76::t_8e79277f2180ac 1-176
+tools/client910/crates/rs910-protocol/Cargo.toml
+  s_bf99a93e97ab76::t_8e79277f2180ac 20-21
+tools/client910/src/scenario_tests.rs
+  s_bf99a93e97ab76::t_8e79277f2180ac 396
+tools/client910/crates/rs910-protocol/src/rsa_block.rs
+  s_bf99a93e97ab76::t_8e79277f2180ac 1-216
+THIRD_PARTY_LICENSES.md
+  s_bf99a93e97ab76::t_8e79277f2180ac 12,18,22,221,223,1502,6583
+server/src/lostcity/engine/World.ts
+  s_bf99a93e97ab76::t_8e79277f2180ac 48,141-142,144-145,173-174,176,186-187,246,1397-1398
+tools/client910/fixtures/recorded/login-crypto/TEST-ONLY-rsa-key.json
+  s_bf99a93e97ab76::t_8e79277f2180ac 1-12
+tools/client910/crates/rs910-protocol/src/isaac_cipher.rs
+  s_bf99a93e97ab76::t_8e79277f2180ac 1-208
+tools/refactor/provenance-baseline.tsv
+  s_bf99a93e97ab76::t_8e79277f2180ac 3,6,14
+tools/client910/crates/rs910-client/src/lib.rs
+  s_bf99a93e97ab76::t_8e79277f2180ac 15-18,42,48
+docs/architecture.md
+  s_bf99a93e97ab76::t_8e79277f2180ac 55
+server/src/lostcity/network/ClientSocket.ts
+  s_bf99a93e97ab76::t_8e79277f2180ac 11,39,41-48,71-82,222,234
+server/src/lostcity/network/SocketE2E.integration.test.ts
+  s_bf99a93e97ab76::t_8e79277f2180ac 37,43,129,133,146,148,198,250,807-842
+  s_bf99a93e97ab76::t_f3ac9c5d245a5d 843
+docs/setup.md
+  s_bf99a93e97ab76::t_8e79277f2180ac 43,46-54,77-78,84-89
+tools/client910/src/app/session_controller.rs
+  s_bf99a93e97ab76::t_8e79277f2180ac 707,770,941
+tools/client910/crates/rs910-client/src/loading_connection.rs
+  s_bf99a93e97ab76::t_8e79277f2180ac 6-8,14-17,20-21,61,65
+server/package.json
+  s_bf99a93e97ab76::t_8e79277f2180ac 30
+tools/client910/fixtures/recorded/login-crypto/primitives.txt
+  s_bf99a93e97ab76::t_8e79277f2180ac 1-13
+tools/client910/fixtures/recorded/README.md
+  s_bf99a93e97ab76::t_8e79277f2180ac 52
+tools/client910/src/session_replay.rs
+  s_bf99a93e97ab76::t_8e79277f2180ac 318-320,409,2338-2340,2488,2592-2594
+tools/client910/src/app/tests.rs
+  s_bf99a93e97ab76::t_8e79277f2180ac 10
+tools/client910/crates/rs910-protocol/src/tiny_cipher.rs
+  s_bf99a93e97ab76::t_8e79277f2180ac 1-104
+server/src/lostcity/network/SocialLogin.ts
+  s_bf99a93e97ab76::t_8e79277f2180ac 2,58-59,87-88,90,101-105
+tools/refactor/layers.txt
+  s_bf99a93e97ab76::t_8e79277f2180ac 48,78,175-180,477-478
+tools/Cargo.lock
+  s_bf99a93e97ab76::t_6ca4f802fab224 861,1286-1295,1307-1315,1936,2035
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "c492845c4914f830f473a2bc7918847b16782947",
+  "prompts": {},
+  "sessions": {
+    "s_bf99a93e97ab76": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "3306d217-ef25-4a58-aa1a-8bdfdb5da12f",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
