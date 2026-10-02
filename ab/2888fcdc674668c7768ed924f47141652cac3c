@@ -1,0 +1,43 @@
+server/src/lostcity/content/objs/take.ts
+  s_bf99a93e97ab76::t_c9b23bcd634705 1,21
+server/src/lostcity/content/skills/cooking/cooking.ts
+  s_bf99a93e97ab76::t_de971e61cf41fd 8,32
+server/src/lostcity/content/skills/firemaking/firemaking.ts
+  s_bf99a93e97ab76::t_7452b7bb53c54a 10,37,43,49,54,79,90
+server/src/lostcity/content/skills/fishing/fishing.ts
+  s_bf99a93e97ab76::t_9687279b3bd035 2,10,82
+server/src/lostcity/content/skills/mining/mining.ts
+  s_bf99a93e97ab76::t_f15da2146a6b66 2,10,68
+server/src/lostcity/content/skills/woodcutting/woodcutting.ts
+  s_bf99a93e97ab76::t_8254f8db49d94b 2,8,107
+server/src/lostcity/engine/interaction/Interactions.ts
+  s_bf99a93e97ab76::t_c09d38f400f476 1,160
+server/src/lostcity/protocol/handlers/Interaction.ts
+  s_bf99a93e97ab76::t_c8b86529459151 1,20,31
+server/src/lostcity/protocol/outbound/GameMessages.ts
+  s_bf99a93e97ab76::t_b3bff2f10f9aeb 1-20
+server/src/lostcity/systems/bank/BankSession.ts
+  s_bf99a93e97ab76::t_b59c340cea8129 2,203
+server/src/lostcity/systems/shop/ShopSession.ts
+  s_bf99a93e97ab76::t_ee4178089d82cb 2,120
+server/src/lostcity/systems/skilling/Gathering.ts
+  s_bf99a93e97ab76::t_6f54bef617f4ad 1,75,83,91,111,127,136,147
+server/src/lostcity/systems/skilling/Production.ts
+  s_bf99a93e97ab76::t_c6b129921e0f59 11,372
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "ab2888fcdc674668c7768ed924f47141652cac3c",
+  "prompts": {},
+  "sessions": {
+    "s_bf99a93e97ab76": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "3306d217-ef25-4a58-aa1a-8bdfdb5da12f",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
