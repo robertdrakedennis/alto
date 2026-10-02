@@ -1,0 +1,102 @@
+tools/client910/crates/rs910-render-modern/src/frame/tests/mod.rs
+  s_bf99a93e97ab76::t_44c5483c32e9a7 15
+tools/client910/crates/rs910-ui/src/ui_preferences.rs
+  s_bf99a93e97ab76::t_44c5483c32e9a7 117,119-122,176-186,194
+tools/client910/crates/rs910-toolkit/src/performance_metric.rs
+  s_bf99a93e97ab76::t_44c5483c32e9a7 12-19,23-61,76-96
+  s_bf99a93e97ab76::t_1cc9f5599d9b77 97
+tools/client910/crates/rs910-ui/src/ui_vars.rs
+  s_bf99a93e97ab76::t_44c5483c32e9a7 189-192,490
+tools/client910/crates/rs910-ui/src/ui_properties.rs
+  s_bf99a93e97ab76::t_44c5483c32e9a7 104-106
+tools/client910/crates/rs910-ui/src/ui_hook_host.rs
+  s_bf99a93e97ab76::t_44c5483c32e9a7 157-171
+tools/client910/src/ui_goldens/ui_run_replay.rs
+  s_bf99a93e97ab76::t_44c5483c32e9a7 37
+tools/client910/crates/rs910-render-modern/Cargo.toml
+  s_bf99a93e97ab76::t_44c5483c32e9a7 24-25
+tools/client910/crates/rs910-render-modern/src/frame/benchmark.rs
+  s_bf99a93e97ab76::t_44c5483c32e9a7 1-220
+tools/client910/crates/rs910-ui/src/ui_runtime.rs
+  s_bf99a93e97ab76::t_44c5483c32e9a7 1085-1087
+tools/client910/crates/rs910-ui/src/message_box.rs
+  s_bf99a93e97ab76::t_44c5483c32e9a7 15-30
+  s_bf99a93e97ab76::t_132bba3ed01169 31
+tools/client910/src/ui_goldens/stat_packet_tests.rs
+  s_bf99a93e97ab76::t_44c5483c32e9a7 584
+tools/client910/crates/rs910-render-modern/src/frame/tests/benchmark.rs
+  s_bf99a93e97ab76::t_44c5483c32e9a7 1-63
+tools/client910/crates/rs910-render-modern/src/frame/mod.rs
+  s_bf99a93e97ab76::t_44c5483c32e9a7 467-469,851,1261,1934
+tools/client910/crates/rs910-ui/src/ui_host.rs
+  s_bf99a93e97ab76::t_44c5483c32e9a7 40,42
+tools/client910/crates/rs910-ui/src/client_game.rs
+  s_bf99a93e97ab76::t_44c5483c32e9a7 112-122,133-143,162-163
+tools/client910/crates/rs910-gpu-device/src/lib.rs
+  s_bf99a93e97ab76::t_44c5483c32e9a7 14-15
+tools/client910/crates/rs910-ui/src/ui_host_builtins.rs
+  s_bf99a93e97ab76::t_44c5483c32e9a7 109
+tools/client910/src/ui_vars_oracle.rs
+  s_bf99a93e97ab76::t_44c5483c32e9a7 501,606,640
+tools/client910/crates/rs910-client/src/client_core/session_core.rs
+  s_bf99a93e97ab76::t_44c5483c32e9a7 1021-1023,1161-1164
+tools/client910/crates/rs910-gpu-device/src/ui_preferences_metric_gpu.rs
+  s_bf99a93e97ab76::t_44c5483c32e9a7 6-9,29,51-73,75-82,85-100,102,104,107,211,247,249-250,255-344
+tools/client910/crates/rs910-ui/src/ui_preferences_autosetup.rs
+  s_bf99a93e97ab76::t_44c5483c32e9a7 8,199-238,242-250,256-261,270,272-273,278,280-284,307-313,315,319-321,326-327,337,364,384,397,499,538,546,608,641-764,775
+tools/client910/crates/rs910-ui/src/ui_command_spec.rs
+  s_bf99a93e97ab76::t_44c5483c32e9a7 2838
+tools/client910/crates/rs910-render-gpu/src/render/ui.rs
+  s_bf99a93e97ab76::t_44c5483c32e9a7 163-176,188-192
+  s_bf99a93e97ab76::t_ae3b3ae20d5f66 162
+tools/client910/crates/rs910-ui/src/ui_preferences_mutations.rs
+  s_bf99a93e97ab76::t_44c5483c32e9a7 66,71,88-90
+docs/client-status.md
+  s_bf99a93e97ab76::t_407210027892dc 22
+tools/Cargo.lock
+  s_bf99a93e97ab76::t_82225db998f764 2077
+tools/client910/src/active_toolkit.rs
+  s_bf99a93e97ab76::t_07943b217c389a 65-100,736,761-775,868-876,881-906
+tools/client910/src/app/diagnostics.rs
+  s_bf99a93e97ab76::t_0c1a97dbaaac84 17-40
+tools/client910/src/app/mainloop.rs
+  s_bf99a93e97ab76::t_e92fb3f3c47dd4 274-292,299,302-304
+tools/client910/src/app/scene_pick_tests.rs
+  s_bf99a93e97ab76::t_9a94813932ec94 72
+tools/client910/src/session_replay.rs
+  s_bf99a93e97ab76::t_7346d5291c32d3 799,2135
+tools/client910/src/test_support.rs
+  s_bf99a93e97ab76::t_6fc2f056a8d292 72-80,83-86
+tools/client910/src/ui_camera_controls_tests.rs
+  s_bf99a93e97ab76::t_56f9298d31d132 55
+tools/client910/src/ui_client_state_oracle.rs
+  s_bf99a93e97ab76::t_4711a043ab3fa8 290
+tools/client910/src/ui_equipment_replay.rs
+  s_bf99a93e97ab76::t_707e970385296f 471
+tools/client910/src/ui_goldens.rs
+  s_bf99a93e97ab76::t_8610ba74834e60 14
+tools/client910/src/ui_goldens/player_picking_tests.rs
+  s_bf99a93e97ab76::t_291d212137fa34 33
+tools/client910/src/ui_goldens/settings_profiling.rs
+  s_bf99a93e97ab76::t_1a0685828afbc7 1-184
+tools/client910/src/ui_goldens/settings_world.rs
+  s_bf99a93e97ab76::t_b6dbea7a55b581 9,83-129,131-132,177-181,291-292,405-410
+tools/refactor/test-inventory.txt
+  s_bf99a93e97ab76::t_494f48fc21cead 4,37,42,45,252-254,902,1063,1446-1447
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "19c001dec59ea2cc984393bfa90a7670c60ba42d",
+  "prompts": {},
+  "sessions": {
+    "s_bf99a93e97ab76": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "3306d217-ef25-4a58-aa1a-8bdfdb5da12f",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
