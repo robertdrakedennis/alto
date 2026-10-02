@@ -1,0 +1,123 @@
+docs/server-architecture.md
+  s_bf99a93e97ab76::t_e22dee1a02a62c 45-47,116-117
+server/README.md
+  s_bf99a93e97ab76::t_d5a8c16292e168 11
+server/src/formats/config/vartype/VarBasicType.ts
+  s_bf99a93e97ab76::t_9e670ccc9db6ad 4,6,12-16
+server/src/lostcity/config/Config.ts
+  s_bf99a93e97ab76::t_38b5b8c4595271 12,48,85,154-158
+server/src/lostcity/engine/Lobby.ts
+  s_bf99a93e97ab76::t_19ca0e8e019831 22-23,74,79,248,370,398
+server/src/lostcity/engine/Social.ts
+  s_bf99a93e97ab76::t_889cf91b20cc0b 6,14,17
+server/src/lostcity/engine/World.ts
+  s_bf99a93e97ab76::t_ab415e86a68b98 7-9,19,25-26,28,43-44,152,175,245,295,310,349,386,394,396-397,399-400,402,404
+server/src/lostcity/engine/devcommands/DevCommand.ts
+  s_bf99a93e97ab76::t_008e6bb3afd101 1-4
+server/src/lostcity/engine/devcommands/DevCommands.ts
+  s_bf99a93e97ab76::t_164e0d8935c461 1-34
+server/src/lostcity/engine/devcommands/EntityCommands.ts
+  s_bf99a93e97ab76::t_c155171a2bfbee 1-169
+server/src/lostcity/engine/devcommands/InterfaceCommands.ts
+  s_bf99a93e97ab76::t_0358c3202fd9d6 1-73
+server/src/lostcity/engine/devcommands/PlayerCommands.ts
+  s_bf99a93e97ab76::t_ade8364d9e6548 1-190
+server/src/lostcity/engine/devcommands/SessionCommands.ts
+  s_bf99a93e97ab76::t_630eaf30675edd 1-75
+server/src/lostcity/engine/zone/LocRegistry.ts
+  s_bf99a93e97ab76::t_ce85031ca4ccff 38-44
+server/src/lostcity/entity/ClientVarStore.ts
+  s_bf99a93e97ab76::t_f81a90e9627637 1,3,22-23,27,29
+server/src/lostcity/entity/FollowRestOp.integration.test.ts
+  s_bf99a93e97ab76::t_7ee4fc8416f192 221-223,317
+server/src/lostcity/entity/Player.ts
+  s_bf99a93e97ab76::t_130a8adf9e289a 1671
+server/src/lostcity/entity/PlayerAppearance.ts
+  s_bf99a93e97ab76::t_275f35a603c4e2 3,126
+server/src/lostcity/entity/Settings.integration.test.ts
+  s_bf99a93e97ab76::t_29c2f23640b1df 19-20,22,351,355-359
+server/src/lostcity/network/LoginCrypto.test.ts
+  s_bf99a93e97ab76::t_71031938559a76 15-16
+server/src/lostcity/network/SocialLogin.test.ts
+  s_bf99a93e97ab76::t_b5bcd5c3da0b1e 3-4
+server/src/lostcity/protocol/ClientVarKind.ts
+  s_bf99a93e97ab76::t_6358f526b9a627 1-23
+server/src/lostcity/protocol/ExtendedChars.ts
+  s_bf99a93e97ab76::t_b63fbfc6d64d05 1-2
+server/src/lostcity/protocol/handlers/Cheat.ts
+  s_bf99a93e97ab76::t_5e7e2eb55fb602 1-9
+server/src/lostcity/protocol/handlers/Dialogue.ts
+  s_bf99a93e97ab76::t_9ef228d5ec1eed 1-71
+server/src/lostcity/protocol/handlers/InboundHandlers.ts
+  s_bf99a93e97ab76::t_f69782d6799b70 1-36
+server/src/lostcity/protocol/handlers/Interaction.ts
+  s_bf99a93e97ab76::t_010b30a273d659 1-100
+server/src/lostcity/protocol/handlers/Interface.ts
+  s_bf99a93e97ab76::t_28597aac3c3338 1-68
+server/src/lostcity/protocol/handlers/Movement.ts
+  s_bf99a93e97ab76::t_7b2bc75b0ebfda 1-7
+server/src/lostcity/protocol/handlers/Session.ts
+  s_bf99a93e97ab76::t_ee51e0a04e865a 1-45
+server/src/lostcity/protocol/handlers/Social.ts
+  s_bf99a93e97ab76::t_4904adaa09e2cf 1-29
+server/src/lostcity/protocol/handlers/UseOn.ts
+  s_bf99a93e97ab76::t_8bafb5d03c5bfb 1-105
+server/src/lostcity/protocol/handlers/index.ts
+  s_bf99a93e97ab76::t_ee24c04783083b 1-26
+server/src/lostcity/protocol/inbound/ClientFrames.ts
+  s_bf99a93e97ab76::t_f5af1c02ecf751 1-33
+server/src/lostcity/protocol/inbound/Decoders.test.ts
+  s_bf99a93e97ab76::t_c855f66bea9694 1-80
+server/src/lostcity/protocol/inbound/Decoders.ts
+  s_bf99a93e97ab76::t_d31b3feb74484a 1-63
+server/src/lostcity/protocol/inbound/Frame.ts
+  s_bf99a93e97ab76::t_faea9c6c63f15d 1-119
+server/src/lostcity/protocol/inbound/Messages.ts
+  s_bf99a93e97ab76::t_81fdd67243e009 1-431
+server/src/lostcity/protocol/inbound/decoders/Cheat.ts
+  s_bf99a93e97ab76::t_879a14bb2aff72 1-16
+server/src/lostcity/protocol/inbound/decoders/Dialogue.ts
+  s_bf99a93e97ab76::t_7cfbd3dd5fef6b 1-49
+server/src/lostcity/protocol/inbound/decoders/Interaction.ts
+  s_bf99a93e97ab76::t_628f33932fe7c2 1-66
+server/src/lostcity/protocol/inbound/decoders/Interface.ts
+  s_bf99a93e97ab76::t_d9e2350e9214a2 1-38
+server/src/lostcity/protocol/inbound/decoders/Movement.ts
+  s_bf99a93e97ab76::t_917c3b005f82f7 1-21
+server/src/lostcity/protocol/inbound/decoders/Session.ts
+  s_bf99a93e97ab76::t_fbfc690cd24804 1-83
+server/src/lostcity/protocol/inbound/decoders/Social.ts
+  s_bf99a93e97ab76::t_01ce2f71b80448 1-75
+server/src/lostcity/protocol/inbound/decoders/UseOn.ts
+  s_bf99a93e97ab76::t_1f230f9ba9bbf9 1-82
+server/src/lostcity/protocol/outbound/AppearanceBlock.ts
+  s_bf99a93e97ab76::t_16b4752473109b 1-107
+server/src/lostcity/protocol/outbound/ClientVarBlocks.ts
+  s_bf99a93e97ab76::t_768992076091e9 1-59
+server/src/lostcity/protocol/outbound/LoginReplies.ts
+  s_bf99a93e97ab76::t_dd7e384b7f47b8 1-202
+server/src/lostcity/script/handlers/ServerPermVarcs.ts
+  s_bf99a93e97ab76::t_1570f588cfc21d 1,5-8,13,33,130-136,139-140,148,158
+server/src/lostcity/tools/social-frames.ts
+  s_bf99a93e97ab76::t_11a2ca895fde36 16
+server/src/lostcity/tools/verify-client-varcs.ts
+  s_bf99a93e97ab76::t_a2bc83f832eaec 3,20
+tools/refactor/oxlint-baseline.txt
+  s_bf99a93e97ab76::t_f8ff2b4fe6eec2 3-8,107,138,198
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "1c433b808efc5ccab8d2e6ca2ca7d342945a6295",
+  "prompts": {},
+  "sessions": {
+    "s_bf99a93e97ab76": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "3306d217-ef25-4a58-aa1a-8bdfdb5da12f",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
