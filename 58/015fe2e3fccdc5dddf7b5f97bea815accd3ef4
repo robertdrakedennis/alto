@@ -1,0 +1,21 @@
+tools/client910/src/scenario_npc_combat.rs
+  s_bf99a93e97ab76::t_50ec3db4e01090 196
+tools/refactor/test-inventory.txt
+  s_bf99a93e97ab76::t_15e31e3c8599e6 47,1882-1883
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "58015fe2e3fccdc5dddf7b5f97bea815accd3ef4",
+  "prompts": {},
+  "sessions": {
+    "s_bf99a93e97ab76": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "3306d217-ef25-4a58-aa1a-8bdfdb5da12f",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
