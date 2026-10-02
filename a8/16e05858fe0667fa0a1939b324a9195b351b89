@@ -1,0 +1,39 @@
+docs/client-status.md
+  s_bf99a93e97ab76::t_57526706047882 18
+tools/client910/crates/rs910-scene/src/player_picking.rs
+  s_bf99a93e97ab76::t_8c1f72b8369b26 88-100,125-128,133-140,181-182,188,206-210,374-378,431-442,455,497-525
+tools/client910/crates/rs910-scene/src/scene_player_pick.rs
+  s_bf99a93e97ab76::t_d975dcc4431d87 345-358
+tools/client910/src/app.rs
+  s_bf99a93e97ab76::t_9ed09dfa37e4a3 75-77,742
+tools/client910/src/app/dynamic_loc_pick_tests.rs
+  s_bf99a93e97ab76::t_d64f4e7220a6c4 1-469
+tools/client910/src/app/redraw.rs
+  s_bf99a93e97ab76::t_f13cf7e6deb285 423,492-494
+tools/client910/src/app/scene_host.rs
+  s_bf99a93e97ab76::t_c681bcdc61cbb9 46-48,80-109,168-169,239-241,248,345,347-351,395,401-403,418,575-579,860-863,928-932
+tools/client910/src/scenario_skills.rs
+  s_bf99a93e97ab76::t_340b0c2941756d 359
+tools/client910/src/scenario_tests.rs
+  s_bf99a93e97ab76::t_35e7f8da077513 15,44-49,57-153
+tools/client910/src/session_replay.rs
+  s_bf99a93e97ab76::t_b222b900f82e2e 682-685
+tools/refactor/test-inventory.txt
+  s_bf99a93e97ab76::t_d9b6d5306b42c4 4,61-63
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "a816e05858fe0667fa0a1939b324a9195b351b89",
+  "prompts": {},
+  "sessions": {
+    "s_bf99a93e97ab76": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "3306d217-ef25-4a58-aa1a-8bdfdb5da12f",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
