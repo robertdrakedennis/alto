@@ -1,0 +1,41 @@
+docs/client-status.md
+  s_bf99a93e97ab76::t_6ec2ff4bb60ffe 18
+tools/client910/crates/rs910-ui/src/ui_runtime/engine.rs
+  s_bf99a93e97ab76::t_31913bdbbe5915 116-118,145
+tools/client910/crates/rs910-ui/src/ui_runtime/menu_builder.rs
+  s_bf99a93e97ab76::t_4fdb26240d34f5 286-306,308,319
+tools/client910/crates/rs910-ui/src/ui_scene_options.rs
+  s_bf99a93e97ab76::t_b71cf719c7f2e8 55-74
+tools/client910/fixtures/recorded/README.md
+  s_bf99a93e97ab76::t_000719b271695f 56
+tools/client910/fixtures/recorded/scene-pick/recording.bin
+  s_bf99a93e97ab76::t_6f9a8cd0d4c0ba 1-286
+tools/client910/src/app.rs
+  s_bf99a93e97ab76::t_3155c339af9c66 72-74,683
+tools/client910/src/app/redraw.rs
+  s_bf99a93e97ab76::t_e132a856340996 432,492-498
+tools/client910/src/app/scene_pick_tests.rs
+  s_bf99a93e97ab76::t_f3ef0bcee50855 1-389
+tools/client910/src/app/view_camera.rs
+  s_bf99a93e97ab76::t_db476c102507d5 10-11,223-224,229,266-285
+tools/client910/src/scenario_tests.rs
+  s_bf99a93e97ab76::t_58c6fb18b9afb5 47,2267-2424
+tools/refactor/test-inventory.txt
+  s_bf99a93e97ab76::t_12e2a55d2f6435 4,60,71-73
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "56035751f5afddb4cf284c74a4b73b7383c6b879",
+  "prompts": {},
+  "sessions": {
+    "s_bf99a93e97ab76": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "3306d217-ef25-4a58-aa1a-8bdfdb5da12f",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
