@@ -1,0 +1,79 @@
+server/src/lostcity/config/Config.testkit.ts
+  s_bf99a93e97ab76::t_b186105ae13e91 1-18
+server/src/lostcity/config/Config.ts
+  s_bf99a93e97ab76::t_0ff6442187b423 37,92-116
+server/src/lostcity/config/InvType.ts
+  s_bf99a93e97ab76::t_2daaaa68b5ba51 31-35
+server/src/lostcity/engine/Dialogue.integration.test.ts
+  s_bf99a93e97ab76::t_1d293505953dd7 1,27
+server/src/lostcity/engine/World.test.ts
+  s_bf99a93e97ab76::t_9552d906853f3e 1,83-84,202,205,216,227
+server/src/lostcity/entity/BankSession.integration.test.ts
+  s_bf99a93e97ab76::t_ae154af0ed9280 266
+server/src/lostcity/entity/Consumables.integration.test.ts
+  s_bf99a93e97ab76::t_d81154b93fe08b 111,210,230,281,290,313,340,349,356
+server/src/lostcity/entity/Equipment.integration.test.ts
+  s_bf99a93e97ab76::t_77bd0403a15041 94,203,256,280,334,363
+server/src/lostcity/entity/Run.integration.test.ts
+  s_bf99a93e97ab76::t_3d24689b1ef214 112
+server/src/lostcity/entity/Settings.integration.test.ts
+  s_bf99a93e97ab76::t_30c90332de95d8 196,370
+server/src/lostcity/systems/bank/BankSession.ts
+  s_bf99a93e97ab76::t_64942c9fee754b 191
+server/src/lostcity/systems/equipment/EquipmentStats.ts
+  s_bf99a93e97ab76::t_c3d4695cb681af 5,24-26,86,90
+server/src/lostcity/systems/equipment/LoadoutWindow.ts
+  s_bf99a93e97ab76::t_06d9333dfc6bdf 48-51
+server/src/lostcity/systems/inventory/Bank.test.ts
+  s_bf99a93e97ab76::t_2948a318f2bb59 1-2,5-7,15
+server/src/lostcity/systems/inventory/Bank.ts
+  s_bf99a93e97ab76::t_52a17f698f9d81 45-46,48
+server/src/lostcity/systems/inventory/Inventories.test.ts
+  s_bf99a93e97ab76::t_33f19c2b392dba 1-18
+server/src/lostcity/systems/inventory/Inventories.ts
+  s_bf99a93e97ab76::t_a33044420bd8e2 9-10,63-65,67,85-98,134-136,185,208,213
+server/src/lostcity/systems/inventory/Inventory.ts
+  s_bf99a93e97ab76::t_d9af63528e18b4 6,39-51
+server/src/lostcity/systems/inventory/InventoryLayout.ts
+  s_bf99a93e97ab76::t_c8abd7008cfb1e 1-24
+server/src/lostcity/systems/inventory/Trade.ts
+  s_bf99a93e97ab76::t_a13ebd9a024df5 7
+server/src/lostcity/systems/session/Account.ts
+  s_bf99a93e97ab76::t_057b78d5ec5cac 3,68-69,112-117,127,144-151
+server/src/lostcity/systems/session/AccountFile.test.ts
+  s_bf99a93e97ab76::t_d991fe2d127fe9 1-3,7-10,32,48
+server/src/lostcity/systems/session/AccountFile.ts
+  s_bf99a93e97ab76::t_80e54b39414b96 6,26-27,30-46,80-107,129-131
+server/src/lostcity/systems/session/LoginInterfaces.ts
+  s_bf99a93e97ab76::t_03d32612707af1 69,72
+server/src/lostcity/systems/session/Session.ts
+  s_bf99a93e97ab76::t_79467de21bd7b3 37,39,50
+server/src/lostcity/systems/session/Sessions.ts
+  s_bf99a93e97ab76::t_f6dfb05cd6d4ab 1,85
+server/src/lostcity/systems/shop/ShopSession.ts
+  s_bf99a93e97ab76::t_95e6cbf22373dd 84,115
+server/src/lostcity/systems/trade/TradeView.ts
+  s_bf99a93e97ab76::t_232f78425569ef 3,16-17
+server/src/lostcity/systems/trade/TradeWindows.ts
+  s_bf99a93e97ab76::t_18bfb6117645ea 4,45,88-89,123-124,126,128,136-137,142-143,148-149
+server/src/lostcity/systems/trade/Trading.ts
+  s_bf99a93e97ab76::t_d92812918c3a85 283
+tools/refactor/test-inventory.txt
+  s_bf99a93e97ab76::t_8cdb33bdaaa64a 47,1668,1695
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "ace697ad9885400ed7e464b917ef87e7333e6615",
+  "prompts": {},
+  "sessions": {
+    "s_bf99a93e97ab76": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "3306d217-ef25-4a58-aa1a-8bdfdb5da12f",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
