@@ -1,0 +1,142 @@
+tools/client910/crates/rs910-ui/src/ui_leaf.rs
+  s_bf99a93e97ab76::t_dd724c27bb6c59 538,540,552-554,559,565
+tools/client910/src/app_loading.rs
+  s_bf99a93e97ab76::t_dd724c27bb6c59 813-815,817-818
+tools/client910/crates/rs910-ui/src/ui_runtime/commands/chat.rs
+  s_bf99a93e97ab76::t_dd724c27bb6c59 71,80-83,86-97,99-111
+tools/client910/crates/rs910-ui/src/ui_player_options.rs
+  s_bf99a93e97ab76::t_dd724c27bb6c59 88-92,119,125-126,129,169-174,190,193,198-204
+tools/client910/crates/rs910-core/src/texts_table.rs
+  s_bf99a93e97ab76::t_dd724c27bb6c59 1-360
+tools/client910/src/app/frame_clock.rs
+  s_bf99a93e97ab76::t_dd724c27bb6c59 20-21,23-25
+tools/client910/crates/rs910-ui/src/loading.rs
+  s_bf99a93e97ab76::t_dd724c27bb6c59 57-64,66,79
+tools/client910/src/app/console_host.rs
+  s_bf99a93e97ab76::t_dd724c27bb6c59 14-18,35-37,45-65,69,82,85-92,94,97-99,101,135,144,146-173,176-178,180-222,225,227-229,232-235,238-241,423-427,486-494,537
+tools/client910/crates/rs910-ui/src/ui_preferences_toolkit.rs
+  s_bf99a93e97ab76::t_dd724c27bb6c59 117-144,330-355
+  s_bf99a93e97ab76::t_7bcd6e620276c8 356
+tools/client910/src/app/entity_renderer.rs
+  s_bf99a93e97ab76::t_dd724c27bb6c59 3,11-13,17
+tools/client910/crates/rs910-render-gpu/src/render/ui.rs
+  s_bf99a93e97ab76::t_dd724c27bb6c59 199,203
+tools/client910/crates/rs910-ui/src/ui_preferences_autosetup.rs
+  s_bf99a93e97ab76::t_dd724c27bb6c59 84-93,96-97,145-172,203-209,211,215,222,227,255,259,302-316,322-329,335-342,462-498
+  s_bf99a93e97ab76::t_cc2d1b09e7eb72 499
+tools/client910/src/app/console_tests.rs
+  s_bf99a93e97ab76::t_dd724c27bb6c59 1-254
+tools/client910/crates/rs910-gpu-device/src/lib.rs
+  s_bf99a93e97ab76::t_dd724c27bb6c59 22
+tools/client910/src/active_toolkit.rs
+  s_bf99a93e97ab76::t_dd724c27bb6c59 159-173,546-572,574,576-595,609-610,616-690,1098-1101,1196-1259
+  s_bf99a93e97ab76::t_d88563ff6ef8af 1260
+tools/client910/crates/rs910-ui/src/ui_minimenu.rs
+  s_bf99a93e97ab76::t_dd724c27bb6c59 125,542-543
+tools/client910/crates/rs910-ui/src/ui_host_game.rs
+  s_bf99a93e97ab76::t_dd724c27bb6c59 1645-1648,1681-1684
+docs/client-status.md
+  s_bf99a93e97ab76::t_dd724c27bb6c59 17,20,22
+tools/client910/crates/rs910-ui/src/world_map_client.rs
+  s_bf99a93e97ab76::t_dd724c27bb6c59 653
+tools/client910/crates/rs910-ui/src/ui_menu_render.rs
+  s_bf99a93e97ab76::t_dd724c27bb6c59 77,224,233-237
+tools/client910/crates/rs910-core/src/texts.rs
+  s_bf99a93e97ab76::t_dd724c27bb6c59 1-291
+tools/client910/src/ui_goldens.rs
+  s_bf99a93e97ab76::t_dd724c27bb6c59 14
+tools/client910/crates/rs910-ui/src/ping.rs
+  s_bf99a93e97ab76::t_dd724c27bb6c59 1-257
+tools/client910/src/app/cache_tests.rs
+  s_bf99a93e97ab76::t_dd724c27bb6c59 1-88
+tools/client910/crates/rs910-core/src/lib.rs
+  s_bf99a93e97ab76::t_dd724c27bb6c59 18,32,35-36
+tools/client910/src/app.rs
+  s_bf99a93e97ab76::t_dd724c27bb6c59 242-243,245,550-564,649-650,676-678,680,726-728,739-740,906,908,1056,1137-1140
+tools/client910/crates/rs910-render-gpu/src/render/device.rs
+  s_bf99a93e97ab76::t_dd724c27bb6c59 95-108,152,324-328,335
+tools/refactor/test-inventory.txt
+  s_bf99a93e97ab76::t_4d00c884d7e523 4,33-34,37,45,47,52-59,783,791-792,817-818,861-862,1292-1293,1378,1392,1401
+tools/client910/crates/rs910-ui/src/debug_overlay.rs
+  s_bf99a93e97ab76::t_dd724c27bb6c59 55-56
+tools/client910/crates/rs910-gpu-device/src/health.rs
+  s_bf99a93e97ab76::t_dd724c27bb6c59 1-179
+tools/refactor/provenance-baseline.tsv
+  s_bf99a93e97ab76::t_4d00c884d7e523 3,7-8,11,15,17,19
+tools/client910/crates/rs910-gpu-device/src/gpu_device.rs
+  s_bf99a93e97ab76::t_dd724c27bb6c59 51-53,55-60,106-143,151-157,161,185,187-189,194-204,213,217-218,222-223,233,238-240,249-251,258-274,329-334,340-347,464-503
+  s_bf99a93e97ab76::t_ed2f3f61ce54c6 504
+tools/client910/crates/rs910-ui/src/ui_fonts.rs
+  s_bf99a93e97ab76::t_dd724c27bb6c59 145,206,304,328-330,335
+tools/client910/crates/rs910-config/src/ui_defaults.rs
+  s_bf99a93e97ab76::t_dd724c27bb6c59 158-183
+tools/client910/crates/rs910-core/src/cache_schedule.rs
+  s_bf99a93e97ab76::t_dd724c27bb6c59 1-168
+tools/client910/crates/rs910-render-gpu/src/floor_render.rs
+  s_bf99a93e97ab76::t_dd724c27bb6c59 1049,1064,1088,1090-1117
+tools/client910/crates/rs910-scene/src/npc_draw.rs
+  s_bf99a93e97ab76::t_dd724c27bb6c59 20,199,203-212
+  s_bf99a93e97ab76::t_1b03137fd98a15 213-214
+tools/client910/crates/rs910-config/src/config/obj.rs
+  s_bf99a93e97ab76::t_dd724c27bb6c59 117-123,128-134,388,392,404-412
+tools/client910/crates/rs910-ui/src/ui_runtime.rs
+  s_bf99a93e97ab76::t_dd724c27bb6c59 312-341,537-567,1656-1691
+tools/client910/crates/rs910-ui/src/ui_sprites.rs
+  s_bf99a93e97ab76::t_dd724c27bb6c59 197,216
+tools/client910/src/app/console_commands.rs
+  s_bf99a93e97ab76::t_dd724c27bb6c59 1-403
+tools/refactor/layers.txt
+  s_bf99a93e97ab76::t_dd724c27bb6c59 127-132,448-449,509-510
+tools/client910/src/app/redraw.rs
+  s_bf99a93e97ab76::t_dd724c27bb6c59 78-82
+tools/client910/crates/rs910-ui/src/ui_runtime/engine.rs
+  s_bf99a93e97ab76::t_dd724c27bb6c59 193
+tools/client910/crates/rs910-ui/src/lib.rs
+  s_bf99a93e97ab76::t_dd724c27bb6c59 45
+tools/client910/crates/rs910-ui/src/ui_social.rs
+  s_bf99a93e97ab76::t_dd724c27bb6c59 15-16,35-37,39-52,54,910,913,1081,1095,1108-1109,1117,1134,1148,1161-1162,1170
+tools/client910/src/app/preferences.rs
+  s_bf99a93e97ab76::t_dd724c27bb6c59 114-119
+tools/client910/crates/rs910-render-gpu/src/render/frame.rs
+  s_bf99a93e97ab76::t_dd724c27bb6c59 224,228
+tools/client910/crates/rs910-ui/src/ui_cache.rs
+  s_bf99a93e97ab76::t_dd724c27bb6c59 48,131
+tools/client910/src/app/device_recovery.rs
+  s_bf99a93e97ab76::t_dd724c27bb6c59 1-336
+tools/client910/src/app/mainloop.rs
+  s_bf99a93e97ab76::t_dd724c27bb6c59 164-178
+tools/client910/crates/rs910-ui/src/ui_models.rs
+  s_bf99a93e97ab76::t_dd724c27bb6c59 16,63,66-68,88,103-106,118-134
+tools/client910/src/app/cache_cleaning.rs
+  s_bf99a93e97ab76::t_dd724c27bb6c59 1-71
+tools/client910/src/debug_flags.rs
+  s_bf99a93e97ab76::t_dd724c27bb6c59 39-41,52-54,99,106,163
+tools/client910/crates/rs910-core/src/applet_params.rs
+  s_bf99a93e97ab76::t_dd724c27bb6c59 157-174
+tools/client910/crates/rs910-core/src/soft_cache.rs
+  s_bf99a93e97ab76::t_dd724c27bb6c59 1-168
+tools/client910/crates/rs910-ui/src/console.rs
+  s_bf99a93e97ab76::t_dd724c27bb6c59 67
+tools/client910/crates/rs910-ui/src/ui_preferences.rs
+  s_bf99a93e97ab76::t_dd724c27bb6c59 52-55,101
+tools/client910/crates/rs910-ui/src/ui_runtime/menu_builder.rs
+  s_bf99a93e97ab76::t_dd724c27bb6c59 45,55,58,125-126,157-158,391,605,707-714,1231,1236
+tools/client910/crates/rs910-ui/src/ui_menu_input.rs
+  s_bf99a93e97ab76::t_dd724c27bb6c59 52,188
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "8f951a5b0ddbbe2769a9c53f7550bbe303164a34",
+  "prompts": {},
+  "sessions": {
+    "s_bf99a93e97ab76": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "3306d217-ef25-4a58-aa1a-8bdfdb5da12f",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
