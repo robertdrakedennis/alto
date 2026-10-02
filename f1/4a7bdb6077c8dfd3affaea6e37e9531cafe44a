@@ -1,0 +1,59 @@
+server/src/formats/network/protocol/ServerProt.ts
+  s_bf99a93e97ab76::t_068dfd7a1cf936 504-540
+tools/client910/src/scenario_tests.rs
+  s_bf99a93e97ab76::t_068dfd7a1cf936 1816-1820,2710-2913
+tools/client910/crates/rs910-ui/src/ui_backend.rs
+  s_bf99a93e97ab76::t_068dfd7a1cf936 1380-1383,1416,1682-1736
+  s_bf99a93e97ab76::t_4968f0331a3075 1737-1738
+tools/client910/crates/rs910-protocol/src/server_prot.rs
+  s_bf99a93e97ab76::t_068dfd7a1cf936 2427
+server/src/formats/network/protocol/ServerProt.test.ts
+  s_bf99a93e97ab76::t_068dfd7a1cf936 88-106
+tools/client910/fixtures/recorded/README.md
+  s_bf99a93e97ab76::t_068dfd7a1cf936 64
+tools/client910/crates/rs910-ui/src/ui_menu_render.rs
+  s_bf99a93e97ab76::t_068dfd7a1cf936 214-217
+tools/client910/crates/rs910-ui/src/ui_runtime/menu_builder.rs
+  s_bf99a93e97ab76::t_068dfd7a1cf936 49
+tools/client910/src/app/entity_renderer.rs
+  s_bf99a93e97ab76::t_068dfd7a1cf936 363-368,386
+docs/client-status.md
+  s_bf99a93e97ab76::t_068dfd7a1cf936 19,43
+  s_bf99a93e97ab76::t_7689547eee0219 44
+tools/client910/crates/rs910-ui/src/ui_models.rs
+  s_bf99a93e97ab76::t_068dfd7a1cf936 1-2,23-24,26-27,69-73,78,95-97,101-127,130-132,142-143,162-163,173-174,223-224,282-299,303-309,311-334,356,377-439,442-445,451-452,454,458,464-474,476,479-490,492-506,508-509,559-566,568-654,659-681,683-684,686-687,690,694-697,700-701,709-712,715-737,739-795,797,946,964,1039,1042-1043,1081-1183,1202-1204,1206-1209,1211-1214,1217-1228,1230-1234,1236-1255,1257-1258,1261-1263,1286,1700-2094
+tools/client910/crates/rs910-ui/src/ui_properties.rs
+  s_bf99a93e97ab76::t_068dfd7a1cf936 80-82
+tools/client910/crates/rs910-ui/src/ui_minimenu.rs
+  s_bf99a93e97ab76::t_068dfd7a1cf936 122
+tools/client910/crates/rs910-ui/tests/language.rs
+  s_bf99a93e97ab76::t_068dfd7a1cf936 1-34
+tools/client910/src/app/console_host.rs
+  s_bf99a93e97ab76::t_068dfd7a1cf936 641
+tools/client910/fixtures/recorded/ui-component-models/kind-one-sample.bin
+  s_bf99a93e97ab76::t_068dfd7a1cf936 1-886
+tools/client910/fixtures/interface-run/run.sh
+  s_bf99a93e97ab76::t_068dfd7a1cf936 1-89
+tools/client910/crates/rs910-ui/src/ui_model_transform.rs
+  s_bf99a93e97ab76::t_068dfd7a1cf936 9-11,18,78
+server/src/lostcity/engine/World.ts
+  s_bf99a93e97ab76::t_068dfd7a1cf936 1024-1057
+tools/client910/crates/rs910-config/src/config/loc.rs
+  s_bf99a93e97ab76::t_068dfd7a1cf936 203
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "f14a7bdb6077c8dfd3affaea6e37e9531cafe44a",
+  "prompts": {},
+  "sessions": {
+    "s_bf99a93e97ab76": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "3306d217-ef25-4a58-aa1a-8bdfdb5da12f",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
