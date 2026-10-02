@@ -1,0 +1,110 @@
+server/src/lostcity/systems/locs/Locs.ts
+  s_bf99a93e97ab76::t_49c72e1d70791d 2-230,242
+  s_bf99a93e97ab76::t_c1ff0a71a96368 232
+server/src/lostcity/content/skills/cooking/cooking.ts
+  s_bf99a93e97ab76::t_e9401042fca274 1-2,18
+server/src/lostcity/content/skills/firemaking/firemaking.ts
+  s_bf99a93e97ab76::t_c52cecfceec62b 2-3,19
+server/src/lostcity/content/skills/mining/mining.test.ts
+  s_bf99a93e97ab76::t_a9a314237c3609 9,40
+server/src/lostcity/content/skills/mining/mining.ts
+  s_bf99a93e97ab76::t_c1ecc8f8f7cf5e 1-2,36
+server/src/lostcity/content/skills/woodcutting/woodcutting.ts
+  s_bf99a93e97ab76::t_8984ad3161f294 1-2,25,102
+server/src/lostcity/engine/NpcCombat.ts
+  s_bf99a93e97ab76::t_b5b86b78470f25 5,7
+server/src/lostcity/engine/NpcSimulation.ts
+  s_bf99a93e97ab76::t_3f898159b5cb43 12
+server/src/lostcity/engine/World.ts
+  s_bf99a93e97ab76::t_0bcb420cc2e7f5 15,23-24,28,53,70-76,79-83
+server/src/lostcity/engine/WorldContent.ts
+  s_bf99a93e97ab76::t_c6e121014729bc 8-9,24
+server/src/lostcity/engine/collision/CollisionManager.ts
+  s_bf99a93e97ab76::t_ed9ceacfb48f9c 132,139,144
+server/src/lostcity/engine/devcommands/EntityCommands.ts
+  s_bf99a93e97ab76::t_6774762c8dfa55 2,34
+server/src/lostcity/engine/devcommands/PlayerCommands.ts
+  s_bf99a93e97ab76::t_c9b582dfab334c 3
+server/src/lostcity/engine/interaction/Behaviour.ts
+  s_bf99a93e97ab76::t_1d122e33a78f6e 3-4
+server/src/lostcity/engine/interaction/Interaction.testkit.ts
+  s_bf99a93e97ab76::t_bd3a15d2faacd3 2
+server/src/lostcity/engine/interaction/Interaction.ts
+  s_bf99a93e97ab76::t_a44216cca4a2c9 4
+server/src/lostcity/engine/interaction/Reach.ts
+  s_bf99a93e97ab76::t_ed4fd9b63b72f7 4,31,35
+server/src/lostcity/engine/triggers/ContentData.ts
+  s_bf99a93e97ab76::t_93bc841fa02abe 5-6,22
+server/src/lostcity/engine/triggers/Trigger.ts
+  s_bf99a93e97ab76::t_5edd022316f540 3-4
+server/src/lostcity/engine/triggers/Triggers.test.ts
+  s_bf99a93e97ab76::t_5ddb5d290b6f01 4,7
+server/src/lostcity/engine/zone/MapSquare.ts
+  s_bf99a93e97ab76::t_892c908c6c5396 6,58,134
+server/src/lostcity/engine/zone/ZoneSync.ts
+  s_bf99a93e97ab76::t_11c71feefd45a9 2-7,34,36,61,78
+server/src/lostcity/engine/zone/Zones.ts
+  s_bf99a93e97ab76::t_5644fd0945bd1a 1-16
+server/src/lostcity/entity/LocObjOp.integration.test.ts
+  s_bf99a93e97ab76::t_42f2c0ea18da44 161
+server/src/lostcity/network/LocOpE2E.integration.test.ts
+  s_bf99a93e97ab76::t_0225203286863c 40,302
+server/src/lostcity/network/SkillsE2E.integration.test.ts
+  s_bf99a93e97ab76::t_946fbc120e61c6 44,135,155,210
+server/src/lostcity/network/SkillsE2E.testkit.ts
+  s_bf99a93e97ab76::t_0a522e11159de1 22
+server/src/lostcity/network/SocketE2E.integration.test.ts
+  s_bf99a93e97ab76::t_6506f2b3692d02 689
+server/src/lostcity/network/WoodcuttingE2E.integration.test.ts
+  s_bf99a93e97ab76::t_48f8f3ef201987 73,77,120
+server/src/lostcity/systems/locs/Loc.ts
+  s_bf99a93e97ab76::t_27ef67c4f2bb2a 1-62
+server/src/lostcity/systems/locs/LocLookup.test.ts
+  s_bf99a93e97ab76::t_08a9d20dbe0a36 2-3,8,38
+server/src/lostcity/systems/locs/LocLookup.ts
+  s_bf99a93e97ab76::t_af0421f95ac983 1,10,42
+server/src/lostcity/systems/locs/LocMap.ts
+  s_bf99a93e97ab76::t_a208dda6a0775a 1-104
+server/src/lostcity/systems/locs/LocSync.ts
+  s_bf99a93e97ab76::t_497733579a6189 1-18
+server/src/lostcity/systems/locs/Locs.test.ts
+  s_bf99a93e97ab76::t_1f4a10efc7759e 1-68
+server/src/lostcity/systems/loot/DropTables.test.ts
+  s_bf99a93e97ab76::t_e4333e0ff40b02 1-27
+server/src/lostcity/systems/loot/DropTables.ts
+  s_bf99a93e97ab76::t_ef183606bb7843 21,62-73
+server/src/lostcity/systems/loot/GroundObjects.ts
+  s_bf99a93e97ab76::t_1ad013b56343e1 1,128-129,158-164
+server/src/lostcity/systems/loot/GroundSync.ts
+  s_bf99a93e97ab76::t_e30c681823dd8b 1-28
+server/src/lostcity/systems/loot/Loot.test.ts
+  s_bf99a93e97ab76::t_de6c9ecdf624ec 1-29
+server/src/lostcity/systems/loot/Loot.ts
+  s_bf99a93e97ab76::t_b03cd1029854f5 1-46
+server/src/lostcity/systems/movement/Movement.ts
+  s_bf99a93e97ab76::t_8af94bd86810d2 1
+server/src/lostcity/systems/movement/Route.ts
+  s_bf99a93e97ab76::t_e810035a905543 2,50,57
+server/src/lostcity/systems/skilling/Gathering.ts
+  s_bf99a93e97ab76::t_57096897a3a883 5-6,167,172
+tools/refactor/oxlint-baseline.txt
+  s_bf99a93e97ab76::t_670c5a530c0d1e 3,7-9,12,15,87-89,91
+tools/refactor/test-inventory.txt
+  s_bf99a93e97ab76::t_f4e3590dccb83f 47,1653,1662,1678
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "4d98986fcccbd2095ccca9ac0ef41ad5994f9846",
+  "prompts": {},
+  "sessions": {
+    "s_bf99a93e97ab76": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "3306d217-ef25-4a58-aa1a-8bdfdb5da12f",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
