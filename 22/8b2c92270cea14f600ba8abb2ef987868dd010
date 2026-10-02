@@ -1,0 +1,72 @@
+tools/client910/crates/rs910-game/src/animation_playback.rs
+  s_bf99a93e97ab76::t_77ba490a38b0ba 31-34,45-47,53-56,85,110,163,169-247
+  s_bf99a93e97ab76::t_484ac5a5c919af 248
+tools/client910/crates/rs910-ui/src/audio_runtime.rs
+  s_bf99a93e97ab76::t_77ba490a38b0ba 14,211,319-394,401-409,411,413,583-589,591-664
+tools/client910/src/scenario_sequence_sound.rs
+  s_bf99a93e97ab76::t_77ba490a38b0ba 1-149
+tools/client910/crates/rs910-game/src/game_runtime.rs
+  s_bf99a93e97ab76::t_77ba490a38b0ba 60-77,181-188,190-202,317-324,329-341,346,356-362,379
+tools/refactor/provenance-baseline.tsv
+  s_bf99a93e97ab76::t_77ba490a38b0ba 3,5-7,10-12,15-17,19
+tools/client910/src/scenario_tests.rs
+  s_bf99a93e97ab76::t_77ba490a38b0ba 130,1940
+tools/client910/src/app.rs
+  s_bf99a93e97ab76::t_77ba490a38b0ba 228-231
+tools/client910/fixtures/recorded/animation-sound/expected.txt
+  s_bf99a93e97ab76::t_77ba490a38b0ba 1-746
+tools/client910/crates/rs910-ui/src/ui_runtime/engine.rs
+  s_bf99a93e97ab76::t_77ba490a38b0ba 352-354
+tools/client910/crates/rs910-game/src/lib.rs
+  s_bf99a93e97ab76::t_77ba490a38b0ba 41
+tools/client910/crates/rs910-game/src/entities910/animation_state.rs
+  s_bf99a93e97ab76::t_77ba490a38b0ba 38-41,43-44,46-61,95-98,112-113
+tools/client910/crates/rs910-game/src/sequence_sound.rs
+  s_bf99a93e97ab76::t_77ba490a38b0ba 1-240
+tools/client910/crates/rs910-audio/src/audio_api.rs
+  s_bf99a93e97ab76::t_77ba490a38b0ba 194-197,226-227,632-633,967-971
+  s_bf99a93e97ab76::t_706bedae8a7bf9 972
+tools/client910/crates/rs910-client/src/client_core/session_core.rs
+  s_bf99a93e97ab76::t_77ba490a38b0ba 1041-1044
+tools/client910/fixtures/recorded/audio-sequence-sound/cases.tsv
+  s_bf99a93e97ab76::t_77ba490a38b0ba 1-281
+tools/refactor/layers.txt
+  s_bf99a93e97ab76::t_77ba490a38b0ba 243
+tools/client910/crates/rs910-game/src/actor.rs
+  s_bf99a93e97ab76::t_77ba490a38b0ba 5-6,61,64,73,77-79,83-84,117-120,122-123,162,179,189
+tools/refactor/test-inventory.txt
+  s_bf99a93e97ab76::t_77ba490a38b0ba 4,36,57-58,94,818,839,1246
+tools/client910/crates/rs910-ui/src/ui_runtime.rs
+  s_bf99a93e97ab76::t_77ba490a38b0ba 1515-1518
+tools/refactor/test-removals.txt
+  s_bf99a93e97ab76::t_77ba490a38b0ba 722-723
+tools/client910/src/audio_corpus.rs
+  s_bf99a93e97ab76::t_77ba490a38b0ba 72,80,110-115,344-346,350-363
+  s_bf99a93e97ab76::t_96cdbf6ea0bdba 364
+tools/client910/fixtures/recorded/audio-sequence-sound/expected.tsv
+  s_bf99a93e97ab76::t_77ba490a38b0ba 1-280
+tools/client910/crates/rs910-game/Cargo.toml
+  s_bf99a93e97ab76::t_77ba490a38b0ba 36-39
+tools/client910/fixtures/recorded/README.md
+  s_bf99a93e97ab76::t_77ba490a38b0ba 33-35
+docs/client-status.md
+  s_bf99a93e97ab76::t_77ba490a38b0ba 24
+tools/client910/fixtures/recorded/animation-sound/cases.txt
+  s_bf99a93e97ab76::t_77ba490a38b0ba 1-747
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "228b2c92270cea14f600ba8abb2ef987868dd010",
+  "prompts": {},
+  "sessions": {
+    "s_bf99a93e97ab76": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "3306d217-ef25-4a58-aa1a-8bdfdb5da12f",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
