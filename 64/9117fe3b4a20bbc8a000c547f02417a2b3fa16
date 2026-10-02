@@ -1,0 +1,21 @@
+docs/server-architecture.md
+  s_bf99a93e97ab76::t_1d1c69a648e75e 7,9,48-76,86,114
+server/README.md
+  s_bf99a93e97ab76::t_0fcd403766e9e4 11,50,108-123,139-146,160,162
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "649117fe3b4a20bbc8a000c547f02417a2b3fa16",
+  "prompts": {},
+  "sessions": {
+    "s_bf99a93e97ab76": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "3306d217-ef25-4a58-aa1a-8bdfdb5da12f",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
