@@ -1,0 +1,181 @@
+.gitignore
+  s_bf99a93e97ab76::t_1f98a311ee5b2f 53-58
+server/README.md
+  s_bf99a93e97ab76::t_2e764ae7113ac3 30-31,68-126
+server/jest.config.ts
+  s_bf99a93e97ab76::t_926e20ac9a2381 13,19-21,45
+server/package.json
+  s_bf99a93e97ab76::t_750a333b5e6be5 27,35-36
+server/src/formats/config/seqtype/SeqType.ts
+  s_bf99a93e97ab76::t_497a51588fb912 47-52,69-74,110-111
+server/src/formats/network/protocol/ServerProt.ts
+  s_bf99a93e97ab76::t_c8deca2695c937 390-411,1307
+server/src/lostcity/content/Backpack.ts
+  s_bf99a93e97ab76::t_43a4a4c124545f 1-65
+server/src/lostcity/content/ContentRegistry.test.ts
+  s_bf99a93e97ab76::t_35fd288d74458a 1-54
+server/src/lostcity/content/ContentRegistry.ts
+  s_bf99a93e97ab76::t_443df520bc4c20 1-227
+server/src/lostcity/content/Cooking.ts
+  s_bf99a93e97ab76::t_6d4b5f2c0d468a 1-135
+server/src/lostcity/content/Firemaking.ts
+  s_bf99a93e97ab76::t_c81784b0bebaf7 1-172
+server/src/lostcity/content/Fishing.ts
+  s_bf99a93e97ab76::t_833684897a530d 1-184
+server/src/lostcity/content/Gathering.ts
+  s_bf99a93e97ab76::t_170cb9fc00ba96 1-152
+server/src/lostcity/content/Items.ts
+  s_bf99a93e97ab76::t_061283dd7d519e 1-26
+server/src/lostcity/content/Mining.test.ts
+  s_bf99a93e97ab76::t_af079af3fe309a 1-54
+server/src/lostcity/content/Mining.ts
+  s_bf99a93e97ab76::t_1f61bd7a6aa7bf 1-210
+server/src/lostcity/content/Production.ts
+  s_bf99a93e97ab76::t_962d2043c53b00 1-309
+server/src/lostcity/content/SkillTables.ts
+  s_bf99a93e97ab76::t_928e48b5e9fe8f 1-164
+server/src/lostcity/content/SkillXp.ts
+  s_bf99a93e97ab76::t_1abfef1d675b73 1-26
+server/src/lostcity/content/Skills.ts
+  s_bf99a93e97ab76::t_cebcf2ce9bbc1d 1-58
+server/src/lostcity/content/Tools.ts
+  s_bf99a93e97ab76::t_e28a66a75b2a34 1-76
+server/src/lostcity/content/Woodcutting.ts
+  s_bf99a93e97ab76::t_e92ba94211aa67 10-13,71,120-121,183,188-189,194-217,222,229-230,236,242-243,248,255,268,278,282
+server/src/lostcity/content/npc/NpcCacheProfile.ts
+  s_bf99a93e97ab76::t_0cba99bc756743 1-84
+server/src/lostcity/content/npc/NpcData.test.ts
+  s_bf99a93e97ab76::t_2cd92aefb66d47 1-48
+server/src/lostcity/content/npc/NpcData.ts
+  s_bf99a93e97ab76::t_6cfbc46e55a062 1-118
+server/src/lostcity/content/npc/NpcDrops.ts
+  s_bf99a93e97ab76::t_88fb2f79cca773 1-52
+server/src/lostcity/engine/ItemCatalog.ts
+  s_bf99a93e97ab76::t_407943a2bf7067 1-26
+server/src/lostcity/engine/MeleeCombat.test.ts
+  s_bf99a93e97ab76::t_b424b4444b5ea3 1-55
+server/src/lostcity/engine/MeleeCombat.ts
+  s_bf99a93e97ab76::t_60083b7a9005fa 1-77
+server/src/lostcity/engine/NpcCombat.integration.test.ts
+  s_bf99a93e97ab76::t_3c4047e8365a40 1-166
+server/src/lostcity/engine/NpcCombat.ts
+  s_bf99a93e97ab76::t_4ee93d8301c9fc 1-216
+server/src/lostcity/engine/NpcSimulation.ts
+  s_bf99a93e97ab76::t_d26ad41950dc6c 1,7-13,16-22,24-37,55-57,60-62,79-97,106-108,112,120-126,131,134,136-137,142-146,149-163,167-168,170-179,186,193-195,197,206-207,230,232,248-250
+server/src/lostcity/engine/NpcWander.test.ts
+  s_bf99a93e97ab76::t_5b0f8121a7e3cd 1-78
+server/src/lostcity/engine/ObjInteraction.ts
+  s_bf99a93e97ab76::t_30efcd123ce836 1-60
+server/src/lostcity/engine/TargetInteraction.ts
+  s_bf99a93e97ab76::t_492f64d4c1b350 1-90
+server/src/lostcity/engine/World.ts
+  s_bf99a93e97ab76::t_930b6b902000c9 24,43-48,53-55,73-75,77-84,91-94,466-476,561-564,673-678,680-682,695-696,772-773,777,1121-1142,1237-1238,1359,1367-1368,1370-1371,1378-1379,1385,1511-1525,1673,1696,1705-1707,1720
+server/src/lostcity/engine/zone/GroundObjects.test.ts
+  s_bf99a93e97ab76::t_3ab68d5128b724 1-61
+server/src/lostcity/engine/zone/GroundObjects.ts
+  s_bf99a93e97ab76::t_1fa4098c38a43f 1-149
+server/src/lostcity/engine/zone/ZoneSync.ts
+  s_bf99a93e97ab76::t_42d2bd242e9e53 3,26-47,62,64,66,77,82,86,88-89,92-93
+server/src/lostcity/entity/EquipmentStats.ts
+  s_bf99a93e97ab76::t_b96be444de298b 14-17,111-112
+server/src/lostcity/entity/LocObjOp.integration.test.ts
+  s_bf99a93e97ab76::t_009dcce35576af 285,403,406,408,411-412,414-417
+server/src/lostcity/entity/Npc.ts
+  s_bf99a93e97ab76::t_5f7e84a73cb09c 4,6-7,61-64,91-94,109-110,117-118,132-133
+server/src/lostcity/entity/NpcInfo.test.ts
+  s_bf99a93e97ab76::t_1f6c412be14738 11,203-205,208-209,211-216
+server/src/lostcity/entity/NpcOp.integration.test.ts
+  s_bf99a93e97ab76::t_afad73748e6041 219
+server/src/lostcity/entity/Player.ts
+  s_bf99a93e97ab76::t_0449135cb46e1d 72-73,139-141,657,917,1065,1131-1140,1347-1353,1407,1420-1427
+server/src/lostcity/network/SkillsE2E.integration.test.ts
+  s_bf99a93e97ab76::t_ec1e1f528bd3b7 1-227
+server/src/lostcity/network/SkillsE2E.testkit.ts
+  s_bf99a93e97ab76::t_a3a5dc16aacd83 1-205
+server/src/lostcity/tools/npc/DropStage.ts
+  s_bf99a93e97ab76::t_a467937058322f 1-67
+server/src/lostcity/tools/npc/NpcWiki.test.ts
+  s_bf99a93e97ab76::t_fa5b0a501030a0 1-117
+server/src/lostcity/tools/npc/NpcWiki.ts
+  s_bf99a93e97ab76::t_f7b6186e280a1f 1-157
+server/src/lostcity/tools/npc/OtherServer.ts
+  s_bf99a93e97ab76::t_58d214e3ade230 1-74
+server/src/lostcity/tools/npc/ProfileStage.ts
+  s_bf99a93e97ab76::t_b516100312c837 1-130
+server/src/lostcity/tools/npc/SpawnStage.ts
+  s_bf99a93e97ab76::t_b697fbc72841b5 1-116
+server/src/lostcity/tools/npc/WikiClient.ts
+  s_bf99a93e97ab76::t_5e448db60c03a8 1-132
+server/src/lostcity/tools/npc/Wikitext.ts
+  s_bf99a93e97ab76::t_a3f070b08894ee 1-113
+server/src/lostcity/tools/npc/generate.ts
+  s_bf99a93e97ab76::t_3c7b845528528a 1-158
+server/src/lostcity/tools/skills/cacheIndex.ts
+  s_bf99a93e97ab76::t_ef9afab34b57b7 1-81
+server/src/lostcity/tools/skills/cooking.ts
+  s_bf99a93e97ab76::t_05574936b573b0 1-73
+server/src/lostcity/tools/skills/firemaking.ts
+  s_bf99a93e97ab76::t_25068735719395 1-39
+server/src/lostcity/tools/skills/fishing.ts
+  s_bf99a93e97ab76::t_4aaf83201ce354 1-160
+server/src/lostcity/tools/skills/generate.ts
+  s_bf99a93e97ab76::t_bc3b75a568cccb 1-37
+server/src/lostcity/tools/skills/lua.ts
+  s_bf99a93e97ab76::t_a58481d8277733 1-108
+server/src/lostcity/tools/skills/mining.ts
+  s_bf99a93e97ab76::t_af8c9fba76dd3f 1-71
+server/src/lostcity/tools/skills/report.ts
+  s_bf99a93e97ab76::t_d43636b8fa5329 1-22
+server/src/lostcity/tools/skills/wiki.ts
+  s_bf99a93e97ab76::t_746ff617ec7510 1-70
+server/src/lostcity/tools/skills/wikitext.ts
+  s_bf99a93e97ab76::t_ba36271b0d3a98 1-52
+tools/client910/fixtures/entity-run/run.sh
+  s_bf99a93e97ab76::t_5bcffd86db83ee 46
+tools/client910/fixtures/interface-run/run.sh
+  s_bf99a93e97ab76::t_050ce1d95fc557 46
+tools/client910/fixtures/session-replay/entities/record.sh
+  s_bf99a93e97ab76::t_f29a237a09d600 24
+tools/client910/fixtures/session-replay/flow-lib.sh
+  s_bf99a93e97ab76::t_f4d658958e60fd 23,26,42,57
+tools/client910/fixtures/session-replay/npc-combat/record.sh
+  s_bf99a93e97ab76::t_808aa998813732 1-68
+tools/client910/fixtures/session-replay/npc-combat/server-trace.jsonl
+  s_bf99a93e97ab76::t_a12a2d64d97ff2 1-168
+tools/client910/fixtures/session-replay/record.sh
+  s_bf99a93e97ab76::t_89863394392117 27
+tools/client910/fixtures/session-replay/skills/record.sh
+  s_bf99a93e97ab76::t_8442973fda677d 1-51
+tools/client910/fixtures/session-replay/skills/server-trace.jsonl
+  s_bf99a93e97ab76::t_8691a09245d9fa 1-164
+tools/client910/fixtures/session-replay/woodcutting/record.sh
+  s_bf99a93e97ab76::t_654dd0bd1924ab 45,49
+tools/client910/src/app.rs
+  s_bf99a93e97ab76::t_4d5323f21f1e2b 272-275,284-287
+tools/client910/src/scenario_npc_combat.rs
+  s_bf99a93e97ab76::t_09d9d050c3d39f 1-131
+tools/client910/src/scenario_skills.rs
+  s_bf99a93e97ab76::t_4a86debc3f106e 1-1160
+tools/client910/src/scenario_woodcutting.rs
+  s_bf99a93e97ab76::t_afa21f8b112819 43,45,49,52,55,58,62,65,68,71,78,90,105,114,135,145,161,210,250-253,267
+tools/refactor/replay-gate.txt
+  s_bf99a93e97ab76::t_3f7fd9fefe4519 14-15,17
+tools/refactor/test-inventory.txt
+  s_bf99a93e97ab76::t_44f7d8813e7545 4,47,67,70-71,1607,1647-1649,1658-1659,1661-1662,1665,1668,1670,1680-1681,1690,1700,1714-1715,1725,1729,1733-1734,1740,1744,1767-1768,1771,1849-1850,1856,1867,1872
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "e8c68c197c87b4e1b336fd38479630373b29d262",
+  "prompts": {},
+  "sessions": {
+    "s_bf99a93e97ab76": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "3306d217-ef25-4a58-aa1a-8bdfdb5da12f",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
