@@ -1,0 +1,61 @@
+docs/client-status.md
+  s_c202351b3d1826::t_dcb4a48fb40cf1 29
+packages/domain/src/symbols/varc.ts
+  s_c202351b3d1826::t_2eaf9136ed8d54 13
+revisions/910/symbols/varc.sym
+  s_c202351b3d1826::t_3d8e8b7279c13a 11
+revisions/950/cs2/950-1-to-910.json
+  s_c202351b3d1826::t_fa2f1c5e9419f4 539-552
+tools/README.md
+  s_c202351b3d1826::t_b32a6c92472fae 220,244-267,369,387-389
+tools/client910/crates/rs910-symbols/src/varc.rs
+  s_c202351b3d1826::t_fadae4fe2535e1 23-24
+tools/client910/crates/rs910-ui/src/ui_components.rs
+  s_c202351b3d1826::t_edfc509edd95e5 599
+tools/client910/crates/rs910-ui/src/ui_hook_host.rs
+  s_c202351b3d1826::t_c933389ef60f15 448-453
+tools/client910/crates/rs910-ui/src/ui_vars.rs
+  s_c202351b3d1826::t_d3009ce02a4904 211-221,472-474
+tools/client910/src/ui_goldens/ui_authoring_replay.rs
+  s_c202351b3d1826::t_566ea5ff51348d 515-522
+tools/client910/src/ui_goldens/ui_imported_replay.rs
+  s_c202351b3d1826::t_0d69aa64c5c56d 126,261,330,348,461,504,699,724,748,805,866,868-869,1911-2277
+tools/cs2/fixtures/variables.json
+  s_c202351b3d1826::t_f077f32b1f0afb 1033-1058
+tools/cs2/src/bridge.rs
+  s_c202351b3d1826::t_df14639fae78e4 47,106,108-134,633,730,771
+tools/cs2/src/import910.rs
+  s_c202351b3d1826::t_d78b0627b972f5 56-57,104,175,387,400,434-438,574-575,578,586-607,627,898-900,1133
+tools/cs2/src/lib.rs
+  s_c202351b3d1826::t_5f891a1a6c7b69 17
+tools/cs2/src/lower910.rs
+  s_c202351b3d1826::t_1d248d5a949163 97,166,362
+tools/cs2/src/main.rs
+  s_c202351b3d1826::t_61ef2a1d7c2563 135-140,160-165,410-411,420-429,446-460,466-467,478-487,500-505
+tools/cs2/src/variable_bindings.rs
+  s_c202351b3d1826::t_cf313fc8822370 1-283
+tools/cs2/src/variables.rs
+  s_c202351b3d1826::t_dccb83e197410d 188,208,258,266,289-307,315,372,380-529,806,822-957
+tools/native910/src/execution.rs
+  s_c202351b3d1826::t_4138fb7d0e246e 140-144,254-258,313-323,394,411-414,659-662,788-793,861-863
+tools/native910/src/runtime.rs
+  s_c202351b3d1826::t_b7d82984a49190 102-110
+tools/native910/src/vm.rs
+  s_c202351b3d1826::t_32092f66fe2cc1 285-291,416-444,585-604,2892
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "d1d212ead1e68fa7c4a9dd373bcd73b80f1177ad",
+  "prompts": {},
+  "sessions": {
+    "s_c202351b3d1826": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0fe2d-4e63-7e41-b719-caa999b24fd9",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
