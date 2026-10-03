@@ -1,0 +1,336 @@
+server/src/lostcity/content/world/climbs/climbs.ts
+  s_bf99a93e97ab76::t_3678776d376c69 9,37-39,44-50,57,60
+server/src/lostcity/systems/inventory/Shop.test.ts
+  s_bf99a93e97ab76::t_3678776d376c69 4,16-18,51,53-56,59-61
+server/src/lostcity/content/world/lodestones/data.ts
+  s_bf99a93e97ab76::t_3678776d376c69 1,4,118-121,123-142,149-156
+tools/refactor/test-removals.txt
+  s_bf99a93e97ab76::t_3678776d376c69 760-768
+server/src/lostcity/content/world/transport/rules.ts
+  s_bf99a93e97ab76::t_df0a66596b3ed4 1-70
+tools/client910/crates/rs910-symbols/src/quest.rs
+  s_bf99a93e97ab76::t_3678776d376c69 8-9,12-17,24-25,28-29
+server/src/lostcity/content/world/lodestones/quick.ts
+  s_bf99a93e97ab76::t_df0a66596b3ed4 1-37
+server/src/lostcity/network/SupportE2E.integration.test.ts
+  s_bf99a93e97ab76::t_3678776d376c69 2-4,16-21,50-51,155-195
+  s_bf99a93e97ab76::t_7e05005b2e133b 196-197
+server/src/lostcity/tools/data/domains/spawns/SpawnValidation.ts
+  s_bf99a93e97ab76::t_3678776d376c69 2,4,9-12,25-26,28,33,47-56,78-79,92-101,105-108,111-113,116,132,134-135,148-149,152
+server/src/lostcity/content/world/lamps/data.ts
+  s_bf99a93e97ab76::t_df0a66596b3ed4 1-88
+tools/client910/fixtures/session-replay/world-travel/record.sh
+  s_bf99a93e97ab76::t_df0a66596b3ed4 1-82
+server/src/lostcity/systems/movement/Movement.ts
+  s_bf99a93e97ab76::t_3678776d376c69 197-204
+tools/client910/src/scenario_world_travel.rs
+  s_bf99a93e97ab76::t_df0a66596b3ed4 1-347
+server/src/lostcity/systems/session/Account.ts
+  s_bf99a93e97ab76::t_3678776d376c69 111,157
+packages/domain/src/symbols/component.ts
+  s_bf99a93e97ab76::t_3678776d376c69 70-84,177-187,246-257,355,435-441
+packages/domain/src/symbols/param.ts
+  s_bf99a93e97ab76::t_3678776d376c69 6-8,11-21,65,87-88,96-107
+revisions/910/symbols/spot.sym
+  s_bf99a93e97ab76::t_3678776d376c69 5-6,12-13
+server/src/lostcity/network/DungeonsE2E.integration.test.ts
+  s_bf99a93e97ab76::t_df0a66596b3ed4 1-69
+server/src/lostcity/systems/movement/Teleporting.ts
+  s_bf99a93e97ab76::t_df0a66596b3ed4 1-66
+server/src/lostcity/tools/data/domains/world/ClimbPlaces.ts
+  s_bf99a93e97ab76::t_df0a66596b3ed4 1-118
+server/src/lostcity/engine/interaction/behaviours/npc.ts
+  s_bf99a93e97ab76::t_3678776d376c69 4,16,37-41
+packages/domain/src/symbols/quest.ts
+  s_bf99a93e97ab76::t_3678776d376c69 6,8-10,14,16
+revisions/910/symbols/component.sym
+  s_bf99a93e97ab76::t_3678776d376c69 58-70,141-149,198-207,284,337-339
+revisions/910/symbols/seq.sym
+  s_bf99a93e97ab76::t_3678776d376c69 36-37,52-53,58-59,89
+server/src/lostcity/content/world/transport/spirittrees/spiritTrees.ts
+  s_bf99a93e97ab76::t_df0a66596b3ed4 1-104
+server/src/lostcity/systems/shop/Shops.ts
+  s_bf99a93e97ab76::t_3678776d376c69 7,10-14,23-24,32-36,38-51,53,78,83-84,86-88,91-95,106,110-125,128-136
+  s_bf99a93e97ab76::t_df0a66596b3ed4 89-90
+revisions/910/symbols/script.sym
+  s_bf99a93e97ab76::t_3678776d376c69 24
+server/src/lostcity/network/QuestsE2E.integration.test.ts
+  s_bf99a93e97ab76::t_3678776d376c69 364-365
+server/src/lostcity/content/skills/agility/crossings.ts
+  s_bf99a93e97ab76::t_3678776d376c69 77-84
+server/src/lostcity/protocol/outbound/Components.ts
+  s_bf99a93e97ab76::t_df0a66596b3ed4 1-23
+server/src/lostcity/systems/agility/AgilityLaps.ts
+  s_bf99a93e97ab76::t_df0a66596b3ed4 1-62
+server/src/lostcity/tools/data/domains/skills/agility.ts
+  s_bf99a93e97ab76::t_3678776d376c69 1-2,4,9-13,16-17,19-23,25-26,29-60,65-69,71-76,78-79,81-82,84-86,89-106,109-114,117-121,124-127,129-130,132-133,135,138-139,141-143,145-146,148,151-152,154-155,157,160-162,165-168,170-172,174-176,178-181,183-184,186,189,191-192,194,197-211,214-217,219-220,222-245,247-251,253,256-257,259-260,264,268-269,272
+  s_bf99a93e97ab76::t_11f559ae5ced93 218,221,246
+server/src/lostcity/content/world/transport/index.ts
+  s_bf99a93e97ab76::t_3678776d376c69 27,33
+  s_bf99a93e97ab76::t_df0a66596b3ed4 1-26,28-32,34-35
+server/src/lostcity/systems/equipment/PlayerEquipment.ts
+  s_bf99a93e97ab76::t_3678776d376c69 10,114-126,183,185,196-197
+server/src/lostcity/tools/data/domains/shops/ShopPage.ts
+  s_bf99a93e97ab76::t_3678776d376c69 1,3,6-9,16,20-22,33-57,59-62,64-72,74-82,85-89,93,96-105,107-109,113-114,116-135,139-141,144-149,155-156,173-183
+server/src/lostcity/content/world/climbs/data.ts
+  s_bf99a93e97ab76::t_3678776d376c69 46,49,53,70-72
+  s_bf99a93e97ab76::t_11594d201a5a34 73-74
+server/src/lostcity/engine/triggers/Triggers.ts
+  s_bf99a93e97ab76::t_3678776d376c69 58
+server/src/lostcity/tools/data/domains/skills/AgilityCrossing.ts
+  s_bf99a93e97ab76::t_df0a66596b3ed4 1-280
+server/src/lostcity/network/SocketE2E.integration.test.ts
+  s_bf99a93e97ab76::t_3678776d376c69 452-453
+server/src/lostcity/content/skills/agility/data.ts
+  s_bf99a93e97ab76::t_3678776d376c69 1-2,4,11-14,16-20,31,33-35,37-43,51-93,101-102,104-105,112,114-115,119-127,129,134,138,144,147,152-163,167,176,191,197,199-202,204,207
+server/src/lostcity/tools/data/domains/shops/Shops.test.ts
+  s_bf99a93e97ab76::t_3678776d376c69 2-3,8-9,13,15-18,21,27,29-31,35,38-49,56-65,69-70,72,85-100,105,107-111
+revisions/910/symbols/enum.sym
+  s_bf99a93e97ab76::t_3678776d376c69 23-25,38-40,42-45,47-49
+revisions/910/symbols/loc.sym
+  s_bf99a93e97ab76::t_3678776d376c69 4-6,75,124-125,127-134,162-164,182
+server/src/lostcity/systems/npc/Spawns.ts
+  s_bf99a93e97ab76::t_3678776d376c69 73-74
+tools/client910/crates/rs910-symbols/src/obj.rs
+  s_bf99a93e97ab76::t_3678776d376c69 20-25,58-59,100-101,110-113,138-139,182-183,226-229,332-333,452-453,458-459,464-465,496-497
+server/src/lostcity/config/Config.ts
+  s_bf99a93e97ab76::t_3678776d376c69 191-195
+revisions/910/symbols/obj.sym
+  s_bf99a93e97ab76::t_3678776d376c69 10-12,29,50,55-56,69,91,113-114,166,226,229,232,248
+tools/client910/crates/rs910-symbols/src/interface.rs
+  s_bf99a93e97ab76::t_3678776d376c69 22-23,66-67,80-81,212-215
+tools/client910/fixtures/session-replay/world-travel/server-trace.jsonl
+  s_bf99a93e97ab76::t_df0a66596b3ed4 1-404
+server/src/lostcity/data/WorldData.ts
+  s_bf99a93e97ab76::t_3678776d376c69 18-26,34-35,41
+packages/domain/src/symbols/enum.ts
+  s_bf99a93e97ab76::t_3678776d376c69 25-27,40-42,44-47,49-51
+tools/refactor/test-inventory.txt
+  s_bf99a93e97ab76::t_3678776d376c69 4,47,109,1683,1693,1721,1727,1767,1800,1810,1825,1857,1862,1911,1933-1934,1942,1960,1973,2003
+packages/domain/src/symbols/script.ts
+  s_bf99a93e97ab76::t_3678776d376c69 26
+server/src/lostcity/tools/data/domains/skills/AgilityWiki.ts
+  s_bf99a93e97ab76::t_df0a66596b3ed4 1-205
+revisions/910/symbols/npc.sym
+  s_bf99a93e97ab76::t_3678776d376c69 44-45
+server/src/lostcity/tools/data/domains/spawns/index.ts
+  s_bf99a93e97ab76::t_3678776d376c69 18-19,35,115
+server/src/lostcity/data/TransportData.ts
+  s_bf99a93e97ab76::t_df0a66596b3ed4 1-6,8-44,46-53
+  s_bf99a93e97ab76::t_3678776d376c69 7,45
+server/src/lostcity/systems/session/AccountFile.ts
+  s_bf99a93e97ab76::t_3678776d376c69 3,112,139
+server/src/lostcity/systems/inventory/Shop.ts
+  s_bf99a93e97ab76::t_3678776d376c69 1-2,6-7,18,32-37,127-132,134
+server/src/lostcity/tools/data/domains/world/ClimbReport.ts
+  s_bf99a93e97ab76::t_df0a66596b3ed4 1-66
+revisions/910/symbols/inv.sym
+  s_bf99a93e97ab76::t_3678776d376c69 14
+server/src/lostcity/content/skills/agility/agility.test.ts
+  s_bf99a93e97ab76::t_3678776d376c69 3-9,17,28,30-34,39-49,56-57,60,82-86,91-93
+  s_bf99a93e97ab76::t_aab9db7181fff8 94-95
+packages/domain/src/symbols/npc.ts
+  s_bf99a93e97ab76::t_3678776d376c69 46-47
+server/src/lostcity/content/world/transport/fairyrings/fairyRings.ts
+  s_bf99a93e97ab76::t_df0a66596b3ed4 1-201
+server/src/lostcity/network/InventoryFlows.integration.test.ts
+  s_bf99a93e97ab76::t_3678776d376c69 18,37,334,336-337,339,345-348,350,354-357,359-360,365,369-370,372-379,381-382,385-386,388-397,399,401,404,407-453
+server/src/lostcity/tools/data/domains/world/WikiDungeons.ts
+  s_bf99a93e97ab76::t_df0a66596b3ed4 1-100
+server/src/lostcity/tools/data/domains/world/index.ts
+  s_bf99a93e97ab76::t_3678776d376c69 4-7,11-12,15-17,26-27,33-34,61-65,68,73-75,78-79,92
+packages/domain/src/symbols/obj.ts
+  s_bf99a93e97ab76::t_3678776d376c69 12-14,31,52,57-58,71,93,115-116,168,228,231,234,250
+server/src/lostcity/network/TransportE2E.integration.test.ts
+  s_bf99a93e97ab76::t_df0a66596b3ed4 1-33,35-150
+  s_bf99a93e97ab76::t_3678776d376c69 34
+server/src/lostcity/content/world/lodestones/lodestones.ts
+  s_bf99a93e97ab76::t_3678776d376c69 3,9,11-25,80-84,112-123,125-126,128,131-139,142,144-151,154,163,165,188
+tools/client910/crates/rs910-symbols/src/inv.rs
+  s_bf99a93e97ab76::t_3678776d376c69 28-29
+packages/domain/src/symbols/varbit.ts
+  s_bf99a93e97ab76::t_3678776d376c69 6,62-64,78,80,138-143,166-169
+tools/client910/crates/rs910-symbols/src/script.rs
+  s_bf99a93e97ab76::t_3678776d376c69 48-49
+packages/domain/src/symbols/interface.ts
+  s_bf99a93e97ab76::t_3678776d376c69 13,35,42,108-109
+packages/domain/src/symbols/spot.ts
+  s_bf99a93e97ab76::t_3678776d376c69 7-8,14-15
+packages/domain/src/symbols/varp.ts
+  s_bf99a93e97ab76::t_3678776d376c69 30-32,59,64,79-80
+revisions/910/symbols/location.sym
+  s_bf99a93e97ab76::t_3678776d376c69 4-9,12,33,62,71-72,92-96,103-105,110
+server/src/lostcity/network/TeleportsE2E.integration.test.ts
+  s_bf99a93e97ab76::t_df0a66596b3ed4 1-197
+server/src/lostcity/network/WorldE2E.integration.test.ts
+  s_bf99a93e97ab76::t_3678776d376c69 19-20,325,327,329,360
+server/src/lostcity/tools/data/domains/shops/index.ts
+  s_bf99a93e97ab76::t_3678776d376c69 1-2,4,7-11,16-23,25-28,30,33-34,36-52,55-57,59-60,62-63,65,67-68,70-71,73,75,77-79,81-82,84-85,87-90,92-93,95,97-120,122,124-125,127,129,131-132,134-136,138-142,144-146,148-149,151-152,154-155,158,160-179,181-184,187,191-201,203-204,206
+  s_bf99a93e97ab76::t_df0a66596b3ed4 24
+  s_bf99a93e97ab76::t_11f559ae5ced93 159
+tools/client910/crates/rs910-symbols/src/varbit.rs
+  s_bf99a93e97ab76::t_3678776d376c69 8-9,120-125,152-153,156-157,272-283,328-335
+server/src/formats/config/npctype/NpcType.ts
+  s_bf99a93e97ab76::t_3678776d376c69 7-9,60-62
+  s_bf99a93e97ab76::t_5a859cb814eab1 63-64
+server/src/lostcity/content/skills/agility/paths.ts
+  s_bf99a93e97ab76::t_3678776d376c69 1-3,6,15,19-21,50-55,57-65,67
+server/src/lostcity/content/world/transport/gliders/gliders.ts
+  s_bf99a93e97ab76::t_df0a66596b3ed4 1-89
+revisions/910/symbols/varc.sym
+  s_bf99a93e97ab76::t_3678776d376c69 17
+server/src/lostcity/content/skills/agility/agility.ts
+  s_bf99a93e97ab76::t_3678776d376c69 11,13-20,26-29,35-36,46-66,80,91,93,97-99,101,111-125,129,134-135,137-146,159,172-176,181,191,193,198-207,212-250,253-256,268,275-277,284
+  s_bf99a93e97ab76::t_bf0bb640604e56 285
+server/README.md
+  s_bf99a93e97ab76::t_3678776d376c69 27,209,217,224-226
+server/src/lostcity/content/world/transport/gliders/data.ts
+  s_bf99a93e97ab76::t_df0a66596b3ed4 1-80
+server/src/lostcity/content/world/teleports/data.ts
+  s_bf99a93e97ab76::t_df0a66596b3ed4 1-71
+server/src/lostcity/content/world/teleports/teleports.ts
+  s_bf99a93e97ab76::t_df0a66596b3ed4 1-185
+server/src/lostcity/tools/data/domains/world/Teleports.ts
+  s_bf99a93e97ab76::t_df0a66596b3ed4 1-279
+tools/client910/crates/rs910-symbols/src/component.rs
+  s_bf99a93e97ab76::t_3678776d376c69 139-169,365-387,509-533,739-740,912-926
+  s_bf99a93e97ab76::t_18d6f2be724b20 927
+server/src/lostcity/content/skills/agility/laps.ts
+  s_bf99a93e97ab76::t_3678776d376c69 4-11,13-20,23-26,28,30-32,34,36,38-39,41-43,48-62
+docs/server-architecture.md
+  s_bf99a93e97ab76::t_3678776d376c69 71,221-262
+  s_bf99a93e97ab76::t_3c52566081e953 263
+server/src/lostcity/content/skills/agility/pyramid.ts
+  s_bf99a93e97ab76::t_df0a66596b3ed4 1-103
+server/src/lostcity/tools/data/domains/skills/AgilityMatch.ts
+  s_bf99a93e97ab76::t_3678776d376c69 25-27,105-106,121-126,128,140-147,158-163,169,175-195,197,204
+revisions/910/symbols/quest.sym
+  s_bf99a93e97ab76::t_3678776d376c69 4,6-8,12,14
+server/src/lostcity/data/AgilityTable.ts
+  s_bf99a93e97ab76::t_3678776d376c69 8,14-19,26-27,36-41,48-49,51-57,67-73,81-87
+  s_bf99a93e97ab76::t_21572d4f54027d 88
+revisions/910/symbols/interface.sym
+  s_bf99a93e97ab76::t_3678776d376c69 11,33,40,106-107
+server/src/lostcity/systems/movement/Route.ts
+  s_bf99a93e97ab76::t_3678776d376c69 49-80,159-175
+  s_bf99a93e97ab76::t_cab11d253fb0d3 176
+packages/domain/src/symbols/loc.ts
+  s_bf99a93e97ab76::t_3678776d376c69 6-8,77,126-127,129-136,164-166,184
+tools/client910/crates/rs910-symbols/src/npc.rs
+  s_bf99a93e97ab76::t_3678776d376c69 88-91
+server/src/lostcity/content/world/transport/charter/data.ts
+  s_bf99a93e97ab76::t_df0a66596b3ed4 1-76
+server/src/lostcity/engine/triggers/Trigger.ts
+  s_bf99a93e97ab76::t_3678776d376c69 16-18,30,40-41,49,51-52,60,100-130
+tools/client910/crates/rs910-symbols/src/enums.rs
+  s_bf99a93e97ab76::t_3678776d376c69 46-51,77-82,84-91,94-99
+server/src/lostcity/data/ShopData.ts
+  s_bf99a93e97ab76::t_3678776d376c69 5-8,17,19-22,32
+server/src/lostcity/entity/Player.ts
+  s_bf99a93e97ab76::t_3678776d376c69 17,61-62
+server/src/lostcity/tools/data/domains/world/Transports.ts
+  s_bf99a93e97ab76::t_df0a66596b3ed4 1,3-10,12-17,19-65,67-69,71-83,87-257
+  s_bf99a93e97ab76::t_3678776d376c69 2,11,18,66,70,84-86
+server/src/lostcity/tools/data/domains/shops/ShopMatch.ts
+  s_bf99a93e97ab76::t_3678776d376c69 4-11,14,17,19-20,22-27,29,32-51,54,58,60-61,63-65,68,75,80-117
+packages/domain/src/symbols/inv.ts
+  s_bf99a93e97ab76::t_3678776d376c69 16
+server/src/lostcity/protocol/handlers/Interface.ts
+  s_bf99a93e97ab76::t_3678776d376c69 1-2,8-10,46-47
+server/src/lostcity/data/TeleportData.ts
+  s_bf99a93e97ab76::t_df0a66596b3ed4 1-67
+tools/client910/crates/rs910-symbols/src/spot.rs
+  s_bf99a93e97ab76::t_3678776d376c69 10-13,24-27
+tools/client910/crates/rs910-symbols/src/varc.rs
+  s_bf99a93e97ab76::t_3678776d376c69 35-36
+server/src/lostcity/systems/session/LoginInterfaces.ts
+  s_bf99a93e97ab76::t_3678776d376c69 64-66,98
+server/src/lostcity/content/world/farm/farm.ts
+  s_bf99a93e97ab76::t_3678776d376c69 33-34,60-67,77-85
+  s_bf99a93e97ab76::t_951e01d5670023 86-87
+server/src/lostcity/systems/shop/ShopBackpack.ts
+  s_bf99a93e97ab76::t_3678776d376c69 4,16-18
+packages/domain/src/symbols/seq.ts
+  s_bf99a93e97ab76::t_3678776d376c69 38-39,54-55,60-61,91
+revisions/910/symbols/varp.sym
+  s_bf99a93e97ab76::t_3678776d376c69 28-30,57,62,77-78
+server/src/lostcity/content/world/transport/spirittrees/data.ts
+  s_bf99a93e97ab76::t_df0a66596b3ed4 1-103
+server/src/lostcity/content/world/lamps/lamps.ts
+  s_bf99a93e97ab76::t_df0a66596b3ed4 1-72
+server/src/lostcity/network/CounterStaffE2E.integration.test.ts
+  s_bf99a93e97ab76::t_df0a66596b3ed4 1-60
+revisions/910/symbols/param.sym
+  s_bf99a93e97ab76::t_3678776d376c69 4-6,9-19,63,85-86,94-105
+server/src/lostcity/systems/shop/ShopSession.ts
+  s_bf99a93e97ab76::t_3678776d376c69 11-13,24,35-44,48-53,94,99,106,115,120-122,149-189,203-206,222,242,248,252-256,258-263,265,276,281-282,285-286,290,302,307-309,311-312,314-315,318,324,332-334,337-338,350-351,353-354,360-361,363,365-366,368-369,375-377
+server/src/lostcity/tools/data/domains/skills/AgilityShortcuts.ts
+  s_bf99a93e97ab76::t_df0a66596b3ed4 1-231
+server/src/lostcity/tools/data/domains/shops/ShopPages.ts
+  s_bf99a93e97ab76::t_df0a66596b3ed4 1-151
+tools/client910/crates/rs910-symbols/src/param.rs
+  s_bf99a93e97ab76::t_3678776d376c69 8-13,18-39,127-128,170-173,188-211
+tools/client910/crates/rs910-symbols/src/seq.rs
+  s_bf99a93e97ab76::t_3678776d376c69 72-75,104-107,116-119,178-179
+server/src/lostcity/engine/interaction/Reach.ts
+  s_bf99a93e97ab76::t_3678776d376c69 1,5,61,65-126
+server/src/lostcity/systems/shop/ShopCurrency.ts
+  s_bf99a93e97ab76::t_df0a66596b3ed4 1-43
+revisions/910/symbols/varbit.sym
+  s_bf99a93e97ab76::t_3678776d376c69 4,60-62,76,78,136-141,164-167
+server/src/lostcity/content/world/transport/charter/charter.ts
+  s_bf99a93e97ab76::t_df0a66596b3ed4 1-116
+server/src/lostcity/content/world/farm/data.ts
+  s_bf99a93e97ab76::t_3678776d376c69 79-80,84
+packages/domain/src/symbols/location.ts
+  s_bf99a93e97ab76::t_3678776d376c69 14-19,22,43,72,81-82,102-106,113-115,120
+server/src/lostcity/content/world/transport/fairyrings/data.ts
+  s_bf99a93e97ab76::t_df0a66596b3ed4 1-110
+server/src/lostcity/systems/shop/ShopInterface.ts
+  s_bf99a93e97ab76::t_3678776d376c69 1,21,24-25
+  s_bf99a93e97ab76::t_63b6ac04f497e2 26
+server/src/lostcity/systems/shop/ShopPrices.ts
+  s_bf99a93e97ab76::t_df0a66596b3ed4 1-78
+tools/client910/crates/rs910-symbols/src/varp.rs
+  s_bf99a93e97ab76::t_3678776d376c69 57-62,115-116,125-126,154-157
+tools/client910/src/app.rs
+  s_bf99a93e97ab76::t_3678776d376c69 333-336
+tools/client910/crates/rs910-symbols/src/location.rs
+  s_bf99a93e97ab76::t_3678776d376c69 8-19,24-25,66-67,124-125,142-145,184-193,206-211,220-221
+packages/domain/src/symbols/varc.ts
+  s_bf99a93e97ab76::t_3678776d376c69 19
+server/src/lostcity/content/world/index.ts
+  s_bf99a93e97ab76::t_3678776d376c69 12-14,22-24,27,33-41
+server/src/lostcity/systems/equipment/EquipmentContent.ts
+  s_bf99a93e97ab76::t_3678776d376c69 37-47
+server/src/lostcity/tools/data/domains/world/MapLinks.ts
+  s_bf99a93e97ab76::t_df0a66596b3ed4 1-187
+server/src/lostcity/systems/equipment/Equipment.ts
+  s_bf99a93e97ab76::t_3678776d376c69 189-211
+tools/client910/crates/rs910-symbols/src/loc.rs
+  s_bf99a93e97ab76::t_3678776d376c69 8-13,150-151,248-251,254-269,324-329,364-365
+server/src/lostcity/systems/locs/ClimbOps.ts
+  s_bf99a93e97ab76::t_3678776d376c69 41-67,72
+server/src/lostcity/tools/data/domains/world/Climbs.ts
+  s_bf99a93e97ab76::t_3678776d376c69 2,4-7,17-18,20,22-23,25-26,28-29,31-38,40-44,46-55,57-60,64-67,69-71,74-75,77-79,86-87,89,92-93,95,97-116,118-119,121-124,127,129-130,132,135-138,141-145,147-150,152-153,155-159,161-162,164-165,168,170,172-259,261-283,285,288
+  s_bf99a93e97ab76::t_df0a66596b3ed4 133-134,260
+  s_bf99a93e97ab76::t_11f559ae5ced93 167
+server/src/lostcity/systems/rewards/SkillChoice.ts
+  s_bf99a93e97ab76::t_df0a66596b3ed4 1-78
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "60660999327e867fe996b648feb6960f4487344b",
+  "prompts": {},
+  "sessions": {
+    "s_bf99a93e97ab76": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "3306d217-ef25-4a58-aa1a-8bdfdb5da12f",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
