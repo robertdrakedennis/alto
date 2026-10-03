@@ -1,0 +1,54 @@
+tools/client910/src/ui_goldens.rs
+  s_bf99a93e97ab76::t_605261a6b26b3b 21-22
+tools/client910/src/ui_goldens/ui_authoring_replay.rs
+  s_bf99a93e97ab76::t_e7823b6ba989f7 143-144,146,152-155,249-250,259-261
+  s_c202351b3d1826::t_ce8e49ad78d37b 3,237-248,251-258,262-296
+docs/client-status.md
+  s_c202351b3d1826::t_d8e76ae405241d 29
+revisions/950/cs2/950-1-to-910.json
+  s_c202351b3d1826::t_37168f2170c840 1-402
+tools/Cargo.lock
+  s_c202351b3d1826::t_2f5853dc412da4 401
+tools/README.md
+  s_c202351b3d1826::t_eb6f8e9b1a628b 3,13,162-208
+tools/client910/Cargo.toml
+  s_c202351b3d1826::t_c18d888f805f45 110
+tools/client910/crates/rs910-config/src/config/tests.rs
+  s_c202351b3d1826::t_4ebc8109d67834 372-373,388-393
+tools/client910/src/ui_goldens/ui_imported_replay.rs
+  s_c202351b3d1826::t_4bfe9724655ea0 1-288
+tools/cs2/src/import910.rs
+  s_c202351b3d1826::t_e9fdc3a58e9c03 1-633
+tools/cs2/src/lib.rs
+  s_c202351b3d1826::t_5e572896d9159a 8-9
+tools/cs2/src/lower910.rs
+  s_c202351b3d1826::t_f518fffbd2115f 1-310
+tools/cs2/src/main.rs
+  s_c202351b3d1826::t_79a078f94b22d2 35-69,126-175
+tools/cs2/src/wire.rs
+  s_c202351b3d1826::t_fd428bc25afa50 259,486-622
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "d4a7fe5f65e502c03fd42dcc724322105baf819c",
+  "prompts": {},
+  "sessions": {
+    "s_bf99a93e97ab76": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "3306d217-ef25-4a58-aa1a-8bdfdb5da12f",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    },
+    "s_c202351b3d1826": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0fe2d-4e63-7e41-b719-caa999b24fd9",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
