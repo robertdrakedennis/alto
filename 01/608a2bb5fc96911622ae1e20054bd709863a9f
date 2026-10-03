@@ -1,0 +1,22 @@
+tools/refactor/README.md
+  s_bf99a93e97ab76::t_e279375ef9e594 109,111-115
+tools/refactor/gatekit.py
+  s_bf99a93e97ab76::t_78faeb05dc3750 407-409
+  s_bf99a93e97ab76::t_f3c02310c76e43 376-398,400-406,410-414,416-418
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "01608a2bb5fc96911622ae1e20054bd709863a9f",
+  "prompts": {},
+  "sessions": {
+    "s_bf99a93e97ab76": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "3306d217-ef25-4a58-aa1a-8bdfdb5da12f",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
