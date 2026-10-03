@@ -1,0 +1,47 @@
+docs/client-status.md
+  s_c202351b3d1826::t_9a2f682e7e1e76 29
+revisions/950/cs2/950-1-to-910.json
+  s_c202351b3d1826::t_71d63853fd6be5 39-54,441-471,647-662,791-805,853-867
+revisions/950/cs2/950-1.json
+  s_c202351b3d1826::t_779a58ca75c8f7 876,878-891,7834,7836-7849,8181,8183-8196,11674,11676-11689,15455,15457-15470,15876,15878-15891
+tools/README.md
+  s_c202351b3d1826::t_8cd24ceac0aa58 473-476,481,484-503
+tools/client910/crates/rs910-ui/fixtures/modern-text-properties.json
+  s_c202351b3d1826::t_75f83780c751e8 1-568
+tools/client910/crates/rs910-ui/src/ui_components.rs
+  s_c202351b3d1826::t_3edfcae8913877 612,894-910,2859-3013,3687
+tools/client910/crates/rs910-ui/src/ui_hook_host.rs
+  s_c202351b3d1826::t_ad7a63be179edd 99-127
+tools/client910/crates/rs910-ui/src/ui_properties.rs
+  s_c202351b3d1826::t_4f913a9f768e21 774-851
+tools/client910/src/ui_goldens/ui_imported_replay.rs
+  s_c202351b3d1826::t_e4835db3dcf3a4 263,2671-2674,2946,2985-3057,3059-3077,3147-3176,3188-3191,3209,3221-3222,3224,3349-3384,3394
+tools/cs2/src/bridge.rs
+  s_c202351b3d1826::t_5e37e33400c0ae 49,110,206-212,445-527,761,872,971,1014
+tools/cs2/src/flow.rs
+  s_c202351b3d1826::t_7b880bb402a99d 34-43,215,285-310,1132
+tools/cs2/src/import910.rs
+  s_c202351b3d1826::t_386d140a0a1a77 53-54,104,120-138,194-195,236,341,567-568,592-646,734,1029-1030,1062,1095-1098,1108,1234-1235,1247,1262,1317,1338-1340,1348-1356,1374-1394
+tools/cs2/src/lower910.rs
+  s_c202351b3d1826::t_1e617303966d5a 170-171,248-253,286,313-321
+tools/native910/src/execution.rs
+  s_c202351b3d1826::t_9f2ce66d184b87 139-143,229-254,318-344,429-460,608-617,650-655,692-713,1079-1081
+tools/native910/src/vm.rs
+  s_c202351b3d1826::t_1513fa131459e6 2894-2895
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "ff1f5a218d76d20472dbd56ea93f11d8db32fb18",
+  "prompts": {},
+  "sessions": {
+    "s_c202351b3d1826": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0fe2d-4e63-7e41-b719-caa999b24fd9",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
