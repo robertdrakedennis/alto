@@ -1,0 +1,175 @@
+docs/server-architecture.md
+  s_bf99a93e97ab76::t_e1d5685a1cd089 147-159
+packages/domain/src/symbols/component.ts
+  s_bf99a93e97ab76::t_00acc4f7e70fdb 75-83,181-184,286-291
+packages/domain/src/symbols/interface.ts
+  s_bf99a93e97ab76::t_661a54019b2d57 27,39,68
+packages/domain/src/symbols/inv.ts
+  s_bf99a93e97ab76::t_64596ba93cdfaf 9
+packages/domain/src/symbols/loc.ts
+  s_bf99a93e97ab76::t_0a9792846471c0 39,63,87,116
+packages/domain/src/symbols/location.ts
+  s_bf99a93e97ab76::t_b0b511ad6ed59b 71,73
+packages/domain/src/symbols/npc.ts
+  s_bf99a93e97ab76::t_b03f8cd9949713 19
+packages/domain/src/symbols/obj.ts
+  s_bf99a93e97ab76::t_c1c23bb37db187 11,43,45,60,66,68,78,82,84,99,110,129-137
+packages/domain/src/symbols/param.ts
+  s_bf99a93e97ab76::t_af525868dfee46 8-20
+packages/domain/src/symbols/seq.ts
+  s_bf99a93e97ab76::t_12574975c0273e 15-16
+packages/domain/src/symbols/varbit.ts
+  s_bf99a93e97ab76::t_91967a4143f93f 57
+packages/domain/src/symbols/varc.ts
+  s_bf99a93e97ab76::t_733552f493186c 11-12
+revisions/910/symbols/component.sym
+  s_bf99a93e97ab76::t_e56cd542af37b8 55-61,141-142,216-219
+revisions/910/symbols/interface.sym
+  s_bf99a93e97ab76::t_7824fa9c614364 25,37,66
+revisions/910/symbols/inv.sym
+  s_bf99a93e97ab76::t_ebed537503679c 7
+revisions/910/symbols/loc.sym
+  s_bf99a93e97ab76::t_0d415edd12498b 37,61,85,114
+revisions/910/symbols/location.sym
+  s_bf99a93e97ab76::t_676b2a409d907b 61,63
+revisions/910/symbols/npc.sym
+  s_bf99a93e97ab76::t_79a1d6bfb718ff 17
+revisions/910/symbols/obj.sym
+  s_bf99a93e97ab76::t_b125623cc95b69 9,41,43,58,64,66,76,80,82,97,108,127-135
+revisions/910/symbols/param.sym
+  s_bf99a93e97ab76::t_07a0b2504c5fc5 6-18
+revisions/910/symbols/seq.sym
+  s_bf99a93e97ab76::t_29011eccaef5f4 13-14
+revisions/910/symbols/varbit.sym
+  s_bf99a93e97ab76::t_8d3ac0c2ad5004 55
+revisions/910/symbols/varc.sym
+  s_bf99a93e97ab76::t_16fe6e86d3e230 9-10
+server/README.md
+  s_bf99a93e97ab76::t_2f0d60046796b2 27,216
+server/src/formats/network/protocol/ServerProt.ts
+  s_bf99a93e97ab76::t_5a6812ce31a3b9 747-786
+server/src/lostcity/config/ObjType.ts
+  s_bf99a93e97ab76::t_6409f6151eef12 10-11,94,144
+server/src/lostcity/content/skills/construction/building.ts
+  s_bf99a93e97ab76::t_688b7019fbfc66 1-225
+server/src/lostcity/content/skills/construction/construction.ts
+  s_bf99a93e97ab76::t_548107f2e013ec 1-111
+server/src/lostcity/content/skills/construction/data.ts
+  s_bf99a93e97ab76::t_e5a8e6aa163096 1-158
+server/src/lostcity/content/skills/construction/estateAgent.ts
+  s_bf99a93e97ab76::t_a55658026e4cbb 1-84
+server/src/lostcity/content/skills/construction/houses.ts
+  s_bf99a93e97ab76::t_c4f1c5b1d91758 1-247
+server/src/lostcity/content/skills/index.ts
+  s_bf99a93e97ab76::t_9ae4e665123356 21,39-40,48,69,85
+server/src/lostcity/data/ConstructionTable.ts
+  s_bf99a93e97ab76::t_ff69593add7eb4 1-90
+server/src/lostcity/engine/World.ts
+  s_bf99a93e97ab76::t_7252cba541499a 14,69-71,259
+server/src/lostcity/engine/WorldContent.ts
+  s_bf99a93e97ab76::t_a81a6378139157 11,36-39
+server/src/lostcity/engine/collision/CollisionManager.ts
+  s_bf99a93e97ab76::t_3cddf9bb16eccb 9,78-83
+server/src/lostcity/engine/tick/TickPhases.test.ts
+  s_bf99a93e97ab76::t_397a4b8581af96 54
+server/src/lostcity/engine/tick/WorldPhases.ts
+  s_bf99a93e97ab76::t_f81c3edd95fb40 27-28
+server/src/lostcity/engine/triggers/ContentData.ts
+  s_bf99a93e97ab76::t_72f8939f362334 8,27-28
+server/src/lostcity/entity/Player.ts
+  s_bf99a93e97ab76::t_99600eaa629a8e 17,59-60
+server/src/lostcity/network/ConstructionE2E.integration.test.ts
+  s_bf99a93e97ab76::t_92d3fd6327bdd6 1-245
+server/src/lostcity/network/SkillsE2E.testkit.ts
+  s_bf99a93e97ab76::t_a59da6b26959b4 38,62-63,175,202-205
+server/src/lostcity/network/SocketE2E.testkit.ts
+  s_bf99a93e97ab76::t_1a30c131ca7f74 885-925
+server/src/lostcity/systems/construction/HouseState.ts
+  s_bf99a93e97ab76::t_7981a9af7d4442 1-121
+server/src/lostcity/systems/instances/ChunkCopy.ts
+  s_bf99a93e97ab76::t_b45ce9a9873626 1-64
+server/src/lostcity/systems/instances/Instance.ts
+  s_bf99a93e97ab76::t_621105f3308621 1-111
+server/src/lostcity/systems/instances/Instances.ts
+  s_bf99a93e97ab76::t_216d827ab73649 1-204
+server/src/lostcity/systems/instances/TemplateMaps.ts
+  s_bf99a93e97ab76::t_34ed08262df0c3 1-82
+server/src/lostcity/systems/inventory/Inventories.ts
+  s_bf99a93e97ab76::t_a3b5a2a03b9801 1,116-130
+server/src/lostcity/systems/locs/LocMap.ts
+  s_bf99a93e97ab76::t_5725fe69d01eb3 88-112
+server/src/lostcity/systems/locs/Locs.ts
+  s_bf99a93e97ab76::t_1a55d8535a6c54 274-296
+server/src/lostcity/systems/movement/BuildArea.ts
+  s_bf99a93e97ab76::t_8298800d5ed6de 4,9-14,24-25,48-51
+server/src/lostcity/systems/movement/Movement.ts
+  s_bf99a93e97ab76::t_ee2e4f82473e3b 5,126-133,143-162
+server/src/lostcity/systems/session/Account.ts
+  s_bf99a93e97ab76::t_0453312ceb5d14 80,87-89,110-111,156
+server/src/lostcity/systems/session/AccountFile.ts
+  s_bf99a93e97ab76::t_84f742041cfc4c 3,110-111,136-137
+server/src/lostcity/tools/data/domains/skills/construction.ts
+  s_bf99a93e97ab76::t_b7439d3438b5c0 1-304
+server/src/lostcity/tools/data/domains/skills/index.ts
+  s_bf99a93e97ab76::t_f44a49321560ea 4,18,42-43
+server/vitest.config.ts
+  s_bf99a93e97ab76::t_cdae70d432ca83 48-49
+tools/client910/crates/rs910-client/src/client_core/session_core.rs
+  s_bf99a93e97ab76::t_a79f92764a5379 1560-1561,1564-1567,1572-1574
+tools/client910/crates/rs910-client/src/input_script.rs
+  s_bf99a93e97ab76::t_b334f62567a2ab 32-33
+tools/client910/crates/rs910-game/src/protocol910/pack_terrain.rs
+  s_bf99a93e97ab76::t_c616670df15c58 166-179
+tools/client910/crates/rs910-game/src/protocol910/terrain.rs
+  s_bf99a93e97ab76::t_4afd408222e21b 302-303,305-321,323,329-338,342-348,351-357,360-369,372-378
+tools/client910/crates/rs910-symbols/src/component.rs
+  s_bf99a93e97ab76::t_526c3bef3d7108 153-171,375-383,600-612
+tools/client910/crates/rs910-symbols/src/interface.rs
+  s_bf99a93e97ab76::t_8323c4e2890108 50-51,74-75,132-133
+tools/client910/crates/rs910-symbols/src/inv.rs
+  s_bf99a93e97ab76::t_1b7f018b7c649e 14-15
+tools/client910/crates/rs910-symbols/src/loc.rs
+  s_bf99a93e97ab76::t_10358d02c6596e 74-75,122-123,170-171,228-229
+tools/client910/crates/rs910-symbols/src/location.rs
+  s_bf99a93e97ab76::t_51cc1a70571821 122-123,126-127
+tools/client910/crates/rs910-symbols/src/npc.rs
+  s_bf99a93e97ab76::t_b074aa763056fb 34-35
+tools/client910/crates/rs910-symbols/src/obj.rs
+  s_bf99a93e97ab76::t_466af8aa208e66 18-19,82-83,86-87,116-117,128-129,132-133,152-153,160-161,164-165,194-195,216-217,254-271
+tools/client910/crates/rs910-symbols/src/param.rs
+  s_bf99a93e97ab76::t_a5ff771d48746e 13-38
+tools/client910/crates/rs910-symbols/src/seq.rs
+  s_bf99a93e97ab76::t_d8f17555e29a7b 26-29
+tools/client910/crates/rs910-symbols/src/varbit.rs
+  s_bf99a93e97ab76::t_6420e8e2cef10d 110-111
+tools/client910/crates/rs910-symbols/src/varc.rs
+  s_bf99a93e97ab76::t_dd84955a8b6a11 19-22
+tools/client910/fixtures/session-replay/house/record.sh
+  s_bf99a93e97ab76::t_697de19b2dc018 1-86
+tools/client910/fixtures/session-replay/house/server-trace.jsonl
+  s_bf99a93e97ab76::t_6c42a5aae604ad 1-110
+tools/client910/src/app.rs
+  s_bf99a93e97ab76::t_83dfa866714a36 311-313
+tools/client910/src/scenario_house.rs
+  s_bf99a93e97ab76::t_966d7f3660cbc7 1-261
+tools/client910/src/session_replay.rs
+  s_bf99a93e97ab76::t_b785109c911634 619-621,628-629,702-707,711-714,739-797,851-855,860-868
+tools/refactor/test-inventory.txt
+  s_bf99a93e97ab76::t_ab2019f89cb253 4,47,63,70,1691
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "45d8c23ba56535460e91a8e20f2da04e6a6c1f8f",
+  "prompts": {},
+  "sessions": {
+    "s_bf99a93e97ab76": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "3306d217-ef25-4a58-aa1a-8bdfdb5da12f",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
