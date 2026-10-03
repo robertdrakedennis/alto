@@ -1,0 +1,31 @@
+docs/client-status.md
+  s_c202351b3d1826::t_123281a2a97221 29
+revisions/950/cs2/layout.json
+  s_c202351b3d1826::t_a3a9256bf6bc08 1-89
+tools/client910/crates/rs910-ui/fixtures/anchored-layout.json
+  s_c202351b3d1826::t_9efde2a287cc36 654-663,702-711,750-759,798-807,846-855,894-903,942-951,990-999,1038-1047,1086-1095,1134-1143,1182-1191,1230-1239,1248-2482
+tools/client910/crates/rs910-ui/src/ui_components.rs
+  s_c202351b3d1826::t_241655fbce45f9 92,135,2338-2339,2371-2458,2512,2516,2520,2545-2558
+tools/client910/crates/rs910-ui/src/ui_layout.rs
+  s_c202351b3d1826::t_88fbf7bc8af772 6-7,182-184,230-245
+tools/client910/crates/rs910-ui/src/ui_layout_constraints.rs
+  s_c202351b3d1826::t_c61caf3d5f783e 27-70,105-116,183-193,211-260
+tools/client910/src/ui_goldens/ui_authoring_replay.rs
+  s_c202351b3d1826::t_17384da7e25e46 245,268,274-277,291-310,312-325,356-359
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "617f36974435890e984568ddffa9a7471d34833f",
+  "prompts": {},
+  "sessions": {
+    "s_c202351b3d1826": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0fe2d-4e63-7e41-b719-caa999b24fd9",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
