@@ -1,0 +1,41 @@
+tools/client910/crates/rs910-scene/src/locs.rs
+  s_bf99a93e97ab76::t_41abcc8cee6126 146-219,324-334
+tools/client910/src/lib.rs
+  s_bf99a93e97ab76::t_41abcc8cee6126 181-184,208-211
+tools/client910/crates/rs910-symbols/src/loc.rs
+  s_bf99a93e97ab76::t_41abcc8cee6126 84-85
+packages/domain/src/symbols/loc.ts
+  s_bf99a93e97ab76::t_41abcc8cee6126 44
+tools/client910/src/app/dynamic_loc_pick_tests.rs
+  s_bf99a93e97ab76::t_41abcc8cee6126 470-571
+tools/client910/src/app.rs
+  s_bf99a93e97ab76::t_41abcc8cee6126 766-767
+tools/client910/fixtures/session-replay/production/record.sh
+  s_bf99a93e97ab76::t_41abcc8cee6126 13
+tools/client910/src/app/cache_tests.rs
+  s_bf99a93e97ab76::t_41abcc8cee6126 36
+tools/client910/fixtures/session-replay/flow-lib.sh
+  s_bf99a93e97ab76::t_41abcc8cee6126 8-9,34-38
+revisions/910/symbols/loc.sym
+  s_bf99a93e97ab76::t_41abcc8cee6126 42
+docs/client-status.md
+  s_bf99a93e97ab76::t_41abcc8cee6126 18
+tools/client910/src/app/entity_renderer.rs
+  s_bf99a93e97ab76::t_41abcc8cee6126 5-15,28-36,736-746,759-824,826-904,920,988
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "70448a635215a61f1dc28396e3ce8d0e368806cf",
+  "prompts": {},
+  "sessions": {
+    "s_bf99a93e97ab76": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "3306d217-ef25-4a58-aa1a-8bdfdb5da12f",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
