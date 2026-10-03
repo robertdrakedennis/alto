@@ -1,0 +1,235 @@
+docs/server-architecture.md
+  s_bf99a93e97ab76::t_a2a73f506557f0 132-146,151-162,168-171,177-184
+packages/domain/src/symbols/component.ts
+  s_bf99a93e97ab76::t_74751aa7e723ef 42-69
+packages/domain/src/symbols/enum.ts
+  s_bf99a93e97ab76::t_ad8844a146b574 31-32
+packages/domain/src/symbols/interface.ts
+  s_bf99a93e97ab76::t_7f0d85138db56e 10-12
+packages/domain/src/symbols/loc.ts
+  s_bf99a93e97ab76::t_ec616d030d8263 6-8,26,41-43,46-54,57-59,61-71,79-81,99-100,149
+packages/domain/src/symbols/location.ts
+  s_bf99a93e97ab76::t_8805805b6a0083 21,26-34,40,43-46,79,96
+packages/domain/src/symbols/npc.ts
+  s_bf99a93e97ab76::t_8c66c30c2bdd19 7,20-22,26,44-45,48
+packages/domain/src/symbols/obj.ts
+  s_bf99a93e97ab76::t_5a9bd09728e760 8-9,12,14,17,19-20,24,39,45-46,53,55-56,59,61,63,77,82,87,92,95,97,100,105-106,132,137,140,142,144,146-147,152,160,162,174,183,192,196,208-210,213
+packages/domain/src/symbols/quest.ts
+  s_bf99a93e97ab76::t_70ef6cf23b2506 7
+packages/domain/src/symbols/seq.ts
+  s_bf99a93e97ab76::t_e37b3167b7593d 7,11,16-17,62,67,69,72,74,76,86,92
+packages/domain/src/symbols/spot.ts
+  s_bf99a93e97ab76::t_0209f0f3aa7b16 12-13
+packages/domain/src/symbols/varbit.ts
+  s_bf99a93e97ab76::t_9cb6b30fa83c2c 8,12,15,22-24,76,104,113-129,144
+revisions/910/symbols/component.sym
+  s_bf99a93e97ab76::t_f0beda11d959eb 34-57
+revisions/910/symbols/enum.sym
+  s_bf99a93e97ab76::t_ea367d06ac5181 29-30
+revisions/910/symbols/interface.sym
+  s_bf99a93e97ab76::t_f83f957712ea26 8-10
+revisions/910/symbols/loc.sym
+  s_bf99a93e97ab76::t_5ae1341fb387d5 4-6,24,39-41,44-52,55-57,59-69,77-79,97-98,147
+revisions/910/symbols/location.sym
+  s_bf99a93e97ab76::t_09580ccfa33f88 11,16-24,30,33-36,69,86
+revisions/910/symbols/npc.sym
+  s_bf99a93e97ab76::t_41f0eac48c715d 5,18-20,24,42-43,46
+revisions/910/symbols/obj.sym
+  s_bf99a93e97ab76::t_a484b70248aa5f 6-7,10,12,15,17-18,22,37,43-44,51,53-54,57,59,61,75,80,85,90,93,95,98,103-104,130,135,138,140,142,144-145,150,158,160,172,181,190,194,206-208,211
+revisions/910/symbols/quest.sym
+  s_bf99a93e97ab76::t_0846f47ab5862c 5
+revisions/910/symbols/seq.sym
+  s_bf99a93e97ab76::t_537ade8f02f943 5,9,14-15,60,65,67,70,72,74,84,90
+revisions/910/symbols/spot.sym
+  s_bf99a93e97ab76::t_4f4a83b1c17aaa 10-11
+revisions/910/symbols/varbit.sym
+  s_bf99a93e97ab76::t_a2dc0755afb33e 6,10,13,20-22,74,102,111-127,142
+server/README.md
+  s_bf99a93e97ab76::t_5709b679a57cd9 203-205,213-215
+server/src/formats/network/protocol/ServerProt.ts
+  s_bf99a93e97ab76::t_80bef7cbdef9f7 628-642
+server/src/lostcity/content/skills/divination/data.ts
+  s_bf99a93e97ab76::t_a4baaefa835cd5 20-21,65-67,76-77
+server/src/lostcity/content/skills/divination/divination.ts
+  s_bf99a93e97ab76::t_f0f6f5e9d8a0b8 6,36-42,56-57,63,78-82,85-88,100-105,107,109-133,135-138
+server/src/lostcity/content/skills/divination/enriched.ts
+  s_bf99a93e97ab76::t_307abcb8b0a9ca 1-105
+server/src/lostcity/content/skills/farming/data.ts
+  s_bf99a93e97ab76::t_271d79a83fcff5 10-11,14-22,39-43,52-62,84-106,110,120-122,128,144
+server/src/lostcity/content/skills/farming/farming.ts
+  s_bf99a93e97ab76::t_17e8c46ab8af2c 1,9,13,15-18,21,27-29,34-41,45-49,53,57-60,63-64,67-70,76,80-84,94,106,117,119,135,140,148,156,163,178-179,185-187,190,201,205-206,217,220,223,230,234,236,238-241,244,247,255,258,261-268,270,274,278,285,290,295,299,307-309,314-316,321-326,331,338,345-347,351-352,355-356
+server/src/lostcity/content/skills/farming/gardeners.ts
+  s_bf99a93e97ab76::t_de8359d19c7b51 1-107
+server/src/lostcity/content/skills/farming/health.ts
+  s_bf99a93e97ab76::t_362ae4e83b7647 1-66
+server/src/lostcity/content/skills/farming/trees.ts
+  s_bf99a93e97ab76::t_220b7542403b74 1-190
+server/src/lostcity/content/skills/farming/watering.ts
+  s_bf99a93e97ab76::t_28611d6de81201 1-90
+server/src/lostcity/content/skills/fishing/barehanded.ts
+  s_bf99a93e97ab76::t_5795aec98d6f49 1-61
+server/src/lostcity/content/skills/fishing/data.ts
+  s_bf99a93e97ab76::t_e00b501a1118e3 1,6-7,23-27,29-32,61-67,70-79,88-89,92-99,115-116,137-138,140-149,155-157,160
+server/src/lostcity/content/skills/fishing/fishing.ts
+  s_bf99a93e97ab76::t_44ad36ffabe97a 13-14,17-19,32,40,68,71-72,112-116,124-133,136-137,139,146-160
+server/src/lostcity/content/skills/hunter/data.ts
+  s_bf99a93e97ab76::t_ba491f1ea191e4 4-5,16-17,19-23,43-52,55-57,66-67,70-85,88-93,141-148,170,172-185,218-238,254-256
+server/src/lostcity/content/skills/hunter/hunter.ts
+  s_bf99a93e97ab76::t_01a5288b5aa764 6,19,21-24,38-43,45-47,51,56,58,61-70,81,86,91-102,116,118-119,124-130,138-141,146-147,150-152,156-165,167-170,174-175,177,188,194,211,215-223,232,236-243,248-252,261-265,289-290,293,299,301-302,304,311-313,336-337,342
+server/src/lostcity/content/skills/hunter/netting.ts
+  s_bf99a93e97ab76::t_66de0159e45315 1-235
+server/src/lostcity/content/skills/hunter/pitfall.ts
+  s_bf99a93e97ab76::t_81e28e51c95926 1-203
+server/src/lostcity/content/skills/index.ts
+  s_bf99a93e97ab76::t_365f998531837e 55,65
+server/src/lostcity/content/skills/mining/data.ts
+  s_bf99a93e97ab76::t_b5850a1ac251d7 1,8,31-37,55-60,73-84,87-126,151-154,193-198,206-209
+server/src/lostcity/content/skills/mining/mining.test.ts
+  s_bf99a93e97ab76::t_53a8beb9111a08 43,85-87,90-91,98-107
+server/src/lostcity/content/skills/mining/mining.ts
+  s_bf99a93e97ab76::t_f300e03a6a67bc 1,15-16,18-19,55-57,61,67,69-71,81-82,100-101,117-121,123-127,139-140,147,155,170-171,230,232,237-238
+server/src/lostcity/content/skills/mining/orebox.ts
+  s_bf99a93e97ab76::t_4a0adcf5dc256a 1-218
+server/src/lostcity/content/skills/mining/rockertunities.ts
+  s_bf99a93e97ab76::t_c86d93cfe76aed 1-124
+server/src/lostcity/content/skills/mining/stamina.ts
+  s_bf99a93e97ab76::t_8e371e6e920641 6-7,16,20,23,26-27,30-35,40,45
+server/src/lostcity/content/skills/mining/stars.ts
+  s_bf99a93e97ab76::t_39094c46e59281 1-244
+server/src/lostcity/content/skills/smithing/smithing.ts
+  s_bf99a93e97ab76::t_714b97f39a1b99 5,309-315,358-362
+server/src/lostcity/content/skills/water/water.ts
+  s_bf99a93e97ab76::t_7cb05cb280cd22 6-7,15
+server/src/lostcity/content/skills/woodcutting/canoes.ts
+  s_bf99a93e97ab76::t_173596ef93fa27 1-263
+server/src/lostcity/content/skills/woodcutting/crystaltrees.ts
+  s_bf99a93e97ab76::t_e5a4984d64d686 1-93
+server/src/lostcity/content/skills/woodcutting/data.ts
+  s_bf99a93e97ab76::t_9d114f4d6426c0 6,60-85,100-110,113-123,181-184,189,198-199,203-205,221-223,228-229,235-237,242,245-248
+server/src/lostcity/content/skills/woodcutting/jungle.ts
+  s_bf99a93e97ab76::t_17f0ca7e410516 1-95
+server/src/lostcity/content/skills/woodcutting/woodcutting.test.ts
+  s_bf99a93e97ab76::t_288f031da8e92c 61,64-65,71-72
+server/src/lostcity/content/skills/woodcutting/woodcutting.ts
+  s_bf99a93e97ab76::t_ac897283fdca57 15-17,19-21,23,27,63-65,68,80,82-85,88-92,97-102,104-114,137-138,143,145,177,219,223-224,236-252,318-320
+server/src/lostcity/data/GatheringTables.ts
+  s_bf99a93e97ab76::t_2b3622d86002fc 36-50,66-67,73-74,87,90-92,99-141,156-163,169-174,179-182,192,194,202,204-212,219-224,239-242,246-248,255-257,276-279
+server/src/lostcity/data/SkillTables.ts
+  s_bf99a93e97ab76::t_797c76d6e33f22 3,15,52-70,103-104,136-141,168-196,204,209-213,239-242
+server/src/lostcity/data/WoodcuttingTable.ts
+  s_bf99a93e97ab76::t_dec4b9e957634c 1-124
+server/src/lostcity/engine/tick/TickPhases.test.ts
+  s_bf99a93e97ab76::t_bb090001c86567 55-58
+server/src/lostcity/engine/tick/WorldPhases.ts
+  s_bf99a93e97ab76::t_6ca7635e96cd4d 29-35
+server/src/lostcity/network/FarmingE2E.integration.test.ts
+  s_bf99a93e97ab76::t_30a396f812e32f 1-271
+server/src/lostcity/network/FishingDivinationE2E.integration.test.ts
+  s_bf99a93e97ab76::t_8f66ea35e4eb03 1-204
+server/src/lostcity/network/GatheringE2E.integration.test.ts
+  s_bf99a93e97ab76::t_b86a4c891ba49d 20-21,148,154
+server/src/lostcity/network/GatheringGapsE2E.integration.test.ts
+  s_bf99a93e97ab76::t_33629155d477e5 1-350
+server/src/lostcity/network/HunterE2E.integration.test.ts
+  s_bf99a93e97ab76::t_08cabb5030592e 1-214
+server/src/lostcity/systems/appearance/TileSpots.ts
+  s_bf99a93e97ab76::t_8e5762321cb64b 1-33
+server/src/lostcity/systems/equipment/EquipmentContent.ts
+  s_bf99a93e97ab76::t_09e0cf57c47201 5-6,33-34
+server/src/lostcity/systems/farming/Farming.ts
+  s_bf99a93e97ab76::t_0a3eaad6670fa1 4,26-31,44-47,66-81,102-110,133-134,139-140,146,152-164,172,179,183,188,195,205-214
+server/src/lostcity/systems/farming/FarmingState.ts
+  s_bf99a93e97ab76::t_86eeb357d44f6a 5,17-21,33-35,39-40,61-62,70-88,95,99-101
+server/src/lostcity/systems/farming/PatchState.ts
+  s_bf99a93e97ab76::t_11519fbdf6aa52 20,22,24-31,36-37,40,45,50,55-71,80,82,84,99,102-114,124-131,143
+server/src/lostcity/systems/interfaces/Interfaces.ts
+  s_bf99a93e97ab76::t_446c6b523c238d 86-92
+server/src/lostcity/systems/skilling/Gathering.ts
+  s_bf99a93e97ab76::t_6f9d04c2350177 68-69,139
+server/src/lostcity/systems/skilling/MetalBank.ts
+  s_bf99a93e97ab76::t_057d44d368628c 85-106
+server/src/lostcity/systems/skilling/ToolBelt.ts
+  s_bf99a93e97ab76::t_ee4794db39f8d3 40-41
+server/src/lostcity/systems/skilling/Traps.ts
+  s_bf99a93e97ab76::t_382ff232c12243 11-15,30-33,38-39,41-42,68-71,80-81,94-96,99,102-103,105,149,151,156-157,161,172-176,189,191-196
+server/src/lostcity/tools/data/domains/skills/FarmingForms.ts
+  s_bf99a93e97ab76::t_f8510273bf8b7f 1-185
+server/src/lostcity/tools/data/domains/skills/FarmingGardeners.ts
+  s_bf99a93e97ab76::t_3d315e43805303 1-170
+server/src/lostcity/tools/data/domains/skills/FishingExtras.ts
+  s_bf99a93e97ab76::t_ed553eabac23a5 1-108
+server/src/lostcity/tools/data/domains/skills/divination.ts
+  s_bf99a93e97ab76::t_9f14ab032ee377 3,93-119,171,174,186-187
+server/src/lostcity/tools/data/domains/skills/farming.ts
+  s_bf99a93e97ab76::t_61f4d880619150 4,6-7,11,15-20,26-27,33-35,38-44,46-58,81-82,85-87,90-95,113,115-125,131-149,151,157,159-170,173-180,183-192,194-199,201-202,205-211,213,215-216,219-221,223,225,227-228,230-237,239-240,242-243,245-275,278-296,298-301,313-323,326-327,329,335-342,348,351-352,360,363,367-368
+server/src/lostcity/tools/data/domains/skills/fishing.ts
+  s_bf99a93e97ab76::t_580372f014af52 6,41-46,54,60-66,73,92,100-101,105,110,128-129,132-137,198-204,210-212,235-239,283,299,349-360,383-385
+server/src/lostcity/tools/data/domains/skills/hunter.ts
+  s_bf99a93e97ab76::t_2849942bc9bf63 2-3,17-24,27-32,78-139,208,210,218-222,234-237,257,262,265,268-274
+server/src/lostcity/tools/data/domains/skills/index.ts
+  s_bf99a93e97ab76::t_768b103586dd5d 31-32,41-42
+server/src/lostcity/tools/data/domains/skills/mining.ts
+  s_bf99a93e97ab76::t_86062ee2854b70 2-4,45-46,77-79,174-175,207,211,266-267,279-280,290,293,315-318
+server/src/lostcity/tools/data/domains/skills/miningStamina.ts
+  s_bf99a93e97ab76::t_ee6da5da800bc6 1-74
+server/src/lostcity/tools/data/domains/skills/netting.ts
+  s_bf99a93e97ab76::t_9343216b28a3f3 1-153
+server/src/lostcity/tools/data/domains/skills/stars.ts
+  s_bf99a93e97ab76::t_e042714490f092 1-161
+server/src/lostcity/tools/data/domains/skills/woodcutting.ts
+  s_bf99a93e97ab76::t_e60bb1cb50743a 1,3,33-38,57-67,73,75-94,96,100,103,106,109,139-143,147,161,164,200-201,276,279-280,296-297,324-325,329-330,335-347
+server/src/lostcity/tools/data/domains/skills/woodcuttingExtras.ts
+  s_bf99a93e97ab76::t_e9f9caa1c37831 1-184
+server/src/lostcity/tools/data/domains/spawns/SkillSpawns.ts
+  s_bf99a93e97ab76::t_bc40f57846b009 1-47
+server/src/lostcity/tools/data/domains/spawns/index.ts
+  s_bf99a93e97ab76::t_0364bdae72c1eb 11-12,49,78,80,103-104
+tools/client910/crates/rs910-symbols/src/component.rs
+  s_bf99a93e97ab76::t_3a72086c61ec8f 81-138
+tools/client910/crates/rs910-symbols/src/enums.rs
+  s_bf99a93e97ab76::t_1613878bb08231 58-61
+tools/client910/crates/rs910-symbols/src/interface.rs
+  s_bf99a93e97ab76::t_5f7ca2793bb1d2 16-21
+tools/client910/crates/rs910-symbols/src/loc.rs
+  s_bf99a93e97ab76::t_77aacf180cbe27 8-13,48-49,78-83,88-105,110-115,118-139,154-159,194-197,294-295
+tools/client910/crates/rs910-symbols/src/location.rs
+  s_bf99a93e97ab76::t_45a1baf52f702b 22-23,32-49,60-61,66-73,138-139,172-173
+tools/client910/crates/rs910-symbols/src/npc.rs
+  s_bf99a93e97ab76::t_8b03bd0c0b46c1 10-11,36-41,48-49,84-87,92-93
+tools/client910/crates/rs910-symbols/src/obj.rs
+  s_bf99a93e97ab76::t_0e4d1ddca01ba2 12-15,20-21,24-25,30-31,34-37,44-45,74-75,86-89,102-103,106-109,114-115,118-119,122-123,150-151,160-161,170-171,180-181,186-187,190-191,196-197,206-209,260-261,270-271,276-277,280-281,284-285,288-291,300-301,316-317,320-321,344-345,362-363,380-381,388-389,412-417,422-423
+tools/client910/crates/rs910-symbols/src/quest.rs
+  s_bf99a93e97ab76::t_7e750d726c591e 10-11
+tools/client910/crates/rs910-symbols/src/seq.rs
+  s_bf99a93e97ab76::t_5cbf913d6066d5 10-11,18-19,28-31,120-121,130-131,134-135,140-141,144-145,148-149,168-169,180-181
+tools/client910/crates/rs910-symbols/src/spot.rs
+  s_bf99a93e97ab76::t_bf05a7c05cd714 20-23
+tools/client910/crates/rs910-symbols/src/varbit.rs
+  s_bf99a93e97ab76::t_41917be029bde3 12-13,20-21,26-27,40-45,148-149,204-205,222-255,284-285
+tools/client910/fixtures/session-replay/gathering-gaps/record.sh
+  s_bf99a93e97ab76::t_3c59b821d09354 1-70
+tools/client910/fixtures/session-replay/gathering-gaps/server-trace.jsonl
+  s_bf99a93e97ab76::t_28b217dd3f6caf 1-240
+tools/client910/src/app.rs
+  s_bf99a93e97ab76::t_fb9404269e82de 312-314
+tools/client910/src/scenario_gathering_gaps.rs
+  s_bf99a93e97ab76::t_ebd390295c22b9 1-306
+tools/refactor/test-inventory.txt
+  s_bf99a93e97ab76::t_89305638f280b7 4,47,71,1714,1753,1755,1758,1763,1774-1775,1800,1822,1830,1833,1843,1852,1877,1894-1895,1917,1925,2014
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "83794e870cc1a7c9bef4f8a0827938479ca571c1",
+  "prompts": {},
+  "sessions": {
+    "s_bf99a93e97ab76": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "3306d217-ef25-4a58-aa1a-8bdfdb5da12f",
+        "model": "unknown"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
