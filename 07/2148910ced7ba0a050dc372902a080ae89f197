@@ -1,0 +1,152 @@
+server/src/lostcity/systems/session/AccountFile.ts
+  s_bf99a93e97ab76::t_c16e2bec5e8538 2,108-109,133-134
+revisions/910/symbols/component.sym
+  s_bf99a93e97ab76::t_c16e2bec5e8538 174-177
+tools/client910/src/app.rs
+  s_bf99a93e97ab76::t_c16e2bec5e8538 311-314
+revisions/910/symbols/interface.sym
+  s_bf99a93e97ab76::t_c16e2bec5e8538 52
+server/src/lostcity/content/skills/hunter/hunter.ts
+  s_bf99a93e97ab76::t_c16e2bec5e8538 1-272
+server/src/lostcity/content/skills/farming/data.ts
+  s_bf99a93e97ab76::t_c16e2bec5e8538 1-99
+packages/domain/src/symbols/location.ts
+  s_bf99a93e97ab76::t_c16e2bec5e8538 56,58-59
+server/src/lostcity/systems/skilling/Traps.ts
+  s_bf99a93e97ab76::t_c16e2bec5e8538 1-176
+revisions/910/symbols/loc.sym
+  s_bf99a93e97ab76::t_c16e2bec5e8538 17-19,21-27,40,63,69-71,73-96,106-107
+server/src/lostcity/content/skills/index.ts
+  s_bf99a93e97ab76::t_c16e2bec5e8538 14-16,35-37,45,50-52,78-80,92-95,107-111
+tools/client910/crates/rs910-symbols/src/component.rs
+  s_bf99a93e97ab76::t_c16e2bec5e8538 461-473
+packages/domain/src/symbols/loc.ts
+  s_bf99a93e97ab76::t_c16e2bec5e8538 19-21,23-29,42,65,71-73,75-98,108-109
+server/src/lostcity/tools/data/domains/skills/hunter.ts
+  s_bf99a93e97ab76::t_c16e2bec5e8538 1-184
+server/README.md
+  s_bf99a93e97ab76::t_c16e2bec5e8538 116,198-200
+packages/domain/src/symbols/param.ts
+  s_bf99a93e97ab76::t_c16e2bec5e8538 37
+packages/domain/src/symbols/interface.ts
+  s_bf99a93e97ab76::t_c16e2bec5e8538 54
+packages/domain/src/symbols/npc.ts
+  s_bf99a93e97ab76::t_c16e2bec5e8538 15,23-24
+server/src/lostcity/engine/tick/WorldPhases.ts
+  s_bf99a93e97ab76::t_c16e2bec5e8538 18,24-26
+server/src/lostcity/network/NatureSkillsE2E.integration.test.ts
+  s_bf99a93e97ab76::t_c16e2bec5e8538 1-254
+server/src/lostcity/systems/npc/NpcEvents.ts
+  s_bf99a93e97ab76::t_c16e2bec5e8538 13,20-21,43,51
+tools/client910/crates/rs910-symbols/src/obj.rs
+  s_bf99a93e97ab76::t_c16e2bec5e8538 22-23,30-31,58-59,68-69,128-133,136-137,140-143,148-149,152-153,158-159,172-173,192-193,208-209
+server/src/lostcity/engine/devcommands/SkillCommands.ts
+  s_bf99a93e97ab76::t_c16e2bec5e8538 1-62
+server/src/formats/network/protocol/ServerProt.ts
+  s_bf99a93e97ab76::t_c16e2bec5e8538 1292,1379-1380,1399-1400
+  s_bf99a93e97ab76::t_ea32aee9842cfb 1401
+revisions/910/symbols/seq.sym
+  s_bf99a93e97ab76::t_c16e2bec5e8538 16,18-21,32-33,41-42,44,46,55
+server/src/lostcity/systems/stats/StatNames.ts
+  s_bf99a93e97ab76::t_c16e2bec5e8538 1-13
+server/src/lostcity/systems/farming/Farming.ts
+  s_bf99a93e97ab76::t_c16e2bec5e8538 1-161
+revisions/910/symbols/location.sym
+  s_bf99a93e97ab76::t_c16e2bec5e8538 46,48-49
+tools/client910/crates/rs910-symbols/src/loc.rs
+  s_bf99a93e97ab76::t_c16e2bec5e8538 34-39,42-55,80-81,127-128,138-143,146-193,212-215
+server/src/lostcity/systems/movement/StepAside.ts
+  s_bf99a93e97ab76::t_c16e2bec5e8538 1-29
+server/src/lostcity/content/skills/firemaking/firemaking.ts
+  s_bf99a93e97ab76::t_c16e2bec5e8538 11,97
+tools/client910/crates/rs910-symbols/src/location.rs
+  s_bf99a93e97ab76::t_c16e2bec5e8538 92-93,96-99
+server/src/lostcity/systems/farming/FarmingState.ts
+  s_bf99a93e97ab76::t_c16e2bec5e8538 1-72
+revisions/910/symbols/obj.sym
+  s_bf99a93e97ab76::t_c16e2bec5e8538 11,15,29,34,64-66,68,70-71,74,76,79,86,96,104
+packages/domain/src/symbols/component.ts
+  s_bf99a93e97ab76::t_c16e2bec5e8538 222-227
+tools/client910/crates/rs910-symbols/src/npc.rs
+  s_bf99a93e97ab76::t_c16e2bec5e8538 26-27,42-45
+server/src/lostcity/entity/Player.ts
+  s_bf99a93e97ab76::t_c16e2bec5e8538 16,55-56
+packages/domain/src/symbols/varbit.ts
+  s_bf99a93e97ab76::t_c16e2bec5e8538 79,81,87,94,99
+server/src/lostcity/systems/farming/PatchState.ts
+  s_bf99a93e97ab76::t_c16e2bec5e8538 1-109
+tools/refactor/test-inventory.txt
+  s_bf99a93e97ab76::t_c16e2bec5e8538 4,47,72,1727,1768,1798,1814
+docs/server-architecture.md
+  s_bf99a93e97ab76::t_c16e2bec5e8538 115-129
+revisions/910/symbols/varbit.sym
+  s_bf99a93e97ab76::t_c16e2bec5e8538 77,79,85,92,97
+tools/client910/crates/rs910-symbols/src/varbit.rs
+  s_bf99a93e97ab76::t_c16e2bec5e8538 154-155,158-159,170-171,184-185,194-195
+tools/client910/crates/rs910-symbols/src/seq.rs
+  s_bf99a93e97ab76::t_c16e2bec5e8538 32-33,36-43,64-67,82-85,88-89,93-94,110-111
+server/src/lostcity/entity/Npc.ts
+  s_bf99a93e97ab76::t_c16e2bec5e8538 68-78
+server/src/lostcity/content/skills/divination/divination.ts
+  s_bf99a93e97ab76::t_c16e2bec5e8538 1-251
+server/src/lostcity/systems/session/Account.ts
+  s_bf99a93e97ab76::t_c16e2bec5e8538 108-109,153
+server/src/lostcity/engine/tick/TickPhases.test.ts
+  s_bf99a93e97ab76::t_c16e2bec5e8538 52-53
+tools/client910/fixtures/session-replay/nature/server-trace.jsonl
+  s_bf99a93e97ab76::t_c16e2bec5e8538 1-232
+server/src/lostcity/engine/devcommands/DevCommands.ts
+  s_bf99a93e97ab76::t_c16e2bec5e8538 7,28
+  s_bf99a93e97ab76::t_ef40c81792226f 29
+server/src/lostcity/tools/data/domains/skills/farming.ts
+  s_bf99a93e97ab76::t_c16e2bec5e8538 1-323
+tools/client910/fixtures/session-replay/nature/record.sh
+  s_bf99a93e97ab76::t_c16e2bec5e8538 1-72
+tools/client910/src/scenario_nature.rs
+  s_bf99a93e97ab76::t_c16e2bec5e8538 1-319
+packages/domain/src/symbols/obj.ts
+  s_bf99a93e97ab76::t_c16e2bec5e8538 13,17,31,36,66-68,70,72-73,76,78,81,88,98,106
+server/src/lostcity/content/skills/hunter/data.ts
+  s_bf99a93e97ab76::t_c16e2bec5e8538 1-177
+server/src/lostcity/data/GatheringTables.ts
+  s_bf99a93e97ab76::t_c16e2bec5e8538 1-189
+server/src/lostcity/tools/data/domains/skills/index.ts
+  s_bf99a93e97ab76::t_c16e2bec5e8538 5-6,9,17,38-41
+server/src/lostcity/systems/npc/NpcInfo.test.ts
+  s_bf99a93e97ab76::t_c16e2bec5e8538 61,186-187,342-360
+  s_bf99a93e97ab76::t_b48552350095ea 361-362
+server/src/lostcity/content/skills/divination/data.ts
+  s_bf99a93e97ab76::t_c16e2bec5e8538 1-119
+server/src/lostcity/systems/skilling/ToolBelt.ts
+  s_bf99a93e97ab76::t_c16e2bec5e8538 34-37
+tools/client910/crates/rs910-symbols/src/param.rs
+  s_bf99a93e97ab76::t_c16e2bec5e8538 70-71
+packages/domain/src/symbols/seq.ts
+  s_bf99a93e97ab76::t_c16e2bec5e8538 18,20-23,34-35,43-44,46,48,57
+revisions/910/symbols/npc.sym
+  s_bf99a93e97ab76::t_c16e2bec5e8538 13,21-22
+server/src/lostcity/content/skills/farming/farming.ts
+  s_bf99a93e97ab76::t_c16e2bec5e8538 1-323
+server/src/lostcity/tools/data/domains/skills/divination.ts
+  s_bf99a93e97ab76::t_c16e2bec5e8538 1-160
+tools/client910/crates/rs910-symbols/src/interface.rs
+  s_bf99a93e97ab76::t_c16e2bec5e8538 104-105
+revisions/910/symbols/param.sym
+  s_bf99a93e97ab76::t_c16e2bec5e8538 35
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "072148910ced7ba0a050dc372902a080ae89f197",
+  "prompts": {},
+  "sessions": {
+    "s_bf99a93e97ab76": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "3306d217-ef25-4a58-aa1a-8bdfdb5da12f",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
