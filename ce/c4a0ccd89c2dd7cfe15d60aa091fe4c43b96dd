@@ -1,0 +1,123 @@
+docs/server-architecture.md
+  s_c202351b3d1826::t_1309310ab02abc 101-114
+packages/domain/src/symbols/loc.ts
+  s_c202351b3d1826::t_2f587e51794e85 6-26,29-33,35-47,58-61,71-76
+packages/domain/src/symbols/npc.ts
+  s_c202351b3d1826::t_5353d0833ce3ec 19-21
+packages/domain/src/symbols/obj.ts
+  s_c202351b3d1826::t_6c13b361df2b42 29,56
+packages/domain/src/symbols/seq.ts
+  s_c202351b3d1826::t_e021115c534a09 6,14,17-19,29-32,34-37,39-42,44
+packages/domain/src/symbols/spot.ts
+  s_c202351b3d1826::t_a28f33cb97bf2b 12
+revisions/910/symbols/loc.sym
+  s_c202351b3d1826::t_caac09aca63315 4-24,27-31,33-45,56-59,69-74
+revisions/910/symbols/npc.sym
+  s_c202351b3d1826::t_7bf853d9015df6 17-19
+revisions/910/symbols/obj.sym
+  s_c202351b3d1826::t_89a22a904f56b8 27,54
+revisions/910/symbols/seq.sym
+  s_c202351b3d1826::t_568078c11f9250 4,12,15-17,27-30,32-35,37-40,42
+revisions/910/symbols/spot.sym
+  s_c202351b3d1826::t_129cddcbdf6e77 10
+server/README.md
+  s_c202351b3d1826::t_6f6976ec2929f0 27,194-195
+server/src/formats/network/protocol/ServerProt.ts
+  s_c202351b3d1826::t_e64efaa55a08b2 8,1060-1061,1149-1150,1220-1237
+server/src/lostcity/content/skills/agility/agility.test.ts
+  s_c202351b3d1826::t_3a7bb4639c858f 1-69
+server/src/lostcity/content/skills/agility/agility.ts
+  s_c202351b3d1826::t_395f0030b39919 1-183
+server/src/lostcity/content/skills/agility/crossings.ts
+  s_c202351b3d1826::t_2f8b02f6ac887c 1-81
+server/src/lostcity/content/skills/agility/data.ts
+  s_c202351b3d1826::t_27c3739b927ded 1-126
+server/src/lostcity/content/skills/agility/laps.ts
+  s_c202351b3d1826::t_8a288239ce6c4f 1-35
+server/src/lostcity/content/skills/agility/paths.ts
+  s_c202351b3d1826::t_ff30d7e0dfc67c 1-49
+server/src/lostcity/content/skills/agility/shortcuts.ts
+  s_c202351b3d1826::t_9b61b8fa35b894 1-20
+server/src/lostcity/content/skills/index.ts
+  s_c202351b3d1826::t_cff517029f36a6 18-19,30-31,39,55-56,67-68,78-79,89-90
+server/src/lostcity/content/skills/thieving/chests.ts
+  s_c202351b3d1826::t_d2b7ce9ccf3627 1-113
+server/src/lostcity/content/skills/thieving/data.ts
+  s_c202351b3d1826::t_b598c84368301d 1-153
+server/src/lostcity/content/skills/thieving/loot.ts
+  s_c202351b3d1826::t_690b61991b31f6 1-35
+server/src/lostcity/content/skills/thieving/thieving.ts
+  s_c202351b3d1826::t_4731bee29d53e7 1-196
+server/src/lostcity/data/AgilityTable.ts
+  s_c202351b3d1826::t_f1806c27dd72ee 1-63
+server/src/lostcity/data/ThievingTable.ts
+  s_c202351b3d1826::t_578b6e9cc50c86 1-66
+server/src/lostcity/engine/World.ts
+  s_c202351b3d1826::t_88422b3c56a9f8 258-267
+server/src/lostcity/engine/interaction/Behaviour.ts
+  s_c202351b3d1826::t_79a580cee8eea1 45-46
+server/src/lostcity/engine/interaction/Interactions.ts
+  s_c202351b3d1826::t_620215fa7d529a 42-44,123,158,176-180
+server/src/lostcity/engine/interaction/behaviours/loc.ts
+  s_c202351b3d1826::t_33b002a3f21a97 5,70-77
+server/src/lostcity/engine/triggers/Triggers.ts
+  s_c202351b3d1826::t_9d8bd4ff5454c4 11-16,29,95,106,112,162-175,274,276
+server/src/lostcity/network/SocketE2E.testkit.ts
+  s_c202351b3d1826::t_6f83f6e9a960e2 1240-1249,1543,1656-1660
+server/src/lostcity/network/SupportE2E.integration.test.ts
+  s_c202351b3d1826::t_b7763907e9bbab 1-219
+server/src/lostcity/systems/appearance/PresentationEvents.ts
+  s_c202351b3d1826::t_5369e5c42644c7 27-45,53-54,63,72
+server/src/lostcity/systems/locs/LocFrame.ts
+  s_c202351b3d1826::t_78a7d1dfea8b10 1-53
+server/src/lostcity/systems/movement/Movement.ts
+  s_c202351b3d1826::t_3fc5433118cb72 14-16,134-159
+server/src/lostcity/systems/npc/NpcEvents.ts
+  s_c202351b3d1826::t_eb30ab70a5677e 29-33
+server/src/lostcity/tools/data/domains/skills/AgilityMatch.ts
+  s_c202351b3d1826::t_c1cb0a833f1ecb 1-235
+server/src/lostcity/tools/data/domains/skills/agility.ts
+  s_c202351b3d1826::t_8c1ba1902937a9 1-183
+server/src/lostcity/tools/data/domains/skills/index.ts
+  s_c202351b3d1826::t_d728bbb70841b7 3,8,14,33-35
+server/src/lostcity/tools/data/domains/skills/thieving.ts
+  s_c202351b3d1826::t_0cc516d3f23063 1-215
+server/vitest.config.ts
+  s_c202351b3d1826::t_555306635d4d3c 46-47
+tools/client910/crates/rs910-symbols/src/loc.rs
+  s_c202351b3d1826::t_04a5e9b9b312f8 8-49,54-63,66-91,112-119,138-149
+tools/client910/crates/rs910-symbols/src/npc.rs
+  s_c202351b3d1826::t_27d35e6e302548 34-39
+tools/client910/crates/rs910-symbols/src/obj.rs
+  s_c202351b3d1826::t_4bd31958aa75ed 54-55,108-109
+tools/client910/crates/rs910-symbols/src/seq.rs
+  s_c202351b3d1826::t_1a434c6db946dd 8-9,24-25,30-35,54-61,64-71,74-81,84-85
+tools/client910/crates/rs910-symbols/src/spot.rs
+  s_c202351b3d1826::t_da4d8f89a710e6 20-21
+tools/client910/fixtures/session-replay/support/record.sh
+  s_c202351b3d1826::t_a8af6adc617266 1-95
+tools/client910/fixtures/session-replay/support/server-trace.jsonl
+  s_c202351b3d1826::t_3992c889b4c1f4 1-242
+tools/client910/src/app.rs
+  s_c202351b3d1826::t_dce2293356b076 307-310
+tools/client910/src/scenario_support.rs
+  s_c202351b3d1826::t_42a8325913a66a 1-312
+tools/refactor/oxlint-baseline.txt
+  s_c202351b3d1826::t_ac3e4d7fcf8c5d 3,10,59
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "cec4a0ccd89c2dd7cfe15d60aa091fe4c43b96dd",
+  "prompts": {},
+  "sessions": {
+    "s_c202351b3d1826": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0fe2d-4e63-7e41-b719-caa999b24fd9",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
