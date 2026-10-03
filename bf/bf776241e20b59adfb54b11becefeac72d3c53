@@ -1,0 +1,37 @@
+docs/client-status.md
+  s_c202351b3d1826::t_d73f265875138b 29
+revisions/950/cs2/950-1-to-910.json
+  s_c202351b3d1826::t_04dfe452f3423a 53-68
+revisions/950/cs2/950-1.json
+  s_c202351b3d1826::t_40345cbc51ea3c 950,952-965
+tools/client910/crates/rs910-ui/src/ui_components.rs
+  s_c202351b3d1826::t_644575d330ae35 589-597,961-978,1718-1815
+tools/client910/src/ui_goldens/ui_imported_replay.rs
+  s_c202351b3d1826::t_9b81819b8434f7 182,342-356,451,454-456,831-833,835-836,940-949
+tools/cs2/src/bridge.rs
+  s_c202351b3d1826::t_5927f73aff47aa 175-180
+tools/cs2/src/import910.rs
+  s_c202351b3d1826::t_3f59289b0e5694 160,475,760,827,926,976-978
+tools/cs2/src/lower910.rs
+  s_c202351b3d1826::t_81c22467f7751d 103,166-172,182-186,191
+tools/native910/src/execution.rs
+  s_c202351b3d1826::t_7bf43b99720947 88,164,184-186,227,472
+tools/native910/src/vm.rs
+  s_c202351b3d1826::t_3901ded18d5d7d 2828-2830
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "bfbf776241e20b59adfb54b11becefeac72d3c53",
+  "prompts": {},
+  "sessions": {
+    "s_c202351b3d1826": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0fe2d-4e63-7e41-b719-caa999b24fd9",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
