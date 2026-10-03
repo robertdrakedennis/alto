@@ -1,0 +1,14 @@
+tools/client910/src/ui_goldens/ui_imported_replay.rs
+  h_d26e211304196f 24,461
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "55a26080b72ff9870bcef5c38b92070c26d9683d",
+  "prompts": {},
+  "humans": {
+    "h_d26e211304196f": {
+      "author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
