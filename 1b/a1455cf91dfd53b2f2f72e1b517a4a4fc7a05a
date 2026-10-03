@@ -1,0 +1,32 @@
+tools/client910/src/session_replay.rs
+  s_bf99a93e97ab76::t_3e6a84f5027aa6 29,123,125,137,506,508,516,683,2203-2204,2206
+tools/client910/src/test_support.rs
+  s_bf99a93e97ab76::t_3e6a84f5027aa6 14-62
+tools/client910/src/scenario_tests.rs
+  s_bf99a93e97ab76::t_3e6a84f5027aa6 35-37,73,75-77,81
+tools/client910/src/ui_goldens/settings_world.rs
+  s_bf99a93e97ab76::t_3e6a84f5027aa6 8,134,136,183,185,218,220,270-271
+tools/refactor/gatekit.py
+  s_bf99a93e97ab76::t_3e6a84f5027aa6 7-11,24,26-28,70-135,194,206,228-229,233-235,237,255-256,413-414,428-431,433-442
+tools/refactor/gate.sh
+  s_bf99a93e97ab76::t_3e6a84f5027aa6 15-17,54,163-169,172,191,196-200
+tools/refactor/README.md
+  s_bf99a93e97ab76::t_3e6a84f5027aa6 73-88,134-135,156-166
+  s_bf99a93e97ab76::t_2844d40e433cd3 167
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "1ba1455cf91dfd53b2f2f72e1b517a4a4fc7a05a",
+  "prompts": {},
+  "sessions": {
+    "s_bf99a93e97ab76": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "3306d217-ef25-4a58-aa1a-8bdfdb5da12f",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
