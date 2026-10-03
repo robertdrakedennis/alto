@@ -1,0 +1,141 @@
+docs/client-status.md
+  s_bf99a93e97ab76::t_de49eafe09796d 21
+docs/server-architecture.md
+  s_bf99a93e97ab76::t_f47e2c1e4bb0d2 50,160-172
+packages/domain/src/symbols/component.ts
+  s_bf99a93e97ab76::t_fc3eb67a20a58f 69-120,229-230
+packages/domain/src/symbols/enum.ts
+  s_bf99a93e97ab76::t_60920ed9190189 20-23,26
+packages/domain/src/symbols/interface.ts
+  s_bf99a93e97ab76::t_fadda6f0f3b2b5 24-27
+packages/domain/src/symbols/npc.ts
+  s_bf99a93e97ab76::t_bbfe67806bf0f3 25-26
+packages/domain/src/symbols/param.ts
+  s_bf99a93e97ab76::t_4da878f392b157 30-36
+packages/domain/src/symbols/struct.ts
+  s_bf99a93e97ab76::t_20a8d1364a99b0 8
+packages/domain/src/symbols/varbit.ts
+  s_bf99a93e97ab76::t_d8cdb23eba7123 49,57
+packages/domain/src/symbols/varp.ts
+  s_bf99a93e97ab76::t_ea1b3dd5bd7d33 21-26
+revisions/910/symbols/component.sym
+  s_bf99a93e97ab76::t_07e048b5d15aba 53-96,182-183
+revisions/910/symbols/enum.sym
+  s_bf99a93e97ab76::t_d74761bb960d4c 18-21,24
+revisions/910/symbols/interface.sym
+  s_bf99a93e97ab76::t_d2d5668a77c95a 22-25
+revisions/910/symbols/npc.sym
+  s_bf99a93e97ab76::t_d680465a5e0846 23-24
+revisions/910/symbols/param.sym
+  s_bf99a93e97ab76::t_929efec9f5654b 28-34
+revisions/910/symbols/struct.sym
+  s_bf99a93e97ab76::t_11295f730fb494 6
+revisions/910/symbols/varbit.sym
+  s_bf99a93e97ab76::t_3f3846b3ab8d70 47,55
+revisions/910/symbols/varp.sym
+  s_bf99a93e97ab76::t_67441014d94b7c 19-24
+server/README.md
+  s_bf99a93e97ab76::t_48375c46d0b3d2 27,217,223
+server/src/formats/network/protocol/ServerProt.ts
+  s_bf99a93e97ab76::t_5455eb096e3827 497-512
+server/src/lostcity/config/ObjDerivation.ts
+  s_bf99a93e97ab76::t_76710cb9fa4a71 107
+server/src/lostcity/config/ObjType.ts
+  s_bf99a93e97ab76::t_c7bce3a548ca6e 16-17,101,253
+server/src/lostcity/content/world/exchange/exchange.ts
+  s_bf99a93e97ab76::t_c02900a2c513d8 1-63
+server/src/lostcity/content/world/index.ts
+  s_bf99a93e97ab76::t_623689a1b4e981 8,21,25
+server/src/lostcity/data/ExchangeData.ts
+  s_bf99a93e97ab76::t_fc1073082456f2 1-28
+server/src/lostcity/data/GeneratedData.ts
+  s_bf99a93e97ab76::t_b61916b7a1db22 15
+server/src/lostcity/engine/World.ts
+  s_bf99a93e97ab76::t_28ae9c46277363 22-23,121-130
+server/src/lostcity/engine/WorldContent.ts
+  s_bf99a93e97ab76::t_e90a2e50ba52a5 8,69-72
+server/src/lostcity/engine/tick/TickPhases.test.ts
+  s_bf99a93e97ab76::t_c8c6f195835ad6 52
+server/src/lostcity/engine/tick/WorldPhases.ts
+  s_bf99a93e97ab76::t_d4913abecb3f64 24-25
+server/src/lostcity/engine/triggers/ContentData.ts
+  s_bf99a93e97ab76::t_798a5b529c560d 3,38-39
+server/src/lostcity/network/GrandExchangeE2E.integration.test.ts
+  s_bf99a93e97ab76::t_3ee0ba7b09672d 1-350
+server/src/lostcity/protocol/handlers/Dialogue.ts
+  s_bf99a93e97ab76::t_e7625d7c50b696 37,39-48
+server/src/lostcity/systems/grand-exchange/ExchangeBook.ts
+  s_bf99a93e97ab76::t_44cd1aa9a40b62 1-242
+server/src/lostcity/systems/grand-exchange/ExchangeInterface.ts
+  s_bf99a93e97ab76::t_004e0302374f3a 1-81
+server/src/lostcity/systems/grand-exchange/ExchangeSetup.ts
+  s_bf99a93e97ab76::t_46d072bbcabe76 1-104
+server/src/lostcity/systems/grand-exchange/ExchangeStore.ts
+  s_bf99a93e97ab76::t_8bfc9087e30519 1-94
+server/src/lostcity/systems/grand-exchange/ExchangeWindow.ts
+  s_bf99a93e97ab76::t_c71bc1fa7fce09 1-305
+server/src/lostcity/systems/grand-exchange/GrandExchange.ts
+  s_bf99a93e97ab76::t_d2ed15c87fffb6 1-301
+server/src/lostcity/systems/grand-exchange/Holdings.ts
+  s_bf99a93e97ab76::t_701b051612da10 1-106
+server/src/lostcity/systems/interfaces/HeroWindowTab.ts
+  s_bf99a93e97ab76::t_8f8079de899f58 1-82
+server/src/lostcity/systems/interfaces/SettingsWindow.ts
+  s_bf99a93e97ab76::t_b4a7879fd64030 91-92,98-101
+server/src/lostcity/systems/inventory/Inventories.ts
+  s_bf99a93e97ab76::t_d77528fda37045 292-311
+server/src/lostcity/systems/session/Sessions.ts
+  s_bf99a93e97ab76::t_73294808df8e58 12,23,122-123,126
+server/src/lostcity/tools/data/domains.ts
+  s_bf99a93e97ab76::t_fa374fcb80886b 8,12
+server/src/lostcity/tools/data/domains/exchange/ExchangeModule.ts
+  s_bf99a93e97ab76::t_f5c2c9bbb34c69 1-28
+server/src/lostcity/tools/data/domains/exchange/index.ts
+  s_bf99a93e97ab76::t_bb2b2743228a1f 1-70
+server/src/lostcity/tools/data/generate.ts
+  s_bf99a93e97ab76::t_c0dfd3b2779eb1 14-15
+tools/client910/crates/rs910-symbols/src/component.rs
+  s_bf99a93e97ab76::t_67df395ac93381 139-246,475-478
+tools/client910/crates/rs910-symbols/src/enums.rs
+  s_bf99a93e97ab76::t_53acaa15cf644b 36-43,48-49
+tools/client910/crates/rs910-symbols/src/interface.rs
+  s_bf99a93e97ab76::t_cd3ad6192ce741 44-51
+tools/client910/crates/rs910-symbols/src/npc.rs
+  s_bf99a93e97ab76::t_c9d9f4e5a6eecf 46-49
+tools/client910/crates/rs910-symbols/src/param.rs
+  s_bf99a93e97ab76::t_00b93e8e10eb1f 56-69
+tools/client910/crates/rs910-symbols/src/structs.rs
+  s_bf99a93e97ab76::t_05459aeb3116c1 12-13
+tools/client910/crates/rs910-symbols/src/varbit.rs
+  s_bf99a93e97ab76::t_d2695973a262b3 94-95,110-111
+tools/client910/crates/rs910-symbols/src/varp.rs
+  s_bf99a93e97ab76::t_0a641cc34da8e5 39-50
+tools/client910/crates/rs910-ui/src/ui_runtime/packets/vars.rs
+  s_bf99a93e97ab76::t_915ea580ad1309 36-39
+tools/client910/fixtures/session-replay/exchange/record.sh
+  s_bf99a93e97ab76::t_6160492f6953b9 1-70
+tools/client910/fixtures/session-replay/exchange/server-trace.jsonl
+  s_bf99a93e97ab76::t_5fc6175a3e6498 1-158
+tools/client910/src/app.rs
+  s_bf99a93e97ab76::t_c2f5c70725a2af 322-325
+tools/client910/src/scenario_exchange.rs
+  s_bf99a93e97ab76::t_7b8850f89784e9 1-275
+tools/refactor/test-inventory.txt
+  s_bf99a93e97ab76::t_85a74db599ef76 4,47,68,1703,1713
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "4e70a3e0f4be20f2d3d49db8f9eb2752ab88eec8",
+  "prompts": {},
+  "sessions": {
+    "s_bf99a93e97ab76": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "3306d217-ef25-4a58-aa1a-8bdfdb5da12f",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
