@@ -1,0 +1,39 @@
+docs/client-status.md
+  s_c202351b3d1826::t_4fd9a144e3390e 29
+tools/README.md
+  s_c202351b3d1826::t_4dfa5f3f68a5a2 168-177
+tools/client910/crates/rs910-ui/fixtures/retained-player-transmit.json
+  s_c202351b3d1826::t_b6a229c4d4a90f 1-914
+tools/client910/crates/rs910-ui/src/ui_components.rs
+  s_c202351b3d1826::t_47fd1ae50d3b28 107-108,151,602,730-731,733-746,3007
+tools/client910/crates/rs910-ui/src/ui_hook_host.rs
+  s_c202351b3d1826::t_9bcfc1871e6561 68-69,71-84
+tools/client910/crates/rs910-ui/src/ui_loop.rs
+  s_c202351b3d1826::t_763b38e2c4b060 260,264-282
+tools/client910/crates/rs910-ui/src/ui_properties.rs
+  s_c202351b3d1826::t_342ffd6b1dbe51 924-926,1343,1606-1876
+tools/client910/src/ui_goldens/ui_authoring_replay.rs
+  s_c202351b3d1826::t_9d99b98907469d 576-583
+tools/client910/src/ui_goldens/ui_imported_replay.rs
+  s_c202351b3d1826::t_151ebcf0a50f36 128,881,885-886,2397-2630
+tools/native910/src/execution.rs
+  s_c202351b3d1826::t_52ace44842cbc4 149-152,276-279,352-363,434,454-457,708-712,845-847
+tools/native910/src/vm.rs
+  s_c202351b3d1826::t_daa50186d61999 2892
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "1f4ea4b0d7a017607351392338d5e5f9581fafc5",
+  "prompts": {},
+  "sessions": {
+    "s_c202351b3d1826": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0fe2d-4e63-7e41-b719-caa999b24fd9",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
