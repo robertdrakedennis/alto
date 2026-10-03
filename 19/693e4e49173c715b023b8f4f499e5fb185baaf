@@ -1,0 +1,51 @@
+docs/client-status.md
+  s_bf99a93e97ab76::t_1093c84da5e6ae 29
+revisions/950/cs2/950-1.json
+  s_c202351b3d1826::t_0f2d47a32bf81b 11,453-456,568-571,907-910,2023-2026,2866-2869,3037-3040,3341-3344,3512-3515,3795-3798,3938-3941,4214-4217,4434-4445,5803-5806,6289-6292,6502-6505,6932-6935,7047-7050,7512-7515,8537-8540,8547-8550,8914-8917,10415-10418,10670-10673,10736-10739,10970-10973,11477-11480,12159-12162,12218-12221,12529-12532,13253-13256,13438-13441,13574-13577,15313-15316
+tools/README.md
+  s_bf99a93e97ab76::t_8cd5af948fce9f 187-200
+tools/cs2/src/flow.rs
+  s_bf99a93e97ab76::t_646aba180bed74 1-817
+tools/cs2/src/import910.rs
+  s_bf99a93e97ab76::t_35bb5f51340544 4,159-160,169-170,196,204,212-222,258-259,265-267,275-280,282-299,301-305,310-312,384,403-409
+tools/cs2/src/lib.rs
+  s_c202351b3d1826::t_26268b648033d5 9
+tools/cs2/src/lower910.rs
+  s_bf99a93e97ab76::t_29ecdcba38efcd 172,290
+tools/cs2/src/main.rs
+  s_bf99a93e97ab76::t_6db8d77ccfc26b 48
+tools/cs2/src/profile.rs
+  s_bf99a93e97ab76::t_cdff87526b3247 34-99,127-128,144-146,186-209
+tools/cs2/src/semantic.rs
+  s_bf99a93e97ab76::t_12dc66733dfee6 10,262-279
+tools/cs2/src/wire.rs
+  s_bf99a93e97ab76::t_b9ea758ac1884c 261
+tools/native910/src/dataflow.rs
+  s_c202351b3d1826::t_b94e9950406f06 11-55,181-189,294-298,306-308,320-321,359-370,418-440,475,483,492,627-628,689-691,698,779-784,791-792,794,798-800,891,893,1079-1086,1116,1152-1159,1202,1209-1221,1236-1248,1269-1273,1345,1387-1396,1399-1408
+tools/revision/gen_cs2_profile.py
+  s_bf99a93e97ab76::t_1bb1dc3b8ce14c 19,23,29,37,41-46
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "19693e4e49173c715b023b8f4f499e5fb185baaf",
+  "prompts": {},
+  "sessions": {
+    "s_bf99a93e97ab76": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "3306d217-ef25-4a58-aa1a-8bdfdb5da12f",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    },
+    "s_c202351b3d1826": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0fe2d-4e63-7e41-b719-caa999b24fd9",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
