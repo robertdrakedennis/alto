@@ -1,0 +1,59 @@
+docs/client-status.md
+  s_c202351b3d1826::t_6e87ec0b7c1c6f 29
+revisions/950/cs2/950-1-to-910.json
+  s_c202351b3d1826::t_1d16b94b6f83b5 194-208
+revisions/950/cs2/950-1.json
+  s_c202351b3d1826::t_432c47a523b465 5335,5337-5350
+tools/client910/crates/rs910-ui/src/ui_components.rs
+  s_c202351b3d1826::t_9fae3692513ee7 588-606,894-990,1428-1626,1932
+tools/client910/crates/rs910-ui/src/ui_hook_host.rs
+  s_c202351b3d1826::t_accb3377befd41 724
+tools/client910/crates/rs910-ui/src/ui_runtime/chat_host_tests.rs
+  s_c202351b3d1826::t_cb847f6b7394c9 16
+tools/client910/crates/rs910-ui/src/ui_runtime/no_op_host_tests.rs
+  s_c202351b3d1826::t_06a9538a06f198 31,60,233
+tools/client910/crates/rs910-ui/src/ui_runtime/scene_query_tests.rs
+  s_c202351b3d1826::t_3c7acdae447d26 37
+tools/client910/crates/rs910-ui/src/ui_runtime/world_map_golden_tests.rs
+  s_c202351b3d1826::t_33d0abf8659cbe 336
+tools/client910/src/ui_goldens/menu_state_tests.rs
+  s_c202351b3d1826::t_722cef7dfe11a1 32
+tools/client910/src/ui_goldens/social_packet_tests.rs
+  s_c202351b3d1826::t_02bc951ccb174e 326
+tools/client910/src/ui_goldens/ui_imported_replay.rs
+  s_c202351b3d1826::t_0eea0ddc15c123 182,322-377,765-768,872-888
+tools/cs2/src/bridge.rs
+  s_c202351b3d1826::t_624b45d970222e 175,182-185,273
+tools/cs2/src/flow.rs
+  s_c202351b3d1826::t_2e3f8c919677cf 132-145,257,288-292
+tools/cs2/src/import910.rs
+  s_c202351b3d1826::t_a160fc0a85efa3 158,471,562,754,777,804,808-809,819,916,919-920,929,935-941,961
+tools/cs2/src/lower910.rs
+  s_c202351b3d1826::t_04ecee845b0731 18,79,141,154-166
+tools/cs2/src/profile.rs
+  s_c202351b3d1826::t_14b5eee96df53e 39-42
+tools/native910/src/dataflow.rs
+  s_c202351b3d1826::t_a12ccec06ca0c2 54-55,192-194
+tools/native910/src/execution.rs
+  s_c202351b3d1826::t_675717b7bc565a 89-92,94-154,156,158-165,169-183,190,433-437
+tools/native910/src/vm.rs
+  s_c202351b3d1826::t_9ad8ed4977b388 185-186,267,560,2248-2249,2253-2277,2600,2742-2852
+tools/native910/tests/tooling_contracts.rs
+  s_c202351b3d1826::t_4169faea41842e 161,198
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "17c3bf34df2a40bf22f341b1bed34334093b6b79",
+  "prompts": {},
+  "sessions": {
+    "s_c202351b3d1826": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0fe2d-4e63-7e41-b719-caa999b24fd9",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
