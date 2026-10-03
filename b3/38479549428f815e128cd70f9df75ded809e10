@@ -1,0 +1,49 @@
+tools/refactor/gatekit.py
+  s_bf99a93e97ab76::t_f76f0a7ce03844 1-377
+AGENTS.md
+  s_bf99a93e97ab76::t_f76f0a7ce03844 26
+tools/Cargo.toml
+  s_bf99a93e97ab76::t_f76f0a7ce03844 43-54,56-68
+server/vitest.setup.ts
+  s_bf99a93e97ab76::t_f76f0a7ce03844 1-15
+README.md
+  s_bf99a93e97ab76::t_f76f0a7ce03844 84
+CONTRIBUTING.md
+  s_bf99a93e97ab76::t_f76f0a7ce03844 57
+tools/refactor/gate.sh
+  s_bf99a93e97ab76::t_f76f0a7ce03844 2,4-6,8-23,28,35-37,40-42,49,52,56-79,81-99,102,111,120,122-130,142,154-157,159-169,174-176,178-184,186-198,221-227,229-248,251-252,254-273
+tools/refactor/README.md
+  s_bf99a93e97ab76::t_f76f0a7ce03844 3-7,10,13-17,20-27,30,35-37,39-41,45-114,116-140,142-150,157,168-174,180-191,300-304,321-323,339-340
+server/vitest.config.ts
+  s_bf99a93e97ab76::t_f76f0a7ce03844 92-95
+tools/refactor/rsscan/src/main.rs
+  s_bf99a93e97ab76::t_f76f0a7ce03844 1428-1444,1665,1819-1982,1988,1990
+tools/refactor/test-inventory.py
+  s_bf99a93e97ab76::t_f76f0a7ce03844 46-58,62-63,143-202,206,208-214,216,223,225,227-231,238-244,351,355-357,360-363,365-378,554-557,559-566,594-597
+server/vitest.global-setup.ts
+  s_bf99a93e97ab76::t_f76f0a7ce03844 1-31
+server/tsconfig.json
+  s_bf99a93e97ab76::t_f76f0a7ce03844 9
+docs/setup.md
+  s_bf99a93e97ab76::t_f76f0a7ce03844 99
+tools/README.md
+  s_bf99a93e97ab76::t_f76f0a7ce03844 40
+tools/.config/nextest.toml
+  s_bf99a93e97ab76::t_f76f0a7ce03844 1-24
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "b338479549428f815e128cd70f9df75ded809e10",
+  "prompts": {},
+  "sessions": {
+    "s_bf99a93e97ab76": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "3306d217-ef25-4a58-aa1a-8bdfdb5da12f",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
