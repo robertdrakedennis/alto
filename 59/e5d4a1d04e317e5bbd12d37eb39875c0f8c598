@@ -1,0 +1,51 @@
+docs/client-status.md
+  s_c202351b3d1826::t_2a8450d5edd8fa 29
+revisions/950/cs2/950-1-to-910.json
+  s_c202351b3d1826::t_e48e4e3ebb5b49 265-278,531-544
+revisions/950/cs2/950-1.json
+  s_c202351b3d1826::t_1f8d1118928a6a 11186-11199,13674-13677
+tools/README.md
+  s_c202351b3d1826::t_10ea9131b6a297 167-185,276-277
+tools/client910/Cargo.toml
+  s_c202351b3d1826::t_566b9f63141ee5 110
+tools/client910/crates/rs910-config/src/lib.rs
+  s_c202351b3d1826::t_fc0e137179f81f 60
+tools/client910/crates/rs910-config/src/ui_db_resource.rs
+  s_c202351b3d1826::t_432c507ba449ac 1-280
+tools/client910/crates/rs910-config/src/ui_db_schema.rs
+  s_c202351b3d1826::t_48621877dc2e2d 102-120
+tools/client910/crates/rs910-ui/src/ui_runtime/engine.rs
+  s_c202351b3d1826::t_946c2d76174c4b 250-251
+tools/client910/crates/rs910-ui/src/ui_vars.rs
+  s_c202351b3d1826::t_b62ff0c7f4843f 446-457
+tools/client910/src/ui_goldens/ui_imported_replay.rs
+  s_c202351b3d1826::t_a56b5bef006745 140,182,215-219,252-255,316,403,444,626,649,671,726,842-1070,1175-1214
+tools/cs2/Cargo.toml
+  s_c202351b3d1826::t_f8e548051efb13 18-21
+tools/cs2/src/database.rs
+  s_c202351b3d1826::t_046fe3ca43e1b5 11,84-93,101,217,222-243,247-308,315,322,423-426,513-527
+tools/cs2/src/flow.rs
+  s_c202351b3d1826::t_b70ca78c1f4b15 28-37,134-140,150-156,182,215-251,319,349-351,354-357
+tools/native910/src/dataflow.rs
+  s_c202351b3d1826::t_34db3d571b1366 56-66,203-208,711-726,736-754
+tools/native910/src/execution.rs
+  s_c202351b3d1826::t_acf5bec6c2fe6c 13,22-26,36,45,50-58,80-108,114,137-143,218-222,251-269,303-304,310-328,337,348-350,366-385,395,419,432,454-456,479,497-499,521-561,605-611,630,654-657,667-669
+tools/refactor/layers.txt
+  s_c202351b3d1826::t_6768b97ba0d172 213
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "59e5d4a1d04e317e5bbd12d37eb39875c0f8c598",
+  "prompts": {},
+  "sessions": {
+    "s_c202351b3d1826": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0fe2d-4e63-7e41-b719-caa999b24fd9",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
