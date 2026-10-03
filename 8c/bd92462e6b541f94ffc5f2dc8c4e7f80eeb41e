@@ -1,0 +1,182 @@
+tools/client910/crates/rs910-ui/src/ui_properties.rs
+  s_bf99a93e97ab76::t_86eb70916dd2a7 525-527,536-550,554-558,570-573,732-782,846,862,865,889,986-992,1194-1196,1211,1258,1261
+tools/native910/verify.sh
+  s_c202351b3d1826::t_8cd8f6a5a01bb6 4-8,23-25
+  s_bf99a93e97ab76::t_1435321b539285 28
+tools/native910/src/repack.rs
+  s_bf99a93e97ab76::t_2e195aa385a24b 1,19,71,73-151,164,209,211-212,215,217-228,233-235,241,246-251,253,255-256,304-312,314-319,323-325,341-342
+tools/native910/src/resources.rs
+  s_bf99a93e97ab76::t_93e12219a151e1 24-38,50,132-138
+tools/native910/src/preview.rs
+  s_fabd82cb77b9e0::t_dfd30bff40e724 6333,6339-6343
+tools/client910/src/ui_hooks_oracle.rs
+  s_fabd82cb77b9e0::t_cde45767c1714a 626-629
+tools/client910/src/ui_fonts_oracle.rs
+  s_fabd82cb77b9e0::t_00ad8373ceaddc 495-498
+tools/native910/tests/timer_acceptance.rs
+  s_c202351b3d1826::t_001a1b0cb72c48 41
+tools/native910/src/cli.rs
+  s_bf99a93e97ab76::t_d880ecc402fc20 4-5,35-37,68-70,107-109,127-134,144,227,235-242,259,271-275,294,302-318,350-421,423,436-451,567
+tools/native910/src/source.rs
+  s_bf99a93e97ab76::t_62741dd380a245 2187-2196,2213-2233,2235,2264-2274,2278-2282,2285-2286,2292-2294,2310,2334,2336-2340
+tools/native910/tests/xref_corpus.rs
+  s_c202351b3d1826::t_911406f9bb41bf 1-6,13,29-31,59-61,64,74,79,88,91-98,100-101,106,111,188-231
+tools/native910/tests/semantic_coverage.rs
+  s_68f0ff11e08ed5::t_7cceaffb79c95b 38
+tools/native910/src/lib.rs
+  s_bf99a93e97ab76::t_781c9d3c44e8b3 24
+tools/native910/src/jstr.rs
+  s_c202351b3d1826::t_3f4b40b6ea89af 8-10,50-61,63-73,111-122
+tools/client910/crates/rs910-ui/src/ui_hook_host.rs
+  s_bf99a93e97ab76::t_5e43360dee2df8 47-73
+tools/client910/src/ui_properties_oracle.rs
+  s_bf99a93e97ab76::t_deda6c98287d02 23,26,394
+tools/native910/src/symbols.rs
+  s_c202351b3d1826::t_11c56d255885a2 56-64,134-138,172-255,373-377
+tools/refactor/replay-gate.txt
+  s_c202351b3d1826::t_ccc8030067df40 29
+tools/native910/tests/project_build.rs
+  s_c202351b3d1826::t_7cc51c55f37ef0 14,29,32,52-64,72-123,136-382
+tools/refactor/test-inventory.txt
+  s_bf99a93e97ab76::t_cac19e3d47900e 4
+  s_c202351b3d1826::t_3045d139668bba 11,21,23,156-157,287,427,439,444-445,461,506,571,574,840
+  s_bf99a93e97ab76::t_e7feb2b42024df 5
+tools/refactor/gate.sh
+  s_c202351b3d1826::t_c2263360f410cc 138,154
+tools/client910/src/ui_opkey_trace.rs
+  s_c202351b3d1826::t_cf31f12d622672 136
+tools/native910/src/project.rs
+  s_bf99a93e97ab76::t_281f18d373bcdf 1-4,39-42,56-75,93,102-103,105-114,133-151,154,171-181,184-187,191-196,198,203-206,259-295,308-334,346-352,368-387,427-441,453-573,582
+tools/native910/src/packet.rs
+  s_bf99a93e97ab76::t_09460fffbed3ce 10-11,132,146-155,287-295,425-428
+tools/native910/README.md
+  s_bf99a93e97ab76::t_47678e2781330b 11-14,27-34,39-49,92-96,100-102,118-156,187-192,198-199,205-207
+tools/native910/src/xref.rs
+  s_bf99a93e97ab76::t_60ec5adede26d5 1,3-8,10-14,16-24,46-49,60-61,69-73,78,492-496,732-762,766-769,818-824,867,1196,1209-1214,1250-1255,1269-1290,1298,1308-1433,1440,1502-1509,1512-1535,1574-1582,1623-1627,1636-1638,1642,1662-1663,1687-1695,1766,1781-1786,1843-1850,1913-1914,1916-1920,1923-1926,2079-2082,2093-2099,2101,2113,2136,2146-2161,2163,2180-2224,2253-2270,2596-2620,3492-3649
+tools/native910/src/isource.rs
+  s_bf99a93e97ab76::t_a2ef00e1df6a8a 1217-1227,1231-1235,1237-1254,1261-1263,1285,1287-1291
+tools/client910/src/ui_configs_oracle.rs
+  s_bf99a93e97ab76::t_da3a6ec3d50499 439-443
+tools/native910/tests/cs2_traces.rs
+  s_c202351b3d1826::t_7821e4d39afdad 147
+tools/client910/src/ui_goldens.rs
+  s_bf99a93e97ab76::t_196b4eefde2d6a 18-19
+tools/native910/tests/dataflow.rs
+  s_bf99a93e97ab76::t_3a0038a4716d76 133-164,521-727
+tools/native910/src/coverage.rs
+  s_bf99a93e97ab76::t_c4861803d9e7a4 27-39,51
+tools/native910/src/runtime.rs
+  s_fabd82cb77b9e0::t_58c77ff9f592d2 121-132
+tools/native910/src/expr.rs
+  s_bf99a93e97ab76::t_2c12683e3d57e8 1117-1118,1120-1136,1138,1148
+tools/client910/crates/rs910-ui/src/ui_components.rs
+  s_bf99a93e97ab76::t_14c03fd84a6dfe 48-54,57-59,95,492-498,551-568
+tools/native910/tests/recorded_differential.rs
+  s_c202351b3d1826::t_50ac9efc2b7387 97,148
+tools/native910/src/dataflow.rs
+  s_bf99a93e97ab76::t_dbf724b813b46b 11-38,253,280-281,294-300,306-321,324-358,360-389,391-418,420-427,429-483,485-489,491-498,500-504,506,509-529,531-534,536,538-582,584,587-598,600,602-679,681-702,712,735-736,753,875,915,923,925-930,962-974
+tools/client910/src/ui_client_state_oracle.rs
+  s_bf99a93e97ab76::t_6b23bec38e3f8f 319
+tools/native910/src/vm.rs
+  s_c202351b3d1826::t_bb395e7c5a854b 51-52,145-148,238-252,286-311,334,453,503,648,660,665-666,703,731,741,761-764,772,779-788,1104,1217-1218,1224,1232,1269,1290,1298-1302,1316,1374,1809-1810,1818,1826,1838,1857-1859,1868,1877,1885-1886,1960,2256-2423
+tools/client910/crates/rs910-ui/src/ui_host_builtins.rs
+  s_c202351b3d1826::t_c593003f1596e3 91,1051,1258,1714,1795
+tools/client910/src/core_goldens.rs
+  s_c202351b3d1826::t_5212af8105e7e4 91,174-182,187-189,191-198
+docs/client-status.md
+  s_bf99a93e97ab76::t_f2cfe83fc998a2 20,29
+docs/engine-and-studio.md
+  s_bf99a93e97ab76::t_4a93ca41d4ff71 59-64,69-75,107-111,122-123
+revisions/950/cs2/950-1.json
+  s_bf99a93e97ab76::t_2adbe10c93c1c6 1-15987
+revisions/950/cs2/decoder.json
+  s_bf99a93e97ab76::t_fda9c3ac4c83d3 1-58
+server/src/lostcity/tools/js5pack/verify-scripts.ts
+  s_bf99a93e97ab76::t_d9c01d49caff51 7,27-32,37
+tools/Cargo.lock
+  s_bf99a93e97ab76::t_cff5bbb2f32c43 608-620
+tools/README.md
+  s_bf99a93e97ab76::t_3b011ca752c834 3,13,112-161
+tools/client910/crates/rs910-config/src/opcode_table.rs
+  s_bf99a93e97ab76::t_800a2ff3da7a16 353,359-363
+tools/client910/crates/rs910-config/src/ui_bytes.rs
+  s_bf99a93e97ab76::t_67b3c5fe8a3b44 3-4,66-70,109,111,116
+tools/client910/crates/rs910-core/src/cp1252.rs
+  s_bf99a93e97ab76::t_72ad50efd74dfe 12-13,15-16
+tools/client910/crates/rs910-game/src/client_vars.rs
+  s_bf99a93e97ab76::t_97b3b645120b8f 44
+tools/client910/crates/rs910-protocol/src/server_prot.rs
+  s_bf99a93e97ab76::t_62e44fea54dd82 95-106
+tools/client910/crates/rs910-ui/src/iface.rs
+  s_bf99a93e97ab76::t_efe92ee7360318 6,13-14,16-21,340-344
+tools/client910/crates/rs910-ui/src/ui_command_spec.rs
+  s_bf99a93e97ab76::t_6d4d28e5cd9931 594,671,932,935,1042
+tools/client910/crates/rs910-ui/src/ui_command_spec/client_cases.rs
+  s_c202351b3d1826::t_c86438275aed69 284-288,309-313
+tools/client910/src/ui_goldens/ui_authoring_replay.rs
+  s_bf99a93e97ab76::t_e7823b6ba989f7 1-235
+tools/cs2/Cargo.toml
+  s_bf99a93e97ab76::t_7527b39e847ce0 1-20
+tools/cs2/src/corpus.rs
+  s_bf99a93e97ab76::t_dcdabcbf9b7b79 1-167
+tools/cs2/src/lib.rs
+  s_bf99a93e97ab76::t_4de3f4406b8350 1-10
+tools/cs2/src/main.rs
+  s_bf99a93e97ab76::t_c713635dbec98e 1-143
+tools/cs2/src/profile.rs
+  s_bf99a93e97ab76::t_28ae6d9f658d6f 1-148
+tools/cs2/src/semantic.rs
+  s_bf99a93e97ab76::t_e7d57df69ff117 1-255
+tools/cs2/src/wire.rs
+  s_bf99a93e97ab76::t_d49d1571181759 1-485
+tools/native910/src/evidence.rs
+  s_bf99a93e97ab76::t_507d0c0b6cf330 1-324
+tools/native910/tests/fixtures/cs2-traces/null-objects.tsv
+  s_bf99a93e97ab76::t_34682575a81a58 1-17
+tools/native910/tests/repack_interfaces.rs
+  s_bf99a93e97ab76::t_c8ada8d5aeb8a3 1-89
+tools/revision/extract_cs2_registry.py
+  s_bf99a93e97ab76::t_22365c816e9339 1-141
+tools/revision/gen_cs2_profile.py
+  s_bf99a93e97ab76::t_8957ab355e482c 1-60
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "8cbd92462e6b541f94ffc5f2dc8c4e7f80eeb41e",
+  "prompts": {},
+  "sessions": {
+    "s_68f0ff11e08ed5": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0fe47-43c3-7613-9dbc-50c0bca9d979",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    },
+    "s_bf99a93e97ab76": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "3306d217-ef25-4a58-aa1a-8bdfdb5da12f",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    },
+    "s_c202351b3d1826": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0fe2d-4e63-7e41-b719-caa999b24fd9",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    },
+    "s_fabd82cb77b9e0": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0f11f-0669-7153-acc7-8c62f4b65b3a",
+        "model": "gpt-6-astra"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
