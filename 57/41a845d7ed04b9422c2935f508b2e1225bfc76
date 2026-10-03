@@ -1,0 +1,195 @@
+tools/client910/crates/rs910-scene/src/map.rs
+  s_c202351b3d1826::t_298c03b7dce911 828-831,886-891
+server/src/lostcity/systems/skilling/Production.ts
+  s_c202351b3d1826::t_298c03b7dce911 1,22-29,32-33,46-53,95-96,181-182,185,197,202-211,215-218,220-223,230-238,240-241,254,262
+tools/client910/crates/rs910-symbols/src/component.rs
+  s_c202351b3d1826::t_298c03b7dce911 771-772,795-807,943-950
+  s_c202351b3d1826::t_9c4e0fede5d975 951
+server/src/lostcity/systems/skilling/MetalWindow.ts
+  s_c202351b3d1826::t_298c03b7dce911 34-35,71-75,98-99,115,133,226-232,242-254
+  s_c202351b3d1826::t_a3cd03487afad6 255-256
+packages/domain/src/symbols/param.ts
+  s_c202351b3d1826::t_298c03b7dce911 11-17,71,86
+server/src/lostcity/content/skills/runecrafting/abyss.ts
+  s_c202351b3d1826::t_298c03b7dce911 1-253
+revisions/910/symbols/varbit.sym
+  s_c202351b3d1826::t_298c03b7dce911 4,11,18,27-29,58,72,74-76,78-79,86,90,92,94,96,98-99,102,130-131,133-134,142,160,162,177-180,188,195,197-198,204,208
+docs/server-architecture.md
+  s_c202351b3d1826::t_298c03b7dce911 91,96,186-212
+  s_c202351b3d1826::t_408d66660e9726 213
+packages/domain/src/symbols/varbit.ts
+  s_c202351b3d1826::t_298c03b7dce911 6,13,20,29-31,60,74,76-78,80-81,88,92,94,96,98,100-101,104,132-133,135-136,144,162,164,179-182,190,197,199-200,206,210
+server/src/lostcity/content/skills/index.ts
+  s_c202351b3d1826::t_298c03b7dce911 1-2,26,61,64,68,101,117
+revisions/910/symbols/seq.sym
+  s_c202351b3d1826::t_298c03b7dce911 31,59
+server/src/lostcity/network/RunecraftingE2E.integration.test.ts
+  s_c202351b3d1826::t_298c03b7dce911 16,18-20,43,46-48,127-179
+  s_c202351b3d1826::t_b75b794a34282f 180
+server/src/lostcity/content/skills/runecrafting/runecrafting.ts
+  s_c202351b3d1826::t_298c03b7dce911 14-17,25,31-32,34-35,37,42-43,61-72,74,78,80-82,88,97,106,121,123,133,137-138,153-167,170,177-183,187,189,192
+server/src/lostcity/content/skills/crafting/crafting.ts
+  s_c202351b3d1826::t_298c03b7dce911 3-4,10,99-100,110-112,114
+server/src/lostcity/network/TrailsE2E.integration.test.ts
+  s_c202351b3d1826::t_298c03b7dce911 256
+server/src/lostcity/systems/locs/Locs.ts
+  s_c202351b3d1826::t_298c03b7dce911 10-11,29-30,125,225,227,230,233-238,241,266
+tools/client910/crates/rs910-symbols/src/interface.rs
+  s_c202351b3d1826::t_298c03b7dce911 218-219
+server/src/lostcity/content/skills/smithing/data.ts
+  s_c202351b3d1826::t_298c03b7dce911 1,5,27-33,43-57,110-115,119-142,148
+tools/client910/crates/rs910-symbols/src/param.rs
+  s_c202351b3d1826::t_298c03b7dce911 18-31,138-139,168-169
+packages/domain/src/symbols/component.ts
+  s_c202351b3d1826::t_298c03b7dce911 370,381-386,449-452
+revisions/910/symbols/script.sym
+  s_c202351b3d1826::t_298c03b7dce911 26
+server/README.md
+  s_c202351b3d1826::t_298c03b7dce911 206-208,210-212,228-231
+server/src/lostcity/network/ProductionE2E.integration.test.ts
+  s_c202351b3d1826::t_298c03b7dce911 32,90-91,183-221,403-446
+tools/client910/crates/rs910-game/src/protocol910/rebuild_state.rs
+  s_c202351b3d1826::t_298c03b7dce911 448-452,485-493
+server/src/lostcity/content/skills/cooking/data.ts
+  s_c202351b3d1826::t_298c03b7dce911 1,16-20,24,37-38,59-69
+  s_c202351b3d1826::t_6a3a6823b6ec96 70
+packages/domain/src/symbols/npc.ts
+  s_c202351b3d1826::t_298c03b7dce911 18,35,43,49-50
+server/src/lostcity/data/SkillTables.ts
+  s_c202351b3d1826::t_298c03b7dce911 258-265
+packages/domain/src/symbols/loc.ts
+  s_c202351b3d1826::t_298c03b7dce911 6-26,49-51,54,72,74,76,103,106,113,135-137,139-140,156,158,205,223
+server/src/lostcity/tools/data/domains/spawns/SpawnValidation.ts
+  s_c202351b3d1826::t_298c03b7dce911 25-42,145-147
+tools/client910/crates/rs910-symbols/src/location.rs
+  s_c202351b3d1826::t_298c03b7dce911 8-63,76-77,90-91,96-99,216-219
+tools/client910/crates/rs910-symbols/src/obj.rs
+  s_c202351b3d1826::t_298c03b7dce911 12-13,16-19,30-31,36-37,42-43,48-49,68-69,86-87,112-115,122-123,126-129,146-151,158-159,164-165,168-169,172-173,178-179,210-211,214-215,228-229,232-233,238-241,250-251,254-255,258-263,266-271,276-277,280-281,290-295,310-311,314-317,372-375,382-385,388-389,400-401,410-411,414-415,440-441,448-451,458-459,476-481,486-491,494-495,518-519,528-529,536-537,540-543,550-553,572-573,592-593
+server/src/lostcity/systems/session/LoginInterfaces.ts
+  s_c202351b3d1826::t_298c03b7dce911 7,102
+revisions/910/symbols/param.sym
+  s_c202351b3d1826::t_298c03b7dce911 9-15,69,84
+tools/client910/crates/rs910-symbols/src/script.rs
+  s_c202351b3d1826::t_298c03b7dce911 52-53
+server/src/lostcity/systems/stats/Stats.ts
+  s_c202351b3d1826::t_298c03b7dce911 167-175
+server/src/lostcity/tools/data/domains/skills/thieving.ts
+  s_c202351b3d1826::t_298c03b7dce911 12-15,74-80,84,142-152,161-172,180-181,193-194,196,198
+revisions/910/symbols/npc.sym
+  s_c202351b3d1826::t_298c03b7dce911 16,33,41,47-48
+tools/client910/crates/rs910-symbols/src/npc.rs
+  s_c202351b3d1826::t_298c03b7dce911 32-33,66-67,82-83,94-97
+server/src/lostcity/content/skills/runecrafting/pouches.ts
+  s_c202351b3d1826::t_298c03b7dce911 1-276
+revisions/910/symbols/obj.sym
+  s_c202351b3d1826::t_298c03b7dce911 6,8-9,15,18,21,24,34,43,56-57,61,63-64,73-75,79,82,84,86,89,105,107,114,116,119-120,125,127,129-131,133-135,138,140,145-147,155,157-158,186-187,191-192,194,200,205,207,220,224-225,229,238-240,243-245,247,259,264,268,270-271,275-276,286,296
+revisions/910/symbols/component.sym
+  s_c202351b3d1826::t_298c03b7dce911 295,301-304,345-346
+server/src/lostcity/content/objs/toolbelt/toolbelt.ts
+  s_c202351b3d1826::t_298c03b7dce911 1-124
+server/src/lostcity/content/skills/smithing/smithing.ts
+  s_c202351b3d1826::t_298c03b7dce911 18,116,133-149,163,168,170
+revisions/910/symbols/interface.sym
+  s_c202351b3d1826::t_298c03b7dce911 109
+server/src/lostcity/systems/skilling/ToolBeltWindow.ts
+  s_c202351b3d1826::t_298c03b7dce911 1-130
+server/src/lostcity/content/skills/firemaking/firemaking.ts
+  s_c202351b3d1826::t_298c03b7dce911 1-2,4,21,27,29,86,98-99,156
+tools/client910/crates/rs910-symbols/src/varp.rs
+  s_c202351b3d1826::t_298c03b7dce911 8-9,69-70,79-80,109-110
+tools/client910/src/app.rs
+  s_c202351b3d1826::t_298c03b7dce911 318-320
+packages/domain/src/symbols/obj.ts
+  s_c202351b3d1826::t_298c03b7dce911 8,10-11,17,20,23,26,36,45,58-59,63,65-66,75-77,81,84,86,88,91,107,109,116,118,121-122,127,129,131-133,135-137,140,142,147-149,157,159-160,188-189,193-194,196,202,207,209,222,226-227,231,240-242,245-247,249,261,266,270,272-273,277-278,288,298
+packages/domain/src/symbols/seq.ts
+  s_c202351b3d1826::t_298c03b7dce911 33,61
+tools/client910/fixtures/session-replay/make-and-abyss/record.sh
+  s_c202351b3d1826::t_298c03b7dce911 1-60
+server/src/lostcity/tools/data/domains/skills/cooking.ts
+  s_c202351b3d1826::t_298c03b7dce911 16-20,29-68,84-86,88-89,91,93-95,97-114,117-122,124,126-146,149-161,163-205,207-210,221-223,225,231,235-243,246
+server/src/lostcity/systems/skilling/ToolBeltTools.ts
+  s_c202351b3d1826::t_298c03b7dce911 1-124
+server/src/lostcity/systems/equipment/EquipmentContent.ts
+  s_c202351b3d1826::t_298c03b7dce911 34-37
+packages/domain/src/symbols/enum.ts
+  s_c202351b3d1826::t_298c03b7dce911 19-21,52,57
+packages/domain/src/symbols/script.ts
+  s_c202351b3d1826::t_298c03b7dce911 28
+revisions/910/symbols/enum.sym
+  s_c202351b3d1826::t_298c03b7dce911 17-19,50,55
+tools/client910/crates/rs910-symbols/src/loc.rs
+  s_c202351b3d1826::t_298c03b7dce911 8-49,94-99,104-105,140-141,144-145,148-149,202-203,208-209,222-223,266-271,274-277,308-309,312-313,406-407,442-443
+revisions/910/symbols/location.sym
+  s_c202351b3d1826::t_298c03b7dce911 4-31,38,45,48-49,108-109
+tools/client910/crates/rs910-symbols/src/seq.rs
+  s_c202351b3d1826::t_298c03b7dce911 62-63,118-119
+server/src/lostcity/content/skills/thieving/thieving.ts
+  s_c202351b3d1826::t_298c03b7dce911 34-36,42-43,136-144,168,171,173-175
+server/src/lostcity/systems/skilling/MetalBank.ts
+  s_c202351b3d1826::t_298c03b7dce911 6,59-60,72,107-108,114,121,165-167,169,194,196-197,200
+server/src/lostcity/data/ThievingTable.ts
+  s_c202351b3d1826::t_298c03b7dce911 31-32
+server/src/lostcity/systems/skilling/ToolBelt.ts
+  s_c202351b3d1826::t_298c03b7dce911 1,5-6,10,12-15,18-29,32-38,40-45,48,50-81,86-88,90-95,103-130,133-147,149-151
+revisions/910/symbols/loc.sym
+  s_c202351b3d1826::t_298c03b7dce911 4-24,47-49,52,70,72,74,101,104,111,133-135,137-138,154,156,203,221
+server/src/lostcity/network/SkillsE2E.integration.test.ts
+  s_c202351b3d1826::t_298c03b7dce911 31,197-220
+  s_c202351b3d1826::t_321ad7d68e46c4 221-222
+server/src/lostcity/content/skills/thieving/data.ts
+  s_c202351b3d1826::t_298c03b7dce911 19,81-82,85-97,103-106,122-129,134-135,155,162-163
+tools/refactor/test-inventory.txt
+  s_c202351b3d1826::t_298c03b7dce911 4,47,76,1633,1701,1766,1833,1888,1913,1966,2010
+packages/domain/src/symbols/varp.ts
+  s_c202351b3d1826::t_298c03b7dce911 6,36,41,56
+packages/domain/src/symbols/interface.ts
+  s_c202351b3d1826::t_298c03b7dce911 111
+server/src/lostcity/tools/data/domains/spawns/Merge.ts
+  s_c202351b3d1826::t_298c03b7dce911 34-35,37,46
+tools/client910/src/scenario_make_abyss.rs
+  s_c202351b3d1826::t_298c03b7dce911 1-287
+tools/client910/crates/rs910-symbols/src/enums.rs
+  s_c202351b3d1826::t_298c03b7dce911 35-40,100-101,110-111
+server/src/lostcity/network/SmithingE2E.integration.test.ts
+  s_c202351b3d1826::t_298c03b7dce911 21-25,27,29-30,38-39,179,248-333
+revisions/910/symbols/varp.sym
+  s_c202351b3d1826::t_298c03b7dce911 4,34,39,54
+server/src/lostcity/content/skills/runecrafting/data.ts
+  s_c202351b3d1826::t_298c03b7dce911 1,39-40,43-44,51-63,66-68,99-101,103-105,107-108,110,114-117,125-127
+tools/client910/fixtures/session-replay/make-and-abyss/server-trace.jsonl
+  s_c202351b3d1826::t_298c03b7dce911 1-608
+packages/domain/src/symbols/location.ts
+  s_c202351b3d1826::t_298c03b7dce911 14-41,48,55,58-59,118-119
+server/src/lostcity/tools/data/domains/spawns/WikiSpawns.ts
+  s_c202351b3d1826::t_298c03b7dce911 3,25-26,60
+server/src/lostcity/network/ToolBeltE2E.integration.test.ts
+  s_c202351b3d1826::t_298c03b7dce911 1-160
+tools/client910/crates/rs910-symbols/src/varbit.rs
+  s_c202351b3d1826::t_298c03b7dce911 8-9,22-23,36-37,54-59,116-117,144-145,148-153,156-159,172-173,180-181,184-185,188-189,192-193,196-199,204-205,260-263,266-269,284-285,320-321,324-325,354-361,376-377,390-391,394-397,408-409,416-417
+server/src/lostcity/content/skills/cooking/cooking.ts
+  s_c202351b3d1826::t_298c03b7dce911 13-14,67,71-76,79-81,89-100,103,113-122
+  s_c202351b3d1826::t_66ecf34c19fb18 123
+server/src/lostcity/content/skills/crafting/tanning.ts
+  s_c202351b3d1826::t_298c03b7dce911 1-105
+server/src/lostcity/network/SupportE2E.integration.test.ts
+  s_c202351b3d1826::t_298c03b7dce911 28,271-301
+  s_c202351b3d1826::t_612fe6537db801 302
+server/src/lostcity/tools/data/domains/spawns/index.ts
+  s_c202351b3d1826::t_298c03b7dce911 49,79-82,84
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "5741a845d7ed04b9422c2935f508b2e1225bfc76",
+  "prompts": {},
+  "sessions": {
+    "s_c202351b3d1826": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0fe2d-4e63-7e41-b719-caa999b24fd9",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
