@@ -1,0 +1,219 @@
+packages/domain/src/symbols/varbit.ts
+  s_bf99a93e97ab76::t_dafc06a92b7192 40-44,93-97,106-107
+revisions/910/symbols/enum.sym
+  s_bf99a93e97ab76::t_dafc06a92b7192 26
+server/src/lostcity/engine/devcommands/DialogueCommands.ts
+  s_bf99a93e97ab76::t_dafc06a92b7192 3,6-8,10-11,23-24,26-27
+server/src/lostcity/systems/quests/Quests.ts
+  s_bf99a93e97ab76::t_dafc06a92b7192 1-230
+revisions/910/symbols/npc.sym
+  s_bf99a93e97ab76::t_dafc06a92b7192 8,17-20,23,27,30-34
+server/src/lostcity/systems/session/Sessions.ts
+  s_bf99a93e97ab76::t_dafc06a92b7192 20-21,121
+packages/domain/src/symbols/param.ts
+  s_bf99a93e97ab76::t_dafc06a92b7192 23-26
+server/src/lostcity/content/quests/index.ts
+  s_bf99a93e97ab76::t_dafc06a92b7192 1-58
+packages/domain/src/symbols/enum.ts
+  s_bf99a93e97ab76::t_dafc06a92b7192 28
+packages/domain/src/symbols/obj.ts
+  s_bf99a93e97ab76::t_dafc06a92b7192 11,15,34,52,57,69,77,84-85,89,108,113,119,122
+server/src/lostcity/network/QuestsE2E.integration.test.ts
+  s_bf99a93e97ab76::t_dafc06a92b7192 1-471
+packages/domain/src/symbols/component.ts
+  s_bf99a93e97ab76::t_dafc06a92b7192 106,250-272
+tools/client910/fixtures/session-replay/quest/server-trace.jsonl
+  s_bf99a93e97ab76::t_dafc06a92b7192 1-326
+packages/domain/src/symbols/varc.ts
+  s_bf99a93e97ab76::t_dafc06a92b7192 13-14
+server/src/lostcity/content/quests/cooks_assistant/data.ts
+  s_bf99a93e97ab76::t_dafc06a92b7192 1-50
+server/src/lostcity/engine/World.ts
+  s_bf99a93e97ab76::t_dafc06a92b7192 24-26,105-106,249,251-253
+server/src/lostcity/systems/npc/NpcPopulation.ts
+  s_bf99a93e97ab76::t_dafc06a92b7192 84-108,127-129
+packages/domain/src/symbols/seq.ts
+  s_bf99a93e97ab76::t_dafc06a92b7192 25,41,49,52
+tools/client910/crates/rs910-symbols/src/varbit.rs
+  s_bf99a93e97ab76::t_dafc06a92b7192 76-85,182-191,208-211
+revisions/910/symbols/component.sym
+  s_bf99a93e97ab76::t_dafc06a92b7192 85,190-206
+tools/client910/crates/rs910-symbols/src/quest.rs
+  s_bf99a93e97ab76::t_dafc06a92b7192 1-15
+packages/domain/src/symbols/loc.ts
+  s_bf99a93e97ab76::t_dafc06a92b7192 40,66-68,73-76,83,109-111
+packages/domain/src/symbols/npc.ts
+  s_bf99a93e97ab76::t_dafc06a92b7192 10,19-22,25,29,32-36
+docs/symbols.md
+  s_bf99a93e97ab76::t_dafc06a92b7192 7,59
+revisions/910/symbols/quest.sym
+  s_bf99a93e97ab76::t_dafc06a92b7192 1-7
+revisions/910/symbols/varc.sym
+  s_bf99a93e97ab76::t_dafc06a92b7192 11-12
+packages/domain/src/symbols/location.ts
+  s_bf99a93e97ab76::t_dafc06a92b7192 62,70
+server/src/lostcity/config/QuestType.ts
+  s_bf99a93e97ab76::t_dafc06a92b7192 1-117
+server/src/lostcity/content/world/farm/farm.ts
+  s_bf99a93e97ab76::t_dafc06a92b7192 1-222
+server/src/lostcity/content/world/index.ts
+  s_bf99a93e97ab76::t_dafc06a92b7192 10,17,20,25
+server/src/lostcity/engine/WorldContent.ts
+  s_bf99a93e97ab76::t_dafc06a92b7192 12,67-68
+  s_bf99a93e97ab76::t_d1ba997dae2f55 69-70
+server/src/lostcity/systems/quests/QuestBook.ts
+  s_bf99a93e97ab76::t_dafc06a92b7192 1-148
+packages/domain/src/symbols/quest.ts
+  s_bf99a93e97ab76::t_dafc06a92b7192 1-10
+server/src/lostcity/systems/quests/QuestLog.ts
+  s_bf99a93e97ab76::t_dafc06a92b7192 1-109
+server/src/lostcity/systems/vars/Vars.ts
+  s_bf99a93e97ab76::t_dafc06a92b7192 113-118
+server/src/lostcity/tools/data/domains/dialogue/index.ts
+  s_bf99a93e97ab76::t_dafc06a92b7192 5,70-71,74-77,79
+server/src/lostcity/tools/data/domains/dialogue/Scenes.ts
+  s_bf99a93e97ab76::t_dafc06a92b7192 1-178
+server/src/lostcity/tools/data/domains/dialogue/quests.ts
+  s_bf99a93e97ab76::t_dafc06a92b7192 1-196
+server/src/lostcity/content/quests/restless_ghost/restless_ghost.ts
+  s_bf99a93e97ab76::t_dafc06a92b7192 1-217
+server/src/lostcity/tools/data/domains/spawns/index.ts
+  s_bf99a93e97ab76::t_dafc06a92b7192 11-12,46-48,67,76,78,85-97
+  s_bf99a93e97ab76::t_267ba1709b4286 98-99
+tools/client910/crates/rs910-symbols/src/enums.rs
+  s_bf99a93e97ab76::t_dafc06a92b7192 52-53
+packages/domain/src/symbols/ids.ts
+  s_bf99a93e97ab76::t_dafc06a92b7192 50-52
+server/src/lostcity/network/SocketE2E.integration.test.ts
+  s_bf99a93e97ab76::t_dafc06a92b7192 409-410,429-431
+server/src/lostcity/content/quests/scenes.ts
+  s_bf99a93e97ab76::t_dafc06a92b7192 1-89
+server/src/lostcity/engine/triggers/ContentData.ts
+  s_bf99a93e97ab76::t_dafc06a92b7192 9,36-37
+server/src/lostcity/systems/dialogue/DialogueSession.ts
+  s_bf99a93e97ab76::t_dafc06a92b7192 122-126
+server/src/lostcity/systems/npc/NpcLife.ts
+  s_bf99a93e97ab76::t_dafc06a92b7192 16-17
+server/src/lostcity/tools/data/domains/spawns/WikiLocations.ts
+  s_bf99a93e97ab76::t_dafc06a92b7192 20-22,39,55-57,61-68
+server/src/lostcity/tools/sym/SymbolKinds.ts
+  s_bf99a93e97ab76::t_dafc06a92b7192 32,317-326
+  s_bf99a93e97ab76::t_944631ae10d1f1 327
+server/src/lostcity/systems/session/Session.ts
+  s_bf99a93e97ab76::t_dafc06a92b7192 60
+tools/client910/crates/rs910-symbols/src/interface.rs
+  s_bf99a93e97ab76::t_dafc06a92b7192 122-127
+tools/client910/crates/rs910-symbols/src/loc.rs
+  s_bf99a93e97ab76::t_dafc06a92b7192 76-77,129-134,143-150,162-163,214-219
+revisions/910/symbols/varp.sym
+  s_bf99a93e97ab76::t_dafc06a92b7192 18-19,47-49
+server/src/lostcity/config/Config.ts
+  s_bf99a93e97ab76::t_dafc06a92b7192 22,55,100-101,126-127,220-227
+  s_bf99a93e97ab76::t_047eb0b383f9bf 228
+server/src/lostcity/content/world/farm/data.ts
+  s_bf99a93e97ab76::t_dafc06a92b7192 1-83
+server/src/lostcity/systems/quests/QuestWindows.ts
+  s_bf99a93e97ab76::t_dafc06a92b7192 1-138
+tools/client910/crates/rs910-symbols/src/location.rs
+  s_bf99a93e97ab76::t_dafc06a92b7192 104-105,120-121
+tools/client910/crates/rs910-symbols/src/param.rs
+  s_bf99a93e97ab76::t_dafc06a92b7192 42-49
+tools/client910/crates/rs910-symbols/src/varc.rs
+  s_bf99a93e97ab76::t_dafc06a92b7192 22-25
+tools/client910/crates/rs910-symbols/src/varp.rs
+  s_bf99a93e97ab76::t_dafc06a92b7192 37-40,95-100
+server/README.md
+  s_bf99a93e97ab76::t_dafc06a92b7192 27,184-198,218-219
+server/src/lostcity/data/QuestData.ts
+  s_bf99a93e97ab76::t_dafc06a92b7192 1-69
+revisions/910/symbols/location.sym
+  s_bf99a93e97ab76::t_dafc06a92b7192 52,60
+revisions/910/symbols/obj.sym
+  s_bf99a93e97ab76::t_dafc06a92b7192 9,13,32,50,55,67,75,82-83,87,106,111,117,120
+docs/server-architecture.md
+  s_bf99a93e97ab76::t_dafc06a92b7192 100-130,148
+packages/domain/src/symbols/index.ts
+  s_bf99a93e97ab76::t_dafc06a92b7192 14
+revisions/910/symbols/param.sym
+  s_bf99a93e97ab76::t_dafc06a92b7192 21-24
+server/src/lostcity/engine/interaction/behaviours/loc.ts
+  s_bf99a93e97ab76::t_dafc06a92b7192 67-72
+server/src/lostcity/tools/data/domains/dialogue/Transcript.ts
+  s_bf99a93e97ab76::t_dafc06a92b7192 2,16,25-30,33,106-196,198,213-219,222,227-231,233-236,238-239,241,243-244,246-247,253-254
+revisions/910/symbols/loc.sym
+  s_bf99a93e97ab76::t_dafc06a92b7192 38,64-66,71-74,81,107-109
+server/src/lostcity/systems/loot/GroundObjects.ts
+  s_bf99a93e97ab76::t_dafc06a92b7192 49-50,67-70,82-83,93,96-97,134-139,144,146-150
+revisions/910/symbols/interface.sym
+  s_bf99a93e97ab76::t_dafc06a92b7192 61-63
+server/src/lostcity/content/quests/sheep_shearer/sheep_shearer.ts
+  s_bf99a93e97ab76::t_dafc06a92b7192 1-116
+tools/client910/crates/rs910-symbols/src/component.rs
+  s_bf99a93e97ab76::t_dafc06a92b7192 216-217,523-570
+  s_bf99a93e97ab76::t_dae54dc9c89f9a 571
+tools/client910/crates/rs910-symbols/src/npc.rs
+  s_bf99a93e97ab76::t_dafc06a92b7192 16-17,34-41,46-47,54-55,60-69
+tools/client910/fixtures/session-replay/quest/record.sh
+  s_bf99a93e97ab76::t_dafc06a92b7192 1-76
+server/src/lostcity/data/DialogueData.ts
+  s_bf99a93e97ab76::t_dafc06a92b7192 10-11,16-17,19-34,38,44,48-49,60
+server/src/lostcity/content/quests/cooks_assistant/cooks_assistant.ts
+  s_bf99a93e97ab76::t_dafc06a92b7192 1-229
+server/tools/oxlint/alto/rules/no-magic-id.ts
+  s_bf99a93e97ab76::t_dafc06a92b7192 8,51,70
+packages/domain/src/symbols/interface.ts
+  s_bf99a93e97ab76::t_dafc06a92b7192 63-65
+revisions/910/symbols/seq.sym
+  s_bf99a93e97ab76::t_dafc06a92b7192 23,39,47,50
+server/src/lostcity/tools/data/domains/dialogue/QuestScripts.ts
+  s_bf99a93e97ab76::t_dafc06a92b7192 1-152
+server/src/lostcity/content/quests/restless_ghost/data.ts
+  s_bf99a93e97ab76::t_dafc06a92b7192 1-46
+server/src/lostcity/systems/dialogue/Conversation.ts
+  s_bf99a93e97ab76::t_dafc06a92b7192 13-16,19-21,25-28,57-63,66-84,87-131,139,141
+tools/client910/src/scenario_quest.rs
+  s_bf99a93e97ab76::t_dafc06a92b7192 1-329
+revisions/910/symbols/varbit.sym
+  s_bf99a93e97ab76::t_dafc06a92b7192 38-42,91-95,104-105
+tools/client910/crates/rs910-symbols/src/lib.rs
+  s_bf99a93e97ab76::t_dafc06a92b7192 20,204-208
+  s_bf99a93e97ab76::t_e43aaafa1d9ab7 209-215
+tools/client910/crates/rs910-symbols/src/obj.rs
+  s_bf99a93e97ab76::t_dafc06a92b7192 18-19,26-27,64-65,100-101,110-111,134-135,150-151,164-167,174-175,212-213,222-223,234-235,240-241
+tools/client910/crates/rs910-symbols/src/seq.rs
+  s_bf99a93e97ab76::t_dafc06a92b7192 46-47,78-79,94-95,100-101
+tools/refactor/layers.txt
+  s_bf99a93e97ab76::t_dafc06a92b7192 548
+server/src/lostcity/content/quests/sheep_shearer/data.ts
+  s_bf99a93e97ab76::t_dafc06a92b7192 1-24
+server/src/lostcity/entity/Player.ts
+  s_bf99a93e97ab76::t_dafc06a92b7192 25,75
+server/src/lostcity/systems/equipment/EquipmentContent.ts
+  s_bf99a93e97ab76::t_dafc06a92b7192 5-6,32-33
+tools/client910/src/app.rs
+  s_bf99a93e97ab76::t_dafc06a92b7192 315-318
+packages/domain/src/symbols/varp.ts
+  s_bf99a93e97ab76::t_dafc06a92b7192 20-21,49-51
+server/src/lostcity/network/WoodcuttingE2E.integration.test.ts
+  s_bf99a93e97ab76::t_dafc06a92b7192 580-581,583-584
+tools/refactor/test-inventory.txt
+  s_bf99a93e97ab76::t_dafc06a92b7192 4,47,75,1596-1597,1655,1668
+server/src/formats/network/protocol/ServerProt.ts
+  s_bf99a93e97ab76::t_dafc06a92b7192 375-384
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "7ed6559852f407ea10f33ef5a886ae2b9cc07028",
+  "prompts": {},
+  "sessions": {
+    "s_bf99a93e97ab76": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "3306d217-ef25-4a58-aa1a-8bdfdb5da12f",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
