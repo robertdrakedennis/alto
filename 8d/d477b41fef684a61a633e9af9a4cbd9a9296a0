@@ -1,0 +1,164 @@
+packages/domain/src/symbols/component.ts
+  s_bf99a93e97ab76::t_0b4702a35d0311 42-51,79-81,168
+server/src/lostcity/content/emotes/index.ts
+  s_bf99a93e97ab76::t_0b4702a35d0311 1-46
+server/src/lostcity/tools/data/domains/clues/DatedPages.ts
+  s_bf99a93e97ab76::t_0b4702a35d0311 1-166
+tools/client910/crates/rs910-symbols/src/npc.rs
+  s_bf99a93e97ab76::t_0b4702a35d0311 74-75
+packages/domain/src/symbols/param.ts
+  s_bf99a93e97ab76::t_0b4702a35d0311 8-15,29
+server/src/lostcity/content/trails/data.ts
+  s_bf99a93e97ab76::t_0b4702a35d0311 1-64
+server/src/lostcity/entity/Player.ts
+  s_bf99a93e97ab76::t_0b4702a35d0311 18,80
+server/src/lostcity/network/TrailsE2E.integration.test.ts
+  s_bf99a93e97ab76::t_0b4702a35d0311 1-310
+tools/client910/src/scenario_trails.rs
+  s_bf99a93e97ab76::t_0b4702a35d0311 1-231
+revisions/910/symbols/component.sym
+  s_bf99a93e97ab76::t_0b4702a35d0311 34-39,59,131
+packages/domain/src/symbols/npc.ts
+  s_bf99a93e97ab76::t_0b4702a35d0311 39
+revisions/910/symbols/location.sym
+  s_bf99a93e97ab76::t_0b4702a35d0311 7,43,45-46,50,53-54,77
+tools/client910/crates/rs910-symbols/src/enums.rs
+  s_bf99a93e97ab76::t_0b4702a35d0311 36-37
+tools/client910/crates/rs910-symbols/src/obj.rs
+  s_bf99a93e97ab76::t_0b4702a35d0311 70-71,90-97,132-133,142-143,158-213,256-265,276-287,292-293,348-349
+tools/client910/fixtures/session-replay/trails/server-trace.jsonl
+  s_bf99a93e97ab76::t_0b4702a35d0311 1-120
+tools/client910/crates/rs910-symbols/src/seq.rs
+  s_bf99a93e97ab76::t_0b4702a35d0311 8-9,12-13,20-25,30-31,48-51,76-77,92-97,112-113,116-117,128-129,132-133,138-139,148-151,158-159,166-169
+tools/client910/fixtures/session-replay/trails/record.sh
+  s_bf99a93e97ab76::t_0b4702a35d0311 1-67
+packages/domain/src/symbols/obj.ts
+  s_bf99a93e97ab76::t_0b4702a35d0311 37,47-50,68,73,81-108,130-134,140-145,148,176
+server/src/lostcity/content/trails/talk.ts
+  s_bf99a93e97ab76::t_0b4702a35d0311 1-112
+server/src/lostcity/tools/data/domains/clues/CluePages.ts
+  s_bf99a93e97ab76::t_0b4702a35d0311 1-68
+packages/domain/src/symbols/enum.ts
+  s_bf99a93e97ab76::t_0b4702a35d0311 20
+server/src/lostcity/engine/devcommands/TrailCommands.ts
+  s_bf99a93e97ab76::t_0b4702a35d0311 1-31
+server/src/lostcity/tools/data/domains/clues/index.ts
+  s_bf99a93e97ab76::t_0b4702a35d0311 1-153
+tools/client910/src/app.rs
+  s_bf99a93e97ab76::t_0b4702a35d0311 326-329
+packages/domain/src/symbols/interface.ts
+  s_bf99a93e97ab76::t_0b4702a35d0311 19-20,26,63-87
+server/src/lostcity/systems/trails/TrailState.ts
+  s_bf99a93e97ab76::t_0b4702a35d0311 1-112
+server/src/formats/network/protocol/ServerProt.ts
+  s_bf99a93e97ab76::t_0b4702a35d0311 1346-1347
+server/src/lostcity/content/trails/places.ts
+  s_bf99a93e97ab76::t_0b4702a35d0311 1-115
+server/src/lostcity/data/ClueData.ts
+  s_bf99a93e97ab76::t_0b4702a35d0311 1-110
+revisions/910/symbols/npc.sym
+  s_bf99a93e97ab76::t_0b4702a35d0311 37
+server/src/lostcity/tools/data/domains/clues/Steps.ts
+  s_bf99a93e97ab76::t_0b4702a35d0311 1-305
+docs/server-architecture.md
+  s_bf99a93e97ab76::t_0b4702a35d0311 35,173-180
+  s_bf99a93e97ab76::t_d3762f48ca222c 181
+packages/domain/src/symbols/inv.ts
+  s_bf99a93e97ab76::t_0b4702a35d0311 8
+server/src/lostcity/tools/data/domains.ts
+  s_bf99a93e97ab76::t_0b4702a35d0311 10,13
+tools/client910/crates/rs910-symbols/src/component.rs
+  s_bf99a93e97ab76::t_0b4702a35d0311 81-102,161-167,348-349
+server/src/lostcity/systems/skilling/ToolBelt.ts
+  s_bf99a93e97ab76::t_0b4702a35d0311 37-40
+server/src/lostcity/systems/trails/Coordinates.ts
+  s_bf99a93e97ab76::t_0b4702a35d0311 1-45
+revisions/910/symbols/obj.sym
+  s_bf99a93e97ab76::t_0b4702a35d0311 35,45-48,66,71,79-106,128-132,138-143,146,174
+revisions/910/symbols/param.sym
+  s_bf99a93e97ab76::t_0b4702a35d0311 6-13,27
+revisions/910/symbols/seq.sym
+  s_bf99a93e97ab76::t_0b4702a35d0311 4,6,10-12,15,24-25,38,46-48,56,58,64,66,69,74-75,79,83-84
+revisions/910/symbols/varp.sym
+  s_bf99a93e97ab76::t_0b4702a35d0311 19-21,30,47-48,73-76
+server/src/lostcity/content/trails/index.ts
+  s_bf99a93e97ab76::t_0b4702a35d0311 1-72
+revisions/910/symbols/varbit.sym
+  s_bf99a93e97ab76::t_0b4702a35d0311 17,48-51,58-60,95-98,118,130
+server/README.md
+  s_bf99a93e97ab76::t_0b4702a35d0311 27,218
+tools/client910/crates/rs910-symbols/src/param.rs
+  s_bf99a93e97ab76::t_0b4702a35d0311 12-27,54-55
+server/src/lostcity/content/trails/emote.ts
+  s_bf99a93e97ab76::t_0b4702a35d0311 1-95
+server/src/lostcity/data/GeneratedData.ts
+  s_bf99a93e97ab76::t_0b4702a35d0311 15
+revisions/910/symbols/enum.sym
+  s_bf99a93e97ab76::t_0b4702a35d0311 18
+server/src/lostcity/network/ProductionE2E.integration.test.ts
+  s_bf99a93e97ab76::t_0b4702a35d0311 140-141
+packages/domain/src/symbols/location.ts
+  s_bf99a93e97ab76::t_0b4702a35d0311 17,53,55-56,60,63-64,87
+packages/domain/src/symbols/seq.ts
+  s_bf99a93e97ab76::t_0b4702a35d0311 6,8,12-14,17,26-27,40,48-50,58,60,66,68,71,76-77,81,85-86
+tools/client910/crates/rs910-symbols/src/location.rs
+  s_bf99a93e97ab76::t_0b4702a35d0311 14-15,86-87,90-93,100-101,106-109,154-155
+packages/domain/src/symbols/loc.ts
+  s_bf99a93e97ab76::t_0b4702a35d0311 62
+server/src/lostcity/systems/trails/Rewards.ts
+  s_bf99a93e97ab76::t_0b4702a35d0311 1-34
+tools/client910/crates/rs910-symbols/src/loc.rs
+  s_bf99a93e97ab76::t_0b4702a35d0311 120-121
+server/src/lostcity/systems/trails/TreasureTrails.ts
+  s_bf99a93e97ab76::t_0b4702a35d0311 1-247
+server/src/lostcity/network/SocketE2E.integration.test.ts
+  s_bf99a93e97ab76::t_0b4702a35d0311 410,431-433
+revisions/910/symbols/loc.sym
+  s_bf99a93e97ab76::t_0b4702a35d0311 60
+revisions/910/symbols/inv.sym
+  s_bf99a93e97ab76::t_0b4702a35d0311 6
+tools/client910/crates/rs910-symbols/src/interface.rs
+  s_bf99a93e97ab76::t_0b4702a35d0311 34-37,48-49,122-171
+revisions/910/symbols/interface.sym
+  s_bf99a93e97ab76::t_0b4702a35d0311 17-18,24,61-85
+server/src/lostcity/systems/emotes/Emotes.ts
+  s_bf99a93e97ab76::t_0b4702a35d0311 1-93
+packages/domain/src/symbols/varbit.ts
+  s_bf99a93e97ab76::t_0b4702a35d0311 19,50-53,60-62,97-100,120,132
+server/src/lostcity/systems/session/Sessions.ts
+  s_bf99a93e97ab76::t_0b4702a35d0311 24-25,129
+packages/domain/src/symbols/varp.ts
+  s_bf99a93e97ab76::t_0b4702a35d0311 21-23,32,49-50,75-78
+server/src/lostcity/engine/World.ts
+  s_bf99a93e97ab76::t_0b4702a35d0311 30-34,118-121,278-281,297-301
+  s_bf99a93e97ab76::t_b48b806595432d 302
+server/src/lostcity/systems/trails/ClueWindows.ts
+  s_bf99a93e97ab76::t_0b4702a35d0311 1-77
+server/src/lostcity/engine/devcommands/DevCommands.ts
+  s_bf99a93e97ab76::t_0b4702a35d0311 8,31
+  s_bf99a93e97ab76::t_8d9366a6e787c3 32
+tools/client910/crates/rs910-symbols/src/inv.rs
+  s_bf99a93e97ab76::t_0b4702a35d0311 13-14
+tools/client910/crates/rs910-symbols/src/varbit.rs
+  s_bf99a93e97ab76::t_0b4702a35d0311 34-35,96-103,116-121,190-197,236-237,260-261
+tools/client910/crates/rs910-symbols/src/varp.rs
+  s_bf99a93e97ab76::t_0b4702a35d0311 39-44,61-62,95-98,147-154
+tools/refactor/test-inventory.txt
+  s_bf99a93e97ab76::t_72cabdf5bd3b61 4,47,103,1699,1715,1743
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "8dd477b41fef684a61a633e9af9a4cbd9a9296a0",
+  "prompts": {},
+  "sessions": {
+    "s_bf99a93e97ab76": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "3306d217-ef25-4a58-aa1a-8bdfdb5da12f",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
