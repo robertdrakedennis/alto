@@ -1,0 +1,21 @@
+server/src/lostcity/systems/combat/Abilities.ts
+  s_3f4b5347620927::t_7b8b7ce22ccc9b 21,160-162,167
+server/src/lostcity/systems/combat/AbilityEquipment.ts
+  s_3f4b5347620927::t_630314237265b2 6-7,38-39,43-49
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "2e739c78e954f2caa4076a8a317a18c600d0fb6d",
+  "prompts": {},
+  "sessions": {
+    "s_3f4b5347620927": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1052f-291b-7aa2-897e-1b9a6fb3f082",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
