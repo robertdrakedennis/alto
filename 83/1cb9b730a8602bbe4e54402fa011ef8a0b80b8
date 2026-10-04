@@ -1,0 +1,23 @@
+tools/client910/crates/rs910-gpu-device/src/uploads.rs
+  s_3f4b5347620927::t_acbde7c79dc127 15-16
+tools/client910/crates/rs910-render-modern/src/frame/prebuild.rs
+  s_3f4b5347620927::t_c6481415124c71 81
+tools/perf/modern_perf_hook.rs
+  s_3f4b5347620927::t_8970c5aa288061 697,727,735
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "831cb9b730a8602bbe4e54402fa011ef8a0b80b8",
+  "prompts": {},
+  "sessions": {
+    "s_3f4b5347620927": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1052f-291b-7aa2-897e-1b9a6fb3f082",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
