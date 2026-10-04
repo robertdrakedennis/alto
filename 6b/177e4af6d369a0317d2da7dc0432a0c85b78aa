@@ -1,0 +1,112 @@
+revisions/910/symbols/enum.sym
+  s_429575801bef1b::t_474b63a144795c 38-39
+revisions/910/symbols/loc.sym
+  s_429575801bef1b::t_2de229ce77876c 103,140-141
+revisions/910/symbols/location.sym
+  s_429575801bef1b::t_89f019903fc620 72,108-110
+revisions/910/symbols/npc.sym
+  s_429575801bef1b::t_8d62bbeeb91191 43
+server/src/lostcity/content/skills/construction/data.ts
+  s_429575801bef1b::t_88dc3fc73a20be 28-29
+server/src/lostcity/content/skills/construction/houses.ts
+  s_c202351b3d1826::t_ad56ac99799250 9-13,22,26-29,70,75,78,81-105,111,118,125,141-146,154,160,222
+server/src/lostcity/data/GeneratedData.ts
+  s_c202351b3d1826::t_6588471e1f9cd7 15
+server/src/lostcity/engine/World.ts
+  s_c202351b3d1826::t_d8282fa51c6baf 1-2,17-18,115-117,120-123,126-127,328-329
+  s_c202351b3d1826::t_efdf5f796545ac 315
+server/src/lostcity/engine/WorldContent.ts
+  s_c202351b3d1826::t_2532bb964b99dc 1,13,31-34,43-50
+server/src/lostcity/engine/tick/TickPhases.test.ts
+  s_429575801bef1b::t_904c5a3785176e 65
+server/src/lostcity/engine/tick/WorldPhases.ts
+  s_c202351b3d1826::t_efafb472fedfd3 1,39,58-60
+server/src/lostcity/engine/triggers/ContentData.ts
+  s_c202351b3d1826::t_1024265f60832a 1-2,11,29,34-35
+server/src/lostcity/engine/triggers/Trigger.ts
+  s_c202351b3d1826::t_2cbf43ec022de5 1-2,32-34,93,96-140
+server/src/lostcity/entity/Npc.ts
+  s_c202351b3d1826::t_717e923e09de2e 1,31
+server/src/lostcity/entity/Player.ts
+  s_c202351b3d1826::t_6c10fd03e48d47 5-6,48-50
+server/src/lostcity/network/CombatGapsE2E.integration.test.ts
+  s_429575801bef1b::t_a5ce40c68c8ffa 5
+server/src/lostcity/systems/combat/PlayerSkull.ts
+  s_c202351b3d1826::t_cddb244a58a42f 6,62-63
+server/src/lostcity/systems/instances/InstanceMap.ts
+  s_429575801bef1b::t_29a28b56f71677 27
+server/src/lostcity/systems/movement/BuildArea.ts
+  s_429575801bef1b::t_b1ed5bd7a73e34 4
+server/src/lostcity/systems/npc/Aggression.ts
+  s_c202351b3d1826::t_2eb1a5d38167cc 1,30-35,73-74,77-78,80-93
+server/src/lostcity/systems/npc/NpcPopulation.ts
+  s_429575801bef1b::t_b0ff50f257a763 35-36,57,70,72,132,134-135
+server/src/lostcity/systems/session/Sessions.ts
+  s_c202351b3d1826::t_ed39e953b7e865 1,18-19,119,132,146
+server/src/lostcity/tools/data/domains.ts
+  s_c202351b3d1826::t_f6010d234ccbf8 1,16
+server/vitest.config.ts
+  s_c202351b3d1826::t_13c8055b18d433 60
+tools/client910/crates/rs910-symbols/src/enums.rs
+  s_429575801bef1b::t_24aab7ee1604ef 76-79
+tools/client910/crates/rs910-symbols/src/loc.rs
+  s_429575801bef1b::t_261ed918b876be 202,207,280-283
+tools/client910/crates/rs910-symbols/src/location.rs
+  s_429575801bef1b::t_8e7a9a4d1e6bf7 144-145,216-221
+tools/client910/crates/rs910-symbols/src/npc.rs
+  s_429575801bef1b::t_551b58c5a3c586 86-87
+docs/client-status.md
+  s_c202351b3d1826::t_0a55288b156841 21
+server/src/lostcity/data/CombatData.ts
+  s_c202351b3d1826::t_5bd084b11b17d3 4,89-103,113-114
+server/src/lostcity/network/DeathE2E.integration.test.ts
+  s_c202351b3d1826::t_00e266e94872fa 2,6,106,109,114-117,121,183-286
+server/src/lostcity/network/InstanceSessionsE2E.integration.test.ts
+  s_c202351b3d1826::t_fe14bc4a501b44 209-215
+server/src/lostcity/systems/combat/Graves.ts
+  s_c202351b3d1826::t_11a673da5d748e 1,38,47,68-69,132-133,159,182,192-197
+server/src/lostcity/systems/combat/PlayerDeath.ts
+  s_c202351b3d1826::t_094d8f1e650fc0 37,42-44,65,97,109,127-140,144,182,186-189
+server/src/lostcity/tools/data/domains/combat/DeathStage.ts
+  s_c202351b3d1826::t_42f7901ee54199 1-2,4,29-45,51-64,74-87,97-109,111-112,114
+server/src/lostcity/tools/data/domains/combat/index.ts
+  s_c202351b3d1826::t_d0f9937020b143 12,83,89
+tools/client910/fixtures/session-replay/death-office/record.py
+  s_c202351b3d1826::t_836dab3a950b75 1-85
+tools/client910/fixtures/session-replay/death-office/record.sh
+  s_c202351b3d1826::t_44747ad8ba9cdf 1-4
+tools/client910/fixtures/session-replay/death-office/seed.mjs
+  s_c202351b3d1826::t_3cde26af05bb81 1-54
+tools/client910/fixtures/session-replay/death-office/server.mjs
+  s_c202351b3d1826::t_9fbcd60faa736e 1-4
+tools/client910/src/app.rs
+  s_c202351b3d1826::t_3cc08e544bf64f 356-359
+tools/client910/src/scenario_death_office.rs
+  s_c202351b3d1826::t_11438e7188e1af 1-183
+tools/refactor/replay-gate.txt
+  s_c202351b3d1826::t_4887a362502d81 89-92
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "6b177e4af6d369a0317d2da7dc0432a0c85b78aa",
+  "prompts": {},
+  "sessions": {
+    "s_429575801bef1b": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1042e-bcee-7462-94a0-0556ff24d16e",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    },
+    "s_c202351b3d1826": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0fe2d-4e63-7e41-b719-caa999b24fd9",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
