@@ -1,0 +1,19 @@
+tools/client910/crates/rs910-render-modern/src/frame/benchmark.rs
+  s_3f4b5347620927::t_c869f2613ae5f4 76,142,170
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "8d4cadd21b04bc121f7e72c562fb0b4481ba1916",
+  "prompts": {},
+  "sessions": {
+    "s_3f4b5347620927": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1052f-291b-7aa2-897e-1b9a6fb3f082",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}

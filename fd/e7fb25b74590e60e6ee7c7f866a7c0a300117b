@@ -1,0 +1,31 @@
+docs/renderer/modern-renderer.md
+  s_3f4b5347620927::t_4c65c176648d2b 635-637
+docs/server-architecture.md
+  s_3f4b5347620927::t_9e7354fb1ebb7b 477-479
+tools/client910/crates/rs910-gpu-device/src/gpu_device.rs
+  s_3f4b5347620927::t_cf235c385f4149 284,296-300
+tools/client910/crates/rs910-gpu-device/src/uploads.rs
+  s_3f4b5347620927::t_adc1afa8bf3f19 117-121,209,247-273
+tools/client910/crates/rs910-render-modern/src/frame/tests/lifecycle.rs
+  s_3f4b5347620927::t_bcbf6e439513d2 112-113,116-122,124,149,166-168,177,180,187,198-200,202-203,209
+tools/client910/src/active_toolkit.rs
+  s_3f4b5347620927::t_87ac02136fe4c9 899,995,1022-1024
+tools/client910/src/app/scene_host.rs
+  s_3f4b5347620927::t_6b99d0abfc1d7b 386
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "fde7fb25b74590e60e6ee7c7f866a7c0a300117b",
+  "prompts": {},
+  "sessions": {
+    "s_3f4b5347620927": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1052f-291b-7aa2-897e-1b9a6fb3f082",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
