@@ -1,0 +1,23 @@
+docs/renderer/modern-renderer.md
+  s_3f4b5347620927::t_316183915cef1f 755-759,765-777
+tools/perf/modern_perf_bench.rs
+  s_3f4b5347620927::t_d395b3c7cae816 998,1002-1011,1050-1061,1064-1065,1077,1079,1082-1100,1103-1105,1108,1114,1118,1125-1126,1128,1130-1131,1136-1142,1145-1150,1167-1169,1171,1177,1181-1192,1203
+tools/perf/modern_views_diff.py
+  s_3f4b5347620927::t_ad24093fee3f6f 2,4,6-8,10-11,15-24,27-72,74-124,126-139
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "c588ccae27db24861405acffaed5f6e223051540",
+  "prompts": {},
+  "sessions": {
+    "s_3f4b5347620927": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1052f-291b-7aa2-897e-1b9a6fb3f082",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
