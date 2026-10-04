@@ -1,0 +1,25 @@
+docs/server-architecture.md
+  s_3f4b5347620927::t_c3f35a19b0681d 125
+server/src/lostcity/systems/combat/CombatCondition.ts
+  s_3f4b5347620927::t_e3cb4935ebc1a9 48-49
+server/src/lostcity/systems/combat/CombatStatuses.test.ts
+  s_3f4b5347620927::t_a4bff8a278813b 37,167-191
+server/src/lostcity/systems/combat/CombatStatuses.ts
+  s_3f4b5347620927::t_c864fd5f5b2160 45,49,53-66,89,156,176,181,189,207
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "e11bf77392f3da8b16efd1fcacd231329d8d1b62",
+  "prompts": {},
+  "sessions": {
+    "s_3f4b5347620927": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1052f-291b-7aa2-897e-1b9a6fb3f082",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
