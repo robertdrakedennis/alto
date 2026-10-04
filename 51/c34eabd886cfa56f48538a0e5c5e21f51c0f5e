@@ -1,0 +1,119 @@
+tools/client910/crates/rs910-ui/src/ui_layout.rs
+  s_c202351b3d1826::t_6439da3edf31be 158
+  s_c202351b3d1826::t_619145ce5e7dd2 181-189,191,314,317
+  s_c202351b3d1826::t_2eeccd7411f5bf 155-157,159-160,166-180,278,281,289,292,318
+  s_c202351b3d1826::t_fe36ea91bcf070 4-5,20-21,192,277,279-280,282-285,288,290-291,307-313,315-316,319-337,350-354
+tools/client910/crates/rs910-ui/src/ui_properties/geometry.rs
+  s_c202351b3d1826::t_152af84e18b8af 139,146,369-374,377-378,491-496,498-500,505-526,584-591
+  s_c202351b3d1826::t_495493b38c5608 1-4,6-36,39-71,73-76,78-79,82-105,110-135,137-138,140-145,147-151,153-264,267-275,277,280-368,438-474,527-583,592-593,670-672
+  s_c202351b3d1826::t_22ee2535ba8b50 5,37-38,72,77,80-81,106-109,279,645-647,656
+  s_c202351b3d1826::t_3906b702419fa3 375-376,379-380,475-490,501-504
+  s_c202351b3d1826::t_47c91d680b5287 152,497
+  s_c202351b3d1826::t_001124c6e8f951 136,265-266,278,382,434-435,594-644,648-655,657-669
+  s_c202351b3d1826::t_6034a4c9ac2b73 276,381,383-433,436-437,673
+tools/client910/crates/rs910-ui/src/ui_components.rs
+  s_c202351b3d1826::t_e6623ee0d490cf 93-94,147-185,191-192,195,270-288,737,883-885,982,993,1042,1544-1549,2986-3004,3631,3706-3779,4381
+  s_c202351b3d1826::t_b6135828a5fde1 3,6,87-88
+tools/client910/src/ui_goldens/ui_imported_replay.rs
+  s_c202351b3d1826::t_63f276b3d0f0bc 132,899-900,905-906,2691,3505-3506,3516,3541-3545,3547-3551,3563-3586,3588-3609,3612-3613,3622,3629-3755,3905-3946,3958,4054-4080,4136-4137,4186,4246-4563,4565
+  s_c202351b3d1826::t_7e852fb2b75941 3587
+  s_c202351b3d1826::t_f03058856c594f 3959,4101-4109
+  s_c202351b3d1826::t_5ae5a8b36d859b 4053,4081-4100,4110-4135
+  s_c202351b3d1826::t_226d87f810bc4d 4564,4566-4782
+docs/client-status.md
+  s_c202351b3d1826::t_d8e256c322bbf1 30
+revisions/950/cs2/frames.json
+  s_c202351b3d1826::t_23b6c7fc827fad 47-248
+revisions/950/cs2/layout.json
+  s_c202351b3d1826::t_2944283a0ab1d6 8
+tools/README.md
+  s_c202351b3d1826::t_505787c2a2cc86 474,538-541,547-627,667-701
+tools/client910/crates/rs910-ui/fixtures/modern-layout-properties.json
+  s_c202351b3d1826::t_203b7a2312d3db 1-15667
+tools/client910/crates/rs910-ui/fixtures/modern-text-child.json
+  s_c202351b3d1826::t_3047ad42e1e424 380-398
+tools/client910/crates/rs910-ui/fixtures/runtime-child-order.json
+  s_c202351b3d1826::t_62f31fabc138c7 410-652
+tools/client910/crates/rs910-ui/src/ui_components/cached_children.rs
+  s_c202351b3d1826::t_cd504930f320d2 1-33
+tools/client910/crates/rs910-ui/src/ui_draw.rs
+  s_c202351b3d1826::t_0c562cfefc494a 517-518,523
+tools/client910/crates/rs910-ui/src/ui_hook_host.rs
+  s_c202351b3d1826::t_58bc5bf1ffae19 59,68,132
+tools/client910/crates/rs910-ui/src/ui_layout/recording.rs
+  s_c202351b3d1826::t_f8cec39a016958 1-242
+tools/client910/crates/rs910-ui/src/ui_lifecycle.rs
+  s_c202351b3d1826::t_cc07b7a2ad451a 1094,1181
+tools/client910/crates/rs910-ui/src/ui_loop.rs
+  s_c202351b3d1826::t_3a4a0e459b80fc 962-964
+tools/client910/crates/rs910-ui/src/ui_model_animation.rs
+  s_c202351b3d1826::t_754aec7c148381 86-88
+tools/client910/crates/rs910-ui/src/ui_properties.rs
+  s_c202351b3d1826::t_78aa1c431231f0 4,12,72,780-797
+tools/client910/crates/rs910-ui/src/ui_resources.rs
+  s_c202351b3d1826::t_7109a83ebfffb4 21-27,62-73,97-103,106,109-119,154,173-177,182-234
+tools/client910/src/ui_goldens/ui_authoring_replay.rs
+  s_c202351b3d1826::t_1f43250dbd7ba9 491
+tools/cs2/fixtures/frame-tails.json
+  s_c202351b3d1826::t_4999d5993ae908 1-1768
+tools/cs2/fixtures/initial-frames.json
+  s_c202351b3d1826::t_dd4101417badb9 3,45-46,78-79,111-112,145-146,179-180,215-216,251-252,287-288,322-323,357-358,622-1623
+tools/cs2/fixtures/initial-geometry.json
+  s_c202351b3d1826::t_cc25bcbf3a11c4 1-1206
+tools/cs2/fixtures/ordinary-containers.json
+  s_c202351b3d1826::t_9efa5c2c107f01 1-857
+tools/cs2/src/frame_layout.rs
+  s_c202351b3d1826::t_b5b525536ce160 1-168
+tools/cs2/src/frames.rs
+  s_c202351b3d1826::t_2fe57a66c94798 1-3,5,11,16-18,51,62-64,84-104,115-119,121-124,138,142,167-217,219-220,222-228,235-260,268-294,296-317,319-330,346,348,376-385,387,390-394,437,446-450,456-481,490-498,513-600,604-635,659-690,692-701,704-705,710-712,714-793,796-797,799,885-927,956-967,978-1233
+tools/cs2/src/frames/containers.rs
+  s_c202351b3d1826::t_c33a2552e09661 1-114
+tools/cs2/src/frames/tail.rs
+  s_c202351b3d1826::t_930488ea27d727 1-475
+tools/cs2/src/layout.rs
+  s_c202351b3d1826::t_71057c8d28bfd5 1-169
+tools/cs2/src/lib.rs
+  s_c202351b3d1826::t_05be4b8e9646d8 13,16
+tools/cs2/src/main.rs
+  s_c202351b3d1826::t_f8068033f744f3 113,119-125,131-152,583-605,607-610,615-632
+tools/cs2/src/semantic.rs
+  s_c202351b3d1826::t_5a7a7bb0e8113b 247-250
+tools/native910/src/component_layout.rs
+  s_c202351b3d1826::t_f08eb67eb32587 1-327
+tools/native910/src/execution.rs
+  s_c202351b3d1826::t_f268878b8bc9c5 16-18,147-151,519-531,696-706,892-899,928,946-953,1012-1033,1406-1407
+tools/native910/src/execution/layout.rs
+  s_c202351b3d1826::t_4709307f9404ec 1-93
+tools/native910/src/inames.rs
+  s_c202351b3d1826::t_8a6d3d03e57ff2 97-99
+tools/native910/src/isource.rs
+  s_c202351b3d1826::t_3c19c493701630 1240-1241,1269-1274
+tools/native910/src/lib.rs
+  s_c202351b3d1826::t_7bcf78d39233b4 20
+tools/native910/src/project.rs
+  s_c202351b3d1826::t_810eb6c1aa379a 41,65-72,114,118-121,365-373,376,494-499,511,515-517,584-586,590,610,612-615
+tools/native910/src/repack.rs
+  s_c202351b3d1826::t_e4e1024c008226 117-127,132-134,155-187
+tools/native910/src/validate.rs
+  s_c202351b3d1826::t_792f0f6d37c420 166-175
+tools/native910/src/vm.rs
+  s_c202351b3d1826::t_ccf5224312c5f1 2895
+tools/native910/src/xref.rs
+  s_c202351b3d1826::t_ca7908e5b0e22b 1796-1797,1800
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "51c34eabd886cfa56f48538a0e5c5e21f51c0f5e",
+  "prompts": {},
+  "sessions": {
+    "s_c202351b3d1826": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0fe2d-4e63-7e41-b719-caa999b24fd9",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": null
+    }
+  }
+}
