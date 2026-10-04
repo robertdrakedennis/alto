@@ -1,0 +1,37 @@
+docs/client-status.md
+  s_c202351b3d1826::t_1c6e7fada219f8 29
+tools/README.md
+  s_c202351b3d1826::t_94c2f642f12f9c 494-495,501-502,508-509,515-535
+tools/client910/crates/rs910-ui/src/ui_components.rs
+  s_c202351b3d1826::t_202cf588f52554 126,133,908-923,971,2964,3091,3159-3376
+tools/client910/crates/rs910-ui/src/ui_hook_host.rs
+  s_c202351b3d1826::t_81ae1ae37cca99 56-84,132
+tools/client910/crates/rs910-ui/src/ui_properties.rs
+  s_c202351b3d1826::t_6750f1a1e8f510 69-71,785,822-844
+tools/client910/src/ui_goldens/ui_imported_replay.rs
+  s_c202351b3d1826::t_5ef6f0c6075d89 56,267,3003,3007,3107,3109-3112,3132-3139,3169-3183,3200-3204,3240-3255,3257-3258,3330-3346,3527,3530-3534,3549,3554-3561,3585,3600-3628,3630,3639-3656,3672,3690-3696,3699,3703
+tools/cs2/src/bridge.rs
+  s_c202351b3d1826::t_96f3b0277ba569 37,40,469,471-477,545
+tools/cs2/src/import910.rs
+  s_c202351b3d1826::t_fc0134440aa721 55-56,109,165-195,253,672-677,696-753,902-907,1210,1246-1269,1614
+tools/cs2/src/lower910.rs
+  s_c202351b3d1826::t_b5fb7003d8ecc4 320
+tools/native910/src/execution.rs
+  s_c202351b3d1826::t_360a198668bc92 268-333,367,473-479,606-608,888-894,1328-1334
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "031c5a8f0c5f7208be5be3891f19d4d1d2a74575",
+  "prompts": {},
+  "sessions": {
+    "s_c202351b3d1826": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0fe2d-4e63-7e41-b719-caa999b24fd9",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
