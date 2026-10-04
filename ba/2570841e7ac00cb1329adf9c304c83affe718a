@@ -1,0 +1,31 @@
+docs/client-status.md
+  s_c202351b3d1826::t_75bec8ff18edb6 29
+revisions/950/cs2/frames.json
+  s_c202351b3d1826::t_c77d27dfa6ab26 31-46
+tools/README.md
+  s_c202351b3d1826::t_6d91912b3e28f9 540,544-552,555,564,580-581
+tools/client910/src/ui_goldens/ui_imported_replay.rs
+  s_c202351b3d1826::t_9dcc32bf6450c9 2752,2766,2770-2775
+tools/cs2/fixtures/style-fonts.json
+  s_c202351b3d1826::t_82b164d6ae9fb2 1-849
+tools/cs2/src/frames.rs
+  s_c202351b3d1826::t_82de17bb287a6c 2-3,54,70-73,217-225,233-234,240,255-262,279,286,290,328-331,335-339,352,358-360,368,371-372,383,424,449,455-475
+tools/cs2/src/frames/styles.rs
+  s_c202351b3d1826::t_68b5ff2a56889c 1-237
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "ba2570841e7ac00cb1329adf9c304c83affe718a",
+  "prompts": {},
+  "sessions": {
+    "s_c202351b3d1826": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0fe2d-4e63-7e41-b719-caa999b24fd9",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
