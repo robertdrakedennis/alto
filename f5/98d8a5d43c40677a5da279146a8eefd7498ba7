@@ -1,0 +1,37 @@
+docs/client-status.md
+  s_c202351b3d1826::t_4e0dec1bcf2c2d 29
+revisions/950/cs2/frames.json
+  s_c202351b3d1826::t_4d2c466f1557e4 1-32
+tools/README.md
+  s_c202351b3d1826::t_8f3f5c4cbc9f5b 537-563,568,572-574
+tools/client910/src/ui_goldens/ui_imported_replay.rs
+  s_c202351b3d1826::t_99f861b2b384e7 269,340,359,473,517,723,749,774,832,2214,2393,2751-2770,3151,3216,3247-3248,3317,3340,3388-3392,3405,3428,3473,3509
+tools/cs2/fixtures/initial-frames.json
+  s_c202351b3d1826::t_dabd959804dfea 1-613
+tools/cs2/src/frames.rs
+  s_c202351b3d1826::t_5207ae0d0f43ae 1-429
+tools/cs2/src/import910.rs
+  s_c202351b3d1826::t_fd9220b96ba063 59-60,113,129-130,138-141,146,485,499,540-543,772-781,799,802-803,805-806,809,832-833
+tools/cs2/src/lib.rs
+  s_c202351b3d1826::t_683fb444fa1f2f 13
+tools/cs2/src/main.rs
+  s_c202351b3d1826::t_aebdcf4748d2a8 113-124,141-143,169-171,426,439-444,471,491,506-511,532,552-561
+tools/cs2/src/wire.rs
+  s_c202351b3d1826::t_aec19e9dd952ba 268
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "f598d8a5d43c40677a5da279146a8eefd7498ba7",
+  "prompts": {},
+  "sessions": {
+    "s_c202351b3d1826": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0fe2d-4e63-7e41-b719-caa999b24fd9",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
