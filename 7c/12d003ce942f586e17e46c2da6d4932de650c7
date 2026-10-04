@@ -1,0 +1,35 @@
+docs/client-status.md
+  s_3f4b5347620927::t_20fbff2cddbd9a 22-25
+docs/renderer/modern-renderer.md
+  s_3f4b5347620927::t_0d851ead16d884 879-887
+tools/client910/crates/rs910-render-gpu/src/render/device.rs
+  s_3f4b5347620927::t_ab1d6650e80259 259-264,279
+tools/client910/crates/rs910-render-modern/src/frame/gpu/point_lights.rs
+  s_3f4b5347620927::t_416f4cb9bbdd70 69,82-83,209,322,337,340
+tools/client910/crates/rs910-render-modern/src/frame/tests/lifecycle.rs
+  s_3f4b5347620927::t_18130746d207a7 237-246,256-258,262-263,269-271,274-275,289-428
+tools/client910/crates/rs910-render-modern/src/frame/tests/models.rs
+  s_3f4b5347620927::t_6dc91799519c5b 361-362,374-377,419,421-455
+tools/client910/crates/rs910-scene/src/model_lights.rs
+  s_3f4b5347620927::t_6f24d0c5f24b31 12-13,123-126,133,468,540,565
+tools/client910/src/active_toolkit.rs
+  s_3f4b5347620927::t_d718f839b1f1f9 1304-1306,1387-1389
+tools/client910/src/active_toolkit/render_tests.rs
+  s_3f4b5347620927::t_79f1009ee9b24e 373-375,380-385,435-453,491-503,519-529
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "7c12d003ce942f586e17e46c2da6d4932de650c7",
+  "prompts": {},
+  "sessions": {
+    "s_3f4b5347620927": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1052f-291b-7aa2-897e-1b9a6fb3f082",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
