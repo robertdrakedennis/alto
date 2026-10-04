@@ -1,0 +1,69 @@
+docs/renderer/modern-renderer.md
+  s_3f4b5347620927::t_5129c956fe7519 8,26-51
+tools/client910/crates/rs910-game/src/protocol910/rebuild_state.rs
+  s_3f4b5347620927::t_05c5ac81e830fd 521
+tools/client910/crates/rs910-game/src/protocol910/zone.rs
+  s_3f4b5347620927::t_f60aa784208ed3 27-28,122-124
+tools/client910/crates/rs910-game/src/protocol910/zone_state.rs
+  s_3f4b5347620927::t_852018d1d2e08d 215
+tools/client910/crates/rs910-render-gpu/src/player_renderer.rs
+  s_3f4b5347620927::t_328ce2e378721d 22,35-36,48,182,337-363,369-370,409-418,423-436,489-498,503-516
+tools/client910/crates/rs910-render-gpu/src/scene_meshes.rs
+  s_3f4b5347620927::t_09cbaf4d9b6461 823-825,829,837,850-853,856,945-949,951,953
+tools/client910/crates/rs910-ui/src/ui_draw.rs
+  s_3f4b5347620927::t_9ab5aa86065dbc 11,175-215,407-429,433-434,582,586
+tools/client910/src/active_toolkit.rs
+  s_3f4b5347620927::t_9cae97fe249851 391-396,1220-1222,1284-1358
+tools/client910/src/app.rs
+  s_3f4b5347620927::t_07cd141d0ee4d7 814-815
+tools/client910/src/app/cache_cleaning.rs
+  s_3f4b5347620927::t_c3c5cf27c7cc49 49,56-57
+tools/client910/src/app/dynamic_loc_pick_tests.rs
+  s_3f4b5347620927::t_7c1d9a272e17b0 385-409,420-451
+tools/client910/src/app/entity_renderer.rs
+  s_3f4b5347620927::t_e0a85b1fb3558e 8-12,33-34,209-239,306,333-368,370,372,374,410-420,629-665,680-681,684,740,1235-1245,1258,1416,1481-1501,1695-1704
+tools/client910/src/app/entity_renderer/cache.rs
+  s_3f4b5347620927::t_648aaa2a06f546 1-201
+tools/client910/src/app/environment.rs
+  s_3f4b5347620927::t_6e2154a0e38b42 242-247
+tools/client910/src/app/redraw.rs
+  s_3f4b5347620927::t_49a0a2ed6bfe0c 75-83,378-388,400-403,405,439-445,457,501
+tools/client910/src/app/scene_host.rs
+  s_3f4b5347620927::t_267495bf30f484 123-124,244-249,271,283-298,322-329,338-340,366,418,438,878,949-1000,1036-1045,1074-1086,1100-1106,1112,1123-1125,1370-1378
+tools/client910/src/app/session_controller.rs
+  s_3f4b5347620927::t_894627be94543a 450,453-461,1746-1796
+tools/perf/instrument.py
+  s_c202351b3d1826::t_7da9f053b6f567 166-168
+tools/perf/modern_online.sh
+  s_3f4b5347620927::t_c790252ad8c1c5 17,20,22
+tools/perf/online.sh
+  s_3f4b5347620927::t_1992414de9f80a 11,18,20
+tools/perf/online_session.py
+  s_3f4b5347620927::t_7d517c45739b48 1-188
+tools/refactor/test-inventory.txt
+  s_3f4b5347620927::t_1b65dcb577b899 4,50,67,124
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "20928c61956deb286ab948ed8cb38f9cbca7f434",
+  "prompts": {},
+  "sessions": {
+    "s_3f4b5347620927": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1052f-291b-7aa2-897e-1b9a6fb3f082",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    },
+    "s_c202351b3d1826": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0fe2d-4e63-7e41-b719-caa999b24fd9",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
