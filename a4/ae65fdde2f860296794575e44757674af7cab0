@@ -1,0 +1,31 @@
+docs/server-architecture.md
+  s_3f4b5347620927::t_ce6a06de404dce 504-510
+server/src/lostcity/systems/combat/Combat.ts
+  s_3f4b5347620927::t_6e794cf8937bd5 184-193,220
+server/src/lostcity/systems/combat/CombatStyle.ts
+  s_3f4b5347620927::t_ad32fdf404f95d 9-14,29-30
+server/src/lostcity/systems/combat/Combatant.ts
+  s_3f4b5347620927::t_1650828b9faf97 6,110-111
+server/src/lostcity/systems/combat/MagicCombat.ts
+  s_3f4b5347620927::t_7a2fb18afa73e1 4,15-17
+server/src/lostcity/systems/combat/MeleeCombat.ts
+  s_3f4b5347620927::t_89f59dc35d0bed 2,44-49,51-56,75-77
+server/src/lostcity/systems/combat/RangedCombat.ts
+  s_3f4b5347620927::t_e6c3820644dbe2 4,15-17
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "a4ae65fdde2f860296794575e44757674af7cab0",
+  "prompts": {},
+  "sessions": {
+    "s_3f4b5347620927": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1052f-291b-7aa2-897e-1b9a6fb3f082",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
