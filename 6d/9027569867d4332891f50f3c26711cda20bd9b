@@ -1,0 +1,85 @@
+docs/renderer/modern-renderer.md
+  s_3f4b5347620927::t_5c8035d35174ce 121,140-141,146,675-710,729
+tools/client910/crates/rs910-gpu-device/src/gpu_device.rs
+  s_3f4b5347620927::t_8b68c1fc14961c 189-199
+tools/client910/crates/rs910-render-modern/src/far/batch.rs
+  s_3f4b5347620927::t_75793a6a6529d1 24,266-280,292-296,298-309,392-405,409,413-420,423,427-434,438,448-455
+tools/client910/crates/rs910-render-modern/src/frame/benchmark.rs
+  s_3f4b5347620927::t_4cfa2b14da6ee6 217
+tools/client910/crates/rs910-render-modern/src/frame/forward_io.wgsl
+  s_3f4b5347620927::t_df7bf1c5d745c4 3-9
+tools/client910/crates/rs910-render-modern/src/frame/gpu/far.rs
+  s_3f4b5347620927::t_86e84cfea4ca3a 61-62,84,363-365,447,449-450,455,457,1255,1336-1341,1346-1347,1351,1354,1798,2017,2019,2021-2022,2045-2046,2062,2066,2068-2074
+tools/client910/crates/rs910-render-modern/src/frame/gpu/point_shadows.rs
+  s_3f4b5347620927::t_bcc8500ebc9da1 17-18,42-43,583-586,588-596,615,617-618,623,633,766-836
+tools/client910/crates/rs910-render-modern/src/frame/gpu/post.rs
+  s_3f4b5347620927::t_afe5a0ceaa8745 26-35,185,239-241,266,396-399,502-506,547,552,555-561,565,570-571,581-605,715-720,723,728,827-831,833,837,841-844,864,935,939-940,987-990,994
+tools/client910/crates/rs910-render-modern/src/frame/gpu/probes.rs
+  s_3f4b5347620927::t_d3b72acb25c000 1801
+tools/client910/crates/rs910-render-modern/src/frame/gpu/shadow_cache.rs
+  s_3f4b5347620927::t_4eb292ab5fff6a 370,386-387
+tools/client910/crates/rs910-render-modern/src/frame/gpu/sky_cube.rs
+  s_3f4b5347620927::t_91d86b206b3d7b 617
+tools/client910/crates/rs910-render-modern/src/frame/gpu/water.rs
+  s_3f4b5347620927::t_bb926af44db1d1 1294-1296,1305-1316,1402-1404,1418-1419,1497-1499,1513-1517
+tools/client910/crates/rs910-render-modern/src/frame/gpu/water_reflection.rs
+  s_3f4b5347620927::t_212c3a4c17a844 11-12
+tools/client910/crates/rs910-render-modern/src/frame/mod.rs
+  s_3f4b5347620927::t_785524ea13aec1 274-275,401-402,843,1222,1265-1269,1325-1327,1346,1349,1397,1501,1972-1974,1988-1992
+tools/client910/crates/rs910-render-modern/src/frame/passes.rs
+  s_3f4b5347620927::t_69cf041ca8ea99 323,332,341,350
+tools/client910/crates/rs910-render-modern/src/frame/submit.rs
+  s_3f4b5347620927::t_b53a17eb4bc738 148-163,174,182,188,194,201,213,231,238-324,328-393
+tools/client910/crates/rs910-render-modern/src/frame/tests/far.rs
+  s_3f4b5347620927::t_5dfbcef759c9e2 364-509
+tools/client910/crates/rs910-render-modern/src/frame/tests/point_shadows.rs
+  s_3f4b5347620927::t_bd623e8d0204e0 538-591
+tools/client910/crates/rs910-render-modern/src/frame/tests/post.rs
+  s_3f4b5347620927::t_e75f28729728a2 4,58,65,81,91-105,110-171,173-180,182-197
+tools/client910/crates/rs910-render-modern/src/frame/tests/scale.rs
+  s_3f4b5347620927::t_69eda263ada1eb 8
+tools/client910/crates/rs910-render-modern/src/frame/tests/water.rs
+  s_3f4b5347620927::t_075c2446f6ec7f 208-209,220-272,276-279
+tools/client910/crates/rs910-render-modern/src/frame/underwater.rs
+  s_3f4b5347620927::t_215d9379f4ffb7 147,226
+tools/client910/crates/rs910-render-modern/src/lib.rs
+  s_3f4b5347620927::t_08e37e5b0cec77 70-77
+tools/client910/crates/rs910-render-modern/src/lighting/probes.wgsl
+  s_3f4b5347620927::t_57be7d2b230af8 140
+tools/client910/crates/rs910-render-modern/src/models/shading.wgsl
+  s_3f4b5347620927::t_4c528bc2bf8405 41
+tools/client910/crates/rs910-render-modern/src/post/ao.rs
+  s_3f4b5347620927::t_39a1324594acd0 223-245
+tools/client910/crates/rs910-render-modern/src/post/post.wgsl
+  s_3f4b5347620927::t_3f3f6614a26aa2 113,120
+tools/client910/crates/rs910-render-modern/src/settings.rs
+  s_3f4b5347620927::t_105f7a5f6daa09 59-85,129,267,319-326,392-405
+tools/client910/crates/rs910-render-modern/src/terrain/terrain.wgsl
+  s_3f4b5347620927::t_ad4d8749ca03a6 170,213
+tools/client910/src/active_toolkit.rs
+  s_3f4b5347620927::t_c95e8a1a9ec0e0 694
+tools/perf/modern_perf_bench.rs
+  s_3f4b5347620927::t_3f1ce86c3b6c5c 344-352
+tools/perf/modern_perf_hook.rs
+  s_3f4b5347620927::t_82234839c1ef53 63-64,107-108,477,534-564,574,620,628,633-642
+tools/perf/modern_stage.py
+  s_3f4b5347620927::t_f26690df3011ac 59
+tools/refactor/test-inventory.txt
+  s_3f4b5347620927::t_f0aae4385ff9e8 1111,1114,1123,1128,1140,1147,1183,1213
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "6d9027569867d4332891f50f3c26711cda20bd9b",
+  "prompts": {},
+  "sessions": {
+    "s_3f4b5347620927": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1052f-291b-7aa2-897e-1b9a6fb3f082",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
