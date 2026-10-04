@@ -1,0 +1,49 @@
+docs/server-architecture.md
+  s_3f4b5347620927::t_813d7e0b9200e1 600-605
+server/src/lostcity/network/AbilityTargetsE2E.integration.test.ts
+  s_3f4b5347620927::t_19a36dfc5b1418 1-210
+server/src/lostcity/protocol/handlers/UseOn.ts
+  s_3f4b5347620927::t_2b1f58fc959cfc 6,31-32,41,66
+server/src/lostcity/systems/action-bar/ActionBar.ts
+  s_3f4b5347620927::t_72970da28120ed 298-315
+server/src/lostcity/systems/combat/AbilityFacade.ts
+  s_3f4b5347620927::t_2b4ffc267188a2 3-4,32-37
+server/src/lostcity/systems/combat/AbilityMovement.test.ts
+  s_3f4b5347620927::t_f1db8b9948120e 1-136
+server/src/lostcity/systems/combat/AbilityMovement.ts
+  s_3f4b5347620927::t_cd38a2dbc9d818 1-179
+server/src/lostcity/systems/combat/AbilityMovementCollision.ts
+  s_3f4b5347620927::t_8c0bbdff17769a 1-43
+server/src/lostcity/systems/combat/AbilityReactionFixtures.testkit.ts
+  s_3f4b5347620927::t_8999fa263c4e45 177
+server/src/lostcity/systems/combat/AbilityReactionTypes.ts
+  s_3f4b5347620927::t_6243f6ec5915c0 42
+server/src/lostcity/systems/combat/AbilityReactions.integration.test.ts
+  s_3f4b5347620927::t_fc9f6a136449d2 101-103
+server/src/lostcity/systems/combat/AbilityReactions.ts
+  s_3f4b5347620927::t_aec5eecb62b0e4 126,128
+server/src/lostcity/systems/combat/AbilitySources.ts
+  s_3f4b5347620927::t_727b0044932eb6 1-50
+server/src/lostcity/systems/movement/Movement.ts
+  s_3f4b5347620927::t_17954185262264 110-116,124-137
+server/vitest.config.ts
+  s_3f4b5347620927::t_5cb3d39522030e 46
+tools/refactor/test-inventory.txt
+  s_3f4b5347620927::t_6565e129623c96 1641,1827,1905,2033,2041,2062,2109,2138,2149
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "490e7ce1f7a98f4eb7ff8796c59d75adba8e5439",
+  "prompts": {},
+  "sessions": {
+    "s_3f4b5347620927": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1052f-291b-7aa2-897e-1b9a6fb3f082",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
