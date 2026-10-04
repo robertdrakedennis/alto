@@ -1,0 +1,192 @@
+docs/client-status.md
+  h_d26e211304196f 13-14
+docs/server-architecture.md
+  h_d26e211304196f 456-461
+packages/domain/src/symbols/component.ts
+  h_d26e211304196f 25,33,238,435-437
+packages/domain/src/symbols/dbrow.ts
+  h_d26e211304196f 6
+packages/domain/src/symbols/enum.ts
+  h_d26e211304196f 9
+packages/domain/src/symbols/interface.ts
+  h_d26e211304196f 37,110
+packages/domain/src/symbols/inv.ts
+  h_d26e211304196f 9
+packages/domain/src/symbols/location.ts
+  h_d26e211304196f 126-127
+packages/domain/src/symbols/npc.ts
+  h_d26e211304196f 40
+packages/domain/src/symbols/param.ts
+  h_d26e211304196f 97-101,103
+packages/domain/src/symbols/seq.ts
+  h_d26e211304196f 7-13,27,29-30,39-41,57-59,74-76,87-89,107-109
+packages/domain/src/symbols/varbit.ts
+  h_d26e211304196f 94-95
+revisions/910/symbols/component.sym
+  h_d26e211304196f 18,24,189,335
+revisions/910/symbols/dbrow.sym
+  h_d26e211304196f 4
+revisions/910/symbols/enum.sym
+  h_d26e211304196f 7
+revisions/910/symbols/interface.sym
+  h_d26e211304196f 35,108
+revisions/910/symbols/inv.sym
+  h_d26e211304196f 7
+revisions/910/symbols/location.sym
+  h_d26e211304196f 116-117
+revisions/910/symbols/npc.sym
+  h_d26e211304196f 38
+revisions/910/symbols/param.sym
+  h_d26e211304196f 95-99,101
+revisions/910/symbols/seq.sym
+  h_d26e211304196f 5-11,25,27-28,37-39,55-57,72-74,85-87,105-107
+revisions/910/symbols/varbit.sym
+  h_d26e211304196f 92-93
+server/src/formats/config/seqtype/SeqType.ts
+  h_d26e211304196f 35,41-62,83
+server/src/lostcity/config/Config.ts
+  h_d26e211304196f 86-95,99,112-113
+server/src/lostcity/data/NpcData.ts
+  h_d26e211304196f 79-80
+server/src/lostcity/entity/Player.ts
+  h_d26e211304196f 1,70
+server/src/lostcity/network/AbilitiesE2E.integration.test.ts
+  h_d26e211304196f 62,83,109-110
+server/src/lostcity/network/CombatBalance.integration.test.ts
+  h_d26e211304196f 1-122
+server/src/lostcity/network/CombatGapsE2E.integration.test.ts
+  h_d26e211304196f 45-46,186,190
+server/src/lostcity/network/DeathE2E.integration.test.ts
+  h_d26e211304196f 23-24,95,112,260
+server/src/lostcity/network/GrandExchangeE2E.integration.test.ts
+  h_d26e211304196f 255-258,282,296,299,303,312-315,355
+server/src/lostcity/network/InventoryFlows.integration.test.ts
+  h_d26e211304196f 46,55,70,275,331-332,338,393,397
+server/src/lostcity/network/MagicE2E.integration.test.ts
+  h_d26e211304196f 286,291,298,314,337,347,355
+server/src/lostcity/network/MoneyE2E.integration.test.ts
+  h_d26e211304196f 1-138
+server/src/lostcity/network/PrayerE2E.integration.test.ts
+  h_d26e211304196f 30-31,33,106
+server/src/lostcity/network/SkillsE2E.testkit.ts
+  h_d26e211304196f 49,131-143
+server/src/lostcity/protocol/handlers/Dialogue.ts
+  h_d26e211304196f 15-16
+server/src/lostcity/protocol/handlers/Interface.ts
+  h_d26e211304196f 35
+server/src/lostcity/systems/bank/BankSession.ts
+  h_d26e211304196f 1,80,134
+server/src/lostcity/systems/bank/BankTransfers.ts
+  h_d26e211304196f 1,63-79,148-155
+server/src/lostcity/systems/combat/Abilities.ts
+  h_d26e211304196f 156-160
+server/src/lostcity/systems/combat/DeathOffice.ts
+  h_d26e211304196f 1,15,307-310,315-318,320-326,328,335
+server/src/lostcity/systems/combat/Graves.ts
+  h_d26e211304196f 140,144-147,157
+server/src/lostcity/systems/combat/MagicSpells.ts
+  h_d26e211304196f 1,10,286-291,377-380,408-424
+server/src/lostcity/systems/combat/PlayerCombat.ts
+  h_d26e211304196f 32-35,108-113,193-194,197-204
+server/src/lostcity/systems/grand-exchange/ExchangeStore.ts
+  h_d26e211304196f 4,14,61
+server/src/lostcity/systems/grand-exchange/GrandExchange.ts
+  h_d26e211304196f 117-118,120-121,150,175,178,184,298
+server/src/lostcity/systems/grand-exchange/Holdings.ts
+  h_d26e211304196f 3,63-64,68,83,91
+server/src/lostcity/systems/interfaces/Interfaces.ts
+  h_d26e211304196f 36,118
+server/src/lostcity/systems/inventory/Inventories.ts
+  h_d26e211304196f 3,23,143,194-195,218-225,286-287,290,292,298-300,314,318,321-322,336,339,342,345-346
+server/src/lostcity/systems/money/Money.ts
+  h_d26e211304196f 1-205
+server/src/lostcity/systems/npc/NpcCacheProfile.ts
+  h_d26e211304196f 1-2,15,17,19,21,23,39-41,53-62,73-75,112-114
+server/src/lostcity/systems/npc/NpcCombat.ts
+  h_d26e211304196f 173,247-249
+server/src/lostcity/systems/npc/QualifiedAnimations.ts
+  h_d26e211304196f 1-26
+server/src/lostcity/systems/npc/SpawnManager.ts
+  h_d26e211304196f 1,43-51
+server/src/lostcity/systems/session/Account.ts
+  h_d26e211304196f 32,71,93-94,113,174
+server/src/lostcity/systems/session/AccountFile.ts
+  h_d26e211304196f 110,143
+server/src/lostcity/systems/session/LoginInterfaces.ts
+  h_d26e211304196f 1,106-113,115
+server/src/lostcity/systems/shop/ShopCurrency.ts
+  h_d26e211304196f 19-20
+server/src/lostcity/systems/shop/ShopSession.ts
+  h_d26e211304196f 1,158-159,181,190,313-315,319,329-340,342-349,356,391-393,401
+server/src/lostcity/systems/skilling/Backpack.ts
+  h_d26e211304196f 1,14,87,90
+server/src/lostcity/systems/slayer/Slayer.ts
+  h_d26e211304196f 199,201,212
+server/src/lostcity/systems/trade/PendingSettlement.ts
+  h_d26e211304196f 4,16,24
+server/src/lostcity/systems/trade/TradeRecovery.ts
+  h_d26e211304196f 1-2,27,39-45
+server/src/lostcity/systems/trade/TradeSession.ts
+  h_d26e211304196f 10
+server/src/lostcity/systems/trade/TradeWindows.ts
+  h_d26e211304196f 6,50,81
+server/src/lostcity/systems/trade/Trading.ts
+  h_d26e211304196f 1,160-164,199-200,224-240,245-257,310-315,318-325,341-342,344-345,383-389
+server/src/lostcity/tools/data/DataContext.ts
+  h_d26e211304196f 8,78
+server/src/lostcity/tools/data/domains/npcs/AttackProfiles.ts
+  h_d26e211304196f 131-136
+server/src/lostcity/tools/data/domains/npcs/NpcWiki.test.ts
+  h_d26e211304196f 4,79-103
+server/src/lostcity/tools/data/domains/npcs/NpcWiki.ts
+  h_d26e211304196f 9-15,41-42,109-114,140-141
+server/src/lostcity/tools/data/domains/npcs/ProfileStage.ts
+  h_d26e211304196f 81,96-104,140-142,182-183
+server/src/lostcity/tools/data/domains/npcs/index.ts
+  h_d26e211304196f 1,100-104,116-117
+tools/client910/crates/rs910-symbols/src/component.rs
+  h_d26e211304196f 47-48,64-65,494-495,913-919
+tools/client910/crates/rs910-symbols/src/dbrow.rs
+  h_d26e211304196f 5-9
+tools/client910/crates/rs910-symbols/src/enums.rs
+  h_d26e211304196f 14-15
+tools/client910/crates/rs910-symbols/src/interface.rs
+  h_d26e211304196f 70-71,216-217
+tools/client910/crates/rs910-symbols/src/inv.rs
+  h_d26e211304196f 14-15
+tools/client910/crates/rs910-symbols/src/location.rs
+  h_d26e211304196f 232-235
+tools/client910/crates/rs910-symbols/src/npc.rs
+  h_d26e211304196f 76-77
+tools/client910/crates/rs910-symbols/src/param.rs
+  h_d26e211304196f 190-199,202-203
+tools/client910/crates/rs910-symbols/src/seq.rs
+  h_d26e211304196f 10-23,50-51,54-57,74-79,110-115,144-149,170-175,210-215
+tools/client910/crates/rs910-symbols/src/varbit.rs
+  h_d26e211304196f 184-187
+tools/client910/fixtures/session-replay/correctness-farm/server-trace.jsonl
+  h_d26e211304196f 1-154
+tools/client910/fixtures/session-replay/correctness-npcs/server-trace.jsonl
+  h_d26e211304196f 1-542
+tools/client910/fixtures/session-replay/correctness-npcs/server.mjs
+  h_d26e211304196f 1-5
+tools/client910/fixtures/session-replay/correctness-wood/server-trace.jsonl
+  h_d26e211304196f 1-188
+tools/client910/fixtures/session-replay/player-correctness-record.py
+  h_d26e211304196f 1-82
+tools/client910/src/app.rs
+  h_d26e211304196f 1275-1278
+tools/client910/src/scenario_player_correctness.rs
+  h_d26e211304196f 1-201
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "c760230b94fcf46a5d575ce2b109032f873920d9",
+  "prompts": {},
+  "humans": {
+    "h_d26e211304196f": {
+      "author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
