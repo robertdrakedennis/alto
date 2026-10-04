@@ -1,0 +1,49 @@
+docs/client-status.md
+  s_c202351b3d1826::t_0a55288b156841 21
+server/src/lostcity/data/CombatData.ts
+  s_c202351b3d1826::t_5bd084b11b17d3 4,89-103,113-114
+server/src/lostcity/engine/World.ts
+  s_c202351b3d1826::t_efdf5f796545ac 315
+server/src/lostcity/network/DeathE2E.integration.test.ts
+  s_c202351b3d1826::t_00e266e94872fa 2,6,106,109,114-117,121,183-286
+server/src/lostcity/network/InstanceSessionsE2E.integration.test.ts
+  s_c202351b3d1826::t_fe14bc4a501b44 189-195
+server/src/lostcity/systems/combat/Graves.ts
+  s_c202351b3d1826::t_11a673da5d748e 1,38,47,68-69,132-133,159,182,192-197
+server/src/lostcity/systems/combat/PlayerDeath.ts
+  s_c202351b3d1826::t_094d8f1e650fc0 37,42-44,65,97,109,127-140,144,182,186-189
+server/src/lostcity/tools/data/domains/combat/DeathStage.ts
+  s_c202351b3d1826::t_42f7901ee54199 1-2,4,29-45,51-64,74-87,97-109,111-112,114
+server/src/lostcity/tools/data/domains/combat/index.ts
+  s_c202351b3d1826::t_d0f9937020b143 12,83,89
+tools/client910/fixtures/session-replay/death-office/record.py
+  s_c202351b3d1826::t_836dab3a950b75 1-85
+tools/client910/fixtures/session-replay/death-office/record.sh
+  s_c202351b3d1826::t_44747ad8ba9cdf 1-4
+tools/client910/fixtures/session-replay/death-office/seed.mjs
+  s_c202351b3d1826::t_3cde26af05bb81 1-54
+tools/client910/fixtures/session-replay/death-office/server.mjs
+  s_c202351b3d1826::t_9fbcd60faa736e 1-4
+tools/client910/src/app.rs
+  s_c202351b3d1826::t_3cc08e544bf64f 356-359
+tools/client910/src/scenario_death_office.rs
+  s_c202351b3d1826::t_11438e7188e1af 1-183
+tools/refactor/replay-gate.txt
+  s_c202351b3d1826::t_4887a362502d81 89-92
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "6db4cb53d90cc21aa3e246f456aef3477fb10f02",
+  "prompts": {},
+  "sessions": {
+    "s_c202351b3d1826": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0fe2d-4e63-7e41-b719-caa999b24fd9",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
