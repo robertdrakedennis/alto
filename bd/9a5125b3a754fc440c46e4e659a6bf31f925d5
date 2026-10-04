@@ -1,0 +1,41 @@
+docs/server-architecture.md
+  s_3f4b5347620927::t_cb1af52169de0c 547-554
+server/src/lostcity/data/ability/AbilityExecution.ts
+  s_3f4b5347620927::t_0c6eec758e9a17 181-184,339-340
+server/src/lostcity/network/AbilityOpponentReductionE2E.integration.test.ts
+  s_3f4b5347620927::t_3b3d6cb220747a 1-195
+server/src/lostcity/systems/combat/Abilities.ts
+  s_3f4b5347620927::t_143712febc0dd9 1,154-160
+server/src/lostcity/systems/combat/AbilityEquipmentDuration.ts
+  s_3f4b5347620927::t_092cece9093184 1-63
+server/src/lostcity/systems/combat/AbilityOpponentReduction.test.ts
+  s_3f4b5347620927::t_fdf50e815e447e 1-192
+server/src/lostcity/systems/combat/CombatCondition.ts
+  s_3f4b5347620927::t_d900a0741809b0 109
+server/src/lostcity/systems/combat/CombatStatuses.ts
+  s_3f4b5347620927::t_2d930c5052ee71 179,377-378
+server/src/lostcity/tools/data/domains/abilities/DebilitateStage.test.ts
+  s_3f4b5347620927::t_a3f6035c888708 1-161
+server/src/lostcity/tools/data/domains/abilities/DebilitateStage.ts
+  s_3f4b5347620927::t_025618a3cd747c 1-53
+server/src/lostcity/tools/data/domains/abilities/EffectStage.ts
+  s_3f4b5347620927::t_3d63f3eebf7309 1,70-73
+server/src/lostcity/tools/data/domains/abilities/ExecutionStage.ts
+  s_3f4b5347620927::t_a209bfea41bc9d 69-74
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "bd9a5125b3a754fc440c46e4e659a6bf31f925d5",
+  "prompts": {},
+  "sessions": {
+    "s_3f4b5347620927": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1052f-291b-7aa2-897e-1b9a6fb3f082",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
