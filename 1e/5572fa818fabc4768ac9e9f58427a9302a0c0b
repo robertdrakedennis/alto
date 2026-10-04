@@ -1,0 +1,49 @@
+docs/server-architecture.md
+  s_3f4b5347620927::t_bba5cd87c26978 546-548
+server/src/lostcity/network/AbilitiesE2E.integration.test.ts
+  s_3f4b5347620927::t_e8764f6e96a7f8 3,5,346-467
+server/src/lostcity/systems/combat/Abilities.ts
+  s_3f4b5347620927::t_fbe2c37e71a370 12,14,17,127,160-162,192-193,456-466,476-481
+server/src/lostcity/systems/combat/AbilityCritical.test.ts
+  s_3f4b5347620927::t_4f63a91b431cac 1-113
+server/src/lostcity/systems/combat/AbilityCritical.ts
+  s_3f4b5347620927::t_5198e2eb019e58 1-130
+server/src/lostcity/systems/combat/AbilityEffects.ts
+  s_3f4b5347620927::t_7a4ebe76cfbd6d 2,10,14,27,41,43-45,56-64,77-78,80,84-85,91,98
+server/src/lostcity/systems/combat/AbilityEquipment.ts
+  s_3f4b5347620927::t_d77c71f1055483 2,19-24,51-64
+server/src/lostcity/systems/combat/AbilityRuntime.ts
+  s_3f4b5347620927::t_6cd84b8360d2ec 9,11,14,27,51-52,59,64-66,84-87,102,104,132-135,137,158,183-185,187-188,197,242-254,258-265,279-283,291-298,321,325-326,347-349
+server/src/lostcity/systems/combat/CombatCondition.ts
+  s_3f4b5347620927::t_848dd3df4a2560 63
+server/src/lostcity/systems/combat/CombatStatuses.ts
+  s_3f4b5347620927::t_26cc9b4a336b36 334-337
+server/src/lostcity/systems/combat/ConditionModifiers.ts
+  s_3f4b5347620927::t_d6f833d827c94e 32-35
+tools/refactor/test-inventory.txt
+  s_c202351b3d1826::t_e13cfb223eeb14 48,1640,1748,1777,1781,1875,1944
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "1e5572fa818fabc4768ac9e9f58427a9302a0c0b",
+  "prompts": {},
+  "sessions": {
+    "s_3f4b5347620927": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1052f-291b-7aa2-897e-1b9a6fb3f082",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    },
+    "s_c202351b3d1826": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0fe2d-4e63-7e41-b719-caa999b24fd9",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}

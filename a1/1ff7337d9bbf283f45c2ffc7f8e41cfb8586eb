@@ -1,0 +1,25 @@
+server/src/lostcity/tools/data/domains/abilities/DamageStage.ts
+  s_3f4b5347620927::t_658986bc83a00e 8,119-120
+server/src/lostcity/tools/data/domains/abilities/FieldRestoreStage.ts
+  s_3f4b5347620927::t_485111c22fbd7f 1,3,5,18-27,42-80,162-165,170,183
+server/src/lostcity/tools/data/domains/abilities/PlaceholderPolicies.ts
+  s_3f4b5347620927::t_65b5ef17023ba7 11-12
+server/src/lostcity/tools/data/domains/abilities/SourceContracts.test.ts
+  s_3f4b5347620927::t_87f0cff33236cb 660-663,734-745,750-752
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "a11ff7337d9bbf283f45c2ffc7f8e41cfb8586eb",
+  "prompts": {},
+  "sessions": {
+    "s_3f4b5347620927": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1052f-291b-7aa2-897e-1b9a6fb3f082",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
