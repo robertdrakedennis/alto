@@ -1,0 +1,19 @@
+server/src/lostcity/systems/interfaces/HeroWindowTab.ts
+  s_3f4b5347620927::t_b44b6707cdedd4 17-18,36
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "0295c37d879babe80147a36e2730f2971b37f6ad",
+  "prompts": {},
+  "sessions": {
+    "s_3f4b5347620927": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1052f-291b-7aa2-897e-1b9a6fb3f082",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}

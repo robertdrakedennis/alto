@@ -1,0 +1,99 @@
+docs/server-architecture.md
+  s_3f4b5347620927::t_846093d5d26ff3 464,471-477
+packages/domain/src/symbols/component.ts
+  s_3f4b5347620927::t_6926dc151ee600 7-23,25-27,29-39,42-210,330-333,443-447,449,465,477,488,633-636,699-701
+packages/domain/src/symbols/enum.ts
+  s_3f4b5347620927::t_73f3a976c1584f 11,27,45,78
+packages/domain/src/symbols/interface.ts
+  s_3f4b5347620927::t_564165c836c588 7-11,35,108,123
+packages/domain/src/symbols/script.ts
+  s_3f4b5347620927::t_63e7e735b2b5cf 13,24,26
+packages/domain/src/symbols/struct.ts
+  s_3f4b5347620927::t_dd6f9f256bc0b9 6-10,13,18,22-25,28
+packages/domain/src/symbols/varbit.ts
+  s_3f4b5347620927::t_772bb4622a749f 7-11,14-16,96-97,192-193
+packages/domain/src/symbols/varc.ts
+  s_3f4b5347620927::t_0bc7af829b32df 6-7
+packages/domain/src/symbols/varp.ts
+  s_3f4b5347620927::t_b5cee51a18d9fe 7-364
+revisions/910/symbols/component.sym
+  s_3f4b5347620927::t_8c0e3d641d5de3 4-20,22-24,26-36,38-196,294-295,380-384,386,402,414,425,535-536,575
+revisions/910/symbols/enum.sym
+  s_3f4b5347620927::t_933bd1396c5f41 9,25,43,76
+revisions/910/symbols/interface.sym
+  s_3f4b5347620927::t_2c1e194a32b734 5-9,33,106,121
+revisions/910/symbols/script.sym
+  s_3f4b5347620927::t_04ff3abfbdad72 11,22,24
+revisions/910/symbols/struct.sym
+  s_3f4b5347620927::t_3373c8334e4f63 4-8,11,16,20-23,26
+revisions/910/symbols/varbit.sym
+  s_3f4b5347620927::t_58d585fc74daa2 5-9,12-14,94-95,190-191
+revisions/910/symbols/varc.sym
+  s_3f4b5347620927::t_3e396be960602e 4-5
+revisions/910/symbols/varp.sym
+  s_3f4b5347620927::t_67a61969fd4f9c 5-362
+server/src/lostcity/entity/Player.ts
+  s_3f4b5347620927::t_ffb11f8b71ed61 21,100
+server/src/lostcity/network/ActionBarE2E.integration.test.ts
+  s_c202351b3d1826::t_c83d0cf25bb80c 1-282
+server/src/lostcity/protocol/handlers/UseOn.ts
+  s_3f4b5347620927::t_f20e595f767ee9 30,57,66
+server/src/lostcity/systems/action-bar/ActionBar.ts
+  s_3f4b5347620927::t_6b33ff630b7c76 1-389
+server/src/lostcity/systems/action-bar/ActionBarContract.ts
+  s_3f4b5347620927::t_9fb82632a5669a 1-377
+server/src/lostcity/systems/action-bar/ActionBarLayouts.ts
+  s_3f4b5347620927::t_b644e2f1e8db8d 1-213
+server/src/lostcity/systems/action-bar/AdditionalBarSettings.ts
+  s_3f4b5347620927::t_6e197fa7aa6f3b 1-84
+server/src/lostcity/systems/action-bar/BookShortcuts.ts
+  s_3f4b5347620927::t_322ad05ffbcaf6 1-132
+server/src/lostcity/systems/interfaces/SettingsWindow.ts
+  s_3f4b5347620927::t_5efe50b36233b6 106-108,188-192,229
+server/src/lostcity/systems/session/LoginInterfaces.ts
+  s_3f4b5347620927::t_50eb28b49dbae8 121
+server/src/lostcity/systems/session/Session.ts
+  s_3f4b5347620927::t_91fe649e4acbe9 53
+server/vitest.config.ts
+  s_3f4b5347620927::t_a41972f2e94bee 43
+tools/client910/crates/rs910-symbols/src/component.rs
+  s_3f4b5347620927::t_a84099e9bf8cf2 9-42,45-50,53-74,79-421,671-679,911-920,923-924,955-956,979-980,1001-1002,1308-1316,1453-1459
+tools/client910/crates/rs910-symbols/src/enums.rs
+  s_3f4b5347620927::t_2ca45eae81a427 18-19,51-52,86-87,152-153
+tools/client910/crates/rs910-symbols/src/interface.rs
+  s_3f4b5347620927::t_dbd59c991b9a9f 10-19,66-67,212-213,242-243
+tools/client910/crates/rs910-symbols/src/script.rs
+  s_3f4b5347620927::t_b858a652490b8f 23-24,44-45,48-49
+tools/client910/crates/rs910-symbols/src/structs.rs
+  s_3f4b5347620927::t_79a06c0bb13d88 8-17,22-23,32-33,40-47,52-53
+tools/client910/crates/rs910-symbols/src/varbit.rs
+  s_3f4b5347620927::t_1d397620b786e6 10-19,24-29,188-191,380-383
+tools/client910/crates/rs910-symbols/src/varc.rs
+  s_3f4b5347620927::t_54c9b28f850962 8-11
+tools/client910/crates/rs910-symbols/src/varp.rs
+  s_3f4b5347620927::t_ebc29eba12d711 10-725
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "2a598fe789e258dba25c61e9c289f272bdaa8b57",
+  "prompts": {},
+  "sessions": {
+    "s_3f4b5347620927": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1052f-291b-7aa2-897e-1b9a6fb3f082",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    },
+    "s_c202351b3d1826": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0fe2d-4e63-7e41-b719-caa999b24fd9",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}

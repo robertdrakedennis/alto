@@ -1,0 +1,43 @@
+docs/server-architecture.md
+  s_3f4b5347620927::t_cbc409445955f4 473-474
+server/src/lostcity/network/ActionBarE2E.integration.test.ts
+  s_3f4b5347620927::t_9efd459b72ca74 7,9-22,32-43,141-159,223-243,286-306,311,313-314,317-320,322-325,327-328,330-333
+server/src/lostcity/systems/action-bar/ActionBar.ts
+  s_3f4b5347620927::t_bf41849a07570c 7,19,73,75,147-148,360,369-372,376-377
+server/src/lostcity/systems/action-bar/ActionBarContract.ts
+  s_3f4b5347620927::t_11ac59210a6efd 351-353,357
+server/src/lostcity/systems/action-bar/BookShortcuts.ts
+  s_3f4b5347620927::t_6f016cb7d10cbe 16-19,133
+tools/client910/crates/rs910-ui/fixtures/action-bar-drag-events.json
+  s_3f4b5347620927::t_c62c6979c6a36f 1-84
+tools/client910/crates/rs910-ui/src/ui_action_bar_drag_tests.rs
+  s_c202351b3d1826::t_1ce50e2cdf4424 1-232
+tools/client910/crates/rs910-ui/src/ui_interaction.rs
+  s_3f4b5347620927::t_dc0568da73e500 12-14
+tools/refactor/test-inventory.txt
+  s_3f4b5347620927::t_c0869623fec0cc 46,48,1439,1797,1840,1950-1953,1968,1970,1972,2008
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "c8fbf621fadec1f27e72a348f4e1c46b37a4708d",
+  "prompts": {},
+  "sessions": {
+    "s_3f4b5347620927": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1052f-291b-7aa2-897e-1b9a6fb3f082",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    },
+    "s_c202351b3d1826": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0fe2d-4e63-7e41-b719-caa999b24fd9",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
