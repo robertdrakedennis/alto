@@ -1,0 +1,33 @@
+server/src/lostcity/engine/interaction/LocObjOp.integration.test.ts
+  s_3f4b5347620927::t_a7a0405113592a 418-419,425-427
+server/src/lostcity/network/CombatCluesE2E.integration.test.ts
+  s_3f4b5347620927::t_f7c812a5ced0a3 49-50
+server/src/lostcity/network/NpcStylesE2E.integration.test.ts
+  s_3f4b5347620927::t_c4030ca2d43363 44-45,137
+server/src/lostcity/network/PrayerE2E.integration.test.ts
+  s_3f4b5347620927::t_87a32b79344927 106
+server/src/lostcity/network/QuestsE2E.integration.test.ts
+  s_3f4b5347620927::t_c3be775e387471 34-38,276,391
+server/src/lostcity/network/SocketE2E.integration.test.ts
+  s_3f4b5347620927::t_49afb8aad6b85e 27,434,571
+server/src/lostcity/systems/bank/BankSession.integration.test.ts
+  s_3f4b5347620927::t_5e1d097963b3eb 17-24,114,188,190-191,245-246,251
+server/src/lostcity/systems/combat/Combat.test.ts
+  s_3f4b5347620927::t_dfd4e1d96c6fab 41-43,80
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "a5387810b9fbf7346e51c05ab6db307276f1fa77",
+  "prompts": {},
+  "sessions": {
+    "s_3f4b5347620927": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1052f-291b-7aa2-897e-1b9a6fb3f082",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
