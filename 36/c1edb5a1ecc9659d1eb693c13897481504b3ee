@@ -1,0 +1,81 @@
+revisions/910/symbols/enum.sym
+  s_429575801bef1b::t_474b63a144795c 38-39
+revisions/910/symbols/loc.sym
+  s_429575801bef1b::t_2de229ce77876c 101,137-138
+revisions/910/symbols/location.sym
+  s_429575801bef1b::t_89f019903fc620 72,107-109
+revisions/910/symbols/npc.sym
+  s_429575801bef1b::t_8d62bbeeb91191 42
+server/src/lostcity/content/skills/construction/data.ts
+  s_429575801bef1b::t_88dc3fc73a20be 28-29
+server/src/lostcity/content/skills/construction/houses.ts
+  s_c202351b3d1826::t_ad56ac99799250 9-13,22,26-29,70,75,78,81-105,111,118,125,141-146,154,160,222
+server/src/lostcity/data/GeneratedData.ts
+  s_c202351b3d1826::t_6588471e1f9cd7 15
+server/src/lostcity/engine/World.ts
+  s_c202351b3d1826::t_d8282fa51c6baf 1-2,17-18,115-117,120-123,126-127,327-328
+server/src/lostcity/engine/WorldContent.ts
+  s_c202351b3d1826::t_2532bb964b99dc 1,13,31-34,43-50
+server/src/lostcity/engine/tick/TickPhases.test.ts
+  s_429575801bef1b::t_904c5a3785176e 65
+server/src/lostcity/engine/tick/WorldPhases.ts
+  s_c202351b3d1826::t_efafb472fedfd3 1,39,58-60
+server/src/lostcity/engine/triggers/ContentData.ts
+  s_c202351b3d1826::t_1024265f60832a 1-2,11,29,34-35
+server/src/lostcity/engine/triggers/Trigger.ts
+  s_c202351b3d1826::t_2cbf43ec022de5 1-2,32-34,93,96-140
+server/src/lostcity/entity/Npc.ts
+  s_c202351b3d1826::t_717e923e09de2e 1,31
+server/src/lostcity/entity/Player.ts
+  s_c202351b3d1826::t_6c10fd03e48d47 5-6,48-50
+server/src/lostcity/network/CombatGapsE2E.integration.test.ts
+  s_429575801bef1b::t_a5ce40c68c8ffa 5
+server/src/lostcity/systems/combat/PlayerSkull.ts
+  s_c202351b3d1826::t_cddb244a58a42f 6,62-63
+server/src/lostcity/systems/instances/InstanceMap.ts
+  s_429575801bef1b::t_29a28b56f71677 27
+server/src/lostcity/systems/movement/BuildArea.ts
+  s_429575801bef1b::t_b1ed5bd7a73e34 4
+server/src/lostcity/systems/npc/Aggression.ts
+  s_c202351b3d1826::t_2eb1a5d38167cc 1,30-35,73-74,77-78,80-93
+server/src/lostcity/systems/npc/NpcPopulation.ts
+  s_429575801bef1b::t_b0ff50f257a763 35-36,57,70,72,132,134-135
+server/src/lostcity/systems/session/Sessions.ts
+  s_c202351b3d1826::t_ed39e953b7e865 1,18-19,119,132,146
+server/src/lostcity/tools/data/domains.ts
+  s_c202351b3d1826::t_f6010d234ccbf8 1,16
+server/vitest.config.ts
+  s_c202351b3d1826::t_13c8055b18d433 60
+tools/client910/crates/rs910-symbols/src/enums.rs
+  s_429575801bef1b::t_24aab7ee1604ef 76-79
+tools/client910/crates/rs910-symbols/src/loc.rs
+  s_429575801bef1b::t_261ed918b876be 202-203,274-277
+tools/client910/crates/rs910-symbols/src/location.rs
+  s_429575801bef1b::t_8e7a9a4d1e6bf7 144-145,214-219
+tools/client910/crates/rs910-symbols/src/npc.rs
+  s_429575801bef1b::t_551b58c5a3c586 84-85
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "36c1edb5a1ecc9659d1eb693c13897481504b3ee",
+  "prompts": {},
+  "sessions": {
+    "s_429575801bef1b": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1042e-bcee-7462-94a0-0556ff24d16e",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    },
+    "s_c202351b3d1826": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0fe2d-4e63-7e41-b719-caa999b24fd9",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
