@@ -1,0 +1,37 @@
+docs/server-architecture.md
+  s_3f4b5347620927::t_9720e61053667f 524-529
+server/src/lostcity/systems/combat/AbilityReactionAftermath.ts
+  s_3f4b5347620927::t_2ac209fee55eed 1-32
+server/src/lostcity/systems/combat/AbilityReactionFixtures.testkit.ts
+  s_3f4b5347620927::t_6d7367efed2895 1-184
+server/src/lostcity/systems/combat/AbilityReactionMath.ts
+  s_3f4b5347620927::t_afbd4b73680631 1-53
+server/src/lostcity/systems/combat/AbilityReactionTypes.ts
+  s_3f4b5347620927::t_8715c656e37a23 1-100
+server/src/lostcity/systems/combat/AbilityReactions.integration.test.ts
+  s_3f4b5347620927::t_0dadfbacfe2ffa 1-281
+server/src/lostcity/systems/combat/AbilityReactions.ts
+  s_3f4b5347620927::t_9b92812c89b570 1-186
+server/src/lostcity/systems/combat/AbilityShield.ts
+  s_3f4b5347620927::t_f34814d031ae3b 1-27
+server/vitest.config.ts
+  s_3f4b5347620927::t_812fd0bd720ad3 47
+tools/refactor/test-inventory.txt
+  s_3f4b5347620927::t_a2493b46926392 1600,1693-1694,1811,1826,1846,1864,1890,1928,1962,2006,2008,2032,2040,2068,2074
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "c9dc4404608807c10c6160192adc786200c279bb",
+  "prompts": {},
+  "sessions": {
+    "s_3f4b5347620927": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1052f-291b-7aa2-897e-1b9a6fb3f082",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
