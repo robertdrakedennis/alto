@@ -1,0 +1,19 @@
+tools/client910/crates/rs910-ui/src/ui_components.rs
+  s_c202351b3d1826::t_e106cf7f8b5b1c 836,1128-1141
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "1a9ee75f0b8c9848c0c87b31a6f3102b78bd6bdd",
+  "prompts": {},
+  "sessions": {
+    "s_c202351b3d1826": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0fe2d-4e63-7e41-b719-caa999b24fd9",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}

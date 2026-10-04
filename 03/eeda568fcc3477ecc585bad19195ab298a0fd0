@@ -1,0 +1,51 @@
+docs/client-status.md
+  s_c202351b3d1826::t_7db55de72882f6 30
+revisions/950/cs2/950-1.json
+  s_c202351b3d1826::t_6e74dedf08fc89 6346,6348-6352
+revisions/950/cs2/enums.json
+  s_c202351b3d1826::t_991d7acf6a69da 1-470
+tools/README.md
+  s_c202351b3d1826::t_1ef5901d7dc930 187-208
+tools/client910/crates/rs910-config/src/lib.rs
+  s_c202351b3d1826::t_1768aaed6085a8 63-64
+tools/client910/crates/rs910-config/src/ui_enum_resource.rs
+  s_c202351b3d1826::t_eae05d42e959f9 1-171
+tools/client910/crates/rs910-config/src/ui_enum_schema.rs
+  s_c202351b3d1826::t_0eb864ded19d0d 1-203
+tools/cs2/fixtures/enums.json
+  s_c202351b3d1826::t_37bc36619effcc 1-1814
+tools/cs2/src/enums.rs
+  s_c202351b3d1826::t_b9bd0a9a8a688b 1-476
+tools/cs2/src/flow.rs
+  s_c202351b3d1826::t_de62002924bcc2 23-26,33-44,166-168,202,272-298,367,404-406
+tools/cs2/src/import910.rs
+  s_c202351b3d1826::t_79c73ef5fe758f 200,304
+tools/cs2/src/lib.rs
+  s_c202351b3d1826::t_7f7fdf6dc0166e 11
+tools/cs2/src/main.rs
+  s_c202351b3d1826::t_aa6d7d7bfeb447 79-95,251-286
+tools/cs2/src/profile.rs
+  s_c202351b3d1826::t_bcd5ed1d1034f4 40-42,198-200
+tools/cs2/src/wire.rs
+  s_c202351b3d1826::t_12f563c85f0f85 265
+tools/native910/src/dataflow.rs
+  s_c202351b3d1826::t_e1506d9f63bdd2 60-88,232-236,756-757
+tools/refactor/layers.txt
+  s_c202351b3d1826::t_f8d01d1a42807a 214-215
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "03eeda568fcc3477ecc585bad19195ab298a0fd0",
+  "prompts": {},
+  "sessions": {
+    "s_c202351b3d1826": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0fe2d-4e63-7e41-b719-caa999b24fd9",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}

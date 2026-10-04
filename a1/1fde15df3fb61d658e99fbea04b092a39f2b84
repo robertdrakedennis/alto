@@ -1,0 +1,39 @@
+docs/client-status.md
+  s_c202351b3d1826::t_c2ff2355dc3897 30
+tools/client910/crates/rs910-ui/src/lib.rs
+  s_c202351b3d1826::t_9de97765d3b68d 81
+tools/client910/crates/rs910-ui/src/ui_components.rs
+  s_c202351b3d1826::t_a3ca8bce6f75ed 60-61,98-99,685-701,883-895,938,943-958,960,966,980,1184-1376,1380
+tools/client910/crates/rs910-ui/src/ui_draw.rs
+  s_c202351b3d1826::t_11ee23854c60ce 514-528,549
+tools/client910/crates/rs910-ui/src/ui_hooks.rs
+  s_c202351b3d1826::t_eaa3300f4f9246 315-326,423,440-444
+tools/client910/crates/rs910-ui/src/ui_layout.rs
+  s_c202351b3d1826::t_986296e74c3122 127-129,219-222,226-231
+tools/client910/crates/rs910-ui/src/ui_loop.rs
+  s_c202351b3d1826::t_d6fa73f3796605 943-946,952
+tools/client910/crates/rs910-ui/src/ui_model_animation.rs
+  s_c202351b3d1826::t_14c5bd8d3b98c4 85-88,93
+tools/client910/crates/rs910-ui/src/ui_runtime_children.rs
+  s_c202351b3d1826::t_470dedbf41d32f 1-272
+tools/client910/src/ui_goldens/ui_authoring_replay.rs
+  s_c202351b3d1826::t_975b64950228e7 240-345
+tools/client910/src/ui_sprites_oracle.rs
+  s_c202351b3d1826::t_f2a21ab216f90e 432-433
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "a11fde15df3fb61d658e99fbea04b092a39f2b84",
+  "prompts": {},
+  "sessions": {
+    "s_c202351b3d1826": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0fe2d-4e63-7e41-b719-caa999b24fd9",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}

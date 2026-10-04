@@ -1,0 +1,35 @@
+docs/client-status.md
+  s_c202351b3d1826::t_ee1fe00ea10955 30
+revisions/950/cs2/950-1.json
+  s_c202351b3d1826::t_6a096269265517 1011,1013-1026,5016,5018-5031,7884,7886-7899,10453,10455-10468
+tools/client910/crates/rs910-ui/fixtures/anchored-layout.json
+  s_c202351b3d1826::t_60c73a75295933 1-1120
+tools/client910/crates/rs910-ui/src/lib.rs
+  s_c202351b3d1826::t_c059575c142a09 66
+tools/client910/crates/rs910-ui/src/ui_components.rs
+  s_c202351b3d1826::t_63a84eee0eec67 88-91,131-133,2334-2520,2526
+tools/client910/crates/rs910-ui/src/ui_layout.rs
+  s_c202351b3d1826::t_650600c9dad9f9 5-7,49-50,53-81,83,110-111,125-131
+tools/client910/crates/rs910-ui/src/ui_layout_constraints.rs
+  s_c202351b3d1826::t_ec8b441e8ec063 1-143
+tools/client910/crates/rs910-ui/src/ui_properties.rs
+  s_c202351b3d1826::t_52dae579e2a75f 902-906,922,933
+tools/client910/src/ui_goldens/ui_authoring_replay.rs
+  s_c202351b3d1826::t_db0b6945b82fc3 245,257-278,280,294-311,340-344
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "a429764f778da7aa6952c329dca51c7797ed5f4f",
+  "prompts": {},
+  "sessions": {
+    "s_c202351b3d1826": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0fe2d-4e63-7e41-b719-caa999b24fd9",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}

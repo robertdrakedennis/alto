@@ -1,0 +1,27 @@
+tools/client910/crates/rs910-ui/src/lib.rs
+  s_c202351b3d1826::t_e345e876d23efc 81
+tools/client910/crates/rs910-ui/src/ui_components.rs
+  s_c202351b3d1826::t_fc1fea437026e3 6-10,59-78,84-85,723,983-1015,1037,1045-1089,1287
+tools/client910/crates/rs910-ui/src/ui_hooks.rs
+  s_c202351b3d1826::t_f9ad62464e6cdc 315
+tools/client910/crates/rs910-ui/src/ui_runtime_children.rs
+  s_c202351b3d1826::t_cc40ad0c8a11a0 4-5,7,89,104,126,138
+tools/client910/src/ui_goldens/ui_authoring_replay.rs
+  s_c202351b3d1826::t_039908ec348b69 243
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "fc45e4f1c052e25f1c69bc7c2eec3b19f7740bda",
+  "prompts": {},
+  "sessions": {
+    "s_c202351b3d1826": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0fe2d-4e63-7e41-b719-caa999b24fd9",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}

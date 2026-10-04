@@ -1,0 +1,45 @@
+docs/client-status.md
+  s_c202351b3d1826::t_e1b2d750d931ac 30
+revisions/950/cs2/950-1-to-910.json
+  s_c202351b3d1826::t_7e0ff8d1c9e2a7 741-774
+tools/README.md
+  s_c202351b3d1826::t_655a560611f18f 204-205,239-240,299-301,441-455,471-481
+tools/client910/crates/rs910-config/src/ui_component_fields.rs
+  s_c202351b3d1826::t_3909049596cafd 131-224
+tools/client910/crates/rs910-ui/fixtures/modern-text-child.json
+  s_c202351b3d1826::t_c8196da3db6f40 1-381
+tools/client910/crates/rs910-ui/src/ui_components.rs
+  s_c202351b3d1826::t_328c7c4817598e 611-612,719-839,850-862,1177,2578-2840,3513
+tools/client910/crates/rs910-ui/src/ui_hook_host.rs
+  s_c202351b3d1826::t_9287941eae50e9 56-68
+tools/client910/src/ui_goldens/ui_authoring_replay.rs
+  s_c202351b3d1826::t_25517f713cbe6a 528
+tools/client910/src/ui_goldens/ui_imported_replay.rs
+  s_c202351b3d1826::t_757f440ad2c087 881,2668-2672,2699,2705-2706,2725,2875-2876,2906-2983,3017-3049,3051,3054-3065,3076-3113,3119,3130-3139,3178-3196,3198-3220,3227,3248-3253,3258-3271,3281-3284
+tools/cs2/src/bridge.rs
+  s_c202351b3d1826::t_6bf642b738e93c 340-345,363-365,376,429-432
+tools/cs2/src/import910.rs
+  s_c202351b3d1826::t_e7ebd9a57707d5 175,549,682-687,949,1021,1151,1159,1184-1209,1229,1408,1427-1435,1454-1456,1471-1477,1484-1485,1503,1508-1514
+tools/cs2/src/lower910.rs
+  s_c202351b3d1826::t_33e65c412a7039 22-23,87-126,174,248,277,284-288,290-304
+tools/native910/src/execution.rs
+  s_c202351b3d1826::t_c26468e3b8efb8 162-167,330-343,448-468,510-515,531,542-545,550-553,957-967,1116-1134
+tools/native910/src/vm.rs
+  s_c202351b3d1826::t_9c530a419ce802 2895
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "b6274a3e032026f40cd725722b1cd427de29bf2b",
+  "prompts": {},
+  "sessions": {
+    "s_c202351b3d1826": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0fe2d-4e63-7e41-b719-caa999b24fd9",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}

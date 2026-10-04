@@ -1,0 +1,45 @@
+docs/client-status.md
+  s_c202351b3d1826::t_a374be397fe112 30
+revisions/950/cs2/950-1.json
+  s_c202351b3d1826::t_8d6679ab6be406 6266,6268-6281,13659
+revisions/950/cs2/database.json
+  s_c202351b3d1826::t_f5c2e6f87a55db 1-588
+tools/Cargo.lock
+  s_c202351b3d1826::t_1aecbf66847c48 624
+tools/README.md
+  s_c202351b3d1826::t_b829c958c4207c 13,160-169
+tools/client910/crates/rs910-config/src/lib.rs
+  s_c202351b3d1826::t_7bf554ff82b4ac 60
+tools/client910/crates/rs910-config/src/ui_db_schema.rs
+  s_c202351b3d1826::t_5bf8bbc48a85b1 1-393
+tools/cs2/Cargo.toml
+  s_c202351b3d1826::t_89c7063aaf8e95 12
+tools/cs2/fixtures/database.json
+  s_c202351b3d1826::t_4cf30cacd329d6 1-1234
+tools/cs2/src/database.rs
+  s_c202351b3d1826::t_ec22762bff9063 1-445
+tools/cs2/src/lib.rs
+  s_c202351b3d1826::t_dfeaaebf3dac38 10
+tools/cs2/src/main.rs
+  s_c202351b3d1826::t_fc9d4a30432ca2 63-78,215-244
+tools/cs2/src/wire.rs
+  s_c202351b3d1826::t_daea91882be2c2 264
+tools/refactor/layers.txt
+  s_c202351b3d1826::t_57d8d054ab1d53 212
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "ba57703724211e50cd4b1bf1ec3ba3c790be1a59",
+  "prompts": {},
+  "sessions": {
+    "s_c202351b3d1826": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0fe2d-4e63-7e41-b719-caa999b24fd9",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
