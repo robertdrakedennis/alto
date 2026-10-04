@@ -1,0 +1,23 @@
+docs/renderer/modern-renderer.md
+  s_3f4b5347620927::t_f2233d0b917d43 615-618
+tools/client910/crates/rs910-render-gpu/src/render/frame.rs
+  s_3f4b5347620927::t_e705259ee54442 120-125,541,546,585-590,593,628-633
+tools/client910/src/active_toolkit.rs
+  s_3f4b5347620927::t_9c3ed6e99bbcfd 840-842
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "6bd369ae26eee2a6d7e8150ccb4cff46bc6efd97",
+  "prompts": {},
+  "sessions": {
+    "s_3f4b5347620927": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1052f-291b-7aa2-897e-1b9a6fb3f082",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
