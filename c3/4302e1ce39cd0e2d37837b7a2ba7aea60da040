@@ -1,0 +1,16 @@
+tools/client910/crates/rs910-render-modern/src/frame/jobs.rs
+  h_d26e211304196f 24-25,255-264
+tools/client910/crates/rs910-render-modern/src/shadows/casters.rs
+  h_d26e211304196f 108-120,138,150,199
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "c34302e1ce39cd0e2d37837b7a2ba7aea60da040",
+  "prompts": {},
+  "humans": {
+    "h_d26e211304196f": {
+      "author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
