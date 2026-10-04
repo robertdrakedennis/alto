@@ -1,0 +1,65 @@
+docs/server-architecture.md
+  s_3f4b5347620927::t_976bcd1b82052b 511-518
+packages/domain/src/symbols/component.ts
+  s_3f4b5347620927::t_2c3edd9b1904c4 501
+packages/domain/src/symbols/param.ts
+  s_3f4b5347620927::t_4f7a019d7f3c60 155-156
+packages/domain/src/symbols/struct.ts
+  s_3f4b5347620927::t_ca9ee57d4e57ad 21,35-39
+packages/domain/src/symbols/varbit.ts
+  s_3f4b5347620927::t_6067379603cfec 82,157,239-243
+revisions/910/symbols/component.sym
+  s_3f4b5347620927::t_216dc5571245e1 436
+revisions/910/symbols/param.sym
+  s_3f4b5347620927::t_bcda0e287fea03 153-154
+revisions/910/symbols/struct.sym
+  s_3f4b5347620927::t_ece4b021bf3b0b 19,33-37
+revisions/910/symbols/varbit.sym
+  s_3f4b5347620927::t_20a7f5210942cb 80,155,237-241
+server/src/lostcity/entity/Player.ts
+  s_3f4b5347620927::t_1f636cf8145bf4 21,102
+server/src/lostcity/network/RevolutionE2E.integration.test.ts
+  s_3f4b5347620927::t_8f846f8f729ab3 1-331
+server/src/lostcity/systems/action-bar/ActionBar.ts
+  s_3f4b5347620927::t_ebb83813eadcb9 30,34,298-317,319
+server/src/lostcity/systems/action-bar/RevolutionSettings.ts
+  s_3f4b5347620927::t_5eaa338c206621 1-166
+server/src/lostcity/systems/combat/AbilityFacade.ts
+  s_3f4b5347620927::t_3b8e5e578f0c58 1-29
+server/src/lostcity/systems/combat/AbilityVariants.integration.test.ts
+  s_3f4b5347620927::t_e2ed1bdeb9763b 1-121
+server/src/lostcity/systems/combat/AbilityVariants.ts
+  s_3f4b5347620927::t_20a4190c3ff717 1-56
+server/src/lostcity/systems/combat/Revolution.ts
+  s_3f4b5347620927::t_edd3ee5f7ffaa8 1-42
+server/src/lostcity/systems/interfaces/SettingsWindow.ts
+  s_3f4b5347620927::t_ac247b06370ae6 188-189,232
+server/src/lostcity/systems/session/Session.ts
+  s_3f4b5347620927::t_45dcd145d7dbf1 55,78
+server/vitest.config.ts
+  s_3f4b5347620927::t_ddb5fa075b70a9 45-46
+tools/client910/crates/rs910-symbols/src/component.rs
+  s_3f4b5347620927::t_a825eaa0081632 1028-1029
+tools/client910/crates/rs910-symbols/src/param.rs
+  s_3f4b5347620927::t_6b3668cbf83a7e 307-310
+tools/client910/crates/rs910-symbols/src/structs.rs
+  s_3f4b5347620927::t_7df3989c6691a8 38-39,66-75
+tools/client910/crates/rs910-symbols/src/varbit.rs
+  s_3f4b5347620927::t_69d9927a282867 160-161,310-311,474-483
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "c59ad4486dad6e34a95c41e5e8ac99b499562d05",
+  "prompts": {},
+  "sessions": {
+    "s_3f4b5347620927": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1052f-291b-7aa2-897e-1b9a6fb3f082",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
