@@ -1,0 +1,67 @@
+docs/server-architecture.md
+  s_3f4b5347620927::t_f21cc693c4cf90 123-129
+packages/domain/src/symbols/enum.ts
+  s_3f4b5347620927::t_85fee0411901db 11,27,77
+packages/domain/src/symbols/param.ts
+  s_3f4b5347620927::t_71d93bb74b9a01 7,10-16,59,182-192
+packages/domain/src/symbols/script.ts
+  s_3f4b5347620927::t_2515ce04f29205 8
+packages/domain/src/symbols/varbit.ts
+  s_3f4b5347620927::t_46fa4e47419c83 119-122
+revisions/910/symbols/enum.sym
+  s_3f4b5347620927::t_3be24b1663126a 9,25,75
+revisions/910/symbols/param.sym
+  s_3f4b5347620927::t_e80e502cce550a 5,8-14,57,180-190
+revisions/910/symbols/script.sym
+  s_3f4b5347620927::t_918121e0bdd347 6
+revisions/910/symbols/varbit.sym
+  s_3f4b5347620927::t_39cf94499cdd54 117-120
+server/src/lostcity/data/AbilityData.ts
+  s_3f4b5347620927::t_cd3cec402a54f7 1-93
+server/src/lostcity/data/GeneratedData.ts
+  s_3f4b5347620927::t_6bfe85c8acc432 15
+server/src/lostcity/data/ability/AbilityExecution.test.ts
+  s_3f4b5347620927::t_2be527d12b3487 1-97
+server/src/lostcity/data/ability/AbilityExecution.ts
+  s_3f4b5347620927::t_d9a293a3d3bf71 1-212
+server/src/lostcity/data/ability/AbilityFacts.ts
+  s_3f4b5347620927::t_3af17ccf883b33 1-34
+server/src/lostcity/data/ability/AbilityHooks.ts
+  s_3f4b5347620927::t_7ae159beeae586 1-158
+server/src/lostcity/tools/data/domains/abilities/CostStage.ts
+  s_3f4b5347620927::t_890017d65dcaa2 1-78
+server/src/lostcity/tools/data/domains/abilities/NativeCatalog.ts
+  s_3f4b5347620927::t_0d6fad05e6e4a4 1-200
+server/src/lostcity/tools/data/domains/abilities/SourceContracts.test.ts
+  s_3f4b5347620927::t_5d7b211bf9a3ba 1-61
+server/src/lostcity/tools/data/domains/abilities/TierStage.ts
+  s_3f4b5347620927::t_f16ba65cfabade 1-39
+server/src/lostcity/tools/data/domains/abilities/WikiSource.ts
+  s_3f4b5347620927::t_bee5f2f73fffe7 1-52
+tools/client910/crates/rs910-symbols/src/enums.rs
+  s_3f4b5347620927::t_0cc58504de5330 18-19,51-52,150-151
+tools/client910/crates/rs910-symbols/src/param.rs
+  s_3f4b5347620927::t_5305bc2a618584 11-12,17-30,115-116,361-382
+tools/client910/crates/rs910-symbols/src/script.rs
+  s_3f4b5347620927::t_42f3c7d3392e5c 12-13
+tools/client910/crates/rs910-symbols/src/varbit.rs
+  s_3f4b5347620927::t_e83e05f5e7aab6 234-241
+tools/refactor/test-inventory.txt
+  s_3f4b5347620927::t_c4dd006faeb6ae 48,1714,1774,1798-1799,1829,1854,2016
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "6513f35a7c5faed0eb56ad6060ae328fa24646a5",
+  "prompts": {},
+  "sessions": {
+    "s_3f4b5347620927": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1052f-291b-7aa2-897e-1b9a6fb3f082",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
