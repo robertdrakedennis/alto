@@ -1,0 +1,39 @@
+docs/server-architecture.md
+  s_3f4b5347620927::t_7eee3d8c1edc57 511-513
+server/src/lostcity/systems/combat/Abilities.ts
+  s_3f4b5347620927::t_492681b822b997 4,11-12,68-69,92,95-96,108,110-114,125,131-132,147,151,201,229-241,346-359
+server/src/lostcity/systems/combat/AbilityActivationServices.ts
+  s_3f4b5347620927::t_d6531b1f838785 1-35
+server/src/lostcity/systems/combat/AbilityDamage.test.ts
+  s_3f4b5347620927::t_1f54dd24e5e922 143-204
+server/src/lostcity/systems/combat/AbilityDamage.ts
+  s_3f4b5347620927::t_2072404aa1765b 9,14,52-55,59-60,80,82,86-89,95-100,115
+server/src/lostcity/systems/combat/AbilityEffects.ts
+  s_3f4b5347620927::t_cfab24f3781f7d 13,58-60
+server/src/lostcity/systems/combat/AbilityRuntime.ts
+  s_3f4b5347620927::t_97bb85502f479d 8,56-57,60,90-93,105-117,122,139-147,152-159,182,221-222,278-295
+server/src/lostcity/systems/combat/CombatCondition.ts
+  s_3f4b5347620927::t_dad680efae9631 92-93
+server/src/lostcity/systems/combat/CombatStatuses.ts
+  s_3f4b5347620927::t_ebbed6b5246c16 245,252,333,339,343
+server/src/lostcity/systems/combat/ConditionModifiers.ts
+  s_3f4b5347620927::t_03b49ceeb1edcb 1,17,28-31,38-46
+server/src/lostcity/systems/combat/MeleeCombat.ts
+  s_3f4b5347620927::t_e688d6359c0e89 58-62,68
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "0a08ded4ae1da92328385335984fc07607903096",
+  "prompts": {},
+  "sessions": {
+    "s_3f4b5347620927": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1052f-291b-7aa2-897e-1b9a6fb3f082",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
