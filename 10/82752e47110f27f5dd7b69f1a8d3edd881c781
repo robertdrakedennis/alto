@@ -1,0 +1,35 @@
+docs/server-architecture.md
+  s_3f4b5347620927::t_d4f86905a4c773 129
+server/src/lostcity/engine/tick/WorldPhases.ts
+  s_3f4b5347620927::t_59dd931cbffcfd 100-104
+server/src/lostcity/network/SocketE2E.integration.test.ts
+  s_3f4b5347620927::t_5e116f820168e4 437-438
+server/src/lostcity/systems/combat/CombatStatuses.ts
+  s_3f4b5347620927::t_b984dded11b6c3 44-45
+server/src/lostcity/systems/combat/PlayerCombat.ts
+  s_3f4b5347620927::t_ba77836a17c479 8,45,58,218
+server/src/lostcity/systems/combat/StatusDisplay.integration.test.ts
+  s_3f4b5347620927::t_acf70871a586e7 108-138
+server/src/lostcity/systems/combat/StatusDisplay.ts
+  s_3f4b5347620927::t_1bda8ce7307588 6,40-51
+server/src/lostcity/systems/session/LoginInterfaces.ts
+  s_3f4b5347620927::t_d2e77e9f8af4a5 112
+server/src/lostcity/systems/session/Session.ts
+  s_3f4b5347620927::t_05813e7d14d33a 88-89
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "1082752e47110f27f5dd7b69f1a8d3edd881c781",
+  "prompts": {},
+  "sessions": {
+    "s_3f4b5347620927": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1052f-291b-7aa2-897e-1b9a6fb3f082",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
