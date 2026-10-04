@@ -1,0 +1,83 @@
+docs/server-architecture.md
+  s_3f4b5347620927::t_64ff05f558b16a 186,193,215,246,252,256,262,270,274,289,292,316,331,353,386,417,424,433,438,444,507,531,557-577
+packages/domain/src/symbols/obj.ts
+  s_a6e4d95112d140::t_f3bd251697a76d 2,156-157,240,362-363
+packages/domain/src/symbols/varbit.ts
+  s_a6e4d95112d140::t_0d40fb80cd248f 2,205
+revisions/910/symbols/obj.sym
+  s_3f4b5347620927::t_a6215f2e087dcd 154-155,238,360-361
+revisions/910/symbols/varbit.sym
+  s_3f4b5347620927::t_aab0a332feb231 203
+server/src/lostcity/engine/tick/WorldPhases.ts
+  s_3f4b5347620927::t_f558df3844c29f 44,122
+server/src/lostcity/network/AbilityDefencesE2E.integration.test.ts
+  s_3f4b5347620927::t_0238ce997abd3d 185-187,196-197
+server/src/lostcity/network/AbilityTargetsE2E.integration.test.ts
+  s_3f4b5347620927::t_02bb569f525f79 3,5,8,10-12,38-47,127,131,229-351
+server/src/lostcity/network/MagicE2E.integration.test.ts
+  s_3f4b5347620927::t_cb627248775c59 2,4-5,8,96-111,393-464
+server/src/lostcity/network/RangedE2E.integration.test.ts
+  s_3f4b5347620927::t_a601ee42518737 1,3,7,9-10,65-80,156-207
+server/src/lostcity/systems/combat/AbilityDefences.ts
+  s_3f4b5347620927::t_37f0e72ce2dd33 2-4,32-33,37-38,80-85,164,166,194-207,217-224,228-229
+server/src/lostcity/systems/combat/AbilityKillMarks.ts
+  s_3f4b5347620927::t_74983fa1a70400 1-77
+server/src/lostcity/systems/combat/AbilityMovementCollision.ts
+  s_3f4b5347620927::t_4c062d5bf29e94 21
+server/src/lostcity/systems/combat/AbilityNativeCounters.ts
+  s_3f4b5347620927::t_3ac0e3525b65db 1-59
+server/src/lostcity/systems/combat/AbilityReactions.ts
+  s_3f4b5347620927::t_8ec996f4a38bed 187-197
+server/src/lostcity/systems/combat/AbilitySessionServices.ts
+  s_3f4b5347620927::t_e1afd749024d5f 22,99-100
+server/src/lostcity/systems/combat/Combat.ts
+  s_3f4b5347620927::t_72816042d4e13a 115-116,359,379
+server/src/lostcity/systems/combat/Combatant.ts
+  s_3f4b5347620927::t_15ad58c0a0c8eb 81-82
+server/src/lostcity/systems/combat/MagicSpells.ts
+  s_3f4b5347620927::t_e21c866a3e3fbf 14,17,42-47,102,116-119,126-130,213-214,244-262,264,269,280-281,341
+server/src/lostcity/systems/equipment/EquipmentContent.ts
+  s_3f4b5347620927::t_4fafcf0c59b2b4 8,11-29
+server/src/lostcity/systems/equipment/EquipmentStats.ts
+  s_3f4b5347620927::t_46c0863ad7b3e0 11,115,139-142,144-145,201
+server/src/lostcity/systems/equipment/MagicEquipment.ts
+  s_3f4b5347620927::t_bb814edec0955c 1,14-17,20-29
+server/src/lostcity/systems/equipment/PlayerEquipment.ts
+  s_3f4b5347620927::t_5cee3a8fe131b5 53,186,227
+server/src/lostcity/systems/equipment/RangedEquipment.ts
+  s_3f4b5347620927::t_d5e0d1b0ca732f 1,17-18,21-28
+server/src/lostcity/tools/data/domains/combat/MagicStage.ts
+  s_3f4b5347620927::t_107818917d56a3 54,141,146
+server/src/lostcity/tools/data/domains/combat/RangedStage.ts
+  s_3f4b5347620927::t_26b144bd857875 3,26
+tools/client910/crates/rs910-symbols/src/obj.rs
+  s_3f4b5347620927::t_3a4d523e6bebea 308-311,476-477,720-723
+tools/client910/crates/rs910-symbols/src/varbit.rs
+  s_3f4b5347620927::t_d57c4fc586baab 406-407
+tools/refactor/test-inventory.txt
+  s_3f4b5347620927::t_a91b72813e3851 48,2025-2027,2052,2061,2078
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "47d6ed0b8b62f4f6c68824bd13f64c9ffd679639",
+  "prompts": {},
+  "sessions": {
+    "s_3f4b5347620927": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1052f-291b-7aa2-897e-1b9a6fb3f082",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    },
+    "s_a6e4d95112d140": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1059a-8f61-7901-a112-fc4aa27737ae",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
