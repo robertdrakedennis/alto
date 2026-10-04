@@ -1,0 +1,41 @@
+docs/server-architecture.md
+  s_3f4b5347620927::t_f7c2bdceddd71c 129
+packages/domain/src/symbols/enum.ts
+  s_3f4b5347620927::t_4644799a37ae70 43
+packages/domain/src/symbols/script.ts
+  s_3f4b5347620927::t_06b02a8c60433a 25
+packages/domain/src/symbols/struct.ts
+  s_3f4b5347620927::t_3cb56298ae8c55 22-23
+revisions/910/symbols/enum.sym
+  s_3f4b5347620927::t_fa43546fab4a9c 41
+revisions/910/symbols/script.sym
+  s_3f4b5347620927::t_05fbadd6d1047a 23
+revisions/910/symbols/struct.sym
+  s_3f4b5347620927::t_018a19b77dc81a 20-21
+server/src/lostcity/systems/combat/StatusDisplay.integration.test.ts
+  s_3f4b5347620927::t_42a05b88505087 1,6,127-133
+server/src/lostcity/systems/combat/StatusDisplay.ts
+  s_3f4b5347620927::t_db0c5b6011efc1 1,16-20,40-56
+tools/client910/crates/rs910-symbols/src/enums.rs
+  s_3f4b5347620927::t_0801d8990ed3c8 82-83
+tools/client910/crates/rs910-symbols/src/script.rs
+  s_3f4b5347620927::t_cc7be95fc26a94 46-47
+tools/client910/crates/rs910-symbols/src/structs.rs
+  s_3f4b5347620927::t_dd2e794c2dcced 40-43
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "b3c11efcd0f776da57a03ed08da39563a0502083",
+  "prompts": {},
+  "sessions": {
+    "s_3f4b5347620927": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1052f-291b-7aa2-897e-1b9a6fb3f082",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
