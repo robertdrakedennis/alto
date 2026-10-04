@@ -1,0 +1,37 @@
+docs/server-architecture.md
+  s_3f4b5347620927::t_e2180812ea21e8 129
+packages/domain/src/symbols/script.ts
+  s_3f4b5347620927::t_5f370a83b08e83 34
+packages/domain/src/symbols/struct.ts
+  s_3f4b5347620927::t_da73ad3d1f82ae 12
+revisions/910/symbols/script.sym
+  s_3f4b5347620927::t_5f87f653ef9357 32
+revisions/910/symbols/struct.sym
+  s_3f4b5347620927::t_f5f8a73e99af66 10
+server/src/lostcity/systems/combat/CombatCondition.ts
+  s_3f4b5347620927::t_ab04ad73401025 10
+server/src/lostcity/systems/combat/StatusDisplay.integration.test.ts
+  s_3f4b5347620927::t_7708994b3e4c04 96-115
+server/src/lostcity/systems/combat/StatusDisplay.ts
+  s_3f4b5347620927::t_250b120ed0663f 90,94
+tools/client910/crates/rs910-symbols/src/script.rs
+  s_3f4b5347620927::t_1d1b6c69d5f295 64-65
+tools/client910/crates/rs910-symbols/src/structs.rs
+  s_3f4b5347620927::t_4e158b3a2fcbd8 20-21
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "83a8a41ada4fa53f23d95ce8694d00fff7a795e0",
+  "prompts": {},
+  "sessions": {
+    "s_3f4b5347620927": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1052f-291b-7aa2-897e-1b9a6fb3f082",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}

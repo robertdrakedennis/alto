@@ -1,0 +1,53 @@
+docs/server-architecture.md
+  s_3f4b5347620927::t_ac5d83014e7b4b 479,512-515
+server/src/lostcity/data/CombatData.ts
+  s_3f4b5347620927::t_41fbe9c998d1c2 134
+server/src/lostcity/engine/tick/WorldPhases.ts
+  s_3f4b5347620927::t_49e72e2ff4f898 42-48
+server/src/lostcity/network/AbilitiesE2E.integration.test.ts
+  s_3f4b5347620927::t_6f07ca0e82f98d 46-65,156-185,198-230
+server/src/lostcity/systems/combat/Abilities.ts
+  s_3f4b5347620927::t_12a2cc0958434d 7,50,130,148,162-169
+server/src/lostcity/systems/combat/Combat.ts
+  s_3f4b5347620927::t_9d0e25364618d7 11-12,150-151,179-183,198-203,210-219,221,224,239-241,268-269
+server/src/lostcity/systems/combat/CombatCondition.ts
+  s_3f4b5347620927::t_2fb17a12085565 20-21
+server/src/lostcity/systems/combat/CombatStatuses.test.ts
+  s_3f4b5347620927::t_b6b651f29e5991 292-315
+server/src/lostcity/systems/combat/CombatStatuses.ts
+  s_3f4b5347620927::t_8b2d7afe33c990 38-41,97
+server/src/lostcity/systems/combat/CombatStyle.ts
+  s_3f4b5347620927::t_65b2f2a3815e12 1-7,22
+server/src/lostcity/systems/combat/Combatant.ts
+  s_3f4b5347620927::t_0473125091a1fb 5-6,68,92,108
+server/src/lostcity/systems/combat/ConditionModifiers.ts
+  s_3f4b5347620927::t_ca51ad086571c4 12,23-25,33,43-47
+server/src/lostcity/systems/combat/MagicCombat.ts
+  s_3f4b5347620927::t_be3eea9035905e 3,15-17
+server/src/lostcity/systems/combat/MeleeCombat.ts
+  s_3f4b5347620927::t_b629a265f671bb 2,66-68
+server/src/lostcity/systems/combat/PlayerCombat.ts
+  s_3f4b5347620927::t_d17b2084ce29ab 131-132
+server/src/lostcity/systems/combat/RangedCombat.ts
+  s_3f4b5347620927::t_2f23c0bbb30a6a 3,15-17
+server/src/lostcity/systems/npc/NpcMovement.ts
+  s_3f4b5347620927::t_fb4ca6d116718c 127-128
+server/src/lostcity/tools/data/domains/combat/AbilityStage.ts
+  s_3f4b5347620927::t_3da92e067ef551 62,70,95
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "28b54f1ca0935fca3af31cd9600ebc7b8ab68778",
+  "prompts": {},
+  "sessions": {
+    "s_3f4b5347620927": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1052f-291b-7aa2-897e-1b9a6fb3f082",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}

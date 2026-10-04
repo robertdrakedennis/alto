@@ -1,0 +1,69 @@
+docs/server-architecture.md
+  s_3f4b5347620927::t_dc7130fa2a3be6 123-131
+packages/domain/src/symbols/component.ts
+  s_3f4b5347620927::t_9bb5e20cba1f4f 277-278,519-524
+packages/domain/src/symbols/interface.ts
+  s_3f4b5347620927::t_52a3ba8bed79e6 122-123
+packages/domain/src/symbols/param.ts
+  s_3f4b5347620927::t_9d546ca94635ce 9,174-184
+packages/domain/src/symbols/script.ts
+  s_3f4b5347620927::t_ab16eb7b6a08fb 10,43-44
+packages/domain/src/symbols/struct.ts
+  s_3f4b5347620927::t_09acc7a7e2fbad 6-7,9-10,19,22
+revisions/910/symbols/component.sym
+  s_3f4b5347620927::t_51c3252c23c536 226-227,397-398
+revisions/910/symbols/interface.sym
+  s_3f4b5347620927::t_11aed86ceadc8d 120-121
+revisions/910/symbols/param.sym
+  s_3f4b5347620927::t_15ec7366903959 7,172-182
+revisions/910/symbols/script.sym
+  s_3f4b5347620927::t_e31beee7443ddd 8,41-42
+revisions/910/symbols/struct.sym
+  s_3f4b5347620927::t_d96688191104b1 4-5,7-8,17,20
+server/src/lostcity/systems/combat/CombatCondition.ts
+  s_3f4b5347620927::t_ae03f95c6ceac3 1-61
+server/src/lostcity/systems/combat/CombatStatuses.test.ts
+  s_3f4b5347620927::t_115acae32ee2ec 1-166
+server/src/lostcity/systems/combat/CombatStatuses.ts
+  s_c202351b3d1826::t_530fa40fe2c8a3 2-4,10-16,18,25,27-34,43-210,223-225,228-229,232,244,255,271,279
+server/src/lostcity/systems/combat/StatusDisplay.integration.test.ts
+  s_3f4b5347620927::t_ed17263a80b325 1-107
+server/src/lostcity/systems/combat/StatusDisplay.ts
+  s_3f4b5347620927::t_168caf2da9ce75 1-74
+server/src/lostcity/systems/npc/NpcCombat.ts
+  s_3f4b5347620927::t_5fe215880b644a 3,45,145
+tools/client910/crates/rs910-symbols/src/component.rs
+  s_3f4b5347620927::t_85d4c8257a59b1 573-576,1092-1105
+tools/client910/crates/rs910-symbols/src/interface.rs
+  s_3f4b5347620927::t_666416758b4dba 240-243
+tools/client910/crates/rs910-symbols/src/param.rs
+  s_3f4b5347620927::t_9179c8cf748317 14-15,345-366
+tools/client910/crates/rs910-symbols/src/script.rs
+  s_3f4b5347620927::t_7b3d7465ee5010 16-17,83-86
+tools/client910/crates/rs910-symbols/src/structs.rs
+  s_3f4b5347620927::t_09770665e31f60 8-11,14-17,34-35,40-41
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "9f3f674b187cfb15a332b28ca75d890dda40e6eb",
+  "prompts": {},
+  "sessions": {
+    "s_3f4b5347620927": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1052f-291b-7aa2-897e-1b9a6fb3f082",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    },
+    "s_c202351b3d1826": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0fe2d-4e63-7e41-b719-caa999b24fd9",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}

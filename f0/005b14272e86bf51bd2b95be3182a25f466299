@@ -1,0 +1,21 @@
+server/src/lostcity/systems/combat/StatusDisplay.integration.test.ts
+  s_3f4b5347620927::t_0412e1438f6ee8 105-109
+server/src/lostcity/systems/combat/StatusDisplay.ts
+  s_3f4b5347620927::t_6b0a5781c0c4bf 70
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "f0005b14272e86bf51bd2b95be3182a25f466299",
+  "prompts": {},
+  "sessions": {
+    "s_3f4b5347620927": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1052f-291b-7aa2-897e-1b9a6fb3f082",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
