@@ -1,0 +1,43 @@
+packages/domain/src/symbols/script.ts
+  s_3f4b5347620927::t_95ae8eaeb3ad21 6,9-10
+revisions/910/symbols/script.sym
+  s_3f4b5347620927::t_d48ff04a0d6e47 4,7-8
+server/src/lostcity/data/AbilityData.ts
+  s_3f4b5347620927::t_7ad1f27c171e53 87
+server/src/lostcity/data/ability/AbilityExecution.ts
+  s_3f4b5347620927::t_8db08e50cc445c 14,24-25,57,64,71-81,179-180
+server/src/lostcity/tools/data/domains.ts
+  s_3f4b5347620927::t_bbb6d150071097 1,17
+server/src/lostcity/tools/data/domains/abilities/DamageStage.ts
+  s_3f4b5347620927::t_7b94b9d05210bf 1-108
+server/src/lostcity/tools/data/domains/abilities/EffectStage.ts
+  s_3f4b5347620927::t_458cb8ed76dcdf 1-89
+server/src/lostcity/tools/data/domains/abilities/ExecutionStage.ts
+  s_3f4b5347620927::t_5e1195f2c77993 1-54
+server/src/lostcity/tools/data/domains/abilities/RuleRead.ts
+  s_3f4b5347620927::t_65ee146683a825 1-80
+server/src/lostcity/tools/data/domains/abilities/TargetStage.ts
+  s_3f4b5347620927::t_fa2557de1dd946 1-79
+server/src/lostcity/tools/data/domains/abilities/TierStage.ts
+  s_3f4b5347620927::t_f14bb5cc27f36a 34-35
+server/src/lostcity/tools/data/domains/abilities/index.ts
+  s_3f4b5347620927::t_3ea74ca06a6424 1-42
+tools/client910/crates/rs910-symbols/src/script.rs
+  s_3f4b5347620927::t_5a18cb95b3cd95 8-9,14-15,17
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "06c52118507e4dfb48e1966455208b5e620c7192",
+  "prompts": {},
+  "sessions": {
+    "s_3f4b5347620927": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1052f-291b-7aa2-897e-1b9a6fb3f082",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
