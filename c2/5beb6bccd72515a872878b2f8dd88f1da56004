@@ -1,0 +1,43 @@
+server/src/lostcity/data/ability/AbilityExecution.ts
+  s_3f4b5347620927::t_2d3931d6d50437 15,33,48,53,57-58,62,85,90,123,142,146,169-171,197-198
+server/src/lostcity/data/ability/AbilityHooks.ts
+  s_3f4b5347620927::t_eb8f12f5a87da9 37-38,45-46,96-107,116,125-129
+server/src/lostcity/tools/data/domains/abilities/BleedStage.ts
+  s_3f4b5347620927::t_c93e2b96cff812 23-24,26,28-29,31,76
+server/src/lostcity/tools/data/domains/abilities/ChannelStage.ts
+  s_3f4b5347620927::t_4a35d176c1f74a 49,68
+server/src/lostcity/tools/data/domains/abilities/CostStage.ts
+  s_3f4b5347620927::t_aa3fa10d34d95f 63-78
+server/src/lostcity/tools/data/domains/abilities/DamageStage.ts
+  s_3f4b5347620927::t_16d35af01c1086 129-139,145-148
+server/src/lostcity/tools/data/domains/abilities/DefensiveStage.ts
+  s_3f4b5347620927::t_2d1be60e0915b6 137-138
+server/src/lostcity/tools/data/domains/abilities/EffectStage.ts
+  s_3f4b5347620927::t_1708726f6cd098 4,60-64,170,177
+server/src/lostcity/tools/data/domains/abilities/OrdinaryEffectStage.ts
+  s_3f4b5347620927::t_5b9ec29c1ccff9 1-170
+server/src/lostcity/tools/data/domains/abilities/SourceContracts.test.ts
+  s_3f4b5347620927::t_e18d62e3d61ef8 5-6,124,140-142,149,152-202
+server/src/lostcity/tools/data/domains/abilities/TargetStage.ts
+  s_3f4b5347620927::t_414f58bf2890e6 8-11,52-74,78-90,130-136,145-153,162-171,174-177,179-205
+server/src/lostcity/tools/data/domains/abilities/TimingStage.ts
+  s_3f4b5347620927::t_b0252931f246d4 27-33
+tools/refactor/test-inventory.txt
+  s_3f4b5347620927::t_8439a368b40b51 48,1811,1876
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "c25beb6bccd72515a872878b2f8dd88f1da56004",
+  "prompts": {},
+  "sessions": {
+    "s_3f4b5347620927": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1052f-291b-7aa2-897e-1b9a6fb3f082",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
