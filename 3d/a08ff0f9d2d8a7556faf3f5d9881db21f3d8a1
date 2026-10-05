@@ -1,0 +1,51 @@
+docs/server-architecture.md
+  s_3f4b5347620927::t_0befd778697ba1 692-699
+packages/domain/src/symbols/param.ts
+  s_3f4b5347620927::t_143dd06ff49481 81
+revisions/910/symbols/param.sym
+  s_3f4b5347620927::t_1b3af2378faedc 79
+server/src/lostcity/data/FoodData.ts
+  s_3f4b5347620927::t_6bc5b65ee1abd6 1-79
+server/src/lostcity/data/GeneratedData.ts
+  s_3f4b5347620927::t_344d6f01e590f2 15
+server/src/lostcity/network/FoodE2E.integration.test.ts
+  s_3f4b5347620927::t_a4cf5d68ff7787 1-333
+server/src/lostcity/systems/combat/Combat.ts
+  s_3f4b5347620927::t_ed758319ef4dc2 187
+server/src/lostcity/systems/combat/Combatant.ts
+  s_3f4b5347620927::t_d81d0b6f8dea96 138-139
+server/src/lostcity/systems/combat/PlayerCombat.ts
+  s_3f4b5347620927::t_73abf7b6bee35e 172-175
+server/src/lostcity/systems/consumables/Consumables.ts
+  s_3f4b5347620927::t_0dfd845da84257 1-2,12-28,32-35,41-83
+server/src/lostcity/systems/inventory/InventoryOperation.ts
+  s_3f4b5347620927::t_e4d7739e3eb9e5 7,15
+server/src/lostcity/systems/stats/Stats.ts
+  s_3f4b5347620927::t_14cd72f700e3b9 247,252-259
+server/src/lostcity/tools/data/domains.ts
+  s_3f4b5347620927::t_aaadbd155eb577 1,18
+server/src/lostcity/tools/data/domains/food/index.ts
+  s_3f4b5347620927::t_6cb9e3e01168ae 1-79
+server/vitest.config.ts
+  s_3f4b5347620927::t_55977e314038e5 51
+tools/client910/crates/rs910-symbols/src/param.rs
+  s_3f4b5347620927::t_dcb8a150a3f5f8 158-159
+tools/refactor/test-inventory.txt
+  s_3f4b5347620927::t_3fb10bf6b4e0e0 1739,1998,2022,2099,2132,2223,2278,2356,2411
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "3da08ff0f9d2d8a7556faf3f5d9881db21f3d8a1",
+  "prompts": {},
+  "sessions": {
+    "s_3f4b5347620927": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1052f-291b-7aa2-897e-1b9a6fb3f082",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
