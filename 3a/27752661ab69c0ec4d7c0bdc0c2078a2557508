@@ -1,0 +1,53 @@
+docs/server-architecture.md
+  s_3f4b5347620927::t_5dfdab001dc8c0 149,694-697
+packages/domain/src/symbols/script.ts
+  s_3f4b5347620927::t_37619f5086179b 42
+packages/domain/src/symbols/varbit.ts
+  s_3f4b5347620927::t_4d7755b535cf8c 162
+packages/domain/src/symbols/varc.ts
+  s_3f4b5347620927::t_cf85c415e63683 68
+revisions/910/symbols/script.sym
+  s_3f4b5347620927::t_2f259fc7dfe9a2 40
+revisions/910/symbols/varbit.sym
+  s_3f4b5347620927::t_bafaff4bada064 160
+revisions/910/symbols/varc.sym
+  s_3f4b5347620927::t_ec689f65a46e6b 66
+server/src/lostcity/network/LegacySpecialsE2E.integration.test.ts
+  s_3f4b5347620927::t_05fe7dac33a7aa 5-6,106,412-420,423
+server/src/lostcity/systems/action-bar/ActionBar.ts
+  s_3f4b5347620927::t_a51ef4d22004f8 1,143-149
+server/src/lostcity/systems/action-bar/ActionBarInterfaces.ts
+  s_3f4b5347620927::t_674ca66c183dc2 4,12-13,108-113
+server/src/lostcity/systems/combat/CombatOptions.ts
+  s_3f4b5347620927::t_a16047db2ac2c1 6,53,83,86,115-120,137-140,152,160-161
+server/src/lostcity/systems/combat/LegacyHud.ts
+  s_3f4b5347620927::t_2e9ecdbbff643f 1-30
+server/src/lostcity/systems/combat/PlayerSpecials.ts
+  s_3f4b5347620927::t_d122feec310e0a 291
+server/src/lostcity/systems/combat/SpecialDamage.ts
+  s_3f4b5347620927::t_aa954a85df05af 1-2,62-63,65
+server/src/lostcity/systems/vars/Vars.ts
+  s_3f4b5347620927::t_cfd4c03773ffd6 1,6-7,29-36,114-125
+tools/client910/crates/rs910-symbols/src/script.rs
+  s_3f4b5347620927::t_98246c44f55808 80-81
+tools/client910/crates/rs910-symbols/src/varbit.rs
+  s_3f4b5347620927::t_4ec22ee4cc3d6f 320-321
+tools/client910/crates/rs910-symbols/src/varc.rs
+  s_3f4b5347620927::t_cfa8c3e7b35776 133-134
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "3a27752661ab69c0ec4d7c0bdc0c2078a2557508",
+  "prompts": {},
+  "sessions": {
+    "s_3f4b5347620927": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1052f-291b-7aa2-897e-1b9a6fb3f082",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
