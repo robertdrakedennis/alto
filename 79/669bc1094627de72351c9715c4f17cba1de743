@@ -1,0 +1,41 @@
+packages/domain/src/symbols/component.ts
+  s_3f4b5347620927::t_f0eecfef35200c 806-808
+revisions/910/symbols/component.sym
+  s_3f4b5347620927::t_870b66f1c81507 652
+server/src/lostcity/systems/wilderness/Wilderness.ts
+  s_3f4b5347620927::t_835885681eaf78 191,194
+tools/client910/crates/rs910-symbols/src/component.rs
+  s_3f4b5347620927::t_b4a226db760432 1682-1688
+tools/client910/fixtures/session-replay/slayer-wilderness/combat-receipts.jsonl
+  s_3f4b5347620927::t_829ecaa961b410 1-36
+tools/client910/fixtures/session-replay/slayer-wilderness/plan.json
+  s_3f4b5347620927::t_54a5c2a5efa3d8 1-103
+tools/client910/fixtures/session-replay/slayer-wilderness/seed.mjs
+  s_3f4b5347620927::t_db58fcf12bc0a4 81
+tools/client910/fixtures/session-replay/slayer-wilderness/server-trace.jsonl
+  s_3f4b5347620927::t_ec8d564176e4ee 1-296
+tools/client910/src/app.rs
+  s_3f4b5347620927::t_7f505a73b0f7fe 368-371
+tools/client910/src/scenario_slayer_wilderness.rs
+  s_3f4b5347620927::t_df25f5c2beaecf 1-266
+tools/refactor/replay-gate.txt
+  s_3f4b5347620927::t_6644c9e5f1c3d7 108-110
+tools/refactor/test-inventory.txt
+  s_3f4b5347620927::t_79759d42f798fb 4,48,105,1742,1765,2098-2099,2108-2109,2114,2117,2129,2204
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "79669bc1094627de72351c9715c4f17cba1de743",
+  "prompts": {},
+  "sessions": {
+    "s_3f4b5347620927": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1052f-291b-7aa2-897e-1b9a6fb3f082",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
