@@ -1,0 +1,14 @@
+tools/client910/src/scenario_barrows.rs
+  h_d26e211304196f 756-758,764-767
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "93a17be019af0665896fa2cba79e8e9c8688141a",
+  "prompts": {},
+  "humans": {
+    "h_d26e211304196f": {
+      "author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
