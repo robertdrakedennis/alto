@@ -1,0 +1,39 @@
+docs/server-architecture.md
+  s_3f4b5347620927::t_1cf5ac3c595cc7 747-748
+server/src/lostcity/data/ItemChargeData.ts
+  s_3f4b5347620927::t_60f8a754d98c85 25
+server/src/lostcity/data/SpecialCombatData.ts
+  s_3f4b5347620927::t_4832eb9c41361e 53
+server/src/lostcity/network/LegacySpecialsE2E.integration.test.ts
+  s_3f4b5347620927::t_3ce9efcb0a0a49 1,652-680
+server/src/lostcity/systems/combat/PlayerSpecials.ts
+  s_3f4b5347620927::t_1badfeca5ad3b0 203-204,250
+server/src/lostcity/systems/combat/SpecialEnergy.test.ts
+  s_3f4b5347620927::t_ec775cbd9ab91f 43-67
+server/src/lostcity/systems/combat/SpecialEnergy.ts
+  s_3f4b5347620927::t_627396f58845c0 27-28
+server/src/lostcity/systems/equipment/PlayerItemCharges.integration.test.ts
+  s_3f4b5347620927::t_9d96d8ae762af9 14-15,288-331
+server/src/lostcity/systems/equipment/PlayerItemCharges.ts
+  s_3f4b5347620927::t_f4789d5514717f 23-24,27-28,99-133,153
+server/src/lostcity/tools/data/domains/combat/ChargeStage.ts
+  s_3f4b5347620927::t_8975661426ac73 89-144
+server/src/lostcity/tools/data/domains/combat/SpecialStage.ts
+  s_3f4b5347620927::t_ccd9d01ca4f498 96,151-169,418
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "2b1d4683bc80a8e1d65df8ddc425b98cac4408be",
+  "prompts": {},
+  "sessions": {
+    "s_3f4b5347620927": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1052f-291b-7aa2-897e-1b9a6fb3f082",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
