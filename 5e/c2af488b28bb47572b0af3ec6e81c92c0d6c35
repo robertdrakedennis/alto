@@ -1,0 +1,25 @@
+server/src/lostcity/network/SocketE2E.integration.test.ts
+  s_3f4b5347620927::t_bfdb4c0a2a887d 419,428
+tools/client910/src/interactive_input_tests.rs
+  s_3f4b5347620927::t_9a35ddc43789c7 36,60,62
+tools/client910/src/live_control.rs
+  s_3f4b5347620927::t_72ce84e0fb7229 10,30,596-702,1251,1253
+tools/client910/src/toolbar_input_tests.rs
+  s_3f4b5347620927::t_ac472357acd676 26,385-420,422-435
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "5ec2af488b28bb47572b0af3ec6e81c92c0d6c35",
+  "prompts": {},
+  "sessions": {
+    "s_3f4b5347620927": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1052f-291b-7aa2-897e-1b9a6fb3f082",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
