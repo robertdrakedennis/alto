@@ -1,0 +1,19 @@
+server/src/lostcity/network/WildernessE2E.integration.test.ts
+  s_3f4b5347620927::t_8faf4dd477e8d8 109,119,124
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "c3abbfe2cc9853a19fcbc9fe4b8e8fc76d664dcc",
+  "prompts": {},
+  "sessions": {
+    "s_3f4b5347620927": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1052f-291b-7aa2-897e-1b9a6fb3f082",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
