@@ -1,0 +1,29 @@
+docs/server-architecture.md
+  s_3f4b5347620927::t_445feb3eab9217 725-726
+server/src/lostcity/network/GiantMoleE2E.integration.test.ts
+  s_3f4b5347620927::t_4e51d6c413575c 5,7,34-35,142-143,145-151,155-159,162-169
+server/src/lostcity/systems/movement/BuildArea.ts
+  s_3f4b5347620927::t_28a18d65289d01 26-27,54-59
+server/src/lostcity/systems/session/Viewport.ts
+  s_3f4b5347620927::t_3f78e3034c6ff3 79-84
+tools/client910/fixtures/session-replay/giant-mole/record.py
+  s_3f4b5347620927::t_c8563fbe53b354 126-127,150-151
+tools/client910/fixtures/session-replay/giant-mole/seed.mjs
+  s_3f4b5347620927::t_b78b86e61bc8bf 123
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "1938b15b9ec51b9f15eda0fd9a04c3b21f2e205e",
+  "prompts": {},
+  "sessions": {
+    "s_3f4b5347620927": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1052f-291b-7aa2-897e-1b9a6fb3f082",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
