@@ -1,0 +1,61 @@
+docs/server-architecture.md
+  s_3f4b5347620927::t_5e189300a2ed80 569-578
+server/src/lostcity/network/AbilitiesE2E.integration.test.ts
+  s_3f4b5347620927::t_e1fa13028a952f 1,269-270,559-562,569,778-1004
+server/src/lostcity/systems/combat/Abilities.ts
+  s_3f4b5347620927::t_9795f869521f25 1-2,34-35,66,76-77,104,114-118,136,139,153,160-161,163,220-225,269,303,311-317,361,477
+server/src/lostcity/systems/combat/AbilityExceptionalRuntime.ts
+  s_3f4b5347620927::t_ef5d5512878991 2,32,112,116,171-175,178,182-187,213-214,243-256,374-376,379,383-385
+server/src/lostcity/systems/combat/AbilityGroundField.test.ts
+  s_3f4b5347620927::t_994c7dcfc470fc 1-360
+server/src/lostcity/systems/combat/AbilityGroundField.ts
+  s_3f4b5347620927::t_93171b74c822e6 1-291
+server/src/lostcity/systems/combat/AbilityImmediateEffects.ts
+  s_3f4b5347620927::t_38ae2fc94aecf8 53-55,57,61,71
+server/src/lostcity/systems/combat/AbilityRuntime.ts
+  s_3f4b5347620927::t_b9a36499dd11b3 2,41,66-69,80,101,179
+server/src/lostcity/systems/combat/AbilityTimeline.test.ts
+  s_3f4b5347620927::t_ef1bb89c1938ab 7,44,53,186-209
+server/src/lostcity/systems/combat/AbilityTimeline.ts
+  s_3f4b5347620927::t_1fefcd3004b681 140-142
+server/src/lostcity/systems/combat/CombatCondition.ts
+  s_3f4b5347620927::t_a552a4a3d74069 3-4,47-58,63-64
+server/src/lostcity/systems/combat/CombatStatuses.test.ts
+  s_3f4b5347620927::t_12912f9eaa958e 4,493-571
+server/src/lostcity/systems/combat/CombatStatuses.ts
+  s_3f4b5347620927::t_307de1434fa177 6,8,37,160,166-171,190-207,213-216,222,246,252,286,299,308-309,372,399,468-469,472
+server/src/lostcity/systems/combat/ConditionArea.ts
+  s_3f4b5347620927::t_0aa9eea84b5e97 1-18
+server/src/lostcity/systems/equipment/MagicStats.ts
+  s_3f4b5347620927::t_f26a3ca2c4bc2a 11-12,30,42
+server/src/lostcity/systems/equipment/RangedStats.ts
+  s_3f4b5347620927::t_bb1f143c21d5b8 55-57
+server/src/lostcity/systems/equipment/RawMainhandWeapon.test.ts
+  s_3f4b5347620927::t_4c3f261f37f2ce 1-159
+server/src/lostcity/systems/equipment/RawMainhandWeapon.ts
+  s_3f4b5347620927::t_4b790f25f0751e 1-45
+server/src/lostcity/tools/data/domains/abilities/ConditionEffectStage.ts
+  s_3f4b5347620927::t_6981b6cde8e638 32-51
+server/src/lostcity/tools/data/domains/abilities/SourceContracts.test.ts
+  s_3f4b5347620927::t_5f83f1663618b0 249-251
+tools/client910/fixtures/session-replay/ability-gameplay/record.py
+  s_3f4b5347620927::t_4cdab23ee43306 50-55,146-153
+tools/client910/fixtures/session-replay/ability-gameplay/server.mjs
+  s_3f4b5347620927::t_cf7cfc40ae735f 36-43
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "fe69d1be0983a641282857aa9527de1610eb6205",
+  "prompts": {},
+  "sessions": {
+    "s_3f4b5347620927": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1052f-291b-7aa2-897e-1b9a6fb3f082",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}

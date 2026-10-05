@@ -1,0 +1,37 @@
+server/src/lostcity/data/ability/AbilityExecution.ts
+  s_3f4b5347620927::t_adec51be03b363 13,24
+server/src/lostcity/data/ability/AbilityHooks.ts
+  s_3f4b5347620927::t_64a9c5b35a755d 64,157
+server/src/lostcity/tools/data/domains/abilities/DamageStage.ts
+  s_3f4b5347620927::t_5b1973240c9109 2,89-90,139
+server/src/lostcity/tools/data/domains/abilities/DefensiveStage.ts
+  s_3f4b5347620927::t_c45651b3bc4ec4 61
+server/src/lostcity/tools/data/domains/abilities/EffectStage.ts
+  s_3f4b5347620927::t_062cad8c21a029 4,62-65
+server/src/lostcity/tools/data/domains/abilities/PeriodicDamageStage.ts
+  s_3f4b5347620927::t_4ad9e6d3586a87 1-222
+server/src/lostcity/tools/data/domains/abilities/SourceContracts.test.ts
+  s_3f4b5347620927::t_3e527b8dc3c082 203-279
+server/src/lostcity/tools/data/domains/abilities/SpecialEffectStage.ts
+  s_3f4b5347620927::t_ea4d6b51f2813c 1-138
+server/src/lostcity/tools/data/domains/abilities/TargetStage.ts
+  s_3f4b5347620927::t_ec411d441f724c 44,85
+tools/refactor/test-inventory.txt
+  s_3f4b5347620927::t_ff30eff18dc8b5 1941-1942,2129
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "50a3afb081f819207d5d15fd5c378aa6bd5eecfb",
+  "prompts": {},
+  "sessions": {
+    "s_3f4b5347620927": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1052f-291b-7aa2-897e-1b9a6fb3f082",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}

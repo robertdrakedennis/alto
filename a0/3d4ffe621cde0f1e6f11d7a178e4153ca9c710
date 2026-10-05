@@ -1,0 +1,78 @@
+server/src/lostcity/data/ability/AbilityHooks.ts
+  s_3f4b5347620927::t_b5aac08b39e0aa 12-13,103-104,107,109-112
+  s_3f4b5347620927::t_0441de6d0ba6ce 274-295
+  s_3f4b5347620927::t_9a9b9ef5289c88 141-153,254-261,296-305,310-311,343-352
+server/src/lostcity/tools/data/domains/abilities/DamageStage.ts
+  s_3f4b5347620927::t_7ca6caabb52451 7,96-97
+  s_3f4b5347620927::t_e4ef813b1a6e4b 6,95
+  s_3f4b5347620927::t_b5aac08b39e0aa 88
+  s_3f4b5347620927::t_03c8bc17cbb77f 83-85
+  s_3f4b5347620927::t_83470cfd274516 98
+server/src/lostcity/tools/data/domains/abilities/ContextEffectStage.ts
+  s_3f4b5347620927::t_b5aac08b39e0aa 1-3,5-33,35-40,45-52,56-57,66-69,72-93,96-98,106,124-136,142-144,147,150-158
+  s_3f4b5347620927::t_4057e82db0d7b4 41-44,55,60-65,70-71,94-95,99-105,107-123,137-141,145-146,148-149
+  s_3f4b5347620927::t_f69ce7b370e14b 4,34
+  s_3f4b5347620927::t_266df29589b8fd 53-54,58-59
+server/src/lostcity/data/ability/AbilityExecution.ts
+  s_3f4b5347620927::t_9df1db5466d779 5-6,46
+  s_3f4b5347620927::t_d690463937f3e6 7-8,20-28,47-53,294-297
+  s_3f4b5347620927::t_b5aac08b39e0aa 162
+  s_3f4b5347620927::t_65762b62e21dca 19,39,292-293
+  s_3f4b5347620927::t_0441de6d0ba6ce 165
+server/src/lostcity/tools/data/domains/abilities/EffectStage.ts
+  s_3f4b5347620927::t_b5aac08b39e0aa 7,73-75
+  s_3f4b5347620927::t_0441de6d0ba6ce 8,76-79
+  s_3f4b5347620927::t_f04823b41a2275 212-217
+  s_3f4b5347620927::t_c24236a4d1fedd 80
+server/src/lostcity/tools/data/domains/abilities/DefensiveStage.ts
+  s_3f4b5347620927::t_bda419c954f290 209-217
+  s_3f4b5347620927::t_6c7ce23d09f47b 218-223
+server/src/lostcity/tools/data/domains/abilities/SmokeDamageStage.ts
+  s_3f4b5347620927::t_61437b0c3ad061 20
+  s_3f4b5347620927::t_03c8bc17cbb77f 2
+  s_3f4b5347620927::t_e4ef813b1a6e4b 1,3-19,21-46
+  s_3f4b5347620927::t_9a610a69ed3ce6 47-68
+server/src/lostcity/data/ability/AbilityExecution.test.ts
+  s_3f4b5347620927::t_ffd13bf58d0e28 3,21-24,226-238,247-249
+  s_3f4b5347620927::t_4057e82db0d7b4 239-246
+server/src/lostcity/tools/data/domains/abilities/PlaceholderPolicies.ts
+  s_3f4b5347620927::t_f69ce7b370e14b 5
+  s_3f4b5347620927::t_0441de6d0ba6ce 1-4,6-16
+server/src/lostcity/tools/data/domains/abilities/FieldRestoreStage.ts
+  s_3f4b5347620927::t_4057e82db0d7b4 46-47,51-52,58-107,109,116-123,127-151,153
+  s_3f4b5347620927::t_0441de6d0ba6ce 1-45,48-50,53-57,108,110-115,124-126,152,154-157
+server/src/lostcity/tools/data/domains/abilities/OrdinaryEffectStage.ts
+  s_3f4b5347620927::t_e4ef813b1a6e4b 20
+server/src/lostcity/tools/data/domains/abilities/ShadowDamageStage.ts
+  s_3f4b5347620927::t_4057e82db0d7b4 19-20,28-29,39-47,51-59,64,67-72,75-82
+  s_3f4b5347620927::t_7ca6caabb52451 1-18,21-22,24-27,30-38,48-50,60-63,65-66,73,84-87
+  s_3f4b5347620927::t_91c800506ff846 23
+  s_3f4b5347620927::t_61437b0c3ad061 74,83
+server/src/lostcity/tools/data/domains/abilities/SourceContracts.test.ts
+  s_3f4b5347620927::t_3c943b86325003 14-15,536-564,571-576,578-581,586-594,596-597,607-619,623,634-635
+  s_3f4b5347620927::t_882f0897b6917b 16,407,636-659,666-667,669,679,681-682,699-703,705-706,734
+  s_3f4b5347620927::t_f04823b41a2275 17,660-665,729-733
+  s_3f4b5347620927::t_f9bea571633b57 565-568,595
+  s_3f4b5347620927::t_be0a30f06dc3e6 569-570,621
+  s_3f4b5347620927::t_f70ebd15764516 13,322-362,384
+  s_3f4b5347620927::t_4057e82db0d7b4 363-383,385-406,577,582-585,598-606,620,622,624-633,668,670-678,680,683-698,704,707-728
+  s_3f4b5347620927::t_bfa97b0b62c1b9 408
+server/src/lostcity/systems/combat/AbilityActivationServices.ts
+  s_3f4b5347620927::t_d1e09b56924760 1,28-35,40
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "a03d4ffe621cde0f1e6f11d7a178e4153ca9c710",
+  "prompts": {},
+  "sessions": {
+    "s_3f4b5347620927": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1052f-291b-7aa2-897e-1b9a6fb3f082",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}

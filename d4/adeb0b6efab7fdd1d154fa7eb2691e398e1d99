@@ -1,0 +1,51 @@
+server/src/lostcity/systems/combat/Abilities.ts
+  s_3f4b5347620927::t_59e5c78ddcf833 140
+server/src/lostcity/systems/combat/AbilityEffects.ts
+  s_3f4b5347620927::t_53764ba3095347 27,45,52
+server/src/lostcity/systems/combat/AbilityRuntime.ts
+  s_3f4b5347620927::t_2e3ca8f5d5863a 95,168-176,239-240
+server/src/lostcity/systems/combat/AbilityTargets.ts
+  s_3f4b5347620927::t_1e37de0277e7bd 25,32-41,45,47
+server/src/lostcity/systems/combat/AbilityTimeline.test.ts
+  s_3f4b5347620927::t_8e92f1961a11f4 1-111
+server/src/lostcity/systems/combat/AbilityTimeline.ts
+  s_3f4b5347620927::t_2714d7bfd0b57e 77-82,109
+server/src/lostcity/systems/combat/Combat.ts
+  s_3f4b5347620927::t_87717bc30e81f2 236
+server/src/lostcity/systems/combat/CombatCondition.ts
+  s_3f4b5347620927::t_8200eb1dad614d 11,13,53,71-74,76
+server/src/lostcity/systems/combat/CombatStatuses.test.ts
+  s_3f4b5347620927::t_a5eb4acbbece44 5,317-392
+server/src/lostcity/systems/combat/CombatStatuses.ts
+  s_3f4b5347620927::t_18e16ae5582601 4,27,52,55,81,106,137,162-193,260,267,301,319
+server/src/lostcity/systems/combat/CombatStyle.ts
+  s_3f4b5347620927::t_f6d2514923c1ec 7
+server/src/lostcity/systems/combat/ConditionModifiers.ts
+  s_3f4b5347620927::t_61a612a9ba13a7 67-87
+server/src/lostcity/systems/combat/MagicCombat.ts
+  s_3f4b5347620927::t_aac81d0c9b1abb 4,16,22
+server/src/lostcity/systems/combat/MeleeCombat.ts
+  s_3f4b5347620927::t_2647319770361b 31-37,83,89
+server/src/lostcity/systems/combat/RangedCombat.ts
+  s_3f4b5347620927::t_445de4e61ed305 4,16,22
+server/src/lostcity/systems/combat/StatusDisplay.ts
+  s_3f4b5347620927::t_9feb0019ed6067 93-94
+tools/refactor/test-inventory.txt
+  s_3f4b5347620927::t_0b97956c052acf 1749,1761,1772,1806,1837,1852,1873,2008,2121
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "d4adeb0b6efab7fdd1d154fa7eb2691e398e1d99",
+  "prompts": {},
+  "sessions": {
+    "s_3f4b5347620927": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1052f-291b-7aa2-897e-1b9a6fb3f082",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}

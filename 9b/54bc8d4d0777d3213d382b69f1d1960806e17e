@@ -1,0 +1,75 @@
+server/src/lostcity/tools/data/domains/abilities/ConditionEffectStage.ts
+  s_3f4b5347620927::t_d8c808f3d72a13 6,13-18,43,61-62
+  s_3f4b5347620927::t_ad388cfc514c16 104-123
+  s_3f4b5347620927::t_a864c3deb2805a 76-77,79-81
+  s_3f4b5347620927::t_d026156f3d01f3 1-5,7-12,19-42,44-60,63-75,78,82-103,124-125
+  s_3f4b5347620927::t_9f4d60c42f7fc1 126-165
+server/src/lostcity/tools/data/domains/abilities/EffectStage.ts
+  s_3f4b5347620927::t_d026156f3d01f3 6,67-69
+  s_3f4b5347620927::t_9a508b7cdfb0f9 70
+server/src/lostcity/data/ability/AbilityExecution.ts
+  s_3f4b5347620927::t_e8c750480b23f6 3,44,268-271,293-300
+  s_3f4b5347620927::t_8ac464126cf0c1 136-138
+  s_3f4b5347620927::t_d8c808f3d72a13 64
+  s_3f4b5347620927::t_6b65e5447680ac 301
+server/src/lostcity/data/ability/AbilityHooks.ts
+  s_3f4b5347620927::t_d026156f3d01f3 210,217
+  s_3f4b5347620927::t_8ac464126cf0c1 59-60,204-209,211-216,218-222,227-228
+  s_3f4b5347620927::t_6849ff8d25251a 58,61-68,223-226,229-233,275-282
+server/src/lostcity/tools/data/domains/abilities/DamageStage.ts
+  s_3f4b5347620927::t_d8c808f3d72a13 97-98
+server/src/lostcity/tools/data/domains/abilities/TargetStage.ts
+  s_3f4b5347620927::t_d8c808f3d72a13 76-77
+  s_3f4b5347620927::t_6a6d1726ea6121 81
+server/src/lostcity/tools/data/domains/abilities/SpecialEffectStage.ts
+  s_3f4b5347620927::t_d8c808f3d72a13 27-34
+server/src/lostcity/tools/data/domains/abilities/index.ts
+  s_3f4b5347620927::t_b74eac9a35db56 11,53
+server/src/lostcity/data/ability/AbilityExecution.test.ts
+  s_3f4b5347620927::t_ca836a2fe6fde6 185-187
+  s_3f4b5347620927::t_95617e14661c86 178-184,188-192
+  s_3f4b5347620927::t_b415395a62a69a 193-221
+server/src/lostcity/tools/data/domains/abilities/ChannelStage.ts
+  s_3f4b5347620927::t_4d3e423c66098b 81-88,93-99
+  s_3f4b5347620927::t_e8c750480b23f6 3,79-80,89-91
+  s_3f4b5347620927::t_6a6d1726ea6121 50
+  s_c202351b3d1826::t_a04acbdb3a1a2f 92
+server/src/lostcity/tools/data/domains/abilities/ExecutionStage.ts
+  s_3f4b5347620927::t_b74eac9a35db56 68
+  s_3f4b5347620927::t_e8c750480b23f6 2
+server/src/lostcity/tools/data/domains/abilities/SourceContracts.test.ts
+  s_3f4b5347620927::t_e75bec136b78ae 11,211-220,229-231,233-236,238-250
+  s_3f4b5347620927::t_95617e14661c86 85-88,97-98,135-144
+  s_3f4b5347620927::t_d8c808f3d72a13 12,145,221-228,232,237,251-275,277,311
+  s_3f4b5347620927::t_386d7ba12cb148 146-150,159-165,276,278-310,312-314
+packages/domain/src/symbols/param.ts
+  s_3f4b5347620927::t_78f70384a55ae8 187,199
+revisions/910/symbols/param.sym
+  s_3f4b5347620927::t_bd4b1299cea656 185,197
+tools/client910/crates/rs910-symbols/src/param.rs
+  s_3f4b5347620927::t_79f515aa38f419 370-371,394-395
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "9b54bc8d4d0777d3213d382b69f1d1960806e17e",
+  "prompts": {},
+  "sessions": {
+    "s_3f4b5347620927": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1052f-291b-7aa2-897e-1b9a6fb3f082",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    },
+    "s_c202351b3d1826": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0fe2d-4e63-7e41-b719-caa999b24fd9",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
