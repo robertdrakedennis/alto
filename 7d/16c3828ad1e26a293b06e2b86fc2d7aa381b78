@@ -1,0 +1,97 @@
+docs/server-architecture.md
+  s_3f4b5347620927::t_2eb986ad0b153c 865-927
+packages/domain/src/symbols/npc.ts
+  s_3f4b5347620927::t_0793e2948464ff 52-67
+packages/domain/src/symbols/varbit.ts
+  s_3f4b5347620927::t_e2e2e5e9d3f8c1 134-137
+revisions/910/symbols/npc.sym
+  s_3f4b5347620927::t_fd8f3aa7b78c02 50-65
+revisions/910/symbols/varbit.sym
+  s_3f4b5347620927::t_f9cd2ef846a9a9 132-135
+server/src/lostcity/content/world/bosses/GwdAltar.test.ts
+  s_3f4b5347620927::t_1c61d621917fa1 1-164
+server/src/lostcity/content/world/bosses/GwdAltar.ts
+  s_3f4b5347620927::t_ffbf6520e0bf3b 1-56
+server/src/lostcity/content/world/bosses/GwdAttackPlan.test.ts
+  s_3f4b5347620927::t_d67518eff05bcf 1-157
+server/src/lostcity/content/world/bosses/GwdAttackPlan.ts
+  s_3f4b5347620927::t_1fc221dcadb920 1-151
+server/src/lostcity/content/world/bosses/GwdCamp.ts
+  s_3f4b5347620927::t_51f4fb060bd5a7 1-91
+server/src/lostcity/content/world/bosses/GwdCounts.test.ts
+  s_3f4b5347620927::t_8b53987dd85782 1-155
+server/src/lostcity/content/world/bosses/GwdCounts.ts
+  s_3f4b5347620927::t_8e69887e068a49 1-76
+server/src/lostcity/content/world/bosses/GwdDungeon.ts
+  s_3f4b5347620927::t_cee7f7f29811b3 1-200
+server/src/lostcity/content/world/bosses/GwdEncounter.ts
+  s_3f4b5347620927::t_9d17512403d75b 1-133
+server/src/lostcity/data/GwdData.test.ts
+  s_3f4b5347620927::t_37d0cc796b5c94 1-141
+server/src/lostcity/data/GwdData.ts
+  s_3f4b5347620927::t_4a5e2f5a15d8ee 1-256
+server/src/lostcity/network/InstanceSessionsE2E.integration.test.ts
+  s_3f4b5347620927::t_17cbde52c9c243 332-371
+server/src/lostcity/systems/combat/Combat.ts
+  s_3f4b5347620927::t_69aa0a6502534d 4-5,191,268-272,333-429,518,599-600
+server/src/lostcity/systems/combat/Combatant.ts
+  s_3f4b5347620927::t_fb5610786c3eac 1-2,99-101,155-157
+server/src/lostcity/systems/combat/OrdinaryVolley.test.ts
+  s_3f4b5347620927::t_f2c9b8f31258e0 1-226
+server/src/lostcity/systems/combat/OrdinaryVolley.ts
+  s_3f4b5347620927::t_2a911a7d959d1b 1-35
+server/src/lostcity/systems/equipment/PlayerItemCharges.ts
+  s_3f4b5347620927::t_86c2bc81c58a1d 86-96
+server/src/lostcity/systems/instances/InstanceSessions.ts
+  s_3f4b5347620927::t_c5e0c988af92ee 34-35,91-100
+server/src/lostcity/systems/npc/NpcCombat.ts
+  s_3f4b5347620927::t_c6e22bfea439ee 1,54-56,86-113,116-118,128-129,185,288-290,305,407-409
+server/src/lostcity/systems/npc/NpcLevelDrain.test.ts
+  s_3f4b5347620927::t_5c319fc81ddf3f 1-95
+server/src/lostcity/systems/npc/NpcStats.ts
+  s_3f4b5347620927::t_892b6843d70990 42-47,63,75,86
+server/src/lostcity/systems/session/AccountFile.ts
+  s_3f4b5347620927::t_7191dafa87d05f 15,28-29,101
+server/src/lostcity/systems/stats/PrayerOverboost.test.ts
+  s_3f4b5347620927::t_3dce86c02e3d76 1-252
+server/src/lostcity/systems/stats/Resources.ts
+  s_3f4b5347620927::t_863783089d38cc 3-5,10,19-20,26-28,31-32,45,48,50,54
+server/src/lostcity/systems/stats/Stats.ts
+  s_3f4b5347620927::t_91bb96d3f80387 8,331,351,364-386
+server/src/lostcity/systems/vars/Vars.ts
+  s_3f4b5347620927::t_b521da54d49b09 131-152
+server/src/lostcity/tools/data/domains/instances/GwdCoupledDrops.test.ts
+  s_3f4b5347620927::t_fc95ee42810394 1-47
+server/src/lostcity/tools/data/domains/instances/GwdCoupledDrops.ts
+  s_3f4b5347620927::t_261eb0c2632b93 1-41
+server/src/lostcity/tools/data/domains/instances/GwdProfile.test.ts
+  s_3f4b5347620927::t_5e069ba756e0f4 1-64
+server/src/lostcity/tools/data/domains/instances/GwdProfile.ts
+  s_3f4b5347620927::t_19ac31092eae1a 1-42
+server/src/lostcity/tools/data/domains/instances/GwdSources.test.ts
+  s_3f4b5347620927::t_0d944c34a032d7 1-184
+server/src/lostcity/tools/data/domains/instances/GwdSources.ts
+  s_3f4b5347620927::t_3d40e8fec12ab0 1-217
+server/src/lostcity/tools/data/domains/instances/GwdStage.ts
+  s_3f4b5347620927::t_da91268cdbe46b 1-402
+tools/client910/crates/rs910-symbols/src/npc.rs
+  s_3f4b5347620927::t_aa2f071ba094b3 100-131
+tools/client910/crates/rs910-symbols/src/varbit.rs
+  s_3f4b5347620927::t_ce0483b4c595c5 264-271
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "7d16c3828ad1e26a293b06e2b86fc2d7aa381b78",
+  "prompts": {},
+  "sessions": {
+    "s_3f4b5347620927": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1052f-291b-7aa2-897e-1b9a6fb3f082",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
