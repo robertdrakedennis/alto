@@ -1,0 +1,59 @@
+docs/server-architecture.md
+  s_3f4b5347620927::t_87d3e6d68d6f64 650-653
+server/src/lostcity/engine/tick/WorldPhases.ts
+  s_3f4b5347620927::t_7443135481837a 58-62
+server/src/lostcity/network/AbilityRestorationE2E.integration.test.ts
+  s_3f4b5347620927::t_498a028eda2e29 1-261
+server/src/lostcity/network/AbilityUniqueE2E.integration.test.ts
+  s_3f4b5347620927::t_f9282648c2dbf0 1-295
+server/src/lostcity/systems/combat/AbilityBalancedLife.test.ts
+  s_3f4b5347620927::t_d480b7c301df54 1-55
+server/src/lostcity/systems/combat/AbilityBalancedLife.ts
+  s_3f4b5347620927::t_9f57845ed68d66 1-103
+server/src/lostcity/systems/combat/AbilityDefences.ts
+  s_3f4b5347620927::t_77b65cc971dba4 4,13,35,41,83-88,103-122,204,240,261
+server/src/lostcity/systems/combat/AbilityEffects.ts
+  s_3f4b5347620927::t_22920cb67d0a25 2,16,46
+server/src/lostcity/systems/combat/AbilityRestoration.test.ts
+  s_3f4b5347620927::t_763e208b0ed146 1-51
+server/src/lostcity/systems/combat/AbilityRestoration.ts
+  s_3f4b5347620927::t_f683c7722f9473 1-191
+server/src/lostcity/systems/combat/AbilityRuntime.ts
+  s_3f4b5347620927::t_aec3d7774be1c2 536,548
+server/src/lostcity/systems/combat/AbilitySessionServices.ts
+  s_3f4b5347620927::t_9881f2612791ed 8,12,24,80-81,96-97,104-105,125
+server/src/lostcity/systems/combat/AbilityTaunt.test.ts
+  s_3f4b5347620927::t_77c6edef64dd9d 1-33
+server/src/lostcity/systems/combat/AbilityTaunt.ts
+  s_3f4b5347620927::t_2e40450ed1f263 1-83
+server/src/lostcity/systems/combat/AbilityUniqueEffects.ts
+  s_3f4b5347620927::t_c437648d3e64a6 1-147
+server/src/lostcity/systems/combat/Combat.ts
+  s_3f4b5347620927::t_5030e3797e6184 15,107-116,303-305
+server/src/lostcity/systems/combat/PlayerCombat.ts
+  s_3f4b5347620927::t_33280d35bcc30a 17,21,177,179-180,190-193
+server/src/lostcity/systems/movement/Movement.ts
+  s_3f4b5347620927::t_5e2a141f758927 224-231
+server/src/lostcity/systems/npc/NpcCombat.ts
+  s_3f4b5347620927::t_0b46b927aa1b19 49,61-69,71
+server/src/lostcity/systems/npc/NpcStats.ts
+  s_3f4b5347620927::t_9776e40451fa60 5-6,53-58
+server/vitest.config.ts
+  s_3f4b5347620927::t_b50a6f364894a0 56-57,60-62
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "bd4790976d190f63a1665b751ad60988a01003da",
+  "prompts": {},
+  "sessions": {
+    "s_3f4b5347620927": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1052f-291b-7aa2-897e-1b9a6fb3f082",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
