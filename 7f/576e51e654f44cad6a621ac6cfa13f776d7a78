@@ -1,0 +1,35 @@
+docs/client-status.md
+  s_3f4b5347620927::t_787ab6ae70a7a4 15
+docs/server-architecture.md
+  s_3f4b5347620927::t_a2911b0b4ca2a4 808
+tools/client910/fixtures/session-replay/legacy-interface/hud-receipts.jsonl
+  s_3f4b5347620927::t_a26fd79d9b335d 1-42
+tools/client910/fixtures/session-replay/legacy-interface/server-trace.jsonl
+  s_3f4b5347620927::t_e811ea280e1bd7 1-240
+tools/client910/src/app.rs
+  s_3f4b5347620927::t_0caa81700c6a09 1319-1322
+tools/client910/src/scenario_legacy_combat.rs
+  s_3f4b5347620927::t_9f7e463c6c37ca 46-49
+tools/client910/src/scenario_legacy_interface.rs
+  s_3f4b5347620927::t_d02da2d483ccf8 1-364
+tools/refactor/replay-gate.txt
+  s_3f4b5347620927::t_da2463b80a2d0b 117-119
+tools/refactor/test-inventory.txt
+  s_3f4b5347620927::t_f475e8425c488b 4,48,91,1701,1731,2032,2034,2038,2040,2053,2143,2165-2166,2168,2188,2194,2340
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "7f576e51e654f44cad6a621ac6cfa13f776d7a78",
+  "prompts": {},
+  "sessions": {
+    "s_3f4b5347620927": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1052f-291b-7aa2-897e-1b9a6fb3f082",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
