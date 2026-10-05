@@ -1,0 +1,29 @@
+docs/server-architecture.md
+  s_3f4b5347620927::t_68066d9de537df 703,762-763
+server/src/lostcity/network/WildernessE2E.integration.test.ts
+  s_3f4b5347620927::t_13cd2134a23341 1,36-41,183,185-187,205-213
+server/src/lostcity/systems/equipment/PlayerEquipment.ts
+  s_3f4b5347620927::t_c96b9df14cf7a2 1,4,34-57,186-243,263-264,267,299-300,384
+server/src/lostcity/systems/equipment/PlayerItemCharges.integration.test.ts
+  s_3f4b5347620927::t_ea5b368741a8d0 39-50,224-285
+server/src/lostcity/systems/inventory/Inventories.ts
+  s_3f4b5347620927::t_a3c6dd09344186 377,390-391
+server/src/lostcity/systems/wilderness/Wilderness.ts
+  s_3f4b5347620927::t_9d68053cbbfaad 1,214-222
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "9c8ebb4286a1d2503ad97218369f70480c26c9a1",
+  "prompts": {},
+  "sessions": {
+    "s_3f4b5347620927": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1052f-291b-7aa2-897e-1b9a6fb3f082",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}

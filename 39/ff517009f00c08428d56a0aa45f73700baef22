@@ -1,0 +1,37 @@
+docs/server-architecture.md
+  s_3f4b5347620927::t_b9340d44c00d78 764-767
+server/src/lostcity/data/SpecialCombatData.ts
+  s_3f4b5347620927::t_fe0ebbbcf86043 45,63,72
+server/src/lostcity/network/LegacySpecialsE2E.integration.test.ts
+  s_3f4b5347620927::t_7d242872fd1c80 1-3,12,16,92,97,122-124,340,576-651
+server/src/lostcity/systems/combat/PlayerSpecials.ts
+  s_3f4b5347620927::t_87eb9f27683cc3 172-176,335
+server/src/lostcity/systems/combat/SpecialEffects.ts
+  s_3f4b5347620927::t_8b5bd59a869073 143-152
+server/src/lostcity/systems/equipment/EquipmentContent.ts
+  s_3f4b5347620927::t_911e184a401a61 42,50-51,104
+server/src/lostcity/systems/equipment/EquipmentRules.ts
+  s_3f4b5347620927::t_ec3438c4e256f7 10-11,25-28
+server/src/lostcity/systems/equipment/SpecialEquipment.ts
+  s_3f4b5347620927::t_65f5bf0418dddb 18-19,24,28-29
+server/src/lostcity/tools/data/domains/combat/MagicStage.ts
+  s_3f4b5347620927::t_81f98842b582c1 176
+server/src/lostcity/tools/data/domains/combat/SpecialStage.ts
+  s_3f4b5347620927::t_7c5a83db3fad55 7,74,95,134-148,150-161,405,413
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "39ff517009f00c08428d56a0aa45f73700baef22",
+  "prompts": {},
+  "sessions": {
+    "s_3f4b5347620927": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1052f-291b-7aa2-897e-1b9a6fb3f082",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}

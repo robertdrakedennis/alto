@@ -1,0 +1,25 @@
+docs/server-architecture.md
+  s_3f4b5347620927::t_0b926dd123cdc2 772-773
+server/src/lostcity/network/LegacySpecialsE2E.integration.test.ts
+  s_3f4b5347620927::t_2d8c74cb2c175f 7,698-724
+server/src/lostcity/tools/data/domains/combat/ChargeStage.ts
+  s_3f4b5347620927::t_4722ddfc9f7ef6 99-104
+server/src/lostcity/tools/data/domains/combat/SpecialStage.ts
+  s_3f4b5347620927::t_35fd293394481d 151-161
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "376584d1009546af9a68f1f563baeb45228ffa30",
+  "prompts": {},
+  "sessions": {
+    "s_3f4b5347620927": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1052f-291b-7aa2-897e-1b9a6fb3f082",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
