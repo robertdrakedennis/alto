@@ -1,0 +1,79 @@
+docs/server-architecture.md
+  s_3f4b5347620927::t_10d438d26b85cf 735-741
+packages/domain/src/symbols/obj.ts
+  s_3f4b5347620927::t_5f242455eec549 420,426-427
+packages/domain/src/symbols/param.ts
+  s_3f4b5347620927::t_20e870b9ea18c8 105-107
+revisions/910/symbols/obj.sym
+  s_3f4b5347620927::t_a324a604cb12ae 418,424-425
+revisions/910/symbols/param.sym
+  s_3f4b5347620927::t_5cdac176abd63d 103-105
+server/src/lostcity/content/objs/charges.ts
+  s_3f4b5347620927::t_5b2daf6f2b20cc 1-25
+server/src/lostcity/data/ItemChargeData.ts
+  s_3f4b5347620927::t_3a16d9473b48f4 1-44
+server/src/lostcity/engine/World.ts
+  s_3f4b5347620927::t_368f976737c8d3 3,323
+server/src/lostcity/engine/tick/WorldPhases.ts
+  s_3f4b5347620927::t_94268660c14475 114
+server/src/lostcity/entity/Player.ts
+  s_3f4b5347620927::t_dbbc24bb0f2566 40,77
+server/src/lostcity/systems/combat/Combat.ts
+  s_3f4b5347620927::t_77f270d473e282 376
+server/src/lostcity/systems/combat/PlayerCombat.ts
+  s_3f4b5347620927::t_59cb3dd27b2827 184-185,210
+server/src/lostcity/systems/combat/PlayerSpecials.ts
+  s_3f4b5347620927::t_011f7cc43a4e9f 192-193,259-260
+server/src/lostcity/systems/combat/SpecialEffects.ts
+  s_3f4b5347620927::t_9f8064cc87e7f4 19,31
+server/src/lostcity/systems/equipment/PlayerEquipment.ts
+  s_3f4b5347620927::t_f5012d54093d1e 3,98,115-125,162,169,184,215-217,300
+server/src/lostcity/systems/equipment/PlayerItemCharges.integration.test.ts
+  s_3f4b5347620927::t_15bd05408a18de 1-211
+server/src/lostcity/systems/equipment/PlayerItemCharges.ts
+  s_3f4b5347620927::t_8766b6d988228a 1-241
+server/src/lostcity/systems/inventory/Inventories.ts
+  s_3f4b5347620927::t_a36236d2fac6ad 51-58,173,295,377
+server/src/lostcity/systems/inventory/InventoryItem.ts
+  s_3f4b5347620927::t_4ac121df12a26b 20-25,30,41-43,45-50,54-56,60-66
+server/src/lostcity/systems/inventory/InventoryOperation.ts
+  s_3f4b5347620927::t_c50c4f8b57428c 15-16
+server/src/lostcity/systems/inventory/ItemCharges.test.ts
+  s_3f4b5347620927::t_3ae5856b46eaf2 141-185
+server/src/lostcity/systems/inventory/ItemCharges.ts
+  s_3f4b5347620927::t_a77f87d8ffa219 2,10-11,26-27,39,44,69-70,74-100,129
+server/src/lostcity/systems/inventory/ObjStacking.ts
+  s_3f4b5347620927::t_0cca84560436b3 4-6,12,23
+server/src/lostcity/systems/session/Account.ts
+  s_3f4b5347620927::t_9e43f096ca012f 45,84-85,123,193
+server/src/lostcity/systems/session/AccountFile.ts
+  s_3f4b5347620927::t_94b162bb84f716 112,146,164
+server/src/lostcity/systems/session/Session.ts
+  s_3f4b5347620927::t_9dae7e32b83f1f 10,69,71-72
+server/src/lostcity/tools/data/domains/combat/ChargeStage.ts
+  s_3f4b5347620927::t_aa4e2e5bbc2d3f 1-90
+server/src/lostcity/tools/data/domains/combat/index.ts
+  s_3f4b5347620927::t_d10841221de799 1,21-22,57,61,84-96,112
+server/vitest.config.ts
+  s_3f4b5347620927::t_c6bafbf75e33c6 30
+tools/client910/crates/rs910-symbols/src/obj.rs
+  s_3f4b5347620927::t_c9b56233da1f5d 836-837,848-851
+tools/client910/crates/rs910-symbols/src/param.rs
+  s_3f4b5347620927::t_9b531f66736cc6 207-212
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "916e3703206e206a47e763c79218e8214ccb81ff",
+  "prompts": {},
+  "sessions": {
+    "s_3f4b5347620927": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1052f-291b-7aa2-897e-1b9a6fb3f082",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
