@@ -1,0 +1,14 @@
+tools/client910/scripts/control.py
+  h_d26e211304196f 31-33
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "2ae3367df18245b395b0ea1a54a26e271808ab4f",
+  "prompts": {},
+  "humans": {
+    "h_d26e211304196f": {
+      "author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
