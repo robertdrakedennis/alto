@@ -1,0 +1,14 @@
+tools/client910/fixtures/session-replay/barrows/seed.mjs
+  h_d26e211304196f 33,188-192,196
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "429df809aa4ae705e42198bb16048a0ad6fef111",
+  "prompts": {},
+  "humans": {
+    "h_d26e211304196f": {
+      "author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
