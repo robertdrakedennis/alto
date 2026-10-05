@@ -1,0 +1,47 @@
+docs/server-architecture.md
+  s_3f4b5347620927::t_42b80db91f3aa0 802-803,808-809,820-821,823-824
+server/src/lostcity/content/trails/index.ts
+  s_3f4b5347620927::t_b6e68f94aac55e 38,43
+server/src/lostcity/content/trails/places.ts
+  s_3f4b5347620927::t_67ea71e7dea972 34,36,40,112-114
+server/src/lostcity/content/world/bosses/Barrows.ts
+  s_3f4b5347620927::t_5f3d213a95bf16 1-213
+server/src/lostcity/content/world/bosses/BarrowsCore.test.ts
+  s_3f4b5347620927::t_d006eea8107b2e 162-177
+server/src/lostcity/content/world/bosses/BarrowsEncounter.ts
+  s_3f4b5347620927::t_1c914c66d5155f 1-466
+server/src/lostcity/content/world/bosses/BarrowsEquipment.integration.test.ts
+  s_3f4b5347620927::t_fe514911a3b75a 18,66-67,237-300
+server/src/lostcity/content/world/bosses/BarrowsProgress.ts
+  s_3f4b5347620927::t_795f1b28a748fc 11-14,23-35
+server/src/lostcity/content/world/bosses/BarrowsRepairs.ts
+  s_3f4b5347620927::t_a55295d50a3d1b 1-42
+server/src/lostcity/data/BarrowsData.ts
+  s_3f4b5347620927::t_fac50b0b3d0d79 8-9,30,64,104-105,150-152
+server/src/lostcity/engine/World.ts
+  s_3f4b5347620927::t_df575d00abdd4f 6-7,137-138,340,346
+server/src/lostcity/network/BarrowsE2E.integration.test.ts
+  s_3f4b5347620927::t_7c4ef85ec426b4 1-160
+server/src/lostcity/systems/equipment/PlayerEquipment.ts
+  s_3f4b5347620927::t_b3a8925e294291 11,262-292
+server/src/lostcity/systems/equipment/PlayerItemCharges.ts
+  s_3f4b5347620927::t_eab3b58f9ae855 7,13,163,165,204-301
+server/src/lostcity/tools/data/domains/instances/Barrows.ts
+  s_3f4b5347620927::t_14d77f60093eed 6-7,146-153,192-195,216-218,222-230,252,266-277,291-292,296,304
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "5f255eed44998cc7350d0f9f625cf20f01210267",
+  "prompts": {},
+  "sessions": {
+    "s_3f4b5347620927": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1052f-291b-7aa2-897e-1b9a6fb3f082",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
