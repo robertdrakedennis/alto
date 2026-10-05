@@ -1,0 +1,39 @@
+docs/server-architecture.md
+  s_3f4b5347620927::t_fae46413e43ba3 789-790
+server/src/lostcity/data/CombatData.ts
+  s_3f4b5347620927::t_512d06ce8ffa71 58
+server/src/lostcity/network/LegacySpecialsE2E.integration.test.ts
+  s_3f4b5347620927::t_a28fedf9c290c3 1124-1209
+server/src/lostcity/systems/combat/PlayerSpecials.ts
+  s_3f4b5347620927::t_51af8f4ad74908 147
+server/src/lostcity/systems/combat/RangedAttacks.ts
+  s_3f4b5347620927::t_0d5a7e157aabf3 34,47,83-85,100,102
+server/src/lostcity/systems/equipment/PlayerItemCharges.integration.test.ts
+  s_3f4b5347620927::t_666d543e00a647 402-438
+server/src/lostcity/tools/data/domains/combat/ChargeStage.ts
+  s_3f4b5347620927::t_a55e32e1a9a2b5 2,95-124
+server/src/lostcity/tools/data/domains/combat/RangedStage.ts
+  s_3f4b5347620927::t_16ca6463ce2665 26,45-49,57-58
+server/src/lostcity/tools/data/domains/combat/SpecialStage.ts
+  s_3f4b5347620927::t_fd339f6f09a0db 1,7,476-477,616-640,651-660
+server/src/lostcity/tools/data/domains/combat/SuperiorWarriorStage.ts
+  s_3f4b5347620927::t_b8507679930864 1-78
+server/src/lostcity/tools/data/domains/combat/index.ts
+  s_3f4b5347620927::t_50bb6f38beb0d7 57
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "2e352101d7deb34f0ab489284dbf3449d2de0503",
+  "prompts": {},
+  "sessions": {
+    "s_3f4b5347620927": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1052f-291b-7aa2-897e-1b9a6fb3f082",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
