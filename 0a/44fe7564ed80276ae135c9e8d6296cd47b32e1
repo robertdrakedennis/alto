@@ -1,0 +1,37 @@
+tools/client910/fixtures/session-replay/slayer-equipment/equipment-receipts.jsonl
+  s_3f4b5347620927::t_66cc659a0f2777 1-20
+tools/client910/fixtures/session-replay/slayer-equipment/plan.json
+  s_3f4b5347620927::t_c46add46eeb049 1-328
+tools/client910/fixtures/session-replay/slayer-equipment/record.py
+  s_3f4b5347620927::t_50ce592fb99624 1-228
+tools/client910/fixtures/session-replay/slayer-equipment/seed.mjs
+  s_3f4b5347620927::t_59c8b14774bca1 1-146
+tools/client910/fixtures/session-replay/slayer-equipment/server-trace.jsonl
+  s_3f4b5347620927::t_b483fbcbd8dd19 1-352
+tools/client910/fixtures/session-replay/slayer-equipment/server.mjs
+  s_3f4b5347620927::t_ce46d54341f8cc 1-27
+tools/client910/src/app.rs
+  s_3f4b5347620927::t_9d560984902353 376-379
+tools/client910/src/scenario_slayer_equipment.rs
+  s_3f4b5347620927::t_74f7a5e70a06f9 1-360
+tools/refactor/replay-gate.txt
+  s_3f4b5347620927::t_cad66ce1aa48c2 120-122
+tools/refactor/test-inventory.txt
+  s_3f4b5347620927::t_62376c01f7225c 4,48,108,1810,2047,2068-2069,2112,2168,2185,2199-2200,2205,2212,2217,2259
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "0a44fe7564ed80276ae135c9e8d6296cd47b32e1",
+  "prompts": {},
+  "sessions": {
+    "s_3f4b5347620927": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1052f-291b-7aa2-897e-1b9a6fb3f082",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
