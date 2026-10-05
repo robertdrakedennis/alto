@@ -1,0 +1,25 @@
+docs/server-architecture.md
+  s_3f4b5347620927::t_3aa002a64e660d 868-869
+server/src/lostcity/systems/equipment/PlayerItemCharges.integration.test.ts
+  s_3f4b5347620927::t_e74db601149fdf 403-473
+server/src/lostcity/systems/equipment/PlayerItemCharges.ts
+  s_3f4b5347620927::t_9fefe8a3047fa8 31-41,151,160-175
+tools/refactor/test-inventory.txt
+  s_3f4b5347620927::t_8c38c0833f4f29 1973-1974
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "beb7d49d263466fa4093d0492bbf8aaba7cffa57",
+  "prompts": {},
+  "sessions": {
+    "s_3f4b5347620927": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1052f-291b-7aa2-897e-1b9a6fb3f082",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}

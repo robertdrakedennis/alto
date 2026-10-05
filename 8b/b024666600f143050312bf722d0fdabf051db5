@@ -1,0 +1,69 @@
+docs/server-architecture.md
+  s_3f4b5347620927::t_82ba7cd3767db2 901-902
+packages/domain/src/symbols/component.ts
+  s_3f4b5347620927::t_b6184d847d23ce 758
+packages/domain/src/symbols/loc.ts
+  s_3f4b5347620927::t_4e1fcd0c3a8451 146,148
+packages/domain/src/symbols/obj.ts
+  s_3f4b5347620927::t_c825a6ecad29f6 27,439
+revisions/910/symbols/component.sym
+  s_3f4b5347620927::t_206910f5e5911f 619
+revisions/910/symbols/loc.sym
+  s_3f4b5347620927::t_9e41b6aa8f79f0 144,146
+revisions/910/symbols/obj.sym
+  s_3f4b5347620927::t_2c60781027306c 25,437
+server/src/lostcity/content/skills/construction/data.ts
+  s_3f4b5347620927::t_38e49e0b0e6ccb 69-70
+server/src/lostcity/content/world/bosses/Barrows.ts
+  s_3f4b5347620927::t_000646170ac0e5 2,47,51
+server/src/lostcity/content/world/bosses/BarrowsRepairs.ts
+  s_32282483846156::t_98bbd5c2490a0a 1-2,15-16,18,21-48,60,72
+server/src/lostcity/data/BarrowsData.ts
+  s_3f4b5347620927::t_7a0d8a34bacaab 191-195
+server/src/lostcity/engine/World.ts
+  s_3f4b5347620927::t_55b1cbc7bea947 352
+server/src/lostcity/network/BarrowsHouseRepairE2E.integration.test.ts
+  s_32282483846156::t_c4122661042331 1-230
+server/src/lostcity/tools/data/domains/instances/Barrows.ts
+  s_32282483846156::t_c2d884a6834d6c 5,7,13,268-276,303
+server/src/lostcity/tools/data/domains/instances/BarrowsWiki.test.ts
+  s_32282483846156::t_4b450ecd4a8675 3,53-71
+server/src/lostcity/tools/data/domains/instances/BarrowsWiki.ts
+  s_32282483846156::t_38b726f8789190 157-176
+server/src/lostcity/tools/data/domains/skills/construction.test.ts
+  s_32282483846156::t_8d1b3dc822cd84 1-29
+server/src/lostcity/tools/data/domains/skills/construction.ts
+  s_32282483846156::t_5e5c5631a1c6aa 30-31,54-75,317,325-340
+tools/client910/crates/rs910-symbols/src/component.rs
+  s_3f4b5347620927::t_89ff808138a1b3 1579-1580
+tools/client910/crates/rs910-symbols/src/loc.rs
+  s_3f4b5347620927::t_f64c2fd499ebbc 288-289,292-293
+tools/client910/crates/rs910-symbols/src/obj.rs
+  s_3f4b5347620927::t_1f858f16759854 50-51,874-875
+tools/refactor/test-inventory.txt
+  s_32282483846156::t_33d144c88e13c3 1666,2137,2245,2273-2274,2406
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "8bb024666600f143050312bf722d0fdabf051db5",
+  "prompts": {},
+  "sessions": {
+    "s_32282483846156": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "8e5be8e8-979d-4f47-9654-aed7f425daee",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    },
+    "s_3f4b5347620927": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1052f-291b-7aa2-897e-1b9a6fb3f082",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
