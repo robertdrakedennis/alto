@@ -1,0 +1,25 @@
+server/src/lostcity/content/world/bosses/Barrows.ts
+  s_3f4b5347620927::t_9822033245fe19 212-218
+server/src/lostcity/network/BarrowsE2E.integration.test.ts
+  s_3f4b5347620927::t_5282325edde85c 154-170
+tools/client910/fixtures/session-replay/barrows/driver.py
+  s_3f4b5347620927::t_bf96cc390d5a95 859-875,877-878,880-886,888-889,891-892,902-904,908-928,930-931,935,937
+tools/client910/fixtures/session-replay/barrows/repair_driver.py
+  s_3f4b5347620927::t_815345c0a6823e 95-104
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "404bdfe9120b88dcf1138507b3074fffa4beb9b6",
+  "prompts": {},
+  "sessions": {
+    "s_3f4b5347620927": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1052f-291b-7aa2-897e-1b9a6fb3f082",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
