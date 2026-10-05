@@ -1,0 +1,21 @@
+tools/client910/fixtures/session-replay/slayer-wilderness/record.py
+  s_3f4b5347620927::t_aa39e8595aec6f 43
+tools/client910/fixtures/session-replay/slayer-wilderness/seed.mjs
+  s_3f4b5347620927::t_48ea22c7454908 29-36,40-41,74
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "837eb572f65f9443d5cc2a38c79548f879da58ac",
+  "prompts": {},
+  "sessions": {
+    "s_3f4b5347620927": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1052f-291b-7aa2-897e-1b9a6fb3f082",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
