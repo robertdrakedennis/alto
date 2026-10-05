@@ -1,0 +1,149 @@
+docs/server-architecture.md
+  s_3f4b5347620927::t_1267cac446e383 703-704
+packages/domain/src/symbols/component.ts
+  s_3f4b5347620927::t_9c917f18dc9e61 492,750,752-754,757,760,766-772
+packages/domain/src/symbols/interface.ts
+  s_3f4b5347620927::t_a4cdf670bd2e1a 140
+packages/domain/src/symbols/location.ts
+  s_3f4b5347620927::t_c5a7f47e5ec57b 168-173
+packages/domain/src/symbols/obj.ts
+  s_3f4b5347620927::t_9dc93f21b461ee 306
+packages/domain/src/symbols/param.ts
+  s_3f4b5347620927::t_9eac868ec8af62 157-158
+packages/domain/src/symbols/struct.ts
+  s_3f4b5347620927::t_68cf284dec3353 61
+packages/domain/src/symbols/varbit.ts
+  s_3f4b5347620927::t_ba222e70d1273e 272,284,286-289,291-295,307,309
+revisions/910/symbols/component.sym
+  s_3f4b5347620927::t_af6e972f444d80 429,611,613-615,618,621,627-633
+revisions/910/symbols/interface.sym
+  s_3f4b5347620927::t_39c2c5cc91c94e 138
+revisions/910/symbols/location.sym
+  s_3f4b5347620927::t_2e666e78888f2a 158-163
+revisions/910/symbols/obj.sym
+  s_3f4b5347620927::t_a7930916df8d81 304
+revisions/910/symbols/param.sym
+  s_3f4b5347620927::t_124cba5c9ff398 155-156
+revisions/910/symbols/struct.sym
+  s_3f4b5347620927::t_19a02aa25484f7 59
+revisions/910/symbols/varbit.sym
+  s_3f4b5347620927::t_b794f86d666b98 270,282,284-287,289-293,305,307
+server/src/lostcity/content/objs/toolbelt/toolbelt.ts
+  s_3f4b5347620927::t_e87d69ca87fd63 76-83
+server/src/lostcity/content/players/ops.ts
+  s_3f4b5347620927::t_060c00f2e667f1 8-9,14-15,24-29
+server/src/lostcity/data/CombatData.ts
+  s_3f4b5347620927::t_4e8728e84c4c94 70-71
+server/src/lostcity/data/GeneratedData.ts
+  s_3f4b5347620927::t_7831686616dd2e 15
+server/src/lostcity/data/SlayerData.ts
+  s_3f4b5347620927::t_f100229ca96624 28,33-37,44-58,70
+server/src/lostcity/data/WildernessData.ts
+  s_3f4b5347620927::t_0ca1858a8446fb 1-31
+server/src/lostcity/engine/World.ts
+  s_3f4b5347620927::t_4963d87d67d777 1-2,128-129,186-187,326
+server/src/lostcity/engine/WorldContent.ts
+  s_3f4b5347620927::t_9602784444bdec 39-42
+server/src/lostcity/engine/tick/WorldPhases.ts
+  s_3f4b5347620927::t_18670d839c8187 83-89
+server/src/lostcity/engine/triggers/ContentData.ts
+  s_3f4b5347620927::t_d96060e5fd1d8d 31
+server/src/lostcity/entity/Player.ts
+  s_3f4b5347620927::t_2587522b71f972 53
+server/src/lostcity/network/SlayerE2E.integration.test.ts
+  s_3f4b5347620927::t_92d01352932079 1,154,163,165,325,329,348-354,360,398-404,409,421-422,426-468
+server/src/lostcity/network/WildernessE2E.integration.test.ts
+  s_3f4b5347620927::t_859382a38500fd 1-286
+server/src/lostcity/protocol/handlers/UseOn.ts
+  s_3f4b5347620927::t_00427ffdd78647 42-43
+server/src/lostcity/systems/action-bar/ActionBar.ts
+  s_3f4b5347620927::t_ff35d1fc161638 88-92
+server/src/lostcity/systems/appearance/Look.ts
+  s_3f4b5347620927::t_8edce303d046f2 61,79-87
+server/src/lostcity/systems/combat/Combat.ts
+  s_3f4b5347620927::t_fcb3f5e0e8d42c 299
+server/src/lostcity/systems/combat/CombatStatuses.ts
+  s_3f4b5347620927::t_1cb46bed3e83d5 31,49-59,267,486
+server/src/lostcity/systems/combat/Combatant.ts
+  s_3f4b5347620927::t_1dd9775b5f8f14 87,142,145
+server/src/lostcity/systems/combat/MagicSpells.ts
+  s_3f4b5347620927::t_675c3441640d34 9,101,116,119,127-129,167-172,216,226,237,300,315-327,374-375,387-396
+server/src/lostcity/systems/combat/PlayerCombat.ts
+  s_3f4b5347620927::t_d403a45f1e3a2e 168-177,226,330
+server/src/lostcity/systems/combat/PlayerDeath.ts
+  s_3f4b5347620927::t_6f358df641628d 1,39-43,111,119,126,134-149,173
+server/src/lostcity/systems/combat/PlayerSkull.ts
+  s_3f4b5347620927::t_9d6048d84c2a8a 12,53,59-66,73,77
+server/src/lostcity/systems/equipment/EquipmentStats.ts
+  s_3f4b5347620927::t_8f4226a014c66a 165
+server/src/lostcity/systems/equipment/MagicEquipment.ts
+  s_3f4b5347620927::t_e5c3b8ef4f3dc0 12-13,16-17,24-36
+server/src/lostcity/systems/equipment/SlayerEquipment.ts
+  s_3f4b5347620927::t_1200098e005e02 18
+server/src/lostcity/systems/loot/GroundObjects.ts
+  s_3f4b5347620927::t_bf14f392e2ea16 32-33,51,60,95,162
+server/src/lostcity/systems/movement/FollowRestOp.integration.test.ts
+  s_3f4b5347620927::t_13595d5b81c7ca 60-61,208,211
+server/src/lostcity/systems/session/Sessions.ts
+  s_3f4b5347620927::t_645553553de0a4 20,123
+server/src/lostcity/systems/skilling/Production.ts
+  s_3f4b5347620927::t_ca1595ae024669 124,167
+server/src/lostcity/systems/slayer/PlayerSlayer.ts
+  s_3f4b5347620927::t_a1395784108a50 5,9,22-25,129,140,188,192-197,206,230,232,235,238-251,277-278,301,304
+server/src/lostcity/systems/slayer/Slayer.ts
+  s_3f4b5347620927::t_8a7b25c7a99396 2,24-25,45,57,67-68,132,145,238-255
+server/src/lostcity/systems/slayer/SlayerElites.ts
+  s_3f4b5347620927::t_414c7f06fd59d1 4,10,12,19-32,40,42-43,50,52-53,58,62,66,68,80,85,91-95,98,101
+server/src/lostcity/systems/slayer/SlayerFinishing.ts
+  s_3f4b5347620927::t_a864af8dd4c18e 14,16,18-20,22,35,40,42,44,47,50,59-62,75-76,79,86-99,101,103,111,114,117,121,124,127
+server/src/lostcity/systems/slayer/SlayerState.ts
+  s_3f4b5347620927::t_e10cf064c22b32 39
+server/src/lostcity/systems/wilderness/Wilderness.ts
+  s_3f4b5347620927::t_484c30d3fa201e 1-270
+server/src/lostcity/tools/data/domains.ts
+  s_3f4b5347620927::t_28dc05a6e34fb5 1,18
+server/src/lostcity/tools/data/domains/combat/MagicStage.ts
+  s_3f4b5347620927::t_0d904d4a072d3c 4-5,23-36,84-87,112,123,142-144,160-162,164,169,180-190
+server/src/lostcity/tools/data/domains/slayer/EliteStage.ts
+  s_3f4b5347620927::t_ca3e38082ac6e4 8,10,12,14,16,18,20,22,24,26,34,40-45,49,53-79,81,84,87-105,109-121,123
+server/src/lostcity/tools/data/domains/slayer/RequirementsStage.ts
+  s_3f4b5347620927::t_601bdf696fc401 8,10,12,14-18,20,22,24,26,30,32,34,36,47-55,57-60,63,66,68,72,76,79,82,85,90,92,96,98,101,119-161,163,165,168,170-171,173,180,184,187,191-194,198,201
+server/src/lostcity/tools/data/domains/slayer/RewardStage.ts
+  s_3f4b5347620927::t_ba2161d3926498 1-121
+server/src/lostcity/tools/data/domains/slayer/SlayerWearStage.ts
+  s_3f4b5347620927::t_d9172b8cd526c0 9,11,13,15,24,28-33,36,41,44,47,56-61,64
+server/src/lostcity/tools/data/domains/slayer/index.ts
+  s_3f4b5347620927::t_eca4c2f3cd3d9c 1,76-101,194,312,364,373-375,400,402,426-429,443
+server/src/lostcity/tools/data/domains/wilderness/index.ts
+  s_3f4b5347620927::t_34744e03c01fe2 1-62
+tools/client910/crates/rs910-symbols/src/component.rs
+  s_3f4b5347620927::t_d3c0b862ef3212 1009-1010,1563-1564,1567-1572,1577-1578,1583-1584,1595-1608
+tools/client910/crates/rs910-symbols/src/interface.rs
+  s_3f4b5347620927::t_491eed357a67fd 276-277
+tools/client910/crates/rs910-symbols/src/location.rs
+  s_3f4b5347620927::t_5b70bf4ec18923 316-327
+tools/client910/crates/rs910-symbols/src/obj.rs
+  s_3f4b5347620927::t_dc0f6adfa5b48f 608-609
+tools/client910/crates/rs910-symbols/src/param.rs
+  s_3f4b5347620927::t_edc1beb447df8e 311-314
+tools/client910/crates/rs910-symbols/src/structs.rs
+  s_3f4b5347620927::t_e1007a805a8885 118-119
+tools/client910/crates/rs910-symbols/src/varbit.rs
+  s_3f4b5347620927::t_6faf980fa7e131 540-541,564-565,568-575,578-587,610-611,614-615
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "f1854c8963b44122dd710e1009b7f9c984a7d580",
+  "prompts": {},
+  "sessions": {
+    "s_3f4b5347620927": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1052f-291b-7aa2-897e-1b9a6fb3f082",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
