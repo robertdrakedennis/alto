@@ -1,0 +1,101 @@
+server/src/lostcity/systems/combat/MagicBookInterface.ts
+  s_3f4b5347620927::t_7bc038e830b208 1-8
+server/src/lostcity/systems/action-bar/ActionBarInterfaces.ts
+  s_3f4b5347620927::t_66b4a178eb4950 54-55,91-95
+  s_3f4b5347620927::t_376a02d473e501 6,87-89
+  s_3f4b5347620927::t_7bc038e830b208 12,14,31,34,38,40,46,49,59,64,66,68,70,75,78,80,90,99,104,107
+  s_3f4b5347620927::t_a99aa732561b59 20,33,100
+  s_3f4b5347620927::t_b544421d3615ce 50-53,60
+  s_3f4b5347620927::t_873eceab59a5bd 21-26
+  s_3f4b5347620927::t_1738c7aea2704c 11,13,15-16,36,57-58,61,71,96-98
+  s_3f4b5347620927::t_b2fcb6e68c975f 1-5,7-10,17-19,27-30,32,35,37,39,41-45,47-48,56,62-63,65,67,69,72-74,76-77,79,81-86,101-103,105-106,108-110
+server/src/lostcity/systems/combat/MagicSpells.ts
+  s_3f4b5347620927::t_7bc038e830b208 16,124,144,179,244,327,392
+server/src/lostcity/network/MagicE2E.integration.test.ts
+  s_3f4b5347620927::t_1df188cb0fe9eb 122,125,138,148,153,198
+  s_3f4b5347620927::t_cb761cc66835c0 205,222-226,228,232,240,243-247,280,291,299,303,308-312,314,323,329-333,346
+server/src/lostcity/systems/action-bar/PowersWindow.ts
+  s_3f4b5347620927::t_b2fcb6e68c975f 2-9,13,15,17-18,25-26,30-31,33-34,40-45,47-52,54-62,65-67,69-70,72-73,75-76,78-79,81-84,86-89,91-92,94-95,97-98,100,102-104,116,118-120,122-123,125,130-136,141-145
+  s_3f4b5347620927::t_873eceab59a5bd 27-29,35-38
+  s_3f4b5347620927::t_376a02d473e501 1,19-24,32,127,140
+  s_3f4b5347620927::t_66b4a178eb4950 10,12,14,16,39,46,53,64,68,71,74,77,80,85,90,93,96,99,101,105,108,110,117,121,124,126,128,137,139
+  s_3f4b5347620927::t_a99aa732561b59 129,138
+  s_3f4b5347620927::t_8d08f1cc120d24 11,63,106-107,109,111-115
+server/src/lostcity/systems/interfaces/Interfaces.ts
+  s_3f4b5347620927::t_b2fcb6e68c975f 41,61-65,80-81
+server/src/lostcity/systems/action-bar/BookShortcuts.ts
+  s_3f4b5347620927::t_7bc038e830b208 8,91
+  s_3f4b5347620927::t_1738c7aea2704c 93
+server/src/lostcity/network/PowersE2E.integration.test.ts
+  s_3f4b5347620927::t_5cd78c25c7d1ba 250,252,255-256
+  s_3f4b5347620927::t_7bc038e830b208 9,12,14,16,18,20,22,24,26,28,30,32,34,36,38,40,42,44,46,48,50,52,54,56,58,60,62,64,66,68,70,74,79,91,94,97,100,104,108,116,121,124,126-127,129,136,138-139,141,145,153,161,164,175,181,184,187,192,194,198,253,286,326,330
+  s_3f4b5347620927::t_bac920a2c375e4 1-8,10-11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,65,67,69,71-73,75-78,80-90,92-93,95-96,98-99,101-103,105-107,109,128,130,140,142-144,146,152,154,159-160,162-163,165-174,176-180,182-183,185-186,188-191,193,195-197,199-249,251,254,257-282,284,287-305,323-325,331-338,342-350
+  s_3f4b5347620927::t_4bd72b547fdf71 63,283,285
+  s_3f4b5347620927::t_e9ef799566d62b 306-322
+  s_3f4b5347620927::t_6edd6e8a596fed 110-115,117-120,122-123,125,131-135,137,147-151,155-158,327-329,339-341
+  s_3f4b5347620927::t_d38a06a5929d55 351-356
+server/src/lostcity/systems/action-bar/ActionBar.ts
+  s_3f4b5347620927::t_7bc038e830b208 13,159,161,164
+  s_3f4b5347620927::t_376a02d473e501 33,158,160,162-163,165-167
+  s_3f4b5347620927::t_873eceab59a5bd 1,11-12,52-53,65-66,72-73,80,89-90,135,139,141-142,155,171-172,370
+  s_3f4b5347620927::t_1738c7aea2704c 136,138,156-157
+  s_3f4b5347620927::t_7783f42ddf61bd 168
+server/src/lostcity/protocol/handlers/Session.ts
+  s_3f4b5347620927::t_873eceab59a5bd 38-41
+server/vitest.config.ts
+  s_3f4b5347620927::t_bac920a2c375e4 44
+server/src/lostcity/systems/interfaces/HeroWindowTab.ts
+  s_3f4b5347620927::t_b2fcb6e68c975f 13-16,34-42,49,51,70
+  s_3f4b5347620927::t_666223ec7805bc 52,54-62,64-65,82-86,89-90
+  s_3f4b5347620927::t_c1fcd372ea89a1 66
+docs/server-architecture.md
+  s_3f4b5347620927::t_c0e430756cf362 525-526
+packages/domain/src/symbols/component.ts
+  s_3f4b5347620927::t_8156cb18f6a7e0 624,673-675
+packages/domain/src/symbols/interface.ts
+  s_3f4b5347620927::t_8a3611ac83143b 118
+packages/domain/src/symbols/param.ts
+  s_3f4b5347620927::t_618f8ae2146718 85,87,89-91
+packages/domain/src/symbols/struct.ts
+  s_3f4b5347620927::t_6499326a851309 28
+packages/domain/src/symbols/varbit.ts
+  s_3f4b5347620927::t_cc1746a80281a4 221
+revisions/910/symbols/component.sym
+  s_3f4b5347620927::t_a2e36067624220 531,559
+revisions/910/symbols/interface.sym
+  s_3f4b5347620927::t_aa334944f31f00 116
+revisions/910/symbols/param.sym
+  s_3f4b5347620927::t_96429482ba0662 83,85,87-89
+revisions/910/symbols/struct.sym
+  s_3f4b5347620927::t_571af7aa285fe1 26
+revisions/910/symbols/varbit.sym
+  s_3f4b5347620927::t_094d1c22a5149b 219
+tools/client910/crates/rs910-symbols/src/component.rs
+  s_3f4b5347620927::t_0ee9383ac8b96d 1288-1289,1396-1402
+tools/client910/crates/rs910-symbols/src/interface.rs
+  s_3f4b5347620927::t_3138b997ba2b6f 232-233
+tools/client910/crates/rs910-symbols/src/param.rs
+  s_3f4b5347620927::t_e5507741d441d9 167-168,170-171,174-179
+tools/client910/crates/rs910-symbols/src/structs.rs
+  s_3f4b5347620927::t_95e0c786f29a83 52-53
+tools/client910/crates/rs910-symbols/src/varbit.rs
+  s_3f4b5347620927::t_d73b168993b99c 438-439
+tools/refactor/test-inventory.txt
+  s_3f4b5347620927::t_b6c760eb9d230a 1682,1717-1718,1991-1994,2021,2047,2049,2063,2176
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "8b1cbcc0f4cea2a2e27bd039974adc1746dbd5ef",
+  "prompts": {},
+  "sessions": {
+    "s_3f4b5347620927": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1052f-291b-7aa2-897e-1b9a6fb3f082",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}

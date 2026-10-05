@@ -1,0 +1,33 @@
+tools/client910/fixtures/session-replay/abilities/record.py
+  s_3f4b5347620927::t_15b8088fe551ce 1-140
+tools/client910/fixtures/session-replay/abilities/record.sh
+  s_3f4b5347620927::t_1df8b9d919149b 1-4
+tools/client910/fixtures/session-replay/abilities/seed.mjs
+  s_3f4b5347620927::t_58ca72e04cdf32 1-107
+tools/client910/fixtures/session-replay/abilities/server-trace.jsonl
+  s_3f4b5347620927::t_cd85027e05f55d 1-314
+tools/client910/fixtures/session-replay/abilities/server.mjs
+  s_3f4b5347620927::t_a789e2441ca18c 1-15
+tools/client910/src/app.rs
+  s_3f4b5347620927::t_2562242ae9823d 303-306
+tools/client910/src/scenario_abilities.rs
+  s_3f4b5347620927::t_cdac6027f6be9b 1-398
+tools/refactor/test-inventory.txt
+  s_3f4b5347620927::t_ef402c809d2a20 72
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "0fdd47fb94fedd39a653fdc05b6c5e59a8e3e412",
+  "prompts": {},
+  "sessions": {
+    "s_3f4b5347620927": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1052f-291b-7aa2-897e-1b9a6fb3f082",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
