@@ -1,0 +1,53 @@
+docs/server-architecture.md
+  s_3f4b5347620927::t_e629865d3c6405 686-693
+server/src/lostcity/data/SpecialCombatData.ts
+  s_3f4b5347620927::t_0e862c2e483d03 31-32,36,38,61-63
+server/src/lostcity/engine/tick/WorldPhases.ts
+  s_3f4b5347620927::t_2eef74aa2cfb03 49-50,55-64
+server/src/lostcity/network/LegacySpecialsE2E.integration.test.ts
+  s_3f4b5347620927::t_92a8730b5e1504 10,381-486
+server/src/lostcity/systems/combat/AbilityMovement.ts
+  s_3f4b5347620927::t_198fc8963676e2 1-2,182-196
+server/src/lostcity/systems/combat/AbilitySessionServices.ts
+  s_3f4b5347620927::t_1525e7626b1688 5-6,9,126
+server/src/lostcity/systems/combat/CombatCondition.ts
+  s_3f4b5347620927::t_e189861f356ec5 47-52,88,121
+server/src/lostcity/systems/combat/CombatStatuses.test.ts
+  s_3f4b5347620927::t_8b532113fe1d0b 572-696
+server/src/lostcity/systems/combat/CombatStatuses.ts
+  s_3f4b5347620927::t_fa4c8fc4311e13 126-133,191,267,304-319,369-382,430-433,438
+server/src/lostcity/systems/combat/PlayerSpecials.ts
+  s_3f4b5347620927::t_f2d569c5f52a6e 45-46,59-60,95-118,127-128,222-240,248,256,266-267,273-274,276-284,289-299,301-305
+server/src/lostcity/systems/combat/SpecialDamage.ts
+  s_3f4b5347620927::t_b3c7db6e089345 1,33,72,77-78,80-88,90,92
+server/src/lostcity/systems/combat/SpecialEffects.ts
+  s_3f4b5347620927::t_ee0b5f96ab650a 1,97-109,111-129
+server/src/lostcity/systems/equipment/SpecialEquipment.ts
+  s_3f4b5347620927::t_53f58299cb86b7 12-13,22-28,40,43,64
+server/src/lostcity/tools/data/domains/combat/MagicStage.ts
+  s_3f4b5347620927::t_9e1626b7ab718a 3-4,153-169,174
+server/src/lostcity/tools/data/domains/combat/RangedStage.ts
+  s_3f4b5347620927::t_09943498419dce 10-11,40,44
+server/src/lostcity/tools/data/domains/combat/SpecialAvailabilityStage.ts
+  s_3f4b5347620927::t_0d5eee32a46d24 1-73
+server/src/lostcity/tools/data/domains/combat/SpecialStage.ts
+  s_3f4b5347620927::t_951b6f7596a2a0 1,66-70,77,88,90-92,108-115,147-222,228,235,317-324,337,343,355-357,359-360,362-366,372-383,386-389,406-407
+server/src/lostcity/tools/data/domains/combat/index.ts
+  s_3f4b5347620927::t_b84b491abb7b0a 100
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "465abb73aa0ab85e421422f881849c0e13c87e5b",
+  "prompts": {},
+  "sessions": {
+    "s_3f4b5347620927": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1052f-291b-7aa2-897e-1b9a6fb3f082",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
