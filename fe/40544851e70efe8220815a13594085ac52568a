@@ -1,0 +1,75 @@
+docs/client-status.md
+  s_3f4b5347620927::t_908ed415f0586d 15-18,32-47
+docs/server-architecture.md
+  s_3f4b5347620927::t_f7f631d63884a5 186,193,215,246,252,256,262,270,274,289,292,316,331,353,386,417,424,433,438,444,540,596-603
+server/src/lostcity/data/AbilityData.ts
+  s_3f4b5347620927::t_7ec6f6f24bebc8 7-8,32-34
+server/src/lostcity/network/AbilitiesE2E.integration.test.ts
+  s_3f4b5347620927::t_d04a97e61d01aa 1-2,4,8,10,21-22,1009-1240
+server/src/lostcity/network/NpcSpotMasks.testkit.ts
+  s_3f4b5347620927::t_cd73197beaf883 1-156
+server/src/lostcity/network/SocketE2E.testkit.ts
+  s_3f4b5347620927::t_31777ce0bc2b02 1281-1298,1603-1605,1667,1692,1700,1738,1751
+server/src/lostcity/systems/combat/Abilities.ts
+  s_3f4b5347620927::t_b96c7e0f283c72 1,171
+server/src/lostcity/systems/combat/AbilityLaunchPresentation.test.ts
+  s_3f4b5347620927::t_a862c06979ceea 1-63
+server/src/lostcity/systems/combat/AbilityLaunchPresentation.ts
+  s_3f4b5347620927::t_9899c1b956673d 1-108
+server/src/lostcity/systems/combat/AbilityPresentation.test.ts
+  s_3f4b5347620927::t_c32bf1aadf8bfc 1-52
+server/src/lostcity/systems/combat/AbilityPresentation.ts
+  s_3f4b5347620927::t_6ce2aa1ea375dd 1-50
+server/src/lostcity/systems/combat/AbilityRuntime.ts
+  s_3f4b5347620927::t_08fcb088193cd9 1-2,56,67,220-224,309,360-361,388,438,475-478
+server/src/lostcity/systems/combat/PlayerCombat.ts
+  s_3f4b5347620927::t_d21def4ddddbca 1,4-6,21-22,37-42,203,206,214-229
+server/src/lostcity/tools/data/domains/abilities/NativeCatalog.ts
+  s_3f4b5347620927::t_abe28e4c652798 116-123,149-151
+server/src/lostcity/tools/data/domains/abilities/SourceContracts.test.ts
+  s_3f4b5347620927::t_9fba221c44622d 52-53,759-768
+server/vitest.config.ts
+  s_3f4b5347620927::t_91f30d5ebbac08 5-8,21-24,31-32,50
+tools/Cargo.toml
+  s_3f4b5347620927::t_669eba844ca31f 62-64,66
+tools/client910/fixtures/session-replay/ability-gameplay/ability-events.json
+  s_3f4b5347620927::t_46d279da5fef07 1-72
+tools/client910/fixtures/session-replay/ability-gameplay/life-events-raw.json
+  s_3f4b5347620927::t_a502baafc395e0 1-851
+tools/client910/fixtures/session-replay/ability-gameplay/life-events.json
+  s_3f4b5347620927::t_bda28c68d92d4f 1-902
+tools/client910/fixtures/session-replay/ability-gameplay/plan.json
+  s_3f4b5347620927::t_196469f065b46b 1-46
+tools/client910/fixtures/session-replay/ability-gameplay/player-publications.json
+  s_3f4b5347620927::t_08ec9fe4b8515f 1-1023
+tools/client910/fixtures/session-replay/ability-gameplay/publication-alignment.json
+  s_3f4b5347620927::t_f60cd4efc50633 1-7
+tools/client910/fixtures/session-replay/ability-gameplay/record.py
+  s_3f4b5347620927::t_301e95b251bd07 27-32,38,53,159-200
+tools/client910/fixtures/session-replay/ability-gameplay/seed.mjs
+  s_3f4b5347620927::t_4955f2da0a2ac7 1-13,32-39,55-56,59,61,63-67,70-113,115-136,138-168
+tools/client910/fixtures/session-replay/ability-gameplay/server-trace.jsonl
+  s_3f4b5347620927::t_8227346f071e4e 1-172
+tools/client910/fixtures/session-replay/ability-gameplay/server.mjs
+  s_3f4b5347620927::t_268bdc128a9eee 3-10,16-17,22-29,32-42,44-45,47-49,51-111,114-161
+tools/client910/src/scenario_abilities.rs
+  s_3f4b5347620927::t_2f94e3ae9b6453 177-185,361-379,382-385,431-1389
+tools/refactor/replay-gate.txt
+  s_3f4b5347620927::t_872002256a05b9 97-100
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "fe40544851e70efe8220815a13594085ac52568a",
+  "prompts": {},
+  "sessions": {
+    "s_3f4b5347620927": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1052f-291b-7aa2-897e-1b9a6fb3f082",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
