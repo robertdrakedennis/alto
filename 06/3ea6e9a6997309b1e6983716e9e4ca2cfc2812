@@ -1,0 +1,31 @@
+docs/client-status.md
+  s_3f4b5347620927::t_95e51e3dd18d36 27
+tools/client910/fixtures/session-replay/legacy-locate/locate-receipts.jsonl
+  s_3f4b5347620927::t_dc6a06253c7d40 1-424
+tools/client910/fixtures/session-replay/legacy-locate/native-energy-inputs.json
+  s_3f4b5347620927::t_860cbc1d3079fe 1-45
+tools/client910/fixtures/session-replay/legacy-locate/plan.json
+  s_3f4b5347620927::t_bd77e15a74069d 1-175
+tools/client910/fixtures/session-replay/legacy-locate/server-trace.jsonl
+  s_3f4b5347620927::t_d60ee7eb0d1023 1-406
+tools/client910/src/scenario_legacy_specials.rs
+  s_3f4b5347620927::t_3e474a0df8577b 229-795
+tools/refactor/test-inventory.txt
+  s_3f4b5347620927::t_89ca8fdbcb0d15 92
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "063ea6e9a6997309b1e6983716e9e4ca2cfc2812",
+  "prompts": {},
+  "sessions": {
+    "s_3f4b5347620927": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1052f-291b-7aa2-897e-1b9a6fb3f082",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
