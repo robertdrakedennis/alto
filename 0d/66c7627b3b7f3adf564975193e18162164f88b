@@ -1,0 +1,25 @@
+docs/server-architecture.md
+  s_3f4b5347620927::t_18ea1cfc29b5ce 892-896,929-934
+server/src/lostcity/content/world/bosses/GwdDungeon.ts
+  s_3f4b5347620927::t_46e6256c54b242 3,27-28,30-31,137-141,143-146
+server/src/lostcity/network/GwdE2E.integration.test.ts
+  s_3f4b5347620927::t_d8bb704d913897 1-225
+tools/refactor/test-inventory.txt
+  s_3f4b5347620927::t_ecff724f72f3e6 48,1913,1976,2264-2265,2272,2314,2335,2438,2456
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "0d66c7627b3b7f3adf564975193e18162164f88b",
+  "prompts": {},
+  "sessions": {
+    "s_3f4b5347620927": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1052f-291b-7aa2-897e-1b9a6fb3f082",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
