@@ -1,0 +1,37 @@
+docs/server-architecture.md
+  s_3f4b5347620927::t_d03899b7a8b68f 898-901,936-940
+packages/domain/src/symbols/location.ts
+  s_3f4b5347620927::t_6f97834e3a0661 130
+packages/domain/src/symbols/obj.ts
+  s_3f4b5347620927::t_3803952199d62a 327
+revisions/910/symbols/location.sym
+  s_3f4b5347620927::t_bd1400ac358f8a 120
+revisions/910/symbols/obj.sym
+  s_3f4b5347620927::t_9c198e2fdd9e53 325
+server/src/lostcity/network/GwdE2E.integration.test.ts
+  s_3f4b5347620927::t_dc14ae753c80db 4,6-8,10,29-30,53-66,191,246-335
+server/src/lostcity/tools/data/domains/instances/GwdStage.ts
+  s_3f4b5347620927::t_f5eb7389eb35af 8,262-274
+tools/client910/crates/rs910-symbols/src/location.rs
+  s_3f4b5347620927::t_4044d00832aa97 240-241
+tools/client910/crates/rs910-symbols/src/obj.rs
+  s_3f4b5347620927::t_98f8e00794be2b 650-651
+tools/refactor/test-inventory.txt
+  s_3f4b5347620927::t_cbb0f920751df7 48,2307
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "35e09cbfb6608106b903021592cb35634cff8517",
+  "prompts": {},
+  "sessions": {
+    "s_3f4b5347620927": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1052f-291b-7aa2-897e-1b9a6fb3f082",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
