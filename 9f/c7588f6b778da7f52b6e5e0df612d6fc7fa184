@@ -1,0 +1,109 @@
+docs/server-architecture.md
+  s_3f4b5347620927::t_181175a9a5325d 659,665-675
+packages/domain/src/symbols/component.ts
+  s_3f4b5347620927::t_9c1b49346e6179 583-589
+packages/domain/src/symbols/interface.ts
+  s_3f4b5347620927::t_003871162632f8 67
+packages/domain/src/symbols/struct.ts
+  s_3f4b5347620927::t_17725ebf98ab52 13,25,28-29,31-32,34,44-45,56
+packages/domain/src/symbols/varbit.ts
+  s_3f4b5347620927::t_5bc6c73bcecccb 150,160-161,192,204,240
+packages/domain/src/symbols/varp.ts
+  s_3f4b5347620927::t_366d5d2a16c70f 374
+revisions/910/symbols/component.sym
+  s_3f4b5347620927::t_d54e49d69f092f 495-499
+revisions/910/symbols/interface.sym
+  s_3f4b5347620927::t_704f4ac9438fc3 65
+revisions/910/symbols/struct.sym
+  s_3f4b5347620927::t_e6cf8e69852936 11,23,26-27,29-30,32,42-43,54
+revisions/910/symbols/varbit.sym
+  s_3f4b5347620927::t_ba036b3497a05a 148,158-159,190,202,238
+revisions/910/symbols/varp.sym
+  s_3f4b5347620927::t_c46bcf7dfe40e0 372
+server/src/lostcity/data/LegacyCombatData.ts
+  s_3f4b5347620927::t_4a3f6311c155ee 1-25
+server/src/lostcity/engine/devcommands/PlayerCommands.ts
+  s_3f4b5347620927::t_e56d0409bc42d0 12-18
+server/src/lostcity/network/LegacyRulesE2E.integration.test.ts
+  s_3f4b5347620927::t_7394cb9689100c 1-475
+server/src/lostcity/network/MagicE2E.integration.test.ts
+  s_3f4b5347620927::t_776931bdf8c36c 112-113
+server/src/lostcity/network/RangedE2E.integration.test.ts
+  s_3f4b5347620927::t_b2cfdfc77da1c5 81-82
+server/src/lostcity/protocol/handlers/Interface.ts
+  s_3f4b5347620927::t_70f84bb31aa874 41
+server/src/lostcity/systems/combat/Combat.ts
+  s_3f4b5347620927::t_9e2ff63f818761 2,10,57,124-125,255,278,355,410-411,416,418-426,430-439
+server/src/lostcity/systems/combat/CombatOptions.ts
+  s_3f4b5347620927::t_864e6f51a075c3 1-243
+server/src/lostcity/systems/combat/Combatant.ts
+  s_3f4b5347620927::t_ceb2de1f748008 70-76,86,134-135
+server/src/lostcity/systems/combat/DeathExperience.test.ts
+  s_3f4b5347620927::t_70f59d9f769950 1-128
+server/src/lostcity/systems/combat/Experience.ts
+  s_3f4b5347620927::t_8d5cfda2e2d24e 32-88
+server/src/lostcity/systems/combat/LegacyCombat.ts
+  s_3f4b5347620927::t_4530e496bfa658 1-11
+server/src/lostcity/systems/combat/PlayerCombat.ts
+  s_3f4b5347620927::t_425df06e7c22c1 1-6,10,60,70-81,91,136-142,169-179
+server/src/lostcity/systems/interfaces/SettingsWindow.ts
+  s_3f4b5347620927::t_2b487d6e5c04ae 192,233
+server/src/lostcity/systems/npc/NpcPopulation.ts
+  s_3f4b5347620927::t_0836492119feaf 74
+server/src/lostcity/systems/npc/Respawns.ts
+  s_3f4b5347620927::t_17dc5c06e594f0 20,22,25,36
+server/src/lostcity/systems/session/LoginInterfaces.ts
+  s_3f4b5347620927::t_02aea5a4b6a995 122
+server/src/lostcity/systems/session/Session.ts
+  s_3f4b5347620927::t_e43fd7e2dadca7 10,61-62,87
+server/src/lostcity/systems/stats/SkillSet.test.ts
+  s_3f4b5347620927::t_5d41062d1d613e 48-111
+server/src/lostcity/tools/data/domains/combat/LegacyStage.ts
+  s_3f4b5347620927::t_2f911226637705 1-42
+server/src/lostcity/tools/data/domains/combat/index.ts
+  s_3f4b5347620927::t_6b1dc927aa079a 1,15-16,49,53,74,90
+tools/client910/crates/rs910-symbols/src/component.rs
+  s_3f4b5347620927::t_fb3079026bbdcb 1203-1217
+tools/client910/crates/rs910-symbols/src/interface.rs
+  s_3f4b5347620927::t_1f19c3cfc5dc8d 130-131
+tools/client910/crates/rs910-symbols/src/structs.rs
+  s_3f4b5347620927::t_337b9ec5e3ca04 22-23,46-47,52-55,58-61,64-65,84-87,108-109
+tools/client910/crates/rs910-symbols/src/varbit.rs
+  s_3f4b5347620927::t_ba62f1b1a6e413 296-297,316-319,380-381,404-405,476-477
+tools/client910/crates/rs910-symbols/src/varp.rs
+  s_3f4b5347620927::t_e49ea9d1371b5c 745-746
+tools/client910/fixtures/session-replay/legacy-combat/combat-receipts.jsonl
+  s_3f4b5347620927::t_f403b79c6b02fa 1-48
+tools/client910/fixtures/session-replay/legacy-combat/record.py
+  s_3f4b5347620927::t_9b299400734f29 1-131
+tools/client910/fixtures/session-replay/legacy-combat/seed.mjs
+  s_3f4b5347620927::t_2373387b65f1a8 1-123
+tools/client910/fixtures/session-replay/legacy-combat/server-trace.jsonl
+  s_3f4b5347620927::t_478a2f265dcb47 1-328
+tools/client910/fixtures/session-replay/legacy-combat/server.mjs
+  s_3f4b5347620927::t_f158c0c0c23996 1-31
+tools/client910/src/app.rs
+  s_3f4b5347620927::t_36c21d3d6f1c7e 360-363
+tools/client910/src/scenario_legacy_combat.rs
+  s_3f4b5347620927::t_9eedac716e1e58 1-357
+tools/refactor/replay-gate.txt
+  s_3f4b5347620927::t_2ce97a3d1274f0 104-106
+tools/refactor/test-inventory.txt
+  s_3f4b5347620927::t_5fe83f5c01d137 4,48,89,1638,1693-1696,1926,1934,2090,2115,2126,2131,2192,2206,2214,2272,2339
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "9fc7588f6b778da7f52b6e5e0df612d6fc7fa184",
+  "prompts": {},
+  "sessions": {
+    "s_3f4b5347620927": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1052f-291b-7aa2-897e-1b9a6fb3f082",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
