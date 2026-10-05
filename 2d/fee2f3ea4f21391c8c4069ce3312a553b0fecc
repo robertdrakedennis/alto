@@ -1,0 +1,79 @@
+docs/server-architecture.md
+  s_3f4b5347620927::t_ceb89a01ce808e 676-686
+packages/domain/src/symbols/component.ts
+  s_3f4b5347620927::t_60d98a37a38007 741,743,745,747-749,751-754,756,758
+packages/domain/src/symbols/npc.ts
+  s_3f4b5347620927::t_bdf05813ee70fd 14,42
+packages/domain/src/symbols/obj.ts
+  s_3f4b5347620927::t_7f2cd4223003ec 307
+packages/domain/src/symbols/varbit.ts
+  s_3f4b5347620927::t_8e2f13b9a71ca6 272,275-283,285-293,295
+revisions/910/symbols/component.sym
+  s_3f4b5347620927::t_82a6240c68d1a6 602,604,606,608-610,612-615,617,619
+revisions/910/symbols/npc.sym
+  s_3f4b5347620927::t_cdd156a47fd71f 12,40
+revisions/910/symbols/obj.sym
+  s_3f4b5347620927::t_362121d2480d9b 305
+revisions/910/symbols/varbit.sym
+  s_3f4b5347620927::t_7a3b3bf77e5063 270,273-281,283-291,293
+server/src/lostcity/data/SlayerData.ts
+  s_3f4b5347620927::t_522a1248de38e6 20-35,49-51,65-67
+server/src/lostcity/network/SlayerE2E.integration.test.ts
+  s_3f4b5347620927::t_c9ab7ea1148a30 2,12-13,20-25,176,257,292-406
+server/src/lostcity/systems/equipment/EquipmentContent.ts
+  s_3f4b5347620927::t_8e5339fd90a755 40
+server/src/lostcity/systems/equipment/EquipmentRules.ts
+  s_3f4b5347620927::t_96870795d939ea 26-27
+server/src/lostcity/systems/equipment/EquipmentStats.ts
+  s_3f4b5347620927::t_60ea6cecea89b0 150,165,195-196,198-199
+server/src/lostcity/systems/equipment/SlayerEquipment.ts
+  s_3f4b5347620927::t_4c57935e91ac23 1-2,14-25,28
+server/src/lostcity/systems/npc/NpcCombat.ts
+  s_3f4b5347620927::t_86e21bb3e82f76 48-54,78,351
+server/src/lostcity/systems/npc/NpcStats.ts
+  s_3f4b5347620927::t_066e6d03fc78bc 21,41,51
+server/src/lostcity/systems/skilling/Production.ts
+  s_3f4b5347620927::t_a005c665aba339 123-124,165
+server/src/lostcity/systems/slayer/PlayerSlayer.ts
+  s_3f4b5347620927::t_8df84a7737e596 120-121,123-126,128-129,131-150,180-184,216-221,271-302
+server/src/lostcity/systems/slayer/Slayer.ts
+  s_3f4b5347620927::t_2fd63a9279a72b 2-4,30-31,43-44,55,63-65,129,133,138-141,157,160-210,228
+server/src/lostcity/systems/slayer/SlayerElites.ts
+  s_3f4b5347620927::t_edf35672a3ce89 1-74
+server/src/lostcity/systems/slayer/SlayerFinishing.ts
+  s_3f4b5347620927::t_0d01ed930c7453 1-98
+server/src/lostcity/systems/slayer/SlayerState.ts
+  s_3f4b5347620927::t_2c69ac4415af1b 11-21,30,37
+server/src/lostcity/tools/data/domains/slayer/EliteStage.ts
+  s_3f4b5347620927::t_604afd60d1fc46 1-53
+server/src/lostcity/tools/data/domains/slayer/RequirementsStage.ts
+  s_3f4b5347620927::t_9fb32441242ace 1-110
+server/src/lostcity/tools/data/domains/slayer/SlayerWearStage.ts
+  s_3f4b5347620927::t_3ee9237400fd97 1-46
+server/src/lostcity/tools/data/domains/slayer/index.ts
+  s_3f4b5347620927::t_33d46217623002 2-4,231-234,338-345,370-376,388-390,397,401-403
+tools/client910/crates/rs910-symbols/src/component.rs
+  s_3f4b5347620927::t_f800336769489e 1545-1546,1549-1550,1553-1554,1557-1562,1565-1572,1575-1576,1579-1580
+tools/client910/crates/rs910-symbols/src/npc.rs
+  s_3f4b5347620927::t_fadc9796b4d318 24-25,80-81
+tools/client910/crates/rs910-symbols/src/obj.rs
+  s_3f4b5347620927::t_867e6ea036dc30 610-611
+tools/client910/crates/rs910-symbols/src/varbit.rs
+  s_3f4b5347620927::t_811a9646e76e5e 540-541,546-563,566-583,586-587
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "2dfee2f3ea4f21391c8c4069ce3312a553b0fecc",
+  "prompts": {},
+  "sessions": {
+    "s_3f4b5347620927": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1052f-291b-7aa2-897e-1b9a6fb3f082",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
