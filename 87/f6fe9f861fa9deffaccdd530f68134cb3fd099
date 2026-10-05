@@ -1,0 +1,31 @@
+tools/client910/fixtures/session-replay/barrows/combined.py
+  s_3f4b5347620927::t_30356e62178ea1 1-70
+tools/client910/fixtures/session-replay/barrows/driver.py
+  s_3f4b5347620927::t_a0bae5b2c9e4b5 1-1048
+tools/client910/fixtures/session-replay/barrows/food-receipts.mjs
+  s_3f4b5347620927::t_0c6961b4bede23 1-51
+tools/client910/fixtures/session-replay/barrows/repair-receipts.mjs
+  s_3f4b5347620927::t_f7c233ca7936cf 1-41
+tools/client910/fixtures/session-replay/barrows/repair_driver.py
+  s_3f4b5347620927::t_b32a4865d5f088 1-297
+tools/client910/fixtures/session-replay/barrows/seed.mjs
+  s_3f4b5347620927::t_0b96191af66f15 1,4-5,7-17,19-45,47,49-91,94-102,104-138,140-153
+tools/client910/fixtures/session-replay/barrows/server.mjs
+  s_3f4b5347620927::t_a2a01964cc71b2 1,4-7,11-25,29,32-36,38-49,52-66,68-95
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "87f6fe9f861fa9deffaccdd530f68134cb3fd099",
+  "prompts": {},
+  "sessions": {
+    "s_3f4b5347620927": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1052f-291b-7aa2-897e-1b9a6fb3f082",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
