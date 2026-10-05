@@ -1,0 +1,29 @@
+packages/domain/src/symbols/varbit.ts
+  s_3f4b5347620927::t_89f3199b410a9e 152
+revisions/910/symbols/varbit.sym
+  s_3f4b5347620927::t_bb298ef0db1e08 150
+server/src/lostcity/network/LegacyCombatE2E.integration.test.ts
+  s_3f4b5347620927::t_a9e335da8f3dc0 80,92
+server/src/lostcity/network/LegacyRulesE2E.integration.test.ts
+  s_3f4b5347620927::t_27fd78cd637d86 334
+tools/client910/crates/rs910-symbols/src/varbit.rs
+  s_3f4b5347620927::t_f6200a9998e86c 300-301
+tools/client910/src/scenario_abilities.rs
+  s_3f4b5347620927::t_5e0c0619d7b5d3 1451,1453,1470,1472
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "9e892993a4718ca3e97fe91d75a6d41e8caa6582",
+  "prompts": {},
+  "sessions": {
+    "s_3f4b5347620927": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1052f-291b-7aa2-897e-1b9a6fb3f082",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
