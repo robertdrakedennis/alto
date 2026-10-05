@@ -1,0 +1,89 @@
+docs/server-architecture.md
+  s_3f4b5347620927::t_362726d0526d8a 717-722
+server/src/lostcity/content/objs/take.ts
+  s_3f4b5347620927::t_246c4cb3301bb6 18
+server/src/lostcity/network/AbilitiesE2E.integration.test.ts
+  s_3f4b5347620927::t_c07f47260f5e33 1019
+server/src/lostcity/network/GatheringGapsE2E.integration.test.ts
+  s_3f4b5347620927::t_4dbb6d44235d20 199
+server/src/lostcity/network/SkillsE2E.testkit.ts
+  s_3f4b5347620927::t_7c43c9c983539b 1,55-56,137
+server/src/lostcity/systems/appearance/PlayerAppearance.ts
+  s_3f4b5347620927::t_8dfa9554a3cd04 1,118
+server/src/lostcity/systems/bank/BankSession.integration.test.ts
+  s_3f4b5347620927::t_ca1432af4f7027 1,92
+server/src/lostcity/systems/bank/BankTransfers.ts
+  s_3f4b5347620927::t_bce498cfda2303 1,11-12,84,108,110,136,141,148,175
+server/src/lostcity/systems/combat/AbilityEquipment.ts
+  s_3f4b5347620927::t_f689890a027b88 1,67
+server/src/lostcity/systems/combat/DeathOffice.ts
+  s_3f4b5347620927::t_5ba65455d73a88 1,319
+server/src/lostcity/systems/combat/Graves.ts
+  s_3f4b5347620927::t_c6f16d1b56afd8 1,144-145,148
+server/src/lostcity/systems/combat/MagicSpells.ts
+  s_3f4b5347620927::t_db3a59bee3168d 1,172,456
+server/src/lostcity/systems/combat/PlayerDeath.ts
+  s_3f4b5347620927::t_b2752dac0c35c3 1,31
+server/src/lostcity/systems/equipment/Equipment.integration.test.ts
+  s_3f4b5347620927::t_af0b7c54c02e4e 387-459
+server/src/lostcity/systems/equipment/Equipment.ts
+  s_3f4b5347620927::t_023cd8813984db 1,60-63,78,90,104,115-120,161,174,207
+server/src/lostcity/systems/equipment/EquipmentPreview.ts
+  s_3f4b5347620927::t_bb1a7e0be033ab 1,11
+server/src/lostcity/systems/equipment/EquipmentRules.ts
+  s_3f4b5347620927::t_90dbfcf90aa9d6 1,15
+server/src/lostcity/systems/equipment/EquipmentStats.ts
+  s_3f4b5347620927::t_46bfc7f23b3d93 1,123
+server/src/lostcity/systems/equipment/PlayerEquipment.ts
+  s_3f4b5347620927::t_e33238eb5fda8f 1-3,10-12,25-28,150-209,238,288,291,298
+server/src/lostcity/systems/grand-exchange/ExchangeStore.ts
+  s_3f4b5347620927::t_b5921da947f9f7 1,35
+server/src/lostcity/systems/grand-exchange/Holdings.ts
+  s_3f4b5347620927::t_63790167278156 52
+server/src/lostcity/systems/inventory/Bank.ts
+  s_3f4b5347620927::t_2875c970eac1d5 1-4,90,97,130,132-133,136,145,156,175-176,179,185-187,207
+server/src/lostcity/systems/inventory/Container.ts
+  s_3f4b5347620927::t_49c2c44d9c6a0b 1,23,77,97-98,142-144,149,161,178-183,201-202,210,225
+server/src/lostcity/systems/inventory/Inventories.ts
+  s_3f4b5347620927::t_146c6a1891bb57 1,54,116-121,190-193,369,381-385
+server/src/lostcity/systems/inventory/Inventory.ts
+  s_3f4b5347620927::t_8eb8b4164a5c1d 1-4,30,37,70
+server/src/lostcity/systems/inventory/InventoryItem.ts
+  s_3f4b5347620927::t_4f673d7f88d70d 1-79
+server/src/lostcity/systems/inventory/ItemCharges.test.ts
+  s_3f4b5347620927::t_5112eb0b2ded74 1-140
+server/src/lostcity/systems/inventory/ItemCharges.ts
+  s_3f4b5347620927::t_79c1e6de8a9aa2 1-103
+server/src/lostcity/systems/inventory/Trade.ts
+  s_3f4b5347620927::t_e33974d7708bed 1-4,7-8,53,64-66,68,89,144-155,185-196,254,257,260,263
+server/src/lostcity/systems/loot/GroundObjects.ts
+  s_3f4b5347620927::t_cb16ae69bd713d 1,28,47,84-85,93
+server/src/lostcity/systems/session/AccountFile.ts
+  s_3f4b5347620927::t_a57c882b017c67 1,27,37,40-42,44-46,159-173
+server/src/lostcity/systems/shop/ShopSession.ts
+  s_3f4b5347620927::t_89bf4a5cc2e55f 376
+server/src/lostcity/systems/skilling/Backpack.ts
+  s_3f4b5347620927::t_561f57aa56c7e5 1,47,49,55,62,69,79
+server/src/lostcity/systems/trade/PendingSettlement.ts
+  s_3f4b5347620927::t_275e30452ab60f 1,17
+server/src/lostcity/systems/trade/TradeRecovery.ts
+  s_3f4b5347620927::t_941be899a4da93 1,41
+server/src/lostcity/systems/trade/Trading.ts
+  s_3f4b5347620927::t_bbb5bc902628cb 1,231,249
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "7d47b3b25875e24c3a4fe6a8a12f62e0f07e2c4b",
+  "prompts": {},
+  "sessions": {
+    "s_3f4b5347620927": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1052f-291b-7aa2-897e-1b9a6fb3f082",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
