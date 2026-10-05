@@ -1,0 +1,43 @@
+docs/server-architecture.md
+  s_3f4b5347620927::t_c08e3ebc7b5c63 604
+server/src/lostcity/engine/tick/TickPhases.test.ts
+  s_3f4b5347620927::t_a1baf8a07292f1 70,72
+server/src/lostcity/network/AbilityRestorationE2E.integration.test.ts
+  s_3f4b5347620927::t_5f692a16aa5da2 72-77,95-99,151-154,184,203,235-248,268-272
+server/src/lostcity/network/AbilityUniqueE2E.integration.test.ts
+  s_3f4b5347620927::t_50d7d9c2e350a7 30-31,85-91,96,129,149-153,161,193-197,211-214
+server/src/lostcity/systems/combat/AbilityBalancedLife.test.ts
+  s_3f4b5347620927::t_61cd413e59f749 48-53,58-63
+server/src/lostcity/systems/combat/AbilityBalancedLife.ts
+  s_3f4b5347620927::t_a7939d4e7ed5cf 43,52-61,90-93,98-114
+server/src/lostcity/systems/combat/AbilityRestoration.ts
+  s_3f4b5347620927::t_031a5c5130d375 90-95
+server/src/lostcity/systems/combat/AbilityRuntime.ts
+  s_3f4b5347620927::t_09e39a0ca326c6 548-549
+server/src/lostcity/systems/combat/AbilityTaunt.test.ts
+  s_3f4b5347620927::t_bb44761f5330de 18-20
+server/src/lostcity/systems/combat/AbilityTaunt.ts
+  s_3f4b5347620927::t_67f900202c0bb4 21-22
+server/src/lostcity/systems/combat/AbilityUniqueEffects.ts
+  s_3f4b5347620927::t_92a2e6ae6d84e9 22,32-37,41,45-50,76-87,128,130,138-140,148-156,165
+server/src/lostcity/systems/movement/Movement.ts
+  s_3f4b5347620927::t_020ec9ec8847b4 226
+tools/refactor/test-inventory.txt
+  s_3f4b5347620927::t_48d16b87c77f6e 48,1882-1883,1984,2078,2085,2095,2097-2098,2101,2113-2114,2137,2150,2194,2203,2263,2302
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "4ead7d727d7668b449da448fc42dc8cb30e8563f",
+  "prompts": {},
+  "sessions": {
+    "s_3f4b5347620927": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1052f-291b-7aa2-897e-1b9a6fb3f082",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
