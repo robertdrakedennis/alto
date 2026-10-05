@@ -1,0 +1,27 @@
+docs/client-status.md
+  s_3f4b5347620927::t_73d39f69164daf 95-102
+docs/engine-and-studio.md
+  s_3f4b5347620927::t_34aa84f2640147 201-209
+tools/client910/src/observed_session.rs
+  s_3f4b5347620927::t_b807c39e7cba6b 1-616
+tools/client910/src/session_replay.rs
+  s_3f4b5347620927::t_0c9125ca1734b4 244-252,305-320,359-365,389-392,462-466,529-537
+tools/refactor/test-inventory.txt
+  s_3f4b5347620927::t_b8944800e087be 4,33,44,70-71,155-158,178,219-223,675-676,1334
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "388b3fc507daae80cd44e561e0d5569721df07e0",
+  "prompts": {},
+  "sessions": {
+    "s_3f4b5347620927": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1052f-291b-7aa2-897e-1b9a6fb3f082",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
