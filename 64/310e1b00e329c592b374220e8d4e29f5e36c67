@@ -1,0 +1,14 @@
+server/src/lostcity/systems/equipment/Equipment.integration.test.ts
+  h_d26e211304196f 178,188-191,193-197
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "64310e1b00e329c592b374220e8d4e29f5e36c67",
+  "prompts": {},
+  "humans": {
+    "h_d26e211304196f": {
+      "author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
