@@ -1,0 +1,20 @@
+docs/renderer/modern-renderer.md
+  s_3f4b5347620927::t_f3da35da5a5926 26-33
+  s_3f4b5347620927::t_10e8c6d96e3e9d 847-856
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "cef8332a1d274da3bc2d7f15289c8f5d9d15ff60",
+  "prompts": {},
+  "sessions": {
+    "s_3f4b5347620927": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1052f-291b-7aa2-897e-1b9a6fb3f082",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
