@@ -1,0 +1,45 @@
+docs/server-architecture.md
+  s_3f4b5347620927::t_529ed7773c8672 719-720
+packages/domain/src/symbols/component.ts
+  s_3f4b5347620927::t_bcbc31202ec35b 584-588,590
+packages/domain/src/symbols/struct.ts
+  s_3f4b5347620927::t_7b8280d717a454 54
+packages/domain/src/symbols/varbit.ts
+  s_3f4b5347620927::t_c89737ad1ba983 160,279
+revisions/910/symbols/component.sym
+  s_3f4b5347620927::t_31e8b41f0bc27d 495-499,501
+revisions/910/symbols/struct.sym
+  s_3f4b5347620927::t_66b172d0a2c542 52
+revisions/910/symbols/varbit.sym
+  s_3f4b5347620927::t_cf2ce3cf1835a8 158,277
+server/src/lostcity/network/LegacyHudE2E.integration.test.ts
+  s_3f4b5347620927::t_8d7f6e0a7cfe52 42-53,128-129,134-138,149,178,185-196,209,316-427
+server/src/lostcity/systems/combat/CombatOptions.ts
+  s_3f4b5347620927::t_fb3823bacead1f 48-53,61,80,85-93,133-136,140,178-182,198,242-249
+server/src/lostcity/systems/combat/LegacyHud.ts
+  s_3f4b5347620927::t_d6aa86d590099b 7-8,30
+server/src/lostcity/systems/session/LoginLayout.ts
+  s_3f4b5347620927::t_029b03d67b5c30 49
+tools/client910/crates/rs910-symbols/src/component.rs
+  s_3f4b5347620927::t_19d691d06f1c3c 1206-1215,1218-1219
+tools/client910/crates/rs910-symbols/src/structs.rs
+  s_3f4b5347620927::t_2e46f39bad79c0 104-105
+tools/client910/crates/rs910-symbols/src/varbit.rs
+  s_3f4b5347620927::t_aa01c1fe920568 316-317,554-555
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "e731461deaeef49b4b952e90905a476fa49a0039",
+  "prompts": {},
+  "sessions": {
+    "s_3f4b5347620927": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1052f-291b-7aa2-897e-1b9a6fb3f082",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
