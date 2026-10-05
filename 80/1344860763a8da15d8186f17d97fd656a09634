@@ -1,0 +1,21 @@
+server/src/lostcity/network/CombatCluesE2E.integration.test.ts
+  s_3f4b5347620927::t_1ac23b1cd76d94 215-216
+server/src/lostcity/network/KingBlackDragonE2E.integration.test.ts
+  s_3f4b5347620927::t_0b0eb6d73dabe1 159-160,345,348-349
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "801344860763a8da15d8186f17d97fd656a09634",
+  "prompts": {},
+  "sessions": {
+    "s_3f4b5347620927": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1052f-291b-7aa2-897e-1b9a6fb3f082",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
