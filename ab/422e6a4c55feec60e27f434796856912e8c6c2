@@ -1,0 +1,85 @@
+docs/client-status.md
+  s_3f4b5347620927::t_7415c544961070 13-14
+docs/server-architecture.md
+  s_3f4b5347620927::t_c9022e42c494e4 656-665
+packages/domain/src/symbols/script.ts
+  s_3f4b5347620927::t_6db4131c6b3311 2,14-15
+packages/domain/src/symbols/struct.ts
+  s_3f4b5347620927::t_4194edbced864e 2,25
+revisions/910/symbols/script.sym
+  s_3f4b5347620927::t_6f826089b8de93 12-13
+revisions/910/symbols/struct.sym
+  s_3f4b5347620927::t_384fdc7d1f8a57 23
+server/src/lostcity/engine/World.ts
+  s_3f4b5347620927::t_def87484d4754e 1,74,176-177
+server/src/lostcity/network/AbilitiesE2E.integration.test.ts
+  s_3f4b5347620927::t_61ede928666382 77
+server/src/lostcity/network/AbilityDefencesE2E.integration.test.ts
+  s_3f4b5347620927::t_0047ba26a68d36 63
+server/src/lostcity/network/AbilityOpponentReductionE2E.integration.test.ts
+  s_3f4b5347620927::t_855bf4a98f99c0 58
+server/src/lostcity/network/AbilityRestorationE2E.integration.test.ts
+  s_3f4b5347620927::t_ff23c53e03ad69 68
+server/src/lostcity/network/AbilityTargetsE2E.integration.test.ts
+  s_3f4b5347620927::t_0109413022e16b 48
+server/src/lostcity/network/AbilityUniqueE2E.integration.test.ts
+  s_3f4b5347620927::t_742ee727c97e0d 66
+server/src/lostcity/network/LegacyCombatE2E.integration.test.ts
+  s_3f4b5347620927::t_3587033ca48fe6 1-144
+server/src/lostcity/network/MagicE2E.integration.test.ts
+  s_3f4b5347620927::t_8771d002e6f76d 404,441
+server/src/lostcity/network/RangedE2E.integration.test.ts
+  s_3f4b5347620927::t_103a2cabb6839c 166
+server/src/lostcity/network/RevolutionE2E.integration.test.ts
+  s_3f4b5347620927::t_c91a0fdb1f754c 45
+server/src/lostcity/network/SkillsE2E.testkit.ts
+  s_3f4b5347620927::t_005131ea517ab9 1,88-92,171-172
+server/src/lostcity/systems/action-bar/RevolutionSettings.ts
+  s_3f4b5347620927::t_1360f265f22338 1,33,36,89,105,132-140
+server/src/lostcity/systems/combat/Abilities.ts
+  s_3f4b5347620927::t_c0bcc14393164c 1,43,95,115-118,136-137,153,186-187,286-287,317-318,360,515-516
+server/src/lostcity/systems/combat/AbilityFacade.ts
+  s_3f4b5347620927::t_760b1c43c3184a 7
+server/src/lostcity/systems/combat/AbilityReactions.integration.test.ts
+  s_3f4b5347620927::t_59f4219af64079 18
+server/src/lostcity/systems/combat/AbilityVariants.integration.test.ts
+  s_3f4b5347620927::t_7306ab8c0a26cf 25
+server/src/lostcity/systems/combat/CombatMode.ts
+  s_3f4b5347620927::t_de8b098f49ac92 1-16
+server/src/lostcity/systems/session/Session.ts
+  s_3f4b5347620927::t_a33219233b2156 1,34,41-42,57,82
+server/src/lostcity/systems/session/Sessions.ts
+  s_3f4b5347620927::t_dae7f2aa4f2db2 1,18,117
+server/vitest.config.ts
+  s_3f4b5347620927::t_1690334e5f3d53 50
+tools/client910/crates/rs910-symbols/src/script.rs
+  s_3f4b5347620927::t_3617170aafdc38 24-27
+tools/client910/crates/rs910-symbols/src/structs.rs
+  s_3f4b5347620927::t_7a54671d880e42 46-47
+tools/client910/fixtures/session-replay/abilities/server.mjs
+  s_3f4b5347620927::t_eb58a55fcad6fb 3-7,11,15-22
+tools/client910/fixtures/session-replay/ability-gameplay/server.mjs
+  s_3f4b5347620927::t_9032ae7a57f2c4 18
+tools/client910/src/scenario_abilities.rs
+  s_3f4b5347620927::t_f5cbdcba49bdbf 1390-1481
+tools/refactor/replay-gate.txt
+  s_3f4b5347620927::t_fbbfaa8f1ddd90 101-103
+tools/refactor/test-inventory.txt
+  s_3f4b5347620927::t_78a4468d81dac1 4,48,74,1691,1929
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "ab422e6a4c55feec60e27f434796856912e8c6c2",
+  "prompts": {},
+  "sessions": {
+    "s_3f4b5347620927": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1052f-291b-7aa2-897e-1b9a6fb3f082",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
