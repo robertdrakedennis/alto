@@ -1,0 +1,27 @@
+docs/server-architecture.md
+  s_3f4b5347620927::t_61e80d3940c83a 623-628
+server/src/lostcity/systems/combat/AbilityReactionFixtures.testkit.ts
+  s_3f4b5347620927::t_4f66adb569884f 8,166
+server/src/lostcity/systems/combat/AbilityReactionTypes.ts
+  s_3f4b5347620927::t_f194b536f56994 14
+server/src/lostcity/systems/combat/AbilityReactions.integration.test.ts
+  s_3f4b5347620927::t_65b39e7988f26e 133-135,174,176-182
+server/src/lostcity/systems/combat/AbilityReactions.ts
+  s_3f4b5347620927::t_a751b77cc64dd1 25
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "bbfa064c36aeb0f0707a3f1fd2ef3245a48f1d38",
+  "prompts": {},
+  "sessions": {
+    "s_3f4b5347620927": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1052f-291b-7aa2-897e-1b9a6fb3f082",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
