@@ -1,0 +1,19 @@
+server/src/lostcity/tools/data/domains/combat/SpecialAvailabilityStage.ts
+  s_3f4b5347620927::t_421288bd77104a 54-60,63
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "c47c66af3d210efcc3f64405cbf229627ee00aab",
+  "prompts": {},
+  "sessions": {
+    "s_3f4b5347620927": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1052f-291b-7aa2-897e-1b9a6fb3f082",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
