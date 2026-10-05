@@ -1,0 +1,87 @@
+docs/server-architecture.md
+  s_3f4b5347620927::t_4d7f1ef4a1538d 149-162,169-170
+packages/domain/src/symbols/param.ts
+  s_3f4b5347620927::t_796b23c8ce2498 113,121
+revisions/910/symbols/param.sym
+  s_3f4b5347620927::t_2949ced07d0209 111,119
+server/src/lostcity/content/trails/index.ts
+  s_3f4b5347620927::t_c11f4e71befcb9 10,41
+server/src/lostcity/data/CombatData.ts
+  s_3f4b5347620927::t_2af0fa49614d4e 69
+server/src/lostcity/data/NpcData.ts
+  s_3f4b5347620927::t_6f63a021a4940d 2,37-38,47-65,102-103,159-179
+server/src/lostcity/systems/combat/AbilityRuntime.ts
+  s_3f4b5347620927::t_0c78b190e17f49 141
+server/src/lostcity/systems/combat/Combat.ts
+  s_3f4b5347620927::t_c03faf485160ed 256
+server/src/lostcity/systems/combat/CombatWeakness.ts
+  s_3f4b5347620927::t_86af2e0186848d 1-59
+server/src/lostcity/systems/combat/Combatant.ts
+  s_3f4b5347620927::t_81a1dcd5a3d83d 1,15,149
+server/src/lostcity/systems/combat/MagicCombat.ts
+  s_3f4b5347620927::t_17241d345013bc 20
+server/src/lostcity/systems/combat/MeleeCombat.ts
+  s_3f4b5347620927::t_0807f5cf99c5d6 92
+server/src/lostcity/systems/combat/PlayerCombat.ts
+  s_3f4b5347620927::t_c8e6bf15923068 1,138-141
+server/src/lostcity/systems/combat/RangedCombat.ts
+  s_3f4b5347620927::t_6a1d7e60afded8 20
+server/src/lostcity/systems/loot/DropTables.test.ts
+  s_3f4b5347620927::t_3113f861b77642 4,31-123
+server/src/lostcity/systems/loot/DropTables.ts
+  s_3f4b5347620927::t_be3063c11555f8 3,7-10,13-18,22,26-55,62-64,66-79,82,84-86,88-102,105-121,124,129-139,142-160,162
+server/src/lostcity/systems/loot/Loot.ts
+  s_3f4b5347620927::t_73f8eca2e8cca6 4-5,38-39
+server/src/lostcity/systems/npc/NpcCacheProfile.test.ts
+  s_3f4b5347620927::t_ffa5c7e01b70ee 1-12,16-18,42-198
+server/src/lostcity/systems/npc/NpcCacheProfile.ts
+  s_3f4b5347620927::t_0e9493d0eac320 2,43-44,71-72,120-121
+server/src/lostcity/systems/npc/NpcCombat.ts
+  s_3f4b5347620927::t_f9b683cd95ea7b 50,71-79,82,229,236-238,296,298,358
+server/src/lostcity/systems/npc/NpcPopulation.ts
+  s_3f4b5347620927::t_7e679f5d01ba1b 11,65-70,212-217
+server/src/lostcity/systems/npc/NpcStats.ts
+  s_3f4b5347620927::t_3c74b1f8afc35a 3-4,23-24,46,56
+server/src/lostcity/systems/trails/ClueDrops.ts
+  s_3f4b5347620927::t_a00aa0055dd69f 1-21
+server/src/lostcity/tools/data/DataContext.ts
+  s_3f4b5347620927::t_b767610143aca1 1-4,36,95-118
+server/src/lostcity/tools/data/domains/combat/MagicStage.ts
+  s_3f4b5347620927::t_5cca585e9be6f9 124
+server/src/lostcity/tools/data/domains/drops/DropStage.ts
+  s_3f4b5347620927::t_c101e4a7744a89 5-17,22,34-37,49-73,77,79,87-107,109-110,112-134,141-143,146-147,151-154,156,159-169,173-183,185-202,205
+server/src/lostcity/tools/data/domains/drops/SharedDrops.ts
+  s_3f4b5347620927::t_3555238d793471 1-164
+server/src/lostcity/tools/data/domains/drops/index.ts
+  s_3f4b5347620927::t_269c9200f020f5 2,6-16,23-26,28-29,31-32,34-40,43-44,46-49,51-63,65-91,94,97,100,102-103,106-108,110-111
+server/src/lostcity/tools/data/domains/npcs/AnimationProfiles.ts
+  s_3f4b5347620927::t_fe7dda27871c78 1-59
+server/src/lostcity/tools/data/domains/npcs/NpcWiki.test.ts
+  s_3f4b5347620927::t_518b9c4fc0b87c 4-5,42-43,73-74,107-267
+server/src/lostcity/tools/data/domains/npcs/NpcWiki.ts
+  s_3f4b5347620927::t_e674b25983d7bb 1,33-35,58-59,67-68,71-89,143-154,170-172,193,207-227,232-234,237,265-369,371-374,376,378
+server/src/lostcity/tools/data/domains/npcs/ProfileStage.ts
+  s_3f4b5347620927::t_389f67f38673e1 143-144,186-187
+server/src/lostcity/tools/data/domains/npcs/index.ts
+  s_3f4b5347620927::t_fabde955ca5ffc 1,8-9,12,16-19,26-46,59-60,65,69-70,79-83,131-134,139,141,155-156,163-184,196,202-206
+tools/client910/crates/rs910-symbols/src/param.rs
+  s_3f4b5347620927::t_066bc3fe898d2b 222-223,238-239
+tools/refactor/test-inventory.txt
+  s_3f4b5347620927::t_3e1f550cad048f 48,1910,1926,1932,1936-1937,1986,1995,2003,2086-2087,2091,2175,2233,2243
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "0deed72794c8080bcef57a36d97a87af188b0779",
+  "prompts": {},
+  "sessions": {
+    "s_3f4b5347620927": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1052f-291b-7aa2-897e-1b9a6fb3f082",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
