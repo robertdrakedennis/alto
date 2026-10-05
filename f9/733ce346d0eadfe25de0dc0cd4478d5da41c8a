@@ -1,0 +1,33 @@
+packages/domain/src/symbols/param.ts
+  s_3f4b5347620927::t_d227058803bc4e 233
+packages/domain/src/symbols/script.ts
+  s_3f4b5347620927::t_2b35cf54b23189 57
+revisions/910/symbols/param.sym
+  s_3f4b5347620927::t_e7aa9e6caaf1dd 231
+revisions/910/symbols/script.sym
+  s_3f4b5347620927::t_f6f088be9cb77e 55
+server/src/lostcity/network/PowersE2E.integration.test.ts
+  s_3f4b5347620927::t_43f38c3445d39c 289,307,328
+server/src/lostcity/network/SocketE2E.integration.test.ts
+  s_3f4b5347620927::t_1c9822566cc685 452-455
+tools/client910/crates/rs910-symbols/src/param.rs
+  s_3f4b5347620927::t_f2a5aa2eba2131 462-463
+tools/client910/crates/rs910-symbols/src/script.rs
+  s_3f4b5347620927::t_38d05b99a55f65 110-111
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "f9733ce346d0eadfe25de0dc0cd4478d5da41c8a",
+  "prompts": {},
+  "sessions": {
+    "s_3f4b5347620927": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1052f-291b-7aa2-897e-1b9a6fb3f082",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
