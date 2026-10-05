@@ -1,0 +1,49 @@
+docs/server-architecture.md
+  s_3f4b5347620927::t_877c60154f2ae5 852-859
+server/src/lostcity/data/SpecialCombatData.ts
+  s_3f4b5347620927::t_613037ae8cae09 43
+server/src/lostcity/engine/World.ts
+  s_3f4b5347620927::t_aebb2d469e864f 198-200
+server/src/lostcity/network/LegacySpecialsE2E.integration.test.ts
+  s_3f4b5347620927::t_402297edab5daa 15,17,1217-1317
+server/src/lostcity/systems/combat/Combat.ts
+  s_3f4b5347620927::t_442db75ad72157 25-32,39,387,402-407
+server/src/lostcity/systems/combat/Combatant.ts
+  s_3f4b5347620927::t_37542ff0794ed6 132-133
+server/src/lostcity/systems/combat/PlayerCombat.ts
+  s_3f4b5347620927::t_b97f481de76b24 132-135
+server/src/lostcity/systems/combat/PlayerSpecials.ts
+  s_3f4b5347620927::t_ee8751ec32858d 13-14,56,64,138,147-154,420
+server/src/lostcity/systems/combat/SpecialEffects.ts
+  s_3f4b5347620927::t_44155bd38a4478 120-126
+server/src/lostcity/systems/npc/NpcCombat.ts
+  s_3f4b5347620927::t_36e8f26e93f1a7 211-214
+server/src/lostcity/systems/stats/CurrentLevelBoost.test.ts
+  s_3f4b5347620927::t_e5562eb0618138 1-155
+server/src/lostcity/systems/stats/Regeneration.ts
+  s_3f4b5347620927::t_0e756b715d4ec8 14
+server/src/lostcity/systems/stats/Stats.ts
+  s_3f4b5347620927::t_621fd72672e38e 180-184,186,188-197,199-218,267,272,275,278-283
+server/src/lostcity/tools/data/domains/combat/SpecialAvailabilityStage.ts
+  s_3f4b5347620927::t_20d7a10e5f0b60 49
+server/src/lostcity/tools/data/domains/combat/SpecialStage.ts
+  s_3f4b5347620927::t_628ba770ea8ebd 40-43,89-91,187-215,604-607,614
+tools/refactor/test-inventory.txt
+  s_3f4b5347620927::t_dc8a85f8fe70d9 1796,1832,1979,2147,2187-2189,2282
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "a2bde8ea55dd828e1beab2908ff4502aeaf7c3ad",
+  "prompts": {},
+  "sessions": {
+    "s_3f4b5347620927": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1052f-291b-7aa2-897e-1b9a6fb3f082",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}

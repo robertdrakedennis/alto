@@ -1,0 +1,31 @@
+docs/server-architecture.md
+  s_3f4b5347620927::t_14639443b387ed 740
+packages/domain/src/symbols/obj.ts
+  s_3f4b5347620927::t_ca22fdec9f60bf 399
+revisions/910/symbols/obj.sym
+  s_3f4b5347620927::t_cdc7d4326baa78 397
+server/src/lostcity/network/LegacySpecialsE2E.integration.test.ts
+  s_3f4b5347620927::t_ae0dbc80447a03 584-590,592-594,608-612
+server/src/lostcity/tools/data/domains/combat/SpecialStage.ts
+  s_3f4b5347620927::t_e64e64dd561a82 96,158,162,164-165,167,174-179,378,381-389,591-594,659
+tools/client910/crates/rs910-symbols/src/obj.rs
+  s_3f4b5347620927::t_b242d810b9fda5 794-795
+tools/refactor/test-inventory.txt
+  s_3f4b5347620927::t_2831424d1966bd 1966
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "0570f455a49e2c64627dc50112fdf31878161868",
+  "prompts": {},
+  "sessions": {
+    "s_3f4b5347620927": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1052f-291b-7aa2-897e-1b9a6fb3f082",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
