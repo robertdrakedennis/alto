@@ -1,0 +1,23 @@
+docs/server-architecture.md
+  s_3f4b5347620927::t_59ff1727b201c3 717-718
+server/src/lostcity/content/activities/pest-control/PestExchangeNpcs.ts
+  s_3f4b5347620927::t_024417a97de822 1-45
+server/src/lostcity/network/PestExchangeE2E.integration.test.ts
+  s_3f4b5347620927::t_6baac57e8244bf 9,12,17-26,261-289
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "9b72ae7ddd499f7a6dfa58be28b920872377d0d1",
+  "prompts": {},
+  "sessions": {
+    "s_3f4b5347620927": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1052f-291b-7aa2-897e-1b9a6fb3f082",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
