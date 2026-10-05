@@ -1,0 +1,51 @@
+docs/server-architecture.md
+  s_3f4b5347620927::t_1cd12297d65fda 705-711
+packages/domain/src/symbols/component.ts
+  s_3f4b5347620927::t_0a545d81bb8589 766-773,781-792
+packages/domain/src/symbols/obj.ts
+  s_3f4b5347620927::t_32f76d5eaa3774 90,137,229,271,311,313,315,331
+packages/domain/src/symbols/param.ts
+  s_3f4b5347620927::t_8d4b741c98f92c 161-163
+revisions/910/symbols/component.sym
+  s_3f4b5347620927::t_297a72ca2afbfb 627-634,642-653
+revisions/910/symbols/obj.sym
+  s_3f4b5347620927::t_e930edcc19fb6e 88,135,227,269,309,311,313,329
+revisions/910/symbols/param.sym
+  s_3f4b5347620927::t_652bfc9d680f1e 159-161
+server/src/lostcity/data/SlayerData.ts
+  s_3f4b5347620927::t_d8239ae91b6878 62-94,105-107
+server/src/lostcity/systems/equipment/SlayerEquipment.ts
+  s_3f4b5347620927::t_5742a32dbf3612 25-33
+server/src/lostcity/systems/slayer/PlayerSlayer.ts
+  s_3f4b5347620927::t_9d80aef4a91833 164,169-173,177,181,203-205
+server/src/lostcity/systems/slayer/Slayer.ts
+  s_3f4b5347620927::t_84cf87c0ce0cef 1,85-94,135-156,194-203,207-224
+server/src/lostcity/systems/slayer/SlayerTaskLists.ts
+  s_3f4b5347620927::t_26ae93187696ba 1-23
+server/src/lostcity/tools/data/domains/slayer/SlayerHelmetStage.ts
+  s_3f4b5347620927::t_48b2766b070f5e 1-143
+server/src/lostcity/tools/data/domains/slayer/index.ts
+  s_3f4b5347620927::t_68177b5992d71e 1,71-88,92,408-419,428-430,469
+tools/client910/crates/rs910-symbols/src/component.rs
+  s_3f4b5347620927::t_1e89fef74ac5a2 1595-1610,1625-1648
+tools/client910/crates/rs910-symbols/src/obj.rs
+  s_3f4b5347620927::t_d68d660ed2781e 176-177,270-271,454-455,538-539,618-619,622-623,626-627,658-659
+tools/client910/crates/rs910-symbols/src/param.rs
+  s_3f4b5347620927::t_952eff3968e8d9 319-324
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "daee8295c00d55bff7ef1c5b71b0f101cf621847",
+  "prompts": {},
+  "sessions": {
+    "s_3f4b5347620927": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1052f-291b-7aa2-897e-1b9a6fb3f082",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
