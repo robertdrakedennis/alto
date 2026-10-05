@@ -1,0 +1,33 @@
+docs/server-architecture.md
+  s_3f4b5347620927::t_9651b177dd1233 149,725,792-800
+server/src/lostcity/content/world/bosses/BarrowsCore.test.ts
+  s_3f4b5347620927::t_e432dcf24b5036 1-130
+server/src/lostcity/content/world/bosses/BarrowsProgress.ts
+  s_3f4b5347620927::t_8b8b31108df8ed 1-94
+server/src/lostcity/content/world/bosses/BarrowsRewards.ts
+  s_3f4b5347620927::t_dc86db9e99af6a 1-69
+server/src/lostcity/data/BarrowsData.ts
+  s_3f4b5347620927::t_4d0bccb2dcd3cd 1-150
+server/src/lostcity/tools/data/domains/instances/BarrowsWiki.test.ts
+  s_3f4b5347620927::t_d894cb74b22207 1-52
+server/src/lostcity/tools/data/domains/instances/BarrowsWiki.ts
+  s_3f4b5347620927::t_91225a4857e6cb 1-156
+tools/refactor/test-inventory.txt
+  s_3f4b5347620927::t_abbcfc93d65599 1652-1660
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "e3dc3baf636d49c49b0baa5260f9dd151e2877eb",
+  "prompts": {},
+  "sessions": {
+    "s_3f4b5347620927": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1052f-291b-7aa2-897e-1b9a6fb3f082",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
