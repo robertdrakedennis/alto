@@ -1,0 +1,27 @@
+docs/client-status.md
+  s_3f4b5347620927::t_db0181d10ac63e 15-17
+tools/client910/fixtures/session-replay/slayer-wilderness/combat-receipts.jsonl
+  s_3f4b5347620927::t_bea66c9648b735 1-36
+tools/client910/fixtures/session-replay/slayer-wilderness/plan.json
+  s_3f4b5347620927::t_3036ed3e0e4ce0 102
+tools/client910/fixtures/session-replay/slayer-wilderness/server-trace.jsonl
+  s_3f4b5347620927::t_9e5731d23688f5 137,154,241,243
+tools/client910/src/scenario_slayer_wilderness.rs
+  s_3f4b5347620927::t_d6685bf6680638 111-195,344-352
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "7366c8d07021681c03166551b1fd30e63e47f0e9",
+  "prompts": {},
+  "sessions": {
+    "s_3f4b5347620927": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1052f-291b-7aa2-897e-1b9a6fb3f082",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
