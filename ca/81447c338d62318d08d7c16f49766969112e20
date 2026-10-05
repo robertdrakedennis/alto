@@ -1,0 +1,113 @@
+docs/server-architecture.md
+  s_3f4b5347620927::t_8589be9946bcc3 692-701
+packages/domain/src/symbols/component.ts
+  s_3f4b5347620927::t_4da7b9376b3275 588
+packages/domain/src/symbols/obj.ts
+  s_3f4b5347620927::t_bebc4fe21a8bfb 6,19-20,24-25,35,38,48,55-56,109-110,112,114-117,119-123,133,168-170,172,182,197,201,204,217-218,260,263-264,272-274,279,296,323,325,328-331,344-345,363,366-367,370,374,399-400,422-427,429
+packages/domain/src/symbols/param.ts
+  s_3f4b5347620927::t_3d0acdfda82397 80,158-159,222-226
+packages/domain/src/symbols/seq.ts
+  s_3f4b5347620927::t_3c84463426bb3b 7,15,55-57,68,128,152
+packages/domain/src/symbols/spot.ts
+  s_3f4b5347620927::t_22898e700e3a44 6-7,9-12,15,37,42-43
+packages/domain/src/symbols/varp.ts
+  s_3f4b5347620927::t_3c0fba0f8960c2 455
+revisions/910/symbols/component.sym
+  s_3f4b5347620927::t_d1ff2899a2f5ea 499
+revisions/910/symbols/obj.sym
+  s_3f4b5347620927::t_7c0807b35c7110 4,17-18,22-23,33,36,46,53-54,107-108,110,112-115,117-121,131,166-168,170,180,195,199,202,215-216,258,261-262,270-272,277,294,321,323,326-329,342-343,361,364-365,368,372,397-398,420-425,427
+revisions/910/symbols/param.sym
+  s_3f4b5347620927::t_ab24dcd3e47e5d 78,156-157,220-224
+revisions/910/symbols/seq.sym
+  s_3f4b5347620927::t_2cf277f39003ce 5,13,53-55,66,126,150
+revisions/910/symbols/spot.sym
+  s_3f4b5347620927::t_a095139771a36f 4-5,7-10,13,35,40-41
+revisions/910/symbols/varp.sym
+  s_3f4b5347620927::t_9c11d8610ba146 453
+server/src/lostcity/data/SpecialCombatData.ts
+  s_3f4b5347620927::t_6cc6fc2d54e069 1-91
+server/src/lostcity/engine/tick/WorldPhases.ts
+  s_3f4b5347620927::t_c103518bf8bfde 97
+server/src/lostcity/network/LegacySpecialsE2E.integration.test.ts
+  s_3f4b5347620927::t_fbaf7282667255 1-379
+server/src/lostcity/protocol/handlers/Interface.ts
+  s_3f4b5347620927::t_632f4c38fb9980 41
+server/src/lostcity/systems/combat/Abilities.ts
+  s_3f4b5347620927::t_a5f9134f4ea78d 528,600
+server/src/lostcity/systems/combat/Combat.ts
+  s_3f4b5347620927::t_f58d3bd0c91b61 228-237,252-256
+server/src/lostcity/systems/combat/CombatCondition.ts
+  s_3f4b5347620927::t_a179487bf96aed 65-66
+server/src/lostcity/systems/combat/CombatStatuses.ts
+  s_3f4b5347620927::t_250f50c492a0a6 1,83,85
+server/src/lostcity/systems/combat/Combatant.ts
+  s_3f4b5347620927::t_50c9c66e30857d 139-140
+server/src/lostcity/systems/combat/PlayerCombat.ts
+  s_3f4b5347620927::t_5f75755c24990e 2,73,95,189-195
+server/src/lostcity/systems/combat/PlayerSpecials.ts
+  s_3f4b5347620927::t_f33135b2d04db1 1-281
+server/src/lostcity/systems/combat/Prayers.ts
+  s_3f4b5347620927::t_5457f33eb099e6 73-78
+server/src/lostcity/systems/combat/RangedAttacks.ts
+  s_3f4b5347620927::t_1550756070c23a 10,21,69-75,77,79,81,83,89,96,98,100,109-113
+server/src/lostcity/systems/combat/SpecialDamage.ts
+  s_3f4b5347620927::t_22d8ea3e8ed936 1-87
+server/src/lostcity/systems/combat/SpecialEffects.ts
+  s_3f4b5347620927::t_b48992e6c7731e 1-123
+server/src/lostcity/systems/combat/SpecialEnergy.test.ts
+  s_3f4b5347620927::t_fdee07fa092de2 1-42
+server/src/lostcity/systems/combat/SpecialEnergy.ts
+  s_3f4b5347620927::t_ed52a78f734167 1-52
+server/src/lostcity/systems/equipment/EquipmentContent.ts
+  s_3f4b5347620927::t_c75e5ff22dac6d 1,82,114
+server/src/lostcity/systems/equipment/EquipmentStats.ts
+  s_3f4b5347620927::t_280fe3f806673e 104-112,115
+server/src/lostcity/systems/equipment/PlayerEquipment.ts
+  s_3f4b5347620927::t_63d92bd6b78f88 106-107,144,149,153
+server/src/lostcity/systems/equipment/SpecialEquipment.ts
+  s_3f4b5347620927::t_b33db2fc9329fb 1-57
+server/src/lostcity/systems/npc/NpcCombat.ts
+  s_3f4b5347620927::t_2b39165d364bdb 40-41,228-232
+server/src/lostcity/systems/npc/NpcStats.ts
+  s_3f4b5347620927::t_0f02d9ae75cc58 9-12,34-41,44-51,55,61,71
+server/src/lostcity/systems/session/Session.ts
+  s_3f4b5347620927::t_720c31efdc8ed1 10,22-23,65,92,106
+server/src/lostcity/systems/stats/Stats.ts
+  s_3f4b5347620927::t_48ce7ebae90d79 30-31,177-190,283-302
+server/src/lostcity/tools/data/domains/combat/RangedStage.ts
+  s_3f4b5347620927::t_dcae7fa2838a9e 4,27-34
+server/src/lostcity/tools/data/domains/combat/SpecialPresentationStage.ts
+  s_3f4b5347620927::t_647417c060a4e1 1-34
+server/src/lostcity/tools/data/domains/combat/SpecialStage.ts
+  s_3f4b5347620927::t_0b1b400bfd6b94 1-312
+server/src/lostcity/tools/data/domains/combat/index.ts
+  s_3f4b5347620927::t_3bbcf71d065d86 1,18-19,53,57,79,95
+tools/client910/crates/rs910-symbols/src/component.rs
+  s_3f4b5347620927::t_4ea46813a549e1 1214-1215
+tools/client910/crates/rs910-symbols/src/obj.rs
+  s_3f4b5347620927::t_32eda570623c45 8-9,34-37,44-47,66-67,72-73,92-93,106-109,214-217,220-221,224-231,234-243,262-263,332-337,340-341,360-361,390-391,398-399,404-405,430-433,516-517,522-525,540-545,554-555,588-589,642-643,646-647,652-659,684-687,722-723,728-731,736-737,744-745,794-797,840-851,854-855
+tools/client910/crates/rs910-symbols/src/param.rs
+  s_3f4b5347620927::t_9f6d76cb9d535d 156-157,313-316,440-449
+tools/client910/crates/rs910-symbols/src/seq.rs
+  s_3f4b5347620927::t_af0b9045ae8e54 10-11,26-27,106-111,132-133,252-253,300-301
+tools/client910/crates/rs910-symbols/src/spot.rs
+  s_3f4b5347620927::t_1e7db3854b5106 8-11,14-21,26-27,70-71,80-83
+tools/client910/crates/rs910-symbols/src/varp.rs
+  s_3f4b5347620927::t_b88406a722d0a4 906-907
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "ca81447c338d62318d08d7c16f49766969112e20",
+  "prompts": {},
+  "sessions": {
+    "s_3f4b5347620927": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1052f-291b-7aa2-897e-1b9a6fb3f082",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}

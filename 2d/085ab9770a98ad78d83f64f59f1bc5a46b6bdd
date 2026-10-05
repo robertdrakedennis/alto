@@ -1,0 +1,69 @@
+docs/server-architecture.md
+  s_3f4b5347620927::t_4d256783170c1d 702-718
+packages/domain/src/symbols/component.ts
+  s_3f4b5347620927::t_9a322055e36666 591-598,674
+packages/domain/src/symbols/interface.ts
+  s_3f4b5347620927::t_d8d03679d51a1f 68-71
+packages/domain/src/symbols/script.ts
+  s_3f4b5347620927::t_0c555a7b453315 42
+packages/domain/src/symbols/varbit.ts
+  s_3f4b5347620927::t_b66cc532aac445 162
+packages/domain/src/symbols/varc.ts
+  s_3f4b5347620927::t_4996b4fb2bdff1 68
+revisions/910/symbols/component.sym
+  s_3f4b5347620927::t_3fc280c52aab7d 501-504,561
+revisions/910/symbols/interface.sym
+  s_3f4b5347620927::t_266396457c0822 66-69
+revisions/910/symbols/script.sym
+  s_3f4b5347620927::t_a72c516db76371 40
+revisions/910/symbols/varbit.sym
+  s_3f4b5347620927::t_4ab363f1427fb5 160
+revisions/910/symbols/varc.sym
+  s_3f4b5347620927::t_5a8a6da3043e18 66
+server/src/lostcity/network/ActionBarE2E.integration.test.ts
+  s_3f4b5347620927::t_012a14a56a4a92 74
+server/src/lostcity/network/LegacyHudE2E.integration.test.ts
+  s_3f4b5347620927::t_e35e9561934f7f 1-288
+server/src/lostcity/network/LegacyRulesE2E.integration.test.ts
+  s_3f4b5347620927::t_701b261768bd00 313,326-327
+server/src/lostcity/network/PowersE2E.integration.test.ts
+  s_3f4b5347620927::t_8f3e9affe355fd 69
+server/src/lostcity/systems/action-bar/ActionBar.ts
+  s_3f4b5347620927::t_1182b93ae58d3b 1,143-153
+server/src/lostcity/systems/action-bar/ActionBarInterfaces.ts
+  s_3f4b5347620927::t_6d79766aa2fc97 5,12-13,54,90-96,101-104,120-125
+server/src/lostcity/systems/combat/CombatOptions.ts
+  s_3f4b5347620927::t_9db2bd6ee03899 6,52-53,55,85,88,117-122,128,139-146,158,166-167,170,195-203,209,256,259,265,271-272
+server/src/lostcity/systems/combat/LegacyHud.ts
+  s_3f4b5347620927::t_48d4725fe79e00 1-50
+server/src/lostcity/systems/vars/Vars.ts
+  s_3f4b5347620927::t_c120a6cda054fd 5-6,28-33,111-124
+server/vitest.config.ts
+  s_3f4b5347620927::t_3ad484a8100dc4 51-52
+tools/client910/crates/rs910-symbols/src/component.rs
+  s_3f4b5347620927::t_6e9ecc76166fc5 1220-1237,1398-1399
+tools/client910/crates/rs910-symbols/src/interface.rs
+  s_3f4b5347620927::t_2b946435eaec8a 132-139
+tools/client910/crates/rs910-symbols/src/script.rs
+  s_3f4b5347620927::t_34c34cc101c863 80-81
+tools/client910/crates/rs910-symbols/src/varbit.rs
+  s_3f4b5347620927::t_495d07ce574426 320-321
+tools/client910/crates/rs910-symbols/src/varc.rs
+  s_3f4b5347620927::t_8c108890b0e42f 133-134
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "2d085ab9770a98ad78d83f64f59f1bc5a46b6bdd",
+  "prompts": {},
+  "sessions": {
+    "s_3f4b5347620927": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1052f-291b-7aa2-897e-1b9a6fb3f082",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
