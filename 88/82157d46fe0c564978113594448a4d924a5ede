@@ -1,0 +1,21 @@
+tools/client910/fixtures/session-replay/giant-mole/record.py
+  s_3f4b5347620927::t_d93a401cbebe40 20-21,90,126-139,148-149
+tools/client910/fixtures/session-replay/giant-mole/server.mjs
+  s_3f4b5347620927::t_8ac9f807e71c9c 5,25
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "8882157d46fe0c564978113594448a4d924a5ede",
+  "prompts": {},
+  "sessions": {
+    "s_3f4b5347620927": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1052f-291b-7aa2-897e-1b9a6fb3f082",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
