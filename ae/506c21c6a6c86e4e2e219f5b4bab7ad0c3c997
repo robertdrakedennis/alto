@@ -1,0 +1,35 @@
+docs/server-architecture.md
+  s_3f4b5347620927::t_915a4693597bdf 814-815
+server/src/lostcity/systems/combat/Combat.test.ts
+  s_3f4b5347620927::t_f1d3a457843fab 11-12,146-195
+server/src/lostcity/systems/combat/Combat.ts
+  s_3f4b5347620927::t_951ca29839bdf5 25-32,37,385,400-405
+server/src/lostcity/systems/combat/Combatant.ts
+  s_3f4b5347620927::t_89bec6a4ba35ea 132-133
+server/src/lostcity/systems/combat/PlayerCombat.ts
+  s_3f4b5347620927::t_a3b163e08627a2 132-135
+server/src/lostcity/systems/npc/NpcCombat.ts
+  s_3f4b5347620927::t_0ca75ef99c5e4c 211-214
+server/src/lostcity/systems/npc/NpcDropAdmission.test.ts
+  s_3f4b5347620927::t_70108b703404b3 1-84
+server/src/lostcity/systems/npc/NpcPopulation.ts
+  s_3f4b5347620927::t_0e99dc70dc3e50 79-87,237
+tools/refactor/test-inventory.txt
+  s_3f4b5347620927::t_54479edc9c0fe2 48,1983,2017,2286-2287
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "ae506c21c6a6c86e4e2e219f5b4bab7ad0c3c997",
+  "prompts": {},
+  "sessions": {
+    "s_3f4b5347620927": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1052f-291b-7aa2-897e-1b9a6fb3f082",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
