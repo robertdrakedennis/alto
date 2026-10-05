@@ -1,0 +1,79 @@
+docs/server-architecture.md
+  s_3f4b5347620927::t_3d55bea8b78e46 802-805
+packages/domain/src/symbols/component.ts
+  s_3f4b5347620927::t_93ec6bae0c18c6 249-261,660-666
+packages/domain/src/symbols/dbrow.ts
+  s_3f4b5347620927::t_cf8c7d33a83ebf 6
+packages/domain/src/symbols/interface.ts
+  s_3f4b5347620927::t_afdf779c7989ed 16-17,87
+packages/domain/src/symbols/inv.ts
+  s_3f4b5347620927::t_cfe8c5a1966585 8
+packages/domain/src/symbols/loc.ts
+  s_3f4b5347620927::t_dd6c93aa78a476 46-51
+packages/domain/src/symbols/location.ts
+  s_3f4b5347620927::t_b72f8d747c221d 58-63
+packages/domain/src/symbols/varbit.ts
+  s_3f4b5347620927::t_71ca589672b5d5 40-47
+packages/domain/src/symbols/varp.ts
+  s_3f4b5347620927::t_85e47144f70781 372,388
+revisions/910/symbols/component.sym
+  s_3f4b5347620927::t_4a6336ad976c6d 229-239,560-564
+revisions/910/symbols/dbrow.sym
+  s_3f4b5347620927::t_8c054de2ec2f48 4
+revisions/910/symbols/interface.sym
+  s_3f4b5347620927::t_e33c7afcea5790 14-15,85
+revisions/910/symbols/inv.sym
+  s_3f4b5347620927::t_82a006098b169a 6
+revisions/910/symbols/loc.sym
+  s_3f4b5347620927::t_b0b8ccf91d8766 44-49
+revisions/910/symbols/location.sym
+  s_3f4b5347620927::t_2d799be0a3c751 48-53
+revisions/910/symbols/varbit.sym
+  s_3f4b5347620927::t_4fe3e1b0160e81 38-45
+revisions/910/symbols/varp.sym
+  s_3f4b5347620927::t_241809d51bbfec 370,386
+server/src/formats/network/protocol/ServerInterfaceModel.test.ts
+  s_3f4b5347620927::t_29cbf7201754e2 1-95
+server/src/formats/network/protocol/ServerProt.test.ts
+  s_3f4b5347620927::t_33f15c6257a250 31-32
+server/src/formats/network/protocol/ServerProt.ts
+  s_3f4b5347620927::t_2b0c4af051e666 367-388
+server/src/lostcity/data/BarrowsData.ts
+  s_3f4b5347620927::t_4e0c6cae55c126 80-81,85,95,100,112-126,143,145
+server/src/lostcity/tools/data/domains/instances/Barrows.ts
+  s_3f4b5347620927::t_70a7d20120fd2e 1-272
+server/src/lostcity/tools/data/domains/instances/index.ts
+  s_3f4b5347620927::t_43f938a77aaf8e 1,11,13-19
+tools/client910/crates/rs910-symbols/src/component.rs
+  s_3f4b5347620927::t_774f724e779b42 501-527,1363-1377
+tools/client910/crates/rs910-symbols/src/dbrow.rs
+  s_3f4b5347620927::t_b7c6d4d1d24a1e 8-9
+tools/client910/crates/rs910-symbols/src/interface.rs
+  s_3f4b5347620927::t_e777d1e6ced8eb 28-31,170-171
+tools/client910/crates/rs910-symbols/src/inv.rs
+  s_3f4b5347620927::t_5853f11a80d88a 12-13
+tools/client910/crates/rs910-symbols/src/loc.rs
+  s_3f4b5347620927::t_cd1463f73daa98 88-99
+tools/client910/crates/rs910-symbols/src/location.rs
+  s_3f4b5347620927::t_b767aff8df22e0 96-107
+tools/client910/crates/rs910-symbols/src/varbit.rs
+  s_3f4b5347620927::t_a7d1158cde65ab 76-91
+tools/client910/crates/rs910-symbols/src/varp.rs
+  s_3f4b5347620927::t_b8be0b326c4a82 740-741,773-774
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "e1ee3d3dcc2b04eddae442cf48374bc322b73b70",
+  "prompts": {},
+  "sessions": {
+    "s_3f4b5347620927": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1052f-291b-7aa2-897e-1b9a6fb3f082",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
