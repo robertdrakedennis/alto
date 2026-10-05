@@ -1,0 +1,19 @@
+tools/client910/fixtures/session-replay/barrows/driver.py
+  s_3f4b5347620927::t_d9f012ad98d8f8 13,570-573
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "51eb122f57af2ceb8541f1ac04aa1bf455915f3a",
+  "prompts": {},
+  "sessions": {
+    "s_3f4b5347620927": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1052f-291b-7aa2-897e-1b9a6fb3f082",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
