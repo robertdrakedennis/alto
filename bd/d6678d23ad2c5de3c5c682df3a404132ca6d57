@@ -1,0 +1,122 @@
+tools/client910/src/live_control.rs
+  s_3f4b5347620927::t_ad943e9079179a 450
+  s_3f4b5347620927::t_d63fe12655e96b 31-33,56-63,79-80,380-384,387-401,467
+  s_3f4b5347620927::t_d806bd5ba6a6ab 548-549,551-552,556,568-579,582,585,610-613
+  s_3f4b5347620927::t_3d61a1ff7768cd 215,621,628-645
+  s_3f4b5347620927::t_2c3717662099fb 201-211,300-304,327,331-334,345,476
+  s_3f4b5347620927::t_3ce88eb337e5f1 1-30,34-55,64-78,81-110,112-138,140-143,145-200,212-214,217-262,264-299,305-326,328-330,335-344,346-379,385-386,402-428,430-432,439-441,446-447,452-458,465-466,469,473,490,516-547,553-555,557-561,563,565-567,580-581,583-584,586-589,591-592,594-609,614-620,622-627,646-678
+  s_3f4b5347620927::t_111a8b350f461e 443,445,459,590,593
+  s_3f4b5347620927::t_ab332ae9edc943 481-482
+  s_3f4b5347620927::t_d9f1153fb6f4d9 111,139,144,216,263,429,433-438,442,444,448-449,451,460-464,468,470-472,474-475,477-480,483-489,491-515
+  s_3f4b5347620927::t_e88cfeca5d14b0 550,562,564
+  s_3f4b5347620927::t_72b0ad1d8961e1 679-1316
+tools/client910/scripts/control.py
+  s_3f4b5347620927::t_d6e66295db2953 11-13,23-28,39-42,44,83,118-121,134
+  s_3f4b5347620927::t_3ce88eb337e5f1 1-10,14-22,30-38,43,45-61,64-72,74-82,84-86,88,90-117,122-133,135-146
+  s_3f4b5347620927::t_483c3ca2deaa37 29,62-63,73,87,89
+  s_3f4b5347620927::t_22a3abc352d0a2 147-157
+docs/client-status.md
+  s_3f4b5347620927::t_7f9bcb928da2c3 25-28
+docs/engine-and-studio.md
+  s_3f4b5347620927::t_83a558d6a44386 50,178-200
+docs/server-architecture.md
+  s_3f4b5347620927::t_350eaf0bc0f92d 816-817
+packages/domain/src/symbols/component.ts
+  s_3f4b5347620927::t_a35892b63a8ae3 493,854-856
+packages/domain/src/symbols/enum.ts
+  s_3f4b5347620927::t_5d5e1fece49b84 83
+packages/domain/src/symbols/interface.ts
+  s_3f4b5347620927::t_e339b4295a500e 145
+packages/domain/src/symbols/script.ts
+  s_3f4b5347620927::t_fae02f3578eec9 61
+packages/domain/src/symbols/struct.ts
+  s_3f4b5347620927::t_77f50114456a39 14,67
+revisions/910/symbols/component.sym
+  s_3f4b5347620927::t_f586ceef522ab4 430,694
+revisions/910/symbols/enum.sym
+  s_3f4b5347620927::t_b8f013e467c688 81
+revisions/910/symbols/interface.sym
+  s_3f4b5347620927::t_9901a95e1b2b10 143
+revisions/910/symbols/script.sym
+  s_3f4b5347620927::t_aa82effd1a4b60 59
+revisions/910/symbols/struct.sym
+  s_3f4b5347620927::t_69cfae9aabb472 12,65
+server/src/lostcity/network/LegacyHudE2E.integration.test.ts
+  s_3f4b5347620927::t_3238fd22fe9779 156,185-187
+server/src/lostcity/systems/session/LoginInterfaces.ts
+  s_3f4b5347620927::t_7012c0afcede14 2,90-91
+tools/Cargo.lock
+  s_3f4b5347620927::t_c97e9b64cd5834 2013
+tools/client910/Cargo.toml
+  s_3f4b5347620927::t_0853d8a436f4cf 39-40
+tools/client910/crates/rs910-client/Cargo.toml
+  s_3f4b5347620927::t_cb33e2188653ae 17-18
+tools/client910/crates/rs910-client/src/client_core.rs
+  s_3f4b5347620927::t_d6620011ebf054 27,38
+tools/client910/crates/rs910-client/src/client_core/input_event.rs
+  s_3f4b5347620927::t_1204825883c432 1-241
+tools/client910/crates/rs910-client/src/client_core/io.rs
+  s_3f4b5347620927::t_110d9ac7463ad6 11,23,37,46-47,132,137-147,188,196,198-202,207,305-323,325-330,500
+tools/client910/crates/rs910-client/src/client_core/session_core.rs
+  s_3f4b5347620927::t_8cffb4cfa30ee5 6-15,76-77
+tools/client910/crates/rs910-client/src/client_debug_flags.rs
+  s_3f4b5347620927::t_b20a3307442885 21-22,55-56
+tools/client910/crates/rs910-client/src/session_record.rs
+  s_3f4b5347620927::t_12486336c66e7c 33-35
+tools/client910/crates/rs910-game/src/protocol910/terrain.rs
+  s_3f4b5347620927::t_2c4be1e73e4216 7-13,108-119,166-170,203-206,220-222,228,289-314
+tools/client910/crates/rs910-scene/src/maploader.rs
+  s_3f4b5347620927::t_bba64361d4ab93 520-625
+tools/client910/crates/rs910-symbols/src/component.rs
+  s_3f4b5347620927::t_6d2bfd78c18733 1011-1012,1781-1787
+tools/client910/crates/rs910-symbols/src/enums.rs
+  s_3f4b5347620927::t_c5ed1f12651932 162-163
+tools/client910/crates/rs910-symbols/src/interface.rs
+  s_3f4b5347620927::t_bf80be6fa9dd6e 286-287
+tools/client910/crates/rs910-symbols/src/script.rs
+  s_3f4b5347620927::t_602629e392c81a 118-119
+tools/client910/crates/rs910-symbols/src/structs.rs
+  s_3f4b5347620927::t_ce46a7eb2a8133 24-25,130-131
+tools/client910/crates/rs910-ui/src/ui_components.rs
+  s_3f4b5347620927::t_3f9100c16fe7ed 1083-1089
+tools/client910/crates/rs910-ui/src/ui_keyboard.rs
+  s_3f4b5347620927::t_b19c4466af67b3 78-85
+tools/client910/crates/rs910-ui/src/ui_runtime/menu_builder.rs
+  s_3f4b5347620927::t_5b3bb456894d08 310-365,460,689-709,714
+tools/client910/crates/rs910-ui/src/ui_scene_options.rs
+  s_3f4b5347620927::t_c609cd20196184 38-50
+tools/client910/fixtures/recorded/toolbar-input/login.json
+  s_3f4b5347620927::t_ea8659d6f290f2 1-43375
+tools/client910/src/app.rs
+  s_3f4b5347620927::t_602c3956349c14 271-278,500-503,564-567,665-666,799-803,807-808,1036-1037,1108-1113,1126-1127,1144-1145,1147-1149,1158-1159,1174,1190-1193,1219-1220,1235,1237
+tools/client910/src/app/mainloop.rs
+  s_3f4b5347620927::t_4ba9ad7278a717 107-156,390-391
+tools/client910/src/app/startup.rs
+  s_3f4b5347620927::t_2ebc731e4b976a 355
+tools/client910/src/interactive_input_tests.rs
+  s_3f4b5347620927::t_db025490e3d6c9 1-567
+tools/client910/src/lib.rs
+  s_3f4b5347620927::t_9b86879fd1c17a 42-43
+tools/client910/src/session_replay.rs
+  s_3f4b5347620927::t_29678c65278cea 526,538-539,549,552,575,606,2374
+tools/client910/src/toolbar_input_tests.rs
+  s_3f4b5347620927::t_65145a14b96d33 1-484
+tools/refactor/layers.txt
+  s_3f4b5347620927::t_14e931c8d940cb 80-81,98
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "bdd6678d23ad2c5de3c5c682df3a404132ca6d57",
+  "prompts": {},
+  "sessions": {
+    "s_3f4b5347620927": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1052f-291b-7aa2-897e-1b9a6fb3f082",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
