@@ -1,0 +1,25 @@
+server/src/lostcity/network/AbilityDefencesE2E.integration.test.ts
+  s_3f4b5347620927::t_ad2076743d7590 63-64,69,73-74
+server/src/lostcity/network/AbilityUniqueE2E.integration.test.ts
+  s_3f4b5347620927::t_9128e7fdafdf36 70,241-243
+server/src/lostcity/network/WildernessE2E.integration.test.ts
+  s_3f4b5347620927::t_99b76ed4db44e2 11,37-38,99-125
+tools/refactor/test-inventory.txt
+  s_3f4b5347620927::t_e9dd683066daa6 48,2178
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "97d69f10c6feb02f345ca2165e5d67f5a8ba04e3",
+  "prompts": {},
+  "sessions": {
+    "s_3f4b5347620927": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1052f-291b-7aa2-897e-1b9a6fb3f082",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
