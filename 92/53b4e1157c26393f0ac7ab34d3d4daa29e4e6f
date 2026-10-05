@@ -1,0 +1,33 @@
+docs/client-status.md
+  s_3f4b5347620927::t_2f5e32f6287e12 27-28
+tools/client910/fixtures/session-replay/giant-mole/combat-receipts.jsonl
+  s_3f4b5347620927::t_19ab56264cf33a 1-1016
+tools/client910/fixtures/session-replay/giant-mole/plan.json
+  s_3f4b5347620927::t_b79e39c816f275 1-934
+tools/client910/fixtures/session-replay/giant-mole/server-trace.jsonl
+  s_3f4b5347620927::t_6184ce9f32f136 1-1224
+tools/client910/src/app.rs
+  s_3f4b5347620927::t_100ae138549406 376-379
+tools/client910/src/scenario_giant_mole.rs
+  s_3f4b5347620927::t_169f732f1988e9 1-370
+tools/refactor/replay-gate.txt
+  s_3f4b5347620927::t_39e5ab4b1a8919 111-113
+tools/refactor/test-inventory.txt
+  s_3f4b5347620927::t_8d459a2b39cfcd 4,48,84,1795,1980,2037,2094,2142,2217,2253,2270,2293
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "9253b4e1157c26393f0ac7ab34d3d4daa29e4e6f",
+  "prompts": {},
+  "sessions": {
+    "s_3f4b5347620927": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1052f-291b-7aa2-897e-1b9a6fb3f082",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
