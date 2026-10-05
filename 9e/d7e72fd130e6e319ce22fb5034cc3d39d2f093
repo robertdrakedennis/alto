@@ -1,0 +1,101 @@
+docs/server-architecture.md
+  s_3f4b5347620927::t_6a45930903d5ed 705-716
+packages/domain/src/symbols/component.ts
+  s_3f4b5347620927::t_1da28e1168b47d 302-312
+packages/domain/src/symbols/enum.ts
+  s_3f4b5347620927::t_ced875e8a72379 11
+packages/domain/src/symbols/interface.ts
+  s_3f4b5347620927::t_f6c193f0428a79 31,119-120
+packages/domain/src/symbols/param.ts
+  s_3f4b5347620927::t_66443a2075fa2e 60-67
+packages/domain/src/symbols/script.ts
+  s_3f4b5347620927::t_78cd4650b0a370 16
+packages/domain/src/symbols/struct.ts
+  s_3f4b5347620927::t_7dc124148e8473 17,34
+packages/domain/src/symbols/varbit.ts
+  s_3f4b5347620927::t_b6fdea57012d08 83
+packages/domain/src/symbols/varp.ts
+  s_3f4b5347620927::t_c2aae1be2fe767 388-390
+revisions/910/symbols/component.sym
+  s_3f4b5347620927::t_4e243d8e455a1a 272-280
+revisions/910/symbols/enum.sym
+  s_3f4b5347620927::t_6940c1c7b18b31 9
+revisions/910/symbols/interface.sym
+  s_3f4b5347620927::t_59d481306d6886 29,117-118
+revisions/910/symbols/param.sym
+  s_3f4b5347620927::t_18e06ae5092056 58-65
+revisions/910/symbols/script.sym
+  s_3f4b5347620927::t_1d9e463f04e0f1 14
+revisions/910/symbols/struct.sym
+  s_3f4b5347620927::t_7faba63d935d96 15,32
+revisions/910/symbols/varbit.sym
+  s_3f4b5347620927::t_0bfe4e957102d3 81
+revisions/910/symbols/varp.sym
+  s_3f4b5347620927::t_6a9d7725e5d463 386-388
+server/src/lostcity/content/activities/pest-control/PestCommendations.test.ts
+  s_3f4b5347620927::t_4ae31ae0a53239 1-87
+server/src/lostcity/content/activities/pest-control/PestCommendations.ts
+  s_3f4b5347620927::t_3a6cf67bc7c5f4 1-67
+server/src/lostcity/content/activities/pest-control/PestExchange.ts
+  s_3f4b5347620927::t_daf094ceb7d2bb 1-141
+server/src/lostcity/content/activities/pest-control/PestGame.test.ts
+  s_3f4b5347620927::t_a8d9b596dd46e3 1-156
+server/src/lostcity/content/activities/pest-control/PestGame.ts
+  s_3f4b5347620927::t_5d4f82933c2382 1-154
+server/src/lostcity/content/activities/pest-control/PestParticipation.test.ts
+  s_3f4b5347620927::t_afec7ef013bd9b 1-59
+server/src/lostcity/content/activities/pest-control/PestParticipation.ts
+  s_3f4b5347620927::t_c93c581af84e36 1-63
+server/src/lostcity/content/activities/pest-control/PestQueue.test.ts
+  s_3f4b5347620927::t_ae59c66742cffd 1-68
+server/src/lostcity/content/activities/pest-control/PestQueue.ts
+  s_3f4b5347620927::t_4c07112bdceead 1-106
+server/src/lostcity/content/activities/pest-control/PestRewardRules.test.ts
+  s_3f4b5347620927::t_46e6a67e90c88b 1-75
+server/src/lostcity/content/activities/pest-control/PestRewardRules.ts
+  s_3f4b5347620927::t_5c92b650df7024 1-55
+server/src/lostcity/content/activities/pest-control/PestRewardTransactions.ts
+  s_3f4b5347620927::t_8eff3c7f9f3fe4 1-108
+server/src/lostcity/data/PestRewardData.ts
+  s_3f4b5347620927::t_982b74f97a427d 1-42
+server/src/lostcity/network/PestExchangeE2E.integration.test.ts
+  s_3f4b5347620927::t_b09cb59a760dc2 1-249
+server/src/lostcity/systems/vars/Vars.ts
+  s_3f4b5347620927::t_b2e69ddae356fa 98-105
+server/src/lostcity/tools/data/domains/pest-control/RewardCatalog.ts
+  s_3f4b5347620927::t_4d6ec354acf103 1-134
+server/vitest.config.ts
+  s_3f4b5347620927::t_d0585669bc913e 51
+tools/client910/crates/rs910-symbols/src/component.rs
+  s_3f4b5347620927::t_6588cfed11e042 612-634
+tools/client910/crates/rs910-symbols/src/enums.rs
+  s_3f4b5347620927::t_ff535357d11cde 18-19
+tools/client910/crates/rs910-symbols/src/interface.rs
+  s_3f4b5347620927::t_7515da156476c3 58-59,234-237
+tools/client910/crates/rs910-symbols/src/param.rs
+  s_3f4b5347620927::t_317bbd42c1f608 116-131
+tools/client910/crates/rs910-symbols/src/script.rs
+  s_3f4b5347620927::t_49fca7d791c62e 28-29
+tools/client910/crates/rs910-symbols/src/structs.rs
+  s_3f4b5347620927::t_a75dca9a465645 30-31,64-65
+tools/client910/crates/rs910-symbols/src/varbit.rs
+  s_3f4b5347620927::t_91aba90a8db51e 162-163
+tools/client910/crates/rs910-symbols/src/varp.rs
+  s_3f4b5347620927::t_79df33efc69cbe 773-778
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "9ed7e72fd130e6e319ce22fb5034cc3d39d2f093",
+  "prompts": {},
+  "sessions": {
+    "s_3f4b5347620927": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1052f-291b-7aa2-897e-1b9a6fb3f082",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
