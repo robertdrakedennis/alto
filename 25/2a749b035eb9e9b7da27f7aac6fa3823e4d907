@@ -1,0 +1,33 @@
+tools/client910/crates/rs910-ui/src/ui_runtime/menu_builder.rs
+  s_3f4b5347620927::t_6d98e13dc511a6 346-357
+tools/client910/fixtures/session-replay/barrows/driver.py
+  s_3f4b5347620927::t_616605d61e992b 22,110,258,271,336-342,402,413,431,475-496,499,526,649
+tools/client910/fixtures/session-replay/barrows/repair_driver.py
+  s_3f4b5347620927::t_5754171550d68b 187
+tools/client910/fixtures/session-replay/barrows/seed.mjs
+  s_3f4b5347620927::t_b63571372629bf 33,48-55,148
+tools/client910/scripts/control.py
+  s_3f4b5347620927::t_444a53c2273ca6 88,103
+tools/client910/src/interactive_input_tests.rs
+  s_3f4b5347620927::t_be187be1b52b11 568-794
+tools/client910/src/live_control.rs
+  s_3f4b5347620927::t_277ab7894b412d 36,40-46,89-92,142-151,202-204,208-209,584-596,626-657,662,669-674,761,776-791,1043-1100,1212-1229,1355,1364,1377,1408,1413,1421,1466-1515
+tools/client910/src/toolbar_input_tests.rs
+  s_3f4b5347620927::t_457edc661ae752 424,428,430-450,478-486
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "252a749b035eb9e9b7da27f7aac6fa3823e4d907",
+  "prompts": {},
+  "sessions": {
+    "s_3f4b5347620927": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1052f-291b-7aa2-897e-1b9a6fb3f082",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
