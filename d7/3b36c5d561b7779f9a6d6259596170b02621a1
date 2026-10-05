@@ -1,0 +1,35 @@
+packages/domain/src/symbols/npc.ts
+  s_3f4b5347620927::t_8b7cf0cab7cba2 63
+packages/domain/src/symbols/obj.ts
+  s_3f4b5347620927::t_94f0dcafa257b2 27
+revisions/910/symbols/npc.sym
+  s_3f4b5347620927::t_eea75cb56331a2 61
+revisions/910/symbols/obj.sym
+  s_3f4b5347620927::t_cf96c3345b7fd5 25
+tools/client910/crates/rs910-symbols/src/npc.rs
+  s_3f4b5347620927::t_ed1cef3e6f7af2 122-123
+tools/client910/crates/rs910-symbols/src/obj.rs
+  s_3f4b5347620927::t_a435c4595db843 50-51
+tools/client910/fixtures/session-replay/slayer-wilderness/record.py
+  s_3f4b5347620927::t_b1b940d04216d1 1-175
+tools/client910/fixtures/session-replay/slayer-wilderness/seed.mjs
+  s_3f4b5347620927::t_6d9dc3ac775387 1-75
+tools/client910/fixtures/session-replay/slayer-wilderness/server.mjs
+  s_3f4b5347620927::t_85ec1f60e2a58a 1-19
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "d73b36c5d561b7779f9a6d6259596170b02621a1",
+  "prompts": {},
+  "sessions": {
+    "s_3f4b5347620927": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1052f-291b-7aa2-897e-1b9a6fb3f082",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
