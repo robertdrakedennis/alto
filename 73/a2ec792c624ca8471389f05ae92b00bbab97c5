@@ -1,0 +1,27 @@
+server/src/lostcity/network/ActionBarE2E.integration.test.ts
+  s_3f4b5347620927::t_a6750c00514d00 9,93-94,246
+server/src/lostcity/network/LegacyCombatE2E.integration.test.ts
+  s_3f4b5347620927::t_89d30980f48199 75-78
+server/src/lostcity/network/PowersE2E.integration.test.ts
+  s_3f4b5347620927::t_1c3f07097f6e43 176-184,298,316,337
+server/src/lostcity/network/PrayerE2E.integration.test.ts
+  s_3f4b5347620927::t_fa6054e68b864b 12,87-88,244
+server/src/lostcity/network/SocketE2E.integration.test.ts
+  s_3f4b5347620927::t_058eee7cc6ac0c 27,141-146,451-452,669-671,676-683
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "73a2ec792c624ca8471389f05ae92b00bbab97c5",
+  "prompts": {},
+  "sessions": {
+    "s_3f4b5347620927": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1052f-291b-7aa2-897e-1b9a6fb3f082",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
