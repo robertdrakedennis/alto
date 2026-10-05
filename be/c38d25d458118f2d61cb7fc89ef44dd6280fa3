@@ -1,0 +1,63 @@
+docs/server-architecture.md
+  s_3f4b5347620927::t_d885d5797af0b3 873-878,898-903
+packages/domain/src/symbols/param.ts
+  s_3f4b5347620927::t_cc8aac4571d5cd 112-113
+revisions/910/symbols/param.sym
+  s_3f4b5347620927::t_39dfdc2c46fabe 110-111
+server/src/lostcity/content/skills/construction/houses.ts
+  s_3f4b5347620927::t_3339e285fb9b64 4,25-32,138-171
+server/src/lostcity/content/world/bosses/Barrows.ts
+  s_3f4b5347620927::t_c8858e21828919 13,48-49
+server/src/lostcity/content/world/bosses/BarrowsEncounter.ts
+  s_3f4b5347620927::t_8cae8dd99dcb85 87-93
+server/src/lostcity/content/world/bosses/BarrowsEquipment.integration.test.ts
+  s_3f4b5347620927::t_6d099b8503f0d8 1-7,101,110,307-525
+server/src/lostcity/content/world/bosses/BarrowsSetEffects.ts
+  s_3f4b5347620927::t_814583e1e3b85f 1-131
+server/src/lostcity/data/BarrowsData.ts
+  s_3f4b5347620927::t_888ea64492e069 16-17,50-85,190,198-199
+server/src/lostcity/network/BarrowsE2E.integration.test.ts
+  s_3f4b5347620927::t_2c43776d280a02 3,7-8,12-13,165-311
+server/src/lostcity/systems/combat/Combat.test.ts
+  s_3f4b5347620927::t_fb7d50b5a1972f 11-12,197-253
+server/src/lostcity/systems/combat/Combat.ts
+  s_3f4b5347620927::t_67d0b39901f7f2 3-4,32-46,49,311,317-327,336-345,350,353-363,541-542
+server/src/lostcity/systems/combat/Combatant.ts
+  s_3f4b5347620927::t_a4f36abde9f9d9 1,26,98
+server/src/lostcity/systems/combat/PlayerCombat.ts
+  s_3f4b5347620927::t_ef824c7784f67d 49-50,248,251-252
+server/src/lostcity/tools/data/domains/instances/Barrows.ts
+  s_3f4b5347620927::t_0cdace1ae18bc7 2,294
+server/src/lostcity/tools/data/domains/instances/BarrowsSetStage.test.ts
+  s_3f4b5347620927::t_dd4162b3440678 1-51
+server/src/lostcity/tools/data/domains/instances/BarrowsSetStage.ts
+  s_3f4b5347620927::t_88a6e7cfc21493 1-211
+tools/client910/crates/rs910-symbols/src/param.rs
+  s_3f4b5347620927::t_30b52ee6645ef4 220-223
+tools/refactor/test-inventory.txt
+  s_32282483846156::t_362ef1161834f9 1672,1686-1687,2211,2215-2216,2222,2270,2351,2354,2383
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "bec38d25d458118f2d61cb7fc89ef44dd6280fa3",
+  "prompts": {},
+  "sessions": {
+    "s_32282483846156": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "8e5be8e8-979d-4f47-9654-aed7f425daee",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    },
+    "s_3f4b5347620927": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1052f-291b-7aa2-897e-1b9a6fb3f082",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}

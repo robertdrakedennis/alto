@@ -1,0 +1,14 @@
+tools/client910/fixtures/session-replay/barrows/record.py
+  h_d26e211304196f 2-14,16-25,27-239,242-632,634-635,637-641,643-727,729-979,981-991
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "22163dfa32c5904c3cabbbe7f79c8c17d00f5f45",
+  "prompts": {},
+  "humans": {
+    "h_d26e211304196f": {
+      "author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}

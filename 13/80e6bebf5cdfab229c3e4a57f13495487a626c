@@ -1,0 +1,18 @@
+tools/client910/fixtures/session-replay/barrows/record.py
+  h_d26e211304196f 972-984
+tools/client910/fixtures/session-replay/barrows/server.mjs
+  h_d26e211304196f 48-50,66
+tools/client910/src/scenario_barrows.rs
+  h_d26e211304196f 2,7,9,19-49,97-121,123-131,133-177,179-187,191,195-198,201,203-209,216,218-229,233-236,239,245-253,255,257-290,293-296,298-311,315-316,321,325-619,624-789,795-822,824-836,839-844,846-873,892-898,904,906-911,960-978,1000-1012,1018-1030,1032,1044-1045,1048-1071,1081-1082,1084-1120
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "1380e6bebf5cdfab229c3e4a57f13495487a626c",
+  "prompts": {},
+  "humans": {
+    "h_d26e211304196f": {
+      "author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}

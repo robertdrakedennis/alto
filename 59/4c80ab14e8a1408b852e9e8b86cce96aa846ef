@@ -1,0 +1,19 @@
+docs/server-architecture.md
+  s_3f4b5347620927::t_fb772ed04c6ef4 815-816,821,823,825,827,869-876
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "594c80ab14e8a1408b852e9e8b86cce96aa846ef",
+  "prompts": {},
+  "sessions": {
+    "s_3f4b5347620927": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1052f-291b-7aa2-897e-1b9a6fb3f082",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
