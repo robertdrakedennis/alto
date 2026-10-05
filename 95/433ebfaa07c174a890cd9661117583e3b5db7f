@@ -1,0 +1,57 @@
+docs/client-status.md
+  s_3f4b5347620927::t_91a422559f2407 33
+docs/server-architecture.md
+  s_3f4b5347620927::t_2214fcbc4d28c8 878-889
+server/src/lostcity/content/activities/pest-control/PestControl.ts
+  s_3f4b5347620927::t_4e7f23b80d9659 18,20,25-26,53,75-77,103-119,121,154-182,265,292,347-362
+server/src/lostcity/content/activities/pest-control/PestEncounter.ts
+  s_3f4b5347620927::t_c6d67dabad0d95 16-17,38-39,51-52,66,136,140-141,144-152,201,227-234,241,248-367,466-467
+server/src/lostcity/content/activities/pest-control/PestFortifications.ts
+  s_3f4b5347620927::t_220d2d973bc1d5 1-176
+server/src/lostcity/content/activities/pest-control/PestSeals.ts
+  s_3f4b5347620927::t_4d1dcd213b2df9 1-106
+server/src/lostcity/data/PestActivityData.ts
+  s_3f4b5347620927::t_61eccc7ec35a07 28-38,49-60,99-104,124-133
+server/src/lostcity/network/PestControlE2E.integration.test.ts
+  s_3f4b5347620927::t_e747b4849e7318 2,7-8,11,115,336-343,398,461-805
+server/src/lostcity/network/PestExchangeE2E.integration.test.ts
+  s_3f4b5347620927::t_7117dabc336072 282-344
+server/src/lostcity/systems/equipment/PlayerEquipment.ts
+  s_3f4b5347620927::t_2b6ab6ebf15707 2-3,54,58-59,205,246-250
+server/src/lostcity/systems/inventory/Inventories.ts
+  s_3f4b5347620927::t_a3c9ef1e5f3ae5 295
+server/src/lostcity/systems/movement/RunEnergy.test.ts
+  s_3f4b5347620927::t_43229c4ed94e03 102-124
+server/src/lostcity/systems/movement/RunEnergy.ts
+  s_3f4b5347620927::t_fe28e6b0d891d2 6,77-85
+server/src/lostcity/systems/movement/Teleporting.ts
+  s_3f4b5347620927::t_85a5a5d0a1997e 44,55
+server/src/lostcity/tools/data/domains/pest-control/ActivityRules.ts
+  s_3f4b5347620927::t_235f3e22acf4a5 11,20-21,50,52,64-66,81-82,253-332,348,417,420-425,458-459,474,487,499-513,523,525-526
+tools/refactor/test-inventory.txt
+  s_b32c875748afc7::t_29100df92dc47f 48,1924,2013,2050,2097,2120,2231,2235,2267,2277,2307,2388
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "95433ebfaa07c174a890cd9661117583e3b5db7f",
+  "prompts": {},
+  "sessions": {
+    "s_3f4b5347620927": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1052f-291b-7aa2-897e-1b9a6fb3f082",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    },
+    "s_b32c875748afc7": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "3adfa644-4225-4038-aac9-bfdf1a4ec4f4",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
