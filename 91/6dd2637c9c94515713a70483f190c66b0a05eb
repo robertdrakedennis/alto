@@ -1,0 +1,14 @@
+tools/client910/fixtures/session-replay/pest-control/record.py
+  h_d26e211304196f 62-70,136-137
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "916dd2637c9c94515713a70483f190c66b0a05eb",
+  "prompts": {},
+  "humans": {
+    "h_d26e211304196f": {
+      "author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}

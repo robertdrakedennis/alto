@@ -1,0 +1,33 @@
+tools/client910/fixtures/session-replay/pest-control/driver.py
+  s_3f4b5347620927::t_582f679f0a0a74 1-531
+tools/client910/fixtures/session-replay/pest-control/peer_broker.mjs
+  s_32282483846156::t_f242396ae4d85e 1-302
+tools/client910/fixtures/session-replay/pest-control/seed.mjs
+  s_3f4b5347620927::t_e162c6d2a03703 12,18-19,32,34,40,42-49,56-62,64-65,68,71-77,79-91,93-97,99-107,109
+tools/client910/fixtures/session-replay/pest-control/server.mjs
+  s_3f4b5347620927::t_e4bb46c66e4a60 3-4,9-10,16-18,20-22,24-26,28,30-57,60-61,63,65-67,69-74,77-81,83-92,94-100,105-111,115-150,155-169,171-179
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "549654d0ae420cca0f1aaf9712a4fce68600ae07",
+  "prompts": {},
+  "sessions": {
+    "s_32282483846156": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "8e5be8e8-979d-4f47-9654-aed7f425daee",
+        "model": "unknown"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    },
+    "s_3f4b5347620927": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1052f-291b-7aa2-897e-1b9a6fb3f082",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
