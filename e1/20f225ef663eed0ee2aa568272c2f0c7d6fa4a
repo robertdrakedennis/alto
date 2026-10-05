@@ -1,0 +1,103 @@
+docs/server-architecture.md
+  s_3f4b5347620927::t_3ca2fbea6e149c 713-716
+packages/domain/src/symbols/loc.ts
+  s_3f4b5347620927::t_5d03d458fe79f9 121-124
+packages/domain/src/symbols/location.ts
+  s_3f4b5347620927::t_1987f4cda6aa13 113-119
+packages/domain/src/symbols/npc.ts
+  s_3f4b5347620927::t_13db423d2fd032 43-46,64-65
+packages/domain/src/symbols/seq.ts
+  s_3f4b5347620927::t_2377bd81158624 57-64,108-110
+packages/domain/src/symbols/spot.ts
+  s_3f4b5347620927::t_41fd08278629e2 9-14
+packages/domain/src/symbols/struct.ts
+  s_3f4b5347620927::t_a7c14fb6847ed4 23-24
+revisions/910/symbols/loc.sym
+  s_3f4b5347620927::t_5a8bed5ea98ec3 119-122
+revisions/910/symbols/location.sym
+  s_3f4b5347620927::t_a48fc203302198 103-109
+revisions/910/symbols/npc.sym
+  s_3f4b5347620927::t_f8275fa6516771 41-44,62-63
+revisions/910/symbols/seq.sym
+  s_3f4b5347620927::t_12a807e4a3b3ee 55-62,106-108
+revisions/910/symbols/spot.sym
+  s_3f4b5347620927::t_8b7222eec4477f 7-12
+revisions/910/symbols/struct.sym
+  s_3f4b5347620927::t_19580f51269de1 21-22
+server/src/lostcity/content/world/bosses/BossRooms.ts
+  s_3f4b5347620927::t_f51db54e9072c2 3,57,64,87-97,106-108,114,123-128,146,152,159-160,165,167-169,171-177,179-180,182-192,245-251,270-271,277,279-281,295-296,345-346,348-351,503,512,541-545
+server/src/lostcity/content/world/bosses/MoleEncounter.ts
+  s_3f4b5347620927::t_f6224b98676d3c 1-527
+server/src/lostcity/content/world/bosses/MoleRewards.ts
+  s_3f4b5347620927::t_90e63f6d31cea8 1-74
+server/src/lostcity/data/BossRoomData.ts
+  s_3f4b5347620927::t_e9faf2bd3636f8 3,11-13,26
+server/src/lostcity/data/MoleEncounterData.ts
+  s_3f4b5347620927::t_90c78f63f2b743 1-80
+server/src/lostcity/data/NpcData.ts
+  s_3f4b5347620927::t_dba7cdb4132b65 39
+server/src/lostcity/engine/devcommands/NpcSelection.ts
+  s_3f4b5347620927::t_2528f89cc41eaa 1-59
+server/src/lostcity/engine/devcommands/PlayerCommands.ts
+  s_3f4b5347620927::t_0c5cce30ac16b3 91-101
+server/src/lostcity/engine/devcommands/SkillCommands.ts
+  s_3f4b5347620927::t_12c988bd516570 5,22-72,92
+server/src/lostcity/network/GiantMoleE2E.integration.test.ts
+  s_3f4b5347620927::t_9ffaa8c30ab828 1-430
+server/src/lostcity/network/GiantMoleInputs.testkit.ts
+  s_3f4b5347620927::t_1cd35442c12686 1-25
+server/src/lostcity/network/KingBlackDragonE2E.integration.test.ts
+  s_3f4b5347620927::t_0d4bd80d62635f 1,3,117-122
+server/src/lostcity/systems/combat/CombatCondition.ts
+  s_3f4b5347620927::t_1b0852c1879ff7 83-84
+server/src/lostcity/systems/combat/CombatState.ts
+  s_3f4b5347620927::t_11318da276b47e 61-65
+server/src/lostcity/systems/combat/CombatStatuses.ts
+  s_3f4b5347620927::t_fb6c8250afe41d 81
+server/src/lostcity/systems/loot/Loot.ts
+  s_3f4b5347620927::t_759cb0f642f77b 10-11,48
+server/src/lostcity/systems/npc/NpcPopulation.ts
+  s_3f4b5347620927::t_4ba447cf622211 14,68-74,221-236,238
+server/src/lostcity/tools/data/domains/instances/GiantMole.ts
+  s_3f4b5347620927::t_a8f2d36a75f2fe 1-286
+server/src/lostcity/tools/data/domains/instances/index.ts
+  s_3f4b5347620927::t_159b6da9893876 1,8-9,11
+server/src/lostcity/tools/data/domains/npcs/NpcWiki.test.ts
+  s_3f4b5347620927::t_c0194f9ff75b1b 268-281
+server/src/lostcity/tools/data/domains/npcs/NpcWiki.ts
+  s_3f4b5347620927::t_8a1319b66ebfa3 193,282
+tools/client910/crates/rs910-symbols/src/loc.rs
+  s_3f4b5347620927::t_13138cd2206f13 238-245
+tools/client910/crates/rs910-symbols/src/location.rs
+  s_3f4b5347620927::t_ec8a308a93cfef 206-219
+tools/client910/crates/rs910-symbols/src/npc.rs
+  s_3f4b5347620927::t_0b8df7b8204bf2 82-89,124-127
+tools/client910/crates/rs910-symbols/src/seq.rs
+  s_3f4b5347620927::t_8de8586ac75d80 110-125,212-217
+tools/client910/crates/rs910-symbols/src/spot.rs
+  s_3f4b5347620927::t_3738f42d84b672 14-25
+tools/client910/crates/rs910-symbols/src/structs.rs
+  s_3f4b5347620927::t_867c728d02bcc3 42-45
+tools/client910/fixtures/session-replay/giant-mole/record.py
+  s_3f4b5347620927::t_79cc083cf226bd 1-161
+tools/client910/fixtures/session-replay/giant-mole/seed.mjs
+  s_3f4b5347620927::t_94d3b6fe8a1c35 1-123
+tools/client910/fixtures/session-replay/giant-mole/server.mjs
+  s_3f4b5347620927::t_4a225709f27878 1-29
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "e120f225ef663eed0ee2aa568272c2f0c7d6fa4a",
+  "prompts": {},
+  "sessions": {
+    "s_3f4b5347620927": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1052f-291b-7aa2-897e-1b9a6fb3f082",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}

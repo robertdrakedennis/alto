@@ -1,0 +1,14 @@
+docs/server-architecture.md
+  h_d26e211304196f 692,706-712
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "1189277a9974176174f3ede88b55ec6f764892e9",
+  "prompts": {},
+  "humans": {
+    "h_d26e211304196f": {
+      "author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
