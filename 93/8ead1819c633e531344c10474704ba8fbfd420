@@ -1,0 +1,31 @@
+docs/server-architecture.md
+  s_3f4b5347620927::t_3d61db5040eeea 832,903,906-919
+server/src/lostcity/content/world/bosses/BarrowsEncounter.ts
+  s_3f4b5347620927::t_06d163392eba61 16-17,64,167-168,272,302,335-353,355-357,369-377,379-388,433
+server/src/lostcity/network/BarrowsE2E.integration.test.ts
+  s_3f4b5347620927::t_ff9d2b834e540a 14,313-376
+server/src/lostcity/network/BarrowsRehearsal.integration.test.ts
+  s_3f4b5347620927::t_d60a210af5ba19 1-359
+server/src/lostcity/tools/data/domains/instances/Barrows.ts
+  s_3f4b5347620927::t_7aa01bf41cb18b 4,44-47,129-138,140,202-203,320-325,336
+server/vitest.config.ts
+  s_3f4b5347620927::t_b09fb87d93885d 86-87
+tools/refactor/test-inventory.txt
+  s_3f4b5347620927::t_7d93887162a3b5 2111,2203
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "938ead1819c633e531344c10474704ba8fbfd420",
+  "prompts": {},
+  "sessions": {
+    "s_3f4b5347620927": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1052f-291b-7aa2-897e-1b9a6fb3f082",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}

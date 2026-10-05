@@ -1,0 +1,31 @@
+tools/client910/crates/rs910-game/src/protocol910/terrain.rs
+  s_3f4b5347620927::t_784f036c0d55ce 7-13,108-119,166-170,203-206,220-222,228,289-314
+tools/client910/crates/rs910-scene/src/maploader.rs
+  s_3f4b5347620927::t_1d32cdb057bbfa 520-625
+tools/client910/fixtures/session-replay/barrows/record.py
+  s_3f4b5347620927::t_c07b49b422a7f6 1-184
+tools/client910/fixtures/session-replay/barrows/seed.mjs
+  s_3f4b5347620927::t_e47dd453a49e7b 1-237
+tools/client910/fixtures/session-replay/barrows/server.mjs
+  s_3f4b5347620927::t_e16bec63d96385 1-123
+tools/client910/src/app.rs
+  s_3f4b5347620927::t_2a85d6ca8ed28c 396-399
+tools/client910/src/scenario_barrows.rs
+  s_3f4b5347620927::t_4425abc0b35d01 1-409
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "cb578482e978f2666c470bf92e14515eb40183c5",
+  "prompts": {},
+  "sessions": {
+    "s_3f4b5347620927": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1052f-291b-7aa2-897e-1b9a6fb3f082",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}

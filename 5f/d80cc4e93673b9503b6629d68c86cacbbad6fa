@@ -1,0 +1,57 @@
+docs/server-architecture.md
+  s_3f4b5347620927::t_b25ed3e0cf42e2 871-872,876-881
+server/src/lostcity/content/world/bosses/BarrowsCore.test.ts
+  s_3f4b5347620927::t_b397d1fac6e603 1,131-161
+server/src/lostcity/content/world/bosses/BarrowsEquipment.integration.test.ts
+  s_3f4b5347620927::t_2580e3ec38fe69 1-234
+server/src/lostcity/content/world/bosses/BarrowsProgress.ts
+  s_3f4b5347620927::t_f5cd885a2bcc62 3,15,20,24,47-72
+server/src/lostcity/content/world/bosses/BarrowsWindows.ts
+  s_3f4b5347620927::t_f14def72f33fce 1-115
+server/src/lostcity/data/BarrowsData.ts
+  s_3f4b5347620927::t_9b69aca226e6c1 33-35,39-40
+server/src/lostcity/data/ItemChargeData.ts
+  s_3f4b5347620927::t_7d2bab8c9b0c47 20-34,38
+server/src/lostcity/entity/Player.ts
+  s_3f4b5347620927::t_c7dcf285353213 1,58
+server/src/lostcity/systems/equipment/ChargedEquipment.ts
+  s_3f4b5347620927::t_2f19967fcfd9b9 1-23
+server/src/lostcity/systems/equipment/EquipmentContent.ts
+  s_3f4b5347620927::t_40dea0ad1e6d1f 1,39-40,90,122-125
+server/src/lostcity/systems/equipment/EquipmentRules.ts
+  s_3f4b5347620927::t_f1346c6cdec97f 20-21
+server/src/lostcity/systems/equipment/EquipmentStats.ts
+  s_3f4b5347620927::t_b6c0f4d7f4c91b 1,44-49,125-129,154-155,177-178,197-201,231-233
+server/src/lostcity/systems/equipment/PlayerItemCharges.ts
+  s_3f4b5347620927::t_78631bdc50d9ac 1,61
+server/src/lostcity/systems/inventory/Inventories.ts
+  s_3f4b5347620927::t_cbb627c34a5f2c 295
+server/src/lostcity/systems/session/Account.ts
+  s_3f4b5347620927::t_0e9e063b6d9f00 1-2,48,88-89,128,199
+server/src/lostcity/systems/session/AccountFile.ts
+  s_3f4b5347620927::t_90242e026a3113 1,114,149
+server/src/lostcity/tools/data/domains/combat/BarrowsChargeStage.test.ts
+  s_3f4b5347620927::t_c89bcec5ca14ef 1-31
+server/src/lostcity/tools/data/domains/combat/BarrowsChargeStage.ts
+  s_3f4b5347620927::t_c9ebfee520c6cb 1-204
+server/src/lostcity/tools/data/domains/combat/ChargeStage.ts
+  s_3f4b5347620927::t_23389f5669dad9 1,33,132-140
+server/src/lostcity/tools/data/domains/combat/index.ts
+  s_3f4b5347620927::t_5cf04bdefe110c 113,115,121
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "5fd80cc4e93673b9503b6629d68c86cacbbad6fa",
+  "prompts": {},
+  "sessions": {
+    "s_3f4b5347620927": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1052f-291b-7aa2-897e-1b9a6fb3f082",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
