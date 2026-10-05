@@ -1,0 +1,53 @@
+docs/server-architecture.md
+  s_3f4b5347620927::t_e9c492e924a53e 752-759
+server/src/lostcity/data/RunEnergyData.ts
+  s_3f4b5347620927::t_f6eb6ff8a9214c 1-14
+server/src/lostcity/data/SpecialCombatData.ts
+  s_3f4b5347620927::t_731d68f62ebf66 51
+server/src/lostcity/engine/tick/WorldPhases.ts
+  s_3f4b5347620927::t_38308dcda9272a 84
+server/src/lostcity/network/LegacyHamstringE2E.integration.test.ts
+  s_3f4b5347620927::t_cf79e7d54fa315 1-190
+server/src/lostcity/systems/combat/CombatCondition.ts
+  s_3f4b5347620927::t_6f9cde1fa79b16 77
+server/src/lostcity/systems/combat/CombatStatuses.ts
+  s_3f4b5347620927::t_660c9328f1b592 86-102,181-183
+server/src/lostcity/systems/combat/SpecialEffects.ts
+  s_3f4b5347620927::t_6cb18357e67ee0 190-195
+server/src/lostcity/systems/movement/Movement.ts
+  s_3f4b5347620927::t_bca04b2c62fa09 8,270,290-291
+server/src/lostcity/systems/movement/RunEnergy.test.ts
+  s_3f4b5347620927::t_8b1bfa9a4cbaf4 1-101
+server/src/lostcity/systems/movement/RunEnergy.ts
+  s_3f4b5347620927::t_acfeaffcb34924 4,8-21,26,32-49
+server/src/lostcity/systems/movement/RunState.ts
+  s_3f4b5347620927::t_ce8dfadba49e3c 10-11
+server/src/lostcity/systems/session/Session.ts
+  s_3f4b5347620927::t_e1a3ed2ffc4fa7 12,67
+server/src/lostcity/tools/data/domains/combat/RunEnergyStage.ts
+  s_3f4b5347620927::t_0794aa61ba3d70 1-28
+server/src/lostcity/tools/data/domains/combat/SpecialAvailabilityStage.ts
+  s_3f4b5347620927::t_e28b69567bf298 38
+server/src/lostcity/tools/data/domains/combat/SpecialStage.ts
+  s_3f4b5347620927::t_51d334d6cae64e 94,168-185,530
+server/src/lostcity/tools/data/domains/combat/index.ts
+  s_3f4b5347620927::t_7e4a9bf6507fc3 1,24-25,59,65,99,113-114,119
+tools/refactor/test-inventory.txt
+  s_3f4b5347620927::t_774ff540d50367 1823,1887,2150,2204,2297,2312,2429
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "9c5c50de71d742074061114a7cf23b93a42b56f0",
+  "prompts": {},
+  "sessions": {
+    "s_3f4b5347620927": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1052f-291b-7aa2-897e-1b9a6fb3f082",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
