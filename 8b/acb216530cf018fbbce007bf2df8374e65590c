@@ -1,0 +1,43 @@
+docs/client-status.md
+  s_3f4b5347620927::t_0ae841a15ab7d9 17-18
+packages/domain/src/symbols/location.ts
+  s_3f4b5347620927::t_5dd31ef9d5196c 143
+revisions/910/symbols/location.sym
+  s_3f4b5347620927::t_45a733f70d0842 133
+tools/client910/crates/rs910-symbols/src/location.rs
+  s_3f4b5347620927::t_ff5e08fded9e28 266-267
+tools/client910/fixtures/session-replay/npc-audit/combat-receipts.jsonl
+  s_3f4b5347620927::t_e47f585bdb5185 1-26
+tools/client910/fixtures/session-replay/npc-audit/record.py
+  s_3f4b5347620927::t_8f7956ec55db12 1-142
+tools/client910/fixtures/session-replay/npc-audit/seed.mjs
+  s_3f4b5347620927::t_6a82d2454c6da2 1-59
+tools/client910/fixtures/session-replay/npc-audit/server-trace.jsonl
+  s_3f4b5347620927::t_02ff281882e257 1-216
+tools/client910/fixtures/session-replay/npc-audit/server.mjs
+  s_3f4b5347620927::t_e9c92bd441115d 1-29
+tools/client910/src/app.rs
+  s_3f4b5347620927::t_2a1f7eb308f37f 364-367
+tools/client910/src/scenario_npc_audit.rs
+  s_3f4b5347620927::t_493f0783d28589 1-444
+tools/refactor/replay-gate.txt
+  s_3f4b5347620927::t_61caad9a3d38ae 107
+tools/refactor/test-inventory.txt
+  s_3f4b5347620927::t_6c3fb70688c13d 4,92
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "8bacb216530cf018fbbce007bf2df8374e65590c",
+  "prompts": {},
+  "sessions": {
+    "s_3f4b5347620927": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1052f-291b-7aa2-897e-1b9a6fb3f082",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
