@@ -1,0 +1,14 @@
+tools/client910/fixtures/session-replay/barrows/driver.py
+  h_d26e211304196f 560
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "5665f80664cda41c00042498d096ae571316a654",
+  "prompts": {},
+  "humans": {
+    "h_d26e211304196f": {
+      "author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
