@@ -1,0 +1,33 @@
+packages/domain/src/symbols/obj.ts
+  s_3f4b5347620927::t_935db7acef7327 290
+revisions/910/symbols/obj.sym
+  s_3f4b5347620927::t_d64597e6e914cb 288
+server/src/lostcity/tools/data/domains/instances/GwdDropItems.test.ts
+  s_3f4b5347620927::t_d54828861c84ea 1-55
+server/src/lostcity/tools/data/domains/instances/GwdDropItems.ts
+  s_3f4b5347620927::t_79b1fbb237917c 1-29
+server/src/lostcity/tools/data/domains/instances/GwdPolicy.ts
+  s_3f4b5347620927::t_38c04e56d28a5d 137
+server/src/lostcity/tools/data/domains/instances/GwdStage.ts
+  s_3f4b5347620927::t_267b11728d15ce 12,129,304-313,478,508
+tools/client910/crates/rs910-symbols/src/obj.rs
+  s_3f4b5347620927::t_f70812ac9f328b 576-577
+tools/client910/src/scenario_god_wars.rs
+  s_3f4b5347620927::t_44afb687c2ab9f 44,771
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "f311c1e9db90c7d4d5ce51d7b516387c56e80a5f",
+  "prompts": {},
+  "sessions": {
+    "s_3f4b5347620927": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1052f-291b-7aa2-897e-1b9a6fb3f082",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
