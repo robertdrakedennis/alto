@@ -1,0 +1,105 @@
+tools/client910/fixtures/session-replay/god-wars/armadyl/combat-receipts.jsonl
+  s_3f4b5347620927::t_cdc7d5fd14d2f5 1-5124
+tools/client910/fixtures/session-replay/god-wars/armadyl/driver-journal.jsonl
+  s_3f4b5347620927::t_29ddaa37dbbe9d 1-6502
+tools/client910/fixtures/session-replay/god-wars/armadyl/execution.json
+  s_3f4b5347620927::t_bb82bbf5260b72 1-14
+tools/client910/fixtures/session-replay/god-wars/armadyl/final-saved-state.json
+  s_3f4b5347620927::t_e7c41eb7a56409 1-1722
+tools/client910/fixtures/session-replay/god-wars/armadyl/initial-fixture.json
+  s_3f4b5347620927::t_4e80cc881e4f00 1-910
+tools/client910/fixtures/session-replay/god-wars/armadyl/plan.json
+  s_3f4b5347620927::t_427f786164bd25 1-578
+tools/client910/fixtures/session-replay/god-wars/armadyl/rope-before-saved-state.json
+  s_3f4b5347620927::t_084827b8bfd227 1-1722
+tools/client910/fixtures/session-replay/god-wars/armadyl/server-trace.jsonl
+  s_3f4b5347620927::t_da1ae655662475 1-3874
+tools/client910/fixtures/session-replay/god-wars/bandos/combat-receipts.jsonl
+  s_3f4b5347620927::t_2a74d622069b03 1-2683
+tools/client910/fixtures/session-replay/god-wars/bandos/driver-journal.jsonl
+  s_3f4b5347620927::t_c94260286be49a 1-3733
+tools/client910/fixtures/session-replay/god-wars/bandos/execution.json
+  s_3f4b5347620927::t_411168f6a46520 1-14
+tools/client910/fixtures/session-replay/god-wars/bandos/final-saved-state.json
+  s_3f4b5347620927::t_62d8d6e9fc6616 1-1710
+tools/client910/fixtures/session-replay/god-wars/bandos/initial-fixture.json
+  s_3f4b5347620927::t_a77165d9dabd56 1-686
+tools/client910/fixtures/session-replay/god-wars/bandos/plan.json
+  s_3f4b5347620927::t_ef07942f17d9bb 1-355
+tools/client910/fixtures/session-replay/god-wars/bandos/rope-before-saved-state.json
+  s_3f4b5347620927::t_141c8bae981491 1-1710
+tools/client910/fixtures/session-replay/god-wars/bandos/server-trace.jsonl
+  s_3f4b5347620927::t_2d4cdddb53a4e2 1-1954
+tools/client910/fixtures/session-replay/god-wars/saradomin/combat-receipts.jsonl
+  s_000d40b86ee599::t_b39d8388ac6b93 1-5570
+tools/client910/fixtures/session-replay/god-wars/saradomin/driver-journal.jsonl
+  s_1691a1d3ba4fb2::t_16c43711f7f303 1-6607
+tools/client910/fixtures/session-replay/god-wars/saradomin/execution.json
+  s_1691a1d3ba4fb2::t_0e4d3d581b6fd2 1-14
+tools/client910/fixtures/session-replay/god-wars/saradomin/final-saved-state.json
+  s_0c078e69478431::t_825da550a18be0 1-1722
+tools/client910/fixtures/session-replay/god-wars/saradomin/initial-fixture.json
+  s_0c078e69478431::t_d52d178e50b165 1-888
+tools/client910/fixtures/session-replay/god-wars/saradomin/plan.json
+  s_1691a1d3ba4fb2::t_3e5b9ae8de3f63 1-555
+tools/client910/fixtures/session-replay/god-wars/saradomin/rope-before-saved-state.json
+  s_0c078e69478431::t_ed9996d5e33efb 1-1722
+tools/client910/fixtures/session-replay/god-wars/saradomin/server-trace.jsonl
+  s_0c078e69478431::t_efea8c29b835d4 1-3852
+tools/client910/fixtures/session-replay/god-wars/zamorak/combat-receipts.jsonl
+  s_3f4b5347620927::t_214d7a94a987da 1-3006
+tools/client910/fixtures/session-replay/god-wars/zamorak/driver-journal.jsonl
+  s_3f4b5347620927::t_2e5e5cb9629477 1-3973
+tools/client910/fixtures/session-replay/god-wars/zamorak/execution.json
+  s_3f4b5347620927::t_684b5603b7e0ca 1-14
+tools/client910/fixtures/session-replay/god-wars/zamorak/final-saved-state.json
+  s_3f4b5347620927::t_c14a558ef8ae1d 1-1722
+tools/client910/fixtures/session-replay/god-wars/zamorak/initial-fixture.json
+  s_3f4b5347620927::t_b705a327e6efe4 1-813
+tools/client910/fixtures/session-replay/god-wars/zamorak/plan.json
+  s_3f4b5347620927::t_a775c534a59be9 1-481
+tools/client910/fixtures/session-replay/god-wars/zamorak/rope-before-saved-state.json
+  s_3f4b5347620927::t_a30b1f24d6c077 1-1722
+tools/client910/fixtures/session-replay/god-wars/zamorak/server-trace.jsonl
+  s_3f4b5347620927::t_5bc3610bd9f3ae 1-2318
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "41726054515559616996be20209df064c4d25c4e",
+  "prompts": {},
+  "sessions": {
+    "s_000d40b86ee599": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "8daed186-c92e-4ab1-a065-fac701068c8d",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    },
+    "s_0c078e69478431": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "712c1fd7-2642-4677-8ee0-0f91d015a28e",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    },
+    "s_1691a1d3ba4fb2": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a111c7-5481-70c0-bf09-faf18a897c36",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    },
+    "s_3f4b5347620927": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1052f-291b-7aa2-897e-1b9a6fb3f082",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
