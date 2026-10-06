@@ -1,0 +1,23 @@
+tools/client910/fixtures/session-replay/barrows/driver.py
+  s_3f4b5347620927::t_7c46040c6d84a5 60-61,258-260,262,291,530-577,1099
+tools/client910/fixtures/session-replay/barrows/seed.mjs
+  s_3f4b5347620927::t_2023f763cb6cbb 35,64-67,69
+tools/client910/fixtures/session-replay/barrows/server.mjs
+  s_3f4b5347620927::t_556517d7480851 17,59-60,83
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "7159f78b6664d5f5073441bac0e33caecd2e799a",
+  "prompts": {},
+  "sessions": {
+    "s_3f4b5347620927": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1052f-291b-7aa2-897e-1b9a6fb3f082",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
