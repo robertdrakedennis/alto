@@ -1,0 +1,29 @@
+docs/server-architecture.md
+  s_3f4b5347620927::t_16ad014e3bcf7c 966-967
+tools/client910/fixtures/session-replay/pest-control/driver.py
+  s_3f4b5347620927::t_96532439767043 2,22,25-28,40-41,48-50,79-86,153,155,164,166-175,200-202,208-211,231,253-295,302,316-323,327-328,335,358-370,372,390-659,672-790,807-815,819-842,844-845,847-848,853-855,857,859-862,865,868-869,875-895,897,937-940,950-951,957-962,984-985,1034-1044,1050-1051,1055
+tools/client910/fixtures/session-replay/pest-control/seed.mjs
+  s_3f4b5347620927::t_afa2ad05c32404 4,9,21,94-122,129,137
+tools/client910/fixtures/session-replay/pest-control/server.mjs
+  s_3f4b5347620927::t_92497d0d54aa25 36-39,123,127,148-149
+tools/client910/src/scenario_pest_control.rs
+  s_3f4b5347620927::t_2690908d666dc1 10-11,60-63,264,273-284,459-470,498-503,506-636,682-697,746-791,925-926,972-988,1017-1023
+tools/refactor/test-inventory.txt
+  s_3f4b5347620927::t_cf07d049ad003d 2297,2314-2315
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "d837e1cc2a7863a8984394d8a7ff80065a185c26",
+  "prompts": {},
+  "sessions": {
+    "s_3f4b5347620927": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1052f-291b-7aa2-897e-1b9a6fb3f082",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
