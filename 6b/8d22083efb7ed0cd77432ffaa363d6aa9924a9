@@ -1,0 +1,24 @@
+tools/client910/fixtures/session-replay/god-wars/driver.py
+  h_d26e211304196f 53-60,91-95,123,132-134,151-152,157-176,185-187,196,211-212,244-245,1049-1317,1319-1320,1646-1647,1699
+tools/client910/fixtures/session-replay/god-wars/freeze.py
+  h_d26e211304196f 28
+tools/client910/fixtures/session-replay/god-wars/record.py
+  h_d26e211304196f 25,275
+tools/client910/fixtures/session-replay/god-wars/saved_projection.py
+  h_d26e211304196f 32-33,102-103,109,123-129,142-144,152-157,159
+tools/client910/fixtures/session-replay/god-wars/seed.mjs
+  h_d26e211304196f 21,31,41-42,60,69-70,88,94,119,251,253,255-268,270,273,310
+tools/client910/fixtures/session-replay/god-wars/server.mjs
+  h_d26e211304196f 118
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "6b8d22083efb7ed0cd77432ffaa363d6aa9924a9",
+  "prompts": {},
+  "humans": {
+    "h_d26e211304196f": {
+      "author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
