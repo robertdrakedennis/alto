@@ -1,0 +1,14 @@
+tools/client910/fixtures/session-replay/god-wars/driver.py
+  h_d26e211304196f 910-924,1595-1601,1619-1622,1644-1645,1648-1649
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "26e60c6596f6aa8edac54842131aca4c1613d65c",
+  "prompts": {},
+  "humans": {
+    "h_d26e211304196f": {
+      "author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
