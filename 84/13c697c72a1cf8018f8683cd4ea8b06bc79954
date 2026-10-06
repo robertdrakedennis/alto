@@ -1,0 +1,350 @@
+server/src/lostcity/systems/equipment/PlayerEquipment.ts
+  s_3f4b5347620927::t_b3a8925e294291 11,265-295
+tools/client910/fixtures/session-replay/barrows/combat-receipts.jsonl
+  s_3f4b5347620927::t_546acbd60549c7 1-2059
+tools/client910/src/session_replay.rs
+  s_3f4b5347620927::t_dfaa8099d04c12 39-67,95-198,265-266,385-392,448-465,475-483,527-529,556-557,596-601,701,710-731,747-748,759-761,784-796,823-837,886-896,900-906,912,925-927,1001,1053,1065-1074
+revisions/910/symbols/varbit.sym
+  s_3f4b5347620927::t_4fe3e1b0160e81 38-45
+revisions/910/symbols/component.sym
+  s_3f4b5347620927::t_206910f5e5911f 615
+  s_3f4b5347620927::t_eac1873f2db5c5 229-234
+  s_3f4b5347620927::t_4a6336ad976c6d 556-560
+tools/client910/fixtures/session-replay/barrows/record.py
+  h_d26e211304196f 2-14,16-25,27-132,217-324,326-716,718-725,727-844,846-848,850-872,874-1089
+  s_3f4b5347620927::t_44dc1b7e7aa6b0 325,717,726
+  s_3f4b5347620927::t_c07b49b422a7f6 1,15,26
+  s_3f4b5347620927::t_cb81098e5a5cd8 133-216,845,849,873
+server/src/lostcity/tools/data/domains/combat/BarrowsChargeStage.ts
+  s_3f4b5347620927::t_c9ebfee520c6cb 1-204
+server/src/lostcity/content/trails/places.ts
+  s_3f4b5347620927::t_67ea71e7dea972 34,36,40,112-114
+server/src/formats/network/protocol/ServerProt.test.ts
+  s_3f4b5347620927::t_33f15c6257a250 31-32
+server/src/lostcity/systems/session/Account.ts
+  s_3f4b5347620927::t_0e9e063b6d9f00 1-2,48,88-89,128,199
+tools/client910/fixtures/session-replay/barrows/seed.mjs
+  h_d26e211304196f 25-26,34,40,58-63,68-97,99,156-184,221-225
+  s_3f4b5347620927::t_2023f763cb6cbb 35,64-67,98
+  s_3f4b5347620927::t_e47dd453a49e7b 2-3,6,18,49,100,144-145,155,220
+  s_3f4b5347620927::t_e5503173f1c130 202
+  s_3f4b5347620927::t_0b96191af66f15 1,4-5,7-17,19-24,27-33,36-39,41-48,50,101-143,146-154,185-201,203-219,226-238
+  s_3f4b5347620927::t_b63571372629bf 51-57
+packages/domain/src/symbols/inv.ts
+  s_3f4b5347620927::t_cfe8c5a1966585 8
+packages/domain/src/symbols/component.ts
+  s_3f4b5347620927::t_21edc6479328cc 250-255
+  s_3f4b5347620927::t_b6184d847d23ce 754
+  s_3f4b5347620927::t_93ec6bae0c18c6 249,256,656-662
+server/src/lostcity/systems/equipment/EquipmentContent.ts
+  s_3f4b5347620927::t_40dea0ad1e6d1f 1,39-40,90,102,122-125
+server/src/lostcity/content/world/bosses/BarrowsRewards.ts
+  s_3f4b5347620927::t_dc86db9e99af6a 1-69
+server/src/lostcity/content/skills/construction/houses.ts
+  s_3f4b5347620927::t_3339e285fb9b64 4,25-32,138-171
+docs/server-architecture.md
+  s_3f4b5347620927::t_3aa002a64e660d 893-894
+  s_3f4b5347620927::t_9651b177dd1233 895
+  s_3f4b5347620927::t_915a4693597bdf 901-902
+  s_3f4b5347620927::t_42b80db91f3aa0 879-880,891-892,903-904,906-907
+  s_3f4b5347620927::t_3d55bea8b78e46 877-878,881-882
+  s_3f4b5347620927::t_d885d5797af0b3 883-888,908-912
+  s_3f4b5347620927::t_b25ed3e0cf42e2 889-890,896-900,905
+  s_3f4b5347620927::t_82ba7cd3767db2 914-915
+  s_3f4b5347620927::t_fb772ed04c6ef4 869-876
+  s_3f4b5347620927::t_3d61db5040eeea 913,916-929
+  s_3f4b5347620927::t_c38d088c198b88 814,868,930-933
+tools/client910/crates/rs910-symbols/src/component.rs
+  s_3f4b5347620927::t_d299972e391dff 505,507,509-515
+  s_3f4b5347620927::t_89ff808138a1b3 1571-1572
+  s_3f4b5347620927::t_774f724e779b42 501-504,506,508,516-517,1355-1369
+server/src/lostcity/engine/World.ts
+  s_3f4b5347620927::t_df575d00abdd4f 6-7,139-140,346
+  s_3f4b5347620927::t_55b1cbc7bea947 352
+tools/client910/fixtures/session-replay/barrows/server-trace.jsonl
+  s_3f4b5347620927::t_0aa1b1203443f9 1-2500
+tools/client910/fixtures/session-replay/barrows/driver-journal.jsonl
+  s_3f4b5347620927::t_cffc8c96bd7ac8 1-5497
+server/src/lostcity/tools/data/domains/combat/index.ts
+  s_32282483846156::t_1f673ec65cfe4d 114
+  s_3f4b5347620927::t_5cf04bdefe110c 115,121
+tools/client910/scripts/control.py
+  h_d26e211304196f 31-33
+  s_3f4b5347620927::t_444a53c2273ca6 88,103
+server/src/lostcity/tools/data/domains/combat/BarrowsChargeStage.test.ts
+  s_3f4b5347620927::t_c89bcec5ca14ef 1-31
+server/src/lostcity/systems/npc/NpcPopulation.ts
+  s_3f4b5347620927::t_0e99dc70dc3e50 79-87,237
+server/src/lostcity/content/world/bosses/BarrowsSetEffects.ts
+  s_3f4b5347620927::t_814583e1e3b85f 1-131
+tools/client910/fixtures/session-replay/barrows/server.mjs
+  s_3f4b5347620927::t_556517d7480851 17,59-60,83
+  s_3f4b5347620927::t_a2a01964cc71b2 1,4-7,11-16,18-25,31-35,37-47,51,54-58,61-66,68-70,72-82,84-100
+  s_3f4b5347620927::t_e16bec63d96385 2-3,8-10,26-28,30,36,52-53,71,101
+  h_d26e211304196f 48-50,67
+  s_3f4b5347620927::t_776243ce196cfc 29
+server/src/lostcity/systems/session/AccountFile.ts
+  s_3f4b5347620927::t_90242e026a3113 1,114,149
+tools/client910/fixtures/session-replay/barrows/food-receipts.mjs
+  s_3f4b5347620927::t_0c6961b4bede23 1-51
+docs/client-status.md
+  s_3f4b5347620927::t_79562c61f0aa6b 25,33
+revisions/910/symbols/varp.sym
+  s_3f4b5347620927::t_241809d51bbfec 370,386
+revisions/910/symbols/location.sym
+  s_3f4b5347620927::t_2d799be0a3c751 48-53
+server/src/lostcity/systems/combat/PlayerCombat.ts
+  s_3f4b5347620927::t_ef824c7784f67d 49-50,248,251-252
+server/src/lostcity/network/BarrowsE2E.integration.test.ts
+  s_3f4b5347620927::t_7c4ef85ec426b4 1-2,4,6,9-11,15-153,171-182
+  s_3f4b5347620927::t_ff9d2b834e540a 14,330-391,411-412
+  s_3f4b5347620927::t_5282325edde85c 154-170
+  s_3f4b5347620927::t_2c43776d280a02 3,7-8,12-13,183-189,191-329
+  s_3f4b5347620927::t_3b0b77364cabab 190
+  s_3f4b5347620927::t_f60f01bc3a5f68 5,392-410
+server/src/lostcity/content/skills/construction/data.ts
+  s_3f4b5347620927::t_38e49e0b0e6ccb 69-70
+server/src/formats/network/protocol/ServerInterfaceModel.test.ts
+  s_3f4b5347620927::t_29cbf7201754e2 1-95
+revisions/910/symbols/dbrow.sym
+  s_3f4b5347620927::t_8c054de2ec2f48 4
+packages/domain/src/symbols/loc.ts
+  s_3f4b5347620927::t_dd6c93aa78a476 46-51
+  s_3f4b5347620927::t_4e1fcd0c3a8451 146,148
+revisions/910/symbols/obj.sym
+  s_3f4b5347620927::t_2c60781027306c 25,437
+revisions/910/symbols/interface.sym
+  s_3f4b5347620927::t_e33c7afcea5790 14-15,85
+tools/client910/fixtures/session-replay/barrows/plan.json
+  s_3f4b5347620927::t_c445a80b582128 1-311
+tools/client910/fixtures/session-replay/barrows/combined.py
+  s_3f4b5347620927::t_30356e62178ea1 1-70
+tools/client910/crates/rs910-symbols/src/varp.rs
+  s_3f4b5347620927::t_b8be0b326c4a82 740-741,773-774
+packages/domain/src/symbols/interface.ts
+  s_3f4b5347620927::t_afdf779c7989ed 16-17,87
+server/src/lostcity/content/world/bosses/BarrowsCore.test.ts
+  s_3f4b5347620927::t_b397d1fac6e603 1,131-161
+  s_3f4b5347620927::t_d006eea8107b2e 162-177
+  s_3f4b5347620927::t_e432dcf24b5036 2-130
+packages/domain/src/symbols/param.ts
+  s_3f4b5347620927::t_cc8aac4571d5cd 112-113
+packages/domain/src/symbols/varp.ts
+  s_3f4b5347620927::t_85e47144f70781 372,388
+server/src/lostcity/systems/combat/Combatant.ts
+  s_3f4b5347620927::t_a4f36abde9f9d9 1,26,98
+server/src/lostcity/systems/npc/NpcDropAdmission.test.ts
+  s_3f4b5347620927::t_70108b703404b3 1-84
+tools/client910/crates/rs910-client/src/client_core/io.rs
+  s_3f4b5347620927::t_1ebec0913381cc 276-292,405-411
+tools/client910/src/observed_session.rs
+  s_3f4b5347620927::t_301bb662f8f09a 6,291-300,315-337,350-354,372,393,399-416,420,442,444-445,447,449,459,463,495-497,499-501,520,564-597,675
+  s_3f4b5347620927::t_0e409a20d74531 17-19
+  s_3f4b5347620927::t_e2678c0f767c8d 233-238,301,311-314,384,386,491-494,498,516,518
+server/src/lostcity/network/BarrowsRehearsal.integration.test.ts
+  s_3f4b5347620927::t_d60a210af5ba19 1-287,289-359
+  s_3f4b5347620927::t_59b6f4099b4dbe 288
+server/src/lostcity/content/world/bosses/BarrowsWindows.ts
+  s_3f4b5347620927::t_f14def72f33fce 1-30,32,34-115
+  s_3f4b5347620927::t_1e1611b4a9cdb4 31,33
+revisions/910/symbols/loc.sym
+  s_3f4b5347620927::t_9e41b6aa8f79f0 144,146
+  s_3f4b5347620927::t_b0b8ccf91d8766 44-49
+tools/client910/crates/rs910-symbols/src/dbrow.rs
+  s_3f4b5347620927::t_b7c6d4d1d24a1e 8-9
+tools/client910/fixtures/session-replay/barrows/final-saved-state.json
+  s_3f4b5347620927::t_f9671484476f52 1
+tools/client910/fixtures/session-replay/barrows/driver-result.json
+  s_3f4b5347620927::t_f1cd438e8e320c 1-12622
+packages/domain/src/symbols/location.ts
+  s_3f4b5347620927::t_b72f8d747c221d 58-63
+tools/client910/crates/rs910-symbols/src/interface.rs
+  s_3f4b5347620927::t_e777d1e6ced8eb 28-31,170-171
+server/src/lostcity/systems/equipment/EquipmentStats.ts
+  s_3f4b5347620927::t_b6c0f4d7f4c91b 1,44-49,125-129,154-155,177-178,189-190,197-202,232-234
+server/src/lostcity/content/trails/index.ts
+  s_3f4b5347620927::t_b6e68f94aac55e 38,43
+tools/client910/fixtures/session-replay/barrows/driver.py
+  s_3f4b5347620927::t_ae811716cd0365 953-955,959
+  s_3f4b5347620927::t_c243d1e47748bc 257,1300-1359,1363-1364,1411-1418,1421-1422,1426-1436,1520
+  s_3f4b5347620927::t_ac554ffc02e552 532-533,535
+  s_3f4b5347620927::t_d9f012ad98d8f8 13,833-836
+  s_3f4b5347620927::t_e5d26a387b170e 66-67,298
+  s_3f4b5347620927::t_bf96cc390d5a95 1157-1159,1168,1172-1183,1185-1186,1188-1194,1196-1197,1199-1200,1210-1212,1216-1236,1238-1239,1243,1245
+  s_3f4b5347620927::t_41026adad8fd53 76-82,316-320,1097-1124
+  s_3f4b5347620927::t_0313b3b2f9c540 1160-1167,1169-1171
+  s_3f4b5347620927::t_a0bae5b2c9e4b5 1-12,14-22,24-59,64-65,68-75,83-121,123-256,258-260,264,266-270,272-275,277,280-290,292-294,299-304,308-315,321-324,327-333,337-338,340-365,373-399,401-403,412,415-440,442-451,453-469,471-513,531,854-855,857-882,884-952,956-958,960-971,973,976-980,988-1006,1010-1017,1019-1042,1045-1061,1084-1085,1125-1132,1135-1136,1146-1156,1184,1187,1195,1198,1201-1209,1213-1215,1237,1240-1242,1244,1246-1299,1360-1361,1365-1401,1404-1405,1407-1410,1419,1437-1519,1521-1563,1566-1651
+  h_d26e211304196f 62-63,271,278-279,296-297,305-307,325-326,334-336,339,400,404-411,413-414,514,516,519,530,534,536-537,545-732,742,775-832,837-852,972,974-975,981-987,1007-1009,1043-1044,1062-1083,1086-1096,1133-1134,1137-1145,1402-1403,1406,1420,1423-1425,1564-1565
+  s_3f4b5347620927::t_7c46040c6d84a5 60-61,261-263,265,295,538-544,733-741,743-774,1362
+  s_3f4b5347620927::t_616605d61e992b 23,122,276,291,366-372,441,452,470,515,517-518,520-529,853,856,883,1018
+server/src/lostcity/systems/inventory/Inventories.ts
+  s_3f4b5347620927::t_cbb627c34a5f2c 295
+tools/client910/src/toolbar_input_tests.rs
+  s_3f4b5347620927::t_457edc661ae752 424,428,430-450,478-486
+tools/client910/crates/rs910-core/src/logic_clock.rs
+  s_3f4b5347620927::t_bc35ca9b35b558 87-196,268-269,272-274,287,600-638
+tools/client910/src/app.rs
+  s_3f4b5347620927::t_2a85d6ca8ed28c 396-399
+server/src/lostcity/tools/data/domains/skills/construction.ts
+  s_32282483846156::t_5e5c5631a1c6aa 30-31,54-75,317,325-340
+server/src/lostcity/systems/equipment/PlayerItemCharges.ts
+  s_3f4b5347620927::t_9fefe8a3047fa8 33-43,154,164
+  s_3f4b5347620927::t_eab3b58f9ae855 7,13,163,165,204-301
+  s_3f4b5347620927::t_78631bdc50d9ac 1,62
+packages/domain/src/symbols/dbrow.ts
+  s_3f4b5347620927::t_cf8c7d33a83ebf 6
+packages/domain/src/symbols/obj.ts
+  s_3f4b5347620927::t_c825a6ecad29f6 27,439
+tools/client910/crates/rs910-ui/src/ui_runtime/menu_builder.rs
+  s_3f4b5347620927::t_6d98e13dc511a6 346-357
+tools/client910/fixtures/session-replay/barrows/repair_driver.py
+  h_d26e211304196f 7,88-131,155,157-159,163-164
+  s_3f4b5347620927::t_736652f1636def 197-215
+  s_3f4b5347620927::t_b32a4865d5f088 1-6,8-87,132-139,150-154,156,160-162,165-196,216-263,265-374
+  s_3f4b5347620927::t_5754171550d68b 264
+  s_3f4b5347620927::t_815345c0a6823e 140-149
+server/src/lostcity/systems/equipment/ChargedEquipment.ts
+  s_3f4b5347620927::t_2f19967fcfd9b9 1-23
+tools/client910/src/scenario_barrows.rs
+  h_d26e211304196f 2,10,24-31,34-56,104-128,130-138,140-173,187-197,199-207,211,215-218,221,223-229,236,238-249,253-256,259,265-273,275,277-310,313-316,318-331,335-336,341,345-571,589-656,661-746,763-841,847-852,874-904,915-920,922-949,975-981,987,989-994,1060-1078,1100-1112,1118-1130,1132,1144-1145,1148-1171,1185-1186,1188-1224
+  s_3f4b5347620927::t_d8dd686c04378a 6-9,32-33,572-588,853-873,951-957
+  s_3f4b5347620927::t_4425abc0b35d01 1,3-5,11-23,57-103,139,198,208-210,212-214,219-220,222,230-235,237,250-252,257-258,260-264,274,276,311-312,317,332-334,337-340,342-344,657-660,757,761-762,842-846,906-909,911,921,950,958-974,982-986,988,995,1010,1012-1059,1079-1099,1113-1117,1131,1133-1134,1136-1143,1146-1147,1172-1184,1187,1225-1227
+  s_3f4b5347620927::t_8954e64aa39aab 129,747-756,758-760,905,910,912-914,996-1004,1006-1009,1011
+  s_3f4b5347620927::t_c5067927a028b3 174-186,1005,1135
+server/src/lostcity/tools/data/domains/instances/index.ts
+  s_3f4b5347620927::t_43f938a77aaf8e 1,11,13-19
+server/src/lostcity/data/BarrowsData.ts
+  s_3f4b5347620927::t_4d0bccb2dcd3cd 1-7,10-15,18-31,33-37,41-43,46-49,86-101,103-125,128-130,132-140,144-146,148-158,174-187,198,200-202,205-210
+  s_3f4b5347620927::t_888ea64492e069 16-17,50-85,190,203-204
+  s_3f4b5347620927::t_4e0c6cae55c126 126-127,131,141,147,159-173,197,199
+  s_3f4b5347620927::t_fac50b0b3d0d79 8-9,32,102,142-143,188-189,196
+  s_3f4b5347620927::t_9b69aca226e6c1 38-40,44-45
+  s_3f4b5347620927::t_7a0d8a34bacaab 191-195
+tools/client910/fixtures/session-replay/barrows/initial-repair-fixture.json
+  s_3f4b5347620927::t_bff9ed14a48c8a 1-583
+tools/client910/src/interactive_input_tests.rs
+  s_3f4b5347620927::t_be187be1b52b11 568-594,596-620,622-794
+  s_3f4b5347620927::t_820a28182d1201 595,621
+server/src/lostcity/systems/equipment/EquipmentRules.ts
+  s_3f4b5347620927::t_f1346c6cdec97f 20-21
+tools/client910/fixtures/session-replay/barrows/repair-receipts.mjs
+  s_3f4b5347620927::t_f7c233ca7936cf 1-41
+packages/domain/src/symbols/varbit.ts
+  s_3f4b5347620927::t_71ca589672b5d5 40-47
+server/src/lostcity/content/world/bosses/BarrowsRepairs.ts
+  s_3f4b5347620927::t_a55295d50a3d1b 3-14,17,19-20,49-59,61-66,74-76,78-79
+  s_32282483846156::t_98bbd5c2490a0a 1-2,15-16,18,21-48,60,77
+  s_3f4b5347620927::t_be0cf21a87ede2 67-73
+tools/refactor/test-inventory.txt
+  s_3f4b5347620927::t_ab72eb64ac823c 4,35,48,71,159,920-921,1674-1675,1677-1678,1685,1691,1696,1739-1740,2078,2282-2283,2289,2300
+  s_3f4b5347620927::t_8c38c0833f4f29 2006-2007
+  s_32282483846156::t_33d144c88e13c3 1686,2158,2267,2295-2296,2428
+  s_3f4b5347620927::t_abbcfc93d65599 1679-1684,1687-1690,1694-1695
+  s_3f4b5347620927::t_7d93887162a3b5 2131,2223
+  s_32282483846156::t_362ef1161834f9 1676,1692-1693,2219,2224-2225,2231,2279,2362,2365,2394
+  s_3f4b5347620927::t_54479edc9c0fe2 2023,2058,2386-2387
+server/src/lostcity/entity/Player.ts
+  s_3f4b5347620927::t_c7dcf285353213 1,58
+server/src/lostcity/tools/data/domains/instances/BarrowsSetStage.test.ts
+  s_3f4b5347620927::t_dd4162b3440678 1-51
+tools/client910/crates/rs910-symbols/src/location.rs
+  s_3f4b5347620927::t_b767aff8df22e0 96-107
+server/src/lostcity/content/world/bosses/Barrows.ts
+  s_3f4b5347620927::t_9822033245fe19 212-218
+  s_3f4b5347620927::t_5f3d213a95bf16 1,3-13,15-46,48,52-211,219-222
+  s_3f4b5347620927::t_000646170ac0e5 2,47,51
+  s_3f4b5347620927::t_c8858e21828919 14,49-50
+server/src/lostcity/tools/data/domains/combat/ChargeStage.ts
+  s_3f4b5347620927::t_23389f5669dad9 1,33,132-140
+server/src/lostcity/systems/combat/Combat.test.ts
+  s_3f4b5347620927::t_fb7d50b5a1972f 11-12,197-253
+  s_3f4b5347620927::t_f1d3a457843fab 13,147-196
+server/src/lostcity/tools/data/domains/skills/construction.test.ts
+  s_32282483846156::t_8d1b3dc822cd84 1-29
+server/src/lostcity/systems/equipment/PlayerItemCharges.integration.test.ts
+  s_3f4b5347620927::t_e74db601149fdf 403-473
+tools/client910/crates/rs910-symbols/src/inv.rs
+  s_3f4b5347620927::t_5853f11a80d88a 12-13
+tools/client910/crates/rs910-symbols/src/obj.rs
+  s_3f4b5347620927::t_1f858f16759854 50-51,874-875
+tools/client910/crates/rs910-symbols/src/loc.rs
+  s_3f4b5347620927::t_f64c2fd499ebbc 288-289,292-293
+  s_3f4b5347620927::t_cd1463f73daa98 88-99
+server/src/lostcity/tools/data/domains/instances/BarrowsSetStage.ts
+  s_3f4b5347620927::t_88a6e7cfc21493 1-211
+server/vitest.config.ts
+  s_3f4b5347620927::t_b09fb87d93885d 86-87
+server/src/formats/network/protocol/ServerProt.ts
+  s_3f4b5347620927::t_2b0c4af051e666 367-388
+server/src/lostcity/tools/data/domains/instances/BarrowsWiki.test.ts
+  s_3f4b5347620927::t_d894cb74b22207 1-2,4-52
+  s_32282483846156::t_4b450ecd4a8675 3,53-71
+server/src/lostcity/data/ItemChargeData.ts
+  s_3f4b5347620927::t_7d2bab8c9b0c47 20-34,38
+tools/client910/crates/rs910-symbols/src/varbit.rs
+  s_3f4b5347620927::t_a7d1158cde65ab 76-91
+server/src/lostcity/content/world/bosses/BarrowsProgress.ts
+  s_3f4b5347620927::t_8b8b31108df8ed 1-2,4-10,15-18,20-22,36-38,40-61,88-136
+  s_3f4b5347620927::t_f5cd885a2bcc62 3,19,39,62-87
+  s_3f4b5347620927::t_795f1b28a748fc 11-14,23-35
+server/src/lostcity/tools/data/domains/instances/Barrows.ts
+  s_3f4b5347620927::t_70a7d20120fd2e 1,3,6,10-12,14-43,48-128,139,141-159,168-201,204-205,210-229,233-235,245-265,267-279,300-312,317-319,326-332,334-335,337-339
+  s_32282483846156::t_c2d884a6834d6c 5,7,13,280-288,315
+  s_3f4b5347620927::t_0cdace1ae18bc7 2,316
+  s_3f4b5347620927::t_7aa01bf41cb18b 4,44-47,129-138,140,202-203,320-325,336
+  s_3f4b5347620927::t_14d77f60093eed 8-9,160-167,206-209,230-232,236-244,266,289-299,313-314,333
+server/src/lostcity/network/BarrowsHouseRepairE2E.integration.test.ts
+  s_32282483846156::t_c4122661042331 1-230
+revisions/910/symbols/inv.sym
+  s_3f4b5347620927::t_82a006098b169a 6
+server/src/lostcity/content/world/bosses/BarrowsEquipment.integration.test.ts
+  s_3f4b5347620927::t_2580e3ec38fe69 8-23,30-76,79-80,83-107,109-116,118-249
+  s_3f4b5347620927::t_54ea55ce38dbe4 1,25-29,81-82,315-395
+  s_3f4b5347620927::t_6d099b8503f0d8 2-7,108,117,314,396-613
+  s_3f4b5347620927::t_fe514911a3b75a 24,77-78,250-313
+server/src/lostcity/systems/combat/Combat.ts
+  s_3f4b5347620927::t_67d0b39901f7f2 3-4,32-46,49,311,317-327,336-345,350,353-363,541-542
+server/src/lostcity/content/world/bosses/BarrowsEncounter.ts
+  s_3f4b5347620927::t_8cae8dd99dcb85 90-96
+  s_3f4b5347620927::t_06d163392eba61 16-17,64,167-168,272,302,335-353,355-357,369-377,379-388,433
+  s_3f4b5347620927::t_1c914c66d5155f 1-15,18-63,65-89,97-166,169-271,273-301,303-334,354,358-368,378,389-432,434-505
+revisions/910/symbols/param.sym
+  s_3f4b5347620927::t_39dfdc2c46fabe 110-111
+tools/client910/src/live_control.rs
+  s_3f4b5347620927::t_277ab7894b412d 36,40-46,89-92,142-151,202-204,208-209,584-596,626-657,662,669-674,761,776-791,1043-1100,1212-1229,1369,1378,1391,1422,1427,1435,1480-1529
+  h_d26e211304196f 1338-1351,1387
+server/src/lostcity/tools/data/domains/instances/BarrowsWiki.ts
+  s_3f4b5347620927::t_91225a4857e6cb 1-156
+  s_32282483846156::t_38b726f8789190 157-176
+tools/client910/crates/rs910-symbols/src/param.rs
+  s_3f4b5347620927::t_30b52ee6645ef4 220-223
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "8413c697c72a1cf8018f8683cd4ea8b06bc79954",
+  "prompts": {},
+  "humans": {
+    "h_d26e211304196f": {
+      "author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  },
+  "sessions": {
+    "s_32282483846156": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "8e5be8e8-979d-4f47-9654-aed7f425daee",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    },
+    "s_3f4b5347620927": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1052f-291b-7aa2-897e-1b9a6fb3f082",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
