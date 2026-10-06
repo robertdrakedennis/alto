@@ -1,0 +1,33 @@
+packages/domain/src/symbols/component.ts
+  s_3f4b5347620927::t_21edc6479328cc 250-255
+revisions/910/symbols/component.sym
+  s_3f4b5347620927::t_eac1873f2db5c5 229-234
+server/src/lostcity/content/world/bosses/BarrowsWindows.ts
+  s_3f4b5347620927::t_1e1611b4a9cdb4 31,33
+server/src/lostcity/network/BarrowsE2E.integration.test.ts
+  s_3f4b5347620927::t_3b0b77364cabab 190
+server/src/lostcity/network/BarrowsRehearsal.integration.test.ts
+  s_3f4b5347620927::t_59b6f4099b4dbe 288
+tools/client910/crates/rs910-symbols/src/component.rs
+  s_3f4b5347620927::t_d299972e391dff 505,507,509-515
+tools/client910/fixtures/session-replay/barrows/driver.py
+  s_3f4b5347620927::t_e5d26a387b170e 62-63,286
+tools/client910/fixtures/session-replay/barrows/repair_driver.py
+  s_3f4b5347620927::t_736652f1636def 147-165
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "d1a24240278b4e53225676e842897af21a222534",
+  "prompts": {},
+  "sessions": {
+    "s_3f4b5347620927": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1052f-291b-7aa2-897e-1b9a6fb3f082",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
