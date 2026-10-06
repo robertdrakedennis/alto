@@ -1,0 +1,16 @@
+tools/client910/fixtures/session-replay/god-wars/driver.py
+  h_d26e211304196f 857,896-897,899,909,929-930,935-942,946,953,962,968,978,991-992,995-997,999,1443-1460,1526-1527
+tools/client910/src/scenario_god_wars.rs
+  h_d26e211304196f 151-247,322,480-492,516,519
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "dc00359547d8cc1c0de067f51262a41ab7503586",
+  "prompts": {},
+  "humans": {
+    "h_d26e211304196f": {
+      "author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
