@@ -1,0 +1,43 @@
+docs/server-architecture.md
+  s_3f4b5347620927::t_8228bc73d26525 1025
+server/src/lostcity/content/activities/pest-control/PestControl.ts
+  s_3f4b5347620927::t_1eb7640221d374 234-235,292,408-409
+server/src/lostcity/content/activities/pest-control/PestFortifications.ts
+  s_3f4b5347620927::t_a4d419c3bf8a4b 8-10,44,137-142,144-145,150,159-162,179
+server/src/lostcity/content/activities/pest-control/PestSeals.ts
+  s_3f4b5347620927::t_19b58ccaf9f4e5 9-10,26,67,76,78-79,101
+server/src/lostcity/network/PestControlE2E.integration.test.ts
+  s_3f4b5347620927::t_f87a8b7d7c260b 11,18-20,92,95-101,442,755,760-761,777,779-780,785,819-1049
+server/src/lostcity/systems/instances/InstanceKind.ts
+  s_3f4b5347620927::t_1fc2486c8546d5 3,11-17,47
+server/src/lostcity/systems/instances/InstanceSession.ts
+  s_3f4b5347620927::t_6334c85cf65b6b 145-146
+server/src/lostcity/systems/instances/InstanceSessions.ts
+  s_3f4b5347620927::t_0f18a4a7224f25 44,105-109,123,126,128-131,136,146-147,182-188,219-220,222-226,228,230,232-234
+server/src/lostcity/systems/movement/BuildArea.ts
+  s_3f4b5347620927::t_3c1ae76300e430 49,51,53-54,56
+server/src/lostcity/systems/movement/Movement.ts
+  s_3f4b5347620927::t_1e8192a6c1d3db 145,150,160-161,172-173,176-177,197-198
+server/src/lostcity/systems/movement/Teleporting.ts
+  s_3f4b5347620927::t_a45dd4869b5be4 56-57
+server/src/lostcity/systems/session/Sessions.ts
+  s_3f4b5347620927::t_ae0efbc4279a94 150
+tools/refactor/test-inventory.txt
+  s_3f4b5347620927::t_6a7f9afc3d7c69 1847,2371,2448,2512
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "203964848bb52617f1049c6dc495ba8225354be8",
+  "prompts": {},
+  "sessions": {
+    "s_3f4b5347620927": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1052f-291b-7aa2-897e-1b9a6fb3f082",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
