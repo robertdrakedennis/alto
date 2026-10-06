@@ -1,0 +1,21 @@
+server/src/lostcity/content/world/bosses/GwdAltar.integration.test.ts
+  s_3f4b5347620927::t_2c53c8f393639d 1-2,120-124
+tools/client910/src/scenario_god_wars.rs
+  s_3f4b5347620927::t_f9f0fcb2549585 5-6,10,16-17,20-21,622-638,697,873-888,929-947,1003-1027,1029-1035,1074-1094,1222-1226
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "d7955f888436856888fbe3ff5af6d67c65a23c65",
+  "prompts": {},
+  "sessions": {
+    "s_3f4b5347620927": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1052f-291b-7aa2-897e-1b9a6fb3f082",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
