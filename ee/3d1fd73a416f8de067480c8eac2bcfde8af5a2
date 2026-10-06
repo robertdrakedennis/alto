@@ -1,0 +1,90 @@
+server/src/lostcity/content/world/bosses/BarrowsEquipment.integration.test.ts
+  s_3f4b5347620927::t_54ea55ce38dbe4 317,319-320,332,334-336,340-357,410-488
+server/src/lostcity/tools/data/domains/combat/index.ts
+  s_3f4b5347620927::t_34d491611d6ead 122
+server/src/lostcity/tools/data/domains/combat/SpecialStage.ts
+  s_3f4b5347620927::t_728a81f544d918 5,814,816-820,833-834,838-839
+server/src/lostcity/content/world/bosses/BarrowsRepairs.ts
+  s_3f4b5347620927::t_a55295d50a3d1b 55-60,63-68,72-103
+  s_3f4b5347620927::t_036bc5cac12573 4-5
+  s_32282483846156::t_98bbd5c2490a0a 104
+server/src/lostcity/tools/data/domains/combat/SpecialPresentationStage.ts
+  s_3f4b5347620927::t_c0c6d1d639f06d 3,36-54
+  s_3f4b5347620927::t_647417c060a4e1 55
+server/src/lostcity/content/world/bosses/GwdDungeon.ts
+  s_3f4b5347620927::t_cee7f7f29811b3 158
+  s_3f4b5347620927::t_06fa606cecd54f 160-163
+docs/server-architecture.md
+  s_3f4b5347620927::t_3aa002a64e660d 911
+  s_3f4b5347620927::t_ed77f5a00e9a16 817-822
+  s_3f4b5347620927::t_2eb986ad0b153c 968
+  s_3f4b5347620927::t_d5ac1c92bf5861 804-805
+server/src/lostcity/tools/data/domains/combat/SpecialAvailabilityStage.ts
+  s_3f4b5347620927::t_cbacd975b62dbf 11-17
+tools/client910/src/app.rs
+  s_c202351b3d1826::t_3cc08e544bf64f 412
+  s_3f4b5347620927::t_65ff2eaa87fef2 413-415
+server/src/lostcity/content/world/bosses/GwdCamp.ts
+  s_3f4b5347620927::t_51f4fb060bd5a7 80
+docs/client-status.md
+  s_3f4b5347620927::t_5a36f1c4c25deb 115
+  s_3f4b5347620927::t_8080be622987fc 35-36
+  s_3f4b5347620927::t_df0a549b4cc5d2 37
+  s_3f4b5347620927::t_1447e760de772c 109-114
+server/src/lostcity/tools/data/domains/combat/SpecialCatalogStage.ts
+  s_3f4b5347620927::t_595db7b1905fff 1-132
+server/src/lostcity/content/world/bosses/GwdCamp.test.ts
+  s_3f4b5347620927::t_408feee7451595 3,10,14,45-56,90-91,133-148,150-151,153,160,204-288
+server/src/lostcity/engine/tick/TickPhases.test.ts
+  s_3f4b5347620927::t_b983579f067360 65
+server/src/lostcity/engine/tick/WorldPhases.ts
+  s_3f4b5347620927::t_bf4a4430fa99b5 80
+tools/client910/fixtures/session-replay/special-repair/driver.py
+  s_3f4b5347620927::t_26eed56c676a34 1-323
+tools/client910/fixtures/session-replay/special-repair/freeze.py
+  s_3f4b5347620927::t_79e0513efb5aaf 1-141
+tools/client910/fixtures/session-replay/special-repair/prepare.py
+  s_3f4b5347620927::t_b35c570674536b 1-90
+tools/client910/fixtures/session-replay/special-repair/record.py
+  s_3f4b5347620927::t_b7a700c4d8ffe6 1-245
+tools/client910/fixtures/session-replay/special-repair/seed.mjs
+  s_3f4b5347620927::t_f67e536e82e59b 1-127
+tools/client910/fixtures/session-replay/special-repair/server.mjs
+  s_3f4b5347620927::t_979ef6ed206a14 1-86
+tools/client910/src/scenario_special_repair.rs
+  s_3f4b5347620927::t_6c56a691582040 1-465
+tools/refactor/replay-gate.txt
+  s_3f4b5347620927::t_060c5ac08b46c6 124,128-129
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "ee3d1fd73a416f8de067480c8eac2bcfde8af5a2",
+  "prompts": {},
+  "sessions": {
+    "s_32282483846156": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "8e5be8e8-979d-4f47-9654-aed7f425daee",
+        "model": "unknown"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    },
+    "s_3f4b5347620927": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1052f-291b-7aa2-897e-1b9a6fb3f082",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    },
+    "s_c202351b3d1826": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0fe2d-4e63-7e41-b719-caa999b24fd9",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
