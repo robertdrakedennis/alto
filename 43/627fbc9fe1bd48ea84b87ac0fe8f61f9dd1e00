@@ -1,0 +1,27 @@
+packages/domain/src/symbols/obj.ts
+  s_3f4b5347620927::t_3fbc54bddd9a2b 27
+revisions/910/symbols/obj.sym
+  s_3f4b5347620927::t_d74508d54c38ec 25
+server/src/lostcity/network/GwdE2E.integration.test.ts
+  s_3f4b5347620927::t_130e92c7c2e42f 37-40,270-310
+server/src/lostcity/systems/equipment/EquipmentContent.ts
+  s_3f4b5347620927::t_9e1fe317782edf 57-60,76
+tools/client910/crates/rs910-symbols/src/obj.rs
+  s_3f4b5347620927::t_a61b0b97fa0030 50-51
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "43627fbc9fe1bd48ea84b87ac0fe8f61f9dd1e00",
+  "prompts": {},
+  "sessions": {
+    "s_3f4b5347620927": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1052f-291b-7aa2-897e-1b9a6fb3f082",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
