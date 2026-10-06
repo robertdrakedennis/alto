@@ -1,0 +1,21 @@
+docs/client-status.md
+  s_3f4b5347620927::t_df0a549b4cc5d2 25,33
+docs/server-architecture.md
+  s_3f4b5347620927::t_8f55d626e2ec57 710
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "2e506efca940ac78d4b4b4cbf18c70ecc44d752e",
+  "prompts": {},
+  "sessions": {
+    "s_3f4b5347620927": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1052f-291b-7aa2-897e-1b9a6fb3f082",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
