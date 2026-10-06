@@ -1,0 +1,31 @@
+docs/client-status.md
+  s_3f4b5347620927::t_64444a879ea6c7 33
+server/src/lostcity/content/activities/pest-control/PestControl.ts
+  s_3f4b5347620927::t_45118fdfc7bcab 118,137-141,148-152
+server/src/lostcity/content/activities/pest-control/PestFortifications.ts
+  s_3f4b5347620927::t_5f5f78fd7e64ac 6-7,46,111-128,188-196,206-207
+server/src/lostcity/network/PestControlE2E.integration.test.ts
+  s_3f4b5347620927::t_b9f4f91e9dc14d 8-10,1053-1155
+server/src/lostcity/systems/locs/Doors.ts
+  s_3f4b5347620927::t_c201ae25c06383 44,49-50,62,66,77,89-93,112-115,117,126
+server/src/lostcity/systems/locs/Locs.test.ts
+  s_3f4b5347620927::t_922eb2d0f1957c 8,107-127
+tools/refactor/test-inventory.txt
+  s_3f4b5347620927::t_f47f9e66800a93 48,1750,2018,2352
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "585922850f47cb5d807152e966268470c304f0d6",
+  "prompts": {},
+  "sessions": {
+    "s_3f4b5347620927": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1052f-291b-7aa2-897e-1b9a6fb3f082",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
