@@ -1,0 +1,23 @@
+docs/server-architecture.md
+  s_3f4b5347620927::t_25b00dda5c203b 967
+tools/client910/fixtures/session-replay/pest-control/record.py
+  s_3f4b5347620927::t_98276fdb8fa09d 2-14,17,28-453,455-630,632-716,718-805
+tools/client910/fixtures/session-replay/pest-control/root_broker.mjs
+  s_3f4b5347620927::t_dc3647dbec2f7f 1-44
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "159bbf78bf91a740b0e9d99d0fe3da571732066f",
+  "prompts": {},
+  "sessions": {
+    "s_3f4b5347620927": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1052f-291b-7aa2-897e-1b9a6fb3f082",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
