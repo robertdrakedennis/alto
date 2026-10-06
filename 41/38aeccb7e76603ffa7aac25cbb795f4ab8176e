@@ -1,0 +1,129 @@
+docs/server-architecture.md
+  s_3f4b5347620927::t_6e1c90260eda30 990-993
+packages/domain/src/symbols/interface.ts
+  s_3f4b5347620927::t_9e8536ac90593c 63
+packages/domain/src/symbols/loc.ts
+  s_3f4b5347620927::t_7c4d3f23676548 146-164
+packages/domain/src/symbols/location.ts
+  s_3f4b5347620927::t_a367afa465c929 131-188
+packages/domain/src/symbols/varc.ts
+  s_3f4b5347620927::t_412ae7251959ce 65-68
+packages/domain/src/symbols/varp.ts
+  s_3f4b5347620927::t_139d9cb7e72a6c 409-410
+revisions/910/symbols/interface.sym
+  s_3f4b5347620927::t_a0ed113395846b 61
+revisions/910/symbols/loc.sym
+  s_3f4b5347620927::t_f8394c893df382 144-162
+revisions/910/symbols/location.sym
+  s_3f4b5347620927::t_9724ee6498db6b 121-178
+revisions/910/symbols/varc.sym
+  s_3f4b5347620927::t_3ff6b9989bfaba 63-66
+revisions/910/symbols/varp.sym
+  s_3f4b5347620927::t_c5e6ad89a0fb97 407-408
+server/src/lostcity/content/world/bosses/GwdAltar.test.ts
+  s_3f4b5347620927::t_3a78e3673a816d 17-21,23,25,27,29,31,33-35,37,39,41,56,59,64,68,73,80,91,95,97,102,110,112-115,125,128,130,135,138,140,177-178,184
+server/src/lostcity/content/world/bosses/GwdAltar.ts
+  s_3f4b5347620927::t_27b531b6b29024 8-9,17,33,37,45,48,50,54,61
+server/src/lostcity/content/world/bosses/GwdAttackPlan.test.ts
+  s_3f4b5347620927::t_f31659ed597b02 14,16,18,20,22,24,26,28,30,32,34,36,38,40,42,44,46,50,78,106
+server/src/lostcity/content/world/bosses/GwdAttackPlan.ts
+  s_3f4b5347620927::t_90e89179f19a22 10,12,14,16,18,59,61,65,76,81,86,101,112,117,122,131,133,147,151,154,156,158,164,167,170,173,175
+server/src/lostcity/content/world/bosses/GwdCamp.test.ts
+  s_3f4b5347620927::t_408feee7451595 1-170
+server/src/lostcity/content/world/bosses/GwdCamp.ts
+  s_3f4b5347620927::t_92be7543162e17 10,39,42-52,65,68,74,83,97,103
+server/src/lostcity/content/world/bosses/GwdCounts.test.ts
+  s_3f4b5347620927::t_d8519df3e7e3ec 12,14,16,18,20,22,24,26,28,30,32,34,36,38,66,71,76,81,83,89,95
+server/src/lostcity/content/world/bosses/GwdCounts.ts
+  s_3f4b5347620927::t_e80066d4cd81b6 7,9,11,34,36,46,48,59,63,66,69,77,80,85,88
+server/src/lostcity/content/world/bosses/GwdDungeon.ts
+  s_3f4b5347620927::t_32b84d6c990903 19-21,23,55,63-64,78,86,91,96,101,105,108,110,115,119,126,130,133-134,138,144,148,161,164,167,170,173,176,179,183,186,189,193,196,199,201,206,208,215,221,224,228,230,239
+server/src/lostcity/content/world/bosses/GwdEncounter.test.ts
+  s_3f4b5347620927::t_59cb3155d8fc0b 1-231
+server/src/lostcity/content/world/bosses/GwdEncounter.ts
+  s_3f4b5347620927::t_7884524b03c3a6 11,13,39,51,53,56,62,67,70,76,79,81,87-89,92,95,104,107,133,137
+server/src/lostcity/data/GwdData.test.ts
+  s_3f4b5347620927::t_b8af3491d99c37 4-5,8,10,12,14,16,18,20,22,24,26,28,30,32,34,36,38,40,42,44,46,48,50,52,54,63,68,155,166,171-190
+server/src/lostcity/data/GwdData.ts
+  s_3f4b5347620927::t_b23ded791399a2 2,7,9,11,13,15,17,19,21,23,25,29,31,35,37,39-40,52,57,63,71-72,75,88,95,97,99,110,124,163,165,170,172,178,191,196,198,221,248-249,259,261,264,266,268,270,272,278,281,283,285,288,292,295,300,303,305,309-325
+server/src/lostcity/data/NpcData.ts
+  s_3f4b5347620927::t_f159a5ad031486 39-42,66-71,77-80
+server/src/lostcity/engine/World.ts
+  s_3f4b5347620927::t_a80fe81815e58a 1-2,59,142-144,354-358,407
+server/src/lostcity/engine/tick/WorldPhases.ts
+  s_3f4b5347620927::t_14579b90ff7239 126
+server/src/lostcity/network/InstanceSessionsE2E.integration.test.ts
+  s_3f4b5347620927::t_54174c21db454a 352,356,363,367,370
+server/src/lostcity/systems/combat/Combat.ts
+  s_3f4b5347620927::t_1ca638e313421b 284,287,387,389,397,411,417,425,431,437,469,472,480,485
+server/src/lostcity/systems/combat/OrdinaryVolley.test.ts
+  s_3f4b5347620927::t_a14e327612b766 14,16,18,20,22,24,26,28,30,32,34,36,38,40,42,44,71,80,94,97,107,114,117,122,125
+server/src/lostcity/systems/equipment/PlayerItemCharges.ts
+  s_3f4b5347620927::t_164e362edb9d08 104,107,110
+server/src/lostcity/systems/instances/InstanceSessions.ts
+  s_3f4b5347620927::t_860087a8940021 92,97
+server/src/lostcity/systems/loot/DropTables.test.ts
+  s_3f4b5347620927::t_234fb3c4efc0b1 5,124-141
+server/src/lostcity/systems/loot/DropTables.ts
+  s_3f4b5347620927::t_91a420b8e94569 58-62,126,157
+server/src/lostcity/systems/npc/NpcCombat.ts
+  s_3f4b5347620927::t_21b49e15ad0282 111
+server/src/lostcity/systems/npc/NpcLevelDrain.test.ts
+  s_3f4b5347620927::t_168c01db76b41f 10,12,14,16,18,20,22,24,26,28,30,53,80,100
+server/src/lostcity/systems/stats/PrayerOverboost.test.ts
+  s_3f4b5347620927::t_90f7bedc251686 29,35,75,196,199-200
+server/src/lostcity/systems/vars/Vars.ts
+  s_3f4b5347620927::t_ec2f6d3c61d31f 145,148
+server/src/lostcity/tools/data/domains/instances/GodWars.ts
+  s_3f4b5347620927::t_92f9033364492b 1-20
+server/src/lostcity/tools/data/domains/instances/GwdCoupledDrops.test.ts
+  s_3f4b5347620927::t_18a53da8942e78 6,8,10
+server/src/lostcity/tools/data/domains/instances/GwdCoupledDrops.ts
+  s_3f4b5347620927::t_bcfc982726683c 6,8,11,25,30,34,37,40,44,48-53
+server/src/lostcity/tools/data/domains/instances/GwdFollowers.test.ts
+  s_3f4b5347620927::t_9cac99d4a04d22 1-73
+server/src/lostcity/tools/data/domains/instances/GwdFollowers.ts
+  s_3f4b5347620927::t_29b26a6b58ff7d 1-94
+server/src/lostcity/tools/data/domains/instances/GwdPolicy.ts
+  s_3f4b5347620927::t_d07c08fa5da15f 1-152
+server/src/lostcity/tools/data/domains/instances/GwdProfile.test.ts
+  s_3f4b5347620927::t_54829b21832ea0 8,10,12,14,16,18,20,22,24,26,28,30,32,34,68,80-129
+server/src/lostcity/tools/data/domains/instances/GwdProfile.ts
+  s_3f4b5347620927::t_4add6976e7478a 1-2,9-10,13,16,19,25,27,30,32-66,68,84
+server/src/lostcity/tools/data/domains/instances/GwdSources.test.ts
+  s_3f4b5347620927::t_41d6cc74c517b1 8,10,12,14,16,18,20,22,24,26,28,30,32,34,36,38,40,42,44,46,48,50,52,54,56,58,129,136,159,194,215-240
+server/src/lostcity/tools/data/domains/instances/GwdSources.ts
+  s_3f4b5347620927::t_28bf6e52e16623 5,9,11,13,15,17,19,21,23-31,33,35,58,60,63,66,73,75,77,79,86,89,92,99,101,107,111,120,123,126,129,131,137,140,144,150,156,158,164,166,177,181,184,186,190,193,196,203,224,239,242,248,250,253,256,261,269,271,275-302,305-310,312-313
+server/src/lostcity/tools/data/domains/instances/GwdStage.ts
+  s_3f4b5347620927::t_2e7e1c39bffcf1 4-5,38,40,42,44,46,48,50,52,54,56,70,72,116,132,135,137,140,142,144,150,156,160,162,173,189,192,194,197,203,208-217,219,228,231,233,236,239,241,244,247,253,259,266,275,278,288,292,296,298,302,304,307,310,313,316,318,321,323,325,327,341,343-344,364-365,387,390,393,396,400,413,415,425,428,431,433,436,438,440-441,446-449,451,453,464,467
+server/src/lostcity/tools/data/domains/instances/index.ts
+  s_3f4b5347620927::t_22685f5c112680 2,13,15-17,19-20,22
+tools/client910/crates/rs910-symbols/src/interface.rs
+  s_3f4b5347620927::t_f23f53affd9c9d 122-123
+tools/client910/crates/rs910-symbols/src/loc.rs
+  s_3f4b5347620927::t_abb6415455e628 288-325
+tools/client910/crates/rs910-symbols/src/location.rs
+  s_3f4b5347620927::t_e5f047440fe5ff 242-357
+tools/client910/crates/rs910-symbols/src/varc.rs
+  s_3f4b5347620927::t_1060d7bcef0530 127-134
+tools/client910/crates/rs910-symbols/src/varp.rs
+  s_3f4b5347620927::t_42299e951b66e0 815-818
+tools/refactor/test-inventory.txt
+  s_3f4b5347620927::t_a9c5998d76c102 1741,1825,1894,1931,1936,1949-1951,1957-1958,1964,2005,2016,2030,2041,2046,2086,2106,2114-2115,2119,2123-2124,2183,2193,2196,2209,2229,2238,2313,2346,2355-2356,2362,2366,2370,2391,2411,2413,2421,2430,2470,2505,2524,2535,2540,2569,2571,2610,2634,2648
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "4138aeccb7e76603ffa7aac25cbb795f4ab8176e",
+  "prompts": {},
+  "sessions": {
+    "s_3f4b5347620927": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1052f-291b-7aa2-897e-1b9a6fb3f082",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}

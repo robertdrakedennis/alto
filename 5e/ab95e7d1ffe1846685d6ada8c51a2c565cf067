@@ -1,0 +1,21 @@
+tools/client910/src/app.rs
+  s_3f4b5347620927::t_0a596f93e9d8bb 400-403
+tools/client910/src/scenario_god_wars.rs
+  s_3f4b5347620927::t_eff724d06bc92f 1-1309
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "5eab95e7d1ffe1846685d6ada8c51a2c565cf067",
+  "prompts": {},
+  "sessions": {
+    "s_3f4b5347620927": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1052f-291b-7aa2-897e-1b9a6fb3f082",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
