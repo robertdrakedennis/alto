@@ -1,0 +1,31 @@
+tools/client910/src/scenario_slayer_catalog.rs
+  s_3f4b5347620927::t_9cfba5b95cde6f 313-330
+  s_3f4b5347620927::t_5ed7c90b76dc5d 216-219,284-292,294-304,306-307,310-312
+  s_3f4b5347620927::t_69d5bf20afdd7a 293
+  s_3f4b5347620927::t_5d4bd1d2102bcc 305
+  s_3f4b5347620927::t_31c18f35ab665a 4,6,10,24,31-33,35-36,49-91,98-106,112-151,157-160,166-172,196-215,341-343,353,405-456,488-495
+tools/client910/fixtures/session-replay/slayer-catalog/server.mjs
+  s_3f4b5347620927::t_00943e48288a6c 1-93
+tools/client910/fixtures/session-replay/slayer-catalog/driver.py
+  s_3f4b5347620927::t_ebd25e6a819656 1-173
+tools/client910/fixtures/session-replay/slayer-catalog/seed.mjs
+  s_3f4b5347620927::t_bef89f20100c98 1-106
+tools/refactor/replay-gate.txt
+  s_3f4b5347620927::t_82ddf4cd79d09d 123-125
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "dcac073068193fa51f2e8db397f0833496f2e854",
+  "prompts": {},
+  "sessions": {
+    "s_3f4b5347620927": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1052f-291b-7aa2-897e-1b9a6fb3f082",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
