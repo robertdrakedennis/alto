@@ -1,0 +1,41 @@
+tools/client910/fixtures/session-replay/barrows/driver.py
+  s_3f4b5347620927::t_d7d29d1ae0479e 869,874-882
+tools/client910/fixtures/session-replay/god-wars/common.py
+  s_3f4b5347620927::t_eb563234a371b2 1-396
+tools/client910/fixtures/session-replay/god-wars/driver.py
+  s_3f4b5347620927::t_ed674fdd51de56 1-1347
+tools/client910/fixtures/session-replay/god-wars/freeze.py
+  s_3f4b5347620927::t_1346b3c54b0e99 1-170
+tools/client910/fixtures/session-replay/god-wars/login_provider.mjs
+  s_3f4b5347620927::t_78d6f44a238b7f 1-22
+tools/client910/fixtures/session-replay/god-wars/peer_adapter.mjs
+  s_3f4b5347620927::t_47807c742c6a1a 1-49
+tools/client910/fixtures/session-replay/god-wars/peer_broker.mjs
+  s_3f4b5347620927::t_de14e733cc5580 1-302
+tools/client910/fixtures/session-replay/god-wars/publications.py
+  s_3f4b5347620927::t_5f932b8a27216b 1-63
+tools/client910/fixtures/session-replay/god-wars/record.py
+  s_3f4b5347620927::t_55834d9cdbfee2 1-361
+tools/client910/fixtures/session-replay/god-wars/saved_projection.py
+  s_3f4b5347620927::t_6968c392ccca96 1-208
+tools/client910/fixtures/session-replay/god-wars/seed.mjs
+  s_3f4b5347620927::t_27144eaa20c989 1-309
+tools/client910/fixtures/session-replay/god-wars/server.mjs
+  s_3f4b5347620927::t_40b13913383e76 1-133
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "706cca872a36d566c112618c4509a1f46f5f2ae2",
+  "prompts": {},
+  "sessions": {
+    "s_3f4b5347620927": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1052f-291b-7aa2-897e-1b9a6fb3f082",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
