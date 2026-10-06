@@ -1,0 +1,47 @@
+docs/server-architecture.md
+  s_3f4b5347620927::t_ed77f5a00e9a16 815-820
+  s_3f4b5347620927::t_3aa002a64e660d 899
+server/src/lostcity/content/world/bosses/BarrowsEquipment.integration.test.ts
+  s_3f4b5347620927::t_54ea55ce38dbe4 317,319-320,332,334-336,340-357,410-488
+server/src/lostcity/tools/data/domains/combat/SpecialAvailabilityStage.ts
+  s_3f4b5347620927::t_cbacd975b62dbf 11-17
+server/src/lostcity/tools/data/domains/combat/index.ts
+  s_3f4b5347620927::t_34d491611d6ead 122
+server/src/lostcity/content/world/bosses/BarrowsRepairs.ts
+  s_3f4b5347620927::t_a55295d50a3d1b 55-60,63-68,72-103
+  s_32282483846156::t_98bbd5c2490a0a 104
+  s_3f4b5347620927::t_036bc5cac12573 4-5
+docs/client-status.md
+  s_3f4b5347620927::t_8080be622987fc 33-34
+server/src/lostcity/tools/data/domains/combat/SpecialCatalogStage.ts
+  s_3f4b5347620927::t_595db7b1905fff 1-132
+server/src/lostcity/tools/data/domains/combat/SpecialPresentationStage.ts
+  s_3f4b5347620927::t_c0c6d1d639f06d 3,36-54
+  s_3f4b5347620927::t_647417c060a4e1 55
+server/src/lostcity/tools/data/domains/combat/SpecialStage.ts
+  s_3f4b5347620927::t_728a81f544d918 5,814,816-820,833-834,838-839
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "03c8b335a0a7e931f77aebd74d584d1ff5f7517b",
+  "prompts": {},
+  "sessions": {
+    "s_32282483846156": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "8e5be8e8-979d-4f47-9654-aed7f425daee",
+        "model": "unknown"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    },
+    "s_3f4b5347620927": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1052f-291b-7aa2-897e-1b9a6fb3f082",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
