@@ -1,0 +1,108 @@
+tools/client910/fixtures/session-replay/endgame-gear/driver-journal.jsonl
+  s_3f4b5347620927::t_0e317e73f4f1bc 1-291
+tools/client910/fixtures/session-replay/endgame-gear/plan.json
+  s_3f4b5347620927::t_b5ccc3389cfe3a 1-383
+server/src/lostcity/data/GeneratedData.ts
+  s_3f4b5347620927::t_1ca178be1bdcdb 15
+server/src/lostcity/systems/equipment/EndgameFixture.testkit.ts
+  s_3f4b5347620927::t_3fb5a1c63f92be 1-100
+tools/client910/fixtures/session-replay/endgame-gear/server-trace.jsonl
+  s_3f4b5347620927::t_dcb52a979f02ed 1-92
+server/src/lostcity/systems/session/Account.ts
+  s_3f4b5347620927::t_8893fff765c0b3 1,36,78,134
+server/src/lostcity/network/SkillsE2E.testkit.ts
+  s_3f4b5347620927::t_4692a03ddef424 2,53,145
+server/src/lostcity/systems/combat/PlayerSpecials.ts
+  s_3f4b5347620927::t_76db0b6cd91532 295
+server/src/lostcity/tools/data/domains.ts
+  s_3f4b5347620927::t_e9d5bf0fa0f8b5 1,35-36
+server/src/lostcity/content/world/bosses/BarrowsEquipment.integration.test.ts
+  s_3f4b5347620927::t_2580e3ec38fe69 210-211
+  s_3f4b5347620927::t_56534badfc201a 213
+tools/client910/src/scenario_endgame.rs
+  s_3f4b5347620927::t_fda0e33b586489 1-309
+docs/server-architecture.md
+  s_3f4b5347620927::t_75fba8ff613980 1012-1039
+revisions/910/symbols/param.sym
+  s_3f4b5347620927::t_54a1219bbe4555 106,111
+server/src/lostcity/network/EndgameE2E.integration.test.ts
+  s_3f4b5347620927::t_56d3ef2a2ed108 1-219
+tools/client910/src/live_control.rs
+  s_3f4b5347620927::t_0eab1c6212486f 789-797
+server/src/lostcity/systems/equipment/EquipmentStats.ts
+  s_3f4b5347620927::t_6505bc6a782c76 24-25,51-60,136,140,188-192,197-207,210,234,241-251,271,280-281,328-335
+docs/client-status.md
+  s_3f4b5347620927::t_5a36f1c4c25deb 104-138
+server/src/lostcity/systems/combat/MagicSpells.ts
+  s_3f4b5347620927::t_e8d06651bcee4b 12-13,17,39-40,128-131,133,136,141,144,148,175,190,342-343,346,367,386,484
+server/src/lostcity/systems/combat/RangedAttacks.ts
+  s_3f4b5347620927::t_88b6fdeb9879ee 10,54-57,59,63,67,86,96
+server/src/lostcity/systems/combat/Combatant.ts
+  s_3f4b5347620927::t_c9d5e2934f9f92 13-14,89,147-150
+server/src/lostcity/systems/stats/Stats.ts
+  s_3f4b5347620927::t_510ed30c8ae4ea 57-58,78-91,220-221,414,424-425,466
+tools/refactor/test-inventory.txt
+  s_3f4b5347620927::t_8ec0b63f08df92 4,48,82,1664,1752,2057,2257-2258,2429
+tools/client910/src/app.rs
+  s_3f4b5347620927::t_3274166b63bfae 404-407
+tools/client910/fixtures/session-replay/endgame-gear/execution.json
+  s_3f4b5347620927::t_0724cfd894d2b1 1-15
+server/src/lostcity/network/LegacySpecialsE2E.integration.test.ts
+  s_3f4b5347620927::t_c9ea11ed3637a4 191,213
+server/src/lostcity/systems/equipment/PlayerItemCharges.integration.test.ts
+  s_3f4b5347620927::t_c8d6516b26db14 510-553
+tools/client910/fixtures/session-replay/endgame-gear/combat-receipts.jsonl
+  s_3f4b5347620927::t_9b3923841ad71a 1-52
+server/src/lostcity/data/ItemChargeData.ts
+  s_3f4b5347620927::t_afde5366bd3d2b 26,30,66-77
+server/src/lostcity/systems/combat/PlayerCombat.ts
+  s_3f4b5347620927::t_572e9571b9c4ac 24,59-60,79-127,198,212-216,224,227-228,262-263,269,360
+server/src/lostcity/systems/equipment/PlayerEquipment.ts
+  s_3f4b5347620927::t_dae18a8c735292 16,88,429-432,445
+tools/refactor/replay-gate.txt
+  s_3f4b5347620927::t_70c4f97a75b049 123
+server/src/lostcity/systems/combat/Combat.ts
+  s_3f4b5347620927::t_50c8a6d68c5437 214-215,218-224,289,292,307,322,346-349,367
+server/src/lostcity/systems/equipment/EquipmentContent.ts
+  s_3f4b5347620927::t_9ca84792dca4dc 1,14,96,130-137
+server/src/lostcity/systems/equipment/EndgameEquipment.ts
+  s_3f4b5347620927::t_da5d2ddb3ddef4 1-35
+server/src/lostcity/network/LegacyRulesE2E.integration.test.ts
+  s_3f4b5347620927::t_7394cb9689100c 405,409,417,422
+tools/client910/crates/rs910-symbols/src/param.rs
+  s_3f4b5347620927::t_33e1faf8645fe2 212-213,222-223
+tools/client910/fixtures/session-replay/endgame-gear/backend-inputs.json
+  s_3f4b5347620927::t_b09223c48f1f8a 1-969
+tools/client910/fixtures/session-replay/endgame-gear/initial-fixture.json
+  s_3f4b5347620927::t_71f129e08a9c43 1-157
+server/src/lostcity/systems/session/Session.ts
+  s_3f4b5347620927::t_6d8cd37a281e80 10-11,60-61,63-64
+server/src/lostcity/data/EndgameLoadoutData.ts
+  s_3f4b5347620927::t_4d19f7bb5e9f6f 1-69
+tools/client910/fixtures/session-replay/endgame-gear/final-saved-state.json
+  s_3f4b5347620927::t_bb459d05c8414b 1-219
+server/src/lostcity/systems/inventory/Inventories.ts
+  s_3f4b5347620927::t_11fb05de68b4ce 377
+server/src/lostcity/systems/equipment/PlayerItemCharges.ts
+  s_3f4b5347620927::t_4bfd39e2891ee5 5,149,157,160-165,340
+server/src/lostcity/tools/data/domains/equipment/index.ts
+  s_3f4b5347620927::t_d1fd0dc7f4f310 1-430
+packages/domain/src/symbols/param.ts
+  s_3f4b5347620927::t_a2a239d903aae4 108,113
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "2eeca3a2defdfdf0c78e9497bf22b84efc90d097",
+  "prompts": {},
+  "sessions": {
+    "s_3f4b5347620927": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1052f-291b-7aa2-897e-1b9a6fb3f082",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
