@@ -1,0 +1,33 @@
+docs/server-architecture.md
+  s_3f4b5347620927::t_f0e4f29ab9e676 957-960
+server/src/lostcity/content/world/bosses/GwdDungeon.ts
+  s_3f4b5347620927::t_2e9f958bc990e3 31,37-42,151
+server/src/lostcity/data/GwdData.ts
+  s_3f4b5347620927::t_3b751eaf885c92 193
+server/src/lostcity/network/GwdE2E.integration.test.ts
+  s_3f4b5347620927::t_9cd46bf6ccf0ff 224-242
+server/src/lostcity/tools/data/domains/instances/GwdPolicy.ts
+  s_3f4b5347620927::t_c5262b973d3977 52
+server/src/lostcity/tools/data/domains/instances/GwdStage.ts
+  s_3f4b5347620927::t_bf513f380a5feb 461-466,515
+tools/client910/src/scenario_god_wars.rs
+  s_3f4b5347620927::t_0323253effae6c 43,45-46,72,173,1307,1340,1373,1406
+tools/refactor/test-inventory.txt
+  s_3f4b5347620927::t_ee9ea2f21541e9 2708
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "91b193fad0078e1b77243961ab5c74c1961b34f6",
+  "prompts": {},
+  "sessions": {
+    "s_3f4b5347620927": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1052f-291b-7aa2-897e-1b9a6fb3f082",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
