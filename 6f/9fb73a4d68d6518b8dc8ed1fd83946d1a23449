@@ -1,0 +1,16 @@
+tools/client910/fixtures/session-replay/barrows/driver.py
+  h_d26e211304196f 62-63,271,296-297,543-647,657
+tools/client910/fixtures/session-replay/barrows/seed.mjs
+  h_d26e211304196f 68-80,83
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "6f9fb73a4d68d6518b8dc8ed1fd83946d1a23449",
+  "prompts": {},
+  "humans": {
+    "h_d26e211304196f": {
+      "author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
