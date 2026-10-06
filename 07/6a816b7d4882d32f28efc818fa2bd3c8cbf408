@@ -1,0 +1,29 @@
+docs/client-status.md
+  s_3f4b5347620927::t_8080be622987fc 33-35
+docs/server-architecture.md
+  s_3f4b5347620927::t_ed77f5a00e9a16 815-820
+server/src/lostcity/tools/data/domains/combat/SpecialAvailabilityStage.ts
+  s_3f4b5347620927::t_cbacd975b62dbf 11-17
+server/src/lostcity/tools/data/domains/combat/SpecialCatalogStage.ts
+  s_3f4b5347620927::t_595db7b1905fff 1-124
+server/src/lostcity/tools/data/domains/combat/SpecialStage.ts
+  s_3f4b5347620927::t_728a81f544d918 5,814,816-820,833-834,838-839
+server/src/lostcity/tools/data/domains/combat/index.ts
+  s_3f4b5347620927::t_34d491611d6ead 122
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "076a816b7d4882d32f28efc818fa2bd3c8cbf408",
+  "prompts": {},
+  "sessions": {
+    "s_3f4b5347620927": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1052f-291b-7aa2-897e-1b9a6fb3f082",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
