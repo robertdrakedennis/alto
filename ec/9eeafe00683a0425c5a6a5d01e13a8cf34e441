@@ -1,0 +1,95 @@
+server/src/lostcity/content/world/bosses/BossRooms.ts
+  s_3f4b5347620927::t_6a30ce63d96cb3 4,117-122
+server/src/lostcity/systems/npc/NpcDepletionPolicy.ts
+  s_3f4b5347620927::t_ffe64f426fd5c7 1-6
+server/src/lostcity/data/QbdMechanicData.ts
+  s_3f4b5347620927::t_4e12135ec2142a 1-69
+tools/client910/fixtures/session-replay/queen-black-dragon/prepare-spec.py
+  s_3f4b5347620927::t_a7c9998d266750 1-85
+server/src/lostcity/tools/data/domains/instances/index.ts
+  s_3f4b5347620927::t_b369599ea8fff0 1,22,26,28,44,48,52
+server/src/lostcity/systems/combat/Combat.ts
+  s_3f4b5347620927::t_f096bc08b42bdd 153,155,207,265,271,409-419,487-489,672-677,722
+tools/client910/fixtures/session-replay/queen-black-dragon/contract.py
+  s_3f4b5347620927::t_8fe96a6fac06ac 1-107
+server/src/lostcity/content/world/bosses/QbdEncounter.ts
+  s_3f4b5347620927::t_8855327ea73aca 1-279
+server/src/lostcity/systems/combat/HitQueue.ts
+  s_3f4b5347620927::t_cdc81370cbd857 3-6,10,24,35-41,45,50,55,74-80
+server/src/lostcity/systems/npc/NpcPopulation.ts
+  s_3f4b5347620927::t_754d3da67781cd 114-120
+server/src/lostcity/systems/movement/Movement.ts
+  s_3f4b5347620927::t_3a0cfc00857c77 139,158,180,188,213
+server/src/lostcity/data/BossRoomData.ts
+  s_3f4b5347620927::t_40e920e406645f 1,24,148-161
+server/src/lostcity/systems/npc/NpcCombat.ts
+  s_3f4b5347620927::t_186b34bb67b97a 1,74-75,101-119,141,175-176,376,405,453-457,477-478
+server/src/lostcity/tools/data/domains/instances/QueenBlackDragon.ts
+  s_3f4b5347620927::t_14d6680a802425 1-251
+server/src/lostcity/network/QbdE2E.integration.test.ts
+  s_3f4b5347620927::t_c5670957840dcb 1-478
+tools/client910/fixtures/session-replay/queen-black-dragon/seed.mjs
+  s_3f4b5347620927::t_2a3927a3360a4b 1-109
+server/src/lostcity/systems/loot/PendingClaimAccount.test.ts
+  s_3f4b5347620927::t_b29c64b22fb80b 1-14
+server/src/lostcity/systems/combat/Combatant.ts
+  s_3f4b5347620927::t_ce0c999e7a7f39 202-204
+server/src/lostcity/network/SkillsE2E.testkit.ts
+  s_3f4b5347620927::t_91f8e4d773a3ed 52,145
+server/src/lostcity/data/QbdData.ts
+  s_3f4b5347620927::t_b6b1bba557e31f 1-41
+server/src/lostcity/systems/inventory/Inventories.ts
+  s_3f4b5347620927::t_bad05481827f8e 295
+docs/server-architecture.md
+  s_3f4b5347620927::t_e4a565e66f40e9 1121-1131
+server/src/lostcity/content/world/bosses/QbdLair.ts
+  s_3f4b5347620927::t_0d1867193fed58 1-111
+tools/client910/fixtures/session-replay/queen-black-dragon/freeze.py
+  s_3f4b5347620927::t_cc09941f211f7e 1-150
+server/src/lostcity/systems/movement/Teleporting.ts
+  s_3f4b5347620927::t_be221ab1850d40 45,56
+tools/client910/fixtures/session-replay/queen-black-dragon/record.py
+  s_3f4b5347620927::t_7e5217f59cd558 1-52
+server/src/lostcity/content/world/bosses/QbdWindows.ts
+  s_3f4b5347620927::t_3d083a1c748f01 1-55
+server/src/lostcity/systems/session/AccountFile.ts
+  s_3f4b5347620927::t_c64bb7b3e46326 1,119-120,156-157,184-189
+server/src/lostcity/systems/combat/OrdinaryVolley.ts
+  s_3f4b5347620927::t_1cc23299724ff3 24,39-40
+server/src/lostcity/systems/session/Account.ts
+  s_3f4b5347620927::t_919d10cdb7cd9e 1,53-54,97-99,139-140,212-214
+server/src/lostcity/entity/Player.ts
+  s_3f4b5347620927::t_342eca083fae9e 1-2,61-62
+tools/client910/fixtures/session-replay/queen-black-dragon/server.mjs
+  s_3f4b5347620927::t_507d073c2d6b18 1-168
+tools/client910/fixtures/session-replay/queen-black-dragon/driver.py
+  s_3f4b5347620927::t_0ac913753407dc 1-127
+server/src/lostcity/systems/combat/CombatStatuses.ts
+  s_3f4b5347620927::t_cb5165f5b31258 34-42,46-69,103,195,359,416,698
+server/src/lostcity/content/world/bosses/QbdRewards.ts
+  s_3f4b5347620927::t_64133e8ccf1a09 1-172
+server/src/lostcity/systems/loot/PendingClaim.ts
+  s_3f4b5347620927::t_b9ce0a3e79c332 1-38
+server/src/lostcity/network/QbdMechanicObservation.testkit.ts
+  s_3f4b5347620927::t_afb17e69897c08 1-107
+server/src/lostcity/systems/consumables/Consumables.ts
+  s_3f4b5347620927::t_75dada97a25ee6 52,87,115
+server/src/lostcity/content/world/bosses/QbdMechanics.ts
+  s_3f4b5347620927::t_7b3c7df0c1f6a3 1-427
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "ec9eeafe00683a0425c5a6a5d01e13a8cf34e441",
+  "prompts": {},
+  "sessions": {
+    "s_3f4b5347620927": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1052f-291b-7aa2-897e-1b9a6fb3f082",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
