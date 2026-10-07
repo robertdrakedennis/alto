@@ -1,0 +1,123 @@
+docs/client-status.md
+  s_3f4b5347620927::t_4ae9389956332d 45-46
+packages/domain/src/symbols/location.ts
+  s_3f4b5347620927::t_08008ac0720011 83-85
+packages/domain/src/symbols/npc.ts
+  s_3f4b5347620927::t_bae3b6eb86bbc8 17
+revisions/910/symbols/location.sym
+  s_3f4b5347620927::t_106f8d96b7ade6 73-75
+revisions/910/symbols/npc.sym
+  s_3f4b5347620927::t_1f4dacfa8da5ce 15
+server/src/lostcity/content/world/bosses/ChaosElemental.ts
+  s_3f4b5347620927::t_5407ce5b8e24b4 1-233
+server/src/lostcity/data/ChaosElementalData.test.ts
+  s_3f4b5347620927::t_f3a33dcf9c0d99 1-32
+server/src/lostcity/data/ChaosElementalData.ts
+  s_3f4b5347620927::t_a0362185d4d74c 1-104
+server/src/lostcity/data/GeneratedData.ts
+  s_3f4b5347620927::t_aeb41346368b20 59-61
+server/src/lostcity/data/ItemChargeData.ts
+  s_3f4b5347620927::t_1de30cea492344 50-55
+server/src/lostcity/data/WildernessData.ts
+  s_3f4b5347620927::t_f85d8752d3511f 21
+server/src/lostcity/engine/World.ts
+  s_3f4b5347620927::t_7a8d54bf649ba3 5-6,205,207,217,346-347,361
+server/src/lostcity/network/ChaosElementalE2E.integration.test.ts
+  s_3f4b5347620927::t_db84d84ff4e092 1-702
+server/src/lostcity/systems/combat/Combat.ts
+  s_3f4b5347620927::t_bc275b1d04f61f 5,57,415-416,418-419,426-427,433-437,502-537,541-543,554-561
+server/src/lostcity/systems/combat/HitQueue.ts
+  s_3f4b5347620927::t_9c189a36dd7f98 5,17-26,28,32-37,47-59,69-73
+server/src/lostcity/systems/combat/NpcCombat.integration.test.ts
+  s_3f4b5347620927::t_bd48f3d6fdac27 1-4,198-232
+server/src/lostcity/systems/combat/OrdinaryVolley.ts
+  s_3f4b5347620927::t_bfb6cb2461c02b 17-18,28-36,40
+server/src/lostcity/systems/combat/PlayerDeath.ts
+  s_3f4b5347620927::t_45dc13fda7696d 38,103,112,128-131,139-140,158,195-201,204,208
+server/src/lostcity/systems/equipment/PlayerEquipment.ts
+  s_3f4b5347620927::t_931720ee96ed4a 199-266
+server/src/lostcity/systems/equipment/PlayerItemCharges.integration.test.ts
+  s_3f4b5347620927::t_30eb767f107e91 554-599
+server/src/lostcity/systems/equipment/PlayerItemCharges.ts
+  s_3f4b5347620927::t_5914316623d59c 77-98
+server/src/lostcity/systems/movement/Movement.ts
+  s_3f4b5347620927::t_e822c6db605178 18-21,48-53,143,167
+server/src/lostcity/systems/npc/NpcCombat.ts
+  s_3f4b5347620927::t_782e8893fc2f5b 54-55,227-228
+server/src/lostcity/systems/npc/NpcDropAdmission.test.ts
+  s_3f4b5347620927::t_b3ea6f178eca12 2,9-10,24-27,90-278
+server/src/lostcity/systems/npc/NpcPopulation.ts
+  s_3f4b5347620927::t_57beda7a17403c 5,9-10,23-26,45-52,80-93,250-281,287-292
+server/src/lostcity/systems/wilderness/Wilderness.ts
+  s_3f4b5347620927::t_100952020b9060 2,88-92
+server/src/lostcity/tools/data/DataContext.ts
+  s_3f4b5347620927::t_ff0ba51f389a9d 16-17
+server/src/lostcity/tools/data/domains/equipment/index.ts
+  s_3f4b5347620927::t_4c426422238a5f 7,118-145,186,200-238
+server/src/lostcity/tools/data/domains/wilderness/ChaosElementalLootStage.ts
+  s_3f4b5347620927::t_c05bdfe5155025 1-148
+server/src/lostcity/tools/data/domains/wilderness/ChaosElementalStage.ts
+  s_3f4b5347620927::t_426285f3bd4749 1-179
+server/src/lostcity/tools/data/domains/wilderness/index.ts
+  s_3f4b5347620927::t_0b95cc6c1da347 1-2,4-5,28-63,65-67,100-101,103-135
+server/src/lostcity/tools/data/generate.ts
+  s_3f4b5347620927::t_e1f43de4d75092 34,44-47,63-64
+server/src/lostcity/tools/data/output.ts
+  s_3f4b5347620927::t_69667952ce8f46 6-59,68-69
+server/src/lostcity/tools/data/wiki/WikiClient.ts
+  s_3f4b5347620927::t_ab25e61c4d5c7c 243
+tools/client910/crates/rs910-symbols/src/location.rs
+  s_3f4b5347620927::t_cd352933b33dbd 146-151
+tools/client910/crates/rs910-symbols/src/npc.rs
+  s_3f4b5347620927::t_9071161fba7bec 30-31
+tools/client910/fixtures/session-replay/boss-encounters/encounter_controls.py
+  s_3f4b5347620927::t_137d738bdc6cc5 1-251
+tools/client910/fixtures/session-replay/chaos-elemental/driver.py
+  s_3f4b5347620927::t_17394117509677 1-354
+tools/client910/fixtures/session-replay/chaos-elemental/freeze.py
+  s_3f4b5347620927::t_9748fbab704bf6 1-184
+tools/client910/fixtures/session-replay/chaos-elemental/recorded-full-life-loot-retreat/backend-inputs.json
+  s_3f4b5347620927::t_858d04f35c2774 1-3092
+tools/client910/fixtures/session-replay/chaos-elemental/recorded-full-life-loot-retreat/combat-receipts.jsonl
+  s_3f4b5347620927::t_6823f05605dd0f 1-227
+tools/client910/fixtures/session-replay/chaos-elemental/recorded-full-life-loot-retreat/driver-journal.jsonl
+  s_3f4b5347620927::t_1750d3250fc974 1-688
+tools/client910/fixtures/session-replay/chaos-elemental/recorded-full-life-loot-retreat/execution.json
+  s_3f4b5347620927::t_46b33a8b4ae7ff 1-117
+tools/client910/fixtures/session-replay/chaos-elemental/recorded-full-life-loot-retreat/final-saved-state.json
+  s_3f4b5347620927::t_9706c794df7fda 1-1839
+tools/client910/fixtures/session-replay/chaos-elemental/recorded-full-life-loot-retreat/initial-fixture.json
+  s_3f4b5347620927::t_dc37bca0a4adee 1-322
+tools/client910/fixtures/session-replay/chaos-elemental/recorded-full-life-loot-retreat/plan.json
+  s_3f4b5347620927::t_423c5a1c933ee0 1-540
+tools/client910/fixtures/session-replay/chaos-elemental/recorded-full-life-loot-retreat/server-trace.jsonl
+  s_3f4b5347620927::t_efcff95aed19a5 1-220
+tools/client910/fixtures/session-replay/chaos-elemental/seed.mjs
+  s_3f4b5347620927::t_db864f8ce03a87 1-118
+tools/client910/fixtures/session-replay/chaos-elemental/server.mjs
+  s_3f4b5347620927::t_066f54978e4c1e 1-166
+tools/client910/src/app.rs
+  s_3f4b5347620927::t_8da11bcf151bc1 416-419
+tools/client910/src/scenario_chaos_elemental.rs
+  s_3f4b5347620927::t_af9d00860eaa15 1-516
+tools/refactor/replay-gate.txt
+  s_3f4b5347620927::t_2841d0f82f6ab8 140-142
+tools/refactor/test-inventory.txt
+  s_3f4b5347620927::t_fdab9d5c3dc480 4,48,81,1674,1679,1683-1690,1692,1730-1731,1750,1864,1880,1940,1949,1979,2235,2261,2443,2481,2563,2627
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "e01e86b0a9c912312c6a0020b1ce959b3555e9e0",
+  "prompts": {},
+  "sessions": {
+    "s_3f4b5347620927": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1052f-291b-7aa2-897e-1b9a6fb3f082",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
