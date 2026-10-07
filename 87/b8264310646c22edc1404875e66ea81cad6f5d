@@ -1,0 +1,161 @@
+docs/client-status.md
+  s_3f4b5347620927::t_2777a6803d8e00 41-42
+docs/server-architecture.md
+  s_3f4b5347620927::t_1d95f2930ad4d2 1080-1097
+packages/domain/src/symbols/loc.ts
+  s_3f4b5347620927::t_3c26daa736e8e9 82
+packages/domain/src/symbols/location.ts
+  s_3f4b5347620927::t_399ae52ad2281e 85-88
+packages/domain/src/symbols/npc.ts
+  s_3f4b5347620927::t_6df158762b6ece 25-26
+packages/domain/src/symbols/obj.ts
+  s_3f4b5347620927::t_b0d48da6e50220 278
+packages/domain/src/symbols/struct.ts
+  s_3f4b5347620927::t_c9b1639cf82628 19,42
+revisions/910/symbols/loc.sym
+  s_3f4b5347620927::t_59e8076f9690fc 80
+revisions/910/symbols/location.sym
+  s_3f4b5347620927::t_a5665096015e18 75-78
+revisions/910/symbols/npc.sym
+  s_3f4b5347620927::t_248aa67dd96478 23-24
+revisions/910/symbols/obj.sym
+  s_3f4b5347620927::t_9664e35c7ee609 276
+revisions/910/symbols/struct.sym
+  s_3f4b5347620927::t_0c2e52228b7657 17,40
+server/src/lostcity/content/world/bosses/BossRooms.ts
+  s_3f4b5347620927::t_b93766bb54e478 3-4,72,128,138-139,183,193-195,201,205,211-214,232-237,328-332,336,373-378,400
+server/src/lostcity/content/world/bosses/CoreDrainBoundary.test.ts
+  s_3f4b5347620927::t_f4ca4dafc17bd2 1-114
+server/src/lostcity/content/world/bosses/CoreDrainBoundary.ts
+  s_3f4b5347620927::t_759a010e3de399 1-44
+server/src/lostcity/content/world/bosses/CorporealDamage.ts
+  s_3f4b5347620927::t_472cd15c25dda2 1-13
+server/src/lostcity/content/world/bosses/CorporealEncounter.ts
+  s_3f4b5347620927::t_ec58a8c07b9a50 1-261
+server/src/lostcity/content/world/bosses/CorporealPassage.ts
+  s_3f4b5347620927::t_dfe19c603c5d82 1-43
+server/src/lostcity/data/BossRoomData.ts
+  s_3f4b5347620927::t_85fd751a11c3fa 5,19,22,127-135
+server/src/lostcity/data/CorporealEncounterData.ts
+  s_3f4b5347620927::t_8b1ca8fcb8a1fa 1-40
+server/src/lostcity/network/CorporealBeastE2E.integration.test.ts
+  s_3f4b5347620927::t_55f17d90f45bd3 1-462
+server/src/lostcity/network/CorporealHardCases.testkit.ts
+  s_3f4b5347620927::t_ed5de8ea04b7ba 1-273
+server/src/lostcity/network/CorporealHardCasesE2E.integration.test.ts
+  s_3f4b5347620927::t_077a832d3373d8 1-487
+server/src/lostcity/systems/combat/AcceptedLifeLoss.ts
+  s_3f4b5347620927::t_eb875c8d4101f0 1-6
+server/src/lostcity/systems/combat/Combat.ts
+  s_3f4b5347620927::t_fcb6e833d5c3b2 4,476-477,683
+server/src/lostcity/systems/combat/CombatWeaponCapture.ts
+  s_3f4b5347620927::t_7d7f88b536015b 1-28
+server/src/lostcity/systems/combat/Combatant.ts
+  s_3f4b5347620927::t_f199bdf3905c5b 84-90,97,175
+server/src/lostcity/systems/combat/CorporealDeliveryBoundary.test.ts
+  s_3f4b5347620927::t_ac28c8c9ce0302 1-122
+server/src/lostcity/systems/combat/OrdinaryVolley.ts
+  s_3f4b5347620927::t_f39100a5a49414 19-20
+server/src/lostcity/systems/combat/PlayerCombat.ts
+  s_3f4b5347620927::t_69812a2048fdf7 1,248-251
+server/src/lostcity/systems/combat/PlayerSpecials.ts
+  s_3f4b5347620927::t_b473e8969e8ac6 1,270,386-387
+server/src/lostcity/tools/data/domains/instances/CorporealBeast.ts
+  s_3f4b5347620927::t_80c608d123045c 1-186
+server/src/lostcity/tools/data/domains/instances/CorporealPolicy.ts
+  s_3f4b5347620927::t_d54da99a783935 1-44
+server/src/lostcity/tools/data/domains/instances/DagannothKings.ts
+  s_3f4b5347620927::t_8f9c8e9dff39d5 1,6,71
+server/src/lostcity/tools/data/domains/instances/GiantMole.ts
+  s_3f4b5347620927::t_22ba6d78edd4a8 1,10,154
+server/src/lostcity/tools/data/domains/instances/InstanceCurrency.ts
+  s_3f4b5347620927::t_84c49475e70843 1-74
+server/src/lostcity/tools/data/domains/instances/index.ts
+  s_3f4b5347620927::t_059dbd11829974 1-2,21,25-27,30-31,42,46,50
+server/vitest.config.ts
+  s_3f4b5347620927::t_0b0a05313202f0 13-16
+tools/client910/crates/rs910-symbols/src/loc.rs
+  s_3f4b5347620927::t_09c7a6004406ab 160-161
+tools/client910/crates/rs910-symbols/src/location.rs
+  s_3f4b5347620927::t_0f7b73fa340959 150-157
+tools/client910/crates/rs910-symbols/src/npc.rs
+  s_3f4b5347620927::t_cba4b07978c213 46-49
+tools/client910/crates/rs910-symbols/src/obj.rs
+  s_3f4b5347620927::t_5fd14c722bb735 552-553
+tools/client910/crates/rs910-symbols/src/structs.rs
+  s_3f4b5347620927::t_a31bea307df6e3 34-35,80-81
+tools/client910/fixtures/session-replay/boss-encounters/corporeal-beast-melee-sample/adoption.json
+  s_3f4b5347620927::t_3d2410f237abb6 1-1085
+tools/client910/fixtures/session-replay/boss-encounters/corporeal-beast-melee-sample/backend-inputs.json
+  s_3f4b5347620927::t_aa1e48a77c4842 1-2809
+tools/client910/fixtures/session-replay/boss-encounters/corporeal-beast-melee-sample/combat-receipts.jsonl
+  s_3f4b5347620927::t_070be9811604ca 1-978
+tools/client910/fixtures/session-replay/boss-encounters/corporeal-beast-melee-sample/driver-journal.jsonl
+  s_3f4b5347620927::t_554a5b7d736d4f 1-1182
+tools/client910/fixtures/session-replay/boss-encounters/corporeal-beast-melee-sample/execution.json
+  s_3f4b5347620927::t_93cbdd1f827cf6 1-116
+tools/client910/fixtures/session-replay/boss-encounters/corporeal-beast-melee-sample/final-saved-state.json
+  s_3f4b5347620927::t_7588d4190f78ad 1-1835
+tools/client910/fixtures/session-replay/boss-encounters/corporeal-beast-melee-sample/fixture-hashes.json
+  s_3f4b5347620927::t_e05b0e91cdef41 1-18
+tools/client910/fixtures/session-replay/boss-encounters/corporeal-beast-melee-sample/initial-fixture.json
+  s_3f4b5347620927::t_c47fc4d5b043ff 1-322
+tools/client910/fixtures/session-replay/boss-encounters/corporeal-beast-melee-sample/native-build.json
+  s_3f4b5347620927::t_4ac97b59aaf130 1-1008
+tools/client910/fixtures/session-replay/boss-encounters/corporeal-beast-melee-sample/native-hit-types.json
+  s_3f4b5347620927::t_f29ae11c9d9725 1-6157
+tools/client910/fixtures/session-replay/boss-encounters/corporeal-beast-melee-sample/plan.json
+  s_3f4b5347620927::t_542168c40b5c47 1-213
+tools/client910/fixtures/session-replay/boss-encounters/corporeal-beast-melee-sample/process-closure.json
+  s_3f4b5347620927::t_62018aed543c05 1-1967
+tools/client910/fixtures/session-replay/boss-encounters/corporeal-beast-melee-sample/qualification.json
+  s_3f4b5347620927::t_2f96f14667a919 1-2515
+tools/client910/fixtures/session-replay/boss-encounters/corporeal-beast-melee-sample/server-trace.jsonl
+  s_3f4b5347620927::t_5f1dabc8b6fe53 1-488
+tools/client910/fixtures/session-replay/boss-encounters/corporeal-beast-melee-sample/socket-qualification.json
+  s_3f4b5347620927::t_7811354f46c76f 1-238
+tools/client910/fixtures/session-replay/boss-encounters/corporeal-beast-melee-sample/source-epoch.json
+  s_3f4b5347620927::t_6f3ca486e24997 1-2153
+tools/client910/fixtures/session-replay/corporeal-beast/contract.py
+  s_3f4b5347620927::t_d3b13587facd1b 1-120
+tools/client910/fixtures/session-replay/corporeal-beast/driver.py
+  s_3f4b5347620927::t_4d01e9b75f985c 1-274
+tools/client910/fixtures/session-replay/corporeal-beast/freeze.py
+  s_3f4b5347620927::t_42f98200d426e1 1-149
+tools/client910/fixtures/session-replay/corporeal-beast/prepare-spec.py
+  s_3f4b5347620927::t_be78560eaf0602 1-81
+tools/client910/fixtures/session-replay/corporeal-beast/qualify-native-hit-types.mjs
+  s_3f4b5347620927::t_7450fa6b66fbc2 1-28
+tools/client910/fixtures/session-replay/corporeal-beast/record.py
+  s_3f4b5347620927::t_0c5cd1e1374e21 1-245
+tools/client910/fixtures/session-replay/corporeal-beast/seed.mjs
+  s_3f4b5347620927::t_647e5bcfbeca8d 1-119
+tools/client910/fixtures/session-replay/corporeal-beast/server.mjs
+  s_3f4b5347620927::t_fddb6d36dcf94a 1-164
+tools/client910/src/app.rs
+  s_3f4b5347620927::t_a213d43b54cde2 416-419
+tools/client910/src/scenario_boss_encounters.rs
+  s_3f4b5347620927::t_3a9ee100d901c2 27,30,38,43
+tools/client910/src/scenario_corporeal_beast.rs
+  s_3f4b5347620927::t_96f08fe6c4fbca 1-975
+tools/refactor/replay-gate.txt
+  s_3f4b5347620927::t_73b7e6be934a43 134-136
+tools/refactor/test-inventory.txt
+  s_3f4b5347620927::t_2106a1694eff4c 4,48,84,1675,1680,1893,2179,2193,2414,2469,2484,2494-2495,2565
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "87b8264310646c22edc1404875e66ea81cad6f5d",
+  "prompts": {},
+  "sessions": {
+    "s_3f4b5347620927": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1052f-291b-7aa2-897e-1b9a6fb3f082",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
