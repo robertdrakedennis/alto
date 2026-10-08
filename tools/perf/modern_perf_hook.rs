@@ -563,25 +563,25 @@ fn indirect_counts(buffer: &wgpu::Buffer, offset: u64, draws: u32) -> (u64, u64)
 }
 
 pub trait NxRenderPass<'a> {
-    fn nx_set_pipeline(&mut self, p: &'a wgpu::RenderPipeline);
-    fn nx_set_bind_group(&mut self, i: u32, g: &'a wgpu::BindGroup, o: &[u32]);
-    fn nx_set_vertex_buffer<S: RangeBounds<u64>>(&mut self, slot: u32, b: &'a wgpu::Buffer, r: S);
-    fn nx_set_vertex_buffer_slice(&mut self, slot: u32, s: wgpu::BufferSlice<'a>);
-    fn nx_set_index_buffer<S: RangeBounds<u64>>(&mut self, b: &'a wgpu::Buffer, r: S, f: wgpu::IndexFormat);
-    fn nx_set_index_buffer_slice(&mut self, s: wgpu::BufferSlice<'a>, f: wgpu::IndexFormat);
+    fn nx_set_pipeline(&mut self, p: &wgpu::RenderPipeline);
+    fn nx_set_bind_group(&mut self, i: u32, g: &wgpu::BindGroup, o: &[u32]);
+    fn nx_set_vertex_buffer<S: RangeBounds<u64>>(&mut self, slot: u32, b: &wgpu::Buffer, r: S);
+    fn nx_set_vertex_buffer_slice(&mut self, slot: u32, s: wgpu::BufferSlice<'_>);
+    fn nx_set_index_buffer<S: RangeBounds<u64>>(&mut self, b: &wgpu::Buffer, r: S, f: wgpu::IndexFormat);
+    fn nx_set_index_buffer_slice(&mut self, s: wgpu::BufferSlice<'_>, f: wgpu::IndexFormat);
     fn nx_draw_indexed(&mut self, r: Range<u32>, base: i32, i: Range<u32>);
     fn nx_draw(&mut self, v: Range<u32>, i: Range<u32>);
     fn nx_multi_draw_indexed_indirect(&mut self, b: &wgpu::Buffer, offset: u64, draws: u32);
 }
 impl<'a> NxRenderPass<'a> for wgpu::RenderPass<'a> {
-    fn nx_set_pipeline(&mut self, p: &'a wgpu::RenderPipeline) {
+    fn nx_set_pipeline(&mut self, p: &wgpu::RenderPipeline) {
         count(K::SetPipeline, 1);
         if bound_same(0, hid(p)) {
             count(K::SetPipelineSame, 1);
         }
         self.set_pipeline(p);
     }
-    fn nx_set_bind_group(&mut self, i: u32, g: &'a wgpu::BindGroup, o: &[u32]) {
+    fn nx_set_bind_group(&mut self, i: u32, g: &wgpu::BindGroup, o: &[u32]) {
         count(K::SetBindGroup, 1);
         let key = hid(g) ^ o.iter().fold(0u64, |h, v| h.wrapping_mul(31).wrapping_add(u64::from(*v) + 1));
         pass_tally(1);
@@ -591,26 +591,26 @@ impl<'a> NxRenderPass<'a> for wgpu::RenderPass<'a> {
         }
         self.set_bind_group(i, g, o);
     }
-    fn nx_set_vertex_buffer<S: RangeBounds<u64>>(&mut self, slot: u32, b: &'a wgpu::Buffer, r: S) {
+    fn nx_set_vertex_buffer<S: RangeBounds<u64>>(&mut self, slot: u32, b: &wgpu::Buffer, r: S) {
         count(K::SetVertexBuffer, 1);
         if bound_same(9 + (slot as usize & 3), hid(b) ^ range_key(&r)) {
             count(K::SetVertexBufferSame, 1);
         }
         self.set_vertex_buffer(slot, b.slice(r));
     }
-    fn nx_set_vertex_buffer_slice(&mut self, slot: u32, s: wgpu::BufferSlice<'a>) {
+    fn nx_set_vertex_buffer_slice(&mut self, slot: u32, s: wgpu::BufferSlice<'_>) {
         count(K::SetVertexBuffer, 1);
         bound_same(9 + (slot as usize & 3), u64::MAX - 1);
         self.set_vertex_buffer(slot, s);
     }
-    fn nx_set_index_buffer<S: RangeBounds<u64>>(&mut self, b: &'a wgpu::Buffer, r: S, f: wgpu::IndexFormat) {
+    fn nx_set_index_buffer<S: RangeBounds<u64>>(&mut self, b: &wgpu::Buffer, r: S, f: wgpu::IndexFormat) {
         count(K::SetIndexBuffer, 1);
         if bound_same(13, hid(b) ^ range_key(&r)) {
             count(K::SetIndexBufferSame, 1);
         }
         self.set_index_buffer(b.slice(r), f);
     }
-    fn nx_set_index_buffer_slice(&mut self, s: wgpu::BufferSlice<'a>, f: wgpu::IndexFormat) {
+    fn nx_set_index_buffer_slice(&mut self, s: wgpu::BufferSlice<'_>, f: wgpu::IndexFormat) {
         count(K::SetIndexBuffer, 1);
         bound_same(13, u64::MAX - 1);
         self.set_index_buffer(s, f);

@@ -38,6 +38,7 @@
 //! low detail), with the point lights the frame has (the reference turns
 //! their shadows off); the far scene and the water are not drawn.
 
+use crate::frame::encoding::EncodeInputs;
 use std::sync::atomic::{AtomicU8, Ordering};
 use std::sync::{Arc, Mutex};
 
@@ -304,21 +305,21 @@ impl ModernRenderer {
     /// The ambient capture's statistics.
     #[must_use]
     pub fn ambient_stats(&self) -> AmbientStats {
-        self.ambient.stats()
+        self.history.ambient.stats()
     }
 
     /// The block map square `square` shows at `now_ms` (tests and
     /// diagnostics).
     #[must_use]
     pub fn ambient_block(&self, square: Square, now_ms: i64) -> Irradiance {
-        self.ambient.schedule.shown(square, now_ms)
+        self.history.ambient.schedule.shown(square, now_ms)
     }
 
     /// Whether a capture, a projection or a blend is still under way at
     /// `now_ms` (false while the ambient is off).
     #[must_use]
     pub fn ambient_pending(&self, now_ms: i64) -> bool {
-        let a = &self.ambient;
+        let a = &self.history.ambient;
         a.enabled
             && (a.schedule.wanted().len() < a.window
                 || !a.schedule.idle()
@@ -330,8 +331,8 @@ impl ModernRenderer {
     /// at `now_ms` (the ambient has settled).
     #[must_use]
     pub fn ambient_settled(&self, now_ms: i64) -> bool {
-        self.ambient.enabled
-            && !self.ambient.schedule.wanted().is_empty()
+        self.history.ambient.enabled
+            && !self.history.ambient.schedule.wanted().is_empty()
             && !self.ambient_pending(now_ms)
     }
 
@@ -344,9 +345,9 @@ impl ModernRenderer {
             snapshot,
             origin,
         } = *prep;
-        self.ambient.capture = None;
-        self.ambient.enabled = self.settings.look.captured_ambient();
-        if !self.ambient.enabled {
+        self.history.ambient.capture = None;
+        self.history.ambient.enabled = self.preparation.settings.look.captured_ambient();
+        if !self.history.ambient.enabled {
             return;
         }
         let now = self.frame_millis();
@@ -354,27 +355,28 @@ impl ModernRenderer {
 
         // Request the window's squares under the settled environment.
         let key = self.ambient_key(snapshot);
-        let held = match self.ambient.env {
+        let held = match self.history.ambient.env {
             Some((k, n)) if k == key => n.saturating_add(1),
             _ => 1,
         };
-        self.ambient.env = Some((key, held));
+        self.history.ambient.env = Some((key, held));
         let window = snapshot
             .floors
             .first()
             .and_then(Option::as_ref)
             .map(|g| window_squares(snapshot.floor_base, [g.tiles_x, g.tiles_z]))
             .unwrap_or_default();
-        self.ambient.window = window.len();
+        self.history.ambient.window = window.len();
         if held >= SETTLE_FRAMES && !window.is_empty() {
-            self.ambient.schedule.request(key, &window, now);
+            self.history.ambient.schedule.request(key, &window, now);
         }
 
         // At most one face a frame.
         // (The buffers are made with the first face.)
-        let room = self.ambient.readbacks.is_empty() || self.ambient.free_readback().is_some();
+        let room = self.history.ambient.readbacks.is_empty()
+            || self.history.ambient.free_readback().is_some();
         if !window.is_empty() && room {
-            if let Some(ticket) = self.ambient.schedule.next_face() {
+            if let Some(ticket) = self.history.ambient.schedule.next_face() {
                 self.record_ambient_face(prep, frame, ticket);
             }
         }
@@ -382,19 +384,21 @@ impl ModernRenderer {
         // The table around the camera.
         let camera = square_of(snapshot.floor_base, origin[0] as i32, origin[2] as i32);
         let table_origin = Table::origin_for(camera);
-        let table =
-            self.ambient
-                .with_test_blocks(Table::fill(&self.ambient.schedule, table_origin, now));
-        if self.ambient.table.as_ref() != Some(&table) {
+        let table = self.history.ambient.with_test_blocks(Table::fill(
+            &self.history.ambient.schedule,
+            table_origin,
+            now,
+        ));
+        if self.history.ambient.table.as_ref() != Some(&table) {
             queue.write_buffer(
-                &self.lights.probes.squares,
+                &self.scene_resources.lights.probes.squares,
                 0,
                 bytemuck::cast_slice(&cell_words(&table)),
             );
-            self.ambient.table = Some(table);
+            self.history.ambient.table = Some(table);
         }
         let base = snapshot.floor_base;
-        self.ambient.params = (
+        self.history.ambient.params = (
             [
                 1.0,
                 (base[0] * 512 - table_origin.0 * SQUARE_SIZE) as f32,
@@ -412,7 +416,7 @@ impl ModernRenderer {
         use std::hash::{Hash, Hasher};
         let mut h = std::collections::hash_map::DefaultHasher::new();
         crate::frame::gpu::probes::env_key(snapshot).hash(&mut h);
-        self.sky_cubes.baked().hash(&mut h);
+        self.scene_resources.sky_cubes.baked().hash(&mut h);
         h.finish()
     }
 
@@ -421,8 +425,8 @@ impl ModernRenderer {
     fn harvest_ambient(&mut self, device: &wgpu::Device, now: i64) {
         let inline = self.threads() == 1;
         let _ = device.poll(wgpu::PollType::Poll);
-        for i in 0..self.ambient.readbacks.len() {
-            let (ticket, state) = match &self.ambient.readbacks[i].stage {
+        for i in 0..self.history.ambient.readbacks.len() {
+            let (ticket, state) = match &self.history.ambient.readbacks[i].stage {
                 Stage::Mapping(ticket, flag) => (*ticket, flag.load(Ordering::Acquire)),
                 _ => continue,
             };
@@ -430,7 +434,7 @@ impl ModernRenderer {
                 continue;
             }
             let bytes = (state == 1).then(|| {
-                let buffer = &self.ambient.readbacks[i].buffer;
+                let buffer = &self.history.ambient.readbacks[i].buffer;
                 let bytes = buffer
                     .slice(..)
                     .get_mapped_range()
@@ -439,34 +443,36 @@ impl ModernRenderer {
                 buffer.unmap();
                 bytes
             });
-            self.ambient.readbacks[i].stage = Stage::Free;
+            self.history.ambient.readbacks[i].stage = Stage::Free;
             match bytes {
                 Some(bytes) => {
                     if let Some(p) =
-                        self.ambient
+                        self.history
+                            .ambient
                             .schedule
                             .face_done(ticket, FACE_RES as usize, bytes)
                     {
-                        self.ambient.project(p, inline);
+                        self.history.ambient.project(p, inline);
                     }
                 }
                 None => {
                     log::warn!(
                         "[modern] ambient: a face readback failed; its square is captured again"
                     );
-                    self.ambient.schedule.abandon(ticket);
+                    self.history.ambient.schedule.abandon(ticket);
                 }
             }
         }
         let done = std::mem::take(
             &mut *self
+                .history
                 .ambient
                 .results
                 .lock()
                 .unwrap_or_else(std::sync::PoisonError::into_inner),
         );
         for (key, block) in done {
-            self.ambient.schedule.complete(key, block, now);
+            self.history.ambient.schedule.complete(key, block, now);
         }
     }
 
@@ -542,12 +548,13 @@ impl ModernRenderer {
         } = *prep;
         let started = std::time::Instant::now();
         let face = usize::from(ticket.face);
-        if self.probes.pipes.is_none() {
-            self.probes.pipes = Some(CapturePipes::new(device, queue, self));
+        if self.history.probes.pipes.is_none() {
+            self.history.probes.pipes =
+                Some(CapturePipes::new(device, queue, &self.encoding_inputs()));
         }
-        if self.ambient.target.is_none() {
-            self.ambient.target = Some(face_target(device));
-            self.ambient.readbacks = (0..READBACKS)
+        if self.history.ambient.target.is_none() {
+            self.history.ambient.target = Some(face_target(device));
+            self.history.ambient.readbacks = (0..READBACKS)
                 .map(|_| Readback {
                     buffer: device.create_buffer(&wgpu::BufferDescriptor {
                         label: Some("modern ambient readback"),
@@ -560,6 +567,7 @@ impl ModernRenderer {
                 .collect();
         }
         let readback = self
+            .history
             .ambient
             .free_readback()
             .expect("a free readback buffer");
@@ -571,7 +579,7 @@ impl ModernRenderer {
             0.0,
             (snapshot.floor_base[1] * 512) as f32,
         ];
-        let eye = match self.ambient.eye {
+        let eye = match self.history.ambient.eye {
             Some((square, world)) if square == ticket.square && ticket.face != 0 => {
                 [world[0] - shift[0], world[1], world[2] - shift[2]]
             }
@@ -583,7 +591,7 @@ impl ModernRenderer {
                     candidates.locs.len(),
                     origin,
                 );
-                self.ambient.eye = Some((
+                self.history.ambient.eye = Some((
                     ticket.square,
                     [eye[0] + shift[0], eye[1], eye[2] + shift[2]],
                 ));
@@ -625,7 +633,12 @@ impl ModernRenderer {
             contents: bytemuck::bytes_of(&slot),
             usage: wgpu::BufferUsages::UNIFORM,
         });
-        let pipes = self.probes.pipes.as_ref().expect("capture pipelines");
+        let pipes = self
+            .history
+            .probes
+            .pipes
+            .as_ref()
+            .expect("capture pipelines");
         let frame_layout = self.pipes().forward.get_bind_group_layout(0);
         let bind = device.create_bind_group(&wgpu::BindGroupDescriptor {
             label: Some("modern ambient frame"),
@@ -645,11 +658,11 @@ impl ModernRenderer {
                 },
             ],
         });
-        self.ambient.draws = seen.len();
-        self.ambient.record_ms = started.elapsed().as_secs_f32() * 1000.0;
-        self.ambient.faces += 1;
-        self.ambient.readbacks[readback].stage = Stage::Copied(ticket);
-        self.ambient.capture = Some(AmbientCapture {
+        self.history.ambient.draws = seen.len();
+        self.history.ambient.record_ms = started.elapsed().as_secs_f32() * 1000.0;
+        self.history.ambient.faces += 1;
+        self.history.ambient.readbacks[readback].stage = Stage::Copied(ticket);
+        self.history.ambient.capture = Some(AmbientCapture {
             scene: SceneCapture {
                 draws: built.draws,
                 sky_layers: None,
@@ -666,6 +679,77 @@ impl ModernRenderer {
         });
     }
 
+    /// Return a prepared face that never reached a submitted command buffer.
+    pub(crate) fn discard_ambient_frame(&mut self, previous: AmbientProgress) {
+        self.history.ambient.capture = None;
+        for readback in &mut self.history.ambient.readbacks {
+            if let Stage::Copied(ticket) = readback.stage {
+                self.history.ambient.schedule.retry_unsubmitted(ticket);
+                readback.stage = Stage::Free;
+            }
+        }
+        self.history.ambient.env = previous.env;
+        self.history.ambient.faces = previous.faces;
+        self.history.ambient.record_ms = previous.record_ms;
+        self.history.ambient.draws = previous.draws;
+    }
+
+    /// Map the readback buffer of the face this frame encoded (its copy was
+    /// submitted with the frame); the harvest reads it once it is ready.
+    pub(crate) fn map_ambient_readback(&mut self) {
+        for r in &mut self.history.ambient.readbacks {
+            let Stage::Copied(ticket) = r.stage else {
+                continue;
+            };
+            let flag = Arc::new(AtomicU8::new(0));
+            let done = Arc::clone(&flag);
+            r.buffer
+                .slice(..)
+                .map_async(wgpu::MapMode::Read, move |result| {
+                    done.store(if result.is_ok() { 1 } else { 2 }, Ordering::Release);
+                });
+            r.stage = Stage::Mapping(ticket, flag);
+        }
+    }
+}
+
+/// The face target: the capture format at the face size and its depth.
+fn face_target(device: &wgpu::Device) -> FaceTarget {
+    let size = wgpu::Extent3d {
+        width: FACE_RES,
+        height: FACE_RES,
+        depth_or_array_layers: 1,
+    };
+    let texture = |label, format, usage| {
+        device.create_texture(&wgpu::TextureDescriptor {
+            label: Some(label),
+            size,
+            mip_level_count: 1,
+            sample_count: 1,
+            dimension: wgpu::TextureDimension::D2,
+            format,
+            usage,
+            view_formats: &[],
+        })
+    };
+    let colour = texture(
+        "modern ambient face",
+        crate::frame::gpu::probes::CAPTURE_FORMAT,
+        wgpu::TextureUsages::RENDER_ATTACHMENT | wgpu::TextureUsages::COPY_SRC,
+    );
+    let depth = texture(
+        "modern ambient face depth",
+        DEPTH_FORMAT,
+        wgpu::TextureUsages::RENDER_ATTACHMENT,
+    );
+    FaceTarget {
+        view: colour.create_view(&Default::default()),
+        depth: depth.create_view(&Default::default()),
+        colour,
+    }
+}
+
+impl<'a> EncodeInputs<'a> {
     /// Encode this frame's ambient face (the probes unit): the sky, then the
     /// scene's draws, into the face target, copied to the face's readback
     /// buffer.
@@ -731,74 +815,5 @@ impl ModernRenderer {
                 depth_or_array_layers: 1,
             },
         );
-    }
-
-    /// Return a prepared face that never reached a submitted command buffer.
-    pub(crate) fn discard_ambient_frame(&mut self, previous: AmbientProgress) {
-        self.ambient.capture = None;
-        for readback in &mut self.ambient.readbacks {
-            if let Stage::Copied(ticket) = readback.stage {
-                self.ambient.schedule.retry_unsubmitted(ticket);
-                readback.stage = Stage::Free;
-            }
-        }
-        self.ambient.env = previous.env;
-        self.ambient.faces = previous.faces;
-        self.ambient.record_ms = previous.record_ms;
-        self.ambient.draws = previous.draws;
-    }
-
-    /// Map the readback buffer of the face this frame encoded (its copy was
-    /// submitted with the frame); the harvest reads it once it is ready.
-    pub(crate) fn map_ambient_readback(&mut self) {
-        for r in &mut self.ambient.readbacks {
-            let Stage::Copied(ticket) = r.stage else {
-                continue;
-            };
-            let flag = Arc::new(AtomicU8::new(0));
-            let done = Arc::clone(&flag);
-            r.buffer
-                .slice(..)
-                .map_async(wgpu::MapMode::Read, move |result| {
-                    done.store(if result.is_ok() { 1 } else { 2 }, Ordering::Release);
-                });
-            r.stage = Stage::Mapping(ticket, flag);
-        }
-    }
-}
-
-/// The face target: the capture format at the face size and its depth.
-fn face_target(device: &wgpu::Device) -> FaceTarget {
-    let size = wgpu::Extent3d {
-        width: FACE_RES,
-        height: FACE_RES,
-        depth_or_array_layers: 1,
-    };
-    let texture = |label, format, usage| {
-        device.create_texture(&wgpu::TextureDescriptor {
-            label: Some(label),
-            size,
-            mip_level_count: 1,
-            sample_count: 1,
-            dimension: wgpu::TextureDimension::D2,
-            format,
-            usage,
-            view_formats: &[],
-        })
-    };
-    let colour = texture(
-        "modern ambient face",
-        crate::frame::gpu::probes::CAPTURE_FORMAT,
-        wgpu::TextureUsages::RENDER_ATTACHMENT | wgpu::TextureUsages::COPY_SRC,
-    );
-    let depth = texture(
-        "modern ambient face depth",
-        DEPTH_FORMAT,
-        wgpu::TextureUsages::RENDER_ATTACHMENT,
-    );
-    FaceTarget {
-        view: colour.create_view(&Default::default()),
-        depth: depth.create_view(&Default::default()),
-        colour,
     }
 }

@@ -13,7 +13,7 @@
 # (`tools/target` unless CARGO_TARGET_DIR is set).
 [workspace]
 resolver = "2"
-members = ["native910", "cs2", "client910", "client910/crates/rs910-core", "client910/crates/rs910-symbols", "client910/crates/rs910-js5", "client910/crates/rs910-protocol", "client910/crates/rs910-audio", "client910/crates/rs910-config", "client910/crates/rs910-model", "client910/crates/rs910-game", "client910/crates/rs910-scene", "client910/crates/rs910-toolkit", "client910/crates/rs910-ui", "client910/crates/rs910-gpu-device", "client910/crates/rs910-render-gpu", "client910/crates/rs910-far-scene", "client910/crates/rs910-render-modern", "client910/crates/rs910-client"]
+members = ["native910", "cs2", "client910", "client910/crates/rs910-core", "client910/crates/rs910-jobs", "client910/crates/rs910-symbols", "client910/crates/rs910-js5", "client910/crates/rs910-protocol", "client910/crates/rs910-audio", "client910/crates/rs910-config", "client910/crates/rs910-model", "client910/crates/rs910-game", "client910/crates/rs910-scene", "client910/crates/rs910-toolkit", "client910/crates/rs910-ui", "client910/crates/rs910-gpu-device", "client910/crates/rs910-render-gpu", "client910/crates/rs910-far-scene", "client910/crates/rs910-render-modern", "client910/crates/rs910-client"]
 # The refactor-gate helper is its own workspace (own lockfile, syn 2).
 exclude = ["refactor/rsscan"]
 

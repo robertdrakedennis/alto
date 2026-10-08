@@ -24,6 +24,7 @@
 //! cascades' caster packets, sorted the same way, are the shadow cache's
 //! (`frame::gpu::shadow_cache`: only what a cascade redraws this frame).
 
+use crate::frame::encoding::EncodeInputs;
 use crate::frame::*;
 
 /// The buffer set a draw's geometry lives in.
@@ -137,14 +138,98 @@ impl FramePackets {
 }
 
 impl ModernRenderer {
+    /// Draw `list` in order into a pass whose pipeline and groups 0, 2 and
+    /// 3 are set.
+    pub(crate) fn submit_all<'p>(&'p self, pass: &mut wgpu::RenderPass<'p>, list: &[Draw]) {
+        self.encoding_inputs().submit_all(pass, list)
+    }
+
+    /// Far indirect arguments are frame resources, uploaded before recording.
+    /// A device without nonzero indirect instances retains ordinary draws.
+    pub(crate) fn prepare_far_indirect(
+        &mut self,
+        device: &wgpu::Device,
+        queue: &dyn rs910_gpu_device::uploads::Uploader,
+    ) {
+        let far = &mut self.scene_resources.far;
+        far.indirect_args.clear();
+        if !device
+            .features()
+            .contains(wgpu::Features::INDIRECT_FIRST_INSTANCE)
+        {
+            return;
+        }
+        for d in &mut self.frame_resources.draws {
+            if matches!(d.geometry, Geometry::Far { .. }) {
+                d.indirect = Some(far.indirect_args.len() as u32);
+                far.indirect_args.push(wgpu::util::DrawIndexedIndirectArgs {
+                    index_count: d.count,
+                    instance_count: 1,
+                    first_index: d.first_index,
+                    base_vertex: d.geometry.base_vertex(),
+                    first_instance: d.instance,
+                });
+            }
+        }
+        if far.indirect_args.is_empty() {
+            return;
+        }
+        let need = far.indirect_args.len() as u64 * INDIRECT_STRIDE;
+        if far.indirect.as_ref().is_none_or(|(_, cap)| *cap < need) {
+            let cap = need.next_power_of_two();
+            far.indirect = Some((
+                device.create_buffer(&wgpu::BufferDescriptor {
+                    label: Some("modern far indirect"),
+                    size: cap,
+                    usage: wgpu::BufferUsages::INDIRECT | wgpu::BufferUsages::COPY_DST,
+                    mapped_at_creation: false,
+                }),
+                cap,
+            ));
+        }
+        queue.write_buffer(
+            &far.indirect.as_ref().expect("far indirect").0,
+            0,
+            bytemuck::cast_slice(&far.indirect_args),
+        );
+        let mut first = 0;
+        while first < self.frame_resources.draws.len() {
+            let count = far_run_len(&self.frame_resources.draws[first..]);
+            if count > 1 {
+                far.stats.indirect_runs += 1;
+                far.stats.indirect_packets += count;
+            }
+            first += count;
+        }
+    }
+}
+
+/// Packed indexed argument size required by wgpu's indirect ABI.
+const INDIRECT_STRIDE: u64 = std::mem::size_of::<wgpu::util::DrawIndexedIndirectArgs>() as u64;
+
+pub(crate) fn far_run_len(list: &[Draw]) -> usize {
+    let first = &list[0];
+    let Some(index) = first.indirect else {
+        return 1;
+    };
+    if !matches!(first.geometry, Geometry::Far { .. }) {
+        return 1;
+    }
+    list.iter()
+        .enumerate()
+        .take_while(|(offset, d)| {
+            d.indirect == Some(index + *offset as u32)
+                && d.geometry.buffers() == first.geometry.buffers()
+                && d.material == first.material
+                && d.pass == first.pass
+        })
+        .count()
+}
+
+impl<'a> EncodeInputs<'a> {
     /// Draw `d`, setting only the state `bound` does not already hold (the
     /// pipeline and groups 0, 2 and 3 are the pass's).
-    pub(crate) fn submit<'p>(
-        &'p self,
-        pass: &mut wgpu::RenderPass<'p>,
-        d: &Draw,
-        bound: &mut Bound,
-    ) {
+    pub(crate) fn submit<'p>(&self, pass: &mut wgpu::RenderPass<'p>, d: &Draw, bound: &mut Bound) {
         if !self.bind_draw(pass, d, bound) {
             return;
         }
@@ -155,12 +240,7 @@ impl ModernRenderer {
         );
     }
 
-    fn bind_draw<'p>(
-        &'p self,
-        pass: &mut wgpu::RenderPass<'p>,
-        d: &Draw,
-        bound: &mut Bound,
-    ) -> bool {
+    fn bind_draw<'p>(&self, pass: &mut wgpu::RenderPass<'p>, d: &Draw, bound: &mut Bound) -> bool {
         // The material first: a draw whose material is not loaded draws
         // nothing (and binds nothing). A material with a layer of the arrays
         // (`models::material_arrays`) binds nothing per draw: the pass holds
@@ -231,19 +311,10 @@ impl ModernRenderer {
         true
     }
 
-    /// Draw `list` in order into a pass whose pipeline and groups 0, 2 and
-    /// 3 are set.
-    pub(crate) fn submit_all<'p>(&'p self, pass: &mut wgpu::RenderPass<'p>, list: &[Draw]) {
-        let mut bound = Bound::default();
-        let mut first = 0;
-        while first < list.len() {
-            first += self.submit_run(pass, &list[first..], &mut bound);
-        }
-    }
     /// Submit one ordinary packet or a consecutive far run. Pipeline, material,
     /// buffer page and argument order must all match; sprites bound the slice.
     pub(crate) fn submit_run<'p>(
-        &'p self,
+        &self,
         pass: &mut wgpu::RenderPass<'p>,
         list: &[Draw],
         bound: &mut Bound,
@@ -266,86 +337,15 @@ impl ModernRenderer {
         1
     }
 
-    /// Far indirect arguments are frame resources, uploaded before recording.
-    /// A device without nonzero indirect instances retains ordinary draws.
-    pub(crate) fn prepare_far_indirect(
-        &mut self,
-        device: &wgpu::Device,
-        queue: &dyn rs910_gpu_device::uploads::Uploader,
-    ) {
-        let far = &mut self.far;
-        far.indirect_args.clear();
-        if !device
-            .features()
-            .contains(wgpu::Features::INDIRECT_FIRST_INSTANCE)
-        {
-            return;
-        }
-        for d in &mut self.draws {
-            if matches!(d.geometry, Geometry::Far { .. }) {
-                d.indirect = Some(far.indirect_args.len() as u32);
-                far.indirect_args.push(wgpu::util::DrawIndexedIndirectArgs {
-                    index_count: d.count,
-                    instance_count: 1,
-                    first_index: d.first_index,
-                    base_vertex: d.geometry.base_vertex(),
-                    first_instance: d.instance,
-                });
-            }
-        }
-        if far.indirect_args.is_empty() {
-            return;
-        }
-        let need = far.indirect_args.len() as u64 * INDIRECT_STRIDE;
-        if far.indirect.as_ref().is_none_or(|(_, cap)| *cap < need) {
-            let cap = need.next_power_of_two();
-            far.indirect = Some((
-                device.create_buffer(&wgpu::BufferDescriptor {
-                    label: Some("modern far indirect"),
-                    size: cap,
-                    usage: wgpu::BufferUsages::INDIRECT | wgpu::BufferUsages::COPY_DST,
-                    mapped_at_creation: false,
-                }),
-                cap,
-            ));
-        }
-        queue.write_buffer(
-            &far.indirect.as_ref().expect("far indirect").0,
-            0,
-            bytemuck::cast_slice(&far.indirect_args),
-        );
+    /// Draw `list` in order into a pass whose pipeline and groups 0, 2 and
+    /// 3 are set.
+    pub(crate) fn submit_all<'p>(&self, pass: &mut wgpu::RenderPass<'p>, list: &[Draw]) {
+        let mut bound = Bound::default();
         let mut first = 0;
-        while first < self.draws.len() {
-            let count = far_run_len(&self.draws[first..]);
-            if count > 1 {
-                far.stats.indirect_runs += 1;
-                far.stats.indirect_packets += count;
-            }
-            first += count;
+        while first < list.len() {
+            first += self.submit_run(pass, &list[first..], &mut bound);
         }
     }
-}
-
-/// Packed indexed argument size required by wgpu's indirect ABI.
-const INDIRECT_STRIDE: u64 = std::mem::size_of::<wgpu::util::DrawIndexedIndirectArgs>() as u64;
-
-pub(crate) fn far_run_len(list: &[Draw]) -> usize {
-    let first = &list[0];
-    let Some(index) = first.indirect else {
-        return 1;
-    };
-    if !matches!(first.geometry, Geometry::Far { .. }) {
-        return 1;
-    }
-    list.iter()
-        .enumerate()
-        .take_while(|(offset, d)| {
-            d.indirect == Some(index + *offset as u32)
-                && d.geometry.buffers() == first.geometry.buffers()
-                && d.material == first.material
-                && d.pass == first.pass
-        })
-        .count()
 }
 
 #[cfg(test)]

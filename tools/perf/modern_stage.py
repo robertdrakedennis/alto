@@ -203,6 +203,29 @@ GAUGES = [
     (srcdir / 'frame/gpu/probes.rs', 'self.probes.stats.captures += 1;',
      'crate::modern_perf_hook::count(crate::modern_perf_hook::K::ProbeCaptures, 1);'),
 ]
+# State ownership is free to change; keep the same instrumentation when
+# comparing a tree from before the split with one using explicit owners.
+state_file = srcdir / 'frame/state.rs'
+owners = {}
+if state_file.exists():
+    state = state_file.read_text()
+    for owner, type_name in [
+        ('device_resources', 'DeviceResources'), ('scene_resources', 'SceneResources'),
+        ('frame_resources', 'FrameResources'), ('history', 'FrameHistory'),
+        ('preparation', 'PreparationState'),
+    ]:
+        section = state.split('struct ' + type_name + ' {', 1)[1].split('\n}', 1)[0]
+        for field in re.findall(r'pub\(crate\) (\w+):', section):
+            owners[field] = owner
+
+def owned_access(text, receiver):
+    for field, owner in owners.items():
+        text = re.sub(r'\b' + receiver + r'\.' + field + r'\b',
+                      receiver + '.' + owner + '.' + field, text)
+    return text
+
+DRAW = [(owned_access(anchor, 'self'), name) for anchor, name in DRAW]
+GAUGES = [(path, owned_access(anchor, 'self'), call) for path, anchor, call in GAUGES]
 for path, anchor, call in GAUGES:
     t = path.read_text()
     if call in t:
@@ -273,7 +296,8 @@ if 'modern_perf_hook::frame_begin' not in t:
     t = t.replace('\n#[cfg(test)]\nmod tests;', '\n#[cfg(test)]\nmod tests;\n#[cfg(test)]\nmod perf_bench;\n#[cfg(test)]\nmod perf_samples;', 1)
     assert 'mod perf_bench;' in t, 'frame/mod.rs anchor: mod tests;'
     rend.write_text(t)
-shutil.copy(HERE / 'modern_perf_bench.rs', srcdir / 'frame/perf_bench.rs')
+(srcdir / 'frame/perf_bench.rs').write_text(
+    owned_access((HERE / 'modern_perf_bench.rs').read_text(), 'r'))
 # The anti-aliasing change as this tree's client makes it: the renderer's
 # own `set_samples` where it has one, else a new renderer (the caller then
 # re-applies its settings; returns whether the renderer was kept).

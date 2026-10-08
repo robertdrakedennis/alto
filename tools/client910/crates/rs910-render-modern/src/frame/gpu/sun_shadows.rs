@@ -248,17 +248,17 @@ impl ModernRenderer {
         // The preset of the level.
         let profile = settings.profile();
         let size = profile.map_or(1, |p| p.atlas_size());
-        if self.shadow.atlas.0 != size {
-            self.shadow.atlas = atlas(
+        if self.history.shadow.atlas.0 != size {
+            self.history.shadow.atlas = atlas(
                 device,
-                &self.shadow.receive_layout,
-                &self.shadow.uniforms,
-                &self.shadow.sampler,
+                &self.history.shadow.receive_layout,
+                &self.history.shadow.uniforms,
+                &self.history.shadow.sampler,
                 size,
             );
-            self.shadow.sun.state.forget_tiles();
+            self.history.shadow.sun.state.forget_tiles();
         }
-        self.shadow_frame = profile.map(|profile| {
+        self.frame_resources.shadow_frame = profile.map(|profile| {
             let mut camera = snapshot.camera.clone();
             camera.viewport = viewport;
             camera.target = [0; 3];
@@ -270,21 +270,26 @@ impl ModernRenderer {
                 &camera.projection(),
                 origin,
             );
-            let fits = self.shadow.sun.state.choose_fits(
+            let fits = self.history.shadow.sun.state.choose_fits(
                 (profile.quality, sun_dir.map(f32::to_bits)),
                 &fresh,
-                self.frame,
+                self.history.frame,
             );
             ShadowFrame::from_fits(profile, basis, fits, origin)
         });
         let uniforms = self
+            .frame_resources
             .shadow_frame
             .as_ref()
             .map_or_else(ShadowUniforms::default, |f| f.uniforms);
-        queue.write_buffer(&self.shadow.uniforms, 0, bytemuck::bytes_of(&uniforms));
-        if let Some(frame) = &self.shadow_frame {
+        queue.write_buffer(
+            &self.history.shadow.uniforms,
+            0,
+            bytemuck::bytes_of(&uniforms),
+        );
+        if let Some(frame) = &self.frame_resources.shadow_frame {
             queue.write_buffer(
-                &self.shadow.casters,
+                &self.history.shadow.casters,
                 0,
                 bytemuck::cast_slice(&frame.casters),
             );

@@ -60,7 +60,7 @@ pub(super) fn renderer(
         samples,
         settings,
     );
-    r.far.sync = true;
+    r.scene_resources.far.sync = true;
     r
 }
 
@@ -680,7 +680,7 @@ pub(super) fn eye_distances(
     r: &ModernRenderer,
     snapshot: &SceneSnapshot<'_>,
 ) -> Vec<f32> {
-    let targets = r.targets.as_ref().unwrap();
+    let targets = r.frame_resources.targets.as_ref().unwrap();
     let [w, h] = targets.size;
     let uniforms = frame_uniforms(snapshot, (w as i32, h as i32));
     let source = format!(
@@ -698,7 +698,7 @@ pub(super) fn eye_distances(
     let q = u.inv * vec4<f32>(ndc, z, 1.0);
     return vec4<f32>(length(q.xyz / q.w - u.eye.xyz), 0.0, 0.0, 1.0);
 }}",
-        if r.samples > 1 {
+        if r.device_resources.samples > 1 {
             "texture_depth_multisampled_2d"
         } else {
             "texture_depth_2d"

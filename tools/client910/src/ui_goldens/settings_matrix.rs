@@ -14,6 +14,59 @@ use rs910_symbols::component::{
 };
 use rs910_symbols::{interface, varp, ComponentId};
 
+/// A recorded login reaches the native Graphics tab, then ordinary pointer
+/// and keyboard input edits the local renderer overlay. Native codec bytes
+/// stay unchanged, and reset returns the complete local preference record.
+#[test]
+#[cfg_attr(feature = "no-pack", ignore)]
+fn modern_graphics_controls_use_the_normal_retained_input_and_paint_path() -> anyhow::Result<()> {
+    use rs910_config::renderer_preferences::{QualityPreset, RendererPreferences};
+    const GRAPHICS_TAB: u64 = 2;
+    const AWT_RIGHT: i32 = 39;
+    const PRESS_CYCLES: usize = 1;
+    const HALF: i32 = 2;
+    const CLEAR: [f32; 3] = [0.0; 3];
+    let mut world = SettingsWorld::login("modern-graphics", &[])?;
+    world.open_tab(GRAPHICS_TAB)?;
+    let native = world.options().encode();
+    world.ui.renderer_settings.sync(
+        true,
+        RendererPreferences::DEFAULT,
+        RendererPreferences::DEFAULT,
+    );
+    let last_button = |world: &mut SettingsWorld| -> anyhow::Result<[i32; 2]> {
+        let cycle = world.game.cycle;
+        let output = world.ui.paint(cycle, false, CLEAR)?;
+        let rect = output
+            .recording
+            .ops
+            .iter()
+            .rev()
+            .find_map(|op| match op {
+                crate::ui_paint::Op::Fill(rect, _) => Some(*rect),
+                _ => None,
+            })
+            .ok_or_else(|| anyhow::anyhow!("modern settings button did not paint"))?;
+        let [x, y, width, height] = rect;
+        Ok([x + width / HALF, y + height / HALF])
+    };
+    let launch = last_button(&mut world)?;
+    world.click_at(launch)?;
+    world.press(AWT_RIGHT, PRESS_CYCLES)?;
+    assert_eq!(
+        world.ui.renderer_settings.take_change(),
+        Some(QualityPreset::Ultra.preferences())
+    );
+    let reset = last_button(&mut world)?;
+    world.click_at(reset)?;
+    assert_eq!(
+        world.ui.renderer_settings.take_change(),
+        Some(RendererPreferences::DEFAULT)
+    );
+    assert_eq!(world.options().encode(), native);
+    Ok(())
+}
+
 /// What the consumers read after a step.
 #[derive(Clone, Debug, PartialEq, Eq)]
 struct Seen {

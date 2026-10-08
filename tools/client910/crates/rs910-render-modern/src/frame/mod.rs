@@ -361,159 +361,26 @@ pub struct SpriteSegment {
 
 /// See the module docs.
 pub struct ModernRenderer {
-    pub(crate) samples: u32,
-    pub(crate) output_format: wgpu::TextureFormat,
-    pub(crate) textures: Textures,
-    pub(crate) frame_buffer: wgpu::Buffer,
-    pub(crate) frame_bind: wgpu::BindGroup,
-    /// The forward-target pipelines per sample count (`frame::pipelines`).
-    pub(crate) pipelines:
-        crate::frame::pipelines::Variants<u32, crate::frame::pipelines::SamplePipelines>,
-    /// What they are built from (a sample change builds the new count's).
-    pub(crate) pipeline_inputs: crate::frame::pipelines::PipelineInputs,
-    pub(crate) sky_layer_layout: wgpu::BindGroupLayout,
-    pub(crate) sky_texture_layout: wgpu::BindGroupLayout,
-    pub(crate) sky_layer_buffer: Option<(wgpu::Buffer, wgpu::BindGroup, u64)>,
-    pub(crate) sky_textures: HashMap<SkyTextureKey, SkyTextureGpu>,
-    pub(crate) sky_white: wgpu::BindGroup,
-    pub(crate) sky_sampler: wgpu::Sampler,
-    /// The grading block of the post chain's composite (`post::grading`).
-    pub(crate) post_buffer: wgpu::Buffer,
-    /// The grading LUTs of the three remap slots (`post::grading`), stacked
-    /// `256 x 48`, and the sprite each slot holds.
-    pub(crate) lut_view: wgpu::TextureView,
-    pub(crate) lut_texture: wgpu::Texture,
-    pub(crate) lut_slots: [i32; 3],
-    pub(crate) luts: crate::post::grading::LutCache,
     /// The last frame's grading.
     pub grading: crate::post::grading::Grading,
     /// The per-square environment (M5, `lighting::environment`).
     pub environment: crate::lighting::environment::EnvironmentState,
-    pub(crate) targets: Option<Targets>,
-    pub(crate) shadow: ShadowGpu,
-    /// The static point lights (M4).
-    pub(crate) lights: LightGpu,
-    /// The frame's cascades (`None`: shadows off).
-    pub(crate) shadow_frame: Option<ShadowFrame>,
-    /// The off-screen locs' shadow-only draws
-    /// (`shadows::casters`), drawn in the cascades only.
-    pub(crate) shadow_only: Vec<(Draw, u8)>,
-    /// Posed camera-local entity bounds, aligned with shadow-only packets.
-    pub(crate) shadow_only_bounds: Vec<Option<crate::models::bounds::Bounds>>,
-    /// Per draw, the cascades it casts into (bit `k`).
-    pub(crate) cascade_masks: Vec<u8>,
-    pub(crate) floors: Vec<Option<FloorGpu>>,
-    /// The loc meshes, one per scene slot (`resources`).
-    pub(crate) statics: crate::fast_hash::FastMap<LocSlot, StaticModel>,
-    /// The seabed's selection and the underwater locs' meshes (`underwater`).
-    pub(crate) underwater: crate::frame::underwater::UnderwaterState,
-    /// Their geometry: the shared loc pages (`arenas`).
-    pub(crate) loc_arena: crate::frame::arenas::LocArena,
-    /// The depth-only passes' sorted draw lists of this frame (`submit`).
-    pub(crate) packets: crate::frame::submit::FramePackets,
-    /// The installed scene's identity (level 0's floor token address, the
-    /// static slot count): a change drops the loc model cache.
-    pub(crate) scene_token: Option<(usize, usize)>,
-    /// The loc meshes built on the threads ahead of their draws this frame
-    /// (`prebuild`).
-    pub(crate) prebuilds: crate::frame::prebuild::Prebuilds,
-    /// `prepare_entity`'s batch list, reused each call.
-    pub(crate) batch_scratch: Vec<(i32, u32, u32)>,
-    /// GPU buffers created for loc meshes so far (`loc_mesh_cache`).
-    pub(crate) loc_buffers_created: u64,
-    /// Per-frame lists kept for their capacity: the visible locs' draw
-    /// ranges (caster culling) and the transparent entities' ranges.
-    pub(crate) visible_scratch: Vec<(usize, usize, usize)>,
-    pub(crate) transparent_scratch: Vec<(std::ops::Range<usize>, [f32; 16])>,
-    /// The visible entities' draw ranges and their camera-local boxes
-    /// (`models::bounds`; the water reflection culls by them).
-    pub(crate) draw_bounds: Vec<(u32, u32, crate::models::bounds::Bounds)>,
-    pub(crate) arena: Arena,
-    pub(crate) instances: Vec<Instance>,
-    pub(crate) instance_buffer: Option<(wgpu::Buffer, u64)>,
-    pub(crate) draws: Vec<Draw>,
-    pub(crate) sky: Vec<SkyDraw>,
-    /// The sky's cubes and their cross-fade (`gpu::sky_cube`).
-    pub(crate) sky_cubes: crate::frame::gpu::sky_cube::SkyCubes,
-    /// The billboard and particle quads (M9).
-    pub(crate) sprites: SpriteGpu,
-    /// The particle frame the shell handed over last (M9,
-    /// [`ModernRenderer::set_particles`]).
-    pub(crate) particles: crate::sprites::particles::ParticleFrame,
-    /// The faithful toolkit's bloom state (M9: billboards whose type hides
-    /// under bloom are skipped, [`ModernRenderer::set_faithful_bloom`]).
-    pub(crate) faithful_bloom: bool,
-    /// The last frame's billboards and sprite segments (M9).
-    pub(crate) billboards: crate::sprites::billboards::Billboards,
-    pub(crate) sprite_segments: Vec<SpriteSegment>,
-    /// The post chain (M8, `post`, [`crate::post`]).
-    pub(crate) post: PostGpu,
-    pub(crate) clear: [f32; 3],
-    pub(crate) frame: u64,
-    pub(crate) frame_time: Option<i64>,
     pub stats: Stats,
-    /// Water (M7, `water`): the frame's water draws and their resources.
-    pub(crate) water: crate::frame::gpu::water::WaterGpu,
-    /// NXT terrain (M10, `terrain`, [`crate::terrain`]).
-    pub(crate) terrain: crate::frame::gpu::terrain::TerrainGpu,
-    /// The far scene (`far`, `rs910_far_scene`).
-    pub(crate) far: crate::frame::gpu::far::FarGpu,
     /// RT7 models (M10, [`crate::models::rt7`]).
     pub rt7: crate::models::rt7::Rt7Cache,
-    /// Light probes and IBL (M6, `probes`).
-    pub(crate) probes: ProbeGpu,
-    /// The per-square ambient capture (`gpu::ambient`).
-    pub(crate) ambient: crate::frame::gpu::ambient::AmbientGpu,
-    /// The quality settings ([`crate::settings`]).
-    pub(crate) settings: crate::settings::ModernSettings,
-    /// The frame's pass order so far (`frame::passes`).
-    pub(crate) pass_order: crate::frame::passes::Order,
     /// The threads the frame's jobs run on (`frame::jobs`: the encode
     /// units, the posed models).
     pub(crate) jobs: crate::frame::jobs::Jobs,
-    /// This frame's posed models (`posing`).
-    pub(crate) posing: crate::frame::posing::Posing,
-    /// This frame's scene viewport at the render scale (`None`: at 100%).
-    pub(crate) scaled: Option<crate::frame::scale::Scaled>,
-    /// The display's scale factor and the saved render scale choice
-    /// ([`Self::set_display`]).
-    pub(crate) display: crate::frame::scale::Display,
-    /// The compiled shader modules (`crate::shaders`).
-    pub(crate) shaders: crate::shaders::Library,
     /// The look's values ([`crate::lighting::look`], the settings' look mode).
     pub look: crate::lighting::look::Look,
     /// The environment record's remap slots and angle fog
     /// ([`crate::lighting::environment_record`]).
     pub environment_record: crate::lighting::environment_record::EnvironmentRecord,
-    /// The roof-hidden casters (`interior`,
-    /// [`crate::shadows::interior`]), drawn in the cascades only.
-    pub(crate) interior: crate::frame::gpu::interior::InteriorGpu,
-    /// The atmosphere layers (`atmos`).
-    pub(crate) atmos: crate::frame::gpu::atmosphere::AtmosGpu,
-    /// Extra opaque models the tests add to the next frames (streams and a
-    /// scene-local model matrix, column-major).
-    #[cfg(test)]
-    pub(crate) test_models: Vec<(ModelStreams, [f32; 16])>,
-    /// The performance metric's model and its placements, drawn every frame
-    /// (`benchmark`); `None` in the game's renderer.
-    pub(crate) bench_models: Option<(ModelStreams, Vec<[f32; 16]>)>,
-    /// Tests: the point lights and their tile grid of a snapshot without a
-    /// live scene (scene-local lights; the grid's tiles are the floor path's).
-    #[cfg(test)]
-    pub(crate) test_lights: Option<(
-        Vec<crate::lighting::point_lights::Light>,
-        crate::lighting::point_lights::Grid,
-    )>,
-    /// Tests: every visible caster into every cascade.
-    #[cfg(test)]
-    pub(crate) test_no_cascade_cull: bool,
-    /// Tests: the depth-only passes in the draw order (`submit`).
-    #[cfg(test)]
-    pub(crate) test_unsorted_packets: bool,
-    /// Tests: every loc mesh and material built at its draw, nothing ahead
-    /// on the threads (`prebuild`).
-    #[cfg(test)]
-    pub(crate) test_inline_builds: bool,
+    pub(crate) device_resources: DeviceResources,
+    pub(crate) scene_resources: SceneResources,
+    pub(crate) frame_resources: FrameResources,
+    pub(crate) history: FrameHistory,
+    pub(crate) preparation: PreparationState,
 }
 
 /// The sun shadows' GPU state (M3): the settings, the atlas, the receive
@@ -580,7 +447,8 @@ pub(crate) const ALPHA_BLEND: wgpu::BlendState = wgpu::BlendState {
 
 impl ModernRenderer {
     pub(crate) fn frame_millis(&self) -> i64 {
-        self.frame_time
+        self.frame_resources
+            .frame_time
             .unwrap_or_else(crate::logic_clock::monotonic_millis)
     }
 
@@ -808,95 +676,104 @@ impl ModernRenderer {
             view_formats: &[],
         });
         let lut_view = lut_texture.create_view(&wgpu::TextureViewDescriptor::default());
+        let lights = LightGpu::new(device, queue, point_layout, &shaders);
         let mut renderer = Self {
-            samples,
-            output_format,
-            textures,
-            frame_buffer,
-            frame_bind,
-            pipelines,
-            pipeline_inputs: inputs,
-            sky_layer_layout,
-            sky_texture_layout,
-            sky_layer_buffer: None,
-            sky_textures: HashMap::new(),
-            sky_white,
-            sky_sampler,
-            post_buffer,
-            lut_view,
-            lut_texture,
-            lut_slots: [-1; 3],
-            luts: crate::post::grading::LutCache::default(),
             grading: crate::post::grading::Grading::default(),
             environment: crate::lighting::environment::EnvironmentState::default(),
-            targets: None,
-            shadow,
-            lights: LightGpu::new(device, queue, point_layout, &shaders),
-            shaders,
-            pass_order: crate::frame::passes::Order,
+            stats: Stats::default(),
+            rt7: crate::models::rt7::Rt7Cache::default(),
             jobs: crate::frame::jobs::Jobs::new(crate::frame::jobs::default_threads()),
-            posing: crate::frame::posing::Posing::default(),
-            scaled: None,
-            display: crate::frame::scale::Display::default(),
-            shadow_frame: None,
-            shadow_only: Vec::new(),
-            shadow_only_bounds: Vec::new(),
-            cascade_masks: Vec::new(),
-            floors: Vec::new(),
-            statics: Default::default(),
-            underwater: Default::default(),
-            loc_arena: crate::frame::arenas::LocArena::default(),
-            packets: crate::frame::submit::FramePackets::default(),
-            scene_token: None,
-            prebuilds: crate::frame::prebuild::Prebuilds::default(),
-            batch_scratch: Vec::new(),
-            loc_buffers_created: 0,
-            visible_scratch: Vec::new(),
-            transparent_scratch: Vec::new(),
-            draw_bounds: Vec::new(),
-            arena: Arena::default(),
-            instances: Vec::new(),
-            instance_buffer: None,
-            draws: Vec::new(),
-            sky: Vec::new(),
-            sky_cubes: Default::default(),
-            sprites: SpriteGpu::default(),
-            particles: crate::sprites::particles::ParticleFrame::default(),
-            faithful_bloom: false,
-            billboards: crate::sprites::billboards::Billboards::default(),
-            sprite_segments: Vec::new(),
-            post,
-            clear: [0.0; 3],
-            settings,
             look: crate::lighting::look::Look::for_mode(settings.look),
             environment_record: crate::lighting::environment_record::EnvironmentRecord::for_mode(
                 settings.look,
             ),
-            frame: 0,
-            frame_time: None,
-            stats: Stats::default(),
-            water: crate::frame::gpu::water::WaterGpu::default(),
-            terrain: crate::frame::gpu::terrain::TerrainGpu::default(),
-            far: crate::frame::gpu::far::FarGpu::default(),
-            interior: crate::frame::gpu::interior::InteriorGpu::default(),
-            rt7: crate::models::rt7::Rt7Cache::default(),
-            probes: ProbeGpu::default(),
-            ambient: Default::default(),
-            atmos: crate::frame::gpu::atmosphere::AtmosGpu::default(),
-            #[cfg(test)]
-            test_models: Vec::new(),
-            bench_models: None,
-            #[cfg(test)]
-            test_lights: None,
-            #[cfg(test)]
-            #[cfg(test)]
-            #[cfg(test)]
-            #[cfg(test)]
-            test_no_cascade_cull: false,
-            #[cfg(test)]
-            test_unsorted_packets: false,
-            #[cfg(test)]
-            test_inline_builds: false,
+            device_resources: DeviceResources {
+                samples,
+                output_format,
+                textures,
+                frame_buffer,
+                frame_bind,
+                pipelines,
+                pipeline_inputs: inputs,
+                sky_layer_layout,
+                sky_texture_layout,
+                sky_white,
+                sky_sampler,
+                post_buffer,
+                lut_view,
+                lut_texture,
+                lut_slots: [-1; 3],
+                luts: crate::post::grading::LutCache::default(),
+                shaders,
+            },
+            scene_resources: SceneResources {
+                lights,
+                floors: Vec::new(),
+                statics: Default::default(),
+                underwater: Default::default(),
+                loc_arena: crate::frame::arenas::LocArena::default(),
+                scene_token: None,
+                loc_buffers_created: 0,
+                sky_textures: HashMap::new(),
+                sky_cubes: Default::default(),
+                terrain: crate::frame::gpu::terrain::TerrainGpu::default(),
+                far: crate::frame::gpu::far::FarGpu::default(),
+                interior: crate::frame::gpu::interior::InteriorGpu::default(),
+            },
+            frame_resources: FrameResources {
+                water: crate::frame::gpu::water::WaterGpu::default(),
+                targets: None,
+                scaled: None,
+                shadow_frame: None,
+                shadow_only: Vec::new(),
+                shadow_only_bounds: Vec::new(),
+                cascade_masks: Vec::new(),
+                packets: crate::frame::submit::FramePackets::default(),
+                batch_scratch: Vec::new(),
+                visible_scratch: Vec::new(),
+                transparent_scratch: Vec::new(),
+                draw_bounds: Vec::new(),
+                arena: Arena::default(),
+                instances: Vec::new(),
+                instance_buffer: None,
+                draws: Vec::new(),
+                sky: Vec::new(),
+                sky_layer_buffer: None,
+                sprites: SpriteGpu::default(),
+                particles: crate::sprites::particles::ParticleFrame::default(),
+                billboards: crate::sprites::billboards::Billboards::default(),
+                sprite_segments: Vec::new(),
+                clear: [0.0; 3],
+                frame_time: None,
+                posing: crate::frame::posing::Posing::default(),
+                atmos: crate::frame::gpu::atmosphere::AtmosGpu::default(),
+            },
+            history: FrameHistory {
+                shadow,
+                post,
+                probes: ProbeGpu::default(),
+                ambient: Default::default(),
+                frame: 0,
+            },
+            preparation: PreparationState {
+                sky_sources: HashMap::new(),
+                prebuilds: crate::frame::prebuild::Prebuilds::default(),
+                settings,
+                display: crate::frame::scale::Display::default(),
+                pass_order: crate::frame::passes::Order,
+                faithful_bloom: false,
+                #[cfg(test)]
+                test_models: Vec::new(),
+                bench_models: None,
+                #[cfg(test)]
+                test_lights: None,
+                #[cfg(test)]
+                test_no_cascade_cull: false,
+                #[cfg(test)]
+                test_unsorted_packets: false,
+                #[cfg(test)]
+                test_inline_builds: false,
+            },
         };
         // Every pipeline the frame draws with, created here rather than in
         // the first frame (`frame::pipelines`): the probe capture, the
@@ -911,7 +788,7 @@ impl ModernRenderer {
     /// leaves the frame unchanged).
     pub(crate) fn cull_visible_casters(&self) -> bool {
         #[cfg(test)]
-        if self.test_no_cascade_cull {
+        if self.preparation.test_no_cascade_cull {
             return false;
         }
         true
@@ -940,21 +817,24 @@ impl ModernRenderer {
         bounds: Option<crate::models::bounds::Bounds>,
     ) {
         if let Some(b) = bounds {
-            self.draw_bounds
-                .push((start as u32, self.draws.len() as u32, b));
+            self.frame_resources.draw_bounds.push((
+                start as u32,
+                self.frame_resources.draws.len() as u32,
+                b,
+            ));
         }
     }
 
     /// The frames' colour format this renderer was built for.
     #[must_use]
     pub fn output_format(&self) -> wgpu::TextureFormat {
-        self.output_format
+        self.device_resources.output_format
     }
 
     /// The forward target's sample count.
     #[must_use]
     pub fn samples(&self) -> u32 {
-        self.samples
+        self.device_resources.samples
     }
 
     /// The display's scale factor and the player's saved render scale (`None`:
@@ -962,27 +842,35 @@ impl ModernRenderer {
     /// when the window and the saved choice are known and when either changes.
     /// The setting's own value (`CLIENT910_MODERN_RENDER_SCALE`) still wins.
     pub fn set_display(&mut self, scale_factor: f64, saved: Option<crate::settings::RenderScale>) {
-        self.display.scale_factor = scale_factor;
-        self.display.saved = saved;
+        self.preparation.display.scale_factor = scale_factor;
+        self.preparation.display.saved = saved;
+    }
+
+    /// Apply local quality choices between frames. Target extents, occlusion,
+    /// reflection buffers and far-ring builds are keyed by the next frame's
+    /// settings; native shadow, sample-count and bloom owners remain intact.
+    pub fn set_quality(&mut self, settings: crate::settings::ModernSettings) {
+        let current = &mut self.preparation.settings;
+        current.ao = settings.ao;
+        current.ao_resolution = settings.ao_resolution;
+        current.far = settings.far;
+        current.volumetrics = settings.volumetrics;
+        current.reflections = settings.reflections;
+        current.dof = settings.dof;
+        current.render_scale = settings.render_scale;
     }
 
     /// The sun shadow settings (M3; the shell maps them from the faithful
     /// `ClientOptions`, [`ShadowSettings::from_options`]).
     pub fn set_shadow_settings(&mut self, settings: ShadowSettings) {
-        self.shadow.settings = settings;
+        self.history.shadow.settings = settings;
     }
 
     /// The shadow settings in effect: the shell's options, with the
     /// quality of [`crate::settings::ModernSettings::shadows`] when fixed.
     #[must_use]
     pub fn shadow_settings(&self) -> ShadowSettings {
-        match self.settings.shadows {
-            crate::settings::Shadows::Fixed(quality) => ShadowSettings {
-                quality,
-                ..self.shadow.settings
-            },
-            crate::settings::Shadows::Options => self.shadow.settings,
-        }
+        self.encoding_inputs().shadow_settings()
     }
 
     /// This frame's particle quads (M9, [`crate::sprites::particles`]): the
@@ -991,59 +879,59 @@ impl ModernRenderer {
     /// the next (the faithful particle pass keeps its last batches the same
     /// way).
     pub fn set_particles(&mut self, frame: crate::sprites::particles::ParticleFrame) {
-        self.particles = frame;
+        self.frame_resources.particles = frame;
     }
 
     /// The particle frame the next frames draw (M9; the shell's check).
     #[must_use]
     pub fn particles(&self) -> &crate::sprites::particles::ParticleFrame {
-        &self.particles
+        &self.frame_resources.particles
     }
 
     /// The faithful toolkit's bloom state (M9): billboards whose type hides
     /// under bloom are skipped while it is on, so the billboard set
     /// stays the faithful one.
     pub fn set_faithful_bloom(&mut self, bloom: bool) {
-        self.faithful_bloom = bloom;
+        self.preparation.faithful_bloom = bloom;
     }
 
     /// Frames drawn so far (the shell's check skips a call that drew none).
     #[must_use]
     pub fn frames(&self) -> u64 {
-        self.frame
+        self.history.frame
     }
 
     /// The last frame's billboards (M9; the shell's check).
     #[must_use]
     pub fn billboards(&self) -> &crate::sprites::billboards::Billboards {
-        &self.billboards
+        &self.frame_resources.billboards
     }
 
     /// What the last frame's billboard and particle segments drew, in draw
     /// order (M9; the shell's check).
     #[must_use]
     pub fn sprite_segments(&self) -> &[SpriteSegment] {
-        &self.sprite_segments
+        &self.frame_resources.sprite_segments
     }
 
     /// The last frame's cascades (`None`: shadows off).
     #[must_use]
     pub fn shadow_frame(&self) -> Option<&ShadowFrame> {
-        self.shadow_frame.as_ref()
+        self.frame_resources.shadow_frame.as_ref()
     }
 
     /// Draw RT7 materials from `source` (`None`: through the M1 path),
     /// re-uploading the floors that hold material bindings
     /// ([`Textures::set_rt7_source`]; verification only).
     pub fn set_rt7_textures(&mut self, source: Option<crate::models::materials::TextureSource>) {
-        self.textures.set_rt7_source(source);
-        self.floors.clear();
+        self.device_resources.textures.set_rt7_source(source);
+        self.scene_resources.floors.clear();
     }
 
     /// The material cache (what each material resolved to; M2 tests).
     #[must_use]
     pub fn textures(&self) -> &Textures {
-        &self.textures
+        &self.device_resources.textures
     }
 
     /// The last frame's lit HDR frame, the post chain's source (the
@@ -1051,17 +939,21 @@ impl ModernRenderer {
     /// it back to check for non-finite values).
     #[must_use]
     pub fn hdr_target(&self) -> Option<&wgpu::Texture> {
-        self.targets.as_ref().map(|t| match self.hdr_source() {
-            0 => &t.resolved,
-            _ => &t.scratch,
-        })
+        self.frame_resources
+            .targets
+            .as_ref()
+            .map(|t| match self.hdr_source() {
+                0 => &t.resolved,
+                _ => &t.scratch,
+            })
     }
 
     pub(crate) fn ensure_targets(&mut self, device: &wgpu::Device, size: [u32; 2]) {
         if self
+            .frame_resources
             .targets
             .as_ref()
-            .is_some_and(|t| t.size == size && t.samples == self.samples)
+            .is_some_and(|t| t.size == size && t.samples == self.device_resources.samples)
         {
             return;
         }
@@ -1084,35 +976,39 @@ impl ModernRenderer {
         };
         // A sample change at the same size keeps the resolved target (the
         // post chain binds it by size).
-        let ((resolved, resolved_view), (scratch, scratch_view)) =
-            match self.targets.take().filter(|t| t.size == size) {
-                Some(t) => ((t.resolved, t.resolved_view), (t.scratch, t.scratch_view)),
-                None => {
-                    let hdr = |label| {
-                        let t = texture(
-                            label,
-                            HDR_FORMAT,
-                            1,
-                            wgpu::TextureUsages::RENDER_ATTACHMENT
+        let ((resolved, resolved_view), (scratch, scratch_view)) = match self
+            .frame_resources
+            .targets
+            .take()
+            .filter(|t| t.size == size)
+        {
+            Some(t) => ((t.resolved, t.resolved_view), (t.scratch, t.scratch_view)),
+            None => {
+                let hdr = |label| {
+                    let t = texture(
+                        label,
+                        HDR_FORMAT,
+                        1,
+                        wgpu::TextureUsages::RENDER_ATTACHMENT
                                 | wgpu::TextureUsages::TEXTURE_BINDING
                                 | wgpu::TextureUsages::COPY_SRC
                                 // M8's post tests write synthetic HDR images into it.
                                 | wgpu::TextureUsages::COPY_DST,
-                        );
-                        let v = t.create_view(&wgpu::TextureViewDescriptor::default());
-                        (t, v)
-                    };
-                    (
-                        hdr("modern forward lighting"),
-                        hdr("modern forward lighting (twin)"),
-                    )
-                }
-            };
-        let msaa = (self.samples > 1).then(|| {
+                    );
+                    let v = t.create_view(&wgpu::TextureViewDescriptor::default());
+                    (t, v)
+                };
+                (
+                    hdr("modern forward lighting"),
+                    hdr("modern forward lighting (twin)"),
+                )
+            }
+        };
+        let msaa = (self.device_resources.samples > 1).then(|| {
             texture(
                 "modern forward lighting (msaa)",
                 HDR_FORMAT,
-                self.samples,
+                self.device_resources.samples,
                 wgpu::TextureUsages::RENDER_ATTACHMENT,
             )
             .create_view(&wgpu::TextureViewDescriptor::default())
@@ -1120,14 +1016,14 @@ impl ModernRenderer {
         let depth = texture(
             "modern depth",
             DEPTH_FORMAT,
-            self.samples,
+            self.device_resources.samples,
             // Sampled by the water pass (M7) as the scene depth.
             wgpu::TextureUsages::RENDER_ATTACHMENT | wgpu::TextureUsages::TEXTURE_BINDING,
         )
         .create_view(&wgpu::TextureViewDescriptor::default());
-        self.targets = Some(Targets {
+        self.frame_resources.targets = Some(Targets {
             size,
-            samples: self.samples,
+            samples: self.device_resources.samples,
             msaa,
             resolved,
             resolved_view,
@@ -1190,11 +1086,13 @@ impl ModernRenderer {
         // scissor; the camera keeps the viewport's size `(w, h)`.
         let viewport_pixels = u64::from(w.unsigned_abs()) * u64::from(h.unsigned_abs());
         let percent = self
+            .preparation
             .display
-            .resolve(self.settings.render_scale, viewport_pixels)
+            .resolve(self.preparation.settings.render_scale, viewport_pixels)
             .as_percent();
-        self.scaled = crate::frame::scale::Scaled::of(percent, size, rect, clip);
+        self.frame_resources.scaled = crate::frame::scale::Scaled::of(percent, size, rect, clip);
         let (size, rect, clip) = self
+            .frame_resources
             .scaled
             .map_or((size, rect, clip), |s| (s.size, s.rect, s.clip));
         let [target_width, target_height] = size.map(|v| v as i32);
@@ -1204,24 +1102,24 @@ impl ModernRenderer {
         if right.clamp(left, target_width) <= left || bottom.clamp(top, target_height) <= top {
             return None;
         }
-        self.frame_time = snapshot.time_ms;
-        let previous_frame = self.frame;
-        self.frame += 1;
-        self.pass_order.start();
+        self.frame_resources.frame_time = snapshot.time_ms;
+        let previous_frame = self.history.frame;
+        self.history.frame += 1;
+        self.preparation.pass_order.start();
         self.ensure_targets(device, size);
         self.check_scene(snapshot);
         let checkpoint = lifecycle::FrameCheckpoint::capture(self, snapshot, previous_frame);
-        self.prebuilds.clear();
-        self.textures.clear_prefetched();
-        self.loc_arena.begin_frame();
-        self.arena.clear();
-        self.instances.clear();
-        self.draws.clear();
-        self.draw_bounds.clear();
-        self.shadow_only.clear();
-        self.shadow_only_bounds.clear();
-        self.water.draws.clear();
-        self.sky.clear();
+        self.preparation.prebuilds.clear();
+        self.device_resources.textures.clear_prefetched();
+        self.scene_resources.loc_arena.begin_frame();
+        self.frame_resources.arena.clear();
+        self.frame_resources.instances.clear();
+        self.frame_resources.draws.clear();
+        self.frame_resources.draw_bounds.clear();
+        self.frame_resources.shadow_only.clear();
+        self.frame_resources.shadow_only_bounds.clear();
+        self.frame_resources.water.draws.clear();
+        self.frame_resources.sky.clear();
 
         // The camera-local frame: the scene-local camera target.
         let origin = [
@@ -1240,7 +1138,7 @@ impl ModernRenderer {
         // The camera square's global environment cube.
         self.prepare_global_env(device, queue, snapshot, now);
         // The camera square's tone-map block (lighting::look).
-        if self.settings.look == crate::settings::LookMode::Verified {
+        if self.preparation.settings.look == crate::settings::LookMode::Verified {
             self.look = self
                 .look
                 .with_tone_map(&self.environment.tone_map(snapshot, now));
@@ -1263,14 +1161,18 @@ impl ModernRenderer {
         // M8: the post effects, and whether the forward pass applies SSAO.
         let ssao = self.prepare_post(device, queue, &uniforms, size, rect, clip);
         uniforms.params[1] = if ssao {
-            self.settings.ao_resolution.divisor() as f32
+            self.preparation.settings.ao_resolution.divisor() as f32
         } else {
             0.0
         };
         uniforms.params[2] = 1.0;
         // The scattering in the geometry passes' block.
         let frame_uniforms = self.atmosphere_uniforms(snapshot, &uniforms);
-        queue.write_buffer(&self.frame_buffer, 0, bytemuck::bytes_of(&frame_uniforms));
+        queue.write_buffer(
+            &self.device_resources.frame_buffer,
+            0,
+            bytemuck::bytes_of(&frame_uniforms),
+        );
         self.prepare_shadows(device, queue, snapshot, (w, h), origin, sun_dir);
         self.prepare_lights(device, queue, snapshot, origin);
         // The point-light shadows' candidates, slots and levels
@@ -1278,7 +1180,7 @@ impl ModernRenderer {
         let eye = [uniforms.eye[0], uniforms.eye[1], uniforms.eye[2]];
         self.select_point_shadows(&uniforms.view, &uniforms.view_proj, eye, origin);
         self.prepare_grading(queue, snapshot);
-        self.clear = crate::post::tonemap::display_to_hdr(snapshot.env.clear);
+        self.frame_resources.clear = crate::post::tonemap::display_to_hdr(snapshot.env.clear);
 
         // The sky's cubes: the environment's cube through its fade, the bakes that are due.
         self.plan_sky_cubes(device, queue, snapshot, &uniforms.view_proj, now);
@@ -1299,8 +1201,8 @@ impl ModernRenderer {
         };
         // The visible locs' draw ranges, each culled per cascade
         // below (`crate::shadows::casters::visible_cascades`): `(first, end, id)`.
-        let cull = self.shadow_frame.is_some() && self.cull_visible_casters();
-        let mut visible = std::mem::take(&mut self.visible_scratch);
+        let cull = self.frame_resources.shadow_frame.is_some() && self.cull_visible_casters();
+        let mut visible = std::mem::take(&mut self.frame_resources.visible_scratch);
         visible.clear();
         // The entities' loc meshes not cached yet, built on the threads
         // (`prebuild`).
@@ -1308,9 +1210,11 @@ impl ModernRenderer {
         let ranges = self.prepare_entities(device, queue, snapshot, &list.opaque, origin);
         for (entity, (start, end, bounds)) in list.opaque.iter().zip(ranges) {
             if let Some(bounds) = bounds {
-                self.draw_bounds.push((start as u32, end as u32, bounds));
+                self.frame_resources
+                    .draw_bounds
+                    .push((start as u32, end as u32, bounds));
             }
-            if self.shadow_frame.is_some() {
+            if self.frame_resources.shadow_frame.is_some() {
                 visible.push((start, end, entity.id));
             }
         }
@@ -1321,69 +1225,82 @@ impl ModernRenderer {
             origin,
         );
         #[cfg(test)]
-        for (streams, matrix) in std::mem::take(&mut self.test_models) {
-            let start = self.draws.len();
+        for (streams, matrix) in std::mem::take(&mut self.preparation.test_models) {
+            let start = self.frame_resources.draws.len();
             let model_bounds = crate::models::bounds::Bounds::of(&streams.vertices)
                 .map(|b| b.transformed(&local_matrix(&matrix, origin)));
-            let (base_vertex, first) = self.arena.push(&streams);
+            let (base_vertex, first) = self.frame_resources.arena.push(&streams);
             for &(material, start, count) in &streams.batches {
                 // The snapshot's materials (None in most tests).
-                self.textures
-                    .ensure(device, queue, snapshot.pack, snapshot.materials, material);
-                let instance = self.instances.len() as u32;
+                self.device_resources.textures.ensure(
+                    device,
+                    queue,
+                    snapshot.pack,
+                    snapshot.materials,
+                    material,
+                );
+                let instance = self.frame_resources.instances.len() as u32;
                 let mut record =
                     self.instance(local_matrix(&matrix, origin), material, 1.0, FLAG_FLOOR);
                 record.p2 = [0.0; 4];
-                self.instances.push(record);
-                self.draws.push(Draw {
+                self.frame_resources.instances.push(record);
+                self.frame_resources.draws.push(Draw {
                     geometry: Geometry::Arena { base_vertex },
                     material,
                     first_index: start + first,
                     count,
                     instance,
                     pass: Pass::Opaque,
-                    casts: self.shadow_frame.is_some(),
+                    casts: self.frame_resources.shadow_frame.is_some(),
                     indirect: None,
                 });
             }
             self.note_bounds(start, model_bounds);
-            self.test_models.push((streams, matrix));
+            self.preparation.test_models.push((streams, matrix));
         }
         self.prepare_benchmark_models(device, queue, snapshot, origin);
         self.prepare_far_locs(device, queue, snapshot, origin, None);
         // The underwater locs stand below everything drawn here.
         self.prepare_underwater_locs(device, queue, snapshot, origin, false, None);
-        let opaque_draws = self.draws.len();
-        let floor_casts = self.shadow_frame.is_some() && self.shadow_settings().scenery;
+        let opaque_draws = self.frame_resources.draws.len();
+        let floor_casts =
+            self.frame_resources.shadow_frame.is_some() && self.shadow_settings().scenery;
         for floor in &list.floors {
             self.prepare_floor(device, queue, snapshot, floor);
-            let n = self.floors[floor.level]
+            let n = self.scene_resources.floors[floor.level]
                 .as_ref()
                 .map_or(0, |f| f.batches.len());
             for batch in 0..n {
                 let (material, uv_scale, count) = {
-                    let b = &self.floors[floor.level].as_ref().expect("floor").batches[batch];
+                    let b = &self.scene_resources.floors[floor.level]
+                        .as_ref()
+                        .expect("floor")
+                        .batches[batch];
                     (b.material, b.uv_scale, b.count)
                 };
                 if count == 0 || self.terrain_replaces(snapshot, floor.level, material) {
                     continue;
                 }
                 stats.floor_batches += 1;
-                let instance = self.instances.len() as u32;
+                let instance = self.frame_resources.instances.len() as u32;
                 // Floors keep their ownership alpha for the batch blending;
                 // only the texture's own cutout applies. Their point lights
                 // come from the tile grid at their level (M4).
                 let mut record = self.instance(floor_matrix, material, uv_scale, FLAG_FLOOR);
                 record.p2 = [floor.level as f32, 0.0, 0.0, 0.0];
-                self.instances.push(record);
+                self.frame_resources.instances.push(record);
                 // Water batches draw in the water pass (M7, `water`).
-                if self
-                    .water
-                    .take(snapshot, floor.level, batch, material, instance, count)
-                {
+                if self.frame_resources.water.take(
+                    snapshot,
+                    floor.level,
+                    batch,
+                    material,
+                    instance,
+                    count,
+                ) {
                     continue;
                 }
-                self.draws.push(Draw {
+                self.frame_resources.draws.push(Draw {
                     geometry: Geometry::Floor {
                         level: floor.level,
                         batch,
@@ -1402,10 +1319,10 @@ impl ModernRenderer {
         self.prepare_underwater_bed(device, queue, snapshot, origin);
         // The transparent entities, each with its model-draw range and
         // camera-local matrix (M9: the blended sprites join them by depth).
-        let group0_end = self.draws.len();
-        self.water.split = group0_end;
-        self.post.geometry_draws = group0_end;
-        let mut transparent = std::mem::take(&mut self.transparent_scratch);
+        let group0_end = self.frame_resources.draws.len();
+        self.frame_resources.water.split = group0_end;
+        self.history.post.geometry_draws = group0_end;
+        let mut transparent = std::mem::take(&mut self.frame_resources.transparent_scratch);
         transparent.clear();
         self.prepare_far_locs(device, queue, snapshot, origin, Some(&mut transparent));
         self.prepare_underwater_locs(
@@ -1419,16 +1336,18 @@ impl ModernRenderer {
         let ranges = self.prepare_entities(device, queue, snapshot, &list.transparent, origin);
         for (entity, (start, end, bounds)) in list.transparent.iter().zip(ranges) {
             if let Some(bounds) = bounds {
-                self.draw_bounds.push((start as u32, end as u32, bounds));
+                self.frame_resources
+                    .draw_bounds
+                    .push((start as u32, end as u32, bounds));
             }
-            if self.shadow_frame.is_some() {
+            if self.frame_resources.shadow_frame.is_some() {
                 visible.push((start, end, entity.id));
             }
             transparent.push((start..end, local_matrix(&entity.matrix, origin)));
         }
         // Model billboards and particles (M9).
         self.prepare_sprites(&prep, &list, group0_end, &transparent);
-        self.transparent_scratch = transparent;
+        self.frame_resources.transparent_scratch = transparent;
         drop(list);
         // What the roof removal hid this frame (its storeys and
         // roofs cast; `interior`).
@@ -1446,25 +1365,36 @@ impl ModernRenderer {
         stats.particles = self.stats.particles;
         stats.particle_batches = self.stats.particle_batches;
         stats.hdr_sprites = self.stats.hdr_sprites;
-        stats.draws = self.draws.len();
+        stats.draws = self.frame_resources.draws.len();
         stats.sky_layers = sky_layers.len();
-        stats.statics = self.statics.len();
-        stats.materials = self.textures.len();
-        stats.rt7_materials = self.textures.stats.rt7;
-        stats.missing_maps = self.textures.stats.missing;
-        stats.shadow_cascades = self.shadow_frame.as_ref().map_or(0, |f| f.profile.cascades);
-        stats.shadow_casters =
-            self.draws.iter().filter(|d| d.casts).count() + self.shadow_only.len();
-        stats.point_lights = self.lights.frame.len();
-        stats.lit_tiles = self.lights.grid_stats.lit_tiles;
-        stats.full_tiles = self.lights.grid_stats.full_tiles;
+        stats.statics = self.scene_resources.statics.len();
+        stats.materials = self.device_resources.textures.len();
+        stats.rt7_materials = self.device_resources.textures.stats.rt7;
+        stats.missing_maps = self.device_resources.textures.stats.missing;
+        stats.shadow_cascades = self
+            .frame_resources
+            .shadow_frame
+            .as_ref()
+            .map_or(0, |f| f.profile.cascades);
+        stats.shadow_casters = self
+            .frame_resources
+            .draws
+            .iter()
+            .filter(|d| d.casts)
+            .count()
+            + self.frame_resources.shadow_only.len();
+        stats.point_lights = self.scene_resources.lights.frame.len();
+        stats.lit_tiles = self.scene_resources.lights.grid_stats.lit_tiles;
+        stats.full_tiles = self.scene_resources.lights.grid_stats.full_tiles;
         stats.lit_draws = self
+            .frame_resources
             .draws
             .iter()
             .filter(|d| {
                 !matches!(d.geometry, Geometry::Floor { .. })
-                    && self.instances[d.instance as usize].p2[0] > 0.0
-                    && self.instances[d.instance as usize].p0[3] as u32 & FLAG_FLOOR == 0
+                    && self.frame_resources.instances[d.instance as usize].p2[0] > 0.0
+                    && self.frame_resources.instances[d.instance as usize].p0[3] as u32 & FLAG_FLOOR
+                        == 0
             })
             .count();
 
@@ -1476,9 +1406,11 @@ impl ModernRenderer {
         // cascade's casters from its own volume): the visible locs' from
         // their footprints, every cascade for the rest (floors, models no
         // loc owns); the caster draw calls over the cascades.
-        self.cascade_masks.clear();
-        self.cascade_masks.resize(self.draws.len(), u8::MAX);
-        if let Some(frame) = self.shadow_frame.as_ref().filter(|_| cull) {
+        self.frame_resources.cascade_masks.clear();
+        self.frame_resources
+            .cascade_masks
+            .resize(self.frame_resources.draws.len(), u8::MAX);
+        if let Some(frame) = self.frame_resources.shadow_frame.as_ref().filter(|_| cull) {
             let entities: Vec<_> = visible
                 .iter()
                 .map(|&(_, _, id)| snapshot.live_frame().and_then(|live| live.entities.get(id)))
@@ -1487,35 +1419,39 @@ impl ModernRenderer {
                 crate::shadows::casters::entity_cascades(frame, entities[i])
             });
             for (&(start, end, _), mask) in visible.iter().zip(masks) {
-                let end = end.min(self.cascade_masks.len());
-                for m in &mut self.cascade_masks[start.min(end)..end] {
+                let end = end.min(self.frame_resources.cascade_masks.len());
+                for m in &mut self.frame_resources.cascade_masks[start.min(end)..end] {
                     *m = mask;
                 }
             }
         }
         // The depth pre-pass's sorted list (`submit`).
         #[cfg(test)]
-        let sorted = !self.test_unsorted_packets;
+        let sorted = !self.preparation.test_unsorted_packets;
         #[cfg(not(test))]
         let sorted = true;
         self.prepare_far_indirect(device, queue);
-        self.packets.build(&self.draws, opaque_draws, sorted);
+        self.frame_resources
+            .packets
+            .build(&self.frame_resources.draws, opaque_draws, sorted);
         // Each cascade's casters, whether its maps are kept and its sorted
         // caster packets (`shadows::cache`).
         (stats.shadow_cascade_casters, stats.shadow_draws) =
             self.plan_shadow_casters(device, queue, snapshot, origin, &visible, deferred);
-        self.visible_scratch = visible;
+        self.frame_resources.visible_scratch = visible;
         // Uploads: the arena, the instances, the sky layer slots.
-        self.arena.upload(device, queue);
-        if !self.instances.is_empty() {
-            let need = (self.instances.len() * std::mem::size_of::<Instance>()) as u64;
+        self.frame_resources.arena.upload(device, queue);
+        if !self.frame_resources.instances.is_empty() {
+            let need =
+                (self.frame_resources.instances.len() * std::mem::size_of::<Instance>()) as u64;
             if self
+                .frame_resources
                 .instance_buffer
                 .as_ref()
                 .is_none_or(|(_, cap)| *cap < need)
             {
                 let cap = need.next_power_of_two();
-                self.instance_buffer = Some((
+                self.frame_resources.instance_buffer = Some((
                     device.create_buffer(&wgpu::BufferDescriptor {
                         label: Some("modern instances"),
                         size: cap,
@@ -1525,12 +1461,21 @@ impl ModernRenderer {
                     cap,
                 ));
             }
-            let (buffer, _) = self.instance_buffer.as_ref().expect("instances");
-            queue.write_buffer(buffer, 0, bytemuck::cast_slice(&self.instances));
+            let (buffer, _) = self
+                .frame_resources
+                .instance_buffer
+                .as_ref()
+                .expect("instances");
+            queue.write_buffer(
+                buffer,
+                0,
+                bytemuck::cast_slice(&self.frame_resources.instances),
+            );
         }
         if !sky_layers.is_empty() {
             let need = (sky_layers.len() * std::mem::size_of::<SkyLayerUniforms>()) as u64;
             if self
+                .frame_resources
                 .sky_layer_buffer
                 .as_ref()
                 .is_none_or(|(_, _, cap)| *cap < need)
@@ -1544,7 +1489,7 @@ impl ModernRenderer {
                 });
                 let bind = device.create_bind_group(&wgpu::BindGroupDescriptor {
                     label: Some("modern sky layers"),
-                    layout: &self.sky_layer_layout,
+                    layout: &self.device_resources.sky_layer_layout,
                     entries: &[wgpu::BindGroupEntry {
                         binding: 0,
                         resource: wgpu::BindingResource::Buffer(wgpu::BufferBinding {
@@ -1556,17 +1501,21 @@ impl ModernRenderer {
                         }),
                     }],
                 });
-                self.sky_layer_buffer = Some((buffer, bind, cap));
+                self.frame_resources.sky_layer_buffer = Some((buffer, bind, cap));
             }
-            let (buffer, _, _) = self.sky_layer_buffer.as_ref().expect("sky layers");
+            let (buffer, _, _) = self
+                .frame_resources
+                .sky_layer_buffer
+                .as_ref()
+                .expect("sky layers");
             queue.write_buffer(buffer, 0, bytemuck::cast_slice(&sky_layers));
         }
         // The cubes planned above, drawn now that the arena and the instances are uploaded.
         self.bake_sky_cubes(device, queue);
-        if self.frame == 1 || self.frame.is_multiple_of(600) {
+        if self.history.frame == 1 || self.history.frame.is_multiple_of(600) {
             log::info!(
                 "[modern] frame {}: {} opaque + {} transparent entity draws, {} floor batches, {} draws, {} sky decor layers; {} loc models, {} materials cached ({} white; RT7 {}: {} normal + {} compound maps, {} fallbacks, {} missing, {:?} preferred); sun shadows {:?}: {} cascades x {} casters; point lights {}: {} lit tiles ({} full), {} lit entity draws; {} billboards on {} models, {} particles in {} batches ({} HDR-scaled quads)",
-                self.frame,
+                self.history.frame,
                 stats.opaque,
                 stats.transparent,
                 stats.floor_batches,
@@ -1574,13 +1523,13 @@ impl ModernRenderer {
                 stats.sky_layers,
                 stats.statics,
                 stats.materials,
-                self.textures.failed,
-                self.textures.stats.rt7,
-                self.textures.stats.normal_maps,
-                self.textures.stats.compound_maps,
-                self.textures.stats.fallbacks,
-                self.textures.stats.missing,
-                self.textures.source(),
+                self.device_resources.textures.failed,
+                self.device_resources.textures.stats.rt7,
+                self.device_resources.textures.stats.normal_maps,
+                self.device_resources.textures.stats.compound_maps,
+                self.device_resources.textures.stats.fallbacks,
+                self.device_resources.textures.stats.missing,
+                self.device_resources.textures.source(),
                 self.shadow_settings(),
                 stats.shadow_cascades,
                 stats.shadow_casters,
@@ -1594,16 +1543,16 @@ impl ModernRenderer {
                 stats.particle_batches,
                 stats.hdr_sprites
             );
-            let (vertices, indices) = self.loc_arena.used();
+            let (vertices, indices) = self.scene_resources.loc_arena.used();
             log::info!(
                 "[modern] loc pages: {} ({vertices} vertices, {indices} indices in use); depth pre-pass {} draws, cascades {:?} draws",
-                self.loc_arena.pages.len(),
-                self.packets.prepass.len(),
-                self.shadow
+                self.scene_resources.loc_arena.pages.len(),
+                self.frame_resources.packets.prepass.len(),
+                self.history.shadow
                     .sun
                     .static_lists
                     .iter()
-                    .zip(&self.shadow.sun.dynamic_lists)
+                    .zip(&self.history.shadow.sun.dynamic_lists)
                     .map(|(s, d)| s.len() + d.len())
                     .collect::<Vec<_>>()
             );
@@ -1616,8 +1565,8 @@ impl ModernRenderer {
         self.prepare_caustics(device, queue, origin);
         self.prepare_atmos(device, queue, &uniforms, size, rect, clip);
         // The loc pages' staged writes (`arenas`), before the submission.
-        self.loc_arena.flush(queue);
-        self.far.arena.flush(queue);
+        self.scene_resources.loc_arena.flush(queue);
+        self.scene_resources.far.arena.flush(queue);
         Some(PreparedFrame {
             rect,
             clip,
@@ -1659,7 +1608,7 @@ impl ModernRenderer {
         snapshot: &SceneSnapshot<'_>,
     ) {
         let pack = snapshot.pack;
-        let luts = &mut self.luts;
+        let luts = &mut self.device_resources.luts;
         // The record's remap slots (lighting::environment_record).
         let record_grading = self.environment_record.remap;
         let mut grading = if record_grading {
@@ -1673,16 +1622,16 @@ impl ModernRenderer {
             grading = crate::post::grading::Grading::default();
         }
         for (slot, &id) in grading.luts.iter().enumerate() {
-            if id < 0 || self.lut_slots[slot] == id {
+            if id < 0 || self.device_resources.lut_slots[slot] == id {
                 continue;
             }
-            let Some(lut) = self.luts.get(pack, id) else {
+            let Some(lut) = self.device_resources.luts.get(pack, id) else {
                 continue;
             };
             let size = crate::post::grading::LUT_SIZE as u32;
             queue.write_texture(
                 wgpu::TexelCopyTextureInfo {
-                    texture: &self.lut_texture,
+                    texture: &self.device_resources.lut_texture,
                     mip_level: 0,
                     origin: wgpu::Origin3d {
                         x: 0,
@@ -1703,14 +1652,16 @@ impl ModernRenderer {
                     depth_or_array_layers: 1,
                 },
             );
-            self.lut_slots[slot] = id;
+            self.device_resources.lut_slots[slot] = id;
         }
-        let mut post =
-            crate::post::grading::PostUniforms::new(&grading, !self.output_format.is_srgb());
+        let mut post = crate::post::grading::PostUniforms::new(
+            &grading,
+            !self.device_resources.output_format.is_srgb(),
+        );
         if record_grading {
             post = crate::lighting::environment_record::post_uniforms(
                 &grading,
-                !self.output_format.is_srgb(),
+                !self.device_resources.output_format.is_srgb(),
             );
         } else {
             // The modern colour correction has no levels; the remap
@@ -1718,7 +1669,11 @@ impl ModernRenderer {
             post.params[3] = 0.0;
             self.look.grade_weights(&mut post.weights);
         }
-        queue.write_buffer(&self.post_buffer, 0, bytemuck::bytes_of(&post));
+        queue.write_buffer(
+            &self.device_resources.post_buffer,
+            0,
+            bytemuck::bytes_of(&post),
+        );
         if self.grading != grading {
             log::info!("[modern] grading {grading:?}");
         }
@@ -1736,265 +1691,8 @@ impl ModernRenderer {
         rect: [i32; 4],
         clip: [i32; 4],
     ) -> Vec<wgpu::CommandBuffer> {
-        let targets = self.targets.as_ref().expect("targets");
-        let [l, t, r, b] = clip;
-        let (tw, th) = (targets.size[0] as i32, targets.size[1] as i32);
-        let (l, t) = (l.clamp(0, tw), t.clamp(0, th));
-        let (r, b) = (r.clamp(l, tw), b.clamp(t, th));
-        if r <= l || b <= t {
-            return Vec::new();
-        }
-        use crate::frame::units::Unit;
-        let cx = EncodeFrame {
-            targets,
-            colour: targets.msaa.as_ref().unwrap_or(&targets.resolved_view),
-            view,
-            rect,
-            clip,
-            scissor: [l as u32, t as u32, (r - l) as u32, (b - t) as u32],
-        };
-        let units: Vec<Unit> = crate::frame::units::CLAIM_ORDER
-            .into_iter()
-            .filter(|&u| self.unit_records(u))
-            .collect();
-        // The post chain's encoder (the frame's): one unit takes it.
-        let frame_encoder = std::sync::Mutex::new(encoder);
-        let recorded = self.jobs.map(units.len(), |i| {
-            let unit = units[i];
-            self.pass_order.start_unit(unit);
-            let decl = unit.decl();
-            if decl.frame_encoder {
-                let mut encoder = frame_encoder
-                    .lock()
-                    .unwrap_or_else(std::sync::PoisonError::into_inner);
-                self.encode_unit(unit, &mut encoder, &cx);
-                return (unit.index(), None);
-            }
-            let mut encoder = device.create_command_encoder(&wgpu::CommandEncoderDescriptor {
-                label: Some(decl.label),
-            });
-            self.encode_unit(unit, &mut encoder, &cx);
-            (unit.index(), Some(encoder.finish()))
-        });
-        // Submission order (`frame::units::UNITS`), whatever order the
-        // threads took and finished the units in.
-        let mut buffers: Vec<(usize, wgpu::CommandBuffer)> = recorded
-            .into_iter()
-            .filter_map(|(k, b)| b.map(|b| (k, b)))
-            .collect();
-        buffers.sort_by_key(|&(k, _)| k);
-        self.pass_order.start();
-        buffers.into_iter().map(|(_, b)| b).collect()
-    }
-
-    /// Whether `unit` records anything this frame.
-    fn unit_records(&self, unit: crate::frame::units::Unit) -> bool {
-        use crate::frame::units::Unit;
-        match unit {
-            Unit::Probes => self.probes.capture.is_some() || self.ambient.capture.is_some(),
-            Unit::SunShadows => self.shadow_frame.is_some(),
-            Unit::PointShadows => self.point_shadows_record(),
-            Unit::WaterReflection | Unit::ForwardAfterWater => !self.water.draws.is_empty(),
-            _ => true,
-        }
-    }
-
-    /// Record `unit`'s passes into `encoder`.
-    fn encode_unit(
-        &self,
-        unit: crate::frame::units::Unit,
-        encoder: &mut wgpu::CommandEncoder,
-        cx: &EncodeFrame<'_>,
-    ) {
-        use crate::frame::units::Unit;
-        match unit {
-            // 1. Probes: a light-probe capture this frame (`probes`).
-            Unit::Probes => {
-                self.encode_probes(encoder);
-                self.encode_ambient(encoder);
-            }
-            // 2. Sky, the frame's background: the decor sprites into the sky
-            // shading's source, then the sky shading over it (`atmos`).
-            Unit::Sky => {
-                self.encode_sky(encoder, cx);
-                self.encode_sky_shading(encoder, cx.colour);
-            }
-            // 3. Sun shadows (pass type 0): each cascade's tile of the atlas.
-            Unit::SunShadows => self.encode_sun_shadows(encoder),
-            // 3b. The point-light shadow faces redrawn.
-            Unit::PointShadows => self.encode_point_shadows(encoder),
-            // 4. The caustic rays and their light (the terrain of step 7
-            // reads it).
-            Unit::Caustics => self.encode_caustics(encoder),
-            // 5. Depth pre-pass.
-            Unit::DepthPrepass => self.encode_depth_prepass(encoder, cx),
-            // 6. Ambient occlusion (`post::ao`): the geometry pass, the
-            // occlusion pass and the blur.
-            Unit::AmbientOcclusion => self.encode_ssao(encoder, cx.rect, cx.clip),
-            // 7a. The water's planar reflection (`water`).
-            Unit::WaterReflection => self.encode_water_reflection(encoder),
-            // 7. Forward lighting, in the faithful order; with water (M7)
-            // split around the water pass (`water`): group 0, then the
-            // water surfaces and group 2.
-            Unit::Forward => self.encode_forward(encoder, cx),
-            Unit::ForwardAfterWater => {
-                self.encode_water_forward(encoder, cx, WaterForward::Surface);
-                self.encode_water_forward(encoder, cx, WaterForward::Group2);
-            }
-            // 8. Volumetric scattering, depth of field. 9. The post chain
-            // into the frame (`post`).
-            Unit::Post => {
-                self.encode_atmos_post(encoder);
-                self.encode_post(encoder, cx.view, cx.rect);
-            }
-        }
-    }
-
-    /// The sky's decor sprites into the sky shading's source (transparent, blended over what is
-    /// behind them by the shading): the cube carries the rest of the sky, so a frame without a
-    /// decor draws nothing here.
-    fn encode_sky(&self, encoder: &mut wgpu::CommandEncoder, cx: &EncodeFrame<'_>) {
-        if !self.atmos.frame.sky_decor {
-            return;
-        }
-        let clear = wgpu::Color::TRANSPARENT;
-        let (sky_view, sky_resolve) = self.sky_shading_target().unwrap_or((cx.colour, None));
-        let mut pass = encoder.begin_render_pass(&wgpu::RenderPassDescriptor {
-            label: Some(self.begin_pass(crate::frame::passes::Pass::Sky)),
-            color_attachments: &[Some(wgpu::RenderPassColorAttachment {
-                view: sky_view,
-                resolve_target: sky_resolve,
-                depth_slice: None,
-                ops: wgpu::Operations {
-                    load: wgpu::LoadOp::Clear(clear),
-                    store: wgpu::StoreOp::Store,
-                },
-            })],
-            depth_stencil_attachment: None,
-            occlusion_query_set: None,
-            multiview_mask: None,
-            timestamp_writes: None,
-        });
-        cx.set_view(&mut pass);
-        for draw in &self.sky {
-            match draw {
-                SkyDraw::Layer {
-                    slot,
-                    texture: texture @ Some(SkyTextureKey::Decor(..)),
-                } => {
-                    let Some((_, layers, _)) = self.sky_layer_buffer.as_ref() else {
-                        continue;
-                    };
-                    pass.set_pipeline(&self.pipes().sky_layer);
-                    pass.set_bind_group(
-                        0,
-                        layers,
-                        &[slot * std::mem::size_of::<SkyLayerUniforms>() as u32],
-                    );
-                    let texture = texture
-                        .and_then(|k| self.sky_textures.get(&k))
-                        .map_or(&self.sky_white, |t| &t.bind_group);
-                    pass.set_bind_group(1, texture, &[]);
-                    pass.draw(0..3, 0..1);
-                }
-                // The cube carries the box's layers and dome model.
-                SkyDraw::Layer { .. } => {}
-            }
-        }
-    }
-
-    /// The depth pre-pass (GeometryPass): the opaque entities that write
-    /// depth.
-    fn encode_depth_prepass(&self, encoder: &mut wgpu::CommandEncoder, cx: &EncodeFrame<'_>) {
-        let mut pass = encoder.begin_render_pass(&wgpu::RenderPassDescriptor {
-            label: Some(self.begin_pass(crate::frame::passes::Pass::DepthPrepass)),
-            color_attachments: &[],
-            depth_stencil_attachment: cx.depth_attachment(wgpu::LoadOp::Clear(1.0)),
-            occlusion_query_set: None,
-            multiview_mask: None,
-            timestamp_writes: None,
-        });
-        cx.set_view(&mut pass);
-        pass.set_pipeline(&self.pipes().depth_prepass);
-        pass.set_bind_group(0, &self.frame_bind, &[]);
-        pass.set_bind_group(2, &self.shadow.atlas.2, &[]);
-        pass.set_bind_group(3, &self.lights.bind, &[]);
-        // Sorted (`submit`): depth only, so the order does not matter.
-        self.submit_all(&mut pass, &self.packets.prepass);
-    }
-
-    /// `part` of the forward pass with the water (`water`).
-    fn encode_water_forward(
-        &self,
-        encoder: &mut wgpu::CommandEncoder,
-        cx: &EncodeFrame<'_>,
-        part: WaterForward,
-    ) {
-        self.encode_forward_with_water(encoder, cx, part);
-    }
-
-    /// The forward lighting in the faithful order (with water, its group 0:
-    /// the water surfaces and group 2 are units of their own, `water`).
-    fn encode_forward(&self, encoder: &mut wgpu::CommandEncoder, cx: &EncodeFrame<'_>) {
-        let targets = cx.targets;
-        let receive = &self.shadow.atlas.2;
-        if !self.water.draws.is_empty() {
-            self.encode_water_forward(encoder, cx, WaterForward::Group0);
-            return;
-        }
-        let mut pass = encoder.begin_render_pass(&wgpu::RenderPassDescriptor {
-            label: Some(self.begin_pass(crate::frame::passes::Pass::Forward)),
-            color_attachments: &[Some(wgpu::RenderPassColorAttachment {
-                view: cx.colour,
-                resolve_target: targets.msaa.as_ref().map(|_| &targets.resolved_view),
-                depth_slice: None,
-                ops: wgpu::Operations {
-                    load: wgpu::LoadOp::Load,
-                    store: wgpu::StoreOp::Store,
-                },
-            })],
-            depth_stencil_attachment: cx.depth_attachment(wgpu::LoadOp::Load),
-            occlusion_query_set: None,
-            multiview_mask: None,
-            timestamp_writes: None,
-        });
-        cx.set_view(&mut pass);
-        pass.set_bind_group(0, &self.frame_bind, &[]);
-        pass.set_bind_group(2, receive, &[]);
-        pass.set_bind_group(3, &self.lights.bind, &[]);
-        // M10: the terrain first (opaque, depth tested and written).
-        self.encode_terrain(&mut pass, TerrainPass::Forward);
-        let mut current = None;
-        let mut bound = crate::frame::submit::Bound::default();
-        // The billboards and particles (M9) go between the model draws
-        // at their places (`sprites`: the group 0 tail and group 2).
-        let mut sprites = self.sprites.draws.iter().peekable();
-        let mut i = 0;
-        while i < self.draws.len() {
-            let d = &self.draws[i];
-            while let Some(sprite) = sprites.next_if(|s| s.after <= i) {
-                self.sprites
-                    .draw(&mut pass, &self.pipes().sprites, &self.textures, sprite);
-                current = None;
-                bound.reset();
-            }
-            if current != Some(d.pass) {
-                pass.set_pipeline(match d.pass {
-                    Pass::Opaque => &self.pipes().forward,
-                    Pass::NoDepthWrite => &self.pipes().forward_no_depth_write,
-                });
-                current = Some(d.pass);
-            }
-            let end = sprites
-                .peek()
-                .map_or(self.draws.len(), |s| s.after)
-                .min(self.draws.len());
-            i += self.submit_run(&mut pass, &self.draws[i..end], &mut bound);
-        }
-        for sprite in sprites {
-            self.sprites
-                .draw(&mut pass, &self.pipes().sprites, &self.textures, sprite);
-        }
+        self.encoding_inputs()
+            .encode(device, encoder, view, rect, clip)
     }
 }
 
@@ -2062,6 +1760,10 @@ pub(crate) use crate::frame::gpu::water::WaterForward;
 pub use crate::frame::gpu::water::WaterStats;
 pub(crate) use crate::frame::resources::{Arena, FloorGpu, LocSlot, StaticModel};
 
+mod state;
+use state::{DeviceResources, FrameHistory, FrameResources, PreparationState, SceneResources};
+pub(crate) mod encoding;
+use encoding::EncodeInputs;
 pub(crate) mod arenas;
 pub mod benchmark;
 pub(crate) mod compile;
@@ -2080,3 +1782,290 @@ pub(crate) mod submit;
 mod tests;
 pub(crate) mod underwater;
 pub mod units;
+
+impl<'a> EncodeInputs<'a> {
+    /// The shadow settings in effect: the shell's options, with the
+    /// quality of [`crate::settings::ModernSettings::shadows`] when fixed.
+    #[must_use]
+    pub fn shadow_settings(&self) -> ShadowSettings {
+        match self.settings.shadows {
+            crate::settings::Shadows::Fixed(quality) => ShadowSettings {
+                quality,
+                ..self.shadow.settings
+            },
+            crate::settings::Shadows::Options => self.shadow.settings,
+        }
+    }
+
+    /// The depth pre-pass (GeometryPass): the opaque entities that write
+    /// depth.
+    fn encode_depth_prepass(&self, encoder: &mut wgpu::CommandEncoder, cx: &EncodeFrame<'_>) {
+        let mut pass = encoder.begin_render_pass(&wgpu::RenderPassDescriptor {
+            label: Some(self.begin_pass(crate::frame::passes::Pass::DepthPrepass)),
+            color_attachments: &[],
+            depth_stencil_attachment: cx.depth_attachment(wgpu::LoadOp::Clear(1.0)),
+            occlusion_query_set: None,
+            multiview_mask: None,
+            timestamp_writes: None,
+        });
+        cx.set_view(&mut pass);
+        pass.set_pipeline(&self.pipes().depth_prepass);
+        pass.set_bind_group(0, self.frame_bind, &[]);
+        pass.set_bind_group(2, &self.shadow.atlas.2, &[]);
+        pass.set_bind_group(3, &self.lights.bind, &[]);
+        // Sorted (`submit`): depth only, so the order does not matter.
+        self.submit_all(&mut pass, &self.packets.prepass);
+    }
+
+    /// Whether `unit` records anything this frame.
+    fn unit_records(&self, unit: crate::frame::units::Unit) -> bool {
+        use crate::frame::units::Unit;
+        match unit {
+            Unit::Probes => self.probes.capture.is_some() || self.ambient.capture.is_some(),
+            Unit::SunShadows => self.shadow_frame.is_some(),
+            Unit::PointShadows => self.point_shadows_record(),
+            Unit::WaterReflection | Unit::ForwardAfterWater => !self.water.draws.is_empty(),
+            _ => true,
+        }
+    }
+
+    /// `part` of the forward pass with the water (`water`).
+    fn encode_water_forward(
+        &self,
+        encoder: &mut wgpu::CommandEncoder,
+        cx: &EncodeFrame<'_>,
+        part: WaterForward,
+    ) {
+        self.encode_forward_with_water(encoder, cx, part);
+    }
+
+    /// The sky's decor sprites into the sky shading's source (transparent, blended over what is
+    /// behind them by the shading): the cube carries the rest of the sky, so a frame without a
+    /// decor draws nothing here.
+    fn encode_sky(&self, encoder: &mut wgpu::CommandEncoder, cx: &EncodeFrame<'_>) {
+        if !self.atmos.frame.sky_decor {
+            return;
+        }
+        let clear = wgpu::Color::TRANSPARENT;
+        let (sky_view, sky_resolve) = self.sky_shading_target().unwrap_or((cx.colour, None));
+        let mut pass = encoder.begin_render_pass(&wgpu::RenderPassDescriptor {
+            label: Some(self.begin_pass(crate::frame::passes::Pass::Sky)),
+            color_attachments: &[Some(wgpu::RenderPassColorAttachment {
+                view: sky_view,
+                resolve_target: sky_resolve,
+                depth_slice: None,
+                ops: wgpu::Operations {
+                    load: wgpu::LoadOp::Clear(clear),
+                    store: wgpu::StoreOp::Store,
+                },
+            })],
+            depth_stencil_attachment: None,
+            occlusion_query_set: None,
+            multiview_mask: None,
+            timestamp_writes: None,
+        });
+        cx.set_view(&mut pass);
+        for draw in self.sky {
+            match draw {
+                SkyDraw::Layer {
+                    slot,
+                    texture: texture @ Some(SkyTextureKey::Decor(..)),
+                } => {
+                    let Some((_, layers, _)) = self.sky_layer_buffer.as_ref() else {
+                        continue;
+                    };
+                    pass.set_pipeline(&self.pipes().sky_layer);
+                    pass.set_bind_group(
+                        0,
+                        layers,
+                        &[slot * std::mem::size_of::<SkyLayerUniforms>() as u32],
+                    );
+                    let texture = texture
+                        .and_then(|k| self.sky_textures.get(&k))
+                        .map_or(self.sky_white, |t| &t.bind_group);
+                    pass.set_bind_group(1, texture, &[]);
+                    pass.draw(0..3, 0..1);
+                }
+                // The cube carries the box's layers and dome model.
+                SkyDraw::Layer { .. } => {}
+            }
+        }
+    }
+
+    /// The forward lighting in the faithful order (with water, its group 0:
+    /// the water surfaces and group 2 are units of their own, `water`).
+    fn encode_forward(&self, encoder: &mut wgpu::CommandEncoder, cx: &EncodeFrame<'_>) {
+        let targets = cx.targets;
+        let receive = &self.shadow.atlas.2;
+        if !self.water.draws.is_empty() {
+            self.encode_water_forward(encoder, cx, WaterForward::Group0);
+            return;
+        }
+        let mut pass = encoder.begin_render_pass(&wgpu::RenderPassDescriptor {
+            label: Some(self.begin_pass(crate::frame::passes::Pass::Forward)),
+            color_attachments: &[Some(wgpu::RenderPassColorAttachment {
+                view: cx.colour,
+                resolve_target: targets.msaa.as_ref().map(|_| &targets.resolved_view),
+                depth_slice: None,
+                ops: wgpu::Operations {
+                    load: wgpu::LoadOp::Load,
+                    store: wgpu::StoreOp::Store,
+                },
+            })],
+            depth_stencil_attachment: cx.depth_attachment(wgpu::LoadOp::Load),
+            occlusion_query_set: None,
+            multiview_mask: None,
+            timestamp_writes: None,
+        });
+        cx.set_view(&mut pass);
+        pass.set_bind_group(0, self.frame_bind, &[]);
+        pass.set_bind_group(2, receive, &[]);
+        pass.set_bind_group(3, &self.lights.bind, &[]);
+        // M10: the terrain first (opaque, depth tested and written).
+        self.encode_terrain(&mut pass, TerrainPass::Forward);
+        let mut current = None;
+        let mut bound = crate::frame::submit::Bound::default();
+        // The billboards and particles (M9) go between the model draws
+        // at their places (`sprites`: the group 0 tail and group 2).
+        let mut sprites = self.sprites.draws.iter().peekable();
+        let mut i = 0;
+        while i < self.draws.len() {
+            let d = &self.draws[i];
+            while let Some(sprite) = sprites.next_if(|s| s.after <= i) {
+                self.sprites
+                    .draw(&mut pass, &self.pipes().sprites, self.textures, sprite);
+                current = None;
+                bound.reset();
+            }
+            if current != Some(d.pass) {
+                pass.set_pipeline(match d.pass {
+                    Pass::Opaque => &self.pipes().forward,
+                    Pass::NoDepthWrite => &self.pipes().forward_no_depth_write,
+                });
+                current = Some(d.pass);
+            }
+            let end = sprites
+                .peek()
+                .map_or(self.draws.len(), |s| s.after)
+                .min(self.draws.len());
+            i += self.submit_run(&mut pass, &self.draws[i..end], &mut bound);
+        }
+        for sprite in sprites {
+            self.sprites
+                .draw(&mut pass, &self.pipes().sprites, self.textures, sprite);
+        }
+    }
+
+    /// Record `unit`'s passes into `encoder`.
+    fn encode_unit(
+        &self,
+        unit: crate::frame::units::Unit,
+        encoder: &mut wgpu::CommandEncoder,
+        cx: &EncodeFrame<'_>,
+    ) {
+        use crate::frame::units::Unit;
+        match unit {
+            // 1. Probes: a light-probe capture this frame (`probes`).
+            Unit::Probes => {
+                self.encode_probes(encoder);
+                self.encode_ambient(encoder);
+            }
+            // 2. Sky, the frame's background: the decor sprites into the sky
+            // shading's source, then the sky shading over it (`atmos`).
+            Unit::Sky => {
+                self.encode_sky(encoder, cx);
+                self.encode_sky_shading(encoder, cx.colour);
+            }
+            // 3. Sun shadows (pass type 0): each cascade's tile of the atlas.
+            Unit::SunShadows => self.encode_sun_shadows(encoder),
+            // 3b. The point-light shadow faces redrawn.
+            Unit::PointShadows => self.encode_point_shadows(encoder),
+            // 4. The caustic rays and their light (the terrain of step 7
+            // reads it).
+            Unit::Caustics => self.encode_caustics(encoder),
+            // 5. Depth pre-pass.
+            Unit::DepthPrepass => self.encode_depth_prepass(encoder, cx),
+            // 6. Ambient occlusion (`post::ao`): the geometry pass, the
+            // occlusion pass and the blur.
+            Unit::AmbientOcclusion => self.encode_ssao(encoder, cx.rect, cx.clip),
+            // 7a. The water's planar reflection (`water`).
+            Unit::WaterReflection => self.encode_water_reflection(encoder),
+            // 7. Forward lighting, in the faithful order; with water (M7)
+            // split around the water pass (`water`): group 0, then the
+            // water surfaces and group 2.
+            Unit::Forward => self.encode_forward(encoder, cx),
+            Unit::ForwardAfterWater => {
+                self.encode_water_forward(encoder, cx, WaterForward::Surface);
+                self.encode_water_forward(encoder, cx, WaterForward::Group2);
+            }
+            // 8. Volumetric scattering, depth of field. 9. The post chain
+            // into the frame (`post`).
+            Unit::Post => {
+                self.encode_atmos_post(encoder);
+                self.encode_post(encoder, cx.view, cx.rect);
+            }
+        }
+    }
+
+    /// Record the frame (`frame::units`): every unit into its own command
+    /// encoder on the renderer's threads (`frame::jobs`), submitted in
+    /// frame order; the post chain, which writes `view`, into `encoder`.
+    pub(crate) fn encode(
+        &self,
+        device: &wgpu::Device,
+        encoder: &mut wgpu::CommandEncoder,
+        view: &wgpu::TextureView,
+        rect: [i32; 4],
+        clip: [i32; 4],
+    ) -> Vec<wgpu::CommandBuffer> {
+        let targets = self.targets.as_ref().expect("targets");
+        let [l, t, r, b] = clip;
+        let (tw, th) = (targets.size[0] as i32, targets.size[1] as i32);
+        let (l, t) = (l.clamp(0, tw), t.clamp(0, th));
+        let (r, b) = (r.clamp(l, tw), b.clamp(t, th));
+        if r <= l || b <= t {
+            return Vec::new();
+        }
+        use crate::frame::units::Unit;
+        let cx = EncodeFrame {
+            targets,
+            colour: targets.msaa.as_ref().unwrap_or(&targets.resolved_view),
+            view,
+            rect,
+            clip,
+            scissor: [l as u32, t as u32, (r - l) as u32, (b - t) as u32],
+        };
+        let units: Vec<Unit> = crate::frame::units::CLAIM_ORDER
+            .into_iter()
+            .filter(|&u| self.unit_records(u))
+            .collect();
+        // The post chain's encoder (the frame's): one unit takes it.
+        let frame_encoder = std::sync::Mutex::new(encoder);
+        let recorded = self.jobs.map(units.len(), |i| {
+            let unit = units[i];
+            self.pass_order.start_unit(unit);
+            let decl = unit.decl();
+            if decl.frame_encoder {
+                let mut encoder = frame_encoder
+                    .lock()
+                    .unwrap_or_else(std::sync::PoisonError::into_inner);
+                self.encode_unit(unit, &mut encoder, &cx);
+                return (unit.index(), None);
+            }
+            let mut encoder = device.create_command_encoder(&wgpu::CommandEncoderDescriptor {
+                label: Some(decl.label),
+            });
+            self.encode_unit(unit, &mut encoder, &cx);
+            (unit.index(), Some(encoder.finish()))
+        });
+        // Submission order (`frame::units::UNITS`), whatever order the
+        // threads took and finished the units in.
+        let mut buffers: Vec<(usize, wgpu::CommandBuffer)> = recorded
+            .into_iter()
+            .filter_map(|(k, b)| b.map(|b| (k, b)))
+            .collect();
+        buffers.sort_by_key(|&(k, _)| k);
+        self.pass_order.start();
+        buffers.into_iter().map(|(_, b)| b).collect()
+    }
+}

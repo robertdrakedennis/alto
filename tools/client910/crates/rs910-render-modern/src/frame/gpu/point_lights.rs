@@ -326,7 +326,7 @@ impl ModernRenderer {
                 // The modern colour term (the colour clamped, then
                 // times the intensity).
                 let lights = crate::models::shading::frame_lights(table);
-                self.lights.prepare(
+                self.scene_resources.lights.prepare(
                     device,
                     queue,
                     key,
@@ -334,18 +334,24 @@ impl ModernRenderer {
                     lights,
                     origin,
                 );
-                self.lights.grid_identity = Some(table.grid_identity().clone());
+                self.scene_resources.lights.grid_identity = Some(table.grid_identity().clone());
             }
             None => {
-                self.lights.grid_identity = None;
+                self.scene_resources.lights.grid_identity = None;
                 #[cfg(test)]
-                if let Some((lights, grid)) = self.test_lights.clone() {
+                if let Some((lights, grid)) = self.preparation.test_lights.clone() {
                     let key = (1, lights.len(), (grid.levels, grid.nx, grid.nz));
-                    self.lights
-                        .prepare(device, queue, key, move || grid, lights, origin);
+                    self.scene_resources.lights.prepare(
+                        device,
+                        queue,
+                        key,
+                        move || grid,
+                        lights,
+                        origin,
+                    );
                     return;
                 }
-                self.lights.prepare(
+                self.scene_resources.lights.prepare(
                     device,
                     queue,
                     (0, 0, (0, 0, 0)),

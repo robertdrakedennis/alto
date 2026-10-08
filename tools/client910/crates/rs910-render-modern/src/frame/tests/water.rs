@@ -21,8 +21,8 @@ fn water_frame(
         ..ModernSettings::DEFAULT
     };
     let mut r = renderer(device, queue, 1, settings);
-    r.water.debug = debug;
-    r.atmos.test_clear_air = debug != 0;
+    r.frame_resources.water.debug = debug;
+    r.frame_resources.atmos.test_clear_air = debug != 0;
     if let Some(look) = look {
         r.look = look;
     }
@@ -227,25 +227,27 @@ fn water_reflection_culling_leaves_the_frame_unchanged() {
             let snapshot = offline.snapshot(&pack);
             for samples in [4, 1] {
                 let mut r = renderer(&device, &queue, samples, ModernSettings::DEFAULT);
-                r.water.test_no_reflection_cull = true;
+                r.frame_resources.water.test_no_reflection_cull = true;
                 let all = settled(&device, &queue, &mut r, &snapshot, size);
                 let every = r.water_stats();
-                r.water.test_no_reflection_cull = false;
+                r.frame_resources.water.test_no_reflection_cull = false;
                 let culled = render(&device, &queue, &mut r, &snapshot, size);
                 let stats = r.water_stats();
                 let far_packets = r
+                    .frame_resources
                     .draws
                     .iter()
                     .enumerate()
                     .filter(|(_, draw)| matches!(draw.geometry, crate::frame::Geometry::Far { .. }))
                     .count();
                 let far_kept = r
+                    .frame_resources
                     .water
                     .reflected
                     .iter()
                     .filter(|index| {
                         matches!(
-                            r.draws[**index as usize].geometry,
+                            r.frame_resources.draws[**index as usize].geometry,
                             crate::frame::Geometry::Far { .. }
                         )
                     })

@@ -91,7 +91,7 @@ pub struct Rt7Stats {
 #[derive(Default)]
 pub struct Rt7Cache {
     /// The loc configs (prepare-only: the store is not `Sync`).
-    locs: crate::exclusive::Exclusive<Option<Option<rs910_config::config::LocStore>>>,
+    locs: Option<Option<rs910_config::config::LocStore>>,
     models: HashMap<i32, Option<Arc<Rt7Model>>>,
     raw: HashMap<i32, Option<Arc<crate::modelunlit::ModelUnlit>>>,
     pub stats: Rt7Stats,
@@ -316,10 +316,10 @@ impl Rt7Cache {
         } else {
             shape
         };
-        if self.locs.get_mut().is_none() {
-            *self.locs.get_mut() = Some(rs910_config::config::LocStore::load(pack).ok());
+        if self.locs.is_none() {
+            self.locs = Some(rs910_config::config::LocStore::load(pack).ok());
         }
-        let locs = self.locs.get_mut().as_ref().and_then(Option::as_ref);
+        let locs = self.locs.as_ref().and_then(Option::as_ref);
         let loc = locs.and_then(|l| l.get(loc_id));
         let Some(ids) = loc
             .and_then(|l| l.shape_models.iter().find(|(s, _)| i32::from(*s) == shape))

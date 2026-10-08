@@ -301,15 +301,19 @@ fn sorted_depth_passes_on_shared_loc_pages_leave_the_frame_unchanged() {
         let mut r = renderer(&device, &queue, 4, ModernSettings::DEFAULT);
         r.set_shadow_settings(crate::shadows::Settings::from_options(2, 3, 1));
         // Every cascade redraws its casters each frame (no shadow cache).
-        r.shadow.sun.test_uncached = true;
+        r.history.shadow.sun.test_uncached = true;
         let sorted = settled(&device, &queue, &mut r, &snapshot, size).pixels;
-        let lists: Vec<Vec<crate::frame::Draw>> = std::iter::once(r.packets.prepass.clone())
-            .chain(r.shadow.sun.static_lists.iter().cloned())
-            .collect();
-        r.test_unsorted_packets = true;
+        let lists: Vec<Vec<crate::frame::Draw>> =
+            std::iter::once(r.frame_resources.packets.prepass.clone())
+                .chain(r.history.shadow.sun.static_lists.iter().cloned())
+                .collect();
+        r.preparation.test_unsorted_packets = true;
         let ordered = render(&device, &queue, &mut r, &snapshot, size).pixels;
         let differ = Noise::of(&sorted, &ordered);
-        let (pages, meshes) = (r.loc_arena.pages.len(), r.loc_mesh_cache().0);
+        let (pages, meshes) = (
+            r.scene_resources.loc_arena.pages.len(),
+            r.loc_mesh_cache().0,
+        );
         eprintln!("{name}: {differ:?}; {meshes} loc meshes on {pages} pages");
         assert_eq!(differ, Noise::default(), "{name}");
         assert!(
@@ -370,6 +374,9 @@ fn threaded_and_synchronous_encodes_draw_the_identical_frame() {
         posed > 0 && four.rt7.anim.stats.drawn > 0,
         "the view poses RT7 models"
     );
-    assert!(!four.water.draws.is_empty(), "the view has water");
+    assert!(
+        !four.frame_resources.water.draws.is_empty(),
+        "the view has water"
+    );
     assert_eq!(differ, Noise::default());
 }

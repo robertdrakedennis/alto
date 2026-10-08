@@ -79,13 +79,13 @@ fn penumbra_widens_with_the_filter_and_the_umbra_stays_binary() {
         ..ModernSettings::DEFAULT
     };
     let mut r = renderer(&device, &queue, 4, settings);
-    r.atmos.test_clear_air = true;
+    r.frame_resources.atmos.test_clear_air = true;
     let models = vec![
         (flat_quad(cx, cz, 4000.0, 0.0), identity),
         (flat_quad(cx - 250.0, cz, 300.0, -400.0), identity),
     ];
     let draw = |r: &mut ModernRenderer| {
-        r.test_models = models.clone();
+        r.preparation.test_models = models.clone();
         render(&device, &queue, r, &snapshot, size).hdr
     };
     // The references: the ground unshadowed, and lit by the ambient alone
@@ -220,7 +220,7 @@ fn cascade_culling_leaves_the_frame_unchanged() {
             r.set_shadow_settings(Settings::from_options(2, quality, 1));
             let culled = settled(&device, &queue, &mut r, &snapshot, size).pixels;
             let n_culled = r.stats.shadow_cascade_casters;
-            r.test_no_cascade_cull = true;
+            r.preparation.test_no_cascade_cull = true;
             let whole = render(&device, &queue, &mut r, &snapshot, size).pixels;
             let n_whole = r.stats.shadow_cascade_casters;
             let differ = Noise::of(&culled, &whole);
@@ -244,10 +244,10 @@ fn uncached(
     snapshot: &SceneSnapshot<'_>,
     size: [u32; 2],
 ) -> Vec<u8> {
-    r.shadow.sun.test_uncached = true;
-    r.shadow.point.forget_faces();
+    r.history.shadow.sun.test_uncached = true;
+    r.history.shadow.point.forget_faces();
     let frame = render(device, queue, r, snapshot, size).pixels;
-    r.shadow.sun.test_uncached = false;
+    r.history.shadow.sun.test_uncached = false;
     frame
 }
 
@@ -362,13 +362,13 @@ fn moving_casters_and_a_turning_sun_move_their_shadows() {
         ..ModernSettings::DEFAULT
     };
     let draw = |r: &mut ModernRenderer, env: &rs910_scene::env::EnvFrame, x: f32| {
-        r.test_models = scene(x);
+        r.preparation.test_models = scene(x);
         render(&device, &queue, r, &bare(&camera, env), size).pixels
     };
     // The frame of `r` and the same frame drawn without the caches.
     let with_redrawn = |r: &mut ModernRenderer, env: &rs910_scene::env::EnvFrame, x: f32| {
         let kept = draw(r, env, x);
-        r.test_models = scene(x);
+        r.preparation.test_models = scene(x);
         (
             kept,
             uncached(&device, &queue, r, &bare(&camera, env), size),
@@ -378,7 +378,7 @@ fn moving_casters_and_a_turning_sun_move_their_shadows() {
         crate::logic_clock::set_test_now(Some(1_700_000_000_000));
         let mut r = renderer(&device, &queue, 4, settings);
         r.set_shadow_settings(Settings::from_options(2, quality, 1));
-        r.test_models = scene(-250.0);
+        r.preparation.test_models = scene(-250.0);
         let before = settled(&device, &queue, &mut r, &bare(&camera, &env), size).pixels;
         draw(&mut r, &env, 250.0);
         let (moved, redrawn) = with_redrawn(&mut r, &env, 250.0);

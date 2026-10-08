@@ -48,6 +48,7 @@ fn underwater_bed_and_locs_show_through_the_water() {
     let mut a = renderer(&device, &queue, 1, ModernSettings::DEFAULT);
     let frame_with = settled(&device, &queue, &mut a, &with, size);
     let meshes = a
+        .scene_resources
         .underwater
         .meshes
         .iter()
@@ -84,7 +85,8 @@ fn underwater_bed_and_locs_show_through_the_water() {
     render(&device, &queue, &mut a, &with, size);
     assert_eq!(a.loc_mesh_cache().1, built, "meshes were rebuilt");
     assert_eq!(
-        a.underwater
+        a.scene_resources
+            .underwater
             .meshes
             .iter()
             .flatten()

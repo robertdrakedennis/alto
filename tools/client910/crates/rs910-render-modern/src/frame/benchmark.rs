@@ -82,7 +82,7 @@ pub fn run(
     let size = [request.canvas[0].max(1), request.canvas[1].max(1)];
     let mut renderer = ModernRenderer::new(device, queue, format, samples, settings);
     let target = [26 * 512, 0, 26 * 512];
-    renderer.bench_models = Some((
+    renderer.preparation.bench_models = Some((
         streams(request.model),
         placements([target[0] as f32, target[2] as f32]),
     ));
@@ -193,31 +193,36 @@ impl ModernRenderer {
         snapshot: &SceneSnapshot<'_>,
         origin: [f32; 3],
     ) {
-        let Some((streams, matrices)) = self.bench_models.take() else {
+        let Some((streams, matrices)) = self.preparation.bench_models.take() else {
             return;
         };
-        let (base_vertex, first) = self.arena.push(&streams);
+        let (base_vertex, first) = self.frame_resources.arena.push(&streams);
         for matrix in &matrices {
             for &(material, start, count) in &streams.batches {
-                self.textures
-                    .ensure(device, queue, snapshot.pack, snapshot.materials, material);
-                let instance = self.instances.len() as u32;
+                self.device_resources.textures.ensure(
+                    device,
+                    queue,
+                    snapshot.pack,
+                    snapshot.materials,
+                    material,
+                );
+                let instance = self.frame_resources.instances.len() as u32;
                 let mut record =
                     self.instance(local_matrix(matrix, origin), material, 1.0, FLAG_FLOOR);
                 record.p2 = [0.0; 4];
-                self.instances.push(record);
-                self.draws.push(Draw {
+                self.frame_resources.instances.push(record);
+                self.frame_resources.draws.push(Draw {
                     geometry: Geometry::Arena { base_vertex },
                     material,
                     first_index: start + first,
                     count,
                     instance,
                     pass: Pass::Opaque,
-                    casts: self.shadow_frame.is_some(),
+                    casts: self.frame_resources.shadow_frame.is_some(),
                     indirect: None,
                 });
             }
         }
-        self.bench_models = Some((streams, matrices));
+        self.preparation.bench_models = Some((streams, matrices));
     }
 }

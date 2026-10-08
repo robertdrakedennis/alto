@@ -70,6 +70,7 @@
 //! extension tile is selected by the plan, no far tile lies inside the
 //! window, and every far container was built against the current window.
 
+use crate::frame::encoding::EncodeInputs;
 use std::collections::{BTreeMap, HashMap, VecDeque};
 use std::sync::Arc;
 
@@ -635,13 +636,13 @@ fn container_rect(id: (i32, i32)) -> TileRect {
 impl ModernRenderer {
     /// The draw-distance level (`ModernSettings::far`).
     pub(crate) fn far_level(&self) -> Option<FarLevel> {
-        self.settings.far
+        self.preparation.settings.far
     }
 
     /// Whether the whole ring is built before the frame
     /// (`CLIENT910_MODERN_FAR_SYNC=1`, or a test's [`FarGpu::sync`]).
     pub(crate) fn far_sync(&self) -> bool {
-        self.far.sync || rs910_far_scene::far_debug_flags::flags().sync
+        self.scene_resources.far.sync || rs910_far_scene::far_debug_flags::flags().sync
     }
 
     /// F0: this frame's far plane and fog in `uniforms` (see the module
@@ -659,13 +660,14 @@ impl ModernRenderer {
         let usable = level.is_some()
             && surface
             && self
+                .scene_resources
                 .far
                 .scene
                 .as_ref()
                 .is_some_and(|(key, ok)| *ok && *key == crate::terrain::SceneKey::of(snapshot));
-        self.far.active = usable;
-        self.far.level = level.filter(|_| usable);
-        let Some(level) = self.far.level else {
+        self.scene_resources.far.active = usable;
+        self.scene_resources.far.level = level.filter(|_| usable);
+        let Some(level) = self.scene_resources.far.level else {
             return;
         };
         let far = level.far_plane() as f32;
@@ -677,10 +679,10 @@ impl ModernRenderer {
         let vp = crate::camera::multiply(&view, &projection);
         let view_proj = crate::camera::gl_to_wgpu_depth() * crate::camera::to_glam(&vp);
         uniforms.view_proj = view_proj.to_cols_array_2d();
-        self.far.view_proj = view_proj;
-        self.far.view = crate::camera::to_glam(&view);
-        self.far.projection = projection;
-        self.far.viewport = [viewport.0 as f32, viewport.1 as f32];
+        self.scene_resources.far.view_proj = view_proj;
+        self.scene_resources.far.view = crate::camera::to_glam(&view);
+        self.scene_resources.far.projection = projection;
+        self.scene_resources.far.viewport = [viewport.0 as f32, viewport.1 as f32];
         if uniforms.fog_colour[3] > 0.0 {
             if let Some((start, end)) = far_level::fog_range(far, snapshot.env.fog.range) {
                 uniforms.fog_range = [start, 1.0 / (end - start), 0.0, 0.0];
@@ -696,10 +698,10 @@ impl ModernRenderer {
         snapshot: &SceneSnapshot<'_>,
         sync: bool,
     ) -> Option<Arc<FarAssets>> {
-        if let Some(a) = self.far.assets.as_ref() {
+        if let Some(a) = self.scene_resources.far.assets.as_ref() {
             return Some(Arc::clone(a));
         }
-        if self.far.assets_loading.is_none() {
+        if self.scene_resources.far.assets_loading.is_none() {
             let (Some(pack), Some(materials)) = (snapshot.pack, snapshot.materials) else {
                 return None;
             };
@@ -714,10 +716,11 @@ impl ModernRenderer {
                     }
                 })
                 .expect("spawn the far assets loader");
-            self.far.assets_loading = Some(loader);
+            self.scene_resources.far.assets_loading = Some(loader);
         }
         if !sync
             && !self
+                .scene_resources
                 .far
                 .assets_loading
                 .as_ref()
@@ -725,17 +728,25 @@ impl ModernRenderer {
         {
             return None;
         }
-        let assets = Arc::new(self.far.assets_loading.take()?.join().ok()??);
+        let assets = Arc::new(
+            self.scene_resources
+                .far
+                .assets_loading
+                .take()?
+                .join()
+                .ok()??,
+        );
         let a = Arc::clone(&assets);
-        self.far.terrain_jobs = Some(FarJobs::new(
+        self.scene_resources.far.terrain_jobs = Some(FarJobs::new(
             "far-terrain",
             default_threads(TERRAIN_WORKERS),
             || (),
         ));
-        self.far.loc_jobs = Some(FarJobs::new("far-locs", LOC_WORKERS, move || {
-            LocWorker::new(Arc::clone(&a))
-        }));
-        self.far.assets = Some(Arc::clone(&assets));
+        self.scene_resources.far.loc_jobs =
+            Some(FarJobs::new("far-locs", LOC_WORKERS, move || {
+                LocWorker::new(Arc::clone(&a))
+            }));
+        self.scene_resources.far.assets = Some(Arc::clone(&assets));
         Some(assets)
     }
 
@@ -755,17 +766,18 @@ impl ModernRenderer {
         if self.far_level().is_some() {
             let key = crate::terrain::SceneKey::of(snapshot);
             let ok = self
+                .scene_resources
                 .terrain
                 .scene
                 .as_ref()
                 .is_some_and(|s| s.key == key && s.cpu.usable);
-            if self.far.scene.as_ref().map(|(k, _)| k) != Some(&key) {
-                self.far.ext.clear();
+            if self.scene_resources.far.scene.as_ref().map(|(k, _)| k) != Some(&key) {
+                self.scene_resources.far.ext.clear();
             }
-            self.far.scene = Some((key, ok));
+            self.scene_resources.far.scene = Some((key, ok));
         }
         let sync = self.far_sync();
-        let far = &mut self.far;
+        let far = &mut self.scene_resources.far;
         far.draws.clear();
         far.ext_draws.clear();
         far.ext_opaque.clear();
@@ -776,7 +788,10 @@ impl ModernRenderer {
         far.batch_opaque = 0;
         far.new_materials = 0;
         far.stats = FarStats::default();
-        let Some(level) = far.level.filter(|_| far.active && self.terrain.active) else {
+        let Some(level) = far
+            .level
+            .filter(|_| far.active && self.scene_resources.terrain.active)
+        else {
             far.active = false;
             return;
         };
@@ -786,7 +801,7 @@ impl ModernRenderer {
         };
         far.stats.level = Some(level.index());
         let Some(assets) = self.ensure_far_assets(snapshot, sync) else {
-            self.far.active = false;
+            self.scene_resources.far.active = false;
             return;
         };
         let window = snapshot
@@ -804,18 +819,18 @@ impl ModernRenderer {
         let phase = std::time::Instant::now();
         self.far_stream(&assets, window, &view, sync);
         self.far_upload(device, queue, sync);
-        self.far.stats.phases_ms[0] = phase.elapsed().as_secs_f64() * 1000.0;
+        self.scene_resources.far.stats.phases_ms[0] = phase.elapsed().as_secs_f64() * 1000.0;
         let phase = std::time::Instant::now();
         // The layers of the materials the new squares named.
-        if self.far.layers.dirty || self.far.bind.is_none() {
+        if self.scene_resources.far.layers.dirty || self.scene_resources.far.bind.is_none() {
             self.upload_far_layers(device, queue);
         }
-        self.far.stats.phases_ms[1] = phase.elapsed().as_secs_f64() * 1000.0;
+        self.scene_resources.far.stats.phases_ms[1] = phase.elapsed().as_secs_f64() * 1000.0;
         // (Re-)place the squares' terrain at the scene's base.
         // (Within the frame's budget after the first: a square not placed
         // yet draws from a later frame.)
         let base = snapshot.floor_base;
-        let far = &mut self.far;
+        let far = &mut self.scene_resources.far;
         let mut placed = 0;
         for square in far.world.squares() {
             let Some(mesh) = square.value.terrain.as_ref() else {
@@ -867,7 +882,7 @@ impl ModernRenderer {
         // F3/F4: the far loc containers.
         let phase = std::time::Instant::now();
         self.prepare_far_containers(device, queue, snapshot, origin, &view);
-        self.far.stats.phases_ms[2] = phase.elapsed().as_secs_f64() * 1000.0;
+        self.scene_resources.far.stats.phases_ms[2] = phase.elapsed().as_secs_f64() * 1000.0;
         let phase = std::time::Instant::now();
         // F2: the near extension.
         let prep = PrepareFrame {
@@ -877,15 +892,27 @@ impl ModernRenderer {
             origin,
         };
         self.prepare_far_extension(&prep, list, level, sync);
-        self.far.stats.phases_ms[3] = phase.elapsed().as_secs_f64() * 1000.0;
-        self.far.frames += 1;
-        self.far.stats.build_ms = start.elapsed().as_secs_f64() * 1000.0;
-        self.far.stats.pending = self.far.terrain_jobs.as_ref().map_or(0, FarJobs::pending)
-            + self.far.loc_jobs.as_ref().map_or(0, FarJobs::pending);
-        self.far.stats.waiting = self.far.ready.len();
+        self.scene_resources.far.stats.phases_ms[3] = phase.elapsed().as_secs_f64() * 1000.0;
+        self.scene_resources.far.frames += 1;
+        self.scene_resources.far.stats.build_ms = start.elapsed().as_secs_f64() * 1000.0;
+        self.scene_resources.far.stats.pending = self
+            .scene_resources
+            .far
+            .terrain_jobs
+            .as_ref()
+            .map_or(0, FarJobs::pending)
+            + self
+                .scene_resources
+                .far
+                .loc_jobs
+                .as_ref()
+                .map_or(0, FarJobs::pending);
+        self.scene_resources.far.stats.waiting = self.scene_resources.far.ready.len();
         self.check_far(snapshot, list);
-        if self.far.frames == 1 || self.far.frames.is_multiple_of(600) {
-            let s = self.far.stats;
+        if self.scene_resources.far.frames == 1
+            || self.scene_resources.far.frames.is_multiple_of(600)
+        {
+            let s = self.scene_resources.far.stats;
             log::info!(
                 "[modern] far scene level {}: {} squares ({} drawn, {} triangles), {} loc containers ({} drawn, {} locs, {} draws), {:.1} MB GPU, {} layers; near extension {} tiles, {} locs ({} batched, {} draws); {} builds pending, {} uploads waiting",
                 level.index(),
@@ -897,7 +924,7 @@ impl ModernRenderer {
                 s.far_locs,
                 s.far_draws,
                 s.gpu_bytes as f64 / 1e6,
-                self.far.layers.materials.len(),
+                self.scene_resources.far.layers.materials.len(),
                 s.ext_tiles,
                 s.ext_locs,
                 s.ext_batched,
@@ -919,7 +946,7 @@ impl ModernRenderer {
         view: &FarView,
         sync: bool,
     ) {
-        let far = &mut self.far;
+        let far = &mut self.scene_resources.far;
         // A moved window: the squares near it rebuild against the new one
         // (their GPU copies go now: they may overlap it).
         if far.window != window {
@@ -1050,14 +1077,22 @@ impl ModernRenderer {
         sync: bool,
     ) {
         let mut spent = 0_u64;
-        while let Some(next) = self.far.ready.front() {
+        while let Some(next) = self.scene_resources.far.ready.front() {
             let bytes = next.bytes();
-            if !sync && spent > 0 && (spent + bytes > UPLOAD_BUDGET || self.far.over_budget()) {
+            if !sync
+                && spent > 0
+                && (spent + bytes > UPLOAD_BUDGET || self.scene_resources.far.over_budget())
+            {
                 break;
             }
-            let next = self.far.ready.pop_front().expect("a ready build");
+            let next = self
+                .scene_resources
+                .far
+                .ready
+                .pop_front()
+                .expect("a ready build");
             spent += bytes;
-            let far = &mut self.far;
+            let far = &mut self.scene_resources.far;
             match next {
                 Ready::Terrain(sq, ticket, t) => {
                     let Some(square) = far.world.current_mut(sq, ticket) else {
@@ -1163,8 +1198,8 @@ impl ModernRenderer {
                     );
                 }
             }
-            self.far.stats.uploaded += 1;
-            self.far.stats.upload_bytes += bytes;
+            self.scene_resources.far.stats.uploaded += 1;
+            self.scene_resources.far.stats.upload_bytes += bytes;
         }
     }
 
@@ -1188,15 +1223,15 @@ impl ModernRenderer {
                 (abs[2] - base[1] * 512) as f32,
             ) - o
         };
-        let z_row = self.far.view.row(2);
-        let mut records = std::mem::take(&mut self.far.record_scratch);
+        let z_row = self.scene_resources.far.view.row(2);
+        let mut records = std::mem::take(&mut self.scene_resources.far.record_scratch);
         records.clear();
-        let mut ranges = std::mem::take(&mut self.far.range_scratch);
+        let mut ranges = std::mem::take(&mut self.scene_resources.far.range_scratch);
         ranges.clear();
-        let mut lods = std::mem::take(&mut self.far.lod_scratch);
-        let mut run = std::mem::take(&mut self.far.run_scratch);
+        let mut lods = std::mem::take(&mut self.scene_resources.far.lod_scratch);
+        let mut run = std::mem::take(&mut self.scene_resources.far.run_scratch);
         let mut rebuild: Vec<SquareId> = Vec::new();
-        let far = &mut self.far;
+        let far = &mut self.scene_resources.far;
         for (&id, c) in &far.containers {
             far.stats.containers += 1;
             far.stats.gpu_bytes += c.gpu.bytes;
@@ -1273,11 +1308,11 @@ impl ModernRenderer {
                 far.stats.far_locs += drawn;
             }
         }
-        self.far.lod_scratch = lods;
-        self.far.run_scratch = run;
+        self.scene_resources.far.lod_scratch = lods;
+        self.scene_resources.far.run_scratch = run;
         let sync = self.far_sync();
         for sq in rebuild {
-            far_start_locs(&mut self.far, sq, view, sync);
+            far_start_locs(&mut self.scene_resources.far, sq, view, sync);
         }
         if sync {
             self.far_upload(device, queue, true);
@@ -1295,20 +1330,20 @@ impl ModernRenderer {
                 ))
             })
         });
-        self.far.range_scratch = ranges;
+        self.scene_resources.far.range_scratch = ranges;
         for r in records.drain(..) {
             let transparent = r.transparent;
             let draws = self.batch_draws(device, queue, snapshot, &r);
             if draws == 0 {
                 continue;
             }
-            self.far.stats.far_batches += 1;
-            self.far.stats.far_draws += draws;
+            self.scene_resources.far.stats.far_batches += 1;
+            self.scene_resources.far.stats.far_draws += draws;
             if !transparent {
-                self.far.batch_opaque = self.far.batch_draws.len();
+                self.scene_resources.far.batch_opaque = self.scene_resources.far.batch_draws.len();
             }
         }
-        self.far.record_scratch = records;
+        self.scene_resources.far.record_scratch = records;
     }
 
     /// Record `r`'s draw packets (see [`FarGpu::batch_draws`]); returns how
@@ -1325,7 +1360,7 @@ impl ModernRenderer {
         else {
             return 0;
         };
-        let matrix = self.instances[instance as usize].model;
+        let matrix = self.frame_resources.instances[instance as usize].model;
         let geometry = Geometry::Far {
             page: r.alloc.page,
             base_vertex: r.alloc.vertex as i32,
@@ -1333,13 +1368,13 @@ impl ModernRenderer {
         let first = r.alloc.first_index();
         let (at, len) = r.ranges;
         for k in at..at + len {
-            let run = self.far.range_scratch[k];
+            let run = self.scene_resources.far.range_scratch[k];
             let origin = glam::Vec3::from(r.at);
             let bounds = crate::models::bounds::Bounds {
                 min: (origin + glam::Vec3::from(run.bounds.min)).to_array(),
                 max: (origin + glam::Vec3::from(run.bounds.max)).to_array(),
             };
-            self.far.batch_draws.push((
+            self.scene_resources.far.batch_draws.push((
                 Draw {
                     geometry,
                     material: r.material,
@@ -1368,14 +1403,16 @@ impl ModernRenderer {
         at: [f32; 3],
         lights: [f32; 4],
     ) -> Option<u32> {
-        if self.textures.get(material).is_none() {
+        if self.device_resources.textures.get(material).is_none() {
             // A new material: its load (the texture reads and uploads) is
             // this thread's work, one or a few a frame; its residency the
             // loc workers checked already.
-            if self.far.new_materials > 0 && self.far.over_budget() {
+            if self.scene_resources.far.new_materials > 0 && self.scene_resources.far.over_budget()
+            {
                 return None;
             }
             let quiet = self
+                .scene_resources
                 .far
                 .assets
                 .as_ref()
@@ -1383,17 +1420,22 @@ impl ModernRenderer {
             if !quiet {
                 return None;
             }
-            self.far.new_materials += 1;
-            self.textures
-                .ensure(device, queue, snapshot.pack, snapshot.materials, material);
+            self.scene_resources.far.new_materials += 1;
+            self.device_resources.textures.ensure(
+                device,
+                queue,
+                snapshot.pack,
+                snapshot.materials,
+                material,
+            );
         }
         let matrix = [
             1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, at[0], at[1], at[2], 1.0,
         ];
         let mut record = self.instance(matrix, material, 1.0, 0);
         record.p2 = lights;
-        self.instances.push(record);
-        Some(self.instances.len() as u32 - 1)
+        self.frame_resources.instances.push(record);
+        Some(self.frame_resources.instances.len() as u32 - 1)
     }
 
     /// The far layers' texture array, material table and bind group (the
@@ -1404,17 +1446,19 @@ impl ModernRenderer {
         device: &wgpu::Device,
         queue: &dyn rs910_gpu_device::uploads::Uploader,
     ) {
-        let layers = &mut self.far.layers;
+        let layers = &mut self.scene_resources.far.layers;
         layers.dirty = false;
-        let (Some(pipes), Some(uniforms)) =
-            (self.terrain.pipes.as_ref(), self.terrain.uniforms.as_ref())
-        else {
+        let (Some(pipes), Some(uniforms)) = (
+            self.scene_resources.terrain.pipes.as_ref(),
+            self.scene_resources.terrain.uniforms.as_ref(),
+        ) else {
             return;
         };
         // The array grows by powers of two; new layers are written in
         // place (a new array writes them all).
         let count = layers.texels.len().max(1) as u32;
         let grow = self
+            .scene_resources
             .far
             .layer_array
             .as_ref()
@@ -1443,17 +1487,19 @@ impl ModernRenderer {
                 dimension: Some(wgpu::TextureViewDimension::D2Array),
                 ..Default::default()
             });
-            self.far.layer_array = Some((texture, view, capacity, layers.texels.len()));
-        } else if let Some((texture, _, _, written)) = self.far.layer_array.as_mut() {
+            self.scene_resources.far.layer_array =
+                Some((texture, view, capacity, layers.texels.len()));
+        } else if let Some((texture, _, _, written)) = self.scene_resources.far.layer_array.as_mut()
+        {
             for (layer, levels) in layers.texels.iter().enumerate().skip(*written) {
                 write_layer(queue, texture, layer as u32, levels);
             }
             *written = layers.texels.len();
         }
-        let Some((_, view, _, _)) = self.far.layer_array.as_ref() else {
+        let Some((_, view, _, _)) = self.scene_resources.far.layer_array.as_ref() else {
             return;
         };
-        let layers = &self.far.layers;
+        let layers = &self.scene_resources.far.layers;
         let mut table = layers.params.clone();
         if table.is_empty() {
             table.push([0.0; 4]);
@@ -1481,7 +1527,10 @@ impl ModernRenderer {
                 resource: materials_buffer.as_entire_binding(),
             },
         ];
-        if let (true, Some(b)) = (pipes.caustics, self.water.caustics.buffers.as_ref()) {
+        if let (true, Some(b)) = (
+            pipes.caustics,
+            self.frame_resources.water.caustics.buffers.as_ref(),
+        ) {
             entries.push(wgpu::BindGroupEntry {
                 binding: 12,
                 resource: b.uniforms.as_entire_binding(),
@@ -1491,11 +1540,12 @@ impl ModernRenderer {
                 resource: b.light.as_entire_binding(),
             });
         }
-        self.far.bind = Some(device.create_bind_group(&wgpu::BindGroupDescriptor {
-            label: Some("modern far terrain"),
-            layout: &pipes.layout,
-            entries: &entries,
-        }));
+        self.scene_resources.far.bind =
+            Some(device.create_bind_group(&wgpu::BindGroupDescriptor {
+                label: Some("modern far terrain"),
+                layout: &pipes.layout,
+                entries: &entries,
+            }));
     }
 
     /// F2: the window's tiles and static locs the plan left out (see the
@@ -1532,11 +1582,14 @@ impl ModernRenderer {
                 .is_some_and(|r| plane >= r.first_plane && stamp_at(plane, x, z) == Some(r.stamp))
         };
         // Tiles, per level the near terrain covers.
-        let Some(terrain) = self.terrain.scene.as_ref() else {
+        let Some(terrain) = self.scene_resources.terrain.scene.as_ref() else {
             return;
         };
-        if self.far.ext.len() < terrain.levels.len() {
-            self.far.ext.resize_with(terrain.levels.len(), || None);
+        if self.scene_resources.far.ext.len() < terrain.levels.len() {
+            self.scene_resources
+                .far
+                .ext
+                .resize_with(terrain.levels.len(), || None);
         }
         for floor in &list.floors {
             let (Some(Some(mesh)), Some(Some(_))) = (
@@ -1546,11 +1599,13 @@ impl ModernRenderer {
                 continue;
             };
             // (Compared in place: the selection is cloned only for a new key.)
-            let fresh = self.far.ext[floor.level].as_ref().is_none_or(|e| {
-                e.key.selection != *floor.selection
-                    || e.key.roof != roof_key
-                    || e.key.far != far_plane
-            });
+            let fresh = self.scene_resources.far.ext[floor.level]
+                .as_ref()
+                .is_none_or(|e| {
+                    e.key.selection != *floor.selection
+                        || e.key.roof != roof_key
+                        || e.key.far != far_plane
+                });
             if fresh {
                 let [tx, tz] = mesh.tiles;
                 let mut tiles = Vec::new();
@@ -1574,22 +1629,24 @@ impl ModernRenderer {
                 }
                 // The classic roof stamp is the cycle in roof mode 2, so the key
                 // moves every cycle: the same tiles keep their indices.
-                let kept = self.far.ext[floor.level].as_mut().filter(|e| {
-                    e.tiles == tiles
-                        && e.key.selection == *floor.selection
-                        && e.key.far == far_plane
-                });
+                let kept = self.scene_resources.far.ext[floor.level]
+                    .as_mut()
+                    .filter(|e| {
+                        e.tiles == tiles
+                            && e.key.selection == *floor.selection
+                            && e.key.far == far_plane
+                    });
                 if let Some(e) = kept {
                     e.key.roof = roof_key;
                 } else {
-                    self.far.ext[floor.level] =
+                    self.scene_resources.far.ext[floor.level] =
                         Some(extension(device, floor, mesh, roof_key, far_plane, tiles));
                 }
             }
-            if let Some(e) = self.far.ext[floor.level].as_ref() {
-                self.far.stats.ext_tiles += e.tiles.len();
+            if let Some(e) = self.scene_resources.far.ext[floor.level].as_ref() {
+                self.scene_resources.far.stats.ext_tiles += e.tiles.len();
                 if e.count > 0 {
-                    self.far.ext_draws.push(floor.level);
+                    self.scene_resources.far.ext_draws.push(floor.level);
                 }
             }
         }
@@ -1598,8 +1655,8 @@ impl ModernRenderer {
             crate::terrain::SceneKey::of(snapshot),
             live.static_entity_count,
         );
-        if self.far.ext_scene.key.as_ref() != Some(&scene_key) {
-            let generation = self.far.ext_scene.generation + 1;
+        if self.scene_resources.far.ext_scene.key.as_ref() != Some(&scene_key) {
+            let generation = self.scene_resources.far.ext_scene.generation + 1;
             let mut by_container: BTreeMap<(i32, i32), Vec<usize>> = BTreeMap::new();
             for (id, e) in live
                 .entities
@@ -1616,11 +1673,11 @@ impl ModernRenderer {
                 );
                 by_container.entry(container_of(x, z)).or_default().push(id);
             }
-            if let Some(jobs) = self.far.loc_jobs.as_mut() {
+            if let Some(jobs) = self.scene_resources.far.loc_jobs.as_mut() {
                 jobs.retain_queued(|k| !matches!(k, LocKey::Extension(..)));
             }
-            self.far.drop_extension();
-            self.far.ext_scene = ExtScene {
+            self.scene_resources.far.drop_extension();
+            self.scene_resources.far.ext_scene = ExtScene {
                 key: Some(scene_key),
                 by_container,
                 containers: HashMap::new(),
@@ -1638,9 +1695,9 @@ impl ModernRenderer {
                 x >= ox && z >= oz && x <= ox + 2 * d && z <= oz + 2 * d
             })
         };
-        let view = self.far.view;
+        let view = self.scene_resources.far.view;
         let plan = &live.draw.plan;
-        let mut planned = std::mem::take(&mut self.far.planned_scratch);
+        let mut planned = std::mem::take(&mut self.scene_resources.far.planned_scratch);
         planned.clear();
         planned.resize(live.entities.len(), false);
         for &id in plan.opaque.iter().chain(&plan.transparent) {
@@ -1648,14 +1705,14 @@ impl ModernRenderer {
                 *p = true;
             }
         }
-        let mut selected = std::mem::take(&mut self.far.ext_selected);
+        let mut selected = std::mem::take(&mut self.scene_resources.far.ext_selected);
         selected.clear();
         selected.resize(live.entities.len(), false);
         #[cfg(test)]
-        let per_loc = self.far.test_per_loc;
+        let per_loc = self.scene_resources.far.test_per_loc;
         #[cfg(not(test))]
         let per_loc = false;
-        let mut candidates = std::mem::take(&mut self.far.candidate_scratch);
+        let mut candidates = std::mem::take(&mut self.scene_resources.far.candidate_scratch);
         candidates.clear();
         let eye = glam::Vec3::from(origin);
         for (id, e) in live.entities.iter().enumerate() {
@@ -1695,17 +1752,22 @@ impl ModernRenderer {
             if in_square(e.x >> 9, e.z >> 9) && depth <= classic {
                 continue;
             }
-            match box_pixels(&self.far.view_proj, lo - eye, hi - eye, self.far.viewport) {
+            match box_pixels(
+                &self.scene_resources.far.view_proj,
+                lo - eye,
+                hi - eye,
+                self.scene_resources.far.viewport,
+            ) {
                 Some(px) if px >= MIN_PIXELS => {}
                 _ => continue,
             }
             if e.transparent {
-                self.far.ext_transparent.push(id);
+                self.scene_resources.far.ext_transparent.push(id);
                 continue;
             }
             // Opaque: from its container (below).
             if per_loc {
-                self.far.ext_opaque.push(id);
+                self.scene_resources.far.ext_opaque.push(id);
                 continue;
             }
             let container = container_of(
@@ -1717,10 +1779,16 @@ impl ModernRenderer {
         // Request the containers the candidates need that are not built
         // (or went stale: a loc changed), nearest first, within the gather
         // budget (all of them in sync mode, built and uploaded here).
-        let mut wanted = std::mem::take(&mut self.far.wanted_scratch);
+        let mut wanted = std::mem::take(&mut self.scene_resources.far.wanted_scratch);
         wanted.clear();
         for &(_, container) in &candidates {
-            let needed = match self.far.ext_scene.containers.get(&container) {
+            let needed = match self
+                .scene_resources
+                .far
+                .ext_scene
+                .containers
+                .get(&container)
+            {
                 None | Some(ExtContainer::Gathering { .. }) => true,
                 Some(ExtContainer::Ready { stale, .. }) => *stale,
                 Some(ExtContainer::Queued { .. }) => false,
@@ -1732,12 +1800,12 @@ impl ModernRenderer {
         let focus = [snapshot.camera.target[0], snapshot.camera.target[2]];
         wanted.sort_by_key(|&id| (distance_to_rect(focus, &container_rect(id)), id));
         for (k, &id) in wanted.iter().enumerate() {
-            if k > 0 && self.far.over_budget() {
+            if k > 0 && self.scene_resources.far.over_budget() {
                 break;
             }
             self.request_ext_container(snapshot, id, sync);
         }
-        self.far.wanted_scratch = wanted;
+        self.scene_resources.far.wanted_scratch = wanted;
         if sync {
             self.far_upload(device, queue, true);
         }
@@ -1746,16 +1814,22 @@ impl ModernRenderer {
         // changed since); while its container builds, per loc only if its
         // mesh is already cached (no new build on this thread).
         for &(id, container) in &candidates {
-            match self.far.ext_scene.containers.get_mut(&container) {
+            match self
+                .scene_resources
+                .far
+                .ext_scene
+                .containers
+                .get_mut(&container)
+            {
                 Some(ExtContainer::Ready { keys, stale, .. }) => {
                     let current = snapshot.entity_key(id);
                     match keys.get(&(id as u32)) {
                         Some(k) if Some(*k) == current => selected[id] = true,
                         Some(_) => {
                             *stale = true;
-                            self.far.ext_opaque.push(id);
+                            self.scene_resources.far.ext_opaque.push(id);
                         }
-                        None => self.far.ext_opaque.push(id),
+                        None => self.scene_resources.far.ext_opaque.push(id),
                     }
                 }
                 _ => {
@@ -1763,7 +1837,7 @@ impl ModernRenderer {
                         .entity_key(id)
                         .is_some_and(|k| self.static_model(&k).is_some())
                     {
-                        self.far.ext_opaque.push(id);
+                        self.scene_resources.far.ext_opaque.push(id);
                     }
                 }
             }
@@ -1771,18 +1845,25 @@ impl ModernRenderer {
         // Draw the containers' selected locs (LOD 0, as the near path).
         let base = snapshot.floor_base;
         let o = glam::Vec3::from(origin);
-        let mut run = std::mem::take(&mut self.far.run_scratch);
-        let mut records = std::mem::take(&mut self.far.record_scratch);
+        let mut run = std::mem::take(&mut self.scene_resources.far.run_scratch);
+        let mut records = std::mem::take(&mut self.scene_resources.far.record_scratch);
         records.clear();
-        let mut ranges = std::mem::take(&mut self.far.range_scratch);
+        let mut ranges = std::mem::take(&mut self.scene_resources.far.range_scratch);
         ranges.clear();
-        let mut ids = std::mem::take(&mut self.far.id_scratch);
+        let mut ids = std::mem::take(&mut self.scene_resources.far.id_scratch);
         ids.clear();
-        ids.extend(self.far.ext_scene.containers.keys().copied());
+        ids.extend(
+            self.scene_resources
+                .far
+                .ext_scene
+                .containers
+                .keys()
+                .copied(),
+        );
         ids.sort_unstable();
         for id in &ids {
             let Some(ExtContainer::Ready { gpu: Some(gpu), .. }) =
-                self.far.ext_scene.containers.get(id)
+                self.scene_resources.far.ext_scene.containers.get(id)
             else {
                 continue;
             };
@@ -1820,32 +1901,38 @@ impl ModernRenderer {
                 }
             }
         }
-        self.far.run_scratch = run;
-        self.far.id_scratch = ids;
-        self.far.range_scratch = ranges;
+        self.scene_resources.far.run_scratch = run;
+        self.scene_resources.far.id_scratch = ids;
+        self.scene_resources.far.range_scratch = ranges;
         // By page and material (fewer binds; opaque, so the order changes
         // only exact depth ties).
         records.sort_by_key(|r| (r.alloc.page, r.material, r.alloc.vertex));
         // The extension's opaque batches draw before the far transparent
         // ones.
-        let transparent_far = self.far.batch_draws.split_off(self.far.batch_opaque);
+        let transparent_far = self
+            .scene_resources
+            .far
+            .batch_draws
+            .split_off(self.scene_resources.far.batch_opaque);
         for r in records.drain(..) {
-            self.far.stats.ext_draws += self.batch_draws(device, queue, snapshot, &r);
+            self.scene_resources.far.stats.ext_draws +=
+                self.batch_draws(device, queue, snapshot, &r);
         }
-        self.far.record_scratch = records;
-        self.far.batch_opaque = self.far.batch_draws.len();
-        self.far.batch_draws.extend(transparent_far);
-        self.far.stats.ext_batched = selected.iter().filter(|&&s| s).count();
-        self.far.stats.ext_transparent = self.far.ext_transparent.len();
-        for c in self.far.ext_scene.containers.values() {
+        self.scene_resources.far.record_scratch = records;
+        self.scene_resources.far.batch_opaque = self.scene_resources.far.batch_draws.len();
+        self.scene_resources.far.batch_draws.extend(transparent_far);
+        self.scene_resources.far.stats.ext_batched = selected.iter().filter(|&&s| s).count();
+        self.scene_resources.far.stats.ext_transparent =
+            self.scene_resources.far.ext_transparent.len();
+        for c in self.scene_resources.far.ext_scene.containers.values() {
             if let ExtContainer::Ready { gpu: Some(g), .. } = c {
-                self.far.stats.ext_containers += 1;
-                self.far.stats.ext_bytes += g.bytes;
+                self.scene_resources.far.stats.ext_containers += 1;
+                self.scene_resources.far.stats.ext_bytes += g.bytes;
             }
         }
-        self.far.ext_selected = selected;
-        self.far.candidate_scratch = candidates;
-        self.far.planned_scratch = planned;
+        self.scene_resources.far.ext_selected = selected;
+        self.scene_resources.far.candidate_scratch = candidates;
+        self.scene_resources.far.planned_scratch = planned;
         // Far first among the transparent draws.
         let key = |id: &usize| {
             let p = glam::Vec3::new(
@@ -1855,11 +1942,13 @@ impl ModernRenderer {
             ) - eye;
             -(view * p.extend(1.0)).z
         };
-        self.far
+        self.scene_resources
+            .far
             .ext_transparent
             .sort_by(|a, b| key(a).total_cmp(&key(b)));
-        self.far.stats.ext_locs =
-            self.far.ext_opaque.len() + self.far.ext_transparent.len() + self.far.stats.ext_batched;
+        self.scene_resources.far.stats.ext_locs = self.scene_resources.far.ext_opaque.len()
+            + self.scene_resources.far.ext_transparent.len()
+            + self.scene_resources.far.stats.ext_batched;
     }
 
     /// Start extension container `id`'s build: slim copies of its locs'
@@ -1872,6 +1961,7 @@ impl ModernRenderer {
             return;
         };
         let ids = self
+            .scene_resources
             .far
             .ext_scene
             .by_container
@@ -1880,19 +1970,20 @@ impl ModernRenderer {
             .unwrap_or_default();
         // Resume a gathering, or start one (a stale container's old mesh
         // goes: its locs draw per loc meanwhile).
-        let (start, mut locs, mut keys) = match self.far.ext_scene.containers.remove(&id) {
-            Some(ExtContainer::Gathering { next, locs, keys }) => (next, locs, keys),
-            other => {
-                if let Some(ExtContainer::Ready { gpu: Some(old), .. }) = other {
-                    old.free(&mut self.far.arena);
+        let (start, mut locs, mut keys) =
+            match self.scene_resources.far.ext_scene.containers.remove(&id) {
+                Some(ExtContainer::Gathering { next, locs, keys }) => (next, locs, keys),
+                other => {
+                    if let Some(ExtContainer::Ready { gpu: Some(old), .. }) = other {
+                        old.free(&mut self.scene_resources.far.arena);
+                    }
+                    (0, Vec::with_capacity(ids.len()), HashMap::new())
                 }
-                (0, Vec::with_capacity(ids.len()), HashMap::new())
-            }
-        };
+            };
         let mut draws = Vec::new();
         for (k, &eid) in ids.iter().enumerate().skip(start) {
-            if k > start && self.far.over_budget() {
-                self.far.ext_scene.containers.insert(
+            if k > start && self.scene_resources.far.over_budget() {
+                self.scene_resources.far.ext_scene.containers.insert(
                     id,
                     ExtContainer::Gathering {
                         next: k,
@@ -1958,20 +2049,21 @@ impl ModernRenderer {
                 lights: crate::lighting::point_lights::model_slots(live.model_lights, eid),
             });
         }
-        let ext = &mut self.far.ext_scene;
+        let ext = &mut self.scene_resources.far.ext_scene;
         ext.generation += 1;
         let generation = ext.generation;
         ext.containers
             .insert(id, ExtContainer::Queued { generation, keys });
         let base = snapshot.floor_base;
-        let Some(jobs) = self.far.loc_jobs.as_mut() else {
+        let Some(jobs) = self.scene_resources.far.loc_jobs.as_mut() else {
             return;
         };
         if sync {
             if let LocResult::Extension(e) =
                 jobs.run_inline(|w| LocResult::Extension(w.extension(id, base, locs)))
             {
-                self.far
+                self.scene_resources
+                    .far
                     .ready
                     .push_back(Ready::Extension(id, generation, e));
             }
@@ -2000,25 +2092,31 @@ impl ModernRenderer {
         origin: [f32; 3],
         transparent: Option<&mut Vec<(std::ops::Range<usize>, [f32; 16])>>,
     ) {
-        if !self.far.active {
+        if !self.scene_resources.far.active {
             return;
         }
         let (Some(live), Some(scene)) = (snapshot.live_frame(), snapshot.scene) else {
             return;
         };
         let ids = if transparent.is_some() {
-            std::mem::take(&mut self.far.ext_transparent)
+            std::mem::take(&mut self.scene_resources.far.ext_transparent)
         } else {
-            std::mem::take(&mut self.far.ext_opaque)
+            std::mem::take(&mut self.scene_resources.far.ext_opaque)
         };
         let mut ranges = Vec::new();
         if transparent.is_some() {
             // The far transparent batches, far to near.
-            for &(d, matrix, bounds) in &self.far.batch_draws[self.far.batch_opaque..] {
-                ranges.push((self.draws.len()..self.draws.len() + 1, matrix));
-                let start = self.draws.len();
-                self.draws.push(d);
-                self.draw_bounds
+            for &(d, matrix, bounds) in
+                &self.scene_resources.far.batch_draws[self.scene_resources.far.batch_opaque..]
+            {
+                ranges.push((
+                    self.frame_resources.draws.len()..self.frame_resources.draws.len() + 1,
+                    matrix,
+                ));
+                let start = self.frame_resources.draws.len();
+                self.frame_resources.draws.push(d);
+                self.frame_resources
+                    .draw_bounds
                     .push((start as u32, start as u32 + 1, bounds));
             }
         }
@@ -2041,36 +2139,39 @@ impl ModernRenderer {
                     }
                     new += 1;
                 }
-                let start = self.draws.len();
+                let start = self.frame_resources.draws.len();
                 let bounds = self.prepare_entity(device, queue, snapshot, entity, origin);
                 self.note_bounds(start, bounds);
-                for d in &mut self.draws[start..] {
+                for d in &mut self.frame_resources.draws[start..] {
                     d.casts = false;
                 }
                 ranges.push((
-                    start..self.draws.len(),
+                    start..self.frame_resources.draws.len(),
                     local_matrix(&entity.matrix, origin),
                 ));
             }
         }
         if let Some(out) = transparent {
             out.extend(ranges);
-            self.far.ext_transparent = ids;
+            self.scene_resources.far.ext_transparent = ids;
         } else {
-            self.far.ext_opaque = ids;
+            self.scene_resources.far.ext_opaque = ids;
             // The containers' opaque batches.
-            let start = self.draws.len();
-            self.draws.extend(
-                self.far.batch_draws[..self.far.batch_opaque]
+            let start = self.frame_resources.draws.len();
+            self.frame_resources.draws.extend(
+                self.scene_resources.far.batch_draws[..self.scene_resources.far.batch_opaque]
                     .iter()
                     .map(|&(d, _, _)| d),
             );
-            for (offset, &(_, _, bounds)) in self.far.batch_draws[..self.far.batch_opaque]
+            for (offset, &(_, _, bounds)) in self.scene_resources.far.batch_draws
+                [..self.scene_resources.far.batch_opaque]
                 .iter()
                 .enumerate()
             {
                 let index = (start + offset) as u32;
-                self.draw_bounds.push((index, index + 1, bounds));
+                self.frame_resources
+                    .draw_bounds
+                    .push((index, index + 1, bounds));
             }
         }
     }
@@ -2084,12 +2185,14 @@ impl ModernRenderer {
         }
         let (ok, report) = self.far_disjoint(snapshot, list);
         if !ok {
-            self.far.mismatches += 1;
+            self.scene_resources.far.mismatches += 1;
             log::warn!(
                 "[modern] far check: {report} ({} mismatching frames)",
-                self.far.mismatches
+                self.scene_resources.far.mismatches
             );
-        } else if self.far.frames == 1 || self.far.frames.is_multiple_of(600) {
+        } else if self.scene_resources.far.frames == 1
+            || self.scene_resources.far.frames.is_multiple_of(600)
+        {
             log::info!("[modern] far check: {report}");
         }
     }
@@ -2107,6 +2210,7 @@ impl ModernRenderer {
         let plan = &live.draw.plan;
         let in_plan = |id: &usize| plan.opaque.contains(id) || plan.transparent.contains(id);
         let batched: Vec<usize> = self
+            .scene_resources
             .far
             .ext_selected
             .iter()
@@ -2115,17 +2219,18 @@ impl ModernRenderer {
             .map(|(id, _)| id)
             .collect();
         let locs = self
+            .scene_resources
             .far
             .ext_opaque
             .iter()
-            .chain(&self.far.ext_transparent)
+            .chain(&self.scene_resources.far.ext_transparent)
             .chain(&batched)
             .filter(|id| in_plan(id))
             .count();
         let mut tiles = 0;
         let mut ext_tiles = 0;
         for floor in &list.floors {
-            let Some(Some(e)) = self.far.ext.get(floor.level) else {
+            let Some(Some(e)) = self.scene_resources.far.ext.get(floor.level) else {
                 continue;
             };
             let g = floor.geometry;
@@ -2151,8 +2256,9 @@ impl ModernRenderer {
             });
         let mut inside = 0;
         let mut far_tiles = 0;
-        for (id, gpu) in &self.far.squares {
+        for (id, gpu) in &self.scene_resources.far.squares {
             let Some(mesh) = self
+                .scene_resources
                 .far
                 .world
                 .square(*id)
@@ -2172,6 +2278,7 @@ impl ModernRenderer {
             }
         }
         let other_window = self
+            .scene_resources
             .far
             .containers
             .values()
@@ -2182,70 +2289,17 @@ impl ModernRenderer {
             ok,
             format!(
                 "{} extension locs ({} batched; {locs} in the plan), {ext_tiles} extension tiles ({tiles} selected by the plan), {far_tiles} far tiles ({inside} inside the window), {} far loc containers ({other_window} placed against another window)",
-                self.far.ext_opaque.len() + self.far.ext_transparent.len() + batched.len(),
+                self.scene_resources.far.ext_opaque.len() + self.scene_resources.far.ext_transparent.len() + batched.len(),
                 batched.len(),
-                self.far.containers.len()
+                self.scene_resources.far.containers.len()
             ),
         )
-    }
-
-    /// Draw the far scene into `pass` (the forward and normal/depth passes;
-    /// the near extension's containers also the water reflection; see the
-    /// module docs). Called at the start of the terrain's draws; the caller
-    /// re-sets its pipeline and group 1 afterwards.
-    pub(crate) fn encode_far<'p>(&'p self, pass: &mut wgpu::RenderPass<'p>, kind: TerrainPass) {
-        let far = &self.far;
-        let t = &self.terrain;
-        let (true, Some(pipes)) = (far.active && t.active, t.pipes.as_ref()) else {
-            return;
-        };
-        let terrain_pipeline = match kind {
-            TerrainPass::Forward => Some(pipes.forward.current().expect("terrain lit pipeline")),
-            TerrainPass::Geometry => Some(&pipes.geometry),
-            TerrainPass::Shadow | TerrainPass::Reflection => None,
-        };
-        if let Some(pipeline) =
-            terrain_pipeline.filter(|_| !far.draws.is_empty() || !far.ext_draws.is_empty())
-        {
-            pass.set_pipeline(pipeline);
-            // F2: the window's tiles beyond the plan, from the near terrain.
-            if let Some(scene) = t.scene.as_ref() {
-                pass.set_bind_group(1, &scene.bind, &[]);
-                for &level in &far.ext_draws {
-                    let (Some(Some(gpu)), Some(Some(ext))) =
-                        (scene.levels.get(level), far.ext.get(level))
-                    else {
-                        continue;
-                    };
-                    let Some(indices) = ext.indices.as_ref() else {
-                        continue;
-                    };
-                    pass.set_vertex_buffer(0, gpu.vertices.slice(..));
-                    pass.set_index_buffer(indices.slice(..), wgpu::IndexFormat::Uint32);
-                    pass.draw_indexed(0..ext.count, 0, 0..1);
-                }
-            }
-            // F1: the far squares.
-            if let Some(bind) = far.bind.as_ref() {
-                pass.set_bind_group(1, bind, &[]);
-                for (id, level) in &far.draws {
-                    let Some(Some((vertices, indices, count))) =
-                        far.squares.get(id).and_then(|s| s.levels.get(*level))
-                    else {
-                        continue;
-                    };
-                    pass.set_vertex_buffer(0, vertices.slice(..));
-                    pass.set_index_buffer(indices.slice(..), wgpu::IndexFormat::Uint32);
-                    pass.draw_indexed(0..*count, 0, 0..1);
-                }
-            }
-        }
     }
 
     /// The far scene's counters of the last frame.
     #[must_use]
     pub fn far_stats(&self) -> FarStats {
-        self.far.stats
+        self.scene_resources.far.stats
     }
 }
 
@@ -2380,5 +2434,60 @@ pub(crate) fn upload_square(
         window,
         bounds: [lo, hi],
         bytes,
+    }
+}
+
+impl<'a> EncodeInputs<'a> {
+    /// Draw the far scene into `pass` (the forward and normal/depth passes;
+    /// the near extension's containers also the water reflection; see the
+    /// module docs). Called at the start of the terrain's draws; the caller
+    /// re-sets its pipeline and group 1 afterwards.
+    pub(crate) fn encode_far<'p>(&self, pass: &mut wgpu::RenderPass<'p>, kind: TerrainPass) {
+        let far = self.far;
+        let t = self.terrain;
+        let (true, Some(pipes)) = (far.active && t.active, t.pipes.as_ref()) else {
+            return;
+        };
+        let terrain_pipeline = match kind {
+            TerrainPass::Forward => Some(pipes.forward.current().expect("terrain lit pipeline")),
+            TerrainPass::Geometry => Some(&pipes.geometry),
+            TerrainPass::Shadow | TerrainPass::Reflection => None,
+        };
+        if let Some(pipeline) =
+            terrain_pipeline.filter(|_| !far.draws.is_empty() || !far.ext_draws.is_empty())
+        {
+            pass.set_pipeline(pipeline);
+            // F2: the window's tiles beyond the plan, from the near terrain.
+            if let Some(scene) = t.scene.as_ref() {
+                pass.set_bind_group(1, &scene.bind, &[]);
+                for &level in &far.ext_draws {
+                    let (Some(Some(gpu)), Some(Some(ext))) =
+                        (scene.levels.get(level), far.ext.get(level))
+                    else {
+                        continue;
+                    };
+                    let Some(indices) = ext.indices.as_ref() else {
+                        continue;
+                    };
+                    pass.set_vertex_buffer(0, gpu.vertices.slice(..));
+                    pass.set_index_buffer(indices.slice(..), wgpu::IndexFormat::Uint32);
+                    pass.draw_indexed(0..ext.count, 0, 0..1);
+                }
+            }
+            // F1: the far squares.
+            if let Some(bind) = far.bind.as_ref() {
+                pass.set_bind_group(1, bind, &[]);
+                for (id, level) in &far.draws {
+                    let Some(Some((vertices, indices, count))) =
+                        far.squares.get(id).and_then(|s| s.levels.get(*level))
+                    else {
+                        continue;
+                    };
+                    pass.set_vertex_buffer(0, vertices.slice(..));
+                    pass.set_index_buffer(indices.slice(..), wgpu::IndexFormat::Uint32);
+                    pass.draw_indexed(0..*count, 0, 0..1);
+                }
+            }
+        }
     }
 }

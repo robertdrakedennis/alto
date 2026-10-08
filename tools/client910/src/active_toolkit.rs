@@ -191,11 +191,11 @@ pub struct ActiveToolkit {
     /// when the first anti-aliasing level arrives, taken at its first use:
     /// `rs910_render_modern::frame::startup`).
     modern_startup: Option<rs910_render_modern::frame::startup::Startup>,
-    /// The window's scale factor and the player's saved render scale, which the
-    /// modern backend takes when it exists ([`ActiveToolkit::set_ui_scale`],
-    /// [`ActiveToolkit::set_modern_render_scale`]).
+    /// The window scale and the saved/effective local quality records.
+    /// Startup, recreation and live edits share this preference owner.
     display_scale_factor: f64,
-    saved_render_scale: Option<rs910_render_modern::settings::RenderScale>,
+    modern_preferences: rs910_config::renderer_preferences::RendererPreferences,
+    modern_settings: rs910_render_modern::settings::ModernSettings,
     /// The window the device draws to, kept to make the surface again after
     /// a device loss (none for a headless toolkit).
     window: Option<Arc<Window>>,
@@ -726,7 +726,8 @@ impl ActiveToolkit {
             scene_bloom: false,
             modern_samples: None,
             display_scale_factor: 1.0,
-            saved_render_scale: None,
+            modern_preferences: Default::default(),
+            modern_settings: rs910_render_modern::settings::ModernSettings::from_env(),
             modern_startup: None,
             window: None,
             generation: 0,
@@ -848,7 +849,7 @@ impl ActiveToolkit {
             &self.device.queue,
             self.device.config.format,
             samples,
-            rs910_render_modern::settings::ModernSettings::from_env(),
+            self.modern_settings,
         );
         log::info!(
             "[client910] modern renderer: {samples}x MSAA forward target (created in {:.1} ms)",
@@ -875,7 +876,8 @@ impl ActiveToolkit {
     /// The modern backend of `renderer`, told the window's scale factor and the
     /// saved render scale.
     fn modern_backend(&self, mut renderer: rs910_render_modern::frame::ModernRenderer) -> Backend {
-        renderer.set_display(self.display_scale_factor, self.saved_render_scale);
+        renderer.set_quality(self.modern_settings);
+        renderer.set_display(self.display_scale_factor, None);
         Backend::Modern(Box::new(renderer))
     }
 
@@ -888,20 +890,42 @@ impl ActiveToolkit {
         self.apply_modern_display();
     }
 
-    /// The player's saved render scale for the modern renderer (`None`:
-    /// automatic); see `crate::modern_display`.
-    pub fn set_modern_render_scale(
-        &mut self,
-        scale: Option<rs910_render_modern::settings::RenderScale>,
-    ) {
-        self.render_barrier();
-        self.saved_render_scale = scale;
-        self.apply_modern_display();
-    }
-
+    /// Keep automatic scene resolution in step with the display.
     fn apply_modern_display(&mut self) {
         if let Backend::Modern(modern) = &mut self.backend {
-            modern.set_display(self.display_scale_factor, self.saved_render_scale);
+            modern.set_display(self.display_scale_factor, None);
+        }
+    }
+
+    pub fn modern_preferences(&self) -> rs910_config::renderer_preferences::RendererPreferences {
+        self.modern_preferences
+    }
+
+    pub fn effective_modern_preferences(
+        &self,
+    ) -> rs910_config::renderer_preferences::RendererPreferences {
+        self.modern_settings.preferences()
+    }
+
+    pub fn modern_controls_available(&self) -> bool {
+        self.kind == RendererKind::Modern && !self.answers.toolkit0
+    }
+
+    /// Finish an in-flight frame only when its effective quality changes.
+    /// Recreation, metric probes and startup use this same resolved state.
+    pub fn set_modern_preferences(
+        &mut self,
+        preferences: rs910_config::renderer_preferences::RendererPreferences,
+    ) {
+        let settings = rs910_render_modern::settings::ModernSettings::resolve(preferences);
+        self.modern_preferences = preferences;
+        if settings == self.modern_settings {
+            return;
+        }
+        self.render_barrier();
+        self.modern_settings = settings;
+        if let Backend::Modern(modern) = &mut self.backend {
+            modern.set_quality(settings);
         }
     }
 
@@ -1007,7 +1031,7 @@ impl ActiveToolkit {
                 &self.device,
                 self.device.config.format,
                 self.modern_forward_samples(),
-                rs910_render_modern::settings::ModernSettings::from_env(),
+                self.modern_settings,
                 request,
             ),
             RendererKind::FaithfulGpu | RendererKind::Null => {
@@ -1321,7 +1345,7 @@ impl ActiveToolkit {
                 self.device.config.format,
                 want,
                 &more,
-                rs910_render_modern::settings::ModernSettings::from_env(),
+                self.modern_settings,
             ));
             log::info!(
                 "[client910] modern renderer: creating ({want}x MSAA) on its startup thread"

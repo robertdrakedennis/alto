@@ -41,8 +41,6 @@ pub(crate) enum SkyDraw {
 
 /// A sky material layer's texture.
 pub(crate) struct SkyTextureGpu {
-    /// The texture it was made from (its identity; prepare-only).
-    pub(crate) source: crate::exclusive::Exclusive<std::sync::Arc<crate::sky_frame::SkyTexture>>,
     /// Its first and last pixels.
     pub(crate) first: i32,
     pub(crate) last: i32,
@@ -60,9 +58,10 @@ impl ModernRenderer {
         texture: &std::sync::Arc<crate::sky_frame::SkyTexture>,
     ) {
         let fresh = self
-            .sky_textures
-            .get_mut(&key)
-            .is_none_or(|t| !std::sync::Arc::ptr_eq(t.source.get_mut(), texture));
+            .preparation
+            .sky_sources
+            .get(&key)
+            .is_none_or(|source| !std::sync::Arc::ptr_eq(source, texture));
         if fresh {
             let [tw, th] = texture.size.map(|v| v.max(1) as u32);
             let mut rgba = Vec::with_capacity((tw * th * 4) as usize);
@@ -97,7 +96,7 @@ impl ModernRenderer {
             );
             let bind_group = device.create_bind_group(&wgpu::BindGroupDescriptor {
                 label: Some("modern sky material"),
-                layout: &self.sky_texture_layout,
+                layout: &self.device_resources.sky_texture_layout,
                 entries: &[
                     wgpu::BindGroupEntry {
                         binding: 0,
@@ -107,14 +106,16 @@ impl ModernRenderer {
                     },
                     wgpu::BindGroupEntry {
                         binding: 1,
-                        resource: wgpu::BindingResource::Sampler(&self.sky_sampler),
+                        resource: wgpu::BindingResource::Sampler(
+                            &self.device_resources.sky_sampler,
+                        ),
                     },
                 ],
             });
-            self.sky_textures.insert(
+            self.preparation.sky_sources.insert(key, texture.clone());
+            self.scene_resources.sky_textures.insert(
                 key,
                 SkyTextureGpu {
-                    source: crate::exclusive::Exclusive::new(texture.clone()),
                     first: texture.first,
                     last: texture.last,
                     bind_group,
@@ -143,7 +144,7 @@ impl ModernRenderer {
         // At a render scale (`frame::scale`) the layers are placed in the
         // viewport's own pixels: `params.yz` viewport pixels per target
         // pixel (0: the same), and the sky models' camera keeps its size.
-        let (ratio, (w, h)) = self.scaled.map_or(([0.0; 2], (w, h)), |s| {
+        let (ratio, (w, h)) = self.frame_resources.scaled.map_or(([0.0; 2], (w, h)), |s| {
             (s.ratio(), (s.native_rect[2], s.native_rect[3]))
         });
         // The sky through the modern composite.
@@ -163,7 +164,7 @@ impl ModernRenderer {
             });
             layers.push(u);
         };
-        let mut sky_draws = std::mem::take(&mut self.sky);
+        let mut sky_draws = std::mem::take(&mut self.frame_resources.sky);
         for layer in sky.layers {
             match layer {
                 // The box's fills, clears and dome model are drawn by the sky cube's bake and
@@ -216,7 +217,7 @@ impl ModernRenderer {
                     let texture = SkyTextureKey::Decor(*key, *decor);
                     // The decor fades with the sky's cross-fade (its cube's share), not
                     // with the classic fade the layer list carries.
-                    let weight = self.sky_cubes.decor_weight(*key);
+                    let weight = self.scene_resources.sky_cubes.decor_weight(*key);
                     if weight <= 0.0 {
                         continue;
                     }
@@ -234,7 +235,7 @@ impl ModernRenderer {
                 }
             }
         }
-        self.sky = sky_draws;
+        self.frame_resources.sky = sky_draws;
         layers
     }
 }

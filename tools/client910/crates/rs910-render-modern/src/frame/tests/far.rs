@@ -291,7 +291,7 @@ fn streamed_far_scene_converges_to_the_synchronous_frame() {
     // One draw per material batch and LOD run, not per loc.
     assert!(s.far_locs > 0 && s.far_draws < s.far_locs, "{s:?}");
     let mut streamed = renderer(&device, &queue, 4, ModernSettings::DEFAULT);
-    streamed.far.sync = false;
+    streamed.scene_resources.far.sync = false;
     // (The far scene starts on the second frame: the first decides the
     // scene's terrain.)
     let (mut frames, mut streaming) = (0, 0);
@@ -307,11 +307,13 @@ fn streamed_far_scene_converges_to_the_synchronous_frame() {
         assert!(frames < 20_000, "the ring never finished: {s:?}");
     }
     let inline = streamed
+        .scene_resources
         .far
         .terrain_jobs
         .as_ref()
         .map_or(0, |j| j.inline_runs())
         + streamed
+            .scene_resources
             .far
             .loc_jobs
             .as_ref()
@@ -339,7 +341,7 @@ fn batched_near_extension_draws_the_per_loc_frame() {
     });
     let snapshot = offline.snapshot(&pack);
     let mut per_loc = renderer(&device, &queue, 4, ModernSettings::DEFAULT);
-    per_loc.far.test_per_loc = true;
+    per_loc.scene_resources.far.test_per_loc = true;
     let reference = settled(&device, &queue, &mut per_loc, &snapshot, size);
     let mut batched = renderer(&device, &queue, 4, ModernSettings::DEFAULT);
     let frame = settled(&device, &queue, &mut batched, &snapshot, size);
@@ -422,7 +424,7 @@ fn far_multi_draw_matches_direct_packets_with_staged_arguments() {
             ..ModernSettings::DEFAULT
         },
     );
-    r.test_models = models.clone();
+    r.preparation.test_models = models.clone();
     let rect = [0, 0, SIZE[0] as i32, SIZE[1] as i32];
     let clip = [0, 0, SIZE[0] as i32, SIZE[1] as i32];
     let _prepared = r
@@ -437,21 +439,24 @@ fn far_multi_draw_matches_direct_packets_with_staged_arguments() {
             &snapshot,
         )
         .expect("visible frame");
-    assert_eq!(r.draws.len(), PACKET_COUNT);
-    for (draw, (mesh, _)) in r.draws.iter_mut().zip(&models) {
-        let allocation = r.far.arena.store(device, &gpu, None, mesh);
+    assert_eq!(r.frame_resources.draws.len(), PACKET_COUNT);
+    for (draw, (mesh, _)) in r.frame_resources.draws.iter_mut().zip(&models) {
+        let allocation = r.scene_resources.far.arena.store(device, &gpu, None, mesh);
         draw.geometry = Geometry::Far {
             page: allocation.page,
             base_vertex: allocation.vertex as i32,
         };
         draw.first_index = allocation.first_index();
     }
-    r.far.arena.flush(&gpu);
+    r.scene_resources.far.arena.flush(&gpu);
     r.prepare_far_indirect(device, &gpu);
-    r.packets.build(&r.draws, PACKET_COUNT, true);
-    assert_eq!(r.far.stats.indirect_runs, 1);
-    assert_eq!(r.far.stats.indirect_packets, PACKET_COUNT);
+    r.frame_resources
+        .packets
+        .build(&r.frame_resources.draws, PACKET_COUNT, true);
+    assert_eq!(r.scene_resources.far.stats.indirect_runs, 1);
+    assert_eq!(r.scene_resources.far.stats.indirect_packets, PACKET_COUNT);
     assert!(r
+        .scene_resources
         .far
         .indirect_args
         .iter()
@@ -482,11 +487,13 @@ fn far_multi_draw_matches_direct_packets_with_staged_arguments() {
     // Warm the same prepared state, without advancing simulation or producer clocks.
     capture(&r);
     let indirect = capture(&r);
-    let packets = r.draws.clone();
-    for draw in &mut r.draws {
+    let packets = r.frame_resources.draws.clone();
+    for draw in &mut r.frame_resources.draws {
         draw.indirect = None;
     }
-    r.packets.build(&r.draws, PACKET_COUNT, true);
+    r.frame_resources
+        .packets
+        .build(&r.frame_resources.draws, PACKET_COUNT, true);
     let direct = capture(&r);
     assert_eq!(
         indirect, direct,
@@ -499,8 +506,10 @@ fn far_multi_draw_matches_direct_packets_with_staged_arguments() {
         direct.chunks_exact(4).any(|pixel| pixel != &direct[..4]),
         "varied visible geometry"
     );
-    r.draws = packets;
-    r.packets.build(&r.draws, PACKET_COUNT, true);
+    r.frame_resources.draws = packets;
+    r.frame_resources
+        .packets
+        .build(&r.frame_resources.draws, PACKET_COUNT, true);
     assert_eq!(
         capture(&r),
         direct,

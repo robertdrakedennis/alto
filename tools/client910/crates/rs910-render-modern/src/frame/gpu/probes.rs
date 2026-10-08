@@ -13,6 +13,7 @@
 //! environment cube's faces (128) → its mip chain → the prefilter into the
 //! bound cube. It runs when the scene or the settled environment changes
 //! (`lighting::probes` "When"), never per frame.
+use crate::frame::encoding::EncodeInputs;
 use std::collections::HashMap;
 use std::hash::{Hash, Hasher};
 
@@ -716,7 +717,7 @@ impl ModernRenderer {
     /// The probes' statistics (renderer plan M6).
     #[must_use]
     pub fn probe_stats(&self) -> ProbeStats {
-        self.probes.stats
+        self.history.probes.stats
     }
 
     /// This frame's probes (after the frame's draws, before the uploads):
@@ -729,18 +730,18 @@ impl ModernRenderer {
             origin,
             ..
         } = *prep;
-        self.probes.capture = None;
+        self.history.probes.capture = None;
         let debug = match crate::lighting::probes::mode() {
             crate::lighting::probes::Mode::Debug(n) => n,
             _ => 0,
         };
         let key = env_key(snapshot);
-        let scene = self.scene_token.unwrap_or((0, 0));
+        let scene = self.scene_resources.scene_token.unwrap_or((0, 0));
         let has_scene = snapshot.floors.first().and_then(Option::as_ref).is_some();
-        let settled = self.probes.last_env == Some(key);
-        self.probes.last_env = Some(key);
+        let settled = self.history.probes.last_env == Some(key);
+        self.history.probes.last_env = Some(key);
         let wanted = has_scene
-            && match self.probes.captured {
+            && match self.history.probes.captured {
                 None => true,
                 Some((s, _)) if s == (usize::MAX, 0) => false,
                 Some((s, e)) => s != scene || (e != key && settled),
@@ -764,10 +765,10 @@ impl ModernRenderer {
                 // With the captured ambient the zone probes are not captured:
                 // the global probe (every probe's fill) and the environment
                 // cube are what the water, reflections and env masks read.
-                if self.settings.look.captured_ambient() {
+                if self.preparation.settings.look.captured_ambient() {
                     order.clear();
                 }
-                self.probes.job = Some(Job {
+                self.history.probes.job = Some(Job {
                     grid,
                     order,
                     first: true,
@@ -775,11 +776,11 @@ impl ModernRenderer {
                     draw_calls: 0,
                     record_ms: 0.0,
                 });
-                self.probes.captured = Some((scene, key));
-                self.probes.stats.captures += 1;
+                self.history.probes.captured = Some((scene, key));
+                self.history.probes.stats.captures += 1;
             }
         }
-        if let Some(mut job) = self.probes.job.take() {
+        if let Some(mut job) = self.history.probes.job.take() {
             let started = std::time::Instant::now();
             let subset: Vec<usize> = if job.first {
                 Vec::new()
@@ -792,30 +793,31 @@ impl ModernRenderer {
             };
             self.record_capture(prep, frame, &job.grid, &subset, job.first);
             if job.first {
-                self.probes.grid = Some(job.grid.clone());
+                self.history.probes.grid = Some(job.grid.clone());
             }
             job.first = false;
             job.frames += 1;
-            job.draw_calls += self.probes.stats.probe_draw_calls + self.probes.stats.env_draw_calls;
+            job.draw_calls += self.history.probes.stats.probe_draw_calls
+                + self.history.probes.stats.env_draw_calls;
             job.record_ms += started.elapsed().as_secs_f32() * 1000.0;
             if job.order.is_empty() {
-                self.probes.stats.record_ms = job.record_ms;
+                self.history.probes.stats.record_ms = job.record_ms;
                 log::info!(
                     "[modern] probes: capture {} done in {} frames: {} draw calls, {:.1} ms recording; {:?}",
-                    self.probes.stats.captures,
+                    self.history.probes.stats.captures,
                     job.frames,
                     job.draw_calls,
                     job.record_ms,
-                    self.probes.stats
+                    self.history.probes.stats
                 );
             } else {
-                self.probes.job = Some(job);
+                self.history.probes.job = Some(job);
             }
         }
         let least_metal = 0.0;
-        let (ambient, ambient_dims) = self.ambient.shader_params();
-        let (grid, captured) = match &self.probes.grid {
-            Some(g) => (g.clone(), self.probes.captured.is_some()),
+        let (ambient, ambient_dims) = self.history.ambient.shader_params();
+        let (grid, captured) = match &self.history.probes.grid {
+            Some(g) => (g.clone(), self.history.probes.captured.is_some()),
             None => (ProbeGrid::default(), false),
         };
         let uniforms = ProbeUniforms {
@@ -842,7 +844,7 @@ impl ModernRenderer {
             ambient_dims,
         };
         queue.write_buffer(
-            &self.lights.probes.uniforms,
+            &self.scene_resources.lights.probes.uniforms,
             0,
             bytemuck::bytes_of(&uniforms),
         );
@@ -866,8 +868,9 @@ impl ModernRenderer {
             origin,
         } = *prep;
         let started = std::time::Instant::now();
-        if self.probes.pipes.is_none() {
-            self.probes.pipes = Some(CapturePipes::new(device, queue, self));
+        if self.history.probes.pipes.is_none() {
+            self.history.probes.pipes =
+                Some(CapturePipes::new(device, queue, &self.encoding_inputs()));
         }
         let count = grid.nx * grid.nz;
         // The global probe with the environment cube: over the camera
@@ -887,7 +890,13 @@ impl ModernRenderer {
         }
         let rows = eyes.len() as u32;
         let res = crate::lighting::probes::CAPTURE_RES;
-        if self.probes.atlas.as_ref().is_none_or(|a| a.rows < rows) {
+        if self
+            .history
+            .probes
+            .atlas
+            .as_ref()
+            .is_none_or(|a| a.rows < rows)
+        {
             let size = wgpu::Extent3d {
                 width: 6 * res,
                 height: rows * res,
@@ -905,7 +914,7 @@ impl ModernRenderer {
                     view_formats: &[],
                 })
             };
-            self.probes.atlas = Some(Atlas {
+            self.history.probes.atlas = Some(Atlas {
                 rows,
                 colour: texture(
                     "modern probe atlas",
@@ -1025,7 +1034,12 @@ impl ModernRenderer {
             contents: bytemuck::cast_slice(&slots),
             usage: wgpu::BufferUsages::UNIFORM,
         });
-        let pipes = self.probes.pipes.as_ref().expect("capture pipelines");
+        let pipes = self
+            .history
+            .probes
+            .pipes
+            .as_ref()
+            .expect("capture pipelines");
         let frame_layout = self.pipes().forward.get_bind_group_layout(0);
         let binds = (0..slots.len())
             .map(|i| {
@@ -1064,6 +1078,7 @@ impl ModernRenderer {
                     binding: 0,
                     resource: wgpu::BindingResource::TextureView(
                         &self
+                            .history
                             .probes
                             .atlas
                             .as_ref()
@@ -1074,7 +1089,7 @@ impl ModernRenderer {
                 },
                 wgpu::BindGroupEntry {
                     binding: 1,
-                    resource: self.lights.probes.sh.as_entire_binding(),
+                    resource: self.scene_resources.lights.probes.sh.as_entire_binding(),
                 },
                 wgpu::BindGroupEntry {
                     binding: 2,
@@ -1144,15 +1159,15 @@ impl ModernRenderer {
             &cube_view(&pipes.env_source, 0, None),
         );
 
-        self.probes.stats.nx = grid.nx;
-        self.probes.stats.nz = grid.nz;
-        self.probes.stats.locs = loc_count;
-        self.probes.stats.floor_batches = floor_batches;
-        self.probes.stats.probe_draw_calls = faces
+        self.history.probes.stats.nx = grid.nx;
+        self.history.probes.stats.nz = grid.nz;
+        self.history.probes.stats.locs = loc_count;
+        self.history.probes.stats.floor_batches = floor_batches;
+        self.history.probes.stats.probe_draw_calls = faces
             .iter()
             .map(|f| f.iter().map(Vec::len).sum::<usize>())
             .sum();
-        self.probes.stats.env_draw_calls = env_faces.iter().map(Vec::len).sum();
+        self.history.probes.stats.env_draw_calls = env_faces.iter().map(Vec::len).sum();
         if crate::modern_debug_flags::flags().check {
             // CLIENT910_MODERN_CHECK: every probe is captured (a face row per
             // probe plus the global one), every floor batch of every level
@@ -1163,7 +1178,7 @@ impl ModernRenderer {
                 .enumerate()
                 .filter_map(|(l, g)| {
                     let g = g.as_ref()?;
-                    let gpu = self.floors.get(l)?.as_ref()?;
+                    let gpu = self.scene_resources.floors.get(l)?.as_ref()?;
                     if g.vertex_count == 0 || !gpu.token.matches(g) {
                         return None;
                     }
@@ -1190,7 +1205,7 @@ impl ModernRenderer {
                 );
             }
         }
-        self.probes.capture = Some(Capture {
+        self.history.probes.capture = Some(Capture {
             scene: SceneCapture {
                 draws,
                 sky_layers,
@@ -1290,8 +1305,10 @@ impl ModernRenderer {
                                 colour[3] = 1.0;
                                 push(SkyLayerUniforms { colour, ..base }, None);
                             }
-                            let Some(texture) =
-                                self.sky_textures.get(&SkyTextureKey::Material(*key))
+                            let Some(texture) = self
+                                .scene_resources
+                                .sky_textures
+                                .get(&SkyTextureKey::Material(*key))
                             else {
                                 continue;
                             };
@@ -1340,7 +1357,7 @@ impl ModernRenderer {
         });
         let bind = device.create_bind_group(&wgpu::BindGroupDescriptor {
             label: Some("modern probe sky layers"),
-            layout: &self.sky_layer_layout,
+            layout: &self.device_resources.sky_layer_layout,
             entries: &[wgpu::BindGroupEntry {
                 binding: 0,
                 resource: wgpu::BindingResource::Buffer(wgpu::BufferBinding {
@@ -1352,11 +1369,692 @@ impl ModernRenderer {
         });
         (Some((buffer, bind)), draws)
     }
+}
 
+/// What a capture can draw: the scene's locs (visible or not) and every
+/// zone of every floor batch over all its tiles, with their bounding
+/// spheres (camera-local; the locs first, then the floor parts).
+pub(crate) struct CaptureCandidates<'a> {
+    pub(crate) locs: Vec<crate::models::draw_list::EntityDraw<'a>>,
+    pub(crate) spheres: Vec<(glam::Vec3, f32)>,
+    /// Floor parts: (level, batch, first index, index count).
+    pub(crate) parts: Vec<(usize, usize, u32, u32)>,
+}
+
+/// The capture draws recorded for the candidates some face sees: each
+/// candidate's range of draws.
+pub(crate) struct BuiltDraws {
+    pub(crate) draws: Vec<CaptureDraw>,
+    pub(crate) ranges: Vec<(u32, u32)>,
+    pub(crate) loc_count: usize,
+    pub(crate) floor_batches: usize,
+}
+
+/// The candidates within reach of `eye` (`far`, and at least `angle`
+/// wide), then per face those in its view pyramid.
+pub(crate) fn cull_faces(
+    spheres: &[(glam::Vec3, f32)],
+    eye: [f32; 3],
+    far: f32,
+    angle: f32,
+) -> [Vec<u32>; 6] {
+    let e = glam::Vec3::from(eye);
+    let near: Vec<u32> = spheres
+        .iter()
+        .enumerate()
+        .filter(|(_, (c, r))| {
+            let d = (*c - e).length();
+            d - r < far && *r >= angle * d
+        })
+        .map(|(i, _)| i as u32)
+        .collect();
+    std::array::from_fn(|face| {
+        near.iter()
+            .copied()
+            .filter(|&i| {
+                let (c, r) = spheres[i as usize];
+                in_face(face, c - e, r, far)
+            })
+            .collect()
+    })
+}
+
+impl Capture {
+    /// The bind group of the sky's frame slot of `face` (the last six).
+    pub(crate) fn sky_bind(&self, face: usize) -> &wgpu::BindGroup {
+        &self.binds[self.binds.len() - 6 + face]
+    }
+}
+
+/// Each face's winding against the frame's (a mirrored face draws with the
+/// clockwise pipelines).
+pub(crate) fn face_windings(frame: &FrameUniforms, near: f32) -> [usize; 6] {
+    let main = glam::Mat4::from_cols_array_2d(&frame.view_proj).determinant();
+    std::array::from_fn(|face| {
+        let d = crate::lighting::probes::face_view_proj(face, [0.0; 3], near, 1000.0).determinant();
+        usize::from((d > 0.0) != (main > 0.0))
+    })
+}
+
+/// The frame block of a capture face seen from camera-local `eye` (`sky`:
+/// the sky's rotation-only view): no SSAO, the sky at the capture's own
+/// exposure (the frame's exposure follows the modern composite; the capture
+/// keeps the display encode it projects).
+pub(crate) fn capture_frame(
+    frame: &FrameUniforms,
+    eye: [f32; 3],
+    face: usize,
+    (near, far): (f32, f32),
+    sky: bool,
+) -> FrameUniforms {
+    let mut f = *frame;
+    f.view_proj = crate::lighting::probes::face_view_proj(face, eye, near, far).to_cols_array_2d();
+    f.view = crate::lighting::probes::face_view(face, eye).to_cols_array_2d();
+    f.eye = [eye[0], eye[1], eye[2], frame.eye[3]];
+    f.params = [crate::post::tonemap::EXPOSURE, 0.0, 0.0, 0.0];
+    if sky {
+        f.view = glam::Mat4::IDENTITY.to_cols_array_2d();
+        f.eye = [0.0, 0.0, 0.0, 0.0];
+    }
+    f
+}
+
+impl ModernRenderer {
+    /// The sky models of a capture (the sky box's dome, drawn from the face's eye under the
+    /// face's own rotation): recorded here, for a capture, and not in every frame: nothing else
+    /// of the frame reads them (the sky cube's bake draws its own).
+    pub(crate) fn capture_sky_models(
+        &mut self,
+        device: &wgpu::Device,
+        queue: &dyn rs910_gpu_device::uploads::Uploader,
+        snapshot: &SceneSnapshot<'_>,
+    ) -> Vec<Draw> {
+        use crate::skybox::SkyLayer;
+        let mut sky_models = Vec::new();
+        let (Some(sky), Some(materials)) = (snapshot.sky, snapshot.materials) else {
+            return sky_models;
+        };
+        for layer in sky.layers {
+            let SkyLayer::Model { key, .. } = layer else {
+                continue;
+            };
+            let Some(model) = sky.model(*key) else {
+                continue;
+            };
+            let Some(streams) =
+                crate::models::mesh::model_streams(model, materials, Colour::Classic)
+            else {
+                continue;
+            };
+            let (base_vertex, first) = self.frame_resources.arena.push(&streams);
+            for &(material, start, count) in &streams.batches {
+                self.device_resources.textures.ensure(
+                    device,
+                    queue,
+                    snapshot.pack,
+                    Some(materials),
+                    material,
+                );
+                let instance = self.frame_resources.instances.len() as u32;
+                self.frame_resources.instances.push(self.instance(
+                    [
+                        1., 0., 0., 0., 0., 1., 0., 0., 0., 0., 1., 0., 0., 0., 0., 1.,
+                    ],
+                    material,
+                    1.0,
+                    FLAG_SKY | FLAG_UNLIT,
+                ));
+                sky_models.push(Draw {
+                    geometry: Geometry::Arena { base_vertex },
+                    material,
+                    first_index: start + first,
+                    count,
+                    instance,
+                    pass: Pass::NoDepthWrite,
+                    casts: false,
+                    indirect: None,
+                });
+            }
+        }
+        sky_models
+    }
+
+    /// The capture candidates of this frame's scene (the loc radii cached
+    /// per scene).
+    pub(crate) fn capture_candidates<'a>(
+        &mut self,
+        prep: &PrepareFrame<'_, 'a>,
+    ) -> CaptureCandidates<'a> {
+        let PrepareFrame {
+            device,
+            snapshot,
+            origin,
+            ..
+        } = *prep;
+        // The candidates: every loc of the scene (visible or not) and every
+        // zone of every floor batch over all its tiles, with their bounding
+        // spheres (camera-local).
+        if self.history.probes.radii_scene != self.scene_resources.scene_token {
+            self.history.probes.radii.clear();
+            self.history.probes.radii_scene = self.scene_resources.scene_token;
+        }
+        let locs = crate::models::draw_list::DrawList::scene_locs(snapshot);
+        let mut spheres: Vec<(glam::Vec3, f32)> = Vec::with_capacity(locs.len());
+        for entity in &locs {
+            let radius = match entity.key {
+                Some(key) => {
+                    let slot = self
+                        .history
+                        .probes
+                        .radii
+                        .entry(crate::frame::resources::loc_slot(&key))
+                        .or_insert_with(|| (key, loc_radius(entity.model, &entity.matrix)));
+                    if slot.0 != key {
+                        *slot = (key, loc_radius(entity.model, &entity.matrix));
+                    }
+                    slot.1
+                }
+                None => loc_radius(entity.model, &entity.matrix),
+            };
+            let m = &entity.matrix;
+            spheres.push((
+                glam::Vec3::new(m[12] - origin[0], m[13] - origin[1], m[14] - origin[2]),
+                radius,
+            ));
+        }
+        // Floor parts: (level, batch, first index, index count).
+        let mut parts: Vec<(usize, usize, u32, u32)> = Vec::new();
+        for (level, g) in snapshot.floors.iter().enumerate() {
+            let Some(g) = g.as_ref() else {
+                continue;
+            };
+            let Some(Some(gpu)) = self.scene_resources.floors.get(level) else {
+                continue;
+            };
+            // Only a level this scene uploaded (a level left over from the
+            // previous scene holds other batches).
+            if g.vertex_count == 0 || !gpu.token.matches(g) {
+                continue;
+            }
+            if self.history.probes.floors.len() <= level {
+                self.history.probes.floors.resize_with(level + 1, || None);
+            }
+            if self.history.probes.floors[level]
+                .as_ref()
+                .is_none_or(|f| !f.token.matches(g))
+            {
+                let stride = g.stride_floats;
+                let zone = (crate::lighting::probes::ZONE / 512.0) as usize;
+                let chunks: Vec<Vec<usize>> = (0..g.tiles_z.div_ceil(zone))
+                    .flat_map(|cz| (0..g.tiles_x.div_ceil(zone)).map(move |cx| (cx, cz)))
+                    .map(|(cx, cz)| {
+                        let mut tiles = Vec::new();
+                        for z in cz * zone..((cz + 1) * zone).min(g.tiles_z) {
+                            for x in cx * zone..((cx + 1) * zone).min(g.tiles_x) {
+                                tiles.push(z * g.tiles_x + x);
+                            }
+                        }
+                        tiles
+                    })
+                    .collect();
+                let batches = gpu
+                    .batches
+                    .iter()
+                    .map(|b| {
+                        let mut indices: Vec<u16> = Vec::new();
+                        let mut ranges = Vec::new();
+                        for tiles in &chunks {
+                            let (part, _, _) = g.batches[b.source].build_indices(g, tiles);
+                            if part.is_empty() {
+                                continue;
+                            }
+                            let (mut lo, mut hi) =
+                                (glam::Vec3::splat(f32::MAX), glam::Vec3::splat(f32::MIN));
+                            for &i in &part {
+                                let f = &g.stream0
+                                    [usize::from(i) * stride..usize::from(i) * stride + 3];
+                                let p = glam::Vec3::new(f[0], f[1], f[2]);
+                                lo = lo.min(p);
+                                hi = hi.max(p);
+                            }
+                            let centre = (lo + hi) * 0.5;
+                            ranges.push((
+                                indices.len() as u32,
+                                part.len() as u32,
+                                [centre.x, centre.y, centre.z, (hi - lo).length() * 0.5],
+                            ));
+                            indices.extend_from_slice(&part);
+                        }
+                        if indices.is_empty() {
+                            return None;
+                        }
+                        if !indices.len().is_multiple_of(2) {
+                            indices.push(0);
+                        }
+                        Some((
+                            device.create_buffer_init(&wgpu::util::BufferInitDescriptor {
+                                label: Some("modern probe floor indices"),
+                                contents: bytemuck::cast_slice(&indices),
+                                usage: wgpu::BufferUsages::INDEX,
+                            }),
+                            ranges,
+                        ))
+                    })
+                    .collect();
+                self.history.probes.floors[level] = Some(FullFloor {
+                    token: crate::frame::resources::FloorToken::of(g),
+                    batches,
+                });
+            }
+            let full = self.history.probes.floors[level]
+                .as_ref()
+                .expect("full floor");
+            for (batch, entry) in full.batches.iter().enumerate() {
+                for &(first, count, s) in entry.iter().flat_map(|(_, r)| r) {
+                    parts.push((level, batch, first, count));
+                    spheres.push((
+                        glam::Vec3::new(s[0] - origin[0], s[1] - origin[1], s[2] - origin[2]),
+                        s[3],
+                    ));
+                }
+            }
+        }
+
+        CaptureCandidates {
+            locs,
+            spheres,
+            parts,
+        }
+    }
+
+    /// The draws of the candidates `used` marks (a loc's model uploaded
+    /// only then).
+    pub(crate) fn capture_draws(
+        &mut self,
+        prep: &PrepareFrame<'_, '_>,
+        locs: &[crate::models::draw_list::EntityDraw<'_>],
+        parts: &[(usize, usize, u32, u32)],
+        used: &[bool],
+    ) -> BuiltDraws {
+        let PrepareFrame {
+            device,
+            queue,
+            snapshot,
+            origin,
+        } = *prep;
+        // The seen locs' meshes not cached yet, built on the threads
+        // (`frame::prebuild`).
+        self.prebuild_locs(
+            snapshot,
+            locs.iter()
+                .enumerate()
+                .filter(|&(i, _)| used[i])
+                .map(|(_, e)| e),
+        );
+        let mut draws = Vec::new();
+        let mut ranges = vec![(0_u32, 0_u32); locs.len() + parts.len()];
+        let mut loc_count = 0;
+        for (i, entity) in locs.iter().enumerate() {
+            if !used[i] {
+                continue;
+            }
+            let start = self.frame_resources.draws.len();
+            self.prepare_entity(device, queue, snapshot, entity, origin);
+            let recorded: Vec<Draw> = self.frame_resources.draws.drain(start..).collect();
+            if !recorded.is_empty() {
+                loc_count += 1;
+            }
+            let first = draws.len() as u32;
+            draws.extend(recorded.into_iter().map(CaptureDraw::Loc));
+            ranges[i] = (first, draws.len() as u32);
+        }
+        let floor_matrix = local_matrix(
+            &[
+                1., 0., 0., 0., 0., 1., 0., 0., 0., 0., 1., 0., 0., 0., 0., 1.,
+            ],
+            origin,
+        );
+        let mut floor_instances: HashMap<(usize, usize), u32> = HashMap::new();
+        for (k, &(level, batch, first, count)) in parts.iter().enumerate() {
+            let i = locs.len() + k;
+            if !used[i] {
+                continue;
+            }
+            let instance = match floor_instances.get(&(level, batch)) {
+                Some(&instance) => instance,
+                None => {
+                    let Some(b) = self
+                        .scene_resources
+                        .floors
+                        .get(level)
+                        .and_then(Option::as_ref)
+                        .and_then(|f| f.batches.get(batch))
+                    else {
+                        continue;
+                    };
+                    let (material, uv_scale) = (b.material, b.uv_scale);
+                    let instance = self.frame_resources.instances.len() as u32;
+                    let mut record = self.instance(floor_matrix, material, uv_scale, FLAG_FLOOR);
+                    record.p2 = [level as f32, 0.0, 0.0, 0.0];
+                    self.frame_resources.instances.push(record);
+                    floor_instances.insert((level, batch), instance);
+                    instance
+                }
+            };
+            let at = draws.len() as u32;
+            draws.push(CaptureDraw::Floor {
+                level,
+                batch,
+                instance,
+                first,
+                count,
+            });
+            ranges[i] = (at, at + 1);
+        }
+        let floor_batches = floor_instances.len();
+        BuiltDraws {
+            draws,
+            ranges,
+            loc_count,
+            floor_batches,
+        }
+    }
+}
+
+impl CapturePipes {
+    pub(crate) fn new(
+        device: &wgpu::Device,
+        queue: &dyn rs910_gpu_device::uploads::Uploader,
+        r: &EncodeInputs<'_>,
+    ) -> Self {
+        // The forward module (compiled once, `crate::frame::pipelines::PipelineInputs`).
+        let module = &r.pipeline_inputs.forward_module;
+        let layout = device.create_pipeline_layout(&wgpu::PipelineLayoutDescriptor {
+            label: Some("modern probe capture"),
+            bind_group_layouts: &[
+                Some(&r.pipes().forward.get_bind_group_layout(0)),
+                Some(&r.pipes().forward.get_bind_group_layout(1)),
+                Some(&r.pipes().forward.get_bind_group_layout(2)),
+                Some(&r.pipes().forward.get_bind_group_layout(3)),
+                Some(&r.pipes().forward.get_bind_group_layout(4)),
+            ],
+            immediate_size: 0,
+        });
+        let layouts = vertex_layouts();
+        // The capture shades with the ambient (the probes it fills are
+        // not read while they are captured).
+        let fs = "fs_forward_ambient";
+        let pipeline = |label: &str, cw: bool, depth: Option<bool>| {
+            device.create_render_pipeline(&wgpu::RenderPipelineDescriptor {
+                label: Some(label),
+                layout: Some(&layout),
+                vertex: wgpu::VertexState {
+                    module,
+                    entry_point: Some("vs_forward"),
+                    buffers: &layouts,
+                    compilation_options: Default::default(),
+                },
+                fragment: Some(wgpu::FragmentState {
+                    module,
+                    entry_point: Some(fs),
+                    targets: &[Some(wgpu::ColorTargetState {
+                        format: CAPTURE_FORMAT,
+                        blend: Some(ALPHA_BLEND),
+                        write_mask: wgpu::ColorWrites::ALL,
+                    })],
+                    compilation_options: Default::default(),
+                }),
+                primitive: wgpu::PrimitiveState {
+                    topology: wgpu::PrimitiveTopology::TriangleList,
+                    front_face: if cw {
+                        wgpu::FrontFace::Cw
+                    } else {
+                        wgpu::FrontFace::Ccw
+                    },
+                    cull_mode: Some(wgpu::Face::Back),
+                    ..Default::default()
+                },
+                depth_stencil: Some(wgpu::DepthStencilState {
+                    format: DEPTH_FORMAT,
+                    depth_write_enabled: Some(depth.unwrap_or(false)),
+                    depth_compare: Some(if depth.is_some() {
+                        wgpu::CompareFunction::LessEqual
+                    } else {
+                        wgpu::CompareFunction::Always
+                    }),
+                    stencil: Default::default(),
+                    bias: Default::default(),
+                }),
+                multisample: wgpu::MultisampleState::default(),
+                multiview_mask: None,
+                cache: None,
+            })
+        };
+        let sky_module = r.shaders.get(device, crate::shaders::Module::SkyLayers);
+        let sky_layout = device.create_pipeline_layout(&wgpu::PipelineLayoutDescriptor {
+            label: Some("modern probe sky"),
+            bind_group_layouts: &[Some(r.sky_layer_layout), Some(r.sky_texture_layout)],
+            immediate_size: 0,
+        });
+        let sky_layer = || {
+            device.create_render_pipeline(&wgpu::RenderPipelineDescriptor {
+                label: Some("modern probe sky layer"),
+                layout: Some(&sky_layout),
+                vertex: wgpu::VertexState {
+                    module: &sky_module,
+                    entry_point: Some("vs_main"),
+                    buffers: &[],
+                    compilation_options: Default::default(),
+                },
+                fragment: Some(wgpu::FragmentState {
+                    module: &sky_module,
+                    entry_point: Some("fs_main"),
+                    targets: &[Some(wgpu::ColorTargetState {
+                        format: CAPTURE_FORMAT,
+                        blend: Some(ALPHA_BLEND),
+                        write_mask: wgpu::ColorWrites::ALL,
+                    })],
+                    compilation_options: Default::default(),
+                }),
+                primitive: wgpu::PrimitiveState::default(),
+                depth_stencil: Some(wgpu::DepthStencilState {
+                    format: DEPTH_FORMAT,
+                    depth_write_enabled: Some(false),
+                    depth_compare: Some(wgpu::CompareFunction::Always),
+                    stencil: Default::default(),
+                    bias: Default::default(),
+                }),
+                multisample: wgpu::MultisampleState::default(),
+                multiview_mask: None,
+                cache: None,
+            })
+        };
+        let project_module = r
+            .shaders
+            .get(device, crate::shaders::Module::ProbeProjection);
+        let project_layout = device.create_bind_group_layout(&wgpu::BindGroupLayoutDescriptor {
+            label: Some("modern probe projection"),
+            entries: &[
+                wgpu::BindGroupLayoutEntry {
+                    binding: 0,
+                    visibility: wgpu::ShaderStages::COMPUTE,
+                    ty: wgpu::BindingType::Texture {
+                        sample_type: wgpu::TextureSampleType::Float { filterable: false },
+                        view_dimension: wgpu::TextureViewDimension::D2,
+                        multisampled: false,
+                    },
+                    count: None,
+                },
+                wgpu::BindGroupLayoutEntry {
+                    binding: 1,
+                    visibility: wgpu::ShaderStages::COMPUTE,
+                    ty: wgpu::BindingType::Buffer {
+                        ty: wgpu::BufferBindingType::Storage { read_only: false },
+                        has_dynamic_offset: false,
+                        min_binding_size: None,
+                    },
+                    count: None,
+                },
+                wgpu::BindGroupLayoutEntry {
+                    binding: 2,
+                    visibility: wgpu::ShaderStages::COMPUTE,
+                    ty: wgpu::BindingType::Buffer {
+                        ty: wgpu::BufferBindingType::Uniform,
+                        has_dynamic_offset: false,
+                        min_binding_size: None,
+                    },
+                    count: None,
+                },
+                wgpu::BindGroupLayoutEntry {
+                    binding: 3,
+                    visibility: wgpu::ShaderStages::COMPUTE,
+                    ty: wgpu::BindingType::Buffer {
+                        ty: wgpu::BufferBindingType::Storage { read_only: true },
+                        has_dynamic_offset: false,
+                        min_binding_size: None,
+                    },
+                    count: None,
+                },
+            ],
+        });
+        let project = || {
+            device.create_compute_pipeline(&wgpu::ComputePipelineDescriptor {
+                label: Some("modern probe projection"),
+                layout: Some(
+                    &device.create_pipeline_layout(&wgpu::PipelineLayoutDescriptor {
+                        label: Some("modern probe projection"),
+                        bind_group_layouts: &[Some(&project_layout)],
+                        immediate_size: 0,
+                    }),
+                ),
+                module: &project_module,
+                entry_point: Some("cs_project"),
+                compilation_options: Default::default(),
+                cache: None,
+            })
+        };
+        // The capture, sky, projection and filter pipelines are created at
+        // once (`frame::compile`).
+        let pipeline = &pipeline;
+        let model_jobs: Vec<crate::frame::compile::Job<'_, wgpu::RenderPipeline>> = vec![
+            Box::new(move || pipeline("modern probe capture", false, Some(false))),
+            Box::new(move || pipeline("modern probe capture", false, Some(true))),
+            Box::new(move || pipeline("modern probe capture", true, Some(false))),
+            Box::new(move || pipeline("modern probe capture", true, Some(true))),
+            Box::new(move || pipeline("modern probe sky model", false, None)),
+            Box::new(move || pipeline("modern probe sky model", true, None)),
+        ];
+        let (models, (sky_layer, (project, filters))) = crate::frame::compile::join(
+            || crate::frame::compile::all(model_jobs),
+            || {
+                crate::frame::compile::join(sky_layer, || {
+                    crate::frame::compile::join(project, || FilterGpu::new(device, r.shaders))
+                })
+            },
+        );
+        let mut models = models.into_iter();
+        let mut next = || models.next().expect("every pipeline is built");
+        let forward = [[next(), next()], [next(), next()]];
+        let sky_model = [next(), next()];
+        let no_shadow_buffer = device.create_buffer_init(&wgpu::util::BufferInitDescriptor {
+            label: Some("modern probe no shadow"),
+            contents: bytemuck::bytes_of(&ShadowUniforms::default()),
+            usage: wgpu::BufferUsages::UNIFORM,
+        });
+        let no_shadow = device.create_bind_group(&wgpu::BindGroupDescriptor {
+            label: Some("modern probe no shadow"),
+            layout: &r.pipes().forward.get_bind_group_layout(2),
+            entries: &[
+                wgpu::BindGroupEntry {
+                    binding: 0,
+                    resource: no_shadow_buffer.as_entire_binding(),
+                },
+                wgpu::BindGroupEntry {
+                    binding: 1,
+                    resource: wgpu::BindingResource::TextureView(&r.shadow.atlas.1),
+                },
+                wgpu::BindGroupEntry {
+                    binding: 2,
+                    resource: wgpu::BindingResource::Sampler(&r.shadow.sampler),
+                },
+            ],
+        });
+        let depth = |label, w, h| {
+            device
+                .create_texture(&wgpu::TextureDescriptor {
+                    label: Some(label),
+                    size: wgpu::Extent3d {
+                        width: w,
+                        height: h,
+                        depth_or_array_layers: 1,
+                    },
+                    mip_level_count: 1,
+                    sample_count: 1,
+                    dimension: wgpu::TextureDimension::D2,
+                    format: DEPTH_FORMAT,
+                    usage: wgpu::TextureUsages::RENDER_ATTACHMENT,
+                    view_formats: &[],
+                })
+                .create_view(&Default::default())
+        };
+        let res = crate::lighting::probes::CAPTURE_RES;
+        let sky_atlas = device.create_texture(&wgpu::TextureDescriptor {
+            label: Some("modern probe sky"),
+            size: wgpu::Extent3d {
+                width: 6 * res,
+                height: res,
+                depth_or_array_layers: 1,
+            },
+            mip_level_count: 1,
+            sample_count: 1,
+            dimension: wgpu::TextureDimension::D2,
+            format: CAPTURE_FORMAT,
+            usage: wgpu::TextureUsages::RENDER_ATTACHMENT | wgpu::TextureUsages::COPY_SRC,
+            view_formats: &[],
+        });
+        Self {
+            forward,
+            sky_model,
+            sky_layer,
+            project,
+            project_layout,
+            filters,
+            no_shadow,
+            ao_white: crate::frame::gpu::post::white_view(device, queue),
+            env_source: cube_texture(
+                device,
+                "modern environment capture",
+                crate::lighting::probes::ENV_RES,
+                crate::lighting::probes::ENV_MIPS,
+                wgpu::TextureUsages::RENDER_ATTACHMENT
+                    | wgpu::TextureUsages::TEXTURE_BINDING
+                    | wgpu::TextureUsages::COPY_SRC,
+            ),
+            env_depth: depth(
+                "modern environment capture depth",
+                crate::lighting::probes::ENV_RES,
+                crate::lighting::probes::ENV_RES,
+            ),
+            sky_atlas,
+            sky_depth: depth("modern probe sky depth", 6 * res, res),
+        }
+    }
+}
+
+#[cfg(test)]
+impl ModernRenderer {
+    /// Tests: whether a capture is in progress (the probes', or the
+    /// per-square ambient's when it is on).
+    pub(crate) fn probe_capture_pending(&self) -> bool {
+        self.history.probes.job.is_some() || self.ambient_pending(self.frame_millis())
+    }
+}
+
+impl<'a> EncodeInputs<'a> {
     /// Draw one capture draw (`bound`: what the face's draws have bound,
     /// `frame::submit`).
     pub(crate) fn draw_capture<'p>(
-        &'p self,
+        &self,
         pass: &mut wgpu::RenderPass<'p>,
         d: &CaptureDraw,
         bound: &mut crate::frame::submit::Bound,
@@ -1394,66 +2092,6 @@ impl ModernRenderer {
                 pass.set_index_buffer(indices.slice(..), wgpu::IndexFormat::Uint16);
                 pass.draw_indexed(first..first + count, 0, instance..instance + 1);
             }
-        }
-    }
-
-    /// One capture face's draws (`list`), the pipeline by the face's
-    /// winding and each draw's depth writes.
-    pub(crate) fn draw_face<'p>(
-        &'p self,
-        pass: &mut wgpu::RenderPass<'p>,
-        capture: &'p SceneCapture,
-        list: &[u32],
-        face: usize,
-    ) {
-        let pipes = self.probes.pipes.as_ref().expect("capture pipelines");
-        let mut current = None;
-        let mut bound = crate::frame::submit::Bound::default();
-        for &i in list {
-            let d = &capture.draws[i as usize];
-            let write = match d {
-                CaptureDraw::Loc(d) => usize::from(d.pass == Pass::Opaque),
-                CaptureDraw::Floor { .. } => 1,
-            };
-            if current != Some(write) {
-                pass.set_pipeline(&pipes.forward[capture.winding[face]][write]);
-                current = Some(write);
-            }
-            self.draw_capture(pass, d, &mut bound);
-        }
-    }
-
-    /// The sky of one capture face: its layers, then the sky models.
-    pub(crate) fn draw_capture_sky<'p>(
-        &'p self,
-        pass: &mut wgpu::RenderPass<'p>,
-        capture: &'p SceneCapture,
-        sky_bind: &'p wgpu::BindGroup,
-        target: usize,
-        face: usize,
-    ) {
-        let pipes = self.probes.pipes.as_ref().expect("capture pipelines");
-        if let Some((_, layers)) = capture.sky_layers.as_ref() {
-            pass.set_pipeline(&pipes.sky_layer);
-            for &(slot, texture) in &capture.sky_draws[target][face] {
-                pass.set_bind_group(
-                    0,
-                    layers,
-                    &[slot * std::mem::size_of::<SkyLayerUniforms>() as u32],
-                );
-                let texture = texture
-                    .and_then(|k| self.sky_textures.get(&k))
-                    .map_or(&self.sky_white, |t| &t.bind_group);
-                pass.set_bind_group(1, texture, &[]);
-                pass.draw(0..3, 0..1);
-            }
-        }
-        if !capture.sky_models.is_empty() {
-            pass.set_pipeline(&pipes.sky_model[capture.winding[face]]);
-            pass.set_bind_group(0, sky_bind, &[]);
-            pass.set_bind_group(2, &pipes.no_shadow, &[]);
-            pass.set_bind_group(3, &self.lights.bind, &[]);
-            self.submit_all(pass, &capture.sky_models);
         }
     }
 
@@ -1660,674 +2298,64 @@ impl ModernRenderer {
             started.elapsed().as_secs_f32() * 1000.0
         );
     }
-}
 
-/// What a capture can draw: the scene's locs (visible or not) and every
-/// zone of every floor batch over all its tiles, with their bounding
-/// spheres (camera-local; the locs first, then the floor parts).
-pub(crate) struct CaptureCandidates<'a> {
-    pub(crate) locs: Vec<crate::models::draw_list::EntityDraw<'a>>,
-    pub(crate) spheres: Vec<(glam::Vec3, f32)>,
-    /// Floor parts: (level, batch, first index, index count).
-    pub(crate) parts: Vec<(usize, usize, u32, u32)>,
-}
-
-/// The capture draws recorded for the candidates some face sees: each
-/// candidate's range of draws.
-pub(crate) struct BuiltDraws {
-    pub(crate) draws: Vec<CaptureDraw>,
-    pub(crate) ranges: Vec<(u32, u32)>,
-    pub(crate) loc_count: usize,
-    pub(crate) floor_batches: usize,
-}
-
-/// The candidates within reach of `eye` (`far`, and at least `angle`
-/// wide), then per face those in its view pyramid.
-pub(crate) fn cull_faces(
-    spheres: &[(glam::Vec3, f32)],
-    eye: [f32; 3],
-    far: f32,
-    angle: f32,
-) -> [Vec<u32>; 6] {
-    let e = glam::Vec3::from(eye);
-    let near: Vec<u32> = spheres
-        .iter()
-        .enumerate()
-        .filter(|(_, (c, r))| {
-            let d = (*c - e).length();
-            d - r < far && *r >= angle * d
-        })
-        .map(|(i, _)| i as u32)
-        .collect();
-    std::array::from_fn(|face| {
-        near.iter()
-            .copied()
-            .filter(|&i| {
-                let (c, r) = spheres[i as usize];
-                in_face(face, c - e, r, far)
-            })
-            .collect()
-    })
-}
-
-impl Capture {
-    /// The bind group of the sky's frame slot of `face` (the last six).
-    pub(crate) fn sky_bind(&self, face: usize) -> &wgpu::BindGroup {
-        &self.binds[self.binds.len() - 6 + face]
-    }
-}
-
-/// Each face's winding against the frame's (a mirrored face draws with the
-/// clockwise pipelines).
-pub(crate) fn face_windings(frame: &FrameUniforms, near: f32) -> [usize; 6] {
-    let main = glam::Mat4::from_cols_array_2d(&frame.view_proj).determinant();
-    std::array::from_fn(|face| {
-        let d = crate::lighting::probes::face_view_proj(face, [0.0; 3], near, 1000.0).determinant();
-        usize::from((d > 0.0) != (main > 0.0))
-    })
-}
-
-/// The frame block of a capture face seen from camera-local `eye` (`sky`:
-/// the sky's rotation-only view): no SSAO, the sky at the capture's own
-/// exposure (the frame's exposure follows the modern composite; the capture
-/// keeps the display encode it projects).
-pub(crate) fn capture_frame(
-    frame: &FrameUniforms,
-    eye: [f32; 3],
-    face: usize,
-    (near, far): (f32, f32),
-    sky: bool,
-) -> FrameUniforms {
-    let mut f = *frame;
-    f.view_proj = crate::lighting::probes::face_view_proj(face, eye, near, far).to_cols_array_2d();
-    f.view = crate::lighting::probes::face_view(face, eye).to_cols_array_2d();
-    f.eye = [eye[0], eye[1], eye[2], frame.eye[3]];
-    f.params = [crate::post::tonemap::EXPOSURE, 0.0, 0.0, 0.0];
-    if sky {
-        f.view = glam::Mat4::IDENTITY.to_cols_array_2d();
-        f.eye = [0.0, 0.0, 0.0, 0.0];
-    }
-    f
-}
-
-impl ModernRenderer {
-    /// The sky models of a capture (the sky box's dome, drawn from the face's eye under the
-    /// face's own rotation): recorded here, for a capture, and not in every frame: nothing else
-    /// of the frame reads them (the sky cube's bake draws its own).
-    pub(crate) fn capture_sky_models(
-        &mut self,
-        device: &wgpu::Device,
-        queue: &dyn rs910_gpu_device::uploads::Uploader,
-        snapshot: &SceneSnapshot<'_>,
-    ) -> Vec<Draw> {
-        use crate::skybox::SkyLayer;
-        let mut sky_models = Vec::new();
-        let (Some(sky), Some(materials)) = (snapshot.sky, snapshot.materials) else {
-            return sky_models;
-        };
-        for layer in sky.layers {
-            let SkyLayer::Model { key, .. } = layer else {
-                continue;
+    /// One capture face's draws (`list`), the pipeline by the face's
+    /// winding and each draw's depth writes.
+    pub(crate) fn draw_face<'p>(
+        &self,
+        pass: &mut wgpu::RenderPass<'p>,
+        capture: &'p SceneCapture,
+        list: &[u32],
+        face: usize,
+    ) {
+        let pipes = self.probes.pipes.as_ref().expect("capture pipelines");
+        let mut current = None;
+        let mut bound = crate::frame::submit::Bound::default();
+        for &i in list {
+            let d = &capture.draws[i as usize];
+            let write = match d {
+                CaptureDraw::Loc(d) => usize::from(d.pass == Pass::Opaque),
+                CaptureDraw::Floor { .. } => 1,
             };
-            let Some(model) = sky.model(*key) else {
-                continue;
-            };
-            let Some(streams) =
-                crate::models::mesh::model_streams(model, materials, Colour::Classic)
-            else {
-                continue;
-            };
-            let (base_vertex, first) = self.arena.push(&streams);
-            for &(material, start, count) in &streams.batches {
-                self.textures
-                    .ensure(device, queue, snapshot.pack, Some(materials), material);
-                let instance = self.instances.len() as u32;
-                self.instances.push(self.instance(
-                    [
-                        1., 0., 0., 0., 0., 1., 0., 0., 0., 0., 1., 0., 0., 0., 0., 1.,
-                    ],
-                    material,
-                    1.0,
-                    FLAG_SKY | FLAG_UNLIT,
-                ));
-                sky_models.push(Draw {
-                    geometry: Geometry::Arena { base_vertex },
-                    material,
-                    first_index: start + first,
-                    count,
-                    instance,
-                    pass: Pass::NoDepthWrite,
-                    casts: false,
-                    indirect: None,
-                });
+            if current != Some(write) {
+                pass.set_pipeline(&pipes.forward[capture.winding[face]][write]);
+                current = Some(write);
             }
-        }
-        sky_models
-    }
-
-    /// The capture candidates of this frame's scene (the loc radii cached
-    /// per scene).
-    pub(crate) fn capture_candidates<'a>(
-        &mut self,
-        prep: &PrepareFrame<'_, 'a>,
-    ) -> CaptureCandidates<'a> {
-        let PrepareFrame {
-            device,
-            snapshot,
-            origin,
-            ..
-        } = *prep;
-        // The candidates: every loc of the scene (visible or not) and every
-        // zone of every floor batch over all its tiles, with their bounding
-        // spheres (camera-local).
-        if self.probes.radii_scene != self.scene_token {
-            self.probes.radii.clear();
-            self.probes.radii_scene = self.scene_token;
-        }
-        let locs = crate::models::draw_list::DrawList::scene_locs(snapshot);
-        let mut spheres: Vec<(glam::Vec3, f32)> = Vec::with_capacity(locs.len());
-        for entity in &locs {
-            let radius = match entity.key {
-                Some(key) => {
-                    let slot = self
-                        .probes
-                        .radii
-                        .entry(crate::frame::resources::loc_slot(&key))
-                        .or_insert_with(|| (key, loc_radius(entity.model, &entity.matrix)));
-                    if slot.0 != key {
-                        *slot = (key, loc_radius(entity.model, &entity.matrix));
-                    }
-                    slot.1
-                }
-                None => loc_radius(entity.model, &entity.matrix),
-            };
-            let m = &entity.matrix;
-            spheres.push((
-                glam::Vec3::new(m[12] - origin[0], m[13] - origin[1], m[14] - origin[2]),
-                radius,
-            ));
-        }
-        // Floor parts: (level, batch, first index, index count).
-        let mut parts: Vec<(usize, usize, u32, u32)> = Vec::new();
-        for (level, g) in snapshot.floors.iter().enumerate() {
-            let Some(g) = g.as_ref() else {
-                continue;
-            };
-            let Some(Some(gpu)) = self.floors.get(level) else {
-                continue;
-            };
-            // Only a level this scene uploaded (a level left over from the
-            // previous scene holds other batches).
-            if g.vertex_count == 0 || !gpu.token.matches(g) {
-                continue;
-            }
-            if self.probes.floors.len() <= level {
-                self.probes.floors.resize_with(level + 1, || None);
-            }
-            if self.probes.floors[level]
-                .as_ref()
-                .is_none_or(|f| !f.token.matches(g))
-            {
-                let stride = g.stride_floats;
-                let zone = (crate::lighting::probes::ZONE / 512.0) as usize;
-                let chunks: Vec<Vec<usize>> = (0..g.tiles_z.div_ceil(zone))
-                    .flat_map(|cz| (0..g.tiles_x.div_ceil(zone)).map(move |cx| (cx, cz)))
-                    .map(|(cx, cz)| {
-                        let mut tiles = Vec::new();
-                        for z in cz * zone..((cz + 1) * zone).min(g.tiles_z) {
-                            for x in cx * zone..((cx + 1) * zone).min(g.tiles_x) {
-                                tiles.push(z * g.tiles_x + x);
-                            }
-                        }
-                        tiles
-                    })
-                    .collect();
-                let batches = gpu
-                    .batches
-                    .iter()
-                    .map(|b| {
-                        let mut indices: Vec<u16> = Vec::new();
-                        let mut ranges = Vec::new();
-                        for tiles in &chunks {
-                            let (part, _, _) = g.batches[b.source].build_indices(g, tiles);
-                            if part.is_empty() {
-                                continue;
-                            }
-                            let (mut lo, mut hi) =
-                                (glam::Vec3::splat(f32::MAX), glam::Vec3::splat(f32::MIN));
-                            for &i in &part {
-                                let f = &g.stream0
-                                    [usize::from(i) * stride..usize::from(i) * stride + 3];
-                                let p = glam::Vec3::new(f[0], f[1], f[2]);
-                                lo = lo.min(p);
-                                hi = hi.max(p);
-                            }
-                            let centre = (lo + hi) * 0.5;
-                            ranges.push((
-                                indices.len() as u32,
-                                part.len() as u32,
-                                [centre.x, centre.y, centre.z, (hi - lo).length() * 0.5],
-                            ));
-                            indices.extend_from_slice(&part);
-                        }
-                        if indices.is_empty() {
-                            return None;
-                        }
-                        if !indices.len().is_multiple_of(2) {
-                            indices.push(0);
-                        }
-                        Some((
-                            device.create_buffer_init(&wgpu::util::BufferInitDescriptor {
-                                label: Some("modern probe floor indices"),
-                                contents: bytemuck::cast_slice(&indices),
-                                usage: wgpu::BufferUsages::INDEX,
-                            }),
-                            ranges,
-                        ))
-                    })
-                    .collect();
-                self.probes.floors[level] = Some(FullFloor {
-                    token: crate::frame::resources::FloorToken::of(g),
-                    batches,
-                });
-            }
-            let full = self.probes.floors[level].as_ref().expect("full floor");
-            for (batch, entry) in full.batches.iter().enumerate() {
-                for &(first, count, s) in entry.iter().flat_map(|(_, r)| r) {
-                    parts.push((level, batch, first, count));
-                    spheres.push((
-                        glam::Vec3::new(s[0] - origin[0], s[1] - origin[1], s[2] - origin[2]),
-                        s[3],
-                    ));
-                }
-            }
-        }
-
-        CaptureCandidates {
-            locs,
-            spheres,
-            parts,
+            self.draw_capture(pass, d, &mut bound);
         }
     }
 
-    /// The draws of the candidates `used` marks (a loc's model uploaded
-    /// only then).
-    pub(crate) fn capture_draws(
-        &mut self,
-        prep: &PrepareFrame<'_, '_>,
-        locs: &[crate::models::draw_list::EntityDraw<'_>],
-        parts: &[(usize, usize, u32, u32)],
-        used: &[bool],
-    ) -> BuiltDraws {
-        let PrepareFrame {
-            device,
-            queue,
-            snapshot,
-            origin,
-        } = *prep;
-        // The seen locs' meshes not cached yet, built on the threads
-        // (`frame::prebuild`).
-        self.prebuild_locs(
-            snapshot,
-            locs.iter()
-                .enumerate()
-                .filter(|&(i, _)| used[i])
-                .map(|(_, e)| e),
-        );
-        let mut draws = Vec::new();
-        let mut ranges = vec![(0_u32, 0_u32); locs.len() + parts.len()];
-        let mut loc_count = 0;
-        for (i, entity) in locs.iter().enumerate() {
-            if !used[i] {
-                continue;
+    /// The sky of one capture face: its layers, then the sky models.
+    pub(crate) fn draw_capture_sky<'p>(
+        &self,
+        pass: &mut wgpu::RenderPass<'p>,
+        capture: &'p SceneCapture,
+        sky_bind: &'p wgpu::BindGroup,
+        target: usize,
+        face: usize,
+    ) {
+        let pipes = self.probes.pipes.as_ref().expect("capture pipelines");
+        if let Some((_, layers)) = capture.sky_layers.as_ref() {
+            pass.set_pipeline(&pipes.sky_layer);
+            for &(slot, texture) in &capture.sky_draws[target][face] {
+                pass.set_bind_group(
+                    0,
+                    layers,
+                    &[slot * std::mem::size_of::<SkyLayerUniforms>() as u32],
+                );
+                let texture = texture
+                    .and_then(|k| self.sky_textures.get(&k))
+                    .map_or(self.sky_white, |t| &t.bind_group);
+                pass.set_bind_group(1, texture, &[]);
+                pass.draw(0..3, 0..1);
             }
-            let start = self.draws.len();
-            self.prepare_entity(device, queue, snapshot, entity, origin);
-            let recorded: Vec<Draw> = self.draws.drain(start..).collect();
-            if !recorded.is_empty() {
-                loc_count += 1;
-            }
-            let first = draws.len() as u32;
-            draws.extend(recorded.into_iter().map(CaptureDraw::Loc));
-            ranges[i] = (first, draws.len() as u32);
         }
-        let floor_matrix = local_matrix(
-            &[
-                1., 0., 0., 0., 0., 1., 0., 0., 0., 0., 1., 0., 0., 0., 0., 1.,
-            ],
-            origin,
-        );
-        let mut floor_instances: HashMap<(usize, usize), u32> = HashMap::new();
-        for (k, &(level, batch, first, count)) in parts.iter().enumerate() {
-            let i = locs.len() + k;
-            if !used[i] {
-                continue;
-            }
-            let instance = match floor_instances.get(&(level, batch)) {
-                Some(&instance) => instance,
-                None => {
-                    let Some(b) = self
-                        .floors
-                        .get(level)
-                        .and_then(Option::as_ref)
-                        .and_then(|f| f.batches.get(batch))
-                    else {
-                        continue;
-                    };
-                    let (material, uv_scale) = (b.material, b.uv_scale);
-                    let instance = self.instances.len() as u32;
-                    let mut record = self.instance(floor_matrix, material, uv_scale, FLAG_FLOOR);
-                    record.p2 = [level as f32, 0.0, 0.0, 0.0];
-                    self.instances.push(record);
-                    floor_instances.insert((level, batch), instance);
-                    instance
-                }
-            };
-            let at = draws.len() as u32;
-            draws.push(CaptureDraw::Floor {
-                level,
-                batch,
-                instance,
-                first,
-                count,
-            });
-            ranges[i] = (at, at + 1);
+        if !capture.sky_models.is_empty() {
+            pass.set_pipeline(&pipes.sky_model[capture.winding[face]]);
+            pass.set_bind_group(0, sky_bind, &[]);
+            pass.set_bind_group(2, &pipes.no_shadow, &[]);
+            pass.set_bind_group(3, &self.lights.bind, &[]);
+            self.submit_all(pass, &capture.sky_models);
         }
-        let floor_batches = floor_instances.len();
-        BuiltDraws {
-            draws,
-            ranges,
-            loc_count,
-            floor_batches,
-        }
-    }
-}
-
-impl CapturePipes {
-    pub(crate) fn new(
-        device: &wgpu::Device,
-        queue: &dyn rs910_gpu_device::uploads::Uploader,
-        r: &ModernRenderer,
-    ) -> Self {
-        // The forward module (compiled once, `crate::frame::pipelines::PipelineInputs`).
-        let module = &r.pipeline_inputs.forward_module;
-        let layout = device.create_pipeline_layout(&wgpu::PipelineLayoutDescriptor {
-            label: Some("modern probe capture"),
-            bind_group_layouts: &[
-                Some(&r.pipes().forward.get_bind_group_layout(0)),
-                Some(&r.pipes().forward.get_bind_group_layout(1)),
-                Some(&r.pipes().forward.get_bind_group_layout(2)),
-                Some(&r.pipes().forward.get_bind_group_layout(3)),
-                Some(&r.pipes().forward.get_bind_group_layout(4)),
-            ],
-            immediate_size: 0,
-        });
-        let layouts = vertex_layouts();
-        // The capture shades with the ambient (the probes it fills are
-        // not read while they are captured).
-        let fs = "fs_forward_ambient";
-        let pipeline = |label: &str, cw: bool, depth: Option<bool>| {
-            device.create_render_pipeline(&wgpu::RenderPipelineDescriptor {
-                label: Some(label),
-                layout: Some(&layout),
-                vertex: wgpu::VertexState {
-                    module,
-                    entry_point: Some("vs_forward"),
-                    buffers: &layouts,
-                    compilation_options: Default::default(),
-                },
-                fragment: Some(wgpu::FragmentState {
-                    module,
-                    entry_point: Some(fs),
-                    targets: &[Some(wgpu::ColorTargetState {
-                        format: CAPTURE_FORMAT,
-                        blend: Some(ALPHA_BLEND),
-                        write_mask: wgpu::ColorWrites::ALL,
-                    })],
-                    compilation_options: Default::default(),
-                }),
-                primitive: wgpu::PrimitiveState {
-                    topology: wgpu::PrimitiveTopology::TriangleList,
-                    front_face: if cw {
-                        wgpu::FrontFace::Cw
-                    } else {
-                        wgpu::FrontFace::Ccw
-                    },
-                    cull_mode: Some(wgpu::Face::Back),
-                    ..Default::default()
-                },
-                depth_stencil: Some(wgpu::DepthStencilState {
-                    format: DEPTH_FORMAT,
-                    depth_write_enabled: Some(depth.unwrap_or(false)),
-                    depth_compare: Some(if depth.is_some() {
-                        wgpu::CompareFunction::LessEqual
-                    } else {
-                        wgpu::CompareFunction::Always
-                    }),
-                    stencil: Default::default(),
-                    bias: Default::default(),
-                }),
-                multisample: wgpu::MultisampleState::default(),
-                multiview_mask: None,
-                cache: None,
-            })
-        };
-        let sky_module = r.shaders.get(device, crate::shaders::Module::SkyLayers);
-        let sky_layout = device.create_pipeline_layout(&wgpu::PipelineLayoutDescriptor {
-            label: Some("modern probe sky"),
-            bind_group_layouts: &[Some(&r.sky_layer_layout), Some(&r.sky_texture_layout)],
-            immediate_size: 0,
-        });
-        let sky_layer = || {
-            device.create_render_pipeline(&wgpu::RenderPipelineDescriptor {
-                label: Some("modern probe sky layer"),
-                layout: Some(&sky_layout),
-                vertex: wgpu::VertexState {
-                    module: &sky_module,
-                    entry_point: Some("vs_main"),
-                    buffers: &[],
-                    compilation_options: Default::default(),
-                },
-                fragment: Some(wgpu::FragmentState {
-                    module: &sky_module,
-                    entry_point: Some("fs_main"),
-                    targets: &[Some(wgpu::ColorTargetState {
-                        format: CAPTURE_FORMAT,
-                        blend: Some(ALPHA_BLEND),
-                        write_mask: wgpu::ColorWrites::ALL,
-                    })],
-                    compilation_options: Default::default(),
-                }),
-                primitive: wgpu::PrimitiveState::default(),
-                depth_stencil: Some(wgpu::DepthStencilState {
-                    format: DEPTH_FORMAT,
-                    depth_write_enabled: Some(false),
-                    depth_compare: Some(wgpu::CompareFunction::Always),
-                    stencil: Default::default(),
-                    bias: Default::default(),
-                }),
-                multisample: wgpu::MultisampleState::default(),
-                multiview_mask: None,
-                cache: None,
-            })
-        };
-        let project_module = r
-            .shaders
-            .get(device, crate::shaders::Module::ProbeProjection);
-        let project_layout = device.create_bind_group_layout(&wgpu::BindGroupLayoutDescriptor {
-            label: Some("modern probe projection"),
-            entries: &[
-                wgpu::BindGroupLayoutEntry {
-                    binding: 0,
-                    visibility: wgpu::ShaderStages::COMPUTE,
-                    ty: wgpu::BindingType::Texture {
-                        sample_type: wgpu::TextureSampleType::Float { filterable: false },
-                        view_dimension: wgpu::TextureViewDimension::D2,
-                        multisampled: false,
-                    },
-                    count: None,
-                },
-                wgpu::BindGroupLayoutEntry {
-                    binding: 1,
-                    visibility: wgpu::ShaderStages::COMPUTE,
-                    ty: wgpu::BindingType::Buffer {
-                        ty: wgpu::BufferBindingType::Storage { read_only: false },
-                        has_dynamic_offset: false,
-                        min_binding_size: None,
-                    },
-                    count: None,
-                },
-                wgpu::BindGroupLayoutEntry {
-                    binding: 2,
-                    visibility: wgpu::ShaderStages::COMPUTE,
-                    ty: wgpu::BindingType::Buffer {
-                        ty: wgpu::BufferBindingType::Uniform,
-                        has_dynamic_offset: false,
-                        min_binding_size: None,
-                    },
-                    count: None,
-                },
-                wgpu::BindGroupLayoutEntry {
-                    binding: 3,
-                    visibility: wgpu::ShaderStages::COMPUTE,
-                    ty: wgpu::BindingType::Buffer {
-                        ty: wgpu::BufferBindingType::Storage { read_only: true },
-                        has_dynamic_offset: false,
-                        min_binding_size: None,
-                    },
-                    count: None,
-                },
-            ],
-        });
-        let project = || {
-            device.create_compute_pipeline(&wgpu::ComputePipelineDescriptor {
-                label: Some("modern probe projection"),
-                layout: Some(
-                    &device.create_pipeline_layout(&wgpu::PipelineLayoutDescriptor {
-                        label: Some("modern probe projection"),
-                        bind_group_layouts: &[Some(&project_layout)],
-                        immediate_size: 0,
-                    }),
-                ),
-                module: &project_module,
-                entry_point: Some("cs_project"),
-                compilation_options: Default::default(),
-                cache: None,
-            })
-        };
-        // The capture, sky, projection and filter pipelines are created at
-        // once (`frame::compile`).
-        let pipeline = &pipeline;
-        let model_jobs: Vec<crate::frame::compile::Job<'_, wgpu::RenderPipeline>> = vec![
-            Box::new(move || pipeline("modern probe capture", false, Some(false))),
-            Box::new(move || pipeline("modern probe capture", false, Some(true))),
-            Box::new(move || pipeline("modern probe capture", true, Some(false))),
-            Box::new(move || pipeline("modern probe capture", true, Some(true))),
-            Box::new(move || pipeline("modern probe sky model", false, None)),
-            Box::new(move || pipeline("modern probe sky model", true, None)),
-        ];
-        let (models, (sky_layer, (project, filters))) = crate::frame::compile::join(
-            || crate::frame::compile::all(model_jobs),
-            || {
-                crate::frame::compile::join(sky_layer, || {
-                    crate::frame::compile::join(project, || FilterGpu::new(device, &r.shaders))
-                })
-            },
-        );
-        let mut models = models.into_iter();
-        let mut next = || models.next().expect("every pipeline is built");
-        let forward = [[next(), next()], [next(), next()]];
-        let sky_model = [next(), next()];
-        let no_shadow_buffer = device.create_buffer_init(&wgpu::util::BufferInitDescriptor {
-            label: Some("modern probe no shadow"),
-            contents: bytemuck::bytes_of(&ShadowUniforms::default()),
-            usage: wgpu::BufferUsages::UNIFORM,
-        });
-        let no_shadow = device.create_bind_group(&wgpu::BindGroupDescriptor {
-            label: Some("modern probe no shadow"),
-            layout: &r.pipes().forward.get_bind_group_layout(2),
-            entries: &[
-                wgpu::BindGroupEntry {
-                    binding: 0,
-                    resource: no_shadow_buffer.as_entire_binding(),
-                },
-                wgpu::BindGroupEntry {
-                    binding: 1,
-                    resource: wgpu::BindingResource::TextureView(&r.shadow.atlas.1),
-                },
-                wgpu::BindGroupEntry {
-                    binding: 2,
-                    resource: wgpu::BindingResource::Sampler(&r.shadow.sampler),
-                },
-            ],
-        });
-        let depth = |label, w, h| {
-            device
-                .create_texture(&wgpu::TextureDescriptor {
-                    label: Some(label),
-                    size: wgpu::Extent3d {
-                        width: w,
-                        height: h,
-                        depth_or_array_layers: 1,
-                    },
-                    mip_level_count: 1,
-                    sample_count: 1,
-                    dimension: wgpu::TextureDimension::D2,
-                    format: DEPTH_FORMAT,
-                    usage: wgpu::TextureUsages::RENDER_ATTACHMENT,
-                    view_formats: &[],
-                })
-                .create_view(&Default::default())
-        };
-        let res = crate::lighting::probes::CAPTURE_RES;
-        let sky_atlas = device.create_texture(&wgpu::TextureDescriptor {
-            label: Some("modern probe sky"),
-            size: wgpu::Extent3d {
-                width: 6 * res,
-                height: res,
-                depth_or_array_layers: 1,
-            },
-            mip_level_count: 1,
-            sample_count: 1,
-            dimension: wgpu::TextureDimension::D2,
-            format: CAPTURE_FORMAT,
-            usage: wgpu::TextureUsages::RENDER_ATTACHMENT | wgpu::TextureUsages::COPY_SRC,
-            view_formats: &[],
-        });
-        Self {
-            forward,
-            sky_model,
-            sky_layer,
-            project,
-            project_layout,
-            filters,
-            no_shadow,
-            ao_white: crate::frame::gpu::post::white_view(device, queue),
-            env_source: cube_texture(
-                device,
-                "modern environment capture",
-                crate::lighting::probes::ENV_RES,
-                crate::lighting::probes::ENV_MIPS,
-                wgpu::TextureUsages::RENDER_ATTACHMENT
-                    | wgpu::TextureUsages::TEXTURE_BINDING
-                    | wgpu::TextureUsages::COPY_SRC,
-            ),
-            env_depth: depth(
-                "modern environment capture depth",
-                crate::lighting::probes::ENV_RES,
-                crate::lighting::probes::ENV_RES,
-            ),
-            sky_atlas,
-            sky_depth: depth("modern probe sky depth", 6 * res, res),
-        }
-    }
-}
-
-#[cfg(test)]
-impl ModernRenderer {
-    /// Tests: whether a capture is in progress (the probes', or the
-    /// per-square ambient's when it is on).
-    pub(crate) fn probe_capture_pending(&self) -> bool {
-        self.probes.job.is_some() || self.ambient_pending(self.frame_millis())
     }
 }

@@ -61,7 +61,7 @@ impl ModernRenderer {
     /// at its draw).
     fn builds_inline(&self) -> bool {
         #[cfg(test)]
-        if self.test_inline_builds {
+        if self.preparation.test_inline_builds {
             return true;
         }
         false
@@ -71,7 +71,8 @@ impl ModernRenderer {
     /// another model (`prepare_entity` builds it then).
     pub(crate) fn loc_mesh_stale(&self, entity: &EntityDraw<'_>) -> bool {
         entity.key.is_some_and(|key| {
-            self.statics
+            self.scene_resources
+                .statics
                 .get(&crate::frame::resources::loc_slot(&key))
                 .is_none_or(|s| s.key != key || s.fingerprint != fingerprint(entity))
         })
@@ -97,6 +98,7 @@ impl ModernRenderer {
                 entity.key.is_some_and(|key| {
                     self.loc_mesh_stale(entity)
                         && !self
+                            .preparation
                             .prebuilds
                             .ready
                             .get(&crate::frame::resources::loc_slot(&key))
@@ -165,7 +167,7 @@ impl ModernRenderer {
         self.prefetch_materials(snapshot, ids);
         for ((entity, _), (outcome, classic)) in work.iter().zip(built.into_iter().flatten()) {
             let key = entity.key.expect("a loc");
-            self.prebuilds.ready.insert(
+            self.preparation.prebuilds.ready.insert(
                 crate::frame::resources::loc_slot(&key),
                 Prebuilt {
                     key,
@@ -191,7 +193,8 @@ impl ModernRenderer {
         }
         let pack = snapshot.pack;
         let jobs = &self.jobs;
-        self.textures
+        self.device_resources
+            .textures
             .prefetch(pack, snapshot.materials, ids, |work| {
                 jobs.map(work.len(), |i| work[i].decode(pack))
             });
@@ -206,12 +209,17 @@ impl ModernRenderer {
     ) -> Option<Option<ModelStreams>> {
         let key = entity.key?;
         let slot = crate::frame::resources::loc_slot(&key);
-        let p = self.prebuilds.ready.get(&slot)?;
+        let p = self.preparation.prebuilds.ready.get(&slot)?;
         if p.key != key || p.fingerprint != fingerprint(entity) {
             return None;
         }
-        let p = self.prebuilds.ready.remove(&slot).expect("a prebuilt mesh");
-        self.prebuilds.taken += 1;
+        let p = self
+            .preparation
+            .prebuilds
+            .ready
+            .remove(&slot)
+            .expect("a prebuilt mesh");
+        self.preparation.prebuilds.taken += 1;
         let rt7 = self.rt7.count(entity, p.outcome);
         Some(rt7.or(p.classic))
     }

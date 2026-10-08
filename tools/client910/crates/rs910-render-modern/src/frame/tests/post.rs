@@ -67,11 +67,12 @@ fn ao_modes_darken_a_crease_not_open_ground() {
             },
         );
         let mut draw = || {
-            r.test_models = models.clone();
+            r.preparation.test_models = models.clone();
             render(&device, &queue, &mut r, &snapshot, size)
         };
         let (first, again) = (draw(), draw());
         let ao = r
+            .history
             .post
             .targets
             .as_ref()
@@ -179,11 +180,16 @@ fn half_resolution_ao_keeps_odd_viewports_and_render_scale_clipped() {
             OUTPUT,
             (RECT, CLIP),
         );
-        let targets = r.post.targets.as_ref().expect("occlusion targets");
+        let targets = r.history.post.targets.as_ref().expect("occlusion targets");
         let ao = halves(&read_back(&device, &queue, &targets.ao_tex, 2));
         assert!(ao.iter().all(|v| v.is_finite() && (0.0..=1.0).contains(v)));
         assert!(ao.iter().any(|v| *v < 0.95), "visible crease is occluded");
-        let scene = r.targets.as_ref().expect("scene targets").size;
+        let scene = r
+            .frame_resources
+            .targets
+            .as_ref()
+            .expect("scene targets")
+            .size;
         let expected = AoResolution::Half.size(scene);
         assert_eq!([targets.ao_tex.width(), targets.ao_tex.height()], expected);
         for (index, pixel) in pixels.chunks_exact(4).enumerate() {

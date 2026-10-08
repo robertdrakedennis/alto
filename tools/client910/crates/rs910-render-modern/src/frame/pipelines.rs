@@ -10,6 +10,7 @@
 //! follow the count on the next frame (`ensure_targets`, the atmosphere's
 //! by key).
 
+use crate::frame::encoding::EncodeInputs;
 use std::hash::Hash;
 
 use crate::frame::compile::Job;
@@ -219,17 +220,18 @@ impl ModernRenderer {
     /// after the change is the frame a renderer created with `samples`
     /// draws, once its probes and caches have settled.
     pub fn set_samples(&mut self, device: &wgpu::Device, samples: u32) {
-        if samples == self.samples {
+        if samples == self.device_resources.samples {
             return;
         }
-        let inputs = &self.pipeline_inputs;
-        self.pipelines
+        let inputs = &self.device_resources.pipeline_inputs;
+        self.device_resources
+            .pipelines
             .select(samples, || SamplePipelines::new(device, inputs, samples));
         log::info!(
             "[modern] forward target: {} -> {samples} samples",
-            self.samples
+            self.device_resources.samples
         );
-        self.samples = samples;
+        self.device_resources.samples = samples;
     }
 
     /// Build every pipeline set that depends on the sample count for each
@@ -245,7 +247,7 @@ impl ModernRenderer {
         queue: &dyn rs910_gpu_device::uploads::Uploader,
         counts: &[u32],
     ) {
-        let current = self.samples;
+        let current = self.device_resources.samples;
         for &samples in counts {
             self.set_samples(device, samples);
             self.select_count_sets(device, queue);
@@ -264,26 +266,30 @@ impl ModernRenderer {
         device: &wgpu::Device,
         queue: &dyn rs910_gpu_device::uploads::Uploader,
     ) {
-        let samples = self.samples;
+        let samples = self.device_resources.samples;
         let water_debug = match crate::modern_debug_flags::flags().water {
             Some(crate::modern_debug_flags::WaterDebug::Term(n)) => n,
             _ => 0,
         };
         let need = (
-            self.probes.pipes.is_none(),
-            self.water.caustics.buffers.is_none(),
-            self.terrain.pipes.is_none(),
-            !self.water.pipes.contains(&(samples, water_debug)),
-            !self.atmos.pipes.contains(&samples),
+            self.history.probes.pipes.is_none(),
+            self.frame_resources.water.caustics.buffers.is_none(),
+            self.scene_resources.terrain.pipes.is_none(),
+            !self
+                .frame_resources
+                .water
+                .pipes
+                .contains(&(samples, water_debug)),
+            !self.frame_resources.atmos.pipes.contains(&samples),
         );
         let built = {
-            let this = &*self;
+            let this = self.encoding_inputs();
             let ((probes, caustics), ((terrain, water), atmos)) = crate::frame::compile::join(
                 || {
                     crate::frame::compile::join(
                         || {
                             need.0.then(|| {
-                                crate::frame::gpu::probes::CapturePipes::new(device, queue, this)
+                                crate::frame::gpu::probes::CapturePipes::new(device, queue, &this)
                             })
                         },
                         || need.1.then(|| this.caustic_buffers(device)),
@@ -305,21 +311,25 @@ impl ModernRenderer {
         };
         let (probes, caustics, terrain, water, atmos) = built;
         if let Some(probes) = probes {
-            self.probes.pipes = Some(probes);
+            self.history.probes.pipes = Some(probes);
         }
         if let Some(caustics) = caustics {
-            self.water.caustics.buffers = Some(caustics);
+            self.frame_resources.water.caustics.buffers = Some(caustics);
         }
         if let Some(terrain) = terrain {
-            self.terrain.pipes = Some(terrain);
+            self.scene_resources.terrain.pipes = Some(terrain);
         }
         if let Some(water) = water {
-            self.water
+            self.frame_resources
+                .water
                 .pipes
                 .insert_selected((samples, water_debug), water);
         }
         if let Some(atmos) = atmos {
-            self.atmos.pipes.insert_selected(samples, atmos);
+            self.frame_resources
+                .atmos
+                .pipes
+                .insert_selected(samples, atmos);
         }
         // What was built before (another count's set, this count's lit
         // terrain pass) is selected here.
@@ -330,6 +340,13 @@ impl ModernRenderer {
 
     /// The forward-target pipelines at the current sample count.
     pub(crate) fn pipes(&self) -> &SamplePipelines {
+        self.encoding_inputs().pipes()
+    }
+}
+
+impl<'a> EncodeInputs<'a> {
+    /// The forward-target pipelines at the current sample count.
+    pub(crate) fn pipes(&self) -> &'a SamplePipelines {
         self.pipelines
             .current()
             .expect("the forward-target pipelines")

@@ -571,6 +571,8 @@ impl Diagnostics {
     }
 }
 
+pub mod renderer_settings;
+
 pub struct Runtime {
     pub store: Store,
     pub state: State,
@@ -580,6 +582,7 @@ pub struct Runtime {
     pub engine: Engine,
     pub diagnostics: Diagnostics,
     pub target: crate::ui_backend::Target,
+    pub renderer_settings: renderer_settings::Panel,
     /// `audioApi`: the ported audio stack (decoder, voices,
     /// mixer, device sink) consuming every retained sound request.
     pub audio: crate::audio_runtime::AudioRuntime,
@@ -810,6 +813,7 @@ impl Runtime {
             engine,
             diagnostics: Diagnostics::default(),
             target,
+            renderer_settings: Default::default(),
             audio,
             input: Default::default(),
             keyboard: Default::default(),
@@ -1399,6 +1403,11 @@ impl Runtime {
         self.send_telemetry(vars);
         self.input.held_keys = (0..112).map(|k| self.keyboard.held(k)).collect();
         self.input.cycle = vars.cycle;
+        if self.renderer_settings.input(&self.state, &mut self.input) {
+            self.key_presses.clear();
+            self.engine.platform.mouse_buttons.fill(false);
+            self.state.minimenu.open = false;
+        }
         let transmits = crate::ui_loop::Transmits {
             varp: vars.varp_transmit,
             varc: vars.state.varc_transmit.counter(),
@@ -1775,6 +1784,8 @@ impl Runtime {
             &mut self.state,
             self.engine.platform.mouse,
         )?;
+        self.renderer_settings
+            .paint(&mut self.target.leaf, &self.state)?;
         Ok(self.target.finish())
     }
 }

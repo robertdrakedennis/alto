@@ -15,6 +15,7 @@
 //! that are due; [`ModernRenderer::bind_sky_cubes`] binds the two cubes the picture mixes.
 
 use crate::atmosphere::sky_fade::{Blend, SkyInput, SkyState};
+use crate::frame::encoding::EncodeInputs;
 use crate::frame::gpu::sky_layers::{SkyLayerUniforms, SkyTextureKey};
 use crate::frame::*;
 
@@ -361,7 +362,7 @@ impl ModernRenderer {
     /// Add `x` to the sky's colour last: 0 in every normal frame, the ambient capture's exposure
     /// while it draws (and 0 again after it).
     pub fn set_sky_exposure_offset(&mut self, x: f32) {
-        self.sky_cubes.exposure_offset = x;
+        self.scene_resources.sky_cubes.exposure_offset = x;
     }
 
     /// The sky of a capture face as this frame's sky shows it (the same cubes, blend, fog, glow
@@ -380,13 +381,14 @@ impl ModernRenderer {
             res,
             exposure,
         } = view;
-        let module = self.shaders.get(
+        let module = self.device_resources.shaders.get(
             device,
             crate::shaders::Module::Atmosphere {
                 multisampled: false,
             },
         );
         let gpu = self
+            .scene_resources
             .sky_cubes
             .gpu
             .get_or_insert_with(|| CubeGpu::new(device, queue));
@@ -422,6 +424,7 @@ impl ModernRenderer {
         let frame_buffer = buffer("modern sky face frame", bytemuck::bytes_of(&block));
         let pass_buffer = buffer("modern sky face pass", bytemuck::bytes_of(&slot));
         let decor = &self
+            .scene_resources
             .sky_cubes
             .gpu
             .as_ref()
@@ -454,22 +457,6 @@ impl ModernRenderer {
         }
     }
 
-    /// Draw a capture face's sky ([`Self::prepare_sky_face`]) into `pass`, which covers the
-    /// whole face (HDR colour, one sample, a depth attachment it leaves alone).
-    pub(crate) fn draw_sky_face<'p>(&'p self, pass: &mut wgpu::RenderPass<'p>, sky: &'p SkyFace) {
-        let (Some(face), Some(cubes)) = (
-            self.sky_cubes.gpu.as_ref().and_then(|g| g.face.as_ref()),
-            self.sky_cube_bind(),
-        ) else {
-            return;
-        };
-        pass.set_pipeline(&face.pipeline);
-        pass.set_bind_group(0, &sky.frame, &[]);
-        pass.set_bind_group(1, &sky.pass, &[]);
-        pass.set_bind_group(3, cubes, &[]);
-        pass.draw(0..3, 0..1);
-    }
-
     /// This frame's sky cubes: the environment's cube follows its fade, and the boxes due for a
     /// bake are planned (their geometry and layers recorded, drawn by [`Self::bake_sky_cubes`]
     /// once the frame's buffers are uploaded). `main_view_proj` is the frame's camera clip
@@ -484,7 +471,7 @@ impl ModernRenderer {
         now_ms: i64,
     ) {
         use crate::skybox::SkyLayer;
-        let cubes = &mut self.sky_cubes;
+        let cubes = &mut self.scene_resources.sky_cubes;
         cubes.pending.clear();
         cubes.layers.clear();
         if cubes.gpu.is_none() {
@@ -504,7 +491,7 @@ impl ModernRenderer {
             }
         }
         let main = glam::Mat4::from_cols_array_2d(main_view_proj).determinant();
-        self.sky_cubes.winding = std::array::from_fn(|face| {
+        self.scene_resources.sky_cubes.winding = std::array::from_fn(|face| {
             let d = crate::lighting::probes::face_view_proj(face, [0.0; 3], FACE_NEAR, 1000.0)
                 .determinant();
             usize::from((d > 0.0) != (main > 0.0))
@@ -514,7 +501,7 @@ impl ModernRenderer {
                 self.plan_bake(device, queue, snapshot, &sky, key);
             }
         }
-        let cubes = &mut self.sky_cubes;
+        let cubes = &mut self.scene_resources.sky_cubes;
         let observed = (
             target,
             sky.is_some_and(|s| s.fading()),
@@ -590,17 +577,17 @@ impl ModernRenderer {
                         continue;
                     };
                     content.model = true;
-                    let (base_vertex, first) = self.arena.push(&streams);
+                    let (base_vertex, first) = self.frame_resources.arena.push(&streams);
                     for &(material, start, count) in &streams.batches {
-                        self.textures.ensure(
+                        self.device_resources.textures.ensure(
                             device,
                             queue,
                             snapshot.pack,
                             Some(materials),
                             material,
                         );
-                        let instance = self.instances.len() as u32;
-                        self.instances.push(self.instance(
+                        let instance = self.frame_resources.instances.len() as u32;
+                        self.frame_resources.instances.push(self.instance(
                             IDENTITY,
                             material,
                             1.0,
@@ -643,8 +630,9 @@ impl ModernRenderer {
                             ..SkyLayerUniforms::default()
                         };
                         let mut push = |u: SkyLayerUniforms, t| {
-                            face_layers.push((self.sky_cubes.layers.len() as u32, t));
-                            self.sky_cubes.layers.push(u);
+                            face_layers
+                                .push((self.scene_resources.sky_cubes.layers.len() as u32, t));
+                            self.scene_resources.sky_cubes.layers.push(u);
                         };
                         // A multiply material over the fog colour.
                         if multiply {
@@ -682,6 +670,7 @@ impl ModernRenderer {
             }
         }
         if self
+            .scene_resources
             .sky_cubes
             .cubes
             .get(&key)
@@ -690,7 +679,7 @@ impl ModernRenderer {
             // Nothing new: the records made for it are not drawn.
             return;
         }
-        self.sky_cubes.pending.push(Pending {
+        self.scene_resources.sky_cubes.pending.push(Pending {
             key,
             content,
             layers,
@@ -705,21 +694,21 @@ impl ModernRenderer {
         device: &wgpu::Device,
         queue: &dyn rs910_gpu_device::uploads::Uploader,
     ) {
-        if self.sky_cubes.pending.is_empty() {
+        if self.scene_resources.sky_cubes.pending.is_empty() {
             return;
         }
-        let Some(pipes) = self.probes.pipes.as_ref() else {
+        let Some(pipes) = self.history.probes.pipes.as_ref() else {
             // The capture pipelines are built with the renderer; none: bake next frame.
-            self.sky_cubes.pending.clear();
+            self.scene_resources.sky_cubes.pending.clear();
             return;
         };
-        let pending = std::mem::take(&mut self.sky_cubes.pending);
-        let layer_uniforms = std::mem::take(&mut self.sky_cubes.layers);
-        let winding = self.sky_cubes.winding;
+        let pending = std::mem::take(&mut self.scene_resources.sky_cubes.pending);
+        let layer_uniforms = std::mem::take(&mut self.scene_resources.sky_cubes.layers);
+        let winding = self.scene_resources.sky_cubes.winding;
         let clear = wgpu::Color {
-            r: f64::from(self.clear[0]),
-            g: f64::from(self.clear[1]),
-            b: f64::from(self.clear[2]),
+            r: f64::from(self.frame_resources.clear[0]),
+            g: f64::from(self.frame_resources.clear[1]),
+            b: f64::from(self.frame_resources.clear[2]),
             a: 1.0,
         };
         // The faces' frames: each looks along its axis from the origin, the sky models unlit.
@@ -771,7 +760,7 @@ impl ModernRenderer {
             });
             let bind = device.create_bind_group(&wgpu::BindGroupDescriptor {
                 label: Some("modern sky cube layers"),
-                layout: &self.sky_layer_layout,
+                layout: &self.device_resources.sky_layer_layout,
                 entries: &[wgpu::BindGroupEntry {
                     binding: 0,
                     resource: wgpu::BindingResource::Buffer(wgpu::BufferBinding {
@@ -858,8 +847,8 @@ impl ModernRenderer {
                             &[index * std::mem::size_of::<SkyLayerUniforms>() as u32],
                         );
                         let texture = texture
-                            .and_then(|k| self.sky_textures.get(&k))
-                            .map_or(&self.sky_white, |t| &t.bind_group);
+                            .and_then(|k| self.scene_resources.sky_textures.get(&k))
+                            .map_or(&self.device_resources.sky_white, |t| &t.bind_group);
                         pass.set_bind_group(1, texture, &[]);
                         pass.draw(0..3, 0..1);
                     }
@@ -868,7 +857,7 @@ impl ModernRenderer {
                     pass.set_pipeline(&pipes.sky_model[winding[face]]);
                     pass.set_bind_group(0, &frame_binds[face], &[]);
                     pass.set_bind_group(2, &pipes.no_shadow, &[]);
-                    pass.set_bind_group(3, &self.lights.bind, &[]);
+                    pass.set_bind_group(3, &self.scene_resources.lights.bind, &[]);
                     self.submit_all(&mut pass, &bake.models);
                 }
             }
@@ -900,21 +889,27 @@ impl ModernRenderer {
                     ""
                 }
             );
-            self.sky_cubes.cubes.insert(key, cube);
-            self.sky_cubes.epoch += 1;
+            self.scene_resources.sky_cubes.cubes.insert(key, cube);
+            self.scene_resources.sky_cubes.epoch += 1;
             #[cfg(test)]
             {
-                self.sky_cubes.bakes += 1;
+                self.scene_resources.sky_cubes.bakes += 1;
             }
         }
     }
 
     /// The bind group of the two cubes this frame's picture mixes (group 3 of the sky shading).
     pub(crate) fn bind_sky_cubes(&mut self, device: &wgpu::Device) {
-        let Some(layout) = self.atmos.pipes.current().map(|p| p.sky_cubes.clone()) else {
+        let Some(layout) = self
+            .frame_resources
+            .atmos
+            .pipes
+            .current()
+            .map(|p| p.sky_cubes.clone())
+        else {
             return;
         };
-        let cubes = &mut self.sky_cubes;
+        let cubes = &mut self.scene_resources.sky_cubes;
         let Some(blend) = cubes.blend else {
             return;
         };
@@ -965,7 +960,7 @@ impl ModernRenderer {
 
     /// Whether a decor sprite was drawn for this frame's sky (into the sky's source).
     pub(crate) fn sky_decor_drawn(&self) -> bool {
-        self.sky.iter().any(|d| {
+        self.frame_resources.sky.iter().any(|d| {
             matches!(
                 d,
                 crate::frame::gpu::sky_layers::SkyDraw::Layer {
@@ -974,15 +969,6 @@ impl ModernRenderer {
                 }
             )
         })
-    }
-
-    /// The sky shading's cube bind group (`None` before the first frame).
-    pub(crate) fn sky_cube_bind(&self) -> Option<&wgpu::BindGroup> {
-        self.sky_cubes
-            .gpu
-            .as_ref()
-            .and_then(|g| g.bind.as_ref())
-            .map(|(bind, _, _)| bind)
     }
 }
 
@@ -1039,7 +1025,7 @@ impl ModernRenderer {
             dimension: Some(wgpu::TextureViewDimension::Cube),
             ..Default::default()
         });
-        self.sky_cubes.cubes.insert(
+        self.scene_resources.sky_cubes.cubes.insert(
             key,
             SkyCube {
                 content: Content {
@@ -1050,6 +1036,33 @@ impl ModernRenderer {
                 _texture: texture,
             },
         );
-        self.sky_cubes.epoch += 1;
+        self.scene_resources.sky_cubes.epoch += 1;
+    }
+}
+
+impl<'a> EncodeInputs<'a> {
+    /// Draw a capture face's sky ([`Self::prepare_sky_face`]) into `pass`, which covers the
+    /// whole face (HDR colour, one sample, a depth attachment it leaves alone).
+    pub(crate) fn draw_sky_face<'p>(&self, pass: &mut wgpu::RenderPass<'p>, sky: &'p SkyFace) {
+        let (Some(face), Some(cubes)) = (
+            self.sky_cubes.gpu.as_ref().and_then(|g| g.face.as_ref()),
+            self.sky_cube_bind(),
+        ) else {
+            return;
+        };
+        pass.set_pipeline(&face.pipeline);
+        pass.set_bind_group(0, &sky.frame, &[]);
+        pass.set_bind_group(1, &sky.pass, &[]);
+        pass.set_bind_group(3, cubes, &[]);
+        pass.draw(0..3, 0..1);
+    }
+
+    /// The sky shading's cube bind group (`None` before the first frame).
+    pub(crate) fn sky_cube_bind(&self) -> Option<&wgpu::BindGroup> {
+        self.sky_cubes
+            .gpu
+            .as_ref()
+            .and_then(|g| g.bind.as_ref())
+            .map(|(bind, _, _)| bind)
     }
 }

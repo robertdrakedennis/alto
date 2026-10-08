@@ -88,7 +88,7 @@ impl Startup {
                     counts += 1;
                 }
                 assert!(
-                    renderer.sky_textures.is_empty(),
+                    renderer.scene_resources.sky_textures.is_empty(),
                     "a renderer crosses threads before it draws"
                 );
                 Created {

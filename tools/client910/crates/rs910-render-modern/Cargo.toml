@@ -16,6 +16,7 @@ description = "The 910 client's default modern scene renderer (`--renderer moder
 doctest = false
 
 [dependencies]
+rs910-jobs = { path = "../rs910-jobs" }
 rs910-core = { path = "../rs910-core" }
 rs910-js5 = { path = "../rs910-js5" }
 rs910-config = { path = "../rs910-config" }

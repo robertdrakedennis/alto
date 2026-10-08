@@ -85,7 +85,7 @@ impl Sky {
 
     /// The environment's cube (`None`: no sky), reached through a transition or not.
     fn environment(&mut self, target: Option<crate::skybox::SkyboxKey>, transition: bool) {
-        self.renderer.sky_cubes.forced = Some((target, transition, None));
+        self.renderer.scene_resources.sky_cubes.forced = Some((target, transition, None));
     }
 
     fn frame(&mut self) -> Frame {
@@ -367,7 +367,9 @@ fn a_capture_face_shows_the_frames_sky_at_the_capture_exposure() {
                 multiview_mask: None,
                 timestamp_writes: None,
             });
-            sky.renderer.draw_sky_face(&mut pass, &sky_face);
+            sky.renderer
+                .encoding_inputs()
+                .draw_sky_face(&mut pass, &sky_face);
         }
         sky.queue.submit(Some(encoder.finish()));
         let texels = halves(&read_back(&sky.device, &sky.queue, &colour, 8));
@@ -432,7 +434,7 @@ fn a_settled_fade_mixes_the_cubes_over_the_default_time() {
     close(after, before, "going back");
     // An override's explicit duration.
     at(40_000);
-    sky.renderer.sky_cubes.forced = Some((Some(CUBE_A), true, Some(1000)));
+    sky.renderer.scene_resources.sky_cubes.forced = Some((Some(CUBE_A), true, Some(1000)));
     shown(&mut sky);
     at(40_000 + 500);
     let mix = shown(&mut sky);
@@ -457,9 +459,12 @@ fn sky_frames_repeat() {
             sky.frame();
             let first = sky.frame();
             // A still sky binds its cubes once.
-            let binds = sky.renderer.sky_cubes.binds;
+            let binds = sky.renderer.scene_resources.sky_cubes.binds;
             let again = sky.frame();
-            assert_eq!(sky.renderer.sky_cubes.binds, binds, "no new bind group");
+            assert_eq!(
+                sky.renderer.scene_resources.sky_cubes.binds, binds,
+                "no new bind group"
+            );
             assert_eq!(first.pixels, again.pixels, "frame to frame");
             first.pixels
         })
@@ -519,10 +524,10 @@ fn the_lumbridge_sky_box_is_baked_into_the_cube() {
     );
     assert!(s_with > 0.02, "the sky's clouds ({s_with})");
     // Drawn again, the box is not baked again.
-    let baked = a.sky_cubes.bakes;
+    let baked = a.scene_resources.sky_cubes.bakes;
     settled(&device, &queue, &mut a, &with, size);
     assert_eq!(baked, 1);
-    assert_eq!(a.sky_cubes.bakes, baked);
+    assert_eq!(a.scene_resources.sky_cubes.bakes, baked);
 }
 
 /// Where the frame's first decor layer lands: its centre and size.

@@ -72,7 +72,7 @@ fn haze_grows_with_distance() {
         ..ModernSettings::DEFAULT
     };
     let (clear, dist, _) = frame_with(&device, &queue, &snapshot, d, size, |r| {
-        r.atmos.test_clear_air = true;
+        r.frame_resources.atmos.test_clear_air = true;
     });
     let (hazy, _, r) = frame_with(&device, &queue, &snapshot, d, size, |_| {});
     let s = r.atmos_frame().scattering.expect("the scattering");

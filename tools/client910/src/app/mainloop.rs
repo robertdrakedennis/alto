@@ -369,6 +369,9 @@ impl ViewerApp {
         if let Err(error) = self.sync_graphics_settings() {
             log::warn!("[client910] graphics device settings: {error:#}");
         }
+        if let Err(error) = self.sync_modern_preferences() {
+            log::warn!("[client910] modern graphics preferences: {error:#}");
+        }
         if let Err(error) = self.sync_window_settings() {
             log::warn!("[client910] canvas settings: {error:#}");
         }

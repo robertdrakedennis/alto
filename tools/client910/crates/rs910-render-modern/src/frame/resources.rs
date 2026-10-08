@@ -250,17 +250,17 @@ impl ModernRenderer {
             floor,
             snapshot.live_frame().map_or(0, |l| l.static_entity_count),
         );
-        if self.scene_token != Some(token) {
-            if self.scene_token.is_some() {
+        if self.scene_resources.scene_token != Some(token) {
+            if self.scene_resources.scene_token.is_some() {
                 log::info!(
                     "[modern] scene changed: {} cached loc models dropped",
-                    self.statics.len()
+                    self.scene_resources.statics.len()
                 );
             }
-            self.statics.clear();
-            self.underwater.meshes.clear();
-            self.loc_arena.reset();
-            self.scene_token = Some(token);
+            self.scene_resources.statics.clear();
+            self.scene_resources.underwater.meshes.clear();
+            self.scene_resources.loc_arena.reset();
+            self.scene_resources.scene_token = Some(token);
         }
     }
 
@@ -268,13 +268,17 @@ impl ModernRenderer {
     /// installed) and the GPU buffers created for loc meshes so far.
     #[must_use]
     pub fn loc_mesh_cache(&self) -> (usize, u64) {
-        (self.statics.len(), self.loc_buffers_created)
+        (
+            self.scene_resources.statics.len(),
+            self.scene_resources.loc_buffers_created,
+        )
     }
 
     /// The cached loc model built for exactly `key` (`None`: none, or one
     /// built for an earlier model of its slot).
     pub(crate) fn static_model(&self, key: &EntityKey) -> Option<&StaticModel> {
-        self.statics
+        self.scene_resources
+            .statics
             .get(&loc_slot(key))
             .filter(|entry| entry.key == *key)
     }
@@ -288,10 +292,12 @@ impl ModernRenderer {
         floor: &crate::models::draw_list::FloorDraw<'_>,
     ) {
         let g = floor.geometry;
-        if self.floors.len() <= floor.level {
-            self.floors.resize_with(floor.level + 1, || None);
+        if self.scene_resources.floors.len() <= floor.level {
+            self.scene_resources
+                .floors
+                .resize_with(floor.level + 1, || None);
         }
-        let stale = self.floors[floor.level]
+        let stale = self.scene_resources.floors[floor.level]
             .as_ref()
             .is_none_or(|f| !f.token.matches(g));
         if stale {
@@ -311,7 +317,7 @@ impl ModernRenderer {
                     indices.push(0);
                 }
                 let colours: Vec<u32> = batch.colours.iter().map(|&c| c as u32).collect();
-                self.textures.ensure(
+                self.device_resources.textures.ensure(
                     device,
                     queue,
                     snapshot.pack,
@@ -346,7 +352,7 @@ impl ModernRenderer {
                 g.calls.is_some()
             );
             let pad = [Vertex::default()];
-            self.floors[floor.level] = Some(FloorGpu {
+            self.scene_resources.floors[floor.level] = Some(FloorGpu {
                 token: FloorToken::of(g),
                 vertices: device.create_buffer_init(&wgpu::util::BufferInitDescriptor {
                     label: Some("modern floor"),
@@ -361,7 +367,9 @@ impl ModernRenderer {
                 selection: None,
             });
         }
-        let gpu = self.floors[floor.level].as_mut().expect("floor uploaded");
+        let gpu = self.scene_resources.floors[floor.level]
+            .as_mut()
+            .expect("floor uploaded");
         if gpu.selection.as_ref() != Some(floor.selection) {
             let tiles = floor.selection.tiles(g.tiles_x, g.tiles_z);
             for batch in &mut gpu.batches {
@@ -387,6 +395,7 @@ impl ModernRenderer {
         extra: u32,
     ) -> Instance {
         let (info, slot_bits) = self
+            .device_resources
             .textures
             .get(material)
             .map(|m| (m.info, m.slot_bits))
@@ -431,14 +440,14 @@ impl ModernRenderer {
         // bodies, projectiles, spot anims) with the character setting;
         // spot shadows and hint arrows never.
         let settings = self.shadow_settings();
-        let casts = self.shadow_frame.is_some()
+        let casts = self.frame_resources.shadow_frame.is_some()
             && match entity.kind {
                 Kind::SpotShadow | Kind::HintArrow => false,
                 Kind::Body => settings.characters,
                 Kind::Model if entity.key.is_some() => settings.scenery,
                 Kind::Model => settings.characters,
             };
-        let mut batches = std::mem::take(&mut self.batch_scratch);
+        let mut batches = std::mem::take(&mut self.frame_resources.batch_scratch);
         batches.clear();
         let model_bounds;
         let geometry = match entity.key {
@@ -450,6 +459,7 @@ impl ModernRenderer {
                 );
                 let slot = loc_slot(&key);
                 let stale = self
+                    .scene_resources
                     .statics
                     .get(&slot)
                     .is_none_or(|s| s.key != key || s.fingerprint != fingerprint);
@@ -457,12 +467,12 @@ impl ModernRenderer {
                     // M10: a static loc's RT7 geometry (`models::rt7`) when it
                     // corresponds to its classic model, else the classic mesh.
                     // (Q-RT7A: a dynamic loc's posed RT7 mesh is checked in this frame.)
-                    self.rt7.anim.begin_frame(self.frame);
+                    self.rt7.anim.begin_frame(self.history.frame);
                     // Built on the threads ahead of the draw (`prebuild`),
                     // else here.
                     let streams = match self.take_prebuilt(entity) {
                         Some(streams) => streams.map(Arc::new),
-                        None if self.posing.has(entity) => {
+                        None if self.frame_resources.posing.has(entity) => {
                             self.rt7.stats.not_static += 1;
                             self.posed_streams(snapshot, materials, entity)
                         }
@@ -481,14 +491,19 @@ impl ModernRenderer {
                     let billboards = crate::sprites::billboards::of_entity(snapshot, entity);
                     // The slot's ranges take the new model in place (a
                     // dynamic loc's next pose, a loc change) while it fits.
-                    let old = self.statics.remove(&slot).and_then(|s| s.mesh);
+                    let old = self
+                        .scene_resources
+                        .statics
+                        .remove(&slot)
+                        .and_then(|s| s.mesh);
                     let mesh = match (old, streams) {
                         (old, Some(s)) => {
                             let (at, mut batches) =
                                 old.map_or((None, Vec::new()), |m| (Some(m.alloc), m.batches));
-                            let before = self.loc_arena.buffers_created;
-                            let alloc = self.loc_arena.store(device, queue, at, &s);
-                            self.loc_buffers_created += self.loc_arena.buffers_created - before;
+                            let before = self.scene_resources.loc_arena.buffers_created;
+                            let alloc = self.scene_resources.loc_arena.store(device, queue, at, &s);
+                            self.scene_resources.loc_buffers_created +=
+                                self.scene_resources.loc_arena.buffers_created - before;
                             batches.clear();
                             batches.extend_from_slice(&s.batches);
                             Some(Mesh {
@@ -503,21 +518,25 @@ impl ModernRenderer {
                         }
                         (None, None) => None,
                     };
-                    self.statics.insert(
+                    self.scene_resources.statics.insert(
                         slot,
                         StaticModel {
                             key,
                             fingerprint,
                             mesh,
-                            used: self.frame,
+                            used: self.history.frame,
                             billboards,
                         },
                     );
                 }
-                let entry = self.statics.get_mut(&slot).expect("static model");
-                entry.used = self.frame;
+                let entry = self
+                    .scene_resources
+                    .statics
+                    .get_mut(&slot)
+                    .expect("static model");
+                entry.used = self.history.frame;
                 let Some(mesh) = entry.mesh.as_ref() else {
-                    self.batch_scratch = batches;
+                    self.frame_resources.batch_scratch = batches;
                     return None;
                 };
                 let first = mesh.alloc.first_index();
@@ -537,11 +556,11 @@ impl ModernRenderer {
                 // classic model (`models::rt7_anim`), else the classic mesh; posed
                 // on the renderer's threads (`frame::posing`).
                 let Some(streams) = self.posed_streams(snapshot, materials, entity) else {
-                    self.batch_scratch = batches;
+                    self.frame_resources.batch_scratch = batches;
                     return None;
                 };
                 model_bounds = crate::models::bounds::Bounds::of(&streams.vertices);
-                let (base_vertex, first) = self.arena.push(&streams);
+                let (base_vertex, first) = self.frame_resources.arena.push(&streams);
                 batches.extend(
                     streams
                         .batches
@@ -561,16 +580,22 @@ impl ModernRenderer {
         };
         let mut recipes = Vec::with_capacity(batches.len());
         for &(material, first_index, count) in &batches {
-            self.textures
-                .ensure(device, queue, snapshot.pack, Some(materials), material);
+            self.device_resources.textures.ensure(
+                device,
+                queue,
+                snapshot.pack,
+                Some(materials),
+                material,
+            );
             let (info, slot_bits) = self
+                .device_resources
                 .textures
                 .get(material)
                 .map(|texture| (texture.info, texture.slot_bits))
                 .unwrap_or_default();
             recipes.push((material, first_index, count, info, slot_bits));
         }
-        self.batch_scratch = batches;
+        self.frame_resources.batch_scratch = batches;
         Some(EntityRecipe {
             geometry,
             batches: recipes,
@@ -582,12 +607,14 @@ impl ModernRenderer {
         })
     }
     fn append_entity(&mut self, records: EntityRecords) -> Option<crate::models::bounds::Bounds> {
-        let first = self.instances.len() as u32;
-        self.instances.extend(records.instances);
-        self.draws.extend(records.draws.into_iter().map(|mut draw| {
-            draw.instance += first;
-            draw
-        }));
+        let first = self.frame_resources.instances.len() as u32;
+        self.frame_resources.instances.extend(records.instances);
+        self.frame_resources
+            .draws
+            .extend(records.draws.into_iter().map(|mut draw| {
+                draw.instance += first;
+                draw
+            }));
         records.bounds
     }
     pub(crate) fn prepare_entity(
@@ -627,9 +654,9 @@ impl ModernRenderer {
             .into_iter()
             .flatten()
             .map(|records| {
-                let start = self.draws.len();
+                let start = self.frame_resources.draws.len();
                 let bounds = records.and_then(|records| self.append_entity(records));
-                (start, self.draws.len(), bounds)
+                (start, self.frame_resources.draws.len(), bounds)
             })
             .collect()
     }

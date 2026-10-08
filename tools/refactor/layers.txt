@@ -11,6 +11,7 @@
 # transitive closure); anything else points up or sideways.
 native910:
 rs910-core:
+rs910-jobs:
 # The content-symbol registry's generated bindings (docs/symbols.md): a leaf.
 rs910-symbols:
 rs910-js5: rs910-core native910
@@ -33,11 +34,12 @@ rs910-render-gpu: rs910-core rs910-model rs910-scene rs910-toolkit rs910-gpu-dev
 # reuse it). rs910-model/rs910-scene are allowed for its later milestones
 # (private loc models).
 rs910-far-scene: rs910-core rs910-js5 rs910-config rs910-model rs910-scene
-rs910-render-modern: rs910-core rs910-model rs910-scene rs910-toolkit rs910-gpu-device rs910-far-scene
+rs910-render-modern: rs910-jobs rs910-core rs910-model rs910-scene rs910-toolkit rs910-gpu-device rs910-far-scene
 rs910-client: rs910-core rs910-js5 rs910-protocol rs910-config rs910-game rs910-model rs910-scene rs910-audio rs910-toolkit rs910-ui native910
 client910: rs910-client rs910-render-gpu rs910-render-modern
 
 [externals]
+rs910-jobs: rayon
 # crate: the non-workspace crates it may depend on (checked with cargo
 # metadata once the crate exists). A crate without an entry is unrestricted
 # apart from [fences]. rs910-core is std only.
@@ -81,6 +83,7 @@ rs910-far-scene: log
 rs910-client: anyhow log tokio libc getrandom serde serde_json
 
 [fences]
+rayon: rs910-jobs
 # external crate: crates allowed to name it.
 wgpu: rs910-render-gpu rs910-gpu-device rs910-render-modern
 objc2-metal: rs910-gpu-device
@@ -89,6 +92,8 @@ tokio: rs910-js5 rs910-client
 cpal: rs910-audio
 
 [modules]
+rs910-jobs rs910-jobs
+renderer_preferences rs910-config
 # top-level client910 module (or glob): target crate. First match wins.
 # `<root>` is main.rs itself (the bin shell).
 <root> client910
@@ -440,7 +445,6 @@ render_debug_flags rs910-render-gpu
 # rs910-config's NXT data tables).
 atmosphere rs910-render-modern
 device_features rs910-render-modern
-exclusive rs910-render-modern
 far rs910-render-modern
 fast_hash rs910-render-modern
 frame rs910-render-modern

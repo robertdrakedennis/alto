@@ -3,6 +3,7 @@
 //! indices, drawn into the sun's cascades only (never the colour, depth,
 //! normal or reflection passes). The roof-hidden entities join the
 //! off-screen caster gather (`shadows::casters`).
+use crate::frame::encoding::EncodeInputs;
 use crate::frame::*;
 use crate::terrain::SceneKey;
 
@@ -41,7 +42,7 @@ impl ModernRenderer {
         &mut self,
         snapshot: &SceneSnapshot<'_>,
     ) -> Option<crate::shadows::interior::RoofHidden> {
-        self.shadow_frame.as_ref()?;
+        self.frame_resources.shadow_frame.as_ref()?;
         Some(crate::shadows::interior::roof_hidden(snapshot))
     }
 
@@ -56,32 +57,34 @@ impl ModernRenderer {
         snapshot: &SceneSnapshot<'_>,
         hidden: Option<&crate::shadows::interior::RoofHidden>,
     ) {
-        self.interior.terrain.clear();
-        self.interior.hidden_entities = 0;
-        self.interior.hidden_tiles = 0;
+        self.scene_resources.interior.terrain.clear();
+        self.scene_resources.interior.hidden_entities = 0;
+        self.scene_resources.interior.hidden_tiles = 0;
         let Some(hidden) = hidden else {
             return;
         };
-        self.interior.hidden_entities = hidden.entities.len();
-        self.interior.hidden_tiles = hidden.tile_count();
-        if self.frame == 1 || self.frame.is_multiple_of(600) {
+        self.scene_resources.interior.hidden_entities = hidden.entities.len();
+        self.scene_resources.interior.hidden_tiles = hidden.tile_count();
+        if self.history.frame == 1 || self.history.frame.is_multiple_of(600) {
             log::info!(
                 "[modern] interior: {} roof-hidden entities ({} caster draws) and {} floor tiles cast",
-                self.interior.hidden_entities,
-                self.interior.hidden_draws,
-                self.interior.hidden_tiles
+                self.scene_resources.interior.hidden_entities,
+                self.scene_resources.interior.hidden_draws,
+                self.scene_resources.interior.hidden_tiles
             );
         }
         if crate::modern_debug_flags::flags().check {
             let (ok, report) = crate::shadows::interior::check(snapshot, hidden);
-            self.interior.frames += 1;
+            self.scene_resources.interior.frames += 1;
             if !ok {
-                self.interior.mismatches += 1;
+                self.scene_resources.interior.mismatches += 1;
                 log::warn!(
                     "[modern] interior check: {report} ({} mismatching frames)",
-                    self.interior.mismatches
+                    self.scene_resources.interior.mismatches
                 );
-            } else if self.interior.frames == 1 || self.interior.frames.is_multiple_of(600) {
+            } else if self.scene_resources.interior.frames == 1
+                || self.scene_resources.interior.frames.is_multiple_of(600)
+            {
                 log::info!("[modern] interior check: {report}");
             }
         }
@@ -89,10 +92,10 @@ impl ModernRenderer {
         if !self.terrain_casts() {
             return;
         }
-        let Some(scene) = self.terrain.scene.as_ref() else {
+        let Some(scene) = self.scene_resources.terrain.scene.as_ref() else {
             return;
         };
-        let i = &mut self.interior;
+        let i = &mut self.scene_resources.interior;
         if i.scene.as_ref() != Some(&scene.key) {
             i.scene = Some(scene.key.clone());
             i.levels.clear();
@@ -143,11 +146,22 @@ impl ModernRenderer {
         }
     }
 
+    /// The last frame's roof-hidden entity caster draws and terrain draws.
+    #[must_use]
+    pub fn interior_casters(&self) -> (usize, usize) {
+        (
+            self.scene_resources.interior.hidden_draws,
+            self.scene_resources.interior.terrain.len(),
+        )
+    }
+}
+
+impl<'a> EncodeInputs<'a> {
     /// The roof-hidden terrain casters into one cascade of the caster pass
     /// (groups 0 and 2 set); leaves the caster pipeline set. (The
     /// roof-hidden entities are the frame's shadow-only draws.)
-    pub(crate) fn encode_interior<'p>(&'p self, pass: &mut wgpu::RenderPass<'p>) {
-        let i = &self.interior;
+    pub(crate) fn encode_interior<'p>(&self, pass: &mut wgpu::RenderPass<'p>) {
+        let i = self.interior;
         if !i.terrain.is_empty() {
             if let (Some(pipes), Some(scene)) =
                 (self.terrain.pipes.as_ref(), self.terrain.scene.as_ref())
@@ -167,11 +181,5 @@ impl ModernRenderer {
             }
             pass.set_pipeline(&self.shadow.pipeline);
         }
-    }
-
-    /// The last frame's roof-hidden entity caster draws and terrain draws.
-    #[must_use]
-    pub fn interior_casters(&self) -> (usize, usize) {
-        (self.interior.hidden_draws, self.interior.terrain.len())
     }
 }

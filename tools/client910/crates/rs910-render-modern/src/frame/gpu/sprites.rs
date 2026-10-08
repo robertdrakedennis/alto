@@ -110,9 +110,9 @@ impl ModernRenderer {
             origin,
         } = *prep;
         use crate::sprites::billboards::{of_entity, Billboards, View};
-        self.sprites.clear();
-        self.sprite_segments.clear();
-        let view = View::new(snapshot, self.faithful_bloom);
+        self.frame_resources.sprites.clear();
+        self.frame_resources.sprite_segments.clear();
+        let view = View::new(snapshot, self.preparation.faithful_bloom);
         // The billboard set (the faithful one, sprites::billboards), the loc
         // models' cached with their mesh.
         let mut billboards = Billboards::default();
@@ -152,8 +152,13 @@ impl ModernRenderer {
                 draws: Vec::new(),
             };
             for q in quads {
-                self.textures
-                    .ensure(device, queue, snapshot.pack, snapshot.materials, q.material);
+                self.device_resources.textures.ensure(
+                    device,
+                    queue,
+                    snapshot.pack,
+                    snapshot.materials,
+                    q.material,
+                );
                 // z: a model billboard (M8: its coverage squared with the
                 // post chain on, `fs_sprite`).
                 // w: the blended pipeline's premultiplied output (lane
@@ -168,7 +173,7 @@ impl ModernRenderer {
                         0.0
                     },
                 ];
-                let quad = self.sprites.push_quad(
+                let quad = self.frame_resources.sprites.push_quad(
                     q.corners,
                     crate::billboard::QUAD_CORNERS,
                     q.colour,
@@ -183,7 +188,7 @@ impl ModernRenderer {
                     _ => group.draws.push((quad, 1, q.material)),
                 }
             }
-            self.sprite_segments.push(SpriteSegment {
+            self.frame_resources.sprite_segments.push(SpriteSegment {
                 particles: false,
                 list: segment.list,
                 at: segment.at,
@@ -193,7 +198,8 @@ impl ModernRenderer {
             groups.push(group);
         }
         // The particle systems (the faithful frame's owners, sprites::particles).
-        let placements = crate::sprites::particles::placements(snapshot, list, &self.particles);
+        let placements =
+            crate::sprites::particles::placements(snapshot, list, &self.frame_resources.particles);
         let mut batches = 0;
         for (list_index, at, range) in placements {
             let mut group = Group {
@@ -202,8 +208,8 @@ impl ModernRenderer {
                 draws: Vec::new(),
             };
             let (mut depth, mut quads, mut drawn) = (0.0, 0_usize, 0_usize);
-            for batch in &self.particles.batches[range] {
-                self.textures.ensure(
+            for batch in &self.frame_resources.particles.batches[range] {
+                self.device_resources.textures.ensure(
                     device,
                     queue,
                     snapshot.pack,
@@ -224,6 +230,7 @@ impl ModernRenderer {
                 ];
                 let first = batch.first_vertex as usize;
                 let Some(corners) = self
+                    .frame_resources
                     .particles
                     .vertices
                     .get(first..first + batch.quads as usize * 4)
@@ -242,7 +249,7 @@ impl ModernRenderer {
                         std::array::from_fn(|i| v.iter().map(|c| c.pos[i]).sum::<f32>() * 0.25);
                     depth += view_depth(&view.view, centre);
                     n += 1;
-                    let quad = self.sprites.push_quad(
+                    let quad = self.frame_resources.sprites.push_quad(
                         [v[0].pos, v[1].pos, v[2].pos, v[3].pos],
                         [v[0].uv, v[1].uv, v[2].uv, v[3].uv],
                         v[0].colour,
@@ -257,7 +264,7 @@ impl ModernRenderer {
                     batches += 1;
                 }
             }
-            self.sprite_segments.push(SpriteSegment {
+            self.frame_resources.sprite_segments.push(SpriteSegment {
                 particles: true,
                 list: list_index,
                 at,
@@ -277,7 +284,7 @@ impl ModernRenderer {
             match group.pipeline {
                 SpritePipeline::Cutout => {
                     for &(first, n, material) in &group.draws {
-                        self.sprites.add_draw(
+                        self.frame_resources.sprites.add_draw(
                             group0_end,
                             first,
                             n,
@@ -299,15 +306,20 @@ impl ModernRenderer {
             let depth = view_depth(&view.view, [matrix[12], matrix[13], matrix[14]]);
             while blended.get(next).is_some_and(|g| g.depth >= depth) {
                 for &(first, n, material) in &blended[next].draws {
-                    self.sprites
-                        .add_draw(range.start, first, n, material, SpritePipeline::Blend);
+                    self.frame_resources.sprites.add_draw(
+                        range.start,
+                        first,
+                        n,
+                        material,
+                        SpritePipeline::Blend,
+                    );
                 }
                 next += 1;
             }
         }
         for group in &blended[next..] {
             for &(first, n, material) in &group.draws {
-                self.sprites.add_draw(
+                self.frame_resources.sprites.add_draw(
                     end.max(group0_end),
                     first,
                     n,
@@ -319,6 +331,7 @@ impl ModernRenderer {
         self.stats.billboards = billboards.quads.len();
         self.stats.billboard_owners = billboards.segments.len();
         self.stats.particles = self
+            .frame_resources
             .sprite_segments
             .iter()
             .filter(|s| s.particles)
@@ -326,18 +339,20 @@ impl ModernRenderer {
             .sum();
         self.stats.particle_batches = batches;
         self.stats.hdr_sprites = self
+            .frame_resources
             .sprites
             .frame
             .chunks_exact(4)
             .filter(|q| q[0].params[1] > 0.5)
             .count();
-        self.billboards = billboards;
-        self.sprites.upload(device, queue);
+        self.frame_resources.billboards = billboards;
+        self.frame_resources.sprites.upload(device, queue);
     }
 
     /// 1 when `material` has an aux map (the HDR scale), else 0.
     pub(crate) fn hdr_scale(&self, material: i32) -> f32 {
         let aux = self
+            .device_resources
             .textures
             .get(material)
             .is_some_and(|m| m.info.flags & crate::models::materials::FLAG_AUX != 0);

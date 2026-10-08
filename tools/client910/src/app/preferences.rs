@@ -4,6 +4,48 @@
 use super::*;
 
 impl ViewerApp {
+    /// UI and console edits use the same live owner and atomic save path.
+    pub(super) fn change_modern_preferences(
+        &mut self,
+        preferences: rs910_config::renderer_preferences::RendererPreferences,
+    ) -> anyhow::Result<()> {
+        if let Some(renderer) = &mut self.renderer {
+            renderer.set_modern_preferences(preferences);
+        }
+        let result = crate::modern_display::save_preferences(
+            &crate::modern_display::path(&self.cli.pack_root),
+            preferences,
+        );
+        if let Some(session) = self.core.session.as_mut() {
+            session.ui.renderer_settings.saved(
+                result
+                    .as_ref()
+                    .err()
+                    .map(|_| "Applied, but could not save. Try again.".into()),
+            );
+        }
+        result
+    }
+
+    pub(super) fn sync_modern_preferences(&mut self) -> anyhow::Result<()> {
+        let change = self
+            .core
+            .session
+            .as_mut()
+            .and_then(|s| s.ui.renderer_settings.take_change());
+        let result = change.map_or(Ok(()), |p| self.change_modern_preferences(p));
+        if let (Some(session), Some(renderer)) =
+            (self.core.session.as_mut(), self.renderer.as_ref())
+        {
+            session.ui.renderer_settings.sync(
+                renderer.modern_controls_available(),
+                renderer.modern_preferences(),
+                renderer.effective_modern_preferences(),
+            );
+        }
+        result
+    }
+
     pub(super) fn sync_graphics_settings(&mut self) -> anyhow::Result<()> {
         let (Some(renderer), Some(game)) = (self.renderer.as_mut(), self.core.session.game_mut())
         else {

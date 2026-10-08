@@ -4,6 +4,7 @@
 //! reads the resolved light (`crate::frame::terrain`, bindings 12 and 13).
 //! Nothing is created or drawn unless the caustics are on with the terrain
 //! (`crate::water_body::caustics::enabled`).
+use crate::frame::encoding::EncodeInputs;
 use crate::frame::*;
 use crate::water_body::caustics::{CausticUniforms, COMPUTE_RES, MAP_RES};
 
@@ -236,17 +237,14 @@ impl CausticPipes {
 impl ModernRenderer {
     /// The caustic buffers (the terrain's bind group reads them).
     pub(crate) fn ensure_caustics(&mut self, device: &wgpu::Device) {
-        if self.water.caustics.buffers.is_none() {
-            self.water.caustics.buffers = Some(self.caustic_buffers(device));
+        if self.frame_resources.water.caustics.buffers.is_none() {
+            self.frame_resources.water.caustics.buffers = Some(self.caustic_buffers(device));
         }
     }
 
     /// A new set of caustic buffers.
     pub(crate) fn caustic_buffers(&self, device: &wgpu::Device) -> CausticBuffers {
-        let module = self
-            .shaders
-            .get(device, crate::shaders::Module::CausticsResolve);
-        CausticBuffers::new(device, &module)
+        self.encoding_inputs().caustic_buffers(device)
     }
 
     /// This frame's caustics (after `prepare_water`): the uniforms (off
@@ -257,64 +255,77 @@ impl ModernRenderer {
         queue: &dyn rs910_gpu_device::uploads::Uploader,
         origin: [f32; 3],
     ) {
-        self.water.caustics.bind = None;
-        let Some(buffers) = self.water.caustics.buffers.as_ref() else {
+        self.frame_resources.water.caustics.bind = None;
+        let Some(buffers) = self.frame_resources.water.caustics.buffers.as_ref() else {
             return;
         };
-        let pipes = self.water.pipes.current();
+        let pipes = self.frame_resources.water.pipes.current();
         let rays = pipes.and_then(|p| p.caustics.as_ref());
-        let on = self.terrain.active && !self.water.draws.is_empty() && rays.is_some();
-        let u = crate::water_body::caustics::uniforms(origin, self.water.plane_y, on);
+        let on = self.scene_resources.terrain.active
+            && !self.frame_resources.water.draws.is_empty()
+            && rays.is_some();
+        let u =
+            crate::water_body::caustics::uniforms(origin, self.frame_resources.water.plane_y, on);
         queue.write_buffer(&buffers.uniforms, 0, bytemuck::bytes_of(&u));
         let (true, Some(pipes), Some(rays)) = (u.extra[3] > 0.5, pipes, rays) else {
             return;
         };
         let normal = |m: Option<u16>| {
-            m.and_then(|m| self.water.normal_maps.get(&m))
+            m.and_then(|m| self.frame_resources.water.normal_maps.get(&m))
                 .unwrap_or(&pipes.flat_normal)
         };
-        let [na, nb] = self.water.normal_pair;
+        let [na, nb] = self.frame_resources.water.normal_pair;
         let tex = wgpu::BindingResource::TextureView;
-        self.water.caustics.bind = Some(device.create_bind_group(&wgpu::BindGroupDescriptor {
-            label: Some("modern caustic rays"),
-            layout: &rays.group2,
-            entries: &[
-                wgpu::BindGroupEntry {
-                    binding: 10,
-                    resource: pipes.uniforms.as_entire_binding(),
-                },
-                wgpu::BindGroupEntry {
-                    binding: 14,
-                    resource: tex(normal(na)),
-                },
-                wgpu::BindGroupEntry {
-                    binding: 15,
-                    resource: tex(normal(nb.or(na))),
-                },
-                wgpu::BindGroupEntry {
-                    binding: 17,
-                    resource: wgpu::BindingResource::Sampler(&pipes.water_sampler),
-                },
-                wgpu::BindGroupEntry {
-                    binding: 19,
-                    resource: buffers.rays.as_entire_binding(),
-                },
-                wgpu::BindGroupEntry {
-                    binding: 20,
-                    resource: buffers.uniforms.as_entire_binding(),
-                },
-            ],
-        }));
-        self.water.caustics.frames += 1;
-        if self.water.caustics.frames == 1 || self.water.caustics.frames.is_multiple_of(600) {
+        self.frame_resources.water.caustics.bind =
+            Some(device.create_bind_group(&wgpu::BindGroupDescriptor {
+                label: Some("modern caustic rays"),
+                layout: &rays.group2,
+                entries: &[
+                    wgpu::BindGroupEntry {
+                        binding: 10,
+                        resource: pipes.uniforms.as_entire_binding(),
+                    },
+                    wgpu::BindGroupEntry {
+                        binding: 14,
+                        resource: tex(normal(na)),
+                    },
+                    wgpu::BindGroupEntry {
+                        binding: 15,
+                        resource: tex(normal(nb.or(na))),
+                    },
+                    wgpu::BindGroupEntry {
+                        binding: 17,
+                        resource: wgpu::BindingResource::Sampler(&pipes.water_sampler),
+                    },
+                    wgpu::BindGroupEntry {
+                        binding: 19,
+                        resource: buffers.rays.as_entire_binding(),
+                    },
+                    wgpu::BindGroupEntry {
+                        binding: 20,
+                        resource: buffers.uniforms.as_entire_binding(),
+                    },
+                ],
+            }));
+        self.frame_resources.water.caustics.frames += 1;
+        if self.frame_resources.water.caustics.frames == 1
+            || self
+                .frame_resources
+                .water
+                .caustics
+                .frames
+                .is_multiple_of(600)
+        {
             log::info!(
                 "[modern] caustics: {} water draws into the {MAP_RES}x{MAP_RES} ray map (plane {:?})",
-                self.water.draws.len(),
-                self.water.plane_y
+                self.frame_resources.water.draws.len(),
+                self.frame_resources.water.plane_y
             );
         }
     }
+}
 
+impl<'a> EncodeInputs<'a> {
     /// The ray pass and the resolve (before the forward pass), when
     /// [`Self::prepare_caustics`] set them up.
     pub(crate) fn encode_caustics(&self, encoder: &mut wgpu::CommandEncoder) {
@@ -344,7 +355,7 @@ impl ModernRenderer {
                 timestamp_writes: None,
             });
             pass.set_pipeline(&rays.pipeline);
-            pass.set_bind_group(0, &self.frame_bind, &[]);
+            pass.set_bind_group(0, self.frame_bind, &[]);
             pass.set_bind_group(2, bind, &[]);
             for d in &self.water.draws {
                 self.draw_water(&mut pass, d);
@@ -357,5 +368,15 @@ impl ModernRenderer {
         pass.set_pipeline(&buffers.resolve);
         pass.set_bind_group(0, &buffers.resolve_bind, &[]);
         pass.dispatch_workgroups(MAP_RES.div_ceil(8), MAP_RES.div_ceil(8), 1);
+    }
+}
+
+impl<'a> EncodeInputs<'a> {
+    /// A new set of caustic buffers.
+    pub(crate) fn caustic_buffers(&self, device: &wgpu::Device) -> CausticBuffers {
+        let module = self
+            .shaders
+            .get(device, crate::shaders::Module::CausticsResolve);
+        CausticBuffers::new(device, &module)
     }
 }

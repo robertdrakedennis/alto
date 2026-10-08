@@ -47,6 +47,7 @@ pub mod login_configs;
 pub mod npc_customisation;
 pub mod nxt;
 pub mod opcode_table;
+pub mod renderer_preferences;
 pub mod scenery_varbits;
 pub mod skybox_types;
 pub mod sprite_data;

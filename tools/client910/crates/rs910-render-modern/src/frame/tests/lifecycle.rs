@@ -7,6 +7,39 @@ use std::sync::Arc;
 
 use super::*;
 
+/// Settings edits reach the real frame consumers and resetting restores the
+/// settled image of a fresh renderer. The existing repeat-noise bound applies
+/// to these independently rendered images.
+#[test]
+#[ignore = "needs a GPU (headless wgpu device) and server/data/pack"]
+fn live_quality_changes_and_reset_draw_the_frames_of_fresh_renderers() {
+    use rs910_config::renderer_preferences::{QualityPreset, RendererPreferences};
+    const SIZE: [u32; 2] = [480, 300];
+    const SAMPLES: u32 = 4;
+    const RIVER_PITCH: f32 = 1400.0;
+    const RIVER_ZOOM: f32 = 1.2;
+    let _clock = fixed_clock();
+    let pack = crate::test_support::require_pack("client.mapsv2.js5");
+    let (device, queue) = crate::test_support::require_gpu();
+    let scene = river_scene(&pack, SIZE, RIVER_PITCH, RIVER_ZOOM);
+    let snapshot = scene.snapshot(&pack);
+    let mut live = renderer(&device, &queue, SAMPLES, ModernSettings::DEFAULT);
+    for preferences in QualityPreset::ALL
+        .iter()
+        .map(|p| p.preferences())
+        .chain(std::iter::once(RendererPreferences::DEFAULT))
+    {
+        let settings = ModernSettings::from_preferences_with_vars(preferences, |_| None);
+        live.set_quality(settings);
+        let actual = settled(&device, &queue, &mut live, &snapshot, SIZE);
+        let mut fresh = renderer(&device, &queue, SAMPLES, settings);
+        let expected = settled(&device, &queue, &mut fresh, &snapshot, SIZE);
+        assert!(Noise::of(&actual.pixels, &expected.pixels).is_repeat_noise(SIZE));
+        assert_eq!(live.stats.draws, fresh.stats.draws);
+        assert_eq!(live.preparation.settings.preferences(), preferences);
+    }
+}
+
 /// The builds ahead of the draws give the frame of building each loc mesh
 /// and material at its draw, with the same RT7 counters and loc pages:
 /// Lumbridge with posed models and ultra shadows (off-screen casters), 4x,
@@ -29,7 +62,7 @@ fn builds_ahead_of_the_draws_leave_the_frame_unchanged() {
     let frame = |inline: bool| {
         let mut r = renderer(&device, &queue, 4, ModernSettings::DEFAULT);
         r.set_shadow_settings(crate::shadows::Settings::from_options(2, 3, 1));
-        r.test_inline_builds = inline;
+        r.preparation.test_inline_builds = inline;
         let frame = settled(&device, &queue, &mut r, &snapshot, size);
         (frame.pixels, r)
     };
@@ -40,9 +73,13 @@ fn builds_ahead_of_the_draws_leave_the_frame_unchanged() {
     let differ = Noise::of(&inline, &ahead);
     eprintln!(
         "{posed} posed models; {} loc meshes built ahead, {} at their draws; {:?}; {differ:?}",
-        threads.prebuilds.taken, at_draws.prebuilds.taken, threads.rt7.stats
+        threads.preparation.prebuilds.taken,
+        at_draws.preparation.prebuilds.taken,
+        threads.rt7.stats
     );
-    assert!(threads.prebuilds.taken > 1000 && at_draws.prebuilds.taken == 0);
+    assert!(
+        threads.preparation.prebuilds.taken > 1000 && at_draws.preparation.prebuilds.taken == 0
+    );
     assert!(
         threads.rt7.anim.stats.maps > 0,
         "the posed models have RT7 maps"
@@ -50,7 +87,10 @@ fn builds_ahead_of_the_draws_leave_the_frame_unchanged() {
     assert_eq!(differ, Noise::default());
     assert_eq!(threads.rt7.stats, at_draws.rt7.stats);
     assert_eq!(threads.rt7.anim.stats, at_draws.rt7.anim.stats);
-    assert_eq!(threads.loc_arena.used(), at_draws.loc_arena.used());
+    assert_eq!(
+        threads.scene_resources.loc_arena.used(),
+        at_draws.scene_resources.loc_arena.used()
+    );
     assert_eq!(threads.textures().len(), at_draws.textures().len());
 }
 
@@ -83,7 +123,7 @@ fn a_renderer_made_on_its_startup_thread_draws_the_frames_of_one_made_here() {
             ModernSettings::DEFAULT,
         );
         let mut r = startup.finish(&device, &queue, samples);
-        r.far.sync = true;
+        r.scene_resources.far.sync = true;
         assert_eq!(r.samples(), samples);
         settled(&device, &queue, &mut r, &snapshot, size).pixels
     };
@@ -162,16 +202,22 @@ fn deferred_scene_commands_match_eager_submissions() {
         ],
     ] {
         let frames = deferred.frames();
-        let exposure = (deferred.post.adapted_slot, deferred.post.last_ms);
+        let exposure = (
+            deferred.history.post.adapted_slot,
+            deferred.history.post.last_ms,
+        );
         assert!(deferred
             .prepare_frame(target(clip), &offline.snapshot(&pack))
             .is_none());
         assert_eq!(deferred.frames(), frames);
         assert_eq!(
-            (deferred.post.adapted_slot, deferred.post.last_ms),
+            (
+                deferred.history.post.adapted_slot,
+                deferred.history.post.last_ms
+            ),
             exposure
         );
-        assert_eq!(deferred.probes.captured, None);
+        assert_eq!(deferred.history.probes.captured, None);
     }
     let mut expected = Vec::new();
     let mut animation_cycle = START_ANIMATION_CYCLE;
@@ -179,20 +225,40 @@ fn deferred_scene_commands_match_eager_submissions() {
         if SKIPPED_FRAMES.contains(&cycle) {
             let snapshot = offline.snapshot(&pack);
             let frames = deferred.frames();
-            let exposure = (deferred.post.adapted_slot, deferred.post.last_ms);
-            let probes = (deferred.probes.captured, deferred.probes.last_env);
-            let order = deferred.probes.job.as_ref().map(|job| job.order.clone());
+            let exposure = (
+                deferred.history.post.adapted_slot,
+                deferred.history.post.last_ms,
+            );
+            let probes = (
+                deferred.history.probes.captured,
+                deferred.history.probes.last_env,
+            );
+            let order = deferred
+                .history
+                .probes
+                .job
+                .as_ref()
+                .map(|job| job.order.clone());
             let unsent = deferred.prepare_frame(target(viewport), &snapshot).unwrap();
             deferred.frame_skipped(unsent);
             gpu.submit(std::iter::empty());
             assert_eq!(deferred.frames(), frames);
             assert_eq!(
-                (deferred.post.adapted_slot, deferred.post.last_ms),
+                (
+                    deferred.history.post.adapted_slot,
+                    deferred.history.post.last_ms
+                ),
                 exposure
             );
-            assert_eq!((deferred.probes.captured, deferred.probes.last_env), probes);
             assert_eq!(
-                deferred.probes.job.as_ref().map(|job| &job.order),
+                (
+                    deferred.history.probes.captured,
+                    deferred.history.probes.last_env
+                ),
+                probes
+            );
+            assert_eq!(
+                deferred.history.probes.job.as_ref().map(|job| &job.order),
                 order.as_ref()
             );
             // The retry reuses the renderer frame number after the game advances.
@@ -285,15 +351,19 @@ fn owned_scene_worker_keeps_pixels_and_job_result_order() {
     );
     assert_eq!(inline.rt7.stats, worker.rt7.stats);
     assert_eq!(inline.rt7.anim.stats, worker.rt7.anim.stats);
-    assert_eq!(inline.loc_arena.used(), worker.loc_arena.used());
+    assert_eq!(
+        inline.scene_resources.loc_arena.used(),
+        worker.scene_resources.loc_arena.used()
+    );
     assert!(
-        !worker.shadow.point.active.is_empty(),
+        !worker.history.shadow.point.active.is_empty(),
         "real cache lights must exercise point slots"
     );
-    let installed_grid = worker.lights.grid.clone();
-    let installed_key = worker.lights.key();
-    let point_keys = worker.shadow.point.keys;
+    let installed_grid = worker.scene_resources.lights.grid.clone();
+    let installed_key = worker.scene_resources.lights.key();
+    let point_keys = worker.history.shadow.point.keys;
     let point_redraws = worker
+        .history
         .shadow
         .point
         .plan
@@ -308,15 +378,16 @@ fn owned_scene_worker_keeps_pixels_and_job_result_order() {
         let output = render(&device, &queue, &mut worker, &next.snapshot(), SIZE);
         assert_eq!(Noise::of(&pixels, &output.pixels), Noise::default());
         assert_eq!(
-            worker.lights.grid, installed_grid,
+            worker.scene_resources.lights.grid, installed_grid,
             "an owned slot must reuse the installed GPU light grid"
         );
-        assert_eq!(worker.lights.key(), installed_key);
+        assert_eq!(worker.scene_resources.lights.key(), installed_key);
         assert_eq!(
-            worker.shadow.point.keys, point_keys,
+            worker.history.shadow.point.keys, point_keys,
             "slot alternation must not reset point faces"
         );
         assert!(worker
+            .history
             .shadow
             .point
             .plan
@@ -325,6 +396,7 @@ fn owned_scene_worker_keeps_pixels_and_job_result_order() {
             .all(|slot| !slot.clear_block));
         assert_eq!(
             worker
+                .history
                 .shadow
                 .point
                 .plan
@@ -341,10 +413,10 @@ fn owned_scene_worker_keeps_pixels_and_job_result_order() {
     offline.live.model_lights.intensities[FIRST_LIGHT] += LIGHT_INTENSITY_DELTA;
     let changed = builder.capture(&offline.snapshot(&pack), slots[FIRST_SLOT].take());
     render(&device, &queue, &mut worker, &changed.snapshot(), SIZE);
-    assert_eq!(worker.lights.grid, installed_grid);
-    assert_eq!(worker.lights.key(), installed_key);
+    assert_eq!(worker.scene_resources.lights.grid, installed_grid);
+    assert_eq!(worker.scene_resources.lights.key(), installed_key);
     assert_eq!(
-        worker.lights.frame[FIRST_LIGHT].intensity,
+        worker.scene_resources.lights.frame[FIRST_LIGHT].intensity,
         original_intensity + LIGHT_INTENSITY_DELTA
     );
     assert_eq!(
@@ -381,9 +453,9 @@ fn owned_scene_worker_keeps_pixels_and_job_result_order() {
     let expected = render(&device, &queue, &mut inline, &offline.snapshot(&pack), SIZE).pixels;
     let actual = render(&device, &queue, &mut worker, &faded.snapshot(), SIZE).pixels;
     assert_eq!(Noise::of(&expected, &actual), Noise::default());
-    assert_eq!(worker.lights.grid, installed_grid);
+    assert_eq!(worker.scene_resources.lights.grid, installed_grid);
     assert_eq!(
-        worker.lights.frame[FIRST_LIGHT].colour,
+        worker.scene_resources.lights.frame[FIRST_LIGHT].colour,
         crate::models::shading::colour_term(
             FADE_COLOUR,
             offline.live.model_lights.intensities[FIRST_LIGHT]
@@ -410,13 +482,17 @@ fn owned_scene_worker_keeps_pixels_and_job_result_order() {
     let replacement = builder.capture(&offline.snapshot(&pack), slots[SECOND_SLOT].take());
     render(&device, &queue, &mut worker, &replacement.snapshot(), SIZE);
     assert_ne!(
-        worker.lights.grid, installed_grid,
+        worker.scene_resources.lights.grid, installed_grid,
         "fresh table installation must rebuild the grid"
     );
-    assert_ne!(worker.lights.key(), installed_key);
-    assert_eq!(worker.shadow.point.scene, Some(worker.lights.key()));
+    assert_ne!(worker.scene_resources.lights.key(), installed_key);
+    assert_eq!(
+        worker.history.shadow.point.scene,
+        Some(worker.scene_resources.lights.key())
+    );
     assert!(
         worker
+            .history
             .shadow
             .point
             .plan

@@ -17,6 +17,7 @@
 //! (`get_bind_group_layout`), so the renderer's constructor only holds the
 //! empty state.
 
+use crate::frame::encoding::EncodeInputs;
 use std::collections::HashMap;
 
 use wgpu::util::DeviceExt;
@@ -630,12 +631,12 @@ impl ModernRenderer {
         queue: &dyn rs910_gpu_device::uploads::Uploader,
         debug: u32,
     ) {
-        let key = (self.samples, debug);
-        if !self.water.pipes.contains(&key) {
+        let key = (self.device_resources.samples, debug);
+        if !self.frame_resources.water.pipes.contains(&key) {
             let pipes = self.water_pipes(device, queue, debug);
-            self.water.pipes.insert_selected(key, pipes);
+            self.frame_resources.water.pipes.insert_selected(key, pipes);
         }
-        self.water.pipes.use_key(key);
+        self.frame_resources.water.pipes.use_key(key);
     }
 
     /// The water's pipelines at the current sample count and `debug` view
@@ -646,33 +647,13 @@ impl ModernRenderer {
         queue: &dyn rs910_gpu_device::uploads::Uploader,
         debug: u32,
     ) -> Pipelines {
-        let samples = self.samples;
-        let forward = &self
-            .pipelines
-            .current()
-            .expect("the forward-target pipelines")
-            .forward;
-        let module = self.shaders.get(
-            device,
-            crate::shaders::Module::Water {
-                multisampled: samples > 1,
-            },
-        );
-        Pipelines::new(
-            device,
-            queue,
-            forward,
-            &self.pipeline_inputs.forward_module,
-            samples,
-            debug,
-            module,
-        )
+        self.encoding_inputs().water_pipes(device, queue, debug)
     }
 
     /// The last frame's water statistics (renderer plan M7).
     #[must_use]
     pub fn water_stats(&self) -> WaterStats {
-        self.water.stats()
+        self.frame_resources.water.stats()
     }
 
     /// The scene's map-file water data, decoded once per installed scene.
@@ -682,15 +663,25 @@ impl ModernRenderer {
             std::sync::Arc::as_ptr(c) as usize
         });
         let key = (snapshot.floor_base[0], snapshot.floor_base[1], id);
-        if self.water.map.as_ref().is_none_or(|(k, _)| *k != key) {
+        if self
+            .frame_resources
+            .water
+            .map
+            .as_ref()
+            .is_none_or(|(k, _)| *k != key)
+        {
             let map = snapshot
                 .pack
                 .map(|pack| WaterMap::load(pack, snapshot.floor_base, [g0.tiles_x, g0.tiles_z]));
-            self.water.map = Some((key, map));
-            self.water.levels.clear();
-            self.water.log_next = true;
+            self.frame_resources.water.map = Some((key, map));
+            self.frame_resources.water.levels.clear();
+            self.frame_resources.water.log_next = true;
         }
-        self.water.map.as_ref().and_then(|(_, m)| m.as_ref())
+        self.frame_resources
+            .water
+            .map
+            .as_ref()
+            .and_then(|(_, m)| m.as_ref())
     }
 
     /// Prepare this frame's water (after the draw records): the map, each
@@ -709,13 +700,13 @@ impl ModernRenderer {
             snapshot,
             origin,
         } = *prep;
-        self.water.stats = WaterStats {
-            draws: self.water.draws.len(),
+        self.frame_resources.water.stats = WaterStats {
+            draws: self.frame_resources.water.draws.len(),
             ..WaterStats::default()
         };
-        self.water.bind = None;
-        self.water.plane_y = None;
-        if self.water.draws.is_empty() {
+        self.frame_resources.water.bind = None;
+        self.frame_resources.water.plane_y = None;
+        if self.frame_resources.water.draws.is_empty() {
             return;
         }
         let debug = match crate::modern_debug_flags::flags().water {
@@ -723,14 +714,14 @@ impl ModernRenderer {
             _ => 0,
         };
         #[cfg(test)]
-        let debug = if self.water.debug != 0 {
-            self.water.debug
+        let debug = if self.frame_resources.water.debug != 0 {
+            self.frame_resources.water.debug
         } else {
             debug
         };
         self.select_water_pipes(device, queue, debug);
-        if self.water.types.is_none() {
-            self.water.types = Some(
+        if self.frame_resources.water.types.is_none() {
+            self.frame_resources.water.types = Some(
                 snapshot
                     .pack
                     .and_then(|p| rs910_config::nxt::water_type::NxtWaterTypes::load(p).ok())
@@ -740,19 +731,28 @@ impl ModernRenderer {
         // The scene's map, taken out for the frame (lane Q-FIN: M7 cloned it
         // every frame) and put back below.
         self.water_map(snapshot);
-        let map_entry = self.water.map.take();
+        let map_entry = self.frame_resources.water.map.take();
         let map = map_entry.as_ref().and_then(|(_, m)| m.as_ref());
         // Each drawn level's water stream (rebuilt with its floor).
-        let mut levels: Vec<usize> = self.water.draws.iter().map(|d| d.level).collect();
+        let mut levels: Vec<usize> = self
+            .frame_resources
+            .water
+            .draws
+            .iter()
+            .map(|d| d.level)
+            .collect();
         levels.dedup();
         for level in levels {
             let Some(g) = snapshot.floors.get(level).and_then(Option::as_ref) else {
                 continue;
             };
-            if self.water.levels.len() <= level {
-                self.water.levels.resize_with(level + 1, || None);
+            if self.frame_resources.water.levels.len() <= level {
+                self.frame_resources
+                    .water
+                    .levels
+                    .resize_with(level + 1, || None);
             }
-            if self.water.levels[level]
+            if self.frame_resources.water.levels[level]
                 .as_ref()
                 .is_some_and(|l| l.token.matches(g))
             {
@@ -770,18 +770,18 @@ impl ModernRenderer {
             let usable = map.filter(|m| {
                 let (hits, total) = crate::water_body::agreement(g, &water_batches, m);
                 if level == 0 {
-                    self.water.stats.agreement = (hits, total);
+                    self.frame_resources.water.stats.agreement = (hits, total);
                 }
                 total == 0 || hits * 10 >= total * 9
             });
             if level == 0 && map.is_some() && usable.is_none() {
                 log::info!(
                     "[modern] water: the map files do not describe this floor ({:?} water tiles agree); default depth, no flow",
-                    self.water.stats.agreement
+                    self.frame_resources.water.stats.agreement
                 );
             }
             let attrs = crate::water_body::vertex_attributes(g, level, usable);
-            let means = &mut self.water.texture_means;
+            let means = &mut self.frame_resources.water.texture_means;
             let is_water: Vec<bool> = (0..g.batches.len())
                 .map(|b| water_batches.contains(&b))
                 .collect();
@@ -808,7 +808,7 @@ impl ModernRenderer {
                     [f[0], f[1], f[2]]
                 })
                 .collect();
-            self.water.levels[level] = Some(LevelWater {
+            self.frame_resources.water.levels[level] = Some(LevelWater {
                 token: FloorToken::of(g),
                 attrs,
                 base: crate::models::mesh::floor_vertices(g),
@@ -821,13 +821,19 @@ impl ModernRenderer {
             });
         }
         // Each drawn level's water mesh for its floor's tile selection.
-        let mut levels: Vec<usize> = self.water.draws.iter().map(|d| d.level).collect();
+        let mut levels: Vec<usize> = self
+            .frame_resources
+            .water
+            .draws
+            .iter()
+            .map(|d| d.level)
+            .collect();
         levels.dedup();
         for level in levels {
             let (Some(g), Some(Some(floor)), Some(Some(lw))) = (
                 snapshot.floors.get(level).and_then(Option::as_ref),
-                self.floors.get(level),
-                self.water.levels.get_mut(level),
+                self.scene_resources.floors.get(level),
+                self.frame_resources.water.levels.get_mut(level),
             ) else {
                 continue;
             };
@@ -881,22 +887,28 @@ impl ModernRenderer {
             lw.selection = Some(selection.clone());
         }
         if let Some(m) = map {
-            self.water.stats.squares = m.squares;
-            self.water.stats.patches = m.patches.len();
+            self.frame_resources.water.stats.squares = m.squares;
+            self.frame_resources.water.stats.patches = m.patches.len();
         }
         // The frame's water type: the one at the camera target.
         let target = [origin[0], origin[2]];
         let water_type = map.map_or(0, |m| m.flow_at(target[0], target[1]).1);
-        self.water.map = map_entry;
-        self.water.stats.water_type = water_type;
+        self.frame_resources.water.map = map_entry;
+        self.frame_resources.water.stats.water_type = water_type;
         let pair = self
+            .frame_resources
             .water
             .types
             .as_ref()
             .and_then(|t| t.get(u32::from(water_type)))
             .map_or([None, None], |t| t.normal_materials());
         for material in pair.into_iter().flatten() {
-            if self.water.normal_maps.contains_key(&material) {
+            if self
+                .frame_resources
+                .water
+                .normal_maps
+                .contains_key(&material)
+            {
                 continue;
             }
             let img = snapshot
@@ -911,22 +923,26 @@ impl ModernRenderer {
                 });
             if let Some(img) = img {
                 let view = upload_normal_map(device, queue, &img);
-                self.water.normal_maps.insert(material, view);
+                self.frame_resources
+                    .water
+                    .normal_maps
+                    .insert(material, view);
             } else {
                 log::warn!("[modern] water: normal map material {material} did not load");
             }
         }
-        self.water.normal_pair = pair;
+        self.frame_resources.water.normal_pair = pair;
         // The type's foam map (WATERTYPE op 9).
-        self.water.foam = self
+        self.frame_resources.water.foam = self
+            .frame_resources
             .water
             .types
             .as_ref()
             .and_then(|t| t.get(u32::from(water_type)))
             .and_then(|t| t.foam_material);
-        if let Some(material) = self.water.foam {
+        if let Some(material) = self.frame_resources.water.foam {
             if let std::collections::hash_map::Entry::Vacant(slot) =
-                self.water.foam_maps.entry(material)
+                self.frame_resources.water.foam_maps.entry(material)
             {
                 let img = snapshot
                     .pack
@@ -942,12 +958,12 @@ impl ModernRenderer {
                     slot.insert(upload_normal_map(device, queue, &img));
                 } else {
                     log::warn!("[modern] water: foam map material {material} did not load");
-                    self.water.foam = None;
+                    self.frame_resources.water.foam = None;
                 }
             }
         }
         // No foam map: no foam.
-        let fx = if self.water.foam.is_some() {
+        let fx = if self.frame_resources.water.foam.is_some() {
             crate::water_body::effects::FX_ALL
         } else {
             crate::water_body::effects::FX_ALL & !crate::water_body::effects::FX_FOAM
@@ -956,9 +972,10 @@ impl ModernRenderer {
         // divisor (`ModernSettings::reflections`); the scene copy is the
         // frame's HDR twin.
         let [_, _, w, h] = rect;
-        let d = self.settings.reflections.divisor().unwrap_or(1);
+        let d = self.preparation.settings.reflections.divisor().unwrap_or(1);
         let reflection_size = [(w.max(d) / d) as u32, (h.max(d) / d) as u32];
         if self
+            .frame_resources
             .water
             .targets
             .as_ref()
@@ -980,7 +997,7 @@ impl ModernRenderer {
                 DEPTH_FORMAT,
                 wgpu::TextureUsages::RENDER_ATTACHMENT,
             );
-            self.water.targets = Some(WaterTargets {
+            self.frame_resources.water.targets = Some(WaterTargets {
                 size,
                 reflection_size,
                 reflection_view: reflection.create_view(&Default::default()),
@@ -988,11 +1005,23 @@ impl ModernRenderer {
             });
         }
         // The reflection plane: the water nearest the camera target.
-        let drawn: Vec<usize> = self.water.draws.iter().map(|d| d.level).collect();
+        let drawn: Vec<usize> = self
+            .frame_resources
+            .water
+            .draws
+            .iter()
+            .map(|d| d.level)
+            .collect();
         let plane = crate::water_body::reflection_height(
             drawn
                 .iter()
-                .filter_map(|&l| self.water.levels.get(l).and_then(Option::as_ref))
+                .filter_map(|&l| {
+                    self.frame_resources
+                        .water
+                        .levels
+                        .get(l)
+                        .and_then(Option::as_ref)
+                })
                 .flat_map(|l| l.vertices.iter())
                 .map(|p| [p[0] - origin[0], p[1] - origin[1], p[2] - origin[2]]),
         );
@@ -1000,12 +1029,13 @@ impl ModernRenderer {
         let view_proj = glam::Mat4::from_cols_array_2d(&frame.view_proj);
         let env_only = crate::modern_debug_flags::flags().water
             == Some(crate::modern_debug_flags::WaterDebug::EnvOnly);
-        self.water.planar =
-            !env_only && plane.is_some() && self.settings.reflections.divisor().is_some();
-        self.water.plane_y = plane;
-        self.water.reflected.clear();
-        if let (true, Some(h)) = (self.water.planar, plane) {
-            self.water.stats.plane = Some(h);
+        self.frame_resources.water.planar = !env_only
+            && plane.is_some()
+            && self.preparation.settings.reflections.divisor().is_some();
+        self.frame_resources.water.plane_y = plane;
+        self.frame_resources.water.reflected.clear();
+        if let (true, Some(h)) = (self.frame_resources.water.planar, plane) {
+            self.frame_resources.water.stats.plane = Some(h);
             let (reflected_view, reflected_vp) =
                 crate::water_body::reflection_view_proj(view, view_proj, h, PLANE_BIAS);
             self.cull_reflection(&reflected_vp);
@@ -1016,12 +1046,18 @@ impl ModernRenderer {
             // The reflection binds no occlusion map of its own
             // (a white texel), so it reads none.
             reflected.params[1] = 0.0;
-            let pipes = self.water.pipes.current().expect("water pipelines");
+            let pipes = self
+                .frame_resources
+                .water
+                .pipes
+                .current()
+                .expect("water pipelines");
             queue.write_buffer(&pipes.reflect_frame, 0, bytemuck::bytes_of(&reflected));
         }
         let look = crate::water_body::LOOK;
         let type_look = crate::water_body::TypeLook::of(
-            self.water
+            self.frame_resources
+                .water
                 .types
                 .as_ref()
                 .and_then(|t| t.get(u32::from(water_type))),
@@ -1031,7 +1067,11 @@ impl ModernRenderer {
             plane: [
                 plane.unwrap_or(0.0),
                 PLANE_TOLERANCE,
-                if self.water.planar { 1.0 } else { 0.0 },
+                if self.frame_resources.water.planar {
+                    1.0
+                } else {
+                    0.0
+                },
                 debug as f32,
             ],
             time: [
@@ -1080,44 +1120,63 @@ impl ModernRenderer {
             // The sky through the modern composite.
             sky: {
                 let e = self.look.sky_exposure();
-                [self.clear[0] / e, self.clear[1] / e, self.clear[2] / e, 1.0]
+                [
+                    self.frame_resources.clear[0] / e,
+                    self.frame_resources.clear[1] / e,
+                    self.frame_resources.clear[2] / e,
+                    1.0,
+                ]
             },
             shore: [
                 look.bank_slope,
                 look.visibility_share,
                 // 1 = M10's terrain draws the bed this frame
                 // (`crate::water_body::BED_DEPTH_WGSL`).
-                if self.terrain.active { 1.0 } else { 0.0 },
+                if self.scene_resources.terrain.active {
+                    1.0
+                } else {
+                    0.0
+                },
                 look.bed_brightness,
             ],
             fx: crate::water_body::effects::uniforms(fx),
         };
-        let pipes = self.water.pipes.current().expect("water pipelines");
+        let pipes = self
+            .frame_resources
+            .water
+            .pipes
+            .current()
+            .expect("water pipelines");
         queue.write_buffer(&pipes.uniforms, 0, bytemuck::bytes_of(&uniforms));
-        let targets = self.targets.as_ref().expect("targets");
-        let wt = self.water.targets.as_ref().expect("water targets");
+        let targets = self.frame_resources.targets.as_ref().expect("targets");
+        let wt = self
+            .frame_resources
+            .water
+            .targets
+            .as_ref()
+            .expect("water targets");
         let normal = |m: Option<u16>| {
-            m.and_then(|m| self.water.normal_maps.get(&m))
+            m.and_then(|m| self.frame_resources.water.normal_maps.get(&m))
                 .unwrap_or(&pipes.flat_normal)
         };
-        let [na, nb] = self.water.normal_pair;
+        let [na, nb] = self.frame_resources.water.normal_pair;
         let tex = wgpu::BindingResource::TextureView;
-        self.water.bind = Some(
+        self.frame_resources.water.bind = Some(
             device.create_bind_group(&wgpu::BindGroupDescriptor {
                 label: Some("modern water"),
                 layout: &pipes.group2,
                 entries: &[
                     wgpu::BindGroupEntry {
                         binding: 0,
-                        resource: self.shadow.uniforms.as_entire_binding(),
+                        resource: self.history.shadow.uniforms.as_entire_binding(),
                     },
                     wgpu::BindGroupEntry {
                         binding: 1,
-                        resource: tex(&self.shadow.atlas.1),
+                        resource: tex(&self.history.shadow.atlas.1),
                     },
                     wgpu::BindGroupEntry {
                         binding: 2,
-                        resource: wgpu::BindingResource::Sampler(&self.shadow.sampler),
+                        resource: wgpu::BindingResource::Sampler(&self.history.shadow.sampler),
                     },
                     wgpu::BindGroupEntry {
                         binding: 10,
@@ -1146,9 +1205,10 @@ impl ModernRenderer {
                     wgpu::BindGroupEntry {
                         binding: 16,
                         resource: tex(self
+                            .frame_resources
                             .water
                             .foam
-                            .and_then(|m| self.water.foam_maps.get(&m))
+                            .and_then(|m| self.frame_resources.water.foam_maps.get(&m))
                             .unwrap_or(&pipes.flat_normal)),
                     },
                     wgpu::BindGroupEntry {
@@ -1167,6 +1227,7 @@ impl ModernRenderer {
         if crate::modern_debug_flags::flags().check {
             static MISMATCHES: std::sync::atomic::AtomicU64 = std::sync::atomic::AtomicU64::new(0);
             let floors = self
+                .frame_resources
                 .draws
                 .iter()
                 .filter(|d| {
@@ -1175,20 +1236,22 @@ impl ModernRenderer {
                 })
                 .count();
             let expected = self.stats.floor_batches;
-            if self.water.log_next {
+            if self.frame_resources.water.log_next {
                 log::info!(
                     "[modern] water check: {floors} floor + {} water draws for {expected} floor batches",
-                    self.water.draws.len()
+                    self.frame_resources.water.draws.len()
                 );
             }
             // Each water draw's mesh range holds its batch's selected
             // triangles (the floor draw's index count).
             let short = self
+                .frame_resources
                 .water
                 .draws
                 .iter()
                 .filter(|d| {
-                    self.water
+                    self.frame_resources
+                        .water
                         .levels
                         .get(d.level)
                         .and_then(Option::as_ref)
@@ -1203,22 +1266,24 @@ impl ModernRenderer {
                     "[modern] water check: {short} water draws whose mesh range is not their selected triangles ({n} mismatching frames)"
                 );
             }
-            if floors + self.water.draws.len() != expected {
+            if floors + self.frame_resources.water.draws.len() != expected {
                 let n = MISMATCHES.fetch_add(1, std::sync::atomic::Ordering::Relaxed) + 1;
                 log::warn!(
                     "[modern] water check: {floors} floor + {} water draws for {expected} floor batches ({n} mismatching frames)",
-                    self.water.draws.len()
+                    self.frame_resources.water.draws.len()
                 );
             }
         }
-        if self.water.log_next || self.frame.is_multiple_of(600) {
-            self.water.log_next = false;
-            log::info!("[modern] water: {:?}", self.water.stats);
+        if self.frame_resources.water.log_next || self.history.frame.is_multiple_of(600) {
+            self.frame_resources.water.log_next = false;
+            log::info!("[modern] water: {:?}", self.frame_resources.water.stats);
         }
     }
+}
 
+impl<'a> EncodeInputs<'a> {
     /// One water draw: its batch's range of the level's water mesh.
-    pub(crate) fn draw_water<'p>(&'p self, pass: &mut wgpu::RenderPass<'p>, d: &WaterDraw) {
+    pub(crate) fn draw_water<'p>(&self, pass: &mut wgpu::RenderPass<'p>, d: &WaterDraw) {
         let (Some(material), Some((instances, _))) =
             (self.textures.get(d.material), self.instance_buffer.as_ref())
         else {
@@ -1393,7 +1458,7 @@ impl ModernRenderer {
                 timestamp_writes: None,
             });
             set_view(&mut pass);
-            pass.set_bind_group(0, &self.frame_bind, &[]);
+            pass.set_bind_group(0, self.frame_bind, &[]);
             pass.set_bind_group(2, receive, &[]);
             pass.set_bind_group(3, &self.lights.bind, &[]);
             self.encode_terrain(&mut pass, crate::frame::TerrainPass::Forward);
@@ -1404,7 +1469,7 @@ impl ModernRenderer {
                 let d = &self.draws[i];
                 while let Some(sprite) = sprites.next_if(|s| s.after <= i) {
                     self.sprites
-                        .draw(&mut pass, &self.pipes().sprites, &self.textures, sprite);
+                        .draw(&mut pass, &self.pipes().sprites, self.textures, sprite);
                     current = None;
                     bound.reset();
                 }
@@ -1423,7 +1488,7 @@ impl ModernRenderer {
                 s.after <= split && s.pipeline == crate::frame::gpu::sprites::SpritePipeline::Cutout
             }) {
                 self.sprites
-                    .draw(&mut pass, &self.pipes().sprites, &self.textures, sprite);
+                    .draw(&mut pass, &self.pipes().sprites, self.textures, sprite);
             }
             drop(pass);
             // The scene copy the water looks through: at one sample, a
@@ -1471,7 +1536,7 @@ impl ModernRenderer {
             });
             set_view(&mut pass);
             pass.set_pipeline(&pipes.water);
-            pass.set_bind_group(0, &self.frame_bind, &[]);
+            pass.set_bind_group(0, self.frame_bind, &[]);
             pass.set_bind_group(2, bind, &[]);
             pass.set_bind_group(3, &self.lights.bind, &[]);
             for d in &self.water.draws {
@@ -1489,7 +1554,7 @@ impl ModernRenderer {
                 timestamp_writes: None,
             });
             set_view(&mut pass);
-            pass.set_bind_group(0, &self.frame_bind, &[]);
+            pass.set_bind_group(0, self.frame_bind, &[]);
             pass.set_bind_group(2, receive, &[]);
             pass.set_bind_group(3, &self.lights.bind, &[]);
             let mut current = None;
@@ -1499,7 +1564,7 @@ impl ModernRenderer {
                 let d = &self.draws[i];
                 while let Some(sprite) = sprites.next_if(|s| s.after <= i) {
                     self.sprites
-                        .draw(&mut pass, &self.pipes().sprites, &self.textures, sprite);
+                        .draw(&mut pass, &self.pipes().sprites, self.textures, sprite);
                     current = None;
                     bound.reset();
                 }
@@ -1518,8 +1583,41 @@ impl ModernRenderer {
             }
             for sprite in sprites {
                 self.sprites
-                    .draw(&mut pass, &self.pipes().sprites, &self.textures, sprite);
+                    .draw(&mut pass, &self.pipes().sprites, self.textures, sprite);
             }
         }
+    }
+}
+
+impl<'a> EncodeInputs<'a> {
+    /// The water's pipelines at the current sample count and `debug` view
+    /// (a new set).
+    pub(crate) fn water_pipes(
+        &self,
+        device: &wgpu::Device,
+        queue: &dyn rs910_gpu_device::uploads::Uploader,
+        debug: u32,
+    ) -> Pipelines {
+        let samples = self.samples;
+        let forward = &self
+            .pipelines
+            .current()
+            .expect("the forward-target pipelines")
+            .forward;
+        let module = self.shaders.get(
+            device,
+            crate::shaders::Module::Water {
+                multisampled: samples > 1,
+            },
+        );
+        Pipelines::new(
+            device,
+            queue,
+            forward,
+            &self.pipeline_inputs.forward_module,
+            samples,
+            debug,
+            module,
+        )
     }
 }

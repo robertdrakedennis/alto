@@ -27,6 +27,7 @@
 //!   from scratch gives, so the frame is the frame of redrawing every face
 //!   every frame. A still scene with an unchanged light set redraws nothing.
 
+use crate::frame::encoding::EncodeInputs;
 use crate::frame::gpu::shadow_cache::CasterClass;
 use crate::frame::*;
 use crate::lighting::point_lights::Light;
@@ -444,10 +445,11 @@ impl ModernRenderer {
         eye: [f32; 3],
         origin: [f32; 3],
     ) {
-        let scene = self.lights.key();
-        let point = &mut self.shadow.point;
+        let scene = self.scene_resources.lights.key();
+        let point = &mut self.history.shadow.point;
         point.active.clear();
         let preset = self
+            .frame_resources
             .shadow_frame
             .as_ref()
             .map(|f| point_preset(f.profile.quality));
@@ -464,6 +466,7 @@ impl ModernRenderer {
         }
         let frustum = ViewFrustum::new(view, view_proj, eye);
         let inputs: Vec<LightInput> = self
+            .scene_resources
             .lights
             .frame
             .iter()
@@ -503,32 +506,34 @@ impl ModernRenderer {
         queue: &dyn rs910_gpu_device::uploads::Uploader,
         origin: [f32; 3],
     ) {
-        self.shadow.point.plan.slots.clear();
-        self.shadow.point.plan.clear_atlas = false;
-        let (Some(preset), Some(frustum)) =
-            (self.shadow.point.preset, self.shadow.point.frustum.clone())
-        else {
-            self.shadow.point.active.clear();
+        self.history.shadow.point.plan.slots.clear();
+        self.history.shadow.point.plan.clear_atlas = false;
+        let (Some(preset), Some(frustum)) = (
+            self.history.shadow.point.preset,
+            self.history.shadow.point.frustum.clone(),
+        ) else {
+            self.history.shadow.point.active.clear();
             self.write_point_block(queue, None, &[]);
             return;
         };
-        let active = self.shadow.point.active.clone();
+        let active = self.history.shadow.point.active.clone();
         if active.is_empty() {
             self.write_point_block(queue, Some(&preset), &[]);
             return;
         }
         let layout = AtlasLayout::new(preset.face, preset.levels, preset.lights);
-        self.shadow.point.layout = Some(layout);
+        self.history.shadow.point.layout = Some(layout);
         if self
+            .scene_resources
             .lights
             .shadow_maps
             .ensure(device, layout.width, layout.height)
         {
-            self.lights.rebind(device);
-            self.shadow.point.forget_faces();
-            self.shadow.point.plan.clear_atlas = true;
+            self.scene_resources.lights.rebind(device);
+            self.history.shadow.point.forget_faces();
+            self.history.shadow.point.plan.clear_atlas = true;
         }
-        let scene = self.lights.key();
+        let scene = self.scene_resources.lights.key();
         // The block: the slotted lights in slot order, each at its level.
         let shadowed: Vec<ShadowedLight> = active
             .iter()
@@ -543,12 +548,12 @@ impl ModernRenderer {
             })
             .collect();
         self.write_point_block(queue, Some(&preset), &shadowed);
-        let fresh = self.shadow.point.plan.clear_atlas;
+        let fresh = self.history.shadow.point.plan.clear_atlas;
         // Each slot's faces: a changed light redraws them all, else the
         // visible faces whose casters changed (see the module docs).
         let mut uniforms = [PointCasterUniforms::default(); 6 * MAX_SHADOWED];
         for a in &active {
-            let l = self.lights.frame[a.light];
+            let l = self.scene_resources.lights.frame[a.light];
             let key: LayerKey = (
                 a.light,
                 l.pos.map(f32::to_bits),
@@ -557,9 +562,9 @@ impl ModernRenderer {
                 scene,
             );
             let mut clear_block = fresh;
-            if self.shadow.point.keys[a.slot] != Some(key) {
-                self.shadow.point.keys[a.slot] = Some(key);
-                self.shadow.point.faces[a.slot] = [[None; 6]; MAX_LEVELS];
+            if self.history.shadow.point.keys[a.slot] != Some(key) {
+                self.history.shadow.point.keys[a.slot] = Some(key);
+                self.history.shadow.point.faces[a.slot] = [[None; 6]; MAX_LEVELS];
                 clear_block = true;
             }
             let p = [
@@ -608,12 +613,12 @@ impl ModernRenderer {
                 }
             };
             let at = |instance: u32| {
-                let m = &self.instances[instance as usize].model;
+                let m = &self.frame_resources.instances[instance as usize].model;
                 [m[12], m[13], m[14]]
             };
-            let classes = &self.shadow.sun;
-            let mut ranges = self.draw_bounds.iter().peekable();
-            for (k, d) in self.draws.iter().enumerate() {
+            let classes = &self.history.shadow.sun;
+            let mut ranges = self.frame_resources.draw_bounds.iter().peekable();
+            for (k, d) in self.frame_resources.draws.iter().enumerate() {
                 while ranges.next_if(|r| r.1 <= k as u32).is_some() {}
                 let bounds = ranges.peek().filter(|r| r.0 <= k as u32).map(|r| r.2);
                 if d.casts && !matches!(d.geometry, Geometry::Floor { .. }) {
@@ -626,11 +631,15 @@ impl ModernRenderer {
                     );
                 }
             }
-            for (k, (d, _)) in self.shadow_only.iter().enumerate() {
+            for (k, (d, _)) in self.frame_resources.shadow_only.iter().enumerate() {
                 let class = classes.only_classes.get(k).copied();
                 add(
                     at(d.instance),
-                    self.shadow_only_bounds.get(k).copied().flatten(),
+                    self.frame_resources
+                        .shadow_only_bounds
+                        .get(k)
+                        .copied()
+                        .flatten(),
                     CasterRef::ShadowOnly(k),
                     class.unwrap_or(CasterClass::Dynamic),
                 );
@@ -640,7 +649,7 @@ impl ModernRenderer {
                 if visible & (1 << f) == 0 {
                     continue;
                 }
-                let held = &mut self.shadow.point.faces[a.slot][a.level][f];
+                let held = &mut self.history.shadow.point.faces[a.slot][a.level][f];
                 if now.1 || held.is_none_or(|h| h != *now || h.1) {
                     redraw |= 1 << f;
                     *held = Some(*now);
@@ -648,7 +657,7 @@ impl ModernRenderer {
                 }
             }
             if clear_block || redraw != 0 {
-                self.shadow.point.plan.slots.push(PendingSlot {
+                self.history.shadow.point.plan.slots.push(PendingSlot {
                     slot: a.slot,
                     level: a.level,
                     clear_block,
@@ -659,7 +668,7 @@ impl ModernRenderer {
         }
         self.stats.point_shadow_lights = active.len();
         queue.write_buffer(
-            &self.shadow.point.casters,
+            &self.history.shadow.point.casters,
             0,
             bytemuck::cast_slice(&uniforms),
         );
@@ -673,7 +682,7 @@ impl ModernRenderer {
         lights: &[ShadowedLight],
     ) {
         let lit = !lights.is_empty();
-        if !lit && !self.shadow.point.lit {
+        if !lit && !self.history.shadow.point.lit {
             return;
         }
         let block = match preset {
@@ -681,13 +690,42 @@ impl ModernRenderer {
             _ => PointShadowUniforms::default(),
         };
         queue.write_buffer(
-            &self.lights.shadow_maps.uniforms,
+            &self.scene_resources.lights.shadow_maps.uniforms,
             0,
             bytemuck::bytes_of(&block),
         );
-        self.shadow.point.lit = lit;
+        self.history.shadow.point.lit = lit;
     }
+}
 
+/// Faces a posed box can actually write. The radius test matches the radial
+/// depth output; the clip planes match the caster shader's cube projection.
+fn overlapping_faces(bounds: &crate::models::bounds::Bounds, light: [f32; 3], radius: f32) -> u8 {
+    let p = glam::Vec3::from(light);
+    let lo = glam::Vec3::from(bounds.min);
+    let hi = glam::Vec3::from(bounds.max);
+    const RELATIVE_OVERLAP_TOLERANCE: f32 = 1e-4;
+    const ABSOLUTE_OVERLAP_TOLERANCE: f32 = 1e-4;
+    let epsilon = radius.abs() * RELATIVE_OVERLAP_TOLERANCE + ABSOLUTE_OVERLAP_TOLERANCE;
+    if p.distance_squared(p.clamp(lo, hi)) > (radius + epsilon).powi(2) {
+        return 0;
+    }
+    (0..CUBE_FACES).fold(0, |mask, face| {
+        let (axis, u, v) = crate::shadows::point::face_axes(face);
+        let (axis, u, v) = (axis.as_vec3(), u.as_vec3(), v.as_vec3());
+        let z = radius / (radius - FACE_NEAR);
+        let rows = [
+            u.extend(-u.dot(p)),
+            v.extend(-v.dot(p)),
+            (axis * z).extend(-z * (axis.dot(p) + FACE_NEAR)),
+            axis.extend(-axis.dot(p)),
+        ];
+        let clip = glam::Mat4::from_cols(rows[0], rows[1], rows[2], rows[3]).transpose();
+        mask | (u8::from(!bounds.outside(&clip)) << face)
+    })
+}
+
+impl<'a> EncodeInputs<'a> {
     /// Whether the point shadows record a pass this frame.
     pub(crate) fn point_shadows_record(&self) -> bool {
         let plan = &self.shadow.point.plan;
@@ -748,7 +786,7 @@ impl ModernRenderer {
                     fill.clear(&mut pass);
                 }
                 pass.set_pipeline(&point.pipeline);
-                pass.set_bind_group(0, &self.frame_bind, &[]);
+                pass.set_bind_group(0, self.frame_bind, &[]);
                 let offset = (pending.slot * 6 + f) as u64 * CASTER_SLOT;
                 pass.set_bind_group(2, &point.caster_bind, &[offset as u32]);
                 let mut bound = crate::frame::submit::Bound::default();
@@ -762,33 +800,6 @@ impl ModernRenderer {
             }
         }
     }
-}
-
-/// Faces a posed box can actually write. The radius test matches the radial
-/// depth output; the clip planes match the caster shader's cube projection.
-fn overlapping_faces(bounds: &crate::models::bounds::Bounds, light: [f32; 3], radius: f32) -> u8 {
-    let p = glam::Vec3::from(light);
-    let lo = glam::Vec3::from(bounds.min);
-    let hi = glam::Vec3::from(bounds.max);
-    const RELATIVE_OVERLAP_TOLERANCE: f32 = 1e-4;
-    const ABSOLUTE_OVERLAP_TOLERANCE: f32 = 1e-4;
-    let epsilon = radius.abs() * RELATIVE_OVERLAP_TOLERANCE + ABSOLUTE_OVERLAP_TOLERANCE;
-    if p.distance_squared(p.clamp(lo, hi)) > (radius + epsilon).powi(2) {
-        return 0;
-    }
-    (0..CUBE_FACES).fold(0, |mask, face| {
-        let (axis, u, v) = crate::shadows::point::face_axes(face);
-        let (axis, u, v) = (axis.as_vec3(), u.as_vec3(), v.as_vec3());
-        let z = radius / (radius - FACE_NEAR);
-        let rows = [
-            u.extend(-u.dot(p)),
-            v.extend(-v.dot(p)),
-            (axis * z).extend(-z * (axis.dot(p) + FACE_NEAR)),
-            axis.extend(-axis.dot(p)),
-        ];
-        let clip = glam::Mat4::from_cols(rows[0], rows[1], rows[2], rows[3]).transpose();
-        mask | (u8::from(!bounds.outside(&clip)) << face)
-    })
 }
 
 #[cfg(test)]

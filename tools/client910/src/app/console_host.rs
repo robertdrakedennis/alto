@@ -114,10 +114,12 @@ impl ConsoleCommands<'_> {
             } else {
                 match crate::modern_display::parse_argument(argument) {
                     Ok(scale) => {
-                        if let Some(renderer) = self.app.renderer.as_mut() {
-                            renderer.set_modern_render_scale(scale);
-                        }
-                        match crate::modern_display::save(&path, scale) {
+                        let mut preferences = self.app.renderer.as_ref().map_or_else(
+                            || crate::modern_display::load_preferences(&path),
+                            |r| r.modern_preferences(),
+                        );
+                        preferences.render_scale = scale;
+                        match self.app.change_modern_preferences(preferences) {
                             Ok(()) => format!(
                                 "renderscale {}",
                                 scale.map_or("auto".to_string(), |s| s.as_percent().to_string())

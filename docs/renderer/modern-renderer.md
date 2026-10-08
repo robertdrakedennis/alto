@@ -6,7 +6,7 @@ faithful-gpu`, alias `classic`). It draws the renderer-neutral `SceneSnapshot` i
 reference UI (`rs910_render_gpu::render::Renderer::frame_composite`). The shell
 answers every capability query with the reference renderer's profile and keeps
 the shared CPU scene preparation running, so the client behaves the same whichever
-renderer draws: packets, game state and saved preferences do not change (the
+renderer draws: packets, game state and the native ClientOptions codec do not change (the
 replay gate's `renderer_choice_is_observationally_inert`). Its pixels are not
 bound by the reference pixel checks; the reference GPU renderer stays the
 correctness reference. It draws the hardware toolkit modes only: in toolkit mode
@@ -59,6 +59,12 @@ later draws see structural changes.
 
 ## Layout
 
+The coordinator owns device resources, scene resources, reusable frame
+resources, submitted-frame history and preparation state (`frame::state`).
+`frame::encoding::EncodeInputs` borrows only immutable GPU inputs for encoding
+and pipeline construction. Preparation-only config stores and sky sources stay
+outside that view; Rust checks worker sharing without an unsafe wrapper.
+
 Each subsystem module holds its CPU half and its WGSL snippets. The GPU halves
 (the `impl ModernRenderer` blocks, pipelines and GPU state) live with the
 renderer in `frame/gpu/`. No subsystem depends on the frame, so the module graph
@@ -109,7 +115,7 @@ any loc (never the shadow passes).
 gives the pass's stage, its resolution class (full, scaled or fixed), its sample
 count (the forward target's or one), what it reads and writes, and where a
 multisampled target resolves. Every pass begins through
-`ModernRenderer::begin_pass`, which names it from the table. In debug builds
+`EncodeInputs::begin_pass`, which names it from the table. In debug builds
 (tests included) it also asserts that the frame keeps the declared stage order.
 
 | Stage | Passes |
@@ -465,17 +471,17 @@ the tables `shadows::presets`; the GPU half is `frame::gpu::point_shadows`.
 
 ## Threading
 
-The frame's CPU work runs on a small pool (`frame::jobs`), a fork and a join
-inside `draw`: `Jobs::map` runs job `i` for every `i` on the render thread and
-the workers, results in job order. It stands in for the engine's shared job pool
-(`rs910_core::jobs`), whose fixed pool and named join will replace it.
+The frame's CPU work uses the engine's safe bounded pool (`rs910-jobs`), with
+a thin renderer adapter in `frame::jobs`. `Jobs::map` runs borrowed work on
+persistent Rayon workers and returns results in input order. The inline mode
+runs on the render thread; no raw job pointer or erased closure lifetime remains.
 
 Thread budget. Beside it run the far scene's streaming pools
 (`rs910_far_scene::far_jobs`): up to three terrain workers and two loc workers,
 busy while the ring streams in and idle once it is built. The frame's pool takes
-the cores those five leave, at least two and at most four threads, the render
-thread included (`frame::jobs::default_threads`): on a 10-core machine the
-render thread and three workers. `CLIENT910_MODERN_THREADS=N` sets the frame's
+the cores those five leave, at least two and at most four compute workers
+(`frame::jobs::default_threads`): on a 10-core machine the render thread waits
+for four workers. `CLIENT910_MODERN_THREADS=N` sets the frame's
 count; `1` runs every job on the render thread, in order (the synchronous mode
 for tests and determinism debugging).
 
@@ -491,8 +497,8 @@ for tests and determinism debugging).
   passes in frame order whatever order the threads finished in. The post
   chain writes the frame's own target, so it records into the frame's
   encoder (the shell's, submitted after `draw`). A unit only reads what
-  `draw` prepared (`&ModernRenderer`); the few prepare-only values that are
-  not `Sync` live in `exclusive::Exclusive`. Debug builds check that each
+  `draw` prepared through immutable `EncodeInputs`. Preparation-only stores
+  are excluded from worker borrows. Debug builds check that each
   pass begins in its own unit and in stage order on its thread, and that
   the units in submission order keep the frame's order.
 - **Posed models** (`frame::posing`). The models posed every frame (the
@@ -505,7 +511,7 @@ for tests and determinism debugging).
   when; the synchronous mode records the same command buffers on one
   thread (`threaded_and_synchronous_encodes_draw_the_identical_frame`).
 - **Plugging in.** A subsystem's passes are a unit: a row in `UNITS` (and
-  `CLAIM_ORDER`) and an arm in `ModernRenderer::encode_unit`.
+  `CLAIM_ORDER`) and an arm in `EncodeInputs::encode_unit`.
 - **Where it stops scaling.** wgpu validates and tracks every pass under
   state the threads share (registry lookups per state change, reference
   counts of the shared bind groups and buffers, the textures' init-tracker
@@ -554,10 +560,12 @@ within 50-100%: 50% for a full-size window at scale factor 2, 100% for a window 
 up to 1600 x 1000 physical pixels. The shell tells the renderer the window's scale
 factor (`ModernRenderer::set_display`, at the window's creation and when it
 changes). Precedence: `CLIENT910_MODERN_RENDER_SCALE`, then the saved choice, then
-automatic. The saved choice is one line in `players/modern-renderer.conf` beside the
-preferences (`render_scale=auto|50..200`), written by the developer console command
-`renderscale auto|50..200` (`renderscale` alone reports it); it is the client's own
-file and changes no option or packet. The effective scale is logged when it changes
+automatic. The saved choice is part of the versioned `players/modern-renderer.conf`
+beside the native preferences. Graphics → Modern graphics and the console command
+`renderscale auto|50..200` share the same live owner and atomic save path
+(`renderscale` alone reports the saved choice). The legacy scale-only file migrates
+on the next save. This local file changes no native option or packet.
+The effective scale is logged when it changes
 (`[modern] render scale 50% (automatic: scale factor 2.00, scene viewport 6400000
 pixels)`).
 
@@ -718,9 +726,21 @@ producers.
 
 ## Settings
 
-`settings::ModernSettings` is passed to `ModernRenderer::new`. The shell fills
-it with `ModernSettings::from_env()`: the defaults plus the dev overrides. It
-is never written to the client options or the preferences.
+`settings::ModernSettings` is passed to `ModernRenderer::new`. The shell resolves
+versioned local `RendererPreferences` under development overrides captured once
+per process. Startup, recreation, metric probes and live editing use that same
+resolved state. Effective changes finish the prior frame before applying; an
+unchanged effective value preserves pending rendering.
+
+Graphics → Modern graphics adds Performance, Balanced, High and Ultra presets,
+scene resolution, draw distance, AO mode and resolution, water reflections,
+volumetric lighting and depth of field. High matches the previous defaults;
+custom edits are identified from their values. Reset restores all local defaults.
+The retained UI consumes normal recorded pointer and keyboard input and paints
+on the existing interface target. It is available in modern hardware mode.
+Rows show the saved value and the effective session value when an override wins.
+The local file is validated and atomically replaced; invalid or future schemas
+log a load error and use defaults. No native option, var or packet is added.
 
 Where the client has an option, the option drives the renderer:
 
@@ -755,8 +775,10 @@ Diagnostics (`modern_debug_flags`, and `rs910_far_scene::far_debug_flags`):
 - `_WATER=env|debugN`: water debug output.
 - `_TERRAIN=no-spec|levelN`: terrain debug output.
 - `_FAR_SYNC=1`: build the whole far ring before each frame.
-- `_THREADS=N`: the frame's threads, the render thread included (`1`:
-  synchronous; see "Threading").
+- `_THREADS=N`: compute workers on the safe persistent `rs910-jobs` pool (`1`:
+  inline on the render thread; see "Threading"). Results retain input order,
+  borrowed work completes before return, and nested jobs and panic recovery
+  use Rayon's scoped scheduler.
 
 ## Provenance policy
 

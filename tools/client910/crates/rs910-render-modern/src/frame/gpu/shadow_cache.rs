@@ -2,6 +2,7 @@
 //! reasons are [`crate::shadows::cache`]): the casters' classes and
 //! signatures, each sun cascade's plan and caster lists, the static atlas,
 //! the tile fills (clear and restore) and the sun shadow passes.
+use crate::frame::encoding::EncodeInputs;
 use crate::frame::*;
 use crate::shadows::cache::{draw_hash, selection_word, Mix, Signature, SunCache, TilePlan};
 use crate::shadows::MAX_CASCADES;
@@ -254,19 +255,19 @@ impl ModernRenderer {
         hidden: Option<&crate::shadows::interior::RoofHidden>,
         origin: [f32; 3],
     ) -> Vec<OffScreenCaster<'a>> {
-        self.interior.hidden_draws = 0;
-        self.shadow.sun.only_classes.clear();
-        let Some(frame) = self.shadow_frame.as_ref() else {
+        self.scene_resources.interior.hidden_draws = 0;
+        self.history.shadow.sun.only_classes.clear();
+        let Some(frame) = self.frame_resources.shadow_frame.as_ref() else {
             return Vec::new();
         };
-        if self.shadow.sun.scene != self.scene_token {
-            self.shadow.sun.scene = self.scene_token;
-            self.shadow.sun.dynamic_locs.clear();
-            self.shadow.sun.prepared.clear();
+        if self.history.shadow.sun.scene != self.scene_resources.scene_token {
+            self.history.shadow.sun.scene = self.scene_resources.scene_token;
+            self.history.shadow.sun.dynamic_locs.clear();
+            self.history.shadow.sun.prepared.clear();
         }
         let settings = self.shadow_settings();
         let settings = (settings.scenery, settings.characters);
-        let now = self.frame;
+        let now = self.history.frame;
         let casters =
             crate::shadows::casters::off_screen_parallel(snapshot, frame, hidden, &self.jobs);
         // Their loc meshes not cached yet, built on the threads
@@ -292,11 +293,12 @@ impl ModernRenderer {
                 std::hash::Hasher::finish(&h)
             });
             let dynamic = match entity.key {
-                Some(key) => animating(&mut self.shadow.sun.dynamic_locs, key, now),
+                Some(key) => animating(&mut self.history.shadow.sun.dynamic_locs, key, now),
                 None => true,
             };
             let known = entity.key.and_then(|key| {
-                self.shadow
+                self.history
+                    .shadow
                     .sun
                     .prepared
                     .get(&crate::frame::resources::loc_slot(&key))
@@ -311,7 +313,7 @@ impl ModernRenderer {
             if let (Some(known), Some(_)) = (known, hash) {
                 if !known.scrolls {
                     if roof {
-                        self.interior.hidden_draws += known.draws;
+                        self.scene_resources.interior.hidden_draws += known.draws;
                     }
                     if known.draws > 0 {
                         deferred.push(OffScreenCaster {
@@ -334,10 +336,10 @@ impl ModernRenderer {
                 self.prepare_off_screen(device, queue, snapshot, &caster, origin);
             let entity = caster.entity;
             if roof {
-                self.interior.hidden_draws += draws;
+                self.scene_resources.interior.hidden_draws += draws;
             }
             if let Some(key) = entity.key {
-                self.shadow.sun.prepared.insert(
+                self.history.shadow.sun.prepared.insert(
                     crate::frame::resources::loc_slot(&key),
                     PreparedCaster {
                         key,
@@ -366,29 +368,31 @@ impl ModernRenderer {
         origin: [f32; 3],
     ) -> (usize, bool) {
         let (mask, hash) = (caster.mask, caster.hash);
-        let start = self.draws.len();
+        let start = self.frame_resources.draws.len();
         let bounds = self.prepare_entity(device, queue, snapshot, &caster.entity, origin);
-        let before = self.shadow_only.len();
-        let instances = &self.instances;
-        let scrolls = self.draws[start..].iter().any(|d| {
+        let before = self.frame_resources.shadow_only.len();
+        let instances = &self.frame_resources.instances;
+        let scrolls = self.frame_resources.draws[start..].iter().any(|d| {
             d.casts && {
                 let p1 = instances[d.instance as usize].p1;
                 p1[0] != 0.0 || p1[1] != 0.0
             }
         });
-        self.shadow_only.extend(
-            self.draws
+        self.frame_resources.shadow_only.extend(
+            self.frame_resources
+                .draws
                 .drain(start..)
                 .filter(|d| d.casts)
                 .map(|d| (d, mask)),
         );
-        let draws = self.shadow_only.len() - before;
-        self.shadow_only_bounds
+        let draws = self.frame_resources.shadow_only.len() - before;
+        self.frame_resources
+            .shadow_only_bounds
             .extend(std::iter::repeat_n(bounds, draws));
-        let classes = &mut self.shadow.sun.only_classes;
+        let classes = &mut self.history.shadow.sun.only_classes;
         let mut first = true;
-        for (d, _) in &self.shadow_only[before..] {
-            let p1 = self.instances[d.instance as usize].p1;
+        for (d, _) in &self.frame_resources.shadow_only[before..] {
+            let p1 = self.frame_resources.instances[d.instance as usize].p1;
             classes.push(match hash {
                 Some(_) if p1[0] != 0.0 || p1[1] != 0.0 => CasterClass::Dynamic,
                 Some(h) if first => {
@@ -420,22 +424,22 @@ impl ModernRenderer {
         deferred: Vec<OffScreenCaster<'_>>,
     ) -> (usize, usize) {
         let terrain_casts = self.terrain_casts();
-        let sun = &mut self.shadow.sun;
+        let sun = &mut self.history.shadow.sun;
         for k in 0..MAX_CASCADES {
             sun.static_lists[k].clear();
             sun.dynamic_lists[k].clear();
         }
         sun.plans = [TilePlan::default(); MAX_CASCADES];
         sun.draw_classes.clear();
-        let Some(frame) = self.shadow_frame.as_ref() else {
+        let Some(frame) = self.frame_resources.shadow_frame.as_ref() else {
             return (0, 0);
         };
         let n = frame.profile.cascades;
         let all = (1_u8 << n) - 1;
-        let now = self.frame;
+        let now = self.history.frame;
         // The visible loc draws' keys.
         sun.draw_keys.clear();
-        sun.draw_keys.resize(self.draws.len(), None);
+        sun.draw_keys.resize(self.frame_resources.draws.len(), None);
         for &(start, end, id) in visible {
             let key = snapshot.entity_key(id);
             let end = end.min(sun.draw_keys.len());
@@ -445,6 +449,7 @@ impl ModernRenderer {
         }
         // The floors' identities: their level, upload and tile selection.
         let floor_ids: Vec<Option<Mix>> = self
+            .scene_resources
             .floors
             .iter()
             .enumerate()
@@ -468,8 +473,8 @@ impl ModernRenderer {
                 })
             })
             .collect();
-        let textures = &self.textures;
-        let instances = &self.instances;
+        let textures = &self.device_resources.textures;
+        let instances = &self.frame_resources.instances;
         let dynamic_locs = &mut sun.dynamic_locs;
         let draw_keys = &sun.draw_keys;
         let mut classify = |i: usize, d: &Draw| -> CasterClass {
@@ -532,12 +537,12 @@ impl ModernRenderer {
                 }
             }
         };
-        for (i, d) in self.draws.iter().enumerate() {
+        for (i, d) in self.frame_resources.draws.iter().enumerate() {
             let class = classify(i, d);
             sun.draw_classes.push(class);
-            add(class, self.cascade_masks[i]);
+            add(class, self.frame_resources.cascade_masks[i]);
         }
-        for (j, (_, mask)) in self.shadow_only.iter().enumerate() {
+        for (j, (_, mask)) in self.frame_resources.shadow_only.iter().enumerate() {
             add(
                 sun.only_classes
                     .get(j)
@@ -558,7 +563,7 @@ impl ModernRenderer {
             }
         }
         // The terrain and the roof-hidden tiles: drawn into every cascade.
-        let t = &self.terrain;
+        let t = &self.scene_resources.terrain;
         if terrain_casts {
             if let Some(scene) = t.scene.as_ref().filter(|_| !t.draws.is_empty()) {
                 let mut h = Mix::tagged(3);
@@ -582,7 +587,7 @@ impl ModernRenderer {
                 }
             }
         }
-        let i = &self.interior;
+        let i = &self.scene_resources.interior;
         if !i.terrain.is_empty() {
             let mut h = Mix::tagged(4);
             for &(level, count) in &i.terrain {
@@ -600,13 +605,15 @@ impl ModernRenderer {
         // Which cascades have dynamic casters.
         let mut dynamic = 0_u8;
         let dynamic_masks = self
+            .frame_resources
             .draws
             .iter()
             .zip(&sun.draw_classes)
-            .zip(&self.cascade_masks)
+            .zip(&self.frame_resources.cascade_masks)
             .map(|((_, c), m)| (*c, *m))
             .chain(
-                self.shadow_only
+                self.frame_resources
+                    .shadow_only
                     .iter()
                     .zip(&sun.only_classes)
                     .map(|((_, m), c)| (*c, *m)),
@@ -618,7 +625,7 @@ impl ModernRenderer {
         }
         // The static atlas (the frame atlas's size) when a cascade has
         // dynamic casters: a new one holds nothing yet.
-        let size = self.shadow.atlas.0;
+        let size = self.history.shadow.atlas.0;
         if dynamic != 0 && sun.statics.as_ref().is_none_or(|s| s.0 != size) {
             sun.statics = Some(static_atlas(device, &sun.fill.restore_layout, size));
             sun.state.forget_cache();
@@ -649,7 +656,12 @@ impl ModernRenderer {
             .map(|d| {
                 let m = &d.entity.matrix;
                 let at = [m[12] - origin[0], m[13] - origin[1], m[14] - origin[2]];
-                d.mask & redraw != 0 || self.shadow.point.reaches(&self.lights.frame, origin, at)
+                d.mask & redraw != 0
+                    || self.history.shadow.point.reaches(
+                        &self.scene_resources.lights.frame,
+                        origin,
+                        at,
+                    )
             })
             .collect();
         for (d, wanted) in deferred.iter().zip(wanted) {
@@ -659,14 +671,20 @@ impl ModernRenderer {
         }
         // The packets: every cascade's dynamic casters, the static ones of
         // the cascades that redraw them; sorted for submission.
-        let sun = &mut self.shadow.sun;
+        let sun = &mut self.history.shadow.sun;
         let casters = self
+            .frame_resources
             .draws
             .iter()
-            .zip(sun.draw_classes.iter().zip(&self.cascade_masks))
+            .zip(
+                sun.draw_classes
+                    .iter()
+                    .zip(&self.frame_resources.cascade_masks),
+            )
             .map(|(d, (c, m))| (d, *c, *m))
             .chain(
-                self.shadow_only
+                self.frame_resources
+                    .shadow_only
                     .iter()
                     .zip(&sun.only_classes)
                     .map(|((d, m), c)| (d, *c, *m)),
@@ -689,7 +707,7 @@ impl ModernRenderer {
             }
         }
         #[cfg(test)]
-        let sorted = !self.test_unsorted_packets;
+        let sorted = !self.preparation.test_unsorted_packets;
         #[cfg(not(test))]
         let sorted = true;
         let mut encoded = 0;
@@ -705,7 +723,17 @@ impl ModernRenderer {
         }
         (met, encoded)
     }
+}
 
+/// Cascade `k`'s tile (`res` texels) as the pass's viewport and scissor.
+fn set_tile(pass: &mut wgpu::RenderPass<'_>, k: usize, res: u32) {
+    let (u, v) = crate::shadows::tile_origin(k);
+    let (tx, ty) = ((u * 2.0) as u32 * res, (v * 2.0) as u32 * res);
+    pass.set_viewport(tx as f32, ty as f32, res as f32, res as f32, 0.0, 1.0);
+    pass.set_scissor_rect(tx, ty, res, res);
+}
+
+impl<'a> EncodeInputs<'a> {
     /// The sun shadow passes (pass type 0): the static casters of the
     /// cascades whose static atlas tile is stale, then each cascade's frame
     /// atlas tile brought up to date (`shadows::cache`: kept, restored from
@@ -797,20 +825,9 @@ impl ModernRenderer {
         }
     }
 
-    /// The caster pipeline and cascade `k`'s groups 0 and 2.
-    fn begin_casters<'p>(&'p self, pass: &mut wgpu::RenderPass<'p>, k: usize) {
-        pass.set_pipeline(&self.shadow.pipeline);
-        pass.set_bind_group(0, &self.frame_bind, &[]);
-        pass.set_bind_group(
-            2,
-            &self.shadow.caster_bind,
-            &[(k as u64 * crate::shadows::CASTER_SLOT) as u32],
-        );
-    }
-
     /// Cascade `k`'s static casters (the terrain, locs and floors, the
     /// roof-hidden tiles) into `pass`, its tile set.
-    fn encode_static_casters<'p>(&'p self, pass: &mut wgpu::RenderPass<'p>, k: usize) {
+    fn encode_static_casters<'p>(&self, pass: &mut wgpu::RenderPass<'p>, k: usize) {
         self.begin_casters(pass, k);
         if self.terrain_casts() {
             self.encode_terrain(pass, TerrainPass::Shadow);
@@ -819,12 +836,15 @@ impl ModernRenderer {
         self.submit_all(pass, &self.shadow.sun.static_lists[k]);
         self.encode_interior(pass);
     }
-}
 
-/// Cascade `k`'s tile (`res` texels) as the pass's viewport and scissor.
-fn set_tile(pass: &mut wgpu::RenderPass<'_>, k: usize, res: u32) {
-    let (u, v) = crate::shadows::tile_origin(k);
-    let (tx, ty) = ((u * 2.0) as u32 * res, (v * 2.0) as u32 * res);
-    pass.set_viewport(tx as f32, ty as f32, res as f32, res as f32, 0.0, 1.0);
-    pass.set_scissor_rect(tx, ty, res, res);
+    /// The caster pipeline and cascade `k`'s groups 0 and 2.
+    fn begin_casters<'p>(&self, pass: &mut wgpu::RenderPass<'p>, k: usize) {
+        pass.set_pipeline(&self.shadow.pipeline);
+        pass.set_bind_group(0, self.frame_bind, &[]);
+        pass.set_bind_group(
+            2,
+            &self.shadow.caster_bind,
+            &[(k as u64 * crate::shadows::CASTER_SLOT) as u32],
+        );
+    }
 }

@@ -20,6 +20,7 @@
 //! groups 2 and 3 the pass inputs (the shadow atlas and its receive block,
 //! the point lights, probes); per-draw data rides the instance stream.
 
+use crate::frame::encoding::EncodeInputs;
 use std::cell::Cell;
 
 /// A pass of the frame.
@@ -639,7 +640,7 @@ impl Order {
     }
 }
 
-impl crate::frame::ModernRenderer {
+impl<'a> EncodeInputs<'a> {
     /// Begin `pass` of this frame: its label (see the module docs).
     pub(crate) fn begin_pass(&self, pass: Pass) -> &'static str {
         self.pass_order.begin(pass)

@@ -51,7 +51,7 @@ pub(super) fn framed(
         multiview_mask: None,
         timestamp_writes: None,
     });
-    r.test_models = models.to_vec();
+    r.preparation.test_models = models.to_vec();
     r.draw(
         Target {
             device,

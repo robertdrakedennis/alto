@@ -42,7 +42,6 @@
 
 pub mod atmosphere;
 pub mod device_features;
-pub mod exclusive;
 pub(crate) mod far;
 pub(crate) mod fast_hash;
 pub mod frame;

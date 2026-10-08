@@ -98,7 +98,7 @@ impl Night {
             ..ModernSettings::DEFAULT
         };
         let mut r = renderer(device, queue, 4, settings);
-        r.atmos.test_clear_air = true;
+        r.frame_resources.atmos.test_clear_air = true;
         r.look.sun = 0.0;
         r.look.ambient *= 0.15;
         r.look.sky = 0.0;
@@ -106,8 +106,8 @@ impl Night {
             None => Settings::from_options(0, 0, 0),
             Some(q) => Settings::from_options(2, q as i32, 1),
         });
-        r.test_models = self.models.clone();
-        r.test_lights = Some((self.lights.clone(), grid_of(&self.lights)));
+        r.preparation.test_models = self.models.clone();
+        r.preparation.test_lights = Some((self.lights.clone(), grid_of(&self.lights)));
         r
     }
 }
@@ -133,7 +133,7 @@ fn night_frame(
     let snapshot = night.snapshot();
     let mut r = night.renderer(device, queue, quality);
     if !lit {
-        r.test_lights = None;
+        r.preparation.test_lights = None;
     }
     let f = settled(device, queue, &mut r, &snapshot, night.size);
     (f, r)
@@ -148,7 +148,7 @@ fn atlas_depths(
     queue: &wgpu::Queue,
     r: &ModernRenderer,
 ) -> (Vec<f32>, u32, u32) {
-    let texture = r.lights.shadow_maps.view.texture();
+    let texture = r.scene_resources.lights.shadow_maps.view.texture();
     let (w, h) = (texture.width(), texture.height());
     let bytes = read_back(device, queue, texture, 4);
     let depths = bytes
@@ -190,10 +190,10 @@ fn the_best_lights_cast_and_the_rest_do_not() {
         // The frame without point shadows: the same scene, the tests' switch.
         let snapshot = night.snapshot();
         let mut off = night.renderer(&device, &queue, Some(quality));
-        off.shadow.point.test_off = true;
+        off.history.shadow.point.test_off = true;
         let off = settled(&device, &queue, &mut off, &snapshot, night.size);
         // Which lights: as the selection rules give them for this camera.
-        let frustum = r.shadow.point.frustum.clone().expect("a frustum");
+        let frustum = r.history.shadow.point.frustum.clone().expect("a frustum");
         let inputs: Vec<LightInput> = night
             .lights
             .iter()
@@ -209,7 +209,14 @@ fn the_best_lights_cast_and_the_rest_do_not() {
             .take(preset.lights)
             .map(|c| c.light)
             .collect();
-        let mut active: Vec<usize> = r.shadow.point.active.iter().map(|a| a.light).collect();
+        let mut active: Vec<usize> = r
+            .history
+            .shadow
+            .point
+            .active
+            .iter()
+            .map(|a| a.light)
+            .collect();
         active.sort_unstable();
         let mut want = best.clone();
         want.sort_unstable();
@@ -221,7 +228,7 @@ fn the_best_lights_cast_and_the_rest_do_not() {
         // The atlas is the layout's.
         let layout = AtlasLayout::new(preset.face, preset.levels, preset.lights);
         assert_eq!(
-            r.lights.shadow_maps.size,
+            r.scene_resources.lights.shadow_maps.size,
             (layout.width, layout.height),
             "{quality:?}"
         );
@@ -267,7 +274,14 @@ fn slots_are_kept_until_the_light_leaves() {
     let snapshot = night.snapshot();
     let mut r = night.renderer(&device, &queue, Some(Quality::Low));
     let held = |r: &ModernRenderer| -> Vec<usize> {
-        let mut v: Vec<usize> = r.shadow.point.active.iter().map(|a| a.light).collect();
+        let mut v: Vec<usize> = r
+            .history
+            .shadow
+            .point
+            .active
+            .iter()
+            .map(|a| a.light)
+            .collect();
         v.sort_unstable();
         v
     };
@@ -278,7 +292,7 @@ fn slots_are_kept_until_the_light_leaves() {
     // still get no slot.
     let others: Vec<usize> = (0..6).filter(|k| !first.contains(k)).collect();
     for &k in &others[2..] {
-        r.test_lights.as_mut().unwrap().0[k].intensity = 1.0e6;
+        r.preparation.test_lights.as_mut().unwrap().0[k].intensity = 1.0e6;
     }
     for _ in 0..3 {
         render(&device, &queue, &mut r, &snapshot, night.size);
@@ -287,7 +301,7 @@ fn slots_are_kept_until_the_light_leaves() {
     // One held light goes out: its slot is held for a few frames, then the
     // best waiting light takes it; the other held light never moved.
     let gone = first[0];
-    r.test_lights.as_mut().unwrap().0[gone].intensity = 0.0;
+    r.preparation.test_lights.as_mut().unwrap().0[gone].intensity = 0.0;
     for _ in 0..RELEASE_FRAMES {
         render(&device, &queue, &mut r, &snapshot, night.size);
         assert_eq!(held(&r), vec![first[1]], "the slot waits");
@@ -318,9 +332,9 @@ fn faces_land_in_their_atlas_rectangles() {
         let (_, r) = night_frame(&device, &queue, &night, Some(quality), true);
         let (depths, w, _) = atlas_depths(&device, &queue, &r);
         let layout = AtlasLayout::new(preset.face, preset.levels, preset.lights);
-        assert_eq!(r.shadow.point.active.len(), preset.lights);
+        assert_eq!(r.history.shadow.point.active.len(), preset.lights);
         let mut levels = Vec::new();
-        for a in &r.shadow.point.active {
+        for a in &r.history.shadow.point.active {
             levels.push(a.level);
             for level in 0..preset.levels {
                 for face in 0..6 {
@@ -347,7 +361,14 @@ fn faces_land_in_their_atlas_rectangles() {
         assert!(levels.iter().all(|&l| l < preset.levels));
         // The rectangles of unused slots (none at these qualities when all
         // slots are held) and everything outside every block is cleared.
-        let held: Vec<usize> = r.shadow.point.active.iter().map(|a| a.slot).collect();
+        let held: Vec<usize> = r
+            .history
+            .shadow
+            .point
+            .active
+            .iter()
+            .map(|a| a.slot)
+            .collect();
         for slot in (0..preset.lights).filter(|s| !held.contains(s)) {
             let [x, y, bw, bh] = layout.block(slot);
             let (lo, hi) = rect_range(
@@ -386,7 +407,7 @@ fn point_shadow_frames_repeat() {
     assert_eq!(Noise::of(&first, &other.pixels), Noise::default());
     let (off, _) = {
         let mut r = night.renderer(&device, &queue, Some(Quality::Ultra));
-        r.shadow.point.test_off = true;
+        r.history.shadow.point.test_off = true;
         (settled(&device, &queue, &mut r, &snapshot, night.size), ())
     };
     assert_ne!(
@@ -423,11 +444,11 @@ fn a_still_night_scene_reuses_faces_that_redraw_identically() {
     settled(&device, &queue, &mut r, &snapshot, size);
     let kept = render(&device, &queue, &mut r, &snapshot, size);
     assert!(
-        !r.shadow.point.active.is_empty(),
+        !r.history.shadow.point.active.is_empty(),
         "lights cast in this view"
     );
     assert_eq!(r.stats.point_shadow_draws, 0, "a still scene draws no face");
-    r.shadow.point.forget_faces();
+    r.history.shadow.point.forget_faces();
     let redrawn = render(&device, &queue, &mut r, &snapshot, size);
     assert!(r.stats.point_shadow_draws > 0, "every visible face redrawn");
     assert_eq!(Noise::of(&kept.pixels, &redrawn.pixels), Noise::default());
@@ -435,7 +456,7 @@ fn a_still_night_scene_reuses_faces_that_redraw_identically() {
     // within a light's reach) draws the same frame.
     let mut all = renderer(&device, &queue, 4, ModernSettings::DEFAULT);
     night(&mut all);
-    all.shadow.point.test_all_casters = true;
+    all.history.shadow.point.test_all_casters = true;
     let everything = settled(&device, &queue, &mut all, &snapshot, size);
     // (Two renderers: within the repeat noise of a process.)
     let spread = Noise::of(&kept.pixels, &everything.pixels);
@@ -445,12 +466,12 @@ fn a_still_night_scene_reuses_faces_that_redraw_identically() {
     );
     let mut off = renderer(&device, &queue, 4, ModernSettings::DEFAULT);
     night(&mut off);
-    off.shadow.point.test_off = true;
+    off.history.shadow.point.test_off = true;
     let without = settled(&device, &queue, &mut off, &snapshot, size);
     let differ = Noise::of(&kept.pixels, &without.pixels);
     eprintln!(
         "{} lights cast, {} face draws redrawn; the frame differs from the one without in {differ:?}",
-        r.shadow.point.active.len(),
+        r.history.shadow.point.active.len(),
         r.stats.point_shadow_draws
     );
     assert!(differ.values > 5000, "point shadows change the frame");
@@ -509,11 +530,11 @@ fn the_shadow_fades_to_lit_by_the_maximum_distance() {
         let (ambient, _) = night_frame(&device, &queue, night, Some(quality), false);
         let (on, r) = night_frame(&device, &queue, night, Some(quality), true);
         assert!(
-            !r.shadow.point.active.is_empty(),
+            !r.history.shadow.point.active.is_empty(),
             "light 0 casts at this distance"
         );
         let mut off = night.renderer(&device, &queue, Some(quality));
-        off.shadow.point.test_off = true;
+        off.history.shadow.point.test_off = true;
         let off = settled(&device, &queue, &mut off, &snapshot, size);
         let amb = green(&ambient.hdr, size, p);
         (green(&on.hdr, size, p) - amb) / (green(&off.hdr, size, p) - amb)
@@ -555,22 +576,22 @@ fn dynamic_caster_overlap_and_departure_clear_the_actual_faces() {
     let mut outside = inside.clone();
     outside.1[12] += OUTSIDE_OFFSET;
     let mut r = night.renderer(&device, &queue, Some(Quality::High));
-    r.test_models = vec![outside.clone()];
+    r.preparation.test_models = vec![outside.clone()];
     settled(&device, &queue, &mut r, &snapshot, SIZE);
     let (empty, _, _) = atlas_depths(&device, &queue, &r);
     assert!(empty.iter().all(|depth| *depth == 1.0));
     outside.1[12] += SMALL_MOTION;
-    r.test_models = vec![outside];
+    r.preparation.test_models = vec![outside];
     render(&device, &queue, &mut r, &snapshot, SIZE);
     assert_eq!(
         r.stats.point_shadow_draws, 0,
         "margin-only motion is irrelevant"
     );
     assert!(
-        !r.point_shadows_record(),
+        !r.encoding_inputs().point_shadows_record(),
         "cached empty faces remain untouched"
     );
-    r.test_models = vec![inside];
+    r.preparation.test_models = vec![inside];
     render(&device, &queue, &mut r, &snapshot, SIZE);
     let (cast, _, _) = atlas_depths(&device, &queue, &r);
     assert!(r.stats.point_shadow_draws > 0);
@@ -578,14 +599,17 @@ fn dynamic_caster_overlap_and_departure_clear_the_actual_faces() {
         cast.iter().any(|depth| *depth < 1.0),
         "actual shadow depth was written"
     );
-    r.test_models.clear();
+    r.preparation.test_models.clear();
     render(&device, &queue, &mut r, &snapshot, SIZE);
-    assert!(r.point_shadows_record(), "departure clears old depth once");
+    assert!(
+        r.encoding_inputs().point_shadows_record(),
+        "departure clears old depth once"
+    );
     let (cleared, _, _) = atlas_depths(&device, &queue, &r);
     assert_eq!(cleared, empty, "departure leaves no stale caster depth");
     render(&device, &queue, &mut r, &snapshot, SIZE);
     assert!(
-        !r.point_shadows_record(),
+        !r.encoding_inputs().point_shadows_record(),
         "empty faces are retained after clearing"
     );
 }

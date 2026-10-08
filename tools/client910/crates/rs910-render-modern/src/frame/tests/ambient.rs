@@ -88,7 +88,7 @@ fn squares_get_their_own_captured_ambient() {
     let first = render(&device, &queue, &mut r, &snapshot, size);
     let (frames, now, last) = settle_ambient(&device, &queue, &mut r, &snapshot, size, 600);
     let stats = r.ambient_stats();
-    let squares = r.ambient.schedule.wanted().to_vec();
+    let squares = r.history.ambient.schedule.wanted().to_vec();
     eprintln!(
         "settled after {frames} frames: {stats:?} over {} squares",
         squares.len()
@@ -176,6 +176,7 @@ fn captured_ambient_is_deterministic_and_converged() {
         let mut r = renderer(&device, &queue, 4, verified());
         let (_, now, frame) = settle_ambient(&device, &queue, &mut r, &snapshot, size, 600);
         let blocks: Vec<Irradiance> = r
+            .history
             .ambient
             .schedule
             .wanted()
@@ -221,6 +222,7 @@ fn fragments_take_the_block_of_their_square() {
     let (_, now, normal) = settle_ambient(&device, &queue, &mut r, &snapshot, size, 600);
     let zero = Irradiance([[0.0; 4]; 7]);
     let west: Vec<Square> = r
+        .history
         .ambient
         .schedule
         .wanted()
@@ -230,7 +232,7 @@ fn fragments_take_the_block_of_their_square() {
         .collect();
     assert!(!west.is_empty());
     for s in west {
-        r.ambient.test_blocks.insert(s, zero);
+        r.history.ambient.test_blocks.insert(s, zero);
     }
     crate::logic_clock::set_test_now(Some(now));
     let dark = render(&device, &queue, &mut r, &snapshot, size);

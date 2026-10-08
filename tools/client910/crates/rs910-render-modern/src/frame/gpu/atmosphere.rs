@@ -6,6 +6,7 @@
 //! skipped when its switch is off (then nothing here runs and the frame is
 //! the one before the lane).
 use crate::atmosphere::sky::PassUniforms;
+use crate::frame::encoding::EncodeInputs;
 use crate::frame::*;
 
 /// A pass slot's size (dynamic offsets are 256-byte aligned).
@@ -403,12 +404,15 @@ impl ModernRenderer {
         device: &wgpu::Device,
         queue: &dyn rs910_gpu_device::uploads::Uploader,
     ) {
-        let samples = self.samples;
-        if !self.atmos.pipes.contains(&samples) {
+        let samples = self.device_resources.samples;
+        if !self.frame_resources.atmos.pipes.contains(&samples) {
             let pipes = self.atmos_pipes(device, queue);
-            self.atmos.pipes.insert_selected(samples, pipes);
+            self.frame_resources
+                .atmos
+                .pipes
+                .insert_selected(samples, pipes);
         }
-        self.atmos.pipes.use_key(samples);
+        self.frame_resources.atmos.pipes.use_key(samples);
     }
 
     /// The atmosphere's pipelines at the current sample count (a new set).
@@ -417,21 +421,7 @@ impl ModernRenderer {
         device: &wgpu::Device,
         queue: &dyn rs910_gpu_device::uploads::Uploader,
     ) -> Pipes {
-        let samples = self.samples;
-        let module = self.shaders.get(
-            device,
-            crate::shaders::Module::Atmosphere {
-                multisampled: samples > 1,
-            },
-        );
-        Pipes::new(
-            device,
-            queue,
-            samples,
-            &self.frame_buffer,
-            &self.shadow.receive_layout,
-            module,
-        )
+        self.encoding_inputs().atmos_pipes(device, queue)
     }
 
     /// The frame uniforms the geometry passes read: `uniforms` with this
@@ -451,12 +441,12 @@ impl ModernRenderer {
             })
             .with_inscatter_scale(self.look.scatter_inscatter);
         let now = self.frame_millis();
-        let s = self.atmos.state.update(target, now);
-        self.atmos.frame.scattering = Some(s);
+        let s = self.frame_resources.atmos.state.update(target, now);
+        self.frame_resources.atmos.frame.scattering = Some(s);
         // Tests: the geometry drawn through clear air (the sky and the
         // probes keep the scattering).
         #[cfg(test)]
-        if self.atmos.test_clear_air {
+        if self.frame_resources.atmos.test_clear_air {
             return *uniforms;
         }
         self.scattering_packed(uniforms)
@@ -465,7 +455,7 @@ impl ModernRenderer {
     /// `uniforms` with this frame's scattering packed in (the frame block the geometry
     /// passes and the sky read); unchanged before the frame's scattering is known.
     pub(crate) fn scattering_packed(&self, uniforms: &FrameUniforms) -> FrameUniforms {
-        let Some(s) = self.atmos.frame.scattering else {
+        let Some(s) = self.frame_resources.atmos.frame.scattering else {
             return *uniforms;
         };
         let p = crate::atmosphere::pack(&s);
@@ -502,11 +492,12 @@ impl ModernRenderer {
                 uniforms.fog_colour[2],
             ]
         } else {
-            self.clear
+            self.frame_resources.clear
         };
-        let shading = self
-            .sky_cubes
-            .shading(self.look.sky_exposure(), decor, flat, exposure);
+        let shading =
+            self.scene_resources
+                .sky_cubes
+                .shading(self.look.sky_exposure(), decor, flat, exposure);
         let mut slot = crate::atmosphere::sky::uniforms(inv, rect, &shading);
         if fogged {
             let start = uniforms.fog_range[0];
@@ -532,24 +523,31 @@ impl ModernRenderer {
         rect: [i32; 4],
         clip: [i32; 4],
     ) {
-        self.atmos.rect = rect;
-        self.atmos.clip = clip;
-        let f = &mut self.atmos.frame;
+        self.frame_resources.atmos.rect = rect;
+        self.frame_resources.atmos.clip = clip;
+        let f = &mut self.frame_resources.atmos.frame;
         f.sky_shading = true;
-        f.volumetrics = self.settings.volumetrics;
-        f.dof = self.settings.dof;
+        f.volumetrics = self.preparation.settings.volumetrics;
+        f.dof = self.preparation.settings.dof;
         self.select_atmos_pipes(device, queue);
-        let key = (size, self.samples);
-        if self.atmos.targets.as_ref().is_none_or(|t| t.key != key) {
-            self.atmos.targets = Some(AtmosTargets {
+        let key = (size, self.device_resources.samples);
+        if self
+            .frame_resources
+            .atmos
+            .targets
+            .as_ref()
+            .is_none_or(|t| t.key != key)
+        {
+            self.frame_resources.atmos.targets = Some(AtmosTargets {
                 key,
                 dof: None,
                 vol: None,
             });
         }
         let half = crate::atmosphere::volumetrics::half_size(rect);
-        if let Some(t) = self.atmos.targets.as_mut().filter(|t| {
-            self.atmos.frame.volumetrics && t.vol.as_ref().is_none_or(|v| v.size != half)
+        if let Some(t) = self.frame_resources.atmos.targets.as_mut().filter(|t| {
+            self.frame_resources.atmos.frame.volumetrics
+                && t.vol.as_ref().is_none_or(|v| v.size != half)
         }) {
             let rt = wgpu::TextureUsages::RENDER_ATTACHMENT | wgpu::TextureUsages::TEXTURE_BINDING;
             t.vol = Some(VolTargets {
@@ -566,8 +564,14 @@ impl ModernRenderer {
                 scatter: view_of(device, "modern volumetrics", half, VOL_FORMAT, 1, rt).1,
             });
         }
-        if let Some(t) = self.atmos.targets.as_mut().filter(|t| t.dof.is_none()) {
-            if self.atmos.frame.dof {
+        if let Some(t) = self
+            .frame_resources
+            .atmos
+            .targets
+            .as_mut()
+            .filter(|t| t.dof.is_none())
+        {
+            if self.frame_resources.atmos.frame.dof {
                 let rt =
                     wgpu::TextureUsages::RENDER_ATTACHMENT | wgpu::TextureUsages::TEXTURE_BINDING;
                 let pair =
@@ -588,12 +592,13 @@ impl ModernRenderer {
             uniforms,
             inv,
             r,
-            self.sky_cubes.exposure_offset,
+            self.scene_resources.sky_cubes.exposure_offset,
             self.sky_decor_drawn(),
         );
         slots[SLOT_SKY as usize] = sky_slot;
-        self.atmos.frame.sky_decor = decor;
+        self.frame_resources.atmos.frame.sky_decor = decor;
         let shadow_range = self
+            .frame_resources
             .shadow_frame
             .as_ref()
             .map_or(0.0, |s| s.uniforms.fade[1]);
@@ -609,8 +614,8 @@ impl ModernRenderer {
         let forward = glam::Vec3::new(view.x_axis.z, view.y_axis.z, view.z_axis.z);
         let eye = glam::Vec3::new(uniforms.eye[0], uniforms.eye[1], uniforms.eye[2]);
         let focal = (-eye).dot(forward).max(1.0);
-        self.atmos.frame.focal = focal;
-        self.atmos.dof_slots.clear();
+        self.frame_resources.atmos.frame.focal = focal;
+        self.frame_resources.atmos.dof_slots.clear();
         let mut slot = SLOT_DOF;
         let mut push = |slots: &mut Vec<PassUniforms>, iteration: f32, kind: f32| {
             slots[slot as usize] = dof_uniforms(inv, r, focal, forward.to_array(), iteration, kind);
@@ -629,9 +634,9 @@ impl ModernRenderer {
             }
         }
         dof.push((push(&mut slots, 0.0, 0.0), 0.0));
-        self.atmos.dof_slots = dof;
+        self.frame_resources.atmos.dof_slots = dof;
         self.bind_sky_cubes(device);
-        let pipes = self.atmos.pipes.current().expect("pipes");
+        let pipes = self.frame_resources.atmos.pipes.current().expect("pipes");
         // 256-byte slots.
         let mut bytes = vec![0_u8; (SLOT * u64::from(SLOTS)) as usize];
         for (k, s) in slots.iter().enumerate() {
@@ -645,8 +650,11 @@ impl ModernRenderer {
     /// This frame's pass bind groups (the renderer's resolved and depth
     /// targets of this size).
     pub(crate) fn bind_atmos(&mut self, device: &wgpu::Device) {
-        let f = self.atmos.frame;
-        let (Some(t), Some(targets)) = (self.atmos.targets.as_ref(), self.targets.as_ref()) else {
+        let f = self.frame_resources.atmos.frame;
+        let (Some(t), Some(targets)) = (
+            self.frame_resources.atmos.targets.as_ref(),
+            self.frame_resources.targets.as_ref(),
+        ) else {
             return;
         };
         let hdr = targets.hdr_views();
@@ -659,9 +667,9 @@ impl ModernRenderer {
             .vol
             .as_ref()
             .filter(|_| f.volumetrics)
-            .map(|v| (targets.size, self.samples, v.size));
-        let vol = if vol_key.is_some() && vol_key == self.atmos.vol_bind_key {
-            self.atmos.vol_bind.take()
+            .map(|v| (targets.size, self.device_resources.samples, v.size));
+        let vol = if vol_key.is_some() && vol_key == self.frame_resources.atmos.vol_bind_key {
+            self.frame_resources.atmos.vol_bind.take()
         } else {
             t.vol.as_ref().filter(|_| f.volumetrics).and_then(|v| {
                 Some([
@@ -681,7 +689,7 @@ impl ModernRenderer {
         let src = hdr[writes % 2];
         let mut dof = Vec::new();
         if let Some(d) = t.dof.as_ref().filter(|_| f.dof) {
-            let mut slots = self.atmos.dof_slots.iter().map(|&(s, _)| s);
+            let mut slots = self.frame_resources.atmos.dof_slots.iter().map(|&(s, _)| s);
             let mut add = |textures: [Option<&wgpu::TextureView>; 4]| {
                 if let (Some(slot), Some(bind)) = (slots.next(), self.bind(device, textures)) {
                     dof.push((slot, bind));
@@ -710,37 +718,18 @@ impl ModernRenderer {
             ]);
         }
         writes += usize::from(dof.len() == 4 + 2 * crate::post::dof::ITERATIONS.len());
-        self.atmos.sky_bind = sky;
-        self.atmos.vol_bind_key = vol.as_ref().and(vol_key);
-        self.atmos.vol_bind = vol;
-        self.atmos.dof_binds = dof;
-        self.atmos.hdr_writes = writes;
-        self.atmos.vol_copy_back = vol_copy_back;
+        self.frame_resources.atmos.sky_bind = sky;
+        self.frame_resources.atmos.vol_bind_key = vol.as_ref().and(vol_key);
+        self.frame_resources.atmos.vol_bind = vol;
+        self.frame_resources.atmos.dof_binds = dof;
+        self.frame_resources.atmos.hdr_writes = writes;
+        self.frame_resources.atmos.vol_copy_back = vol_copy_back;
     }
 
     /// The frame's HDR resolve the post chain reads (`Targets::hdr_views`
     /// index): the one the atmosphere's last full-frame pass wrote.
     pub(crate) fn hdr_source(&self) -> usize {
-        self.atmos.hdr_writes % 2
-    }
-
-    /// Step 1's target when the modern sky is on (`(attachment, resolve)`):
-    /// the classic sky draws into the forward target and resolves into the
-    /// frame's HDR twin, which the modern pass reads; at one sample it draws
-    /// into the twin. (The modern pass clears the forward target before it
-    /// draws, so the classic sky needs no target of its own:
-    /// `frame::passes::ALIASES`.)
-    pub(crate) fn sky_shading_target(
-        &self,
-    ) -> Option<(&wgpu::TextureView, Option<&wgpu::TextureView>)> {
-        if !self.atmos.frame.sky_shading {
-            return None;
-        }
-        let t = self.targets.as_ref()?;
-        Some(match &t.msaa {
-            Some(msaa) => (msaa, Some(&t.scratch_view)),
-            None => (&t.scratch_view, None),
-        })
+        self.encoding_inputs().hdr_source()
     }
 
     pub(crate) fn bind<'a>(
@@ -748,8 +737,8 @@ impl ModernRenderer {
         device: &wgpu::Device,
         textures: [Option<&'a wgpu::TextureView>; 4],
     ) -> Option<wgpu::BindGroup> {
-        let pipes = self.atmos.pipes.current()?;
-        let depth = &self.targets.as_ref()?.depth;
+        let pipes = self.frame_resources.atmos.pipes.current()?;
+        let depth = &self.frame_resources.targets.as_ref()?.depth;
         let t = |v: Option<&'a wgpu::TextureView>| v.unwrap_or(&pipes.dummy);
         let entry = |binding, view| wgpu::BindGroupEntry {
             binding,
@@ -776,6 +765,37 @@ impl ModernRenderer {
         }))
     }
 
+    /// The last frame's modern atmosphere layers (tests, logs).
+    #[must_use]
+    pub fn atmos_frame(&self) -> AtmosFrame {
+        self.frame_resources.atmos.frame
+    }
+}
+
+/// A pass's slot (`crate::atmosphere::sky::PassUniforms`): `p0` the depth-of-field
+/// parameters, `p1` (focal point, iteration, pass kind, 0), `p2` the bokeh parameters, `p3` the
+/// view's forward axis (camera-local, for the view depth).
+pub(crate) fn dof_uniforms(
+    inv_view_proj: [[f32; 4]; 4],
+    rect: [f32; 4],
+    focal: f32,
+    forward: [f32; 3],
+    iteration: f32,
+    kind: f32,
+) -> crate::atmosphere::sky::PassUniforms {
+    crate::atmosphere::sky::PassUniforms {
+        inv_view_proj,
+        rect,
+        p0: crate::post::dof::params(focal),
+        p1: [focal, iteration, kind, 0.0],
+        // No bokeh boost (smoothstep over an unreachable range).
+        p2: [1.0e9, 2.0e9, 1.0, 1.0],
+        p3: [forward[0], forward[1], forward[2], 0.0],
+        ..Default::default()
+    }
+}
+
+impl<'a> EncodeInputs<'a> {
     /// One fullscreen pass over the scene viewport, or over `half` texels
     /// from the origin (the volumetrics' half-size passes).
     pub(crate) fn atmos_pass(&self, encoder: &mut wgpu::CommandEncoder, draw: AtmosPass<'_>) {
@@ -838,16 +858,10 @@ impl ModernRenderer {
         pass.draw(0..3, 0..1);
     }
 
-    /// The scene viewport and its clamped scissor of this frame.
-    pub(crate) fn pass_area(&self, size: [u32; 2]) -> (f32, f32, f32, f32, u32, u32, u32, u32) {
-        let [x, y, w, h] = self.atmos.rect;
-        let [l, t, r, b] = self.atmos.clip;
-        let (tw, th) = (size[0] as i32, size[1] as i32);
-        let (l, t) = (l.clamp(0, tw), t.clamp(0, th));
-        let (r, b) = (r.clamp(l, tw), b.clamp(t, th));
-        (
-            x as f32, y as f32, w as f32, h as f32, l as u32, t as u32, r as u32, b as u32,
-        )
+    /// The frame's HDR resolve the post chain reads (`Targets::hdr_views`
+    /// index): the one the atmosphere's last full-frame pass wrote.
+    pub(crate) fn hdr_source(&self) -> usize {
+        self.atmos.hdr_writes % 2
     }
 
     /// Step 1b: the modern sky over the classic sky's target into the frame's
@@ -880,6 +894,18 @@ impl ModernRenderer {
             .with_cubes(cubes)
             .cleared(self.clear),
         );
+    }
+
+    /// The scene viewport and its clamped scissor of this frame.
+    pub(crate) fn pass_area(&self, size: [u32; 2]) -> (f32, f32, f32, f32, u32, u32, u32, u32) {
+        let [x, y, w, h] = self.atmos.rect;
+        let [l, t, r, b] = self.atmos.clip;
+        let (tw, th) = (size[0] as i32, size[1] as i32);
+        let (l, t) = (l.clamp(0, tw), t.clamp(0, th));
+        let (r, b) = (r.clamp(l, tw), b.clamp(t, th));
+        (
+            x as f32, y as f32, w as f32, h as f32, l as u32, t as u32, r as u32, b as u32,
+        )
     }
 
     /// Step 3b (after the forward pass, before the tonemap): the volumetric
@@ -1026,32 +1052,47 @@ impl ModernRenderer {
         );
     }
 
-    /// The last frame's modern atmosphere layers (tests, logs).
-    #[must_use]
-    pub fn atmos_frame(&self) -> AtmosFrame {
-        self.atmos.frame
+    /// Step 1's target when the modern sky is on (`(attachment, resolve)`):
+    /// the classic sky draws into the forward target and resolves into the
+    /// frame's HDR twin, which the modern pass reads; at one sample it draws
+    /// into the twin. (The modern pass clears the forward target before it
+    /// draws, so the classic sky needs no target of its own:
+    /// `frame::passes::ALIASES`.)
+    pub(crate) fn sky_shading_target(
+        &self,
+    ) -> Option<(&wgpu::TextureView, Option<&wgpu::TextureView>)> {
+        if !self.atmos.frame.sky_shading {
+            return None;
+        }
+        let t = self.targets.as_ref()?;
+        Some(match &t.msaa {
+            Some(msaa) => (msaa, Some(&t.scratch_view)),
+            None => (&t.scratch_view, None),
+        })
     }
 }
 
-/// A pass's slot (`crate::atmosphere::sky::PassUniforms`): `p0` the depth-of-field
-/// parameters, `p1` (focal point, iteration, pass kind, 0), `p2` the bokeh parameters, `p3` the
-/// view's forward axis (camera-local, for the view depth).
-pub(crate) fn dof_uniforms(
-    inv_view_proj: [[f32; 4]; 4],
-    rect: [f32; 4],
-    focal: f32,
-    forward: [f32; 3],
-    iteration: f32,
-    kind: f32,
-) -> crate::atmosphere::sky::PassUniforms {
-    crate::atmosphere::sky::PassUniforms {
-        inv_view_proj,
-        rect,
-        p0: crate::post::dof::params(focal),
-        p1: [focal, iteration, kind, 0.0],
-        // No bokeh boost (smoothstep over an unreachable range).
-        p2: [1.0e9, 2.0e9, 1.0, 1.0],
-        p3: [forward[0], forward[1], forward[2], 0.0],
-        ..Default::default()
+impl<'a> EncodeInputs<'a> {
+    /// The atmosphere's pipelines at the current sample count (a new set).
+    pub(crate) fn atmos_pipes(
+        &self,
+        device: &wgpu::Device,
+        queue: &dyn rs910_gpu_device::uploads::Uploader,
+    ) -> Pipes {
+        let samples = self.samples;
+        let module = self.shaders.get(
+            device,
+            crate::shaders::Module::Atmosphere {
+                multisampled: samples > 1,
+            },
+        );
+        Pipes::new(
+            device,
+            queue,
+            samples,
+            self.frame_buffer,
+            &self.shadow.receive_layout,
+            module,
+        )
     }
 }

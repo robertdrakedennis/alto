@@ -8,6 +8,7 @@
 //! The terrain replaces the classic floor's non-water batches of every level
 //! it covers (their draws are not recorded); the water batches stay the
 //! water pass's (M7).
+use crate::frame::encoding::EncodeInputs;
 use wgpu::util::DeviceExt;
 
 use crate::frame::*;
@@ -414,23 +415,16 @@ impl ModernRenderer {
     /// (built the first time: at renderer creation, and on an
     /// anti-aliasing change).
     pub(crate) fn select_terrain_pipes(&mut self, device: &wgpu::Device) {
-        let samples = self.samples;
-        match self.terrain.pipes.as_mut() {
+        let samples = self.device_resources.samples;
+        match self.scene_resources.terrain.pipes.as_mut() {
             Some(pipes) => pipes.use_samples(device, samples),
-            None => self.terrain.pipes = Some(self.terrain_pipes(device)),
+            None => self.scene_resources.terrain.pipes = Some(self.terrain_pipes(device)),
         }
     }
 
     /// The terrain's pipelines at the current sample count (a new set).
     pub(crate) fn terrain_pipes(&self, device: &wgpu::Device) -> Pipes {
-        Pipes::new(
-            device,
-            &self.pipes().forward,
-            &self.shadow.pipeline,
-            self.samples,
-            true,
-            self.shaders.get(device, crate::shaders::Module::Terrain),
-        )
+        self.encoding_inputs().terrain_pipes(device)
     }
 
     /// The frame's terrain (before the floor loop): the installed scene's terrain
@@ -444,7 +438,7 @@ impl ModernRenderer {
         list: &DrawList<'_>,
         origin: [f32; 3],
     ) {
-        if matches!(self.frame, 2 | 5 | 20) || self.frame.is_multiple_of(600) {
+        if matches!(self.history.frame, 2 | 5 | 20) || self.history.frame.is_multiple_of(600) {
             log::info!(
                 "[modern] rt7 models: {:?}, built in {:.1} ms",
                 self.rt7.stats,
@@ -457,28 +451,28 @@ impl ModernRenderer {
             let (n, bad) = self.rt7.check(&list.opaque);
             let (m, bad2) = self.rt7.check(&list.transparent);
             if bad + bad2 > 0 {
-                self.terrain.rt7_mismatches += 1;
+                self.scene_resources.terrain.rt7_mismatches += 1;
                 log::warn!(
                     "[modern] rt7 check: {} of {} RT7 entities differ from their classic faces ({} mismatching frames)",
                     bad + bad2,
                     n + m,
-                    self.terrain.rt7_mismatches
+                    self.scene_resources.terrain.rt7_mismatches
                 );
-            } else if self.frame == 2 || self.frame.is_multiple_of(600) {
+            } else if self.history.frame == 2 || self.history.frame.is_multiple_of(600) {
                 log::info!(
                     "[modern] rt7 check: {} RT7 entities draw their classic faces",
                     n + m
                 );
             }
         }
-        let t = &mut self.terrain;
+        let t = &mut self.scene_resources.terrain;
         t.draws.clear();
         t.replaced = 0;
         t.active = false;
         // The caustic buffers the terrain's bind group reads.
         self.ensure_caustics(device);
         self.select_terrain_pipes(device);
-        let t = &mut self.terrain;
+        let t = &mut self.scene_resources.terrain;
         #[cfg(test)]
         let test_scene = t.test_scene.take();
         #[cfg(not(test))]
@@ -552,7 +546,10 @@ impl ModernRenderer {
                     resource: materials_buffer.as_entire_binding(),
                 },
             ];
-            if let (true, Some(b)) = (pipes.caustics, self.water.caustics.buffers.as_ref()) {
+            if let (true, Some(b)) = (
+                pipes.caustics,
+                self.frame_resources.water.caustics.buffers.as_ref(),
+            ) {
                 entries.push(wgpu::BindGroupEntry {
                     binding: 12,
                     resource: b.uniforms.as_entire_binding(),
@@ -677,7 +674,7 @@ impl ModernRenderer {
         level: usize,
         material: i32,
     ) -> bool {
-        let t = &mut self.terrain;
+        let t = &mut self.scene_resources.terrain;
         if !t.active {
             return false;
         }
@@ -695,12 +692,26 @@ impl ModernRenderer {
         false
     }
 
+    /// Whether the terrain casts sun shadows this frame (the floors'
+    /// scenery setting, M3).
+    pub(crate) fn terrain_casts(&self) -> bool {
+        self.encoding_inputs().terrain_casts()
+    }
+}
+
+impl<'a> EncodeInputs<'a> {
+    /// Whether the terrain casts sun shadows this frame (the floors'
+    /// scenery setting, M3).
+    pub(crate) fn terrain_casts(&self) -> bool {
+        self.terrain.active && self.shadow_frame.is_some() && self.shadow_settings().scenery
+    }
+
     /// Draw this frame's terrain into `pass` (a pass whose groups 0, 2
     /// and 3 are set; the caller re-sets its own pipeline afterwards).
-    pub(crate) fn encode_terrain<'p>(&'p self, pass: &mut wgpu::RenderPass<'p>, kind: TerrainPass) {
+    pub(crate) fn encode_terrain<'p>(&self, pass: &mut wgpu::RenderPass<'p>, kind: TerrainPass) {
         // The far scene's ground first (`far`; nothing when off).
         self.encode_far(pass, kind);
-        let t = &self.terrain;
+        let t = self.terrain;
         let (true, Some(pipes), Some(scene)) = (t.active, t.pipes.as_ref(), t.scene.as_ref())
         else {
             return;
@@ -731,10 +742,18 @@ impl ModernRenderer {
             pass.draw_indexed(0..count, 0, 0..1);
         }
     }
+}
 
-    /// Whether the terrain casts sun shadows this frame (the floors'
-    /// scenery setting, M3).
-    pub(crate) fn terrain_casts(&self) -> bool {
-        self.terrain.active && self.shadow_frame.is_some() && self.shadow_settings().scenery
+impl<'a> EncodeInputs<'a> {
+    /// The terrain's pipelines at the current sample count (a new set).
+    pub(crate) fn terrain_pipes(&self, device: &wgpu::Device) -> Pipes {
+        Pipes::new(
+            device,
+            &self.pipes().forward,
+            &self.shadow.pipeline,
+            self.samples,
+            true,
+            self.shaders.get(device, crate::shaders::Module::Terrain),
+        )
     }
 }

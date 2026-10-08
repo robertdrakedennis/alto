@@ -262,11 +262,12 @@ impl ModernRenderer {
     ) {
         let target = self.environment.global_cube(snapshot);
         if self
+            .scene_resources
             .lights
             .global_env
             .prepare(device, queue, snapshot, target, now_ms)
         {
-            self.lights.rebind(device);
+            self.scene_resources.lights.rebind(device);
         }
     }
 }

@@ -1,5 +1,5 @@
 //! The modern renderer's quality settings ([`ModernSettings`]): what a
-//! player (or a later options screen) chooses, as data the subsystems read.
+//! player chooses in Graphics, as data the subsystems read.
 //!
 //! Where the client's options have a proven meaning for the renderer they
 //! drive it: the shadow options (`sceneryShadows`, `shadowQuality`,
@@ -8,11 +8,10 @@
 //! anti-aliasing level (the forward target's sample count and FXAA,
 //! [`crate::frame::ModernRenderer::set_samples`]) and the faithful toolkit's
 //! bloom state ([`crate::frame::ModernRenderer::set_faithful_bloom`]). The
-//! rest has no proven option: its default is the renderer's chosen value,
-//! and `CLIENT910_MODERN_*` variables override it for development
-//! ([`ModernSettings::from_env`], read once by the shell; never written to
-//! `ClientOptions` or the preferences, so nothing CS2 or the server sees
-//! changes).
+//! local quality controls use the versioned RendererPreferences record in
+//! rs910-config. Defaults preserve the previous frame. Development overrides
+//! resolve above saved choices ([`ModernSettings::resolve`]); native option
+//! bytes, CS2 vars and packets retain their existing contract.
 //!
 //! | Setting | Variable | Values (default first) |
 //! |---|---|---|
@@ -34,6 +33,8 @@
 //!
 //! An unrecognised value logs a warning and keeps the default.
 
+use rs910_config::renderer_preferences::RendererPreferences;
+pub use rs910_config::renderer_preferences::{AoMode, AoResolution, Reflections, RenderScale};
 use rs910_far_scene::far_level::FarLevel;
 
 /// The sun shadows' quality source.
@@ -43,44 +44,6 @@ pub enum Shadows {
     Options,
     /// A fixed quality whatever the options say (`None`: off).
     Fixed(Option<ShadowQuality>),
-}
-
-/// The ambient occlusion mode: the four values of the modern client's option
-/// `"AmbientOcclusion"` (see [`crate::post::ao`]; the default
-/// [`AoMode::Hbao`] is the Ultra preset's).
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum AoMode {
-    Off,
-    Ssao,
-    Hbao,
-    HbaoUltra,
-}
-
-/// The ambient occlusion target's size relative to the scene.
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum AoResolution {
-    Full,
-    Half,
-}
-
-impl AoResolution {
-    /// Scene pixels per occlusion texel.
-    #[must_use]
-    pub const fn divisor(self) -> u32 {
-        const FULL_RESOLUTION_DIVISOR: u32 = 1;
-        const HALF_RESOLUTION_DIVISOR: u32 = 2;
-        match self {
-            Self::Full => FULL_RESOLUTION_DIVISOR,
-            Self::Half => HALF_RESOLUTION_DIVISOR,
-        }
-    }
-
-    /// The occlusion target's extent, including an odd final scene pixel.
-    #[must_use]
-    pub fn size(self, scene: [u32; 2]) -> [u32; 2] {
-        const MIN_TARGET_EXTENT: u32 = 1;
-        scene.map(|v| v.div_ceil(self.divisor()).max(MIN_TARGET_EXTENT))
-    }
 }
 
 /// Which RT5 materials take the global environment map
@@ -149,110 +112,6 @@ pub struct ModernSettings {
     pub render_scale: Option<RenderScale>,
 }
 
-/// The water's planar reflection: the modern client's option `"Reflections"`
-/// (values 0-4, presets Low 0, Medium 1, High 2, Ultra 3, Ultra+ 4; applying
-/// a preset sets the reflection effect's quality -1, 1, 2, 3, 3, and the
-/// reflection map is sized for quality 1 at half the swapchain's width and
-/// height, for 2 and 3 at its full size, or at fixed 1024x512 and 2048x1024
-/// under a device flag not traced). The default
-/// [`Reflections::Full`] is the High to Ultra+ presets' (a stand-in like
-/// [`AoMode`]'s: no 910 option maps to it).
-#[derive(Clone, Copy, Debug, PartialEq, Eq, Hash)]
-pub enum Reflections {
-    /// No planar reflection (quality -1): the water reflects its
-    /// environment only.
-    Off,
-    /// The reflection at half the scene viewport's width and height
-    /// (quality 1).
-    Half,
-    /// At the scene viewport's size (qualities 2 and 3).
-    Full,
-}
-
-impl Reflections {
-    /// The reflection target's size divisor (`None`: no reflection).
-    #[must_use]
-    pub fn divisor(self) -> Option<i32> {
-        match self {
-            Self::Off => None,
-            Self::Half => Some(2),
-            Self::Full => Some(1),
-        }
-    }
-}
-
-/// The render scale: the scene's pixels per scene-viewport pixel along each
-/// axis, in percent (the modern client's option `"GameRenderScale"`, 50..200
-/// percent, applied as `value * 0.01` to the viewport's size). Away from
-/// 100 the scene renders at that scale and its frame is resampled into the
-/// viewport under the faithful UI ([`crate::frame::scale`]).
-#[derive(Clone, Copy, Debug, PartialEq, Eq, Hash)]
-pub struct RenderScale(u16);
-
-impl RenderScale {
-    /// The viewport's own resolution (the modern client's default is 100,
-    /// or `round10(9600 / dpi)` above 96 dpi, and its window object's dpi is
-    /// a constant 96 that is never read from the display).
-    pub const FULL: Self = Self(100);
-    /// The scale factor from which a display counts as high-DPI.
-    pub const HIGH_DPI_FROM: f64 = 1.25;
-    /// The pixels of scene a high-DPI window renders at most (1600 x 1000):
-    /// a full-size Retina window is GPU-bound at about 27 ms a frame at its
-    /// own 3200 x 2000, and about 7 ms at this budget.
-    pub const HIGH_DPI_BUDGET: f64 = 1_600_000.0;
-    /// The option's range.
-    pub const MIN_PERCENT: u16 = 50;
-    pub const MAX_PERCENT: u16 = 200;
-
-    /// `percent` of the viewport's pixels per axis (`None`: outside
-    /// [`Self::MIN_PERCENT`]..=[`Self::MAX_PERCENT`]).
-    #[must_use]
-    pub fn percent(percent: u16) -> Option<Self> {
-        (Self::MIN_PERCENT..=Self::MAX_PERCENT)
-            .contains(&percent)
-            .then_some(Self(percent))
-    }
-
-    /// The scale in percent.
-    #[must_use]
-    pub fn as_percent(self) -> u16 {
-        self.0
-    }
-
-    /// The automatic scale (a stand-in for the modern client's, which never
-    /// reads the display): 100 on a low-DPI display, and on a high-DPI one
-    /// (`scale_factor` from [`Self::HIGH_DPI_FROM`]) the share of a
-    /// `viewport_pixels` scene viewport that renders at most
-    /// [`Self::HIGH_DPI_BUDGET`] pixels, per axis, in steps of 5 and within
-    /// the option's range: 50 for a full-size window at scale factor 2, 100
-    /// for a window of up to 1600 x 1000 physical pixels.
-    #[must_use]
-    pub fn auto(scale_factor: f64, viewport_pixels: u64) -> Self {
-        if scale_factor < Self::HIGH_DPI_FROM || viewport_pixels == 0 {
-            return Self::FULL;
-        }
-        let share = (Self::HIGH_DPI_BUDGET / viewport_pixels as f64)
-            .sqrt()
-            .min(1.0);
-        let percent = ((share * 20.0).round() as u16 * 5)
-            .clamp(Self::MIN_PERCENT, Self::MAX_PERCENT)
-            .min(100);
-        Self(percent)
-    }
-
-    /// `0.5`..`2` (a factor) or `50`..`200` (a percentage, `%` optional).
-    #[must_use]
-    pub fn parse(v: &str) -> Option<Self> {
-        let v = v.trim().trim_end_matches('%');
-        let x: f64 = v.parse().ok()?;
-        let percent = if x <= 2.0 { x * 100.0 } else { x };
-        if !percent.is_finite() {
-            return None;
-        }
-        Self::percent(percent.round() as u16)
-    }
-}
-
 impl Default for ModernSettings {
     fn default() -> Self {
         Self::DEFAULT
@@ -280,7 +139,7 @@ impl ModernSettings {
     /// docs (the shell reads them once).
     #[must_use]
     pub fn from_env() -> Self {
-        let s = Self::from_vars(|name| std::env::var(name).ok());
+        let s = Self::resolve(RendererPreferences::DEFAULT);
         if s != Self::DEFAULT {
             log::info!("[modern] settings {s:?}");
         }
@@ -290,12 +149,72 @@ impl ModernSettings {
     /// [`Self::from_env`] over any variable source.
     #[must_use]
     pub fn from_vars(var: impl Fn(&str) -> Option<String>) -> Self {
-        let mut s = Self::DEFAULT;
+        Self::from_preferences_with_vars(RendererPreferences::DEFAULT, var)
+    }
+
+    /// Resolve saved choices under development overrides, captured once per
+    /// process so renderer recreation and live editing use the same policy.
+    pub fn resolve(preferences: RendererPreferences) -> Self {
+        static OVERRIDES: std::sync::OnceLock<std::collections::BTreeMap<&'static str, String>> =
+            std::sync::OnceLock::new();
+        const VARIABLES: &[&str] = &[
+            "CLIENT910_MODERN_SHADOWS",
+            "CLIENT910_MODERN_AO",
+            "CLIENT910_MODERN_AO_RESOLUTION",
+            "CLIENT910_MODERN_ENV_REFLECTIONS",
+            "CLIENT910_MODERN_FAR",
+            "CLIENT910_MODERN_VOLUMETRICS",
+            "CLIENT910_MODERN_BLOOM",
+            "CLIENT910_MODERN_FXAA",
+            "CLIENT910_MODERN_DOF",
+            "CLIENT910_MODERN_REFLECTIONS",
+            "CLIENT910_MODERN_RENDER_SCALE",
+            "CLIENT910_MODERN_LOOK",
+        ];
+        let overrides = OVERRIDES.get_or_init(|| {
+            VARIABLES
+                .iter()
+                .filter_map(|&name| std::env::var(name).ok().map(|value| (name, value)))
+                .collect()
+        });
+        Self::from_preferences_with_vars(preferences, |name| overrides.get(name).cloned())
+    }
+
+    pub fn preferences(self) -> RendererPreferences {
+        RendererPreferences {
+            render_scale: self.render_scale,
+            ao: self.ao,
+            ao_resolution: self.ao_resolution,
+            draw_distance: rs910_config::renderer_preferences::DrawDistance::from_level(
+                self.far.map(FarLevel::index),
+            )
+            .expect("validated renderer distance"),
+            volumetrics: self.volumetrics,
+            reflections: self.reflections,
+            dof: self.dof,
+        }
+    }
+
+    /// Pure resolver for fixtures and callers that supply their own overrides.
+    pub fn from_preferences_with_vars(
+        preferences: RendererPreferences,
+        var: impl Fn(&str) -> Option<String>,
+    ) -> Self {
+        let mut s = Self {
+            render_scale: preferences.render_scale,
+            ao: preferences.ao,
+            ao_resolution: preferences.ao_resolution,
+            far: preferences.draw_distance.level().and_then(FarLevel::new),
+            volumetrics: preferences.volumetrics,
+            reflections: preferences.reflections,
+            dof: preferences.dof,
+            ..Self::DEFAULT
+        };
         let read = |name: &str, apply: &mut dyn FnMut(&str) -> bool| {
             if let Some(v) = var(name) {
                 let v = v.trim().to_ascii_lowercase();
                 if !apply(&v) {
-                    log::warn!("[modern] {name}={v:?} not understood; the default stays");
+                    log::warn!("[modern] {name}={v:?} not understood; the saved choice stays");
                 }
             }
         };
@@ -388,6 +307,30 @@ impl ModernSettings {
 #[cfg(test)]
 mod tests {
     use super::*;
+
+    #[test]
+    fn saved_preferences_resolve_below_explicit_overrides_including_automatic_scale() {
+        use rs910_config::renderer_preferences::QualityPreset;
+        assert_eq!(
+            ModernSettings::from_preferences_with_vars(RendererPreferences::DEFAULT, |_| None),
+            ModernSettings::DEFAULT
+        );
+        let mut saved = QualityPreset::Performance.preferences();
+        saved.render_scale = RenderScale::parse("75");
+        let resolved = ModernSettings::from_preferences_with_vars(saved, |name| match name {
+            "CLIENT910_MODERN_AO" => Some("hbao".into()),
+            "CLIENT910_MODERN_RENDER_SCALE" => Some("auto".into()),
+            "CLIENT910_MODERN_REFLECTIONS" => Some("invalid".into()),
+            _ => None,
+        });
+        assert_eq!(resolved.ao, AoMode::Hbao);
+        assert_eq!(resolved.render_scale, None);
+        assert_eq!(resolved.reflections, saved.reflections);
+        assert_eq!(
+            resolved.far.map(FarLevel::index),
+            saved.draw_distance.level()
+        );
+    }
 
     #[test]
     fn ao_resolution_defaults_to_full_and_rounds_odd_extents_up() {

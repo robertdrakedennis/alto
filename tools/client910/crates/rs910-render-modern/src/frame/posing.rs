@@ -84,7 +84,7 @@ fn pose(
 impl ModernRenderer {
     /// Pose the transient models and stale dynamic locs `list` draws.
     pub(crate) fn pose_models(&mut self, snapshot: &SceneSnapshot<'_>, list: &DrawList<'_>) {
-        self.posing.posed.clear();
+        self.frame_resources.posing.posed.clear();
         self.pose_entities(snapshot, list.opaque.iter().chain(&list.transparent));
     }
 
@@ -103,7 +103,7 @@ impl ModernRenderer {
         let mut seen = std::collections::HashSet::new();
         for entity in entities {
             let identity = identity(entity);
-            if self.posing.posed.contains_key(&identity) || !seen.insert(identity) {
+            if self.frame_resources.posing.posed.contains_key(&identity) || !seen.insert(identity) {
                 continue;
             }
             if entity.key.is_some()
@@ -112,7 +112,9 @@ impl ModernRenderer {
             {
                 continue;
             }
-            let map = self.rt7.anim_map(snapshot, entity, Some(self.frame));
+            let map = self
+                .rt7
+                .anim_map(snapshot, entity, Some(self.history.frame));
             models.push((entity, map));
         }
         let jobs = models.len().div_ceil(MODELS_PER_JOB);
@@ -125,7 +127,10 @@ impl ModernRenderer {
                 .collect::<Vec<_>>()
         });
         for ((entity, _), posed) in models.iter().zip(posed.into_iter().flatten()) {
-            self.posing.posed.insert(identity(entity), posed);
+            self.frame_resources
+                .posing
+                .posed
+                .insert(identity(entity), posed);
         }
     }
 
@@ -138,17 +143,24 @@ impl ModernRenderer {
         entity: &EntityDraw<'_>,
     ) -> Option<Arc<ModelStreams>> {
         let identity = identity(entity);
-        if !self.posing.posed.contains_key(&identity) {
-            let map = self.rt7.anim_map(snapshot, entity, Some(self.frame));
+        if !self.frame_resources.posing.posed.contains_key(&identity) {
+            let map = self
+                .rt7
+                .anim_map(snapshot, entity, Some(self.history.frame));
             let posed = pose(
                 entity.model,
                 map.as_deref(),
                 materials,
                 &mut PoseScratch::default(),
             );
-            self.posing.posed.insert(identity, posed);
+            self.frame_resources.posing.posed.insert(identity, posed);
         }
-        let posed = self.posing.posed.get_mut(&identity).expect("posed model");
+        let posed = self
+            .frame_resources
+            .posing
+            .posed
+            .get_mut(&identity)
+            .expect("posed model");
         if let Some(mut count) = posed.count {
             if posed.counted {
                 count.time = std::time::Duration::ZERO;

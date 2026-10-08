@@ -79,7 +79,8 @@ impl ModernRenderer {
     /// The seabed draws of the last frame (tests).
     #[cfg(test)]
     pub(crate) fn underwater_bed_draws(&self) -> usize {
-        self.draws
+        self.frame_resources
+            .draws
             .iter()
             .filter(|d| matches!(d.geometry, Geometry::Floor { level, .. } if level == BED_LEVEL))
             .count()
@@ -101,7 +102,7 @@ impl ModernRenderer {
             return;
         }
         let size = (geometry.tiles_x, geometry.tiles_z);
-        let selection = match self.underwater.selection.take() {
+        let selection = match self.scene_resources.underwater.selection.take() {
             Some((have, selection)) if have == size => selection,
             _ => whole_floor(size.0, size.1),
         };
@@ -117,23 +118,26 @@ impl ModernRenderer {
             ],
             origin,
         );
-        let n = self.floors[BED_LEVEL]
+        let n = self.scene_resources.floors[BED_LEVEL]
             .as_ref()
             .map_or(0, |floor| floor.batches.len());
         for batch in 0..n {
             let (material, uv_scale, count) = {
-                let b = &self.floors[BED_LEVEL].as_ref().expect("bed").batches[batch];
+                let b = &self.scene_resources.floors[BED_LEVEL]
+                    .as_ref()
+                    .expect("bed")
+                    .batches[batch];
                 (b.material, b.uv_scale, b.count)
             };
             if count == 0 {
                 continue;
             }
-            let instance = self.instances.len() as u32;
+            let instance = self.frame_resources.instances.len() as u32;
             // The point lights of the surface level's grid.
             let mut record = self.instance(matrix, material, uv_scale, FLAG_FLOOR);
             record.p2 = [0.0; 4];
-            self.instances.push(record);
-            self.draws.push(Draw {
+            self.frame_resources.instances.push(record);
+            self.frame_resources.draws.push(Draw {
                 geometry: Geometry::Floor {
                     level: BED_LEVEL,
                     batch,
@@ -147,7 +151,7 @@ impl ModernRenderer {
                 indirect: None,
             });
         }
-        self.underwater.selection = Some((size, selection));
+        self.scene_resources.underwater.selection = Some((size, selection));
     }
 
     /// Record the draws of the underwater locs that are (`transparent`) or
@@ -168,9 +172,12 @@ impl ModernRenderer {
             return;
         };
         let models = underwater.models;
-        if self.underwater.meshes.len() != models.len() {
-            self.underwater.meshes.clear();
-            self.underwater.meshes.resize_with(models.len(), || None);
+        if self.scene_resources.underwater.meshes.len() != models.len() {
+            self.scene_resources.underwater.meshes.clear();
+            self.scene_resources
+                .underwater
+                .meshes
+                .resize_with(models.len(), || None);
         }
         for (index, entry) in models.iter().enumerate() {
             if entry.transparent != transparent {
@@ -181,23 +188,27 @@ impl ModernRenderer {
                 entry.model.unique_count,
                 entry.model.draw_face_count,
             );
-            let stale = self.underwater.meshes[index]
+            let stale = self.scene_resources.underwater.meshes[index]
                 .as_ref()
                 .is_none_or(|m| m.fingerprint != fingerprint);
             if stale {
                 let mesh =
                     crate::models::mesh::model_streams(&entry.model, materials, Colour::Classic)
                         .map(|streams| {
-                            let alloc = self.loc_arena.store(device, queue, None, &streams);
+                            let alloc = self
+                                .scene_resources
+                                .loc_arena
+                                .store(device, queue, None, &streams);
                             crate::frame::resources::Mesh {
                                 alloc,
                                 batches: streams.batches.clone(),
                                 bounds: crate::models::bounds::Bounds::of(&streams.vertices),
                             }
                         });
-                self.underwater.meshes[index] = Some(UnderwaterMesh { fingerprint, mesh });
+                self.scene_resources.underwater.meshes[index] =
+                    Some(UnderwaterMesh { fingerprint, mesh });
             }
-            let Some(mesh) = self.underwater.meshes[index]
+            let Some(mesh) = self.scene_resources.underwater.meshes[index]
                 .as_ref()
                 .and_then(|m| m.mesh.as_ref())
             else {
@@ -209,13 +220,20 @@ impl ModernRenderer {
                 page: mesh.alloc.page,
                 base_vertex: mesh.alloc.vertex as i32,
             };
-            let start = self.draws.len();
+            let start = self.frame_resources.draws.len();
             for &(material, first_index, count) in &mesh.batches {
-                self.textures
-                    .ensure(device, queue, snapshot.pack, Some(materials), material);
-                let instance = self.instances.len() as u32;
-                self.instances.push(self.instance(matrix, material, 1.0, 0));
-                self.draws.push(Draw {
+                self.device_resources.textures.ensure(
+                    device,
+                    queue,
+                    snapshot.pack,
+                    Some(materials),
+                    material,
+                );
+                let instance = self.frame_resources.instances.len() as u32;
+                self.frame_resources
+                    .instances
+                    .push(self.instance(matrix, material, 1.0, 0));
+                self.frame_resources.draws.push(Draw {
                     geometry,
                     material,
                     first_index: first_index + first,
@@ -229,7 +247,7 @@ impl ModernRenderer {
             let bounds = mesh.bounds.map(|b| b.transformed(&matrix));
             self.note_bounds(start, bounds);
             if let Some(sorted) = sorted.as_deref_mut() {
-                sorted.push((start..self.draws.len(), matrix));
+                sorted.push((start..self.frame_resources.draws.len(), matrix));
             }
         }
     }

@@ -17,16 +17,16 @@ impl ModernRenderer {
     /// This frame's reflection list under the reflected camera's
     /// `clip` (camera-local to clip).
     pub(crate) fn cull_reflection(&mut self, clip: &glam::Mat4) {
-        let reflected = &mut self.water.reflected;
+        let reflected = &mut self.frame_resources.water.reflected;
         reflected.clear();
         #[cfg(test)]
-        let cull = !self.water.test_no_reflection_cull;
+        let cull = !self.frame_resources.water.test_no_reflection_cull;
         #[cfg(not(test))]
         let cull = true;
-        let mut ranges = self.draw_bounds.iter().peekable();
+        let mut ranges = self.frame_resources.draw_bounds.iter().peekable();
         let mut culled = 0;
         let mut out = None;
-        for i in 0..self.draws.len() as u32 {
+        for i in 0..self.frame_resources.draws.len() as u32 {
             // The box of the entity whose range holds draw `i`, tested
             // once per entity.
             while ranges.next_if(|r| r.1 <= i).is_some() {
@@ -44,7 +44,7 @@ impl ModernRenderer {
                 reflected.push(i);
             }
         }
-        self.water.stats.reflection_draws = reflected.len();
-        self.water.stats.reflection_culled = culled;
+        self.frame_resources.water.stats.reflection_draws = reflected.len();
+        self.frame_resources.water.stats.reflection_culled = culled;
     }
 }

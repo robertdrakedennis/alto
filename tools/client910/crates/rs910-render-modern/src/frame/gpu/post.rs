@@ -5,6 +5,7 @@
 //! adaptation, the bright pass and Kawase blur, the composite (exposure,
 //! bloom, tonemap, grading) and FXAA, in that order.
 use crate::frame::compile::Job;
+use crate::frame::encoding::EncodeInputs;
 use crate::frame::*;
 use crate::post::{Effects, PassParams, PostFrame};
 
@@ -683,7 +684,7 @@ impl ModernRenderer {
     /// The last frame's post effects.
     #[must_use]
     pub fn post_effects(&self) -> Effects {
-        self.post.effects
+        self.history.post.effects
     }
 
     /// This frame's effects, targets and uniforms (renderer plan M8). The
@@ -698,38 +699,42 @@ impl ModernRenderer {
         rect: [i32; 4],
         clip: [i32; 4],
     ) -> bool {
-        let fx = Effects::resolve(&self.settings, self.faithful_bloom, self.samples);
-        if fx != self.post.effects {
+        let fx = Effects::resolve(
+            &self.preparation.settings,
+            self.preparation.faithful_bloom,
+            self.device_resources.samples,
+        );
+        if fx != self.history.post.effects {
             log::info!("[modern] post effects {fx:?}");
         }
-        self.post.effects = fx;
+        self.history.post.effects = fx;
         let [x, y, w, h] = rect;
         let bloom = [
             (w.max(1) as u32).div_ceil(crate::post::BLOOM_DOWNSAMPLE),
             (h.max(1) as u32).div_ceil(crate::post::BLOOM_DOWNSAMPLE),
         ];
         // The occlusion mode (`Off` draws no occlusion).
-        self.post.ao = self.settings.ao;
-        let ao = self.post.ao != crate::settings::AoMode::Off;
-        let targets = self.targets.as_ref().expect("targets");
-        let divisor = self.settings.ao_resolution.divisor();
+        self.history.post.ao = self.preparation.settings.ao;
+        let ao = self.history.post.ao != crate::settings::AoMode::Off;
+        let targets = self.frame_resources.targets.as_ref().expect("targets");
+        let divisor = self.preparation.settings.ao_resolution.divisor();
         let key = PostKey {
             scene: size,
             bloom,
-            ao: self.settings.ao_resolution.size(size),
+            ao: self.preparation.settings.ao_resolution.size(size),
         };
-        self.post.ensure_targets(
+        self.history.post.ensure_targets(
             device,
             key,
             targets.hdr_views(),
-            &self.lut_view,
-            &self.post_buffer,
+            &self.device_resources.lut_view,
+            &self.device_resources.post_buffer,
         );
         self.bind_ao(device, ao.then_some(key));
         // At a render scale with FXAA: FXAA's scaled output, the upscale's
         // source (`frame::scale`).
-        if self.scaled.is_some() && fx.fxaa {
-            let post = &mut self.post;
+        if self.frame_resources.scaled.is_some() && fx.fxaa {
+            let post = &mut self.history.post;
             if post.targets.as_ref().is_some_and(|t| t.ldr_fxaa.is_none()) {
                 let view = target_view(device, "modern post ldr (fxaa)", size, LDR_FORMAT);
                 let w = &post.white;
@@ -739,7 +744,7 @@ impl ModernRenderer {
                     &post.frame,
                     &post.passes,
                     [&view, w, w, w],
-                    Some(&self.post_buffer),
+                    Some(&self.device_resources.post_buffer),
                 );
                 post.targets.as_mut().expect("post targets").ldr_fxaa = Some((view, bind));
             }
@@ -749,16 +754,16 @@ impl ModernRenderer {
         let [l, t, r, b] = clip;
         let (l, t) = (l.clamp(0, tw), t.clamp(0, th));
         let (r, b) = (r.clamp(l, tw), b.clamp(t, th));
-        self.post.clip = [l, t, r, b].map(|v| v as u32);
+        self.history.post.clip = [l, t, r, b].map(|v| v as u32);
         // Adaptation on the logic clock (fixed-clock frames repeat).
         let (dt, reset) = {
             let now = self.frame_millis();
-            let step = self
-                .post
-                .last_ms
-                .map(|last| ((now - last) as f32 / 1000.0).clamp(0.0, crate::post::MAX_TIME_STEP));
-            self.post.last_ms = Some(now);
-            self.post.adapted_slot = 1 - self.post.adapted_slot;
+            let step =
+                self.history.post.last_ms.map(|last| {
+                    ((now - last) as f32 / 1000.0).clamp(0.0, crate::post::MAX_TIME_STEP)
+                });
+            self.history.post.last_ms = Some(now);
+            self.history.post.adapted_slot = 1 - self.history.post.adapted_slot;
             (step.unwrap_or(0.0), step.is_none())
         };
         let view_proj = glam::Mat4::from_cols_array_2d(&uniforms.view_proj);
@@ -819,22 +824,22 @@ impl ModernRenderer {
                 crate::post::FXAA_EDGE_THRESHOLD_MIN,
                 // The composite writes the display frame for a pass after it
                 // (FXAA, or the render scale's upscale).
-                on(fx.fxaa || self.scaled.is_some()),
+                on(fx.fxaa || self.frame_resources.scaled.is_some()),
             ],
         };
         let mut frame = frame;
         self.look.post_frame(&mut frame, pixels_per_unit);
-        queue.write_buffer(&self.post.frame, 0, bytemuck::bytes_of(&frame));
-        let area = crate::post::ao::Area::new(rect, self.post.clip, divisor);
-        self.post.ao_area = area;
+        queue.write_buffer(&self.history.post.frame, 0, bytemuck::bytes_of(&frame));
+        let area = crate::post::ao::Area::new(rect, self.history.post.clip, divisor);
+        self.history.post.ao_area = area;
         frame.rect = area.rect;
         frame.clip = area.clip.map(|v| v as f32);
         let view = crate::post::ao::View {
             viewport: [area.rect[2], area.rect[3]],
             proj,
         };
-        crate::post::ao::post_frame(&mut frame, self.post.ao, &view);
-        queue.write_buffer(&self.post.ao_frame, 0, bytemuck::bytes_of(&frame));
+        crate::post::ao::post_frame(&mut frame, self.history.post.ao, &view);
+        queue.write_buffer(&self.history.post.ao_frame, 0, bytemuck::bytes_of(&frame));
         let mut slots = vec![PassParams::default(); PASS_SLOTS as usize];
         slots[SLOT_BLUR_X as usize] = PassParams::new([1.0, 0.0, 0.0, 0.0]);
         slots[SLOT_BLUR_Y as usize] = PassParams::new([0.0, 1.0, 0.0, 0.0]);
@@ -848,31 +853,38 @@ impl ModernRenderer {
         }
         slots[SLOT_HBAO_A as usize] = PassParams::new(crate::post::ao::HBAO_A.params());
         slots[SLOT_HBAO_B as usize] = PassParams::new(crate::post::ao::HBAO_B.params());
-        if let Some(s) = self.scaled {
+        if let Some(s) = self.frame_resources.scaled {
             // The viewport in the frame's pixels; encode for an sRGB target
             // unless FXAA's output already is linear.
             let mut p = PassParams::new(s.native_rect.map(|v| v as f32));
-            p.pad[0][0] = on(self.output_format.is_srgb() && !fx.fxaa);
+            p.pad[0][0] = on(self.device_resources.output_format.is_srgb() && !fx.fxaa);
             slots[SLOT_UPSCALE as usize] = p;
         }
-        queue.write_buffer(&self.post.passes, 0, bytemuck::cast_slice(&slots));
+        queue.write_buffer(&self.history.post.passes, 0, bytemuck::cast_slice(&slots));
         ao
     }
 
     /// Point the forward frame group's occlusion map at the post targets of
     /// `key` (`None`: the white texel) when it does not already.
     pub(crate) fn bind_ao(&mut self, device: &wgpu::Device, key: Option<PostKey>) {
-        if self.post.frame_ao == key {
+        if self.history.post.frame_ao == key {
             return;
         }
-        let ao = match (key, self.post.targets.as_ref()) {
+        let ao = match (key, self.history.post.targets.as_ref()) {
             (Some(_), Some(t)) => &t.ao,
-            _ => &self.post.white,
+            _ => &self.history.post.white,
         };
-        self.frame_bind = frame_bind(device, &self.post.frame_layout, &self.frame_buffer, ao);
-        self.post.frame_ao = key;
+        self.device_resources.frame_bind = frame_bind(
+            device,
+            &self.history.post.frame_layout,
+            &self.device_resources.frame_buffer,
+            ao,
+        );
+        self.history.post.frame_ao = key;
     }
+}
 
+impl<'a> EncodeInputs<'a> {
     /// A fullscreen post pass into `view` over `[x, y, w, h]` with the
     /// scissor `clip` (`None`: the whole target), cleared to `clear`.
     pub(crate) fn post_pass(&self, encoder: &mut wgpu::CommandEncoder, draw: PostPass<'_>) {
@@ -915,169 +927,6 @@ impl ModernRenderer {
         pass.set_pipeline(pipeline);
         pass.set_bind_group(0, bind, &[(u64::from(slot) * PASS_SLOT) as u32]);
         pass.draw(0..3, 0..1);
-    }
-
-    /// The SSAO passes (before the forward pass): the opaque entities and
-    /// floors into the normal/position targets, the occlusion, its X and Y
-    /// blur into the forward pass's `ssao_map`.
-    pub(crate) fn encode_ssao(
-        &self,
-        encoder: &mut wgpu::CommandEncoder,
-        rect: [i32; 4],
-        clip: [i32; 4],
-    ) {
-        if self.post.ao == crate::settings::AoMode::Off {
-            return;
-        }
-        let Some(t) = self.post.targets.as_ref() else {
-            return;
-        };
-        let [l, tp, r, b] = self.post.ao_area.clip;
-        if r <= l || b <= tp {
-            return;
-        }
-        let [x, y, w, h] = self.post.ao_area.rect;
-        let _ = rect;
-        let _ = clip;
-        {
-            let clear = wgpu::Operations {
-                load: wgpu::LoadOp::Clear(wgpu::Color::TRANSPARENT),
-                store: wgpu::StoreOp::Store,
-            };
-            let mut pass = encoder.begin_render_pass(&wgpu::RenderPassDescriptor {
-                label: Some(self.begin_pass(crate::frame::passes::Pass::AoGeometry)),
-                color_attachments: &[
-                    Some(wgpu::RenderPassColorAttachment {
-                        view: &t.normal,
-                        resolve_target: None,
-                        depth_slice: None,
-                        ops: clear,
-                    }),
-                    Some(wgpu::RenderPassColorAttachment {
-                        view: &t.position,
-                        resolve_target: None,
-                        depth_slice: None,
-                        ops: clear,
-                    }),
-                ],
-                depth_stencil_attachment: Some(wgpu::RenderPassDepthStencilAttachment {
-                    view: &t.depth,
-                    depth_ops: Some(wgpu::Operations {
-                        load: wgpu::LoadOp::Clear(1.0),
-                        store: wgpu::StoreOp::Store,
-                    }),
-                    stencil_ops: None,
-                }),
-                occlusion_query_set: None,
-                multiview_mask: None,
-                timestamp_writes: None,
-            });
-            pass.set_viewport(x, y, w, h, 0.0, 1.0);
-            pass.set_scissor_rect(l, tp, r - l, b - tp);
-            pass.set_pipeline(&self.post.geometry);
-            pass.set_bind_group(0, &self.frame_bind, &[]);
-            pass.set_bind_group(2, &self.shadow.atlas.2, &[]);
-            pass.set_bind_group(3, &self.lights.bind, &[]);
-            // M10: the terrain's normal and depth.
-            self.encode_terrain(&mut pass, crate::frame::TerrainPass::Geometry);
-            pass.set_pipeline(&self.post.geometry);
-            // In the draw order: colour ties keep the last draw (`submit`).
-            let end = self.post.geometry_draws.min(self.draws.len());
-            let mut bound = crate::frame::submit::Bound::default();
-            for d in self.draws[..end]
-                .iter()
-                .filter(|d| d.pass == Pass::Opaque && !matches!(d.geometry, Geometry::Far { .. }))
-            {
-                self.submit(&mut pass, d, &mut bound);
-            }
-        }
-        let area = Some(([x, y, w, h], self.post.ao_area.clip));
-        let mode = self.post.ao;
-        self.encode_ao(encoder, t, mode, area);
-        if !crate::post::ao::blurs(mode) {
-            return;
-        }
-        self.post_pass(
-            encoder,
-            PostPass {
-                which: crate::frame::passes::Pass::AoBlurX,
-                view: &t.ao_tmp,
-                pipeline: &self.post.blur,
-                bind: &t.blur_x_bind,
-                slot: SLOT_BLUR_X,
-                area,
-                clear: Some(1.0),
-            },
-        );
-        self.post_pass(
-            encoder,
-            PostPass {
-                which: crate::frame::passes::Pass::AoBlurY,
-                view: &t.ao,
-                pipeline: &self.post.blur,
-                bind: &t.blur_y_bind,
-                slot: SLOT_BLUR_Y,
-                area,
-                clear: Some(1.0),
-            },
-        );
-    }
-
-    /// The occlusion pass(es) (`post::ao`): SSAO straight into the forward
-    /// pass's map (no blur), or horizon-based set A (then set B over it for
-    /// HBAO Ultra) into the blur's input.
-    pub(crate) fn encode_ao(
-        &self,
-        encoder: &mut wgpu::CommandEncoder,
-        t: &PostTargets,
-        mode: crate::settings::AoMode,
-        area: Option<([f32; 4], [u32; 4])>,
-    ) {
-        use crate::settings::AoMode as Mode;
-        let hbao = &self.post.hbao;
-        match mode {
-            Mode::Off => {}
-            Mode::Ssao => self.post_pass(
-                encoder,
-                PostPass {
-                    which: crate::frame::passes::Pass::Ao,
-                    view: &t.ao,
-                    pipeline: &self.post.ssao,
-                    bind: &t.ssao_bind,
-                    slot: 0,
-                    area,
-                    clear: Some(1.0),
-                },
-            ),
-            Mode::Hbao | Mode::HbaoUltra => {
-                self.post_pass(
-                    encoder,
-                    PostPass {
-                        which: crate::frame::passes::Pass::Ao,
-                        view: &t.ao_raw,
-                        pipeline: &hbao[0],
-                        bind: &t.ssao_bind,
-                        slot: SLOT_HBAO_A,
-                        area,
-                        clear: Some(1.0),
-                    },
-                );
-                if mode == Mode::HbaoUltra {
-                    self.post_pass(
-                        encoder,
-                        PostPass {
-                            which: crate::frame::passes::Pass::Ao,
-                            view: &t.ao_raw,
-                            pipeline: &hbao[1],
-                            bind: &t.ssao_bind,
-                            slot: SLOT_HBAO_B,
-                            area,
-                            clear: None,
-                        },
-                    );
-                }
-            }
-        }
     }
 
     /// The post chain after the forward pass into `view`.
@@ -1251,6 +1100,169 @@ impl ModernRenderer {
                     clear: None,
                 },
             );
+        }
+    }
+
+    /// The SSAO passes (before the forward pass): the opaque entities and
+    /// floors into the normal/position targets, the occlusion, its X and Y
+    /// blur into the forward pass's `ssao_map`.
+    pub(crate) fn encode_ssao(
+        &self,
+        encoder: &mut wgpu::CommandEncoder,
+        rect: [i32; 4],
+        clip: [i32; 4],
+    ) {
+        if self.post.ao == crate::settings::AoMode::Off {
+            return;
+        }
+        let Some(t) = self.post.targets.as_ref() else {
+            return;
+        };
+        let [l, tp, r, b] = self.post.ao_area.clip;
+        if r <= l || b <= tp {
+            return;
+        }
+        let [x, y, w, h] = self.post.ao_area.rect;
+        let _ = rect;
+        let _ = clip;
+        {
+            let clear = wgpu::Operations {
+                load: wgpu::LoadOp::Clear(wgpu::Color::TRANSPARENT),
+                store: wgpu::StoreOp::Store,
+            };
+            let mut pass = encoder.begin_render_pass(&wgpu::RenderPassDescriptor {
+                label: Some(self.begin_pass(crate::frame::passes::Pass::AoGeometry)),
+                color_attachments: &[
+                    Some(wgpu::RenderPassColorAttachment {
+                        view: &t.normal,
+                        resolve_target: None,
+                        depth_slice: None,
+                        ops: clear,
+                    }),
+                    Some(wgpu::RenderPassColorAttachment {
+                        view: &t.position,
+                        resolve_target: None,
+                        depth_slice: None,
+                        ops: clear,
+                    }),
+                ],
+                depth_stencil_attachment: Some(wgpu::RenderPassDepthStencilAttachment {
+                    view: &t.depth,
+                    depth_ops: Some(wgpu::Operations {
+                        load: wgpu::LoadOp::Clear(1.0),
+                        store: wgpu::StoreOp::Store,
+                    }),
+                    stencil_ops: None,
+                }),
+                occlusion_query_set: None,
+                multiview_mask: None,
+                timestamp_writes: None,
+            });
+            pass.set_viewport(x, y, w, h, 0.0, 1.0);
+            pass.set_scissor_rect(l, tp, r - l, b - tp);
+            pass.set_pipeline(&self.post.geometry);
+            pass.set_bind_group(0, self.frame_bind, &[]);
+            pass.set_bind_group(2, &self.shadow.atlas.2, &[]);
+            pass.set_bind_group(3, &self.lights.bind, &[]);
+            // M10: the terrain's normal and depth.
+            self.encode_terrain(&mut pass, crate::frame::TerrainPass::Geometry);
+            pass.set_pipeline(&self.post.geometry);
+            // In the draw order: colour ties keep the last draw (`submit`).
+            let end = self.post.geometry_draws.min(self.draws.len());
+            let mut bound = crate::frame::submit::Bound::default();
+            for d in self.draws[..end]
+                .iter()
+                .filter(|d| d.pass == Pass::Opaque && !matches!(d.geometry, Geometry::Far { .. }))
+            {
+                self.submit(&mut pass, d, &mut bound);
+            }
+        }
+        let area = Some(([x, y, w, h], self.post.ao_area.clip));
+        let mode = self.post.ao;
+        self.encode_ao(encoder, t, mode, area);
+        if !crate::post::ao::blurs(mode) {
+            return;
+        }
+        self.post_pass(
+            encoder,
+            PostPass {
+                which: crate::frame::passes::Pass::AoBlurX,
+                view: &t.ao_tmp,
+                pipeline: &self.post.blur,
+                bind: &t.blur_x_bind,
+                slot: SLOT_BLUR_X,
+                area,
+                clear: Some(1.0),
+            },
+        );
+        self.post_pass(
+            encoder,
+            PostPass {
+                which: crate::frame::passes::Pass::AoBlurY,
+                view: &t.ao,
+                pipeline: &self.post.blur,
+                bind: &t.blur_y_bind,
+                slot: SLOT_BLUR_Y,
+                area,
+                clear: Some(1.0),
+            },
+        );
+    }
+
+    /// The occlusion pass(es) (`post::ao`): SSAO straight into the forward
+    /// pass's map (no blur), or horizon-based set A (then set B over it for
+    /// HBAO Ultra) into the blur's input.
+    pub(crate) fn encode_ao(
+        &self,
+        encoder: &mut wgpu::CommandEncoder,
+        t: &PostTargets,
+        mode: crate::settings::AoMode,
+        area: Option<([f32; 4], [u32; 4])>,
+    ) {
+        use crate::settings::AoMode as Mode;
+        let hbao = &self.post.hbao;
+        match mode {
+            Mode::Off => {}
+            Mode::Ssao => self.post_pass(
+                encoder,
+                PostPass {
+                    which: crate::frame::passes::Pass::Ao,
+                    view: &t.ao,
+                    pipeline: &self.post.ssao,
+                    bind: &t.ssao_bind,
+                    slot: 0,
+                    area,
+                    clear: Some(1.0),
+                },
+            ),
+            Mode::Hbao | Mode::HbaoUltra => {
+                self.post_pass(
+                    encoder,
+                    PostPass {
+                        which: crate::frame::passes::Pass::Ao,
+                        view: &t.ao_raw,
+                        pipeline: &hbao[0],
+                        bind: &t.ssao_bind,
+                        slot: SLOT_HBAO_A,
+                        area,
+                        clear: Some(1.0),
+                    },
+                );
+                if mode == Mode::HbaoUltra {
+                    self.post_pass(
+                        encoder,
+                        PostPass {
+                            which: crate::frame::passes::Pass::Ao,
+                            view: &t.ao_raw,
+                            pipeline: &hbao[1],
+                            bind: &t.ssao_bind,
+                            slot: SLOT_HBAO_B,
+                            area,
+                            clear: None,
+                        },
+                    );
+                }
+            }
         }
     }
 }

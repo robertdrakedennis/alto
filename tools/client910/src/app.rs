@@ -997,7 +997,7 @@ impl ApplicationHandler for ViewerApp {
         let sf = self.window.as_ref().unwrap().scale_factor();
         let renderer = self.renderer.as_mut().unwrap();
         renderer.set_ui_scale(sf);
-        renderer.set_modern_render_scale(crate::modern_display::load(
+        renderer.set_modern_preferences(crate::modern_display::load_preferences(
             &crate::modern_display::path(&self.cli.pack_root),
         ));
         // A session built before the window (`--direct-login`) passed the
