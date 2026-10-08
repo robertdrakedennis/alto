@@ -1,0 +1,7 @@
+{
+  "playerInfoCount": 86,
+  "npcInfoCount": 86,
+  "rawLifeRows": 71,
+  "boundLifeRows": 69,
+  "scope": "Actual server sends; replay consumes the captured packet prefix. Raw terminal world-only ticks are preserved separately."
+}

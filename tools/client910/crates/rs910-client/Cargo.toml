@@ -1,0 +1,58 @@
+[package]
+name = "rs910-client"
+version = "0.1.0"
+edition = "2021"
+publish = false
+description = "The 910 client's client layer: the world/lobby login and the session's socket IO over tokio (LoginManager's connection side, the startup drain, live frame polling), the login workers, the loading-screen connection, the RTR1 session recorder, the deterministic input injectors and the mainredraw sleep. Uses the protocol, game, scene and UI crates; no renderer, no winit."
+
+# Allowed dependencies (tools/refactor/layers.txt `[crates]`,
+# target-architecture.md §2.2): every crate below the shell except the two
+# render impls. tokio is fenced to this crate and rs910-js5; wgpu and winit
+# are fenced out. Doc code blocks are not compiled, like client910's
+# (`doctest = false`).
+[lib]
+doctest = false
+
+[dependencies]
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+rs910-core = { path = "../rs910-core" }
+# The session core (Phase 5): `Pack` (the retained UI and map loads) and
+# the config types the input halves name.
+rs910-js5 = { path = "../rs910-js5" }
+rs910-config = { path = "../rs910-config" }
+rs910-protocol = { path = "../rs910-protocol" }
+rs910-game = { path = "../rs910-game" }
+rs910-scene = { path = "../rs910-scene" }
+rs910-ui = { path = "../rs910-ui" }
+native910 = { path = "../../../native910" }
+anyhow = "1.0"
+log = "0.4"
+tokio = { version = "1", features = ["full"] }
+# The ping report's ICMP echo (unprivileged datagram socket).
+libc = "0.2"
+# Operating-system randomness for the session keys of a login.
+getrandom = "0.3"
+
+[dev-dependencies]
+rs910-symbols = { path = "../rs910-symbols" }
+# The shared test helpers (`frozen`, `reader_digest`, `show`).
+rs910-core = { path = "../rs910-core", features = ["test-hooks"] }
+# The test-only parsers (`server_prot::parse_if_*`) the session tests call
+# and the entity feed's test view (`live::Feed::pending_len`, the Phase G
+# wiring checks).
+rs910-protocol = { path = "../rs910-protocol", features = ["test-hooks"] }
+rs910-game = { path = "../rs910-game", features = ["test-hooks"] }
+# The create-connect fixture (`fixtures/create_account_connect.json`).
+
+[features]
+# Every workspace crate has `no-pack` (tools/README.md); client910's
+# `no-pack` forwards here. Nothing in this crate reads the pack.
+no-pack = []
+# Test seams client910's tests use (the RTR1 reader of the session replay):
+# the items are `#[cfg(any(test, feature = "test-hooks"))]`. client910
+# enables it through [dev-dependencies] only.
+test-hooks = []
+
+[lints]
+workspace = true

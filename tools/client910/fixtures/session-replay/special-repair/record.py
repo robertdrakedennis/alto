@@ -1,0 +1,245 @@
+#!/usr/bin/env python3
+"""Finite special/repair recorder; source proposal until the lead grants its heavy lease."""
+import fcntl
+import hashlib
+import importlib.util
+import json
+import os
+from pathlib import Path
+import shutil
+import signal
+import socket
+import sys
+import time
+
+SPECIAL_SESSION_SECONDS = 480
+SPECIAL_START_SECONDS = 90
+SPECIAL_DRIVER_SECONDS = 360
+SPECIAL_CHECK_SECONDS = 45
+SPECIAL_BROKER_CLOSE_SECONDS = 50
+SPECIAL_POLL_SECONDS = 0.2
+SPECIAL_IDENTITY_SAMPLE_SECONDS = 2
+SPECIAL_MAX_LAUNCHES = 4
+SPECIAL_MAX_CONTROL_SOCKET_PATH_BYTES = 104
+SPECIAL_FORBIDDEN_ENV = frozenset((
+    "ALTO_NPC_SPAWNS", "ALTO_DEV_NPCS", "ALTO_DEV_NPC_WANDER",
+    "ALTO_THIEVING_ROLLS", "ALTO_WC_ALWAYS", "ALTO_SKILLS_ALWAYS",
+    "ALTO_TRAIL_STEPS", "ALTO_GE_MARKET_MAKER", "ALTO_PREFLIGHT_LOGIN_MODULE",
+))
+SPECIAL_FIRST = 0
+SPECIAL_ONE = 1
+SPECIAL_MIN_PORT = 48600
+SPECIAL_END_PORT = 48700
+SPECIAL_ENTRY = "app::session_replay::observed_session::authenticated_observed_session"
+
+
+def special_sha(path):
+    return hashlib.sha256(Path(path).read_bytes()).hexdigest()
+
+
+def special_binding(path):
+    path = Path(path).absolute()
+    return {"path": str(path), "sha256": special_sha(path)}
+
+
+def special_load(entry, name):
+    if special_binding(entry["path"]) != entry:
+        raise RuntimeError("Frozen helper changed: " + entry["path"])
+    spec = importlib.util.spec_from_file_location(name, entry["path"])
+    value = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(value)
+    return value
+
+
+def special_epoch(root, selectors):
+    if not isinstance(selectors, dict) or not selectors:
+        raise RuntimeError("Explicit finite source/input manifest required")
+    current = {}
+    for relative in sorted(selectors):
+        selected = Path(relative)
+        if selected.is_absolute() or ".." in selected.parts:
+            raise RuntimeError("Unsafe source selector: " + relative)
+        current[relative] = special_sha(root / selected)
+    return current
+
+
+def special_checked(entry):
+    if special_binding(entry["path"]) != entry:
+        raise RuntimeError("Frozen input changed: " + entry["path"])
+    return entry["path"]
+
+
+def special_main():
+    spec = json.loads(Path(sys.argv[SPECIAL_ONE]).read_text())
+    if spec.get("executionApproved") is not True:
+        raise RuntimeError("Explicit lead heavy lease is required before runtime")
+    root, out = Path(spec["root"]), Path(spec["out"])
+    if not root.is_absolute() or root == Path('/Users/robert/projects/alto') or out.exists():
+        raise RuntimeError("Own worktree and fresh result directory required")
+    out.mkdir(parents=True)
+    helpers = spec["files"]
+    paths = {name: special_checked(value) for name, value in helpers.items()}
+    owner_module = special_load(helpers["owner"], "ordinary_existing_process_owner")
+    owner = owner_module.Owner(out, root)
+    owner.result.update(expectedPriorLaunches=SPECIAL_FIRST, maximumClientLaunches=SPECIAL_MAX_LAUNCHES,
+        actualClientLaunchesThisRun=SPECIAL_FIRST, rendered=False, captureQualification="ordinary authenticated core")
+    handlers = {kind: signal.getsignal(kind) for kind in (signal.SIGTERM, signal.SIGINT)}
+    for kind in handlers:
+        signal.signal(kind, owner_module.interrupt)
+    frozen = None
+    try:
+        ports = spec["ports"]
+        if set(ports) != {"lobby", "world"} or len(set(ports.values())) != len(ports):
+            raise RuntimeError("Distinct assigned ports required")
+        for port in ports.values():
+            if not SPECIAL_MIN_PORT <= port < SPECIAL_END_PORT:
+                raise RuntimeError("Port outside owned lane range")
+            with socket.socket() as probe:
+                probe.bind(("127.0.0.1", port))
+        frozen = special_epoch(root, spec["sourceInputs"])
+        if frozen != spec["sourceInputs"]:
+            raise RuntimeError("Frozen source/input manifest changed before capture")
+        owner.result["sourceInputCount"] = len(frozen)
+        (out / "source-input-epoch.json").write_text(json.dumps(frozen, sort_keys=True, indent=2) + "\n")
+        build = json.loads(Path(paths["binaryManifest"]).read_text())
+        if build["sourceRoot"] != str(root) or not build["sources"]:
+            raise RuntimeError("Ordinary core was not built from this worktree")
+        if {key: build["binary"][key] for key in ("path", "sha256")} != helpers["binary"]:
+            raise RuntimeError("Compiled core does not match its source manifest")
+        for relative, expected in build["sources"].items():
+            path = Path(relative)
+            if path.is_absolute() or ".." in path.parts or special_sha(root / path) != expected:
+                raise RuntimeError("Compiled source differs: " + relative)
+        owner.result["compiledSourceManifest"] = helpers["binaryManifest"]
+        env = dict(os.environ)
+        for key in list(env):
+            if key.startswith("CLIENT910_") or key in SPECIAL_FORBIDDEN_ENV:
+                env.pop(key)
+        requested_env = spec.get("environment", {})
+        if any(key.startswith("CLIENT910_") or key in SPECIAL_FORBIDDEN_ENV for key in requested_env):
+            raise RuntimeError("Capture environment attempts to restore gameplay assistance")
+        env.update(requested_env)
+        # Account, plan and passive receipts survive a reboot beside the capture.
+        scratch = out / "runtime"
+        scratch.mkdir()
+        work = scratch / "w"
+        work.mkdir()
+        transport, control = scratch / "p.sock", scratch / "c.sock"
+        if any(len(str(path).encode()) >= SPECIAL_MAX_CONTROL_SOCKET_PATH_BYTES for path in (transport, control)):
+            raise RuntimeError("Durable runtime path exceeds the native socket pathname bound")
+        env.update(ALTO_SPECIAL_RUNTIME_ROOT=str(root), ALTO_GENERATED_DIR=str(root / "server/data/generated"),
+            ALTO_PLAYER_DATA_DIR=str(work / "players"), ALTO_LOBBY_PORT=str(ports["lobby"]),
+            ALTO_WORLD_PORT=str(ports["world"]), ALTO_LOGIN_CRYPTO="on", ALTO_TRACE_INFO="1", NODE_OPTIONS="")
+        executables = {name: shutil.which(name, path=env.get("PATH")) for name in ("node", "python3")}
+        if any(value is None for value in executables.values()):
+            raise RuntimeError("Node and Python runtimes are required")
+        owner.result.update(scratch=str(scratch), work=str(work), files=helpers, ports=ports,
+            limitations=["No pixels or FPS proof", "Initial fixture only; no live state assistance"])
+        owner.run("seed", [executables["node"], paths["seed"], str(work), *spec.get("seedArgs", [])],
+                  root / "server", env, SPECIAL_CHECK_SECONDS)
+        pairs = {}
+        pairs["lobby"] = owner.start("lobby", [executables["node"], "src/lostcity/lobby.ts"], root / "server", env, SPECIAL_SESSION_SECONDS)
+        pairs["world"] = owner.start("world", [executables["node"], paths["server"], str(work)], root / "server", env, SPECIAL_SESSION_SECONDS)
+        def wait(predicate, seconds):
+            deadline, sample_at = time.monotonic() + seconds, time.monotonic()
+            while True:
+                if predicate():
+                    return
+                for name, (child, row) in pairs.items():
+                    if child.poll() is not None:
+                        row.update(exit=child.wait(), waited=True)
+                        raise RuntimeError("Owned ordinary process ended early: " + name)
+                now = time.monotonic()
+                if now >= deadline:
+                    raise TimeoutError("Bounded ordinary recorder stage expired")
+                if now >= sample_at:
+                    owner.sample()
+                    sample_at = now + SPECIAL_IDENTITY_SAMPLE_SECONDS
+                time.sleep(SPECIAL_POLL_SECONDS)
+        wait(lambda: all((out / (name + ".log")).exists()
+            and f"listening on port {ports[name]}" in (out / (name + ".log")).read_text().lower()
+            for name in ("lobby", "world")), SPECIAL_START_SECONDS)
+        peer = {"peerCount": SPECIAL_ONE, "headlessOnly": True, "broker": helpers["broker"],
+            "loginTestkit": helpers["loginTestkit"], "deviceEnvelope": helpers["deviceEnvelope"],
+            "receipts": str(out / "backend-receipts.jsonl"), "peer": {
+                "name": "Alice", "port": ports["world"], "transport": str(transport),
+                "control": str(control), "deviceEnvelope": paths["deviceEnvelope"],
+                "modules": {name: helpers[name] for name in ("socketTestkit", "loginProvider", "loginCrypto")}}}
+        peer_path = out / "one-peer.json"
+        peer_path.write_text(json.dumps(peer, indent=2) + "\n")
+        pairs["broker"] = owner.start("broker", [executables["node"], paths["peerAdapter"], str(peer_path)], root / "server", env, SPECIAL_SESSION_SECONDS)
+        wait(transport.exists, SPECIAL_START_SECONDS)
+        owner.run("wired-guard", ["bash", "ref/independence/wired-guard.sh"], root, env, SPECIAL_CHECK_SECONDS)
+        ledger = Path(spec["launchLedger"])
+        ledger.parent.mkdir(parents=True, exist_ok=True)
+        with ledger.open("a+", encoding="utf8") as stream:
+            fcntl.flock(stream, fcntl.LOCK_EX)
+            stream.seek(SPECIAL_FIRST)
+            prior = [json.loads(line) for line in stream if line.strip()]
+            if len(prior) >= SPECIAL_MAX_LAUNCHES:
+                raise RuntimeError("This lane exhausted its four actual client launches")
+            stream.write(json.dumps({"ordinal": len(prior) + SPECIAL_ONE, "time": time.time(),
+                "root": str(root), "out": str(out), "binary": helpers["binary"]}) + "\n")
+            stream.flush()
+            os.fsync(stream.fileno())
+            owner.result["expectedPriorLaunches"] = len(prior)
+        core_env = dict(env, CLIENT910_OBSERVED_TRANSPORT=str(transport), CLIENT910_CONTROL=str(control),
+            CLIENT910_OBSERVED_SESSION_SECONDS=str(SPECIAL_SESSION_SECONDS), CLIENT910_RECORD=str(out / "session.rtr"))
+        pairs["core"] = owner.start("core", [paths["binary"], "--ignored", "--exact", SPECIAL_ENTRY,
+            "--nocapture", "--test-threads=1"], root / "tools", core_env, SPECIAL_SESSION_SECONDS)
+        owner.result["actualClientLaunchesThisRun"] = SPECIAL_ONE
+        wait(control.exists, SPECIAL_START_SECONDS)
+        observer = special_load(helpers["control"], "ordinary_recording_control").Control(str(control), SPECIAL_CHECK_SECONDS)
+        try:
+            def ready():
+                response = observer.request({"command": "snapshot"})
+                return response.get("status") == "observed" and all(response.get("data", {}).get(key)
+                    for key in ("ready", "player", "terrain_present"))
+            wait(ready, SPECIAL_START_SECONDS)
+        finally:
+            observer.close()
+        argv = [executables["python3"], paths["driver"], *[value.replace("{work}", str(work))
+            .replace("{out}", str(out)).replace("{control}", str(control)) for value in spec["driverArgs"]]]
+        driver, row = owner.start("driver", argv, root, env, SPECIAL_DRIVER_SECONDS)
+        wait(lambda: driver.poll() is not None, SPECIAL_DRIVER_SECONDS)
+        row.update(exit=driver.wait(), waited=True)
+        if row["exit"]:
+            raise RuntimeError("Ordinary special/repair driver failed; preserve exact evidence")
+        broker, broker_row = pairs.pop("broker")
+        owner.stop_direct(broker, broker_row, SPECIAL_BROKER_CLOSE_SECONDS)
+        if broker_row["exit"]:
+            raise RuntimeError("Ordinary broker did not close cleanly")
+        wait(lambda: pairs["core"][SPECIAL_FIRST].poll() is not None, SPECIAL_CHECK_SECONDS)
+        core, row = pairs.pop("core")
+        row.update(exit=core.wait(), waited=True)
+        if row["exit"]:
+            raise RuntimeError("Ordinary core did not close cleanly")
+        owner.result.update(passed=True, owningReplayPassed=False)
+    except BaseException as error:
+        owner.result.update(passed=False, error=repr(error))
+    finally:
+        try:
+            owner.cleanup()
+        finally:
+            try:
+                owner.result["sourceInputsUnchanged"] = frozen == special_epoch(root, spec["sourceInputs"])
+                if not owner.result["sourceInputsUnchanged"]:
+                    owner.result["passed"] = False
+                for name, value in helpers.items():
+                    special_checked(value)
+                recorded = out / "session.rtr"
+                if recorded.exists():
+                    owner.result["actualRecording"] = {**special_binding(recorded), "bytes": recorded.stat().st_size}
+            except BaseException as error:
+                owner.cleanup_error("Closed evidence binding", error)
+            finally:
+                for kind, handler in handlers.items():
+                    signal.signal(kind, handler)
+                owner.best_effort_save("Final ordinary recorder")
+    print(json.dumps({key: owner.result.get(key) for key in
+        ("passed", "error", "allDirectChildrenWaited", "ownedSurvivors", "actualClientLaunchesThisRun")}), flush=True)
+    return SPECIAL_FIRST if owner.result["passed"] else SPECIAL_ONE
+
+
+if __name__ == "__main__":
+    raise SystemExit(special_main())

@@ -1,0 +1,17 @@
+# native910 curated interface and child names — one entry per line.
+#
+# 910 interfaces carry no name tags, so names are curated here as the game is
+# reverse-engineered (the Ghidra-naming workflow): pin a meaningful name to an
+# important interface or component and every dump renders it in the identity
+# comment (`// interface bank component main` instead of
+# `// interface 1253 component 4`), and every inspection shows it.
+# Blank lines and `#` comments are ignored. Interface names must be unique
+# idents and ids must exist in the pack; child names must be unique within
+# their interface and the child must exist. Anything else fails loudly.
+#
+# interface <id> <name>
+# component <iface> <child> <name>
+#
+# Example:
+# interface 1253 bank
+# component 1253 4 main

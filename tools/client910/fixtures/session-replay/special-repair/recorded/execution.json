@@ -1,0 +1,119 @@
+{
+  "allOriginalChildrenWaited": true,
+  "captureOwnerPassed": true,
+  "launchesSpent": 1,
+  "owningReplay": {
+    "failed": 0,
+    "passed": 1,
+    "test": "app::scenario_special_repair::special_recorded_native_bob_repair_outside_gwd_and_timed_melee_sample",
+    "wholeRecording": true
+  },
+  "owningReplayPassed": true,
+  "periodicDamageExercised": false,
+  "presentationQualified": false,
+  "publications": {
+    "npc_info": 149,
+    "orderedPublicationLineageSha256": "7c2012304800077f06c53eaad165496290395a84f0be02c2bdbc7877e1b363bf",
+    "player_info": 149
+  },
+  "rendered": false,
+  "sourceBindings": {
+    "binary": {
+      "path": "/Users/robert/projects/alto-target-legacy-specials-gaps/debug/deps/client910-c15188a94426efa7",
+      "sha256": "8841f788fd04e5a61de5a40a04104a9446c86416e63ade62f4bc56f06d99c218"
+    },
+    "binaryManifest": {
+      "path": "/Users/robert/projects/alto-target-legacy-specials-gaps/proof/core1/binary-manifest.json",
+      "sha256": "9237eace2afc902c4f5e73cadb8ec99b748ad9e69a1faa3d19e405f14eed186f"
+    },
+    "broker": {
+      "path": "/Users/robert/.codex/worktrees/legacy-specials-gaps/alto/.cache/special-repair/helpers/peer_broker.mjs",
+      "sha256": "e4d403a67745dbce9a0ec84522a98194d2fb48e6926d5c6851276212639a1568"
+    },
+    "control": {
+      "path": "/Users/robert/.codex/worktrees/legacy-specials-gaps/alto/tools/client910/scripts/control.py",
+      "sha256": "f48413b91db69b5c02d29257c70e66ec55e59f18f3d2f4d53a3ece80d63a045f"
+    },
+    "deviceEnvelope": {
+      "path": "/Users/robert/.codex/worktrees/legacy-specials-gaps/alto/tools/client910/fixtures/session-replay/legacy-interface/session.rtr",
+      "sha256": "acb90c0c962ddec1b8c413af0c2df13e63b922ef71d4bfc1aa9412ff22c5a341"
+    },
+    "driver": {
+      "path": "/Users/robert/.codex/worktrees/legacy-specials-gaps/alto/tools/client910/fixtures/session-replay/special-repair/driver.py",
+      "sha256": "ffb61544fdc9082911eeb7f48cb31ea1d7ffb09c94d4e9ddbeb39c705f2ab481"
+    },
+    "endgameFixture": {
+      "path": "/Users/robert/.codex/worktrees/legacy-specials-gaps/alto/server/src/lostcity/systems/equipment/EndgameFixture.testkit.ts",
+      "sha256": "8afae0d67fa02852c56b01e5f4d5bed833b78edfc13835ee4f90c28548ba3b55"
+    },
+    "foodReceipts": {
+      "path": "/Users/robert/.codex/worktrees/legacy-specials-gaps/alto/tools/client910/fixtures/session-replay/barrows/food-receipts.mjs",
+      "sha256": "bca606f0a95668a6e3936f561d3e6e56770ed1a0b65e64dd98896cfd6c999c9b"
+    },
+    "freeze": {
+      "path": "/Users/robert/.codex/worktrees/legacy-specials-gaps/alto/tools/client910/fixtures/session-replay/special-repair/freeze.py",
+      "sha256": "9fa6bfeaf9bb6c8e1c565f91736b0dff90d43e627593c2cf929967c2702cd8c4"
+    },
+    "loginCrypto": {
+      "path": "/Users/robert/.codex/worktrees/legacy-specials-gaps/alto/server/src/lostcity/network/LoginCrypto.ts",
+      "sha256": "df172e5c3f2ecfffca689a7133c2f004b0c28ddb93fd175326a7638804288bb9"
+    },
+    "loginProvider": {
+      "path": "/Users/robert/.codex/worktrees/legacy-specials-gaps/alto/tools/client910/fixtures/session-replay/god-wars/login_provider.mjs",
+      "sha256": "b8a96e1548141f19ca3b036d96c961018897c5f825ceda6c08dea3d9bf865b50"
+    },
+    "loginTestkit": {
+      "path": "/Users/robert/.codex/worktrees/legacy-specials-gaps/alto/server/src/lostcity/network/SkillsE2E.testkit.ts",
+      "sha256": "39a797dec044580f1ee6f2282b9a339c10df072632f0abd3d0562c7704f68800"
+    },
+    "owner": {
+      "path": "/Users/robert/.codex/worktrees/legacy-specials-gaps/alto/tools/client910/fixtures/session-replay/barrows/record.py",
+      "sha256": "4a6afc86520acbb2e71867cfc9d99726bea9d167804817ed1b9f43e275121350"
+    },
+    "peerAdapter": {
+      "path": "/Users/robert/.codex/worktrees/legacy-specials-gaps/alto/tools/client910/fixtures/session-replay/god-wars/peer_adapter.mjs",
+      "sha256": "e37f3587ed18e6d53b89f1829d1bd29bc911aeb40e8fa0cefbfabd89c7f33d48"
+    },
+    "publications": {
+      "path": "/Users/robert/.codex/worktrees/legacy-specials-gaps/alto/tools/client910/fixtures/session-replay/god-wars/publications.py",
+      "sha256": "768dd55f68d315aa4cbae4dbb3c0e4a13dea2cc541a4d891948a148b347bf889"
+    },
+    "record": {
+      "path": "/Users/robert/.codex/worktrees/legacy-specials-gaps/alto/tools/client910/fixtures/session-replay/special-repair/record.py",
+      "sha256": "397779f88961477c47feb19a7124c7d4b937d043dae06f60d1ef80290ac90875"
+    },
+    "repairReceipts": {
+      "path": "/Users/robert/.codex/worktrees/legacy-specials-gaps/alto/tools/client910/fixtures/session-replay/barrows/repair-receipts.mjs",
+      "sha256": "bfc7d6f3221fbd4890f8ca84895f00a1c6edc9b9024c2a814af56ba9b41bbb83"
+    },
+    "seed": {
+      "path": "/Users/robert/.codex/worktrees/legacy-specials-gaps/alto/tools/client910/fixtures/session-replay/special-repair/seed.mjs",
+      "sha256": "6fe20ddc1302e0e93610e066fe542c80a35f01645667f9a5ae9ff13684660167"
+    },
+    "server": {
+      "path": "/Users/robert/.codex/worktrees/legacy-specials-gaps/alto/tools/client910/fixtures/session-replay/special-repair/server.mjs",
+      "sha256": "4dc4dad06641a9e8231bdd9398aebba9eca3c68554a965f8062f1813be1170fa"
+    },
+    "sharedDriver": {
+      "path": "/Users/robert/.codex/worktrees/legacy-specials-gaps/alto/tools/client910/fixtures/session-replay/barrows/driver.py",
+      "sha256": "d5377a3458af568e527852b9b87d3c529c09a168428dcd363a36c19e85d38508"
+    },
+    "socketTestkit": {
+      "path": "/Users/robert/.codex/worktrees/legacy-specials-gaps/alto/server/src/lostcity/network/SocketE2E.testkit.ts",
+      "sha256": "55ffd1e43c77fd3c99fba6850688c4e6e5c10c9c88228b1e6d977a8effc4e4f8"
+    },
+    "sourceSelectors": {
+      "path": "/Users/robert/projects/alto-target-slayer-gaps/proof/s3/source-input-epoch.json",
+      "sha256": "402fea9740b904d1f89868b9d1982bbeecdc59b30b19b907f37119972444a0a0"
+    },
+    "wiredGuard": {
+      "path": "/Users/robert/projects/alto/ref/independence/wired-guard.sh",
+      "sha256": "aabce1f59b80a316f882d4afb8c30a1fd677740533c3f773a80ebcdef0ad37fd"
+    }
+  },
+  "sourceEpochSha256": "349bb4504a5d73490902e9dd5da125783333ccef6d3bb4256dddf095e908fc2e",
+  "status": "completed_ordinary_special_repair",
+  "wholeBytes": 716516,
+  "wholeRecords": 11220,
+  "wholeSha256": "a37bacd12b507b3d13c5c876b9a5a9a4cde8fdb4dbab0e308d65ead08bf4b9e8"
+}

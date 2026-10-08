@@ -1,0 +1,50 @@
+[package]
+name = "rs910-scene"
+version = "0.1.0"
+edition = "2021"
+publish = false
+description = "The 910 client's CPU scene layer: map/landscape decode and the scene build, locs, environment and lights, the Scene.draw planner (DRW1 trace), occlusion, roofs, live/dynamic scene state, the camera math, the minimap CPU half, entity overlays, picking and the entity model assembly (loc/player/NPC models). No wgpu."
+
+# Allowed dependencies (tools/refactor/layers.txt `[crates]`,
+# target-architecture.md §2.2): rs910-core, rs910-config, rs910-model,
+# rs910-game (and what they depend on: rs910-js5 for `cache::Pack`,
+# rs910-protocol for `server_prot::SkyboxRef`). Externals: layers.txt
+# `[externals]`; wgpu is fenced out. Doc code blocks are not compiled, like
+# client910's (`doctest = false`).
+[lib]
+doctest = false
+
+[dependencies]
+rs910-core = { path = "../rs910-core" }
+rs910-js5 = { path = "../rs910-js5" }
+rs910-protocol = { path = "../rs910-protocol" }
+rs910-config = { path = "../rs910-config" }
+rs910-model = { path = "../rs910-model" }
+rs910-game = { path = "../rs910-game" }
+anyhow = "1.0"
+thiserror = "2.0"
+glam = "0.27"
+bytemuck = { version = "1", features = ["derive"] }
+log = "0.4"
+
+[dev-dependencies]
+# The shared test helpers (`test_support::require_pack`) and
+# the lower crates' test seams the moved tests call.
+rs910-core = { path = "../rs910-core", features = ["test-hooks"] }
+rs910-js5 = { path = "../rs910-js5", features = ["test-hooks"] }
+rs910-config = { path = "../rs910-config", features = ["test-hooks"] }
+rs910-model = { path = "../rs910-model", features = ["test-hooks"] }
+rs910-game = { path = "../rs910-game", features = ["test-hooks"] }
+
+[features]
+# Every workspace crate has `no-pack` (tools/README.md); client910's
+# `no-pack` forwards here. The pack/golden tests that also need client910
+# fixtures live in client910/src/scene_goldens.rs.
+no-pack = []
+# Test seams client910's tests use: the items are
+# `#[cfg(any(test, feature = "test-hooks"))]`. client910 enables it through
+# [dev-dependencies] only.
+test-hooks = []
+
+[lints]
+workspace = true

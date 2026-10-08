@@ -1,0 +1,46 @@
+{
+  "accountKey": "abilityflow",
+  "commands": [
+    "npcadd 16044 2 0",
+    "opnpc 2 16044",
+    "notimeout",
+    "notimeout",
+    "notimeout",
+    "notimeout",
+    "notimeout",
+    "notimeout",
+    "notimeout",
+    "notimeout",
+    "notimeout",
+    "notimeout",
+    "notimeout",
+    "notimeout",
+    "notimeout",
+    "notimeout",
+    "notimeout",
+    "notimeout",
+    "notimeout",
+    "notimeout"
+  ],
+  "operations": "180,96534535,0,2;240,93716734,-1,2;340,93716734,-1,1;900,93716557,-1,1;1000,93716544,-1,1;1260,93716544,-1,1;1400,93716570,-1,1;1550,93716583,-1,1",
+  "keys": "760,49,0;761,49,1",
+  "gestures": "",
+  "lastCycle": 2150,
+  "definitions": {
+    "Slice": 14677,
+    "Forceful Backhand": 28505,
+    "Overpower": 14686,
+    "Anticipation": 14710
+  },
+  "stages": {
+    "equip": 180,
+    "secondBar": 240,
+    "firstBar": 340,
+    "basic": 760,
+    "threshold": 900,
+    "bonus": 1000,
+    "refillBasic": 1260,
+    "ultimate": 1400,
+    "buff": 1550
+  }
+}

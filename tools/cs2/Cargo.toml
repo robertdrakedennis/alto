@@ -1,0 +1,26 @@
+[package]
+name = "cs2"
+version = "0.1.0"
+edition = "2024"
+publish = false
+
+[dependencies]
+anyhow = "1.0.100"
+clap = { version = "4.5.53", features = ["derive"] }
+crc32fast = "1.5.0"
+native910 = { path = "../native910" }
+rs910-config = { path = "../client910/crates/rs910-config" }
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+sha2 = "0.10"
+ureq = { version = "3.4.2", default-features = false, features = ["rustls"] }
+
+[features]
+# Numerical fixtures for the ordinary client replay; never used by the CLI.
+test-hooks = []
+
+[lints]
+workspace = true
+
+[lib]
+doctest = false

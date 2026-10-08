@@ -1,0 +1,4 @@
+# name	root script	typed int args (- = none); see src/ui_opkey_trace.rs
+setopkey_enter	1656	i:1
+setopkey_clear	1656	i:0
+setopkey_row	12747	-

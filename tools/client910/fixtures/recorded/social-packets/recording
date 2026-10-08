@@ -1,0 +1,2384 @@
+packet 1 138 feff
+friends state=0 count=0
+ignores count=0
+filters public=1 private=-1 trade=2
+friendchat owner=null display=null minkick=0 rank=0 count=0
+clan affined null
+clan listened null
+settings affined null
+settings listened null
+group null
+packet 2 74 01
+friends state=0 count=0
+ignores count=0
+filters public=1 private=1 trade=2
+friendchat owner=null display=null minkick=0 rank=0 count=0
+clan affined null
+clan listened null
+settings affined null
+settings listened null
+group null
+packet 3 174 024d616c6c6f7279004d616c6c6f727900000045766500457665007370616d00
+friends state=0 count=0
+ignores count=2
+ ignore 0 nameU=Mallory name=Mallory notes= temp=true
+ ignore 1 nameU=Eve name=Eve notes=spam temp=false
+filters public=1 private=1 trade=2
+friendchat owner=null display=null minkick=0 rank=0 count=0
+clan affined null
+clan listened null
+settings affined null
+settings listened null
+group null
+packet 4 46 00626f62000000010200576f726c64203100000000000072616964206d61746500004361726f6c00000000000000
+friends state=2 count=2
+ friend 0 name=bob prev= world=1 wname=World 1 rank=2 platform=0 referrer=false referred=false notes=raid mate wflags=0
+ friend 1 name=Carol prev= world=0 wname= rank=0 platform=-1 referrer=false referred=false notes= wflags=0
+ignores count=2
+ ignore 0 nameU=Mallory name=Mallory notes= temp=true
+ ignore 1 nameU=Eve name=Eve notes=spam temp=false
+filters public=1 private=1 trade=2
+friendchat owner=null display=null minkick=0 rank=0 count=0
+clan affined null
+clan listened null
+settings affined null
+settings listened null
+group null
+packet 5 46 006361726f6c000000010000576f726c64203100000000000000
+friends state=2 count=3
+ friend 0 name=bob prev= world=1 wname=World 1 rank=2 platform=0 referrer=false referred=false notes=raid mate wflags=0
+ friend 1 name=carol prev= world=1 wname=World 1 rank=0 platform=0 referrer=false referred=false notes= wflags=0
+ friend 2 name=Carol prev= world=0 wname= rank=0 platform=-1 referrer=false referred=false notes= wflags=0
+ignores count=2
+ ignore 0 nameU=Mallory name=Mallory notes= temp=true
+ ignore 1 nameU=Eve name=Eve notes=spam temp=false
+filters public=1 private=1 trade=2
+friendchat owner=null display=null minkick=0 rank=0 count=0
+clan affined null
+clan listened null
+settings affined null
+settings listened null
+group null
+packet 6 46 00626f6200000000020072616964206d61746500
+friends state=2 count=3
+ friend 0 name=carol prev= world=1 wname=World 1 rank=0 platform=0 referrer=false referred=false notes= wflags=0
+ friend 1 name=bob prev= world=0 wname= rank=2 platform=-1 referrer=false referred=false notes=raid mate wflags=0
+ friend 2 name=Carol prev= world=0 wname= rank=0 platform=-1 referrer=false referred=false notes= wflags=0
+ignores count=2
+ ignore 0 nameU=Mallory name=Mallory notes= temp=true
+ ignore 1 nameU=Eve name=Eve notes=spam temp=false
+filters public=1 private=1 trade=2
+friendchat owner=null display=null minkick=0 rank=0 count=0
+clan affined null
+clan listened null
+settings affined null
+settings listened null
+group null
+packet 7 46 014361726f6c5f54776f004361726f6c000000000000
+friends state=2 count=3
+ friend 0 name=carol prev= world=1 wname=World 1 rank=0 platform=0 referrer=false referred=false notes= wflags=0
+ friend 1 name=bob prev= world=0 wname= rank=2 platform=-1 referrer=false referred=false notes=raid mate wflags=0
+ friend 2 name=Carol_Two prev=Carol world=0 wname= rank=0 platform=-1 referrer=false referred=false notes= wflags=0
+ignores count=2
+ ignore 0 nameU=Mallory name=Mallory notes= temp=true
+ ignore 1 nameU=Eve name=Eve notes=spam temp=false
+filters public=1 private=1 trade=2
+friendchat owner=null display=null minkick=0 rank=0 count=0
+clan affined null
+clan listened null
+settings affined null
+settings listened null
+group null
+packet 8 174 0044616e0044616e0000
+friends state=2 count=3
+ friend 0 name=carol prev= world=1 wname=World 1 rank=0 platform=0 referrer=false referred=false notes= wflags=0
+ friend 1 name=bob prev= world=0 wname= rank=2 platform=-1 referrer=false referred=false notes=raid mate wflags=0
+ friend 2 name=Carol_Two prev=Carol world=0 wname= rank=0 platform=-1 referrer=false referred=false notes= wflags=0
+ignores count=3
+ ignore 0 nameU=Mallory name=Mallory notes= temp=true
+ ignore 1 nameU=Eve name=Eve notes=spam temp=false
+ ignore 2 nameU=Dan name=Dan notes= temp=false
+filters public=1 private=1 trade=2
+friendchat owner=null display=null minkick=0 rank=0 count=0
+clan affined null
+clan listened null
+settings affined null
+settings listened null
+group null
+packet 9 138 fd00
+friends state=2 count=3
+ friend 0 name=carol prev= world=1 wname=World 1 rank=0 platform=0 referrer=false referred=false notes= wflags=0
+ friend 1 name=bob prev= world=0 wname= rank=2 platform=-1 referrer=false referred=false notes=raid mate wflags=0
+ friend 2 name=Carol_Two prev=Carol world=0 wname= rank=0 platform=-1 referrer=false referred=false notes= wflags=0
+ignores count=3
+ ignore 0 nameU=Mallory name=Mallory notes= temp=true
+ ignore 1 nameU=Eve name=Eve notes=spam temp=false
+ ignore 2 nameU=Dan name=Dan notes= temp=false
+filters public=0 private=1 trade=3
+friendchat owner=null display=null minkick=0 rank=0 count=0
+clan affined null
+clan listened null
+settings affined null
+settings listened null
+group null
+packet 10 74 02
+friends state=2 count=3
+ friend 0 name=carol prev= world=1 wname=World 1 rank=0 platform=0 referrer=false referred=false notes= wflags=0
+ friend 1 name=bob prev= world=0 wname= rank=2 platform=-1 referrer=false referred=false notes=raid mate wflags=0
+ friend 2 name=Carol_Two prev=Carol world=0 wname= rank=0 platform=-1 referrer=false referred=false notes= wflags=0
+ignores count=3
+ ignore 0 nameU=Mallory name=Mallory notes= temp=true
+ ignore 1 nameU=Eve name=Eve notes=spam temp=false
+ ignore 2 nameU=Dan name=Dan notes= temp=false
+filters public=0 private=2 trade=3
+friendchat owner=null display=null minkick=0 rank=0 count=0
+clan affined null
+clan listened null
+settings affined null
+settings listened null
+group null
+cmd friend_getname ints=[] objs=[carol|] thrown=0 out=
+cmd friend_getname ints=[] objs=[bob|] thrown=0 out=
+cmd friend_getname ints=[] objs=[Carol_Two|Carol] thrown=0 out=
+cmd friend_getname ints=[] objs=[|] thrown=0 out=
+cmd friend_getworld ints=[1] objs=[] thrown=0 out=
+cmd friend_getworld ints=[0] objs=[] thrown=0 out=
+cmd friend_getworld ints=[0] objs=[] thrown=0 out=
+cmd friend_getworldname ints=[] objs=[World 1] thrown=0 out=
+cmd friend_getworldname ints=[] objs=[] thrown=0 out=
+cmd friend_getworldname ints=[] objs=[] thrown=0 out=
+cmd friend_getrank ints=[0] objs=[] thrown=0 out=
+cmd friend_getrank ints=[2] objs=[] thrown=0 out=
+cmd friend_getrank ints=[0] objs=[] thrown=0 out=
+cmd friend_getnotes ints=[] objs=[] thrown=0 out=
+cmd friend_getnotes ints=[] objs=[raid mate] thrown=0 out=
+cmd friend_getnotes ints=[] objs=[] thrown=0 out=
+cmd friend_platform ints=[0] objs=[] thrown=0 out=
+cmd friend_platform ints=[-1] objs=[] thrown=0 out=
+cmd friend_platform ints=[0] objs=[] thrown=0 out=
+cmd friend_is_referred ints=[0] objs=[] thrown=0 out=
+cmd friend_is_referred ints=[0] objs=[] thrown=0 out=
+cmd friend_is_referred ints=[0] objs=[] thrown=0 out=
+cmd friend_is_referrer ints=[0] objs=[] thrown=0 out=
+cmd friend_is_referrer ints=[0] objs=[] thrown=0 out=
+cmd friend_is_referrer ints=[0] objs=[] thrown=0 out=
+cmd friend_getworldflags ints=[0] objs=[] thrown=0 out=
+cmd friend_getworldflags ints=[0] objs=[] thrown=0 out=
+cmd friend_getworldflags ints=[0] objs=[] thrown=0 out=
+cmd friend_count ints=[3] objs=[] thrown=0 out=
+cmd friend_getslotfromname ints=[1] objs=[] thrown=0 out=
+cmd friend_test ints=[1] objs=[] thrown=0 out=
+cmd friend_getslotfromname ints=[-1] objs=[] thrown=0 out=
+cmd friend_test ints=[0] objs=[] thrown=0 out=
+cmd friend_getslotfromname ints=[-1] objs=[] thrown=0 out=
+cmd friend_test ints=[0] objs=[] thrown=0 out=
+cmd friend_getslotfromname ints=[0] objs=[] thrown=0 out=
+cmd friend_test ints=[1] objs=[] thrown=0 out=
+cmd friend_getslotfromname ints=[-1] objs=[] thrown=0 out=
+cmd friend_test ints=[0] objs=[] thrown=0 out=
+cmd friend_getslotfromname ints=[-1] objs=[] thrown=0 out=
+cmd friend_test ints=[1] objs=[] thrown=0 out=
+cmd ignore_count ints=[3] objs=[] thrown=0 out=
+cmd ignore_getname ints=[] objs=[Mallory|Mallory] thrown=0 out=
+cmd ignore_getname ints=[] objs=[Eve|Eve] thrown=0 out=
+cmd ignore_getname ints=[] objs=[Dan|Dan] thrown=0 out=
+cmd ignore_getname ints=[] objs=[|] thrown=0 out=
+cmd ignore_getname_unfiltered ints=[] objs=[Mallory] thrown=0 out=
+cmd ignore_getname_unfiltered ints=[] objs=[Eve] thrown=0 out=
+cmd ignore_getname_unfiltered ints=[] objs=[Dan] thrown=0 out=
+cmd ignore_getname_unfiltered ints=[] objs=[] thrown=0 out=
+cmd ignore_getnotes ints=[] objs=[] thrown=0 out=
+cmd ignore_getnotes ints=[] objs=[spam] thrown=0 out=
+cmd ignore_getnotes ints=[] objs=[] thrown=0 out=
+cmd ignore_getnotes ints=[] objs=[] thrown=0 out=
+cmd ignore_is_temp ints=[1] objs=[] thrown=0 out=
+cmd ignore_is_temp ints=[0] objs=[] thrown=0 out=
+cmd ignore_is_temp ints=[0] objs=[] thrown=0 out=
+cmd ignore_is_temp thrown=1
+cmd ignore_getslotfromname ints=[0] objs=[] thrown=0 out=
+cmd ignore_test ints=[1] objs=[] thrown=0 out=
+cmd ignore_getslotfromname ints=[1] objs=[] thrown=0 out=
+cmd ignore_test ints=[1] objs=[] thrown=0 out=
+cmd ignore_getslotfromname ints=[-1] objs=[] thrown=0 out=
+cmd ignore_test ints=[0] objs=[] thrown=0 out=
+cmd friend_add ints=[] objs=[] thrown=0 out=55045a656400
+cmd friend_add ints=[] objs=[] thrown=0 out=
+chat uid=0 type=4 message=  BOB  is already on your friends list.
+cmd friend_add ints=[] objs=[] thrown=0 out=
+chat uid=1 type=4 message=Please remove eve from your ignore list first.
+cmd friend_add ints=[] objs=[] thrown=0 out=
+chat uid=2 type=4 message=You can't add yourself to your own friends list.
+cmd friend_add ints=[] objs=[] thrown=0 out=
+cmd friend_setrank ints=[] objs=[] thrown=0 out=49074361726f6c00fc
+cmd friend_setnotes ints=[] objs=[] thrown=0 out=4b254361726f6c0061206e6f74652074686174206973206d756368206c6f6e6765722074686100
+cmd ignore_add ints=[] objs=[] thrown=0 out=0d084e65776269650000
+cmd ignore_add_temp ints=[] objs=[] thrown=0 out=0d0a4e756973616e63650001
+cmd ignore_add ints=[] objs=[] thrown=0 out=
+chat uid=3 type=4 message=Please remove bob from your friends list first.
+cmd ignore_add ints=[] objs=[] thrown=0 out=
+chat uid=4 type=4 message=You can't add yourself to your own ignore list.
+cmd ignore_add ints=[] objs=[] thrown=0 out=
+chat uid=5 type=4 message=mallory is already on your ignore list.
+cmd ignore_setnotes ints=[] objs=[] thrown=0 out=2a236e6577206e6f74657320666f72206576652c20637574206f6666206174200045766500
+cmd friend_del ints=[] objs=[] thrown=0 out=230a4361726f6c5f54776f00
+cmd friend_del ints=[] objs=[] thrown=0 out=
+cmd ignore_del ints=[] objs=[] thrown=0 out=2f0444616e00
+cmd friend_count ints=[2] objs=[] thrown=0 out=
+cmd ignore_count ints=[2] objs=[] thrown=0 out=
+packet 11 90 00426f62001122334501000b838c70a46466
+friends state=2 count=2
+ friend 0 name=carol prev= world=1 wname=World 1 rank=0 platform=0 referrer=false referred=false notes= wflags=0
+ friend 1 name=bob prev= world=0 wname= rank=2 platform=-1 referrer=false referred=false notes=raid mate wflags=0
+ignores count=2
+ ignore 0 nameU=Mallory name=Mallory notes= temp=true
+ ignore 1 nameU=Eve name=Eve notes=spam temp=false
+filters public=0 private=2 trade=3
+friendchat owner=null display=null minkick=0 rank=0 count=0
+clan affined null
+clan listened null
+settings affined null
+settings listened null
+group null
+chat uid=6 type=3 flags=0 name=Bob nameU=Bob nameS=Bob clan=null phrase=-1 message=hello alice crown=0
+packet 12 90 00426f62001122334501000b838c70a46466
+friends state=2 count=2
+ friend 0 name=carol prev= world=1 wname=World 1 rank=0 platform=0 referrer=false referred=false notes= wflags=0
+ friend 1 name=bob prev= world=0 wname= rank=2 platform=-1 referrer=false referred=false notes=raid mate wflags=0
+ignores count=2
+ ignore 0 nameU=Mallory name=Mallory notes= temp=true
+ ignore 1 nameU=Eve name=Eve notes=spam temp=false
+filters public=0 private=2 trade=3
+friendchat owner=null display=null minkick=0 rank=0 count=0
+clan affined null
+clan listened null
+settings affined null
+settings listened null
+group null
+packet 13 90 004d616c6c6f7279001122334502000817efcad91500
+friends state=2 count=2
+ friend 0 name=carol prev= world=1 wname=World 1 rank=0 platform=0 referrer=false referred=false notes= wflags=0
+ friend 1 name=bob prev= world=0 wname= rank=2 platform=-1 referrer=false referred=false notes=raid mate wflags=0
+ignores count=2
+ ignore 0 nameU=Mallory name=Mallory notes= temp=true
+ ignore 1 nameU=Eve name=Eve notes=spam temp=false
+filters public=0 private=2 trade=3
+friendchat owner=null display=null minkick=0 rank=0 count=0
+clan affined null
+clan listened null
+settings affined null
+settings listened null
+group null
+packet 14 90 004d6f64205a6564001122334503010ba62d359deca4
+friends state=2 count=2
+ friend 0 name=carol prev= world=1 wname=World 1 rank=0 platform=0 referrer=false referred=false notes= wflags=0
+ friend 1 name=bob prev= world=0 wname= rank=2 platform=-1 referrer=false referred=false notes=raid mate wflags=0
+ignores count=2
+ ignore 0 nameU=Mallory name=Mallory notes= temp=true
+ ignore 1 nameU=Eve name=Eve notes=spam temp=false
+filters public=0 private=2 trade=3
+friendchat owner=null display=null minkick=0 rank=0 count=0
+clan affined null
+clan listened null
+settings affined null
+settings listened null
+group null
+chat uid=7 type=7 flags=0 name=<img=0>Mod Zed nameU=<img=0>Mod Zed nameS=Mod Zed clan=null phrase=-1 message=please stop crown=1
+packet 15 90 004f776e6572205a65640011223345040219de41c7319b608de7195af2a82e2c
+friends state=2 count=2
+ friend 0 name=carol prev= world=1 wname=World 1 rank=0 platform=0 referrer=false referred=false notes= wflags=0
+ friend 1 name=bob prev= world=0 wname= rank=2 platform=-1 referrer=false referred=false notes=raid mate wflags=0
+ignores count=2
+ ignore 0 nameU=Mallory name=Mallory notes= temp=true
+ ignore 1 nameU=Eve name=Eve notes=spam temp=false
+filters public=0 private=2 trade=3
+friendchat owner=null display=null minkick=0 rank=0 count=0
+clan affined null
+clan listened null
+settings affined null
+settings listened null
+group null
+chat uid=8 type=7 flags=0 name=<img=1>Owner Zed nameU=<img=1>Owner Zed nameS=Owner Zed clan=null phrase=-1 message=staff line, not ignorable crown=2
+packet 16 7 426f6200148491782c110000a2c000f549500005000516000707
+friends state=2 count=2
+ friend 0 name=carol prev= world=1 wname=World 1 rank=0 platform=0 referrer=false referred=false notes= wflags=0
+ friend 1 name=bob prev= world=0 wname= rank=2 platform=-1 referrer=false referred=false notes=raid mate wflags=0
+ignores count=2
+ ignore 0 nameU=Mallory name=Mallory notes= temp=true
+ ignore 1 nameU=Eve name=Eve notes=spam temp=false
+filters public=0 private=2 trade=3
+friendchat owner=null display=null minkick=0 rank=0 count=0
+clan affined null
+clan listened null
+settings affined null
+settings listened null
+group null
+chat uid=9 type=6 flags=0 name=Bob nameU=Bob nameS=Bob clan=null phrase=-1 message=hi bob, <lt>b<gt>raid<lt>/b<gt>? crown=null
+packet 17 120 000000000000596f752061726520616c7265616479206f6e2074686520667269656e6473206c6973742e00
+friends state=2 count=2
+ friend 0 name=carol prev= world=1 wname=World 1 rank=0 platform=0 referrer=false referred=false notes= wflags=0
+ friend 1 name=bob prev= world=0 wname= rank=2 platform=-1 referrer=false referred=false notes=raid mate wflags=0
+ignores count=2
+ ignore 0 nameU=Mallory name=Mallory notes= temp=true
+ ignore 1 nameU=Eve name=Eve notes=spam temp=false
+filters public=0 private=2 trade=3
+friendchat owner=null display=null minkick=0 rank=0 count=0
+clan affined null
+clan listened null
+settings affined null
+settings listened null
+group null
+chat uid=10 type=0 flags=0 name= nameU= nameS= clan=null phrase=-1 message=You are already on the friends list. crown=null
+packet 18 120 650000000001426f6200426f622077697368657320746f207472616465207769746820796f752e00
+friends state=2 count=2
+ friend 0 name=carol prev= world=1 wname=World 1 rank=0 platform=0 referrer=false referred=false notes= wflags=0
+ friend 1 name=bob prev= world=0 wname= rank=2 platform=-1 referrer=false referred=false notes=raid mate wflags=0
+ignores count=2
+ ignore 0 nameU=Mallory name=Mallory notes= temp=true
+ ignore 1 nameU=Eve name=Eve notes=spam temp=false
+filters public=0 private=2 trade=3
+friendchat owner=null display=null minkick=0 rank=0 count=0
+clan affined null
+clan listened null
+settings affined null
+settings listened null
+group null
+chat uid=11 type=101 flags=0 name=Bob nameU=Bob nameS=Bob clan=null phrase=-1 message=Bob wishes to trade with you. crown=null
+packet 19 120 04000000000344616e0064616e0044616e20736179732068656c6c6f2e00
+friends state=2 count=2
+ friend 0 name=carol prev= world=1 wname=World 1 rank=0 platform=0 referrer=false referred=false notes= wflags=0
+ friend 1 name=bob prev= world=0 wname= rank=2 platform=-1 referrer=false referred=false notes=raid mate wflags=0
+ignores count=2
+ ignore 0 nameU=Mallory name=Mallory notes= temp=true
+ ignore 1 nameU=Eve name=Eve notes=spam temp=false
+filters public=0 private=2 trade=3
+friendchat owner=null display=null minkick=0 rank=0 count=0
+clan affined null
+clan listened null
+settings affined null
+settings listened null
+group null
+chat uid=12 type=4 flags=0 name=Dan nameU=dan nameS=Dan clan=null phrase=-1 message=Dan says hello. crown=null
+packet 20 120 0a0000000003426f625f3200426f6220320041206e616d6564206c696e652e00
+friends state=2 count=2
+ friend 0 name=carol prev= world=1 wname=World 1 rank=0 platform=0 referrer=false referred=false notes= wflags=0
+ friend 1 name=bob prev= world=0 wname= rank=2 platform=-1 referrer=false referred=false notes=raid mate wflags=0
+ignores count=2
+ ignore 0 nameU=Mallory name=Mallory notes= temp=true
+ ignore 1 nameU=Eve name=Eve notes=spam temp=false
+filters public=0 private=2 trade=3
+friendchat owner=null display=null minkick=0 rank=0 count=0
+clan affined null
+clan listened null
+settings affined null
+settings listened null
+group null
+chat uid=13 type=10 flags=0 name=Bob_2 nameU=Bob 2 nameS=Bob_2 clan=null phrase=-1 message=A named line. crown=null
+packet 21 23 426f620000426f620007035a656400000001ff576f726c64203100626f62000000017f576f726c64203100616c6963650000000102576f726c64203100
+friends state=2 count=2
+ friend 0 name=carol prev= world=1 wname=World 1 rank=0 platform=0 referrer=false referred=false notes= wflags=0
+ friend 1 name=bob prev= world=0 wname= rank=2 platform=-1 referrer=false referred=false notes=raid mate wflags=0
+ignores count=2
+ ignore 0 nameU=Mallory name=Mallory notes= temp=true
+ ignore 1 nameU=Eve name=Eve notes=spam temp=false
+filters public=0 private=2 trade=3
+friendchat owner=Bob display=Bob minkick=7 rank=2 count=3
+ fcuser 0 name=alice nameU=alice world=1 rank=2 wname=World 1
+ fcuser 1 name=bob nameU=bob world=1 rank=127 wname=World 1
+ fcuser 2 name=Zed nameU=Zed world=1 rank=-1 wname=World 1
+clan affined null
+clan listened null
+settings affined null
+settings listened null
+group null
+packet 22 2 416d790000000100576f726c64203100
+friends state=2 count=2
+ friend 0 name=carol prev= world=1 wname=World 1 rank=0 platform=0 referrer=false referred=false notes= wflags=0
+ friend 1 name=bob prev= world=0 wname= rank=2 platform=-1 referrer=false referred=false notes=raid mate wflags=0
+ignores count=2
+ ignore 0 nameU=Mallory name=Mallory notes= temp=true
+ ignore 1 nameU=Eve name=Eve notes=spam temp=false
+filters public=0 private=2 trade=3
+friendchat owner=Bob display=Bob minkick=7 rank=2 count=4
+ fcuser 0 name=alice nameU=alice world=1 rank=2 wname=World 1
+ fcuser 1 name=Amy nameU=Amy world=1 rank=0 wname=World 1
+ fcuser 2 name=bob nameU=bob world=1 rank=127 wname=World 1
+ fcuser 3 name=Zed nameU=Zed world=1 rank=-1 wname=World 1
+clan affined null
+clan listened null
+settings affined null
+settings listened null
+group null
+packet 23 2 416d790000000204576f726c64203200
+friends state=2 count=2
+ friend 0 name=carol prev= world=1 wname=World 1 rank=0 platform=0 referrer=false referred=false notes= wflags=0
+ friend 1 name=bob prev= world=0 wname= rank=2 platform=-1 referrer=false referred=false notes=raid mate wflags=0
+ignores count=2
+ ignore 0 nameU=Mallory name=Mallory notes= temp=true
+ ignore 1 nameU=Eve name=Eve notes=spam temp=false
+filters public=0 private=2 trade=3
+friendchat owner=Bob display=Bob minkick=7 rank=2 count=4
+ fcuser 0 name=alice nameU=alice world=1 rank=2 wname=World 1
+ fcuser 1 name=Amy nameU=Amy world=2 rank=4 wname=World 2
+ fcuser 2 name=bob nameU=bob world=1 rank=127 wname=World 1
+ fcuser 3 name=Zed nameU=Zed world=1 rank=-1 wname=World 1
+clan affined null
+clan listened null
+settings affined null
+settings listened null
+group null
+packet 24 2 5a65640000000180
+friends state=2 count=2
+ friend 0 name=carol prev= world=1 wname=World 1 rank=0 platform=0 referrer=false referred=false notes= wflags=0
+ friend 1 name=bob prev= world=0 wname= rank=2 platform=-1 referrer=false referred=false notes=raid mate wflags=0
+ignores count=2
+ ignore 0 nameU=Mallory name=Mallory notes= temp=true
+ ignore 1 nameU=Eve name=Eve notes=spam temp=false
+filters public=0 private=2 trade=3
+friendchat owner=Bob display=Bob minkick=7 rank=2 count=3
+ fcuser 0 name=alice nameU=alice world=1 rank=2 wname=World 1
+ fcuser 1 name=Amy nameU=Amy world=2 rank=4 wname=World 2
+ fcuser 2 name=bob nameU=bob world=1 rank=127 wname=World 1
+clan affined null
+clan listened null
+settings affined null
+settings listened null
+group null
+cmd clan_getchatcount ints=[3] objs=[] thrown=0 out=
+cmd clan_getchatdisplayname ints=[] objs=[Bob] thrown=0 out=
+cmd clan_getchatownername ints=[] objs=[Bob] thrown=0 out=
+cmd clan_getchatminkick ints=[7] objs=[] thrown=0 out=
+cmd clan_getchatrank ints=[2] objs=[] thrown=0 out=
+cmd clan_getchatusername ints=[] objs=[alice] thrown=0 out=
+cmd clan_getchatusername ints=[] objs=[bob] thrown=0 out=
+cmd clan_getchatusername ints=[] objs=[] thrown=0 out=
+cmd clan_getchatusername_unfiltered ints=[] objs=[alice] thrown=0 out=
+cmd clan_getchatusername_unfiltered ints=[] objs=[bob] thrown=0 out=
+cmd clan_getchatusername_unfiltered ints=[] objs=[] thrown=0 out=
+cmd clan_getchatuserrank ints=[2] objs=[] thrown=0 out=
+cmd clan_getchatuserrank ints=[127] objs=[] thrown=0 out=
+cmd clan_getchatuserrank ints=[0] objs=[] thrown=0 out=
+cmd clan_getchatuserworld ints=[1] objs=[] thrown=0 out=
+cmd clan_getchatuserworld ints=[1] objs=[] thrown=0 out=
+cmd clan_getchatuserworld ints=[0] objs=[] thrown=0 out=
+cmd clan_getchatuserworldname ints=[] objs=[World 1] thrown=0 out=
+cmd clan_getchatuserworldname ints=[] objs=[World 1] thrown=0 out=
+cmd clan_getchatuserworldname ints=[] objs=[] thrown=0 out=
+cmd clan_getchatdisplayname ints=[] objs=[Bob] thrown=0 out=
+cmd clan_getchatdisplayname ints=[] objs=[Bob] thrown=0 out=
+cmd clan_getchatdisplayname ints=[] objs=[Bob] thrown=0 out=
+cmd clan_isself ints=[1] objs=[] thrown=0 out=
+cmd clan_isself ints=[0] objs=[] thrown=0 out=
+cmd clan_isself ints=[0] objs=[] thrown=0 out=
+cmd clan_isself ints=[0] objs=[] thrown=0 out=
+cmd clan_kickuser ints=[] objs=[] thrown=0 out=2004416d7900
+cmd clan_joinchat ints=[] objs=[] thrown=0 out=5c04426f6200
+cmd clan_joinchat ints=[] objs=[] thrown=0 out=
+cmd clan_leavechat ints=[] objs=[] thrown=0 out=5c00
+packet 25 36 00626f6200426f62001122334510000caa4a8a71bccb
+friends state=2 count=2
+ friend 0 name=carol prev= world=1 wname=World 1 rank=0 platform=0 referrer=false referred=false notes= wflags=0
+ friend 1 name=bob prev= world=0 wname= rank=2 platform=-1 referrer=false referred=false notes=raid mate wflags=0
+ignores count=2
+ ignore 0 nameU=Mallory name=Mallory notes= temp=true
+ ignore 1 nameU=Eve name=Eve notes=spam temp=false
+filters public=0 private=2 trade=3
+friendchat owner=Bob display=Bob minkick=7 rank=2 count=3
+ fcuser 0 name=alice nameU=alice world=1 rank=2 wname=World 1
+ fcuser 1 name=Amy nameU=Amy world=2 rank=4 wname=World 2
+ fcuser 2 name=bob nameU=bob world=1 rank=127 wname=World 1
+clan affined null
+clan listened null
+settings affined null
+settings listened null
+group null
+chat uid=14 type=9 flags=0 name=bob nameU=bob nameS=bob clan=Bob phrase=-1 message=raid at noon crown=0
+packet 26 36 004d616c6c6f727900426f62001122334511000c95af2ad46336c0
+friends state=2 count=2
+ friend 0 name=carol prev= world=1 wname=World 1 rank=0 platform=0 referrer=false referred=false notes= wflags=0
+ friend 1 name=bob prev= world=0 wname= rank=2 platform=-1 referrer=false referred=false notes=raid mate wflags=0
+ignores count=2
+ ignore 0 nameU=Mallory name=Mallory notes= temp=true
+ ignore 1 nameU=Eve name=Eve notes=spam temp=false
+filters public=0 private=2 trade=3
+friendchat owner=Bob display=Bob minkick=7 rank=2 count=3
+ fcuser 0 name=alice nameU=alice world=1 rank=2 wname=World 1
+ fcuser 1 name=Amy nameU=Amy world=2 rank=4 wname=World 2
+ fcuser 2 name=bob nameU=bob world=1 rank=127 wname=World 1
+clan affined null
+clan listened null
+settings affined null
+settings listened null
+group null
+packet 27 36 004d6f64205a656400426f62001122334512010ea314ea9d95319b60
+friends state=2 count=2
+ friend 0 name=carol prev= world=1 wname=World 1 rank=0 platform=0 referrer=false referred=false notes= wflags=0
+ friend 1 name=bob prev= world=0 wname= rank=2 platform=-1 referrer=false referred=false notes=raid mate wflags=0
+ignores count=2
+ ignore 0 nameU=Mallory name=Mallory notes= temp=true
+ ignore 1 nameU=Eve name=Eve notes=spam temp=false
+filters public=0 private=2 trade=3
+friendchat owner=Bob display=Bob minkick=7 rank=2 count=3
+ fcuser 0 name=alice nameU=alice world=1 rank=2 wname=World 1
+ fcuser 1 name=Amy nameU=Amy world=2 rank=4 wname=World 2
+ fcuser 2 name=bob nameU=bob world=1 rank=127 wname=World 1
+clan affined null
+clan listened null
+settings affined null
+settings listened null
+group null
+chat uid=15 type=9 flags=0 name=<img=0>Mod Zed nameU=<img=0>Mod Zed nameS=Mod Zed clan=Bob phrase=-1 message=moderator line crown=1
+packet 28 145 00626f6200426f62001122334513000000
+friends state=2 count=2
+ friend 0 name=carol prev= world=1 wname=World 1 rank=0 platform=0 referrer=false referred=false notes= wflags=0
+ friend 1 name=bob prev= world=0 wname= rank=2 platform=-1 referrer=false referred=false notes=raid mate wflags=0
+ignores count=2
+ ignore 0 nameU=Mallory name=Mallory notes= temp=true
+ ignore 1 nameU=Eve name=Eve notes=spam temp=false
+filters public=0 private=2 trade=3
+friendchat owner=Bob display=Bob minkick=7 rank=2 count=3
+ fcuser 0 name=alice nameU=alice world=1 rank=2 wname=World 1
+ fcuser 1 name=Amy nameU=Amy world=2 rank=4 wname=World 2
+ fcuser 2 name=bob nameU=bob world=1 rank=127 wname=World 1
+clan affined null
+clan listened null
+settings affined null
+settings listened null
+group null
+chat uid=16 type=20 flags=0 name=bob nameU=bob nameS=bob clan=Bob phrase=0 message=#efd60cca9270ffa3 crown=0
+packet 29 23 
+friends state=2 count=2
+ friend 0 name=carol prev= world=1 wname=World 1 rank=0 platform=0 referrer=false referred=false notes= wflags=0
+ friend 1 name=bob prev= world=0 wname= rank=2 platform=-1 referrer=false referred=false notes=raid mate wflags=0
+ignores count=2
+ ignore 0 nameU=Mallory name=Mallory notes= temp=true
+ ignore 1 nameU=Eve name=Eve notes=spam temp=false
+filters public=0 private=2 trade=3
+friendchat owner=null display=null minkick=7 rank=2 count=0
+clan affined null
+clan listened null
+settings affined null
+settings listened null
+group null
+packet 30 8 00060902000e838c70b5eebfe5b0
+friends state=2 count=2
+ friend 0 name=carol prev= world=1 wname=World 1 rank=0 platform=0 referrer=false referred=false notes= wflags=0
+ friend 1 name=bob prev= world=0 wname= rank=2 platform=-1 referrer=false referred=false notes=raid mate wflags=0
+ignores count=2
+ ignore 0 nameU=Mallory name=Mallory notes= temp=true
+ ignore 1 nameU=Eve name=Eve notes=spam temp=false
+filters public=0 private=2 trade=3
+friendchat owner=null display=null minkick=7 rank=2 count=0
+clan affined null
+clan listened null
+settings affined null
+settings listened null
+group null
+speech 6 text=hello everyone colour=9 effect=2
+chat uid=17 type=2 flags=0 name=Bob nameU=Bob nameS=Bob clan=null phrase=-1 message=hello everyone crown=0
+packet 31 8 00060000010f2694529a8f315b89
+friends state=2 count=2
+ friend 0 name=carol prev= world=1 wname=World 1 rank=0 platform=0 referrer=false referred=false notes= wflags=0
+ friend 1 name=bob prev= world=0 wname= rank=2 platform=-1 referrer=false referred=false notes=raid mate wflags=0
+ignores count=2
+ ignore 0 nameU=Mallory name=Mallory notes= temp=true
+ ignore 1 nameU=Eve name=Eve notes=spam temp=false
+filters public=0 private=2 trade=3
+friendchat owner=null display=null minkick=7 rank=2 count=0
+clan affined null
+clan listened null
+settings affined null
+settings listened null
+group null
+speech 6 text=padded text colour=0 effect=0
+chat uid=18 type=1 flags=0 name=<img=0>Bob nameU=<img=0>Bob nameS=Bob clan=null phrase=-1 message=  padded text   crown=1
+packet 32 8 00070000000817efcad91500
+friends state=2 count=2
+ friend 0 name=carol prev= world=1 wname=World 1 rank=0 platform=0 referrer=false referred=false notes= wflags=0
+ friend 1 name=bob prev= world=0 wname= rank=2 platform=-1 referrer=false referred=false notes=raid mate wflags=0
+ignores count=2
+ ignore 0 nameU=Mallory name=Mallory notes= temp=true
+ ignore 1 nameU=Eve name=Eve notes=spam temp=false
+filters public=0 private=2 trade=3
+friendchat owner=null display=null minkick=7 rank=2 count=0
+clan affined null
+clan listened null
+settings affined null
+settings listened null
+group null
+speech 6 text=padded text colour=0 effect=0
+packet 33 8 00060000020bde41c723573eb0
+friends state=2 count=2
+ friend 0 name=carol prev= world=1 wname=World 1 rank=0 platform=0 referrer=false referred=false notes= wflags=0
+ friend 1 name=bob prev= world=0 wname= rank=2 platform=-1 referrer=false referred=false notes=raid mate wflags=0
+ignores count=2
+ ignore 0 nameU=Mallory name=Mallory notes= temp=true
+ ignore 1 nameU=Eve name=Eve notes=spam temp=false
+filters public=0 private=2 trade=3
+friendchat owner=null display=null minkick=7 rank=2 count=0
+clan affined null
+clan listened null
+settings affined null
+settings listened null
+group null
+speech 6 text=staff crown colour=0 effect=0
+chat uid=19 type=1 flags=0 name=<img=1>Bob nameU=<img=1>Bob nameS=Bob clan=null phrase=-1 message=staff crown crown=2
+packet 34 8 00090000000cbc178afcf41d58
+friends state=2 count=2
+ friend 0 name=carol prev= world=1 wname=World 1 rank=0 platform=0 referrer=false referred=false notes= wflags=0
+ friend 1 name=bob prev= world=0 wname= rank=2 platform=-1 referrer=false referred=false notes=raid mate wflags=0
+ignores count=2
+ ignore 0 nameU=Mallory name=Mallory notes= temp=true
+ ignore 1 nameU=Eve name=Eve notes=spam temp=false
+filters public=0 private=2 trade=3
+friendchat owner=null display=null minkick=7 rank=2 count=0
+clan affined null
+clan listened null
+settings affined null
+settings listened null
+group null
+speech 6 text=staff crown colour=0 effect=0
+packet 35 8 00068000000002
+friends state=2 count=2
+ friend 0 name=carol prev= world=1 wname=World 1 rank=0 platform=0 referrer=false referred=false notes= wflags=0
+ friend 1 name=bob prev= world=0 wname= rank=2 platform=-1 referrer=false referred=false notes=raid mate wflags=0
+ignores count=2
+ ignore 0 nameU=Mallory name=Mallory notes= temp=true
+ ignore 1 nameU=Eve name=Eve notes=spam temp=false
+filters public=0 private=2 trade=3
+friendchat owner=null display=null minkick=7 rank=2 count=0
+clan affined null
+clan listened null
+settings affined null
+settings listened null
+group null
+speech 6 text=Let's go to Agility course: Agility Pyramid? colour=0 effect=0
+chat uid=20 type=17 flags=0 name=Bob nameU=Bob nameS=Bob clan=null phrase=2 message=#abf25793db6ab9f3 crown=0
+packet 36 8 000680000000020006
+friends state=2 count=2
+ friend 0 name=carol prev= world=1 wname=World 1 rank=0 platform=0 referrer=false referred=false notes= wflags=0
+ friend 1 name=bob prev= world=0 wname= rank=2 platform=-1 referrer=false referred=false notes=raid mate wflags=0
+ignores count=2
+ ignore 0 nameU=Mallory name=Mallory notes= temp=true
+ ignore 1 nameU=Eve name=Eve notes=spam temp=false
+filters public=0 private=2 trade=3
+friendchat owner=null display=null minkick=7 rank=2 count=0
+clan affined null
+clan listened null
+settings affined null
+settings listened null
+group null
+speech 6 text=Let's go to Agility course: Gnome Stronghold Course? colour=0 effect=0
+chat uid=21 type=17 flags=0 name=Bob nameU=Bob nameS=Bob clan=null phrase=2 message=#226001fcb9e43f17 crown=0
+packet 37 8 00060000001f1ead9e62b71fa13165582cce95eeb23cb500
+friends state=2 count=2
+ friend 0 name=carol prev= world=1 wname=World 1 rank=0 platform=0 referrer=false referred=false notes= wflags=0
+ friend 1 name=bob prev= world=0 wname= rank=2 platform=-1 referrer=false referred=false notes=raid mate wflags=0
+ignores count=2
+ ignore 0 nameU=Mallory name=Mallory notes= temp=true
+ ignore 1 nameU=Eve name=Eve notes=spam temp=false
+filters public=0 private=2 trade=3
+friendchat owner=null display=null minkick=7 rank=2 count=0
+clan affined null
+clan listened null
+settings affined null
+settings listened null
+group null
+speech 6 text=Let's go to Agility course: Gnome Stronghold Course? colour=0 effect=0
+packet 38 59 010200000000000000050000000000000007416c746f000064ff0003416c696365007e0001426f62000000014775657374204f6e6500ff0002
+friends state=2 count=2
+ friend 0 name=carol prev= world=1 wname=World 1 rank=0 platform=0 referrer=false referred=false notes= wflags=0
+ friend 1 name=bob prev= world=0 wname= rank=2 platform=-1 referrer=false referred=false notes=raid mate wflags=0
+ignores count=2
+ ignore 0 nameU=Mallory name=Mallory notes= temp=true
+ ignore 1 nameU=Eve name=Eve notes=spam temp=false
+filters public=0 private=2 trade=3
+friendchat owner=null display=null minkick=7 rank=2 count=0
+clan affined name=Alto node=5 update=7 talk=-1 kick=100 users=3 hashes=false displaynames=true
+ cuser 0 name=Alice rank=126 world=1
+ cuser 1 name=Bob rank=0 world=1
+ cuser 2 name=Guest One rank=-1 world=2
+clan listened null
+settings affined null
+settings listened null
+group null
+speech 6 text=Let's go to Agility course: Gnome Stronghold Course? colour=0 effect=0
+cmd activeclanchannel_find_affined ints=[1] objs=[] thrown=0 out=
+cmd activeclanchannel_getclanname ints=[] objs=[Alto] thrown=0 out=
+cmd activeclanchannel_getusercount ints=[3] objs=[] thrown=0 out=
+cmd activeclanchannel_getranktalk ints=[-1] objs=[] thrown=0 out=
+cmd activeclanchannel_getrankkick ints=[100] objs=[] thrown=0 out=
+cmd activeclanchannel_getuserdisplayname ints=[] objs=[Alice] thrown=0 out=
+cmd activeclanchannel_getuserdisplayname ints=[] objs=[Guest One] thrown=0 out=
+cmd activeclanchannel_getuserdisplayname thrown=1
+cmd activeclanchannel_getuserrank ints=[126] objs=[] thrown=0 out=
+cmd activeclanchannel_getuserrank ints=[-1] objs=[] thrown=0 out=
+cmd activeclanchannel_getuserrank thrown=1
+cmd activeclanchannel_getuserworld ints=[1] objs=[] thrown=0 out=
+cmd activeclanchannel_getuserworld ints=[2] objs=[] thrown=0 out=
+cmd activeclanchannel_getuserworld thrown=1
+cmd activeclanchannel_getsorteduserslot ints=[0] objs=[] thrown=0 out=
+cmd activeclanchannel_getsorteduserslot ints=[2] objs=[] thrown=0 out=
+cmd activeclanchannel_getsorteduserslot thrown=1
+cmd activeclanchannel_getuserslot ints=[1] objs=[] thrown=0 out=
+cmd activeclanchannel_getuserslot ints=[1] objs=[] thrown=0 out=
+cmd activeclanchannel_getuserslot ints=[2] objs=[] thrown=0 out=
+cmd activeclanchannel_getuserslot ints=[-1] objs=[] thrown=0 out=
+cmd activeclanchannel_kickuser ints=[] objs=[] thrown=0 out=
+cmd activeclanchannel_kickuser ints=[] objs=[] thrown=0 out=5e0d0100024775657374204f6e6500
+cmd activeclanchannel_kickuser ints=[] objs=[] thrown=0 out=
+packet 39 22 01426f62001122334520000a1a29660e31c0
+friends state=2 count=2
+ friend 0 name=carol prev= world=1 wname=World 1 rank=0 platform=0 referrer=false referred=false notes= wflags=0
+ friend 1 name=bob prev= world=0 wname= rank=2 platform=-1 referrer=false referred=false notes=raid mate wflags=0
+ignores count=2
+ ignore 0 nameU=Mallory name=Mallory notes= temp=true
+ ignore 1 nameU=Eve name=Eve notes=spam temp=false
+filters public=0 private=2 trade=3
+friendchat owner=null display=null minkick=7 rank=2 count=0
+clan affined name=Alto node=5 update=7 talk=-1 kick=100 users=3 hashes=false displaynames=true
+ cuser 0 name=Alice rank=126 world=1
+ cuser 1 name=Bob rank=0 world=1
+ cuser 2 name=Guest One rank=-1 world=2
+clan listened null
+settings affined null
+settings listened null
+group null
+speech 6 text=Let's go to Agility course: Gnome Stronghold Course? colour=0 effect=0
+chat uid=22 type=41 flags=0 name=Bob nameU=Bob nameS=Bob clan=Alto phrase=-1 message=clan hello crown=0
+packet 40 22 014d616c6c6f7279001122334521001195af2ad4468a598cdb
+friends state=2 count=2
+ friend 0 name=carol prev= world=1 wname=World 1 rank=0 platform=0 referrer=false referred=false notes= wflags=0
+ friend 1 name=bob prev= world=0 wname= rank=2 platform=-1 referrer=false referred=false notes=raid mate wflags=0
+ignores count=2
+ ignore 0 nameU=Mallory name=Mallory notes= temp=true
+ ignore 1 nameU=Eve name=Eve notes=spam temp=false
+filters public=0 private=2 trade=3
+friendchat owner=null display=null minkick=7 rank=2 count=0
+clan affined name=Alto node=5 update=7 talk=-1 kick=100 users=3 hashes=false displaynames=true
+ cuser 0 name=Alice rank=126 world=1
+ cuser 1 name=Bob rank=0 world=1
+ cuser 2 name=Guest One rank=-1 world=2
+clan listened null
+settings affined null
+settings listened null
+group null
+speech 6 text=Let's go to Agility course: Gnome Stronghold Course? colour=0 effect=0
+packet 41 89 01426f620011223345220000020003
+friends state=2 count=2
+ friend 0 name=carol prev= world=1 wname=World 1 rank=0 platform=0 referrer=false referred=false notes= wflags=0
+ friend 1 name=bob prev= world=0 wname= rank=2 platform=-1 referrer=false referred=false notes=raid mate wflags=0
+ignores count=2
+ ignore 0 nameU=Mallory name=Mallory notes= temp=true
+ ignore 1 nameU=Eve name=Eve notes=spam temp=false
+filters public=0 private=2 trade=3
+friendchat owner=null display=null minkick=7 rank=2 count=0
+clan affined name=Alto node=5 update=7 talk=-1 kick=100 users=3 hashes=false displaynames=true
+ cuser 0 name=Alice rank=126 world=1
+ cuser 1 name=Bob rank=0 world=1
+ cuser 2 name=Guest One rank=-1 world=2
+clan listened null
+settings affined null
+settings listened null
+group null
+speech 6 text=Let's go to Agility course: Gnome Stronghold Course? colour=0 effect=0
+chat uid=23 type=42 flags=0 name=Bob nameU=Bob nameS=Bob clan=Alto phrase=2 message=#94ce7117f4db5e72 crown=0
+packet 42 146 010000000000000005000000000000000701ff436c656f00000403000000000000000000
+friends state=2 count=2
+ friend 0 name=carol prev= world=1 wname=World 1 rank=0 platform=0 referrer=false referred=false notes= wflags=0
+ friend 1 name=bob prev= world=0 wname= rank=2 platform=-1 referrer=false referred=false notes=raid mate wflags=0
+ignores count=2
+ ignore 0 nameU=Mallory name=Mallory notes= temp=true
+ ignore 1 nameU=Eve name=Eve notes=spam temp=false
+filters public=0 private=2 trade=3
+friendchat owner=null display=null minkick=7 rank=2 count=0
+clan affined name=Alto node=5 update=8 talk=-1 kick=100 users=4 hashes=false displaynames=true
+ cuser 0 name=Alice rank=126 world=1
+ cuser 1 name=Bob rank=0 world=1
+ cuser 2 name=Guest One rank=-1 world=2
+ cuser 3 name=Cleo rank=3 world=4
+clan listened null
+settings affined null
+settings listened null
+group null
+speech 6 text=Let's go to Agility course: Gnome Stronghold Course? colour=0 effect=0
+packet 43 146 01000000000000000500000000000000080200030400050000000000000000436c656f20420000
+friends state=2 count=2
+ friend 0 name=carol prev= world=1 wname=World 1 rank=0 platform=0 referrer=false referred=false notes= wflags=0
+ friend 1 name=bob prev= world=0 wname= rank=2 platform=-1 referrer=false referred=false notes=raid mate wflags=0
+ignores count=2
+ ignore 0 nameU=Mallory name=Mallory notes= temp=true
+ ignore 1 nameU=Eve name=Eve notes=spam temp=false
+filters public=0 private=2 trade=3
+friendchat owner=null display=null minkick=7 rank=2 count=0
+clan affined name=Alto node=5 update=9 talk=-1 kick=100 users=4 hashes=false displaynames=true
+ cuser 0 name=Alice rank=126 world=1
+ cuser 1 name=Bob rank=0 world=1
+ cuser 2 name=Guest One rank=-1 world=2
+ cuser 3 name=Cleo B rank=4 world=5
+clan listened null
+settings affined null
+settings listened null
+group null
+speech 6 text=Let's go to Agility course: Gnome Stronghold Course? colour=0 effect=0
+packet 44 146 0100000000000000050000000000000009050000010900060000000000000000426f622032000000
+friends state=2 count=2
+ friend 0 name=carol prev= world=1 wname=World 1 rank=0 platform=0 referrer=false referred=false notes= wflags=0
+ friend 1 name=bob prev= world=0 wname= rank=2 platform=-1 referrer=false referred=false notes=raid mate wflags=0
+ignores count=2
+ ignore 0 nameU=Mallory name=Mallory notes= temp=true
+ ignore 1 nameU=Eve name=Eve notes=spam temp=false
+filters public=0 private=2 trade=3
+friendchat owner=null display=null minkick=7 rank=2 count=0
+clan affined name=Alto node=5 update=10 talk=-1 kick=100 users=4 hashes=false displaynames=true
+ cuser 0 name=Alice rank=126 world=1
+ cuser 1 name=Bob 2 rank=9 world=6
+ cuser 2 name=Guest One rank=-1 world=2
+ cuser 3 name=Cleo B rank=4 world=5
+clan listened null
+settings affined null
+settings listened null
+group null
+speech 6 text=Let's go to Agility course: Gnome Stronghold Course? colour=0 effect=0
+packet 45 146 010000000000000005000000000000000a03000000ff00
+friends state=2 count=2
+ friend 0 name=carol prev= world=1 wname=World 1 rank=0 platform=0 referrer=false referred=false notes= wflags=0
+ friend 1 name=bob prev= world=0 wname= rank=2 platform=-1 referrer=false referred=false notes=raid mate wflags=0
+ignores count=2
+ ignore 0 nameU=Mallory name=Mallory notes= temp=true
+ ignore 1 nameU=Eve name=Eve notes=spam temp=false
+filters public=0 private=2 trade=3
+friendchat owner=null display=null minkick=7 rank=2 count=0
+clan affined name=Alto node=5 update=11 talk=-1 kick=100 users=3 hashes=false displaynames=true
+ cuser 0 name=Bob 2 rank=9 world=6
+ cuser 1 name=Guest One rank=-1 world=2
+ cuser 2 name=Cleo B rank=4 world=5
+clan listened null
+settings affined null
+settings listened null
+group null
+speech 6 text=Let's go to Agility course: Gnome Stronghold Course? colour=0 effect=0
+packet 46 146 010000000000000005000000000000000b04416c746f2054776f0000023200
+friends state=2 count=2
+ friend 0 name=carol prev= world=1 wname=World 1 rank=0 platform=0 referrer=false referred=false notes= wflags=0
+ friend 1 name=bob prev= world=0 wname= rank=2 platform=-1 referrer=false referred=false notes=raid mate wflags=0
+ignores count=2
+ ignore 0 nameU=Mallory name=Mallory notes= temp=true
+ ignore 1 nameU=Eve name=Eve notes=spam temp=false
+filters public=0 private=2 trade=3
+friendchat owner=null display=null minkick=7 rank=2 count=0
+clan affined name=Alto Two node=5 update=12 talk=2 kick=50 users=3 hashes=false displaynames=true
+ cuser 0 name=Bob 2 rank=9 world=6
+ cuser 1 name=Guest One rank=-1 world=2
+ cuser 2 name=Cleo B rank=4 world=5
+clan listened null
+settings affined null
+settings listened null
+group null
+speech 6 text=Let's go to Agility course: Gnome Stronghold Course? colour=0 effect=0
+packet 47 146 010000000000000005000000000000000c040000
+friends state=2 count=2
+ friend 0 name=carol prev= world=1 wname=World 1 rank=0 platform=0 referrer=false referred=false notes= wflags=0
+ friend 1 name=bob prev= world=0 wname= rank=2 platform=-1 referrer=false referred=false notes=raid mate wflags=0
+ignores count=2
+ ignore 0 nameU=Mallory name=Mallory notes= temp=true
+ ignore 1 nameU=Eve name=Eve notes=spam temp=false
+filters public=0 private=2 trade=3
+friendchat owner=null display=null minkick=7 rank=2 count=0
+clan affined name=null node=5 update=13 talk=2 kick=50 users=3 hashes=false displaynames=true
+ cuser 0 name=Bob 2 rank=9 world=6
+ cuser 1 name=Guest One rank=-1 world=2
+ cuser 2 name=Cleo B rank=4 world=5
+clan listened null
+settings affined null
+settings listened null
+group null
+speech 6 text=Let's go to Agility course: Gnome Stronghold Course? colour=0 effect=0
+packet 48 59 0002000000000000000900000000000000014f74686572000064ff00015a6f6500050003
+friends state=2 count=2
+ friend 0 name=carol prev= world=1 wname=World 1 rank=0 platform=0 referrer=false referred=false notes= wflags=0
+ friend 1 name=bob prev= world=0 wname= rank=2 platform=-1 referrer=false referred=false notes=raid mate wflags=0
+ignores count=2
+ ignore 0 nameU=Mallory name=Mallory notes= temp=true
+ ignore 1 nameU=Eve name=Eve notes=spam temp=false
+filters public=0 private=2 trade=3
+friendchat owner=null display=null minkick=7 rank=2 count=0
+clan affined name=null node=5 update=13 talk=2 kick=50 users=3 hashes=false displaynames=true
+ cuser 0 name=Bob 2 rank=9 world=6
+ cuser 1 name=Guest One rank=-1 world=2
+ cuser 2 name=Cleo B rank=4 world=5
+clan listened name=Other node=9 update=1 talk=-1 kick=100 users=1 hashes=false displaynames=true
+ cuser 0 name=Zoe rank=5 world=3
+settings affined null
+settings listened null
+group null
+speech 6 text=Let's go to Agility course: Gnome Stronghold Course? colour=0 effect=0
+packet 49 22 005a6f65001122334523050a5bcf78c66d80
+friends state=2 count=2
+ friend 0 name=carol prev= world=1 wname=World 1 rank=0 platform=0 referrer=false referred=false notes= wflags=0
+ friend 1 name=bob prev= world=0 wname= rank=2 platform=-1 referrer=false referred=false notes=raid mate wflags=0
+ignores count=2
+ ignore 0 nameU=Mallory name=Mallory notes= temp=true
+ ignore 1 nameU=Eve name=Eve notes=spam temp=false
+filters public=0 private=2 trade=3
+friendchat owner=null display=null minkick=7 rank=2 count=0
+clan affined name=null node=5 update=13 talk=2 kick=50 users=3 hashes=false displaynames=true
+ cuser 0 name=Bob 2 rank=9 world=6
+ cuser 1 name=Guest One rank=-1 world=2
+ cuser 2 name=Cleo B rank=4 world=5
+clan listened name=Other node=9 update=1 talk=-1 kick=100 users=1 hashes=false displaynames=true
+ cuser 0 name=Zoe rank=5 world=3
+settings affined null
+settings listened null
+group null
+speech 6 text=Let's go to Agility course: Gnome Stronghold Course? colour=0 effect=0
+chat uid=24 type=44 flags=0 name=<img=10>Zoe nameU=<img=10>Zoe nameS=Zoe clan=Other phrase=-1 message=guest line crown=5
+packet 50 89 005a6f65001122334524000000
+friends state=2 count=2
+ friend 0 name=carol prev= world=1 wname=World 1 rank=0 platform=0 referrer=false referred=false notes= wflags=0
+ friend 1 name=bob prev= world=0 wname= rank=2 platform=-1 referrer=false referred=false notes=raid mate wflags=0
+ignores count=2
+ ignore 0 nameU=Mallory name=Mallory notes= temp=true
+ ignore 1 nameU=Eve name=Eve notes=spam temp=false
+filters public=0 private=2 trade=3
+friendchat owner=null display=null minkick=7 rank=2 count=0
+clan affined name=null node=5 update=13 talk=2 kick=50 users=3 hashes=false displaynames=true
+ cuser 0 name=Bob 2 rank=9 world=6
+ cuser 1 name=Guest One rank=-1 world=2
+ cuser 2 name=Cleo B rank=4 world=5
+clan listened name=Other node=9 update=1 talk=-1 kick=100 users=1 hashes=false displaynames=true
+ cuser 0 name=Zoe rank=5 world=3
+settings affined null
+settings listened null
+group null
+speech 6 text=Let's go to Agility course: Gnome Stronghold Course? colour=0 effect=0
+chat uid=25 type=45 flags=0 name=Zoe nameU=Zoe nameS=Zoe clan=Other phrase=0 message=#efd60cca9270ffa3 crown=0
+packet 51 59 01
+friends state=2 count=2
+ friend 0 name=carol prev= world=1 wname=World 1 rank=0 platform=0 referrer=false referred=false notes= wflags=0
+ friend 1 name=bob prev= world=0 wname= rank=2 platform=-1 referrer=false referred=false notes=raid mate wflags=0
+ignores count=2
+ ignore 0 nameU=Mallory name=Mallory notes= temp=true
+ ignore 1 nameU=Eve name=Eve notes=spam temp=false
+filters public=0 private=2 trade=3
+friendchat owner=null display=null minkick=7 rank=2 count=0
+clan affined null
+clan listened name=Other node=9 update=1 talk=-1 kick=100 users=1 hashes=false displaynames=true
+ cuser 0 name=Zoe rank=5 world=3
+settings affined null
+settings listened null
+group null
+speech 6 text=Let's go to Agility course: Gnome Stronghold Course? colour=0 effect=0
+packet 52 22 01426f62001122334525000f41f9d4f4191a2d2a
+friends state=2 count=2
+ friend 0 name=carol prev= world=1 wname=World 1 rank=0 platform=0 referrer=false referred=false notes= wflags=0
+ friend 1 name=bob prev= world=0 wname= rank=2 platform=-1 referrer=false referred=false notes=raid mate wflags=0
+ignores count=2
+ ignore 0 nameU=Mallory name=Mallory notes= temp=true
+ ignore 1 nameU=Eve name=Eve notes=spam temp=false
+filters public=0 private=2 trade=3
+friendchat owner=null display=null minkick=7 rank=2 count=0
+clan affined null
+clan listened name=Other node=9 update=1 talk=-1 kick=100 users=1 hashes=false displaynames=true
+ cuser 0 name=Zoe rank=5 world=3
+settings affined null
+settings listened null
+group null
+speech 6 text=Let's go to Agility course: Gnome Stronghold Course? colour=0 effect=0
+packet 53 59 00
+friends state=2 count=2
+ friend 0 name=carol prev= world=1 wname=World 1 rank=0 platform=0 referrer=false referred=false notes= wflags=0
+ friend 1 name=bob prev= world=0 wname= rank=2 platform=-1 referrer=false referred=false notes=raid mate wflags=0
+ignores count=2
+ ignore 0 nameU=Mallory name=Mallory notes= temp=true
+ ignore 1 nameU=Eve name=Eve notes=spam temp=false
+filters public=0 private=2 trade=3
+friendchat owner=null display=null minkick=7 rank=2 count=0
+clan affined null
+clan listened null
+settings affined null
+settings listened null
+group null
+speech 6 text=Let's go to Agility course: Gnome Stronghold Course? colour=0 effect=0
+packet 54 80 00426f62001122334530000000
+friends state=2 count=2
+ friend 0 name=carol prev= world=1 wname=World 1 rank=0 platform=0 referrer=false referred=false notes= wflags=0
+ friend 1 name=bob prev= world=0 wname= rank=2 platform=-1 referrer=false referred=false notes=raid mate wflags=0
+ignores count=2
+ ignore 0 nameU=Mallory name=Mallory notes= temp=true
+ ignore 1 nameU=Eve name=Eve notes=spam temp=false
+filters public=0 private=2 trade=3
+friendchat owner=null display=null minkick=7 rank=2 count=0
+clan affined null
+clan listened null
+settings affined null
+settings listened null
+group null
+speech 6 text=Let's go to Agility course: Gnome Stronghold Course? colour=0 effect=0
+chat uid=26 type=18 flags=0 name=Bob nameU=Bob nameS=Bob clan=null phrase=0 message=#efd60cca9270ffa3 crown=0
+packet 55 80 00426f620011223345310000020004
+friends state=2 count=2
+ friend 0 name=carol prev= world=1 wname=World 1 rank=0 platform=0 referrer=false referred=false notes= wflags=0
+ friend 1 name=bob prev= world=0 wname= rank=2 platform=-1 referrer=false referred=false notes=raid mate wflags=0
+ignores count=2
+ ignore 0 nameU=Mallory name=Mallory notes= temp=true
+ ignore 1 nameU=Eve name=Eve notes=spam temp=false
+filters public=0 private=2 trade=3
+friendchat owner=null display=null minkick=7 rank=2 count=0
+clan affined null
+clan listened null
+settings affined null
+settings listened null
+group null
+speech 6 text=Let's go to Agility course: Gnome Stronghold Course? colour=0 effect=0
+chat uid=27 type=18 flags=0 name=Bob nameU=Bob nameS=Bob clan=null phrase=2 message=#c74648f95a40b954 crown=0
+packet 56 80 00426f6200112233453200006200010002
+friends state=2 count=2
+ friend 0 name=carol prev= world=1 wname=World 1 rank=0 platform=0 referrer=false referred=false notes= wflags=0
+ friend 1 name=bob prev= world=0 wname= rank=2 platform=-1 referrer=false referred=false notes=raid mate wflags=0
+ignores count=2
+ ignore 0 nameU=Mallory name=Mallory notes= temp=true
+ ignore 1 nameU=Eve name=Eve notes=spam temp=false
+filters public=0 private=2 trade=3
+friendchat owner=null display=null minkick=7 rank=2 count=0
+clan affined null
+clan listened null
+settings affined null
+settings listened null
+group null
+speech 6 text=Let's go to Agility course: Gnome Stronghold Course? colour=0 effect=0
+chat uid=28 type=18 flags=0 name=Bob nameU=Bob nameS=Bob clan=null phrase=98 message=#f40da483678ab022 crown=0
+packet 57 80 00426f6200112233453300006c03e8
+friends state=2 count=2
+ friend 0 name=carol prev= world=1 wname=World 1 rank=0 platform=0 referrer=false referred=false notes= wflags=0
+ friend 1 name=bob prev= world=0 wname= rank=2 platform=-1 referrer=false referred=false notes=raid mate wflags=0
+ignores count=2
+ ignore 0 nameU=Mallory name=Mallory notes= temp=true
+ ignore 1 nameU=Eve name=Eve notes=spam temp=false
+filters public=0 private=2 trade=3
+friendchat owner=null display=null minkick=7 rank=2 count=0
+clan affined null
+clan listened null
+settings affined null
+settings listened null
+group null
+speech 6 text=Let's go to Agility course: Gnome Stronghold Course? colour=0 effect=0
+chat uid=29 type=18 flags=0 name=Bob nameU=Bob nameS=Bob clan=null phrase=108 message=#124c40ae69f85b2a crown=0
+packet 58 80 00426f6200112233453400044525
+friends state=2 count=2
+ friend 0 name=carol prev= world=1 wname=World 1 rank=0 platform=0 referrer=false referred=false notes= wflags=0
+ friend 1 name=bob prev= world=0 wname= rank=2 platform=-1 referrer=false referred=false notes=raid mate wflags=0
+ignores count=2
+ ignore 0 nameU=Mallory name=Mallory notes= temp=true
+ ignore 1 nameU=Eve name=Eve notes=spam temp=false
+filters public=0 private=2 trade=3
+friendchat owner=null display=null minkick=7 rank=2 count=0
+clan affined null
+clan listened null
+settings affined null
+settings listened null
+group null
+speech 6 text=Let's go to Agility course: Gnome Stronghold Course? colour=0 effect=0
+chat uid=30 type=18 flags=0 name=Bob nameU=Bob nameS=Bob clan=null phrase=1093 message=#d3d8b6d47641b5d1 crown=0
+packet 59 80 00426f6200112233453500010d00000102
+friends state=2 count=2
+ friend 0 name=carol prev= world=1 wname=World 1 rank=0 platform=0 referrer=false referred=false notes= wflags=0
+ friend 1 name=bob prev= world=0 wname= rank=2 platform=-1 referrer=false referred=false notes=raid mate wflags=0
+ignores count=2
+ ignore 0 nameU=Mallory name=Mallory notes= temp=true
+ ignore 1 nameU=Eve name=Eve notes=spam temp=false
+filters public=0 private=2 trade=3
+friendchat owner=null display=null minkick=7 rank=2 count=0
+clan affined null
+clan listened null
+settings affined null
+settings listened null
+group null
+speech 6 text=Let's go to Agility course: Gnome Stronghold Course? colour=0 effect=0
+chat uid=31 type=18 flags=0 name=Bob nameU=Bob nameS=Bob clan=null phrase=269 message=#5d323f4022cba93e crown=0
+packet 60 80 00426f620011223345360001ff00000003
+friends state=2 count=2
+ friend 0 name=carol prev= world=1 wname=World 1 rank=0 platform=0 referrer=false referred=false notes= wflags=0
+ friend 1 name=bob prev= world=0 wname= rank=2 platform=-1 referrer=false referred=false notes=raid mate wflags=0
+ignores count=2
+ ignore 0 nameU=Mallory name=Mallory notes= temp=true
+ ignore 1 nameU=Eve name=Eve notes=spam temp=false
+filters public=0 private=2 trade=3
+friendchat owner=null display=null minkick=7 rank=2 count=0
+clan affined null
+clan listened null
+settings affined null
+settings listened null
+group null
+speech 6 text=Let's go to Agility course: Gnome Stronghold Course? colour=0 effect=0
+chat uid=32 type=18 flags=0 name=Bob nameU=Bob nameS=Bob clan=null phrase=511 message=#34dbe827dfbdd984 crown=0
+packet 61 80 00426f62001122334537000164000000c8
+friends state=2 count=2
+ friend 0 name=carol prev= world=1 wname=World 1 rank=0 platform=0 referrer=false referred=false notes= wflags=0
+ friend 1 name=bob prev= world=0 wname= rank=2 platform=-1 referrer=false referred=false notes=raid mate wflags=0
+ignores count=2
+ ignore 0 nameU=Mallory name=Mallory notes= temp=true
+ ignore 1 nameU=Eve name=Eve notes=spam temp=false
+filters public=0 private=2 trade=3
+friendchat owner=null display=null minkick=7 rank=2 count=0
+clan affined null
+clan listened null
+settings affined null
+settings listened null
+group null
+speech 6 text=Let's go to Agility course: Gnome Stronghold Course? colour=0 effect=0
+chat uid=33 type=18 flags=0 name=Bob nameU=Bob nameS=Bob clan=null phrase=356 message=#87149e26fc0e7f38 crown=0
+packet 62 80 00426f62001122334538000267010203
+friends state=2 count=2
+ friend 0 name=carol prev= world=1 wname=World 1 rank=0 platform=0 referrer=false referred=false notes= wflags=0
+ friend 1 name=bob prev= world=0 wname= rank=2 platform=-1 referrer=false referred=false notes=raid mate wflags=0
+ignores count=2
+ ignore 0 nameU=Mallory name=Mallory notes= temp=true
+ ignore 1 nameU=Eve name=Eve notes=spam temp=false
+filters public=0 private=2 trade=3
+friendchat owner=null display=null minkick=7 rank=2 count=0
+clan affined null
+clan listened null
+settings affined null
+settings listened null
+group null
+speech 6 text=Let's go to Agility course: Gnome Stronghold Course? colour=0 effect=0
+chat uid=34 type=18 flags=0 name=Bob nameU=Bob nameS=Bob clan=null phrase=615 message=#f145cbe3abaf1b0e crown=0
+packet 63 80 00426f6200112233453900038a00000009
+friends state=2 count=2
+ friend 0 name=carol prev= world=1 wname=World 1 rank=0 platform=0 referrer=false referred=false notes= wflags=0
+ friend 1 name=bob prev= world=0 wname= rank=2 platform=-1 referrer=false referred=false notes=raid mate wflags=0
+ignores count=2
+ ignore 0 nameU=Mallory name=Mallory notes= temp=true
+ ignore 1 nameU=Eve name=Eve notes=spam temp=false
+filters public=0 private=2 trade=3
+friendchat owner=null display=null minkick=7 rank=2 count=0
+clan affined null
+clan listened null
+settings affined null
+settings listened null
+group null
+speech 6 text=Let's go to Agility course: Gnome Stronghold Course? colour=0 effect=0
+chat uid=35 type=18 flags=0 name=Bob nameU=Bob nameS=Bob clan=null phrase=906 message=#2ce0792cb15a1aab crown=0
+packet 64 80 00426f6200112233453a0003b87e
+friends state=2 count=2
+ friend 0 name=carol prev= world=1 wname=World 1 rank=0 platform=0 referrer=false referred=false notes= wflags=0
+ friend 1 name=bob prev= world=0 wname= rank=2 platform=-1 referrer=false referred=false notes=raid mate wflags=0
+ignores count=2
+ ignore 0 nameU=Mallory name=Mallory notes= temp=true
+ ignore 1 nameU=Eve name=Eve notes=spam temp=false
+filters public=0 private=2 trade=3
+friendchat owner=null display=null minkick=7 rank=2 count=0
+clan affined null
+clan listened null
+settings affined null
+settings listened null
+group null
+speech 6 text=Let's go to Agility course: Gnome Stronghold Course? colour=0 effect=0
+chat uid=36 type=18 flags=0 name=Bob nameU=Bob nameS=Bob clan=null phrase=952 message=#6b7242d37d828244 crown=0
+packet 65 80 00426f6200112233453b00000163
+friends state=2 count=2
+ friend 0 name=carol prev= world=1 wname=World 1 rank=0 platform=0 referrer=false referred=false notes= wflags=0
+ friend 1 name=bob prev= world=0 wname= rank=2 platform=-1 referrer=false referred=false notes=raid mate wflags=0
+ignores count=2
+ ignore 0 nameU=Mallory name=Mallory notes= temp=true
+ ignore 1 nameU=Eve name=Eve notes=spam temp=false
+filters public=0 private=2 trade=3
+friendchat owner=null display=null minkick=7 rank=2 count=0
+clan affined null
+clan listened null
+settings affined null
+settings listened null
+group null
+speech 6 text=Let's go to Agility course: Gnome Stronghold Course? colour=0 effect=0
+chat uid=37 type=18 flags=0 name=Bob nameU=Bob nameS=Bob clan=null phrase=1 message=#adb0649708d92f46 crown=0
+packet 66 93 426f620000020005
+friends state=2 count=2
+ friend 0 name=carol prev= world=1 wname=World 1 rank=0 platform=0 referrer=false referred=false notes= wflags=0
+ friend 1 name=bob prev= world=0 wname= rank=2 platform=-1 referrer=false referred=false notes=raid mate wflags=0
+ignores count=2
+ ignore 0 nameU=Mallory name=Mallory notes= temp=true
+ ignore 1 nameU=Eve name=Eve notes=spam temp=false
+filters public=0 private=2 trade=3
+friendchat owner=null display=null minkick=7 rank=2 count=0
+clan affined null
+clan listened null
+settings affined null
+settings listened null
+group null
+speech 6 text=Let's go to Agility course: Gnome Stronghold Course? colour=0 effect=0
+chat uid=38 type=19 flags=0 name=Bob nameU=Bob nameS=Bob clan=null phrase=2 message=#698d1d23424fb55e crown=null
+packet 67 80 004d616c6c6f7279001122334560000000
+friends state=2 count=2
+ friend 0 name=carol prev= world=1 wname=World 1 rank=0 platform=0 referrer=false referred=false notes= wflags=0
+ friend 1 name=bob prev= world=0 wname= rank=2 platform=-1 referrer=false referred=false notes=raid mate wflags=0
+ignores count=2
+ ignore 0 nameU=Mallory name=Mallory notes= temp=true
+ ignore 1 nameU=Eve name=Eve notes=spam temp=false
+filters public=0 private=2 trade=3
+friendchat owner=null display=null minkick=7 rank=2 count=0
+clan affined null
+clan listened null
+settings affined null
+settings listened null
+group null
+speech 6 text=Let's go to Agility course: Gnome Stronghold Course? colour=0 effect=0
+packet 68 80 004d6f64205a6564001122334561010000
+friends state=2 count=2
+ friend 0 name=carol prev= world=1 wname=World 1 rank=0 platform=0 referrer=false referred=false notes= wflags=0
+ friend 1 name=bob prev= world=0 wname= rank=2 platform=-1 referrer=false referred=false notes=raid mate wflags=0
+ignores count=2
+ ignore 0 nameU=Mallory name=Mallory notes= temp=true
+ ignore 1 nameU=Eve name=Eve notes=spam temp=false
+filters public=0 private=2 trade=3
+friendchat owner=null display=null minkick=7 rank=2 count=0
+clan affined null
+clan listened null
+settings affined null
+settings listened null
+group null
+speech 6 text=Let's go to Agility course: Gnome Stronghold Course? colour=0 effect=0
+chat uid=39 type=18 flags=0 name=<img=0>Mod Zed nameU=<img=0>Mod Zed nameS=Mod Zed clan=null phrase=0 message=#efd60cca9270ffa3 crown=1
+packet 69 80 00426f62001122334530000000
+friends state=2 count=2
+ friend 0 name=carol prev= world=1 wname=World 1 rank=0 platform=0 referrer=false referred=false notes= wflags=0
+ friend 1 name=bob prev= world=0 wname= rank=2 platform=-1 referrer=false referred=false notes=raid mate wflags=0
+ignores count=2
+ ignore 0 nameU=Mallory name=Mallory notes= temp=true
+ ignore 1 nameU=Eve name=Eve notes=spam temp=false
+filters public=0 private=2 trade=3
+friendchat owner=null display=null minkick=7 rank=2 count=0
+clan affined null
+clan listened null
+settings affined null
+settings listened null
+group null
+speech 6 text=Let's go to Agility course: Gnome Stronghold Course? colour=0 effect=0
+packet 70 101 0103020000000000000000000300416c746f000000000000416c696365007e00000000426f6200030000000043617261007d000000000002000000010000002a0000000200000007
+friends state=2 count=2
+ friend 0 name=carol prev= world=1 wname=World 1 rank=0 platform=0 referrer=false referred=false notes= wflags=0
+ friend 1 name=bob prev= world=0 wname= rank=2 platform=-1 referrer=false referred=false notes=raid mate wflags=0
+ignores count=2
+ ignore 0 nameU=Mallory name=Mallory notes= temp=true
+ ignore 1 nameU=Eve name=Eve notes=spam temp=false
+filters public=0 private=2 trade=3
+friendchat owner=null display=null minkick=7 rank=2 count=0
+clan affined null
+clan listened null
+settings affined name=Alto owner=0 update=0 allowUnaffined=false talk=0 kick=0 lootshare=0 coinshare=0 members=3 banned=0 owner_slot=0 replacement=2 hashes=false displaynames=true
+ smember 0 hash=- name=Alice rank=126 extra=0 joined=0 muted=false
+ smember 1 hash=- name=Bob rank=3 extra=0 joined=0 muted=false
+ smember 2 hash=- name=Cara rank=125 extra=0 joined=0 muted=false
+ settings 1=i42 2=i7
+settings listened null
+group null
+speech 6 text=Let's go to Agility course: Gnome Stronghold Course? colour=0 effect=0
+packet 71 132 010000000000000000000000000dff4465650017d400
+friends state=2 count=2
+ friend 0 name=carol prev= world=1 wname=World 1 rank=0 platform=0 referrer=false referred=false notes= wflags=0
+ friend 1 name=bob prev= world=0 wname= rank=2 platform=-1 referrer=false referred=false notes=raid mate wflags=0
+ignores count=2
+ ignore 0 nameU=Mallory name=Mallory notes= temp=true
+ ignore 1 nameU=Eve name=Eve notes=spam temp=false
+filters public=0 private=2 trade=3
+friendchat owner=null display=null minkick=7 rank=2 count=0
+clan affined null
+clan listened null
+settings affined name=Alto owner=0 update=1 allowUnaffined=false talk=0 kick=0 lootshare=0 coinshare=0 members=4 banned=0 owner_slot=0 replacement=2 hashes=false displaynames=true
+ smember 0 hash=- name=Alice rank=126 extra=0 joined=0 muted=false
+ smember 1 hash=- name=Bob rank=3 extra=0 joined=0 muted=false
+ smember 2 hash=- name=Cara rank=125 extra=0 joined=0 muted=false
+ smember 3 hash=- name=Dee rank=0 extra=0 joined=6100 muted=false
+ settings 1=i42 2=i7
+settings listened null
+group null
+speech 6 text=Let's go to Agility course: Gnome Stronghold Course? colour=0 effect=0
+packet 72 132 0100000000000000000000000101ff456c690000
+friends state=2 count=2
+ friend 0 name=carol prev= world=1 wname=World 1 rank=0 platform=0 referrer=false referred=false notes= wflags=0
+ friend 1 name=bob prev= world=0 wname= rank=2 platform=-1 referrer=false referred=false notes=raid mate wflags=0
+ignores count=2
+ ignore 0 nameU=Mallory name=Mallory notes= temp=true
+ ignore 1 nameU=Eve name=Eve notes=spam temp=false
+filters public=0 private=2 trade=3
+friendchat owner=null display=null minkick=7 rank=2 count=0
+clan affined null
+clan listened null
+settings affined name=Alto owner=0 update=2 allowUnaffined=false talk=0 kick=0 lootshare=0 coinshare=0 members=5 banned=0 owner_slot=0 replacement=2 hashes=false displaynames=true
+ smember 0 hash=- name=Alice rank=126 extra=0 joined=0 muted=false
+ smember 1 hash=- name=Bob rank=3 extra=0 joined=0 muted=false
+ smember 2 hash=- name=Cara rank=125 extra=0 joined=0 muted=false
+ smember 3 hash=- name=Dee rank=0 extra=0 joined=6100 muted=false
+ smember 4 hash=- name=Eli rank=0 extra=0 joined=0 muted=false
+ settings 1=i42 2=i7
+settings listened null
+group null
+speech 6 text=Let's go to Agility course: Gnome Stronghold Course? colour=0 effect=0
+packet 73 132 0100000000000000000000000203ff4d616c6c6f72790003ff4576650000
+friends state=2 count=2
+ friend 0 name=carol prev= world=1 wname=World 1 rank=0 platform=0 referrer=false referred=false notes= wflags=0
+ friend 1 name=bob prev= world=0 wname= rank=2 platform=-1 referrer=false referred=false notes=raid mate wflags=0
+ignores count=2
+ ignore 0 nameU=Mallory name=Mallory notes= temp=true
+ ignore 1 nameU=Eve name=Eve notes=spam temp=false
+filters public=0 private=2 trade=3
+friendchat owner=null display=null minkick=7 rank=2 count=0
+clan affined null
+clan listened null
+settings affined name=Alto owner=0 update=3 allowUnaffined=false talk=0 kick=0 lootshare=0 coinshare=0 members=5 banned=2 owner_slot=0 replacement=2 hashes=false displaynames=true
+ smember 0 hash=- name=Alice rank=126 extra=0 joined=0 muted=false
+ smember 1 hash=- name=Bob rank=3 extra=0 joined=0 muted=false
+ smember 2 hash=- name=Cara rank=125 extra=0 joined=0 muted=false
+ smember 3 hash=- name=Dee rank=0 extra=0 joined=6100 muted=false
+ smember 4 hash=- name=Eli rank=0 extra=0 joined=0 muted=false
+ sbanned 0 hash=- name=Mallory
+ sbanned 1 hash=- name=Eve
+ settings 1=i42 2=i7
+settings listened null
+group null
+speech 6 text=Let's go to Agility course: Gnome Stronghold Course? colour=0 effect=0
+packet 74 132 0100000000000000000000000304010203040500
+friends state=2 count=2
+ friend 0 name=carol prev= world=1 wname=World 1 rank=0 platform=0 referrer=false referred=false notes= wflags=0
+ friend 1 name=bob prev= world=0 wname= rank=2 platform=-1 referrer=false referred=false notes=raid mate wflags=0
+ignores count=2
+ ignore 0 nameU=Mallory name=Mallory notes= temp=true
+ ignore 1 nameU=Eve name=Eve notes=spam temp=false
+filters public=0 private=2 trade=3
+friendchat owner=null display=null minkick=7 rank=2 count=0
+clan affined null
+clan listened null
+settings affined name=Alto owner=0 update=4 allowUnaffined=true talk=2 kick=3 lootshare=4 coinshare=5 members=5 banned=2 owner_slot=0 replacement=2 hashes=false displaynames=true
+ smember 0 hash=- name=Alice rank=126 extra=0 joined=0 muted=false
+ smember 1 hash=- name=Bob rank=3 extra=0 joined=0 muted=false
+ smember 2 hash=- name=Cara rank=125 extra=0 joined=0 muted=false
+ smember 3 hash=- name=Dee rank=0 extra=0 joined=6100 muted=false
+ smember 4 hash=- name=Eli rank=0 extra=0 joined=0 muted=false
+ sbanned 0 hash=- name=Mallory
+ sbanned 1 hash=- name=Eve
+ settings 1=i42 2=i7
+settings listened null
+group null
+speech 6 text=Let's go to Agility course: Gnome Stronghold Course? colour=0 effect=0
+packet 75 132 010000000000000000000000040200017d0200020000
+friends state=2 count=2
+ friend 0 name=carol prev= world=1 wname=World 1 rank=0 platform=0 referrer=false referred=false notes= wflags=0
+ friend 1 name=bob prev= world=0 wname= rank=2 platform=-1 referrer=false referred=false notes=raid mate wflags=0
+ignores count=2
+ ignore 0 nameU=Mallory name=Mallory notes= temp=true
+ ignore 1 nameU=Eve name=Eve notes=spam temp=false
+filters public=0 private=2 trade=3
+friendchat owner=null display=null minkick=7 rank=2 count=0
+clan affined null
+clan listened null
+settings affined name=Alto owner=0 update=5 allowUnaffined=true talk=2 kick=3 lootshare=4 coinshare=5 members=5 banned=2 owner_slot=0 replacement=1 hashes=false displaynames=true
+ smember 0 hash=- name=Alice rank=126 extra=0 joined=0 muted=false
+ smember 1 hash=- name=Bob rank=125 extra=0 joined=0 muted=false
+ smember 2 hash=- name=Cara rank=0 extra=0 joined=0 muted=false
+ smember 3 hash=- name=Dee rank=0 extra=0 joined=6100 muted=false
+ smember 4 hash=- name=Eli rank=0 extra=0 joined=0 muted=false
+ sbanned 0 hash=- name=Mallory
+ sbanned 1 hash=- name=Eve
+ settings 1=i42 2=i7
+settings listened null
+group null
+speech 6 text=Let's go to Agility course: Gnome Stronghold Course? colour=0 effect=0
+packet 76 132 0100000000000000000000000507000100001234000f00
+friends state=2 count=2
+ friend 0 name=carol prev= world=1 wname=World 1 rank=0 platform=0 referrer=false referred=false notes= wflags=0
+ friend 1 name=bob prev= world=0 wname= rank=2 platform=-1 referrer=false referred=false notes=raid mate wflags=0
+ignores count=2
+ ignore 0 nameU=Mallory name=Mallory notes= temp=true
+ ignore 1 nameU=Eve name=Eve notes=spam temp=false
+filters public=0 private=2 trade=3
+friendchat owner=null display=null minkick=7 rank=2 count=0
+clan affined null
+clan listened null
+settings affined name=Alto owner=0 update=6 allowUnaffined=true talk=2 kick=3 lootshare=4 coinshare=5 members=5 banned=2 owner_slot=0 replacement=1 hashes=false displaynames=true
+ smember 0 hash=- name=Alice rank=126 extra=0 joined=0 muted=false
+ smember 1 hash=- name=Bob rank=125 extra=4660 joined=0 muted=false
+ smember 2 hash=- name=Cara rank=0 extra=0 joined=0 muted=false
+ smember 3 hash=- name=Dee rank=0 extra=0 joined=6100 muted=false
+ smember 4 hash=- name=Eli rank=0 extra=0 joined=0 muted=false
+ sbanned 0 hash=- name=Mallory
+ sbanned 1 hash=- name=Eve
+ settings 1=i42 2=i7
+settings listened null
+group null
+speech 6 text=Let's go to Agility course: Gnome Stronghold Course? colour=0 effect=0
+packet 77 132 010000000000000000000000060e0001010e00000100
+friends state=2 count=2
+ friend 0 name=carol prev= world=1 wname=World 1 rank=0 platform=0 referrer=false referred=false notes= wflags=0
+ friend 1 name=bob prev= world=0 wname= rank=2 platform=-1 referrer=false referred=false notes=raid mate wflags=0
+ignores count=2
+ ignore 0 nameU=Mallory name=Mallory notes= temp=true
+ ignore 1 nameU=Eve name=Eve notes=spam temp=false
+filters public=0 private=2 trade=3
+friendchat owner=null display=null minkick=7 rank=2 count=0
+clan affined null
+clan listened null
+settings affined name=Alto owner=0 update=7 allowUnaffined=true talk=2 kick=3 lootshare=4 coinshare=5 members=5 banned=2 owner_slot=0 replacement=1 hashes=false displaynames=true
+ smember 0 hash=- name=Alice rank=126 extra=0 joined=0 muted=true
+ smember 1 hash=- name=Bob rank=125 extra=4660 joined=0 muted=true
+ smember 2 hash=- name=Cara rank=0 extra=0 joined=0 muted=false
+ smember 3 hash=- name=Dee rank=0 extra=0 joined=6100 muted=false
+ smember 4 hash=- name=Eli rank=0 extra=0 joined=0 muted=false
+ sbanned 0 hash=- name=Mallory
+ sbanned 1 hash=- name=Eve
+ settings 1=i42 2=i7
+settings listened null
+group null
+speech 6 text=Let's go to Agility course: Gnome Stronghold Course? colour=0 effect=0
+packet 78 132 010000000000000000000000070800000003fffffffb090000000400000001234567890a00000005612073657474696e670000
+friends state=2 count=2
+ friend 0 name=carol prev= world=1 wname=World 1 rank=0 platform=0 referrer=false referred=false notes= wflags=0
+ friend 1 name=bob prev= world=0 wname= rank=2 platform=-1 referrer=false referred=false notes=raid mate wflags=0
+ignores count=2
+ ignore 0 nameU=Mallory name=Mallory notes= temp=true
+ ignore 1 nameU=Eve name=Eve notes=spam temp=false
+filters public=0 private=2 trade=3
+friendchat owner=null display=null minkick=7 rank=2 count=0
+clan affined null
+clan listened null
+settings affined name=Alto owner=0 update=8 allowUnaffined=true talk=2 kick=3 lootshare=4 coinshare=5 members=5 banned=2 owner_slot=0 replacement=1 hashes=false displaynames=true
+ smember 0 hash=- name=Alice rank=126 extra=0 joined=0 muted=true
+ smember 1 hash=- name=Bob rank=125 extra=4660 joined=0 muted=true
+ smember 2 hash=- name=Cara rank=0 extra=0 joined=0 muted=false
+ smember 3 hash=- name=Dee rank=0 extra=0 joined=6100 muted=false
+ smember 4 hash=- name=Eli rank=0 extra=0 joined=0 muted=false
+ sbanned 0 hash=- name=Mallory
+ sbanned 1 hash=- name=Eve
+ settings 1=i42 2=i7 3=i-5 4=L4886718345 5=Sa setting
+settings listened null
+group null
+speech 6 text=Let's go to Agility course: Gnome Stronghold Course? colour=0 effect=0
+packet 79 132 010000000000000000000000080800000001000000000b0000000100000005020400
+friends state=2 count=2
+ friend 0 name=carol prev= world=1 wname=World 1 rank=0 platform=0 referrer=false referred=false notes= wflags=0
+ friend 1 name=bob prev= world=0 wname= rank=2 platform=-1 referrer=false referred=false notes=raid mate wflags=0
+ignores count=2
+ ignore 0 nameU=Mallory name=Mallory notes= temp=true
+ ignore 1 nameU=Eve name=Eve notes=spam temp=false
+filters public=0 private=2 trade=3
+friendchat owner=null display=null minkick=7 rank=2 count=0
+clan affined null
+clan listened null
+settings affined name=Alto owner=0 update=9 allowUnaffined=true talk=2 kick=3 lootshare=4 coinshare=5 members=5 banned=2 owner_slot=0 replacement=1 hashes=false displaynames=true
+ smember 0 hash=- name=Alice rank=126 extra=0 joined=0 muted=true
+ smember 1 hash=- name=Bob rank=125 extra=4660 joined=0 muted=true
+ smember 2 hash=- name=Cara rank=0 extra=0 joined=0 muted=false
+ smember 3 hash=- name=Dee rank=0 extra=0 joined=6100 muted=false
+ smember 4 hash=- name=Eli rank=0 extra=0 joined=0 muted=false
+ sbanned 0 hash=- name=Mallory
+ sbanned 1 hash=- name=Eve
+ settings 1=i20 2=i7 3=i-5 4=L4886718345 5=Sa setting
+settings listened null
+group null
+speech 6 text=Let's go to Agility course: Gnome Stronghold Course? colour=0 effect=0
+packet 80 132 0100000000000000000000000906000005000000
+friends state=2 count=2
+ friend 0 name=carol prev= world=1 wname=World 1 rank=0 platform=0 referrer=false referred=false notes= wflags=0
+ friend 1 name=bob prev= world=0 wname= rank=2 platform=-1 referrer=false referred=false notes=raid mate wflags=0
+ignores count=2
+ ignore 0 nameU=Mallory name=Mallory notes= temp=true
+ ignore 1 nameU=Eve name=Eve notes=spam temp=false
+filters public=0 private=2 trade=3
+friendchat owner=null display=null minkick=7 rank=2 count=0
+clan affined null
+clan listened null
+settings affined name=Alto owner=0 update=10 allowUnaffined=true talk=2 kick=3 lootshare=4 coinshare=5 members=4 banned=1 owner_slot=0 replacement=-1 hashes=false displaynames=true
+ smember 0 hash=- name=Bob rank=126 extra=4660 joined=0 muted=true
+ smember 1 hash=- name=Cara rank=0 extra=0 joined=0 muted=false
+ smember 2 hash=- name=Dee rank=0 extra=0 joined=6100 muted=false
+ smember 3 hash=- name=Eli rank=0 extra=0 joined=0 muted=false
+ sbanned 0 hash=- name=Eve
+ settings 1=i20 2=i7 3=i-5 4=L4886718345 5=Sa setting
+settings listened null
+group null
+speech 6 text=Let's go to Agility course: Gnome Stronghold Course? colour=0 effect=0
+packet 81 132 0100000000000000000000000a0c416c746f2052656e616d6564000000000000
+friends state=2 count=2
+ friend 0 name=carol prev= world=1 wname=World 1 rank=0 platform=0 referrer=false referred=false notes= wflags=0
+ friend 1 name=bob prev= world=0 wname= rank=2 platform=-1 referrer=false referred=false notes=raid mate wflags=0
+ignores count=2
+ ignore 0 nameU=Mallory name=Mallory notes= temp=true
+ ignore 1 nameU=Eve name=Eve notes=spam temp=false
+filters public=0 private=2 trade=3
+friendchat owner=null display=null minkick=7 rank=2 count=0
+clan affined null
+clan listened null
+settings affined name=Alto Renamed owner=0 update=11 allowUnaffined=true talk=2 kick=3 lootshare=4 coinshare=5 members=4 banned=1 owner_slot=0 replacement=-1 hashes=false displaynames=true
+ smember 0 hash=- name=Bob rank=126 extra=4660 joined=0 muted=true
+ smember 1 hash=- name=Cara rank=0 extra=0 joined=0 muted=false
+ smember 2 hash=- name=Dee rank=0 extra=0 joined=6100 muted=false
+ smember 3 hash=- name=Eli rank=0 extra=0 joined=0 muted=false
+ sbanned 0 hash=- name=Eve
+ settings 1=i20 2=i7 3=i-5 4=L4886718345 5=Sa setting
+settings listened null
+group null
+speech 6 text=Let's go to Agility course: Gnome Stronghold Course? colour=0 effect=0
+cmd activeclansettings_find_affined ints=[1] objs=[] thrown=0 out=
+cmd activeclansettings_getclanname ints=[] objs=[Alto Renamed] thrown=0 out=
+cmd activeclansettings_getallowunaffined ints=[1] objs=[] thrown=0 out=
+cmd activeclansettings_getranktalk ints=[2] objs=[] thrown=0 out=
+cmd activeclansettings_getrankkick ints=[3] objs=[] thrown=0 out=
+cmd activeclansettings_getranklootshare ints=[4] objs=[] thrown=0 out=
+cmd activeclansettings_getcoinshare ints=[5] objs=[] thrown=0 out=
+cmd activeclansettings_getaffinedcount ints=[4] objs=[] thrown=0 out=
+cmd activeclansettings_getbannedcount ints=[1] objs=[] thrown=0 out=
+cmd activeclansettings_getcurrentowner_slot ints=[0] objs=[] thrown=0 out=
+cmd activeclansettings_getreplacementowner_slot ints=[-1] objs=[] thrown=0 out=
+cmd activeclansettings_getaffineddisplayname ints=[] objs=[Bob] thrown=0 out=
+cmd activeclansettings_getaffineddisplayname ints=[] objs=[Cara] thrown=0 out=
+cmd activeclansettings_getaffineddisplayname ints=[] objs=[Dee] thrown=0 out=
+cmd activeclansettings_getaffineddisplayname thrown=1
+cmd activeclansettings_getaffinedrank ints=[126] objs=[] thrown=0 out=
+cmd activeclansettings_getaffinedrank ints=[0] objs=[] thrown=0 out=
+cmd activeclansettings_getaffinedrank ints=[0] objs=[] thrown=0 out=
+cmd activeclansettings_getaffinedrank thrown=1
+cmd activeclansettings_getaffinedmuted ints=[1] objs=[] thrown=0 out=
+cmd activeclansettings_getaffinedmuted ints=[0] objs=[] thrown=0 out=
+cmd activeclansettings_getaffinedmuted ints=[0] objs=[] thrown=0 out=
+cmd activeclansettings_getaffinedmuted thrown=1
+cmd activeclansettings_getsortedaffinedslot ints=[0] objs=[] thrown=0 out=
+cmd activeclansettings_getsortedaffinedslot ints=[1] objs=[] thrown=0 out=
+cmd activeclansettings_getsortedaffinedslot ints=[2] objs=[] thrown=0 out=
+cmd activeclansettings_getsortedaffinedslot thrown=1
+cmd activeclansettings_getaffinedjoinruneday ints=[0] objs=[] thrown=0 out=
+cmd activeclansettings_getaffinedjoinruneday ints=[0] objs=[] thrown=0 out=
+cmd activeclansettings_getaffinedjoinruneday ints=[6100] objs=[] thrown=0 out=
+cmd activeclansettings_getaffinedjoinruneday thrown=1
+cmd activeclansettings_getbanneddisplayname ints=[] objs=[Eve] thrown=0 out=
+cmd activeclansettings_getbanneddisplayname thrown=1
+cmd activeclansettings_getaffinedextrainfo ints=[0] objs=[] thrown=0 out=
+cmd activeclansettings_getaffinedextrainfo ints=[0] objs=[] thrown=0 out=
+cmd activeclansettings_getaffinedextrainfo ints=[4660] objs=[] thrown=0 out=
+cmd activeclansettings_getaffinedextrainfo thrown=1
+cmd activeclansettings_getaffinedslot ints=[-1] objs=[] thrown=0 out=
+cmd activeclansettings_getaffinedslot ints=[-1] objs=[] thrown=0 out=
+cmd activeclansettings_getaffinedslot ints=[2] objs=[] thrown=0 out=
+cmd activeclansettings_getaffinedslot ints=[-1] objs=[] thrown=0 out=
+cmd activeclansettings_find_listened ints=[0] objs=[] thrown=0 out=
+packet 82 40 0105000000030000018bcfe5680052616964207465616d00000a0000000000000000000000000003416c6963650003030000000000000482000000530002000100000003000400000064002a050302426f620001000000ffff0701004361726100030100c6e3bf000000070102010001426164000002000100000005000200000009
+friends state=2 count=2
+ friend 0 name=carol prev= world=1 wname=World 1 rank=0 platform=0 referrer=false referred=false notes= wflags=0
+ friend 1 name=bob prev= world=0 wname= rank=2 platform=-1 referrer=false referred=false notes=raid mate wflags=0
+ignores count=2
+ ignore 0 nameU=Mallory name=Mallory notes= temp=true
+ ignore 1 nameU=Eve name=Eve notes=spam temp=false
+filters public=0 private=2 trade=3
+friendchat owner=null display=null minkick=7 rank=2 count=0
+clan affined null
+clan listened null
+settings affined name=Alto Renamed owner=0 update=11 allowUnaffined=true talk=2 kick=3 lootshare=4 coinshare=5 members=4 banned=1 owner_slot=0 replacement=-1 hashes=false displaynames=true
+ smember 0 hash=- name=Bob rank=126 extra=4660 joined=0 muted=true
+ smember 1 hash=- name=Cara rank=0 extra=0 joined=0 muted=false
+ smember 2 hash=- name=Dee rank=0 extra=0 joined=6100 muted=false
+ smember 3 hash=- name=Eli rank=0 extra=0 joined=0 muted=false
+ sbanned 0 hash=- name=Eve
+ settings 1=i20 2=i7 3=i-5 4=L4886718345 5=Sa setting
+settings listened null
+group name=Raid team hash=0 membersOnly=true max=10 hasUid=false hasDisplayName=true owner=1 update=3 created=1700000000000 members=3 banned=1 vars=1:5,2:9
+ gmember 0 name=Alice uid=-1 rank=5 status=3 team=2 online=true members=true node=42 xp=1=1154,2=83 vars=1:3,4:100 variables=null
+ gmember 1 name=Bob uid=-1 rank=7 status=1 team=0 online=false members=true node=-1 xp= vars= variables=null
+ gmember 2 name=Cara uid=-1 rank=1 status=2 team=1 online=true members=true node=7 xp=0=13034431 vars= variables=null
+ gbanned 0 name=Bad
+speech 6 text=Let's go to Agility course: Gnome Stronghold Course? colour=0 effect=0
+packet 83 41 416c69636500112233458000000a5ab9ea4c66d8
+friends state=2 count=2
+ friend 0 name=carol prev= world=1 wname=World 1 rank=0 platform=0 referrer=false referred=false notes= wflags=0
+ friend 1 name=bob prev= world=0 wname= rank=2 platform=-1 referrer=false referred=false notes=raid mate wflags=0
+ignores count=2
+ ignore 0 nameU=Mallory name=Mallory notes= temp=true
+ ignore 1 nameU=Eve name=Eve notes=spam temp=false
+filters public=0 private=2 trade=3
+friendchat owner=null display=null minkick=7 rank=2 count=0
+clan affined null
+clan listened null
+settings affined name=Alto Renamed owner=0 update=11 allowUnaffined=true talk=2 kick=3 lootshare=4 coinshare=5 members=4 banned=1 owner_slot=0 replacement=-1 hashes=false displaynames=true
+ smember 0 hash=- name=Bob rank=126 extra=4660 joined=0 muted=true
+ smember 1 hash=- name=Cara rank=0 extra=0 joined=0 muted=false
+ smember 2 hash=- name=Dee rank=0 extra=0 joined=6100 muted=false
+ smember 3 hash=- name=Eli rank=0 extra=0 joined=0 muted=false
+ sbanned 0 hash=- name=Eve
+ settings 1=i20 2=i7 3=i-5 4=L4886718345 5=Sa setting
+settings listened null
+group name=Raid team hash=0 membersOnly=true max=10 hasUid=false hasDisplayName=true owner=1 update=3 created=1700000000000 members=3 banned=1 vars=1:5,2:9
+ gmember 0 name=Alice uid=-1 rank=5 status=3 team=2 online=true members=true node=42 xp=1=1154,2=83 vars=1:3,4:100 variables=null
+ gmember 1 name=Bob uid=-1 rank=7 status=1 team=0 online=false members=true node=-1 xp= vars= variables=null
+ gmember 2 name=Cara uid=-1 rank=1 status=2 team=1 online=true members=true node=7 xp=0=13034431 vars= variables=null
+ gbanned 0 name=Bad
+speech 6 text=Let's go to Agility course: Gnome Stronghold Course? colour=0 effect=0
+chat uid=40 type=24 flags=0 name=Alice nameU=Alice nameS=Alice clan=Raid team phrase=-1 message=group line crown=0
+packet 84 41 4d616c6c6f727900112233458100011295af2ad456ae7a9319b6
+friends state=2 count=2
+ friend 0 name=carol prev= world=1 wname=World 1 rank=0 platform=0 referrer=false referred=false notes= wflags=0
+ friend 1 name=bob prev= world=0 wname= rank=2 platform=-1 referrer=false referred=false notes=raid mate wflags=0
+ignores count=2
+ ignore 0 nameU=Mallory name=Mallory notes= temp=true
+ ignore 1 nameU=Eve name=Eve notes=spam temp=false
+filters public=0 private=2 trade=3
+friendchat owner=null display=null minkick=7 rank=2 count=0
+clan affined null
+clan listened null
+settings affined name=Alto Renamed owner=0 update=11 allowUnaffined=true talk=2 kick=3 lootshare=4 coinshare=5 members=4 banned=1 owner_slot=0 replacement=-1 hashes=false displaynames=true
+ smember 0 hash=- name=Bob rank=126 extra=4660 joined=0 muted=true
+ smember 1 hash=- name=Cara rank=0 extra=0 joined=0 muted=false
+ smember 2 hash=- name=Dee rank=0 extra=0 joined=6100 muted=false
+ smember 3 hash=- name=Eli rank=0 extra=0 joined=0 muted=false
+ sbanned 0 hash=- name=Eve
+ settings 1=i20 2=i7 3=i-5 4=L4886718345 5=Sa setting
+settings listened null
+group name=Raid team hash=0 membersOnly=true max=10 hasUid=false hasDisplayName=true owner=1 update=3 created=1700000000000 members=3 banned=1 vars=1:5,2:9
+ gmember 0 name=Alice uid=-1 rank=5 status=3 team=2 online=true members=true node=42 xp=1=1154,2=83 vars=1:3,4:100 variables=null
+ gmember 1 name=Bob uid=-1 rank=7 status=1 team=0 online=false members=true node=-1 xp= vars= variables=null
+ gmember 2 name=Cara uid=-1 rank=1 status=2 team=1 online=true members=true node=7 xp=0=13034431 vars= variables=null
+ gbanned 0 name=Bad
+speech 6 text=Let's go to Agility course: Gnome Stronghold Course? colour=0 effect=0
+packet 85 176 426f62001122334582000000020002
+friends state=2 count=2
+ friend 0 name=carol prev= world=1 wname=World 1 rank=0 platform=0 referrer=false referred=false notes= wflags=0
+ friend 1 name=bob prev= world=0 wname= rank=2 platform=-1 referrer=false referred=false notes=raid mate wflags=0
+ignores count=2
+ ignore 0 nameU=Mallory name=Mallory notes= temp=true
+ ignore 1 nameU=Eve name=Eve notes=spam temp=false
+filters public=0 private=2 trade=3
+friendchat owner=null display=null minkick=7 rank=2 count=0
+clan affined null
+clan listened null
+settings affined name=Alto Renamed owner=0 update=11 allowUnaffined=true talk=2 kick=3 lootshare=4 coinshare=5 members=4 banned=1 owner_slot=0 replacement=-1 hashes=false displaynames=true
+ smember 0 hash=- name=Bob rank=126 extra=4660 joined=0 muted=true
+ smember 1 hash=- name=Cara rank=0 extra=0 joined=0 muted=false
+ smember 2 hash=- name=Dee rank=0 extra=0 joined=6100 muted=false
+ smember 3 hash=- name=Eli rank=0 extra=0 joined=0 muted=false
+ sbanned 0 hash=- name=Eve
+ settings 1=i20 2=i7 3=i-5 4=L4886718345 5=Sa setting
+settings listened null
+group name=Raid team hash=0 membersOnly=true max=10 hasUid=false hasDisplayName=true owner=1 update=3 created=1700000000000 members=3 banned=1 vars=1:5,2:9
+ gmember 0 name=Alice uid=-1 rank=5 status=3 team=2 online=true members=true node=42 xp=1=1154,2=83 vars=1:3,4:100 variables=null
+ gmember 1 name=Bob uid=-1 rank=7 status=1 team=0 online=false members=true node=-1 xp= vars= variables=null
+ gmember 2 name=Cara uid=-1 rank=1 status=2 team=1 online=true members=true node=7 xp=0=13034431 vars= variables=null
+ gbanned 0 name=Bad
+speech 6 text=Let's go to Agility course: Gnome Stronghold Course? colour=0 effect=0
+chat uid=41 type=25 flags=0 name=Bob nameU=Bob nameS=Bob clan=Raid team phrase=2 message=#4942c713b715ce08 crown=0
+packet 86 176 426f6200112233458301010000
+friends state=2 count=2
+ friend 0 name=carol prev= world=1 wname=World 1 rank=0 platform=0 referrer=false referred=false notes= wflags=0
+ friend 1 name=bob prev= world=0 wname= rank=2 platform=-1 referrer=false referred=false notes=raid mate wflags=0
+ignores count=2
+ ignore 0 nameU=Mallory name=Mallory notes= temp=true
+ ignore 1 nameU=Eve name=Eve notes=spam temp=false
+filters public=0 private=2 trade=3
+friendchat owner=null display=null minkick=7 rank=2 count=0
+clan affined null
+clan listened null
+settings affined name=Alto Renamed owner=0 update=11 allowUnaffined=true talk=2 kick=3 lootshare=4 coinshare=5 members=4 banned=1 owner_slot=0 replacement=-1 hashes=false displaynames=true
+ smember 0 hash=- name=Bob rank=126 extra=4660 joined=0 muted=true
+ smember 1 hash=- name=Cara rank=0 extra=0 joined=0 muted=false
+ smember 2 hash=- name=Dee rank=0 extra=0 joined=6100 muted=false
+ smember 3 hash=- name=Eli rank=0 extra=0 joined=0 muted=false
+ sbanned 0 hash=- name=Eve
+ settings 1=i20 2=i7 3=i-5 4=L4886718345 5=Sa setting
+settings listened null
+group name=Raid team hash=0 membersOnly=true max=10 hasUid=false hasDisplayName=true owner=1 update=3 created=1700000000000 members=3 banned=1 vars=1:5,2:9
+ gmember 0 name=Alice uid=-1 rank=5 status=3 team=2 online=true members=true node=42 xp=1=1154,2=83 vars=1:3,4:100 variables=null
+ gmember 1 name=Bob uid=-1 rank=7 status=1 team=0 online=false members=true node=-1 xp= vars= variables=null
+ gmember 2 name=Cara uid=-1 rank=1 status=2 team=1 online=true members=true node=7 xp=0=13034431 vars= variables=null
+ gbanned 0 name=Bad
+speech 6 text=Let's go to Agility course: Gnome Stronghold Course? colour=0 effect=0
+chat uid=42 type=23 flags=0 name=<img=0>Bob nameU=<img=0>Bob nameS=Bob clan=Raid team phrase=0 message=#efd60cca9270ffa3 crown=1
+packet 87 187 00000000000000000000000301ff4465650003030000000000000000000000050000000201010003ff4576696c0000
+friends state=2 count=2
+ friend 0 name=carol prev= world=1 wname=World 1 rank=0 platform=0 referrer=false referred=false notes= wflags=0
+ friend 1 name=bob prev= world=0 wname= rank=2 platform=-1 referrer=false referred=false notes=raid mate wflags=0
+ignores count=2
+ ignore 0 nameU=Mallory name=Mallory notes= temp=true
+ ignore 1 nameU=Eve name=Eve notes=spam temp=false
+filters public=0 private=2 trade=3
+friendchat owner=null display=null minkick=7 rank=2 count=0
+clan affined null
+clan listened null
+settings affined name=Alto Renamed owner=0 update=11 allowUnaffined=true talk=2 kick=3 lootshare=4 coinshare=5 members=4 banned=1 owner_slot=0 replacement=-1 hashes=false displaynames=true
+ smember 0 hash=- name=Bob rank=126 extra=4660 joined=0 muted=true
+ smember 1 hash=- name=Cara rank=0 extra=0 joined=0 muted=false
+ smember 2 hash=- name=Dee rank=0 extra=0 joined=6100 muted=false
+ smember 3 hash=- name=Eli rank=0 extra=0 joined=0 muted=false
+ sbanned 0 hash=- name=Eve
+ settings 1=i20 2=i7 3=i-5 4=L4886718345 5=Sa setting
+settings listened null
+group name=Raid team hash=0 membersOnly=true max=10 hasUid=false hasDisplayName=true owner=1 update=4 created=1700000000000 members=4 banned=2 vars=1:5,2:9
+ gmember 0 name=Alice uid=-1 rank=5 status=3 team=2 online=true members=true node=42 xp=1=1154,2=83 vars=1:3,4:100 variables=null
+ gmember 1 name=Bob uid=-1 rank=7 status=1 team=0 online=false members=true node=-1 xp= vars= variables=null
+ gmember 2 name=Cara uid=-1 rank=1 status=2 team=1 online=true members=true node=7 xp=0=13034431 vars= variables=null
+ gmember 3 name=Dee uid=-1 rank=1 status=1 team=0 online=true members=true node=2 xp=2=5 vars= variables=null
+ gbanned 0 name=Bad
+ gbanned 1 name=Evil
+speech 6 text=Let's go to Agility course: Gnome Stronghold Course? colour=0 effect=0
+packet 88 187 00000000000000000000000406000100090700000500020800
+friends state=2 count=2
+ friend 0 name=carol prev= world=1 wname=World 1 rank=0 platform=0 referrer=false referred=false notes= wflags=0
+ friend 1 name=bob prev= world=0 wname= rank=2 platform=-1 referrer=false referred=false notes=raid mate wflags=0
+ignores count=2
+ ignore 0 nameU=Mallory name=Mallory notes= temp=true
+ ignore 1 nameU=Eve name=Eve notes=spam temp=false
+filters public=0 private=2 trade=3
+friendchat owner=null display=null minkick=7 rank=2 count=0
+clan affined null
+clan listened null
+settings affined name=Alto Renamed owner=0 update=11 allowUnaffined=true talk=2 kick=3 lootshare=4 coinshare=5 members=4 banned=1 owner_slot=0 replacement=-1 hashes=false displaynames=true
+ smember 0 hash=- name=Bob rank=126 extra=4660 joined=0 muted=true
+ smember 1 hash=- name=Cara rank=0 extra=0 joined=0 muted=false
+ smember 2 hash=- name=Dee rank=0 extra=0 joined=6100 muted=false
+ smember 3 hash=- name=Eli rank=0 extra=0 joined=0 muted=false
+ sbanned 0 hash=- name=Eve
+ settings 1=i20 2=i7 3=i-5 4=L4886718345 5=Sa setting
+settings listened null
+group name=Raid team hash=0 membersOnly=true max=10 hasUid=false hasDisplayName=true owner=2 update=5 created=1700000000000 members=4 banned=2 vars=1:5,2:9
+ gmember 0 name=Alice uid=-1 rank=5 status=3 team=2 online=false members=true node=42 xp=1=1154,2=83 vars=1:3,4:100 variables=null
+ gmember 1 name=Bob uid=-1 rank=7 status=1 team=0 online=true members=true node=9 xp= vars= variables=null
+ gmember 2 name=Cara uid=-1 rank=8 status=2 team=1 online=true members=true node=7 xp=0=13034431 vars= variables=null
+ gmember 3 name=Dee uid=-1 rank=1 status=1 team=0 online=true members=true node=2 xp=2=5 vars= variables=null
+ gbanned 0 name=Bad
+ gbanned 1 name=Evil
+speech 6 text=Let's go to Agility course: Gnome Stronghold Course? colour=0 effect=0
+packet 89 187 000000000000000000000005080002010e0003040900
+friends state=2 count=2
+ friend 0 name=carol prev= world=1 wname=World 1 rank=0 platform=0 referrer=false referred=false notes= wflags=0
+ friend 1 name=bob prev= world=0 wname= rank=2 platform=-1 referrer=false referred=false notes=raid mate wflags=0
+ignores count=2
+ ignore 0 nameU=Mallory name=Mallory notes= temp=true
+ ignore 1 nameU=Eve name=Eve notes=spam temp=false
+filters public=0 private=2 trade=3
+friendchat owner=null display=null minkick=7 rank=2 count=0
+clan affined null
+clan listened null
+settings affined name=Alto Renamed owner=0 update=11 allowUnaffined=true talk=2 kick=3 lootshare=4 coinshare=5 members=4 banned=1 owner_slot=0 replacement=-1 hashes=false displaynames=true
+ smember 0 hash=- name=Bob rank=126 extra=4660 joined=0 muted=true
+ smember 1 hash=- name=Cara rank=0 extra=0 joined=0 muted=false
+ smember 2 hash=- name=Dee rank=0 extra=0 joined=6100 muted=false
+ smember 3 hash=- name=Eli rank=0 extra=0 joined=0 muted=false
+ sbanned 0 hash=- name=Eve
+ settings 1=i20 2=i7 3=i-5 4=L4886718345 5=Sa setting
+settings listened null
+group name=Raid team hash=0 membersOnly=true max=10 hasUid=false hasDisplayName=true owner=2 update=6 created=1700000000000 members=4 banned=2 vars=1:5,2:9
+ gmember 0 name=Alice uid=-1 rank=5 status=2 team=2 online=false members=true node=42 xp=1=1154,2=83 vars=1:3,4:100 variables=null
+ gmember 1 name=Bob uid=-1 rank=7 status=2 team=0 online=true members=true node=9 xp= vars= variables=null
+ gmember 2 name=Cara uid=-1 rank=8 status=2 team=1 online=true members=true node=7 xp=0=13034431 vars= variables=null
+ gmember 3 name=Dee uid=-1 rank=1 status=2 team=4 online=true members=true node=2 xp=2=5 vars= variables=null
+ gbanned 0 name=Bad
+ gbanned 1 name=Evil
+speech 6 text=Let's go to Agility course: Gnome Stronghold Course? colour=0 effect=0
+packet 90 187 0000000000000000000000060a0800010004000000
+friends state=2 count=2
+ friend 0 name=carol prev= world=1 wname=World 1 rank=0 platform=0 referrer=false referred=false notes= wflags=0
+ friend 1 name=bob prev= world=0 wname= rank=2 platform=-1 referrer=false referred=false notes=raid mate wflags=0
+ignores count=2
+ ignore 0 nameU=Mallory name=Mallory notes= temp=true
+ ignore 1 nameU=Eve name=Eve notes=spam temp=false
+filters public=0 private=2 trade=3
+friendchat owner=null display=null minkick=7 rank=2 count=0
+clan affined null
+clan listened null
+settings affined name=Alto Renamed owner=0 update=11 allowUnaffined=true talk=2 kick=3 lootshare=4 coinshare=5 members=4 banned=1 owner_slot=0 replacement=-1 hashes=false displaynames=true
+ smember 0 hash=- name=Bob rank=126 extra=4660 joined=0 muted=true
+ smember 1 hash=- name=Cara rank=0 extra=0 joined=0 muted=false
+ smember 2 hash=- name=Dee rank=0 extra=0 joined=6100 muted=false
+ smember 3 hash=- name=Eli rank=0 extra=0 joined=0 muted=false
+ sbanned 0 hash=- name=Eve
+ settings 1=i20 2=i7 3=i-5 4=L4886718345 5=Sa setting
+settings listened null
+group name=Raid team hash=0 membersOnly=true max=10 hasUid=false hasDisplayName=true owner=2 update=7 created=1700000000000 members=4 banned=1 vars=1:5,2:9
+ gmember 0 name=Alice uid=-1 rank=5 status=3 team=2 online=false members=true node=42 xp=1=1154,2=83 vars=1:3,4:100 variables=null
+ gmember 1 name=Bob uid=-1 rank=7 status=0 team=0 online=true members=true node=9 xp= vars= variables=null
+ gmember 2 name=Cara uid=-1 rank=8 status=3 team=1 online=true members=true node=7 xp=0=13034431 vars= variables=null
+ gmember 3 name=Dee uid=-1 rank=1 status=3 team=4 online=true members=true node=2 xp=2=5 vars= variables=null
+ gbanned 0 name=Evil
+speech 6 text=Let's go to Agility course: Gnome Stronghold Course? colour=0 effect=0
+packet 91 187 0000000000000000000000070b0002010500000000000000000000000000000000000003840000000101010102000100
+friends state=2 count=2
+ friend 0 name=carol prev= world=1 wname=World 1 rank=0 platform=0 referrer=false referred=false notes= wflags=0
+ friend 1 name=bob prev= world=0 wname= rank=2 platform=-1 referrer=false referred=false notes=raid mate wflags=0
+ignores count=2
+ ignore 0 nameU=Mallory name=Mallory notes= temp=true
+ ignore 1 nameU=Eve name=Eve notes=spam temp=false
+filters public=0 private=2 trade=3
+friendchat owner=null display=null minkick=7 rank=2 count=0
+clan affined null
+clan listened null
+settings affined name=Alto Renamed owner=0 update=11 allowUnaffined=true talk=2 kick=3 lootshare=4 coinshare=5 members=4 banned=1 owner_slot=0 replacement=-1 hashes=false displaynames=true
+ smember 0 hash=- name=Bob rank=126 extra=4660 joined=0 muted=true
+ smember 1 hash=- name=Cara rank=0 extra=0 joined=0 muted=false
+ smember 2 hash=- name=Dee rank=0 extra=0 joined=6100 muted=false
+ smember 3 hash=- name=Eli rank=0 extra=0 joined=0 muted=false
+ sbanned 0 hash=- name=Eve
+ settings 1=i20 2=i7 3=i-5 4=L4886718345 5=Sa setting
+settings listened null
+group name=Raid team hash=0 membersOnly=true max=10 hasUid=false hasDisplayName=true owner=1 update=8 created=1700000000000 members=3 banned=1 vars=1:5,2:9
+ gmember 0 name=Alice uid=-1 rank=5 status=3 team=2 online=false members=true node=42 xp=1=1154,2=83 vars=1:3,4:100 variables=null
+ gmember 1 name=Cara uid=-1 rank=8 status=3 team=1 online=true members=true node=7 xp=4=900 vars= variables=null
+ gmember 2 name=Dee uid=-1 rank=1 status=3 team=4 online=true members=true node=2 xp=2=5 vars= variables=null
+ gbanned 0 name=Evil
+speech 6 text=Let's go to Agility course: Gnome Stronghold Course? colour=0 effect=0
+packet 92 187 0000000000000000000000080cffff0dffff00
+friends state=2 count=2
+ friend 0 name=carol prev= world=1 wname=World 1 rank=0 platform=0 referrer=false referred=false notes= wflags=0
+ friend 1 name=bob prev= world=0 wname= rank=2 platform=-1 referrer=false referred=false notes=raid mate wflags=0
+ignores count=2
+ ignore 0 nameU=Mallory name=Mallory notes= temp=true
+ ignore 1 nameU=Eve name=Eve notes=spam temp=false
+filters public=0 private=2 trade=3
+friendchat owner=null display=null minkick=7 rank=2 count=0
+clan affined null
+clan listened null
+settings affined name=Alto Renamed owner=0 update=11 allowUnaffined=true talk=2 kick=3 lootshare=4 coinshare=5 members=4 banned=1 owner_slot=0 replacement=-1 hashes=false displaynames=true
+ smember 0 hash=- name=Bob rank=126 extra=4660 joined=0 muted=true
+ smember 1 hash=- name=Cara rank=0 extra=0 joined=0 muted=false
+ smember 2 hash=- name=Dee rank=0 extra=0 joined=6100 muted=false
+ smember 3 hash=- name=Eli rank=0 extra=0 joined=0 muted=false
+ sbanned 0 hash=- name=Eve
+ settings 1=i20 2=i7 3=i-5 4=L4886718345 5=Sa setting
+settings listened null
+group name=Raid team hash=0 membersOnly=true max=10 hasUid=false hasDisplayName=true owner=1 update=9 created=1700000000000 members=3 banned=1 vars=1:5,2:9
+ gmember 0 name=Alice uid=-1 rank=5 status=3 team=2 online=false members=true node=42 xp=1=1154,2=83 vars=1:3,4:100 variables=null
+ gmember 1 name=Cara uid=-1 rank=8 status=3 team=1 online=true members=true node=7 xp=4=900 vars= variables=null
+ gmember 2 name=Dee uid=-1 rank=1 status=3 team=4 online=true members=true node=2 xp=2=5 vars= variables=null
+ gbanned 0 name=Evil
+speech 6 text=Let's go to Agility course: Gnome Stronghold Course? colour=0 effect=0
+packet 93 187 0000000000000000000000090c00030000000b0c00010000000600
+friends state=2 count=2
+ friend 0 name=carol prev= world=1 wname=World 1 rank=0 platform=0 referrer=false referred=false notes= wflags=0
+ friend 1 name=bob prev= world=0 wname= rank=2 platform=-1 referrer=false referred=false notes=raid mate wflags=0
+ignores count=2
+ ignore 0 nameU=Mallory name=Mallory notes= temp=true
+ ignore 1 nameU=Eve name=Eve notes=spam temp=false
+filters public=0 private=2 trade=3
+friendchat owner=null display=null minkick=7 rank=2 count=0
+clan affined null
+clan listened null
+settings affined name=Alto Renamed owner=0 update=11 allowUnaffined=true talk=2 kick=3 lootshare=4 coinshare=5 members=4 banned=1 owner_slot=0 replacement=-1 hashes=false displaynames=true
+ smember 0 hash=- name=Bob rank=126 extra=4660 joined=0 muted=true
+ smember 1 hash=- name=Cara rank=0 extra=0 joined=0 muted=false
+ smember 2 hash=- name=Dee rank=0 extra=0 joined=6100 muted=false
+ smember 3 hash=- name=Eli rank=0 extra=0 joined=0 muted=false
+ sbanned 0 hash=- name=Eve
+ settings 1=i20 2=i7 3=i-5 4=L4886718345 5=Sa setting
+settings listened null
+group name=Raid team hash=0 membersOnly=true max=10 hasUid=false hasDisplayName=true owner=1 update=10 created=1700000000000 members=3 banned=1 vars=1:6,2:9,3:11
+ gmember 0 name=Alice uid=-1 rank=5 status=3 team=2 online=false members=true node=42 xp=1=1154,2=83 vars=1:3,4:100 variables=null
+ gmember 1 name=Cara uid=-1 rank=8 status=3 team=1 online=true members=true node=7 xp=4=900 vars= variables=null
+ gmember 2 name=Dee uid=-1 rank=1 status=3 team=4 online=true members=true node=2 xp=2=5 vars= variables=null
+ gbanned 0 name=Evil
+speech 6 text=Let's go to Agility course: Gnome Stronghold Course? colour=0 effect=0
+cmd player_group_find ints=[1] objs=[] thrown=0 out=
+cmd player_group_member_count ints=[3] objs=[] thrown=0 out=
+cmd player_group_banned_count ints=[1] objs=[] thrown=0 out=
+cmd player_group_get_max_size ints=[10] objs=[] thrown=0 out=
+cmd player_group_is_members_only ints=[1] objs=[] thrown=0 out=
+cmd player_group_get_overall_status ints=[3] objs=[] thrown=0 out=
+cmd player_group_get_owner_slot ints=[1] objs=[] thrown=0 out=
+cmd player_group_get_create_mins_since_epoch ints=[28333333] objs=[] thrown=0 out=
+cmd player_group_get_displayname ints=[] objs=[Raid team] thrown=0 out=
+cmd player_group_member_get_displayname ints=[] objs=[Alice] thrown=0 out=
+cmd player_group_member_get_displayname ints=[] objs=[Cara] thrown=0 out=
+cmd player_group_member_get_displayname ints=[] objs=[Dee] thrown=0 out=
+cmd player_group_member_get_displayname thrown=1
+cmd player_group_member_get_rank ints=[5] objs=[] thrown=0 out=
+cmd player_group_member_get_rank ints=[8] objs=[] thrown=0 out=
+cmd player_group_member_get_rank ints=[1] objs=[] thrown=0 out=
+cmd player_group_member_get_rank thrown=1
+cmd player_group_member_get_status ints=[3] objs=[] thrown=0 out=
+cmd player_group_member_get_status ints=[3] objs=[] thrown=0 out=
+cmd player_group_member_get_status ints=[3] objs=[] thrown=0 out=
+cmd player_group_member_get_status thrown=1
+cmd player_group_member_get_team ints=[2] objs=[] thrown=0 out=
+cmd player_group_member_get_team ints=[1] objs=[] thrown=0 out=
+cmd player_group_member_get_team ints=[4] objs=[] thrown=0 out=
+cmd player_group_member_get_team thrown=1
+cmd player_group_member_get_last_seen_node_id ints=[42] objs=[] thrown=0 out=
+cmd player_group_member_get_last_seen_node_id ints=[7] objs=[] thrown=0 out=
+cmd player_group_member_get_last_seen_node_id ints=[2] objs=[] thrown=0 out=
+cmd player_group_member_get_last_seen_node_id thrown=1
+cmd player_group_member_is_online ints=[0] objs=[] thrown=0 out=
+cmd player_group_member_is_online ints=[1] objs=[] thrown=0 out=
+cmd player_group_member_is_online ints=[1] objs=[] thrown=0 out=
+cmd player_group_member_is_online thrown=1
+cmd player_group_member_is_member ints=[1] objs=[] thrown=0 out=
+cmd player_group_member_is_member ints=[1] objs=[] thrown=0 out=
+cmd player_group_member_is_member ints=[1] objs=[] thrown=0 out=
+cmd player_group_member_is_member thrown=1
+cmd player_group_member_is_owner ints=[0] objs=[] thrown=0 out=
+cmd player_group_member_is_owner ints=[1] objs=[] thrown=0 out=
+cmd player_group_member_is_owner ints=[0] objs=[] thrown=0 out=
+cmd player_group_member_is_owner ints=[0] objs=[] thrown=0 out=
+cmd player_group_member_get_join_xp ints=[83] objs=[] thrown=0 out=
+cmd player_group_member_get_join_xp ints=[1] objs=[] thrown=0 out=
+cmd player_group_member_get_join_xp ints=[1154] objs=[] thrown=0 out=
+cmd player_group_member_get_join_xp ints=[2] objs=[] thrown=0 out=
+cmd player_group_member_get_join_xp ints=[0] objs=[] thrown=0 out=
+cmd player_group_member_get_join_xp ints=[1] objs=[] thrown=0 out=
+cmd player_group_member_get_join_xp thrown=1
+cmd player_group_member_get_join_xp thrown=1
+cmd player_group_banned_get_displayname ints=[] objs=[Evil] thrown=0 out=
+cmd player_group_banned_get_displayname thrown=1
+packet 94 159 0000010001000000460002fffffffd
+friends state=2 count=2
+ friend 0 name=carol prev= world=1 wname=World 1 rank=0 platform=0 referrer=false referred=false notes= wflags=0
+ friend 1 name=bob prev= world=0 wname= rank=2 platform=-1 referrer=false referred=false notes=raid mate wflags=0
+ignores count=2
+ ignore 0 nameU=Mallory name=Mallory notes= temp=true
+ ignore 1 nameU=Eve name=Eve notes=spam temp=false
+filters public=0 private=2 trade=3
+friendchat owner=null display=null minkick=7 rank=2 count=0
+clan affined null
+clan listened null
+settings affined name=Alto Renamed owner=0 update=11 allowUnaffined=true talk=2 kick=3 lootshare=4 coinshare=5 members=4 banned=1 owner_slot=0 replacement=-1 hashes=false displaynames=true
+ smember 0 hash=- name=Bob rank=126 extra=4660 joined=0 muted=true
+ smember 1 hash=- name=Cara rank=0 extra=0 joined=0 muted=false
+ smember 2 hash=- name=Dee rank=0 extra=0 joined=6100 muted=false
+ smember 3 hash=- name=Eli rank=0 extra=0 joined=0 muted=false
+ sbanned 0 hash=- name=Eve
+ settings 1=i20 2=i7 3=i-5 4=L4886718345 5=Sa setting
+settings listened null
+group name=Raid team hash=0 membersOnly=true max=10 hasUid=false hasDisplayName=true owner=1 update=10 created=1700000000000 members=3 banned=1 vars=1:6,2:9,3:11
+ gmember 0 name=Alice uid=-1 rank=5 status=3 team=2 online=false members=true node=42 xp=1=1154,2=83 vars=1:3,4:100 variables=1:70,2:-3
+ gmember 1 name=Cara uid=-1 rank=8 status=3 team=1 online=true members=true node=7 xp=4=900 vars= variables=null
+ gmember 2 name=Dee uid=-1 rank=1 status=3 team=4 online=true members=true node=2 xp=2=5 vars= variables=null
+ gbanned 0 name=Evil
+speech 6 text=Let's go to Agility course: Gnome Stronghold Course? colour=0 effect=0
+packet 95 159 000000000300000008
+friends state=2 count=2
+ friend 0 name=carol prev= world=1 wname=World 1 rank=0 platform=0 referrer=false referred=false notes= wflags=0
+ friend 1 name=bob prev= world=0 wname= rank=2 platform=-1 referrer=false referred=false notes=raid mate wflags=0
+ignores count=2
+ ignore 0 nameU=Mallory name=Mallory notes= temp=true
+ ignore 1 nameU=Eve name=Eve notes=spam temp=false
+filters public=0 private=2 trade=3
+friendchat owner=null display=null minkick=7 rank=2 count=0
+clan affined null
+clan listened null
+settings affined name=Alto Renamed owner=0 update=11 allowUnaffined=true talk=2 kick=3 lootshare=4 coinshare=5 members=4 banned=1 owner_slot=0 replacement=-1 hashes=false displaynames=true
+ smember 0 hash=- name=Bob rank=126 extra=4660 joined=0 muted=true
+ smember 1 hash=- name=Cara rank=0 extra=0 joined=0 muted=false
+ smember 2 hash=- name=Dee rank=0 extra=0 joined=6100 muted=false
+ smember 3 hash=- name=Eli rank=0 extra=0 joined=0 muted=false
+ sbanned 0 hash=- name=Eve
+ settings 1=i20 2=i7 3=i-5 4=L4886718345 5=Sa setting
+settings listened null
+group name=Raid team hash=0 membersOnly=true max=10 hasUid=false hasDisplayName=true owner=1 update=10 created=1700000000000 members=3 banned=1 vars=1:6,2:9,3:11
+ gmember 0 name=Alice uid=-1 rank=5 status=3 team=2 online=false members=true node=42 xp=1=1154,2=83 vars=1:3,4:100 variables=1:70,2:-3,3:8
+ gmember 1 name=Cara uid=-1 rank=8 status=3 team=1 online=true members=true node=7 xp=4=900 vars= variables=null
+ gmember 2 name=Dee uid=-1 rank=1 status=3 team=4 online=true members=true node=2 xp=2=5 vars= variables=null
+ gbanned 0 name=Evil
+speech 6 text=Let's go to Agility course: Gnome Stronghold Course? colour=0 effect=0
+packet 96 159 000100000400000009
+friends state=2 count=2
+ friend 0 name=carol prev= world=1 wname=World 1 rank=0 platform=0 referrer=false referred=false notes= wflags=0
+ friend 1 name=bob prev= world=0 wname= rank=2 platform=-1 referrer=false referred=false notes=raid mate wflags=0
+ignores count=2
+ ignore 0 nameU=Mallory name=Mallory notes= temp=true
+ ignore 1 nameU=Eve name=Eve notes=spam temp=false
+filters public=0 private=2 trade=3
+friendchat owner=null display=null minkick=7 rank=2 count=0
+clan affined null
+clan listened null
+settings affined name=Alto Renamed owner=0 update=11 allowUnaffined=true talk=2 kick=3 lootshare=4 coinshare=5 members=4 banned=1 owner_slot=0 replacement=-1 hashes=false displaynames=true
+ smember 0 hash=- name=Bob rank=126 extra=4660 joined=0 muted=true
+ smember 1 hash=- name=Cara rank=0 extra=0 joined=0 muted=false
+ smember 2 hash=- name=Dee rank=0 extra=0 joined=6100 muted=false
+ smember 3 hash=- name=Eli rank=0 extra=0 joined=0 muted=false
+ sbanned 0 hash=- name=Eve
+ settings 1=i20 2=i7 3=i-5 4=L4886718345 5=Sa setting
+settings listened null
+group name=Raid team hash=0 membersOnly=true max=10 hasUid=false hasDisplayName=true owner=1 update=10 created=1700000000000 members=3 banned=1 vars=1:6,2:9,3:11
+ gmember 0 name=Alice uid=-1 rank=5 status=3 team=2 online=false members=true node=42 xp=1=1154,2=83 vars=1:3,4:100 variables=1:70,2:-3,3:8
+ gmember 1 name=Cara uid=-1 rank=8 status=3 team=1 online=true members=true node=7 xp=4=900 vars= variables=4:9
+ gmember 2 name=Dee uid=-1 rank=1 status=3 team=4 online=true members=true node=2 xp=2=5 vars= variables=null
+ gbanned 0 name=Evil
+speech 6 text=Let's go to Agility course: Gnome Stronghold Course? colour=0 effect=0
+cmd player_group_member_get_same_world_var ints=[70] objs=[] thrown=0 out=
+cmd player_group_member_get_same_world_var ints=[-3] objs=[] thrown=0 out=
+cmd player_group_member_get_same_world_var ints=[8] objs=[] thrown=0 out=
+cmd player_group_member_get_same_world_var ints=[0] objs=[] thrown=0 out=
+cmd player_group_member_get_same_world_var ints=[9] objs=[] thrown=0 out=
+cmd player_group_member_get_same_world_var ints=[0] objs=[] thrown=0 out=
+cmd player_group_member_get_same_world_var thrown=1
+packet 97 40 
+friends state=2 count=2
+ friend 0 name=carol prev= world=1 wname=World 1 rank=0 platform=0 referrer=false referred=false notes= wflags=0
+ friend 1 name=bob prev= world=0 wname= rank=2 platform=-1 referrer=false referred=false notes=raid mate wflags=0
+ignores count=2
+ ignore 0 nameU=Mallory name=Mallory notes= temp=true
+ ignore 1 nameU=Eve name=Eve notes=spam temp=false
+filters public=0 private=2 trade=3
+friendchat owner=null display=null minkick=7 rank=2 count=0
+clan affined null
+clan listened null
+settings affined name=Alto Renamed owner=0 update=11 allowUnaffined=true talk=2 kick=3 lootshare=4 coinshare=5 members=4 banned=1 owner_slot=0 replacement=-1 hashes=false displaynames=true
+ smember 0 hash=- name=Bob rank=126 extra=4660 joined=0 muted=true
+ smember 1 hash=- name=Cara rank=0 extra=0 joined=0 muted=false
+ smember 2 hash=- name=Dee rank=0 extra=0 joined=6100 muted=false
+ smember 3 hash=- name=Eli rank=0 extra=0 joined=0 muted=false
+ sbanned 0 hash=- name=Eve
+ settings 1=i20 2=i7 3=i-5 4=L4886718345 5=Sa setting
+settings listened null
+group null
+speech 6 text=Let's go to Agility course: Gnome Stronghold Course? colour=0 effect=0
+packet 98 41 416c69636500112233458400001741f9d4f4195ab9ea4ce95b2d80
+friends state=2 count=2
+ friend 0 name=carol prev= world=1 wname=World 1 rank=0 platform=0 referrer=false referred=false notes= wflags=0
+ friend 1 name=bob prev= world=0 wname= rank=2 platform=-1 referrer=false referred=false notes=raid mate wflags=0
+ignores count=2
+ ignore 0 nameU=Mallory name=Mallory notes= temp=true
+ ignore 1 nameU=Eve name=Eve notes=spam temp=false
+filters public=0 private=2 trade=3
+friendchat owner=null display=null minkick=7 rank=2 count=0
+clan affined null
+clan listened null
+settings affined name=Alto Renamed owner=0 update=11 allowUnaffined=true talk=2 kick=3 lootshare=4 coinshare=5 members=4 banned=1 owner_slot=0 replacement=-1 hashes=false displaynames=true
+ smember 0 hash=- name=Bob rank=126 extra=4660 joined=0 muted=true
+ smember 1 hash=- name=Cara rank=0 extra=0 joined=0 muted=false
+ smember 2 hash=- name=Dee rank=0 extra=0 joined=6100 muted=false
+ smember 3 hash=- name=Eli rank=0 extra=0 joined=0 muted=false
+ sbanned 0 hash=- name=Eve
+ settings 1=i20 2=i7 3=i-5 4=L4886718345 5=Sa setting
+settings listened null
+group null
+speech 6 text=Let's go to Agility course: Gnome Stronghold Course? colour=0 effect=0
+cmd chat_getfilter_public ints=[0] objs=[] thrown=0 out=
+cmd chat_getfilter_private ints=[2] objs=[] thrown=0 out=
+cmd chat_getfilter_trade ints=[3] objs=[] thrown=0 out=
+cmd chat_playername ints=[] objs=[alice] thrown=0 out=
+cmd chat_playername_unfiltered ints=[] objs=[alice] thrown=0 out=
+cmd chat_lastuid ints=[42] objs=[] thrown=0 out=
+cmd map_quickchat ints=[0] objs=[] thrown=0 out=
+cmd userdetail_quickchat ints=[0] objs=[] thrown=0 out=
+cmd chat_gethistorylength ints=[1] objs=[] thrown=0 out=
+cmd chat_gethistorylength ints=[1] objs=[] thrown=0 out=
+cmd chat_gethistorylength ints=[7] objs=[] thrown=0 out=
+cmd chat_gethistorylength ints=[2] objs=[] thrown=0 out=
+cmd chat_gethistorylength ints=[2] objs=[] thrown=0 out=
+cmd chat_gethistorylength ints=[13] objs=[] thrown=0 out=
+cmd chat_gethistorylength ints=[1] objs=[] thrown=0 out=
+cmd chat_gethistorylength ints=[0] objs=[] thrown=0 out=
+cmd chat_gethistory_bytypeandline ints=[6,0,-1,0] objs=[<time>|Bob|Bob|Bob||hello alice] thrown=0 out=
+cmd chat_gethistory_bytypeandline ints=[8,0,-1,2] objs=[<time>|<img=1>Owner Zed|<img=1>Owner Zed|Owner Zed||staff line, not ignorable] thrown=0 out=
+cmd chat_gethistory_bytypeandline ints=[39,0,0,1] objs=[<time>|<img=0>Mod Zed|<img=0>Mod Zed|Mod Zed||What is your level in Agility?] thrown=0 out=
+cmd chat_gethistory_bytypeandline ints=[35,0,906,0] objs=[<time>|Bob|Bob|Bob||The blue team's avatar level is: 9.] thrown=0 out=
+cmd chat_gethistory_bytypeandline ints=[-1,0,0,-1] objs=[<time>|||||] thrown=0 out=
+cmd chat_gethistory_byuid ints=[4,0,-1,-1] objs=[<time>|||||  BOB  is already on your friends list.] thrown=0 out=
+cmd chat_getnextuid ints=[1] objs=[] thrown=0 out=
+cmd chat_getprevuid ints=[-1] objs=[] thrown=0 out=
+cmd chat_gethistory_byuid ints=[4,0,-1,-1] objs=[<time>|||||Please remove bob from your friends list first.] thrown=0 out=
+cmd chat_getnextuid ints=[4] objs=[] thrown=0 out=
+cmd chat_getprevuid ints=[2] objs=[] thrown=0 out=
+cmd chat_gethistory_byuid ints=[7,0,-1,1] objs=[<time>|<img=0>Mod Zed|<img=0>Mod Zed|Mod Zed||please stop] thrown=0 out=
+cmd chat_getnextuid ints=[8] objs=[] thrown=0 out=
+cmd chat_getprevuid ints=[6] objs=[] thrown=0 out=
+cmd chat_gethistory_byuid ints=[4,0,-1,-1] objs=[<time>|Dan|dan|Dan||Dan says hello.] thrown=0 out=
+cmd chat_getnextuid ints=[13] objs=[] thrown=0 out=
+cmd chat_getprevuid ints=[11] objs=[] thrown=0 out=
+cmd chat_gethistory_byuid ints=[18,0,1093,0] objs=[<time>|Bob|Bob|Bob||From my friends chat 37 are on this world.] thrown=0 out=
+cmd chat_getnextuid ints=[31] objs=[] thrown=0 out=
+cmd chat_getprevuid ints=[29] objs=[] thrown=0 out=
+cmd chat_gethistory_byuid ints=[-1,0,0,-1] objs=[<time>|||||] thrown=0 out=
+cmd chat_getnextuid ints=[-1] objs=[] thrown=0 out=
+cmd chat_getprevuid ints=[-1] objs=[] thrown=0 out=
+cmd chat_setfilter ints=[] objs=[] thrown=0 out=58010003
+cmd chat_setfilter ints=[] objs=[] thrown=0 out=58020100
+cmd chat_getfilter_public ints=[2] objs=[] thrown=0 out=
+cmd chat_getfilter_private ints=[1] objs=[] thrown=0 out=
+cmd chat_getfilter_trade ints=[0] objs=[] thrown=0 out=
+cmd chat_setmode ints=[] objs=[] thrown=0 out=2c01
+cmd chat_sendpublic ints=[] objs=[] thrown=0 out=5f0a00000b838c70fd958a80
+cmd chat_sendpublic ints=[] objs=[] thrown=0 out=5f0a09010cfa7a058e3b1bb4
+cmd chat_sendpublic ints=[] objs=[] thrown=0 out=5f060103048e7940
+cmd chat_sendprivate ints=[] objs=[] thrown=0 out=07000f426f620011434d657a73343dd45980
+cmd chat_sendabusereport ints=[] objs=[] thrown=0 out=0b214d616c6c6f72790001056120726561736f6e20746861742069732073686f727400
+cmd chat_sendabusereport ints=[] objs=[] thrown=0 out=0b5b4d616c6c6f7279000000787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787878787800
+cmd chatphrase_gettext ints=[] objs=[What is your level in Agility?] thrown=0 out=
+cmd chatphrase_getdynamiccommandcount ints=[0] objs=[] thrown=0 out=
+cmd chatphrase_getdynamiccommand thrown=1
+cmd chatphrase_getdynamiccommand thrown=1
+cmd chatphrase_getdynamiccommand thrown=1
+cmd chatphrase_getautoresponsecount ints=[1] objs=[] thrown=0 out=
+cmd chatphrase_getautoresponse ints=[1] objs=[] thrown=0 out=
+cmd chatphrase_getautoresponse thrown=1
+cmd chatphrase_gettext ints=[] objs=[Let's go to Agility course: ...?] thrown=0 out=
+cmd chatphrase_getdynamiccommandcount ints=[1] objs=[] thrown=0 out=
+cmd chatphrase_getdynamiccommand ints=[0] objs=[] thrown=0 out=
+cmd chatphrase_getdynamiccommand thrown=1
+cmd chatphrase_getdynamiccommand thrown=1
+cmd chatphrase_getautoresponsecount ints=[2] objs=[] thrown=0 out=
+cmd chatphrase_getautoresponse ints=[661] objs=[] thrown=0 out=
+cmd chatphrase_getautoresponse ints=[154] objs=[] thrown=0 out=
+cmd chatphrase_gettext ints=[] objs=[I have ... Slayer points.] thrown=0 out=
+cmd chatphrase_getdynamiccommandcount ints=[1] objs=[] thrown=0 out=
+cmd chatphrase_getdynamiccommand ints=[9] objs=[] thrown=0 out=
+cmd chatphrase_getdynamiccommand thrown=1
+cmd chatphrase_getdynamiccommand thrown=1
+cmd chatphrase_getautoresponsecount ints=[1] objs=[] thrown=0 out=
+cmd chatphrase_getautoresponse ints=[269] objs=[] thrown=0 out=
+cmd chatphrase_getautoresponse thrown=1
+cmd chatphrase_gettext ints=[] objs=[The total amount of experience between levels ... and ... is ....] thrown=0 out=
+cmd chatphrase_getdynamiccommandcount ints=[3] objs=[] thrown=0 out=
+cmd chatphrase_getdynamiccommand ints=[4] objs=[] thrown=0 out=
+cmd chatphrase_getdynamiccommand ints=[11] objs=[] thrown=0 out=
+cmd chatphrase_getdynamiccommand thrown=1
+cmd chatphrase_getautoresponsecount ints=[0] objs=[] thrown=0 out=
+cmd chatphrase_getautoresponse thrown=1
+cmd chatphrase_getautoresponse thrown=1
+cmd chatphrase_gettext ints=[] objs=[I am smithing: ... ....] thrown=0 out=
+cmd chatphrase_getdynamiccommandcount ints=[2] objs=[] thrown=0 out=
+cmd chatphrase_getdynamiccommand ints=[0] objs=[] thrown=0 out=
+cmd chatphrase_getdynamiccommand ints=[0] objs=[] thrown=0 out=
+cmd chatphrase_getdynamiccommand thrown=1
+cmd chatphrase_getautoresponsecount ints=[0] objs=[] thrown=0 out=
+cmd chatphrase_getautoresponse thrown=1
+cmd chatphrase_getautoresponse thrown=1
+cmd chatphrase_getdynamiccommandparam_enum ints=[1505] objs=[] thrown=0 out=
+cmd chatphrase_getdynamiccommandparam_enum thrown=1
+cmd chatphrase_getdynamiccommandparam_enum thrown=1
+cmd chatphrase_getdynamiccommandparam_enum ints=[1498] objs=[] thrown=0 out=
+cmd chatcat_getdesc ints=[] objs=[Group events] thrown=0 out=
+cmd chatcat_getsubcatcount ints=[5] objs=[] thrown=0 out=
+cmd chatcat_getphrasecount ints=[1] objs=[] thrown=0 out=
+cmd chatcat_getsubcat ints=[1] objs=[] thrown=0 out=
+cmd chatcat_getsubcatshortcut ints=[111] objs=[] thrown=0 out=
+cmd chatcat_getphrase ints=[242] objs=[] thrown=0 out=
+cmd chatcat_getphraseshortcut ints=[0] objs=[] thrown=0 out=
+cmd chatcat_getsubcat ints=[2] objs=[] thrown=0 out=
+cmd chatcat_getsubcatshortcut ints=[98] objs=[] thrown=0 out=
+cmd chatcat_getphrase thrown=1
+cmd chatcat_getphraseshortcut thrown=1
+cmd chatcat_getsubcat thrown=1
+cmd chatcat_getsubcatshortcut thrown=1
+cmd chatcat_getphrase thrown=1
+cmd chatcat_getphraseshortcut thrown=1
+cmd chatcat_findsubcatbyshortcut ints=[-1] objs=[] thrown=0 out=
+cmd chatcat_findphrasebyshortcut ints=[-1] objs=[] thrown=0 out=
+cmd chatcat_findsubcatbyshortcut ints=[2] objs=[] thrown=0 out=
+cmd chatcat_findphrasebyshortcut ints=[-1] objs=[] thrown=0 out=
+cmd chatcat_findsubcatbyshortcut ints=[-1] objs=[] thrown=0 out=
+cmd chatcat_findphrasebyshortcut ints=[-1] objs=[] thrown=0 out=
+cmd chatcat_findsubcatbyshortcut ints=[-1] objs=[] thrown=0 out=
+cmd chatcat_findphrasebyshortcut ints=[-1] objs=[] thrown=0 out=
+cmd chatcat_getdesc ints=[] objs=[Organising] thrown=0 out=
+cmd chatcat_getsubcatcount ints=[1] objs=[] thrown=0 out=
+cmd chatcat_getphrasecount ints=[8] objs=[] thrown=0 out=
+cmd chatcat_getsubcat ints=[126] objs=[] thrown=0 out=
+cmd chatcat_getsubcatshortcut ints=[109] objs=[] thrown=0 out=
+cmd chatcat_getphrase ints=[243] objs=[] thrown=0 out=
+cmd chatcat_getphraseshortcut ints=[0] objs=[] thrown=0 out=
+cmd chatcat_getsubcat thrown=1
+cmd chatcat_getsubcatshortcut thrown=1
+cmd chatcat_getphrase ints=[244] objs=[] thrown=0 out=
+cmd chatcat_getphraseshortcut ints=[0] objs=[] thrown=0 out=
+cmd chatcat_getsubcat thrown=1
+cmd chatcat_getsubcatshortcut thrown=1
+cmd chatcat_getphrase thrown=1
+cmd chatcat_getphraseshortcut thrown=1
+cmd chatcat_findsubcatbyshortcut ints=[-1] objs=[] thrown=0 out=
+cmd chatcat_findphrasebyshortcut ints=[-1] objs=[] thrown=0 out=
+cmd chatcat_findsubcatbyshortcut ints=[-1] objs=[] thrown=0 out=
+cmd chatcat_findphrasebyshortcut ints=[-1] objs=[] thrown=0 out=
+cmd chatcat_findsubcatbyshortcut ints=[-1] objs=[] thrown=0 out=
+cmd chatcat_findphrasebyshortcut ints=[-1] objs=[] thrown=0 out=
+cmd chatcat_findsubcatbyshortcut ints=[-1] objs=[] thrown=0 out=
+cmd chatcat_findphrasebyshortcut ints=[-1] objs=[] thrown=0 out=
+cmd chatcat_getdesc ints=[] objs=[Group fighting] thrown=0 out=
+cmd chatcat_getsubcatcount ints=[6] objs=[] thrown=0 out=
+cmd chatcat_getphrasecount ints=[0] objs=[] thrown=0 out=
+cmd chatcat_getsubcat ints=[3] objs=[] thrown=0 out=
+cmd chatcat_getsubcatshortcut ints=[100] objs=[] thrown=0 out=
+cmd chatcat_getphrase thrown=1
+cmd chatcat_getphraseshortcut thrown=1
+cmd chatcat_getsubcat ints=[6] objs=[] thrown=0 out=
+cmd chatcat_getsubcatshortcut ints=[102] objs=[] thrown=0 out=
+cmd chatcat_getphrase thrown=1
+cmd chatcat_getphraseshortcut thrown=1
+cmd chatcat_getsubcat thrown=1
+cmd chatcat_getsubcatshortcut thrown=1
+cmd chatcat_getphrase thrown=1
+cmd chatcat_getphraseshortcut thrown=1
+cmd chatcat_findsubcatbyshortcut ints=[-1] objs=[] thrown=0 out=
+cmd chatcat_findphrasebyshortcut ints=[-1] objs=[] thrown=0 out=
+cmd chatcat_findsubcatbyshortcut ints=[127] objs=[] thrown=0 out=
+cmd chatcat_findphrasebyshortcut ints=[-1] objs=[] thrown=0 out=
+cmd chatcat_findsubcatbyshortcut ints=[-1] objs=[] thrown=0 out=
+cmd chatcat_findphrasebyshortcut ints=[-1] objs=[] thrown=0 out=
+cmd chatcat_findsubcatbyshortcut ints=[-1] objs=[] thrown=0 out=
+cmd chatcat_findphrasebyshortcut ints=[-1] objs=[] thrown=0 out=
+cmd chatcat_getdesc ints=[] objs=[Dagannoth Kings] thrown=0 out=
+cmd chatcat_getsubcatcount ints=[0] objs=[] thrown=0 out=
+cmd chatcat_getphrasecount ints=[7] objs=[] thrown=0 out=
+cmd chatcat_getsubcat thrown=1
+cmd chatcat_getsubcatshortcut thrown=1
+cmd chatcat_getphrase ints=[259] objs=[] thrown=0 out=
+cmd chatcat_getphraseshortcut ints=[0] objs=[] thrown=0 out=
+cmd chatcat_getsubcat thrown=1
+cmd chatcat_getsubcatshortcut thrown=1
+cmd chatcat_getphrase ints=[260] objs=[] thrown=0 out=
+cmd chatcat_getphraseshortcut ints=[0] objs=[] thrown=0 out=
+cmd chatcat_getsubcat thrown=1
+cmd chatcat_getsubcatshortcut thrown=1
+cmd chatcat_getphrase thrown=1
+cmd chatcat_getphraseshortcut thrown=1
+cmd chatcat_findsubcatbyshortcut ints=[-1] objs=[] thrown=0 out=
+cmd chatcat_findphrasebyshortcut ints=[-1] objs=[] thrown=0 out=
+cmd chatcat_findsubcatbyshortcut ints=[-1] objs=[] thrown=0 out=
+cmd chatcat_findphrasebyshortcut ints=[-1] objs=[] thrown=0 out=
+cmd chatcat_findsubcatbyshortcut ints=[-1] objs=[] thrown=0 out=
+cmd chatcat_findphrasebyshortcut ints=[-1] objs=[] thrown=0 out=
+cmd chatcat_findsubcatbyshortcut ints=[-1] objs=[] thrown=0 out=
+cmd chatcat_findphrasebyshortcut ints=[-1] objs=[] thrown=0 out=
+cmd chatphrase_find ints=[9] objs=[] thrown=0 out=
+cmd chatphrase_findnext ints=[4] objs=[] thrown=0 out=
+cmd chatphrase_findnext ints=[2209] objs=[] thrown=0 out=
+cmd chatphrase_findnext ints=[2306] objs=[] thrown=0 out=
+cmd chatphrase_findrestart ints=[] objs=[] thrown=0 out=
+cmd chatphrase_findnext ints=[4] objs=[] thrown=0 out=
+cmd chatphrase_find ints=[1] objs=[] thrown=0 out=
+cmd chatphrase_findnext ints=[32769] objs=[] thrown=0 out=
+cmd chatphrase_findnext ints=[-1] objs=[] thrown=0 out=
+cmd chatphrase_findnext ints=[-1] objs=[] thrown=0 out=
+cmd chatphrase_findrestart ints=[] objs=[] thrown=0 out=
+cmd chatphrase_findnext ints=[32769] objs=[] thrown=0 out=
+cmd chatphrase_find ints=[0] objs=[] thrown=0 out=
+cmd chatphrase_findnext ints=[-1] objs=[] thrown=0 out=
+cmd chatphrase_findnext ints=[-1] objs=[] thrown=0 out=
+cmd chatphrase_findnext ints=[-1] objs=[] thrown=0 out=
+cmd chatphrase_findrestart ints=[] objs=[] thrown=0 out=
+cmd chatphrase_findnext ints=[-1] objs=[] thrown=0 out=
+cmd chatphrase_find ints=[-1] objs=[] thrown=0 out=
+cmd chatphrase_findnext ints=[-1] objs=[] thrown=0 out=
+cmd chatphrase_findnext ints=[-1] objs=[] thrown=0 out=
+cmd chatphrase_findnext ints=[-1] objs=[] thrown=0 out=
+cmd chatphrase_findrestart ints=[] objs=[] thrown=0 out=
+cmd chatphrase_findnext ints=[-1] objs=[] thrown=0 out=
+cmd activechatphrase_send thrown=1
+cmd activechatphrase_prepare ints=[] objs=[] thrown=0 out=
+cmd activechatphrase_setdynamicint ints=[] objs=[] thrown=0 out=
+cmd activechatphrase_setdynamicint thrown=1
+cmd activechatphrase_send ints=[] objs=[] thrown=0 out=11050200020102
+cmd activechatphrase_sendprivate ints=[] objs=[] thrown=0 out=7308426f620000020102
+cmd activechatphrase_prepare ints=[] objs=[] thrown=0 out=
+cmd activechatphrase_setdynamicobj ints=[] objs=[] thrown=0 out=
+cmd activechatphrase_setdynamicobj ints=[] objs=[] thrown=0 out=
+cmd activechatphrase_setdynamicobj ints=[] objs=[] thrown=0 out=
+cmd activechatphrase_send ints=[] objs=[] thrown=0 out=110400026728
+cmd activechatphrase_sendprivate ints=[] objs=[] thrown=0 out=7307426f6200026728
+cmd activechatphrase_prepare ints=[] objs=[] thrown=0 out=
+cmd activechatphrase_send ints=[] objs=[] thrown=0 out=110301010d
+cmd activechatphrase_prepare ints=[] objs=[] thrown=0 out=
+cmd activechatphrase_setdynamicint ints=[] objs=[] thrown=0 out=
+cmd activechatphrase_setdynamicint ints=[] objs=[] thrown=0 out=
+cmd activechatphrase_sendprivate ints=[] objs=[] thrown=0 out=730a426f6200006200070004
+cmd chat_clear ints=[] objs=[] thrown=0 out=
+cmd chat_lastuid ints=[-1] objs=[] thrown=0 out=
+cmd chat_gethistorylength ints=[0] objs=[] thrown=0 out=
+packet 99 90 00426f62001122334570001f1ead9e62b71fa13165582cce95eeb23cb500
+friends state=2 count=2
+ friend 0 name=carol prev= world=1 wname=World 1 rank=0 platform=0 referrer=false referred=false notes= wflags=0
+ friend 1 name=bob prev= world=0 wname= rank=2 platform=-1 referrer=false referred=false notes=raid mate wflags=0
+ignores count=2
+ ignore 0 nameU=Mallory name=Mallory notes= temp=true
+ ignore 1 nameU=Eve name=Eve notes=spam temp=false
+filters public=2 private=1 trade=0
+friendchat owner=null display=null minkick=7 rank=2 count=0
+clan affined null
+clan listened null
+settings affined name=Alto Renamed owner=0 update=11 allowUnaffined=true talk=2 kick=3 lootshare=4 coinshare=5 members=4 banned=1 owner_slot=0 replacement=-1 hashes=false displaynames=true
+ smember 0 hash=- name=Bob rank=126 extra=4660 joined=0 muted=true
+ smember 1 hash=- name=Cara rank=0 extra=0 joined=0 muted=false
+ smember 2 hash=- name=Dee rank=0 extra=0 joined=6100 muted=false
+ smember 3 hash=- name=Eli rank=0 extra=0 joined=0 muted=false
+ sbanned 0 hash=- name=Eve
+ settings 1=i20 2=i7 3=i-5 4=L4886718345 5=Sa setting
+settings listened null
+group null
+speech 6 text=Let's go to Agility course: Gnome Stronghold Course? colour=0 effect=0
+packet 100 80 00426f62001122334571000000
+friends state=2 count=2
+ friend 0 name=carol prev= world=1 wname=World 1 rank=0 platform=0 referrer=false referred=false notes= wflags=0
+ friend 1 name=bob prev= world=0 wname= rank=2 platform=-1 referrer=false referred=false notes=raid mate wflags=0
+ignores count=2
+ ignore 0 nameU=Mallory name=Mallory notes= temp=true
+ ignore 1 nameU=Eve name=Eve notes=spam temp=false
+filters public=2 private=1 trade=0
+friendchat owner=null display=null minkick=7 rank=2 count=0
+clan affined null
+clan listened null
+settings affined name=Alto Renamed owner=0 update=11 allowUnaffined=true talk=2 kick=3 lootshare=4 coinshare=5 members=4 banned=1 owner_slot=0 replacement=-1 hashes=false displaynames=true
+ smember 0 hash=- name=Bob rank=126 extra=4660 joined=0 muted=true
+ smember 1 hash=- name=Cara rank=0 extra=0 joined=0 muted=false
+ smember 2 hash=- name=Dee rank=0 extra=0 joined=6100 muted=false
+ smember 3 hash=- name=Eli rank=0 extra=0 joined=0 muted=false
+ sbanned 0 hash=- name=Eve
+ settings 1=i20 2=i7 3=i-5 4=L4886718345 5=Sa setting
+settings listened null
+group null
+speech 6 text=Let's go to Agility course: Gnome Stronghold Course? colour=0 effect=0
+chat uid=0 type=18 flags=0 name=Bob nameU=Bob nameS=Bob clan=null phrase=0 message=#efd60cca9270ffa3 crown=0
+packet 101 36 00626f6200426f6200112233457200181ead9e62b719b3d0646825db88
+friends state=2 count=2
+ friend 0 name=carol prev= world=1 wname=World 1 rank=0 platform=0 referrer=false referred=false notes= wflags=0
+ friend 1 name=bob prev= world=0 wname= rank=2 platform=-1 referrer=false referred=false notes=raid mate wflags=0
+ignores count=2
+ ignore 0 nameU=Mallory name=Mallory notes= temp=true
+ ignore 1 nameU=Eve name=Eve notes=spam temp=false
+filters public=2 private=1 trade=0
+friendchat owner=null display=null minkick=7 rank=2 count=0
+clan affined null
+clan listened null
+settings affined name=Alto Renamed owner=0 update=11 allowUnaffined=true talk=2 kick=3 lootshare=4 coinshare=5 members=4 banned=1 owner_slot=0 replacement=-1 hashes=false displaynames=true
+ smember 0 hash=- name=Bob rank=126 extra=4660 joined=0 muted=true
+ smember 1 hash=- name=Cara rank=0 extra=0 joined=0 muted=false
+ smember 2 hash=- name=Dee rank=0 extra=0 joined=6100 muted=false
+ smember 3 hash=- name=Eli rank=0 extra=0 joined=0 muted=false
+ sbanned 0 hash=- name=Eve
+ settings 1=i20 2=i7 3=i-5 4=L4886718345 5=Sa setting
+settings listened null
+group null
+speech 6 text=Let's go to Agility course: Gnome Stronghold Course? colour=0 effect=0
+packet 102 90 00426f6200112233457300291ead9e62b711f2a50d314fdd4fd0c3427e455f48cb88d04e
+friends state=2 count=2
+ friend 0 name=carol prev= world=1 wname=World 1 rank=0 platform=0 referrer=false referred=false notes= wflags=0
+ friend 1 name=bob prev= world=0 wname= rank=2 platform=-1 referrer=false referred=false notes=raid mate wflags=0
+ignores count=2
+ ignore 0 nameU=Mallory name=Mallory notes= temp=true
+ ignore 1 nameU=Eve name=Eve notes=spam temp=false
+filters public=2 private=1 trade=0
+friendchat owner=null display=null minkick=7 rank=2 count=0
+clan affined null
+clan listened null
+settings affined name=Alto Renamed owner=0 update=11 allowUnaffined=true talk=2 kick=3 lootshare=4 coinshare=5 members=4 banned=1 owner_slot=0 replacement=-1 hashes=false displaynames=true
+ smember 0 hash=- name=Bob rank=126 extra=4660 joined=0 muted=true
+ smember 1 hash=- name=Cara rank=0 extra=0 joined=0 muted=false
+ smember 2 hash=- name=Dee rank=0 extra=0 joined=6100 muted=false
+ smember 3 hash=- name=Eli rank=0 extra=0 joined=0 muted=false
+ sbanned 0 hash=- name=Eve
+ settings 1=i20 2=i7 3=i-5 4=L4886718345 5=Sa setting
+settings listened null
+group null
+speech 6 text=Let's go to Agility course: Gnome Stronghold Course? colour=0 effect=0
+chat uid=1 type=3 flags=0 name=Bob nameU=Bob nameS=Bob clan=null phrase=-1 message=free text for a player who may quick chat crown=0
+packet 103 90 00426f6200112233457400271ead9e62b71fa1316638b2cd466ca69157d232e2341380
+friends state=2 count=2
+ friend 0 name=carol prev= world=1 wname=World 1 rank=0 platform=0 referrer=false referred=false notes= wflags=0
+ friend 1 name=bob prev= world=0 wname= rank=2 platform=-1 referrer=false referred=false notes=raid mate wflags=0
+ignores count=2
+ ignore 0 nameU=Mallory name=Mallory notes= temp=true
+ ignore 1 nameU=Eve name=Eve notes=spam temp=false
+filters public=2 private=1 trade=0
+friendchat owner=null display=null minkick=7 rank=2 count=0
+clan affined null
+clan listened null
+settings affined name=Alto Renamed owner=0 update=11 allowUnaffined=true talk=2 kick=3 lootshare=4 coinshare=5 members=4 banned=1 owner_slot=0 replacement=-1 hashes=false displaynames=true
+ smember 0 hash=- name=Bob rank=126 extra=4660 joined=0 muted=true
+ smember 1 hash=- name=Cara rank=0 extra=0 joined=0 muted=false
+ smember 2 hash=- name=Dee rank=0 extra=0 joined=6100 muted=false
+ smember 3 hash=- name=Eli rank=0 extra=0 joined=0 muted=false
+ sbanned 0 hash=- name=Eve
+ settings 1=i20 2=i7 3=i-5 4=L4886718345 5=Sa setting
+settings listened null
+group null
+speech 6 text=Let's go to Agility course: Gnome Stronghold Course? colour=0 effect=0

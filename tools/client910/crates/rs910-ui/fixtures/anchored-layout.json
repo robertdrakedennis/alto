@@ -1,0 +1,2483 @@
+{
+  "format": 1,
+  "build": {
+    "major": 950,
+    "minor": 1
+  },
+  "client_md5": "290cb3489d088d145741f1734f53b0fc",
+  "size_routine_sha256": "95e2ad6d082fdcef6df7e7ae1e237739647f4f357ef584bd8e6ece2889a927a4",
+  "position_routine_sha256": "9810a19d9200ed40a5d06e8fb714b1c5fd72adbb6c56a4e697b5378ee45ab867",
+  "size": [
+    {
+      "name": "zero",
+      "parent": [
+        101,
+        79
+      ],
+      "pixels": [
+        0,
+        0
+      ],
+      "fraction_bits": [
+        0,
+        0
+      ],
+      "aspect": "independent",
+      "ratio": [
+        1,
+        1
+      ],
+      "previous": [
+        0,
+        0
+      ],
+      "crop": false,
+      "insets": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "size": [
+        0,
+        0
+      ],
+      "changed": false
+    },
+    {
+      "name": "unchanged",
+      "parent": [
+        101,
+        79
+      ],
+      "pixels": [
+        17,
+        29
+      ],
+      "fraction_bits": [
+        0,
+        0
+      ],
+      "aspect": "independent",
+      "ratio": [
+        1,
+        1
+      ],
+      "previous": [
+        17,
+        29
+      ],
+      "crop": false,
+      "insets": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "size": [
+        17,
+        29
+      ],
+      "changed": false
+    },
+    {
+      "name": "pixels",
+      "parent": [
+        101,
+        79
+      ],
+      "pixels": [
+        17,
+        -29
+      ],
+      "fraction_bits": [
+        0,
+        0
+      ],
+      "aspect": "independent",
+      "ratio": [
+        1,
+        1
+      ],
+      "previous": [
+        0,
+        0
+      ],
+      "crop": false,
+      "insets": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "size": [
+        17,
+        -29
+      ],
+      "changed": true
+    },
+    {
+      "name": "half_parent",
+      "parent": [
+        101,
+        79
+      ],
+      "pixels": [
+        0,
+        0
+      ],
+      "fraction_bits": [
+        1056964608,
+        1056964608
+      ],
+      "aspect": "independent",
+      "ratio": [
+        1,
+        1
+      ],
+      "previous": [
+        0,
+        0
+      ],
+      "crop": false,
+      "insets": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "size": [
+        51,
+        40
+      ],
+      "changed": true
+    },
+    {
+      "name": "negative_half",
+      "parent": [
+        101,
+        79
+      ],
+      "pixels": [
+        0,
+        0
+      ],
+      "fraction_bits": [
+        3204448256,
+        3204448256
+      ],
+      "aspect": "independent",
+      "ratio": [
+        1,
+        1
+      ],
+      "previous": [
+        0,
+        0
+      ],
+      "crop": false,
+      "insets": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "size": [
+        -51,
+        -40
+      ],
+      "changed": true
+    },
+    {
+      "name": "fraction_below_half",
+      "parent": [
+        1,
+        1
+      ],
+      "pixels": [
+        0,
+        0
+      ],
+      "fraction_bits": [
+        1056964607,
+        1056964607
+      ],
+      "aspect": "independent",
+      "ratio": [
+        1,
+        1
+      ],
+      "previous": [
+        0,
+        0
+      ],
+      "crop": false,
+      "insets": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "size": [
+        0,
+        0
+      ],
+      "changed": false
+    },
+    {
+      "name": "fraction_with_offset",
+      "parent": [
+        101,
+        79
+      ],
+      "pixels": [
+        -7,
+        5
+      ],
+      "fraction_bits": [
+        1067450368,
+        3196059648
+      ],
+      "aspect": "independent",
+      "ratio": [
+        1,
+        1
+      ],
+      "previous": [
+        0,
+        0
+      ],
+      "crop": false,
+      "insets": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "size": [
+        119,
+        -15
+      ],
+      "changed": true
+    },
+    {
+      "name": "width_from_height",
+      "parent": [
+        101,
+        79
+      ],
+      "pixels": [
+        0,
+        0
+      ],
+      "fraction_bits": [
+        1048576000,
+        1056964608
+      ],
+      "aspect": "width_from_height",
+      "ratio": [
+        3,
+        2
+      ],
+      "previous": [
+        0,
+        0
+      ],
+      "crop": false,
+      "insets": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "size": [
+        60,
+        40
+      ],
+      "changed": true
+    },
+    {
+      "name": "height_from_width",
+      "parent": [
+        101,
+        79
+      ],
+      "pixels": [
+        0,
+        0
+      ],
+      "fraction_bits": [
+        1056964608,
+        1048576000
+      ],
+      "aspect": "height_from_width",
+      "ratio": [
+        3,
+        2
+      ],
+      "previous": [
+        0,
+        0
+      ],
+      "crop": false,
+      "insets": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "size": [
+        51,
+        34
+      ],
+      "changed": true
+    },
+    {
+      "name": "aspect_overflow",
+      "parent": [
+        101,
+        79
+      ],
+      "pixels": [
+        0,
+        2147483647
+      ],
+      "fraction_bits": [
+        0,
+        0
+      ],
+      "aspect": "width_from_height",
+      "ratio": [
+        2,
+        1
+      ],
+      "previous": [
+        0,
+        0
+      ],
+      "crop": false,
+      "insets": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "size": [
+        -2,
+        2147483647
+      ],
+      "changed": true
+    },
+    {
+      "name": "divide_zero",
+      "parent": [
+        101,
+        79
+      ],
+      "pixels": [
+        0,
+        10
+      ],
+      "fraction_bits": [
+        0,
+        0
+      ],
+      "aspect": "width_from_height",
+      "ratio": [
+        1,
+        0
+      ],
+      "previous": [
+        0,
+        0
+      ],
+      "crop": false,
+      "insets": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "trap": "Unhandled CPU exception (UC_ERR_EXCEPTION)",
+      "size": [
+        0,
+        10
+      ]
+    },
+    {
+      "name": "divide_overflow",
+      "parent": [
+        101,
+        79
+      ],
+      "pixels": [
+        0,
+        -2147483648
+      ],
+      "fraction_bits": [
+        0,
+        0
+      ],
+      "aspect": "width_from_height",
+      "ratio": [
+        1,
+        -1
+      ],
+      "previous": [
+        0,
+        0
+      ],
+      "crop": false,
+      "insets": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "trap": "Unhandled CPU exception (UC_ERR_EXCEPTION)",
+      "size": [
+        0,
+        -2147483648
+      ]
+    },
+    {
+      "name": "large_float",
+      "parent": [
+        2147483647,
+        2147483647
+      ],
+      "pixels": [
+        0,
+        0
+      ],
+      "fraction_bits": [
+        1065353216,
+        1073741824
+      ],
+      "aspect": "independent",
+      "ratio": [
+        1,
+        1
+      ],
+      "previous": [
+        0,
+        0
+      ],
+      "crop": false,
+      "insets": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "size": [
+        -2147483648,
+        -2147483648
+      ],
+      "changed": true
+    },
+    {
+      "name": "offset_wrap",
+      "parent": [
+        101,
+        79
+      ],
+      "pixels": [
+        2147483647,
+        -2147483648
+      ],
+      "fraction_bits": [
+        1056964608,
+        3204448256
+      ],
+      "aspect": "independent",
+      "ratio": [
+        1,
+        1
+      ],
+      "previous": [
+        0,
+        0
+      ],
+      "crop": false,
+      "insets": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "size": [
+        -2147483598,
+        2147483608
+      ],
+      "changed": true
+    },
+    {
+      "name": "viewport_crop",
+      "parent": [
+        101,
+        79
+      ],
+      "pixels": [
+        50,
+        40
+      ],
+      "fraction_bits": [
+        0,
+        0
+      ],
+      "aspect": "independent",
+      "ratio": [
+        1,
+        1
+      ],
+      "previous": [
+        0,
+        0
+      ],
+      "crop": true,
+      "insets": [
+        3,
+        5,
+        7,
+        11
+      ],
+      "size": [
+        40,
+        24
+      ],
+      "changed": true
+    },
+    {
+      "name": "mantissa_boundary",
+      "parent": [
+        16777215,
+        16777217
+      ],
+      "pixels": [
+        0,
+        0
+      ],
+      "fraction_bits": [
+        1056964608,
+        1056964608
+      ],
+      "aspect": "independent",
+      "ratio": [
+        1,
+        1
+      ],
+      "previous": [
+        0,
+        0
+      ],
+      "crop": false,
+      "insets": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "size": [
+        8388608,
+        8388608
+      ],
+      "changed": true
+    },
+    {
+      "name": "replay_size",
+      "parent": [
+        359,
+        79
+      ],
+      "pixels": [
+        0,
+        0
+      ],
+      "fraction_bits": [
+        1056964608,
+        1056964608
+      ],
+      "aspect": "independent",
+      "ratio": [
+        1,
+        1
+      ],
+      "previous": [
+        0,
+        0
+      ],
+      "crop": false,
+      "insets": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "size": [
+        180,
+        40
+      ],
+      "changed": true
+    }
+  ],
+  "position": [
+    {
+      "name": "zero",
+      "parent": [
+        101,
+        79
+      ],
+      "dimensions": [
+        17,
+        29
+      ],
+      "pixels": [
+        0,
+        0
+      ],
+      "fraction_bits": [
+        0,
+        0
+      ],
+      "anchor_bits": [
+        0,
+        0
+      ],
+      "crop": false,
+      "insets": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "parent_padding": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "size_fraction_bits": [
+        0,
+        0
+      ],
+      "position": [
+        0,
+        0
+      ],
+      "size": [
+        17,
+        29
+      ]
+    },
+    {
+      "name": "pixels",
+      "parent": [
+        101,
+        79
+      ],
+      "dimensions": [
+        17,
+        29
+      ],
+      "pixels": [
+        -7,
+        5
+      ],
+      "fraction_bits": [
+        0,
+        0
+      ],
+      "anchor_bits": [
+        0,
+        0
+      ],
+      "crop": false,
+      "insets": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "parent_padding": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "size_fraction_bits": [
+        0,
+        0
+      ],
+      "position": [
+        -7,
+        5
+      ],
+      "size": [
+        17,
+        29
+      ]
+    },
+    {
+      "name": "center",
+      "parent": [
+        101,
+        79
+      ],
+      "dimensions": [
+        17,
+        29
+      ],
+      "pixels": [
+        0,
+        0
+      ],
+      "fraction_bits": [
+        1056964608,
+        1056964608
+      ],
+      "anchor_bits": [
+        1056964608,
+        1056964608
+      ],
+      "crop": false,
+      "insets": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "parent_padding": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "size_fraction_bits": [
+        0,
+        0
+      ],
+      "position": [
+        42,
+        25
+      ],
+      "size": [
+        17,
+        29
+      ]
+    },
+    {
+      "name": "end",
+      "parent": [
+        101,
+        79
+      ],
+      "dimensions": [
+        17,
+        29
+      ],
+      "pixels": [
+        0,
+        0
+      ],
+      "fraction_bits": [
+        1065353216,
+        1065353216
+      ],
+      "anchor_bits": [
+        1065353216,
+        1065353216
+      ],
+      "crop": false,
+      "insets": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "parent_padding": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "size_fraction_bits": [
+        0,
+        0
+      ],
+      "position": [
+        84,
+        50
+      ],
+      "size": [
+        17,
+        29
+      ]
+    },
+    {
+      "name": "half_parent",
+      "parent": [
+        101,
+        79
+      ],
+      "dimensions": [
+        17,
+        29
+      ],
+      "pixels": [
+        0,
+        0
+      ],
+      "fraction_bits": [
+        1056964608,
+        1056964608
+      ],
+      "anchor_bits": [
+        0,
+        0
+      ],
+      "crop": false,
+      "insets": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "parent_padding": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "size_fraction_bits": [
+        0,
+        0
+      ],
+      "position": [
+        51,
+        40
+      ],
+      "size": [
+        17,
+        29
+      ]
+    },
+    {
+      "name": "negative_half",
+      "parent": [
+        101,
+        79
+      ],
+      "dimensions": [
+        17,
+        29
+      ],
+      "pixels": [
+        0,
+        0
+      ],
+      "fraction_bits": [
+        3204448256,
+        3204448256
+      ],
+      "anchor_bits": [
+        0,
+        0
+      ],
+      "crop": false,
+      "insets": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "parent_padding": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "size_fraction_bits": [
+        0,
+        0
+      ],
+      "position": [
+        -51,
+        -40
+      ],
+      "size": [
+        17,
+        29
+      ]
+    },
+    {
+      "name": "fraction_below_half",
+      "parent": [
+        1,
+        1
+      ],
+      "dimensions": [
+        17,
+        29
+      ],
+      "pixels": [
+        0,
+        0
+      ],
+      "fraction_bits": [
+        1056964607,
+        1056964607
+      ],
+      "anchor_bits": [
+        0,
+        0
+      ],
+      "crop": false,
+      "insets": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "parent_padding": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "size_fraction_bits": [
+        0,
+        0
+      ],
+      "position": [
+        0,
+        0
+      ],
+      "size": [
+        17,
+        29
+      ]
+    },
+    {
+      "name": "negative_center",
+      "parent": [
+        101,
+        79
+      ],
+      "dimensions": [
+        18,
+        30
+      ],
+      "pixels": [
+        0,
+        0
+      ],
+      "fraction_bits": [
+        0,
+        0
+      ],
+      "anchor_bits": [
+        1056964608,
+        1056964608
+      ],
+      "crop": false,
+      "insets": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "parent_padding": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "size_fraction_bits": [
+        0,
+        0
+      ],
+      "position": [
+        -9,
+        -15
+      ],
+      "size": [
+        18,
+        30
+      ]
+    },
+    {
+      "name": "combined_negative",
+      "parent": [
+        101,
+        79
+      ],
+      "dimensions": [
+        17,
+        29
+      ],
+      "pixels": [
+        3,
+        -5
+      ],
+      "fraction_bits": [
+        3196059648,
+        1067450368
+      ],
+      "anchor_bits": [
+        1056964608,
+        1065353216
+      ],
+      "crop": false,
+      "insets": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "parent_padding": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "size_fraction_bits": [
+        0,
+        0
+      ],
+      "position": [
+        -31,
+        65
+      ],
+      "size": [
+        17,
+        29
+      ]
+    },
+    {
+      "name": "large_float",
+      "parent": [
+        2147483647,
+        2147483647
+      ],
+      "dimensions": [
+        17,
+        29
+      ],
+      "pixels": [
+        0,
+        0
+      ],
+      "fraction_bits": [
+        1065353216,
+        1073741824
+      ],
+      "anchor_bits": [
+        0,
+        0
+      ],
+      "crop": false,
+      "insets": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "parent_padding": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "size_fraction_bits": [
+        0,
+        0
+      ],
+      "position": [
+        -2147483648,
+        -2147483648
+      ],
+      "size": [
+        17,
+        29
+      ]
+    },
+    {
+      "name": "offset_wrap",
+      "parent": [
+        101,
+        79
+      ],
+      "dimensions": [
+        17,
+        29
+      ],
+      "pixels": [
+        2147483647,
+        -2147483648
+      ],
+      "fraction_bits": [
+        1056964608,
+        3204448256
+      ],
+      "anchor_bits": [
+        0,
+        0
+      ],
+      "crop": false,
+      "insets": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "parent_padding": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "size_fraction_bits": [
+        0,
+        0
+      ],
+      "position": [
+        -2147483598,
+        2147483608
+      ],
+      "size": [
+        17,
+        29
+      ]
+    },
+    {
+      "name": "viewport_crop",
+      "parent": [
+        101,
+        79
+      ],
+      "dimensions": [
+        50,
+        40
+      ],
+      "pixels": [
+        0,
+        0
+      ],
+      "fraction_bits": [
+        1056964608,
+        1056964608
+      ],
+      "anchor_bits": [
+        1056964608,
+        1056964608
+      ],
+      "crop": true,
+      "insets": [
+        3,
+        5,
+        7,
+        11
+      ],
+      "parent_padding": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "size_fraction_bits": [
+        0,
+        0
+      ],
+      "position": [
+        34,
+        33
+      ],
+      "size": [
+        40,
+        24
+      ]
+    },
+    {
+      "name": "replay_center",
+      "parent": [
+        359,
+        79
+      ],
+      "dimensions": [
+        180,
+        40
+      ],
+      "pixels": [
+        0,
+        0
+      ],
+      "fraction_bits": [
+        1056964608,
+        1056964608
+      ],
+      "anchor_bits": [
+        1056964608,
+        1056964608
+      ],
+      "crop": false,
+      "insets": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "parent_padding": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "size_fraction_bits": [
+        0,
+        0
+      ],
+      "position": [
+        90,
+        20
+      ],
+      "size": [
+        180,
+        40
+      ]
+    },
+    {
+      "name": "padding_center",
+      "parent": [
+        101,
+        79
+      ],
+      "dimensions": [
+        17,
+        29
+      ],
+      "pixels": [
+        0,
+        0
+      ],
+      "fraction_bits": [
+        1056964608,
+        1056964608
+      ],
+      "anchor_bits": [
+        1056964608,
+        1056964608
+      ],
+      "crop": false,
+      "insets": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "parent_padding": [
+        3,
+        5,
+        7,
+        11
+      ],
+      "size_fraction_bits": [
+        0,
+        0
+      ],
+      "position": [
+        37,
+        17
+      ],
+      "size": [
+        17,
+        29
+      ]
+    },
+    {
+      "name": "padding_unset",
+      "parent": [
+        101,
+        79
+      ],
+      "dimensions": [
+        17,
+        29
+      ],
+      "pixels": [
+        0,
+        0
+      ],
+      "fraction_bits": [
+        1056964608,
+        1056964608
+      ],
+      "anchor_bits": [
+        1056964608,
+        1056964608
+      ],
+      "crop": false,
+      "insets": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "parent_padding": [
+        255,
+        5,
+        7,
+        255
+      ],
+      "size_fraction_bits": [
+        0,
+        0
+      ],
+      "position": [
+        39,
+        23
+      ],
+      "size": [
+        17,
+        29
+      ]
+    },
+    {
+      "name": "padding_pair_wrap",
+      "parent": [
+        101,
+        79
+      ],
+      "dimensions": [
+        17,
+        29
+      ],
+      "pixels": [
+        0,
+        0
+      ],
+      "fraction_bits": [
+        1056964608,
+        1056964608
+      ],
+      "anchor_bits": [
+        1056964608,
+        1056964608
+      ],
+      "crop": false,
+      "insets": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "parent_padding": [
+        130,
+        0,
+        130,
+        0
+      ],
+      "size_fraction_bits": [
+        0,
+        0
+      ],
+      "position": [
+        40,
+        25
+      ],
+      "size": [
+        17,
+        29
+      ]
+    },
+    {
+      "name": "padding_horizontal_overflow",
+      "parent": [
+        101,
+        79
+      ],
+      "dimensions": [
+        17,
+        29
+      ],
+      "pixels": [
+        0,
+        0
+      ],
+      "fraction_bits": [
+        1056964608,
+        1056964608
+      ],
+      "anchor_bits": [
+        1056964608,
+        1056964608
+      ],
+      "crop": false,
+      "insets": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "parent_padding": [
+        60,
+        5,
+        60,
+        7
+      ],
+      "size_fraction_bits": [
+        0,
+        0
+      ],
+      "position": [
+        42,
+        25
+      ],
+      "size": [
+        17,
+        29
+      ]
+    },
+    {
+      "name": "padding_vertical_overflow",
+      "parent": [
+        101,
+        79
+      ],
+      "dimensions": [
+        17,
+        29
+      ],
+      "pixels": [
+        0,
+        0
+      ],
+      "fraction_bits": [
+        1056964608,
+        1056964608
+      ],
+      "anchor_bits": [
+        1056964608,
+        1056964608
+      ],
+      "crop": false,
+      "insets": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "parent_padding": [
+        3,
+        60,
+        7,
+        60
+      ],
+      "size_fraction_bits": [
+        0,
+        0
+      ],
+      "position": [
+        42,
+        25
+      ],
+      "size": [
+        17,
+        29
+      ]
+    },
+    {
+      "name": "padding_negative_parent",
+      "parent": [
+        -101,
+        -79
+      ],
+      "dimensions": [
+        17,
+        29
+      ],
+      "pixels": [
+        0,
+        0
+      ],
+      "fraction_bits": [
+        1056964608,
+        1056964608
+      ],
+      "anchor_bits": [
+        1056964608,
+        1056964608
+      ],
+      "crop": false,
+      "insets": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "parent_padding": [
+        3,
+        5,
+        7,
+        11
+      ],
+      "size_fraction_bits": [
+        0,
+        0
+      ],
+      "position": [
+        -64,
+        -62
+      ],
+      "size": [
+        17,
+        29
+      ]
+    },
+    {
+      "name": "padding_exact_fit",
+      "parent": [
+        101,
+        79
+      ],
+      "dimensions": [
+        17,
+        29
+      ],
+      "pixels": [
+        0,
+        0
+      ],
+      "fraction_bits": [
+        1056964608,
+        1056964608
+      ],
+      "anchor_bits": [
+        1056964608,
+        1056964608
+      ],
+      "crop": false,
+      "insets": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "parent_padding": [
+        40,
+        30,
+        61,
+        49
+      ],
+      "size_fraction_bits": [
+        0,
+        0
+      ],
+      "position": [
+        -9,
+        -15
+      ],
+      "size": [
+        17,
+        29
+      ]
+    },
+    {
+      "name": "replay_padded_center",
+      "parent": [
+        359,
+        79
+      ],
+      "dimensions": [
+        0,
+        0
+      ],
+      "pixels": [
+        0,
+        0
+      ],
+      "fraction_bits": [
+        1056964608,
+        1056964608
+      ],
+      "anchor_bits": [
+        1056964608,
+        1056964608
+      ],
+      "crop": false,
+      "insets": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "parent_padding": [
+        3,
+        5,
+        7,
+        11
+      ],
+      "size_fraction_bits": [
+        1056964608,
+        1056964608
+      ],
+      "position": [
+        87,
+        16
+      ],
+      "size": [
+        175,
+        32
+      ]
+    }
+  ],
+  "parent_padding_accessor_sha256": "9f30c986bf9a2a45db78c0d6bdd930c9f0fd6760948f9038527a670798f75794",
+  "parent_class_accessor_sha256": "b5e246fbf558c442548ccb78aa6a03d48027a6f91f15c02d7dc661bd43aaaab1",
+  "size_modes": [
+    {
+      "name": "swapped_fraction",
+      "input": [
+        8192,
+        -4096
+      ],
+      "modes": [
+        3,
+        2
+      ],
+      "popped_modes": [
+        3,
+        2
+      ],
+      "aspect_before": 2,
+      "aspect_after": 2,
+      "stack_count": 0,
+      "align": 1,
+      "self_dirty": 1,
+      "pixels": [
+        0,
+        0
+      ],
+      "fraction_bits": [
+        0,
+        3196059648
+      ]
+    },
+    {
+      "name": "swapped_center",
+      "input": [
+        -29,
+        17
+      ],
+      "modes": [
+        1,
+        0
+      ],
+      "popped_modes": [
+        1,
+        0
+      ],
+      "aspect_before": 2,
+      "aspect_after": 2,
+      "stack_count": 0,
+      "align": 1,
+      "self_dirty": 1,
+      "pixels": [
+        29,
+        17
+      ],
+      "fraction_bits": [
+        1065353216,
+        0
+      ]
+    },
+    {
+      "name": "swapped_end",
+      "input": [
+        -4096,
+        8192
+      ],
+      "modes": [
+        5,
+        4
+      ],
+      "popped_modes": [
+        5,
+        4
+      ],
+      "aspect_before": 2,
+      "aspect_after": 2,
+      "stack_count": 0,
+      "align": 1,
+      "self_dirty": 1,
+      "pixels": [
+        0,
+        0
+      ],
+      "fraction_bits": [
+        0,
+        0
+      ]
+    },
+    {
+      "name": "pixel_center",
+      "input": [
+        17,
+        -29
+      ],
+      "modes": [
+        0,
+        1
+      ],
+      "popped_modes": [
+        0,
+        1
+      ],
+      "aspect_before": 2,
+      "aspect_after": 2,
+      "stack_count": 0,
+      "align": 1,
+      "self_dirty": 1,
+      "pixels": [
+        17,
+        29
+      ],
+      "fraction_bits": [
+        0,
+        1065353216
+      ]
+    },
+    {
+      "name": "end_fraction",
+      "input": [
+        17,
+        -29
+      ],
+      "modes": [
+        2,
+        3
+      ],
+      "popped_modes": [
+        2,
+        3
+      ],
+      "aspect_before": 2,
+      "aspect_after": 2,
+      "stack_count": 0,
+      "align": 1,
+      "self_dirty": 1,
+      "pixels": [
+        0,
+        0
+      ],
+      "fraction_bits": [
+        981991424,
+        0
+      ]
+    },
+    {
+      "name": "fraction_center_end",
+      "input": [
+        8192,
+        -4096
+      ],
+      "modes": [
+        4,
+        5
+      ],
+      "popped_modes": [
+        4,
+        5
+      ],
+      "aspect_before": 2,
+      "aspect_after": 2,
+      "stack_count": 0,
+      "align": 1,
+      "self_dirty": 1,
+      "pixels": [
+        0,
+        0
+      ],
+      "fraction_bits": [
+        0,
+        0
+      ]
+    },
+    {
+      "name": "negative_clamp",
+      "input": [
+        17,
+        -29
+      ],
+      "modes": [
+        -1,
+        -2147483648
+      ],
+      "popped_modes": [
+        -1,
+        -2147483648
+      ],
+      "aspect_before": 2,
+      "aspect_after": 2,
+      "stack_count": 0,
+      "align": 1,
+      "self_dirty": 1,
+      "pixels": [
+        17,
+        -29
+      ],
+      "fraction_bits": [
+        0,
+        0
+      ]
+    },
+    {
+      "name": "positive_clamp",
+      "input": [
+        17,
+        -29
+      ],
+      "modes": [
+        6,
+        2147483647
+      ],
+      "popped_modes": [
+        6,
+        2147483647
+      ],
+      "aspect_before": 2,
+      "aspect_after": 2,
+      "stack_count": 0,
+      "align": 1,
+      "self_dirty": 1,
+      "pixels": [
+        0,
+        0
+      ],
+      "fraction_bits": [
+        0,
+        0
+      ]
+    },
+    {
+      "name": "signed_wrap",
+      "input": [
+        -2147483648,
+        -2147483648
+      ],
+      "modes": [
+        1,
+        2
+      ],
+      "popped_modes": [
+        1,
+        2
+      ],
+      "aspect_before": 2,
+      "aspect_after": 2,
+      "stack_count": 0,
+      "align": 1,
+      "self_dirty": 1,
+      "pixels": [
+        -2147483648,
+        0
+      ],
+      "fraction_bits": [
+        1065353216,
+        3355443200
+      ]
+    },
+    {
+      "name": "float_mantissa",
+      "input": [
+        16777217,
+        -16777217
+      ],
+      "modes": [
+        2,
+        3
+      ],
+      "popped_modes": [
+        2,
+        3
+      ],
+      "aspect_before": 2,
+      "aspect_after": 2,
+      "stack_count": 0,
+      "align": 1,
+      "self_dirty": 1,
+      "pixels": [
+        0,
+        0
+      ],
+      "fraction_bits": [
+        1149239296,
+        0
+      ]
+    },
+    {
+      "name": "fraction_bias",
+      "input": [
+        16777217,
+        -16777217
+      ],
+      "modes": [
+        4,
+        5
+      ],
+      "popped_modes": [
+        4,
+        5
+      ],
+      "aspect_before": 2,
+      "aspect_after": 2,
+      "stack_count": 0,
+      "align": 1,
+      "self_dirty": 1,
+      "pixels": [
+        0,
+        0
+      ],
+      "fraction_bits": [
+        0,
+        0
+      ]
+    },
+    {
+      "name": "wide_fraction",
+      "input": [
+        2147483647,
+        -2147483648
+      ],
+      "modes": [
+        2,
+        3
+      ],
+      "popped_modes": [
+        2,
+        3
+      ],
+      "aspect_before": 2,
+      "aspect_after": 2,
+      "stack_count": 0,
+      "align": 1,
+      "self_dirty": 1,
+      "pixels": [
+        0,
+        0
+      ],
+      "fraction_bits": [
+        1207959552,
+        0
+      ]
+    },
+    {
+      "name": "replay",
+      "input": [
+        8192,
+        8192
+      ],
+      "modes": [
+        2,
+        2
+      ],
+      "popped_modes": [
+        2,
+        2
+      ],
+      "aspect_before": 2,
+      "aspect_after": 2,
+      "stack_count": 0,
+      "align": 1,
+      "self_dirty": 1,
+      "pixels": [
+        0,
+        0
+      ],
+      "fraction_bits": [
+        1056964608,
+        1056964608
+      ]
+    },
+    {
+      "name": "replay_center",
+      "input": [
+        0,
+        0
+      ],
+      "modes": [
+        1,
+        1
+      ],
+      "popped_modes": [
+        1,
+        1
+      ],
+      "aspect_before": 2,
+      "aspect_after": 2,
+      "stack_count": 0,
+      "align": 1,
+      "self_dirty": 1,
+      "pixels": [
+        0,
+        0
+      ],
+      "fraction_bits": [
+        1065353216,
+        1065353216
+      ]
+    }
+  ],
+  "position_modes": [
+    {
+      "name": "swapped_fraction",
+      "input": [
+        8192,
+        -4096
+      ],
+      "modes": [
+        3,
+        2
+      ],
+      "popped_modes": [
+        3,
+        2
+      ],
+      "aspect_before": 2,
+      "aspect_after": 2,
+      "stack_count": 0,
+      "align": 1,
+      "self_dirty": 0,
+      "pixels": [
+        0,
+        4096
+      ],
+      "fraction_bits": [
+        1056964608,
+        1065353216
+      ],
+      "anchor_bits": [
+        0,
+        1065353216
+      ]
+    },
+    {
+      "name": "swapped_center",
+      "input": [
+        -29,
+        17
+      ],
+      "modes": [
+        1,
+        0
+      ],
+      "popped_modes": [
+        1,
+        0
+      ],
+      "aspect_before": 2,
+      "aspect_after": 2,
+      "stack_count": 0,
+      "align": 1,
+      "self_dirty": 0,
+      "pixels": [
+        -29,
+        17
+      ],
+      "fraction_bits": [
+        1056964608,
+        0
+      ],
+      "anchor_bits": [
+        1056964608,
+        0
+      ]
+    },
+    {
+      "name": "swapped_end",
+      "input": [
+        -4096,
+        8192
+      ],
+      "modes": [
+        5,
+        4
+      ],
+      "popped_modes": [
+        5,
+        4
+      ],
+      "aspect_before": 2,
+      "aspect_after": 2,
+      "stack_count": 0,
+      "align": 1,
+      "self_dirty": 0,
+      "pixels": [
+        0,
+        0
+      ],
+      "fraction_bits": [
+        1067450368,
+        1065353216
+      ],
+      "anchor_bits": [
+        1065353216,
+        1056964608
+      ]
+    },
+    {
+      "name": "pixel_center",
+      "input": [
+        17,
+        -29
+      ],
+      "modes": [
+        0,
+        1
+      ],
+      "popped_modes": [
+        0,
+        1
+      ],
+      "aspect_before": 2,
+      "aspect_after": 2,
+      "stack_count": 0,
+      "align": 1,
+      "self_dirty": 0,
+      "pixels": [
+        17,
+        -29
+      ],
+      "fraction_bits": [
+        0,
+        1056964608
+      ],
+      "anchor_bits": [
+        0,
+        1056964608
+      ]
+    },
+    {
+      "name": "end_fraction",
+      "input": [
+        17,
+        -29
+      ],
+      "modes": [
+        2,
+        3
+      ],
+      "popped_modes": [
+        2,
+        3
+      ],
+      "aspect_before": 2,
+      "aspect_after": 2,
+      "stack_count": 0,
+      "align": 1,
+      "self_dirty": 0,
+      "pixels": [
+        -17,
+        0
+      ],
+      "fraction_bits": [
+        1065353216,
+        3135766528
+      ],
+      "anchor_bits": [
+        1065353216,
+        0
+      ]
+    },
+    {
+      "name": "fraction_center_end",
+      "input": [
+        8192,
+        -4096
+      ],
+      "modes": [
+        4,
+        5
+      ],
+      "popped_modes": [
+        4,
+        5
+      ],
+      "aspect_before": 2,
+      "aspect_after": 2,
+      "stack_count": 0,
+      "align": 1,
+      "self_dirty": 0,
+      "pixels": [
+        0,
+        0
+      ],
+      "fraction_bits": [
+        1065353216,
+        1067450368
+      ],
+      "anchor_bits": [
+        1056964608,
+        1065353216
+      ]
+    },
+    {
+      "name": "negative_clamp",
+      "input": [
+        17,
+        -29
+      ],
+      "modes": [
+        -1,
+        -2147483648
+      ],
+      "popped_modes": [
+        0,
+        0
+      ],
+      "aspect_before": 2,
+      "aspect_after": 2,
+      "stack_count": 0,
+      "align": 1,
+      "self_dirty": 0,
+      "pixels": [
+        17,
+        -29
+      ],
+      "fraction_bits": [
+        0,
+        0
+      ],
+      "anchor_bits": [
+        0,
+        0
+      ]
+    },
+    {
+      "name": "positive_clamp",
+      "input": [
+        17,
+        -29
+      ],
+      "modes": [
+        6,
+        2147483647
+      ],
+      "popped_modes": [
+        5,
+        5
+      ],
+      "aspect_before": 2,
+      "aspect_after": 2,
+      "stack_count": 0,
+      "align": 1,
+      "self_dirty": 0,
+      "pixels": [
+        0,
+        0
+      ],
+      "fraction_bits": [
+        1065335808,
+        1065368064
+      ],
+      "anchor_bits": [
+        1065353216,
+        1065353216
+      ]
+    },
+    {
+      "name": "signed_wrap",
+      "input": [
+        -2147483648,
+        -2147483648
+      ],
+      "modes": [
+        1,
+        2
+      ],
+      "popped_modes": [
+        1,
+        2
+      ],
+      "aspect_before": 2,
+      "aspect_after": 2,
+      "stack_count": 0,
+      "align": 1,
+      "self_dirty": 0,
+      "pixels": [
+        -2147483648,
+        -2147483648
+      ],
+      "fraction_bits": [
+        1056964608,
+        1065353216
+      ],
+      "anchor_bits": [
+        1056964608,
+        1065353216
+      ]
+    },
+    {
+      "name": "float_mantissa",
+      "input": [
+        16777217,
+        -16777217
+      ],
+      "modes": [
+        2,
+        3
+      ],
+      "popped_modes": [
+        2,
+        3
+      ],
+      "aspect_before": 2,
+      "aspect_after": 2,
+      "stack_count": 0,
+      "align": 1,
+      "self_dirty": 0,
+      "pixels": [
+        -16777217,
+        0
+      ],
+      "fraction_bits": [
+        1065353216,
+        3296722944
+      ],
+      "anchor_bits": [
+        1065353216,
+        0
+      ]
+    },
+    {
+      "name": "fraction_bias",
+      "input": [
+        16777217,
+        -16777217
+      ],
+      "modes": [
+        4,
+        5
+      ],
+      "popped_modes": [
+        4,
+        5
+      ],
+      "aspect_before": 2,
+      "aspect_after": 2,
+      "stack_count": 0,
+      "align": 1,
+      "self_dirty": 0,
+      "pixels": [
+        0,
+        0
+      ],
+      "fraction_bits": [
+        1149243392,
+        1149247488
+      ],
+      "anchor_bits": [
+        1056964608,
+        1065353216
+      ]
+    },
+    {
+      "name": "wide_fraction",
+      "input": [
+        2147483647,
+        -2147483648
+      ],
+      "modes": [
+        2,
+        3
+      ],
+      "popped_modes": [
+        2,
+        3
+      ],
+      "aspect_before": 2,
+      "aspect_after": 2,
+      "stack_count": 0,
+      "align": 1,
+      "self_dirty": 0,
+      "pixels": [
+        -2147483647,
+        0
+      ],
+      "fraction_bits": [
+        1065353216,
+        3355443200
+      ],
+      "anchor_bits": [
+        1065353216,
+        0
+      ]
+    },
+    {
+      "name": "replay",
+      "input": [
+        8192,
+        8192
+      ],
+      "modes": [
+        2,
+        2
+      ],
+      "popped_modes": [
+        2,
+        2
+      ],
+      "aspect_before": 2,
+      "aspect_after": 2,
+      "stack_count": 0,
+      "align": 1,
+      "self_dirty": 0,
+      "pixels": [
+        -8192,
+        -8192
+      ],
+      "fraction_bits": [
+        1065353216,
+        1065353216
+      ],
+      "anchor_bits": [
+        1065353216,
+        1065353216
+      ]
+    },
+    {
+      "name": "replay_center",
+      "input": [
+        0,
+        0
+      ],
+      "modes": [
+        1,
+        1
+      ],
+      "popped_modes": [
+        1,
+        1
+      ],
+      "aspect_before": 2,
+      "aspect_after": 2,
+      "stack_count": 0,
+      "align": 1,
+      "self_dirty": 0,
+      "pixels": [
+        0,
+        0
+      ],
+      "fraction_bits": [
+        1056964608,
+        1056964608
+      ],
+      "anchor_bits": [
+        1056964608,
+        1056964608
+      ]
+    }
+  ],
+  "size_mode_routine_sha256": "549679fa1d01844ac3caa3c5540fd706483b429b1e0533b554fa64f5ca59c092",
+  "position_mode_routine_sha256": "df5d3400438aaa5c7580ffb1166a001636f87ac453507277dfc77c856bbdccbb",
+  "mode_recording_scope": "Constraint field writes; parent dirtying and alignment consumers replaced by inert services."
+}

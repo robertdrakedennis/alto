@@ -1,0 +1,902 @@
+[
+  {
+    "tick": 19,
+    "index": 1,
+    "definition": 16044,
+    "life": 100000,
+    "maximum": 100000,
+    "hits": [],
+    "headbars": [],
+    "npcInfoOrdinal": 17
+  },
+  {
+    "tick": 20,
+    "index": 1,
+    "definition": 16044,
+    "life": 100000,
+    "maximum": 100000,
+    "hits": [],
+    "headbars": [],
+    "npcInfoOrdinal": 18
+  },
+  {
+    "tick": 21,
+    "index": 1,
+    "definition": 16044,
+    "life": 100000,
+    "maximum": 100000,
+    "hits": [],
+    "headbars": [],
+    "npcInfoOrdinal": 19
+  },
+  {
+    "tick": 22,
+    "index": 1,
+    "definition": 16044,
+    "life": 100000,
+    "maximum": 100000,
+    "hits": [],
+    "headbars": [],
+    "npcInfoOrdinal": 20
+  },
+  {
+    "tick": 23,
+    "index": 1,
+    "definition": 16044,
+    "life": 99832,
+    "maximum": 100000,
+    "hits": [
+      {
+        "source": 1,
+        "damage": 168,
+        "delay": 0
+      }
+    ],
+    "headbars": [
+      {
+        "id": 0,
+        "duration": 0,
+        "delay": 0,
+        "start": 254,
+        "end": 254
+      }
+    ],
+    "npcInfoOrdinal": 21
+  },
+  {
+    "tick": 24,
+    "index": 1,
+    "definition": 16044,
+    "life": 99832,
+    "maximum": 100000,
+    "hits": [],
+    "headbars": [],
+    "npcInfoOrdinal": 22
+  },
+  {
+    "tick": 25,
+    "index": 1,
+    "definition": 16044,
+    "life": 99832,
+    "maximum": 100000,
+    "hits": [],
+    "headbars": [],
+    "npcInfoOrdinal": 23
+  },
+  {
+    "tick": 26,
+    "index": 1,
+    "definition": 16044,
+    "life": 99832,
+    "maximum": 100000,
+    "hits": [],
+    "headbars": [],
+    "npcInfoOrdinal": 24
+  },
+  {
+    "tick": 27,
+    "index": 1,
+    "definition": 16044,
+    "life": 99832,
+    "maximum": 100000,
+    "hits": [],
+    "headbars": [],
+    "npcInfoOrdinal": 25
+  },
+  {
+    "tick": 28,
+    "index": 1,
+    "definition": 16044,
+    "life": 99832,
+    "maximum": 100000,
+    "hits": [],
+    "headbars": [],
+    "npcInfoOrdinal": 26
+  },
+  {
+    "tick": 29,
+    "index": 1,
+    "definition": 16044,
+    "life": 99664,
+    "maximum": 100000,
+    "hits": [
+      {
+        "source": 1,
+        "damage": 168,
+        "delay": 0
+      }
+    ],
+    "headbars": [
+      {
+        "id": 0,
+        "duration": 0,
+        "delay": 0,
+        "start": 254,
+        "end": 254
+      }
+    ],
+    "npcInfoOrdinal": 27
+  },
+  {
+    "tick": 30,
+    "index": 1,
+    "definition": 16044,
+    "life": 99664,
+    "maximum": 100000,
+    "hits": [],
+    "headbars": [],
+    "npcInfoOrdinal": 28
+  },
+  {
+    "tick": 31,
+    "index": 1,
+    "definition": 16044,
+    "life": 99664,
+    "maximum": 100000,
+    "hits": [],
+    "headbars": [],
+    "npcInfoOrdinal": 29
+  },
+  {
+    "tick": 32,
+    "index": 1,
+    "definition": 16044,
+    "life": 99664,
+    "maximum": 100000,
+    "hits": [],
+    "headbars": [],
+    "npcInfoOrdinal": 30
+  },
+  {
+    "tick": 33,
+    "index": 1,
+    "definition": 16044,
+    "life": 99664,
+    "maximum": 100000,
+    "hits": [],
+    "headbars": [],
+    "npcInfoOrdinal": 31
+  },
+  {
+    "tick": 34,
+    "index": 1,
+    "definition": 16044,
+    "life": 99664,
+    "maximum": 100000,
+    "hits": [],
+    "headbars": [],
+    "npcInfoOrdinal": 32
+  },
+  {
+    "tick": 35,
+    "index": 1,
+    "definition": 16044,
+    "life": 99496,
+    "maximum": 100000,
+    "hits": [
+      {
+        "source": 1,
+        "damage": 168,
+        "delay": 0
+      }
+    ],
+    "headbars": [
+      {
+        "id": 0,
+        "duration": 0,
+        "delay": 0,
+        "start": 253,
+        "end": 253
+      }
+    ],
+    "npcInfoOrdinal": 33
+  },
+  {
+    "tick": 36,
+    "index": 1,
+    "definition": 16044,
+    "life": 99496,
+    "maximum": 100000,
+    "hits": [],
+    "headbars": [],
+    "npcInfoOrdinal": 34
+  },
+  {
+    "tick": 37,
+    "index": 1,
+    "definition": 16044,
+    "life": 99496,
+    "maximum": 100000,
+    "hits": [],
+    "headbars": [],
+    "npcInfoOrdinal": 35
+  },
+  {
+    "tick": 38,
+    "index": 1,
+    "definition": 16044,
+    "life": 99496,
+    "maximum": 100000,
+    "hits": [],
+    "headbars": [],
+    "npcInfoOrdinal": 36
+  },
+  {
+    "tick": 39,
+    "index": 1,
+    "definition": 16044,
+    "life": 99496,
+    "maximum": 100000,
+    "hits": [],
+    "headbars": [],
+    "npcInfoOrdinal": 37
+  },
+  {
+    "tick": 40,
+    "index": 1,
+    "definition": 16044,
+    "life": 99496,
+    "maximum": 100000,
+    "hits": [],
+    "headbars": [],
+    "npcInfoOrdinal": 38
+  },
+  {
+    "tick": 41,
+    "index": 1,
+    "definition": 16044,
+    "life": 99330,
+    "maximum": 100000,
+    "hits": [
+      {
+        "source": 1,
+        "damage": 166,
+        "delay": 0
+      }
+    ],
+    "headbars": [
+      {
+        "id": 0,
+        "duration": 0,
+        "delay": 0,
+        "start": 253,
+        "end": 253
+      }
+    ],
+    "npcInfoOrdinal": 39
+  },
+  {
+    "tick": 42,
+    "index": 1,
+    "definition": 16044,
+    "life": 99330,
+    "maximum": 100000,
+    "hits": [],
+    "headbars": [],
+    "npcInfoOrdinal": 40
+  },
+  {
+    "tick": 43,
+    "index": 1,
+    "definition": 16044,
+    "life": 99330,
+    "maximum": 100000,
+    "hits": [],
+    "headbars": [],
+    "npcInfoOrdinal": 41
+  },
+  {
+    "tick": 44,
+    "index": 1,
+    "definition": 16044,
+    "life": 99162,
+    "maximum": 100000,
+    "hits": [
+      {
+        "source": 1,
+        "damage": 168,
+        "delay": 0
+      }
+    ],
+    "headbars": [
+      {
+        "id": 0,
+        "duration": 0,
+        "delay": 0,
+        "start": 252,
+        "end": 252
+      }
+    ],
+    "npcInfoOrdinal": 42
+  },
+  {
+    "tick": 45,
+    "index": 1,
+    "definition": 16044,
+    "life": 99162,
+    "maximum": 100000,
+    "hits": [],
+    "headbars": [],
+    "npcInfoOrdinal": 43
+  },
+  {
+    "tick": 46,
+    "index": 1,
+    "definition": 16044,
+    "life": 98896,
+    "maximum": 100000,
+    "hits": [
+      {
+        "source": 1,
+        "damage": 266,
+        "delay": 0
+      }
+    ],
+    "headbars": [
+      {
+        "id": 0,
+        "duration": 0,
+        "delay": 0,
+        "start": 252,
+        "end": 252
+      }
+    ],
+    "npcInfoOrdinal": 44
+  },
+  {
+    "tick": 47,
+    "index": 1,
+    "definition": 16044,
+    "life": 98896,
+    "maximum": 100000,
+    "hits": [],
+    "headbars": [],
+    "npcInfoOrdinal": 45
+  },
+  {
+    "tick": 48,
+    "index": 1,
+    "definition": 16044,
+    "life": 98896,
+    "maximum": 100000,
+    "hits": [],
+    "headbars": [],
+    "npcInfoOrdinal": 46
+  },
+  {
+    "tick": 49,
+    "index": 1,
+    "definition": 16044,
+    "life": 98645,
+    "maximum": 100000,
+    "hits": [
+      {
+        "source": 1,
+        "damage": 251,
+        "delay": 0
+      }
+    ],
+    "headbars": [
+      {
+        "id": 0,
+        "duration": 0,
+        "delay": 0,
+        "start": 251,
+        "end": 251
+      }
+    ],
+    "npcInfoOrdinal": 47
+  },
+  {
+    "tick": 50,
+    "index": 1,
+    "definition": 16044,
+    "life": 98645,
+    "maximum": 100000,
+    "hits": [],
+    "headbars": [],
+    "npcInfoOrdinal": 48
+  },
+  {
+    "tick": 51,
+    "index": 1,
+    "definition": 16044,
+    "life": 98645,
+    "maximum": 100000,
+    "hits": [],
+    "headbars": [],
+    "npcInfoOrdinal": 49
+  },
+  {
+    "tick": 52,
+    "index": 1,
+    "definition": 16044,
+    "life": 98477,
+    "maximum": 100000,
+    "hits": [
+      {
+        "source": 1,
+        "damage": 168,
+        "delay": 0
+      }
+    ],
+    "headbars": [
+      {
+        "id": 0,
+        "duration": 0,
+        "delay": 0,
+        "start": 251,
+        "end": 251
+      }
+    ],
+    "npcInfoOrdinal": 50
+  },
+  {
+    "tick": 53,
+    "index": 1,
+    "definition": 16044,
+    "life": 98477,
+    "maximum": 100000,
+    "hits": [],
+    "headbars": [],
+    "npcInfoOrdinal": 51
+  },
+  {
+    "tick": 54,
+    "index": 1,
+    "definition": 16044,
+    "life": 98477,
+    "maximum": 100000,
+    "hits": [],
+    "headbars": [],
+    "npcInfoOrdinal": 52
+  },
+  {
+    "tick": 55,
+    "index": 1,
+    "definition": 16044,
+    "life": 98477,
+    "maximum": 100000,
+    "hits": [],
+    "headbars": [],
+    "npcInfoOrdinal": 53
+  },
+  {
+    "tick": 56,
+    "index": 1,
+    "definition": 16044,
+    "life": 98477,
+    "maximum": 100000,
+    "hits": [],
+    "headbars": [],
+    "npcInfoOrdinal": 54
+  },
+  {
+    "tick": 57,
+    "index": 1,
+    "definition": 16044,
+    "life": 98477,
+    "maximum": 100000,
+    "hits": [],
+    "headbars": [],
+    "npcInfoOrdinal": 55
+  },
+  {
+    "tick": 58,
+    "index": 1,
+    "definition": 16044,
+    "life": 98311,
+    "maximum": 100000,
+    "hits": [
+      {
+        "source": 1,
+        "damage": 166,
+        "delay": 0
+      }
+    ],
+    "headbars": [
+      {
+        "id": 0,
+        "duration": 0,
+        "delay": 0,
+        "start": 250,
+        "end": 250
+      }
+    ],
+    "npcInfoOrdinal": 56
+  },
+  {
+    "tick": 59,
+    "index": 1,
+    "definition": 16044,
+    "life": 98311,
+    "maximum": 100000,
+    "hits": [],
+    "headbars": [],
+    "npcInfoOrdinal": 57
+  },
+  {
+    "tick": 60,
+    "index": 1,
+    "definition": 16044,
+    "life": 98311,
+    "maximum": 100000,
+    "hits": [],
+    "headbars": [],
+    "npcInfoOrdinal": 58
+  },
+  {
+    "tick": 61,
+    "index": 1,
+    "definition": 16044,
+    "life": 98143,
+    "maximum": 100000,
+    "hits": [
+      {
+        "source": 1,
+        "damage": 168,
+        "delay": 0
+      }
+    ],
+    "headbars": [
+      {
+        "id": 0,
+        "duration": 0,
+        "delay": 0,
+        "start": 250,
+        "end": 250
+      }
+    ],
+    "npcInfoOrdinal": 59
+  },
+  {
+    "tick": 62,
+    "index": 1,
+    "definition": 16044,
+    "life": 98143,
+    "maximum": 100000,
+    "hits": [],
+    "headbars": [],
+    "npcInfoOrdinal": 60
+  },
+  {
+    "tick": 63,
+    "index": 1,
+    "definition": 16044,
+    "life": 97477,
+    "maximum": 100000,
+    "hits": [
+      {
+        "source": 1,
+        "damage": 666,
+        "delay": 0
+      }
+    ],
+    "headbars": [
+      {
+        "id": 0,
+        "duration": 0,
+        "delay": 0,
+        "start": 248,
+        "end": 248
+      }
+    ],
+    "npcInfoOrdinal": 61
+  },
+  {
+    "tick": 64,
+    "index": 1,
+    "definition": 16044,
+    "life": 97477,
+    "maximum": 100000,
+    "hits": [],
+    "headbars": [],
+    "npcInfoOrdinal": 62
+  },
+  {
+    "tick": 65,
+    "index": 1,
+    "definition": 16044,
+    "life": 97477,
+    "maximum": 100000,
+    "hits": [],
+    "headbars": [],
+    "npcInfoOrdinal": 63
+  },
+  {
+    "tick": 66,
+    "index": 1,
+    "definition": 16044,
+    "life": 97309,
+    "maximum": 100000,
+    "hits": [
+      {
+        "source": 1,
+        "damage": 168,
+        "delay": 0
+      }
+    ],
+    "headbars": [
+      {
+        "id": 0,
+        "duration": 0,
+        "delay": 0,
+        "start": 248,
+        "end": 248
+      }
+    ],
+    "npcInfoOrdinal": 64
+  },
+  {
+    "tick": 67,
+    "index": 1,
+    "definition": 16044,
+    "life": 97309,
+    "maximum": 100000,
+    "hits": [],
+    "headbars": [],
+    "npcInfoOrdinal": 65
+  },
+  {
+    "tick": 68,
+    "index": 1,
+    "definition": 16044,
+    "life": 97309,
+    "maximum": 100000,
+    "hits": [],
+    "headbars": [],
+    "npcInfoOrdinal": 66
+  },
+  {
+    "tick": 69,
+    "index": 1,
+    "definition": 16044,
+    "life": 97309,
+    "maximum": 100000,
+    "hits": [],
+    "headbars": [],
+    "npcInfoOrdinal": 67
+  },
+  {
+    "tick": 70,
+    "index": 1,
+    "definition": 16044,
+    "life": 97309,
+    "maximum": 100000,
+    "hits": [],
+    "headbars": [],
+    "npcInfoOrdinal": 68
+  },
+  {
+    "tick": 71,
+    "index": 1,
+    "definition": 16044,
+    "life": 97141,
+    "maximum": 100000,
+    "hits": [
+      {
+        "source": 1,
+        "damage": 168,
+        "delay": 0
+      }
+    ],
+    "headbars": [
+      {
+        "id": 0,
+        "duration": 0,
+        "delay": 0,
+        "start": 247,
+        "end": 247
+      }
+    ],
+    "npcInfoOrdinal": 69
+  },
+  {
+    "tick": 72,
+    "index": 1,
+    "definition": 16044,
+    "life": 97141,
+    "maximum": 100000,
+    "hits": [],
+    "headbars": [],
+    "npcInfoOrdinal": 70
+  },
+  {
+    "tick": 73,
+    "index": 1,
+    "definition": 16044,
+    "life": 97141,
+    "maximum": 100000,
+    "hits": [],
+    "headbars": [],
+    "npcInfoOrdinal": 71
+  },
+  {
+    "tick": 74,
+    "index": 1,
+    "definition": 16044,
+    "life": 97141,
+    "maximum": 100000,
+    "hits": [],
+    "headbars": [],
+    "npcInfoOrdinal": 72
+  },
+  {
+    "tick": 75,
+    "index": 1,
+    "definition": 16044,
+    "life": 97141,
+    "maximum": 100000,
+    "hits": [],
+    "headbars": [],
+    "npcInfoOrdinal": 73
+  },
+  {
+    "tick": 76,
+    "index": 1,
+    "definition": 16044,
+    "life": 97141,
+    "maximum": 100000,
+    "hits": [],
+    "headbars": [],
+    "npcInfoOrdinal": 74
+  },
+  {
+    "tick": 77,
+    "index": 1,
+    "definition": 16044,
+    "life": 96973,
+    "maximum": 100000,
+    "hits": [
+      {
+        "source": 1,
+        "damage": 168,
+        "delay": 0
+      }
+    ],
+    "headbars": [
+      {
+        "id": 0,
+        "duration": 0,
+        "delay": 0,
+        "start": 247,
+        "end": 247
+      }
+    ],
+    "npcInfoOrdinal": 75
+  },
+  {
+    "tick": 78,
+    "index": 1,
+    "definition": 16044,
+    "life": 96973,
+    "maximum": 100000,
+    "hits": [],
+    "headbars": [],
+    "npcInfoOrdinal": 76
+  },
+  {
+    "tick": 79,
+    "index": 1,
+    "definition": 16044,
+    "life": 96973,
+    "maximum": 100000,
+    "hits": [],
+    "headbars": [],
+    "npcInfoOrdinal": 77
+  },
+  {
+    "tick": 80,
+    "index": 1,
+    "definition": 16044,
+    "life": 96973,
+    "maximum": 100000,
+    "hits": [],
+    "headbars": [],
+    "npcInfoOrdinal": 78
+  },
+  {
+    "tick": 81,
+    "index": 1,
+    "definition": 16044,
+    "life": 96973,
+    "maximum": 100000,
+    "hits": [],
+    "headbars": [],
+    "npcInfoOrdinal": 79
+  },
+  {
+    "tick": 82,
+    "index": 1,
+    "definition": 16044,
+    "life": 96973,
+    "maximum": 100000,
+    "hits": [],
+    "headbars": [],
+    "npcInfoOrdinal": 80
+  },
+  {
+    "tick": 83,
+    "index": 1,
+    "definition": 16044,
+    "life": 96805,
+    "maximum": 100000,
+    "hits": [
+      {
+        "source": 1,
+        "damage": 168,
+        "delay": 0
+      }
+    ],
+    "headbars": [
+      {
+        "id": 0,
+        "duration": 0,
+        "delay": 0,
+        "start": 246,
+        "end": 246
+      }
+    ],
+    "npcInfoOrdinal": 81
+  },
+  {
+    "tick": 84,
+    "index": 1,
+    "definition": 16044,
+    "life": 96805,
+    "maximum": 100000,
+    "hits": [],
+    "headbars": [],
+    "npcInfoOrdinal": 82
+  },
+  {
+    "tick": 85,
+    "index": 1,
+    "definition": 16044,
+    "life": 96805,
+    "maximum": 100000,
+    "hits": [],
+    "headbars": [],
+    "npcInfoOrdinal": 83
+  },
+  {
+    "tick": 86,
+    "index": 1,
+    "definition": 16044,
+    "life": 96805,
+    "maximum": 100000,
+    "hits": [],
+    "headbars": [],
+    "npcInfoOrdinal": 84
+  },
+  {
+    "tick": 87,
+    "index": 1,
+    "definition": 16044,
+    "life": 96805,
+    "maximum": 100000,
+    "hits": [],
+    "headbars": [],
+    "npcInfoOrdinal": 85
+  }
+]

@@ -1,0 +1,669 @@
+{
+  "format": 1,
+  "build": {
+    "major": 950,
+    "minor": 1
+  },
+  "client_md5": "290cb3489d088d145741f1734f53b0fc",
+  "script_index_sha256": "f7f5e70c5f5cb95b05596805c21365fcddc68f0f5577bffc6b0423ad0a90e31b",
+  "config_archive": 2,
+  "config_index_sha256": "fa19ac09c9a4673c69fa303d12d48a61948fca49374b7243a355e3ba53541f96",
+  "type_catalog_kernel_sha256": "b9775699753c2c3bac5d3e83bff46d1c4a7b40bd10c00b65d8dd747cf696a83e",
+  "types": [
+    {
+      "id": 0,
+      "base": "int",
+      "default": 0
+    },
+    {
+      "id": 1,
+      "base": "int",
+      "default": 0
+    },
+    {
+      "id": 3,
+      "base": "int",
+      "default": -1
+    },
+    {
+      "id": 4,
+      "base": "int",
+      "default": -1
+    },
+    {
+      "id": 5,
+      "base": "int",
+      "default": -1
+    },
+    {
+      "id": 6,
+      "base": "int",
+      "default": -1
+    },
+    {
+      "id": 7,
+      "base": "int",
+      "default": -1
+    },
+    {
+      "id": 8,
+      "base": "int",
+      "default": -1
+    },
+    {
+      "id": 9,
+      "base": "int",
+      "default": -1
+    },
+    {
+      "id": 10,
+      "base": "int",
+      "default": -1
+    },
+    {
+      "id": 11,
+      "base": "int",
+      "default": -1
+    },
+    {
+      "id": 12,
+      "base": "int",
+      "default": -1
+    },
+    {
+      "id": 14,
+      "base": "int",
+      "default": -1
+    },
+    {
+      "id": 16,
+      "base": "int",
+      "default": -1
+    },
+    {
+      "id": 17,
+      "base": "int",
+      "default": -1
+    },
+    {
+      "id": 18,
+      "base": "int",
+      "default": -1
+    },
+    {
+      "id": 19,
+      "base": "int",
+      "default": -1
+    },
+    {
+      "id": 20,
+      "base": "int",
+      "default": -1
+    },
+    {
+      "id": 21,
+      "base": "int",
+      "default": -1
+    },
+    {
+      "id": 22,
+      "base": "int",
+      "default": -1
+    },
+    {
+      "id": 23,
+      "base": "int",
+      "default": -1
+    },
+    {
+      "id": 24,
+      "base": "int",
+      "default": -1
+    },
+    {
+      "id": 25,
+      "base": "int",
+      "default": -1
+    },
+    {
+      "id": 26,
+      "base": "int",
+      "default": -1
+    },
+    {
+      "id": 28,
+      "base": "int",
+      "default": -1
+    },
+    {
+      "id": 29,
+      "base": "int",
+      "default": -1
+    },
+    {
+      "id": 30,
+      "base": "int",
+      "default": -1
+    },
+    {
+      "id": 31,
+      "base": "int",
+      "default": -1
+    },
+    {
+      "id": 32,
+      "base": "int",
+      "default": -1
+    },
+    {
+      "id": 33,
+      "base": "int",
+      "default": -1
+    },
+    {
+      "id": 34,
+      "base": "int",
+      "default": -1
+    },
+    {
+      "id": 36,
+      "base": "text",
+      "default": ""
+    },
+    {
+      "id": 37,
+      "base": "int",
+      "default": -1
+    },
+    {
+      "id": 38,
+      "base": "int",
+      "default": -1
+    },
+    {
+      "id": 39,
+      "base": "int",
+      "default": -1
+    },
+    {
+      "id": 40,
+      "base": "int",
+      "default": -1
+    },
+    {
+      "id": 41,
+      "base": "int",
+      "default": -1
+    },
+    {
+      "id": 42,
+      "base": "int",
+      "default": -1
+    },
+    {
+      "id": 43,
+      "base": "int",
+      "default": -1
+    },
+    {
+      "id": 44,
+      "base": "int",
+      "default": -1
+    },
+    {
+      "id": 46,
+      "base": "int",
+      "default": -1
+    },
+    {
+      "id": 47,
+      "base": "int",
+      "default": -1
+    },
+    {
+      "id": 48,
+      "base": "int",
+      "default": -1
+    },
+    {
+      "id": 49,
+      "base": "long",
+      "default": -1
+    },
+    {
+      "id": 50,
+      "base": "coordinate",
+      "default": {
+        "level": -1,
+        "position_bits": [
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "id": 51,
+      "base": "int",
+      "default": -1
+    },
+    {
+      "id": 53,
+      "base": "int",
+      "default": -1
+    },
+    {
+      "id": 55,
+      "base": "int",
+      "default": -1
+    },
+    {
+      "id": 56,
+      "base": "long",
+      "default": -1
+    },
+    {
+      "id": 57,
+      "base": "int",
+      "default": -1
+    },
+    {
+      "id": 58,
+      "base": "int",
+      "default": -1
+    },
+    {
+      "id": 59,
+      "base": "int",
+      "default": -1
+    },
+    {
+      "id": 60,
+      "base": "int",
+      "default": -1
+    },
+    {
+      "id": 61,
+      "base": "int",
+      "default": -1
+    },
+    {
+      "id": 62,
+      "base": "int",
+      "default": -1
+    },
+    {
+      "id": 63,
+      "base": "int",
+      "default": -1
+    },
+    {
+      "id": 64,
+      "base": "int",
+      "default": -1
+    },
+    {
+      "id": 66,
+      "base": "int",
+      "default": -1
+    },
+    {
+      "id": 67,
+      "base": "int",
+      "default": -1
+    },
+    {
+      "id": 68,
+      "base": "int",
+      "default": -1
+    },
+    {
+      "id": 69,
+      "base": "int",
+      "default": -1
+    },
+    {
+      "id": 70,
+      "base": "int",
+      "default": -1
+    },
+    {
+      "id": 71,
+      "base": "long",
+      "default": -1
+    },
+    {
+      "id": 72,
+      "base": "int",
+      "default": -1
+    },
+    {
+      "id": 73,
+      "base": "int",
+      "default": -1
+    },
+    {
+      "id": 74,
+      "base": "int",
+      "default": -1
+    },
+    {
+      "id": 89,
+      "base": "int",
+      "default": -1
+    },
+    {
+      "id": 94,
+      "base": "int",
+      "default": -1
+    },
+    {
+      "id": 95,
+      "base": "int",
+      "default": -1
+    },
+    {
+      "id": 96,
+      "base": "int",
+      "default": -1
+    },
+    {
+      "id": 97,
+      "base": "int",
+      "default": -1
+    },
+    {
+      "id": 98,
+      "base": "int",
+      "default": -1
+    },
+    {
+      "id": 99,
+      "base": "int",
+      "default": -1
+    },
+    {
+      "id": 100,
+      "base": "int",
+      "default": -1
+    },
+    {
+      "id": 101,
+      "base": "int",
+      "default": -1
+    },
+    {
+      "id": 102,
+      "base": "int",
+      "default": -1
+    },
+    {
+      "id": 103,
+      "base": "int",
+      "default": -1
+    },
+    {
+      "id": 104,
+      "base": "int",
+      "default": -1
+    },
+    {
+      "id": 105,
+      "base": "int",
+      "default": -1
+    },
+    {
+      "id": 106,
+      "base": "int",
+      "default": -1
+    },
+    {
+      "id": 107,
+      "base": "int",
+      "default": -1
+    },
+    {
+      "id": 108,
+      "base": "int",
+      "default": -1
+    },
+    {
+      "id": 109,
+      "base": "int",
+      "default": -1
+    },
+    {
+      "id": 110,
+      "base": "long",
+      "default": 0
+    },
+    {
+      "id": 111,
+      "base": "int",
+      "default": -1
+    },
+    {
+      "id": 112,
+      "base": "int",
+      "default": -1
+    },
+    {
+      "id": 113,
+      "base": "int",
+      "default": -1
+    },
+    {
+      "id": 114,
+      "base": "int",
+      "default": -1
+    },
+    {
+      "id": 117,
+      "base": "int",
+      "default": -1
+    },
+    {
+      "id": 118,
+      "base": "long",
+      "default": -1
+    },
+    {
+      "id": 119,
+      "base": "int",
+      "default": -1
+    },
+    {
+      "id": 120,
+      "base": "int",
+      "default": -1
+    },
+    {
+      "id": 121,
+      "base": "int",
+      "default": -1
+    },
+    {
+      "id": 122,
+      "base": "int",
+      "default": -1
+    },
+    {
+      "id": 123,
+      "base": "int",
+      "default": -1
+    },
+    {
+      "id": 124,
+      "base": "int",
+      "default": -1
+    },
+    {
+      "id": 125,
+      "base": "int",
+      "default": -1
+    },
+    {
+      "id": 126,
+      "base": "int",
+      "default": 0
+    },
+    {
+      "id": 127,
+      "base": "int",
+      "default": -1
+    },
+    {
+      "id": 129,
+      "base": "int",
+      "default": -1
+    },
+    {
+      "id": 131,
+      "base": "int",
+      "default": -1
+    },
+    {
+      "id": 133,
+      "base": "int",
+      "default": -1
+    },
+    {
+      "id": 135,
+      "base": "int",
+      "default": -1
+    },
+    {
+      "id": 136,
+      "base": "int",
+      "default": -1
+    },
+    {
+      "id": 137,
+      "base": "int",
+      "default": -1
+    },
+    {
+      "id": 138,
+      "base": "int",
+      "default": -1
+    },
+    {
+      "id": 209,
+      "base": "int",
+      "default": -1
+    },
+    {
+      "id": 210,
+      "base": "int",
+      "default": -1
+    },
+    {
+      "id": 211,
+      "base": "int",
+      "default": -1
+    }
+  ],
+  "varbit_group": 69,
+  "variable_definition": {
+    "end": 0,
+    "data_type": 3,
+    "lifetime": 4,
+    "transmit_level": 5,
+    "client_code": 110,
+    "clear_legacy": 7,
+    "flag": 8,
+    "initial_lifetime": 0,
+    "initial_transmit_level": 0,
+    "initial_client_code": 0,
+    "initial_legacy": true,
+    "initial_flag": false
+  },
+  "bit_definition": {
+    "end": 0,
+    "base": 1,
+    "range": 2,
+    "flag": 16,
+    "initial_start": 0,
+    "initial_end": 0,
+    "initial_flag": false
+  },
+  "getter": {
+    "shift_mask": 31,
+    "range_end_bias": 1
+  },
+  "domains": [
+    {
+      "id": 0,
+      "name": "player",
+      "group": 60,
+      "legacy_types": [
+        1
+      ],
+      "legacy_default": -1,
+      "bit_getter_reviewed": true
+    },
+    {
+      "id": 1,
+      "name": "npc",
+      "group": 61,
+      "legacy_types": [
+        1
+      ],
+      "legacy_default": -1,
+      "bit_getter_reviewed": false
+    },
+    {
+      "id": 2,
+      "name": "client",
+      "group": 62,
+      "legacy_types": [
+        0,
+        1
+      ],
+      "legacy_default": -1,
+      "bit_getter_reviewed": true
+    },
+    {
+      "id": 5,
+      "name": "object",
+      "group": 65,
+      "legacy_types": [],
+      "legacy_default": null,
+      "bit_getter_reviewed": false
+    },
+    {
+      "id": 6,
+      "name": "clan",
+      "group": 66,
+      "legacy_types": [],
+      "legacy_default": null,
+      "bit_getter_reviewed": false
+    },
+    {
+      "id": 7,
+      "name": "clan_setting",
+      "group": 67,
+      "legacy_types": [],
+      "legacy_default": null,
+      "bit_getter_reviewed": false
+    },
+    {
+      "id": 9,
+      "name": "player_group",
+      "group": 80,
+      "legacy_types": [],
+      "legacy_default": null,
+      "bit_getter_reviewed": false
+    }
+  ],
+  "kernels": {
+    "decoder": "5cfebaf7b751b9c65be6fb2c6497f2c43c2b3ad068798077bc323e609afe5cd5",
+    "loop": "c1f06f078122b913ce3d9736a93c912b724f183fad2c2a2c4474163ae5855291",
+    "smart": "72254fedf399be4d87ae2c894a071d2f56c6c2bdeee5a7a7ed86918acdbb5ce3",
+    "player_get": "a4dadc835c9417be8a7c19bce7572e356a8c976d1f326a3108a39848b9447e7c",
+    "client_get": "d452ed044b59ff89096b43301be5223138ed74386769c80d8a1527f6d43cbf87",
+    "base_decoder": "be4f36c1deb77eed89b9aad7064c18b9e92ae91a6fef39475a793ce0f79eb8a4",
+    "player_default": "bdb1d8d8d249c8c1965e5e50a6ba833c625b60d823f31bf059d1a3f5be337aba",
+    "client_default": "3758bbcb22da9f9befe3a455670d5f796d2b14fee547d0792ea4a9c039e88d6e"
+  }
+}

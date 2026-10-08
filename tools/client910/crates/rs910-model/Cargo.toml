@@ -1,0 +1,38 @@
+[package]
+name = "rs910-model"
+version = "0.1.0"
+edition = "2021"
+publish = false
+description = "The 910 client's CPU model layer: ModelUnlit/Model decode, GpuModel (CPU side: lighting, animation transforms, billboards), skeletal poses, particles, floor models and their hard shadows, water, material state, font layout and the icon rasteriser. No wgpu."
+
+# Allowed dependencies (tools/refactor/layers.txt, target-architecture.md
+# §2.2): rs910-core and rs910-config (rs910-js5 is reached through config:
+# the decoders read `cache::Pack`). Externals are listed in layers.txt
+# `[externals]`; wgpu is fenced out. Doc code blocks are not compiled, like
+# client910's (`doctest = false`).
+[lib]
+doctest = false
+
+[dependencies]
+rs910-core = { path = "../rs910-core" }
+rs910-js5 = { path = "../rs910-js5" }
+rs910-config = { path = "../rs910-config" }
+anyhow = "1.0"
+thiserror = "2.0"
+
+[dev-dependencies]
+# The shared test helper (`test_support::require_pack`).
+rs910-js5 = { path = "../rs910-js5", features = ["test-hooks"] }
+
+[features]
+# Every workspace crate has `no-pack` (tools/README.md); client910's
+# `no-pack` forwards here. The pack/golden tests that also need client910
+# modules or fixtures live in client910/src/model_goldens.rs.
+no-pack = []
+# Test seams client910's tests use: the items are
+# `#[cfg(any(test, feature = "test-hooks"))]`. client910 enables it through
+# [dev-dependencies] only.
+test-hooks = []
+
+[lints]
+workspace = true

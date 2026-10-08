@@ -1,0 +1,2060 @@
+{
+  "assignment": {
+    "category": 14,
+    "initial": 60,
+    "master": 3,
+    "remaining": 1,
+    "serial": 1
+  },
+  "blockedResources": [
+    "The server has protection potions but no qualified ordinary stat-boost potion consumer; no synthetic overload boost is seeded",
+    "Native prayer bonuses are decoded and shown by cache UI; the existing standard-prayer drain does not yet consume equipment prayer bonuses",
+    "New bows reuse the ordinary recovery owner; native ammunition-recovery rates are not newly qualified"
+  ],
+  "equipment": [
+    26579,
+    26583,
+    30005,
+    30008,
+    30011,
+    30213,
+    45965
+  ],
+  "equipmentFacts": [
+    {
+      "blocked": [],
+      "equipment": {
+        "active": true,
+        "covers": [
+          3
+        ],
+        "kind": "melee-main",
+        "name": "Drygore rapier",
+        "occupancy": [
+          3
+        ],
+        "requirements": [
+          {
+            "level": 90,
+            "stat": 0
+          }
+        ],
+        "slot": 3,
+        "tier": 90
+      },
+      "forms": [
+        26579,
+        26581,
+        26582
+      ],
+      "item": 26579,
+      "name": "Drygore rapier",
+      "native": {
+        "accuracy": 2458,
+        "armourFine": 0,
+        "augmentedItem": 36701,
+        "capacity": 0,
+        "damageFine": 11025,
+        "lifeBonus": 0,
+        "prayerBonus": 0,
+        "repairCost": -1,
+        "set": -1,
+        "speed": 5
+      },
+      "qualification": [
+        "Identity, requirements, occupancy and stats from native cache; tier/style/existence from pinned Wiki history"
+      ],
+      "source": {
+        "pin": "2019-12-10",
+        "revid": 29264420,
+        "timestamp": "2019-08-04T23:24:42Z",
+        "title": "Drygore rapier"
+      },
+      "style": "melee",
+      "tier": 90,
+      "type": "weapon"
+    },
+    {
+      "blocked": [],
+      "equipment": {
+        "active": true,
+        "covers": [
+          5
+        ],
+        "kind": "melee-off",
+        "name": "Off-hand drygore rapier",
+        "occupancy": [
+          5
+        ],
+        "requirements": [
+          {
+            "level": 90,
+            "stat": 0
+          }
+        ],
+        "slot": 5,
+        "tier": 90
+      },
+      "forms": [
+        26583,
+        26585,
+        26586
+      ],
+      "item": 26583,
+      "name": "Off-hand drygore rapier",
+      "native": {
+        "accuracy": 2458,
+        "armourFine": 0,
+        "augmentedItem": 36703,
+        "capacity": 0,
+        "damageFine": 11025,
+        "lifeBonus": 0,
+        "prayerBonus": 0,
+        "repairCost": -1,
+        "set": -1,
+        "speed": 5
+      },
+      "qualification": [
+        "Identity, requirements, occupancy and stats from native cache; tier/style/existence from pinned Wiki history"
+      ],
+      "source": {
+        "pin": "2019-12-10",
+        "revid": 28351669,
+        "timestamp": "2019-05-12T18:46:38Z",
+        "title": "Off-hand drygore rapier"
+      },
+      "style": "melee",
+      "tier": 90,
+      "type": "weapon"
+    },
+    {
+      "blocked": [],
+      "equipment": {
+        "active": true,
+        "armourStyle": "melee",
+        "covers": [
+          0,
+          8,
+          11
+        ],
+        "kind": "power",
+        "name": "Malevolent helm",
+        "occupancy": [
+          0
+        ],
+        "pvpReductionMultiplier": 0.5,
+        "reductionLevel": 90,
+        "requirements": [
+          {
+            "level": 90,
+            "stat": 1
+          }
+        ],
+        "slot": 0,
+        "tier": 90
+      },
+      "forms": [
+        30005,
+        30007
+      ],
+      "item": 30005,
+      "name": "Malevolent helm",
+      "native": {
+        "accuracy": 0,
+        "armourFine": 4356,
+        "augmentedItem": -1,
+        "capacity": 100000,
+        "damageFine": 232,
+        "lifeBonus": 0,
+        "prayerBonus": 2,
+        "repairCost": 750000,
+        "set": -1,
+        "speed": 0
+      },
+      "qualification": [
+        "Identity, requirements, occupancy and stats from native cache; tier/style/existence from pinned Wiki history"
+      ],
+      "source": {
+        "pin": "2019-12-10",
+        "revid": 28375525,
+        "timestamp": "2019-05-14T16:42:14Z",
+        "title": "Malevolent helm"
+      },
+      "style": "melee",
+      "tier": 90,
+      "type": "power"
+    },
+    {
+      "blocked": [],
+      "equipment": {
+        "active": true,
+        "armourStyle": "melee",
+        "covers": [
+          4,
+          6
+        ],
+        "kind": "power",
+        "name": "Malevolent cuirass",
+        "occupancy": [
+          4
+        ],
+        "pvpReductionMultiplier": 0.5,
+        "reductionLevel": 90,
+        "requirements": [
+          {
+            "level": 90,
+            "stat": 1
+          }
+        ],
+        "slot": 4,
+        "tier": 90
+      },
+      "forms": [
+        30008,
+        30010
+      ],
+      "item": 30008,
+      "name": "Malevolent cuirass",
+      "native": {
+        "accuracy": 0,
+        "armourFine": 5009,
+        "augmentedItem": -1,
+        "capacity": 100000,
+        "damageFine": 348,
+        "lifeBonus": 0,
+        "prayerBonus": 3,
+        "repairCost": 3000000,
+        "set": -1,
+        "speed": 0
+      },
+      "qualification": [
+        "Identity, requirements, occupancy and stats from native cache; tier/style/existence from pinned Wiki history"
+      ],
+      "source": {
+        "pin": "2019-12-10",
+        "revid": 28375527,
+        "timestamp": "2019-05-14T16:42:17Z",
+        "title": "Malevolent cuirass"
+      },
+      "style": "melee",
+      "tier": 90,
+      "type": "power"
+    },
+    {
+      "blocked": [],
+      "equipment": {
+        "active": true,
+        "armourStyle": "melee",
+        "covers": [
+          7
+        ],
+        "kind": "power",
+        "name": "Malevolent greaves",
+        "occupancy": [
+          7
+        ],
+        "pvpReductionMultiplier": 0.5,
+        "reductionLevel": 90,
+        "requirements": [
+          {
+            "level": 90,
+            "stat": 1
+          }
+        ],
+        "slot": 7,
+        "tier": 90
+      },
+      "forms": [
+        30011,
+        30013
+      ],
+      "item": 30011,
+      "name": "Malevolent greaves",
+      "native": {
+        "accuracy": 0,
+        "armourFine": 4791,
+        "augmentedItem": -1,
+        "capacity": 100000,
+        "damageFine": 290,
+        "lifeBonus": 0,
+        "prayerBonus": 2,
+        "repairCost": 2000000,
+        "set": -1,
+        "speed": 0
+      },
+      "qualification": [
+        "Identity, requirements, occupancy and stats from native cache; tier/style/existence from pinned Wiki history"
+      ],
+      "source": {
+        "pin": "2019-12-10",
+        "revid": 28375528,
+        "timestamp": "2019-05-14T16:42:19Z",
+        "title": "Malevolent greaves"
+      },
+      "style": "melee",
+      "tier": 90,
+      "type": "power"
+    },
+    {
+      "blocked": [],
+      "equipment": {
+        "active": true,
+        "armourStyle": "melee",
+        "covers": [
+          9
+        ],
+        "kind": "power",
+        "name": "Razorback gauntlets",
+        "occupancy": [
+          9
+        ],
+        "pvpReductionMultiplier": 0.5,
+        "reductionLevel": 90,
+        "requirements": [
+          {
+            "level": 90,
+            "stat": 1
+          }
+        ],
+        "slot": 9,
+        "tier": 90
+      },
+      "forms": [
+        30213,
+        30215
+      ],
+      "item": 30213,
+      "name": "Razorback gauntlets",
+      "native": {
+        "accuracy": 0,
+        "armourFine": 1089,
+        "augmentedItem": -1,
+        "capacity": 100000,
+        "damageFine": 145,
+        "lifeBonus": 0,
+        "prayerBonus": 2,
+        "repairCost": 3000000,
+        "set": -1,
+        "speed": 0
+      },
+      "qualification": [
+        "Identity, requirements, occupancy and stats from native cache; tier/style/existence from pinned Wiki history"
+      ],
+      "source": {
+        "pin": "2019-12-10",
+        "revid": 30586859,
+        "timestamp": "2019-11-26T14:41:51Z",
+        "title": "Razorback gauntlets"
+      },
+      "style": "melee",
+      "tier": 90,
+      "type": "power"
+    },
+    {
+      "blocked": [],
+      "equipment": {
+        "active": true,
+        "armourStyle": "melee",
+        "covers": [
+          10
+        ],
+        "kind": "power",
+        "name": "Masterwork boots",
+        "occupancy": [
+          10
+        ],
+        "pvpReductionMultiplier": 0.5,
+        "reductionLevel": 90,
+        "requirements": [
+          {
+            "level": 90,
+            "stat": 1
+          }
+        ],
+        "slot": 10,
+        "tier": 90
+      },
+      "forms": [
+        45965,
+        45967,
+        45968
+      ],
+      "item": 45965,
+      "name": "Masterwork boots",
+      "native": {
+        "accuracy": 0,
+        "armourFine": 1089,
+        "augmentedItem": -1,
+        "capacity": 100000,
+        "damageFine": 145,
+        "lifeBonus": 0,
+        "prayerBonus": 2,
+        "repairCost": 400000,
+        "set": -1,
+        "speed": 0
+      },
+      "qualification": [
+        "Identity, requirements, occupancy and stats from native cache; tier/style/existence from pinned Wiki history"
+      ],
+      "source": {
+        "pin": "2019-12-10",
+        "revid": 30586787,
+        "timestamp": "2019-11-26T14:05:36Z",
+        "title": "Masterwork melee boots"
+      },
+      "style": "melee",
+      "tier": 90,
+      "type": "power"
+    }
+  ],
+  "expectedCompletionPoints": 2,
+  "food": {
+    "item": 385,
+    "maximumHealing": 2000
+  },
+  "initialPoints": 1000,
+  "loadout": {
+    "armour": "power",
+    "blocked": [],
+    "equipment": [
+      26579,
+      26583,
+      30005,
+      30008,
+      30011,
+      30213,
+      45965
+    ],
+    "hands": "dual-wield",
+    "style": "melee",
+    "tier": 90
+  },
+  "master": {
+    "code": 3,
+    "dir": 4,
+    "level": 0,
+    "name": "Vannaka",
+    "npc": 1597,
+    "source": "wiki-current",
+    "taskOperation": 3,
+    "x": 3094,
+    "z": 9880
+  },
+  "navigationDoors": [
+    {
+      "angle": 0,
+      "forceapproach": 0,
+      "form": 0,
+      "id": 29316,
+      "length": 1,
+      "level": 0,
+      "operation": 1,
+      "width": 1,
+      "x": 3104,
+      "z": 9909
+    },
+    {
+      "angle": 0,
+      "forceapproach": 0,
+      "form": 0,
+      "id": 29315,
+      "length": 1,
+      "level": 0,
+      "operation": 1,
+      "width": 1,
+      "x": 3104,
+      "z": 9910
+    },
+    {
+      "angle": 3,
+      "forceapproach": 0,
+      "form": 0,
+      "id": 29319,
+      "length": 1,
+      "level": 0,
+      "operation": 1,
+      "width": 1,
+      "x": 3131,
+      "z": 9918
+    },
+    {
+      "angle": 3,
+      "forceapproach": 0,
+      "form": 0,
+      "id": 29320,
+      "length": 1,
+      "level": 0,
+      "operation": 1,
+      "width": 1,
+      "x": 3132,
+      "z": 9918
+    },
+    {
+      "angle": 0,
+      "forceapproach": 0,
+      "form": 0,
+      "id": 29316,
+      "length": 1,
+      "level": 0,
+      "operation": 1,
+      "width": 1,
+      "x": 3146,
+      "z": 9870
+    },
+    {
+      "angle": 0,
+      "forceapproach": 0,
+      "form": 0,
+      "id": 29315,
+      "length": 1,
+      "level": 0,
+      "operation": 1,
+      "width": 1,
+      "x": 3146,
+      "z": 9871
+    }
+  ],
+  "prayers": [
+    {
+      "action": 10,
+      "activationBit": 16739,
+      "button": 0,
+      "damageBonusPercent": 0,
+      "drainFinePerTick": 10,
+      "group": "defence",
+      "level": 28,
+      "levelBonus": 6,
+      "name": "Steel Skin",
+      "reductionPercent": 0
+    },
+    {
+      "action": 11,
+      "activationBit": 16740,
+      "button": 1,
+      "damageBonusPercent": 6,
+      "drainFinePerTick": 10,
+      "group": "melee-damage",
+      "level": 31,
+      "levelBonus": 0,
+      "name": "Ultimate Strength",
+      "reductionPercent": 0
+    },
+    {
+      "action": 12,
+      "activationBit": 16741,
+      "button": 2,
+      "damageBonusPercent": 0,
+      "drainFinePerTick": 10,
+      "group": "melee-accuracy",
+      "level": 34,
+      "levelBonus": 6,
+      "name": "Incredible Reflexes",
+      "reductionPercent": 0
+    }
+  ],
+  "previousStreak": 4,
+  "qualification": "Initial previously-earned points and a task with one kill left only; ordinary NPC spawn/profile, RNG, life, resources and native input remain unchanged",
+  "reward": {
+    "aliases": [
+      85721153
+    ],
+    "bit": null,
+    "button": 85721162,
+    "cost": 35,
+    "items": [
+      {
+        "count": 250,
+        "item": 13280
+      }
+    ],
+    "levelRewards": [
+      {
+        "items": [
+          {
+            "count": 50,
+            "item": 13280
+          }
+        ],
+        "level": 1,
+        "xpTenths": 0
+      },
+      {
+        "items": [
+          {
+            "count": 50,
+            "item": 13280
+          }
+        ],
+        "level": 2,
+        "xpTenths": 0
+      },
+      {
+        "items": [
+          {
+            "count": 50,
+            "item": 13280
+          }
+        ],
+        "level": 3,
+        "xpTenths": 0
+      },
+      {
+        "items": [
+          {
+            "count": 50,
+            "item": 13280
+          }
+        ],
+        "level": 4,
+        "xpTenths": 0
+      },
+      {
+        "items": [
+          {
+            "count": 100,
+            "item": 13280
+          }
+        ],
+        "level": 5,
+        "xpTenths": 0
+      },
+      {
+        "items": [
+          {
+            "count": 100,
+            "item": 13280
+          }
+        ],
+        "level": 6,
+        "xpTenths": 0
+      },
+      {
+        "items": [
+          {
+            "count": 100,
+            "item": 13280
+          }
+        ],
+        "level": 7,
+        "xpTenths": 0
+      },
+      {
+        "items": [
+          {
+            "count": 100,
+            "item": 13280
+          }
+        ],
+        "level": 8,
+        "xpTenths": 0
+      },
+      {
+        "items": [
+          {
+            "count": 100,
+            "item": 13280
+          }
+        ],
+        "level": 9,
+        "xpTenths": 0
+      },
+      {
+        "items": [
+          {
+            "count": 100,
+            "item": 13280
+          }
+        ],
+        "level": 10,
+        "xpTenths": 0
+      },
+      {
+        "items": [
+          {
+            "count": 100,
+            "item": 13280
+          }
+        ],
+        "level": 11,
+        "xpTenths": 0
+      },
+      {
+        "items": [
+          {
+            "count": 100,
+            "item": 13280
+          }
+        ],
+        "level": 12,
+        "xpTenths": 0
+      },
+      {
+        "items": [
+          {
+            "count": 100,
+            "item": 13280
+          }
+        ],
+        "level": 13,
+        "xpTenths": 0
+      },
+      {
+        "items": [
+          {
+            "count": 100,
+            "item": 13280
+          }
+        ],
+        "level": 14,
+        "xpTenths": 0
+      },
+      {
+        "items": [
+          {
+            "count": 150,
+            "item": 13280
+          }
+        ],
+        "level": 15,
+        "xpTenths": 0
+      },
+      {
+        "items": [
+          {
+            "count": 150,
+            "item": 13280
+          }
+        ],
+        "level": 16,
+        "xpTenths": 0
+      },
+      {
+        "items": [
+          {
+            "count": 150,
+            "item": 13280
+          }
+        ],
+        "level": 17,
+        "xpTenths": 0
+      },
+      {
+        "items": [
+          {
+            "count": 150,
+            "item": 13280
+          }
+        ],
+        "level": 18,
+        "xpTenths": 0
+      },
+      {
+        "items": [
+          {
+            "count": 150,
+            "item": 13280
+          }
+        ],
+        "level": 19,
+        "xpTenths": 0
+      },
+      {
+        "items": [
+          {
+            "count": 150,
+            "item": 13280
+          }
+        ],
+        "level": 20,
+        "xpTenths": 0
+      },
+      {
+        "items": [
+          {
+            "count": 150,
+            "item": 13280
+          }
+        ],
+        "level": 21,
+        "xpTenths": 0
+      },
+      {
+        "items": [
+          {
+            "count": 150,
+            "item": 13280
+          }
+        ],
+        "level": 22,
+        "xpTenths": 0
+      },
+      {
+        "items": [
+          {
+            "count": 150,
+            "item": 13280
+          }
+        ],
+        "level": 23,
+        "xpTenths": 0
+      },
+      {
+        "items": [
+          {
+            "count": 150,
+            "item": 13280
+          }
+        ],
+        "level": 24,
+        "xpTenths": 0
+      },
+      {
+        "items": [
+          {
+            "count": 200,
+            "item": 13280
+          }
+        ],
+        "level": 25,
+        "xpTenths": 0
+      },
+      {
+        "items": [
+          {
+            "count": 200,
+            "item": 13280
+          }
+        ],
+        "level": 26,
+        "xpTenths": 0
+      },
+      {
+        "items": [
+          {
+            "count": 200,
+            "item": 13280
+          }
+        ],
+        "level": 27,
+        "xpTenths": 0
+      },
+      {
+        "items": [
+          {
+            "count": 200,
+            "item": 13280
+          }
+        ],
+        "level": 28,
+        "xpTenths": 0
+      },
+      {
+        "items": [
+          {
+            "count": 200,
+            "item": 13280
+          }
+        ],
+        "level": 29,
+        "xpTenths": 0
+      },
+      {
+        "items": [
+          {
+            "count": 200,
+            "item": 13280
+          }
+        ],
+        "level": 30,
+        "xpTenths": 0
+      },
+      {
+        "items": [
+          {
+            "count": 200,
+            "item": 13280
+          }
+        ],
+        "level": 31,
+        "xpTenths": 0
+      },
+      {
+        "items": [
+          {
+            "count": 200,
+            "item": 13280
+          }
+        ],
+        "level": 32,
+        "xpTenths": 0
+      },
+      {
+        "items": [
+          {
+            "count": 200,
+            "item": 13280
+          }
+        ],
+        "level": 33,
+        "xpTenths": 0
+      },
+      {
+        "items": [
+          {
+            "count": 200,
+            "item": 13280
+          }
+        ],
+        "level": 34,
+        "xpTenths": 0
+      },
+      {
+        "items": [
+          {
+            "count": 250,
+            "item": 13280
+          }
+        ],
+        "level": 35,
+        "xpTenths": 0
+      },
+      {
+        "items": [
+          {
+            "count": 250,
+            "item": 13280
+          }
+        ],
+        "level": 36,
+        "xpTenths": 0
+      },
+      {
+        "items": [
+          {
+            "count": 250,
+            "item": 13280
+          }
+        ],
+        "level": 37,
+        "xpTenths": 0
+      },
+      {
+        "items": [
+          {
+            "count": 250,
+            "item": 13280
+          }
+        ],
+        "level": 38,
+        "xpTenths": 0
+      },
+      {
+        "items": [
+          {
+            "count": 250,
+            "item": 13280
+          }
+        ],
+        "level": 39,
+        "xpTenths": 0
+      },
+      {
+        "items": [
+          {
+            "count": 250,
+            "item": 13280
+          }
+        ],
+        "level": 40,
+        "xpTenths": 0
+      },
+      {
+        "items": [
+          {
+            "count": 250,
+            "item": 13280
+          }
+        ],
+        "level": 41,
+        "xpTenths": 0
+      },
+      {
+        "items": [
+          {
+            "count": 250,
+            "item": 13280
+          }
+        ],
+        "level": 42,
+        "xpTenths": 0
+      },
+      {
+        "items": [
+          {
+            "count": 250,
+            "item": 13280
+          }
+        ],
+        "level": 43,
+        "xpTenths": 0
+      },
+      {
+        "items": [
+          {
+            "count": 250,
+            "item": 13280
+          }
+        ],
+        "level": 44,
+        "xpTenths": 0
+      },
+      {
+        "items": [
+          {
+            "count": 250,
+            "item": 13280
+          }
+        ],
+        "level": 45,
+        "xpTenths": 0
+      },
+      {
+        "items": [
+          {
+            "count": 250,
+            "item": 13280
+          }
+        ],
+        "level": 46,
+        "xpTenths": 0
+      },
+      {
+        "items": [
+          {
+            "count": 250,
+            "item": 13280
+          }
+        ],
+        "level": 47,
+        "xpTenths": 0
+      },
+      {
+        "items": [
+          {
+            "count": 250,
+            "item": 13280
+          }
+        ],
+        "level": 48,
+        "xpTenths": 0
+      },
+      {
+        "items": [
+          {
+            "count": 250,
+            "item": 13280
+          }
+        ],
+        "level": 49,
+        "xpTenths": 0
+      },
+      {
+        "items": [
+          {
+            "count": 250,
+            "item": 13280
+          }
+        ],
+        "level": 50,
+        "xpTenths": 0
+      },
+      {
+        "items": [
+          {
+            "count": 250,
+            "item": 13280
+          }
+        ],
+        "level": 51,
+        "xpTenths": 0
+      },
+      {
+        "items": [
+          {
+            "count": 250,
+            "item": 13280
+          }
+        ],
+        "level": 52,
+        "xpTenths": 0
+      },
+      {
+        "items": [
+          {
+            "count": 250,
+            "item": 13280
+          }
+        ],
+        "level": 53,
+        "xpTenths": 0
+      },
+      {
+        "items": [
+          {
+            "count": 250,
+            "item": 13280
+          }
+        ],
+        "level": 54,
+        "xpTenths": 0
+      },
+      {
+        "items": [
+          {
+            "count": 250,
+            "item": 13280
+          }
+        ],
+        "level": 55,
+        "xpTenths": 0
+      },
+      {
+        "items": [
+          {
+            "count": 250,
+            "item": 13280
+          }
+        ],
+        "level": 56,
+        "xpTenths": 0
+      },
+      {
+        "items": [
+          {
+            "count": 250,
+            "item": 13280
+          }
+        ],
+        "level": 57,
+        "xpTenths": 0
+      },
+      {
+        "items": [
+          {
+            "count": 250,
+            "item": 13280
+          }
+        ],
+        "level": 58,
+        "xpTenths": 0
+      },
+      {
+        "items": [
+          {
+            "count": 250,
+            "item": 13280
+          }
+        ],
+        "level": 59,
+        "xpTenths": 0
+      },
+      {
+        "items": [
+          {
+            "count": 250,
+            "item": 13280
+          }
+        ],
+        "level": 60,
+        "xpTenths": 0
+      },
+      {
+        "items": [
+          {
+            "count": 250,
+            "item": 13280
+          }
+        ],
+        "level": 61,
+        "xpTenths": 0
+      },
+      {
+        "items": [
+          {
+            "count": 250,
+            "item": 13280
+          }
+        ],
+        "level": 62,
+        "xpTenths": 0
+      },
+      {
+        "items": [
+          {
+            "count": 250,
+            "item": 13280
+          }
+        ],
+        "level": 63,
+        "xpTenths": 0
+      },
+      {
+        "items": [
+          {
+            "count": 250,
+            "item": 13280
+          }
+        ],
+        "level": 64,
+        "xpTenths": 0
+      },
+      {
+        "items": [
+          {
+            "count": 250,
+            "item": 13280
+          }
+        ],
+        "level": 65,
+        "xpTenths": 0
+      },
+      {
+        "items": [
+          {
+            "count": 250,
+            "item": 13280
+          }
+        ],
+        "level": 66,
+        "xpTenths": 0
+      },
+      {
+        "items": [
+          {
+            "count": 250,
+            "item": 13280
+          }
+        ],
+        "level": 67,
+        "xpTenths": 0
+      },
+      {
+        "items": [
+          {
+            "count": 250,
+            "item": 13280
+          }
+        ],
+        "level": 68,
+        "xpTenths": 0
+      },
+      {
+        "items": [
+          {
+            "count": 250,
+            "item": 13280
+          }
+        ],
+        "level": 69,
+        "xpTenths": 0
+      },
+      {
+        "items": [
+          {
+            "count": 250,
+            "item": 13280
+          }
+        ],
+        "level": 70,
+        "xpTenths": 0
+      },
+      {
+        "items": [
+          {
+            "count": 250,
+            "item": 13280
+          }
+        ],
+        "level": 71,
+        "xpTenths": 0
+      },
+      {
+        "items": [
+          {
+            "count": 250,
+            "item": 13280
+          }
+        ],
+        "level": 72,
+        "xpTenths": 0
+      },
+      {
+        "items": [
+          {
+            "count": 250,
+            "item": 13280
+          }
+        ],
+        "level": 73,
+        "xpTenths": 0
+      },
+      {
+        "items": [
+          {
+            "count": 250,
+            "item": 13280
+          }
+        ],
+        "level": 74,
+        "xpTenths": 0
+      },
+      {
+        "items": [
+          {
+            "count": 250,
+            "item": 13280
+          }
+        ],
+        "level": 75,
+        "xpTenths": 0
+      },
+      {
+        "items": [
+          {
+            "count": 250,
+            "item": 13280
+          }
+        ],
+        "level": 76,
+        "xpTenths": 0
+      },
+      {
+        "items": [
+          {
+            "count": 250,
+            "item": 13280
+          }
+        ],
+        "level": 77,
+        "xpTenths": 0
+      },
+      {
+        "items": [
+          {
+            "count": 250,
+            "item": 13280
+          }
+        ],
+        "level": 78,
+        "xpTenths": 0
+      },
+      {
+        "items": [
+          {
+            "count": 250,
+            "item": 13280
+          }
+        ],
+        "level": 79,
+        "xpTenths": 0
+      },
+      {
+        "items": [
+          {
+            "count": 250,
+            "item": 13280
+          }
+        ],
+        "level": 80,
+        "xpTenths": 0
+      },
+      {
+        "items": [
+          {
+            "count": 250,
+            "item": 13280
+          }
+        ],
+        "level": 81,
+        "xpTenths": 0
+      },
+      {
+        "items": [
+          {
+            "count": 250,
+            "item": 13280
+          }
+        ],
+        "level": 82,
+        "xpTenths": 0
+      },
+      {
+        "items": [
+          {
+            "count": 250,
+            "item": 13280
+          }
+        ],
+        "level": 83,
+        "xpTenths": 0
+      },
+      {
+        "items": [
+          {
+            "count": 250,
+            "item": 13280
+          }
+        ],
+        "level": 84,
+        "xpTenths": 0
+      },
+      {
+        "items": [
+          {
+            "count": 250,
+            "item": 13280
+          }
+        ],
+        "level": 85,
+        "xpTenths": 0
+      },
+      {
+        "items": [
+          {
+            "count": 250,
+            "item": 13280
+          }
+        ],
+        "level": 86,
+        "xpTenths": 0
+      },
+      {
+        "items": [
+          {
+            "count": 250,
+            "item": 13280
+          }
+        ],
+        "level": 87,
+        "xpTenths": 0
+      },
+      {
+        "items": [
+          {
+            "count": 250,
+            "item": 13280
+          }
+        ],
+        "level": 88,
+        "xpTenths": 0
+      },
+      {
+        "items": [
+          {
+            "count": 250,
+            "item": 13280
+          }
+        ],
+        "level": 89,
+        "xpTenths": 0
+      },
+      {
+        "items": [
+          {
+            "count": 250,
+            "item": 13280
+          }
+        ],
+        "level": 90,
+        "xpTenths": 0
+      },
+      {
+        "items": [
+          {
+            "count": 250,
+            "item": 13280
+          }
+        ],
+        "level": 91,
+        "xpTenths": 0
+      },
+      {
+        "items": [
+          {
+            "count": 250,
+            "item": 13280
+          }
+        ],
+        "level": 92,
+        "xpTenths": 0
+      },
+      {
+        "items": [
+          {
+            "count": 250,
+            "item": 13280
+          }
+        ],
+        "level": 93,
+        "xpTenths": 0
+      },
+      {
+        "items": [
+          {
+            "count": 250,
+            "item": 13280
+          }
+        ],
+        "level": 94,
+        "xpTenths": 0
+      },
+      {
+        "items": [
+          {
+            "count": 250,
+            "item": 13280
+          }
+        ],
+        "level": 95,
+        "xpTenths": 0
+      },
+      {
+        "items": [
+          {
+            "count": 250,
+            "item": 13280
+          }
+        ],
+        "level": 96,
+        "xpTenths": 0
+      },
+      {
+        "items": [
+          {
+            "count": 250,
+            "item": 13280
+          }
+        ],
+        "level": 97,
+        "xpTenths": 0
+      },
+      {
+        "items": [
+          {
+            "count": 250,
+            "item": 13280
+          }
+        ],
+        "level": 98,
+        "xpTenths": 0
+      },
+      {
+        "items": [
+          {
+            "count": 250,
+            "item": 13280
+          }
+        ],
+        "level": 99,
+        "xpTenths": 0
+      },
+      {
+        "items": [
+          {
+            "count": 250,
+            "item": 13280
+          }
+        ],
+        "level": 100,
+        "xpTenths": 0
+      },
+      {
+        "items": [
+          {
+            "count": 250,
+            "item": 13280
+          }
+        ],
+        "level": 101,
+        "xpTenths": 0
+      },
+      {
+        "items": [
+          {
+            "count": 250,
+            "item": 13280
+          }
+        ],
+        "level": 102,
+        "xpTenths": 0
+      },
+      {
+        "items": [
+          {
+            "count": 250,
+            "item": 13280
+          }
+        ],
+        "level": 103,
+        "xpTenths": 0
+      },
+      {
+        "items": [
+          {
+            "count": 250,
+            "item": 13280
+          }
+        ],
+        "level": 104,
+        "xpTenths": 0
+      },
+      {
+        "items": [
+          {
+            "count": 250,
+            "item": 13280
+          }
+        ],
+        "level": 105,
+        "xpTenths": 0
+      },
+      {
+        "items": [
+          {
+            "count": 250,
+            "item": 13280
+          }
+        ],
+        "level": 106,
+        "xpTenths": 0
+      },
+      {
+        "items": [
+          {
+            "count": 250,
+            "item": 13280
+          }
+        ],
+        "level": 107,
+        "xpTenths": 0
+      },
+      {
+        "items": [
+          {
+            "count": 250,
+            "item": 13280
+          }
+        ],
+        "level": 108,
+        "xpTenths": 0
+      },
+      {
+        "items": [
+          {
+            "count": 250,
+            "item": 13280
+          }
+        ],
+        "level": 109,
+        "xpTenths": 0
+      },
+      {
+        "items": [
+          {
+            "count": 250,
+            "item": 13280
+          }
+        ],
+        "level": 110,
+        "xpTenths": 0
+      },
+      {
+        "items": [
+          {
+            "count": 250,
+            "item": 13280
+          }
+        ],
+        "level": 111,
+        "xpTenths": 0
+      },
+      {
+        "items": [
+          {
+            "count": 250,
+            "item": 13280
+          }
+        ],
+        "level": 112,
+        "xpTenths": 0
+      },
+      {
+        "items": [
+          {
+            "count": 250,
+            "item": 13280
+          }
+        ],
+        "level": 113,
+        "xpTenths": 0
+      },
+      {
+        "items": [
+          {
+            "count": 250,
+            "item": 13280
+          }
+        ],
+        "level": 114,
+        "xpTenths": 0
+      },
+      {
+        "items": [
+          {
+            "count": 250,
+            "item": 13280
+          }
+        ],
+        "level": 115,
+        "xpTenths": 0
+      },
+      {
+        "items": [
+          {
+            "count": 250,
+            "item": 13280
+          }
+        ],
+        "level": 116,
+        "xpTenths": 0
+      },
+      {
+        "items": [
+          {
+            "count": 250,
+            "item": 13280
+          }
+        ],
+        "level": 117,
+        "xpTenths": 0
+      },
+      {
+        "items": [
+          {
+            "count": 250,
+            "item": 13280
+          }
+        ],
+        "level": 118,
+        "xpTenths": 0
+      },
+      {
+        "items": [
+          {
+            "count": 250,
+            "item": 13280
+          }
+        ],
+        "level": 119,
+        "xpTenths": 0
+      },
+      {
+        "items": [
+          {
+            "count": 250,
+            "item": 13280
+          }
+        ],
+        "level": 120,
+        "xpTenths": 0
+      },
+      {
+        "items": [
+          {
+            "count": 250,
+            "item": 13280
+          }
+        ],
+        "level": 121,
+        "xpTenths": 0
+      },
+      {
+        "items": [
+          {
+            "count": 250,
+            "item": 13280
+          }
+        ],
+        "level": 122,
+        "xpTenths": 0
+      },
+      {
+        "items": [
+          {
+            "count": 250,
+            "item": 13280
+          }
+        ],
+        "level": 123,
+        "xpTenths": 0
+      },
+      {
+        "items": [
+          {
+            "count": 250,
+            "item": 13280
+          }
+        ],
+        "level": 124,
+        "xpTenths": 0
+      },
+      {
+        "items": [
+          {
+            "count": 250,
+            "item": 13280
+          }
+        ],
+        "level": 125,
+        "xpTenths": 0
+      },
+      {
+        "items": [
+          {
+            "count": 250,
+            "item": 13280
+          }
+        ],
+        "level": 126,
+        "xpTenths": 0
+      },
+      {
+        "items": [
+          {
+            "count": 250,
+            "item": 13280
+          }
+        ],
+        "level": 127,
+        "xpTenths": 0
+      },
+      {
+        "items": [
+          {
+            "count": 250,
+            "item": 13280
+          }
+        ],
+        "level": 128,
+        "xpTenths": 0
+      },
+      {
+        "items": [
+          {
+            "count": 250,
+            "item": 13280
+          }
+        ],
+        "level": 129,
+        "xpTenths": 0
+      },
+      {
+        "items": [
+          {
+            "count": 250,
+            "item": 13280
+          }
+        ],
+        "level": 130,
+        "xpTenths": 0
+      },
+      {
+        "items": [
+          {
+            "count": 250,
+            "item": 13280
+          }
+        ],
+        "level": 131,
+        "xpTenths": 0
+      },
+      {
+        "items": [
+          {
+            "count": 250,
+            "item": 13280
+          }
+        ],
+        "level": 132,
+        "xpTenths": 0
+      },
+      {
+        "items": [
+          {
+            "count": 250,
+            "item": 13280
+          }
+        ],
+        "level": 133,
+        "xpTenths": 0
+      },
+      {
+        "items": [
+          {
+            "count": 250,
+            "item": 13280
+          }
+        ],
+        "level": 134,
+        "xpTenths": 0
+      },
+      {
+        "items": [
+          {
+            "count": 250,
+            "item": 13280
+          }
+        ],
+        "level": 135,
+        "xpTenths": 0
+      },
+      {
+        "items": [
+          {
+            "count": 250,
+            "item": 13280
+          }
+        ],
+        "level": 136,
+        "xpTenths": 0
+      },
+      {
+        "items": [
+          {
+            "count": 250,
+            "item": 13280
+          }
+        ],
+        "level": 137,
+        "xpTenths": 0
+      },
+      {
+        "items": [
+          {
+            "count": 250,
+            "item": 13280
+          }
+        ],
+        "level": 138,
+        "xpTenths": 0
+      },
+      {
+        "items": [
+          {
+            "count": 250,
+            "item": 13280
+          }
+        ],
+        "level": 139,
+        "xpTenths": 0
+      },
+      {
+        "items": [
+          {
+            "count": 250,
+            "item": 13280
+          }
+        ],
+        "level": 140,
+        "xpTenths": 0
+      }
+    ],
+    "name": "Broad-tipped bolts",
+    "unlock": null,
+    "xpTenths": 0
+  },
+  "spawnAuthority": "Existing generated spawn coordinates retain their actual source labels; this sample does not upgrade current-Wiki geometry to dated authority",
+  "target": {
+    "npc": 117,
+    "profile": {
+      "accuracy": 486,
+      "aggressive": true,
+      "anims": {
+        "attack": 4652,
+        "death": 4653,
+        "defend": 4654
+      },
+      "armour": 486,
+      "attackLevel": 32,
+      "attackSpeed": 6,
+      "deathTicks": 39,
+      "defenceLevel": 32,
+      "dropTable": "npc:117",
+      "experience": 108,
+      "hitpoints": 3200,
+      "level": 44,
+      "magicAffinity": 65,
+      "maxHit": 192,
+      "meleeAffinity": 55,
+      "name": "Hill Giant",
+      "npc": 117,
+      "rangedAffinity": 45,
+      "respawnTicks": 60,
+      "source": {
+        "accuracy": "cache",
+        "aggressive": "wiki",
+        "anims": "other-server-unverified",
+        "armour": "cache",
+        "attackLevel": "wiki",
+        "attackSpeed": "cache",
+        "deathTicks": "cache",
+        "defenceLevel": "wiki",
+        "experience": "wiki",
+        "hitpoints": "wiki",
+        "level": "cache",
+        "magicAffinity": "wiki",
+        "maxHit": "cache",
+        "meleeAffinity": "wiki",
+        "rangedAffinity": "wiki",
+        "respawnTicks": "other-server-unverified",
+        "weakness": "cache",
+        "weaknessAffinity": "cache"
+      },
+      "weakness": "air",
+      "weaknessAffinity": 90
+    },
+    "spawn": {
+      "dir": 4,
+      "level": 0,
+      "npc": 117,
+      "source": "wiki-current",
+      "x": 3117,
+      "z": 9850
+    },
+    "task": {
+      "category": 14,
+      "level": 1,
+      "maximum": 120,
+      "minimum": 60,
+      "monsters": [
+        117,
+        4689,
+        4690,
+        4691,
+        4692,
+        4693
+      ],
+      "name": "hill giants",
+      "quests": [],
+      "requirements": [],
+      "unlock": null,
+      "weight": 10
+    }
+  },
+  "toolbar": {
+    "backpackDestination": 2,
+    "combatDestination": 6,
+    "prayerDestination": 4,
+    "retaliationVarp": 462
+  }
+}

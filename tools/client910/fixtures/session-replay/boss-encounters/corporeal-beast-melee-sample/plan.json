@@ -1,0 +1,213 @@
+{
+  "actors": [
+    {
+      "maximumLife": 100000,
+      "npc": 8133,
+      "role": "boss"
+    },
+    {
+      "maximumLife": 3500,
+      "npc": 8127,
+      "role": "core"
+    }
+  ],
+  "budgets": {
+    "clientSeconds": 360,
+    "driverSeconds": 400,
+    "fightSeconds": 120,
+    "sessionSeconds": 600
+  },
+  "core": {
+    "blocked": [],
+    "cadenceTicks": 3,
+    "damagePolicy": "ordinary-uniform-typeless",
+    "drops": [
+      {
+        "item": 592,
+        "kind": "always",
+        "max": 1,
+        "min": 1,
+        "rarity": "always"
+      }
+    ],
+    "limitations": [
+      "Core prayer-drain amount and HP-dependent summon scaling",
+      "Core leap presentation and exact arrival timeline"
+    ],
+    "maximumDamage": 600,
+    "movementPolicy": "ordinary-walk",
+    "npc": 8127,
+    "pauseMilliseconds": 5000,
+    "poisonStopsDrain": true,
+    "prayerDrainFine": null,
+    "profile": {
+      "hitpoints": 3500
+    },
+    "radiusTiles": 1,
+    "spawnPolicy": "boss-origin",
+    "summonDenominator": 40,
+    "summonPolicy": "participant-fraction-at-boss-launch"
+  },
+  "corpseTicks": 1,
+  "equipment": [
+    37640,
+    30005,
+    30008,
+    30011,
+    30213,
+    45965
+  ],
+  "food": {
+    "item": 385,
+    "maximumHealing": 2000
+  },
+  "format": 1,
+  "loadout": {
+    "armour": "power",
+    "armourTier": 90,
+    "blocked": [],
+    "equipment": [
+      37640,
+      30005,
+      30008,
+      30011,
+      30213,
+      45965
+    ],
+    "hands": "two-handed",
+    "style": "melee",
+    "tier": 92
+  },
+  "lootPolicy": {
+    "coreAshes": "Only after an actual normally earned core death; never substitute for boss loot",
+    "fixedItem": null,
+    "selection": "observed-normal-owner-qualified-roll-or-legal-empty"
+  },
+  "prayers": [
+    {
+      "action": 15,
+      "activationBit": 16747,
+      "button": 13,
+      "damageBonusPercent": 0,
+      "drainFinePerTick": 15,
+      "group": "protect-melee",
+      "level": 43,
+      "levelBonus": 0,
+      "name": "Protect from Melee",
+      "reductionPercent": 50
+    }
+  ],
+  "publicRoom": "corporeal-beast-public",
+  "recordingScope": {
+    "core": "Observe natural full-health core, actual drain/heal and naturally occurring pause/poison/death stop; do not force a random core.",
+    "desired": [
+      "leave",
+      "rejoin"
+    ],
+    "excluded": [
+      "native full kill and boss loot",
+      "boss-death core stop",
+      "private/custom/join/login/cap matrix",
+      "full poison/pause/stale actor matrix",
+      "unqualified presentation and prayer amount",
+      "pixel and FPS proof"
+    ],
+    "identity": "native_ordinary_melee_sample",
+    "narrowing": "Bounded ordinary melee sample starts at full health and observes normal incoming hits, half damage, prayer and food. Full kill, boss loot and core hard cases remain matching socket evidence. Exit/rejoin attempted only within the fixed remaining budget.",
+    "required": [
+      "enter",
+      "ordinary_melee_sample"
+    ]
+  },
+  "restriction": {
+    "fullDamageClasses": [
+      14931
+    ],
+    "fullDamageWeapons": [],
+    "scale": {
+      "denominator": 2,
+      "numerator": 1
+    },
+    "selectedWeapon": {
+      "category": 14930,
+      "forms": [
+        {
+          "category": 14930,
+          "item": 37640
+        },
+        {
+          "category": 14930,
+          "item": 37642
+        },
+        {
+          "category": 14930,
+          "item": 37643
+        }
+      ],
+      "item": 37640,
+      "native": {
+        "accuracy": 2577,
+        "armourFine": 0,
+        "augmentedItem": 37675,
+        "capacity": 60000,
+        "damageFine": 20562,
+        "lifeBonus": 0,
+        "prayerBonus": 0,
+        "repairCost": 4800000,
+        "set": -1,
+        "speed": 6
+      }
+    }
+  },
+  "room": {
+    "entrance": {
+      "level": 2,
+      "x": 2974,
+      "z": 4384
+    },
+    "entryLoc": 38811,
+    "entryTile": {
+      "level": 2,
+      "x": 2971,
+      "z": 4382
+    },
+    "exit": {
+      "level": 2,
+      "x": 2970,
+      "z": 4384
+    },
+    "exitLoc": 38811,
+    "exitTile": {
+      "level": 2,
+      "x": 2971,
+      "z": 4382
+    },
+    "id": "corporeal-beast"
+  },
+  "source": {
+    "blockedResources": [
+      "The server has protection potions but no qualified ordinary stat-boost potion consumer; no synthetic overload boost is seeded",
+      "Native prayer bonuses are decoded and shown by cache UI; the existing standard-prayer drain does not yet consume equipment prayer bonuses",
+      "New bows reuse the ordinary recovery owner; native ammunition-recovery rates are not newly qualified"
+    ],
+    "gearChoice": {
+      "armour": "power",
+      "armourTier": 90,
+      "hands": "two-handed",
+      "style": "melee",
+      "tier": 92
+    },
+    "initialSkillsAndSavedPreferenceOnly": true
+  },
+  "target": {
+    "npc": 8133,
+    "profile": {
+      "hitpoints": 100000
+    }
+  },
+  "toolbar": {
+    "backpackDestination": 2,
+    "prayerDestination": 4,
+    "retaliationVarp": 462
+  }
+}

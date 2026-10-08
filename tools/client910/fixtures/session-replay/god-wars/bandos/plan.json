@@ -1,0 +1,355 @@
+{
+  "format": 1,
+  "accountKey": "alice",
+  "faction": "bandos",
+  "arenaId": "gwd-bandos",
+  "equipment": [
+    1155,
+    1117,
+    1075,
+    45431,
+    4119,
+    11696
+  ],
+  "combatEquipment": [
+    11696
+  ],
+  "altarEquipment": [
+    11696
+  ],
+  "combatStyle": "melee",
+  "equipmentFacts": [
+    {
+      "item": 1155,
+      "name": "Bronze full helm",
+      "qualified": {
+        "name": "Bronze full helm",
+        "slot": 0,
+        "covers": [
+          0,
+          8
+        ],
+        "occupancy": [
+          0
+        ],
+        "kind": "tank",
+        "tier": 5,
+        "reductionLevel": 1,
+        "requirement": {
+          "skill": "defence",
+          "level": 1
+        }
+      },
+      "inventoryOperations": [
+        null,
+        "Wear",
+        null,
+        null,
+        "Drop"
+      ]
+    },
+    {
+      "item": 1117,
+      "name": "Bronze platebody",
+      "qualified": {
+        "name": "Bronze platebody",
+        "slot": 4,
+        "covers": [
+          4,
+          6
+        ],
+        "occupancy": [
+          4
+        ],
+        "kind": "tank",
+        "tier": 5,
+        "reductionLevel": 1,
+        "requirement": {
+          "skill": "defence",
+          "level": 1
+        }
+      },
+      "inventoryOperations": [
+        null,
+        "Wear",
+        null,
+        null,
+        "Drop"
+      ]
+    },
+    {
+      "item": 1075,
+      "name": "Bronze platelegs",
+      "qualified": {
+        "name": "Bronze platelegs",
+        "slot": 7,
+        "covers": [
+          7
+        ],
+        "occupancy": [
+          7
+        ],
+        "kind": "tank",
+        "tier": 5,
+        "reductionLevel": 1,
+        "requirement": {
+          "skill": "defence",
+          "level": 1
+        }
+      },
+      "inventoryOperations": [
+        null,
+        "Wear",
+        null,
+        null,
+        "Drop"
+      ]
+    },
+    {
+      "item": 45431,
+      "name": "Bronze gauntlets",
+      "qualified": {
+        "name": "Bronze gauntlets",
+        "slot": 9,
+        "covers": [
+          9
+        ],
+        "occupancy": [
+          9
+        ],
+        "kind": "tank",
+        "tier": 5,
+        "reductionLevel": 1,
+        "requirement": {
+          "skill": "defence",
+          "level": 1
+        }
+      },
+      "inventoryOperations": [
+        null,
+        "Wear",
+        null,
+        null,
+        "Drop"
+      ]
+    },
+    {
+      "item": 4119,
+      "name": "Bronze armoured boots",
+      "qualified": {
+        "name": "Bronze armoured boots",
+        "slot": 10,
+        "covers": [
+          10
+        ],
+        "occupancy": [
+          10
+        ],
+        "kind": "tank",
+        "tier": 5,
+        "reductionLevel": 1,
+        "requirement": {
+          "skill": "defence",
+          "level": 1
+        }
+      },
+      "inventoryOperations": [
+        null,
+        "Wear",
+        null,
+        null,
+        "Drop"
+      ]
+    },
+    {
+      "item": 11696,
+      "name": "Bandos godsword",
+      "qualified": {
+        "name": "Bandos godsword",
+        "slot": 3,
+        "covers": [
+          3,
+          5
+        ],
+        "occupancy": [
+          3,
+          5
+        ],
+        "kind": "melee-main",
+        "requirement": {
+          "skill": "attack",
+          "level": 75
+        }
+      },
+      "inventoryOperations": [
+        null,
+        "Wield",
+        "Remove-hilt",
+        null,
+        "Drop"
+      ]
+    }
+  ],
+  "food": {
+    "item": 385,
+    "count": 21
+  },
+  "campSelection": {
+    "slayerStat": 18,
+    "policy": "Current native base level plus generated requirement; conservatively exclude task/protection/gear/special-attack restricted camp rows"
+  },
+  "ammunition": null,
+  "route": {
+    "camp": [
+      "gwd_bandos_enter"
+    ],
+    "campReturn": [
+      "gwd_bandos_return"
+    ]
+  },
+  "prayerPolicy": {
+    "campDrain": "unchanged",
+    "depleted": "No live refill/fixture restore; incoming fight can proceed with genuinely empty Prayer until actual altar"
+  },
+  "toolbar": {
+    "backpackDestination": 2,
+    "prayerDestination": 4,
+    "combatDestination": 6,
+    "retaliationVarp": 462,
+    "settings": {
+      "layout": {
+        "category": 31,
+        "slot": 1,
+        "definition": 41667,
+        "selectionPath": [
+          {
+            "index": 5,
+            "parent": 5,
+            "category": 31
+          },
+          {
+            "index": 31,
+            "parent": 5,
+            "category": 31
+          }
+        ]
+      },
+      "slim": {
+        "category": 7,
+        "slot": 3,
+        "definition": 41659,
+        "selectionPath": [
+          {
+            "index": 0,
+            "parent": 0,
+            "category": 6
+          },
+          {
+            "index": 7,
+            "parent": 0,
+            "category": 7
+          }
+        ]
+      }
+    }
+  },
+  "transportPolicy": "Ordinary Settings enables Slim headers and preserves original layout before native retaliation OFF; no seeded preferences; explicit Attack unchanged",
+  "prayers": [
+    {
+      "name": "Protect from Melee",
+      "action": 15,
+      "button": 13,
+      "level": 43,
+      "group": "protect-melee",
+      "activationBit": 16747,
+      "drainFinePerTick": 15,
+      "levelBonus": 0,
+      "damageBonusPercent": 0,
+      "reductionPercent": 50
+    },
+    {
+      "name": "Ultimate Strength",
+      "action": 11,
+      "button": 1,
+      "level": 31,
+      "group": "melee-damage",
+      "activationBit": 16740,
+      "drainFinePerTick": 10,
+      "levelBonus": 0,
+      "damageBonusPercent": 6,
+      "reductionPercent": 0
+    },
+    {
+      "name": "Incredible Reflexes",
+      "action": 12,
+      "button": 2,
+      "level": 34,
+      "group": "melee-accuracy",
+      "activationBit": 16741,
+      "drainFinePerTick": 10,
+      "levelBonus": 6,
+      "damageBonusPercent": 0,
+      "reductionPercent": 0
+    }
+  ],
+  "initialCount": 39,
+  "initialLocation": {
+    "level": 0,
+    "x": 2852,
+    "z": 5334,
+    "packed": 46732502
+  },
+  "initialFixture": {
+    "qualification": "declared-before-login-only",
+    "skillFacts": [
+      {
+        "name": "Attack",
+        "stat": 0,
+        "xp": 13034431,
+        "level": 99
+      },
+      {
+        "name": "Strength",
+        "stat": 2,
+        "xp": 13034431,
+        "level": 99
+      },
+      {
+        "name": "Defence",
+        "stat": 1,
+        "xp": 13034431,
+        "level": 99
+      },
+      {
+        "name": "Constitution",
+        "stat": 3,
+        "xp": 13034431,
+        "level": 99
+      },
+      {
+        "name": "Prayer",
+        "stat": 5,
+        "xp": 13034431,
+        "level": 99
+      },
+      {
+        "name": "Ranged",
+        "stat": 4,
+        "xp": 13034431,
+        "level": 99
+      },
+      {
+        "name": "Agility",
+        "stat": 16,
+        "xp": 13034431,
+        "level": 99
+      }
+    ],
+    "worn": "empty; actual Wield/Wear required after authentication",
+    "counts": "Previously earned 39 are declared; one actual camp kill must supply the fortieth",
+    "entry": "Starts inside the accessible dungeon; first surface quest progression is held",
+    "armadyl": "Godsword supplies travel/altar protection only; actual shortbow+compatible arrows are wielded before camp fight and every arena role",
+    "armour": "Only currently qualified Bronze armour; no invented high-tier worn state. Actual melee-armour ranged penalty remains active",
+    "random": "World ordinary RNG unchanged; no fixture stream"
+  }
+}

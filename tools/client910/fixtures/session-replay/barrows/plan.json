@@ -1,0 +1,311 @@
+{
+  "accountKey": "alice",
+  "equipment": [
+    4151,
+    1171,
+    1117,
+    1075,
+    45431,
+    4119
+  ],
+  "toolbar": {
+    "backpackDestination": 2,
+    "prayerDestination": 4,
+    "combatDestination": 6,
+    "retaliationVarp": 462,
+    "prayerWindow": 21291,
+    "prayerTitle": "Prayer Abilities",
+    "settings": {
+      "layout": {
+        "category": 31,
+        "slot": 1,
+        "definition": 41667,
+        "selectionPath": [
+          {
+            "index": 5,
+            "parent": 5,
+            "category": 31
+          },
+          {
+            "index": 31,
+            "parent": 5,
+            "category": 31
+          }
+        ]
+      },
+      "slim": {
+        "category": 7,
+        "slot": 3,
+        "definition": 41659,
+        "selectionPath": [
+          {
+            "index": 0,
+            "parent": 0,
+            "category": 6
+          },
+          {
+            "index": 7,
+            "parent": 0,
+            "category": 7
+          }
+        ]
+      }
+    }
+  },
+  "prayers": [
+    {
+      "name": "Protect from Magic",
+      "group": "protect-magic",
+      "button": 11,
+      "activationBit": 16745
+    },
+    {
+      "name": "Protect from Missiles",
+      "group": "protect-ranged",
+      "button": 12,
+      "activationBit": 16746
+    },
+    {
+      "name": "Protect from Melee",
+      "group": "protect-melee",
+      "button": 13,
+      "activationBit": 16747
+    }
+  ],
+  "prayerPolicy": {
+    "selection": "Only the unique generated ordinary incoming brother style",
+    "depletion": "Observed genuine Prayer exhaustion, no replenishment or blind action retry",
+    "namespace": "Actual loaded prayer_book.prayer_buttons, serial, native operation and PLAYER activation publication",
+    "qualification": "Native cache title/mount/order facts; fresh CS2 row and actual activation remain required observations"
+  },
+  "repair": {
+    "format": 1,
+    "sourceOnlyInitialFixture": true,
+    "hood": {
+      "name": "Ahrim's hood",
+      "key": "02e6d66b-f46d-413c-8c95-41f427ae9069",
+      "family": {
+        "item": 4708,
+        "equipment": {
+          "name": "Ahrim's hood",
+          "slot": 0,
+          "covers": [
+            0,
+            8
+          ],
+          "occupancy": [
+            0
+          ],
+          "kind": "tank",
+          "active": true,
+          "tier": 70,
+          "armourStyle": "magic",
+          "reductionLevel": 70,
+          "requirements": [
+            {
+              "stat": 1,
+              "level": 70
+            }
+          ]
+        },
+        "capacity": 100000,
+        "freshCharges": 100000,
+        "usedItem": 35551,
+        "coinRepair": {
+          "fullCost": 138000,
+          "output": 4708
+        },
+        "wearPerTick": 1,
+        "depleted": {
+          "kind": "identity",
+          "item": 4860
+        },
+        "checkHeld": 3,
+        "dischargeHeld": null,
+        "creation": [],
+        "repair": [],
+        "qualification": [
+          "Ahrim's hood oldid30649797: degrades and repair_cost agree with all three current native identities",
+          "Barrows equipment oldid30649719: percentage-state mechanism retired in September 2015; current related-item chain bypasses those identities",
+          "Fresh output installs one physical balance; used identity always requires the same saved UUID and charge balance",
+          "Default missing-charge NPC repair price rounds upward as an explicit local policy; qualified armour-stand pricing is captured separately"
+        ]
+      }
+    },
+    "bob": {
+      "npc": 519,
+      "talkOperation": 1,
+      "allOperation": 4,
+      "operation": "Repair-all",
+      "spawn": {
+        "npc": 519,
+        "level": 0,
+        "x": 3228,
+        "z": 3203,
+        "dir": 2,
+        "source": "wiki-current"
+      }
+    },
+    "wear": {
+      "spawn": {
+        "npc": 47,
+        "level": 0,
+        "x": 3207,
+        "z": 3203,
+        "dir": 4,
+        "source": "wiki-current"
+      },
+      "profile": {
+        "npc": 47,
+        "name": "Rat",
+        "level": 1,
+        "hitpoints": 50,
+        "maxHit": 4,
+        "attackSpeed": 4,
+        "attackLevel": 1,
+        "defenceLevel": 1,
+        "accuracy": 110,
+        "armour": 110,
+        "meleeAffinity": 55,
+        "rangedAffinity": 45,
+        "magicAffinity": 65,
+        "weakness": "earth",
+        "weaknessAffinity": 90,
+        "experience": 24.9,
+        "aggressive": false,
+        "anims": null,
+        "deathTicks": 3,
+        "respawnTicks": 60,
+        "dropTable": "npc:47",
+        "source": {
+          "level": "cache",
+          "hitpoints": "wiki",
+          "maxHit": "cache",
+          "attackSpeed": "cache",
+          "accuracy": "cache",
+          "armour": "cache",
+          "attackLevel": "wiki",
+          "defenceLevel": "wiki",
+          "meleeAffinity": "wiki",
+          "rangedAffinity": "wiki",
+          "magicAffinity": "wiki",
+          "weaknessAffinity": "cache",
+          "weakness": "cache",
+          "experience": "wiki",
+          "respawnTicks": "other-server-unverified",
+          "deathTicks": "placeholder",
+          "anims": "placeholder",
+          "aggressive": "wiki"
+        }
+      },
+      "operation": "Attack"
+    },
+    "house": {
+      "portal": {
+        "location": 1,
+        "name": "Taverley",
+        "loc": 15477,
+        "exit": {
+          "level": 0,
+          "x": 2883,
+          "z": 3453,
+          "packed": 47238525
+        },
+        "level": 1
+      },
+      "saved": {
+        "location": 1,
+        "buildMode": false,
+        "rooms": [
+          {
+            "room": 8415,
+            "x": 3,
+            "z": 3,
+            "floor": 1,
+            "rotation": 0,
+            "furniture": [
+              {
+                "hotspot": 0,
+                "obj": 8168
+              }
+            ]
+          },
+          {
+            "room": 8395,
+            "x": 3,
+            "z": 4,
+            "floor": 1,
+            "rotation": 0,
+            "furniture": []
+          },
+          {
+            "room": 8406,
+            "x": 3,
+            "z": 2,
+            "floor": 1,
+            "rotation": 0,
+            "furniture": [
+              {
+                "hotspot": 9,
+                "obj": 8391
+              }
+            ]
+          }
+        ]
+      },
+      "stand": {
+        "furniture": 8391,
+        "loc": 13715,
+        "allOperation": 1,
+        "smithingStat": 13,
+        "smithingDenominator": 200
+      }
+    },
+    "travel": {
+      "lumbridge": {
+        "level": 0,
+        "x": 3233,
+        "z": 3222,
+        "packed": 52972694
+      },
+      "burthorpe": {
+        "level": 0,
+        "x": 2899,
+        "z": 3545,
+        "packed": 47500761
+      }
+    },
+    "smithing": {
+      "stat": 13,
+      "initialLevel": 60
+    },
+    "originalFoodCount": 20,
+    "originalEquipment": [
+      4151,
+      1171,
+      1155,
+      1117,
+      1075,
+      45431,
+      4119
+    ],
+    "initiallyWorn": 1155,
+    "qualification": [
+      "Bob/Rat placements retain their generated spawn provenance, not pinned-2019 coordinates",
+      "Initial owned house uses the existing starter-room policy and the previously tested south Workshop connection",
+      "No lodestone/quest unlock variable is seeded: Lumbridge and Burthorpe are normal start-unlocked destinations",
+      "No charge, account, position, item or skill mutation occurs after login"
+    ]
+  },
+  "preservedSourcePlan": {
+    "path": "/private/tmp/alto-legacy-bosses/barrows-adaptive-proposal/full-route-headless-proposal-2/declared-alice-initial-plan.json",
+    "sha256": "f8f038be2e3c1522fc49e7fc550c3e0c2e7367a46bf145f6f2a637fc3af57700"
+  },
+  "initialFixture": {
+    "sourceOnlyProposal": true,
+    "coins": 300000,
+    "smithing": 60,
+    "construction": 55,
+    "meaning": "Same fight equipment and twenty carried Sharks; only the bronze helmet begins worn to free one damaged-hood slot"
+  }
+}

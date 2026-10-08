@@ -1,0 +1,480 @@
+{
+  "currencyItem": 995,
+  "equipment": [
+    37640,
+    30005,
+    30008,
+    30011,
+    30213,
+    45965
+  ],
+  "flying": {
+    "maximumLife": 40000,
+    "npc": 1160
+  },
+  "food": {
+    "item": 385,
+    "maximumHealing": 2000
+  },
+  "format": 1,
+  "ground": {
+    "maximumLife": 40000,
+    "npc": 1158
+  },
+  "kings": [
+    {
+      "maximumLife": 40000,
+      "npc": 1158
+    },
+    {
+      "maximumLife": 40000,
+      "npc": 1160
+    }
+  ],
+  "kits": {
+    "flying": {
+      "choice": {
+        "armour": "power",
+        "armourTier": 90,
+        "hands": "dual-wield",
+        "style": "ranged",
+        "tier": 90
+      },
+      "equipment": [
+        {
+          "capacity": 60000,
+          "identities": [
+            28437,
+            28439
+          ],
+          "item": 28437,
+          "name": "Ascension crossbow",
+          "slot": 3
+        },
+        {
+          "capacity": 60000,
+          "identities": [
+            28441,
+            28443
+          ],
+          "item": 28441,
+          "name": "Off-hand ascension crossbow",
+          "slot": 5
+        },
+        {
+          "capacity": 100000,
+          "identities": [
+            29854,
+            29856
+          ],
+          "item": 29854,
+          "name": "Sirenic mask",
+          "slot": 0
+        },
+        {
+          "capacity": 100000,
+          "identities": [
+            29857,
+            29859
+          ],
+          "item": 29857,
+          "name": "Sirenic hauberk",
+          "slot": 4
+        },
+        {
+          "capacity": 100000,
+          "identities": [
+            29860,
+            29862
+          ],
+          "item": 29860,
+          "name": "Sirenic chaps",
+          "slot": 7
+        },
+        {
+          "capacity": 100000,
+          "identities": [
+            31203,
+            31205
+          ],
+          "item": 31203,
+          "name": "Ascension grips",
+          "slot": 9
+        },
+        {
+          "capacity": null,
+          "identities": [
+            28465
+          ],
+          "item": 28465,
+          "name": "Ascension bolts",
+          "slot": 13
+        }
+      ],
+      "loadout": {
+        "armour": "power",
+        "blocked": [],
+        "equipment": [
+          28437,
+          28441,
+          29854,
+          29857,
+          29860,
+          31203,
+          28465
+        ],
+        "hands": "dual-wield",
+        "style": "ranged",
+        "tier": 90
+      },
+      "prayers": [
+        {
+          "action": 10,
+          "activationBit": 16739,
+          "button": 0,
+          "damageBonusPercent": 0,
+          "drainFinePerTick": 10,
+          "group": "defence",
+          "level": 28,
+          "levelBonus": 6,
+          "name": "Steel Skin",
+          "reductionPercent": 0
+        },
+        {
+          "action": 23,
+          "activationBit": 16751,
+          "button": 4,
+          "damageBonusPercent": 0,
+          "drainFinePerTick": 10,
+          "group": "ranged-accuracy",
+          "level": 44,
+          "levelBonus": 6,
+          "name": "Eagle Eye",
+          "reductionPercent": 0
+        },
+        {
+          "action": 53,
+          "activationBit": 16753,
+          "button": 3,
+          "damageBonusPercent": 6,
+          "drainFinePerTick": 10,
+          "group": "ranged-damage",
+          "level": 44,
+          "levelBonus": 0,
+          "name": "Overpowering Force",
+          "reductionPercent": 0
+        },
+        {
+          "action": 13,
+          "activationBit": 16745,
+          "button": 11,
+          "damageBonusPercent": 0,
+          "drainFinePerTick": 15,
+          "group": "protect-magic",
+          "level": 37,
+          "levelBonus": 0,
+          "name": "Protect from Magic",
+          "reductionPercent": 50
+        }
+      ]
+    },
+    "ground": {
+      "choice": {
+        "armour": "power",
+        "armourTier": 90,
+        "hands": "two-handed",
+        "style": "melee",
+        "tier": 92
+      },
+      "equipment": [
+        {
+          "capacity": null,
+          "identities": [
+            37640
+          ],
+          "item": 37640,
+          "name": "Zaros godsword",
+          "slot": 3
+        },
+        {
+          "capacity": 100000,
+          "identities": [
+            30005,
+            30007
+          ],
+          "item": 30005,
+          "name": "Malevolent helm",
+          "slot": 0
+        },
+        {
+          "capacity": 100000,
+          "identities": [
+            30008,
+            30010
+          ],
+          "item": 30008,
+          "name": "Malevolent cuirass",
+          "slot": 4
+        },
+        {
+          "capacity": 100000,
+          "identities": [
+            30011,
+            30013
+          ],
+          "item": 30011,
+          "name": "Malevolent greaves",
+          "slot": 7
+        },
+        {
+          "capacity": 100000,
+          "identities": [
+            30213,
+            30215
+          ],
+          "item": 30213,
+          "name": "Razorback gauntlets",
+          "slot": 9
+        },
+        {
+          "capacity": 100000,
+          "identities": [
+            45965,
+            45967
+          ],
+          "item": 45965,
+          "name": "Masterwork boots",
+          "slot": 10
+        }
+      ],
+      "loadout": {
+        "armour": "power",
+        "armourTier": 90,
+        "blocked": [],
+        "equipment": [
+          37640,
+          30005,
+          30008,
+          30011,
+          30213,
+          45965
+        ],
+        "hands": "two-handed",
+        "style": "melee",
+        "tier": 92
+      },
+      "prayers": [
+        {
+          "action": 10,
+          "activationBit": 16739,
+          "button": 0,
+          "damageBonusPercent": 0,
+          "drainFinePerTick": 10,
+          "group": "defence",
+          "level": 28,
+          "levelBonus": 6,
+          "name": "Steel Skin",
+          "reductionPercent": 0
+        },
+        {
+          "action": 11,
+          "activationBit": 16740,
+          "button": 1,
+          "damageBonusPercent": 6,
+          "drainFinePerTick": 10,
+          "group": "melee-damage",
+          "level": 31,
+          "levelBonus": 0,
+          "name": "Ultimate Strength",
+          "reductionPercent": 0
+        },
+        {
+          "action": 12,
+          "activationBit": 16741,
+          "button": 2,
+          "damageBonusPercent": 0,
+          "drainFinePerTick": 10,
+          "group": "melee-accuracy",
+          "level": 34,
+          "levelBonus": 6,
+          "name": "Incredible Reflexes",
+          "reductionPercent": 0
+        },
+        {
+          "action": 13,
+          "activationBit": 16745,
+          "button": 11,
+          "damageBonusPercent": 0,
+          "drainFinePerTick": 15,
+          "group": "protect-magic",
+          "level": 37,
+          "levelBonus": 0,
+          "name": "Protect from Magic",
+          "reductionPercent": 50
+        }
+      ]
+    }
+  },
+  "loadout": {
+    "armour": "power",
+    "armourTier": 90,
+    "blocked": [],
+    "equipment": [
+      37640,
+      30005,
+      30008,
+      30011,
+      30213,
+      45965
+    ],
+    "hands": "two-handed",
+    "style": "melee",
+    "tier": 92
+  },
+  "nativeForms": [
+    {
+      "bas": 3233,
+      "npc": 1158
+    },
+    {
+      "bas": 3234,
+      "npc": 1160
+    }
+  ],
+  "prayers": [
+    {
+      "action": 10,
+      "activationBit": 16739,
+      "button": 0,
+      "damageBonusPercent": 0,
+      "drainFinePerTick": 10,
+      "group": "defence",
+      "level": 28,
+      "levelBonus": 6,
+      "name": "Steel Skin",
+      "reductionPercent": 0
+    },
+    {
+      "action": 11,
+      "activationBit": 16740,
+      "button": 1,
+      "damageBonusPercent": 6,
+      "drainFinePerTick": 10,
+      "group": "melee-damage",
+      "level": 31,
+      "levelBonus": 0,
+      "name": "Ultimate Strength",
+      "reductionPercent": 0
+    },
+    {
+      "action": 12,
+      "activationBit": 16741,
+      "button": 2,
+      "damageBonusPercent": 0,
+      "drainFinePerTick": 10,
+      "group": "melee-accuracy",
+      "level": 34,
+      "levelBonus": 6,
+      "name": "Incredible Reflexes",
+      "reductionPercent": 0
+    },
+    {
+      "action": 13,
+      "activationBit": 16745,
+      "button": 11,
+      "damageBonusPercent": 0,
+      "drainFinePerTick": 15,
+      "group": "protect-magic",
+      "level": 37,
+      "levelBonus": 0,
+      "name": "Protect from Magic",
+      "reductionPercent": 50
+    },
+    {
+      "action": 23,
+      "activationBit": 16751,
+      "button": 4,
+      "damageBonusPercent": 0,
+      "drainFinePerTick": 10,
+      "group": "ranged-accuracy",
+      "level": 44,
+      "levelBonus": 6,
+      "name": "Eagle Eye",
+      "reductionPercent": 0
+    },
+    {
+      "action": 53,
+      "activationBit": 16753,
+      "button": 3,
+      "damageBonusPercent": 6,
+      "drainFinePerTick": 10,
+      "group": "ranged-damage",
+      "level": 44,
+      "levelBonus": 0,
+      "name": "Overpowering Force",
+      "reductionPercent": 0
+    }
+  ],
+  "room": {
+    "entrance": {
+      "level": 0,
+      "x": 3508,
+      "z": 9493
+    },
+    "entryLoc": 23610,
+    "entryParent": 48803,
+    "entryTile": {
+      "level": 0,
+      "x": 3445,
+      "z": 9497
+    },
+    "exit": {
+      "level": 0,
+      "x": 3445,
+      "z": 9496
+    },
+    "exitLoc": 3832,
+    "exitTile": {
+      "level": 0,
+      "x": 3508,
+      "z": 9494
+    },
+    "id": "kalphite-queen",
+    "spawn": {
+      "level": 0,
+      "x": 3477,
+      "z": 9493
+    }
+  },
+  "source": {
+    "blockedResources": [
+      "The server has protection potions but no qualified ordinary stat-boost potion consumer; no synthetic overload boost is seeded",
+      "Native prayer bonuses are decoded and shown by cache UI; the existing standard-prayer drain does not yet consume equipment prayer bonuses",
+      "New bows reuse the ordinary recovery owner; native ammunition-recovery rates are not newly qualified"
+    ],
+    "fixtureHistory": "Upper-hive rope already attached; not a rope/traversal proof",
+    "gearChoices": {
+      "flying": {
+        "armour": "power",
+        "armourTier": 90,
+        "hands": "dual-wield",
+        "style": "ranged",
+        "tier": 90
+      },
+      "ground": {
+        "armour": "power",
+        "armourTier": 90,
+        "hands": "two-handed",
+        "style": "melee",
+        "tier": 92
+      }
+    },
+    "initialSkillsAndSavedPreferenceOnly": true,
+    "scope": "Full two-form ordinary fight, native gear switch, actual final roll/Take or legitimate empty, native exit/rejoin"
+  },
+  "toolbar": {
+    "backpackDestination": 2,
+    "prayerDestination": 4,
+    "retaliationVarp": 462
+  }
+}

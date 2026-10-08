@@ -1,0 +1,76 @@
+# Rust workspace for the 910 client (crate roles and the dependency rules are
+# in docs/architecture.md, conventions in tools/README.md).
+#
+# - `native910`: the standalone CS2/cache library + CLI. It keeps its own
+#   edition (2024) and its strict deny-all lint table; it depends on no
+#   workspace crate.
+# - `client910`: the client lib + bins.
+# - `client910/crates/rs910-*`: the crates split out of client910, bottom-up
+#   (conventions: tools/README.md).
+#
+# One lockfile (`tools/Cargo.lock`, the former client910 lock; native910's
+# lock resolved to a subset of the same versions) and one target directory
+# (`tools/target` unless CARGO_TARGET_DIR is set).
+[workspace]
+resolver = "2"
+members = ["native910", "cs2", "client910", "client910/crates/rs910-core", "client910/crates/rs910-symbols", "client910/crates/rs910-js5", "client910/crates/rs910-protocol", "client910/crates/rs910-audio", "client910/crates/rs910-config", "client910/crates/rs910-model", "client910/crates/rs910-game", "client910/crates/rs910-scene", "client910/crates/rs910-toolkit", "client910/crates/rs910-ui", "client910/crates/rs910-gpu-device", "client910/crates/rs910-render-gpu", "client910/crates/rs910-far-scene", "client910/crates/rs910-render-modern", "client910/crates/rs910-client"]
+# The refactor-gate helper is its own workspace (own lockfile, syn 2).
+exclude = ["refactor/rsscan"]
+
+# Lints of client910 and the rs910-* crates (`[lints] workspace = true`).
+# Relaxed for velocity: warn on `all`, allow pedantic/nursery/cargo.
+# native910 keeps its own strict table (tools/native910/Cargo.toml).
+[workspace.lints.rust]
+unused_must_use = "warn"
+
+[workspace.lints.clippy]
+all = { level = "warn", priority = -1 }
+pedantic = { level = "allow", priority = -1 }
+nursery = { level = "allow", priority = -1 }
+cargo = { level = "allow", priority = -1 }
+# Graphics math (glam/wgpu/u32 colours <-> f32): noisy by design.
+cast_possible_truncation = "allow"
+cast_possible_wrap = "allow"
+cast_sign_loss = "allow"
+cast_precision_loss = "allow"
+checked_conversions = "allow"
+# Prototype render flow: long build fns, helpers after logic.
+too_many_lines = "allow"
+items_after_statements = "allow"
+missing_errors_doc = "allow"
+missing_panics_doc = "allow"
+
+# The tests decode the real revision-910 cache (inflate, bzip2, config and
+# interface decoders, the CS2 VM) and replay recorded sessions, so `cargo
+# test` builds everything at opt-level 2, dependencies included. Debug
+# assertions and overflow checks stay on. Measured for the gate (2026-10, a
+# loaded 10-core machine; tools/refactor/README.md, "Gate"): against
+# opt-level 1, opt-level 2 cut the suite's test time by about a quarter (the
+# longest replay from 170 s to 129 s) for about 25 s more of rebuild after a
+# change without incremental compilation and none with it; opt-level 3 saved
+# another 7 % for 40 % more compile time. native910's tests run in this
+# profile too, so the gate needs no separate `--release` build. Line tables
+# keep backtraces' files and lines without full debuginfo. (Profiles live in
+# the workspace root: cargo ignores them in members.)
+[profile.test]
+opt-level = 2
+debug = "line-tables-only"
+
+[profile.test.package."*"]
+opt-level = 2
+
+# The ordinary development client optimises the workspace engine and dependencies.
+# Keep assertions, checked arithmetic, incremental builds and line-table debugging;
+# animation and scene preparation need optimisation during interactive sessions.
+[profile.dev]
+opt-level = 2
+debug = "line-tables-only"
+
+[profile.dev.package."*"]
+opt-level = 2
+
+# Release uses the default codegen units. rustc 1.94.1 / LLVM 21.1.8 miscompiled
+# a cross-unit call to a function with an unused argument under ThinLTO (dead
+# argument elimination passed `poison` to a `noundef` parameter; SimplifyCFG
+# deleted the removed software toolkit's scaled sprite path). The repo pins
+# 1.96.0 (rust-toolchain.toml), which does not.

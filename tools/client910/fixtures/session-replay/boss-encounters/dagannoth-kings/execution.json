@@ -1,0 +1,103 @@
+{
+  "allOriginalChildrenWaited": true,
+  "captureOwnerPassed": true,
+  "launchesSpent": 2,
+  "owningReplayPassed": false,
+  "publications": {
+    "npc_info": 105,
+    "orderedPublicationLineageSha256": "7e60606d7149e00d8eb079720dc7ce9ce2daf31f39108cf2c273a9ec0ae0426e",
+    "player_info": 105
+  },
+  "rendered": false,
+  "sourceBindings": {
+    "binary": {
+      "path": "/Users/robert/projects/alto-target-boss-expansion/debug/deps/client910-c15188a94426efa7",
+      "sha256": "20dace856b2d09a27f599aed9f2eb0d68caeaaa715b4a99a2f13c902a43baf65"
+    },
+    "binaryManifest": {
+      "path": "/Users/robert/projects/alto-target-boss-expansion/proof/core2/binary-manifest.json",
+      "sha256": "2181801a26cc770f0f821e8b82a120413e6adf228dc985fccd7f2ee81ff58812"
+    },
+    "broker": {
+      "path": "/Users/robert/.codex/worktrees/legacy-boss-expansion/alto/tools/client910/fixtures/session-replay/god-wars/peer_broker.mjs",
+      "sha256": "e4d403a67745dbce9a0ec84522a98194d2fb48e6926d5c6851276212639a1568"
+    },
+    "control": {
+      "path": "/Users/robert/.codex/worktrees/legacy-boss-expansion/alto/tools/client910/scripts/control.py",
+      "sha256": "f48413b91db69b5c02d29257c70e66ec55e59f18f3d2f4d53a3ece80d63a045f"
+    },
+    "deviceEnvelope": {
+      "path": "/Users/robert/.codex/worktrees/legacy-boss-expansion/alto/tools/client910/fixtures/session-replay/legacy-interface/session.rtr",
+      "sha256": "acb90c0c962ddec1b8c413af0c2df13e63b922ef71d4bfc1aa9412ff22c5a341"
+    },
+    "driver": {
+      "path": "/Users/robert/.codex/worktrees/legacy-boss-expansion/alto/tools/client910/fixtures/session-replay/boss-encounters/driver.py",
+      "sha256": "ddcf83c88bc4b1c758c9a67dd06d2959afc6ef9e4bd5647e4e38c8b1098cc0ab"
+    },
+    "foodObserver": {
+      "path": "/Users/robert/.codex/worktrees/legacy-boss-expansion/alto/tools/client910/fixtures/session-replay/barrows/food-receipts.mjs",
+      "sha256": "bca606f0a95668a6e3936f561d3e6e56770ed1a0b65e64dd98896cfd6c999c9b"
+    },
+    "foodRules": {
+      "path": "/Users/robert/.codex/worktrees/legacy-boss-expansion/alto/server/data/generated/food/foods.json",
+      "sha256": "24d0155aca0ff14a5fe426bd95f9aff4a34edf743dd8ac5dc10264936a042ae1"
+    },
+    "freeze": {
+      "path": "/Users/robert/.codex/worktrees/legacy-boss-expansion/alto/tools/client910/fixtures/session-replay/boss-encounters/freeze.py",
+      "sha256": "dab264ab61c814d746ab946fc31ccd15b2a2b031930f87593ee7de3b98e6808b"
+    },
+    "loginCrypto": {
+      "path": "/Users/robert/.codex/worktrees/legacy-boss-expansion/alto/server/src/lostcity/network/LoginCrypto.ts",
+      "sha256": "df172e5c3f2ecfffca689a7133c2f004b0c28ddb93fd175326a7638804288bb9"
+    },
+    "loginProvider": {
+      "path": "/Users/robert/.codex/worktrees/legacy-boss-expansion/alto/tools/client910/fixtures/session-replay/god-wars/login_provider.mjs",
+      "sha256": "b8a96e1548141f19ca3b036d96c961018897c5f825ceda6c08dea3d9bf865b50"
+    },
+    "loginTestkit": {
+      "path": "/Users/robert/.codex/worktrees/legacy-boss-expansion/alto/server/src/lostcity/network/SkillsE2E.testkit.ts",
+      "sha256": "39a797dec044580f1ee6f2282b9a339c10df072632f0abd3d0562c7704f68800"
+    },
+    "owner": {
+      "path": "/Users/robert/.codex/worktrees/legacy-boss-expansion/alto/tools/client910/fixtures/session-replay/barrows/record.py",
+      "sha256": "4a6afc86520acbb2e71867cfc9d99726bea9d167804817ed1b9f43e275121350"
+    },
+    "peerAdapter": {
+      "path": "/Users/robert/.codex/worktrees/legacy-boss-expansion/alto/tools/client910/fixtures/session-replay/god-wars/peer_adapter.mjs",
+      "sha256": "e37f3587ed18e6d53b89f1829d1bd29bc911aeb40e8fa0cefbfabd89c7f33d48"
+    },
+    "publications": {
+      "path": "/Users/robert/.codex/worktrees/legacy-boss-expansion/alto/tools/client910/fixtures/session-replay/god-wars/publications.py",
+      "sha256": "768dd55f68d315aa4cbae4dbb3c0e4a13dea2cc541a4d891948a148b347bf889"
+    },
+    "record": {
+      "path": "/Users/robert/.codex/worktrees/legacy-boss-expansion/alto/tools/client910/fixtures/session-replay/boss-encounters/record.py",
+      "sha256": "084333e75ce0d9545d57769577e945971e5870e3c2780e8cd3d83d9a63b2539c"
+    },
+    "seed": {
+      "path": "/Users/robert/.codex/worktrees/legacy-boss-expansion/alto/tools/client910/fixtures/session-replay/boss-encounters/seed.mjs",
+      "sha256": "d0f908b4973881dc14386b3c79d7ba189489eb96422a565bbeb99b1c7a1dbbe0"
+    },
+    "server": {
+      "path": "/Users/robert/.codex/worktrees/legacy-boss-expansion/alto/tools/client910/fixtures/session-replay/boss-encounters/server.mjs",
+      "sha256": "1aa124a00ca8b6a10de315ff8da3dad3ff92bad9fda53a516fabfe69d787d145"
+    },
+    "sharedDriver": {
+      "path": "/Users/robert/.codex/worktrees/legacy-boss-expansion/alto/tools/client910/fixtures/session-replay/barrows/driver.py",
+      "sha256": "d5377a3458af568e527852b9b87d3c529c09a168428dcd363a36c19e85d38508"
+    },
+    "socketTestkit": {
+      "path": "/Users/robert/.codex/worktrees/legacy-boss-expansion/alto/server/src/lostcity/network/SocketE2E.testkit.ts",
+      "sha256": "55ffd1e43c77fd3c99fba6850688c4e6e5c10c9c88228b1e6d977a8effc4e4f8"
+    },
+    "wiredGuard": {
+      "path": "/Users/robert/.codex/worktrees/legacy-boss-expansion/alto/ref/independence/wired-guard.sh",
+      "sha256": "aabce1f59b80a316f882d4afb8c30a1fd677740533c3f773a80ebcdef0ad37fd"
+    }
+  },
+  "sourceEpochSha256": "984e3790ccede9e884db423f516a8657a065ef8b6983713f7d114395c9ed6f92",
+  "status": "completed_ordinary_boss_encounter",
+  "wholeBytes": 554399,
+  "wholeRecords": 7232,
+  "wholeSha256": "5e1d44761b883be18ddd4d62250729a7c0cdc3205163d5bb9e5eb51acc8983c7"
+}

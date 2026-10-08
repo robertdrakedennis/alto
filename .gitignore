@@ -1,0 +1,145 @@
+# ------------------------------------------------------------------
+# Alto: unified gitignore (Rust client and native tools + TS server)
+# Ignore build outputs, the runtime cache and local-only reference material.
+# ------------------------------------------------------------------
+
+# ---- OS ----
+.DS_Store
+Thumbs.db
+.Spotlight-V100
+.Trashes
+
+# ---- Editors / IDEs ----
+.idea/
+.vscode/
+*.iml
+*.iws
+*.ipr
+.project
+.classpath
+.settings/
+*.code-workspace
+
+# ---- Java / Gradle (local reference build, if present) ----
+.gradle/
+build/
+out/
+*.class
+hs_err_pid*.log
+replay_pid*.log
+# gradle wrapper jar is tracked on purpose:
+# !gradle/wrapper/gradle-wrapper.jar
+
+# ---- Node / TypeScript (server/) ----
+node_modules/
+server/node_modules
+server/out/
+server/dist/
+dist/
+coverage/
+.nyc_output/
+*.tsbuildinfo
+.npm/
+.eslintcache
+
+# ---- Server runtime data (generated, 13GB+ — never commit) ----
+# server/data/src/defaults is tracked
+# everything built/packed/downloaded below is local-only
+server/data/cache/
+server/data/players/client-vars.dat
+# the development server's login RSA key pair (private) and the public key file the client reads
+server/data/keys/
+server/data/pack
+# generated tables (npm --prefix server run data:generate: cache + wiki + local placeholders) and the polite wiki cache
+server/data/generated/
+server/data/wiki-cache/
+# the pre-pipeline layout (skill tables, skill wiki cache), still ignored where a checkout has them
+server/data/skills/
+server/data/wiki/
+server/data/*.js5
+server/dump/
+server/out/
+*.patch.js5
+*.js5
+# the retired RuneScript compiler, still ignored where a checkout has it
+server/RuneScriptCompiler.jar
+RuneScriptCompiler.jar
+flat-file.tar.gz
+
+# ---- Rust ----
+**/target/
+**/*.rs.bk
+
+# ---- Env / secrets ----
+.env
+server/.env
+*.env.local
+
+# ---- Logs ----
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# ---- Temp ----
+tmp/
+temp/
+*.tmp
+*.swp
+*~
+
+# Oracle scratch outputs
+/phase-g-output/
+/phase-g-target/
+
+# ---- Local-only reference material (never commit) ----
+# Maintainers keep reference clients, their builds, original jars, evidence and
+# cache-derived baselines here locally. Nothing in the repository depends on
+# them: tests read the facts they need from committed recordings under
+# tools/*/fixtures/ (see README.md).
+/client
+/ref
+/lib
+/gradle
+/gradlew
+/gradlew.bat
+/settings.gradle
+/gradle.properties
+/phase-g-inputs
+
+# ---- Generated at setup from the user's own cache (Jagex-derived, never commit) ----
+# `npm --prefix server run gamevals:backport` (optional, needs an external name
+# source) writes developer names, read from the user's own data, never published.
+# server/data/src/pack/ held the retired RuneScript path's placeholder names.
+server/data/src/pack/
+server/data/src/gamevals/
+
+# ---- Player data written by the dev server ----
+server/data/players/
+
+# ---- Local-only tooling and scratch (never commit) ----
+# Jars (original client builds, script compiler), throwaway reverse-engineering
+# harnesses and per-machine agent settings. Harnesses live under /ref locally.
+*.jar
+/harness/
+.claude/settings.local.json
+.claude/worktrees/
+
+# ---- TypeScript workspace ----
+# tsc -b declaration output and build info of the workspace packages (tsconfig.json)
+/.cache/
+
+# Private development server and its npm workspace stay local.
+/server/
+/packages/
+/web/
+/package.json
+/package-lock.json
+/tsconfig.json
+/tsconfig.base.json
+/.env.example
+/.github/workflows/server.yml
+/docs/server-architecture.md
+/tools/refactor/oxlint-ratchet.py
+/tools/refactor/oxlint-baseline.txt

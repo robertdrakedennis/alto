@@ -1,0 +1,1814 @@
+{
+  "client_md5": "290cb3489d088d145741f1734f53b0fc",
+  "scope": "Original enum constructor initialization block, dense resizing, lookup and query routines. Allocation, lifecycle, provider, integer hash/equality and string-stack push are observed services; string-stack contents are recorded at its call boundary. Full decoder and session modes other than 4 are not emulated. Decoder blocks are executed with synthetic payloads; packet primitive reads, type lookup, hash capacity and variant assignment services are supplied. Sparse insertion/overwrite and block iteration execute original instructions.",
+  "kernels": {
+    "ctor": "b59234fdc13e614d9a0a4468bbf6574c09775e1e0d70ba6fad497cb95360006f",
+    "copy": "b3110b58c9ea8a757a7f5cf6d03759744ea52c113e458a6f2875e6b3f1343795",
+    "append": "ef83430d847a9d2fa5541f4a0cc0ef46591df082e2d6afc14f58fc8df2d49259",
+    "integer_default": "10830155457bc6cc1603b207b5c1ceac323077157c15f11c9df7408b00fb3556",
+    "dense_resize": "938e63ed5bff2dc687a8531e49b02ed0185f5fb408ac4af77fdc6f5ab88ed7e1",
+    "dense-clear": "c29d00c15ad0fc01a4e7a8bf27e9ba348238d2088153b6fbdfea222cc15b810a",
+    "query": "10610c13d0917f064d1c74a46021c0d7247e99458fb137c963fea47e17c27b6e",
+    "lookup": "d26c7d3d53761d9d15f1c8d44f58f77c5a24706a5510a74d37f67613b0f451dc",
+    "decoder": "cf28ac9af8be33cca354309717a66b2aafa2123b6f1e3cf55aa1dcfdbf3ab387"
+  },
+  "constructor": {
+    "integer_default": 0,
+    "text_default": "",
+    "input_type_present": false,
+    "output_type_present": false,
+    "dense_capacity": 0,
+    "wire_count": 0
+  },
+  "dense_resizes": [
+    {
+      "capacities": [
+        0
+      ],
+      "result": [
+        {
+          "requested": 0,
+          "capacity": 0,
+          "tags": []
+        }
+      ]
+    },
+    {
+      "capacities": [
+        3
+      ],
+      "result": [
+        {
+          "requested": 3,
+          "capacity": 3,
+          "tags": [
+            4,
+            4,
+            4
+          ]
+        }
+      ]
+    },
+    {
+      "capacities": [
+        3,
+        3
+      ],
+      "result": [
+        {
+          "requested": 3,
+          "capacity": 3,
+          "tags": [
+            4,
+            4,
+            4
+          ]
+        },
+        {
+          "requested": 3,
+          "capacity": 3,
+          "tags": [
+            4,
+            4,
+            4
+          ]
+        }
+      ]
+    },
+    {
+      "capacities": [
+        3,
+        5
+      ],
+      "result": [
+        {
+          "requested": 3,
+          "capacity": 3,
+          "tags": [
+            4,
+            4,
+            4
+          ]
+        },
+        {
+          "requested": 5,
+          "capacity": 3,
+          "tags": [
+            0,
+            4,
+            4
+          ]
+        }
+      ]
+    },
+    {
+      "capacities": [
+        3,
+        2
+      ],
+      "result": [
+        {
+          "requested": 3,
+          "capacity": 3,
+          "tags": [
+            4,
+            4,
+            4
+          ]
+        },
+        {
+          "requested": 2,
+          "capacity": 3,
+          "tags": [
+            0,
+            4,
+            4
+          ]
+        }
+      ]
+    },
+    {
+      "capacities": [
+        3,
+        0
+      ],
+      "result": [
+        {
+          "requested": 3,
+          "capacity": 3,
+          "tags": [
+            4,
+            4,
+            4
+          ]
+        },
+        {
+          "requested": 0,
+          "capacity": 0,
+          "tags": []
+        }
+      ]
+    },
+    {
+      "capacities": [
+        3,
+        0,
+        2
+      ],
+      "result": [
+        {
+          "requested": 3,
+          "capacity": 3,
+          "tags": [
+            4,
+            4,
+            4
+          ]
+        },
+        {
+          "requested": 0,
+          "capacity": 0,
+          "tags": []
+        },
+        {
+          "requested": 2,
+          "capacity": 2,
+          "tags": [
+            4,
+            4
+          ]
+        }
+      ]
+    }
+  ],
+  "queries": [
+    {
+      "name": "dense_hit",
+      "input": {
+        "input_type": 0,
+        "output_type": 0,
+        "int_default": {
+          "kind": "int",
+          "value": 0
+        },
+        "text_default": {
+          "kind": "text",
+          "value": ""
+        },
+        "dense": [
+          {
+            "kind": "int",
+            "value": 10
+          },
+          {
+            "kind": "hole"
+          },
+          {
+            "kind": "int",
+            "value": -2147483648
+          }
+        ],
+        "sparse": [
+          [
+            0,
+            {
+              "kind": "int",
+              "value": 97
+            }
+          ],
+          [
+            -1,
+            {
+              "kind": "int",
+              "value": 98
+            }
+          ]
+        ],
+        "args": [
+          777,
+          0,
+          0,
+          29,
+          0
+        ]
+      },
+      "result": {
+        "ints": [
+          777,
+          10
+        ],
+        "events": [
+          [
+            "lookup",
+            29
+          ]
+        ]
+      }
+    },
+    {
+      "name": "dense_hole",
+      "input": {
+        "input_type": 0,
+        "output_type": 0,
+        "int_default": {
+          "kind": "int",
+          "value": 0
+        },
+        "text_default": {
+          "kind": "text",
+          "value": ""
+        },
+        "dense": [
+          {
+            "kind": "int",
+            "value": 10
+          },
+          {
+            "kind": "hole"
+          },
+          {
+            "kind": "int",
+            "value": -2147483648
+          }
+        ],
+        "sparse": [
+          [
+            0,
+            {
+              "kind": "int",
+              "value": 97
+            }
+          ],
+          [
+            -1,
+            {
+              "kind": "int",
+              "value": 98
+            }
+          ]
+        ],
+        "args": [
+          777,
+          0,
+          0,
+          29,
+          1
+        ]
+      },
+      "result": {
+        "ints": [
+          777,
+          0
+        ],
+        "events": [
+          [
+            "lookup",
+            29
+          ]
+        ]
+      }
+    },
+    {
+      "name": "dense_negative",
+      "input": {
+        "input_type": 0,
+        "output_type": 0,
+        "int_default": {
+          "kind": "int",
+          "value": 0
+        },
+        "text_default": {
+          "kind": "text",
+          "value": ""
+        },
+        "dense": [
+          {
+            "kind": "int",
+            "value": 10
+          },
+          {
+            "kind": "hole"
+          },
+          {
+            "kind": "int",
+            "value": -2147483648
+          }
+        ],
+        "sparse": [
+          [
+            0,
+            {
+              "kind": "int",
+              "value": 97
+            }
+          ],
+          [
+            -1,
+            {
+              "kind": "int",
+              "value": 98
+            }
+          ]
+        ],
+        "args": [
+          777,
+          0,
+          0,
+          29,
+          -1
+        ]
+      },
+      "result": {
+        "ints": [
+          777,
+          0
+        ],
+        "events": [
+          [
+            "lookup",
+            29
+          ]
+        ]
+      }
+    },
+    {
+      "name": "dense_past_end",
+      "input": {
+        "input_type": 0,
+        "output_type": 0,
+        "int_default": {
+          "kind": "int",
+          "value": 0
+        },
+        "text_default": {
+          "kind": "text",
+          "value": ""
+        },
+        "dense": [
+          {
+            "kind": "int",
+            "value": 10
+          },
+          {
+            "kind": "hole"
+          },
+          {
+            "kind": "int",
+            "value": -2147483648
+          }
+        ],
+        "sparse": [
+          [
+            0,
+            {
+              "kind": "int",
+              "value": 97
+            }
+          ],
+          [
+            -1,
+            {
+              "kind": "int",
+              "value": 98
+            }
+          ]
+        ],
+        "args": [
+          777,
+          0,
+          0,
+          29,
+          3
+        ]
+      },
+      "result": {
+        "ints": [
+          777,
+          0
+        ],
+        "events": [
+          [
+            "lookup",
+            29
+          ]
+        ]
+      }
+    },
+    {
+      "name": "dense_bits",
+      "input": {
+        "input_type": 0,
+        "output_type": 0,
+        "int_default": {
+          "kind": "int",
+          "value": 0
+        },
+        "text_default": {
+          "kind": "text",
+          "value": ""
+        },
+        "dense": [
+          {
+            "kind": "int",
+            "value": 10
+          },
+          {
+            "kind": "hole"
+          },
+          {
+            "kind": "int",
+            "value": -2147483648
+          }
+        ],
+        "sparse": [
+          [
+            0,
+            {
+              "kind": "int",
+              "value": 97
+            }
+          ],
+          [
+            -1,
+            {
+              "kind": "int",
+              "value": 98
+            }
+          ]
+        ],
+        "args": [
+          777,
+          0,
+          0,
+          29,
+          2
+        ]
+      },
+      "result": {
+        "ints": [
+          777,
+          -2147483648
+        ],
+        "events": [
+          [
+            "lookup",
+            29
+          ]
+        ]
+      }
+    },
+    {
+      "name": "sparse_hit",
+      "input": {
+        "input_type": 0,
+        "output_type": 0,
+        "int_default": {
+          "kind": "int",
+          "value": 0
+        },
+        "text_default": {
+          "kind": "text",
+          "value": ""
+        },
+        "dense": [],
+        "sparse": [
+          [
+            0,
+            {
+              "kind": "int",
+              "value": 97
+            }
+          ],
+          [
+            -1,
+            {
+              "kind": "int",
+              "value": 98
+            }
+          ]
+        ],
+        "args": [
+          777,
+          0,
+          0,
+          29,
+          0
+        ]
+      },
+      "result": {
+        "ints": [
+          777,
+          97
+        ],
+        "events": [
+          [
+            "lookup",
+            29
+          ]
+        ]
+      }
+    },
+    {
+      "name": "sparse_negative",
+      "input": {
+        "input_type": 0,
+        "output_type": 0,
+        "int_default": {
+          "kind": "int",
+          "value": 0
+        },
+        "text_default": {
+          "kind": "text",
+          "value": ""
+        },
+        "dense": [],
+        "sparse": [
+          [
+            0,
+            {
+              "kind": "int",
+              "value": 97
+            }
+          ],
+          [
+            -1,
+            {
+              "kind": "int",
+              "value": 98
+            }
+          ]
+        ],
+        "args": [
+          777,
+          0,
+          0,
+          29,
+          -1
+        ]
+      },
+      "result": {
+        "ints": [
+          777,
+          98
+        ],
+        "events": [
+          [
+            "lookup",
+            29
+          ]
+        ]
+      }
+    },
+    {
+      "name": "sparse_miss",
+      "input": {
+        "input_type": 0,
+        "output_type": 0,
+        "int_default": {
+          "kind": "int",
+          "value": 0
+        },
+        "text_default": {
+          "kind": "text",
+          "value": ""
+        },
+        "dense": [],
+        "sparse": [
+          [
+            0,
+            {
+              "kind": "int",
+              "value": 97
+            }
+          ],
+          [
+            -1,
+            {
+              "kind": "int",
+              "value": 98
+            }
+          ]
+        ],
+        "args": [
+          777,
+          0,
+          0,
+          29,
+          5
+        ]
+      },
+      "result": {
+        "ints": [
+          777,
+          0
+        ],
+        "events": [
+          [
+            "lookup",
+            29
+          ]
+        ]
+      }
+    },
+    {
+      "name": "input_type_mismatch",
+      "input": {
+        "input_type": 0,
+        "output_type": 0,
+        "int_default": {
+          "kind": "int",
+          "value": 0
+        },
+        "text_default": {
+          "kind": "text",
+          "value": ""
+        },
+        "dense": [
+          {
+            "kind": "int",
+            "value": 10
+          },
+          {
+            "kind": "hole"
+          },
+          {
+            "kind": "int",
+            "value": -2147483648
+          }
+        ],
+        "sparse": [
+          [
+            0,
+            {
+              "kind": "int",
+              "value": 97
+            }
+          ],
+          [
+            -1,
+            {
+              "kind": "int",
+              "value": 98
+            }
+          ]
+        ],
+        "args": [
+          777,
+          1,
+          0,
+          29,
+          0
+        ]
+      },
+      "result": {
+        "ints": [
+          777
+        ],
+        "events": [
+          [
+            "lookup",
+            29
+          ],
+          [
+            "type_error"
+          ]
+        ]
+      }
+    },
+    {
+      "name": "output_type_mismatch",
+      "input": {
+        "input_type": 0,
+        "output_type": 0,
+        "int_default": {
+          "kind": "int",
+          "value": 0
+        },
+        "text_default": {
+          "kind": "text",
+          "value": ""
+        },
+        "dense": [
+          {
+            "kind": "int",
+            "value": 10
+          },
+          {
+            "kind": "hole"
+          },
+          {
+            "kind": "int",
+            "value": -2147483648
+          }
+        ],
+        "sparse": [
+          [
+            0,
+            {
+              "kind": "int",
+              "value": 97
+            }
+          ],
+          [
+            -1,
+            {
+              "kind": "int",
+              "value": 98
+            }
+          ]
+        ],
+        "args": [
+          777,
+          0,
+          26,
+          29,
+          0
+        ]
+      },
+      "result": {
+        "ints": [
+          777
+        ],
+        "events": [
+          [
+            "lookup",
+            29
+          ],
+          [
+            "type_error"
+          ]
+        ]
+      }
+    },
+    {
+      "name": "missing_input_type",
+      "input": {
+        "input_type": null,
+        "output_type": 0,
+        "int_default": {
+          "kind": "int",
+          "value": 0
+        },
+        "text_default": {
+          "kind": "text",
+          "value": ""
+        },
+        "dense": [
+          {
+            "kind": "int",
+            "value": 10
+          },
+          {
+            "kind": "hole"
+          },
+          {
+            "kind": "int",
+            "value": -2147483648
+          }
+        ],
+        "sparse": [
+          [
+            0,
+            {
+              "kind": "int",
+              "value": 97
+            }
+          ],
+          [
+            -1,
+            {
+              "kind": "int",
+              "value": 98
+            }
+          ]
+        ],
+        "args": [
+          777,
+          0,
+          0,
+          29,
+          0
+        ]
+      },
+      "result": {
+        "ints": [
+          777
+        ],
+        "events": [
+          [
+            "lookup",
+            29
+          ],
+          [
+            "type_error"
+          ]
+        ]
+      }
+    },
+    {
+      "name": "missing_output_type",
+      "input": {
+        "input_type": 0,
+        "output_type": null,
+        "int_default": {
+          "kind": "int",
+          "value": 0
+        },
+        "text_default": {
+          "kind": "text",
+          "value": ""
+        },
+        "dense": [
+          {
+            "kind": "int",
+            "value": 10
+          },
+          {
+            "kind": "hole"
+          },
+          {
+            "kind": "int",
+            "value": -2147483648
+          }
+        ],
+        "sparse": [
+          [
+            0,
+            {
+              "kind": "int",
+              "value": 97
+            }
+          ],
+          [
+            -1,
+            {
+              "kind": "int",
+              "value": 98
+            }
+          ]
+        ],
+        "args": [
+          777,
+          0,
+          0,
+          29,
+          0
+        ]
+      },
+      "result": {
+        "ints": [
+          777
+        ],
+        "events": [
+          [
+            "lookup",
+            29
+          ],
+          [
+            "type_error"
+          ]
+        ]
+      }
+    },
+    {
+      "name": "numeric_long_type",
+      "input": {
+        "input_type": 0,
+        "output_type": 49,
+        "int_default": {
+          "kind": "int",
+          "value": 0
+        },
+        "text_default": {
+          "kind": "text",
+          "value": ""
+        },
+        "dense": [
+          {
+            "kind": "int",
+            "value": 10
+          },
+          {
+            "kind": "hole"
+          },
+          {
+            "kind": "int",
+            "value": -2147483648
+          }
+        ],
+        "sparse": [
+          [
+            0,
+            {
+              "kind": "int",
+              "value": 97
+            }
+          ],
+          [
+            -1,
+            {
+              "kind": "int",
+              "value": 98
+            }
+          ]
+        ],
+        "args": [
+          777,
+          0,
+          49,
+          29,
+          0
+        ]
+      },
+      "result": {
+        "ints": [
+          777,
+          10
+        ],
+        "events": [
+          [
+            "lookup",
+            29
+          ]
+        ]
+      }
+    },
+    {
+      "name": "numeric_coordinate_type",
+      "input": {
+        "input_type": 0,
+        "output_type": 22,
+        "int_default": {
+          "kind": "int",
+          "value": 0
+        },
+        "text_default": {
+          "kind": "text",
+          "value": ""
+        },
+        "dense": [
+          {
+            "kind": "int",
+            "value": 10
+          },
+          {
+            "kind": "hole"
+          },
+          {
+            "kind": "int",
+            "value": -2147483648
+          }
+        ],
+        "sparse": [
+          [
+            0,
+            {
+              "kind": "int",
+              "value": 97
+            }
+          ],
+          [
+            -1,
+            {
+              "kind": "int",
+              "value": 98
+            }
+          ]
+        ],
+        "args": [
+          777,
+          0,
+          22,
+          29,
+          0
+        ]
+      },
+      "result": {
+        "ints": [
+          777,
+          10
+        ],
+        "events": [
+          [
+            "lookup",
+            29
+          ]
+        ]
+      }
+    },
+    {
+      "name": "text_hit",
+      "input": {
+        "input_type": 0,
+        "output_type": 36,
+        "int_default": {
+          "kind": "int",
+          "value": 0
+        },
+        "text_default": {
+          "kind": "text",
+          "value": ""
+        },
+        "dense": [
+          {
+            "kind": "text",
+            "value": "Palette"
+          }
+        ],
+        "sparse": [
+          [
+            0,
+            {
+              "kind": "int",
+              "value": 97
+            }
+          ],
+          [
+            -1,
+            {
+              "kind": "int",
+              "value": 98
+            }
+          ]
+        ],
+        "args": [
+          777,
+          0,
+          36,
+          29,
+          0
+        ]
+      },
+      "result": {
+        "ints": [
+          777
+        ],
+        "events": [
+          [
+            "lookup",
+            29
+          ],
+          [
+            "object",
+            "Palette"
+          ]
+        ]
+      }
+    },
+    {
+      "name": "text_default",
+      "input": {
+        "input_type": 0,
+        "output_type": 36,
+        "int_default": {
+          "kind": "int",
+          "value": 0
+        },
+        "text_default": {
+          "kind": "text",
+          "value": ""
+        },
+        "dense": [],
+        "sparse": [],
+        "args": [
+          777,
+          0,
+          36,
+          29,
+          0
+        ]
+      },
+      "result": {
+        "ints": [
+          777
+        ],
+        "events": [
+          [
+            "lookup",
+            29
+          ],
+          [
+            "object",
+            ""
+          ]
+        ]
+      }
+    },
+    {
+      "name": "integer_tag_abort",
+      "input": {
+        "input_type": 0,
+        "output_type": 0,
+        "int_default": {
+          "kind": "int",
+          "value": 0
+        },
+        "text_default": {
+          "kind": "text",
+          "value": ""
+        },
+        "dense": [
+          {
+            "kind": "text",
+            "value": "wrong"
+          }
+        ],
+        "sparse": [
+          [
+            0,
+            {
+              "kind": "int",
+              "value": 97
+            }
+          ],
+          [
+            -1,
+            {
+              "kind": "int",
+              "value": 98
+            }
+          ]
+        ],
+        "args": [
+          777,
+          0,
+          0,
+          29,
+          0
+        ]
+      },
+      "result": {
+        "ints": [
+          777
+        ],
+        "events": [
+          [
+            "lookup",
+            29
+          ],
+          [
+            "abort"
+          ]
+        ]
+      }
+    },
+    {
+      "name": "text_tag_abort",
+      "input": {
+        "input_type": 0,
+        "output_type": 36,
+        "int_default": {
+          "kind": "int",
+          "value": 0
+        },
+        "text_default": {
+          "kind": "text",
+          "value": ""
+        },
+        "dense": [
+          {
+            "kind": "int",
+            "value": 10
+          },
+          {
+            "kind": "hole"
+          },
+          {
+            "kind": "int",
+            "value": -2147483648
+          }
+        ],
+        "sparse": [
+          [
+            0,
+            {
+              "kind": "int",
+              "value": 97
+            }
+          ],
+          [
+            -1,
+            {
+              "kind": "int",
+              "value": 98
+            }
+          ]
+        ],
+        "args": [
+          777,
+          0,
+          36,
+          29,
+          0
+        ]
+      },
+      "result": {
+        "ints": [
+          777
+        ],
+        "events": [
+          [
+            "lookup",
+            29
+          ],
+          [
+            "abort"
+          ]
+        ]
+      }
+    }
+  ],
+  "decodes": [
+    {
+      "name": "empty",
+      "wire": [
+        0
+      ],
+      "result": {
+        "input_type": null,
+        "output_type": null,
+        "int_default": {
+          "kind": "int",
+          "value": 0
+        },
+        "text_default": {
+          "kind": "text",
+          "value": ""
+        },
+        "wire_count": 0,
+        "sparse": [],
+        "dense": [],
+        "consumed": 1
+      }
+    },
+    {
+      "name": "legacy_first_alias",
+      "wire": [
+        1,
+        63,
+        2,
+        115,
+        0
+      ],
+      "result": {
+        "input_type": 126,
+        "output_type": 36,
+        "int_default": {
+          "kind": "int",
+          "value": 0
+        },
+        "text_default": {
+          "kind": "text",
+          "value": ""
+        },
+        "wire_count": 0,
+        "sparse": [],
+        "dense": [],
+        "consumed": 5
+      }
+    },
+    {
+      "name": "serial_types",
+      "wire": [
+        101,
+        0,
+        102,
+        26,
+        0
+      ],
+      "result": {
+        "input_type": 0,
+        "output_type": 26,
+        "int_default": {
+          "kind": "int",
+          "value": 0
+        },
+        "text_default": {
+          "kind": "text",
+          "value": ""
+        },
+        "wire_count": 0,
+        "sparse": [],
+        "dense": [],
+        "consumed": 5
+      }
+    },
+    {
+      "name": "unknown_type",
+      "wire": [
+        101,
+        128,
+        230,
+        102,
+        128,
+        230,
+        0
+      ],
+      "result": {
+        "input_type": null,
+        "output_type": null,
+        "int_default": {
+          "kind": "int",
+          "value": 0
+        },
+        "text_default": {
+          "kind": "text",
+          "value": ""
+        },
+        "wire_count": 0,
+        "sparse": [],
+        "dense": [],
+        "consumed": 7
+      }
+    },
+    {
+      "name": "defaults",
+      "wire": [
+        3,
+        65,
+        129,
+        128,
+        0,
+        4,
+        255,
+        255,
+        255,
+        255,
+        0
+      ],
+      "result": {
+        "input_type": null,
+        "output_type": null,
+        "int_default": {
+          "kind": "int",
+          "value": -1
+        },
+        "text_default": {
+          "kind": "text",
+          "value": "A\u20ac"
+        },
+        "wire_count": 0,
+        "sparse": [],
+        "dense": [],
+        "consumed": 11
+      }
+    },
+    {
+      "name": "sparse_repeated",
+      "wire": [
+        6,
+        0,
+        2,
+        255,
+        255,
+        255,
+        255,
+        0,
+        0,
+        0,
+        11,
+        0,
+        0,
+        0,
+        5,
+        0,
+        0,
+        0,
+        12,
+        6,
+        0,
+        3,
+        0,
+        0,
+        0,
+        5,
+        0,
+        0,
+        0,
+        13,
+        0,
+        0,
+        0,
+        5,
+        0,
+        0,
+        0,
+        14,
+        0,
+        0,
+        0,
+        9,
+        0,
+        0,
+        0,
+        15,
+        0
+      ],
+      "result": {
+        "input_type": null,
+        "output_type": null,
+        "int_default": {
+          "kind": "int",
+          "value": 0
+        },
+        "text_default": {
+          "kind": "text",
+          "value": ""
+        },
+        "wire_count": 3,
+        "sparse": [
+          [
+            -1,
+            {
+              "kind": "int",
+              "value": 11
+            }
+          ],
+          [
+            5,
+            {
+              "kind": "int",
+              "value": 14
+            }
+          ],
+          [
+            9,
+            {
+              "kind": "int",
+              "value": 15
+            }
+          ]
+        ],
+        "dense": [],
+        "consumed": 47
+      }
+    },
+    {
+      "name": "sparse_mixed",
+      "wire": [
+        6,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        9,
+        5,
+        0,
+        2,
+        0,
+        0,
+        0,
+        1,
+        72,
+        101,
+        108,
+        108,
+        111,
+        0,
+        0,
+        0,
+        0,
+        2,
+        87,
+        111,
+        114,
+        108,
+        100,
+        0,
+        0
+      ],
+      "result": {
+        "input_type": null,
+        "output_type": null,
+        "int_default": {
+          "kind": "int",
+          "value": 0
+        },
+        "text_default": {
+          "kind": "text",
+          "value": ""
+        },
+        "wire_count": 2,
+        "sparse": [
+          [
+            1,
+            {
+              "kind": "text",
+              "value": "Hello"
+            }
+          ],
+          [
+            2,
+            {
+              "kind": "text",
+              "value": "World"
+            }
+          ]
+        ],
+        "dense": [],
+        "consumed": 35
+      }
+    },
+    {
+      "name": "dense_same_capacity",
+      "wire": [
+        8,
+        0,
+        3,
+        0,
+        2,
+        0,
+        0,
+        0,
+        0,
+        0,
+        11,
+        0,
+        2,
+        0,
+        0,
+        0,
+        12,
+        8,
+        0,
+        3,
+        0,
+        1,
+        0,
+        1,
+        0,
+        0,
+        0,
+        13,
+        0
+      ],
+      "result": {
+        "input_type": null,
+        "output_type": null,
+        "int_default": {
+          "kind": "int",
+          "value": 0
+        },
+        "text_default": {
+          "kind": "text",
+          "value": ""
+        },
+        "wire_count": 1,
+        "sparse": [],
+        "dense": [
+          null,
+          {
+            "kind": "int",
+            "value": 13
+          },
+          null
+        ],
+        "consumed": 29
+      }
+    },
+    {
+      "name": "dense_different_capacity",
+      "wire": [
+        8,
+        0,
+        3,
+        0,
+        2,
+        0,
+        0,
+        0,
+        0,
+        0,
+        11,
+        0,
+        2,
+        0,
+        0,
+        0,
+        12,
+        8,
+        0,
+        5,
+        0,
+        1,
+        0,
+        1,
+        0,
+        0,
+        0,
+        13,
+        0
+      ],
+      "result": {
+        "input_type": null,
+        "output_type": null,
+        "int_default": {
+          "kind": "int",
+          "value": 0
+        },
+        "text_default": {
+          "kind": "text",
+          "value": ""
+        },
+        "wire_count": 1,
+        "sparse": [],
+        "dense": [
+          {
+            "kind": "int",
+            "value": 11
+          },
+          {
+            "kind": "int",
+            "value": 13
+          },
+          {
+            "kind": "int",
+            "value": 12
+          }
+        ],
+        "consumed": 29
+      }
+    },
+    {
+      "name": "dense_zero_sparse",
+      "wire": [
+        6,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        9,
+        8,
+        0,
+        2,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        11,
+        8,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "result": {
+        "input_type": null,
+        "output_type": null,
+        "int_default": {
+          "kind": "int",
+          "value": 0
+        },
+        "text_default": {
+          "kind": "text",
+          "value": ""
+        },
+        "wire_count": 0,
+        "sparse": [
+          [
+            1,
+            {
+              "kind": "int",
+              "value": 9
+            }
+          ]
+        ],
+        "dense": [],
+        "consumed": 28
+      }
+    },
+    {
+      "name": "dense_mixed",
+      "wire": [
+        8,
+        0,
+        2,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        11,
+        7,
+        0,
+        3,
+        0,
+        1,
+        0,
+        1,
+        84,
+        101,
+        120,
+        116,
+        0,
+        0
+      ],
+      "result": {
+        "input_type": null,
+        "output_type": null,
+        "int_default": {
+          "kind": "int",
+          "value": 0
+        },
+        "text_default": {
+          "kind": "text",
+          "value": ""
+        },
+        "wire_count": 1,
+        "sparse": [],
+        "dense": [
+          {
+            "kind": "int",
+            "value": 11
+          },
+          {
+            "kind": "text",
+            "value": "Text"
+          }
+        ],
+        "consumed": 24
+      }
+    },
+    {
+      "name": "ignored_and_tail",
+      "wire": [
+        77,
+        0,
+        88,
+        99
+      ],
+      "result": {
+        "input_type": null,
+        "output_type": null,
+        "int_default": {
+          "kind": "int",
+          "value": 0
+        },
+        "text_default": {
+          "kind": "text",
+          "value": ""
+        },
+        "wire_count": 0,
+        "sparse": [],
+        "dense": [],
+        "consumed": 2
+      }
+    }
+  ]
+}

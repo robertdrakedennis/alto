@@ -1,0 +1,6 @@
+# Recording of the original client: minimap wall and loc marks over the Lumbridge scene (3222,3222), player levels 0 and 1, whole-map pixel frame, random source fixed at 0.5.
+# Format: name len fnv64 [samples] (recorded_golden.rs).
+minimap/L0/ops 5298 c235293e9238a9dd -1118482 183 4 -1118482 239 1 -1118482 292 1 0 271 4 0 344 1 0
+minimap/L0/counts 2 fed69407acf7c43a 833 50
+minimap/L1/ops 3510 9a87829eb70442ef -1118482 1 195 0 1 175 268 -1118482 1 339 0 -1118482 4 451 0 4
+minimap/L1/counts 2 0133a007aef9ed1c 563 22

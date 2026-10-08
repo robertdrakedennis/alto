@@ -1,0 +1,33 @@
+[package]
+name = "rs910-protocol"
+version = "0.1.0"
+edition = "2021"
+publish = false
+description = "Wire protocol of the 910 client port: opcode tables, framing, client packet builders and server packet parsing. No IO."
+
+# rs910-protocol: rs910-core plus error/log crates only; no tokio, no
+# sockets, no native910 (tools/refactor/layers.txt `[crates]`/`[externals]`,
+# target-architecture.md §2.2). Doc code blocks are not compiled, like
+# client910's (`doctest = false`).
+[lib]
+doctest = false
+
+[dependencies]
+rs910-core = { path = "../rs910-core" }
+anyhow = "1.0"
+thiserror = "2.0"
+log = "0.4"
+# The login block's RSA (a single modular exponentiation on a public key).
+num-bigint = "0.4"
+
+[features]
+# Every workspace crate has `no-pack` (CI has no server/data/pack); client910's
+# `no-pack` forwards here. rs910-protocol has no pack-dependent tests.
+no-pack = ["rs910-core/no-pack"]
+# Test-only parsers client910's tests call (`server_prot::parse_if_*`): the
+# items are `#[cfg(any(test, feature = "test-hooks"))]`. client910 enables it
+# through its [dev-dependencies] only, so no production build contains them.
+test-hooks = []
+
+[lints]
+workspace = true

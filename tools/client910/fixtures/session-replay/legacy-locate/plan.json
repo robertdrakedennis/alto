@@ -1,0 +1,175 @@
+{
+  "accountKey": "legacy-locate",
+  "cycle": {
+    "RETALIATION_OFF": 300,
+    "EQUIP_BOW": 600,
+    "EQUIP_ARROWS": 700,
+    "READY": 1000,
+    "SPAWN_PRIMARY": 1100,
+    "SPAWN_ADJACENT": 1200,
+    "SPAWN_OUTSIDE": 1300,
+    "LOCATE": 1400,
+    "ACTIVE": 1450,
+    "ATTACK": 1500,
+    "IMPACT": 1800,
+    "REFILL": 3500,
+    "FINAL": 4000
+  },
+  "lastCycle": 4000,
+  "semanticShots": [
+    1000,
+    1450,
+    1800,
+    3500,
+    4000
+  ],
+  "commands": [
+    "notimeout",
+    "notimeout",
+    "retaliate off",
+    "notimeout",
+    "notimeout",
+    "notimeout",
+    "notimeout",
+    "notimeout",
+    "notimeout",
+    "notimeout",
+    "npcadd 41 3 3",
+    "npcadd 41 4 3",
+    "npcadd 41 3 6",
+    "notimeout",
+    "opnpc 2 41",
+    "notimeout",
+    "notimeout",
+    "notimeout",
+    "notimeout",
+    "notimeout",
+    "notimeout",
+    "notimeout",
+    "notimeout",
+    "notimeout",
+    "notimeout",
+    "notimeout",
+    "notimeout",
+    "notimeout",
+    "notimeout",
+    "notimeout",
+    "notimeout",
+    "notimeout",
+    "notimeout",
+    "notimeout",
+    "notimeout",
+    "notimeout",
+    "notimeout",
+    "notimeout",
+    "notimeout",
+    "notimeout",
+    "notimeout",
+    "notimeout"
+  ],
+  "operations": "600,96534535,0,2;700,96534535,1,2",
+  "clicks": "l,919,649,1400",
+  "pointerBounds": {
+    "bounds": {
+      "98500621": [
+        844,
+        634,
+        150,
+        30
+      ]
+    },
+    "equipRequests": 2,
+    "nativeActivationRequest": true,
+    "normalResponses": "/private/tmp/alto-legacy-specials/locate-native-proof/packets-ready/steps.json",
+    "qualification": "current ordinary TCP equipment replies through recorded ClientCore Replay; candidate, not client recording",
+    "recordedWindowEvents": true,
+    "sourceCapture": "/private/tmp/alto-legacy-interface/capture4/processed/session.rtr"
+  },
+  "pointer": {
+    "x": 919,
+    "y": 649
+  },
+  "recipients": [
+    {
+      "role": "primary",
+      "definition": 41,
+      "level": 0,
+      "x": 3225,
+      "z": 3225,
+      "packed": 52841625,
+      "cycle": 1100
+    },
+    {
+      "role": "adjacent",
+      "definition": 41,
+      "level": 0,
+      "x": 3226,
+      "z": 3225,
+      "packed": 52858009,
+      "cycle": 1200
+    },
+    {
+      "role": "outside",
+      "definition": 41,
+      "level": 0,
+      "x": 3225,
+      "z": 3228,
+      "packed": 52841628,
+      "cycle": 1300
+    }
+  ],
+  "ammunition": {
+    "item": 882,
+    "count": 40,
+    "consumed": false
+  },
+  "energy": {
+    "maximumEnergyFine": 1000,
+    "regenerationFine": 100,
+    "regenerationTicks": 50
+  },
+  "special": {
+    "weapon": 39053,
+    "costFine": 500,
+    "effects": [
+      {
+        "kind": "ordinary-target-area",
+        "durationTicks": 17,
+        "radiusTiles": 1
+      }
+    ],
+    "qualification": [
+      "Decimation oldid30108963: no-ammunition ordinary shots, fifty-percent energy, ten-second refresh and weapon-switch cancellation; exact native fresh/used/broken resource family",
+      "Dated3x3 means one-tile footprint overlap around the primary; native within-three-tiles wording disagrees and is not claimed equivalent",
+      "This Legacy consumer expands ordinary ranged attacks through shared credited impacts; EoC ability expansion, quivers and special-arrow procs remain separate unimplemented consumers",
+      "Seren godbow oldid30407690 retains the April2019 correction: charge bows consume only effect-bearing arrows; currently admitted plain arrows alter the native feed/projectile but are not consumed or recovered",
+      "Ordinary native category sequence/projectile retained; no invented special sequence or spot",
+      "No qualified special asset role; ordinary attack-sequence fallback with no special spot"
+    ]
+  },
+  "physical": {
+    "item": 39053,
+    "capacity": 60000,
+    "freshCharges": 60000,
+    "usedItem": 39055,
+    "coinRepair": {
+      "fullCost": 4500000,
+      "output": 39053
+    },
+    "wearPerTick": 1,
+    "depleted": {
+      "kind": "identity",
+      "item": 39056
+    },
+    "checkHeld": 3,
+    "dischargeHeld": null,
+    "creation": [],
+    "repair": [],
+    "qualification": [
+      "Decimation oldid30108963; native linked fresh/used/broken identities, capacity and full repair price checked",
+      "ceil full native price times missing-charge fraction; fully restored output uses the fresh identity; native repair-NPC interaction qualification remains separate"
+    ]
+  },
+  "inputQualification": "Ordinary cache-derived backpack operations and native pointer IF_BUTTON1. Console npcadd prepares actual generated-profile entities on named tiles; opnpc selects the ordinary interaction owner, independently covered by real OPNPC socket tests. No synthetic damage, mocked energy or packet injection.",
+  "scope": "Locate and charge-bow current-tree client sample; other continuation families remain socket-qualified and catalogue incomplete."
+}

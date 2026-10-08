@@ -1,0 +1,540 @@
+{
+  "arrival": {
+    "level": 0,
+    "x": 3260,
+    "z": 3927
+  },
+  "currencyItem": 995,
+  "equipment": [
+    26579,
+    26583,
+    30005,
+    30008,
+    30011,
+    30213,
+    45965
+  ],
+  "food": {
+    "item": 385,
+    "maximumHealing": 2000
+  },
+  "format": 1,
+  "kings": [
+    {
+      "maximumLife": 17250,
+      "npc": 3200
+    }
+  ],
+  "kits": {
+    "melee": {
+      "choice": {
+        "armour": "power",
+        "armourTier": 90,
+        "hands": "dual-wield",
+        "style": "melee",
+        "tier": 90
+      },
+      "equipment": [
+        {
+          "capacity": 60000,
+          "identities": [
+            26579,
+            26581
+          ],
+          "item": 26579,
+          "name": "Drygore rapier",
+          "slot": 3
+        },
+        {
+          "capacity": 60000,
+          "identities": [
+            26583,
+            26585
+          ],
+          "item": 26583,
+          "name": "Off-hand drygore rapier",
+          "slot": 5
+        },
+        {
+          "capacity": 100000,
+          "identities": [
+            30005,
+            30007
+          ],
+          "item": 30005,
+          "name": "Malevolent helm",
+          "slot": 0
+        },
+        {
+          "capacity": 100000,
+          "identities": [
+            30008,
+            30010
+          ],
+          "item": 30008,
+          "name": "Malevolent cuirass",
+          "slot": 4
+        },
+        {
+          "capacity": 100000,
+          "identities": [
+            30011,
+            30013
+          ],
+          "item": 30011,
+          "name": "Malevolent greaves",
+          "slot": 7
+        },
+        {
+          "capacity": 100000,
+          "identities": [
+            30213,
+            30215
+          ],
+          "item": 30213,
+          "name": "Razorback gauntlets",
+          "slot": 9
+        },
+        {
+          "capacity": 100000,
+          "identities": [
+            45965,
+            45967
+          ],
+          "item": 45965,
+          "name": "Masterwork boots",
+          "slot": 10
+        }
+      ],
+      "loadout": {
+        "armour": "power",
+        "blocked": [],
+        "equipment": [
+          26579,
+          26583,
+          30005,
+          30008,
+          30011,
+          30213,
+          45965
+        ],
+        "hands": "dual-wield",
+        "style": "melee",
+        "tier": 90
+      },
+      "prayers": [
+        {
+          "action": 10,
+          "activationBit": 16739,
+          "button": 0,
+          "damageBonusPercent": 0,
+          "drainFinePerTick": 10,
+          "group": "defence",
+          "level": 28,
+          "levelBonus": 6,
+          "name": "Steel Skin",
+          "reductionPercent": 0
+        },
+        {
+          "action": 11,
+          "activationBit": 16740,
+          "button": 1,
+          "damageBonusPercent": 6,
+          "drainFinePerTick": 10,
+          "group": "melee-damage",
+          "level": 31,
+          "levelBonus": 0,
+          "name": "Ultimate Strength",
+          "reductionPercent": 0
+        },
+        {
+          "action": 12,
+          "activationBit": 16741,
+          "button": 2,
+          "damageBonusPercent": 0,
+          "drainFinePerTick": 10,
+          "group": "melee-accuracy",
+          "level": 34,
+          "levelBonus": 6,
+          "name": "Incredible Reflexes",
+          "reductionPercent": 0
+        },
+        {
+          "action": 13,
+          "activationBit": 16745,
+          "button": 11,
+          "damageBonusPercent": 0,
+          "drainFinePerTick": 15,
+          "group": "protect-magic",
+          "level": 37,
+          "levelBonus": 0,
+          "name": "Protect from Magic",
+          "reductionPercent": 50
+        }
+      ]
+    }
+  },
+  "loadout": {
+    "armour": "power",
+    "blocked": [],
+    "equipment": [
+      26579,
+      26583,
+      30005,
+      30008,
+      30011,
+      30213,
+      45965
+    ],
+    "hands": "dual-wield",
+    "style": "melee",
+    "tier": 90
+  },
+  "policy": {
+    "attackWeights": {
+      "confusion": 1,
+      "discord": 3,
+      "madness": 1
+    },
+    "confusion": {
+      "maximumDistance": 20,
+      "offsets": [
+        {
+          "dx": -3,
+          "dz": -3
+        },
+        {
+          "dx": -3,
+          "dz": -2
+        },
+        {
+          "dx": -3,
+          "dz": -1
+        },
+        {
+          "dx": -3,
+          "dz": 0
+        },
+        {
+          "dx": -3,
+          "dz": 1
+        },
+        {
+          "dx": -3,
+          "dz": 2
+        },
+        {
+          "dx": -3,
+          "dz": 3
+        },
+        {
+          "dx": -2,
+          "dz": -3
+        },
+        {
+          "dx": -2,
+          "dz": -2
+        },
+        {
+          "dx": -2,
+          "dz": -1
+        },
+        {
+          "dx": -2,
+          "dz": 0
+        },
+        {
+          "dx": -2,
+          "dz": 1
+        },
+        {
+          "dx": -2,
+          "dz": 2
+        },
+        {
+          "dx": -2,
+          "dz": 3
+        },
+        {
+          "dx": -1,
+          "dz": -3
+        },
+        {
+          "dx": -1,
+          "dz": -2
+        },
+        {
+          "dx": -1,
+          "dz": -1
+        },
+        {
+          "dx": -1,
+          "dz": 0
+        },
+        {
+          "dx": -1,
+          "dz": 1
+        },
+        {
+          "dx": -1,
+          "dz": 2
+        },
+        {
+          "dx": -1,
+          "dz": 3
+        },
+        {
+          "dx": 0,
+          "dz": -3
+        },
+        {
+          "dx": 0,
+          "dz": -2
+        },
+        {
+          "dx": 0,
+          "dz": -1
+        },
+        {
+          "dx": 0,
+          "dz": 1
+        },
+        {
+          "dx": 0,
+          "dz": 2
+        },
+        {
+          "dx": 0,
+          "dz": 3
+        },
+        {
+          "dx": 1,
+          "dz": -3
+        },
+        {
+          "dx": 1,
+          "dz": -2
+        },
+        {
+          "dx": 1,
+          "dz": -1
+        },
+        {
+          "dx": 1,
+          "dz": 0
+        },
+        {
+          "dx": 1,
+          "dz": 1
+        },
+        {
+          "dx": 1,
+          "dz": 2
+        },
+        {
+          "dx": 1,
+          "dz": 3
+        },
+        {
+          "dx": 2,
+          "dz": -3
+        },
+        {
+          "dx": 2,
+          "dz": -2
+        },
+        {
+          "dx": 2,
+          "dz": -1
+        },
+        {
+          "dx": 2,
+          "dz": 0
+        },
+        {
+          "dx": 2,
+          "dz": 1
+        },
+        {
+          "dx": 2,
+          "dz": 2
+        },
+        {
+          "dx": 2,
+          "dz": 3
+        },
+        {
+          "dx": 3,
+          "dz": -3
+        },
+        {
+          "dx": 3,
+          "dz": -2
+        },
+        {
+          "dx": 3,
+          "dz": -1
+        },
+        {
+          "dx": 3,
+          "dz": 0
+        },
+        {
+          "dx": 3,
+          "dz": 1
+        },
+        {
+          "dx": 3,
+          "dz": 2
+        },
+        {
+          "dx": 3,
+          "dz": 3
+        }
+      ],
+      "teleblock": "respect"
+    },
+    "discordDelayTicks": 2,
+    "effectDelayTicks": 2,
+    "madnessMaximumItems": 3,
+    "qualification": {
+      "attackSelection": "Local not-authoritative 3:1:1 primary/special weights and twenty-tile reach; unavailable specials are excluded before normal RNG. Dated strategy supports equal random damage styles on average.",
+      "confusion": "Dated nearby random teleport and twenty-game-square exception; local not-authoritative Chebyshev centre metric with >= boundary, uniform walkable square-radius-three offsets, public-risk filter and respect-teleblock choice.",
+      "flight": "Local not-authoritative two-tick flight/effect interval; Discord is a projectile for all damage payloads, but native projectile identity is absent.",
+      "lifecycle": "Existing ordinary neutral lifecycle policy; no Chaos numeric interval qualified",
+      "loot": "Partial source-qualified branch contents only; overall probabilities, authenticated membership and complete Chaos loot remain unqualified",
+      "madness": "Dated mainhand-first, full-bag exclusion and one-vacancy transfer. Local not-authoritative maximum-three total singleton items and uniform count/other-slot selection without replacement; current UUID balance survives intervening wear.",
+      "presentation": "Native BAS proves ready/walk only; no action, projectile or impact role qualified",
+      "publicGeometry": "Existing generated Wilderness geometry remains explicitly unverified local policy",
+      "spawn": "Local not-authoritative existing named walkable public spawn; dated west-of-Rogues-Castle region is qualified but exact historic coordinate is absent."
+    },
+    "range": 20,
+    "spawn": {
+      "level": 0,
+      "x": 3261,
+      "z": 3927
+    },
+    "styleWeights": {
+      "magic": 1,
+      "melee": 1,
+      "ranged": 1
+    }
+  },
+  "prayers": [
+    {
+      "action": 10,
+      "activationBit": 16739,
+      "button": 0,
+      "damageBonusPercent": 0,
+      "drainFinePerTick": 10,
+      "group": "defence",
+      "level": 28,
+      "levelBonus": 6,
+      "name": "Steel Skin",
+      "reductionPercent": 0
+    },
+    {
+      "action": 11,
+      "activationBit": 16740,
+      "button": 1,
+      "damageBonusPercent": 6,
+      "drainFinePerTick": 10,
+      "group": "melee-damage",
+      "level": 31,
+      "levelBonus": 0,
+      "name": "Ultimate Strength",
+      "reductionPercent": 0
+    },
+    {
+      "action": 12,
+      "activationBit": 16741,
+      "button": 2,
+      "damageBonusPercent": 0,
+      "drainFinePerTick": 10,
+      "group": "melee-accuracy",
+      "level": 34,
+      "levelBonus": 6,
+      "name": "Incredible Reflexes",
+      "reductionPercent": 0
+    },
+    {
+      "action": 13,
+      "activationBit": 16745,
+      "button": 11,
+      "damageBonusPercent": 0,
+      "drainFinePerTick": 15,
+      "group": "protect-magic",
+      "level": 37,
+      "levelBonus": 0,
+      "name": "Protect from Magic",
+      "reductionPercent": 50
+    }
+  ],
+  "retreat": {
+    "level": 0,
+    "x": 3241,
+    "z": 3927
+  },
+  "scanRadius": 20,
+  "source": {
+    "choice": {
+      "armour": "power",
+      "armourTier": 90,
+      "hands": "dual-wield",
+      "style": "melee",
+      "tier": 90
+    },
+    "noResourcesOverride": true,
+    "scope": "Full-life-loot-retreat; natural Madness/Confusion observations are conditional"
+  },
+  "spawn": {
+    "level": 0,
+    "x": 3261,
+    "z": 3927
+  },
+  "target": {
+    "npc": 3200,
+    "profile": {
+      "accuracy": 1447,
+      "aggressive": true,
+      "anims": null,
+      "armour": 1447,
+      "attackLevel": 69,
+      "attackSpeed": 4,
+      "deathTicks": 3,
+      "defenceLevel": 69,
+      "dropTable": "wilderness:chaos-elemental:3200:common",
+      "experience": 1257.3,
+      "hitpoints": 17250,
+      "level": 305,
+      "magicAffinity": 55,
+      "maxHit": 1104,
+      "meleeAffinity": 45,
+      "name": "Chaos Elemental",
+      "rangedAffinity": 65,
+      "respawnTicks": 30,
+      "source": {
+        "accuracy": "cache",
+        "affinities": "wiki",
+        "anims": "placeholder",
+        "armour": "cache",
+        "attackLevel": "wiki",
+        "attackSpeed": "cache",
+        "deathTicks": "placeholder",
+        "defenceLevel": "wiki",
+        "experience": "wiki",
+        "hitpoints": "wiki",
+        "level": "cache",
+        "maxHit": "cache",
+        "respawnTicks": "placeholder"
+      },
+      "weakness": "bolts",
+      "weaknessAffinity": 90
+    }
+  },
+  "toolbar": {
+    "backpackDestination": 2,
+    "prayerDestination": 4,
+    "retaliationVarp": 462
+  }
+}

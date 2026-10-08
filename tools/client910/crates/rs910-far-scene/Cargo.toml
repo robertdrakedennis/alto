@@ -1,0 +1,37 @@
+[package]
+name = "rs910-far-scene"
+version = "0.1.0"
+edition = "2021"
+publish = false
+description = "The 910 client's render-only far scene (render distance beyond the normal build area): draw-distance levels, far plane and fog law, the map-square ring around the camera focus, quiet (resident) map reads and the decoded terrain of the squares outside the game window. CPU only, no wgpu; renderer-neutral (rs910-render-modern draws it). Design: docs/renderer/modern-renderer.md."
+
+# Allowed dependencies (tools/refactor/layers.txt `[crates]`): rs910-core,
+# rs910-js5 (`cache::Pack::read_group_resident`), rs910-config (the map file
+# decoders), rs910-model and rs910-scene (later milestones: private loc
+# models). It never writes game or scene state and never queues a JS5
+# request. Doc code blocks are not compiled, like client910's
+# (`doctest = false`).
+[lib]
+doctest = false
+
+[dependencies]
+rs910-core = { path = "../rs910-core" }
+rs910-js5 = { path = "../rs910-js5" }
+rs910-config = { path = "../rs910-config" }
+# Lane P6-FAR (F3): the far locs' private placement (`far_locs`: the Java
+# loc placement on a private scene, the lit Java models).
+rs910-model = { path = "../rs910-model" }
+rs910-scene = { path = "../rs910-scene" }
+log = "0.4"
+
+[dev-dependencies]
+# The shared test helpers (`require_pack`).
+rs910-js5 = { path = "../rs910-js5", features = ["test-hooks"] }
+
+[features]
+# Every workspace crate has `no-pack` (tools/README.md); rs910-render-modern's
+# `no-pack` forwards here. The pack tests are ignored under it.
+no-pack = []
+
+[lints]
+workspace = true

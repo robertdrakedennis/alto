@@ -1,0 +1,40 @@
+[package]
+name = "rs910-config"
+version = "0.1.0"
+edition = "2021"
+publish = false
+description = "The 910 client's config types: loc/npc/obj/seq/inv/enum/struct/param/var decoders, floor/texture/material, anims, idk, billboards, font metrics, sprites, quests and ClientOptions (v38 codec)."
+
+# Allowed dependencies (tools/refactor/layers.txt, target-architecture.md
+# §2.2): rs910-core, rs910-js5 and native910; externals are listed in
+# layers.txt `[externals]`. Doc code blocks are not compiled, like
+# client910's (`doctest = false`).
+[lib]
+doctest = false
+
+[dependencies]
+native910 = { path = "../../../native910" }
+rs910-core = { path = "../rs910-core" }
+rs910-js5 = { path = "../rs910-js5" }
+anyhow = "1.0"
+thiserror = "2.0"
+
+[dev-dependencies]
+# The shared test helpers (`test_support::require_pack`, the recordings of the
+# original client in `test_support::frozen`).
+rs910-core = { path = "../rs910-core", features = ["test-hooks"] }
+rs910-js5 = { path = "../rs910-js5", features = ["test-hooks"] }
+
+[features]
+# Every workspace crate has `no-pack` (tools/README.md); client910's
+# `no-pack` forwards here. The pack-reading tests that also need client910
+# modules (map, gpumodel) live in client910/src/config_goldens.rs.
+no-pack = []
+# Test seams client910's tests use (`*Store::from_map`,
+# `BillboardStore::with_type`, `ui_component_fields::FIELD_NAMES`): the items
+# are `#[cfg(any(test, feature = "test-hooks"))]`. client910 enables it
+# through [dev-dependencies] only.
+test-hooks = []
+
+[lints]
+workspace = true

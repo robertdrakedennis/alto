@@ -1,0 +1,103 @@
+{
+  "accountKey": "slayer-wilderness",
+  "commands": [
+    "retaliate off",
+    "notimeout",
+    "notimeout",
+    "notimeout",
+    "notimeout",
+    "notimeout",
+    "notimeout",
+    "npcadd 8274 -1 0",
+    "opnpc 5 8274",
+    "notimeout",
+    "notimeout",
+    "notimeout",
+    "notimeout",
+    "notimeout",
+    "npcadd 1632",
+    "notimeout",
+    "notimeout",
+    "notimeout",
+    "opnpc 2 1632",
+    "notimeout",
+    "notimeout",
+    "notimeout",
+    "notimeout",
+    "notimeout",
+    "notimeout",
+    "notimeout",
+    "tele 3156 3620 0",
+    "notimeout",
+    "notimeout",
+    "oploc 1 3158 3622 65619",
+    "notimeout",
+    "notimeout",
+    "notimeout",
+    "notimeout",
+    "notimeout"
+  ],
+  "operations": "800,96534535,0,2;1050,85721493,-1,1",
+  "keys": "",
+  "clicks": "l,750,241,1200;l,596,393,1700;l,912,124,3200",
+  "hover": "596,393,1690,2000",
+  "lastCycle": 3900,
+  "semanticShots": [
+    1100,
+    1300,
+    1800,
+    2400,
+    2800,
+    3100,
+    3250,
+    3400,
+    3900
+  ],
+  "inputs": {
+    "closeRewards": {
+      "x": 750,
+      "y": 241,
+      "cycle": 1200
+    },
+    "attack": {
+      "x": 596,
+      "y": 393,
+      "cycle": 1700
+    },
+    "walkToPad": {
+      "x": 912,
+      "y": 124,
+      "cycle": 3200
+    }
+  },
+  "pad": {
+    "loc": 65619,
+    "centre": {
+      "level": 0,
+      "x": 3156,
+      "z": 3620
+    },
+    "level": 13
+  },
+  "pillar": {
+    "id": 65619,
+    "form": 11,
+    "angle": 1,
+    "level": 0,
+    "x": 3158,
+    "z": 3622
+  },
+  "expectedPad": {
+    "loc": 65618,
+    "centre": {
+      "level": 0,
+      "x": 3106,
+      "z": 3794
+    },
+    "level": 35
+  },
+  "slug": 1632,
+  "salt": 4161,
+  "weapon": 4151,
+  "qualification": "Skills and points are pre-login fixture state; no gameplay damage, XP or tool consumption is fabricated. Reward purchase uses native widget input, Rock slug attack attempts a renderer pick and has an explicit ordinary interaction-command fallback. Obelisk activation delegates ordinary loc interaction after a fixture relocation. The native modal is closed by its ordinary pointer control, and a minimap click walks onto the central pad after activation. Transport and the native Wilderness HUD use their real owners. The sample does not establish every Slayer/PvP mechanic or exact pixels."
+}

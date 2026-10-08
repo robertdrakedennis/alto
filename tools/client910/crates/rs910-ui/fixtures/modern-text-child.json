@@ -1,0 +1,381 @@
+{
+  "client_md5": "290cb3489d088d145741f1734f53b0fc",
+  "kernel_sha256": {
+    "factory": "d342852e9ff5678ea4681ba8103f91d9e9aa84b8bfe23d51c36b5ba2f6a05b39",
+    "text": "f012d72cb62af78ea7e116a85c6a8dfb5a70dce0575ca6b76f1f0aaa0c6138a7",
+    "base": "620e135b4a18eb6244976b6f316b490c9b908b023f94462ad6bb99ca0c965aed",
+    "assign": "5622b7b09e52a378d92c98700d66cf3f3270e435cadb768c7bd5f4454b5f2005",
+    "weak": "e938d66c8ab3139bc245f82a987b3b514af0e387d271b1f88a3d5362ffabfd36",
+    "dropweak": "fb989c6fd0e85e0ee0c6b1025e422c9f238a4670a97e1bec7f49b9f5c2a1497c",
+    "dropstrong": "f1ac9290792ca19982f972fe1370ea5727d6e68b903a44cea46552bdec96fd0e",
+    "interface_copy": "47aab9fba49d0e0d5da6cbafd2a91741046fc05cead68f6e3d4f5a5cded46b90",
+    "component_copy": "8601833f53c26457b60630569779d00dcd49ccbbd51960e1dc85c06768d26c46",
+    "weak_lock": "41f02f57ee08ffba7244b6fa57c0d7aa5dda3f82b40a95f7baac23a6924b720e",
+    "create": "8eb694a57b36c6bda428e6b0398d76468bdb404bbd9e53562eef55e9e3fccf5d",
+    "attach": "c892da9e586f31b4c48b74b74925a90fb3b1502f1525e1ca54dacfb62598692c",
+    "lookup": "321124bef41272768229d1125b28952a663f40f225f959bfb20e8bfb0e839bb0",
+    "index": "975b1c87b14dc2887e136cc4c6bb57d3bf44253314e5234bce18c97b55764d30",
+    "insert": "ea8ed97f556de9344403c64f2e39ddccdaecf05a8ea81fe2072eb5b9a2c084a4",
+    "reserve": "8e5b688f98c7a1fac1bebe86db7db795eb3df92eb1ec46a4d0655966ea3de2aa",
+    "index_insert": "208704dfcf595a05b0b291c853c25cabea3af5f634423d5be41c2b3a3caa870f",
+    "is_container": "2db31f4e09597946e56e859813bfdad7046d457c32332c3a882654d1e3ffdf67",
+    "admission": "2db31f4e09597946e56e859813bfdad7046d457c32332c3a882654d1e3ffdf67",
+    "virtual_records": "1616e363aa6cd3367e0deef5507cdde0dcbbe5998fc4a5f1c90146ad80a46b60",
+    "virtual_changed": "aa814164e201ade39d001dfa97f020ec12147ee8e200daaf9950824cf1318061",
+    "drawing_accessor": "5d5bd424df808c80c5da68885197e3b24ea07d0f230895aca1ace197a32285ca",
+    "text_vtable": "7262dd4d1b71b4e0eac909c68618386fb7ae83a2a564dfc6f290249511c65809",
+    "false_predicate": "c8e0c1a2ea809cc76a62033f09c0526a8920e9db5f368836b534c652fa430a0d",
+    "to_start": "1d65a95b8f8478de94c03c57681922d726e04eec88edf5063ef3c2d211d836bd",
+    "to_end": "9e0192ca16055084329c7f24d2fbc74bbe6001c9f51371565e0cc5bc2d16ec89",
+    "record_less": "ba7556874ab5ae8661d337e258edef5074db05d1cce74d87ed28e4ff43f758e8",
+    "copy_records": "a2c1f5a9e949f44f4c6ff96214c4cc4b60ba36b1e957c2c7e926fe1122932c06",
+    "append_record": "e3b09e91d5ecfa65e4079c114d73ce6c6e57ad8ed106b72e30bc4dd393ac3721",
+    "erase_record": "b3801e5cb5c21b6cd026f40e526c7c953db639d9596e0b0c8c00ce4686db34ac",
+    "text_is_container": "c2b126fd49c4012d32d3789036686a402d6daea28f8089f94d7a6062c2a0f43e"
+  },
+  "scope": "Original cc_create handler, full factory dispatch to class4 pooled constructor, base initializer, identity assignment, weak/strong references and runtime attachment/insertion/index routines. Class4 pool is preallocated with initialized guard; interface provider, mutex, raw allocator/free and abort-result services are supplied. Parent is a synthetic script-kind-0 container with preallocated child and drawing storage. Admission and non-container failure cases replace only their virtual predicate. Does not execute factory pool growth, other classes, destructor disposal or original full rendering. This fixture projects text fields, stacks, attachment and selection for static script-kind-0 parents. The supplied admission-rejection case is excluded because that predicate does not exist on the mapped target parent class. Other constructors remain unsealed.",
+  "child_limit": 64256,
+  "template_resource": [
+    65,
+    76,
+    84,
+    79,
+    45,
+    84,
+    69,
+    88,
+    84,
+    45,
+    67,
+    72,
+    73,
+    76,
+    68,
+    1,
+    4,
+    0,
+    0,
+    0,
+    4,
+    0,
+    255,
+    255,
+    255,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1,
+    255,
+    255,
+    255,
+    255,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "cases": [
+    {
+      "name": "text_primary",
+      "input": {
+        "packed": 65536,
+        "kind": 4,
+        "child_id": 7,
+        "selector": 0,
+        "group_present": true,
+        "parent_present": true,
+        "container": true
+      },
+      "result": {
+        "success": true,
+        "stack": [
+          91
+        ],
+        "selected": true,
+        "other_bank_preserved": true,
+        "children": 1,
+        "drawing": 0,
+        "identity": [
+          1,
+          0,
+          7,
+          0
+        ],
+        "fields": {
+          "colour": 16777215,
+          "transparency": 0,
+          "aspect": [
+            1,
+            1
+          ],
+          "font": -1,
+          "empty": true,
+          "line_height": 0,
+          "max_lines": 0,
+          "horizontal_align": 0,
+          "vertical_align": 0,
+          "flags": 0
+        }
+      }
+    },
+    {
+      "name": "text_secondary",
+      "input": {
+        "packed": 65536,
+        "kind": 4,
+        "child_id": 7,
+        "selector": 2,
+        "group_present": true,
+        "parent_present": true,
+        "container": true
+      },
+      "result": {
+        "success": true,
+        "stack": [
+          91
+        ],
+        "selected": true,
+        "other_bank_preserved": true,
+        "children": 1,
+        "drawing": 0,
+        "identity": [
+          1,
+          0,
+          7,
+          0
+        ],
+        "fields": {
+          "colour": 16777215,
+          "transparency": 0,
+          "aspect": [
+            1,
+            1
+          ],
+          "font": -1,
+          "empty": true,
+          "line_height": 0,
+          "max_lines": 0,
+          "horizontal_align": 0,
+          "vertical_align": 0,
+          "flags": 0
+        }
+      }
+    },
+    {
+      "name": "text_kind_truncates",
+      "input": {
+        "packed": 65536,
+        "kind": 260,
+        "child_id": 7,
+        "selector": 0,
+        "group_present": true,
+        "parent_present": true,
+        "container": true
+      },
+      "result": {
+        "success": true,
+        "stack": [
+          91
+        ],
+        "selected": true,
+        "other_bank_preserved": true,
+        "children": 1,
+        "drawing": 0,
+        "identity": [
+          1,
+          0,
+          7,
+          0
+        ],
+        "fields": {
+          "colour": 16777215,
+          "transparency": 0,
+          "aspect": [
+            1,
+            1
+          ],
+          "font": -1,
+          "empty": true,
+          "line_height": 0,
+          "max_lines": 0,
+          "horizontal_align": 0,
+          "vertical_align": 0,
+          "flags": 0
+        }
+      }
+    },
+    {
+      "name": "last_flat_child",
+      "input": {
+        "packed": 65536,
+        "kind": 4,
+        "child_id": 64255,
+        "selector": 0,
+        "group_present": true,
+        "parent_present": true,
+        "container": true
+      },
+      "result": {
+        "success": true,
+        "stack": [
+          91
+        ],
+        "selected": true,
+        "other_bank_preserved": true,
+        "children": 1,
+        "drawing": 0,
+        "identity": [
+          1,
+          0,
+          64255,
+          0
+        ],
+        "fields": {
+          "colour": 16777215,
+          "transparency": 0,
+          "aspect": [
+            1,
+            1
+          ],
+          "font": -1,
+          "empty": true,
+          "line_height": 0,
+          "max_lines": 0,
+          "horizontal_align": 0,
+          "vertical_align": 0,
+          "flags": 0
+        }
+      }
+    },
+    {
+      "name": "negative_child",
+      "input": {
+        "packed": 65536,
+        "kind": 4,
+        "child_id": -1,
+        "selector": 0,
+        "group_present": true,
+        "parent_present": true,
+        "container": true
+      },
+      "result": {
+        "success": false,
+        "stack": [
+          91
+        ],
+        "selected": false,
+        "other_bank_preserved": true,
+        "children": 0,
+        "drawing": 0
+      }
+    },
+    {
+      "name": "over_limit_child",
+      "input": {
+        "packed": 65536,
+        "kind": 4,
+        "child_id": 64256,
+        "selector": 0,
+        "group_present": true,
+        "parent_present": true,
+        "container": true
+      },
+      "result": {
+        "success": false,
+        "stack": [
+          91
+        ],
+        "selected": false,
+        "other_bank_preserved": true,
+        "children": 0,
+        "drawing": 0
+      }
+    },
+    {
+      "name": "missing_group",
+      "input": {
+        "packed": 65536,
+        "kind": 4,
+        "child_id": 7,
+        "selector": 0,
+        "group_present": false,
+        "parent_present": true,
+        "container": true
+      },
+      "result": {
+        "success": false,
+        "stack": [
+          91
+        ],
+        "selected": false,
+        "other_bank_preserved": true,
+        "children": 0,
+        "drawing": 0
+      }
+    },
+    {
+      "name": "missing_parent",
+      "input": {
+        "packed": 65536,
+        "kind": 4,
+        "child_id": 7,
+        "selector": 0,
+        "group_present": true,
+        "parent_present": false,
+        "container": true
+      },
+      "result": {
+        "success": true,
+        "stack": [
+          91
+        ],
+        "selected": false,
+        "other_bank_preserved": true,
+        "children": 0,
+        "drawing": 0
+      }
+    },
+    {
+      "name": "non_container",
+      "input": {
+        "packed": 65536,
+        "kind": 4,
+        "child_id": 7,
+        "selector": 0,
+        "group_present": true,
+        "parent_present": true,
+        "container": false
+      },
+      "result": {
+        "success": true,
+        "stack": [
+          91
+        ],
+        "selected": false,
+        "other_bank_preserved": true,
+        "children": 0,
+        "drawing": 0
+      }
+    }
+  ]
+}

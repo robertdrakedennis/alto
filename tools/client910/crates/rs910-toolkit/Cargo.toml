@@ -1,0 +1,32 @@
+[package]
+name = "rs910-toolkit"
+version = "0.1.0"
+edition = "2021"
+publish = false
+description = "The 910 client's toolkit boundary: the retained UI's display lists (Op/Recording, the GPU batch quads), the Toolkit trait over Java's Toolkit 2D API that the GPU painter, the software toolkit and NullToolkit implement, the CPU font resource and the FramePlan a backend executes. No wgpu."
+
+# Allowed dependencies (tools/refactor/layers.txt `[crates]`,
+# target-architecture.md §2.2): rs910-core and rs910-model (and what they
+# depend on: rs910-config for the font/sprite resources and component
+# fields). Externals: layers.txt `[externals]`; wgpu is fenced out. Doc code
+# blocks are not compiled, like client910's (`doctest = false`).
+[lib]
+doctest = false
+
+[dependencies]
+rs910-core = { path = "../rs910-core" }
+rs910-config = { path = "../rs910-config" }
+# `cache::Pack` for the performance-metric model (Phase 3.2).
+rs910-js5 = { path = "../rs910-js5" }
+rs910-model = { path = "../rs910-model" }
+anyhow = "1.0"
+# `text_render::Vertex` is the GPU batch vertex (`#[repr(C)]`, `Pod`).
+bytemuck = { version = "1", features = ["derive"] }
+
+[features]
+# Every workspace crate has `no-pack` (tools/README.md); client910's
+# `no-pack` forwards here. Nothing in this crate reads the pack.
+no-pack = []
+
+[lints]
+workspace = true

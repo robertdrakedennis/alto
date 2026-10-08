@@ -1,0 +1,46 @@
+# Decodes of real cache entries by the original client, recorded once (see tests/decode_golden.rs).
+# A cache entry is `@ kind id -` + `digest=` (its bytes come from the local pack at test time); a synthetic entry keeps its hex and lines.
+@ interface 0:0 -
+digest=82ba07f3e6e1c372
+@ interface 0:1 -
+digest=818e22b3d9894465
+@ interface 0:20 -
+digest=febdb1b6c0fa7ea4
+@ interface 2:0 -
+digest=b4cc3c89ab862ea2
+@ interface 2:1 -
+digest=74099fa037757111
+@ interface 2:5 -
+digest=173718993e491668
+@ interface 4:5 -
+digest=0fe3861358d3f853
+@ interface 4:8 -
+digest=f067c55b538dc212
+@ interface 5:0 -
+digest=36c8930ee66a2065
+@ interface 6:3 -
+digest=f1b5b9ff1edb48c0
+@ interface 6:6 -
+digest=c29975497616db8e
+@ interface 7:3 -
+digest=ee266ae9c2abc28f
+@ interface 13:5 -
+digest=3b35d176d7f1ba87
+@ interface 15:0 -
+digest=8494a6454034df11
+@ interface 41:9 -
+digest=3aef26db6e08f2a7
+@ interface 64:6 -
+digest=8b102ff1dfc6d25f
+@ interface 67:22 -
+digest=b7f00c91cd9214ca
+@ interface 231:3 -
+digest=3a1055e70bffcd7c
+@ interface 234:10 -
+digest=fbb3b2b5d8530958
+@ interface 517:63 -
+digest=0f8c04038e7c6206
+@ interface 649:20 -
+digest=6df7e7aca74ee3a6
+@ interface 101:3 -
+digest=c1b5def5458abff2

@@ -1,0 +1,48 @@
+{
+  "format": 1,
+  "build": {
+    "major": 950,
+    "minor": 1
+  },
+  "client_md5": "290cb3489d088d145741f1734f53b0fc",
+  "script_index_sha256": "f7f5e70c5f5cb95b05596805c21365fcddc68f0f5577bffc6b0423ad0a90e31b",
+  "interface_archive": 3,
+  "interface_index_sha256": "93972d275f01f55cf89cd66ba502fcb80b3d97db6c1e6ca3cae130482d4f1ca0",
+  "text_type": 4,
+  "type_mask": 127,
+  "name_mask": 128,
+  "absent_version": 255,
+  "aspect_mode": 4,
+  "monospaced_version": 2,
+  "max_lines_version": 0,
+  "style_version": 6,
+  "absent_style": -1,
+  "kernels": {
+    "0x006a5b80": "78c64ea5b082495829b1cf17f3eb9f43ba081b1c0edd397720f34fbb6ef81152",
+    "0x006a6b80": "b71a531275ff859008e65079fda1dce0802815551e5a412e00855a2459a1fc87",
+    "0x003a8560": "fa0fea57b8679934aa6697f99a082abf4fc73de155417f5469a0760fb9c104de",
+    "0x00198bb0": "efec483899c4c4653f9cf2300f0dbcc82452fcc056e3428b7f1b7a859bec151d",
+    "0x003a86e0": "35615a697e50d04fac5a18598b2698e04a63ed99bb90c2a9fb9fcee218c102a3",
+    "0x003a8720": "828f934fd2d3b72a77f852c3f832a972cbcc521a7cf3a153ccc1672e1045856e",
+    "0x0019a430": "3a7055998ac92cff2d4bbf759b415a03d51b65e5dd1fd59c7d2b48ee02384917",
+    "0x003a9fd0": "f2877f63cdc5a080ced4268a9564f2f97212eb703e691b3b3ed27303f01be902",
+    "0x003a9ea0": "91fa49116de41075b1852918b3fb116c81566259def3ef916959a67069907c97",
+    "0x006a7b80": "247d5965ac701979553c26807667a8c16acab5159a559c9b411e3ec403bf519f"
+  },
+  "styles": {
+    "archive": 60,
+    "index_sha256": "b1ae64744f7a8cf4c150293f9237652f1a054d204690148d44fc40264a896417",
+    "numeric_tag": 0,
+    "absent_parent": -1,
+    "font_key": 3211736176,
+    "kernels": {
+      "0x002a6d60": "e3f68d85bd2b97b6dc92accb7742248059d74d65a59c61eb7a8166f8e2fb713a",
+      "0x002a7d60": "bd24bb548d5b80988b69cc056e5dda7f6f678a4b7172fca1a0f7a74195838b22",
+      "0x0039add0": "b42852dff50ceccfeaaaf7bfd0718bd81133ec8025ed38307c2d418bb9b62efa",
+      "0x003acce0": "33193ef5b0326f743fda4b520b48faa318b8252aee278ad7315b319be30ea77c",
+      "0x00351670": "f1ac9290792ca19982f972fe1370ea5727d6e68b903a44cea46552bdec96fd0e",
+      "0x003acf00": "f062dd78286212acefa4ff30b67eb2f1eb929158cd7cec92dbeab3d15474988e",
+      "0x000b5c7c": "ec752a762d8cbb20b08a7cc8b9514012ee2dc37a85b18d92544a84268211277f"
+    }
+  }
+}

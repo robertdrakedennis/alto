@@ -1,0 +1,1721 @@
+{
+ "source": "revision 910 protocol tables (opcode, name, size) as recorded from the original client",
+ "ServerProt": [
+  {
+   "name": "TELEMETRY_GRID_ADD_GROUP",
+   "opcode": 0,
+   "size": 5
+  },
+  {
+   "name": "ENVIRONMENT_OVERRIDE",
+   "opcode": 1,
+   "size": -1
+  },
+  {
+   "name": "UPDATE_FRIENDCHAT_CHANNEL_SINGLEUSER",
+   "opcode": 2,
+   "size": -1
+  },
+  {
+   "name": "CREATE_CHECK_EMAIL_REPLY",
+   "opcode": 3,
+   "size": 1
+  },
+  {
+   "name": "PROJANIM_SPECIFIC",
+   "opcode": 4,
+   "size": 23
+  },
+  {
+   "name": "CAM_LOOKAT",
+   "opcode": 5,
+   "size": 6
+  },
+  {
+   "name": "UPDATE_INV_FULL",
+   "opcode": 6,
+   "size": -2
+  },
+  {
+   "name": "MESSAGE_PRIVATE_ECHO",
+   "opcode": 7,
+   "size": -2
+  },
+  {
+   "name": "MESSAGE_PUBLIC",
+   "opcode": 8,
+   "size": -1
+  },
+  {
+   "name": "REBUILD_REGION",
+   "opcode": 9,
+   "size": -2
+  },
+  {
+   "name": "UPDATE_SITESETTINGS",
+   "opcode": 10,
+   "size": -1
+  },
+  {
+   "name": "NPC_ANIM_SPECIFIC",
+   "opcode": 11,
+   "size": 19
+  },
+  {
+   "name": "RESET_ANIMS",
+   "opcode": 12,
+   "size": 0
+  },
+  {
+   "name": "MAP_PROJANIM",
+   "opcode": 13,
+   "size": 18
+  },
+  {
+   "name": "SET_PLAYER_OP",
+   "opcode": 14,
+   "size": -1
+  },
+  {
+   "name": "TELEMETRY_GRID_VALUES_DELTA",
+   "opcode": 15,
+   "size": -2
+  },
+  {
+   "name": "UPDATE_INV_PARTIAL",
+   "opcode": 16,
+   "size": -2
+  },
+  {
+   "name": "MIDI_SONG",
+   "opcode": 17,
+   "size": 3
+  },
+  {
+   "name": "SET_MOVEACTION",
+   "opcode": 18,
+   "size": -1
+  },
+  {
+   "name": "CREATE_SUGGEST_NAME_ERROR",
+   "opcode": 19,
+   "size": 1
+  },
+  {
+   "name": "TELEMETRY_GRID_ADD_COLUMN",
+   "opcode": 20,
+   "size": 6
+  },
+  {
+   "name": "CLIENT_SETVARCSTR_LARGE",
+   "opcode": 21,
+   "size": -2
+  },
+  {
+   "name": "MESSAGE_CLANCHANNEL",
+   "opcode": 22,
+   "size": -1
+  },
+  {
+   "name": "UPDATE_FRIENDCHAT_CHANNEL_FULL",
+   "opcode": 23,
+   "size": -2
+  },
+  {
+   "name": "EXECUTE_CLIENT_CHEAT",
+   "opcode": 24,
+   "size": 2
+  },
+  {
+   "name": "FRIENDLIST_LOADED",
+   "opcode": 25,
+   "size": 0
+  },
+  {
+   "name": "IF_OPENSUB_ACTIVE_LOC",
+   "opcode": 26,
+   "size": 32
+  },
+  {
+   "name": "CLEAR_PLAYER_SNAPSHOT",
+   "opcode": 27,
+   "size": 1
+  },
+  {
+   "name": "UPDATE_STOCKMARKET_SLOT",
+   "opcode": 28,
+   "size": 21
+  },
+  {
+   "name": "SONG_PRELOAD",
+   "opcode": 29,
+   "size": 2
+  },
+  {
+   "name": "CLIENT_SETVARCSTR_SMALL",
+   "opcode": 30,
+   "size": -1
+  },
+  {
+   "name": "IF_SETTEXTFONT",
+   "opcode": 31,
+   "size": 8
+  },
+  {
+   "name": "TELEMETRY_GRID_REMOVE_COLUMN",
+   "opcode": 32,
+   "size": 2
+  },
+  {
+   "name": "UPDATE_STAT",
+   "opcode": 33,
+   "size": 6
+  },
+  {
+   "name": "LOC_CUSTOMISE",
+   "opcode": 34,
+   "size": -1
+  },
+  {
+   "name": "IF_OPENTOP",
+   "opcode": 35,
+   "size": 19
+  },
+  {
+   "name": "MESSAGE_FRIENDCHANNEL",
+   "opcode": 36,
+   "size": -1
+  },
+  {
+   "name": "VORBIS_SOUND",
+   "opcode": 37,
+   "size": 8
+  },
+  {
+   "name": "IF_OPENSUB",
+   "opcode": 38,
+   "size": 23
+  },
+  {
+   "name": "TELEMETRY_GRID_MOVE_COLUMN",
+   "opcode": 39,
+   "size": 3
+  },
+  {
+   "name": "PLAYER_GROUP_FULL",
+   "opcode": 40,
+   "size": -2
+  },
+  {
+   "name": "MESSAGE_PLAYER_GROUP",
+   "opcode": 41,
+   "size": -1
+  },
+  {
+   "name": "VORBIS_SOUND_GROUP",
+   "opcode": 42,
+   "size": 10
+  },
+  {
+   "name": "IF_SETPLAYERHEAD",
+   "opcode": 43,
+   "size": 4
+  },
+  {
+   "name": "VARBIT_SMALL",
+   "opcode": 44,
+   "size": 3
+  },
+  {
+   "name": "LOC_DEL",
+   "opcode": 45,
+   "size": 2
+  },
+  {
+   "name": "UPDATE_FRIENDLIST",
+   "opcode": 46,
+   "size": -2
+  },
+  {
+   "name": "SETDRAWORDER",
+   "opcode": 47,
+   "size": 1
+  },
+  {
+   "name": "SEND_PING",
+   "opcode": 48,
+   "size": 8
+  },
+  {
+   "name": "OBJ_DEL",
+   "opcode": 49,
+   "size": 3
+  },
+  {
+   "name": "VARP_LARGE",
+   "opcode": 50,
+   "size": 6
+  },
+  {
+   "name": "UNHANDLED_51",
+   "opcode": 51,
+   "size": -2
+  },
+  {
+   "name": "DEBUG_SERVER_TRIGGERS",
+   "opcode": 52,
+   "size": -1
+  },
+  {
+   "name": "UPDATE_UID192",
+   "opcode": 53,
+   "size": 28
+  },
+  {
+   "name": "CLIENT_SETVARCBIT_SMALL",
+   "opcode": 54,
+   "size": 3
+  },
+  {
+   "name": "MIDI_JINGLE",
+   "opcode": 55,
+   "size": 3
+  },
+  {
+   "name": "UPDATE_ZONE_PARTIAL_FOLLOWS",
+   "opcode": 56,
+   "size": 3
+  },
+  {
+   "name": "LOGOUT_TRANSFER",
+   "opcode": 57,
+   "size": -1
+  },
+  {
+   "name": "UPDATE_ZONE_PARTIAL_ENCLOSED",
+   "opcode": 58,
+   "size": -2
+  },
+  {
+   "name": "CLANCHANNEL_FULL",
+   "opcode": 59,
+   "size": -2
+  },
+  {
+   "name": "URL_OPEN",
+   "opcode": 60,
+   "size": -2
+  },
+  {
+   "name": "IF_OPENSUB_ACTIVE_PLAYER",
+   "opcode": 61,
+   "size": 25
+  },
+  {
+   "name": "IF_SETPLAYERHEAD_OTHER",
+   "opcode": 62,
+   "size": 10
+  },
+  {
+   "name": "IF_SETRECOL",
+   "opcode": 63,
+   "size": 9
+  },
+  {
+   "name": "CAM_REMOVEROOF",
+   "opcode": 64,
+   "size": 4
+  },
+  {
+   "name": "UPDATE_INV_STOP_TRANSMIT",
+   "opcode": 65,
+   "size": 3
+  },
+  {
+   "name": "CREATE_SUGGEST_NAME_REPLY",
+   "opcode": 66,
+   "size": -1
+  },
+  {
+   "name": "PLAYER_SNAPSHOT",
+   "opcode": 67,
+   "size": -2
+  },
+  {
+   "name": "TELEMETRY_GRID_REMOVE_GROUP",
+   "opcode": 68,
+   "size": 1
+  },
+  {
+   "name": "CLIENT_SETVARCBIT_LARGE",
+   "opcode": 69,
+   "size": 6
+  },
+  {
+   "name": "SOUND_AREA",
+   "opcode": 70,
+   "size": 6
+  },
+  {
+   "name": "MAP_PROJANIM_HALFSQ",
+   "opcode": 71,
+   "size": 21
+  },
+  {
+   "name": "IF_SETPOSITION",
+   "opcode": 72,
+   "size": 8
+  },
+  {
+   "name": "OBJ_COUNT",
+   "opcode": 73,
+   "size": 7
+  },
+  {
+   "name": "CHAT_FILTER_SETTINGS_PRIVATECHAT",
+   "opcode": 74,
+   "size": 1
+  },
+  {
+   "name": "TELEMETRY_GRID_FULL",
+   "opcode": 75,
+   "size": -2
+  },
+  {
+   "name": "SHOW_FACE_HERE",
+   "opcode": 76,
+   "size": 1
+  },
+  {
+   "name": "SOCIAL_NETWORK_LOGOUT",
+   "opcode": 77,
+   "size": -2
+  },
+  {
+   "name": "HINT_ARROW",
+   "opcode": 78,
+   "size": 14
+  },
+  {
+   "name": "IF_SETSCROLLPOS",
+   "opcode": 79,
+   "size": 6
+  },
+  {
+   "name": "MESSAGE_QUICKCHAT_PRIVATE",
+   "opcode": 80,
+   "size": -1
+  },
+  {
+   "name": "CAM2_ENABLE",
+   "opcode": 81,
+   "size": 1
+  },
+  {
+   "name": "MESSAGE_CLANCHANNEL_SYSTEM",
+   "opcode": 82,
+   "size": -1
+  },
+  {
+   "name": "NO_TIMEOUT",
+   "opcode": 83,
+   "size": 0
+  },
+  {
+   "name": "LOC_ANIM_SPECIFIC",
+   "opcode": 84,
+   "size": 10
+  },
+  {
+   "name": "OBJ_ADD",
+   "opcode": 85,
+   "size": 5
+  },
+  {
+   "name": "LOGOUT_FULL",
+   "opcode": 86,
+   "size": 1
+  },
+  {
+   "name": "CAM_SMOOTHRESET",
+   "opcode": 87,
+   "size": 0
+  },
+  {
+   "name": "REBUILD_NORMAL",
+   "opcode": 88,
+   "size": -2
+  },
+  {
+   "name": "MESSAGE_QUICKCHAT_CLANCHANNEL",
+   "opcode": 89,
+   "size": -1
+  },
+  {
+   "name": "MESSAGE_PRIVATE",
+   "opcode": 90,
+   "size": -2
+  },
+  {
+   "name": "VARCLAN_DISABLE",
+   "opcode": 91,
+   "size": 0
+  },
+  {
+   "name": "VORBIS_SOUND_GROUP_START",
+   "opcode": 92,
+   "size": 2
+  },
+  {
+   "name": "MESSAGE_QUICKCHAT_PRIVATE_ECHO",
+   "opcode": 93,
+   "size": -1
+  },
+  {
+   "name": "SET_MAP_FLAG",
+   "opcode": 94,
+   "size": 2
+  },
+  {
+   "name": "VORBIS_SOUND_GROUP_STOP",
+   "opcode": 95,
+   "size": 2
+  },
+  {
+   "name": "TELEMETRY_GRID_MOVE_ROW",
+   "opcode": 96,
+   "size": 3
+  },
+  {
+   "name": "VORBIS_PRELOAD_SOUNDS",
+   "opcode": 97,
+   "size": 2
+  },
+  {
+   "name": "CAM_MOVETO",
+   "opcode": 98,
+   "size": 6
+  },
+  {
+   "name": "RESET_CLIENT_VARCACHE",
+   "opcode": 99,
+   "size": 0
+  },
+  {
+   "name": "IF_SETPLAYERMODEL_OTHER",
+   "opcode": 100,
+   "size": 10
+  },
+  {
+   "name": "CLANSETTINGS_FULL",
+   "opcode": 101,
+   "size": -2
+  },
+  {
+   "name": "IF_OPENSUB_ACTIVE_NPC",
+   "opcode": 102,
+   "size": 25
+  },
+  {
+   "name": "IF_SETANIM",
+   "opcode": 103,
+   "size": 8
+  },
+  {
+   "name": "CAM_RESET",
+   "opcode": 104,
+   "size": 0
+  },
+  {
+   "name": "LOBBY_APPEARANCE",
+   "opcode": 105,
+   "size": -2
+  },
+  {
+   "name": "VARCLAN_ENABLE",
+   "opcode": 106,
+   "size": 0
+  },
+  {
+   "name": "POINTLIGHT_COLOUR",
+   "opcode": 107,
+   "size": 8
+  },
+  {
+   "name": "IF_SETRETEX",
+   "opcode": 108,
+   "size": 9
+  },
+  {
+   "name": "IF_SETHIDE",
+   "opcode": 109,
+   "size": 5
+  },
+  {
+   "name": "LAST_LOGIN_INFO",
+   "opcode": 110,
+   "size": 4
+  },
+  {
+   "name": "REFLECTION_CHECKER",
+   "opcode": 111,
+   "size": -2
+  },
+  {
+   "name": "IF_SETANGLE",
+   "opcode": 112,
+   "size": 10
+  },
+  {
+   "name": "TEXT_COORD",
+   "opcode": 113,
+   "size": -1
+  },
+  {
+   "name": "VORBIS_SPEECH_STOP",
+   "opcode": 114,
+   "size": 0
+  },
+  {
+   "name": "VORBIS_PRELOAD_SOUND_GROUP",
+   "opcode": 115,
+   "size": 2
+  },
+  {
+   "name": "IF_SETMODEL",
+   "opcode": 116,
+   "size": 8
+  },
+  {
+   "name": "DO_CHEAT",
+   "opcode": 117,
+   "size": -1
+  },
+  {
+   "name": "OBJ_REVEAL",
+   "opcode": 118,
+   "size": 7
+  },
+  {
+   "name": "HINT_TRAIL",
+   "opcode": 119,
+   "size": -2
+  },
+  {
+   "name": "MESSAGE_GAME",
+   "opcode": 120,
+   "size": -1
+  },
+  {
+   "name": "IF_OPENSUB_ACTIVE_OBJ",
+   "opcode": 121,
+   "size": 29
+  },
+  {
+   "name": "PLAYER_INFO",
+   "opcode": 122,
+   "size": -2
+  },
+  {
+   "name": "SOUND_MIXBUSS_ADD",
+   "opcode": 123,
+   "size": 6
+  },
+  {
+   "name": "LOC_PREFETCH",
+   "opcode": 124,
+   "size": 5
+  },
+  {
+   "name": "NPC_HEADICON_SPECIFIC",
+   "opcode": 125,
+   "size": 9
+  },
+  {
+   "name": "UPDATE_DOB",
+   "opcode": 126,
+   "size": 4
+  },
+  {
+   "name": "MIDI_SONG_LOCATION",
+   "opcode": 127,
+   "size": 11
+  },
+  {
+   "name": "CLIENT_SETVARC_LARGE",
+   "opcode": 128,
+   "size": 6
+  },
+  {
+   "name": "SERVER_TICK_END",
+   "opcode": 129,
+   "size": 0
+  },
+  {
+   "name": "IF_SETPLAYERHEAD_IGNOREWORN",
+   "opcode": 130,
+   "size": 10
+  },
+  {
+   "name": "CREATE_ACCOUNT_REPLY",
+   "opcode": 131,
+   "size": 1
+  },
+  {
+   "name": "CLANSETTINGS_DELTA",
+   "opcode": 132,
+   "size": -2
+  },
+  {
+   "name": "TRIGGER_ONDIALOGABORT",
+   "opcode": 133,
+   "size": 0
+  },
+  {
+   "name": "REDUCE_PLAYER_ATTACK_PRIORITY",
+   "opcode": 134,
+   "size": 1
+  },
+  {
+   "name": "IF_SET_HTTP_IMAGE",
+   "opcode": 135,
+   "size": 8
+  },
+  {
+   "name": "CUTSCENE",
+   "opcode": 136,
+   "size": -2
+  },
+  {
+   "name": "MINIMAP_TOGGLE",
+   "opcode": 137,
+   "size": 1
+  },
+  {
+   "name": "CHAT_FILTER_SETTINGS",
+   "opcode": 138,
+   "size": 2
+  },
+  {
+   "name": "LOC_ADD_CHANGE",
+   "opcode": 139,
+   "size": -1
+  },
+  {
+   "name": "IF_SETCOLOUR",
+   "opcode": 140,
+   "size": 6
+  },
+  {
+   "name": "REDUCE_NPC_ATTACK_PRIORITY",
+   "opcode": 141,
+   "size": 1
+  },
+  {
+   "name": "VARBIT_LARGE",
+   "opcode": 142,
+   "size": 6
+  },
+  {
+   "name": "VORBIS_SPEECH_SOUND",
+   "opcode": 143,
+   "size": 6
+  },
+  {
+   "name": "POINTLIGHT_INTENSITY",
+   "opcode": 144,
+   "size": 5
+  },
+  {
+   "name": "MESSAGE_QUICKCHAT_FRIENDCHAT",
+   "opcode": 145,
+   "size": -1
+  },
+  {
+   "name": "CLANCHANNEL_DELTA",
+   "opcode": 146,
+   "size": -2
+  },
+  {
+   "name": "LOC_ANIM",
+   "opcode": 147,
+   "size": 7
+  },
+  {
+   "name": "STORE_SERVERPERM_VARCS_ACK",
+   "opcode": 148,
+   "size": 0
+  },
+  {
+   "name": "CLIENT_SETVARC_SMALL",
+   "opcode": 149,
+   "size": 3
+  },
+  {
+   "name": "SET_TARGET",
+   "opcode": 150,
+   "size": 2
+  },
+  {
+   "name": "IF_SETPLAYERMODEL_SELF",
+   "opcode": 151,
+   "size": 4
+  },
+  {
+   "name": "CAMERA_UPDATE",
+   "opcode": 152,
+   "size": -2
+  },
+  {
+   "name": "JS5_RELOAD",
+   "opcode": 153,
+   "size": 0
+  },
+  {
+   "name": "CHANGE_LOBBY",
+   "opcode": 154,
+   "size": -1
+  },
+  {
+   "name": "IF_SETEVENTS",
+   "opcode": 155,
+   "size": 12
+  },
+  {
+   "name": "RUNCLIENTSCRIPT",
+   "opcode": 156,
+   "size": -2
+  },
+  {
+   "name": "VARP_SMALL",
+   "opcode": 157,
+   "size": 3
+  },
+  {
+   "name": "IF_SETOBJECT",
+   "opcode": 158,
+   "size": 10
+  },
+  {
+   "name": "PLAYER_GROUP_VARPS",
+   "opcode": 159,
+   "size": -2
+  },
+  {
+   "name": "TELEMETRY_GRID_REMOVE_ROW",
+   "opcode": 160,
+   "size": 2
+  },
+  {
+   "name": "UPDATE_RUNENERGY",
+   "opcode": 161,
+   "size": 1
+  },
+  {
+   "name": "SOUND_MIXBUSS_SETLEVEL",
+   "opcode": 162,
+   "size": 4
+  },
+  {
+   "name": "CREATE_CHECK_NAME_REPLY",
+   "opcode": 163,
+   "size": 1
+  },
+  {
+   "name": "CAM_FORCEANGLE",
+   "opcode": 164,
+   "size": 4
+  },
+  {
+   "name": "IF_SETTEXTANTIMACRO",
+   "opcode": 165,
+   "size": 5
+  },
+  {
+   "name": "IF_CLOSESUB",
+   "opcode": 166,
+   "size": 4
+  },
+  {
+   "name": "WORLDLIST_FETCH_REPLY",
+   "opcode": 167,
+   "size": -2
+  },
+  {
+   "name": "LOGOUT",
+   "opcode": 168,
+   "size": 1
+  },
+  {
+   "name": "UPDATE_RUNWEIGHT",
+   "opcode": 169,
+   "size": 2
+  },
+  {
+   "name": "UNHANDLED_170",
+   "opcode": 170,
+   "size": -2
+  },
+  {
+   "name": "CAM_SHAKE",
+   "opcode": 171,
+   "size": 6
+  },
+  {
+   "name": "VARCLAN",
+   "opcode": 172,
+   "size": -1
+  },
+  {
+   "name": "TELEMETRY_GRID_SET_ROW_PINNED",
+   "opcode": 173,
+   "size": 3
+  },
+  {
+   "name": "UPDATE_IGNORELIST",
+   "opcode": 174,
+   "size": -2
+  },
+  {
+   "name": "UPDATE_ZONE_FULL_FOLLOWS",
+   "opcode": 175,
+   "size": 3
+  },
+  {
+   "name": "MESSAGE_QUICKCHAT_PLAYER_GROUP",
+   "opcode": 176,
+   "size": -1
+  },
+  {
+   "name": "UPDATE_REBOOT_TIMER",
+   "opcode": 177,
+   "size": 2
+  },
+  {
+   "name": "SPOTANIM_SPECIFIC",
+   "opcode": 178,
+   "size": 12
+  },
+  {
+   "name": "IF_SETTARGETPARAM",
+   "opcode": 179,
+   "size": 10
+  },
+  {
+   "name": "IF_SETPLAYERMODEL_SNAPSHOT",
+   "opcode": 180,
+   "size": 5
+  },
+  {
+   "name": "IF_SETTEXT",
+   "opcode": 181,
+   "size": -2
+  },
+  {
+   "name": "SYNTH_SOUND",
+   "opcode": 182,
+   "size": 8
+  },
+  {
+   "name": "IF_SETGRAPHIC",
+   "opcode": 183,
+   "size": 8
+  },
+  {
+   "name": "IF_SETCLICKMASK",
+   "opcode": 184,
+   "size": 5
+  },
+  {
+   "name": "TELEMETRY_GRID_ADD_ROW",
+   "opcode": 185,
+   "size": 6
+  },
+  {
+   "name": "NPC_INFO",
+   "opcode": 186,
+   "size": -2
+  },
+  {
+   "name": "PLAYER_GROUP_DELTA",
+   "opcode": 187,
+   "size": -2
+  },
+  {
+   "name": "LOYALTY_UPDATE",
+   "opcode": 188,
+   "size": 4
+  },
+  {
+   "name": "IF_SETNPCHEAD",
+   "opcode": 189,
+   "size": 8
+  },
+  {
+   "name": "MIDI_SONG_STOP",
+   "opcode": 190,
+   "size": 0
+  },
+  {
+   "name": "IF_MOVESUB",
+   "opcode": 191,
+   "size": 8
+  },
+  {
+   "name": "TELEMETRY_CLEAR_GRID_VALUE",
+   "opcode": 192,
+   "size": 3
+  },
+  {
+   "name": "MAP_ANIM",
+   "opcode": 193,
+   "size": 10
+  },
+  {
+   "name": "JCOINS_UPDATE",
+   "opcode": 194,
+   "size": 4
+  }
+ ],
+ "ClientProt": [
+  {
+   "name": "MAP_BUILD_STUCK",
+   "opcode": 0,
+   "size": 15
+  },
+  {
+   "name": "RESUME_P_HSLDIALOG",
+   "opcode": 1,
+   "size": 2
+  },
+  {
+   "name": "OPNPC5",
+   "opcode": 2,
+   "size": 3
+  },
+  {
+   "name": "RESUME_P_STRINGDIALOG",
+   "opcode": 3,
+   "size": -1
+  },
+  {
+   "name": "OPPLAYER6",
+   "opcode": 4,
+   "size": 3
+  },
+  {
+   "name": "EVENT_NATIVE_MOUSE_MOVE",
+   "opcode": 5,
+   "size": -1
+  },
+  {
+   "name": "OPPLAYER9",
+   "opcode": 6,
+   "size": 3
+  },
+  {
+   "name": "MESSAGE_PRIVATE",
+   "opcode": 7,
+   "size": -2
+  },
+  {
+   "name": "AFFINEDCLANSETTINGS_ADDBANNED_FROMCHANNEL",
+   "opcode": 8,
+   "size": -1
+  },
+  {
+   "name": "CLIENT_DETAILOPTIONS_STATUS",
+   "opcode": 9,
+   "size": -1
+  },
+  {
+   "name": "RESUME_P_COUNTDIALOG",
+   "opcode": 10,
+   "size": 4
+  },
+  {
+   "name": "SEND_SNAPSHOT",
+   "opcode": 11,
+   "size": -1
+  },
+  {
+   "name": "OPLOC1",
+   "opcode": 12,
+   "size": 9
+  },
+  {
+   "name": "IGNORELIST_ADD",
+   "opcode": 13,
+   "size": -1
+  },
+  {
+   "name": "SOUND_SONGEND",
+   "opcode": 14,
+   "size": 4
+  },
+  {
+   "name": "UNUSED_15",
+   "opcode": 15,
+   "size": 9
+  },
+  {
+   "name": "OPOBJ5",
+   "opcode": 16,
+   "size": 7
+  },
+  {
+   "name": "MESSAGE_QUICKCHAT_PUBLIC",
+   "opcode": 17,
+   "size": -1
+  },
+  {
+   "name": "CLICKWORLDMAP",
+   "opcode": 18,
+   "size": 4
+  },
+  {
+   "name": "UNUSED_19",
+   "opcode": 19,
+   "size": 1
+  },
+  {
+   "name": "CREATE_ACCOUNT",
+   "opcode": 20,
+   "size": -2
+  },
+  {
+   "name": "OPLOCT",
+   "opcode": 21,
+   "size": 17
+  },
+  {
+   "name": "TRANSMITVAR_VERIFYID",
+   "opcode": 22,
+   "size": 4
+  },
+  {
+   "name": "REFLECTION_CHECK_REPLY",
+   "opcode": 23,
+   "size": -1
+  },
+  {
+   "name": "NATIVE_LIBRARY_FAILURE",
+   "opcode": 24,
+   "size": -1
+  },
+  {
+   "name": "OPOBJ2",
+   "opcode": 25,
+   "size": 7
+  },
+  {
+   "name": "OPOBJ3",
+   "opcode": 26,
+   "size": 7
+  },
+  {
+   "name": "OPLOC3",
+   "opcode": 27,
+   "size": 9
+  },
+  {
+   "name": "CREATE_CHECK_EMAIL",
+   "opcode": 28,
+   "size": -2
+  },
+  {
+   "name": "IF_BUTTON4",
+   "opcode": 29,
+   "size": 8
+  },
+  {
+   "name": "SOUND_SONGPRELOADED",
+   "opcode": 30,
+   "size": 4
+  },
+  {
+   "name": "OPNPC4",
+   "opcode": 31,
+   "size": 3
+  },
+  {
+   "name": "CLAN_KICKUSER",
+   "opcode": 32,
+   "size": -1
+  },
+  {
+   "name": "MOVE_GAMECLICK",
+   "opcode": 33,
+   "size": 5
+  },
+  {
+   "name": "CHANGE_EMAIL_ADDRESS",
+   "opcode": 34,
+   "size": -2
+  },
+  {
+   "name": "FRIENDLIST_DEL",
+   "opcode": 35,
+   "size": -1
+  },
+  {
+   "name": "OPNPC6",
+   "opcode": 36,
+   "size": 3
+  },
+  {
+   "name": "EVENT_CAMERA_POSITION",
+   "opcode": 37,
+   "size": 4
+  },
+  {
+   "name": "UNUSED_38",
+   "opcode": 38,
+   "size": -2
+  },
+  {
+   "name": "OPLOC6",
+   "opcode": 39,
+   "size": 9
+  },
+  {
+   "name": "CUTSCENE_FINISHED",
+   "opcode": 40,
+   "size": 1
+  },
+  {
+   "name": "OPPLAYERT",
+   "opcode": 41,
+   "size": 11
+  },
+  {
+   "name": "IGNORE_SETNOTES",
+   "opcode": 42,
+   "size": -1
+  },
+  {
+   "name": "UNUSED_43",
+   "opcode": 43,
+   "size": 1
+  },
+  {
+   "name": "CHAT_SETMODE",
+   "opcode": 44,
+   "size": 1
+  },
+  {
+   "name": "EVENT_MOUSE_CLICK",
+   "opcode": 45,
+   "size": 6
+  },
+  {
+   "name": "UNUSED_46",
+   "opcode": 46,
+   "size": -2
+  },
+  {
+   "name": "IGNORELIST_DEL",
+   "opcode": 47,
+   "size": -1
+  },
+  {
+   "name": "OPPLAYER8",
+   "opcode": 48,
+   "size": 3
+  },
+  {
+   "name": "OPPLAYER5",
+   "opcode": 49,
+   "size": 3
+  },
+  {
+   "name": "IF_BUTTON8",
+   "opcode": 50,
+   "size": 8
+  },
+  {
+   "name": "OPNPC1",
+   "opcode": 51,
+   "size": 3
+  },
+  {
+   "name": "AFFINEDCLANSETTINGS_SETMUTED_FROMCHANNEL",
+   "opcode": 52,
+   "size": -1
+  },
+  {
+   "name": "SIMPLE_TOOLKIT_CHANGE",
+   "opcode": 53,
+   "size": 1
+  },
+  {
+   "name": "OPPLAYER7",
+   "opcode": 54,
+   "size": 3
+  },
+  {
+   "name": "DIRECTX_FAILURE",
+   "opcode": 55,
+   "size": 2
+  },
+  {
+   "name": "OPNPC2",
+   "opcode": 56,
+   "size": 3
+  },
+  {
+   "name": "CLOSE_MODAL",
+   "opcode": 57,
+   "size": 0
+  },
+  {
+   "name": "IF_BUTTONT",
+   "opcode": 58,
+   "size": 16
+  },
+  {
+   "name": "APCOORDT",
+   "opcode": 59,
+   "size": 12
+  },
+  {
+   "name": "SEND_EMAIL_VALIDATION_CODE",
+   "opcode": 60,
+   "size": -1
+  },
+  {
+   "name": "OPLOC4",
+   "opcode": 61,
+   "size": 9
+  },
+  {
+   "name": "OPPLAYER2",
+   "opcode": 62,
+   "size": 3
+  },
+  {
+   "name": "IF_BUTTON7",
+   "opcode": 63,
+   "size": 8
+  },
+  {
+   "name": "ADD_NEW_EMAIL_ADDRESS",
+   "opcode": 64,
+   "size": -2
+  },
+  {
+   "name": "CREATE_CHECK_NAME",
+   "opcode": 65,
+   "size": -1
+  },
+  {
+   "name": "IF_BUTTON9",
+   "opcode": 66,
+   "size": 8
+  },
+  {
+   "name": "IF_BUTTON10",
+   "opcode": 67,
+   "size": 8
+  },
+  {
+   "name": "IF_BUTTON2",
+   "opcode": 68,
+   "size": 8
+  },
+  {
+   "name": "CREATE_SUGGEST_NAMES",
+   "opcode": 69,
+   "size": 0
+  },
+  {
+   "name": "IF_BUTTON5",
+   "opcode": 70,
+   "size": 8
+  },
+  {
+   "name": "STORE_SERVERPERM_VARCS",
+   "opcode": 71,
+   "size": -2
+  },
+  {
+   "name": "EVENT_NATIVE_MOUSE_CLICK",
+   "opcode": 72,
+   "size": 7
+  },
+  {
+   "name": "FRIEND_SETRANK",
+   "opcode": 73,
+   "size": -1
+  },
+  {
+   "name": "PING_STATISTICS",
+   "opcode": 74,
+   "size": 4
+  },
+  {
+   "name": "FRIEND_SETNOTES",
+   "opcode": 75,
+   "size": -1
+  },
+  {
+   "name": "OPPLAYER3",
+   "opcode": 76,
+   "size": 3
+  },
+  {
+   "name": "WORLDLIST_FETCH",
+   "opcode": 77,
+   "size": 4
+  },
+  {
+   "name": "MOVE_MINIMAPCLICK",
+   "opcode": 78,
+   "size": 18
+  },
+  {
+   "name": "MAP_BUILD_COMPLETE",
+   "opcode": 79,
+   "size": 4
+  },
+  {
+   "name": "TELEMETRY_ERROR",
+   "opcode": 80,
+   "size": 0
+  },
+  {
+   "name": "OPOBJ1",
+   "opcode": 81,
+   "size": 7
+  },
+  {
+   "name": "UID_PASSPORT_RESEND_REQUEST",
+   "opcode": 82,
+   "size": 0
+  },
+  {
+   "name": "IF_BUTTON6",
+   "opcode": 83,
+   "size": 8
+  },
+  {
+   "name": "CLIENT_CHEAT",
+   "opcode": 84,
+   "size": -1
+  },
+  {
+   "name": "FRIENDLIST_ADD",
+   "opcode": 85,
+   "size": -1
+  },
+  {
+   "name": "IF_BUTTON3",
+   "opcode": 86,
+   "size": 8
+  },
+  {
+   "name": "EVENT_KEYBOARD",
+   "opcode": 87,
+   "size": -2
+  },
+  {
+   "name": "SET_CHATFILTERSETTINGS",
+   "opcode": 88,
+   "size": 3
+  },
+  {
+   "name": "MOVE_SCRIPTED",
+   "opcode": 89,
+   "size": 5
+  },
+  {
+   "name": "DETECT_MODIFIED_CLIENT",
+   "opcode": 90,
+   "size": 4
+  },
+  {
+   "name": "OPPLAYER10",
+   "opcode": 91,
+   "size": 3
+  },
+  {
+   "name": "CLAN_JOINCHAT_LEAVECHAT",
+   "opcode": 92,
+   "size": -1
+  },
+  {
+   "name": "EVENT_APPLET_FOCUS",
+   "opcode": 93,
+   "size": 1
+  },
+  {
+   "name": "CLANCHANNEL_KICKUSER",
+   "opcode": 94,
+   "size": -1
+  },
+  {
+   "name": "MESSAGE_PUBLIC",
+   "opcode": 95,
+   "size": -1
+  },
+  {
+   "name": "OPLOC2",
+   "opcode": 96,
+   "size": 9
+  },
+  {
+   "name": "EVENT_MOUSE_MOVE",
+   "opcode": 97,
+   "size": -1
+  },
+  {
+   "name": "RESUME_PAUSEBUTTON",
+   "opcode": 98,
+   "size": 6
+  },
+  {
+   "name": "RESUME_P_OBJDIALOG",
+   "opcode": 99,
+   "size": 2
+  },
+  {
+   "name": "SEND_PING_REPLY",
+   "opcode": 100,
+   "size": 9
+  },
+  {
+   "name": "RESUME_P_NAMEDIALOG",
+   "opcode": 101,
+   "size": -1
+  },
+  {
+   "name": "OPPLAYER4",
+   "opcode": 102,
+   "size": 3
+  },
+  {
+   "name": "NO_TIMEOUT",
+   "opcode": 103,
+   "size": 0
+  },
+  {
+   "name": "IF_PLAYER",
+   "opcode": 104,
+   "size": -1
+  },
+  {
+   "name": "OPOBJ6",
+   "opcode": 105,
+   "size": 7
+  },
+  {
+   "name": "ABORT_P_DIALOG",
+   "opcode": 106,
+   "size": 0
+  },
+  {
+   "name": "FACE_SQUARE",
+   "opcode": 107,
+   "size": 4
+  },
+  {
+   "name": "BUG_REPORT",
+   "opcode": 108,
+   "size": -2
+  },
+  {
+   "name": "CLIENT_COMPRESSEDTEXTUREFORMAT_SUPPORT",
+   "opcode": 109,
+   "size": -2
+  },
+  {
+   "name": "RESUME_P_CLANFORUMQFCDIALOG",
+   "opcode": 110,
+   "size": -1
+  },
+  {
+   "name": "IF_BUTTON1",
+   "opcode": 111,
+   "size": 8
+  },
+  {
+   "name": "AUTO_SETUP_RESULT",
+   "opcode": 112,
+   "size": 18
+  },
+  {
+   "name": "OPNPCT",
+   "opcode": 113,
+   "size": 11
+  },
+  {
+   "name": "OPOBJT",
+   "opcode": 114,
+   "size": 15
+  },
+  {
+   "name": "MESSAGE_QUICKCHAT_PRIVATE",
+   "opcode": 115,
+   "size": -1
+  },
+  {
+   "name": "OPNPC3",
+   "opcode": 116,
+   "size": 3
+  },
+  {
+   "name": "OPPLAYER1",
+   "opcode": 117,
+   "size": 3
+  },
+  {
+   "name": "CREATE_LOG_PROGRESS",
+   "opcode": 118,
+   "size": 1
+  },
+  {
+   "name": "OPLOC5",
+   "opcode": 119,
+   "size": 9
+  },
+  {
+   "name": "URL_REQUEST",
+   "opcode": 120,
+   "size": -2
+  },
+  {
+   "name": "OPOBJ4",
+   "opcode": 121,
+   "size": 7
+  },
+  {
+   "name": "IF_BUTTOND",
+   "opcode": 122,
+   "size": 16
+  },
+  {
+   "name": "WINDOW_STATUS",
+   "opcode": 123,
+   "size": 6
+  }
+ ],
+ "LoginProt": [
+  {
+   "name": "INIT_GAME_CONNECTION",
+   "opcode": 14,
+   "size": 0
+  },
+  {
+   "name": "INIT_JS5REMOTE_CONNECTION",
+   "opcode": 15,
+   "size": -1
+  },
+  {
+   "name": "GAMELOGIN",
+   "opcode": 16,
+   "size": -2
+  },
+  {
+   "name": "LOBBYLOGIN",
+   "opcode": 19,
+   "size": -2
+  },
+  {
+   "name": "REQUEST_WORLDLIST",
+   "opcode": 23,
+   "size": 4
+  },
+  {
+   "name": "CHECK_WORLD_SUITABILITY",
+   "opcode": 24,
+   "size": -1
+  },
+  {
+   "name": "GAMELOGIN_CONTINUE",
+   "opcode": 26,
+   "size": 0
+  },
+  {
+   "name": "SSL_WEBCONNECTION",
+   "opcode": 27,
+   "size": 0
+  },
+  {
+   "name": "CREATE_ACCOUNT_CONNECT",
+   "opcode": 28,
+   "size": -2
+  },
+  {
+   "name": "INIT_SOCIAL_NETWORK_CONNECTION",
+   "opcode": 29,
+   "size": -2
+  },
+  {
+   "name": "SOCIAL_NETWORK_LOGIN",
+   "opcode": 30,
+   "size": -2
+  },
+  {
+   "name": "INIT_DEBUG_CONNECTION",
+   "opcode": 31,
+   "size": 4
+  }
+ ],
+ "VarDomainType": [
+  {
+   "name": "PLAYER",
+   "id": 0,
+   "config_group": 60
+  },
+  {
+   "name": "NPC",
+   "id": 1,
+   "config_group": 61
+  },
+  {
+   "name": "CLIENT",
+   "id": 2,
+   "config_group": 62
+  },
+  {
+   "name": "WORLD",
+   "id": 3,
+   "config_group": 63
+  },
+  {
+   "name": "REGION",
+   "id": 4,
+   "config_group": 64
+  },
+  {
+   "name": "OBJECT",
+   "id": 5,
+   "config_group": 65
+  },
+  {
+   "name": "CLAN",
+   "id": 6,
+   "config_group": 66
+  },
+  {
+   "name": "CLAN_SETTING",
+   "id": 7,
+   "config_group": 67
+  },
+  {
+   "name": "CONTROLLER",
+   "id": 8,
+   "config_group": 68
+  },
+  {
+   "name": "PLAYER_GROUP",
+   "id": 9,
+   "config_group": 80
+  },
+  {
+   "name": "GLOBAL",
+   "id": 10,
+   "config_group": 75
+  }
+ ]
+}

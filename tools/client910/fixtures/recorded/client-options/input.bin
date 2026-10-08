@@ -1,0 +1,4284 @@
+new 512 2 0 0 0 0 0
+set animDetail -2147483648
+set animDetail -3
+set animDetail -1
+set animDetail 0
+set animDetail 1
+set animDetail 2
+set animDetail 3
+set animDetail 4
+set animDetail 5
+set animDetail 127
+set animDetail 255
+set animDetail 2147483647
+set antiAliasing -2147483648
+set antiAliasing -3
+set antiAliasing -1
+set antiAliasing 0
+set antiAliasing 1
+set antiAliasing 2
+set antiAliasing 3
+set antiAliasing 4
+set antiAliasing 5
+set antiAliasing 127
+set antiAliasing 255
+set antiAliasing 2147483647
+set antiAliasing2 -2147483648
+set antiAliasing2 -3
+set antiAliasing2 -1
+set antiAliasing2 0
+set antiAliasing2 1
+set antiAliasing2 2
+set antiAliasing2 3
+set antiAliasing2 4
+set antiAliasing2 5
+set antiAliasing2 127
+set antiAliasing2 255
+set antiAliasing2 2147483647
+set unused -2147483648
+set unused -3
+set unused -1
+set unused 0
+set unused 1
+set unused 2
+set unused 3
+set unused 4
+set unused 5
+set unused 127
+set unused 255
+set unused 2147483647
+set bloom -2147483648
+set bloom -3
+set bloom -1
+set bloom 0
+set bloom 1
+set bloom 2
+set bloom 3
+set bloom 4
+set bloom 5
+set bloom 127
+set bloom 255
+set bloom 2147483647
+set brightness -2147483648
+set brightness -3
+set brightness -1
+set brightness 0
+set brightness 1
+set brightness 2
+set brightness 3
+set brightness 4
+set brightness 5
+set brightness 127
+set brightness 255
+set brightness 2147483647
+set buildArea -2147483648
+set buildArea -3
+set buildArea -1
+set buildArea 0
+set buildArea 1
+set buildArea 2
+set buildArea 3
+set buildArea 4
+set buildArea 5
+set buildArea 127
+set buildArea 255
+set buildArea 2147483647
+set consoleKeyPress -2147483648
+set consoleKeyPress -3
+set consoleKeyPress -1
+set consoleKeyPress 0
+set consoleKeyPress 1
+set consoleKeyPress 2
+set consoleKeyPress 3
+set consoleKeyPress 4
+set consoleKeyPress 5
+set consoleKeyPress 127
+set consoleKeyPress 255
+set consoleKeyPress 2147483647
+set drawDistance -2147483648
+set drawDistance -3
+set drawDistance -1
+set drawDistance 0
+set drawDistance 1
+set drawDistance 2
+set drawDistance 3
+set drawDistance 4
+set drawDistance 5
+set drawDistance 127
+set drawDistance 255
+set drawDistance 2147483647
+set flickeringEffects -2147483648
+set flickeringEffects -3
+set flickeringEffects -1
+set flickeringEffects 0
+set flickeringEffects 1
+set flickeringEffects 2
+set flickeringEffects 3
+set flickeringEffects 4
+set flickeringEffects 5
+set flickeringEffects 127
+set flickeringEffects 255
+set flickeringEffects 2147483647
+set fog -2147483648
+set fog -3
+set fog -1
+set fog 0
+set fog 1
+set fog 2
+set fog 3
+set fog 4
+set fog 5
+set fog 127
+set fog 255
+set fog 2147483647
+set groundBlending -2147483648
+set groundBlending -3
+set groundBlending -1
+set groundBlending 0
+set groundBlending 1
+set groundBlending 2
+set groundBlending 3
+set groundBlending 4
+set groundBlending 5
+set groundBlending 127
+set groundBlending 255
+set groundBlending 2147483647
+set groundDecoration -2147483648
+set groundDecoration -3
+set groundDecoration -1
+set groundDecoration 0
+set groundDecoration 1
+set groundDecoration 2
+set groundDecoration 3
+set groundDecoration 4
+set groundDecoration 5
+set groundDecoration 127
+set groundDecoration 255
+set groundDecoration 2147483647
+set idleAnimations -2147483648
+set idleAnimations -3
+set idleAnimations -1
+set idleAnimations 0
+set idleAnimations 1
+set idleAnimations 2
+set idleAnimations 3
+set idleAnimations 4
+set idleAnimations 5
+set idleAnimations 127
+set idleAnimations 255
+set idleAnimations 2147483647
+set lightingDetail -2147483648
+set lightingDetail -3
+set lightingDetail -1
+set lightingDetail 0
+set lightingDetail 1
+set lightingDetail 2
+set lightingDetail 3
+set lightingDetail 4
+set lightingDetail 5
+set lightingDetail 127
+set lightingDetail 255
+set lightingDetail 2147483647
+set sceneryShadows -2147483648
+set sceneryShadows -3
+set sceneryShadows -1
+set sceneryShadows 0
+set sceneryShadows 1
+set sceneryShadows 2
+set sceneryShadows 3
+set sceneryShadows 4
+set sceneryShadows 5
+set sceneryShadows 127
+set sceneryShadows 255
+set sceneryShadows 2147483647
+set shadowQuality -2147483648
+set shadowQuality -3
+set shadowQuality -1
+set shadowQuality 0
+set shadowQuality 1
+set shadowQuality 2
+set shadowQuality 3
+set shadowQuality 4
+set shadowQuality 5
+set shadowQuality 127
+set shadowQuality 255
+set shadowQuality 2147483647
+set orthographic -2147483648
+set orthographic -3
+set orthographic -1
+set orthographic 0
+set orthographic 1
+set orthographic 2
+set orthographic 3
+set orthographic 4
+set orthographic 5
+set orthographic 127
+set orthographic 255
+set orthographic 2147483647
+set particles -2147483648
+set particles -3
+set particles -1
+set particles 0
+set particles 1
+set particles 2
+set particles 3
+set particles 4
+set particles 5
+set particles 127
+set particles 255
+set particles 2147483647
+set removeRoofs -2147483648
+set removeRoofs -3
+set removeRoofs -1
+set removeRoofs 0
+set removeRoofs 1
+set removeRoofs 2
+set removeRoofs 3
+set removeRoofs 4
+set removeRoofs 5
+set removeRoofs 127
+set removeRoofs 255
+set removeRoofs 2147483647
+set removeRoofs2 -2147483648
+set removeRoofs2 -3
+set removeRoofs2 -1
+set removeRoofs2 0
+set removeRoofs2 1
+set removeRoofs2 2
+set removeRoofs2 3
+set removeRoofs2 4
+set removeRoofs2 5
+set removeRoofs2 127
+set removeRoofs2 255
+set removeRoofs2 2147483647
+set screenSize -2147483648
+set screenSize -3
+set screenSize -1
+set screenSize 0
+set screenSize 1
+set screenSize 2
+set screenSize 3
+set screenSize 4
+set screenSize 5
+set screenSize 127
+set screenSize 255
+set screenSize 2147483647
+set skyboxes -2147483648
+set skyboxes -3
+set skyboxes -1
+set skyboxes 0
+set skyboxes 1
+set skyboxes 2
+set skyboxes 3
+set skyboxes 4
+set skyboxes 5
+set skyboxes 127
+set skyboxes 255
+set skyboxes 2147483647
+set characterShadows -2147483648
+set characterShadows -3
+set characterShadows -1
+set characterShadows 0
+set characterShadows 1
+set characterShadows 2
+set characterShadows 3
+set characterShadows 4
+set characterShadows 5
+set characterShadows 127
+set characterShadows 255
+set characterShadows 2147483647
+set textures -2147483648
+set textures -3
+set textures -1
+set textures 0
+set textures 1
+set textures 2
+set textures 3
+set textures 4
+set textures 5
+set textures 127
+set textures 255
+set textures 2147483647
+set toolkit -2147483648
+set toolkit -3
+set toolkit -1
+set toolkit 0
+set toolkit 1
+set toolkit 2
+set toolkit 3
+set toolkit 4
+set toolkit 5
+set toolkit 127
+set toolkit 255
+set toolkit 2147483647
+set displayMode -2147483648
+set displayMode -3
+set displayMode -1
+set displayMode 0
+set displayMode 1
+set displayMode 2
+set displayMode 3
+set displayMode 4
+set displayMode 5
+set displayMode 127
+set displayMode 255
+set displayMode 2147483647
+set waterDetail -2147483648
+set waterDetail -3
+set waterDetail -1
+set waterDetail 0
+set waterDetail 1
+set waterDetail 2
+set waterDetail 3
+set waterDetail 4
+set waterDetail 5
+set waterDetail 127
+set waterDetail 255
+set waterDetail 2147483647
+set windowMode -2147483648
+set windowMode -3
+set windowMode -1
+set windowMode 0
+set windowMode 1
+set windowMode 2
+set windowMode 3
+set windowMode 4
+set windowMode 5
+set windowMode 127
+set windowMode 255
+set windowMode 2147483647
+set maxScreenSize2 -2147483648
+set maxScreenSize2 -3
+set maxScreenSize2 -1
+set maxScreenSize2 0
+set maxScreenSize2 1
+set maxScreenSize2 2
+set maxScreenSize2 3
+set maxScreenSize2 4
+set maxScreenSize2 5
+set maxScreenSize2 127
+set maxScreenSize2 255
+set maxScreenSize2 2147483647
+set unused4 -2147483648
+set unused4 -3
+set unused4 -1
+set unused4 0
+set unused4 1
+set unused4 2
+set unused4 3
+set unused4 4
+set unused4 5
+set unused4 127
+set unused4 255
+set unused4 2147483647
+set unused1 -2147483648
+set unused1 -3
+set unused1 -1
+set unused1 0
+set unused1 1
+set unused1 2
+set unused1 3
+set unused1 4
+set unused1 5
+set unused1 127
+set unused1 255
+set unused1 2147483647
+set unused2 -2147483648
+set unused2 -3
+set unused2 -1
+set unused2 0
+set unused2 1
+set unused2 2
+set unused2 3
+set unused2 4
+set unused2 5
+set unused2 127
+set unused2 255
+set unused2 2147483647
+set unused3 -2147483648
+set unused3 -3
+set unused3 -1
+set unused3 0
+set unused3 1
+set unused3 2
+set unused3 3
+set unused3 4
+set unused3 5
+set unused3 127
+set unused3 255
+set unused3 2147483647
+set unused5 -2147483648
+set unused5 -3
+set unused5 -1
+set unused5 0
+set unused5 1
+set unused5 2
+set unused5 3
+set unused5 4
+set unused5 5
+set unused5 127
+set unused5 255
+set unused5 2147483647
+set unused6 -2147483648
+set unused6 -3
+set unused6 -1
+set unused6 0
+set unused6 1
+set unused6 2
+set unused6 3
+set unused6 4
+set unused6 5
+set unused6 127
+set unused6 255
+set unused6 2147483647
+set unused7 -2147483648
+set unused7 -3
+set unused7 -1
+set unused7 0
+set unused7 1
+set unused7 2
+set unused7 3
+set unused7 4
+set unused7 5
+set unused7 127
+set unused7 255
+set unused7 2147483647
+set unused8 -2147483648
+set unused8 -3
+set unused8 -1
+set unused8 0
+set unused8 1
+set unused8 2
+set unused8 3
+set unused8 4
+set unused8 5
+set unused8 127
+set unused8 255
+set unused8 2147483647
+set unused9 -2147483648
+set unused9 -3
+set unused9 -1
+set unused9 0
+set unused9 1
+set unused9 2
+set unused9 3
+set unused9 4
+set unused9 5
+set unused9 127
+set unused9 255
+set unused9 2147483647
+set unused10 -2147483648
+set unused10 -3
+set unused10 -1
+set unused10 0
+set unused10 1
+set unused10 2
+set unused10 3
+set unused10 4
+set unused10 5
+set unused10 127
+set unused10 255
+set unused10 2147483647
+set unused11 -2147483648
+set unused11 -3
+set unused11 -1
+set unused11 0
+set unused11 1
+set unused11 2
+set unused11 3
+set unused11 4
+set unused11 5
+set unused11 127
+set unused11 255
+set unused11 2147483647
+set unused12 -2147483648
+set unused12 -3
+set unused12 -1
+set unused12 0
+set unused12 1
+set unused12 2
+set unused12 3
+set unused12 4
+set unused12 5
+set unused12 127
+set unused12 255
+set unused12 2147483647
+set customCursors -2147483648
+set customCursors -3
+set customCursors -1
+set customCursors 0
+set customCursors 1
+set customCursors 2
+set customCursors 3
+set customCursors 4
+set customCursors 5
+set customCursors 127
+set customCursors 255
+set customCursors 2147483647
+set preset -2147483648
+set preset -3
+set preset -1
+set preset 0
+set preset 1
+set preset 2
+set preset 3
+set preset 4
+set preset 5
+set preset 127
+set preset 255
+set preset 2147483647
+set cpuUsage -2147483648
+set cpuUsage -3
+set cpuUsage -1
+set cpuUsage 0
+set cpuUsage 1
+set cpuUsage 2
+set cpuUsage 3
+set cpuUsage 4
+set cpuUsage 5
+set cpuUsage 127
+set cpuUsage 255
+set cpuUsage 2147483647
+set loadingScreen -2147483648
+set loadingScreen -3
+set loadingScreen -1
+set loadingScreen 0
+set loadingScreen 1
+set loadingScreen 2
+set loadingScreen 3
+set loadingScreen 4
+set loadingScreen 5
+set loadingScreen 127
+set loadingScreen 255
+set loadingScreen 2147483647
+set safeMode -2147483648
+set safeMode -3
+set safeMode -1
+set safeMode 0
+set safeMode 1
+set safeMode 2
+set safeMode 3
+set safeMode 4
+set safeMode 5
+set safeMode 127
+set safeMode 255
+set safeMode 2147483647
+set unknown7 -2147483648
+set unknown7 -3
+set unknown7 -1
+set unknown7 0
+set unknown7 1
+set unknown7 2
+set unknown7 3
+set unknown7 4
+set unknown7 5
+set unknown7 127
+set unknown7 255
+set unknown7 2147483647
+set unused13 -2147483648
+set unused13 -3
+set unused13 -1
+set unused13 0
+set unused13 1
+set unused13 2
+set unused13 3
+set unused13 4
+set unused13 5
+set unused13 127
+set unused13 255
+set unused13 2147483647
+set soundVolume -2147483648
+set soundVolume -3
+set soundVolume -1
+set soundVolume 0
+set soundVolume 1
+set soundVolume 2
+set soundVolume 3
+set soundVolume 4
+set soundVolume 5
+set soundVolume 127
+set soundVolume 255
+set soundVolume 2147483647
+set backgroundSoundVolume -2147483648
+set backgroundSoundVolume -3
+set backgroundSoundVolume -1
+set backgroundSoundVolume 0
+set backgroundSoundVolume 1
+set backgroundSoundVolume 2
+set backgroundSoundVolume 3
+set backgroundSoundVolume 4
+set backgroundSoundVolume 5
+set backgroundSoundVolume 127
+set backgroundSoundVolume 255
+set backgroundSoundVolume 2147483647
+set speechVolume -2147483648
+set speechVolume -3
+set speechVolume -1
+set speechVolume 0
+set speechVolume 1
+set speechVolume 2
+set speechVolume 3
+set speechVolume 4
+set speechVolume 5
+set speechVolume 127
+set speechVolume 255
+set speechVolume 2147483647
+set unknownVolume1 -2147483648
+set unknownVolume1 -3
+set unknownVolume1 -1
+set unknownVolume1 0
+set unknownVolume1 1
+set unknownVolume1 2
+set unknownVolume1 3
+set unknownVolume1 4
+set unknownVolume1 5
+set unknownVolume1 127
+set unknownVolume1 255
+set unknownVolume1 2147483647
+set unknownVolume2 -2147483648
+set unknownVolume2 -3
+set unknownVolume2 -1
+set unknownVolume2 0
+set unknownVolume2 1
+set unknownVolume2 2
+set unknownVolume2 3
+set unknownVolume2 4
+set unknownVolume2 5
+set unknownVolume2 127
+set unknownVolume2 255
+set unknownVolume2 2147483647
+set stereo -2147483648
+set stereo -3
+set stereo -1
+set stereo 0
+set stereo 1
+set stereo 2
+set stereo 3
+set stereo 4
+set stereo 5
+set stereo 127
+set stereo 255
+set stereo 2147483647
+raw animDetail -2147483648
+clamp
+raw animDetail 2147483647
+clamp
+raw antiAliasing -2147483648
+clamp
+raw antiAliasing 2147483647
+clamp
+raw antiAliasing2 -2147483648
+clamp
+raw antiAliasing2 2147483647
+clamp
+raw unused -2147483648
+clamp
+raw unused 2147483647
+clamp
+raw bloom -2147483648
+clamp
+raw bloom 2147483647
+clamp
+raw brightness -2147483648
+clamp
+raw brightness 2147483647
+clamp
+raw buildArea -2147483648
+clamp
+raw buildArea 2147483647
+clamp
+raw consoleKeyPress -2147483648
+clamp
+raw consoleKeyPress 2147483647
+clamp
+raw drawDistance -2147483648
+clamp
+raw drawDistance 2147483647
+clamp
+raw flickeringEffects -2147483648
+clamp
+raw flickeringEffects 2147483647
+clamp
+raw fog -2147483648
+clamp
+raw fog 2147483647
+clamp
+raw groundBlending -2147483648
+clamp
+raw groundBlending 2147483647
+clamp
+raw groundDecoration -2147483648
+clamp
+raw groundDecoration 2147483647
+clamp
+raw idleAnimations -2147483648
+clamp
+raw idleAnimations 2147483647
+clamp
+raw lightingDetail -2147483648
+clamp
+raw lightingDetail 2147483647
+clamp
+raw sceneryShadows -2147483648
+clamp
+raw sceneryShadows 2147483647
+clamp
+raw shadowQuality -2147483648
+clamp
+raw shadowQuality 2147483647
+clamp
+raw orthographic -2147483648
+clamp
+raw orthographic 2147483647
+clamp
+raw particles -2147483648
+clamp
+raw particles 2147483647
+clamp
+raw removeRoofs -2147483648
+clamp
+raw removeRoofs 2147483647
+clamp
+raw removeRoofs2 -2147483648
+clamp
+raw removeRoofs2 2147483647
+clamp
+raw screenSize -2147483648
+clamp
+raw screenSize 2147483647
+clamp
+raw skyboxes -2147483648
+clamp
+raw skyboxes 2147483647
+clamp
+raw characterShadows -2147483648
+clamp
+raw characterShadows 2147483647
+clamp
+raw textures -2147483648
+clamp
+raw textures 2147483647
+clamp
+raw toolkit -2147483648
+clamp
+raw toolkit 2147483647
+clamp
+raw displayMode -2147483648
+clamp
+raw displayMode 2147483647
+clamp
+raw waterDetail -2147483648
+clamp
+raw waterDetail 2147483647
+clamp
+raw windowMode -2147483648
+clamp
+raw windowMode 2147483647
+clamp
+raw maxScreenSize2 -2147483648
+clamp
+raw maxScreenSize2 2147483647
+clamp
+raw unused4 -2147483648
+clamp
+raw unused4 2147483647
+clamp
+raw unused1 -2147483648
+clamp
+raw unused1 2147483647
+clamp
+raw unused2 -2147483648
+clamp
+raw unused2 2147483647
+clamp
+raw unused3 -2147483648
+clamp
+raw unused3 2147483647
+clamp
+raw unused5 -2147483648
+clamp
+raw unused5 2147483647
+clamp
+raw unused6 -2147483648
+clamp
+raw unused6 2147483647
+clamp
+raw unused7 -2147483648
+clamp
+raw unused7 2147483647
+clamp
+raw unused8 -2147483648
+clamp
+raw unused8 2147483647
+clamp
+raw unused9 -2147483648
+clamp
+raw unused9 2147483647
+clamp
+raw unused10 -2147483648
+clamp
+raw unused10 2147483647
+clamp
+raw unused11 -2147483648
+clamp
+raw unused11 2147483647
+clamp
+raw unused12 -2147483648
+clamp
+raw unused12 2147483647
+clamp
+raw customCursors -2147483648
+clamp
+raw customCursors 2147483647
+clamp
+raw preset -2147483648
+clamp
+raw preset 2147483647
+clamp
+raw cpuUsage -2147483648
+clamp
+raw cpuUsage 2147483647
+clamp
+raw loadingScreen -2147483648
+clamp
+raw loadingScreen 2147483647
+clamp
+raw safeMode -2147483648
+clamp
+raw safeMode 2147483647
+clamp
+raw unknown7 -2147483648
+clamp
+raw unknown7 2147483647
+clamp
+raw unused13 -2147483648
+clamp
+raw unused13 2147483647
+clamp
+raw soundVolume -2147483648
+clamp
+raw soundVolume 2147483647
+clamp
+raw backgroundSoundVolume -2147483648
+clamp
+raw backgroundSoundVolume 2147483647
+clamp
+raw speechVolume -2147483648
+clamp
+raw speechVolume 2147483647
+clamp
+raw unknownVolume1 -2147483648
+clamp
+raw unknownVolume1 2147483647
+clamp
+raw unknownVolume2 -2147483648
+clamp
+raw unknownVolume2 2147483647
+clamp
+raw stereo -2147483648
+clamp
+raw stereo 2147483647
+clamp
+flag displayMode 0
+raw displayMode 0
+clamp
+flag displayMode 1
+flag toolkit 0
+raw toolkit 0
+clamp
+flag toolkit 1
+decode 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 00ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+decode 002525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525
+decode 010000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 01ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+decode 012525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525
+decode 020000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 02ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+decode 022525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525
+decode 030000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 03ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+decode 032525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525
+decode 040000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 04ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+decode 042525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525
+decode 050000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 05ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+decode 052525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525
+decode 060000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 06ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+decode 062525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525
+decode 070000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 07ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+decode 072525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525
+decode 080000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 08ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+decode 082525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525
+decode 090000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 09ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+decode 092525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525
+decode 0a0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 0affffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+decode 0a2525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525
+decode 0b0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 0bffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+decode 0b2525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525
+decode 0c0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 0cffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+decode 0c2525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525
+decode 0d0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 0dffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+decode 0d2525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525
+decode 0e0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 0effffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+decode 0e2525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525
+decode 0f0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 0fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+decode 0f2525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525
+decode 100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 10ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+decode 102525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525
+decode 110000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 11ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+decode 112525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525
+decode 120000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 12ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+decode 122525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525
+decode 130000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 13ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+decode 132525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525
+decode 140000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 14ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+decode 142525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525
+decode 150000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 15ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+decode 152525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525
+decode 160000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 16ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+decode 162525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525
+decode 170000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 17ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+decode 172525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525
+decode 180000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 18ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+decode 182525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525
+decode 190000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 19ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+decode 192525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525
+decode 1a0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 1affffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+decode 1a2525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525
+decode 1b0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 1bffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+decode 1b2525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525
+decode 1c0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 1cffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+decode 1c2525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525
+decode 1d0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 1dffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+decode 1d2525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525
+decode 1e0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 1effffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+decode 1e2525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525
+decode 1f0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 1fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+decode 1f2525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525
+decode 200000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 20ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+decode 202525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525
+decode 210000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 21ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+decode 212525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525
+decode 220000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 22ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+decode 222525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525
+decode 230000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 23ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+decode 232525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525
+decode 240000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 24ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+decode 242525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525
+decode 250000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 25ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+decode 252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525
+decode 260000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 26ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+decode 262525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525
+decode 270000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 27ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+decode 272525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525
+decode -
+decode 26
+decode 2600
+decode 260000
+decode 26000000
+decode 2600000000
+decode 260000000000
+decode 26000000000000
+decode 2600000000000000
+decode 260000000000000000
+decode 26000000000000000000
+decode 2600000000000000000000
+decode 260000000000000000000000
+decode 26000000000000000000000000
+decode 2600000000000000000000000000
+decode 260000000000000000000000000000
+decode 26000000000000000000000000000000
+decode 2600000000000000000000000000000000
+decode 260000000000000000000000000000000000
+decode 26000000000000000000000000000000000000
+decode 2600000000000000000000000000000000000000
+decode 260000000000000000000000000000000000000000
+decode 26000000000000000000000000000000000000000000
+decode 2600000000000000000000000000000000000000000000
+decode 260000000000000000000000000000000000000000000000
+decode 26000000000000000000000000000000000000000000000000
+decode 2600000000000000000000000000000000000000000000000000
+decode 260000000000000000000000000000000000000000000000000000
+decode 26000000000000000000000000000000000000000000000000000000
+decode 2600000000000000000000000000000000000000000000000000000000
+decode 260000000000000000000000000000000000000000000000000000000000
+decode 26000000000000000000000000000000000000000000000000000000000000
+decode 2600000000000000000000000000000000000000000000000000000000000000
+decode 260000000000000000000000000000000000000000000000000000000000000000
+decode 26000000000000000000000000000000000000000000000000000000000000000000
+decode 2600000000000000000000000000000000000000000000000000000000000000000000
+decode 260000000000000000000000000000000000000000000000000000000000000000000000
+decode 26000000000000000000000000000000000000000000000000000000000000000000000000
+decode 2600000000000000000000000000000000000000000000000000000000000000000000000000
+decode 260000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 26000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 2600000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 260000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 26000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 2600000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 260000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 26000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 2600000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 260000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 26000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 2600000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 260000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 26000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 2600000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 260000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 26000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 2600000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 260000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 26000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 2600000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+reset 0 1
+reset 1 1
+new 128 1 1 0 0 0 5
+set animDetail -2147483648
+set animDetail -3
+set animDetail -1
+set animDetail 0
+set animDetail 1
+set animDetail 2
+set animDetail 3
+set animDetail 4
+set animDetail 5
+set animDetail 127
+set animDetail 255
+set animDetail 2147483647
+set antiAliasing -2147483648
+set antiAliasing -3
+set antiAliasing -1
+set antiAliasing 0
+set antiAliasing 1
+set antiAliasing 2
+set antiAliasing 3
+set antiAliasing 4
+set antiAliasing 5
+set antiAliasing 127
+set antiAliasing 255
+set antiAliasing 2147483647
+set antiAliasing2 -2147483648
+set antiAliasing2 -3
+set antiAliasing2 -1
+set antiAliasing2 0
+set antiAliasing2 1
+set antiAliasing2 2
+set antiAliasing2 3
+set antiAliasing2 4
+set antiAliasing2 5
+set antiAliasing2 127
+set antiAliasing2 255
+set antiAliasing2 2147483647
+set unused -2147483648
+set unused -3
+set unused -1
+set unused 0
+set unused 1
+set unused 2
+set unused 3
+set unused 4
+set unused 5
+set unused 127
+set unused 255
+set unused 2147483647
+set bloom -2147483648
+set bloom -3
+set bloom -1
+set bloom 0
+set bloom 1
+set bloom 2
+set bloom 3
+set bloom 4
+set bloom 5
+set bloom 127
+set bloom 255
+set bloom 2147483647
+set brightness -2147483648
+set brightness -3
+set brightness -1
+set brightness 0
+set brightness 1
+set brightness 2
+set brightness 3
+set brightness 4
+set brightness 5
+set brightness 127
+set brightness 255
+set brightness 2147483647
+set buildArea -2147483648
+set buildArea -3
+set buildArea -1
+set buildArea 0
+set buildArea 1
+set buildArea 2
+set buildArea 3
+set buildArea 4
+set buildArea 5
+set buildArea 127
+set buildArea 255
+set buildArea 2147483647
+set consoleKeyPress -2147483648
+set consoleKeyPress -3
+set consoleKeyPress -1
+set consoleKeyPress 0
+set consoleKeyPress 1
+set consoleKeyPress 2
+set consoleKeyPress 3
+set consoleKeyPress 4
+set consoleKeyPress 5
+set consoleKeyPress 127
+set consoleKeyPress 255
+set consoleKeyPress 2147483647
+set drawDistance -2147483648
+set drawDistance -3
+set drawDistance -1
+set drawDistance 0
+set drawDistance 1
+set drawDistance 2
+set drawDistance 3
+set drawDistance 4
+set drawDistance 5
+set drawDistance 127
+set drawDistance 255
+set drawDistance 2147483647
+set flickeringEffects -2147483648
+set flickeringEffects -3
+set flickeringEffects -1
+set flickeringEffects 0
+set flickeringEffects 1
+set flickeringEffects 2
+set flickeringEffects 3
+set flickeringEffects 4
+set flickeringEffects 5
+set flickeringEffects 127
+set flickeringEffects 255
+set flickeringEffects 2147483647
+set fog -2147483648
+set fog -3
+set fog -1
+set fog 0
+set fog 1
+set fog 2
+set fog 3
+set fog 4
+set fog 5
+set fog 127
+set fog 255
+set fog 2147483647
+set groundBlending -2147483648
+set groundBlending -3
+set groundBlending -1
+set groundBlending 0
+set groundBlending 1
+set groundBlending 2
+set groundBlending 3
+set groundBlending 4
+set groundBlending 5
+set groundBlending 127
+set groundBlending 255
+set groundBlending 2147483647
+set groundDecoration -2147483648
+set groundDecoration -3
+set groundDecoration -1
+set groundDecoration 0
+set groundDecoration 1
+set groundDecoration 2
+set groundDecoration 3
+set groundDecoration 4
+set groundDecoration 5
+set groundDecoration 127
+set groundDecoration 255
+set groundDecoration 2147483647
+set idleAnimations -2147483648
+set idleAnimations -3
+set idleAnimations -1
+set idleAnimations 0
+set idleAnimations 1
+set idleAnimations 2
+set idleAnimations 3
+set idleAnimations 4
+set idleAnimations 5
+set idleAnimations 127
+set idleAnimations 255
+set idleAnimations 2147483647
+set lightingDetail -2147483648
+set lightingDetail -3
+set lightingDetail -1
+set lightingDetail 0
+set lightingDetail 1
+set lightingDetail 2
+set lightingDetail 3
+set lightingDetail 4
+set lightingDetail 5
+set lightingDetail 127
+set lightingDetail 255
+set lightingDetail 2147483647
+set sceneryShadows -2147483648
+set sceneryShadows -3
+set sceneryShadows -1
+set sceneryShadows 0
+set sceneryShadows 1
+set sceneryShadows 2
+set sceneryShadows 3
+set sceneryShadows 4
+set sceneryShadows 5
+set sceneryShadows 127
+set sceneryShadows 255
+set sceneryShadows 2147483647
+set shadowQuality -2147483648
+set shadowQuality -3
+set shadowQuality -1
+set shadowQuality 0
+set shadowQuality 1
+set shadowQuality 2
+set shadowQuality 3
+set shadowQuality 4
+set shadowQuality 5
+set shadowQuality 127
+set shadowQuality 255
+set shadowQuality 2147483647
+set orthographic -2147483648
+set orthographic -3
+set orthographic -1
+set orthographic 0
+set orthographic 1
+set orthographic 2
+set orthographic 3
+set orthographic 4
+set orthographic 5
+set orthographic 127
+set orthographic 255
+set orthographic 2147483647
+set particles -2147483648
+set particles -3
+set particles -1
+set particles 0
+set particles 1
+set particles 2
+set particles 3
+set particles 4
+set particles 5
+set particles 127
+set particles 255
+set particles 2147483647
+set removeRoofs -2147483648
+set removeRoofs -3
+set removeRoofs -1
+set removeRoofs 0
+set removeRoofs 1
+set removeRoofs 2
+set removeRoofs 3
+set removeRoofs 4
+set removeRoofs 5
+set removeRoofs 127
+set removeRoofs 255
+set removeRoofs 2147483647
+set removeRoofs2 -2147483648
+set removeRoofs2 -3
+set removeRoofs2 -1
+set removeRoofs2 0
+set removeRoofs2 1
+set removeRoofs2 2
+set removeRoofs2 3
+set removeRoofs2 4
+set removeRoofs2 5
+set removeRoofs2 127
+set removeRoofs2 255
+set removeRoofs2 2147483647
+set screenSize -2147483648
+set screenSize -3
+set screenSize -1
+set screenSize 0
+set screenSize 1
+set screenSize 2
+set screenSize 3
+set screenSize 4
+set screenSize 5
+set screenSize 127
+set screenSize 255
+set screenSize 2147483647
+set skyboxes -2147483648
+set skyboxes -3
+set skyboxes -1
+set skyboxes 0
+set skyboxes 1
+set skyboxes 2
+set skyboxes 3
+set skyboxes 4
+set skyboxes 5
+set skyboxes 127
+set skyboxes 255
+set skyboxes 2147483647
+set characterShadows -2147483648
+set characterShadows -3
+set characterShadows -1
+set characterShadows 0
+set characterShadows 1
+set characterShadows 2
+set characterShadows 3
+set characterShadows 4
+set characterShadows 5
+set characterShadows 127
+set characterShadows 255
+set characterShadows 2147483647
+set textures -2147483648
+set textures -3
+set textures -1
+set textures 0
+set textures 1
+set textures 2
+set textures 3
+set textures 4
+set textures 5
+set textures 127
+set textures 255
+set textures 2147483647
+set toolkit -2147483648
+set toolkit -3
+set toolkit -1
+set toolkit 0
+set toolkit 1
+set toolkit 2
+set toolkit 3
+set toolkit 4
+set toolkit 5
+set toolkit 127
+set toolkit 255
+set toolkit 2147483647
+set displayMode -2147483648
+set displayMode -3
+set displayMode -1
+set displayMode 0
+set displayMode 1
+set displayMode 2
+set displayMode 3
+set displayMode 4
+set displayMode 5
+set displayMode 127
+set displayMode 255
+set displayMode 2147483647
+set waterDetail -2147483648
+set waterDetail -3
+set waterDetail -1
+set waterDetail 0
+set waterDetail 1
+set waterDetail 2
+set waterDetail 3
+set waterDetail 4
+set waterDetail 5
+set waterDetail 127
+set waterDetail 255
+set waterDetail 2147483647
+set windowMode -2147483648
+set windowMode -3
+set windowMode -1
+set windowMode 0
+set windowMode 1
+set windowMode 2
+set windowMode 3
+set windowMode 4
+set windowMode 5
+set windowMode 127
+set windowMode 255
+set windowMode 2147483647
+set maxScreenSize2 -2147483648
+set maxScreenSize2 -3
+set maxScreenSize2 -1
+set maxScreenSize2 0
+set maxScreenSize2 1
+set maxScreenSize2 2
+set maxScreenSize2 3
+set maxScreenSize2 4
+set maxScreenSize2 5
+set maxScreenSize2 127
+set maxScreenSize2 255
+set maxScreenSize2 2147483647
+set unused4 -2147483648
+set unused4 -3
+set unused4 -1
+set unused4 0
+set unused4 1
+set unused4 2
+set unused4 3
+set unused4 4
+set unused4 5
+set unused4 127
+set unused4 255
+set unused4 2147483647
+set unused1 -2147483648
+set unused1 -3
+set unused1 -1
+set unused1 0
+set unused1 1
+set unused1 2
+set unused1 3
+set unused1 4
+set unused1 5
+set unused1 127
+set unused1 255
+set unused1 2147483647
+set unused2 -2147483648
+set unused2 -3
+set unused2 -1
+set unused2 0
+set unused2 1
+set unused2 2
+set unused2 3
+set unused2 4
+set unused2 5
+set unused2 127
+set unused2 255
+set unused2 2147483647
+set unused3 -2147483648
+set unused3 -3
+set unused3 -1
+set unused3 0
+set unused3 1
+set unused3 2
+set unused3 3
+set unused3 4
+set unused3 5
+set unused3 127
+set unused3 255
+set unused3 2147483647
+set unused5 -2147483648
+set unused5 -3
+set unused5 -1
+set unused5 0
+set unused5 1
+set unused5 2
+set unused5 3
+set unused5 4
+set unused5 5
+set unused5 127
+set unused5 255
+set unused5 2147483647
+set unused6 -2147483648
+set unused6 -3
+set unused6 -1
+set unused6 0
+set unused6 1
+set unused6 2
+set unused6 3
+set unused6 4
+set unused6 5
+set unused6 127
+set unused6 255
+set unused6 2147483647
+set unused7 -2147483648
+set unused7 -3
+set unused7 -1
+set unused7 0
+set unused7 1
+set unused7 2
+set unused7 3
+set unused7 4
+set unused7 5
+set unused7 127
+set unused7 255
+set unused7 2147483647
+set unused8 -2147483648
+set unused8 -3
+set unused8 -1
+set unused8 0
+set unused8 1
+set unused8 2
+set unused8 3
+set unused8 4
+set unused8 5
+set unused8 127
+set unused8 255
+set unused8 2147483647
+set unused9 -2147483648
+set unused9 -3
+set unused9 -1
+set unused9 0
+set unused9 1
+set unused9 2
+set unused9 3
+set unused9 4
+set unused9 5
+set unused9 127
+set unused9 255
+set unused9 2147483647
+set unused10 -2147483648
+set unused10 -3
+set unused10 -1
+set unused10 0
+set unused10 1
+set unused10 2
+set unused10 3
+set unused10 4
+set unused10 5
+set unused10 127
+set unused10 255
+set unused10 2147483647
+set unused11 -2147483648
+set unused11 -3
+set unused11 -1
+set unused11 0
+set unused11 1
+set unused11 2
+set unused11 3
+set unused11 4
+set unused11 5
+set unused11 127
+set unused11 255
+set unused11 2147483647
+set unused12 -2147483648
+set unused12 -3
+set unused12 -1
+set unused12 0
+set unused12 1
+set unused12 2
+set unused12 3
+set unused12 4
+set unused12 5
+set unused12 127
+set unused12 255
+set unused12 2147483647
+set customCursors -2147483648
+set customCursors -3
+set customCursors -1
+set customCursors 0
+set customCursors 1
+set customCursors 2
+set customCursors 3
+set customCursors 4
+set customCursors 5
+set customCursors 127
+set customCursors 255
+set customCursors 2147483647
+set preset -2147483648
+set preset -3
+set preset -1
+set preset 0
+set preset 1
+set preset 2
+set preset 3
+set preset 4
+set preset 5
+set preset 127
+set preset 255
+set preset 2147483647
+set cpuUsage -2147483648
+set cpuUsage -3
+set cpuUsage -1
+set cpuUsage 0
+set cpuUsage 1
+set cpuUsage 2
+set cpuUsage 3
+set cpuUsage 4
+set cpuUsage 5
+set cpuUsage 127
+set cpuUsage 255
+set cpuUsage 2147483647
+set loadingScreen -2147483648
+set loadingScreen -3
+set loadingScreen -1
+set loadingScreen 0
+set loadingScreen 1
+set loadingScreen 2
+set loadingScreen 3
+set loadingScreen 4
+set loadingScreen 5
+set loadingScreen 127
+set loadingScreen 255
+set loadingScreen 2147483647
+set safeMode -2147483648
+set safeMode -3
+set safeMode -1
+set safeMode 0
+set safeMode 1
+set safeMode 2
+set safeMode 3
+set safeMode 4
+set safeMode 5
+set safeMode 127
+set safeMode 255
+set safeMode 2147483647
+set unknown7 -2147483648
+set unknown7 -3
+set unknown7 -1
+set unknown7 0
+set unknown7 1
+set unknown7 2
+set unknown7 3
+set unknown7 4
+set unknown7 5
+set unknown7 127
+set unknown7 255
+set unknown7 2147483647
+set unused13 -2147483648
+set unused13 -3
+set unused13 -1
+set unused13 0
+set unused13 1
+set unused13 2
+set unused13 3
+set unused13 4
+set unused13 5
+set unused13 127
+set unused13 255
+set unused13 2147483647
+set soundVolume -2147483648
+set soundVolume -3
+set soundVolume -1
+set soundVolume 0
+set soundVolume 1
+set soundVolume 2
+set soundVolume 3
+set soundVolume 4
+set soundVolume 5
+set soundVolume 127
+set soundVolume 255
+set soundVolume 2147483647
+set backgroundSoundVolume -2147483648
+set backgroundSoundVolume -3
+set backgroundSoundVolume -1
+set backgroundSoundVolume 0
+set backgroundSoundVolume 1
+set backgroundSoundVolume 2
+set backgroundSoundVolume 3
+set backgroundSoundVolume 4
+set backgroundSoundVolume 5
+set backgroundSoundVolume 127
+set backgroundSoundVolume 255
+set backgroundSoundVolume 2147483647
+set speechVolume -2147483648
+set speechVolume -3
+set speechVolume -1
+set speechVolume 0
+set speechVolume 1
+set speechVolume 2
+set speechVolume 3
+set speechVolume 4
+set speechVolume 5
+set speechVolume 127
+set speechVolume 255
+set speechVolume 2147483647
+set unknownVolume1 -2147483648
+set unknownVolume1 -3
+set unknownVolume1 -1
+set unknownVolume1 0
+set unknownVolume1 1
+set unknownVolume1 2
+set unknownVolume1 3
+set unknownVolume1 4
+set unknownVolume1 5
+set unknownVolume1 127
+set unknownVolume1 255
+set unknownVolume1 2147483647
+set unknownVolume2 -2147483648
+set unknownVolume2 -3
+set unknownVolume2 -1
+set unknownVolume2 0
+set unknownVolume2 1
+set unknownVolume2 2
+set unknownVolume2 3
+set unknownVolume2 4
+set unknownVolume2 5
+set unknownVolume2 127
+set unknownVolume2 255
+set unknownVolume2 2147483647
+set stereo -2147483648
+set stereo -3
+set stereo -1
+set stereo 0
+set stereo 1
+set stereo 2
+set stereo 3
+set stereo 4
+set stereo 5
+set stereo 127
+set stereo 255
+set stereo 2147483647
+raw animDetail -2147483648
+clamp
+raw animDetail 2147483647
+clamp
+raw antiAliasing -2147483648
+clamp
+raw antiAliasing 2147483647
+clamp
+raw antiAliasing2 -2147483648
+clamp
+raw antiAliasing2 2147483647
+clamp
+raw unused -2147483648
+clamp
+raw unused 2147483647
+clamp
+raw bloom -2147483648
+clamp
+raw bloom 2147483647
+clamp
+raw brightness -2147483648
+clamp
+raw brightness 2147483647
+clamp
+raw buildArea -2147483648
+clamp
+raw buildArea 2147483647
+clamp
+raw consoleKeyPress -2147483648
+clamp
+raw consoleKeyPress 2147483647
+clamp
+raw drawDistance -2147483648
+clamp
+raw drawDistance 2147483647
+clamp
+raw flickeringEffects -2147483648
+clamp
+raw flickeringEffects 2147483647
+clamp
+raw fog -2147483648
+clamp
+raw fog 2147483647
+clamp
+raw groundBlending -2147483648
+clamp
+raw groundBlending 2147483647
+clamp
+raw groundDecoration -2147483648
+clamp
+raw groundDecoration 2147483647
+clamp
+raw idleAnimations -2147483648
+clamp
+raw idleAnimations 2147483647
+clamp
+raw lightingDetail -2147483648
+clamp
+raw lightingDetail 2147483647
+clamp
+raw sceneryShadows -2147483648
+clamp
+raw sceneryShadows 2147483647
+clamp
+raw shadowQuality -2147483648
+clamp
+raw shadowQuality 2147483647
+clamp
+raw orthographic -2147483648
+clamp
+raw orthographic 2147483647
+clamp
+raw particles -2147483648
+clamp
+raw particles 2147483647
+clamp
+raw removeRoofs -2147483648
+clamp
+raw removeRoofs 2147483647
+clamp
+raw removeRoofs2 -2147483648
+clamp
+raw removeRoofs2 2147483647
+clamp
+raw screenSize -2147483648
+clamp
+raw screenSize 2147483647
+clamp
+raw skyboxes -2147483648
+clamp
+raw skyboxes 2147483647
+clamp
+raw characterShadows -2147483648
+clamp
+raw characterShadows 2147483647
+clamp
+raw textures -2147483648
+clamp
+raw textures 2147483647
+clamp
+raw toolkit -2147483648
+clamp
+raw toolkit 2147483647
+clamp
+raw displayMode -2147483648
+clamp
+raw displayMode 2147483647
+clamp
+raw waterDetail -2147483648
+clamp
+raw waterDetail 2147483647
+clamp
+raw windowMode -2147483648
+clamp
+raw windowMode 2147483647
+clamp
+raw maxScreenSize2 -2147483648
+clamp
+raw maxScreenSize2 2147483647
+clamp
+raw unused4 -2147483648
+clamp
+raw unused4 2147483647
+clamp
+raw unused1 -2147483648
+clamp
+raw unused1 2147483647
+clamp
+raw unused2 -2147483648
+clamp
+raw unused2 2147483647
+clamp
+raw unused3 -2147483648
+clamp
+raw unused3 2147483647
+clamp
+raw unused5 -2147483648
+clamp
+raw unused5 2147483647
+clamp
+raw unused6 -2147483648
+clamp
+raw unused6 2147483647
+clamp
+raw unused7 -2147483648
+clamp
+raw unused7 2147483647
+clamp
+raw unused8 -2147483648
+clamp
+raw unused8 2147483647
+clamp
+raw unused9 -2147483648
+clamp
+raw unused9 2147483647
+clamp
+raw unused10 -2147483648
+clamp
+raw unused10 2147483647
+clamp
+raw unused11 -2147483648
+clamp
+raw unused11 2147483647
+clamp
+raw unused12 -2147483648
+clamp
+raw unused12 2147483647
+clamp
+raw customCursors -2147483648
+clamp
+raw customCursors 2147483647
+clamp
+raw preset -2147483648
+clamp
+raw preset 2147483647
+clamp
+raw cpuUsage -2147483648
+clamp
+raw cpuUsage 2147483647
+clamp
+raw loadingScreen -2147483648
+clamp
+raw loadingScreen 2147483647
+clamp
+raw safeMode -2147483648
+clamp
+raw safeMode 2147483647
+clamp
+raw unknown7 -2147483648
+clamp
+raw unknown7 2147483647
+clamp
+raw unused13 -2147483648
+clamp
+raw unused13 2147483647
+clamp
+raw soundVolume -2147483648
+clamp
+raw soundVolume 2147483647
+clamp
+raw backgroundSoundVolume -2147483648
+clamp
+raw backgroundSoundVolume 2147483647
+clamp
+raw speechVolume -2147483648
+clamp
+raw speechVolume 2147483647
+clamp
+raw unknownVolume1 -2147483648
+clamp
+raw unknownVolume1 2147483647
+clamp
+raw unknownVolume2 -2147483648
+clamp
+raw unknownVolume2 2147483647
+clamp
+raw stereo -2147483648
+clamp
+raw stereo 2147483647
+clamp
+flag displayMode 0
+raw displayMode 0
+clamp
+flag displayMode 1
+flag toolkit 0
+raw toolkit 0
+clamp
+flag toolkit 1
+decode 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 00ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+decode 002525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525
+decode 010000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 01ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+decode 012525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525
+decode 020000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 02ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+decode 022525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525
+decode 030000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 03ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+decode 032525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525
+decode 040000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 04ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+decode 042525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525
+decode 050000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 05ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+decode 052525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525
+decode 060000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 06ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+decode 062525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525
+decode 070000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 07ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+decode 072525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525
+decode 080000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 08ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+decode 082525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525
+decode 090000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 09ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+decode 092525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525
+decode 0a0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 0affffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+decode 0a2525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525
+decode 0b0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 0bffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+decode 0b2525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525
+decode 0c0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 0cffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+decode 0c2525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525
+decode 0d0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 0dffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+decode 0d2525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525
+decode 0e0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 0effffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+decode 0e2525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525
+decode 0f0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 0fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+decode 0f2525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525
+decode 100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 10ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+decode 102525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525
+decode 110000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 11ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+decode 112525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525
+decode 120000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 12ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+decode 122525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525
+decode 130000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 13ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+decode 132525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525
+decode 140000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 14ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+decode 142525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525
+decode 150000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 15ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+decode 152525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525
+decode 160000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 16ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+decode 162525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525
+decode 170000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 17ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+decode 172525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525
+decode 180000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 18ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+decode 182525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525
+decode 190000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 19ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+decode 192525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525
+decode 1a0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 1affffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+decode 1a2525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525
+decode 1b0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 1bffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+decode 1b2525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525
+decode 1c0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 1cffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+decode 1c2525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525
+decode 1d0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 1dffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+decode 1d2525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525
+decode 1e0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 1effffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+decode 1e2525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525
+decode 1f0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 1fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+decode 1f2525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525
+decode 200000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 20ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+decode 202525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525
+decode 210000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 21ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+decode 212525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525
+decode 220000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 22ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+decode 222525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525
+decode 230000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 23ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+decode 232525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525
+decode 240000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 24ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+decode 242525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525
+decode 250000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 25ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+decode 252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525
+decode 260000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 26ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+decode 262525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525
+decode 270000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 27ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+decode 272525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525
+decode -
+decode 26
+decode 2600
+decode 260000
+decode 26000000
+decode 2600000000
+decode 260000000000
+decode 26000000000000
+decode 2600000000000000
+decode 260000000000000000
+decode 26000000000000000000
+decode 2600000000000000000000
+decode 260000000000000000000000
+decode 26000000000000000000000000
+decode 2600000000000000000000000000
+decode 260000000000000000000000000000
+decode 26000000000000000000000000000000
+decode 2600000000000000000000000000000000
+decode 260000000000000000000000000000000000
+decode 26000000000000000000000000000000000000
+decode 2600000000000000000000000000000000000000
+decode 260000000000000000000000000000000000000000
+decode 26000000000000000000000000000000000000000000
+decode 2600000000000000000000000000000000000000000000
+decode 260000000000000000000000000000000000000000000000
+decode 26000000000000000000000000000000000000000000000000
+decode 2600000000000000000000000000000000000000000000000000
+decode 260000000000000000000000000000000000000000000000000000
+decode 26000000000000000000000000000000000000000000000000000000
+decode 2600000000000000000000000000000000000000000000000000000000
+decode 260000000000000000000000000000000000000000000000000000000000
+decode 26000000000000000000000000000000000000000000000000000000000000
+decode 2600000000000000000000000000000000000000000000000000000000000000
+decode 260000000000000000000000000000000000000000000000000000000000000000
+decode 26000000000000000000000000000000000000000000000000000000000000000000
+decode 2600000000000000000000000000000000000000000000000000000000000000000000
+decode 260000000000000000000000000000000000000000000000000000000000000000000000
+decode 26000000000000000000000000000000000000000000000000000000000000000000000000
+decode 2600000000000000000000000000000000000000000000000000000000000000000000000000
+decode 260000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 26000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 2600000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 260000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 26000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 2600000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 260000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 26000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 2600000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 260000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 26000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 2600000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 260000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 26000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 2600000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 260000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 26000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 2600000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 260000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 26000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 2600000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+reset 0 1
+reset 1 1
+new 500 8 0 1 0 1 3
+set animDetail -2147483648
+set animDetail -3
+set animDetail -1
+set animDetail 0
+set animDetail 1
+set animDetail 2
+set animDetail 3
+set animDetail 4
+set animDetail 5
+set animDetail 127
+set animDetail 255
+set animDetail 2147483647
+set antiAliasing -2147483648
+set antiAliasing -3
+set antiAliasing -1
+set antiAliasing 0
+set antiAliasing 1
+set antiAliasing 2
+set antiAliasing 3
+set antiAliasing 4
+set antiAliasing 5
+set antiAliasing 127
+set antiAliasing 255
+set antiAliasing 2147483647
+set antiAliasing2 -2147483648
+set antiAliasing2 -3
+set antiAliasing2 -1
+set antiAliasing2 0
+set antiAliasing2 1
+set antiAliasing2 2
+set antiAliasing2 3
+set antiAliasing2 4
+set antiAliasing2 5
+set antiAliasing2 127
+set antiAliasing2 255
+set antiAliasing2 2147483647
+set unused -2147483648
+set unused -3
+set unused -1
+set unused 0
+set unused 1
+set unused 2
+set unused 3
+set unused 4
+set unused 5
+set unused 127
+set unused 255
+set unused 2147483647
+set bloom -2147483648
+set bloom -3
+set bloom -1
+set bloom 0
+set bloom 1
+set bloom 2
+set bloom 3
+set bloom 4
+set bloom 5
+set bloom 127
+set bloom 255
+set bloom 2147483647
+set brightness -2147483648
+set brightness -3
+set brightness -1
+set brightness 0
+set brightness 1
+set brightness 2
+set brightness 3
+set brightness 4
+set brightness 5
+set brightness 127
+set brightness 255
+set brightness 2147483647
+set buildArea -2147483648
+set buildArea -3
+set buildArea -1
+set buildArea 0
+set buildArea 1
+set buildArea 2
+set buildArea 3
+set buildArea 4
+set buildArea 5
+set buildArea 127
+set buildArea 255
+set buildArea 2147483647
+set consoleKeyPress -2147483648
+set consoleKeyPress -3
+set consoleKeyPress -1
+set consoleKeyPress 0
+set consoleKeyPress 1
+set consoleKeyPress 2
+set consoleKeyPress 3
+set consoleKeyPress 4
+set consoleKeyPress 5
+set consoleKeyPress 127
+set consoleKeyPress 255
+set consoleKeyPress 2147483647
+set drawDistance -2147483648
+set drawDistance -3
+set drawDistance -1
+set drawDistance 0
+set drawDistance 1
+set drawDistance 2
+set drawDistance 3
+set drawDistance 4
+set drawDistance 5
+set drawDistance 127
+set drawDistance 255
+set drawDistance 2147483647
+set flickeringEffects -2147483648
+set flickeringEffects -3
+set flickeringEffects -1
+set flickeringEffects 0
+set flickeringEffects 1
+set flickeringEffects 2
+set flickeringEffects 3
+set flickeringEffects 4
+set flickeringEffects 5
+set flickeringEffects 127
+set flickeringEffects 255
+set flickeringEffects 2147483647
+set fog -2147483648
+set fog -3
+set fog -1
+set fog 0
+set fog 1
+set fog 2
+set fog 3
+set fog 4
+set fog 5
+set fog 127
+set fog 255
+set fog 2147483647
+set groundBlending -2147483648
+set groundBlending -3
+set groundBlending -1
+set groundBlending 0
+set groundBlending 1
+set groundBlending 2
+set groundBlending 3
+set groundBlending 4
+set groundBlending 5
+set groundBlending 127
+set groundBlending 255
+set groundBlending 2147483647
+set groundDecoration -2147483648
+set groundDecoration -3
+set groundDecoration -1
+set groundDecoration 0
+set groundDecoration 1
+set groundDecoration 2
+set groundDecoration 3
+set groundDecoration 4
+set groundDecoration 5
+set groundDecoration 127
+set groundDecoration 255
+set groundDecoration 2147483647
+set idleAnimations -2147483648
+set idleAnimations -3
+set idleAnimations -1
+set idleAnimations 0
+set idleAnimations 1
+set idleAnimations 2
+set idleAnimations 3
+set idleAnimations 4
+set idleAnimations 5
+set idleAnimations 127
+set idleAnimations 255
+set idleAnimations 2147483647
+set lightingDetail -2147483648
+set lightingDetail -3
+set lightingDetail -1
+set lightingDetail 0
+set lightingDetail 1
+set lightingDetail 2
+set lightingDetail 3
+set lightingDetail 4
+set lightingDetail 5
+set lightingDetail 127
+set lightingDetail 255
+set lightingDetail 2147483647
+set sceneryShadows -2147483648
+set sceneryShadows -3
+set sceneryShadows -1
+set sceneryShadows 0
+set sceneryShadows 1
+set sceneryShadows 2
+set sceneryShadows 3
+set sceneryShadows 4
+set sceneryShadows 5
+set sceneryShadows 127
+set sceneryShadows 255
+set sceneryShadows 2147483647
+set shadowQuality -2147483648
+set shadowQuality -3
+set shadowQuality -1
+set shadowQuality 0
+set shadowQuality 1
+set shadowQuality 2
+set shadowQuality 3
+set shadowQuality 4
+set shadowQuality 5
+set shadowQuality 127
+set shadowQuality 255
+set shadowQuality 2147483647
+set orthographic -2147483648
+set orthographic -3
+set orthographic -1
+set orthographic 0
+set orthographic 1
+set orthographic 2
+set orthographic 3
+set orthographic 4
+set orthographic 5
+set orthographic 127
+set orthographic 255
+set orthographic 2147483647
+set particles -2147483648
+set particles -3
+set particles -1
+set particles 0
+set particles 1
+set particles 2
+set particles 3
+set particles 4
+set particles 5
+set particles 127
+set particles 255
+set particles 2147483647
+set removeRoofs -2147483648
+set removeRoofs -3
+set removeRoofs -1
+set removeRoofs 0
+set removeRoofs 1
+set removeRoofs 2
+set removeRoofs 3
+set removeRoofs 4
+set removeRoofs 5
+set removeRoofs 127
+set removeRoofs 255
+set removeRoofs 2147483647
+set removeRoofs2 -2147483648
+set removeRoofs2 -3
+set removeRoofs2 -1
+set removeRoofs2 0
+set removeRoofs2 1
+set removeRoofs2 2
+set removeRoofs2 3
+set removeRoofs2 4
+set removeRoofs2 5
+set removeRoofs2 127
+set removeRoofs2 255
+set removeRoofs2 2147483647
+set screenSize -2147483648
+set screenSize -3
+set screenSize -1
+set screenSize 0
+set screenSize 1
+set screenSize 2
+set screenSize 3
+set screenSize 4
+set screenSize 5
+set screenSize 127
+set screenSize 255
+set screenSize 2147483647
+set skyboxes -2147483648
+set skyboxes -3
+set skyboxes -1
+set skyboxes 0
+set skyboxes 1
+set skyboxes 2
+set skyboxes 3
+set skyboxes 4
+set skyboxes 5
+set skyboxes 127
+set skyboxes 255
+set skyboxes 2147483647
+set characterShadows -2147483648
+set characterShadows -3
+set characterShadows -1
+set characterShadows 0
+set characterShadows 1
+set characterShadows 2
+set characterShadows 3
+set characterShadows 4
+set characterShadows 5
+set characterShadows 127
+set characterShadows 255
+set characterShadows 2147483647
+set textures -2147483648
+set textures -3
+set textures -1
+set textures 0
+set textures 1
+set textures 2
+set textures 3
+set textures 4
+set textures 5
+set textures 127
+set textures 255
+set textures 2147483647
+set toolkit -2147483648
+set toolkit -3
+set toolkit -1
+set toolkit 0
+set toolkit 1
+set toolkit 2
+set toolkit 3
+set toolkit 4
+set toolkit 5
+set toolkit 127
+set toolkit 255
+set toolkit 2147483647
+set displayMode -2147483648
+set displayMode -3
+set displayMode -1
+set displayMode 0
+set displayMode 1
+set displayMode 2
+set displayMode 3
+set displayMode 4
+set displayMode 5
+set displayMode 127
+set displayMode 255
+set displayMode 2147483647
+set waterDetail -2147483648
+set waterDetail -3
+set waterDetail -1
+set waterDetail 0
+set waterDetail 1
+set waterDetail 2
+set waterDetail 3
+set waterDetail 4
+set waterDetail 5
+set waterDetail 127
+set waterDetail 255
+set waterDetail 2147483647
+set windowMode -2147483648
+set windowMode -3
+set windowMode -1
+set windowMode 0
+set windowMode 1
+set windowMode 2
+set windowMode 3
+set windowMode 4
+set windowMode 5
+set windowMode 127
+set windowMode 255
+set windowMode 2147483647
+set maxScreenSize2 -2147483648
+set maxScreenSize2 -3
+set maxScreenSize2 -1
+set maxScreenSize2 0
+set maxScreenSize2 1
+set maxScreenSize2 2
+set maxScreenSize2 3
+set maxScreenSize2 4
+set maxScreenSize2 5
+set maxScreenSize2 127
+set maxScreenSize2 255
+set maxScreenSize2 2147483647
+set unused4 -2147483648
+set unused4 -3
+set unused4 -1
+set unused4 0
+set unused4 1
+set unused4 2
+set unused4 3
+set unused4 4
+set unused4 5
+set unused4 127
+set unused4 255
+set unused4 2147483647
+set unused1 -2147483648
+set unused1 -3
+set unused1 -1
+set unused1 0
+set unused1 1
+set unused1 2
+set unused1 3
+set unused1 4
+set unused1 5
+set unused1 127
+set unused1 255
+set unused1 2147483647
+set unused2 -2147483648
+set unused2 -3
+set unused2 -1
+set unused2 0
+set unused2 1
+set unused2 2
+set unused2 3
+set unused2 4
+set unused2 5
+set unused2 127
+set unused2 255
+set unused2 2147483647
+set unused3 -2147483648
+set unused3 -3
+set unused3 -1
+set unused3 0
+set unused3 1
+set unused3 2
+set unused3 3
+set unused3 4
+set unused3 5
+set unused3 127
+set unused3 255
+set unused3 2147483647
+set unused5 -2147483648
+set unused5 -3
+set unused5 -1
+set unused5 0
+set unused5 1
+set unused5 2
+set unused5 3
+set unused5 4
+set unused5 5
+set unused5 127
+set unused5 255
+set unused5 2147483647
+set unused6 -2147483648
+set unused6 -3
+set unused6 -1
+set unused6 0
+set unused6 1
+set unused6 2
+set unused6 3
+set unused6 4
+set unused6 5
+set unused6 127
+set unused6 255
+set unused6 2147483647
+set unused7 -2147483648
+set unused7 -3
+set unused7 -1
+set unused7 0
+set unused7 1
+set unused7 2
+set unused7 3
+set unused7 4
+set unused7 5
+set unused7 127
+set unused7 255
+set unused7 2147483647
+set unused8 -2147483648
+set unused8 -3
+set unused8 -1
+set unused8 0
+set unused8 1
+set unused8 2
+set unused8 3
+set unused8 4
+set unused8 5
+set unused8 127
+set unused8 255
+set unused8 2147483647
+set unused9 -2147483648
+set unused9 -3
+set unused9 -1
+set unused9 0
+set unused9 1
+set unused9 2
+set unused9 3
+set unused9 4
+set unused9 5
+set unused9 127
+set unused9 255
+set unused9 2147483647
+set unused10 -2147483648
+set unused10 -3
+set unused10 -1
+set unused10 0
+set unused10 1
+set unused10 2
+set unused10 3
+set unused10 4
+set unused10 5
+set unused10 127
+set unused10 255
+set unused10 2147483647
+set unused11 -2147483648
+set unused11 -3
+set unused11 -1
+set unused11 0
+set unused11 1
+set unused11 2
+set unused11 3
+set unused11 4
+set unused11 5
+set unused11 127
+set unused11 255
+set unused11 2147483647
+set unused12 -2147483648
+set unused12 -3
+set unused12 -1
+set unused12 0
+set unused12 1
+set unused12 2
+set unused12 3
+set unused12 4
+set unused12 5
+set unused12 127
+set unused12 255
+set unused12 2147483647
+set customCursors -2147483648
+set customCursors -3
+set customCursors -1
+set customCursors 0
+set customCursors 1
+set customCursors 2
+set customCursors 3
+set customCursors 4
+set customCursors 5
+set customCursors 127
+set customCursors 255
+set customCursors 2147483647
+set preset -2147483648
+set preset -3
+set preset -1
+set preset 0
+set preset 1
+set preset 2
+set preset 3
+set preset 4
+set preset 5
+set preset 127
+set preset 255
+set preset 2147483647
+set cpuUsage -2147483648
+set cpuUsage -3
+set cpuUsage -1
+set cpuUsage 0
+set cpuUsage 1
+set cpuUsage 2
+set cpuUsage 3
+set cpuUsage 4
+set cpuUsage 5
+set cpuUsage 127
+set cpuUsage 255
+set cpuUsage 2147483647
+set loadingScreen -2147483648
+set loadingScreen -3
+set loadingScreen -1
+set loadingScreen 0
+set loadingScreen 1
+set loadingScreen 2
+set loadingScreen 3
+set loadingScreen 4
+set loadingScreen 5
+set loadingScreen 127
+set loadingScreen 255
+set loadingScreen 2147483647
+set safeMode -2147483648
+set safeMode -3
+set safeMode -1
+set safeMode 0
+set safeMode 1
+set safeMode 2
+set safeMode 3
+set safeMode 4
+set safeMode 5
+set safeMode 127
+set safeMode 255
+set safeMode 2147483647
+set unknown7 -2147483648
+set unknown7 -3
+set unknown7 -1
+set unknown7 0
+set unknown7 1
+set unknown7 2
+set unknown7 3
+set unknown7 4
+set unknown7 5
+set unknown7 127
+set unknown7 255
+set unknown7 2147483647
+set unused13 -2147483648
+set unused13 -3
+set unused13 -1
+set unused13 0
+set unused13 1
+set unused13 2
+set unused13 3
+set unused13 4
+set unused13 5
+set unused13 127
+set unused13 255
+set unused13 2147483647
+set soundVolume -2147483648
+set soundVolume -3
+set soundVolume -1
+set soundVolume 0
+set soundVolume 1
+set soundVolume 2
+set soundVolume 3
+set soundVolume 4
+set soundVolume 5
+set soundVolume 127
+set soundVolume 255
+set soundVolume 2147483647
+set backgroundSoundVolume -2147483648
+set backgroundSoundVolume -3
+set backgroundSoundVolume -1
+set backgroundSoundVolume 0
+set backgroundSoundVolume 1
+set backgroundSoundVolume 2
+set backgroundSoundVolume 3
+set backgroundSoundVolume 4
+set backgroundSoundVolume 5
+set backgroundSoundVolume 127
+set backgroundSoundVolume 255
+set backgroundSoundVolume 2147483647
+set speechVolume -2147483648
+set speechVolume -3
+set speechVolume -1
+set speechVolume 0
+set speechVolume 1
+set speechVolume 2
+set speechVolume 3
+set speechVolume 4
+set speechVolume 5
+set speechVolume 127
+set speechVolume 255
+set speechVolume 2147483647
+set unknownVolume1 -2147483648
+set unknownVolume1 -3
+set unknownVolume1 -1
+set unknownVolume1 0
+set unknownVolume1 1
+set unknownVolume1 2
+set unknownVolume1 3
+set unknownVolume1 4
+set unknownVolume1 5
+set unknownVolume1 127
+set unknownVolume1 255
+set unknownVolume1 2147483647
+set unknownVolume2 -2147483648
+set unknownVolume2 -3
+set unknownVolume2 -1
+set unknownVolume2 0
+set unknownVolume2 1
+set unknownVolume2 2
+set unknownVolume2 3
+set unknownVolume2 4
+set unknownVolume2 5
+set unknownVolume2 127
+set unknownVolume2 255
+set unknownVolume2 2147483647
+set stereo -2147483648
+set stereo -3
+set stereo -1
+set stereo 0
+set stereo 1
+set stereo 2
+set stereo 3
+set stereo 4
+set stereo 5
+set stereo 127
+set stereo 255
+set stereo 2147483647
+raw animDetail -2147483648
+clamp
+raw animDetail 2147483647
+clamp
+raw antiAliasing -2147483648
+clamp
+raw antiAliasing 2147483647
+clamp
+raw antiAliasing2 -2147483648
+clamp
+raw antiAliasing2 2147483647
+clamp
+raw unused -2147483648
+clamp
+raw unused 2147483647
+clamp
+raw bloom -2147483648
+clamp
+raw bloom 2147483647
+clamp
+raw brightness -2147483648
+clamp
+raw brightness 2147483647
+clamp
+raw buildArea -2147483648
+clamp
+raw buildArea 2147483647
+clamp
+raw consoleKeyPress -2147483648
+clamp
+raw consoleKeyPress 2147483647
+clamp
+raw drawDistance -2147483648
+clamp
+raw drawDistance 2147483647
+clamp
+raw flickeringEffects -2147483648
+clamp
+raw flickeringEffects 2147483647
+clamp
+raw fog -2147483648
+clamp
+raw fog 2147483647
+clamp
+raw groundBlending -2147483648
+clamp
+raw groundBlending 2147483647
+clamp
+raw groundDecoration -2147483648
+clamp
+raw groundDecoration 2147483647
+clamp
+raw idleAnimations -2147483648
+clamp
+raw idleAnimations 2147483647
+clamp
+raw lightingDetail -2147483648
+clamp
+raw lightingDetail 2147483647
+clamp
+raw sceneryShadows -2147483648
+clamp
+raw sceneryShadows 2147483647
+clamp
+raw shadowQuality -2147483648
+clamp
+raw shadowQuality 2147483647
+clamp
+raw orthographic -2147483648
+clamp
+raw orthographic 2147483647
+clamp
+raw particles -2147483648
+clamp
+raw particles 2147483647
+clamp
+raw removeRoofs -2147483648
+clamp
+raw removeRoofs 2147483647
+clamp
+raw removeRoofs2 -2147483648
+clamp
+raw removeRoofs2 2147483647
+clamp
+raw screenSize -2147483648
+clamp
+raw screenSize 2147483647
+clamp
+raw skyboxes -2147483648
+clamp
+raw skyboxes 2147483647
+clamp
+raw characterShadows -2147483648
+clamp
+raw characterShadows 2147483647
+clamp
+raw textures -2147483648
+clamp
+raw textures 2147483647
+clamp
+raw toolkit -2147483648
+clamp
+raw toolkit 2147483647
+clamp
+raw displayMode -2147483648
+clamp
+raw displayMode 2147483647
+clamp
+raw waterDetail -2147483648
+clamp
+raw waterDetail 2147483647
+clamp
+raw windowMode -2147483648
+clamp
+raw windowMode 2147483647
+clamp
+raw maxScreenSize2 -2147483648
+clamp
+raw maxScreenSize2 2147483647
+clamp
+raw unused4 -2147483648
+clamp
+raw unused4 2147483647
+clamp
+raw unused1 -2147483648
+clamp
+raw unused1 2147483647
+clamp
+raw unused2 -2147483648
+clamp
+raw unused2 2147483647
+clamp
+raw unused3 -2147483648
+clamp
+raw unused3 2147483647
+clamp
+raw unused5 -2147483648
+clamp
+raw unused5 2147483647
+clamp
+raw unused6 -2147483648
+clamp
+raw unused6 2147483647
+clamp
+raw unused7 -2147483648
+clamp
+raw unused7 2147483647
+clamp
+raw unused8 -2147483648
+clamp
+raw unused8 2147483647
+clamp
+raw unused9 -2147483648
+clamp
+raw unused9 2147483647
+clamp
+raw unused10 -2147483648
+clamp
+raw unused10 2147483647
+clamp
+raw unused11 -2147483648
+clamp
+raw unused11 2147483647
+clamp
+raw unused12 -2147483648
+clamp
+raw unused12 2147483647
+clamp
+raw customCursors -2147483648
+clamp
+raw customCursors 2147483647
+clamp
+raw preset -2147483648
+clamp
+raw preset 2147483647
+clamp
+raw cpuUsage -2147483648
+clamp
+raw cpuUsage 2147483647
+clamp
+raw loadingScreen -2147483648
+clamp
+raw loadingScreen 2147483647
+clamp
+raw safeMode -2147483648
+clamp
+raw safeMode 2147483647
+clamp
+raw unknown7 -2147483648
+clamp
+raw unknown7 2147483647
+clamp
+raw unused13 -2147483648
+clamp
+raw unused13 2147483647
+clamp
+raw soundVolume -2147483648
+clamp
+raw soundVolume 2147483647
+clamp
+raw backgroundSoundVolume -2147483648
+clamp
+raw backgroundSoundVolume 2147483647
+clamp
+raw speechVolume -2147483648
+clamp
+raw speechVolume 2147483647
+clamp
+raw unknownVolume1 -2147483648
+clamp
+raw unknownVolume1 2147483647
+clamp
+raw unknownVolume2 -2147483648
+clamp
+raw unknownVolume2 2147483647
+clamp
+raw stereo -2147483648
+clamp
+raw stereo 2147483647
+clamp
+flag displayMode 0
+raw displayMode 0
+clamp
+flag displayMode 1
+flag toolkit 0
+raw toolkit 0
+clamp
+flag toolkit 1
+decode 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 00ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+decode 002525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525
+decode 010000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 01ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+decode 012525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525
+decode 020000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 02ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+decode 022525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525
+decode 030000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 03ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+decode 032525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525
+decode 040000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 04ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+decode 042525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525
+decode 050000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 05ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+decode 052525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525
+decode 060000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 06ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+decode 062525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525
+decode 070000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 07ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+decode 072525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525
+decode 080000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 08ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+decode 082525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525
+decode 090000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 09ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+decode 092525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525
+decode 0a0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 0affffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+decode 0a2525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525
+decode 0b0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 0bffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+decode 0b2525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525
+decode 0c0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 0cffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+decode 0c2525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525
+decode 0d0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 0dffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+decode 0d2525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525
+decode 0e0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 0effffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+decode 0e2525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525
+decode 0f0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 0fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+decode 0f2525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525
+decode 100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 10ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+decode 102525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525
+decode 110000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 11ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+decode 112525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525
+decode 120000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 12ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+decode 122525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525
+decode 130000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 13ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+decode 132525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525
+decode 140000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 14ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+decode 142525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525
+decode 150000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 15ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+decode 152525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525
+decode 160000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 16ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+decode 162525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525
+decode 170000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 17ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+decode 172525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525
+decode 180000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 18ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+decode 182525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525
+decode 190000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 19ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+decode 192525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525
+decode 1a0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 1affffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+decode 1a2525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525
+decode 1b0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 1bffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+decode 1b2525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525
+decode 1c0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 1cffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+decode 1c2525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525
+decode 1d0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 1dffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+decode 1d2525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525
+decode 1e0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 1effffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+decode 1e2525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525
+decode 1f0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 1fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+decode 1f2525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525
+decode 200000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 20ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+decode 202525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525
+decode 210000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 21ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+decode 212525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525
+decode 220000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 22ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+decode 222525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525
+decode 230000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 23ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+decode 232525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525
+decode 240000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 24ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+decode 242525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525
+decode 250000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 25ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+decode 252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525
+decode 260000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 26ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+decode 262525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525
+decode 270000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 27ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+decode 272525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525
+decode -
+decode 26
+decode 2600
+decode 260000
+decode 26000000
+decode 2600000000
+decode 260000000000
+decode 26000000000000
+decode 2600000000000000
+decode 260000000000000000
+decode 26000000000000000000
+decode 2600000000000000000000
+decode 260000000000000000000000
+decode 26000000000000000000000000
+decode 2600000000000000000000000000
+decode 260000000000000000000000000000
+decode 26000000000000000000000000000000
+decode 2600000000000000000000000000000000
+decode 260000000000000000000000000000000000
+decode 26000000000000000000000000000000000000
+decode 2600000000000000000000000000000000000000
+decode 260000000000000000000000000000000000000000
+decode 26000000000000000000000000000000000000000000
+decode 2600000000000000000000000000000000000000000000
+decode 260000000000000000000000000000000000000000000000
+decode 26000000000000000000000000000000000000000000000000
+decode 2600000000000000000000000000000000000000000000000000
+decode 260000000000000000000000000000000000000000000000000000
+decode 26000000000000000000000000000000000000000000000000000000
+decode 2600000000000000000000000000000000000000000000000000000000
+decode 260000000000000000000000000000000000000000000000000000000000
+decode 26000000000000000000000000000000000000000000000000000000000000
+decode 2600000000000000000000000000000000000000000000000000000000000000
+decode 260000000000000000000000000000000000000000000000000000000000000000
+decode 26000000000000000000000000000000000000000000000000000000000000000000
+decode 2600000000000000000000000000000000000000000000000000000000000000000000
+decode 260000000000000000000000000000000000000000000000000000000000000000000000
+decode 26000000000000000000000000000000000000000000000000000000000000000000000000
+decode 2600000000000000000000000000000000000000000000000000000000000000000000000000
+decode 260000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 26000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 2600000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 260000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 26000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 2600000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 260000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 26000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 2600000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 260000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 26000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 2600000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 260000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 26000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 2600000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 260000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 26000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 2600000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 260000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 26000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 2600000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+reset 0 1
+reset 1 1
+new 245 2 0 0 1 0 0
+set animDetail -2147483648
+set animDetail -3
+set animDetail -1
+set animDetail 0
+set animDetail 1
+set animDetail 2
+set animDetail 3
+set animDetail 4
+set animDetail 5
+set animDetail 127
+set animDetail 255
+set animDetail 2147483647
+set antiAliasing -2147483648
+set antiAliasing -3
+set antiAliasing -1
+set antiAliasing 0
+set antiAliasing 1
+set antiAliasing 2
+set antiAliasing 3
+set antiAliasing 4
+set antiAliasing 5
+set antiAliasing 127
+set antiAliasing 255
+set antiAliasing 2147483647
+set antiAliasing2 -2147483648
+set antiAliasing2 -3
+set antiAliasing2 -1
+set antiAliasing2 0
+set antiAliasing2 1
+set antiAliasing2 2
+set antiAliasing2 3
+set antiAliasing2 4
+set antiAliasing2 5
+set antiAliasing2 127
+set antiAliasing2 255
+set antiAliasing2 2147483647
+set unused -2147483648
+set unused -3
+set unused -1
+set unused 0
+set unused 1
+set unused 2
+set unused 3
+set unused 4
+set unused 5
+set unused 127
+set unused 255
+set unused 2147483647
+set bloom -2147483648
+set bloom -3
+set bloom -1
+set bloom 0
+set bloom 1
+set bloom 2
+set bloom 3
+set bloom 4
+set bloom 5
+set bloom 127
+set bloom 255
+set bloom 2147483647
+set brightness -2147483648
+set brightness -3
+set brightness -1
+set brightness 0
+set brightness 1
+set brightness 2
+set brightness 3
+set brightness 4
+set brightness 5
+set brightness 127
+set brightness 255
+set brightness 2147483647
+set buildArea -2147483648
+set buildArea -3
+set buildArea -1
+set buildArea 0
+set buildArea 1
+set buildArea 2
+set buildArea 3
+set buildArea 4
+set buildArea 5
+set buildArea 127
+set buildArea 255
+set buildArea 2147483647
+set consoleKeyPress -2147483648
+set consoleKeyPress -3
+set consoleKeyPress -1
+set consoleKeyPress 0
+set consoleKeyPress 1
+set consoleKeyPress 2
+set consoleKeyPress 3
+set consoleKeyPress 4
+set consoleKeyPress 5
+set consoleKeyPress 127
+set consoleKeyPress 255
+set consoleKeyPress 2147483647
+set drawDistance -2147483648
+set drawDistance -3
+set drawDistance -1
+set drawDistance 0
+set drawDistance 1
+set drawDistance 2
+set drawDistance 3
+set drawDistance 4
+set drawDistance 5
+set drawDistance 127
+set drawDistance 255
+set drawDistance 2147483647
+set flickeringEffects -2147483648
+set flickeringEffects -3
+set flickeringEffects -1
+set flickeringEffects 0
+set flickeringEffects 1
+set flickeringEffects 2
+set flickeringEffects 3
+set flickeringEffects 4
+set flickeringEffects 5
+set flickeringEffects 127
+set flickeringEffects 255
+set flickeringEffects 2147483647
+set fog -2147483648
+set fog -3
+set fog -1
+set fog 0
+set fog 1
+set fog 2
+set fog 3
+set fog 4
+set fog 5
+set fog 127
+set fog 255
+set fog 2147483647
+set groundBlending -2147483648
+set groundBlending -3
+set groundBlending -1
+set groundBlending 0
+set groundBlending 1
+set groundBlending 2
+set groundBlending 3
+set groundBlending 4
+set groundBlending 5
+set groundBlending 127
+set groundBlending 255
+set groundBlending 2147483647
+set groundDecoration -2147483648
+set groundDecoration -3
+set groundDecoration -1
+set groundDecoration 0
+set groundDecoration 1
+set groundDecoration 2
+set groundDecoration 3
+set groundDecoration 4
+set groundDecoration 5
+set groundDecoration 127
+set groundDecoration 255
+set groundDecoration 2147483647
+set idleAnimations -2147483648
+set idleAnimations -3
+set idleAnimations -1
+set idleAnimations 0
+set idleAnimations 1
+set idleAnimations 2
+set idleAnimations 3
+set idleAnimations 4
+set idleAnimations 5
+set idleAnimations 127
+set idleAnimations 255
+set idleAnimations 2147483647
+set lightingDetail -2147483648
+set lightingDetail -3
+set lightingDetail -1
+set lightingDetail 0
+set lightingDetail 1
+set lightingDetail 2
+set lightingDetail 3
+set lightingDetail 4
+set lightingDetail 5
+set lightingDetail 127
+set lightingDetail 255
+set lightingDetail 2147483647
+set sceneryShadows -2147483648
+set sceneryShadows -3
+set sceneryShadows -1
+set sceneryShadows 0
+set sceneryShadows 1
+set sceneryShadows 2
+set sceneryShadows 3
+set sceneryShadows 4
+set sceneryShadows 5
+set sceneryShadows 127
+set sceneryShadows 255
+set sceneryShadows 2147483647
+set shadowQuality -2147483648
+set shadowQuality -3
+set shadowQuality -1
+set shadowQuality 0
+set shadowQuality 1
+set shadowQuality 2
+set shadowQuality 3
+set shadowQuality 4
+set shadowQuality 5
+set shadowQuality 127
+set shadowQuality 255
+set shadowQuality 2147483647
+set orthographic -2147483648
+set orthographic -3
+set orthographic -1
+set orthographic 0
+set orthographic 1
+set orthographic 2
+set orthographic 3
+set orthographic 4
+set orthographic 5
+set orthographic 127
+set orthographic 255
+set orthographic 2147483647
+set particles -2147483648
+set particles -3
+set particles -1
+set particles 0
+set particles 1
+set particles 2
+set particles 3
+set particles 4
+set particles 5
+set particles 127
+set particles 255
+set particles 2147483647
+set removeRoofs -2147483648
+set removeRoofs -3
+set removeRoofs -1
+set removeRoofs 0
+set removeRoofs 1
+set removeRoofs 2
+set removeRoofs 3
+set removeRoofs 4
+set removeRoofs 5
+set removeRoofs 127
+set removeRoofs 255
+set removeRoofs 2147483647
+set removeRoofs2 -2147483648
+set removeRoofs2 -3
+set removeRoofs2 -1
+set removeRoofs2 0
+set removeRoofs2 1
+set removeRoofs2 2
+set removeRoofs2 3
+set removeRoofs2 4
+set removeRoofs2 5
+set removeRoofs2 127
+set removeRoofs2 255
+set removeRoofs2 2147483647
+set screenSize -2147483648
+set screenSize -3
+set screenSize -1
+set screenSize 0
+set screenSize 1
+set screenSize 2
+set screenSize 3
+set screenSize 4
+set screenSize 5
+set screenSize 127
+set screenSize 255
+set screenSize 2147483647
+set skyboxes -2147483648
+set skyboxes -3
+set skyboxes -1
+set skyboxes 0
+set skyboxes 1
+set skyboxes 2
+set skyboxes 3
+set skyboxes 4
+set skyboxes 5
+set skyboxes 127
+set skyboxes 255
+set skyboxes 2147483647
+set characterShadows -2147483648
+set characterShadows -3
+set characterShadows -1
+set characterShadows 0
+set characterShadows 1
+set characterShadows 2
+set characterShadows 3
+set characterShadows 4
+set characterShadows 5
+set characterShadows 127
+set characterShadows 255
+set characterShadows 2147483647
+set textures -2147483648
+set textures -3
+set textures -1
+set textures 0
+set textures 1
+set textures 2
+set textures 3
+set textures 4
+set textures 5
+set textures 127
+set textures 255
+set textures 2147483647
+set toolkit -2147483648
+set toolkit -3
+set toolkit -1
+set toolkit 0
+set toolkit 1
+set toolkit 2
+set toolkit 3
+set toolkit 4
+set toolkit 5
+set toolkit 127
+set toolkit 255
+set toolkit 2147483647
+set displayMode -2147483648
+set displayMode -3
+set displayMode -1
+set displayMode 0
+set displayMode 1
+set displayMode 2
+set displayMode 3
+set displayMode 4
+set displayMode 5
+set displayMode 127
+set displayMode 255
+set displayMode 2147483647
+set waterDetail -2147483648
+set waterDetail -3
+set waterDetail -1
+set waterDetail 0
+set waterDetail 1
+set waterDetail 2
+set waterDetail 3
+set waterDetail 4
+set waterDetail 5
+set waterDetail 127
+set waterDetail 255
+set waterDetail 2147483647
+set windowMode -2147483648
+set windowMode -3
+set windowMode -1
+set windowMode 0
+set windowMode 1
+set windowMode 2
+set windowMode 3
+set windowMode 4
+set windowMode 5
+set windowMode 127
+set windowMode 255
+set windowMode 2147483647
+set maxScreenSize2 -2147483648
+set maxScreenSize2 -3
+set maxScreenSize2 -1
+set maxScreenSize2 0
+set maxScreenSize2 1
+set maxScreenSize2 2
+set maxScreenSize2 3
+set maxScreenSize2 4
+set maxScreenSize2 5
+set maxScreenSize2 127
+set maxScreenSize2 255
+set maxScreenSize2 2147483647
+set unused4 -2147483648
+set unused4 -3
+set unused4 -1
+set unused4 0
+set unused4 1
+set unused4 2
+set unused4 3
+set unused4 4
+set unused4 5
+set unused4 127
+set unused4 255
+set unused4 2147483647
+set unused1 -2147483648
+set unused1 -3
+set unused1 -1
+set unused1 0
+set unused1 1
+set unused1 2
+set unused1 3
+set unused1 4
+set unused1 5
+set unused1 127
+set unused1 255
+set unused1 2147483647
+set unused2 -2147483648
+set unused2 -3
+set unused2 -1
+set unused2 0
+set unused2 1
+set unused2 2
+set unused2 3
+set unused2 4
+set unused2 5
+set unused2 127
+set unused2 255
+set unused2 2147483647
+set unused3 -2147483648
+set unused3 -3
+set unused3 -1
+set unused3 0
+set unused3 1
+set unused3 2
+set unused3 3
+set unused3 4
+set unused3 5
+set unused3 127
+set unused3 255
+set unused3 2147483647
+set unused5 -2147483648
+set unused5 -3
+set unused5 -1
+set unused5 0
+set unused5 1
+set unused5 2
+set unused5 3
+set unused5 4
+set unused5 5
+set unused5 127
+set unused5 255
+set unused5 2147483647
+set unused6 -2147483648
+set unused6 -3
+set unused6 -1
+set unused6 0
+set unused6 1
+set unused6 2
+set unused6 3
+set unused6 4
+set unused6 5
+set unused6 127
+set unused6 255
+set unused6 2147483647
+set unused7 -2147483648
+set unused7 -3
+set unused7 -1
+set unused7 0
+set unused7 1
+set unused7 2
+set unused7 3
+set unused7 4
+set unused7 5
+set unused7 127
+set unused7 255
+set unused7 2147483647
+set unused8 -2147483648
+set unused8 -3
+set unused8 -1
+set unused8 0
+set unused8 1
+set unused8 2
+set unused8 3
+set unused8 4
+set unused8 5
+set unused8 127
+set unused8 255
+set unused8 2147483647
+set unused9 -2147483648
+set unused9 -3
+set unused9 -1
+set unused9 0
+set unused9 1
+set unused9 2
+set unused9 3
+set unused9 4
+set unused9 5
+set unused9 127
+set unused9 255
+set unused9 2147483647
+set unused10 -2147483648
+set unused10 -3
+set unused10 -1
+set unused10 0
+set unused10 1
+set unused10 2
+set unused10 3
+set unused10 4
+set unused10 5
+set unused10 127
+set unused10 255
+set unused10 2147483647
+set unused11 -2147483648
+set unused11 -3
+set unused11 -1
+set unused11 0
+set unused11 1
+set unused11 2
+set unused11 3
+set unused11 4
+set unused11 5
+set unused11 127
+set unused11 255
+set unused11 2147483647
+set unused12 -2147483648
+set unused12 -3
+set unused12 -1
+set unused12 0
+set unused12 1
+set unused12 2
+set unused12 3
+set unused12 4
+set unused12 5
+set unused12 127
+set unused12 255
+set unused12 2147483647
+set customCursors -2147483648
+set customCursors -3
+set customCursors -1
+set customCursors 0
+set customCursors 1
+set customCursors 2
+set customCursors 3
+set customCursors 4
+set customCursors 5
+set customCursors 127
+set customCursors 255
+set customCursors 2147483647
+set preset -2147483648
+set preset -3
+set preset -1
+set preset 0
+set preset 1
+set preset 2
+set preset 3
+set preset 4
+set preset 5
+set preset 127
+set preset 255
+set preset 2147483647
+set cpuUsage -2147483648
+set cpuUsage -3
+set cpuUsage -1
+set cpuUsage 0
+set cpuUsage 1
+set cpuUsage 2
+set cpuUsage 3
+set cpuUsage 4
+set cpuUsage 5
+set cpuUsage 127
+set cpuUsage 255
+set cpuUsage 2147483647
+set loadingScreen -2147483648
+set loadingScreen -3
+set loadingScreen -1
+set loadingScreen 0
+set loadingScreen 1
+set loadingScreen 2
+set loadingScreen 3
+set loadingScreen 4
+set loadingScreen 5
+set loadingScreen 127
+set loadingScreen 255
+set loadingScreen 2147483647
+set safeMode -2147483648
+set safeMode -3
+set safeMode -1
+set safeMode 0
+set safeMode 1
+set safeMode 2
+set safeMode 3
+set safeMode 4
+set safeMode 5
+set safeMode 127
+set safeMode 255
+set safeMode 2147483647
+set unknown7 -2147483648
+set unknown7 -3
+set unknown7 -1
+set unknown7 0
+set unknown7 1
+set unknown7 2
+set unknown7 3
+set unknown7 4
+set unknown7 5
+set unknown7 127
+set unknown7 255
+set unknown7 2147483647
+set unused13 -2147483648
+set unused13 -3
+set unused13 -1
+set unused13 0
+set unused13 1
+set unused13 2
+set unused13 3
+set unused13 4
+set unused13 5
+set unused13 127
+set unused13 255
+set unused13 2147483647
+set soundVolume -2147483648
+set soundVolume -3
+set soundVolume -1
+set soundVolume 0
+set soundVolume 1
+set soundVolume 2
+set soundVolume 3
+set soundVolume 4
+set soundVolume 5
+set soundVolume 127
+set soundVolume 255
+set soundVolume 2147483647
+set backgroundSoundVolume -2147483648
+set backgroundSoundVolume -3
+set backgroundSoundVolume -1
+set backgroundSoundVolume 0
+set backgroundSoundVolume 1
+set backgroundSoundVolume 2
+set backgroundSoundVolume 3
+set backgroundSoundVolume 4
+set backgroundSoundVolume 5
+set backgroundSoundVolume 127
+set backgroundSoundVolume 255
+set backgroundSoundVolume 2147483647
+set speechVolume -2147483648
+set speechVolume -3
+set speechVolume -1
+set speechVolume 0
+set speechVolume 1
+set speechVolume 2
+set speechVolume 3
+set speechVolume 4
+set speechVolume 5
+set speechVolume 127
+set speechVolume 255
+set speechVolume 2147483647
+set unknownVolume1 -2147483648
+set unknownVolume1 -3
+set unknownVolume1 -1
+set unknownVolume1 0
+set unknownVolume1 1
+set unknownVolume1 2
+set unknownVolume1 3
+set unknownVolume1 4
+set unknownVolume1 5
+set unknownVolume1 127
+set unknownVolume1 255
+set unknownVolume1 2147483647
+set unknownVolume2 -2147483648
+set unknownVolume2 -3
+set unknownVolume2 -1
+set unknownVolume2 0
+set unknownVolume2 1
+set unknownVolume2 2
+set unknownVolume2 3
+set unknownVolume2 4
+set unknownVolume2 5
+set unknownVolume2 127
+set unknownVolume2 255
+set unknownVolume2 2147483647
+set stereo -2147483648
+set stereo -3
+set stereo -1
+set stereo 0
+set stereo 1
+set stereo 2
+set stereo 3
+set stereo 4
+set stereo 5
+set stereo 127
+set stereo 255
+set stereo 2147483647
+raw animDetail -2147483648
+clamp
+raw animDetail 2147483647
+clamp
+raw antiAliasing -2147483648
+clamp
+raw antiAliasing 2147483647
+clamp
+raw antiAliasing2 -2147483648
+clamp
+raw antiAliasing2 2147483647
+clamp
+raw unused -2147483648
+clamp
+raw unused 2147483647
+clamp
+raw bloom -2147483648
+clamp
+raw bloom 2147483647
+clamp
+raw brightness -2147483648
+clamp
+raw brightness 2147483647
+clamp
+raw buildArea -2147483648
+clamp
+raw buildArea 2147483647
+clamp
+raw consoleKeyPress -2147483648
+clamp
+raw consoleKeyPress 2147483647
+clamp
+raw drawDistance -2147483648
+clamp
+raw drawDistance 2147483647
+clamp
+raw flickeringEffects -2147483648
+clamp
+raw flickeringEffects 2147483647
+clamp
+raw fog -2147483648
+clamp
+raw fog 2147483647
+clamp
+raw groundBlending -2147483648
+clamp
+raw groundBlending 2147483647
+clamp
+raw groundDecoration -2147483648
+clamp
+raw groundDecoration 2147483647
+clamp
+raw idleAnimations -2147483648
+clamp
+raw idleAnimations 2147483647
+clamp
+raw lightingDetail -2147483648
+clamp
+raw lightingDetail 2147483647
+clamp
+raw sceneryShadows -2147483648
+clamp
+raw sceneryShadows 2147483647
+clamp
+raw shadowQuality -2147483648
+clamp
+raw shadowQuality 2147483647
+clamp
+raw orthographic -2147483648
+clamp
+raw orthographic 2147483647
+clamp
+raw particles -2147483648
+clamp
+raw particles 2147483647
+clamp
+raw removeRoofs -2147483648
+clamp
+raw removeRoofs 2147483647
+clamp
+raw removeRoofs2 -2147483648
+clamp
+raw removeRoofs2 2147483647
+clamp
+raw screenSize -2147483648
+clamp
+raw screenSize 2147483647
+clamp
+raw skyboxes -2147483648
+clamp
+raw skyboxes 2147483647
+clamp
+raw characterShadows -2147483648
+clamp
+raw characterShadows 2147483647
+clamp
+raw textures -2147483648
+clamp
+raw textures 2147483647
+clamp
+raw toolkit -2147483648
+clamp
+raw toolkit 2147483647
+clamp
+raw displayMode -2147483648
+clamp
+raw displayMode 2147483647
+clamp
+raw waterDetail -2147483648
+clamp
+raw waterDetail 2147483647
+clamp
+raw windowMode -2147483648
+clamp
+raw windowMode 2147483647
+clamp
+raw maxScreenSize2 -2147483648
+clamp
+raw maxScreenSize2 2147483647
+clamp
+raw unused4 -2147483648
+clamp
+raw unused4 2147483647
+clamp
+raw unused1 -2147483648
+clamp
+raw unused1 2147483647
+clamp
+raw unused2 -2147483648
+clamp
+raw unused2 2147483647
+clamp
+raw unused3 -2147483648
+clamp
+raw unused3 2147483647
+clamp
+raw unused5 -2147483648
+clamp
+raw unused5 2147483647
+clamp
+raw unused6 -2147483648
+clamp
+raw unused6 2147483647
+clamp
+raw unused7 -2147483648
+clamp
+raw unused7 2147483647
+clamp
+raw unused8 -2147483648
+clamp
+raw unused8 2147483647
+clamp
+raw unused9 -2147483648
+clamp
+raw unused9 2147483647
+clamp
+raw unused10 -2147483648
+clamp
+raw unused10 2147483647
+clamp
+raw unused11 -2147483648
+clamp
+raw unused11 2147483647
+clamp
+raw unused12 -2147483648
+clamp
+raw unused12 2147483647
+clamp
+raw customCursors -2147483648
+clamp
+raw customCursors 2147483647
+clamp
+raw preset -2147483648
+clamp
+raw preset 2147483647
+clamp
+raw cpuUsage -2147483648
+clamp
+raw cpuUsage 2147483647
+clamp
+raw loadingScreen -2147483648
+clamp
+raw loadingScreen 2147483647
+clamp
+raw safeMode -2147483648
+clamp
+raw safeMode 2147483647
+clamp
+raw unknown7 -2147483648
+clamp
+raw unknown7 2147483647
+clamp
+raw unused13 -2147483648
+clamp
+raw unused13 2147483647
+clamp
+raw soundVolume -2147483648
+clamp
+raw soundVolume 2147483647
+clamp
+raw backgroundSoundVolume -2147483648
+clamp
+raw backgroundSoundVolume 2147483647
+clamp
+raw speechVolume -2147483648
+clamp
+raw speechVolume 2147483647
+clamp
+raw unknownVolume1 -2147483648
+clamp
+raw unknownVolume1 2147483647
+clamp
+raw unknownVolume2 -2147483648
+clamp
+raw unknownVolume2 2147483647
+clamp
+raw stereo -2147483648
+clamp
+raw stereo 2147483647
+clamp
+flag displayMode 0
+raw displayMode 0
+clamp
+flag displayMode 1
+flag toolkit 0
+raw toolkit 0
+clamp
+flag toolkit 1
+decode 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 00ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+decode 002525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525
+decode 010000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 01ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+decode 012525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525
+decode 020000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 02ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+decode 022525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525
+decode 030000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 03ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+decode 032525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525
+decode 040000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 04ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+decode 042525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525
+decode 050000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 05ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+decode 052525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525
+decode 060000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 06ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+decode 062525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525
+decode 070000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 07ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+decode 072525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525
+decode 080000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 08ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+decode 082525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525
+decode 090000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 09ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+decode 092525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525
+decode 0a0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 0affffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+decode 0a2525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525
+decode 0b0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 0bffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+decode 0b2525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525
+decode 0c0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 0cffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+decode 0c2525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525
+decode 0d0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 0dffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+decode 0d2525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525
+decode 0e0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 0effffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+decode 0e2525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525
+decode 0f0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 0fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+decode 0f2525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525
+decode 100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 10ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+decode 102525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525
+decode 110000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 11ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+decode 112525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525
+decode 120000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 12ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+decode 122525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525
+decode 130000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 13ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+decode 132525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525
+decode 140000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 14ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+decode 142525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525
+decode 150000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 15ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+decode 152525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525
+decode 160000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 16ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+decode 162525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525
+decode 170000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 17ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+decode 172525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525
+decode 180000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 18ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+decode 182525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525
+decode 190000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 19ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+decode 192525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525
+decode 1a0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 1affffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+decode 1a2525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525
+decode 1b0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 1bffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+decode 1b2525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525
+decode 1c0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 1cffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+decode 1c2525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525
+decode 1d0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 1dffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+decode 1d2525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525
+decode 1e0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 1effffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+decode 1e2525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525
+decode 1f0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 1fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+decode 1f2525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525
+decode 200000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 20ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+decode 202525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525
+decode 210000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 21ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+decode 212525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525
+decode 220000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 22ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+decode 222525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525
+decode 230000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 23ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+decode 232525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525
+decode 240000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 24ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+decode 242525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525
+decode 250000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 25ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+decode 252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525
+decode 260000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 26ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+decode 262525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525
+decode 270000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 27ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+decode 272525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525252525
+decode -
+decode 26
+decode 2600
+decode 260000
+decode 26000000
+decode 2600000000
+decode 260000000000
+decode 26000000000000
+decode 2600000000000000
+decode 260000000000000000
+decode 26000000000000000000
+decode 2600000000000000000000
+decode 260000000000000000000000
+decode 26000000000000000000000000
+decode 2600000000000000000000000000
+decode 260000000000000000000000000000
+decode 26000000000000000000000000000000
+decode 2600000000000000000000000000000000
+decode 260000000000000000000000000000000000
+decode 26000000000000000000000000000000000000
+decode 2600000000000000000000000000000000000000
+decode 260000000000000000000000000000000000000000
+decode 26000000000000000000000000000000000000000000
+decode 2600000000000000000000000000000000000000000000
+decode 260000000000000000000000000000000000000000000000
+decode 26000000000000000000000000000000000000000000000000
+decode 2600000000000000000000000000000000000000000000000000
+decode 260000000000000000000000000000000000000000000000000000
+decode 26000000000000000000000000000000000000000000000000000000
+decode 2600000000000000000000000000000000000000000000000000000000
+decode 260000000000000000000000000000000000000000000000000000000000
+decode 26000000000000000000000000000000000000000000000000000000000000
+decode 2600000000000000000000000000000000000000000000000000000000000000
+decode 260000000000000000000000000000000000000000000000000000000000000000
+decode 26000000000000000000000000000000000000000000000000000000000000000000
+decode 2600000000000000000000000000000000000000000000000000000000000000000000
+decode 260000000000000000000000000000000000000000000000000000000000000000000000
+decode 26000000000000000000000000000000000000000000000000000000000000000000000000
+decode 2600000000000000000000000000000000000000000000000000000000000000000000000000
+decode 260000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 26000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 2600000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 260000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 26000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 2600000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 260000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 26000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 2600000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 260000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 26000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 2600000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 260000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 26000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 2600000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 260000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 26000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 2600000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 260000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 26000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+decode 2600000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+reset 0 1
+reset 1 1

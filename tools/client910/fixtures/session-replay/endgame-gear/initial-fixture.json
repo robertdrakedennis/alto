@@ -1,0 +1,157 @@
+{
+  "accountLevels": 99,
+  "accountSkills": [
+    {
+      "level": 99,
+      "xp": 13034431
+    },
+    {
+      "level": 99,
+      "xp": 13034431
+    },
+    {
+      "level": 99,
+      "xp": 13034431
+    },
+    {
+      "level": 99,
+      "xp": 13034431
+    },
+    {
+      "level": 99,
+      "xp": 13034431
+    },
+    {
+      "level": 99,
+      "xp": 13034431
+    },
+    {
+      "level": 99,
+      "xp": 13034431
+    },
+    {
+      "level": 99,
+      "xp": 13034431
+    },
+    {
+      "level": 99,
+      "xp": 13034431
+    },
+    {
+      "level": 99,
+      "xp": 13034431
+    },
+    {
+      "level": 99,
+      "xp": 13034431
+    },
+    {
+      "level": 99,
+      "xp": 13034431
+    },
+    {
+      "level": 99,
+      "xp": 13034431
+    },
+    {
+      "level": 99,
+      "xp": 13034431
+    },
+    {
+      "level": 99,
+      "xp": 13034431
+    },
+    {
+      "level": 99,
+      "xp": 13034431
+    },
+    {
+      "level": 99,
+      "xp": 13034431
+    },
+    {
+      "level": 99,
+      "xp": 13034431
+    },
+    {
+      "level": 99,
+      "xp": 13034431
+    },
+    {
+      "level": 99,
+      "xp": 13034431
+    },
+    {
+      "level": 99,
+      "xp": 13034431
+    },
+    {
+      "level": 99,
+      "xp": 13034431
+    },
+    {
+      "level": 99,
+      "xp": 13034431
+    },
+    {
+      "level": 99,
+      "xp": 13034431
+    },
+    {
+      "level": 99,
+      "xp": 13034431
+    },
+    {
+      "level": 99,
+      "xp": 13034431
+    },
+    {
+      "level": 99,
+      "xp": 36073511
+    }
+  ],
+  "fixtureOnly": true,
+  "initialAccountSha256": "bb3abaa4e48bc65251faa9da9c3476e590d85eaca98b045d832b97e22e927e56",
+  "seedSourceSha256": "e7134755c82424495e87b9f4b026bf67a223058e9c2c07e0acb6053e98053365",
+  "trainingTarget": {
+    "at": {
+      "level": 0,
+      "packed": 52841625,
+      "x": 3225,
+      "z": 3225
+    },
+    "nid": 1,
+    "npc": 8637,
+    "profile": {
+      "accuracy": 120,
+      "aggressive": false,
+      "anims": null,
+      "armour": 0,
+      "attackLevel": 2,
+      "attackSpeed": 4,
+      "deathTicks": 3,
+      "defenceLevel": 0,
+      "dropTable": null,
+      "experience": 0,
+      "hitpoints": 100000,
+      "level": 2,
+      "magicAffinity": 80,
+      "maxHit": 0,
+      "meleeAffinity": 70,
+      "name": "Goblin",
+      "npc": 8637,
+      "rangedAffinity": 60,
+      "respawnTicks": 30,
+      "source": {
+        "accuracy": "cache",
+        "armour": "cache",
+        "attackSpeed": "cache",
+        "hitpoints": "placeholder",
+        "level": "cache",
+        "maxHit": "cache"
+      },
+      "weakness": "air",
+      "weaknessAffinity": 90
+    }
+  }
+}

@@ -1,0 +1,28 @@
+# Lane HYG-DATA (2026-09-30): fn-hash differences that are real changes. Fixtures of real cache
+# content are no longer committed: scripts and decode-golden entry bytes are read from the local pack at
+# test time and recordings are stored as digests. Only test code changed; production code is untouched.
+# Evidence: native910 tests (cs2_traces, decode_golden, recorded_differential, timer_acceptance), client910
+# ui_opkey_trace, gate tests/replay, and a mutated-digest run that failed naming the first divergent step.
+fn blocks
+fn committed_scripts
+fn compare
+fn configs_match_recorded_decode
+fn interfaces_match_recorded_decode
+fn scripts_match_recorded_decode
+fn sprites_match_recorded_decode
+fn edited_retail_timer_roundtrips_repacks_and_matches_the_recording
+fn real_cache_scripts_match_recorded_traces
+fn script_1258_matches_recorded_traces_for_both_return_depths
+fn if_setopkey_scripts_match_the_recording_through_the_client_host
+fn script
+struct Block
+# Removed: the copy-equals-pack check has nothing left to compare.
+fn committed_scripts_are_the_cache_groups
+# New helpers.
+fn Packs::cache_bytes
+fn first_trace_divergence
+fn fnv64
+fn line_digest
+fn lines_digest
+impl Packs
+struct Packs

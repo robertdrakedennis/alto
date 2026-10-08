@@ -1,0 +1,460 @@
+{
+  "client_md5": "290cb3489d088d145741f1734f53b0fc",
+  "kernels": {
+    "installer": "5efe08e3763b65b422ef235b3e02bfdc29d295d06e6fab6f878567d8a5c2325f",
+    "trigger": "a0fb098a0a2ecfb6ff42cf9431305ea0233329efbc384e4580605decd00bc9c3"
+  },
+  "scope": "Original transmit installer and trigger-list setter run on synthetic preallocated retained state, stopping at the callback builder boundary. Fixed-string construction is supplied. Records only descriptor preprocessing, input consumption and persistent triggers, not argument parsing or map installation. Synthetic source wire inputs are independently encoded as Windows-1252 for the existing source-flow check.",
+  "cases": [
+    {
+      "name": "positive",
+      "input": {
+        "descriptor": "iiiiiY",
+        "count": 1,
+        "prior": [],
+        "new": [
+          3814
+        ],
+        "wire": [
+          105,
+          105,
+          105,
+          105,
+          105,
+          89
+        ]
+      },
+      "result": {
+        "descriptor": [
+          105,
+          105,
+          105,
+          105,
+          105
+        ],
+        "ints": [
+          91
+        ],
+        "triggers": [
+          3814
+        ],
+        "objects": 0
+      }
+    },
+    {
+      "name": "replace",
+      "input": {
+        "descriptor": "iY",
+        "count": 2,
+        "prior": [
+          3814
+        ],
+        "new": [
+          9,
+          3814
+        ],
+        "wire": [
+          105,
+          89
+        ]
+      },
+      "result": {
+        "descriptor": [
+          105
+        ],
+        "ints": [
+          91
+        ],
+        "triggers": [
+          9,
+          3814
+        ],
+        "objects": 0
+      }
+    },
+    {
+      "name": "zero_empty",
+      "input": {
+        "descriptor": "iY",
+        "count": 0,
+        "prior": [],
+        "new": [],
+        "wire": [
+          105,
+          89
+        ]
+      },
+      "result": {
+        "descriptor": [
+          105,
+          89
+        ],
+        "ints": [
+          91
+        ],
+        "triggers": [],
+        "objects": 0
+      }
+    },
+    {
+      "name": "negative_empty",
+      "input": {
+        "descriptor": "iY",
+        "count": -1,
+        "prior": [],
+        "new": [],
+        "wire": [
+          105,
+          89
+        ]
+      },
+      "result": {
+        "descriptor": [
+          105,
+          89
+        ],
+        "ints": [
+          91
+        ],
+        "triggers": [],
+        "objects": 0
+      }
+    },
+    {
+      "name": "zero_retained",
+      "input": {
+        "descriptor": "iY",
+        "count": 0,
+        "prior": [
+          3814
+        ],
+        "new": [],
+        "wire": [
+          105,
+          89
+        ]
+      },
+      "result": {
+        "descriptor": [
+          105
+        ],
+        "ints": [
+          91
+        ],
+        "triggers": [
+          3814
+        ],
+        "objects": 0
+      }
+    },
+    {
+      "name": "negative_retained",
+      "input": {
+        "descriptor": "iY",
+        "count": -1,
+        "prior": [
+          3814
+        ],
+        "new": [],
+        "wire": [
+          105,
+          89
+        ]
+      },
+      "result": {
+        "descriptor": [
+          105
+        ],
+        "ints": [
+          91
+        ],
+        "triggers": [
+          3814
+        ],
+        "objects": 0
+      }
+    },
+    {
+      "name": "no_suffix_empty",
+      "input": {
+        "descriptor": "iii",
+        "count": null,
+        "prior": [],
+        "new": [],
+        "wire": [
+          105,
+          105,
+          105
+        ]
+      },
+      "result": {
+        "descriptor": [
+          105,
+          105,
+          105
+        ],
+        "ints": [
+          91
+        ],
+        "triggers": [],
+        "objects": 0
+      }
+    },
+    {
+      "name": "no_suffix_retained",
+      "input": {
+        "descriptor": "iii",
+        "count": null,
+        "prior": [
+          3814
+        ],
+        "new": [],
+        "wire": [
+          105,
+          105,
+          105
+        ]
+      },
+      "result": {
+        "descriptor": [
+          105,
+          105
+        ],
+        "ints": [
+          91
+        ],
+        "triggers": [
+          3814
+        ],
+        "objects": 0
+      }
+    },
+    {
+      "name": "empty_retained",
+      "input": {
+        "descriptor": "",
+        "count": null,
+        "prior": [
+          3814
+        ],
+        "new": [],
+        "wire": []
+      },
+      "result": {
+        "descriptor": [],
+        "ints": [
+          91
+        ],
+        "triggers": [
+          3814
+        ],
+        "objects": 0
+      }
+    },
+    {
+      "name": "utf8_suffix",
+      "input": {
+        "descriptor": "\u00e9iY",
+        "count": 1,
+        "prior": [],
+        "new": [
+          3814
+        ],
+        "wire": [
+          233,
+          105,
+          89
+        ]
+      },
+      "result": {
+        "descriptor": [
+          195,
+          169,
+          105
+        ],
+        "ints": [
+          91
+        ],
+        "triggers": [
+          3814
+        ],
+        "objects": 0
+      }
+    },
+    {
+      "name": "utf8_retained",
+      "input": {
+        "descriptor": "\u00e9",
+        "count": null,
+        "prior": [
+          3814
+        ],
+        "new": [],
+        "wire": [
+          233
+        ]
+      },
+      "result": {
+        "descriptor": [
+          195
+        ],
+        "ints": [
+          91
+        ],
+        "triggers": [
+          3814
+        ],
+        "objects": 0
+      }
+    }
+  ],
+  "child_selection": {
+    "client_md5": "290cb3489d088d145741f1734f53b0fc",
+    "kernel_sha256": "f254f9356117709bfde4d09a6234875f576f6de16fd82a093b1ddd58ef9fc88c",
+    "scope": "Original active child selection handler runs on synthetic stack and bank state. Retained component/interface lookup is supplied at its service boundary. Records stack traffic, range prefilter, selector bank and forwarded lookup arguments; does not seal lookup tree traversal or reference mutation.",
+    "cases": [
+      {
+        "name": "primary",
+        "input": {
+          "component": 65537,
+          "child": 7,
+          "selector": 0,
+          "found": true
+        },
+        "result": {
+          "ints": [
+            91,
+            1
+          ],
+          "calls": [
+            {
+              "bank": "primary",
+              "component": 65537,
+              "child": 7
+            }
+          ]
+        }
+      },
+      {
+        "name": "secondary",
+        "input": {
+          "component": 65537,
+          "child": 7,
+          "selector": 1,
+          "found": true
+        },
+        "result": {
+          "ints": [
+            91,
+            1
+          ],
+          "calls": [
+            {
+              "bank": "secondary",
+              "component": 65537,
+              "child": 7
+            }
+          ]
+        }
+      },
+      {
+        "name": "nonboolean_selector",
+        "input": {
+          "component": 65537,
+          "child": 7,
+          "selector": 2,
+          "found": true
+        },
+        "result": {
+          "ints": [
+            91,
+            1
+          ],
+          "calls": [
+            {
+              "bank": "secondary",
+              "component": 65537,
+              "child": 7
+            }
+          ]
+        }
+      },
+      {
+        "name": "absent",
+        "input": {
+          "component": 65537,
+          "child": 7,
+          "selector": 0,
+          "found": false
+        },
+        "result": {
+          "ints": [
+            91,
+            0
+          ],
+          "calls": [
+            {
+              "bank": "primary",
+              "component": 65537,
+              "child": 7
+            }
+          ]
+        }
+      },
+      {
+        "name": "last_slot",
+        "input": {
+          "component": 65537,
+          "child": 64255,
+          "selector": 0,
+          "found": true
+        },
+        "result": {
+          "ints": [
+            91,
+            1
+          ],
+          "calls": [
+            {
+              "bank": "primary",
+              "component": 65537,
+              "child": 64255
+            }
+          ]
+        }
+      },
+      {
+        "name": "reserved",
+        "input": {
+          "component": 65537,
+          "child": 64256,
+          "selector": 0,
+          "found": true
+        },
+        "result": {
+          "ints": [
+            91,
+            0
+          ],
+          "calls": []
+        }
+      },
+      {
+        "name": "negative_slot",
+        "input": {
+          "component": 65537,
+          "child": -1,
+          "selector": 0,
+          "found": true
+        },
+        "result": {
+          "ints": [
+            91,
+            0
+          ],
+          "calls": []
+        }
+      }
+    ]
+  }
+}

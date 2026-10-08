@@ -1,0 +1,50 @@
+# cargo-nextest settings for the tools/ workspace. The merge gate
+# (tools/refactor/gate.sh; tools/refactor/README.md, "Gate") runs
+# `cargo nextest run --profile gate`, and `gate.sh --full` runs `--profile
+# full`. Plain `cargo test` and `cargo nextest run` run the same tests.
+
+[profile.default]
+fail-fast = false
+slow-timeout = { period = "60s" }
+
+[profile.gate]
+fail-fast = false
+slow-timeout = { period = "60s" }
+# One retry absorbs a test process the OS kills under memory pressure while
+# several lanes gate at once; nextest still reports it as FLAKY.
+retries = 1
+
+[profile.gate.junit]
+# tools/target/nextest/gate/junit.xml (nextest's store is relative to the
+# workspace root, not CARGO_TARGET_DIR): the replay step reads it.
+path = "junit.xml"
+
+[profile.full]
+fail-fast = false
+slow-timeout = { period = "60s" }
+# One retry absorbs a test process the OS kills under memory pressure while
+# several lanes gate at once; nextest still reports it as FLAKY.
+retries = 1
+
+[profile.full.junit]
+path = "junit.xml"
+
+# Replay tests that run their replays on several threads
+# (client910 `session_replay::ReplayPlan`): one test slot per replay thread,
+# so a run never holds more replays (about 1.2 GB each) than it has slots.
+# Overrides of the default profile apply to every profile.
+[[profile.default.overrides]]
+filter = 'package(client910) and test(=app::session_replay::renderer_choice_is_observationally_inert)'
+threads-required = 4
+
+[[profile.default.overrides]]
+filter = 'package(client910) and test(/^app::session_replay::present_rate_is_observationally_inert/)'
+threads-required = 3
+
+[[profile.default.overrides]]
+filter = 'package(client910) and test(/^app::session_replay::client_core_replays_match_the_frozen_loopback_harness/)'
+threads-required = 2
+
+[[profile.default.overrides]]
+filter = 'package(client910) and test(=app::session_replay::two_replays_on_the_injected_clock_have_identical_cycle_digests)'
+threads-required = 2

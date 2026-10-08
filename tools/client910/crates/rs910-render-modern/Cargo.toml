@@ -1,0 +1,49 @@
+[package]
+name = "rs910-render-modern"
+version = "0.1.0"
+edition = "2021"
+publish = false
+description = "The 910 client's default modern scene renderer (`--renderer modern`): one renderer, by subsystem (models, lighting, shadows, atmosphere, post, water, terrain, sprites, far scene), with quality settings (ModernSettings), over the renderer-neutral scene snapshot. Not bound by the pixel invariant; the reference backends stay the reference. Design: docs/renderer/modern-renderer.md."
+
+# Allowed dependencies (tools/refactor/layers.txt `[crates]`; NXT renderer
+# plan M1): rs910-core, -model, -scene, -toolkit, -gpu-device (and what they
+# depend on: rs910-js5 for `cache::Pack`, rs910-config for materials and
+# textures). It does not depend on rs910-render-gpu: the shell composes the
+# faithful UI around its scene (`Renderer::frame_composite`). wgpu is fenced
+# to this crate, rs910-render-gpu and rs910-gpu-device. Doc code blocks are
+# not compiled, like client910's (`doctest = false`).
+[lib]
+doctest = false
+
+[dependencies]
+rs910-core = { path = "../rs910-core" }
+rs910-js5 = { path = "../rs910-js5" }
+rs910-config = { path = "../rs910-config" }
+rs910-model = { path = "../rs910-model" }
+rs910-scene = { path = "../rs910-scene" }
+# The profiling seam (`performance_metric::RendererProbe`): the benchmark request.
+rs910-toolkit = { path = "../rs910-toolkit" }
+rs910-gpu-device = { path = "../rs910-gpu-device" }
+# Lane Q-FAR1: the far scene's CPU half (levels, ring, quiet map reads).
+rs910-far-scene = { path = "../rs910-far-scene" }
+anyhow = "1.0"
+bytemuck = { version = "1", features = ["derive"] }
+glam = "0.27"
+log = "0.4"
+wgpu = "30"
+
+[dev-dependencies]
+rs910-symbols = { path = "../rs910-symbols" }
+# The shared test helpers (`require_pack`, `require_gpu`).
+rs910-core = { path = "../rs910-core", features = ["test-hooks"] }
+rs910-js5 = { path = "../rs910-js5", features = ["test-hooks"] }
+rs910-gpu-device = { path = "../rs910-gpu-device", features = ["test-hooks"] }
+pollster = "0.3"
+
+[features]
+# Every workspace crate has `no-pack` (tools/README.md); client910's
+# `no-pack` forwards here. The pack tests are ignored under it.
+no-pack = ["rs910-far-scene/no-pack"]
+
+[lints]
+workspace = true

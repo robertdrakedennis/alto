@@ -1,0 +1,5 @@
+# Content symbols of this revision: dbrow. Columns: name, id, fingerprint (tab separated), sorted by name.
+# Written by `npm --prefix server run sym -- add`; never edit by hand. `sym check` resolves every line against
+# the cache and `sym gen` writes the bindings (docs/symbols.md).
+barrows_loot_heading	1577	table=47
+coin_wallet_button	1015	table=28

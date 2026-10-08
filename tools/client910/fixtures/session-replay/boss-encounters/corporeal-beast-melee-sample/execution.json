@@ -1,0 +1,116 @@
+{
+  "allOriginalChildrenWaited": true,
+  "captureOwnerPassed": true,
+  "launchesSpent": 2,
+  "owningReplayPassed": false,
+  "publications": {
+    "npc_info": 244,
+    "orderedPublicationLineageSha256": "ae8903e90bd0b7e42c0cae04a1669bd1a26d02314023ff2bcc79e80a28d7ffd1",
+    "player_info": 244
+  },
+  "rendered": false,
+  "scope": "bounded public native melee sample with exit/rejoin",
+  "sourceBindings": {
+    "adoptionManifest": {
+      "path": "/Users/robert/.codex/worktrees/legacy-corporeal-beast/alto/.cache/corp-execution-20261007-v2/actual-adoption-native3.json",
+      "sha256": "e942286ee80e55ebb03366c6a266f408abdd88e6ae912a0aee78e55c8759e25f"
+    },
+    "baseDriver": {
+      "path": "/Users/robert/.codex/worktrees/legacy-corporeal-beast/alto/tools/client910/fixtures/session-replay/boss-encounters/driver.py",
+      "sha256": "ddcf83c88bc4b1c758c9a67dd06d2959afc6ef9e4bd5647e4e38c8b1098cc0ab"
+    },
+    "binary": {
+      "path": "/Users/robert/projects/alto-target-corporeal-beast/debug/deps/client910-c15188a94426efa7",
+      "sha256": "0a02a6d1ae3fe43a6cdb132f90f97b5d8f740d0736832048dcd07bda78695fa8"
+    },
+    "binaryManifest": {
+      "path": "/Users/robert/projects/alto-target-corporeal-beast/proof/build1/binary-manifest.json",
+      "sha256": "d59244d8e2fe6bed0a0d7c2561ad3f5e7b85423c9b24720dfb4be6260da3d49f"
+    },
+    "broker": {
+      "path": "/Users/robert/.codex/worktrees/legacy-corporeal-beast/alto/tools/client910/fixtures/session-replay/god-wars/peer_broker.mjs",
+      "sha256": "e4d403a67745dbce9a0ec84522a98194d2fb48e6926d5c6851276212639a1568"
+    },
+    "contract": {
+      "path": "/Users/robert/.codex/worktrees/legacy-corporeal-beast/alto/tools/client910/fixtures/session-replay/corporeal-beast/contract.py",
+      "sha256": "3706003314b638e5e00b3d76ae08ddd961db27cae83928890c9f77c71baa4770"
+    },
+    "control": {
+      "path": "/Users/robert/.codex/worktrees/legacy-corporeal-beast/alto/tools/client910/scripts/control.py",
+      "sha256": "f48413b91db69b5c02d29257c70e66ec55e59f18f3d2f4d53a3ece80d63a045f"
+    },
+    "deviceEnvelope": {
+      "path": "/Users/robert/.codex/worktrees/legacy-corporeal-beast/alto/tools/client910/fixtures/session-replay/legacy-interface/session.rtr",
+      "sha256": "acb90c0c962ddec1b8c413af0c2df13e63b922ef71d4bfc1aa9412ff22c5a341"
+    },
+    "driver": {
+      "path": "/Users/robert/.codex/worktrees/legacy-corporeal-beast/alto/tools/client910/fixtures/session-replay/corporeal-beast/driver.py",
+      "sha256": "e58fc40d16ea9f21f8743c214ef48022e3c650726646b91794aa92bf45718cd6"
+    },
+    "foodObserver": {
+      "path": "/Users/robert/.codex/worktrees/legacy-corporeal-beast/alto/tools/client910/fixtures/session-replay/barrows/food-receipts.mjs",
+      "sha256": "bca606f0a95668a6e3936f561d3e6e56770ed1a0b65e64dd98896cfd6c999c9b"
+    },
+    "foodRules": {
+      "path": "/Users/robert/.codex/worktrees/legacy-corporeal-beast/alto/server/data/generated/food/foods.json",
+      "sha256": "24d0155aca0ff14a5fe426bd95f9aff4a34edf743dd8ac5dc10264936a042ae1"
+    },
+    "freeze": {
+      "path": "/Users/robert/.codex/worktrees/legacy-corporeal-beast/alto/tools/client910/fixtures/session-replay/corporeal-beast/freeze.py",
+      "sha256": "bedef162b07e035582748776e98230c54a8752616cbe60163e5e5e156d4738d2"
+    },
+    "loginCrypto": {
+      "path": "/Users/robert/.codex/worktrees/legacy-corporeal-beast/alto/server/src/lostcity/network/LoginCrypto.ts",
+      "sha256": "df172e5c3f2ecfffca689a7133c2f004b0c28ddb93fd175326a7638804288bb9"
+    },
+    "loginProvider": {
+      "path": "/Users/robert/.codex/worktrees/legacy-corporeal-beast/alto/tools/client910/fixtures/session-replay/god-wars/login_provider.mjs",
+      "sha256": "b8a96e1548141f19ca3b036d96c961018897c5f825ceda6c08dea3d9bf865b50"
+    },
+    "loginTestkit": {
+      "path": "/Users/robert/.codex/worktrees/legacy-corporeal-beast/alto/server/src/lostcity/network/SkillsE2E.testkit.ts",
+      "sha256": "39a797dec044580f1ee6f2282b9a339c10df072632f0abd3d0562c7704f68800"
+    },
+    "owner": {
+      "path": "/Users/robert/.codex/worktrees/legacy-corporeal-beast/alto/tools/client910/fixtures/session-replay/barrows/record.py",
+      "sha256": "4a6afc86520acbb2e71867cfc9d99726bea9d167804817ed1b9f43e275121350"
+    },
+    "peerAdapter": {
+      "path": "/Users/robert/.codex/worktrees/legacy-corporeal-beast/alto/tools/client910/fixtures/session-replay/god-wars/peer_adapter.mjs",
+      "sha256": "e37f3587ed18e6d53b89f1829d1bd29bc911aeb40e8fa0cefbfabd89c7f33d48"
+    },
+    "publications": {
+      "path": "/Users/robert/.codex/worktrees/legacy-corporeal-beast/alto/tools/client910/fixtures/session-replay/god-wars/publications.py",
+      "sha256": "768dd55f68d315aa4cbae4dbb3c0e4a13dea2cc541a4d891948a148b347bf889"
+    },
+    "record": {
+      "path": "/Users/robert/.codex/worktrees/legacy-corporeal-beast/alto/tools/client910/fixtures/session-replay/corporeal-beast/record.py",
+      "sha256": "0b959008d3f7422cbc5b24b1da767e422674d48ce27dca4d87134da04d331231"
+    },
+    "seed": {
+      "path": "/Users/robert/.codex/worktrees/legacy-corporeal-beast/alto/tools/client910/fixtures/session-replay/corporeal-beast/seed.mjs",
+      "sha256": "1f6bf4762d4b2e725a3800d3bcdaacd0a1fd5c97ce870c2419dca24362de65b5"
+    },
+    "server": {
+      "path": "/Users/robert/.codex/worktrees/legacy-corporeal-beast/alto/tools/client910/fixtures/session-replay/corporeal-beast/server.mjs",
+      "sha256": "2eefb5b1b5ade9732ee8638d0a9e06edbb670f78270d6bf5f0d6511a0f6187f0"
+    },
+    "sharedDriver": {
+      "path": "/Users/robert/.codex/worktrees/legacy-corporeal-beast/alto/tools/client910/fixtures/session-replay/barrows/driver.py",
+      "sha256": "d5377a3458af568e527852b9b87d3c529c09a168428dcd363a36c19e85d38508"
+    },
+    "socketTestkit": {
+      "path": "/Users/robert/.codex/worktrees/legacy-corporeal-beast/alto/server/src/lostcity/network/SocketE2E.testkit.ts",
+      "sha256": "55ffd1e43c77fd3c99fba6850688c4e6e5c10c9c88228b1e6d977a8effc4e4f8"
+    },
+    "wiredGuard": {
+      "path": "/Users/robert/.codex/worktrees/legacy-corporeal-beast/alto/ref/independence/wired-guard.sh",
+      "sha256": "aabce1f59b80a316f882d4afb8c30a1fd677740533c3f773a80ebcdef0ad37fd"
+    }
+  },
+  "sourceEpochSha256": "d615f15fb2cf9820b1e535851d85d4ce41d009d3ff0fc64db73b27d020a161be",
+  "status": "completed_ordinary_corp_melee_sample",
+  "wholeBytes": 1074771,
+  "wholeRecords": 18553,
+  "wholeSha256": "ca562529388294788462897f51770237378c593272ac4d68f011ecf3dded2ecf"
+}

@@ -1,0 +1,68 @@
+[package]
+name = "rs910-ui"
+version = "0.1.0"
+edition = "2021"
+publish = false
+description = "The 910 client's retained UI: interfaces and components, the CS2 host (ScriptRunner's commands over native910's VM), minimenu, loading screen, developer console, world map, preferences, social, audio routing and the UI's frame output for a toolkit. No wgpu, no winit."
+
+# Allowed dependencies (tools/refactor/layers.txt `[crates]`,
+# target-architecture.md §2.2): rs910-core, -protocol, -config, -game,
+# -model, -scene, -audio, -toolkit and native910 (and rs910-js5, which
+# rs910-config depends on, for `cache::Pack`). Externals: layers.txt
+# `[externals]`; wgpu and winit are fenced out (the native halves live in
+# client910 as `*_gpu`/`*_winit`). Doc code blocks are not compiled, like
+# client910's (`doctest = false`).
+[lib]
+doctest = false
+
+[dependencies]
+rs910-core = { path = "../rs910-core" }
+rs910-symbols = { path = "../rs910-symbols" }
+rs910-js5 = { path = "../rs910-js5" }
+rs910-protocol = { path = "../rs910-protocol" }
+rs910-config = { path = "../rs910-config" }
+rs910-game = { path = "../rs910-game" }
+rs910-model = { path = "../rs910-model" }
+rs910-scene = { path = "../rs910-scene" }
+rs910-audio = { path = "../rs910-audio" }
+rs910-toolkit = { path = "../rs910-toolkit" }
+native910 = { path = "../../../native910" }
+anyhow = "1.0"
+log = "0.4"
+# `winit::dpi`: ui_window's physical -> logical canvas size.
+dpi = "0.1"
+# ui_cam2 / world-map matrices.
+glam = "0.27"
+# `localtime_r` for ui_time's local calendar.
+libc = "0.2"
+# JPEG decoding of the loading-screen sprites.
+jpeg-decoder = { version = "0.3", default-features = false }
+# `test-hooks` only: the hook-execution capture client910's replays read
+# (`ui_runtime::Diagnostics::executions`).
+serde_json = { version = "1", optional = true }
+
+[dev-dependencies]
+# The shared test helpers and the lower crates' test seams the moved tests
+# call.
+rs910-core = { path = "../rs910-core", features = ["test-hooks"] }
+rs910-js5 = { path = "../rs910-js5", features = ["test-hooks"] }
+rs910-config = { path = "../rs910-config", features = ["test-hooks"] }
+rs910-model = { path = "../rs910-model", features = ["test-hooks"] }
+rs910-game = { path = "../rs910-game", features = ["test-hooks"] }
+rs910-scene = { path = "../rs910-scene", features = ["test-hooks"] }
+rs910-protocol = { path = "../rs910-protocol", features = ["test-hooks"] }
+rs910-audio = { path = "../rs910-audio", features = ["test-hooks"] }
+serde_json = "1"
+
+[features]
+# Every workspace crate has `no-pack` (tools/README.md); client910's
+# `no-pack` forwards here. The replays that also need client910 fixtures
+# live in client910/src/ui_goldens.
+no-pack = []
+# Test seams client910's tests use: the items are
+# `#[cfg(any(test, feature = "test-hooks"))]`. client910 enables it through
+# [dev-dependencies] only.
+test-hooks = ["dep:serde_json"]
+
+[lints]
+workspace = true

@@ -1,0 +1,595 @@
+set local alice
+set world 1
+set flags 0 0 0
+# saved lists and filters, then login
+packet 138 feff
+packet 74 01
+packet 174 024d616c6c6f7279004d616c6c6f727900000045766500457665007370616d00
+packet 46 00626f62000000010200576f726c64203100000000000072616964206d61746500004361726f6c00000000000000
+# presence: carol logs in, bob logs out, a renamed friend, a repeated row
+packet 46 006361726f6c000000010000576f726c64203100000000000000
+packet 46 00626f6200000000020072616964206d61746500
+packet 46 014361726f6c5f54776f004361726f6c000000000000
+packet 174 0044616e0044616e0000
+packet 138 fd00
+packet 74 02
+# friend and ignore commands: queries, then the local guards and packets of the mutations
+cmd friend_getname 0 -
+cmd friend_getname 1 -
+cmd friend_getname 2 -
+cmd friend_getname 3 -
+cmd friend_getworld 0 -
+cmd friend_getworld 1 -
+cmd friend_getworld 9 -
+cmd friend_getworldname 0 -
+cmd friend_getworldname 1 -
+cmd friend_getworldname 9 -
+cmd friend_getrank 0 -
+cmd friend_getrank 1 -
+cmd friend_getrank 9 -
+cmd friend_getnotes 0 -
+cmd friend_getnotes 1 -
+cmd friend_getnotes 9 -
+cmd friend_platform 0 -
+cmd friend_platform 1 -
+cmd friend_platform 9 -
+cmd friend_is_referred 0 -
+cmd friend_is_referred 1 -
+cmd friend_is_referred 9 -
+cmd friend_is_referrer 0 -
+cmd friend_is_referrer 1 -
+cmd friend_is_referrer 9 -
+cmd friend_getworldflags 0 -
+cmd friend_getworldflags 1 -
+cmd friend_getworldflags 9 -
+cmd friend_count - -
+cmd friend_getslotfromname - bob
+cmd friend_test - bob
+cmd friend_getslotfromname - Bob_
+cmd friend_test - Bob_
+cmd friend_getslotfromname - Carol Two
+cmd friend_test - Carol Two
+cmd friend_getslotfromname - carol
+cmd friend_test - carol
+cmd friend_getslotfromname - nobody
+cmd friend_test - nobody
+cmd friend_getslotfromname - Alice
+cmd friend_test - Alice
+cmd ignore_count - -
+cmd ignore_getname 0 -
+cmd ignore_getname 1 -
+cmd ignore_getname 2 -
+cmd ignore_getname 9 -
+cmd ignore_getname_unfiltered 0 -
+cmd ignore_getname_unfiltered 1 -
+cmd ignore_getname_unfiltered 2 -
+cmd ignore_getname_unfiltered 9 -
+cmd ignore_getnotes 0 -
+cmd ignore_getnotes 1 -
+cmd ignore_getnotes 2 -
+cmd ignore_getnotes 9 -
+cmd ignore_is_temp 0 -
+cmd ignore_is_temp 1 -
+cmd ignore_is_temp 2 -
+cmd ignore_is_temp 9 -
+cmd ignore_getslotfromname - mallory
+cmd ignore_test - mallory
+cmd ignore_getslotfromname - Eve
+cmd ignore_test - Eve
+cmd ignore_getslotfromname - Nobody
+cmd ignore_test - Nobody
+cmd friend_add - Zed
+cmd friend_add -   BOB 
+cmd friend_add - eve
+cmd friend_add - alice
+cmd friend_add - a name that is far too long for the namespace
+cmd friend_setrank 4 Carol
+cmd friend_setnotes - Carol|a note that is much longer than thirty characters
+cmd ignore_add - Newbie
+cmd ignore_add_temp - Nuisance
+cmd ignore_add - bob
+cmd ignore_add - alice
+cmd ignore_add - mallory
+cmd ignore_setnotes - Eve|new notes for eve, cut off at thirty characters
+cmd friend_del - Carol_Two
+cmd friend_del - nobody
+cmd ignore_del - Dan
+cmd friend_count - -
+cmd ignore_count - -
+# private chat: incoming, a repeat of the same id, an ignored sender, an echo
+packet 90 00426f62001122334501000b838c70a46466
+packet 90 00426f62001122334501000b838c70a46466
+packet 90 004d616c6c6f7279001122334502000817efcad91500
+packet 90 004d6f64205a6564001122334503010ba62d359deca4
+packet 90 004f776e6572205a65640011223345040219de41c7319b608de7195af2a82e2c
+packet 7 426f6200148491782c110000a2c000f549500005000516000707
+# game messages: plain, with a name, ignored name, unfiltered name
+packet 120 000000000000596f752061726520616c7265616479206f6e2074686520667269656e6473206c6973742e00
+packet 120 650000000001426f6200426f622077697368657320746f207472616465207769746820796f752e00
+packet 120 04000000000344616e0064616e0044616e20736179732068656c6c6f2e00
+packet 120 0a0000000003426f625f3200426f6220320041206e616d6564206c696e652e00
+# friends chat: join, single-user add and update and remove, lines, a quick chat line, leave
+packet 23 426f620000426f620007035a656400000001ff576f726c64203100626f62000000017f576f726c64203100616c6963650000000102576f726c64203100
+packet 2 416d790000000100576f726c64203100
+packet 2 416d790000000204576f726c64203200
+packet 2 5a65640000000180
+cmd clan_getchatcount - -
+cmd clan_getchatdisplayname - -
+cmd clan_getchatownername - -
+cmd clan_getchatminkick - -
+cmd clan_getchatrank - -
+cmd clan_getchatusername 0 -
+cmd clan_getchatusername 2 -
+cmd clan_getchatusername 9 -
+cmd clan_getchatusername_unfiltered 0 -
+cmd clan_getchatusername_unfiltered 2 -
+cmd clan_getchatusername_unfiltered 9 -
+cmd clan_getchatuserrank 0 -
+cmd clan_getchatuserrank 2 -
+cmd clan_getchatuserrank 9 -
+cmd clan_getchatuserworld 0 -
+cmd clan_getchatuserworld 2 -
+cmd clan_getchatuserworld 9 -
+cmd clan_getchatuserworldname 0 -
+cmd clan_getchatuserworldname 2 -
+cmd clan_getchatuserworldname 9 -
+cmd clan_getchatdisplayname - -
+cmd clan_getchatdisplayname - -
+cmd clan_getchatdisplayname - -
+cmd clan_isself 0 -
+cmd clan_isself 1 -
+cmd clan_isself 2 -
+cmd clan_isself 9 -
+cmd clan_kickuser - Amy
+cmd clan_joinchat - Bob
+cmd clan_joinchat - 
+cmd clan_leavechat - -
+packet 36 00626f6200426f62001122334510000caa4a8a71bccb
+packet 36 004d616c6c6f727900426f62001122334511000c95af2ad46336c0
+packet 36 004d6f64205a656400426f62001122334512010ea314ea9d95319b60
+packet 145 00626f6200426f62001122334513000000
+packet 23 
+# public chat: plain, coloured, quick chat, an ignored speaker, a moderator, an unknown speaker
+set player 6 Bob
+set player 7 Mallory
+packet 8 00060902000e838c70b5eebfe5b0
+packet 8 00060000010f2694529a8f315b89
+packet 8 00070000000817efcad91500
+packet 8 00060000020bde41c723573eb0
+packet 8 00090000000cbc178afcf41d58
+packet 8 00068000000002
+packet 8 000680000000020006
+set flags 1 0 0
+packet 8 00060000001f1ead9e62b71fa13165582cce95eeb23cb500
+set flags 0 0 0
+# clan channel: affined and guest snapshots, lines, quick chat, clearing
+packet 59 010200000000000000050000000000000007416c746f000064ff0003416c696365007e0001426f62000000014775657374204f6e6500ff0002
+cmd activeclanchannel_find_affined - -
+cmd activeclanchannel_getclanname - -
+cmd activeclanchannel_getusercount - -
+cmd activeclanchannel_getranktalk - -
+cmd activeclanchannel_getrankkick - -
+cmd activeclanchannel_getuserdisplayname 0 -
+cmd activeclanchannel_getuserdisplayname 2 -
+cmd activeclanchannel_getuserdisplayname 9 -
+cmd activeclanchannel_getuserrank 0 -
+cmd activeclanchannel_getuserrank 2 -
+cmd activeclanchannel_getuserrank 9 -
+cmd activeclanchannel_getuserworld 0 -
+cmd activeclanchannel_getuserworld 2 -
+cmd activeclanchannel_getuserworld 9 -
+cmd activeclanchannel_getsorteduserslot 0 -
+cmd activeclanchannel_getsorteduserslot 2 -
+cmd activeclanchannel_getsorteduserslot 9 -
+cmd activeclanchannel_getuserslot - Bob
+cmd activeclanchannel_getuserslot - bob
+cmd activeclanchannel_getuserslot - Guest One
+cmd activeclanchannel_getuserslot - Nobody
+cmd activeclanchannel_kickuser 0 -
+cmd activeclanchannel_kickuser 2 -
+cmd activeclanchannel_kickuser 9 -
+packet 22 01426f62001122334520000a1a29660e31c0
+packet 22 014d616c6c6f7279001122334521001195af2ad4468a598cdb
+packet 89 01426f620011223345220000020003
+packet 146 010000000000000005000000000000000701ff436c656f00000403000000000000000000
+packet 146 01000000000000000500000000000000080200030400050000000000000000436c656f20420000
+packet 146 0100000000000000050000000000000009050000010900060000000000000000426f622032000000
+packet 146 010000000000000005000000000000000a03000000ff00
+packet 146 010000000000000005000000000000000b04416c746f2054776f0000023200
+packet 146 010000000000000005000000000000000c040000
+packet 59 0002000000000000000900000000000000014f74686572000064ff00015a6f6500050003
+packet 22 005a6f65001122334523050a5bcf78c66d80
+packet 89 005a6f65001122334524000000
+packet 59 01
+packet 22 01426f62001122334525000f41f9d4f4191a2d2a
+packet 59 00
+# quick chat: every kind of dynamic value, private and echoed
+packet 80 00426f62001122334530000000
+packet 80 00426f620011223345310000020004
+packet 80 00426f6200112233453200006200010002
+packet 80 00426f6200112233453300006c03e8
+packet 80 00426f6200112233453400044525
+packet 80 00426f6200112233453500010d00000102
+packet 80 00426f620011223345360001ff00000003
+packet 80 00426f62001122334537000164000000c8
+packet 80 00426f62001122334538000267010203
+packet 80 00426f6200112233453900038a00000009
+packet 80 00426f6200112233453a0003b87e
+packet 80 00426f6200112233453b00000163
+packet 93 426f620000020005
+packet 80 004d616c6c6f7279001122334560000000
+packet 80 004d6f64205a6564001122334561010000
+packet 80 00426f62001122334530000000
+# clan settings: full snapshot, then every delta entry
+packet 101 0103020000000000000000000300416c746f000000000000416c696365007e00000000426f6200030000000043617261007d000000000002000000010000002a0000000200000007
+packet 132 010000000000000000000000000dff4465650017d400
+packet 132 0100000000000000000000000101ff456c690000
+packet 132 0100000000000000000000000203ff4d616c6c6f72790003ff4576650000
+packet 132 0100000000000000000000000304010203040500
+packet 132 010000000000000000000000040200017d0200020000
+packet 132 0100000000000000000000000507000100001234000f00
+packet 132 010000000000000000000000060e0001010e00000100
+packet 132 010000000000000000000000070800000003fffffffb090000000400000001234567890a00000005612073657474696e670000
+packet 132 010000000000000000000000080800000001000000000b0000000100000005020400
+packet 132 0100000000000000000000000906000005000000
+packet 132 0100000000000000000000000a0c416c746f2052656e616d6564000000000000
+cmd activeclansettings_find_affined - -
+cmd activeclansettings_getclanname - -
+cmd activeclansettings_getallowunaffined - -
+cmd activeclansettings_getranktalk - -
+cmd activeclansettings_getrankkick - -
+cmd activeclansettings_getranklootshare - -
+cmd activeclansettings_getcoinshare - -
+cmd activeclansettings_getaffinedcount - -
+cmd activeclansettings_getbannedcount - -
+cmd activeclansettings_getcurrentowner_slot - -
+cmd activeclansettings_getreplacementowner_slot - -
+cmd activeclansettings_getaffineddisplayname 0 -
+cmd activeclansettings_getaffineddisplayname 1 -
+cmd activeclansettings_getaffineddisplayname 2 -
+cmd activeclansettings_getaffineddisplayname 99 -
+cmd activeclansettings_getaffinedrank 0 -
+cmd activeclansettings_getaffinedrank 1 -
+cmd activeclansettings_getaffinedrank 2 -
+cmd activeclansettings_getaffinedrank 99 -
+cmd activeclansettings_getaffinedmuted 0 -
+cmd activeclansettings_getaffinedmuted 1 -
+cmd activeclansettings_getaffinedmuted 2 -
+cmd activeclansettings_getaffinedmuted 99 -
+cmd activeclansettings_getsortedaffinedslot 0 -
+cmd activeclansettings_getsortedaffinedslot 1 -
+cmd activeclansettings_getsortedaffinedslot 2 -
+cmd activeclansettings_getsortedaffinedslot 99 -
+cmd activeclansettings_getaffinedjoinruneday 0 -
+cmd activeclansettings_getaffinedjoinruneday 1 -
+cmd activeclansettings_getaffinedjoinruneday 2 -
+cmd activeclansettings_getaffinedjoinruneday 99 -
+cmd activeclansettings_getbanneddisplayname 0 -
+cmd activeclansettings_getbanneddisplayname 99 -
+cmd activeclansettings_getaffinedextrainfo 1,0,15 -
+cmd activeclansettings_getaffinedextrainfo 1,4,7 -
+cmd activeclansettings_getaffinedextrainfo 0,0,31 -
+cmd activeclansettings_getaffinedextrainfo 99,0,3 -
+cmd activeclansettings_getaffinedslot - Alice
+cmd activeclansettings_getaffinedslot - alice
+cmd activeclansettings_getaffinedslot - Dee
+cmd activeclansettings_getaffinedslot - Nobody
+cmd activeclansettings_find_listened - -
+# player group: full snapshot, lines, every delta entry, member variables, clearing
+packet 40 0105000000030000018bcfe5680052616964207465616d00000a0000000000000000000000000003416c6963650003030000000000000482000000530002000100000003000400000064002a050302426f620001000000ffff0701004361726100030100c6e3bf000000070102010001426164000002000100000005000200000009
+packet 41 416c69636500112233458000000a5ab9ea4c66d8
+packet 41 4d616c6c6f727900112233458100011295af2ad456ae7a9319b6
+packet 176 426f62001122334582000000020002
+packet 176 426f6200112233458301010000
+packet 187 00000000000000000000000301ff4465650003030000000000000000000000050000000201010003ff4576696c0000
+packet 187 00000000000000000000000406000100090700000500020800
+packet 187 000000000000000000000005080002010e0003040900
+packet 187 0000000000000000000000060a0800010004000000
+packet 187 0000000000000000000000070b0002010500000000000000000000000000000000000003840000000101010102000100
+packet 187 0000000000000000000000080cffff0dffff00
+packet 187 0000000000000000000000090c00030000000b0c00010000000600
+cmd player_group_find - -
+cmd player_group_member_count - -
+cmd player_group_banned_count - -
+cmd player_group_get_max_size - -
+cmd player_group_is_members_only - -
+cmd player_group_get_overall_status - -
+cmd player_group_get_owner_slot - -
+cmd player_group_get_create_mins_since_epoch - -
+cmd player_group_get_displayname - -
+cmd player_group_member_get_displayname 0 -
+cmd player_group_member_get_displayname 1 -
+cmd player_group_member_get_displayname 2 -
+cmd player_group_member_get_displayname 99 -
+cmd player_group_member_get_rank 0 -
+cmd player_group_member_get_rank 1 -
+cmd player_group_member_get_rank 2 -
+cmd player_group_member_get_rank 99 -
+cmd player_group_member_get_status 0 -
+cmd player_group_member_get_status 1 -
+cmd player_group_member_get_status 2 -
+cmd player_group_member_get_status 99 -
+cmd player_group_member_get_team 0 -
+cmd player_group_member_get_team 1 -
+cmd player_group_member_get_team 2 -
+cmd player_group_member_get_team 99 -
+cmd player_group_member_get_last_seen_node_id 0 -
+cmd player_group_member_get_last_seen_node_id 1 -
+cmd player_group_member_get_last_seen_node_id 2 -
+cmd player_group_member_get_last_seen_node_id 99 -
+cmd player_group_member_is_online 0 -
+cmd player_group_member_is_online 1 -
+cmd player_group_member_is_online 2 -
+cmd player_group_member_is_online 99 -
+cmd player_group_member_is_member 0 -
+cmd player_group_member_is_member 1 -
+cmd player_group_member_is_member 2 -
+cmd player_group_member_is_member 99 -
+cmd player_group_member_is_owner 0 -
+cmd player_group_member_is_owner 1 -
+cmd player_group_member_is_owner 2 -
+cmd player_group_member_is_owner 99 -
+cmd player_group_member_get_join_xp 0,2,0 -
+cmd player_group_member_get_join_xp 0,2,1 -
+cmd player_group_member_get_join_xp 0,1,0 -
+cmd player_group_member_get_join_xp 0,1,1 -
+cmd player_group_member_get_join_xp 1,0,0 -
+cmd player_group_member_get_join_xp 2,4,1 -
+cmd player_group_member_get_join_xp 0,30,0 -
+cmd player_group_member_get_join_xp 99,0,0 -
+cmd player_group_banned_get_displayname 0 -
+cmd player_group_banned_get_displayname 99 -
+packet 159 0000010001000000460002fffffffd
+packet 159 000000000300000008
+packet 159 000100000400000009
+cmd player_group_member_get_same_world_var 0,1,1 -
+cmd player_group_member_get_same_world_var 0,1,2 -
+cmd player_group_member_get_same_world_var 0,1,3 -
+cmd player_group_member_get_same_world_var 0,1,4 -
+cmd player_group_member_get_same_world_var 1,1,4 -
+cmd player_group_member_get_same_world_var 1,1,9 -
+cmd player_group_member_get_same_world_var 99,1,1 -
+packet 40 
+packet 41 416c69636500112233458400001741f9d4f4195ab9ea4ce95b2d80
+# chat and quick chat commands
+cmd chat_getfilter_public - -
+cmd chat_getfilter_private - -
+cmd chat_getfilter_trade - -
+cmd chat_playername - -
+cmd chat_playername_unfiltered - -
+cmd chat_lastuid - -
+cmd map_quickchat - -
+cmd userdetail_quickchat - -
+cmd chat_gethistorylength 0 -
+cmd chat_gethistorylength 3 -
+cmd chat_gethistorylength 4 -
+cmd chat_gethistorylength 7 -
+cmd chat_gethistorylength 9 -
+cmd chat_gethistorylength 18 -
+cmd chat_gethistorylength 41 -
+cmd chat_gethistorylength 99 -
+cmd chat_gethistory_bytypeandline 3,0 -
+cmd chat_gethistory_bytypeandline 7,0 -
+cmd chat_gethistory_bytypeandline 18,0 -
+cmd chat_gethistory_bytypeandline 18,3 -
+cmd chat_gethistory_bytypeandline 4,9 -
+cmd chat_gethistory_byuid 0 -
+cmd chat_getnextuid 0 -
+cmd chat_getprevuid 0 -
+cmd chat_gethistory_byuid 3 -
+cmd chat_getnextuid 3 -
+cmd chat_getprevuid 3 -
+cmd chat_gethistory_byuid 7 -
+cmd chat_getnextuid 7 -
+cmd chat_getprevuid 7 -
+cmd chat_gethistory_byuid 12 -
+cmd chat_getnextuid 12 -
+cmd chat_getprevuid 12 -
+cmd chat_gethistory_byuid 30 -
+cmd chat_getnextuid 30 -
+cmd chat_getprevuid 30 -
+cmd chat_gethistory_byuid 999 -
+cmd chat_getnextuid 999 -
+cmd chat_getprevuid 999 -
+cmd chat_setfilter 1,0,3 -
+cmd chat_setfilter 2,7,0 -
+cmd chat_getfilter_public - -
+cmd chat_getfilter_private - -
+cmd chat_getfilter_trade - -
+cmd chat_setmode 1 -
+cmd chat_sendpublic - hello world
+cmd chat_sendpublic - glow1:wave:with effects
+cmd chat_sendpublic - RED:shake:loud
+cmd chat_sendprivate - Bob|a private message
+cmd chat_sendabusereport 2,5 Mallory|a reason that is short
+cmd chat_sendabusereport 1,0 Mallory|xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+cmd chatphrase_gettext 0 -
+cmd chatphrase_getdynamiccommandcount 0 -
+cmd chatphrase_getdynamiccommand 0,0 -
+cmd chatphrase_getdynamiccommand 0,1 -
+cmd chatphrase_getdynamiccommand 0,9 -
+cmd chatphrase_getautoresponsecount 0 -
+cmd chatphrase_getautoresponse 0,0 -
+cmd chatphrase_getautoresponse 0,1 -
+cmd chatphrase_gettext 2 -
+cmd chatphrase_getdynamiccommandcount 2 -
+cmd chatphrase_getdynamiccommand 2,0 -
+cmd chatphrase_getdynamiccommand 2,1 -
+cmd chatphrase_getdynamiccommand 2,9 -
+cmd chatphrase_getautoresponsecount 2 -
+cmd chatphrase_getautoresponse 2,0 -
+cmd chatphrase_getautoresponse 2,1 -
+cmd chatphrase_gettext 269 -
+cmd chatphrase_getdynamiccommandcount 269 -
+cmd chatphrase_getdynamiccommand 269,0 -
+cmd chatphrase_getdynamiccommand 269,1 -
+cmd chatphrase_getdynamiccommand 269,9 -
+cmd chatphrase_getautoresponsecount 269 -
+cmd chatphrase_getautoresponse 269,0 -
+cmd chatphrase_getautoresponse 269,1 -
+cmd chatphrase_gettext 615 -
+cmd chatphrase_getdynamiccommandcount 615 -
+cmd chatphrase_getdynamiccommand 615,0 -
+cmd chatphrase_getdynamiccommand 615,1 -
+cmd chatphrase_getdynamiccommand 615,9 -
+cmd chatphrase_getautoresponsecount 615 -
+cmd chatphrase_getautoresponse 615,0 -
+cmd chatphrase_getautoresponse 615,1 -
+cmd chatphrase_gettext 98 -
+cmd chatphrase_getdynamiccommandcount 98 -
+cmd chatphrase_getdynamiccommand 98,0 -
+cmd chatphrase_getdynamiccommand 98,1 -
+cmd chatphrase_getdynamiccommand 98,9 -
+cmd chatphrase_getautoresponsecount 98 -
+cmd chatphrase_getautoresponse 98,0 -
+cmd chatphrase_getautoresponse 98,1 -
+cmd chatphrase_getdynamiccommandparam_enum 2,0,0 -
+cmd chatphrase_getdynamiccommandparam_enum 2,0,1 -
+cmd chatphrase_getdynamiccommandparam_enum 269,0,0 -
+cmd chatphrase_getdynamiccommandparam_enum 98,1,0 -
+cmd chatcat_getdesc 0 -
+cmd chatcat_getsubcatcount 0 -
+cmd chatcat_getphrasecount 0 -
+cmd chatcat_getsubcat 0,0 -
+cmd chatcat_getsubcatshortcut 0,0 -
+cmd chatcat_getphrase 0,0 -
+cmd chatcat_getphraseshortcut 0,0 -
+cmd chatcat_getsubcat 0,1 -
+cmd chatcat_getsubcatshortcut 0,1 -
+cmd chatcat_getphrase 0,1 -
+cmd chatcat_getphraseshortcut 0,1 -
+cmd chatcat_getsubcat 0,40 -
+cmd chatcat_getsubcatshortcut 0,40 -
+cmd chatcat_getphrase 0,40 -
+cmd chatcat_getphraseshortcut 0,40 -
+cmd chatcat_findsubcatbyshortcut 0,97 -
+cmd chatcat_findphrasebyshortcut 0,97 -
+cmd chatcat_findsubcatbyshortcut 0,98 -
+cmd chatcat_findphrasebyshortcut 0,98 -
+cmd chatcat_findsubcatbyshortcut 0,122 -
+cmd chatcat_findphrasebyshortcut 0,122 -
+cmd chatcat_findsubcatbyshortcut 0,-1 -
+cmd chatcat_findphrasebyshortcut 0,-1 -
+cmd chatcat_getdesc 1 -
+cmd chatcat_getsubcatcount 1 -
+cmd chatcat_getphrasecount 1 -
+cmd chatcat_getsubcat 1,0 -
+cmd chatcat_getsubcatshortcut 1,0 -
+cmd chatcat_getphrase 1,0 -
+cmd chatcat_getphraseshortcut 1,0 -
+cmd chatcat_getsubcat 1,1 -
+cmd chatcat_getsubcatshortcut 1,1 -
+cmd chatcat_getphrase 1,1 -
+cmd chatcat_getphraseshortcut 1,1 -
+cmd chatcat_getsubcat 1,40 -
+cmd chatcat_getsubcatshortcut 1,40 -
+cmd chatcat_getphrase 1,40 -
+cmd chatcat_getphraseshortcut 1,40 -
+cmd chatcat_findsubcatbyshortcut 1,97 -
+cmd chatcat_findphrasebyshortcut 1,97 -
+cmd chatcat_findsubcatbyshortcut 1,98 -
+cmd chatcat_findphrasebyshortcut 1,98 -
+cmd chatcat_findsubcatbyshortcut 1,122 -
+cmd chatcat_findphrasebyshortcut 1,122 -
+cmd chatcat_findsubcatbyshortcut 1,-1 -
+cmd chatcat_findphrasebyshortcut 1,-1 -
+cmd chatcat_getdesc 2 -
+cmd chatcat_getsubcatcount 2 -
+cmd chatcat_getphrasecount 2 -
+cmd chatcat_getsubcat 2,0 -
+cmd chatcat_getsubcatshortcut 2,0 -
+cmd chatcat_getphrase 2,0 -
+cmd chatcat_getphraseshortcut 2,0 -
+cmd chatcat_getsubcat 2,1 -
+cmd chatcat_getsubcatshortcut 2,1 -
+cmd chatcat_getphrase 2,1 -
+cmd chatcat_getphraseshortcut 2,1 -
+cmd chatcat_getsubcat 2,40 -
+cmd chatcat_getsubcatshortcut 2,40 -
+cmd chatcat_getphrase 2,40 -
+cmd chatcat_getphraseshortcut 2,40 -
+cmd chatcat_findsubcatbyshortcut 2,97 -
+cmd chatcat_findphrasebyshortcut 2,97 -
+cmd chatcat_findsubcatbyshortcut 2,98 -
+cmd chatcat_findphrasebyshortcut 2,98 -
+cmd chatcat_findsubcatbyshortcut 2,122 -
+cmd chatcat_findphrasebyshortcut 2,122 -
+cmd chatcat_findsubcatbyshortcut 2,-1 -
+cmd chatcat_findphrasebyshortcut 2,-1 -
+cmd chatcat_getdesc 5 -
+cmd chatcat_getsubcatcount 5 -
+cmd chatcat_getphrasecount 5 -
+cmd chatcat_getsubcat 5,0 -
+cmd chatcat_getsubcatshortcut 5,0 -
+cmd chatcat_getphrase 5,0 -
+cmd chatcat_getphraseshortcut 5,0 -
+cmd chatcat_getsubcat 5,1 -
+cmd chatcat_getsubcatshortcut 5,1 -
+cmd chatcat_getphrase 5,1 -
+cmd chatcat_getphraseshortcut 5,1 -
+cmd chatcat_getsubcat 5,40 -
+cmd chatcat_getsubcatshortcut 5,40 -
+cmd chatcat_getphrase 5,40 -
+cmd chatcat_getphraseshortcut 5,40 -
+cmd chatcat_findsubcatbyshortcut 5,97 -
+cmd chatcat_findphrasebyshortcut 5,97 -
+cmd chatcat_findsubcatbyshortcut 5,98 -
+cmd chatcat_findphrasebyshortcut 5,98 -
+cmd chatcat_findsubcatbyshortcut 5,122 -
+cmd chatcat_findphrasebyshortcut 5,122 -
+cmd chatcat_findsubcatbyshortcut 5,-1 -
+cmd chatcat_findphrasebyshortcut 5,-1 -
+cmd chatphrase_find 0 agility
+cmd chatphrase_findnext - -
+cmd chatphrase_findnext - -
+cmd chatphrase_findnext - -
+cmd chatphrase_findrestart - -
+cmd chatphrase_findnext - -
+cmd chatphrase_find 1 hello
+cmd chatphrase_findnext - -
+cmd chatphrase_findnext - -
+cmd chatphrase_findnext - -
+cmd chatphrase_findrestart - -
+cmd chatphrase_findnext - -
+cmd chatphrase_find 0 qqqqzzzz
+cmd chatphrase_findnext - -
+cmd chatphrase_findnext - -
+cmd chatphrase_findnext - -
+cmd chatphrase_findrestart - -
+cmd chatphrase_findnext - -
+cmd chatphrase_find 0 e
+cmd chatphrase_findnext - -
+cmd chatphrase_findnext - -
+cmd chatphrase_findnext - -
+cmd chatphrase_findrestart - -
+cmd chatphrase_findnext - -
+cmd activechatphrase_send 0 -
+cmd activechatphrase_prepare 2 -
+cmd activechatphrase_setdynamicint 0,258 -
+cmd activechatphrase_setdynamicint 5,1 -
+cmd activechatphrase_send 2 -
+cmd activechatphrase_sendprivate - Bob
+cmd activechatphrase_prepare 615 -
+cmd activechatphrase_setdynamicobj 0,40 -
+cmd activechatphrase_setdynamicobj 1,41 -
+cmd activechatphrase_setdynamicobj 2,42 -
+cmd activechatphrase_send 0 -
+cmd activechatphrase_sendprivate - Bob
+cmd activechatphrase_prepare 269 -
+cmd activechatphrase_send 1 -
+cmd activechatphrase_prepare 98 -
+cmd activechatphrase_setdynamicint 0,7 -
+cmd activechatphrase_setdynamicint 1,65540 -
+cmd activechatphrase_sendprivate - Bob
+cmd chat_clear - -
+cmd chat_lastuid - -
+cmd chat_gethistorylength 3 -
+# accounts that may only quick chat: free text is dropped, quick chat is not
+set flags 1 0 0
+packet 90 00426f62001122334570001f1ead9e62b71fa13165582cce95eeb23cb500
+packet 80 00426f62001122334571000000
+packet 36 00626f6200426f6200112233457200181ead9e62b719b3d0646825db88
+set flags 1 1 0
+packet 90 00426f6200112233457300291ead9e62b711f2a50d314fdd4fd0c3427e455f48cb88d04e
+set flags 0 0 1
+packet 90 00426f6200112233457400271ead9e62b71fa1316638b2cd466ca69157d232e2341380

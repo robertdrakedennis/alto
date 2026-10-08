@@ -1,0 +1,17 @@
+[package]
+name = "rsscan"
+version = "0.1.0"
+edition = "2021"
+publish = false
+description = "Refactor-gate helper: fn/item body hashes (fn-hash.py), the module dependency scan (dag-check.py) and the magic-id scan (magic-id-ratchet.py)."
+
+# Stand-alone: not a member of any other workspace.
+[workspace]
+
+[dependencies]
+syn = { version = "2", default-features = false, features = ["full", "parsing", "printing", "clone-impls", "visit"] }
+proc-macro2 = { version = "1", default-features = false, features = ["span-locations"] }
+quote = { version = "1", default-features = false }
+
+[profile.release]
+debug = false

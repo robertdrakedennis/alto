@@ -1,0 +1,32 @@
+/gradlew        text eol=lf
+*.bat           text eol=crlf
+
+# binary refs — never diff, never normalize
+ref/client/*.jar binary
+ref/client/*.patched.jar binary
+lib/*.jar binary
+*.js5 binary
+*.dat binary
+*.dat2 binary
+*.idx* binary
+
+# generated cache output is gitignored, but mark it binary if ever forced in
+server/data/pack/** binary
+server/data/cache/** binary
+
+# RuneScript sources stay diffable as text
+*.rs2 text eol=lf
+*.pack text eol=lf
+*.defaults text eol=lf
+*.sym text eol=lf
+
+# Large committed replay recordings are stored with Git LFS.
+tools/client910/fixtures/session-replay/barrows/driver-journal.jsonl filter=lfs diff=lfs merge=lfs -text
+tools/client910/fixtures/session-replay/god-wars/armadyl/combat-receipts.jsonl filter=lfs diff=lfs merge=lfs -text
+tools/client910/fixtures/session-replay/god-wars/armadyl/driver-journal.jsonl filter=lfs diff=lfs merge=lfs -text
+tools/client910/fixtures/session-replay/god-wars/bandos/combat-receipts.jsonl filter=lfs diff=lfs merge=lfs -text
+tools/client910/fixtures/session-replay/god-wars/bandos/driver-journal.jsonl filter=lfs diff=lfs merge=lfs -text
+tools/client910/fixtures/session-replay/god-wars/saradomin/combat-receipts.jsonl filter=lfs diff=lfs merge=lfs -text
+tools/client910/fixtures/session-replay/god-wars/saradomin/driver-journal.jsonl filter=lfs diff=lfs merge=lfs -text
+tools/client910/fixtures/session-replay/god-wars/zamorak/combat-receipts.jsonl filter=lfs diff=lfs merge=lfs -text
+tools/client910/fixtures/session-replay/god-wars/zamorak/driver-journal.jsonl filter=lfs diff=lfs merge=lfs -text

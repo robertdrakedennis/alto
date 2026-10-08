@@ -1,0 +1,3 @@
+# Deduplicated client910 warning counts per lint over
+# `cargo clippy --all-targets` (see clippy-ratchet.py). Lower only.
+# total 0

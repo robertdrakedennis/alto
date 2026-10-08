@@ -1,0 +1,51 @@
+Alto
+Copyright (c) 2026 robert dennis (client, engine and tools)
+
+Licensed under the MIT License (see LICENSE).
+
+Trademarks
+----------
+RuneScape is a trademark of Jagex Ltd. Alto is an independent project. It is
+not affiliated with, sponsored by or endorsed by Jagex Ltd. The name RuneScape
+is used only to identify the game the software is compatible with (nominative
+use). Alto contains no Jagex code, game assets, cache data or shaders. The
+game cache, which you must supply yourself, is Jagex's data and is never
+committed to this repository.
+
+Components and origins
+----------------------
+
+1. Client, engine and tools (tools/client910, tools/native910, tools/perf,
+   tools/refactor)
+   Original work, Copyright (c) 2026 robert dennis, under the MIT License.
+   The client is written as our own engine. Its behaviour is checked against
+   recordings of observable behaviour (packet bytes and tables, variable state,
+   script stacks, draw output) committed as plain data under
+   tools/client910/fixtures and tools/native910/tests/fixtures. Those
+   recordings are test data for interoperability, not source code.
+
+2. Modern renderer (tools/client910/crates/rs910-render-modern)
+   The renderer reimplements, in our own WGSL and Rust, rendering techniques
+   used by later game clients (cascaded sun shadows, ambient occlusion,
+   physically based lighting with image-based reflections, screen-space and
+   volumetric atmosphere effects, water shading and a bloom and tone-map
+   chain). The techniques are widely published. No shader source text, binary
+   or asset of the original game is included in this repository.
+
+3. Rust dependencies
+   The Rust workspace (tools/Cargo.toml, lockfile tools/Cargo.lock) depends on
+   open-source crates from crates.io, among them wgpu, winit, cpal, tokio,
+   glam, bytemuck, anyhow, thiserror, log, clap and serde_json. Each is under
+   its own licence, mostly MIT, Apache-2.0 or both. The full list with the
+   licence text of every crate is in THIRD_PARTY_LICENSES.md.
+
+4. Dependency notices
+   THIRD_PARTY_LICENSES.md is generated from the Rust lockfiles: run
+   `python3 tools/licenses.py` after changing a lockfile (`--check` reports a
+   stale file). The private server and its dependencies are not distributed.
+
+5. Data formats
+   The cache, JS5 and interface formats that Alto reads and writes are
+   documented by the community, in particular by the OpenRS2 project
+   (https://www.openrs2.org). No code from those projects is included unless
+   listed above.

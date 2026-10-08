@@ -1,0 +1,69 @@
+{
+  "accountKey": "legacy-specials",
+  "commands": [
+    "notimeout",
+    "notimeout",
+    "retaliate off",
+    "notimeout",
+    "notimeout",
+    "notimeout",
+    "notimeout",
+    "notimeout",
+    "notimeout",
+    "notimeout",
+    "notimeout",
+    "notimeout",
+    "notimeout",
+    "notimeout",
+    "npcadd 41",
+    "opnpc 2 41",
+    "notimeout",
+    "notimeout",
+    "notimeout",
+    "notimeout",
+    "notimeout",
+    "notimeout",
+    "notimeout",
+    "notimeout",
+    "notimeout",
+    "notimeout",
+    "notimeout",
+    "notimeout",
+    "notimeout",
+    "notimeout",
+    "notimeout",
+    "notimeout",
+    "notimeout",
+    "notimeout",
+    "notimeout",
+    "notimeout",
+    "notimeout"
+  ],
+  "operations": "800,96534535,0,2",
+  "clicks": "l,919,613,1100;l,919,613,1250;l,919,613,1400",
+  "lastCycle": 3500,
+  "semanticShots": [
+    1000,
+    1175,
+    1325,
+    1450,
+    1800,
+    3500
+  ],
+  "energy": {
+    "maximumEnergyFine": 1000,
+    "regenerationFine": 100,
+    "regenerationTicks": 50
+  },
+  "special": {
+    "weapon": 4153,
+    "costFine": 500,
+    "sequence": 1667,
+    "userSpot": 340
+  },
+  "pointerQualification": "Actual cache/native Legacy Combat pane bounds at1024x768 from the corrected CLIENT-domain selection; fresh normal login/pick proof is required in this recording",
+  "presentationQualification": [
+    "Special animation resource exists in cache; special role is an unverified fourth-source placeholder"
+  ],
+  "inputQualification": "Bar uses actual pointer pick and native IF_BUTTON1; equipment uses ordinary native operation; recorded developer opnpc selects the same ordinary interaction owner as separately socket-proved OPNPC"
+}

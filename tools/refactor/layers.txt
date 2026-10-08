@@ -1,0 +1,560 @@
+# Target layering for tools/refactor/dag-check.py.
+#
+# Crate roles and the allowed dependencies and external-crate fences are
+# described in docs/architecture.md; this file is the checked source of truth.
+# Update it in the same change that moves a module or adds one: an unmapped
+# production module fails the check.
+
+[crates]
+# crate: allowed direct dependencies. A module edge is legal when the
+# target crate is the same crate or reachable through these lists (the
+# transitive closure); anything else points up or sideways.
+native910:
+rs910-core:
+# The content-symbol registry's generated bindings (docs/symbols.md): a leaf.
+rs910-symbols:
+rs910-js5: rs910-core native910
+rs910-protocol: rs910-core
+rs910-config: rs910-core rs910-js5 native910
+rs910-game: rs910-core rs910-protocol rs910-config
+rs910-model: rs910-core rs910-config
+rs910-scene: rs910-core rs910-config rs910-model rs910-game
+rs910-audio: rs910-core rs910-config rs910-js5
+rs910-toolkit: rs910-core rs910-model
+rs910-ui: rs910-core rs910-symbols rs910-protocol rs910-config rs910-game rs910-model rs910-scene rs910-audio rs910-toolkit native910
+# Phase 3.4 (renderer plan A2): the device layer below the GPU backends.
+rs910-gpu-device: rs910-core rs910-toolkit
+rs910-render-gpu: rs910-core rs910-model rs910-scene rs910-toolkit rs910-gpu-device
+# Renderer plan M1: the opt-in NXT-style scene renderer, a render layer peer
+# of rs910-render-gpu (it does not depend on it: the shell composes the
+# faithful UI around its scene).
+# Lane Q-FAR1 (NXT render distance F0): the render-only far scene's CPU
+# half, below the NXT backend (renderer-neutral; the studio's editors may
+# reuse it). rs910-model/rs910-scene are allowed for its later milestones
+# (private loc models).
+rs910-far-scene: rs910-core rs910-js5 rs910-config rs910-model rs910-scene
+rs910-render-modern: rs910-core rs910-model rs910-scene rs910-toolkit rs910-gpu-device rs910-far-scene
+rs910-client: rs910-core rs910-js5 rs910-protocol rs910-config rs910-game rs910-model rs910-scene rs910-audio rs910-toolkit rs910-ui native910
+client910: rs910-client rs910-render-gpu rs910-render-modern
+
+[externals]
+# crate: the non-workspace crates it may depend on (checked with cargo
+# metadata once the crate exists). A crate without an entry is unrestricted
+# apart from [fences]. rs910-core is std only.
+rs910-core:
+# Generated constants only: no dependencies, ever.
+rs910-symbols:
+# Phase 2.3: cache + JS5 network. tokio is a dev-dependency only today (the
+# js5net tests' local server); the fence below still allows it.
+rs910-js5: anyhow log thiserror tokio
+# rs910-protocol: no tokio/sockets/native910; anyhow/thiserror/log for
+# the moved parsers' existing error and warn paths.
+rs910-protocol: anyhow thiserror log num-bigint
+# rs910-audio: the audio stack's own externals (cpal is also fenced).
+rs910-audio: anyhow cpal log
+# Phase 2.4: config types.
+rs910-config: anyhow thiserror
+# Phase 2.6: game state (no thiserror/tokio; std::fs only for the client
+# var file, ui_var_store). log: the cutscene action trace (Phase 3.2).
+rs910-game: anyhow log
+# Phase 2.7: CPU model layer (no wgpu: also fenced below).
+rs910-model: anyhow thiserror
+# Phase 2.8: CPU scene layer (no wgpu; glam for the camera matrices, log for
+# the build/placement diagnostics; bytemuck for the Pod uniform block
+# `floor_uniforms::FloorUniforms`, Phase 3.2).
+rs910-scene: anyhow thiserror glam log bytemuck
+# Phase 3.1: the toolkit boundary (no wgpu; bytemuck for the GPU batch
+# vertex `text_render::Vertex`, which the painter builds as it records).
+rs910-toolkit: anyhow bytemuck
+# Phase 3.2: the retained UI (no wgpu/winit: fenced below; dpi is winit's
+# re-exported pixel types; serde_json only under `test-hooks`).
+rs910-ui: anyhow log dpi glam libc jpeg-decoder serde_json
+# Phase 3.3/3.4: the renderers. wgpu only in the device layer and the GPU
+# toolkit (fenced below); pollster only under `test-hooks`.
+rs910-gpu-device: anyhow bytemuck glam log wgpu pollster objc2-metal
+rs910-render-gpu: anyhow bytemuck glam log wgpu pollster
+# Renderer plan M1 (pollster: the GPU tests only, a dev-dependency).
+rs910-render-modern: anyhow bytemuck glam log wgpu pollster
+# Lane Q-FAR1: CPU only (no wgpu, fenced below).
+rs910-far-scene: log
+# Client transport and the canonical recorded input payload codec.
+rs910-client: anyhow log tokio libc getrandom serde serde_json
+
+[fences]
+# external crate: crates allowed to name it.
+wgpu: rs910-render-gpu rs910-gpu-device rs910-render-modern
+objc2-metal: rs910-gpu-device
+winit: client910
+tokio: rs910-js5 rs910-client
+cpal: rs910-audio
+
+[modules]
+# top-level client910 module (or glob): target crate. First match wins.
+# `<root>` is main.rs itself (the bin shell).
+<root> client910
+# The winit ApplicationHandler shell today; Phase 4.4/5.1 splits its core
+# half into rs910-client.
+app client910
+live_control client910
+# Phase 3.2: the native (winit) halves of the UI's input and window modules
+# and `ui_mouse` (winit scroll deltas -> wheel steps, read by the app).
+ui_cursor_winit client910
+ui_keyboard_winit client910
+ui_window_winit client910
+ui_mouse client910
+# Phase 3.3/3.4: the active toolkit (GPU or software backend over the
+# device the GPU renderer owns); the NXT backend plugs in here (plan A3).
+active_toolkit client910
+# Phase 4: the shell's residual diagnostics (the variables only the app and
+# the winit halves read; each crate owns its own set) and the stderr logger
+# `main` installs.
+debug_flags client910
+logging client910
+macos_defaults client910
+# The modern renderer's saved display choice (render scale).
+modern_display client910
+shutdown_signal client910
+
+# rs910-core: std-only helpers.
+# Phase 2.1 moved these into tools/client910/crates/rs910-core (dag-check
+# checks that a module living in a crate is mapped to it):
+trig rs910-core
+colour rs910-core
+char_case rs910-core
+whirlpool rs910-core
+ui_text_compare rs910-core
+animation_matrix rs910-core
+actor_matrix rs910-core
+logic_clock rs910-core
+png_out rs910-core
+applet_params rs910-core
+# Lane G-DEVICE: the localised text table, the caches' aged map and their
+# redraw schedule (std only).
+texts rs910-core
+texts_table rs910-core
+soft_cache rs910-core
+cache_schedule rs910-core
+# Phase 2.5: `warn_repeated!`, shared by client910's logging and the crates.
+log_repeat rs910-core
+# Lane E-A4: the engine profiler (`profile_scope!`, std only), under every
+# crate that places scopes.
+profile rs910-core
+# ...and these hold the merged duplicates (one copy each):
+reader rs910-core
+cp1252 rs910-core
+fault rs910-core
+# The machine probe (memory, processor, operating system).
+hardware rs910-core
+perlin rs910-core
+checksum rs910-core
+# Phase 2.3 moved the `Client.isState*` predicates here (js5net reads them):
+client_state rs910-core
+# Phase 2.8: `Vector3`/`Quaternion`, split out of ui_cam2.
+vector_math rs910-core
+# (Phase 3.2 moved wordpack, which needs cache and anyhow, to rs910-config.
+# Phase 2.4 moved ui_bytes (the UI decoders' anyhow wrapper over `reader`;
+# core is std only) and animation_curve (reads `anim::Curve`) to
+# rs910-config. Phase 4: recorded_golden (then java_golden), formerly mapped here, is client910
+# test infrastructure over fixtures/recorded-goldens, declared `#[cfg(test)]`
+# like scene_golden; debug_flags and logging are the shell's, below.)
+
+# rs910-js5 (Phase 2.3 moved these into tools/client910/crates/rs910-js5)
+cache rs910-js5
+js5net rs910-js5
+# Phase 3.1: `Js5.fetchFile` over the pack, split out of iface.
+js5_fetch rs910-js5
+
+# rs910-protocol (framing, ServerProt/ClientProt, UiEvent parse). Phase 2.2
+# moved these into tools/client910/crates/rs910-protocol; `server_prot` is
+# session.rs' parse half (UiEvent, PayloadReader, parse_*) and `framing`
+# net.rs' byte half (Frame, frame decoders, pure client packet encoders);
+# `payload_reader` holds PayloadReader (read by server_prot and reflection_check).
+proto rs910-protocol
+client_command rs910-protocol
+reflection_check rs910-protocol
+ui_dialogue rs910-protocol
+server_prot rs910-protocol
+payload_reader rs910-protocol
+framing rs910-protocol
+# Login cryptography: the opcode-masking generator, the tiny block cipher
+# of the login body, the RSA block and the stream cipher over the framing.
+isaac_cipher rs910-protocol
+tiny_cipher rs910-protocol
+rsa_block rs910-protocol
+wire_cipher rs910-protocol
+
+# rs910-config (Phase 2.4 moved these into tools/client910/crates/rs910-config):
+config rs910-config
+flo rs910-config
+texture rs910-config
+billboard rs910-config
+avatar rs910-config
+anim rs910-config
+ui_quests rs910-config
+ui_legacy_types rs910-config
+ui_component_fields rs910-config
+sprite_data rs910-config
+font_metrics rs910-config
+client_options rs910-config
+ui_bytes rs910-config
+animation_curve rs910-config
+# Phase 2.6 moved these into rs910-config: `types910` (protocol910's
+# `*_types` config decoders, their pack adapters, the Packet/Error the entity
+# appliers share and the config-side views they build) and the three loaders
+# that only waited for it.
+types910 rs910-config
+animation_sequences rs910-config
+scenery_varbits rs910-config
+# The config archives the game owner and the interface engine both decode
+# at login, read once (above config, types910 and scenery_varbits).
+login_configs rs910-config
+ui_db rs910-config
+ui_db_schema rs910-config
+ui_db_resource rs910-config
+ui_enum_schema rs910-config
+ui_enum_resource rs910-config
+# cutscene.rs' file-format half (`Definition` and its parts); the logic half
+# (`cutscene`) is mapped to rs910-game.
+cutscene_file rs910-config
+# Phase 2.8 splits: the loc ambient-sound data the
+# map build emits (positioned_sound's LocSound*), maploader's `Packet`, the
+# skybox config types (skybox's decoders: revision facts stay in config,
+# see docs/architecture.md) and ui_models' `NpcCustomisation`.
+loc_sound rs910-config
+landscape_packet rs910-config
+skybox_types rs910-config
+npc_customisation rs910-config
+# The opcode-table decoder engine the config decoders share (lane rn-config).
+opcode_table rs910-config
+# Phase 3.1: `SpriteSheet`, split out of
+# iface, and `font_atlas`, which only waited for it (moved into the crate).
+sprite_sheet rs910-config
+font_atlas rs910-config
+# Phase 3.2 moved ui_defaults (MiniMenuDefaults, the Bindings decoder) into
+# the crate.
+ui_defaults rs910-config
+# NXT side tables (renderer plan A5): new, no Java counterpart.
+nxt rs910-config
+# Phase 3.2 moved ui_configs into the crate, with `ui_components::Text`
+# (`utf16_text`) and `ui_properties::Param` (ParamType, into ui_configs),
+# and wordpack.
+# (skybox: its config half is `skybox_types`; the SkyBox state went to
+# rs910-scene in Phase 2.8.)
+ui_configs rs910-config
+utf16_text rs910-config
+wordpack rs910-config
+
+# rs910-game (entity state and packet appliers). Phase 2.6 moved these into
+# tools/client910/crates/rs910-game (protocol910's config decoders went to
+# rs910-config's `types910`); `client_vars` is ui_vars' ClientVarDomain half
+# and `animation_playback` (AnimationNode frame progression over
+# entities910's Node) was mapped to rs910-model before:
+entities910 rs910-game
+protocol910 rs910-game
+entity_runtime rs910-game
+actor rs910-game
+animation_playback rs910-game
+camera_follow rs910-game
+client_vars rs910-game
+ui_var_store rs910-game
+ui_changes rs910-game
+login_state rs910-game
+# Phase 3.2: CLIENT910_CUTSCENE_TRACE, the diagnostic only the game layer reads.
+game_debug_flags rs910-game
+# Phase 3.2: ui_draw's `Fade` (the Client.fade* statics the cutscene writes).
+screen_fade rs910-game
+sequence_sound rs910-game
+# Phase 3.2 moved game_runtime (`Game`; its `ui_variables` went to
+# client_game's `ClientGame`) and cutscene into the crate. ui_vars (`State`,
+# `Variables`: the CS2 host's var-domain view) is UI (`ui_*` below).
+game_runtime rs910-game
+cutscene rs910-game
+
+# rs910-model (Phase 2.7 moved these into tools/client910/crates/rs910-model;
+# `animation_random` is AnimationRandom, split out of animation_playback):
+modelunlit rs910-model
+model rs910-model
+gpumodel rs910-model
+material rs910-model
+animation_random rs910-core
+animation_skeletal rs910-model
+water rs910-model
+hardshadow rs910-model
+floor rs910-model
+particle rs910-model
+font_layout rs910-model
+# The hand-written inventory-icon rasteriser.
+icon_raster rs910-model
+# Phase 2.8 splits: `Sprite` (ui_sprites' CPU pixels, GpuToolkit.createSprite)
+# and `MeshBillboards` (billboard_render's CPU half).
+sprite rs910-model
+mesh_billboards rs910-model
+# Phase 3.1: the dash geometry, split out of
+# world_map_polygon (the toolkit painter and the map painters share it).
+line_dashes rs910-model
+# (Phase 2.8 remapped the modules the model lane left behind to rs910-scene:
+# animation_assets, player_model/pose/body/shadow, npc_type_model and
+# loctype read rs910-game entity state as well as rs910-model, which only
+# the scene layer may do; floorlight, light_animation and model_lights read
+# env/scene/draw_entity; ui_icon_model reads camera/minimap.)
+
+# rs910-scene (Phase 2.8 moved these into tools/client910/crates/rs910-scene;
+# `cam2_scene` is ui_cam2's Trackable/SceneInput, `draw_entity` draw's
+# DrawEntity/entities, `scene_debug_flags` the three CLIENT910_* variables
+# only the scene reads. `scene_golden` is a client910 test module.)
+map rs910-scene
+map_npcs rs910-scene
+maploader rs910-scene
+locs rs910-scene
+tileflags rs910-scene
+env rs910-scene
+rebuild rs910-scene
+scene rs910-scene
+scene_golden rs910-scene
+draw rs910-scene
+draw_trace rs910-scene
+occlusion rs910-scene
+occlusion_raster rs910-scene
+occlusion_fixtures rs910-scene
+roof rs910-scene
+roof_fixtures rs910-scene
+dynamic_loc rs910-scene
+dynamic_scene rs910-scene
+obj_stack rs910-scene
+live_scene rs910-scene
+camera rs910-scene
+minimap rs910-scene
+world_map_polygon rs910-scene
+cover_marker rs910-scene
+entity_elements rs910-scene
+player_scene rs910-scene
+scene_player_pick rs910-scene
+player_picking rs910-scene
+title_world rs910-scene
+cam2_scene rs910-scene
+draw_entity rs910-scene
+scene_debug_flags rs910-scene
+skybox rs910-scene
+animation_assets rs910-scene
+player_model rs910-scene
+player_pose rs910-scene
+player_body rs910-scene
+player_shadow rs910-scene
+npc_draw rs910-scene
+npc_type_model rs910-scene
+loctype rs910-scene
+model_lights rs910-scene
+floorlight rs910-scene
+light_animation rs910-scene
+ui_icon_model rs910-scene
+# Phase 3.2: `GameScene` (`verify_scene`/`capture_scene`, the extension
+# trait of rs910-game's `Game`) moved into the crate.
+game_scene rs910-scene
+# Phase 3.2: floor_render's CPU uniform block (`FloorUniforms`).
+floor_uniforms rs910-scene
+# Phase 3.3: one frame's skybox (sky_frame, from sw_toolkit::model) and the
+# players' draw view (player_draw, for a toolkit's PlayerEntity.draw).
+sky_frame rs910-scene
+sky_decor rs910-scene
+sky_texture rs910-scene
+player_draw rs910-scene
+# Phase 3.2: the interface-model draw the UI hands the renderers
+# (`ui_models::Draw` and its resources; A4 of the NXT renderer plan).
+interface_model rs910-scene
+# Renderer plan A1: the renderer-neutral scene snapshot (from
+# sw_toolkit::model's `SceneInput`).
+scene_snapshot rs910-scene
+
+# rs910-audio. Phase 2.5 moved audio_api, audio_backend, audio_stream and
+# audio_vorbis into tools/client910/crates/rs910-audio and split the rest of
+# the stack out of them (breaking the api/backend/stream cycle):
+audio_api rs910-audio
+audio_backend rs910-audio
+audio_stream rs910-audio
+audio_vorbis rs910-audio
+audio_adjust rs910-audio
+audio_bus rs910-audio
+audio_mixer rs910-audio
+audio_sink rs910-audio
+audio_sound_file rs910-audio
+audio_voice rs910-audio
+# (Phase 3.2 remapped audio_runtime and positioned_sound to rs910-ui, below.)
+
+# rs910-toolkit (Phase 3.1 moved these into tools/client910/crates/rs910-toolkit):
+# the display lists shared by the GPU painter and sw_toolkit (`ui_paint`
+# minus its wgpu Renderer, `sprite_draw`/`text_render` minus their wgpu
+# halves), the CPU font (`font`, from ui_fonts), the `Toolkit` trait
+# (`toolkit`) and the FramePlan (`frame_plan`, with ui_backend's `Scene`).
+ui_paint rs910-toolkit
+sprite_draw rs910-toolkit
+text_render rs910-toolkit
+font rs910-toolkit
+toolkit rs910-toolkit
+frame_plan rs910-toolkit
+# Phase 3.2: the diagnostics both the UI and the GPU renderer read.
+toolkit_debug_flags rs910-toolkit
+# Phase 3.2: the UI's frame output (`ui_backend::Output`, generic over the
+# model draw) and the Java canvas geometry (`ui_window::Canvas`).
+ui_output rs910-toolkit
+# Phase 3.2: the developer console's draw plan and `ConsoleView`.
+console_draw rs910-toolkit
+# Phase 3.2: the CPU halves of two capability queries (the performance-
+# metric model, the CompressedTextureFormat GL codes).
+performance_metric rs910-toolkit
+compressed_texture_format rs910-toolkit
+game_canvas rs910-toolkit
+# Renderer plan A3: the hardware toolkit's capability answers as data.
+capability rs910-toolkit
+
+# rs910-render-gpu
+render rs910-render-gpu
+pipelines rs910-render-gpu
+floor_render rs910-render-gpu
+floorpass rs910-render-gpu
+particle_render rs910-render-gpu
+postprocess rs910-render-gpu
+skybox_render rs910-render-gpu
+scene_target rs910-render-gpu
+# Phase 3.1: the wgpu halves of the toolkit display lists.
+ui_paint_gpu rs910-render-gpu
+text_render_gpu rs910-render-gpu
+sprite_draw_gpu rs910-render-gpu
+# Phase 3.2: the device halves of the UI's capability queries (the GL
+# compressed-texture codes, the performance-metric benchmark).
+console_render rs910-render-gpu
+billboard_render rs910-render-gpu
+# The generated waterfall billow volume (replaces the shipped blob).
+billow rs910-render-gpu
+ui_model_gpu rs910-render-gpu
+window_canvas rs910-render-gpu
+frame_profile rs910-render-gpu
+actor_render rs910-render-gpu
+player_renderer rs910-render-gpu
+# Renderer plan A1: the scene's GPU meshes (from app.rs's ViewerApp).
+scene_meshes rs910-render-gpu
+# Phase 3.4: the diagnostics only the GPU renderer (and the app) read.
+render_debug_flags rs910-render-gpu
+
+# rs910-render-modern: the modern scene renderer, by subsystem
+# (docs/renderer/modern-renderer.md; the exact `nxt` above is
+# rs910-config's NXT data tables).
+atmosphere rs910-render-modern
+device_features rs910-render-modern
+exclusive rs910-render-modern
+far rs910-render-modern
+fast_hash rs910-render-modern
+frame rs910-render-modern
+lighting rs910-render-modern
+models rs910-render-modern
+modern_debug_flags rs910-render-modern
+post rs910-render-modern
+settings rs910-render-modern
+shaders rs910-render-modern
+shadows rs910-render-modern
+sprites rs910-render-modern
+terrain rs910-render-modern
+water_body rs910-render-modern
+# rs910-far-scene (lane Q-FAR1, NXT render distance F0-F2): the far scene's
+# levels, ring, quiet map reads and resident squares.
+far_* rs910-far-scene
+
+# rs910-gpu-device (Phase 3.4, NXT renderer plan A2): the device layer the
+# faithful GPU and NXT backends share (instance/adapter/device/
+# queue/surface, the device capability answers). (`software_present`, the
+# software toolkit's presenter, went with rs910-render-sw in lane DROP-SW.)
+gpu_device rs910-gpu-device
+# Lane G-DEVICE: device loss and error reports (recorded, not panics).
+health rs910-gpu-device
+# Phase 6: the staging-belt buffer uploads the device submits first.
+uploads rs910-gpu-device
+# Phase 3.4: the device halves of the UI's capability queries (the GL
+# compressed-texture codes, the performance-metric benchmark), remapped from
+# rs910-render-gpu: device answers, no render pass.
+client_watch_gpu rs910-gpu-device
+ui_preferences_metric_gpu rs910-gpu-device
+# (rs910-render-sw, the software toolkit `sw_toolkit` and `sw_debug_flags`,
+# was removed in lane DROP-SW.)
+
+# rs910-client (Client mainloop/state, LoginManager IO, loading). Phase 4
+# moved these into tools/client910/crates/rs910-client. net: the
+# socket/login half left after Phase 2.2 (tokio; its login blocks write
+# through native910's ByteWriter). (`app_loading.rs` is app's `#[path]`
+# submodule `loading_host`, the app side of the loading stages: it moves
+# with the app's core half, Phase 4.4/5.1.)
+net rs910-client
+graphics_runtime rs910-client
+loading_connection rs910-client
+# The world's silence timer and the ping report.
+connection_upkeep rs910-client
+wire_stream rs910-client
+login_crypto rs910-client
+session rs910-client
+session_record rs910-client
+input_script rs910-client
+# Phase 4: CLIENT910_RECORD and the input injectors.
+client_debug_flags rs910-client
+# Phase 4: split out of app.rs (whole items): the renderer capabilities the
+# session's toolkit installation reads and records, and the login workers
+# with their tokio runtime (the shell names no tokio).
+toolkit_caps rs910-client
+login_worker rs910-client
+# Phase 5: the client core (the session owners, the logic phase list, the
+# `Io` boundary and the core's redraw steps), moved out of client910's app.
+client_core rs910-client
+
+# rs910-ui (everything else of the retained UI + CS2 host). Phase 3.2 moved
+# these into tools/client910/crates/rs910-ui, with:
+# - ui_backend (the retained traversal that records a frame; no wgpu, so not
+#   the GPU renderer: remapped from rs910-render-gpu);
+# - audio_runtime (`Client.audioApi`: the retained sound requests, the
+#   SOUND_SONG* client packets) and positioned_sound (loc/NPC/player sounds
+#   over protocol910 `Bas`/`Npc` and cam2's random), remapped from
+#   rs910-audio, which may read neither the protocol, the game nor the UI;
+#   the UI's `Runtime` owns the `AudioRuntime` and calls rs910-audio.
+ui_backend rs910-ui
+audio_runtime rs910-ui
+positioned_sound rs910-ui
+# Phase 3.2: `Client.clipboard`, read by ScriptRunner.getclipboard and the
+# developer console (both UI); std only.
+clipboard rs910-ui
+# `lastlogin`'s reverse DNS lookup.
+host_name rs910-ui
+# Phase 3.2: `ClientGame`, the rs910-game `Game` plus the UI variable state
+# (`ui_vars::State`) the app owns beside it.
+client_game rs910-ui
+# TimeFormatter: needs libc localtime_r for the local calendar, so it is not
+# std-only core (Phase 2.1); its callers are the CS2 hosts.
+ui_time rs910-ui
+iface rs910-ui
+console rs910-ui
+message_box rs910-ui
+loading rs910-ui
+debug_overlay rs910-ui
+# Lane G-DEVICE: the server ping behind the overlay (ICMP through libc).
+ping rs910-ui
+client_watch rs910-ui
+world_map rs910-ui
+world_map_client rs910-ui
+ui_* rs910-ui
+
+# rs910-symbols: the content-symbol registry's generated bindings (`sym gen`,
+# docs/symbols.md), one module per kind.
+component rs910-symbols
+dbrow rs910-symbols
+dbtable rs910-symbols
+enums rs910-symbols
+interface rs910-symbols
+inv rs910-symbols
+loc rs910-symbols
+location rs910-symbols
+npc rs910-symbols
+obj rs910-symbols
+param rs910-symbols
+quest rs910-symbols
+script rs910-symbols
+seq rs910-symbols
+spot rs910-symbols
+structs rs910-symbols
+varbit rs910-symbols
+varc rs910-symbols
+varp rs910-symbols

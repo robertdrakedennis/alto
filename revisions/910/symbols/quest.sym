@@ -1,0 +1,14 @@
+# Content symbols of this revision: quest. Columns: name, id, fingerprint (tab separated), sorted by name.
+# Written by `npm --prefix server run sym -- add`; never edit by hand. `sym check` resolves every line against
+# the cache and `sym gen` writes the bindings (docs/symbols.md).
+cabin_fever_quest	296	name=Cabin Fever
+cooks_assistant_quest	257	name=Cook's Assistant
+fairy_tale_cure_a_queen	309	name=A Fairy Tale II - Cure a Queen
+fairy_tale_growing_pains	297	name=A Fairy Tale I - Growing Pains
+fairy_tale_orks_rift	337	name=A Fairy Tale III - Battle at Ork's Rift
+family_crest	116	name=Family Crest
+rune_mysteries	358	name=Rune Mysteries
+sheep_shearer_miniquest	173	name=Sheep Shearer (miniquest)
+the_grand_tree_quest	269	name=The Grand Tree
+the_restless_ghost	27	name=The Restless Ghost
+tree_gnome_village_quest	267	name=Tree Gnome Village

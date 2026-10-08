@@ -1,0 +1,89 @@
+{
+  "format": 1,
+  "build": {
+    "major": 950,
+    "minor": 1
+  },
+  "client_md5": "290cb3489d088d145741f1734f53b0fc",
+  "size": [
+    {
+      "pixel_scale": 1,
+      "fraction_scale_bits": 0,
+      "fraction_bias_bits": 0,
+      "fraction_subtract": false,
+      "element_fraction_bits": 0
+    },
+    {
+      "pixel_scale": -1,
+      "fraction_scale_bits": 0,
+      "fraction_bias_bits": 1065353216,
+      "fraction_subtract": false,
+      "element_fraction_bits": 0
+    },
+    {
+      "pixel_scale": 0,
+      "fraction_scale_bits": 947912704,
+      "fraction_bias_bits": 0,
+      "fraction_subtract": false,
+      "element_fraction_bits": 0
+    },
+    {
+      "pixel_scale": 0,
+      "fraction_scale_bits": 0,
+      "fraction_bias_bits": 0,
+      "fraction_subtract": false,
+      "element_fraction_bits": 0
+    },
+    {
+      "pixel_scale": 0,
+      "fraction_scale_bits": 0,
+      "fraction_bias_bits": 0,
+      "fraction_subtract": false,
+      "element_fraction_bits": 0
+    }
+  ],
+  "position": [
+    {
+      "pixel_scale": 1,
+      "fraction_scale_bits": 0,
+      "fraction_bias_bits": 0,
+      "fraction_subtract": false,
+      "element_fraction_bits": 0
+    },
+    {
+      "pixel_scale": 1,
+      "fraction_scale_bits": 0,
+      "fraction_bias_bits": 1056964608,
+      "fraction_subtract": false,
+      "element_fraction_bits": 1056964608
+    },
+    {
+      "pixel_scale": -1,
+      "fraction_scale_bits": 0,
+      "fraction_bias_bits": 1065353216,
+      "fraction_subtract": false,
+      "element_fraction_bits": 1065353216
+    },
+    {
+      "pixel_scale": 0,
+      "fraction_scale_bits": 947912704,
+      "fraction_bias_bits": 0,
+      "fraction_subtract": false,
+      "element_fraction_bits": 0
+    },
+    {
+      "pixel_scale": 0,
+      "fraction_scale_bits": 947912704,
+      "fraction_bias_bits": 1056964608,
+      "fraction_subtract": false,
+      "element_fraction_bits": 1056964608
+    },
+    {
+      "pixel_scale": 0,
+      "fraction_scale_bits": 947912704,
+      "fraction_bias_bits": 1065353216,
+      "fraction_subtract": true,
+      "element_fraction_bits": 1065353216
+    }
+  ]
+}

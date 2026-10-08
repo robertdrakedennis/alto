@@ -1,0 +1,555 @@
+{
+  "format": 1,
+  "accountKey": "alice",
+  "faction": "saradomin",
+  "arenaId": "gwd-saradomin",
+  "saraKite": {
+    "role": "Commander Zilyana",
+    "weapon": 13879,
+    "mainHandSlot": 3,
+    "range": 7,
+    "speedTicks": 6,
+    "runModeVarp": 463,
+    "runDrainFine": 70,
+    "runFinePerPercent": 100,
+    "runInitialFine": 10000,
+    "source": {
+      "input": "combat/run-energy.json",
+      "sha256": "35b91b83bb0b1bbbef4a41fe04c5ac3b8c9cbf9b2e74902b6f3f6739c8299fd5"
+    },
+    "policy": "Local player strategy: general first, an actual ranged launch then ordinary map-bounded movement and source-cadence wait before a distinct fresh Attack; finite observed Run energy, no historic guide or guaranteed survival claim"
+  },
+  "equipment": [
+    4732,
+    4736,
+    4738,
+    11698
+  ],
+  "godAccessory": null,
+  "physicalEquipment": [
+    {
+      "item": 4732,
+      "usedItem": 35563,
+      "slot": 0,
+      "capacity": 100000,
+      "freshCharges": 100000,
+      "wearPerTick": 1,
+      "equipment": {
+        "name": "Karil's coif",
+        "slot": 0,
+        "covers": [
+          0,
+          8,
+          11
+        ],
+        "occupancy": [
+          0
+        ],
+        "kind": "tank",
+        "active": true,
+        "tier": 70,
+        "armourStyle": "ranged",
+        "reductionLevel": 70,
+        "requirements": [
+          {
+            "stat": 1,
+            "level": 70
+          }
+        ]
+      },
+      "qualification": [
+        "Karil's coif oldid30649763: degrades and repair_cost agree with all three current native identities",
+        "Barrows equipment oldid30649719: percentage-state mechanism retired in September 2015; current related-item chain bypasses those identities",
+        "Fresh output installs one physical balance; used identity always requires the same saved UUID and charge balance",
+        "Default missing-charge NPC repair price rounds upward as an explicit local policy; qualified armour-stand pricing is captured separately"
+      ]
+    },
+    {
+      "item": 4736,
+      "usedItem": 35565,
+      "slot": 4,
+      "capacity": 100000,
+      "freshCharges": 100000,
+      "wearPerTick": 1,
+      "equipment": {
+        "name": "Karil's top",
+        "slot": 4,
+        "covers": [
+          4,
+          6
+        ],
+        "occupancy": [
+          4
+        ],
+        "kind": "tank",
+        "active": true,
+        "tier": 70,
+        "armourStyle": "ranged",
+        "reductionLevel": 70,
+        "requirements": [
+          {
+            "stat": 1,
+            "level": 70
+          }
+        ]
+      },
+      "qualification": [
+        "Karil's top oldid30649747: degrades and repair_cost agree with all three current native identities",
+        "Barrows equipment oldid30649719: percentage-state mechanism retired in September 2015; current related-item chain bypasses those identities",
+        "Fresh output installs one physical balance; used identity always requires the same saved UUID and charge balance",
+        "Default missing-charge NPC repair price rounds upward as an explicit local policy; qualified armour-stand pricing is captured separately"
+      ]
+    },
+    {
+      "item": 4738,
+      "usedItem": 35566,
+      "slot": 7,
+      "capacity": 100000,
+      "freshCharges": 100000,
+      "wearPerTick": 1,
+      "equipment": {
+        "name": "Karil's skirt",
+        "slot": 7,
+        "covers": [
+          7
+        ],
+        "occupancy": [
+          7
+        ],
+        "kind": "tank",
+        "active": true,
+        "tier": 70,
+        "armourStyle": "ranged",
+        "reductionLevel": 70,
+        "requirements": [
+          {
+            "stat": 1,
+            "level": 70
+          }
+        ]
+      },
+      "qualification": [
+        "Karil's skirt oldid30649746: degrades and repair_cost agree with all three current native identities",
+        "Barrows equipment oldid30649719: percentage-state mechanism retired in September 2015; current related-item chain bypasses those identities",
+        "Fresh output installs one physical balance; used identity always requires the same saved UUID and charge balance",
+        "Default missing-charge NPC repair price rounds upward as an explicit local policy; qualified armour-stand pricing is captured separately"
+      ]
+    }
+  ],
+  "combatEquipment": [
+    861,
+    892
+  ],
+  "arenaEquipment": [
+    13879
+  ],
+  "rejoinEquipment": [
+    11698
+  ],
+  "thrownAmmunition": {
+    "item": 13879,
+    "count": 1000
+  },
+  "thrownFacts": {
+    "item": 13879,
+    "name": "Morrigan's javelin",
+    "range": {
+      "item": 13879,
+      "range": 7,
+      "ammunitionRecoveryPercent": null,
+      "intrinsicProjectile": false,
+      "optionalAmmunition": false
+    },
+    "category": 14946,
+    "sequence": 18229,
+    "projectile": 1837,
+    "quest": -1,
+    "secondaryStat": -1,
+    "secondaryLevel": 0,
+    "accuracy": 1829,
+    "damage": 11622,
+    "speed": 6,
+    "qualification": "Retained dated Morrigan javelin oldid30676611 explicitly establishes ordinary base stackable nondegradation; generated range and native Wield/projectile/class sequence have existing normal owners; no special activation"
+  },
+  "tools": [],
+  "recoveredAmmunition": [
+    892,
+    13879
+  ],
+  "altarEquipment": [
+    11698
+  ],
+  "combatStyle": "ranged",
+  "equipmentFacts": [
+    {
+      "item": 4732,
+      "name": "Karil's coif",
+      "qualified": {
+        "name": "Karil's coif",
+        "slot": 0,
+        "covers": [
+          0,
+          8,
+          11
+        ],
+        "occupancy": [
+          0
+        ],
+        "kind": "tank",
+        "active": true,
+        "tier": 70,
+        "armourStyle": "ranged",
+        "reductionLevel": 70,
+        "requirements": [
+          {
+            "stat": 1,
+            "level": 70
+          }
+        ]
+      },
+      "inventoryOperations": [
+        null,
+        "Wear",
+        "Check charges",
+        null,
+        "Drop"
+      ]
+    },
+    {
+      "item": 4736,
+      "name": "Karil's top",
+      "qualified": {
+        "name": "Karil's top",
+        "slot": 4,
+        "covers": [
+          4,
+          6
+        ],
+        "occupancy": [
+          4
+        ],
+        "kind": "tank",
+        "active": true,
+        "tier": 70,
+        "armourStyle": "ranged",
+        "reductionLevel": 70,
+        "requirements": [
+          {
+            "stat": 1,
+            "level": 70
+          }
+        ]
+      },
+      "inventoryOperations": [
+        null,
+        "Wear",
+        "Check charges",
+        null,
+        "Drop"
+      ]
+    },
+    {
+      "item": 4738,
+      "name": "Karil's skirt",
+      "qualified": {
+        "name": "Karil's skirt",
+        "slot": 7,
+        "covers": [
+          7
+        ],
+        "occupancy": [
+          7
+        ],
+        "kind": "tank",
+        "active": true,
+        "tier": 70,
+        "armourStyle": "ranged",
+        "reductionLevel": 70,
+        "requirements": [
+          {
+            "stat": 1,
+            "level": 70
+          }
+        ]
+      },
+      "inventoryOperations": [
+        null,
+        "Wear",
+        "Check charges",
+        null,
+        "Drop"
+      ]
+    },
+    {
+      "item": 11698,
+      "name": "Saradomin godsword",
+      "qualified": {
+        "name": "Saradomin godsword",
+        "slot": 3,
+        "covers": [
+          3,
+          5
+        ],
+        "occupancy": [
+          3,
+          5
+        ],
+        "kind": "melee-main",
+        "requirement": {
+          "skill": "attack",
+          "level": 75
+        }
+      },
+      "inventoryOperations": [
+        null,
+        "Wield",
+        "Remove-hilt",
+        null,
+        "Drop"
+      ]
+    },
+    {
+      "item": 861,
+      "name": "Magic shortbow",
+      "qualified": {
+        "name": "Magic shortbow",
+        "slot": 3,
+        "covers": [
+          3,
+          5
+        ],
+        "occupancy": [
+          3,
+          5
+        ],
+        "kind": "ranged-main",
+        "requirement": {
+          "skill": "ranged",
+          "level": 50
+        }
+      },
+      "inventoryOperations": [
+        null,
+        "Wield",
+        null,
+        null,
+        "Drop"
+      ]
+    },
+    {
+      "item": 892,
+      "name": "Rune arrow",
+      "qualified": {
+        "name": "Rune arrow",
+        "slot": 13,
+        "covers": [
+          13
+        ],
+        "occupancy": [
+          13
+        ],
+        "kind": "ammo"
+      },
+      "inventoryOperations": [
+        null,
+        "Wield",
+        null,
+        null,
+        "Drop"
+      ]
+    },
+    {
+      "item": 13879,
+      "name": "Morrigan's javelin",
+      "qualified": {
+        "name": "Morrigan's javelin",
+        "slot": 3,
+        "covers": [
+          3
+        ],
+        "occupancy": [
+          3
+        ],
+        "kind": "ranged-thrown",
+        "requirement": {
+          "skill": "ranged",
+          "level": 78
+        }
+      },
+      "inventoryOperations": [
+        null,
+        "Wield",
+        null,
+        null,
+        "Drop"
+      ]
+    }
+  ],
+  "food": {
+    "item": 385,
+    "count": 21
+  },
+  "campApproach": {
+    "mainHandSlot": 3,
+    "weapons": [
+      {
+        "item": 861,
+        "range": 7
+      },
+      {
+        "item": 892,
+        "range": 1
+      },
+      {
+        "item": 13879,
+        "range": 7
+      },
+      {
+        "item": 11698,
+        "range": 1
+      }
+    ]
+  },
+  "campSelection": {
+    "slayerStat": 18,
+    "policy": "Current native base level plus generated requirement; conservatively exclude task/protection/gear/special-attack restricted camp rows"
+  },
+  "ammunition": {
+    "item": 892,
+    "count": 1000,
+    "meaning": "Declared normal initial stack; every ordinary shot must consume through ranged owner"
+  },
+  "route": {
+    "camp": [
+      "gwd_saradomin_first_wall",
+      "gwd_saradomin_second_wall"
+    ],
+    "campReturn": [
+      "gwd_saradomin_second_return",
+      "gwd_saradomin_first_return"
+    ]
+  },
+  "prayerPolicy": {
+    "campDrain": "unchanged",
+    "depleted": "Crossing genuinely empties Prayer; only one ordinary admitted Pray-at may restore it before arena fights, with two later Teleports and no cooldown retry or fixture refill"
+  },
+  "toolbar": {
+    "backpackDestination": 2,
+    "prayerDestination": 4,
+    "combatDestination": 6,
+    "retaliationVarp": 462,
+    "settings": {
+      "layout": {
+        "category": 31,
+        "slot": 1,
+        "definition": 41667,
+        "selectionPath": [
+          {
+            "index": 5,
+            "parent": 5,
+            "category": 31
+          },
+          {
+            "index": 31,
+            "parent": 5,
+            "category": 31
+          }
+        ]
+      },
+      "slim": {
+        "category": 7,
+        "slot": 3,
+        "definition": 41659,
+        "selectionPath": [
+          {
+            "index": 0,
+            "parent": 0,
+            "category": 6
+          },
+          {
+            "index": 7,
+            "parent": 0,
+            "category": 7
+          }
+        ]
+      }
+    }
+  },
+  "transportPolicy": "Ordinary Settings enables Slim headers and preserves original layout before native retaliation OFF; no seeded preferences; explicit Attack unchanged",
+  "prayers": [
+    {
+      "name": "Protect from Magic",
+      "action": 13,
+      "button": 11,
+      "level": 37,
+      "group": "protect-magic",
+      "activationBit": 16745,
+      "drainFinePerTick": 15,
+      "levelBonus": 0,
+      "damageBonusPercent": 0,
+      "reductionPercent": 50
+    }
+  ],
+  "restoreBeforeArena": false,
+  "roomFoodPolicy": null,
+  "initialCount": 39,
+  "initialLocation": {
+    "level": 0,
+    "x": 2911,
+    "z": 5298,
+    "packed": 47699122
+  },
+  "initialFixture": {
+    "qualification": "declared-before-login-only",
+    "skillFacts": [
+      {
+        "name": "Attack",
+        "stat": 0,
+        "xp": 13034431,
+        "level": 99
+      },
+      {
+        "name": "Strength",
+        "stat": 2,
+        "xp": 13034431,
+        "level": 99
+      },
+      {
+        "name": "Defence",
+        "stat": 1,
+        "xp": 13034431,
+        "level": 99
+      },
+      {
+        "name": "Constitution",
+        "stat": 3,
+        "xp": 13034431,
+        "level": 99
+      },
+      {
+        "name": "Prayer",
+        "stat": 5,
+        "xp": 13034431,
+        "level": 99
+      },
+      {
+        "name": "Ranged",
+        "stat": 4,
+        "xp": 13034431,
+        "level": 99
+      },
+      {
+        "name": "Agility",
+        "stat": 16,
+        "xp": 13034431,
+        "level": 99
+      }
+    ],
+    "worn": "empty; actual Wield/Wear required after authentication",
+    "counts": "Previously earned 39 are declared; one actual camp kill must supply the fortieth",
+    "entry": "Starts inside the accessible dungeon; first surface quest progression is held",
+    "armadyl": "Initial camp uses actual MSB/Rune arrows, later roles/rejoin use the declared nondegrading javelin stack; Godsword supplies travel/altar association and the Prayer-gated worn stole blocks new own-faction camp acquisition only; no Prayer-drain bonus is counted",
+    "armour": "Fresh generated Barrows armour is carried without UUID/charge metadata; actual Wear installs the sole physical balance, ordinary combat must produce the used identity and charge wear",
+    "random": "World ordinary RNG unchanged; no fixture stream"
+  }
+}

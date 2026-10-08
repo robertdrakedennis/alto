@@ -1,0 +1,953 @@
+{
+  "format": 1,
+  "source_build": {
+    "major": 950,
+    "minor": 1
+  },
+  "source_client_md5": "290cb3489d088d145741f1734f53b0fc",
+  "source_string_encoding": "windows1252_drop_unassigned",
+  "target_build": 910,
+  "rules": [
+    {
+      "source_opcode": 62,
+      "source_handler": 3029744,
+      "source_encoding": "int",
+      "source_command": "pop_string_local",
+      "operations": {
+        "pop_string_local": {
+          "command": "pop_string_local",
+          "opcode": 193,
+          "large_operand": true,
+          "requirement": "intrinsic"
+        }
+      }
+    },
+    {
+      "source_opcode": 78,
+      "source_handler": 3041296,
+      "source_encoding": "int",
+      "source_command": "branch_if_false",
+      "operations": {
+        "branch_if_false": {
+          "command": "branch_if_false",
+          "opcode": 127,
+          "large_operand": true,
+          "requirement": "intrinsic"
+        }
+      }
+    },
+    {
+      "source_opcode": 106,
+      "source_handler": 3245808,
+      "source_encoding": "byte",
+      "source_command": "if_getfontgraphic",
+      "operations": {
+        "if_getfontgraphic": {
+          "command": "if_getfontgraphic",
+          "opcode": 72,
+          "large_operand": false,
+          "requirement": "explicit_component_text",
+          "host_operation": "component-text/read-font/4/290cb3489d088d145741f1734f53b0fc/-1/explicit"
+        }
+      }
+    },
+    {
+      "source_opcode": 120,
+      "source_handler": 3206608,
+      "source_encoding": "byte",
+      "source_command": "cc_settextalign",
+      "operations": {
+        "cc_settextalign": {
+          "command": "cc_settextalign",
+          "opcode": 525,
+          "large_operand": false,
+          "requirement": "active_component_text",
+          "host_operation": "component-text/alignment/4/active",
+          "selector": "nonzero"
+        }
+      }
+    },
+    {
+      "source_opcode": 126,
+      "source_handler": 3043536,
+      "source_encoding": "int",
+      "source_command": "branch_greater_than_or_equals",
+      "operations": {
+        "branch_greater_than_or_equals": {
+          "command": "branch_greater_than_or_equals",
+          "opcode": 1122,
+          "large_operand": true,
+          "requirement": "intrinsic"
+        }
+      }
+    },
+    {
+      "source_opcode": 132,
+      "source_handler": 3172320,
+      "source_encoding": "byte",
+      "source_command": "if_find",
+      "operations": {
+        "if_find": {
+          "command": "if_find",
+          "opcode": 66,
+          "large_operand": false,
+          "requirement": "explicit_component_selection",
+          "host_operation": "find-component",
+          "selector": "equals_one"
+        }
+      }
+    },
+    {
+      "source_opcode": 151,
+      "source_handler": 3192064,
+      "source_encoding": "byte",
+      "source_command": "active_transmit_hook",
+      "operations": {
+        "active_transmit_hook": {
+          "command": "cc_setonvartransmit",
+          "opcode": 861,
+          "large_operand": false,
+          "requirement": "player_variable_callback",
+          "host_operation": "retained-player-transmit/1/1/0/-2147483647/11",
+          "selector": "nonzero"
+        }
+      }
+    },
+    {
+      "source_opcode": 285,
+      "source_handler": 3044176,
+      "source_encoding": "int",
+      "source_command": "branch_not",
+      "operations": {
+        "branch_not": {
+          "command": "branch_not",
+          "opcode": 543,
+          "large_operand": true,
+          "requirement": "intrinsic"
+        }
+      }
+    },
+    {
+      "source_opcode": 305,
+      "source_handler": 2645232,
+      "source_encoding": "byte",
+      "source_command": "cc_settrans",
+      "operations": {
+        "cc_settrans": {
+          "command": "cc_settrans",
+          "opcode": 256,
+          "large_operand": false,
+          "requirement": "active_component_paint",
+          "host_operation": "component-paint/transparency/active",
+          "selector": "equals_one"
+        }
+      }
+    },
+    {
+      "source_opcode": 405,
+      "source_handler": 3044048,
+      "source_encoding": "int",
+      "source_command": "branch_equals",
+      "operations": {
+        "branch_equals": {
+          "command": "branch_equals",
+          "opcode": 1419,
+          "large_operand": true,
+          "requirement": "intrinsic"
+        }
+      }
+    },
+    {
+      "source_opcode": 429,
+      "source_handler": 3042112,
+      "source_encoding": "int",
+      "source_command": "long_branch_less_than_or_equals",
+      "operations": {
+        "long_branch_less_than_or_equals": {
+          "command": "long_branch_less_than_or_equals",
+          "opcode": 1103,
+          "large_operand": true,
+          "requirement": "intrinsic"
+        }
+      }
+    },
+    {
+      "source_opcode": 435,
+      "source_handler": 3172624,
+      "source_encoding": "byte",
+      "source_command": "cc_deleteall",
+      "operations": {
+        "cc_deleteall": {
+          "command": "cc_deleteall",
+          "opcode": 468,
+          "large_operand": false,
+          "requirement": "explicit_runtime_children",
+          "host_operation": "clear-runtime-children"
+        }
+      }
+    },
+    {
+      "source_opcode": 472,
+      "source_handler": 3058944,
+      "source_encoding": "int",
+      "source_command": "join_string",
+      "operations": {
+        "join_string": {
+          "command": "join_string",
+          "opcode": 68,
+          "large_operand": true,
+          "requirement": "string_join"
+        }
+      }
+    },
+    {
+      "source_opcode": 496,
+      "source_handler": 3041984,
+      "source_encoding": "int",
+      "source_command": "long_branch_greater_than_or_equals",
+      "operations": {
+        "long_branch_greater_than_or_equals": {
+          "command": "long_branch_greater_than_or_equals",
+          "opcode": 411,
+          "large_operand": true,
+          "requirement": "intrinsic"
+        }
+      }
+    },
+    {
+      "source_opcode": 536,
+      "source_handler": 3042496,
+      "source_encoding": "int",
+      "source_command": "long_branch_not",
+      "operations": {
+        "long_branch_not": {
+          "command": "long_branch_not",
+          "opcode": 338,
+          "large_operand": true,
+          "requirement": "intrinsic"
+        }
+      }
+    },
+    {
+      "source_opcode": 556,
+      "source_handler": 3042240,
+      "source_encoding": "int",
+      "source_command": "long_branch_greater_than",
+      "operations": {
+        "long_branch_greater_than": {
+          "command": "long_branch_greater_than",
+          "opcode": 564,
+          "large_operand": true,
+          "requirement": "intrinsic"
+        }
+      }
+    },
+    {
+      "source_opcode": 557,
+      "source_handler": 3271568,
+      "source_encoding": "byte",
+      "source_command": "if_setfill",
+      "operations": {
+        "if_setfill": {
+          "command": "if_setfill",
+          "opcode": 622,
+          "large_operand": false,
+          "requirement": "explicit_component_paint",
+          "host_operation": "component-paint/fill/3/explicit"
+        }
+      }
+    },
+    {
+      "source_opcode": 595,
+      "source_handler": 3245584,
+      "source_encoding": "byte",
+      "source_command": "if_settext",
+      "operations": {
+        "if_settext": {
+          "command": "if_settext",
+          "opcode": 1114,
+          "large_operand": false,
+          "requirement": "explicit_plain_text"
+        }
+      }
+    },
+    {
+      "source_opcode": 626,
+      "source_handler": 3198112,
+      "source_encoding": "byte",
+      "source_command": "if_setonop",
+      "operations": {
+        "if_setonop": {
+          "command": "if_setonop",
+          "opcode": 162,
+          "large_operand": false,
+          "requirement": "operation_callback"
+        }
+      }
+    },
+    {
+      "source_opcode": 678,
+      "source_handler": 2616560,
+      "source_encoding": "byte",
+      "source_command": "if_setcolour",
+      "operations": {
+        "if_setcolour": {
+          "command": "if_setcolour",
+          "opcode": 435,
+          "large_operand": false,
+          "requirement": "explicit_component_paint",
+          "host_operation": "component-paint/colour/6/explicit"
+        }
+      }
+    },
+    {
+      "source_opcode": 753,
+      "source_handler": 3282304,
+      "source_encoding": "byte",
+      "source_command": "if_getnextcategorysubid",
+      "operations": {
+        "if_getnextcategorysubid": {
+          "command": "if_getnextsubid",
+          "opcode": 128,
+          "large_operand": false,
+          "requirement": "explicit_runtime_child_slot",
+          "host_operation": "next-runtime-child-slot/235/4096/256/0"
+        }
+      }
+    },
+    {
+      "source_opcode": 820,
+      "source_handler": 3057904,
+      "source_encoding": "typed_constant",
+      "source_command": "push_constant",
+      "operations": {
+        "push_constant_int": {
+          "command": "push_constant_string",
+          "opcode": 1376,
+          "large_operand": true,
+          "requirement": "intrinsic"
+        },
+        "push_constant_string": {
+          "command": "push_constant_string",
+          "opcode": 1376,
+          "large_operand": true,
+          "requirement": "intrinsic"
+        },
+        "push_long_constant": {
+          "command": "push_constant_string",
+          "opcode": 1376,
+          "large_operand": true,
+          "requirement": "intrinsic"
+        }
+      }
+    },
+    {
+      "source_opcode": 870,
+      "source_handler": 2616784,
+      "source_encoding": "byte",
+      "source_command": "if_sethide",
+      "operations": {
+        "if_sethide": {
+          "command": "if_sethide",
+          "opcode": 731,
+          "large_operand": false,
+          "requirement": "explicit_visibility"
+        }
+      }
+    },
+    {
+      "source_opcode": 874,
+      "source_handler": 3076736,
+      "source_encoding": "byte",
+      "source_command": "db_getfieldcount",
+      "operations": {
+        "db_getfieldcount": {
+          "command": "db_getfieldcount",
+          "opcode": 474,
+          "large_operand": false,
+          "requirement": "database_field_count"
+        }
+      }
+    },
+    {
+      "source_opcode": 878,
+      "source_command": "enum",
+      "operations": {
+        "enum": {
+          "command": "_enum",
+          "opcode": 810,
+          "large_operand": false,
+          "requirement": "enum"
+        }
+      },
+      "source_handler": 3076160,
+      "source_encoding": "byte"
+    },
+    {
+      "source_opcode": 889,
+      "source_handler": 3043920,
+      "source_encoding": "int",
+      "source_command": "branch_less_than",
+      "operations": {
+        "branch_less_than": {
+          "command": "branch_less_than",
+          "opcode": 1328,
+          "large_operand": true,
+          "requirement": "intrinsic"
+        }
+      }
+    },
+    {
+      "source_opcode": 919,
+      "source_handler": 3003360,
+      "source_encoding": "int",
+      "source_command": "switch",
+      "operations": {
+        "switch": {
+          "command": "switch",
+          "opcode": 1167,
+          "large_operand": true,
+          "requirement": "intrinsic"
+        }
+      }
+    },
+    {
+      "source_opcode": 980,
+      "source_handler": 3003920,
+      "source_encoding": "int",
+      "source_command": "push_constant_int",
+      "operations": {
+        "push_constant_int": {
+          "command": "push_constant_string",
+          "opcode": 1376,
+          "large_operand": true,
+          "requirement": "intrinsic"
+        }
+      }
+    },
+    {
+      "source_opcode": 996,
+      "source_handler": 3003664,
+      "source_encoding": "byte",
+      "source_command": "return",
+      "operations": {
+        "return": {
+          "command": "return",
+          "opcode": 1349,
+          "large_operand": false,
+          "requirement": "intrinsic"
+        }
+      }
+    },
+    {
+      "source_opcode": 1040,
+      "source_handler": 3207280,
+      "source_encoding": "byte",
+      "source_command": "cc_getfontgraphic",
+      "operations": {
+        "cc_getfontgraphic": {
+          "command": "cc_getfontgraphic",
+          "opcode": 1246,
+          "large_operand": false,
+          "requirement": "active_component_text",
+          "host_operation": "component-text/read-font/4/290cb3489d088d145741f1734f53b0fc/-1/active",
+          "selector": "nonzero"
+        }
+      }
+    },
+    {
+      "source_opcode": 1062,
+      "source_handler": 3041168,
+      "source_encoding": "int",
+      "source_command": "branch_if_true",
+      "operations": {
+        "branch_if_true": {
+          "command": "branch_if_true",
+          "opcode": 464,
+          "large_operand": true,
+          "requirement": "intrinsic"
+        }
+      }
+    },
+    {
+      "source_opcode": 1084,
+      "source_handler": 3206832,
+      "source_encoding": "byte",
+      "source_command": "cc_settextfont",
+      "operations": {
+        "cc_settextfont": {
+          "command": "cc_settextfont",
+          "opcode": 1132,
+          "large_operand": false,
+          "requirement": "active_component_text",
+          "host_operation": "component-text/font/4/15/290cb3489d088d145741f1734f53b0fc/unbound/unbound/active",
+          "selector": "nonzero"
+        }
+      }
+    },
+    {
+      "source_opcode": 1128,
+      "source_handler": 3245136,
+      "source_encoding": "byte",
+      "source_command": "if_settextalign",
+      "operations": {
+        "if_settextalign": {
+          "command": "if_settextalign",
+          "opcode": 299,
+          "large_operand": false,
+          "requirement": "explicit_component_text",
+          "host_operation": "component-text/alignment/4/explicit"
+        }
+      }
+    },
+    {
+      "source_opcode": 1208,
+      "source_handler": 3026416,
+      "source_encoding": "byte",
+      "source_command": "subtract",
+      "operations": {
+        "subtract": {
+          "command": "quickchat_dynamic_command_add",
+          "opcode": 869,
+          "large_operand": false,
+          "requirement": "intrinsic"
+        }
+      }
+    },
+    {
+      "source_opcode": 1209,
+      "source_handler": 3041856,
+      "source_encoding": "int",
+      "source_command": "long_branch_equals",
+      "operations": {
+        "long_branch_equals": {
+          "command": "long_branch_equals",
+          "opcode": 1403,
+          "large_operand": true,
+          "requirement": "intrinsic"
+        }
+      }
+    },
+    {
+      "source_opcode": 1217,
+      "source_handler": 2645456,
+      "source_encoding": "byte",
+      "source_command": "cc_setcolour",
+      "operations": {
+        "cc_setcolour": {
+          "command": "cc_setcolour",
+          "opcode": 669,
+          "large_operand": false,
+          "requirement": "active_component_paint",
+          "host_operation": "component-paint/colour/6/active",
+          "selector": "equals_one"
+        }
+      }
+    },
+    {
+      "source_opcode": 1261,
+      "source_handler": 3044304,
+      "source_encoding": "int",
+      "source_command": "branch",
+      "operations": {
+        "branch": {
+          "command": "branch",
+          "opcode": 866,
+          "large_operand": true,
+          "requirement": "intrinsic"
+        }
+      }
+    },
+    {
+      "source_opcode": 1302,
+      "source_handler": 3233152,
+      "source_encoding": "byte",
+      "source_command": "cc_setfill",
+      "operations": {
+        "cc_setfill": {
+          "command": "cc_setfill",
+          "opcode": 419,
+          "large_operand": false,
+          "requirement": "active_component_paint",
+          "host_operation": "component-paint/fill/3/active",
+          "selector": "equals_one"
+        }
+      }
+    },
+    {
+      "source_opcode": 1386,
+      "source_handler": 3206720,
+      "source_encoding": "byte",
+      "source_command": "cc_getfontmetrics",
+      "operations": {
+        "cc_getfontmetrics": {
+          "command": "cc_getfontmetrics",
+          "opcode": 728,
+          "large_operand": false,
+          "requirement": "active_component_text",
+          "host_operation": "component-text/read-font-metrics/4/290cb3489d088d145741f1734f53b0fc/-1/active",
+          "selector": "nonzero"
+        }
+      }
+    },
+    {
+      "source_opcode": 1475,
+      "source_handler": 3003600,
+      "source_encoding": "int",
+      "source_command": "push_int_local",
+      "operations": {
+        "push_int_local": {
+          "command": "push_int_local",
+          "opcode": 356,
+          "large_operand": true,
+          "requirement": "intrinsic"
+        }
+      }
+    },
+    {
+      "source_opcode": 1511,
+      "source_handler": 2616112,
+      "source_encoding": "byte",
+      "source_command": "if_setop",
+      "operations": {
+        "if_setop": {
+          "command": "if_setop",
+          "opcode": 262,
+          "large_operand": false,
+          "requirement": "explicit_operation_label"
+        }
+      }
+    },
+    {
+      "source_opcode": 1520,
+      "source_handler": 3003536,
+      "source_encoding": "int",
+      "source_command": "pop_int_local",
+      "operations": {
+        "pop_int_local": {
+          "command": "pop_int_local",
+          "opcode": 1071,
+          "large_operand": true,
+          "requirement": "intrinsic"
+        }
+      }
+    },
+    {
+      "source_opcode": 1547,
+      "source_handler": 3165360,
+      "source_encoding": "byte",
+      "source_command": "cc_find",
+      "operations": {
+        "cc_find": {
+          "command": "if_find",
+          "opcode": 66,
+          "large_operand": false,
+          "requirement": "flat_child_selection",
+          "host_operation": "find-flat-child/64256/1",
+          "selector": "nonzero"
+        }
+      }
+    },
+    {
+      "source_opcode": 1553,
+      "source_handler": 3026480,
+      "source_encoding": "byte",
+      "source_command": "add",
+      "operations": {
+        "add": {
+          "command": "add",
+          "opcode": 165,
+          "large_operand": false,
+          "requirement": "intrinsic"
+        }
+      }
+    },
+    {
+      "source_opcode": 1564,
+      "source_handler": 3049616,
+      "source_encoding": "varbit24",
+      "source_command": "push_varbit",
+      "operations": {
+        "push_varbit": {
+          "command": "push_var",
+          "opcode": 524,
+          "large_operand": true,
+          "requirement": "variable_bit"
+        }
+      }
+    },
+    {
+      "source_opcode": 1571,
+      "source_handler": 2616336,
+      "source_encoding": "byte",
+      "source_command": "if_settrans",
+      "operations": {
+        "if_settrans": {
+          "command": "if_settrans",
+          "opcode": 898,
+          "large_operand": false,
+          "requirement": "explicit_component_paint",
+          "host_operation": "component-paint/transparency/explicit"
+        }
+      }
+    },
+    {
+      "source_opcode": 1593,
+      "source_handler": 3245248,
+      "source_encoding": "byte",
+      "source_command": "if_getfontmetrics",
+      "operations": {
+        "if_getfontmetrics": {
+          "command": "if_getfontmetrics",
+          "opcode": 876,
+          "large_operand": false,
+          "requirement": "explicit_component_text",
+          "host_operation": "component-text/read-font-metrics/4/290cb3489d088d145741f1734f53b0fc/-1/explicit"
+        }
+      }
+    },
+    {
+      "source_opcode": 1611,
+      "source_handler": 3206160,
+      "source_encoding": "byte",
+      "source_command": "cc_setmaxlines",
+      "operations": {
+        "cc_setmaxlines": {
+          "command": "cc_setmaxlines",
+          "opcode": 285,
+          "large_operand": false,
+          "requirement": "active_component_text",
+          "host_operation": "component-text/max-lines/4/active",
+          "selector": "nonzero"
+        }
+      }
+    },
+    {
+      "source_opcode": 1625,
+      "source_handler": 3042368,
+      "source_encoding": "int",
+      "source_command": "long_branch_less_than",
+      "operations": {
+        "long_branch_less_than": {
+          "command": "long_branch_less_than",
+          "opcode": 1286,
+          "large_operand": true,
+          "requirement": "intrinsic"
+        }
+      }
+    },
+    {
+      "source_opcode": 1722,
+      "source_handler": 3029824,
+      "source_encoding": "int",
+      "source_command": "push_string_local",
+      "operations": {
+        "push_string_local": {
+          "command": "push_string_local",
+          "opcode": 815,
+          "large_operand": true,
+          "requirement": "intrinsic"
+        }
+      }
+    },
+    {
+      "source_opcode": 1730,
+      "source_handler": 3026352,
+      "source_encoding": "byte",
+      "source_command": "multiply",
+      "operations": {
+        "multiply": {
+          "command": "multiply",
+          "opcode": 586,
+          "large_operand": false,
+          "requirement": "intrinsic"
+        }
+      }
+    },
+    {
+      "source_opcode": 1774,
+      "source_handler": 3003280,
+      "source_encoding": "int",
+      "source_command": "push_long_local",
+      "operations": {
+        "push_long_local": {
+          "command": "push_long_local",
+          "opcode": 548,
+          "large_operand": true,
+          "requirement": "intrinsic"
+        }
+      }
+    },
+    {
+      "source_opcode": 1877,
+      "source_handler": 3043664,
+      "source_encoding": "int",
+      "source_command": "branch_less_than_or_equals",
+      "operations": {
+        "branch_less_than_or_equals": {
+          "command": "branch_less_than_or_equals",
+          "opcode": 1066,
+          "large_operand": true,
+          "requirement": "intrinsic"
+        }
+      }
+    },
+    {
+      "source_opcode": 1903,
+      "source_handler": 3043792,
+      "source_encoding": "int",
+      "source_command": "branch_greater_than",
+      "operations": {
+        "branch_greater_than": {
+          "command": "branch_greater_than",
+          "opcode": 693,
+          "large_operand": true,
+          "requirement": "intrinsic"
+        }
+      }
+    },
+    {
+      "source_opcode": 1915,
+      "source_handler": 3077072,
+      "source_encoding": "byte",
+      "source_command": "db_getfield",
+      "operations": {
+        "db_getfield": {
+          "command": "db_getfield",
+          "opcode": 348,
+          "large_operand": false,
+          "requirement": "database_field"
+        }
+      }
+    },
+    {
+      "source_opcode": 1922,
+      "source_handler": 3003216,
+      "source_encoding": "int",
+      "source_command": "pop_long_local",
+      "operations": {
+        "pop_long_local": {
+          "command": "pop_long_local",
+          "opcode": 405,
+          "large_operand": true,
+          "requirement": "intrinsic"
+        }
+      }
+    },
+    {
+      "source_opcode": 2093,
+      "source_handler": 3281296,
+      "source_encoding": "byte",
+      "source_command": "cc_findbycategory",
+      "operations": {
+        "cc_findbycategory": {
+          "command": "if_find",
+          "opcode": 66,
+          "large_operand": false,
+          "requirement": "explicit_runtime_child_selection",
+          "host_operation": "find-runtime-child/235/4096/256/1/2",
+          "selector": "nonzero"
+        }
+      }
+    },
+    {
+      "source_opcode": 2144,
+      "source_handler": 3245360,
+      "source_encoding": "byte",
+      "source_command": "if_settextfont",
+      "operations": {
+        "if_settextfont": {
+          "command": "if_settextfont",
+          "opcode": 465,
+          "large_operand": false,
+          "requirement": "explicit_component_text",
+          "host_operation": "component-text/font/4/15/290cb3489d088d145741f1734f53b0fc/unbound/unbound/explicit"
+        }
+      }
+    },
+    {
+      "source_opcode": 2170,
+      "source_handler": 3408144,
+      "source_encoding": "int",
+      "source_command": "gosub_with_params",
+      "operations": {
+        "gosub_with_params": {
+          "command": "gosub_with_params",
+          "opcode": 49,
+          "large_operand": true,
+          "requirement": "intrinsic"
+        }
+      }
+    },
+    {
+      "source_opcode": 2171,
+      "source_handler": 3280720,
+      "source_encoding": "byte",
+      "source_command": "cc_create",
+      "operations": {
+        "cc_create": {
+          "command": "cc_create",
+          "opcode": 734,
+          "large_operand": false,
+          "requirement": "flat_text_child_creation",
+          "host_operation": "create-flat-text-child/64256/1/2/unbound/0",
+          "selector": "nonzero",
+          "child_template": {
+            "source_kind": 4,
+            "component_type": 4,
+            "colour": 16777215,
+            "transparency": 0,
+            "aspect": [
+              1,
+              1
+            ],
+            "font": -1,
+            "monochrome": false,
+            "line_height": 0,
+            "horizontal_align": 0,
+            "vertical_align": 0,
+            "max_lines": 0,
+            "shadow": false,
+            "antimacro": false
+          }
+        }
+      }
+    },
+    {
+      "source_opcode": 2200,
+      "source_handler": 3244688,
+      "source_encoding": "byte",
+      "source_command": "if_setmaxlines",
+      "operations": {
+        "if_setmaxlines": {
+          "command": "if_setmaxlines",
+          "opcode": 451,
+          "large_operand": false,
+          "requirement": "explicit_component_text",
+          "host_operation": "component-text/max-lines/4/explicit"
+        }
+      }
+    }
+  ],
+  "source_switch_lookup": "last_entry_wins",
+  "callback_policy": {
+    "clear_script_id": -1,
+    "int_event_tokens": [
+      -2147483647,
+      -2147483646,
+      -2147483645,
+      -2147483644,
+      -2147483643,
+      -2147483642,
+      -2147483641,
+      -2147483640,
+      -2147483639,
+      -2147483638,
+      -2147483637
+    ],
+    "string_event_tokens": [
+      "event_opbase",
+      "event_text"
+    ]
+  }
+}

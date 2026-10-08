@@ -1,0 +1,53 @@
+[package]
+name = "rs910-render-gpu"
+version = "0.1.0"
+edition = "2021"
+publish = false
+description = "The 910 client's faithful GPU toolkit over wgpu: floors, lights and hard shadows, scene models, particles, billboards, skybox and underwater, the post-process chain, the retained UI and console painters, the canvas scale-up and the player model owner, over rs910-gpu-device."
+
+# Allowed dependencies (tools/refactor/layers.txt `[crates]`,
+# target-architecture.md §2.2): rs910-core, -model, -scene, -toolkit and
+# -gpu-device (and what they depend on: rs910-js5, -config, -game). wgpu is
+# fenced to this crate and rs910-gpu-device; winit to the shell (client910).
+# Doc code blocks are not compiled, like client910's (`doctest = false`).
+[lib]
+doctest = false
+
+[dependencies]
+rs910-core = { path = "../rs910-core" }
+rs910-js5 = { path = "../rs910-js5" }
+rs910-config = { path = "../rs910-config" }
+rs910-game = { path = "../rs910-game" }
+rs910-model = { path = "../rs910-model" }
+rs910-scene = { path = "../rs910-scene" }
+rs910-toolkit = { path = "../rs910-toolkit" }
+rs910-gpu-device = { path = "../rs910-gpu-device" }
+anyhow = "1.0"
+bytemuck = { version = "1", features = ["derive"] }
+glam = "0.27"
+log = "0.4"
+wgpu = "30"
+# `test-hooks` only: `ui_model_gpu::Capture` blocks on the adapter.
+pollster = { version = "0.3", optional = true }
+
+[dev-dependencies]
+# The shared test helpers and the lower crates' test seams the moved tests
+# call.
+rs910-core = { path = "../rs910-core", features = ["test-hooks"] }
+rs910-js5 = { path = "../rs910-js5", features = ["test-hooks"] }
+rs910-protocol = { path = "../rs910-protocol" }
+rs910-gpu-device = { path = "../rs910-gpu-device", features = ["test-hooks"] }
+pollster = "0.3"
+
+[features]
+# Every workspace crate has `no-pack` (tools/README.md); client910's
+# `no-pack` forwards here. The tests that also need client910 live in
+# client910/src/render_goldens.
+no-pack = []
+# Test seams client910's tests use: the items are
+# `#[cfg(any(test, feature = "test-hooks"))]`. client910 enables it through
+# [dev-dependencies] only.
+test-hooks = ["dep:pollster"]
+
+[lints]
+workspace = true

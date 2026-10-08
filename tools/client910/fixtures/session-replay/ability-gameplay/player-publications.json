@@ -1,0 +1,1023 @@
+[
+  {
+    "tick": 2,
+    "pid": 1,
+    "life": 0,
+    "animation": null,
+    "automatic": null,
+    "anticipation": null,
+    "playerInfoOrdinal": 0
+  },
+  {
+    "tick": 3,
+    "pid": 1,
+    "life": 0,
+    "animation": null,
+    "automatic": null,
+    "anticipation": null,
+    "playerInfoOrdinal": 1
+  },
+  {
+    "tick": 4,
+    "pid": 1,
+    "life": 0,
+    "animation": null,
+    "automatic": null,
+    "anticipation": null,
+    "playerInfoOrdinal": 2
+  },
+  {
+    "tick": 5,
+    "pid": 1,
+    "life": 0,
+    "animation": null,
+    "automatic": null,
+    "anticipation": null,
+    "playerInfoOrdinal": 3
+  },
+  {
+    "tick": 6,
+    "pid": 1,
+    "life": 0,
+    "animation": null,
+    "automatic": null,
+    "anticipation": null,
+    "playerInfoOrdinal": 4
+  },
+  {
+    "tick": 7,
+    "pid": 1,
+    "life": 0,
+    "animation": null,
+    "automatic": null,
+    "anticipation": null,
+    "playerInfoOrdinal": 5
+  },
+  {
+    "tick": 8,
+    "pid": 1,
+    "life": 0,
+    "animation": null,
+    "automatic": null,
+    "anticipation": null,
+    "playerInfoOrdinal": 6
+  },
+  {
+    "tick": 9,
+    "pid": 1,
+    "life": 0,
+    "animation": null,
+    "automatic": null,
+    "anticipation": null,
+    "playerInfoOrdinal": 7
+  },
+  {
+    "tick": 10,
+    "pid": 1,
+    "life": 0,
+    "animation": null,
+    "automatic": null,
+    "anticipation": null,
+    "playerInfoOrdinal": 8
+  },
+  {
+    "tick": 11,
+    "pid": 1,
+    "life": 0,
+    "animation": null,
+    "automatic": null,
+    "anticipation": null,
+    "playerInfoOrdinal": 9
+  },
+  {
+    "tick": 12,
+    "pid": 1,
+    "life": 0,
+    "animation": null,
+    "automatic": null,
+    "anticipation": null,
+    "playerInfoOrdinal": 10
+  },
+  {
+    "tick": 13,
+    "pid": 1,
+    "life": 0,
+    "animation": null,
+    "automatic": null,
+    "anticipation": null,
+    "playerInfoOrdinal": 11
+  },
+  {
+    "tick": 14,
+    "pid": 1,
+    "life": 0,
+    "animation": null,
+    "automatic": null,
+    "anticipation": null,
+    "playerInfoOrdinal": 12
+  },
+  {
+    "tick": 15,
+    "pid": 1,
+    "life": 0,
+    "animation": null,
+    "automatic": null,
+    "anticipation": null,
+    "playerInfoOrdinal": 13
+  },
+  {
+    "tick": 16,
+    "pid": 1,
+    "life": 0,
+    "animation": null,
+    "automatic": null,
+    "anticipation": null,
+    "playerInfoOrdinal": 14
+  },
+  {
+    "tick": 17,
+    "pid": 1,
+    "life": 0,
+    "animation": null,
+    "automatic": null,
+    "anticipation": null,
+    "playerInfoOrdinal": 15
+  },
+  {
+    "tick": 18,
+    "pid": 1,
+    "life": 0,
+    "animation": null,
+    "automatic": null,
+    "anticipation": null,
+    "playerInfoOrdinal": 16
+  },
+  {
+    "tick": 19,
+    "pid": 1,
+    "life": 0,
+    "animation": null,
+    "automatic": null,
+    "anticipation": null,
+    "playerInfoOrdinal": 17
+  },
+  {
+    "tick": 20,
+    "pid": 1,
+    "life": 0,
+    "animation": null,
+    "automatic": null,
+    "anticipation": null,
+    "playerInfoOrdinal": 18
+  },
+  {
+    "tick": 21,
+    "pid": 1,
+    "life": 0,
+    "animation": null,
+    "automatic": null,
+    "anticipation": null,
+    "playerInfoOrdinal": 19
+  },
+  {
+    "tick": 22,
+    "pid": 1,
+    "life": 0,
+    "animation": null,
+    "automatic": null,
+    "anticipation": null,
+    "playerInfoOrdinal": 20
+  },
+  {
+    "tick": 23,
+    "pid": 1,
+    "life": 0,
+    "animation": {
+      "modes": [
+        7041,
+        7041,
+        7041,
+        7041
+      ],
+      "delay": 0,
+      "revision": 1
+    },
+    "automatic": {
+      "tick": 23,
+      "weapon": 1307,
+      "category": 14930,
+      "expectedSequence": 7041,
+      "revision": 1,
+      "modes": [
+        7041,
+        7041,
+        7041,
+        7041
+      ],
+      "delay": 0
+    },
+    "anticipation": null,
+    "playerInfoOrdinal": 21
+  },
+  {
+    "tick": 24,
+    "pid": 1,
+    "life": 0,
+    "animation": null,
+    "automatic": null,
+    "anticipation": null,
+    "playerInfoOrdinal": 22
+  },
+  {
+    "tick": 25,
+    "pid": 1,
+    "life": 0,
+    "animation": null,
+    "automatic": null,
+    "anticipation": null,
+    "playerInfoOrdinal": 23
+  },
+  {
+    "tick": 26,
+    "pid": 1,
+    "life": 0,
+    "animation": null,
+    "automatic": null,
+    "anticipation": null,
+    "playerInfoOrdinal": 24
+  },
+  {
+    "tick": 27,
+    "pid": 1,
+    "life": 0,
+    "animation": null,
+    "automatic": null,
+    "anticipation": null,
+    "playerInfoOrdinal": 25
+  },
+  {
+    "tick": 28,
+    "pid": 1,
+    "life": 0,
+    "animation": null,
+    "automatic": null,
+    "anticipation": null,
+    "playerInfoOrdinal": 26
+  },
+  {
+    "tick": 29,
+    "pid": 1,
+    "life": 0,
+    "animation": {
+      "modes": [
+        7041,
+        7041,
+        7041,
+        7041
+      ],
+      "delay": 0,
+      "revision": 2
+    },
+    "automatic": {
+      "tick": 29,
+      "weapon": 1307,
+      "category": 14930,
+      "expectedSequence": 7041,
+      "revision": 2,
+      "modes": [
+        7041,
+        7041,
+        7041,
+        7041
+      ],
+      "delay": 0
+    },
+    "anticipation": null,
+    "playerInfoOrdinal": 27
+  },
+  {
+    "tick": 30,
+    "pid": 1,
+    "life": 0,
+    "animation": null,
+    "automatic": null,
+    "anticipation": null,
+    "playerInfoOrdinal": 28
+  },
+  {
+    "tick": 31,
+    "pid": 1,
+    "life": 0,
+    "animation": null,
+    "automatic": null,
+    "anticipation": null,
+    "playerInfoOrdinal": 29
+  },
+  {
+    "tick": 32,
+    "pid": 1,
+    "life": 0,
+    "animation": null,
+    "automatic": null,
+    "anticipation": null,
+    "playerInfoOrdinal": 30
+  },
+  {
+    "tick": 33,
+    "pid": 1,
+    "life": 0,
+    "animation": null,
+    "automatic": null,
+    "anticipation": null,
+    "playerInfoOrdinal": 31
+  },
+  {
+    "tick": 34,
+    "pid": 1,
+    "life": 0,
+    "animation": null,
+    "automatic": null,
+    "anticipation": null,
+    "playerInfoOrdinal": 32
+  },
+  {
+    "tick": 35,
+    "pid": 1,
+    "life": 0,
+    "animation": {
+      "modes": [
+        7041,
+        7041,
+        7041,
+        7041
+      ],
+      "delay": 0,
+      "revision": 3
+    },
+    "automatic": {
+      "tick": 35,
+      "weapon": 1307,
+      "category": 14930,
+      "expectedSequence": 7041,
+      "revision": 3,
+      "modes": [
+        7041,
+        7041,
+        7041,
+        7041
+      ],
+      "delay": 0
+    },
+    "anticipation": null,
+    "playerInfoOrdinal": 33
+  },
+  {
+    "tick": 36,
+    "pid": 1,
+    "life": 0,
+    "animation": null,
+    "automatic": null,
+    "anticipation": null,
+    "playerInfoOrdinal": 34
+  },
+  {
+    "tick": 37,
+    "pid": 1,
+    "life": 0,
+    "animation": null,
+    "automatic": null,
+    "anticipation": null,
+    "playerInfoOrdinal": 35
+  },
+  {
+    "tick": 38,
+    "pid": 1,
+    "life": 0,
+    "animation": null,
+    "automatic": null,
+    "anticipation": null,
+    "playerInfoOrdinal": 36
+  },
+  {
+    "tick": 39,
+    "pid": 1,
+    "life": 0,
+    "animation": null,
+    "automatic": null,
+    "anticipation": null,
+    "playerInfoOrdinal": 37
+  },
+  {
+    "tick": 40,
+    "pid": 1,
+    "life": 0,
+    "animation": null,
+    "automatic": null,
+    "anticipation": null,
+    "playerInfoOrdinal": 38
+  },
+  {
+    "tick": 41,
+    "pid": 1,
+    "life": 0,
+    "animation": {
+      "modes": [
+        18158,
+        18158,
+        18158,
+        18158
+      ],
+      "delay": 0,
+      "revision": 4
+    },
+    "automatic": null,
+    "anticipation": null,
+    "playerInfoOrdinal": 39
+  },
+  {
+    "tick": 42,
+    "pid": 1,
+    "life": 0,
+    "animation": null,
+    "automatic": null,
+    "anticipation": null,
+    "playerInfoOrdinal": 40
+  },
+  {
+    "tick": 43,
+    "pid": 1,
+    "life": 0,
+    "animation": null,
+    "automatic": null,
+    "anticipation": null,
+    "playerInfoOrdinal": 41
+  },
+  {
+    "tick": 44,
+    "pid": 1,
+    "life": 0,
+    "animation": {
+      "modes": [
+        7041,
+        7041,
+        7041,
+        7041
+      ],
+      "delay": 0,
+      "revision": 5
+    },
+    "automatic": null,
+    "anticipation": null,
+    "playerInfoOrdinal": 42
+  },
+  {
+    "tick": 45,
+    "pid": 1,
+    "life": 0,
+    "animation": null,
+    "automatic": null,
+    "anticipation": null,
+    "playerInfoOrdinal": 43
+  },
+  {
+    "tick": 46,
+    "pid": 1,
+    "life": 0,
+    "animation": {
+      "modes": [
+        18169,
+        18169,
+        18169,
+        18169
+      ],
+      "delay": 0,
+      "revision": 6
+    },
+    "automatic": null,
+    "anticipation": null,
+    "playerInfoOrdinal": 44
+  },
+  {
+    "tick": 47,
+    "pid": 1,
+    "life": 0,
+    "animation": null,
+    "automatic": null,
+    "anticipation": null,
+    "playerInfoOrdinal": 45
+  },
+  {
+    "tick": 48,
+    "pid": 1,
+    "life": 0,
+    "animation": null,
+    "automatic": null,
+    "anticipation": null,
+    "playerInfoOrdinal": 46
+  },
+  {
+    "tick": 49,
+    "pid": 1,
+    "life": 0,
+    "animation": {
+      "modes": [
+        18158,
+        18158,
+        18158,
+        18158
+      ],
+      "delay": 0,
+      "revision": 7
+    },
+    "automatic": null,
+    "anticipation": null,
+    "playerInfoOrdinal": 47
+  },
+  {
+    "tick": 50,
+    "pid": 1,
+    "life": 0,
+    "animation": null,
+    "automatic": null,
+    "anticipation": null,
+    "playerInfoOrdinal": 48
+  },
+  {
+    "tick": 51,
+    "pid": 1,
+    "life": 0,
+    "animation": null,
+    "automatic": null,
+    "anticipation": null,
+    "playerInfoOrdinal": 49
+  },
+  {
+    "tick": 52,
+    "pid": 1,
+    "life": 0,
+    "animation": {
+      "modes": [
+        7041,
+        7041,
+        7041,
+        7041
+      ],
+      "delay": 0,
+      "revision": 8
+    },
+    "automatic": null,
+    "anticipation": null,
+    "playerInfoOrdinal": 50
+  },
+  {
+    "tick": 53,
+    "pid": 1,
+    "life": 0,
+    "animation": null,
+    "automatic": null,
+    "anticipation": null,
+    "playerInfoOrdinal": 51
+  },
+  {
+    "tick": 54,
+    "pid": 1,
+    "life": 0,
+    "animation": null,
+    "automatic": null,
+    "anticipation": null,
+    "playerInfoOrdinal": 52
+  },
+  {
+    "tick": 55,
+    "pid": 1,
+    "life": 0,
+    "animation": null,
+    "automatic": null,
+    "anticipation": null,
+    "playerInfoOrdinal": 53
+  },
+  {
+    "tick": 56,
+    "pid": 1,
+    "life": 0,
+    "animation": null,
+    "automatic": null,
+    "anticipation": null,
+    "playerInfoOrdinal": 54
+  },
+  {
+    "tick": 57,
+    "pid": 1,
+    "life": 0,
+    "animation": null,
+    "automatic": null,
+    "anticipation": null,
+    "playerInfoOrdinal": 55
+  },
+  {
+    "tick": 58,
+    "pid": 1,
+    "life": 0,
+    "animation": {
+      "modes": [
+        18158,
+        18158,
+        18158,
+        18158
+      ],
+      "delay": 0,
+      "revision": 9
+    },
+    "automatic": null,
+    "anticipation": null,
+    "playerInfoOrdinal": 56
+  },
+  {
+    "tick": 59,
+    "pid": 1,
+    "life": 0,
+    "animation": null,
+    "automatic": null,
+    "anticipation": null,
+    "playerInfoOrdinal": 57
+  },
+  {
+    "tick": 60,
+    "pid": 1,
+    "life": 0,
+    "animation": null,
+    "automatic": null,
+    "anticipation": null,
+    "playerInfoOrdinal": 58
+  },
+  {
+    "tick": 61,
+    "pid": 1,
+    "life": 0,
+    "animation": {
+      "modes": [
+        7041,
+        7041,
+        7041,
+        7041
+      ],
+      "delay": 0,
+      "revision": 10
+    },
+    "automatic": null,
+    "anticipation": null,
+    "playerInfoOrdinal": 59
+  },
+  {
+    "tick": 62,
+    "pid": 1,
+    "life": 0,
+    "animation": null,
+    "automatic": null,
+    "anticipation": null,
+    "playerInfoOrdinal": 60
+  },
+  {
+    "tick": 63,
+    "pid": 1,
+    "life": 0,
+    "animation": {
+      "modes": [
+        18180,
+        18180,
+        18180,
+        18180
+      ],
+      "delay": 0,
+      "revision": 11
+    },
+    "automatic": null,
+    "anticipation": null,
+    "playerInfoOrdinal": 61
+  },
+  {
+    "tick": 64,
+    "pid": 1,
+    "life": 0,
+    "animation": null,
+    "automatic": null,
+    "anticipation": null,
+    "playerInfoOrdinal": 62
+  },
+  {
+    "tick": 65,
+    "pid": 1,
+    "life": 0,
+    "animation": null,
+    "automatic": null,
+    "anticipation": null,
+    "playerInfoOrdinal": 63
+  },
+  {
+    "tick": 66,
+    "pid": 1,
+    "life": 0,
+    "animation": {
+      "modes": [
+        7041,
+        7041,
+        7041,
+        7041
+      ],
+      "delay": 0,
+      "revision": 12
+    },
+    "automatic": null,
+    "anticipation": null,
+    "playerInfoOrdinal": 64
+  },
+  {
+    "tick": 67,
+    "pid": 1,
+    "life": 0,
+    "animation": null,
+    "automatic": null,
+    "anticipation": null,
+    "playerInfoOrdinal": 65
+  },
+  {
+    "tick": 68,
+    "pid": 1,
+    "life": 0,
+    "animation": {
+      "modes": [
+        18096,
+        18096,
+        18096,
+        18096
+      ],
+      "delay": 0,
+      "revision": 13
+    },
+    "automatic": null,
+    "anticipation": {
+      "generation": 1,
+      "appliedTick": 68,
+      "untilTick": 84
+    },
+    "playerInfoOrdinal": 66
+  },
+  {
+    "tick": 69,
+    "pid": 1,
+    "life": 0,
+    "animation": null,
+    "automatic": null,
+    "anticipation": {
+      "generation": 1,
+      "appliedTick": 68,
+      "untilTick": 84
+    },
+    "playerInfoOrdinal": 67
+  },
+  {
+    "tick": 70,
+    "pid": 1,
+    "life": 0,
+    "animation": null,
+    "automatic": null,
+    "anticipation": {
+      "generation": 1,
+      "appliedTick": 68,
+      "untilTick": 84
+    },
+    "playerInfoOrdinal": 68
+  },
+  {
+    "tick": 71,
+    "pid": 1,
+    "life": 0,
+    "animation": {
+      "modes": [
+        7041,
+        7041,
+        7041,
+        7041
+      ],
+      "delay": 0,
+      "revision": 14
+    },
+    "automatic": null,
+    "anticipation": {
+      "generation": 1,
+      "appliedTick": 68,
+      "untilTick": 84
+    },
+    "playerInfoOrdinal": 69
+  },
+  {
+    "tick": 72,
+    "pid": 1,
+    "life": 0,
+    "animation": null,
+    "automatic": null,
+    "anticipation": {
+      "generation": 1,
+      "appliedTick": 68,
+      "untilTick": 84
+    },
+    "playerInfoOrdinal": 70
+  },
+  {
+    "tick": 73,
+    "pid": 1,
+    "life": 0,
+    "animation": null,
+    "automatic": null,
+    "anticipation": {
+      "generation": 1,
+      "appliedTick": 68,
+      "untilTick": 84
+    },
+    "playerInfoOrdinal": 71
+  },
+  {
+    "tick": 74,
+    "pid": 1,
+    "life": 0,
+    "animation": null,
+    "automatic": null,
+    "anticipation": {
+      "generation": 1,
+      "appliedTick": 68,
+      "untilTick": 84
+    },
+    "playerInfoOrdinal": 72
+  },
+  {
+    "tick": 75,
+    "pid": 1,
+    "life": 0,
+    "animation": null,
+    "automatic": null,
+    "anticipation": {
+      "generation": 1,
+      "appliedTick": 68,
+      "untilTick": 84
+    },
+    "playerInfoOrdinal": 73
+  },
+  {
+    "tick": 76,
+    "pid": 1,
+    "life": 0,
+    "animation": null,
+    "automatic": null,
+    "anticipation": {
+      "generation": 1,
+      "appliedTick": 68,
+      "untilTick": 84
+    },
+    "playerInfoOrdinal": 74
+  },
+  {
+    "tick": 77,
+    "pid": 1,
+    "life": 0,
+    "animation": {
+      "modes": [
+        7041,
+        7041,
+        7041,
+        7041
+      ],
+      "delay": 0,
+      "revision": 15
+    },
+    "automatic": null,
+    "anticipation": {
+      "generation": 1,
+      "appliedTick": 68,
+      "untilTick": 84
+    },
+    "playerInfoOrdinal": 75
+  },
+  {
+    "tick": 78,
+    "pid": 1,
+    "life": 0,
+    "animation": null,
+    "automatic": null,
+    "anticipation": {
+      "generation": 1,
+      "appliedTick": 68,
+      "untilTick": 84
+    },
+    "playerInfoOrdinal": 76
+  },
+  {
+    "tick": 79,
+    "pid": 1,
+    "life": 0,
+    "animation": null,
+    "automatic": null,
+    "anticipation": {
+      "generation": 1,
+      "appliedTick": 68,
+      "untilTick": 84
+    },
+    "playerInfoOrdinal": 77
+  },
+  {
+    "tick": 80,
+    "pid": 1,
+    "life": 0,
+    "animation": null,
+    "automatic": null,
+    "anticipation": {
+      "generation": 1,
+      "appliedTick": 68,
+      "untilTick": 84
+    },
+    "playerInfoOrdinal": 78
+  },
+  {
+    "tick": 81,
+    "pid": 1,
+    "life": 0,
+    "animation": null,
+    "automatic": null,
+    "anticipation": {
+      "generation": 1,
+      "appliedTick": 68,
+      "untilTick": 84
+    },
+    "playerInfoOrdinal": 79
+  },
+  {
+    "tick": 82,
+    "pid": 1,
+    "life": 0,
+    "animation": null,
+    "automatic": null,
+    "anticipation": {
+      "generation": 1,
+      "appliedTick": 68,
+      "untilTick": 84
+    },
+    "playerInfoOrdinal": 80
+  },
+  {
+    "tick": 83,
+    "pid": 1,
+    "life": 0,
+    "animation": {
+      "modes": [
+        7041,
+        7041,
+        7041,
+        7041
+      ],
+      "delay": 0,
+      "revision": 16
+    },
+    "automatic": null,
+    "anticipation": {
+      "generation": 1,
+      "appliedTick": 68,
+      "untilTick": 84
+    },
+    "playerInfoOrdinal": 81
+  },
+  {
+    "tick": 84,
+    "pid": 1,
+    "life": 0,
+    "animation": null,
+    "automatic": null,
+    "anticipation": null,
+    "playerInfoOrdinal": 82
+  },
+  {
+    "tick": 85,
+    "pid": 1,
+    "life": 0,
+    "animation": null,
+    "automatic": null,
+    "anticipation": null,
+    "playerInfoOrdinal": 83
+  },
+  {
+    "tick": 86,
+    "pid": 1,
+    "life": 0,
+    "animation": null,
+    "automatic": null,
+    "anticipation": null,
+    "playerInfoOrdinal": 84
+  },
+  {
+    "tick": 87,
+    "pid": 1,
+    "life": 0,
+    "animation": null,
+    "automatic": null,
+    "anticipation": null,
+    "playerInfoOrdinal": 85
+  }
+]

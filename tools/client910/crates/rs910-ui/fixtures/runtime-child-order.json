@@ -1,0 +1,411 @@
+{
+  "client_md5": "290cb3489d088d145741f1734f53b0fc",
+  "kernel_sha256": {
+    "factory": "d342852e9ff5678ea4681ba8103f91d9e9aa84b8bfe23d51c36b5ba2f6a05b39",
+    "text": "f012d72cb62af78ea7e116a85c6a8dfb5a70dce0575ca6b76f1f0aaa0c6138a7",
+    "base": "620e135b4a18eb6244976b6f316b490c9b908b023f94462ad6bb99ca0c965aed",
+    "assign": "5622b7b09e52a378d92c98700d66cf3f3270e435cadb768c7bd5f4454b5f2005",
+    "weak": "e938d66c8ab3139bc245f82a987b3b514af0e387d271b1f88a3d5362ffabfd36",
+    "dropweak": "fb989c6fd0e85e0ee0c6b1025e422c9f238a4670a97e1bec7f49b9f5c2a1497c",
+    "dropstrong": "f1ac9290792ca19982f972fe1370ea5727d6e68b903a44cea46552bdec96fd0e",
+    "interface_copy": "47aab9fba49d0e0d5da6cbafd2a91741046fc05cead68f6e3d4f5a5cded46b90",
+    "component_copy": "8601833f53c26457b60630569779d00dcd49ccbbd51960e1dc85c06768d26c46",
+    "weak_lock": "41f02f57ee08ffba7244b6fa57c0d7aa5dda3f82b40a95f7baac23a6924b720e",
+    "create": "8eb694a57b36c6bda428e6b0398d76468bdb404bbd9e53562eef55e9e3fccf5d",
+    "attach": "c892da9e586f31b4c48b74b74925a90fb3b1502f1525e1ca54dacfb62598692c",
+    "lookup": "321124bef41272768229d1125b28952a663f40f225f959bfb20e8bfb0e839bb0",
+    "index": "975b1c87b14dc2887e136cc4c6bb57d3bf44253314e5234bce18c97b55764d30",
+    "insert": "ea8ed97f556de9344403c64f2e39ddccdaecf05a8ea81fe2072eb5b9a2c084a4",
+    "reserve": "8e5b688f98c7a1fac1bebe86db7db795eb3df92eb1ec46a4d0655966ea3de2aa",
+    "index_insert": "208704dfcf595a05b0b291c853c25cabea3af5f634423d5be41c2b3a3caa870f",
+    "is_container": "2db31f4e09597946e56e859813bfdad7046d457c32332c3a882654d1e3ffdf67",
+    "admission": "2db31f4e09597946e56e859813bfdad7046d457c32332c3a882654d1e3ffdf67",
+    "virtual_records": "1616e363aa6cd3367e0deef5507cdde0dcbbe5998fc4a5f1c90146ad80a46b60",
+    "virtual_changed": "aa814164e201ade39d001dfa97f020ec12147ee8e200daaf9950824cf1318061",
+    "drawing_accessor": "5d5bd424df808c80c5da68885197e3b24ea07d0f230895aca1ace197a32285ca",
+    "text_vtable": "7262dd4d1b71b4e0eac909c68618386fb7ae83a2a564dfc6f290249511c65809",
+    "false_predicate": "c8e0c1a2ea809cc76a62033f09c0526a8920e9db5f368836b534c652fa430a0d",
+    "to_start": "1d65a95b8f8478de94c03c57681922d726e04eec88edf5063ef3c2d211d836bd",
+    "to_end": "9e0192ca16055084329c7f24d2fbc74bbe6001c9f51371565e0cc5bc2d16ec89",
+    "record_less": "ba7556874ab5ae8661d337e258edef5074db05d1cce74d87ed28e4ff43f758e8",
+    "copy_records": "a2c1f5a9e949f44f4c6ff96214c4cc4b60ba36b1e957c2c7e926fe1122932c06",
+    "append_record": "e3b09e91d5ecfa65e4079c114d73ce6c6e57ad8ed106b72e30bc4dd393ac3721",
+    "erase_record": "b3801e5cb5c21b6cd026f40e526c7c953db639d9596e0b0c8c00ce4686db34ac",
+    "text_is_container": "c2b126fd49c4012d32d3789036686a402d6daea28f8089f94d7a6062c2a0f43e"
+  },
+  "scope": "Original class4 creator, attachment, insertion, drawing accessor and explicit reorder routines execute on a synthetic class0 parent and a preallocated class4 pool. Interface/mutex/allocator/free/error services are supplied. Each child is externally retained. Records ordered and drawing references after insertion, explicit movement and replacement. One case supplies a retained empty drawing vector; this does not record how a clear operation produced it. Constructor growth, other classes, disposal and pixel rendering remain outside this order recording.",
+  "cases": [
+    {
+      "name": "ordered_creation",
+      "input": {
+        "child_id": 200,
+        "operations": [
+          [
+            "create",
+            2
+          ],
+          [
+            "create",
+            90
+          ]
+        ]
+      },
+      "snapshots": [
+        {
+          "ordered": [
+            0
+          ],
+          "drawing": [],
+          "effective": [
+            0
+          ],
+          "child_ids": [
+            200
+          ]
+        },
+        {
+          "ordered": [
+            1,
+            0
+          ],
+          "drawing": [],
+          "effective": [
+            1,
+            0
+          ],
+          "child_ids": [
+            200,
+            2
+          ]
+        },
+        {
+          "ordered": [
+            1,
+            2,
+            0
+          ],
+          "drawing": [],
+          "effective": [
+            1,
+            2,
+            0
+          ],
+          "child_ids": [
+            200,
+            2,
+            90
+          ]
+        }
+      ]
+    },
+    {
+      "name": "drawing_to_end",
+      "input": {
+        "child_id": 200,
+        "operations": [
+          [
+            "create",
+            2
+          ],
+          [
+            "end",
+            0
+          ],
+          [
+            "create",
+            90
+          ]
+        ]
+      },
+      "snapshots": [
+        {
+          "ordered": [
+            0
+          ],
+          "drawing": [],
+          "effective": [
+            0
+          ],
+          "child_ids": [
+            200
+          ]
+        },
+        {
+          "ordered": [
+            1,
+            0
+          ],
+          "drawing": [],
+          "effective": [
+            1,
+            0
+          ],
+          "child_ids": [
+            200,
+            2
+          ]
+        },
+        {
+          "ordered": [
+            1,
+            0
+          ],
+          "drawing": [
+            1,
+            0
+          ],
+          "effective": [
+            1,
+            0
+          ],
+          "child_ids": [
+            200,
+            2
+          ]
+        },
+        {
+          "ordered": [
+            1,
+            2,
+            0
+          ],
+          "drawing": [
+            1,
+            0,
+            2
+          ],
+          "effective": [
+            1,
+            0,
+            2
+          ],
+          "child_ids": [
+            200,
+            2,
+            90
+          ]
+        }
+      ]
+    },
+    {
+      "name": "drawing_to_start_and_replace",
+      "input": {
+        "child_id": 200,
+        "operations": [
+          [
+            "create",
+            2
+          ],
+          [
+            "start",
+            0
+          ],
+          [
+            "create",
+            90
+          ],
+          [
+            "create",
+            2
+          ]
+        ]
+      },
+      "snapshots": [
+        {
+          "ordered": [
+            0
+          ],
+          "drawing": [],
+          "effective": [
+            0
+          ],
+          "child_ids": [
+            200
+          ]
+        },
+        {
+          "ordered": [
+            1,
+            0
+          ],
+          "drawing": [],
+          "effective": [
+            1,
+            0
+          ],
+          "child_ids": [
+            200,
+            2
+          ]
+        },
+        {
+          "ordered": [
+            1,
+            0
+          ],
+          "drawing": [
+            0,
+            1
+          ],
+          "effective": [
+            0,
+            1
+          ],
+          "child_ids": [
+            200,
+            2
+          ]
+        },
+        {
+          "ordered": [
+            1,
+            2,
+            0
+          ],
+          "drawing": [
+            0,
+            1,
+            2
+          ],
+          "effective": [
+            0,
+            1,
+            2
+          ],
+          "child_ids": [
+            200,
+            2,
+            90
+          ]
+        },
+        {
+          "ordered": [
+            3,
+            2,
+            0
+          ],
+          "drawing": [
+            0,
+            3,
+            2
+          ],
+          "effective": [
+            0,
+            3,
+            2
+          ],
+          "child_ids": [
+            200,
+            2,
+            90,
+            2
+          ]
+        }
+      ]
+    },
+    {
+      "name": "retained_empty_drawing",
+      "input": {
+        "child_id": 200,
+        "operations": [
+          [
+            "create",
+            2
+          ],
+          [
+            "start",
+            0
+          ],
+          [
+            "empty_drawing",
+            0
+          ],
+          [
+            "create",
+            90
+          ]
+        ]
+      },
+      "snapshots": [
+        {
+          "ordered": [
+            0
+          ],
+          "drawing": [],
+          "effective": [
+            0
+          ],
+          "child_ids": [
+            200
+          ]
+        },
+        {
+          "ordered": [
+            1,
+            0
+          ],
+          "drawing": [],
+          "effective": [
+            1,
+            0
+          ],
+          "child_ids": [
+            200,
+            2
+          ]
+        },
+        {
+          "ordered": [
+            1,
+            0
+          ],
+          "drawing": [
+            0,
+            1
+          ],
+          "effective": [
+            0,
+            1
+          ],
+          "child_ids": [
+            200,
+            2
+          ]
+        },
+        {
+          "ordered": [
+            1,
+            0
+          ],
+          "drawing": [],
+          "effective": [
+            1,
+            0
+          ],
+          "child_ids": [
+            200,
+            2
+          ]
+        },
+        {
+          "ordered": [
+            1,
+            2,
+            0
+          ],
+          "drawing": [],
+          "effective": [
+            1,
+            2,
+            0
+          ],
+          "child_ids": [
+            200,
+            2,
+            90
+          ]
+        }
+      ]
+    }
+  ]
+}

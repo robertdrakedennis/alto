@@ -1,0 +1,14 @@
+{
+  "executionMode": "headless_gwd_faction_route",
+  "faction": "saradomin",
+  "monotonicClock": "scoped-v1",
+  "recordingBackend": "authenticated_headless",
+  "rendered": false,
+  "roleDefinitions": [
+    6247,
+    6248,
+    6250,
+    6252
+  ],
+  "status": "ordinary_headless_four_role_route_pass_requires_native_proof"
+}

@@ -1,0 +1,41 @@
+[package]
+name = "rs910-gpu-device"
+version = "0.1.0"
+edition = "2021"
+publish = false
+description = "The 910 client's GPU device layer: the wgpu instance, adapter, device, queue and window surface the renderers share, screenshot readback and the device capability answers (MSAA/HDR sample counts, compressed texture formats, the performance-metric benchmark)."
+
+# Allowed dependencies (tools/refactor/layers.txt `[crates]`; NXT renderer
+# plan A2): rs910-core and rs910-toolkit (and what they depend on). wgpu is
+# fenced to this crate and rs910-render-gpu. Doc code blocks are not
+# compiled, like client910's (`doctest = false`).
+[lib]
+doctest = false
+
+[dependencies]
+rs910-core = { path = "../rs910-core" }
+rs910-toolkit = { path = "../rs910-toolkit" }
+anyhow = "1.0"
+bytemuck = { version = "1", features = ["derive"] }
+glam = "0.27"
+log = "0.4"
+wgpu = "30"
+# `ui_preferences_metric_gpu::measure` (and `test_support::require_gpu`)
+# block on the adapter and device requests.
+pollster = "0.3"
+
+# `Device::allocated_bytes` reads the Metal device's allocation total; the
+# same `objc2-metal` wgpu-hal's Metal backend uses.
+[target.'cfg(target_vendor = "apple")'.dependencies]
+objc2-metal = { version = "0.3", default-features = false, features = ["std", "MTLDevice"] }
+
+[features]
+# Every workspace crate has `no-pack` (tools/README.md); client910's
+# `no-pack` forwards here. Nothing in this crate reads the pack.
+no-pack = []
+# Test seams other crates' tests use (`test_support`). client910 and
+# rs910-render-gpu enable it through [dev-dependencies] only.
+test-hooks = []
+
+[lints]
+workspace = true

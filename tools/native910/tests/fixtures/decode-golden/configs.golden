@@ -1,0 +1,116 @@
+# Decodes of real cache entries by the original client, recorded once (see tests/decode_golden.rs).
+# A cache entry is `@ kind id -` + `digest=` (its bytes come from the local pack at test time); a synthetic entry keeps its hex and lines.
+@ enum 0:0 -
+digest=7770edc904f7f280
+@ enum 0:13 -
+digest=110ec3d88917898b
+@ enum 0:14 -
+digest=88827c859a6ead8c
+@ enum 0:29 -
+digest=6a329f916ff12fc6
+@ enum 0:55 -
+digest=8df972b72994dda5
+@ enum 6:28 -
+digest=7840704a2eb6c9cb
+@ struct 0:0 -
+digest=5cc4dec05d144119
+@ struct 0:1 -
+digest=d3e2d1f256bf3734
+@ struct 5:1 -
+digest=cbf29ce484222325
+@ param 0 -
+digest=84963b32e9261124
+@ param 3 -
+digest=220475d9bfde2277
+@ param 14 -
+digest=e0b7b96dc5fd592b
+@ param 21 -
+digest=53cd422b71ee3c7d
+@ param 65 -
+digest=e029b41d65b3fc13
+@ var 0:0 -
+digest=8494a72d9bbe4302
+@ var 0:27 -
+digest=57fbd7ee7a394f4e
+@ var 0:30 -
+digest=1cda74f6df40b9e3
+@ var 1:0 -
+digest=ea097a3b6926e733
+@ var 1:1 -
+digest=be3cc42142d7790a
+@ var 1:3 -
+digest=798f5a97c022a28c
+@ var 2:0 -
+digest=d9ccfdc1731feea7
+@ var 2:6 -
+digest=1b5eae3937f5e238
+@ var 2:87 -
+digest=ffec01d5140fdf6d
+@ var 3:4 -
+digest=f074545c8af797f2
+@ var 3:5 -
+digest=d9ccfdc1731feea7
+@ var 3:6 -
+digest=ea097a3b6926e733
+@ var 4:0 -
+digest=d9ccfdc1731feea7
+@ var 4:31 -
+digest=798f5a97c022a28c
+@ var 4:67 -
+digest=1b5eae3937f5e238
+@ var 5:0 -
+digest=7b3a22a97f402cd8
+@ var 6:0 -
+digest=7b3a22a97f402cd8
+@ var 6:11 -
+digest=6166b58022dc9e43
+@ var 6:12 -
+digest=626bc6a7105c8a81
+@ var 7:0 -
+digest=d9ccfdc1731feea7
+@ var 7:1 -
+digest=f074545c8af797f2
+@ var 7:2 -
+digest=c46ff202971ae160
+@ var 8:0 -
+digest=d9ccfdc1731feea7
+@ var 8:9 -
+digest=f074545c8af797f2
+@ var 8:11 -
+digest=ea097a3b6926e733
+@ var 9:1 -
+digest=d9ccfdc1731feea7
+@ var 10:0 -
+digest=d9ccfdc1731feea7
+@ var 10:143 -
+digest=e1b3c1db1fe1c6e1
+@ var 10:427 -
+digest=f074545c8af797f2
+@ varbit 0 -
+digest=6b38a0e26ef67e30
+@ varbit 1 -
+digest=667de3bbc5d1b356
+@ varbit 2 -
+digest=7b62610cc907956f
+@ varbit 502 -
+digest=5fae9f40dc9fd66c
+@ varbit 507 -
+digest=51c6e9d5fbe27fd5
+@ varbit 831 -
+digest=b85ce9cb32c0e4f6
+@ varbit 1683 -
+digest=1700aca52a62e77a
+@ varbit 6166 -
+digest=ff9532ae50c17a9b
+@ dbtable 0 -
+digest=d4fb6ff74fabdac6
+@ dbtable 4 -
+digest=9cffc6ff5744c7c6
+@ dbtable 5 -
+digest=26322c8f43e1af4a
+@ dbrow 0 -
+digest=2ae573fb239bc4ec
+@ dbrow 89 -
+digest=6d3a96761c06c041
+@ dbrow 416 -
+digest=e0521a3515745d32

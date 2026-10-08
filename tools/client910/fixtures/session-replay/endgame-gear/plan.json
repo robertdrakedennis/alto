@@ -1,0 +1,383 @@
+{
+  "blockedResources": [
+    "The server has protection potions but no qualified ordinary stat-boost potion consumer; no synthetic overload boost is seeded"
+  ],
+  "equipment": [
+    37640,
+    35169,
+    35172,
+    35173,
+    35170,
+    35171
+  ],
+  "equipmentFacts": [
+    {
+      "blocked": [],
+      "equipment": {
+        "active": true,
+        "covers": [
+          3,
+          5
+        ],
+        "kind": "melee-main",
+        "name": "Zaros godsword",
+        "occupancy": [
+          3,
+          5
+        ],
+        "requirements": [
+          {
+            "level": 92,
+            "stat": 0
+          }
+        ],
+        "slot": 3,
+        "tier": 92
+      },
+      "forms": [
+        37640,
+        37642,
+        37643
+      ],
+      "item": 37640,
+      "name": "Zaros godsword",
+      "native": {
+        "accuracy": 2577,
+        "armourFine": 0,
+        "augmentedItem": 37675,
+        "capacity": 60000,
+        "damageFine": 20562,
+        "lifeBonus": 0,
+        "repairCost": 4800000,
+        "set": -1,
+        "speed": 6
+      },
+      "qualification": [
+        "Identity, requirements, occupancy and stats from native cache; tier/style/existence from pinned Wiki history"
+      ],
+      "source": {
+        "pin": "2019-12-10",
+        "revid": 30676389,
+        "timestamp": "2019-12-03T23:43:40Z",
+        "title": "Zaros godsword"
+      },
+      "style": "melee",
+      "tier": 92,
+      "type": "weapon"
+    },
+    {
+      "blocked": [],
+      "equipment": {
+        "active": true,
+        "armourStyle": "melee",
+        "covers": [
+          0,
+          8,
+          11
+        ],
+        "kind": "tank",
+        "name": "Teralith Helmet",
+        "occupancy": [
+          0
+        ],
+        "pvpReductionMultiplier": 1,
+        "reductionLevel": 90,
+        "requirements": [
+          {
+            "level": 90,
+            "stat": 1
+          }
+        ],
+        "slot": 0,
+        "tier": 90
+      },
+      "forms": [
+        35169
+      ],
+      "item": 35169,
+      "name": "Teralith Helmet",
+      "native": {
+        "accuracy": 0,
+        "armourFine": 4916,
+        "augmentedItem": -1,
+        "capacity": 100000,
+        "damageFine": 0,
+        "lifeBonus": 320,
+        "repairCost": -1,
+        "set": 33050,
+        "speed": 0
+      },
+      "qualification": [
+        "Identity, requirements, occupancy and stats from native cache; tier/style/existence from pinned Wiki history",
+        "The defensive-ability reset has no Legacy trigger; the shield-dependent damage bonus requires a separately qualified shield loadout"
+      ],
+      "source": {
+        "pin": "2019-12-10",
+        "revid": 28422259,
+        "timestamp": "2019-05-19T21:58:05Z",
+        "title": "Teralith helmet"
+      },
+      "style": "melee",
+      "tier": 90,
+      "type": "tank"
+    },
+    {
+      "blocked": [],
+      "equipment": {
+        "active": true,
+        "armourStyle": "melee",
+        "covers": [
+          4,
+          6
+        ],
+        "kind": "tank",
+        "name": "Teralith Cuirass",
+        "occupancy": [
+          4
+        ],
+        "pvpReductionMultiplier": 1,
+        "reductionLevel": 90,
+        "requirements": [
+          {
+            "level": 90,
+            "stat": 1
+          }
+        ],
+        "slot": 4,
+        "tier": 90
+      },
+      "forms": [
+        35172
+      ],
+      "item": 35172,
+      "name": "Teralith Cuirass",
+      "native": {
+        "accuracy": 0,
+        "armourFine": 5653,
+        "augmentedItem": -1,
+        "capacity": 100000,
+        "damageFine": 0,
+        "lifeBonus": 640,
+        "repairCost": -1,
+        "set": 33050,
+        "speed": 0
+      },
+      "qualification": [
+        "Identity, requirements, occupancy and stats from native cache; tier/style/existence from pinned Wiki history",
+        "The defensive-ability reset has no Legacy trigger; the shield-dependent damage bonus requires a separately qualified shield loadout"
+      ],
+      "source": {
+        "pin": "2019-12-10",
+        "revid": 28422263,
+        "timestamp": "2019-05-19T21:58:12Z",
+        "title": "Teralith cuirass"
+      },
+      "style": "melee",
+      "tier": 90,
+      "type": "tank"
+    },
+    {
+      "blocked": [],
+      "equipment": {
+        "active": true,
+        "armourStyle": "melee",
+        "covers": [
+          7
+        ],
+        "kind": "tank",
+        "name": "Teralith Leggings",
+        "occupancy": [
+          7
+        ],
+        "pvpReductionMultiplier": 1,
+        "reductionLevel": 90,
+        "requirements": [
+          {
+            "level": 90,
+            "stat": 1
+          }
+        ],
+        "slot": 7,
+        "tier": 90
+      },
+      "forms": [
+        35173
+      ],
+      "item": 35173,
+      "name": "Teralith Leggings",
+      "native": {
+        "accuracy": 0,
+        "armourFine": 5407,
+        "augmentedItem": -1,
+        "capacity": 100000,
+        "damageFine": 0,
+        "lifeBonus": 480,
+        "repairCost": -1,
+        "set": 33050,
+        "speed": 0
+      },
+      "qualification": [
+        "Identity, requirements, occupancy and stats from native cache; tier/style/existence from pinned Wiki history",
+        "The defensive-ability reset has no Legacy trigger; the shield-dependent damage bonus requires a separately qualified shield loadout"
+      ],
+      "source": {
+        "pin": "2019-12-10",
+        "revid": 28422264,
+        "timestamp": "2019-05-19T21:58:15Z",
+        "title": "Teralith leggings"
+      },
+      "style": "melee",
+      "tier": 90,
+      "type": "tank"
+    },
+    {
+      "blocked": [],
+      "equipment": {
+        "active": true,
+        "armourStyle": "melee",
+        "covers": [
+          9
+        ],
+        "kind": "tank",
+        "name": "Teralith Gauntlets",
+        "occupancy": [
+          9
+        ],
+        "pvpReductionMultiplier": 1,
+        "reductionLevel": 90,
+        "requirements": [
+          {
+            "level": 90,
+            "stat": 1
+          }
+        ],
+        "slot": 9,
+        "tier": 90
+      },
+      "forms": [
+        35170
+      ],
+      "item": 35170,
+      "name": "Teralith Gauntlets",
+      "native": {
+        "accuracy": 0,
+        "armourFine": 1229,
+        "augmentedItem": -1,
+        "capacity": 100000,
+        "damageFine": 0,
+        "lifeBonus": 0,
+        "repairCost": -1,
+        "set": 33050,
+        "speed": 0
+      },
+      "qualification": [
+        "Identity, requirements, occupancy and stats from native cache; tier/style/existence from pinned Wiki history",
+        "The defensive-ability reset has no Legacy trigger; the shield-dependent damage bonus requires a separately qualified shield loadout"
+      ],
+      "source": {
+        "pin": "2019-12-10",
+        "revid": 28422261,
+        "timestamp": "2019-05-19T21:58:07Z",
+        "title": "Teralith gauntlets"
+      },
+      "style": "melee",
+      "tier": 90,
+      "type": "tank"
+    },
+    {
+      "blocked": [],
+      "equipment": {
+        "active": true,
+        "armourStyle": "melee",
+        "covers": [
+          10
+        ],
+        "kind": "tank",
+        "name": "Teralith Boots",
+        "occupancy": [
+          10
+        ],
+        "pvpReductionMultiplier": 1,
+        "reductionLevel": 90,
+        "requirements": [
+          {
+            "level": 90,
+            "stat": 1
+          }
+        ],
+        "slot": 10,
+        "tier": 90
+      },
+      "forms": [
+        35171
+      ],
+      "item": 35171,
+      "name": "Teralith Boots",
+      "native": {
+        "accuracy": 0,
+        "armourFine": 1229,
+        "augmentedItem": -1,
+        "capacity": 100000,
+        "damageFine": 0,
+        "lifeBonus": 0,
+        "repairCost": -1,
+        "set": 33050,
+        "speed": 0
+      },
+      "qualification": [
+        "Identity, requirements, occupancy and stats from native cache; tier/style/existence from pinned Wiki history",
+        "The defensive-ability reset has no Legacy trigger; the shield-dependent damage bonus requires a separately qualified shield loadout"
+      ],
+      "source": {
+        "pin": "2019-12-10",
+        "revid": 28422262,
+        "timestamp": "2019-05-19T21:58:10Z",
+        "title": "Teralith boots"
+      },
+      "style": "melee",
+      "tier": 90,
+      "type": "tank"
+    }
+  ],
+  "expected": {
+    "armourRating": 1843,
+    "lifeBonus": 1440,
+    "mainAutoDamage": 2611,
+    "maxLife": 11340,
+    "maximumLegacyHit": 6005,
+    "observedChargeLoss": 6
+  },
+  "food": {
+    "item": 385,
+    "maximumHealing": 2000
+  },
+  "format": 1,
+  "initialAccountSha256": "bb3abaa4e48bc65251faa9da9c3476e590d85eaca98b045d832b97e22e927e56",
+  "loadout": {
+    "armour": "tank",
+    "armourTier": 90,
+    "blocked": [],
+    "equipment": [
+      37640,
+      35169,
+      35172,
+      35173,
+      35170,
+      35171
+    ],
+    "hands": "two-handed",
+    "style": "melee",
+    "tier": 92
+  },
+  "qualification": "T92 weapon with separately qualified T90 tank armour; full T92 armour remains blocked",
+  "toolbar": {
+    "backpackDestination": 2,
+    "wornDestination": 3
+  },
+  "varps": [
+    715,
+    716,
+    711,
+    3596
+  ]
+}

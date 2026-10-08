@@ -1,0 +1,6157 @@
+{
+  "status": "derived_from_captured_immutable_queue_inputs_through_original_pure_encoder",
+  "owner": {
+    "relative": "server/src/formats/network/protocol/ServerProt.ts",
+    "sha256": "7805b88a3e07d16648c9d8c269cc1c11ddae66599c0920d2025bf10911151639"
+  },
+  "originalCombatSha256": "12a70211ff5fdf2764d8025c0a9b42e8ac2d8fbf5a15ec2edabb850d03e405e3",
+  "originalRtrSha256": "ca562529388294788462897f51770237378c593272ac4d68f011ecf3dded2ecf",
+  "gameplayWrites": 0,
+  "publications": [
+    {
+      "tick": 2,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": []
+      },
+      "enemies": []
+    },
+    {
+      "tick": 3,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": []
+      },
+      "enemies": []
+    },
+    {
+      "tick": 4,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": []
+      },
+      "enemies": []
+    },
+    {
+      "tick": 5,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": []
+      },
+      "enemies": []
+    },
+    {
+      "tick": 6,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": []
+      },
+      "enemies": []
+    },
+    {
+      "tick": 7,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": []
+      },
+      "enemies": []
+    },
+    {
+      "tick": 8,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": []
+      },
+      "enemies": []
+    },
+    {
+      "tick": 9,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": []
+      },
+      "enemies": []
+    },
+    {
+      "tick": 10,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": []
+      },
+      "enemies": []
+    },
+    {
+      "tick": 11,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": []
+      },
+      "enemies": []
+    },
+    {
+      "tick": 12,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": []
+      },
+      "enemies": []
+    },
+    {
+      "tick": 13,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": []
+      },
+      "enemies": []
+    },
+    {
+      "tick": 14,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": []
+      },
+      "enemies": []
+    },
+    {
+      "tick": 15,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": []
+      },
+      "enemies": []
+    },
+    {
+      "tick": 16,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": []
+      },
+      "enemies": []
+    },
+    {
+      "tick": 17,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": []
+      },
+      "enemies": []
+    },
+    {
+      "tick": 18,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": []
+      },
+      "enemies": []
+    },
+    {
+      "tick": 19,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": []
+      },
+      "enemies": []
+    },
+    {
+      "tick": 20,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": []
+      },
+      "enemies": []
+    },
+    {
+      "tick": 21,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": []
+      },
+      "enemies": []
+    },
+    {
+      "tick": 22,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": []
+      },
+      "enemies": []
+    },
+    {
+      "tick": 23,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": []
+      },
+      "enemies": []
+    },
+    {
+      "tick": 24,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": []
+      },
+      "enemies": []
+    },
+    {
+      "tick": 25,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": []
+      },
+      "enemies": []
+    },
+    {
+      "tick": 26,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": []
+      },
+      "enemies": []
+    },
+    {
+      "tick": 27,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": []
+      },
+      "enemies": []
+    },
+    {
+      "tick": 28,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": []
+      },
+      "enemies": []
+    },
+    {
+      "tick": 29,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": []
+      },
+      "enemies": []
+    },
+    {
+      "tick": 30,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": []
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": []
+        }
+      ]
+    },
+    {
+      "tick": 31,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": []
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": []
+        }
+      ]
+    },
+    {
+      "tick": 32,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": []
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": []
+        }
+      ]
+    },
+    {
+      "tick": 33,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": []
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": []
+        }
+      ]
+    },
+    {
+      "tick": 34,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": []
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": []
+        }
+      ]
+    },
+    {
+      "tick": 35,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": []
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": []
+        }
+      ]
+    },
+    {
+      "tick": 36,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": []
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": []
+        }
+      ]
+    },
+    {
+      "tick": 37,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": []
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": []
+        }
+      ]
+    },
+    {
+      "tick": 38,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": []
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": []
+        }
+      ]
+    },
+    {
+      "tick": 39,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": []
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": [
+            {
+              "source": 1,
+              "poison": false,
+              "damage": 0,
+              "type": 8
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "tick": 40,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": [
+          {
+            "source": -1,
+            "poison": false,
+            "damage": 0,
+            "type": 8
+          }
+        ]
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": []
+        }
+      ]
+    },
+    {
+      "tick": 41,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": []
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": []
+        }
+      ]
+    },
+    {
+      "tick": 42,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": []
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": []
+        }
+      ]
+    },
+    {
+      "tick": 43,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": []
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": []
+        }
+      ]
+    },
+    {
+      "tick": 44,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": [
+          {
+            "source": -1,
+            "poison": false,
+            "damage": 0,
+            "type": 8
+          }
+        ]
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": []
+        }
+      ]
+    },
+    {
+      "tick": 45,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": []
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": [
+            {
+              "source": 1,
+              "poison": false,
+              "damage": 1484,
+              "type": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "tick": 46,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": []
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": []
+        }
+      ]
+    },
+    {
+      "tick": 47,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": []
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": []
+        }
+      ]
+    },
+    {
+      "tick": 48,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": [
+          {
+            "source": -1,
+            "poison": false,
+            "damage": 0,
+            "type": 8
+          }
+        ]
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": []
+        }
+      ]
+    },
+    {
+      "tick": 49,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": []
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": []
+        }
+      ]
+    },
+    {
+      "tick": 50,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": []
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": []
+        }
+      ]
+    },
+    {
+      "tick": 51,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": []
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": [
+            {
+              "source": 1,
+              "poison": false,
+              "damage": 2700,
+              "type": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "tick": 52,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": [
+          {
+            "source": -1,
+            "poison": false,
+            "damage": 1126,
+            "type": 0
+          }
+        ]
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": []
+        }
+      ]
+    },
+    {
+      "tick": 53,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": []
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": []
+        }
+      ]
+    },
+    {
+      "tick": 54,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": []
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": []
+        }
+      ]
+    },
+    {
+      "tick": 55,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": []
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": []
+        }
+      ]
+    },
+    {
+      "tick": 56,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": [
+          {
+            "source": -1,
+            "poison": false,
+            "damage": 937,
+            "type": 0
+          }
+        ]
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": []
+        }
+      ]
+    },
+    {
+      "tick": 57,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": []
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": [
+            {
+              "source": 1,
+              "poison": false,
+              "damage": 1745,
+              "type": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "tick": 58,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": []
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": []
+        }
+      ]
+    },
+    {
+      "tick": 59,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": []
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": []
+        }
+      ]
+    },
+    {
+      "tick": 60,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": [
+          {
+            "source": -1,
+            "poison": false,
+            "damage": 800,
+            "type": 0
+          }
+        ]
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": []
+        }
+      ]
+    },
+    {
+      "tick": 61,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": []
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": []
+        }
+      ]
+    },
+    {
+      "tick": 62,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": []
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": []
+        }
+      ]
+    },
+    {
+      "tick": 63,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": []
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": [
+            {
+              "source": 1,
+              "poison": false,
+              "damage": 2563,
+              "type": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "tick": 64,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": [
+          {
+            "source": -1,
+            "poison": false,
+            "damage": 0,
+            "type": 8
+          }
+        ]
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": []
+        }
+      ]
+    },
+    {
+      "tick": 65,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": []
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": []
+        }
+      ]
+    },
+    {
+      "tick": 66,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": []
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": []
+        }
+      ]
+    },
+    {
+      "tick": 67,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": []
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": []
+        }
+      ]
+    },
+    {
+      "tick": 68,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": [
+          {
+            "source": -1,
+            "poison": false,
+            "damage": 366,
+            "type": 0
+          }
+        ]
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": []
+        }
+      ]
+    },
+    {
+      "tick": 69,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": []
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": [
+            {
+              "source": 1,
+              "poison": false,
+              "damage": 0,
+              "type": 8
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "tick": 70,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": []
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": []
+        }
+      ]
+    },
+    {
+      "tick": 71,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": []
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": []
+        }
+      ]
+    },
+    {
+      "tick": 72,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": [
+          {
+            "source": -1,
+            "poison": false,
+            "damage": 0,
+            "type": 8
+          }
+        ]
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": []
+        }
+      ]
+    },
+    {
+      "tick": 73,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": []
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": []
+        }
+      ]
+    },
+    {
+      "tick": 74,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": []
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": []
+        }
+      ]
+    },
+    {
+      "tick": 75,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": []
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": [
+            {
+              "source": 1,
+              "poison": false,
+              "damage": 2804,
+              "type": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "tick": 76,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": [
+          {
+            "source": -1,
+            "poison": false,
+            "damage": 373,
+            "type": 0
+          }
+        ]
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": []
+        }
+      ]
+    },
+    {
+      "tick": 77,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": []
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": []
+        }
+      ]
+    },
+    {
+      "tick": 78,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": []
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": []
+        }
+      ]
+    },
+    {
+      "tick": 79,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": []
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": []
+        }
+      ]
+    },
+    {
+      "tick": 80,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": [
+          {
+            "source": -1,
+            "poison": false,
+            "damage": 0,
+            "type": 8
+          }
+        ]
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": []
+        }
+      ]
+    },
+    {
+      "tick": 81,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": []
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": [
+            {
+              "source": 1,
+              "poison": false,
+              "damage": 0,
+              "type": 8
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "tick": 82,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": []
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": []
+        }
+      ]
+    },
+    {
+      "tick": 83,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": []
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": []
+        }
+      ]
+    },
+    {
+      "tick": 84,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": [
+          {
+            "source": -1,
+            "poison": false,
+            "damage": 670,
+            "type": 0
+          }
+        ]
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": []
+        }
+      ]
+    },
+    {
+      "tick": 85,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": []
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": []
+        }
+      ]
+    },
+    {
+      "tick": 86,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": []
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": []
+        }
+      ]
+    },
+    {
+      "tick": 87,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": []
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": []
+        }
+      ]
+    },
+    {
+      "tick": 88,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": [
+          {
+            "source": -1,
+            "poison": false,
+            "damage": 0,
+            "type": 8
+          }
+        ]
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": []
+        }
+      ]
+    },
+    {
+      "tick": 89,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": []
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": []
+        }
+      ]
+    },
+    {
+      "tick": 90,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": []
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": [
+            {
+              "source": 1,
+              "poison": false,
+              "damage": 1691,
+              "type": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "tick": 91,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": []
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": []
+        }
+      ]
+    },
+    {
+      "tick": 92,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": [
+          {
+            "source": -1,
+            "poison": false,
+            "damage": 0,
+            "type": 8
+          }
+        ]
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": []
+        }
+      ]
+    },
+    {
+      "tick": 93,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": []
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": []
+        }
+      ]
+    },
+    {
+      "tick": 94,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": []
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": []
+        }
+      ]
+    },
+    {
+      "tick": 95,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": []
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": []
+        }
+      ]
+    },
+    {
+      "tick": 96,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": [
+          {
+            "source": -1,
+            "poison": false,
+            "damage": 1273,
+            "type": 0
+          }
+        ]
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": [
+            {
+              "source": 1,
+              "poison": false,
+              "damage": 1129,
+              "type": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "tick": 97,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": []
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": []
+        }
+      ]
+    },
+    {
+      "tick": 98,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": []
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": []
+        }
+      ]
+    },
+    {
+      "tick": 99,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": []
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": []
+        }
+      ]
+    },
+    {
+      "tick": 100,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": [
+          {
+            "source": -1,
+            "poison": false,
+            "damage": 0,
+            "type": 8
+          }
+        ]
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": []
+        }
+      ]
+    },
+    {
+      "tick": 101,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": []
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": []
+        }
+      ]
+    },
+    {
+      "tick": 102,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": []
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": [
+            {
+              "source": 1,
+              "poison": false,
+              "damage": 2254,
+              "type": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "tick": 103,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": []
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": []
+        }
+      ]
+    },
+    {
+      "tick": 104,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": [
+          {
+            "source": -1,
+            "poison": false,
+            "damage": 503,
+            "type": 0
+          }
+        ]
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": []
+        }
+      ]
+    },
+    {
+      "tick": 105,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": []
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": []
+        }
+      ]
+    },
+    {
+      "tick": 106,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": []
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": []
+        }
+      ]
+    },
+    {
+      "tick": 107,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": []
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": []
+        }
+      ]
+    },
+    {
+      "tick": 108,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": [
+          {
+            "source": -1,
+            "poison": false,
+            "damage": 72,
+            "type": 0
+          }
+        ]
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": []
+        }
+      ]
+    },
+    {
+      "tick": 109,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": []
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": [
+            {
+              "source": 1,
+              "poison": false,
+              "damage": 0,
+              "type": 8
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "tick": 110,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": []
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": []
+        }
+      ]
+    },
+    {
+      "tick": 111,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": []
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": []
+        }
+      ]
+    },
+    {
+      "tick": 112,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": [
+          {
+            "source": -1,
+            "poison": false,
+            "damage": 91,
+            "type": 0
+          }
+        ]
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": []
+        }
+      ]
+    },
+    {
+      "tick": 113,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": []
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": []
+        }
+      ]
+    },
+    {
+      "tick": 114,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": []
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": []
+        }
+      ]
+    },
+    {
+      "tick": 115,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": []
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": [
+            {
+              "source": 1,
+              "poison": false,
+              "damage": 0,
+              "type": 8
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "tick": 116,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": [
+          {
+            "source": -1,
+            "poison": false,
+            "damage": 729,
+            "type": 0
+          },
+          {
+            "source": -1,
+            "poison": false,
+            "damage": 501,
+            "type": 0
+          }
+        ]
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": []
+        },
+        {
+          "id": 12687,
+          "generation": 1,
+          "actorToken": 3,
+          "definition": 8127,
+          "hits": []
+        }
+      ]
+    },
+    {
+      "tick": 117,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": []
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": []
+        },
+        {
+          "id": 12687,
+          "generation": 1,
+          "actorToken": 3,
+          "definition": 8127,
+          "hits": []
+        }
+      ]
+    },
+    {
+      "tick": 118,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": []
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": []
+        },
+        {
+          "id": 12687,
+          "generation": 1,
+          "actorToken": 3,
+          "definition": 8127,
+          "hits": []
+        }
+      ]
+    },
+    {
+      "tick": 119,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": [
+          {
+            "source": -1,
+            "poison": false,
+            "damage": 587,
+            "type": 0
+          }
+        ]
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": []
+        },
+        {
+          "id": 12687,
+          "generation": 1,
+          "actorToken": 3,
+          "definition": 8127,
+          "hits": []
+        }
+      ]
+    },
+    {
+      "tick": 120,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": [
+          {
+            "source": -1,
+            "poison": false,
+            "damage": 0,
+            "type": 8
+          }
+        ]
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": []
+        },
+        {
+          "id": 12687,
+          "generation": 1,
+          "actorToken": 3,
+          "definition": 8127,
+          "hits": []
+        }
+      ]
+    },
+    {
+      "tick": 121,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": []
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": []
+        },
+        {
+          "id": 12687,
+          "generation": 1,
+          "actorToken": 3,
+          "definition": 8127,
+          "hits": []
+        }
+      ]
+    },
+    {
+      "tick": 122,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": [
+          {
+            "source": -1,
+            "poison": false,
+            "damage": 307,
+            "type": 0
+          }
+        ]
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": []
+        },
+        {
+          "id": 12687,
+          "generation": 1,
+          "actorToken": 3,
+          "definition": 8127,
+          "hits": []
+        }
+      ]
+    },
+    {
+      "tick": 123,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": []
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": []
+        },
+        {
+          "id": 12687,
+          "generation": 1,
+          "actorToken": 3,
+          "definition": 8127,
+          "hits": []
+        }
+      ]
+    },
+    {
+      "tick": 124,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": [
+          {
+            "source": -1,
+            "poison": false,
+            "damage": 470,
+            "type": 0
+          }
+        ]
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": [
+            {
+              "source": 1,
+              "poison": false,
+              "damage": 1868,
+              "type": 0
+            }
+          ]
+        },
+        {
+          "id": 12687,
+          "generation": 1,
+          "actorToken": 3,
+          "definition": 8127,
+          "hits": []
+        }
+      ]
+    },
+    {
+      "tick": 125,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": [
+          {
+            "source": -1,
+            "poison": false,
+            "damage": 59,
+            "type": 0
+          }
+        ]
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": []
+        },
+        {
+          "id": 12687,
+          "generation": 1,
+          "actorToken": 3,
+          "definition": 8127,
+          "hits": []
+        }
+      ]
+    },
+    {
+      "tick": 126,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": []
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": []
+        },
+        {
+          "id": 12687,
+          "generation": 1,
+          "actorToken": 3,
+          "definition": 8127,
+          "hits": []
+        }
+      ]
+    },
+    {
+      "tick": 127,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": []
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": []
+        },
+        {
+          "id": 12687,
+          "generation": 1,
+          "actorToken": 3,
+          "definition": 8127,
+          "hits": []
+        }
+      ]
+    },
+    {
+      "tick": 128,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": [
+          {
+            "source": -1,
+            "poison": false,
+            "damage": 0,
+            "type": 8
+          },
+          {
+            "source": -1,
+            "poison": false,
+            "damage": 70,
+            "type": 0
+          }
+        ]
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": []
+        },
+        {
+          "id": 12687,
+          "generation": 1,
+          "actorToken": 3,
+          "definition": 8127,
+          "hits": []
+        }
+      ]
+    },
+    {
+      "tick": 129,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": []
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": []
+        },
+        {
+          "id": 12687,
+          "generation": 1,
+          "actorToken": 3,
+          "definition": 8127,
+          "hits": []
+        }
+      ]
+    },
+    {
+      "tick": 130,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": []
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": [
+            {
+              "source": 1,
+              "poison": false,
+              "damage": 0,
+              "type": 8
+            }
+          ]
+        },
+        {
+          "id": 12687,
+          "generation": 1,
+          "actorToken": 3,
+          "definition": 8127,
+          "hits": []
+        }
+      ]
+    },
+    {
+      "tick": 131,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": [
+          {
+            "source": -1,
+            "poison": false,
+            "damage": 49,
+            "type": 0
+          }
+        ]
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": []
+        },
+        {
+          "id": 12687,
+          "generation": 1,
+          "actorToken": 3,
+          "definition": 8127,
+          "hits": []
+        }
+      ]
+    },
+    {
+      "tick": 132,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": [
+          {
+            "source": -1,
+            "poison": false,
+            "damage": 0,
+            "type": 8
+          }
+        ]
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": []
+        },
+        {
+          "id": 12687,
+          "generation": 1,
+          "actorToken": 3,
+          "definition": 8127,
+          "hits": []
+        }
+      ]
+    },
+    {
+      "tick": 133,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": []
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": []
+        },
+        {
+          "id": 12687,
+          "generation": 1,
+          "actorToken": 3,
+          "definition": 8127,
+          "hits": []
+        }
+      ]
+    },
+    {
+      "tick": 134,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": [
+          {
+            "source": -1,
+            "poison": false,
+            "damage": 237,
+            "type": 0
+          }
+        ]
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": []
+        },
+        {
+          "id": 12687,
+          "generation": 1,
+          "actorToken": 3,
+          "definition": 8127,
+          "hits": []
+        }
+      ]
+    },
+    {
+      "tick": 135,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": []
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": []
+        },
+        {
+          "id": 12687,
+          "generation": 1,
+          "actorToken": 3,
+          "definition": 8127,
+          "hits": []
+        }
+      ]
+    },
+    {
+      "tick": 136,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": [
+          {
+            "source": -1,
+            "poison": false,
+            "damage": 330,
+            "type": 0
+          }
+        ]
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": [
+            {
+              "source": 1,
+              "poison": false,
+              "damage": 1565,
+              "type": 0
+            }
+          ]
+        },
+        {
+          "id": 12687,
+          "generation": 1,
+          "actorToken": 3,
+          "definition": 8127,
+          "hits": []
+        }
+      ]
+    },
+    {
+      "tick": 137,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": [
+          {
+            "source": -1,
+            "poison": false,
+            "damage": 352,
+            "type": 0
+          }
+        ]
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": []
+        },
+        {
+          "id": 12687,
+          "generation": 1,
+          "actorToken": 3,
+          "definition": 8127,
+          "hits": []
+        }
+      ]
+    },
+    {
+      "tick": 138,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": []
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": []
+        },
+        {
+          "id": 12687,
+          "generation": 1,
+          "actorToken": 3,
+          "definition": 8127,
+          "hits": []
+        }
+      ]
+    },
+    {
+      "tick": 139,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": []
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": []
+        },
+        {
+          "id": 12687,
+          "generation": 1,
+          "actorToken": 3,
+          "definition": 8127,
+          "hits": []
+        }
+      ]
+    },
+    {
+      "tick": 140,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": [
+          {
+            "source": -1,
+            "poison": false,
+            "damage": 0,
+            "type": 8
+          },
+          {
+            "source": -1,
+            "poison": false,
+            "damage": 562,
+            "type": 0
+          }
+        ]
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": []
+        },
+        {
+          "id": 12687,
+          "generation": 1,
+          "actorToken": 3,
+          "definition": 8127,
+          "hits": []
+        }
+      ]
+    },
+    {
+      "tick": 141,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": []
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": []
+        },
+        {
+          "id": 12687,
+          "generation": 1,
+          "actorToken": 3,
+          "definition": 8127,
+          "hits": []
+        }
+      ]
+    },
+    {
+      "tick": 142,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": []
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": []
+        },
+        {
+          "id": 12687,
+          "generation": 1,
+          "actorToken": 3,
+          "definition": 8127,
+          "hits": []
+        }
+      ]
+    },
+    {
+      "tick": 143,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": [
+          {
+            "source": -1,
+            "poison": false,
+            "damage": 71,
+            "type": 0
+          }
+        ]
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": []
+        },
+        {
+          "id": 12687,
+          "generation": 1,
+          "actorToken": 3,
+          "definition": 8127,
+          "hits": []
+        }
+      ]
+    },
+    {
+      "tick": 144,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": [
+          {
+            "source": -1,
+            "poison": false,
+            "damage": 0,
+            "type": 8
+          }
+        ]
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": []
+        },
+        {
+          "id": 12687,
+          "generation": 1,
+          "actorToken": 3,
+          "definition": 8127,
+          "hits": []
+        }
+      ]
+    },
+    {
+      "tick": 145,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": []
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": [
+            {
+              "source": 1,
+              "poison": false,
+              "damage": 0,
+              "type": 8
+            }
+          ]
+        },
+        {
+          "id": 12687,
+          "generation": 1,
+          "actorToken": 3,
+          "definition": 8127,
+          "hits": []
+        }
+      ]
+    },
+    {
+      "tick": 146,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": [
+          {
+            "source": -1,
+            "poison": false,
+            "damage": 476,
+            "type": 0
+          }
+        ]
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": []
+        },
+        {
+          "id": 12687,
+          "generation": 1,
+          "actorToken": 3,
+          "definition": 8127,
+          "hits": []
+        }
+      ]
+    },
+    {
+      "tick": 147,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": []
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": []
+        },
+        {
+          "id": 12687,
+          "generation": 1,
+          "actorToken": 3,
+          "definition": 8127,
+          "hits": []
+        }
+      ]
+    },
+    {
+      "tick": 148,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": [
+          {
+            "source": -1,
+            "poison": false,
+            "damage": 0,
+            "type": 8
+          }
+        ]
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": []
+        },
+        {
+          "id": 12687,
+          "generation": 1,
+          "actorToken": 3,
+          "definition": 8127,
+          "hits": []
+        }
+      ]
+    },
+    {
+      "tick": 149,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": [
+          {
+            "source": -1,
+            "poison": false,
+            "damage": 318,
+            "type": 0
+          }
+        ]
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": []
+        },
+        {
+          "id": 12687,
+          "generation": 1,
+          "actorToken": 3,
+          "definition": 8127,
+          "hits": []
+        }
+      ]
+    },
+    {
+      "tick": 150,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": []
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": []
+        },
+        {
+          "id": 12687,
+          "generation": 1,
+          "actorToken": 3,
+          "definition": 8127,
+          "hits": []
+        }
+      ]
+    },
+    {
+      "tick": 151,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": []
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": [
+            {
+              "source": 1,
+              "poison": false,
+              "damage": 0,
+              "type": 8
+            }
+          ]
+        },
+        {
+          "id": 12687,
+          "generation": 1,
+          "actorToken": 3,
+          "definition": 8127,
+          "hits": []
+        }
+      ]
+    },
+    {
+      "tick": 152,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": [
+          {
+            "source": -1,
+            "poison": false,
+            "damage": 210,
+            "type": 0
+          },
+          {
+            "source": -1,
+            "poison": false,
+            "damage": 398,
+            "type": 0
+          }
+        ]
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": []
+        },
+        {
+          "id": 12687,
+          "generation": 1,
+          "actorToken": 3,
+          "definition": 8127,
+          "hits": []
+        }
+      ]
+    },
+    {
+      "tick": 153,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": []
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": []
+        },
+        {
+          "id": 12687,
+          "generation": 1,
+          "actorToken": 3,
+          "definition": 8127,
+          "hits": []
+        }
+      ]
+    },
+    {
+      "tick": 154,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": []
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": []
+        },
+        {
+          "id": 12687,
+          "generation": 1,
+          "actorToken": 3,
+          "definition": 8127,
+          "hits": []
+        }
+      ]
+    },
+    {
+      "tick": 155,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": [
+          {
+            "source": -1,
+            "poison": false,
+            "damage": 206,
+            "type": 0
+          }
+        ]
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": []
+        },
+        {
+          "id": 12687,
+          "generation": 1,
+          "actorToken": 3,
+          "definition": 8127,
+          "hits": []
+        }
+      ]
+    },
+    {
+      "tick": 156,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": [
+          {
+            "source": -1,
+            "poison": false,
+            "damage": 628,
+            "type": 0
+          }
+        ]
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": []
+        },
+        {
+          "id": 12687,
+          "generation": 1,
+          "actorToken": 3,
+          "definition": 8127,
+          "hits": []
+        }
+      ]
+    },
+    {
+      "tick": 157,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": []
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": []
+        },
+        {
+          "id": 12687,
+          "generation": 1,
+          "actorToken": 3,
+          "definition": 8127,
+          "hits": []
+        }
+      ]
+    },
+    {
+      "tick": 158,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": [
+          {
+            "source": -1,
+            "poison": false,
+            "damage": 438,
+            "type": 0
+          }
+        ]
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": []
+        },
+        {
+          "id": 12687,
+          "generation": 1,
+          "actorToken": 3,
+          "definition": 8127,
+          "hits": []
+        }
+      ]
+    },
+    {
+      "tick": 159,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": []
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": []
+        },
+        {
+          "id": 12687,
+          "generation": 1,
+          "actorToken": 3,
+          "definition": 8127,
+          "hits": []
+        }
+      ]
+    },
+    {
+      "tick": 160,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": [
+          {
+            "source": -1,
+            "poison": false,
+            "damage": 0,
+            "type": 8
+          }
+        ]
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": [
+            {
+              "source": 1,
+              "poison": false,
+              "damage": 2429,
+              "type": 0
+            }
+          ]
+        },
+        {
+          "id": 12687,
+          "generation": 1,
+          "actorToken": 3,
+          "definition": 8127,
+          "hits": []
+        }
+      ]
+    },
+    {
+      "tick": 161,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": [
+          {
+            "source": -1,
+            "poison": false,
+            "damage": 454,
+            "type": 0
+          }
+        ]
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": []
+        },
+        {
+          "id": 12687,
+          "generation": 1,
+          "actorToken": 3,
+          "definition": 8127,
+          "hits": []
+        }
+      ]
+    },
+    {
+      "tick": 162,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": []
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": []
+        },
+        {
+          "id": 12687,
+          "generation": 1,
+          "actorToken": 3,
+          "definition": 8127,
+          "hits": []
+        }
+      ]
+    },
+    {
+      "tick": 163,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": []
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": []
+        },
+        {
+          "id": 12687,
+          "generation": 1,
+          "actorToken": 3,
+          "definition": 8127,
+          "hits": []
+        }
+      ]
+    },
+    {
+      "tick": 164,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": [
+          {
+            "source": -1,
+            "poison": false,
+            "damage": 0,
+            "type": 8
+          },
+          {
+            "source": -1,
+            "poison": false,
+            "damage": 346,
+            "type": 0
+          }
+        ]
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": []
+        },
+        {
+          "id": 12687,
+          "generation": 1,
+          "actorToken": 3,
+          "definition": 8127,
+          "hits": []
+        }
+      ]
+    },
+    {
+      "tick": 165,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": []
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": []
+        },
+        {
+          "id": 12687,
+          "generation": 1,
+          "actorToken": 3,
+          "definition": 8127,
+          "hits": []
+        }
+      ]
+    },
+    {
+      "tick": 166,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": []
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": [
+            {
+              "source": 1,
+              "poison": false,
+              "damage": 3090,
+              "type": 0
+            }
+          ]
+        },
+        {
+          "id": 12687,
+          "generation": 1,
+          "actorToken": 3,
+          "definition": 8127,
+          "hits": []
+        }
+      ]
+    },
+    {
+      "tick": 167,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": [
+          {
+            "source": -1,
+            "poison": false,
+            "damage": 362,
+            "type": 0
+          }
+        ]
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": []
+        },
+        {
+          "id": 12687,
+          "generation": 1,
+          "actorToken": 3,
+          "definition": 8127,
+          "hits": []
+        }
+      ]
+    },
+    {
+      "tick": 168,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": [
+          {
+            "source": -1,
+            "poison": false,
+            "damage": 0,
+            "type": 8
+          }
+        ]
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": []
+        },
+        {
+          "id": 12687,
+          "generation": 1,
+          "actorToken": 3,
+          "definition": 8127,
+          "hits": []
+        }
+      ]
+    },
+    {
+      "tick": 169,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": []
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": []
+        },
+        {
+          "id": 12687,
+          "generation": 1,
+          "actorToken": 3,
+          "definition": 8127,
+          "hits": []
+        }
+      ]
+    },
+    {
+      "tick": 170,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": [
+          {
+            "source": -1,
+            "poison": false,
+            "damage": 364,
+            "type": 0
+          }
+        ]
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": []
+        },
+        {
+          "id": 12687,
+          "generation": 1,
+          "actorToken": 3,
+          "definition": 8127,
+          "hits": []
+        }
+      ]
+    },
+    {
+      "tick": 171,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": []
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": []
+        },
+        {
+          "id": 12687,
+          "generation": 1,
+          "actorToken": 3,
+          "definition": 8127,
+          "hits": []
+        }
+      ]
+    },
+    {
+      "tick": 172,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": [
+          {
+            "source": -1,
+            "poison": false,
+            "damage": 254,
+            "type": 0
+          }
+        ]
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": [
+            {
+              "source": 1,
+              "poison": false,
+              "damage": 1839,
+              "type": 0
+            }
+          ]
+        },
+        {
+          "id": 12687,
+          "generation": 1,
+          "actorToken": 3,
+          "definition": 8127,
+          "hits": []
+        }
+      ]
+    },
+    {
+      "tick": 173,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": [
+          {
+            "source": -1,
+            "poison": false,
+            "damage": 396,
+            "type": 0
+          }
+        ]
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": []
+        },
+        {
+          "id": 12687,
+          "generation": 1,
+          "actorToken": 3,
+          "definition": 8127,
+          "hits": []
+        }
+      ]
+    },
+    {
+      "tick": 174,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": []
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": []
+        },
+        {
+          "id": 12687,
+          "generation": 1,
+          "actorToken": 3,
+          "definition": 8127,
+          "hits": []
+        }
+      ]
+    },
+    {
+      "tick": 175,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": []
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": []
+        },
+        {
+          "id": 12687,
+          "generation": 1,
+          "actorToken": 3,
+          "definition": 8127,
+          "hits": []
+        }
+      ]
+    },
+    {
+      "tick": 176,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": [
+          {
+            "source": -1,
+            "poison": false,
+            "damage": 0,
+            "type": 8
+          },
+          {
+            "source": -1,
+            "poison": false,
+            "damage": 181,
+            "type": 0
+          }
+        ]
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": []
+        },
+        {
+          "id": 12687,
+          "generation": 1,
+          "actorToken": 3,
+          "definition": 8127,
+          "hits": []
+        }
+      ]
+    },
+    {
+      "tick": 177,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": []
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": []
+        },
+        {
+          "id": 12687,
+          "generation": 1,
+          "actorToken": 3,
+          "definition": 8127,
+          "hits": []
+        }
+      ]
+    },
+    {
+      "tick": 178,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": []
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": [
+            {
+              "source": 1,
+              "poison": false,
+              "damage": 0,
+              "type": 8
+            }
+          ]
+        },
+        {
+          "id": 12687,
+          "generation": 1,
+          "actorToken": 3,
+          "definition": 8127,
+          "hits": []
+        }
+      ]
+    },
+    {
+      "tick": 179,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": [
+          {
+            "source": -1,
+            "poison": false,
+            "damage": 122,
+            "type": 0
+          }
+        ]
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": []
+        },
+        {
+          "id": 12687,
+          "generation": 1,
+          "actorToken": 3,
+          "definition": 8127,
+          "hits": []
+        }
+      ]
+    },
+    {
+      "tick": 180,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": [
+          {
+            "source": -1,
+            "poison": false,
+            "damage": 0,
+            "type": 8
+          }
+        ]
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": []
+        },
+        {
+          "id": 12687,
+          "generation": 1,
+          "actorToken": 3,
+          "definition": 8127,
+          "hits": []
+        }
+      ]
+    },
+    {
+      "tick": 181,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": []
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": []
+        },
+        {
+          "id": 12687,
+          "generation": 1,
+          "actorToken": 3,
+          "definition": 8127,
+          "hits": []
+        }
+      ]
+    },
+    {
+      "tick": 182,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": [
+          {
+            "source": -1,
+            "poison": false,
+            "damage": 323,
+            "type": 0
+          }
+        ]
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": []
+        },
+        {
+          "id": 12687,
+          "generation": 1,
+          "actorToken": 3,
+          "definition": 8127,
+          "hits": []
+        }
+      ]
+    },
+    {
+      "tick": 183,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": []
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": []
+        },
+        {
+          "id": 12687,
+          "generation": 1,
+          "actorToken": 3,
+          "definition": 8127,
+          "hits": []
+        }
+      ]
+    },
+    {
+      "tick": 184,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": [
+          {
+            "source": -1,
+            "poison": false,
+            "damage": 1221,
+            "type": 0
+          }
+        ]
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": [
+            {
+              "source": 1,
+              "poison": false,
+              "damage": 0,
+              "type": 8
+            }
+          ]
+        },
+        {
+          "id": 12687,
+          "generation": 1,
+          "actorToken": 3,
+          "definition": 8127,
+          "hits": []
+        }
+      ]
+    },
+    {
+      "tick": 185,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": [
+          {
+            "source": -1,
+            "poison": false,
+            "damage": 391,
+            "type": 0
+          }
+        ]
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": []
+        },
+        {
+          "id": 12687,
+          "generation": 1,
+          "actorToken": 3,
+          "definition": 8127,
+          "hits": []
+        }
+      ]
+    },
+    {
+      "tick": 186,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": []
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": []
+        },
+        {
+          "id": 12687,
+          "generation": 1,
+          "actorToken": 3,
+          "definition": 8127,
+          "hits": []
+        }
+      ]
+    },
+    {
+      "tick": 187,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": []
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": []
+        },
+        {
+          "id": 12687,
+          "generation": 1,
+          "actorToken": 3,
+          "definition": 8127,
+          "hits": []
+        }
+      ]
+    },
+    {
+      "tick": 188,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": [
+          {
+            "source": -1,
+            "poison": false,
+            "damage": 0,
+            "type": 8
+          },
+          {
+            "source": -1,
+            "poison": false,
+            "damage": 589,
+            "type": 0
+          }
+        ]
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": []
+        },
+        {
+          "id": 12687,
+          "generation": 1,
+          "actorToken": 3,
+          "definition": 8127,
+          "hits": []
+        }
+      ]
+    },
+    {
+      "tick": 189,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": []
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": []
+        },
+        {
+          "id": 12687,
+          "generation": 1,
+          "actorToken": 3,
+          "definition": 8127,
+          "hits": []
+        }
+      ]
+    },
+    {
+      "tick": 190,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": []
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": [
+            {
+              "source": 1,
+              "poison": false,
+              "damage": 1502,
+              "type": 0
+            }
+          ]
+        },
+        {
+          "id": 12687,
+          "generation": 1,
+          "actorToken": 3,
+          "definition": 8127,
+          "hits": []
+        }
+      ]
+    },
+    {
+      "tick": 191,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": [
+          {
+            "source": -1,
+            "poison": false,
+            "damage": 116,
+            "type": 0
+          }
+        ]
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": []
+        },
+        {
+          "id": 12687,
+          "generation": 1,
+          "actorToken": 3,
+          "definition": 8127,
+          "hits": []
+        }
+      ]
+    },
+    {
+      "tick": 192,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": [
+          {
+            "source": -1,
+            "poison": false,
+            "damage": 0,
+            "type": 8
+          }
+        ]
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": []
+        },
+        {
+          "id": 12687,
+          "generation": 1,
+          "actorToken": 3,
+          "definition": 8127,
+          "hits": []
+        }
+      ]
+    },
+    {
+      "tick": 193,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": []
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": []
+        },
+        {
+          "id": 12687,
+          "generation": 1,
+          "actorToken": 3,
+          "definition": 8127,
+          "hits": []
+        }
+      ]
+    },
+    {
+      "tick": 194,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": [
+          {
+            "source": -1,
+            "poison": false,
+            "damage": 338,
+            "type": 0
+          }
+        ]
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": []
+        },
+        {
+          "id": 12687,
+          "generation": 1,
+          "actorToken": 3,
+          "definition": 8127,
+          "hits": []
+        }
+      ]
+    },
+    {
+      "tick": 195,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": []
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": []
+        },
+        {
+          "id": 12687,
+          "generation": 1,
+          "actorToken": 3,
+          "definition": 8127,
+          "hits": []
+        }
+      ]
+    },
+    {
+      "tick": 196,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": [
+          {
+            "source": -1,
+            "poison": false,
+            "damage": 0,
+            "type": 8
+          }
+        ]
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": [
+            {
+              "source": 1,
+              "poison": false,
+              "damage": 2460,
+              "type": 0
+            }
+          ]
+        },
+        {
+          "id": 12687,
+          "generation": 1,
+          "actorToken": 3,
+          "definition": 8127,
+          "hits": []
+        }
+      ]
+    },
+    {
+      "tick": 197,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": [
+          {
+            "source": -1,
+            "poison": false,
+            "damage": 173,
+            "type": 0
+          }
+        ]
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": []
+        },
+        {
+          "id": 12687,
+          "generation": 1,
+          "actorToken": 3,
+          "definition": 8127,
+          "hits": []
+        }
+      ]
+    },
+    {
+      "tick": 198,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": []
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": []
+        },
+        {
+          "id": 12687,
+          "generation": 1,
+          "actorToken": 3,
+          "definition": 8127,
+          "hits": []
+        }
+      ]
+    },
+    {
+      "tick": 199,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": []
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": []
+        },
+        {
+          "id": 12687,
+          "generation": 1,
+          "actorToken": 3,
+          "definition": 8127,
+          "hits": []
+        }
+      ]
+    },
+    {
+      "tick": 200,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": [
+          {
+            "source": -1,
+            "poison": false,
+            "damage": 468,
+            "type": 0
+          },
+          {
+            "source": -1,
+            "poison": false,
+            "damage": 455,
+            "type": 0
+          }
+        ]
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": []
+        },
+        {
+          "id": 12687,
+          "generation": 1,
+          "actorToken": 3,
+          "definition": 8127,
+          "hits": []
+        }
+      ]
+    },
+    {
+      "tick": 201,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": []
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": []
+        },
+        {
+          "id": 12687,
+          "generation": 1,
+          "actorToken": 3,
+          "definition": 8127,
+          "hits": []
+        }
+      ]
+    },
+    {
+      "tick": 202,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": []
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": [
+            {
+              "source": 1,
+              "poison": false,
+              "damage": 2154,
+              "type": 0
+            }
+          ]
+        },
+        {
+          "id": 12687,
+          "generation": 1,
+          "actorToken": 3,
+          "definition": 8127,
+          "hits": []
+        }
+      ]
+    },
+    {
+      "tick": 203,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": [
+          {
+            "source": -1,
+            "poison": false,
+            "damage": 375,
+            "type": 0
+          }
+        ]
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": []
+        },
+        {
+          "id": 12687,
+          "generation": 1,
+          "actorToken": 3,
+          "definition": 8127,
+          "hits": []
+        }
+      ]
+    },
+    {
+      "tick": 204,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": [
+          {
+            "source": -1,
+            "poison": false,
+            "damage": 495,
+            "type": 0
+          }
+        ]
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": []
+        },
+        {
+          "id": 12687,
+          "generation": 1,
+          "actorToken": 3,
+          "definition": 8127,
+          "hits": []
+        }
+      ]
+    },
+    {
+      "tick": 205,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": []
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": []
+        },
+        {
+          "id": 12687,
+          "generation": 1,
+          "actorToken": 3,
+          "definition": 8127,
+          "hits": []
+        }
+      ]
+    },
+    {
+      "tick": 206,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": [
+          {
+            "source": -1,
+            "poison": false,
+            "damage": 399,
+            "type": 0
+          }
+        ]
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": []
+        },
+        {
+          "id": 12687,
+          "generation": 1,
+          "actorToken": 3,
+          "definition": 8127,
+          "hits": []
+        }
+      ]
+    },
+    {
+      "tick": 207,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": []
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": []
+        },
+        {
+          "id": 12687,
+          "generation": 1,
+          "actorToken": 3,
+          "definition": 8127,
+          "hits": []
+        }
+      ]
+    },
+    {
+      "tick": 208,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": [
+          {
+            "source": -1,
+            "poison": false,
+            "damage": 0,
+            "type": 8
+          }
+        ]
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": [
+            {
+              "source": 1,
+              "poison": false,
+              "damage": 3078,
+              "type": 0
+            }
+          ]
+        },
+        {
+          "id": 12687,
+          "generation": 1,
+          "actorToken": 3,
+          "definition": 8127,
+          "hits": []
+        }
+      ]
+    },
+    {
+      "tick": 209,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": [
+          {
+            "source": -1,
+            "poison": false,
+            "damage": 427,
+            "type": 0
+          }
+        ]
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": []
+        },
+        {
+          "id": 12687,
+          "generation": 1,
+          "actorToken": 3,
+          "definition": 8127,
+          "hits": []
+        }
+      ]
+    },
+    {
+      "tick": 210,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": []
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": []
+        },
+        {
+          "id": 12687,
+          "generation": 1,
+          "actorToken": 3,
+          "definition": 8127,
+          "hits": []
+        }
+      ]
+    },
+    {
+      "tick": 211,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": []
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": []
+        },
+        {
+          "id": 12687,
+          "generation": 1,
+          "actorToken": 3,
+          "definition": 8127,
+          "hits": []
+        }
+      ]
+    },
+    {
+      "tick": 212,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": [
+          {
+            "source": -1,
+            "poison": false,
+            "damage": 368,
+            "type": 0
+          },
+          {
+            "source": -1,
+            "poison": false,
+            "damage": 71,
+            "type": 0
+          }
+        ]
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": []
+        },
+        {
+          "id": 12687,
+          "generation": 1,
+          "actorToken": 3,
+          "definition": 8127,
+          "hits": []
+        }
+      ]
+    },
+    {
+      "tick": 213,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": []
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": []
+        },
+        {
+          "id": 12687,
+          "generation": 1,
+          "actorToken": 3,
+          "definition": 8127,
+          "hits": []
+        }
+      ]
+    },
+    {
+      "tick": 214,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": []
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": [
+            {
+              "source": 1,
+              "poison": false,
+              "damage": 0,
+              "type": 8
+            }
+          ]
+        },
+        {
+          "id": 12687,
+          "generation": 1,
+          "actorToken": 3,
+          "definition": 8127,
+          "hits": []
+        }
+      ]
+    },
+    {
+      "tick": 215,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": [
+          {
+            "source": -1,
+            "poison": false,
+            "damage": 140,
+            "type": 0
+          }
+        ]
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": []
+        },
+        {
+          "id": 12687,
+          "generation": 1,
+          "actorToken": 3,
+          "definition": 8127,
+          "hits": []
+        }
+      ]
+    },
+    {
+      "tick": 216,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": [
+          {
+            "source": -1,
+            "poison": false,
+            "damage": 0,
+            "type": 8
+          }
+        ]
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": []
+        },
+        {
+          "id": 12687,
+          "generation": 1,
+          "actorToken": 3,
+          "definition": 8127,
+          "hits": []
+        }
+      ]
+    },
+    {
+      "tick": 217,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": []
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": []
+        },
+        {
+          "id": 12687,
+          "generation": 1,
+          "actorToken": 3,
+          "definition": 8127,
+          "hits": []
+        }
+      ]
+    },
+    {
+      "tick": 218,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": [
+          {
+            "source": -1,
+            "poison": false,
+            "damage": 192,
+            "type": 0
+          }
+        ]
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": []
+        },
+        {
+          "id": 12687,
+          "generation": 1,
+          "actorToken": 3,
+          "definition": 8127,
+          "hits": []
+        }
+      ]
+    },
+    {
+      "tick": 219,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": []
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": []
+        },
+        {
+          "id": 12687,
+          "generation": 1,
+          "actorToken": 3,
+          "definition": 8127,
+          "hits": []
+        }
+      ]
+    },
+    {
+      "tick": 220,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": [
+          {
+            "source": -1,
+            "poison": false,
+            "damage": 496,
+            "type": 0
+          }
+        ]
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": []
+        },
+        {
+          "id": 12687,
+          "generation": 1,
+          "actorToken": 3,
+          "definition": 8127,
+          "hits": []
+        }
+      ]
+    },
+    {
+      "tick": 221,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": [
+          {
+            "source": -1,
+            "poison": false,
+            "damage": 223,
+            "type": 0
+          }
+        ]
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": []
+        },
+        {
+          "id": 12687,
+          "generation": 1,
+          "actorToken": 3,
+          "definition": 8127,
+          "hits": []
+        }
+      ]
+    },
+    {
+      "tick": 222,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": []
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": []
+        },
+        {
+          "id": 12687,
+          "generation": 1,
+          "actorToken": 3,
+          "definition": 8127,
+          "hits": []
+        }
+      ]
+    },
+    {
+      "tick": 223,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": []
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": [
+            {
+              "source": 1,
+              "poison": false,
+              "damage": 2937,
+              "type": 0
+            }
+          ]
+        },
+        {
+          "id": 12687,
+          "generation": 1,
+          "actorToken": 3,
+          "definition": 8127,
+          "hits": []
+        }
+      ]
+    },
+    {
+      "tick": 224,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": [
+          {
+            "source": -1,
+            "poison": false,
+            "damage": 0,
+            "type": 8
+          },
+          {
+            "source": -1,
+            "poison": false,
+            "damage": 503,
+            "type": 0
+          }
+        ]
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": []
+        },
+        {
+          "id": 12687,
+          "generation": 1,
+          "actorToken": 3,
+          "definition": 8127,
+          "hits": []
+        }
+      ]
+    },
+    {
+      "tick": 225,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": []
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": []
+        },
+        {
+          "id": 12687,
+          "generation": 1,
+          "actorToken": 3,
+          "definition": 8127,
+          "hits": []
+        }
+      ]
+    },
+    {
+      "tick": 226,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": []
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": []
+        },
+        {
+          "id": 12687,
+          "generation": 1,
+          "actorToken": 3,
+          "definition": 8127,
+          "hits": []
+        }
+      ]
+    },
+    {
+      "tick": 227,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": [
+          {
+            "source": -1,
+            "poison": false,
+            "damage": 346,
+            "type": 0
+          }
+        ]
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": []
+        },
+        {
+          "id": 12687,
+          "generation": 1,
+          "actorToken": 3,
+          "definition": 8127,
+          "hits": []
+        }
+      ]
+    },
+    {
+      "tick": 228,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": [
+          {
+            "source": -1,
+            "poison": false,
+            "damage": 0,
+            "type": 8
+          }
+        ]
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": []
+        },
+        {
+          "id": 12687,
+          "generation": 1,
+          "actorToken": 3,
+          "definition": 8127,
+          "hits": []
+        }
+      ]
+    },
+    {
+      "tick": 229,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": []
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": [
+            {
+              "source": 1,
+              "poison": false,
+              "damage": 3251,
+              "type": 0
+            }
+          ]
+        },
+        {
+          "id": 12687,
+          "generation": 1,
+          "actorToken": 3,
+          "definition": 8127,
+          "hits": []
+        }
+      ]
+    },
+    {
+      "tick": 230,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": [
+          {
+            "source": -1,
+            "poison": false,
+            "damage": 153,
+            "type": 0
+          }
+        ]
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": []
+        },
+        {
+          "id": 12687,
+          "generation": 1,
+          "actorToken": 3,
+          "definition": 8127,
+          "hits": []
+        }
+      ]
+    },
+    {
+      "tick": 231,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": []
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": []
+        },
+        {
+          "id": 12687,
+          "generation": 1,
+          "actorToken": 3,
+          "definition": 8127,
+          "hits": []
+        }
+      ]
+    },
+    {
+      "tick": 232,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": [
+          {
+            "source": -1,
+            "poison": false,
+            "damage": 0,
+            "type": 8
+          }
+        ]
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": []
+        },
+        {
+          "id": 12687,
+          "generation": 1,
+          "actorToken": 3,
+          "definition": 8127,
+          "hits": []
+        }
+      ]
+    },
+    {
+      "tick": 233,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": []
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": []
+        },
+        {
+          "id": 12687,
+          "generation": 1,
+          "actorToken": 3,
+          "definition": 8127,
+          "hits": []
+        }
+      ]
+    },
+    {
+      "tick": 234,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": []
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": []
+        },
+        {
+          "id": 12687,
+          "generation": 1,
+          "actorToken": 3,
+          "definition": 8127,
+          "hits": []
+        }
+      ]
+    },
+    {
+      "tick": 235,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": []
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": []
+        },
+        {
+          "id": 12687,
+          "generation": 1,
+          "actorToken": 3,
+          "definition": 8127,
+          "hits": []
+        }
+      ]
+    },
+    {
+      "tick": 236,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": []
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": []
+        },
+        {
+          "id": 12687,
+          "generation": 1,
+          "actorToken": 3,
+          "definition": 8127,
+          "hits": []
+        }
+      ]
+    },
+    {
+      "tick": 237,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": []
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": []
+        },
+        {
+          "id": 12687,
+          "generation": 1,
+          "actorToken": 3,
+          "definition": 8127,
+          "hits": []
+        }
+      ]
+    },
+    {
+      "tick": 238,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": []
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": []
+        },
+        {
+          "id": 12687,
+          "generation": 1,
+          "actorToken": 3,
+          "definition": 8127,
+          "hits": []
+        }
+      ]
+    },
+    {
+      "tick": 239,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": []
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": []
+        },
+        {
+          "id": 12687,
+          "generation": 1,
+          "actorToken": 3,
+          "definition": 8127,
+          "hits": []
+        }
+      ]
+    },
+    {
+      "tick": 240,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": []
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": []
+        },
+        {
+          "id": 12687,
+          "generation": 1,
+          "actorToken": 3,
+          "definition": 8127,
+          "hits": []
+        }
+      ]
+    },
+    {
+      "tick": 241,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": [
+          {
+            "source": -1,
+            "poison": false,
+            "damage": 0,
+            "type": 8
+          }
+        ]
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": []
+        },
+        {
+          "id": 12687,
+          "generation": 1,
+          "actorToken": 3,
+          "definition": 8127,
+          "hits": []
+        }
+      ]
+    },
+    {
+      "tick": 242,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": []
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": []
+        },
+        {
+          "id": 12687,
+          "generation": 1,
+          "actorToken": 3,
+          "definition": 8127,
+          "hits": []
+        }
+      ]
+    },
+    {
+      "tick": 243,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": []
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": []
+        },
+        {
+          "id": 12687,
+          "generation": 1,
+          "actorToken": 3,
+          "definition": 8127,
+          "hits": []
+        }
+      ]
+    },
+    {
+      "tick": 244,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": []
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": []
+        },
+        {
+          "id": 12687,
+          "generation": 1,
+          "actorToken": 3,
+          "definition": 8127,
+          "hits": []
+        }
+      ]
+    },
+    {
+      "tick": 245,
+      "player": {
+        "id": 1,
+        "generation": 0,
+        "actorToken": 1,
+        "definition": null,
+        "hits": []
+      },
+      "enemies": [
+        {
+          "id": 12686,
+          "generation": 1,
+          "actorToken": 2,
+          "definition": 8133,
+          "hits": []
+        },
+        {
+          "id": 12687,
+          "generation": 1,
+          "actorToken": 3,
+          "definition": 8127,
+          "hits": []
+        }
+      ]
+    }
+  ]
+}

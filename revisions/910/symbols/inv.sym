@@ -1,0 +1,18 @@
+# Content symbols of this revision: inv. Columns: name, id, fingerprint (tab separated), sorted by name.
+# Written by `npm --prefix server run sym -- add`; never edit by hand. `sym check` resolves every line against
+# the cache and `sym gen` writes the bindings (docs/symbols.md).
+backpack	93	size=28
+bank_contents	95	size=1370
+barrows_pending_rewards	796	size=15
+clue_reward_items	141	size=9
+coin_wallet	623	size=1
+duel_stake_offer	134	size=9
+furniture_creation_options	398	size=8
+general_store_stock	4	size=40
+grave_items	676	size=47
+metal_bank_contents	858	size=33
+trade_lend_offer	541	size=1
+trade_offer	90	size=28
+trade_pouch_offer	626	size=1
+tzhaar_rune_store	327	size=8
+worn_equipment	94	size=19

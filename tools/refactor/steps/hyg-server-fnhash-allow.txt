@@ -1,0 +1,5 @@
+# Lane HYG-SERVER (2026-09-30): the recorded protocol table names its unhandled opcodes UNUSED_<n>
+# (client) and UNHANDLED_<n> (server) instead of the original placeholder names, so the golden test compares
+# every name exactly and no longer special-cases placeholders. Test code only; production code is untouched.
+# Evidence: client910 protocol_goldens, server jest ClientProt.test.ts.
+fn protocol_tables_match_the_recording

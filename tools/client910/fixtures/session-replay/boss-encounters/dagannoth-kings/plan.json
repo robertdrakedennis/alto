@@ -1,0 +1,147 @@
+{
+  "equipment": [
+    37640,
+    30005,
+    30008,
+    30011,
+    30213,
+    45965
+  ],
+  "food": {
+    "item": 385,
+    "maximumHealing": 2000
+  },
+  "format": 1,
+  "kings": [
+    {
+      "maximumLife": 35000,
+      "npc": 2881
+    },
+    {
+      "maximumLife": 35000,
+      "npc": 2882
+    },
+    {
+      "maximumLife": 35000,
+      "npc": 2883
+    }
+  ],
+  "loadout": {
+    "armour": "power",
+    "armourTier": 90,
+    "blocked": [],
+    "equipment": [
+      37640,
+      30005,
+      30008,
+      30011,
+      30213,
+      45965
+    ],
+    "hands": "two-handed",
+    "style": "melee",
+    "tier": 92
+  },
+  "loot": 6729,
+  "prayers": [
+    {
+      "action": 10,
+      "activationBit": 16739,
+      "button": 0,
+      "damageBonusPercent": 0,
+      "drainFinePerTick": 10,
+      "group": "defence",
+      "level": 28,
+      "levelBonus": 6,
+      "name": "Steel Skin",
+      "reductionPercent": 0
+    },
+    {
+      "action": 11,
+      "activationBit": 16740,
+      "button": 1,
+      "damageBonusPercent": 6,
+      "drainFinePerTick": 10,
+      "group": "melee-damage",
+      "level": 31,
+      "levelBonus": 0,
+      "name": "Ultimate Strength",
+      "reductionPercent": 0
+    },
+    {
+      "action": 12,
+      "activationBit": 16741,
+      "button": 2,
+      "damageBonusPercent": 0,
+      "drainFinePerTick": 10,
+      "group": "melee-accuracy",
+      "level": 34,
+      "levelBonus": 6,
+      "name": "Incredible Reflexes",
+      "reductionPercent": 0
+    },
+    {
+      "action": 13,
+      "activationBit": 16745,
+      "button": 11,
+      "damageBonusPercent": 0,
+      "drainFinePerTick": 15,
+      "group": "protect-magic",
+      "level": 37,
+      "levelBonus": 0,
+      "name": "Protect from Magic",
+      "reductionPercent": 50
+    }
+  ],
+  "room": {
+    "entrance": {
+      "level": 0,
+      "x": 2900,
+      "z": 4449
+    },
+    "entryLoc": 10230,
+    "entryTile": {
+      "level": 0,
+      "x": 1911,
+      "z": 4367
+    },
+    "exit": {
+      "level": 0,
+      "x": 1912,
+      "z": 4367
+    },
+    "exitLoc": 10229,
+    "exitTile": {
+      "level": 0,
+      "x": 2899,
+      "z": 4446
+    },
+    "id": "dagannoth-kings"
+  },
+  "source": {
+    "blockedResources": [
+      "The server has protection potions but no qualified ordinary stat-boost potion consumer; no synthetic overload boost is seeded",
+      "Native prayer bonuses are decoded and shown by cache UI; the existing standard-prayer drain does not yet consume equipment prayer bonuses",
+      "New bows reuse the ordinary recovery owner; native ammunition-recovery rates are not newly qualified"
+    ],
+    "gearChoice": {
+      "armour": "power",
+      "armourTier": 90,
+      "hands": "two-handed",
+      "style": "melee",
+      "tier": 92
+    },
+    "initialSkillsAndSavedPreferenceOnly": true
+  },
+  "target": {
+    "npc": 2881,
+    "profile": {
+      "hitpoints": 35000
+    }
+  },
+  "toolbar": {
+    "backpackDestination": 2,
+    "prayerDestination": 4,
+    "retaliationVarp": 462
+  }
+}

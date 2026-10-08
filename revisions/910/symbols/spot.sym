@@ -1,0 +1,47 @@
+# Content symbols of this revision: spot. Columns: name, id, fingerprint (tab separated), sorted by name.
+# Written by `npm --prefix server run sym -- add`; never edit by hand. `sym check` resolves every line against
+# the cache and `sym gen` writes the bindings (docs/symbols.md).
+armadyl_godsword_special	2113	model=28249;seq=11990
+bandos_godsword_special	2114	model=28211;seq=11992
+confuse_cast	102	model=3092;seq=668
+dragon_claws_special	1950	model=44811;seq=10965
+dragon_claws_target	3527	model=78980;seq=18531
+dragon_dagger_special	252	model=3478;seq=1063
+dragon_mace_special	251	model=3479;seq=1061
+fairy_ring_arrive	2671	model=57445;seq=3253
+fairy_ring_depart	2670	model=57445;seq=3252
+giant_mole_burrow	4565	model=71927;seq=22617
+giant_mole_emerge	4564	model=71927;seq=22616
+giant_mole_enrage	4563	model=93390;seq=22624
+giant_mole_falling_rocks	4566	model=93389;seq=22628
+giant_mole_stomp	4562	model=93391;seq=22623
+giant_mole_tremor	4569	model=93371;seq=22629
+granite_maul_special	340	model=5415;seq=1668
+home_teleport_cast_1	800	model=1202;seq=115
+home_teleport_cast_2	801	model=1202;seq=116
+home_teleport_cast_3	802	model=1202;seq=117
+home_teleport_cast_4	803	model=1202;seq=118
+home_teleport_cast_5	804	model=1202;seq=137
+kbd_fire_cast	3441	model=76656;seq=17794
+kbd_fire_flight	3442	model=77898;seq=17794
+kbd_fire_impact	3443	model=77898;seq=17794
+kbd_ice_cast	3438	model=77901;seq=17790
+kbd_ice_flight	3439	model=77901;seq=17787
+kbd_ice_impact	3440	model=77901;seq=17791
+kbd_poison_cast	3435	model=77900;seq=17792
+kbd_poison_flight	3436	model=77900;seq=17787
+kbd_poison_impact	3437	model=77900;seq=17793
+kbd_shock_cast	3432	model=77899;seq=17788
+kbd_shock_flight	3433	model=77899;seq=17787
+kbd_shock_impact	3434	model=77899;seq=17789
+lodestone_arrive	3018	model=68741;seq=16389
+lodestone_depart	3017	model=68741;seq=16390
+rockertunity_large_rock	7165	model=74211;seq=32534
+rockertunity_small_rock	7164	model=74210;seq=32534
+saradomin_godsword_special	2109	model=28195;seq=11994
+standard_teleport_arrival	1577	model=32718;seq=8942
+standard_teleport_departure	1576	model=32718;seq=8940
+thieving_stun	245	model=3070;seq=1054
+undergrowth_banner	155	model=2908;seq=1375
+zamorak_godsword_special	1221	model=48116;seq=7069
+zamorak_godsword_target	2104	model=48114;seq=3483

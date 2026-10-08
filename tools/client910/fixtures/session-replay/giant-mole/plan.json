@@ -1,0 +1,934 @@
+{
+  "accountKey": "giant-mole",
+  "commands": [
+    "oploc 1 2984 3383 89158",
+    "notimeout",
+    "notimeout",
+    "notimeout",
+    "notimeout",
+    "notimeout",
+    "notimeout",
+    "notimeout",
+    "notimeout",
+    "notimeout",
+    "approachnpc 18932 0",
+    "opnpc 2 18932",
+    "opnpc 2 18932",
+    "opnpc 2 18932",
+    "approachnpc 18932 1",
+    "opnpc 2 18932",
+    "opnpc 2 18932",
+    "opnpc 2 18932",
+    "approachnpc 18932 2",
+    "opnpc 2 18932",
+    "opnpc 2 18932",
+    "opnpc 2 18932",
+    "approachnpc 18932 3",
+    "opnpc 2 18932",
+    "opnpc 2 18932",
+    "opnpc 2 18932",
+    "approachnpc 18932 0",
+    "opnpc 2 18932",
+    "opnpc 2 18932",
+    "opnpc 2 18932",
+    "approachnpc 18932 1",
+    "opnpc 2 18932",
+    "opnpc 2 18932",
+    "opnpc 2 18932",
+    "approachnpc 18932 2",
+    "opnpc 2 18932",
+    "opnpc 2 18932",
+    "opnpc 2 18932",
+    "approachnpc 18932 3",
+    "opnpc 2 18932",
+    "opnpc 2 18932",
+    "opnpc 2 18932",
+    "approachnpc 18932 0",
+    "opnpc 2 18932",
+    "opnpc 2 18932",
+    "opnpc 2 18932",
+    "approachnpc 18932 1",
+    "opnpc 2 18932",
+    "opnpc 2 18932",
+    "opnpc 2 18932",
+    "approachnpc 18932 2",
+    "opnpc 2 18932",
+    "opnpc 2 18932",
+    "opnpc 2 18932",
+    "approachnpc 18932 3",
+    "opnpc 2 18932",
+    "opnpc 2 18932",
+    "opnpc 2 18932",
+    "approachnpc 18932 0",
+    "opnpc 2 18932",
+    "opnpc 2 18932",
+    "opnpc 2 18932",
+    "approachnpc 18932 1",
+    "opnpc 2 18932",
+    "opnpc 2 18932",
+    "opnpc 2 18932",
+    "approachnpc 18932 2",
+    "opnpc 2 18932",
+    "opnpc 2 18932",
+    "opnpc 2 18932",
+    "approachnpc 18932 3",
+    "opnpc 2 18932",
+    "opnpc 2 18932",
+    "opnpc 2 18932",
+    "approachnpc 18932 0",
+    "opnpc 2 18932",
+    "opnpc 2 18932",
+    "opnpc 2 18932",
+    "approachnpc 18932 1",
+    "opnpc 2 18932",
+    "opnpc 2 18932",
+    "opnpc 2 18932",
+    "approachnpc 18932 2",
+    "opnpc 2 18932",
+    "opnpc 2 18932",
+    "opnpc 2 18932",
+    "approachnpc 18932 3",
+    "opnpc 2 18932",
+    "opnpc 2 18932",
+    "opnpc 2 18932",
+    "approachnpc 18932 0",
+    "opnpc 2 18932",
+    "opnpc 2 18932",
+    "opnpc 2 18932",
+    "approachnpc 18932 1",
+    "opnpc 2 18932",
+    "opnpc 2 18932",
+    "opnpc 2 18932",
+    "approachnpc 18932 2",
+    "opnpc 2 18932",
+    "opnpc 2 18932",
+    "opnpc 2 18932",
+    "approachnpc 18932 3",
+    "opnpc 2 18932",
+    "opnpc 2 18932",
+    "opnpc 2 18932",
+    "approachnpc 18932 0",
+    "opnpc 2 18932",
+    "opnpc 2 18932",
+    "opnpc 2 18932",
+    "approachnpc 18932 1",
+    "opnpc 2 18932",
+    "opnpc 2 18932",
+    "opnpc 2 18932",
+    "approachnpc 18932 2",
+    "opnpc 2 18932",
+    "opnpc 2 18932",
+    "opnpc 2 18932",
+    "approachnpc 18932 3",
+    "opnpc 2 18932",
+    "opnpc 2 18932",
+    "opnpc 2 18932",
+    "approachnpc 18932 0",
+    "opnpc 2 18932",
+    "opnpc 2 18932",
+    "opnpc 2 18932",
+    "approachnpc 18932 1",
+    "opnpc 2 18932",
+    "opnpc 2 18932",
+    "opnpc 2 18932",
+    "approachnpc 18932 2",
+    "opnpc 2 18932",
+    "opnpc 2 18932",
+    "opnpc 2 18932",
+    "approachnpc 18932 3",
+    "opnpc 2 18932",
+    "opnpc 2 18932",
+    "opnpc 2 18932",
+    "approachnpc 18932 0",
+    "opnpc 2 18932",
+    "opnpc 2 18932",
+    "opnpc 2 18932",
+    "approachnpc 18932 1",
+    "opnpc 2 18932",
+    "opnpc 2 18932",
+    "opnpc 2 18932",
+    "takeobj 532",
+    "takeobj 532",
+    "takeobj 532",
+    "takeobj 532",
+    "takeobj 532",
+    "takeobj 532",
+    "walk 6460 97",
+    "notimeout",
+    "notimeout",
+    "notimeout",
+    "notimeout",
+    "notimeout",
+    "oploc 1 6459 97 89159",
+    "notimeout",
+    "notimeout",
+    "notimeout",
+    "notimeout",
+    "notimeout",
+    "oploc 1 2984 3383 89158",
+    "notimeout",
+    "notimeout",
+    "notimeout",
+    "notimeout",
+    "notimeout",
+    "notimeout",
+    "notimeout",
+    "notimeout",
+    "notimeout",
+    "notimeout",
+    "notimeout",
+    "notimeout"
+  ],
+  "operations": "250,77856776,-1,0;300,96534535,0,2;400,96534535,1,2;500,96534535,2,2;600,96534535,3,2;700,96534535,4,2;800,96534535,5,2;900,96534535,6,2;950,95551527,13,1;1000,104267836,-1,1;1050,95551527,1,1;1100,96534535,7,1;1280,96534535,8,1;1460,96534535,9,1;1640,96534535,10,1;1820,96534535,11,1;2000,96534535,12,1;2180,96534535,13,1;2360,96534535,14,1;2540,96534535,15,1;2720,96534535,16,1;2900,96534535,17,1;3080,96534535,18,1;3260,96534535,19,1;3440,96534535,20,1;3620,96534535,21,1;3800,96534535,22,1;3980,96534535,23,1;4160,96534535,24,1;4340,96534535,25,1;4520,96534535,26,1;4700,96534535,27,1;4880,96534535,7,1;5060,96534535,8,1;5240,96534535,9,1;5420,96534535,10,1;5600,96534535,11,1;5780,96534535,12,1;5960,96534535,13,1;6140,96534535,14,1;6320,96534535,15,1;6500,96534535,16,1;6680,96534535,17,1;6860,96534535,18,1;7040,96534535,19,1;7220,96534535,20,1;7400,96534535,21,1;7580,96534535,22,1;7760,96534535,23,1;7940,96534535,24,1;8120,96534535,25,1;8300,96534535,26,1;8480,96534535,27,1;8660,96534535,7,1;8840,96534535,8,1;9020,96534535,9,1;9200,96534535,10,1;9380,96534535,11,1;9560,96534535,12,1;9740,96534535,13,1;9920,96534535,14,1;10100,96534535,15,1;10280,96534535,16,1;10460,96534535,17,1;10640,96534535,18,1;10820,96534535,19,1;11000,96534535,20,1;11180,96534535,21,1;11360,96534535,22,1;11540,96534535,23,1;11720,96534535,24,1;11900,96534535,25,1;12080,96534535,26,1;12260,96534535,27,1;12440,96534535,7,1;12620,96534535,8,1;12800,96534535,9,1;12980,96534535,10,1;13160,96534535,11,1;13340,96534535,12,1;13520,96534535,13,1;13700,96534535,14,1;13880,96534535,15,1;14060,96534535,16,1;14240,96534535,17,1;14420,96534535,18,1;14600,96534535,19,1;16750,77856781,-1,0",
+  "clicks": "",
+  "hover": "",
+  "keys": "",
+  "lastCycle": 17700,
+  "semanticShots": [
+    1100,
+    2200,
+    5100,
+    7200,
+    10100,
+    14700,
+    16500,
+    17700
+  ],
+  "controls": [
+    {
+      "cycle": 1100,
+      "index": 0,
+      "command": "approachnpc 18932 0"
+    },
+    {
+      "cycle": 1200,
+      "index": 1,
+      "command": "opnpc 2 18932"
+    },
+    {
+      "cycle": 1300,
+      "index": 2,
+      "command": "opnpc 2 18932"
+    },
+    {
+      "cycle": 1400,
+      "index": 3,
+      "command": "opnpc 2 18932"
+    },
+    {
+      "cycle": 1500,
+      "index": 4,
+      "command": "approachnpc 18932 1"
+    },
+    {
+      "cycle": 1600,
+      "index": 5,
+      "command": "opnpc 2 18932"
+    },
+    {
+      "cycle": 1700,
+      "index": 6,
+      "command": "opnpc 2 18932"
+    },
+    {
+      "cycle": 1800,
+      "index": 7,
+      "command": "opnpc 2 18932"
+    },
+    {
+      "cycle": 1900,
+      "index": 8,
+      "command": "approachnpc 18932 2"
+    },
+    {
+      "cycle": 2000,
+      "index": 9,
+      "command": "opnpc 2 18932"
+    },
+    {
+      "cycle": 2100,
+      "index": 10,
+      "command": "opnpc 2 18932"
+    },
+    {
+      "cycle": 2200,
+      "index": 11,
+      "command": "opnpc 2 18932"
+    },
+    {
+      "cycle": 2300,
+      "index": 12,
+      "command": "approachnpc 18932 3"
+    },
+    {
+      "cycle": 2400,
+      "index": 13,
+      "command": "opnpc 2 18932"
+    },
+    {
+      "cycle": 2500,
+      "index": 14,
+      "command": "opnpc 2 18932"
+    },
+    {
+      "cycle": 2600,
+      "index": 15,
+      "command": "opnpc 2 18932"
+    },
+    {
+      "cycle": 2700,
+      "index": 16,
+      "command": "approachnpc 18932 0"
+    },
+    {
+      "cycle": 2800,
+      "index": 17,
+      "command": "opnpc 2 18932"
+    },
+    {
+      "cycle": 2900,
+      "index": 18,
+      "command": "opnpc 2 18932"
+    },
+    {
+      "cycle": 3000,
+      "index": 19,
+      "command": "opnpc 2 18932"
+    },
+    {
+      "cycle": 3100,
+      "index": 20,
+      "command": "approachnpc 18932 1"
+    },
+    {
+      "cycle": 3200,
+      "index": 21,
+      "command": "opnpc 2 18932"
+    },
+    {
+      "cycle": 3300,
+      "index": 22,
+      "command": "opnpc 2 18932"
+    },
+    {
+      "cycle": 3400,
+      "index": 23,
+      "command": "opnpc 2 18932"
+    },
+    {
+      "cycle": 3500,
+      "index": 24,
+      "command": "approachnpc 18932 2"
+    },
+    {
+      "cycle": 3600,
+      "index": 25,
+      "command": "opnpc 2 18932"
+    },
+    {
+      "cycle": 3700,
+      "index": 26,
+      "command": "opnpc 2 18932"
+    },
+    {
+      "cycle": 3800,
+      "index": 27,
+      "command": "opnpc 2 18932"
+    },
+    {
+      "cycle": 3900,
+      "index": 28,
+      "command": "approachnpc 18932 3"
+    },
+    {
+      "cycle": 4000,
+      "index": 29,
+      "command": "opnpc 2 18932"
+    },
+    {
+      "cycle": 4100,
+      "index": 30,
+      "command": "opnpc 2 18932"
+    },
+    {
+      "cycle": 4200,
+      "index": 31,
+      "command": "opnpc 2 18932"
+    },
+    {
+      "cycle": 4300,
+      "index": 32,
+      "command": "approachnpc 18932 0"
+    },
+    {
+      "cycle": 4400,
+      "index": 33,
+      "command": "opnpc 2 18932"
+    },
+    {
+      "cycle": 4500,
+      "index": 34,
+      "command": "opnpc 2 18932"
+    },
+    {
+      "cycle": 4600,
+      "index": 35,
+      "command": "opnpc 2 18932"
+    },
+    {
+      "cycle": 4700,
+      "index": 36,
+      "command": "approachnpc 18932 1"
+    },
+    {
+      "cycle": 4800,
+      "index": 37,
+      "command": "opnpc 2 18932"
+    },
+    {
+      "cycle": 4900,
+      "index": 38,
+      "command": "opnpc 2 18932"
+    },
+    {
+      "cycle": 5000,
+      "index": 39,
+      "command": "opnpc 2 18932"
+    },
+    {
+      "cycle": 5100,
+      "index": 40,
+      "command": "approachnpc 18932 2"
+    },
+    {
+      "cycle": 5200,
+      "index": 41,
+      "command": "opnpc 2 18932"
+    },
+    {
+      "cycle": 5300,
+      "index": 42,
+      "command": "opnpc 2 18932"
+    },
+    {
+      "cycle": 5400,
+      "index": 43,
+      "command": "opnpc 2 18932"
+    },
+    {
+      "cycle": 5500,
+      "index": 44,
+      "command": "approachnpc 18932 3"
+    },
+    {
+      "cycle": 5600,
+      "index": 45,
+      "command": "opnpc 2 18932"
+    },
+    {
+      "cycle": 5700,
+      "index": 46,
+      "command": "opnpc 2 18932"
+    },
+    {
+      "cycle": 5800,
+      "index": 47,
+      "command": "opnpc 2 18932"
+    },
+    {
+      "cycle": 5900,
+      "index": 48,
+      "command": "approachnpc 18932 0"
+    },
+    {
+      "cycle": 6000,
+      "index": 49,
+      "command": "opnpc 2 18932"
+    },
+    {
+      "cycle": 6100,
+      "index": 50,
+      "command": "opnpc 2 18932"
+    },
+    {
+      "cycle": 6200,
+      "index": 51,
+      "command": "opnpc 2 18932"
+    },
+    {
+      "cycle": 6300,
+      "index": 52,
+      "command": "approachnpc 18932 1"
+    },
+    {
+      "cycle": 6400,
+      "index": 53,
+      "command": "opnpc 2 18932"
+    },
+    {
+      "cycle": 6500,
+      "index": 54,
+      "command": "opnpc 2 18932"
+    },
+    {
+      "cycle": 6600,
+      "index": 55,
+      "command": "opnpc 2 18932"
+    },
+    {
+      "cycle": 6700,
+      "index": 56,
+      "command": "approachnpc 18932 2"
+    },
+    {
+      "cycle": 6800,
+      "index": 57,
+      "command": "opnpc 2 18932"
+    },
+    {
+      "cycle": 6900,
+      "index": 58,
+      "command": "opnpc 2 18932"
+    },
+    {
+      "cycle": 7000,
+      "index": 59,
+      "command": "opnpc 2 18932"
+    },
+    {
+      "cycle": 7100,
+      "index": 60,
+      "command": "approachnpc 18932 3"
+    },
+    {
+      "cycle": 7200,
+      "index": 61,
+      "command": "opnpc 2 18932"
+    },
+    {
+      "cycle": 7300,
+      "index": 62,
+      "command": "opnpc 2 18932"
+    },
+    {
+      "cycle": 7400,
+      "index": 63,
+      "command": "opnpc 2 18932"
+    },
+    {
+      "cycle": 7500,
+      "index": 64,
+      "command": "approachnpc 18932 0"
+    },
+    {
+      "cycle": 7600,
+      "index": 65,
+      "command": "opnpc 2 18932"
+    },
+    {
+      "cycle": 7700,
+      "index": 66,
+      "command": "opnpc 2 18932"
+    },
+    {
+      "cycle": 7800,
+      "index": 67,
+      "command": "opnpc 2 18932"
+    },
+    {
+      "cycle": 7900,
+      "index": 68,
+      "command": "approachnpc 18932 1"
+    },
+    {
+      "cycle": 8000,
+      "index": 69,
+      "command": "opnpc 2 18932"
+    },
+    {
+      "cycle": 8100,
+      "index": 70,
+      "command": "opnpc 2 18932"
+    },
+    {
+      "cycle": 8200,
+      "index": 71,
+      "command": "opnpc 2 18932"
+    },
+    {
+      "cycle": 8300,
+      "index": 72,
+      "command": "approachnpc 18932 2"
+    },
+    {
+      "cycle": 8400,
+      "index": 73,
+      "command": "opnpc 2 18932"
+    },
+    {
+      "cycle": 8500,
+      "index": 74,
+      "command": "opnpc 2 18932"
+    },
+    {
+      "cycle": 8600,
+      "index": 75,
+      "command": "opnpc 2 18932"
+    },
+    {
+      "cycle": 8700,
+      "index": 76,
+      "command": "approachnpc 18932 3"
+    },
+    {
+      "cycle": 8800,
+      "index": 77,
+      "command": "opnpc 2 18932"
+    },
+    {
+      "cycle": 8900,
+      "index": 78,
+      "command": "opnpc 2 18932"
+    },
+    {
+      "cycle": 9000,
+      "index": 79,
+      "command": "opnpc 2 18932"
+    },
+    {
+      "cycle": 9100,
+      "index": 80,
+      "command": "approachnpc 18932 0"
+    },
+    {
+      "cycle": 9200,
+      "index": 81,
+      "command": "opnpc 2 18932"
+    },
+    {
+      "cycle": 9300,
+      "index": 82,
+      "command": "opnpc 2 18932"
+    },
+    {
+      "cycle": 9400,
+      "index": 83,
+      "command": "opnpc 2 18932"
+    },
+    {
+      "cycle": 9500,
+      "index": 84,
+      "command": "approachnpc 18932 1"
+    },
+    {
+      "cycle": 9600,
+      "index": 85,
+      "command": "opnpc 2 18932"
+    },
+    {
+      "cycle": 9700,
+      "index": 86,
+      "command": "opnpc 2 18932"
+    },
+    {
+      "cycle": 9800,
+      "index": 87,
+      "command": "opnpc 2 18932"
+    },
+    {
+      "cycle": 9900,
+      "index": 88,
+      "command": "approachnpc 18932 2"
+    },
+    {
+      "cycle": 10000,
+      "index": 89,
+      "command": "opnpc 2 18932"
+    },
+    {
+      "cycle": 10100,
+      "index": 90,
+      "command": "opnpc 2 18932"
+    },
+    {
+      "cycle": 10200,
+      "index": 91,
+      "command": "opnpc 2 18932"
+    },
+    {
+      "cycle": 10300,
+      "index": 92,
+      "command": "approachnpc 18932 3"
+    },
+    {
+      "cycle": 10400,
+      "index": 93,
+      "command": "opnpc 2 18932"
+    },
+    {
+      "cycle": 10500,
+      "index": 94,
+      "command": "opnpc 2 18932"
+    },
+    {
+      "cycle": 10600,
+      "index": 95,
+      "command": "opnpc 2 18932"
+    },
+    {
+      "cycle": 10700,
+      "index": 96,
+      "command": "approachnpc 18932 0"
+    },
+    {
+      "cycle": 10800,
+      "index": 97,
+      "command": "opnpc 2 18932"
+    },
+    {
+      "cycle": 10900,
+      "index": 98,
+      "command": "opnpc 2 18932"
+    },
+    {
+      "cycle": 11000,
+      "index": 99,
+      "command": "opnpc 2 18932"
+    },
+    {
+      "cycle": 11100,
+      "index": 100,
+      "command": "approachnpc 18932 1"
+    },
+    {
+      "cycle": 11200,
+      "index": 101,
+      "command": "opnpc 2 18932"
+    },
+    {
+      "cycle": 11300,
+      "index": 102,
+      "command": "opnpc 2 18932"
+    },
+    {
+      "cycle": 11400,
+      "index": 103,
+      "command": "opnpc 2 18932"
+    },
+    {
+      "cycle": 11500,
+      "index": 104,
+      "command": "approachnpc 18932 2"
+    },
+    {
+      "cycle": 11600,
+      "index": 105,
+      "command": "opnpc 2 18932"
+    },
+    {
+      "cycle": 11700,
+      "index": 106,
+      "command": "opnpc 2 18932"
+    },
+    {
+      "cycle": 11800,
+      "index": 107,
+      "command": "opnpc 2 18932"
+    },
+    {
+      "cycle": 11900,
+      "index": 108,
+      "command": "approachnpc 18932 3"
+    },
+    {
+      "cycle": 12000,
+      "index": 109,
+      "command": "opnpc 2 18932"
+    },
+    {
+      "cycle": 12100,
+      "index": 110,
+      "command": "opnpc 2 18932"
+    },
+    {
+      "cycle": 12200,
+      "index": 111,
+      "command": "opnpc 2 18932"
+    },
+    {
+      "cycle": 12300,
+      "index": 112,
+      "command": "approachnpc 18932 0"
+    },
+    {
+      "cycle": 12400,
+      "index": 113,
+      "command": "opnpc 2 18932"
+    },
+    {
+      "cycle": 12500,
+      "index": 114,
+      "command": "opnpc 2 18932"
+    },
+    {
+      "cycle": 12600,
+      "index": 115,
+      "command": "opnpc 2 18932"
+    },
+    {
+      "cycle": 12700,
+      "index": 116,
+      "command": "approachnpc 18932 1"
+    },
+    {
+      "cycle": 12800,
+      "index": 117,
+      "command": "opnpc 2 18932"
+    },
+    {
+      "cycle": 12900,
+      "index": 118,
+      "command": "opnpc 2 18932"
+    },
+    {
+      "cycle": 13000,
+      "index": 119,
+      "command": "opnpc 2 18932"
+    },
+    {
+      "cycle": 13100,
+      "index": 120,
+      "command": "approachnpc 18932 2"
+    },
+    {
+      "cycle": 13200,
+      "index": 121,
+      "command": "opnpc 2 18932"
+    },
+    {
+      "cycle": 13300,
+      "index": 122,
+      "command": "opnpc 2 18932"
+    },
+    {
+      "cycle": 13400,
+      "index": 123,
+      "command": "opnpc 2 18932"
+    },
+    {
+      "cycle": 13500,
+      "index": 124,
+      "command": "approachnpc 18932 3"
+    },
+    {
+      "cycle": 13600,
+      "index": 125,
+      "command": "opnpc 2 18932"
+    },
+    {
+      "cycle": 13700,
+      "index": 126,
+      "command": "opnpc 2 18932"
+    },
+    {
+      "cycle": 13800,
+      "index": 127,
+      "command": "opnpc 2 18932"
+    },
+    {
+      "cycle": 13900,
+      "index": 128,
+      "command": "approachnpc 18932 0"
+    },
+    {
+      "cycle": 14000,
+      "index": 129,
+      "command": "opnpc 2 18932"
+    },
+    {
+      "cycle": 14100,
+      "index": 130,
+      "command": "opnpc 2 18932"
+    },
+    {
+      "cycle": 14200,
+      "index": 131,
+      "command": "opnpc 2 18932"
+    },
+    {
+      "cycle": 14300,
+      "index": 132,
+      "command": "approachnpc 18932 1"
+    },
+    {
+      "cycle": 14400,
+      "index": 133,
+      "command": "opnpc 2 18932"
+    },
+    {
+      "cycle": 14500,
+      "index": 134,
+      "command": "opnpc 2 18932"
+    },
+    {
+      "cycle": 14600,
+      "index": 135,
+      "command": "opnpc 2 18932"
+    }
+  ],
+  "spawn": {
+    "level": 0,
+    "x": 6468,
+    "z": 83
+  },
+  "exit": {
+    "level": 0,
+    "x": 6459,
+    "z": 97
+  },
+  "lootCycle": 14700,
+  "food": {
+    "item": 385,
+    "firstSlot": 7,
+    "slots": 21,
+    "operation": 1,
+    "period": 180
+  },
+  "boss": {
+    "normal": 18932,
+    "enraged": 18933,
+    "hitpoints": 78000,
+    "death": 22620,
+    "bones": 532,
+    "chamberCount": 4,
+    "homes": [
+      {
+        "level": 0,
+        "x": 6468,
+        "z": 83
+      },
+      {
+        "level": 0,
+        "x": 6449,
+        "z": 90
+      },
+      {
+        "level": 0,
+        "x": 6494,
+        "z": 89
+      },
+      {
+        "level": 0,
+        "x": 6488,
+        "z": 50
+      },
+      {
+        "level": 0,
+        "x": 6451,
+        "z": 51
+      }
+    ]
+  },
+  "rehearsalSha256": "2d39ba9b22db2f4dac48941734d9146fdc5174b3bbc746094fbbcc06d539711d",
+  "qualification": "Initial max-level skills and fixed RNG are fixtures. Entry/setup/equipment/prayers/food use native UI; approachnpc/opnpc/oploc/takeobj selection commands delegate ordinary owners. No fixture damage, healing, teleport or loot injection during the fight. Socket proof separately covers actual native MOVE_GAMECLICK and OPNPC. Replay acceptance must prove each life/map/loot event; this recipe alone is not proof."
+}

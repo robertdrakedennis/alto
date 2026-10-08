@@ -1,0 +1,20 @@
+# Decodes of real cache entries by the original client, recorded once (see tests/decode_golden.rs).
+# A cache entry is `@ kind id -` + `digest=` (its bytes come from the local pack at test time); a synthetic entry keeps its hex and lines.
+@ sprite 15 -
+digest=ef252da40321a01f
+@ sprite 20 -
+digest=3f7fa44c015f9094
+@ sprite 22 -
+digest=c3d49de97b7db791
+@ sprite 41 -
+digest=cac4bb71a222a234
+@ sprite 88 -
+digest=7210b72ed5b6c5a6
+@ sprite 89 -
+digest=648a420aa8bb15a3
+@ sprite 94 -
+digest=39ae52091bc24199
+@ sprite 132 -
+digest=0fbeb572a7a1de54
+@ sprite 300 -
+digest=a162a84b8c253a12

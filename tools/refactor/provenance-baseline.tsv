@@ -1,0 +1,19 @@
+# Provenance counts per crate (tools/refactor/provenance.py). Lower only; `lines` is informational.
+crate	obf_code	obf_comment	cites	ghidra	tma	gen_lines	java_word	java_class_ref	java_exception	exempt	lines
+client910	0	0	0	0	0	0	0	0	0	1	48404
+native910	0	0	0	0	0	0	0	0	0	0	45372
+rs910-audio	0	0	0	0	0	0	0	0	0	0	6564
+rs910-client	0	0	0	0	0	0	0	0	0	0	15787
+rs910-config	0	0	0	0	0	0	0	0	0	0	25195
+rs910-core	0	0	0	0	0	0	0	0	0	0	6430
+rs910-far-scene	0	0	0	0	0	0	0	0	0	0	1972
+rs910-game	0	0	0	0	0	0	0	0	0	0	13328
+rs910-gpu-device	0	0	0	0	0	0	0	0	0	0	1241
+rs910-js5	0	0	0	0	0	0	0	0	0	0	6055
+rs910-model	0	0	0	0	0	0	0	0	0	0	17365
+rs910-protocol	0	0	0	0	0	0	0	0	0	0	5949
+rs910-render-gpu	0	0	0	0	0	0	0	0	0	0	16953
+rs910-render-modern	0	0	0	0	0	0	0	0	0	0	44404
+rs910-scene	0	0	0	0	0	0	0	0	0	0	34405
+rs910-toolkit	0	0	0	0	0	0	0	0	0	0	2529
+rs910-ui	0	0	0	0	0	0	0	0	0	2	65359

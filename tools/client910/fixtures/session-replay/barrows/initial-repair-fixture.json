@@ -1,0 +1,583 @@
+{
+  "kind": "Declared pre-login fixture, not live actions",
+  "accountPath": "/private/tmp/alto-legacy-bosses/hf-0vfkscb_/w/players/accounts/2bd806c97f0e00af1a1fc3328fa763a9269723c8db8fac4f93af71db186d6e90.json",
+  "accountSha256": "89330c42bdbc75fe463b1d7ecab9c4e25340dc2751b39f5abd0d95dd01bb4e99",
+  "account": {
+    "version": 2,
+    "accountKey": "alice",
+    "level": 0,
+    "x": 3564,
+    "z": 3287,
+    "members": true,
+    "coins": 300000,
+    "skills": [
+      {
+        "xp": 13034431,
+        "level": 99
+      },
+      {
+        "xp": 13034431,
+        "level": 99
+      },
+      {
+        "xp": 13034431,
+        "level": 99
+      },
+      {
+        "xp": 13034431,
+        "level": 99
+      },
+      {
+        "xp": 0,
+        "level": 1
+      },
+      {
+        "xp": 13034431,
+        "level": 99
+      },
+      {
+        "xp": 0,
+        "level": 1
+      },
+      {
+        "xp": 0,
+        "level": 1
+      },
+      {
+        "xp": 0,
+        "level": 1
+      },
+      {
+        "xp": 0,
+        "level": 1
+      },
+      {
+        "xp": 0,
+        "level": 1
+      },
+      {
+        "xp": 0,
+        "level": 1
+      },
+      {
+        "xp": 0,
+        "level": 1
+      },
+      {
+        "xp": 273742,
+        "level": 60
+      },
+      {
+        "xp": 0,
+        "level": 1
+      },
+      {
+        "xp": 0,
+        "level": 1
+      },
+      {
+        "xp": 0,
+        "level": 1
+      },
+      {
+        "xp": 0,
+        "level": 1
+      },
+      {
+        "xp": 0,
+        "level": 1
+      },
+      {
+        "xp": 0,
+        "level": 1
+      },
+      {
+        "xp": 0,
+        "level": 1
+      },
+      {
+        "xp": 0,
+        "level": 1
+      },
+      {
+        "xp": 166636,
+        "level": 55
+      },
+      {
+        "xp": 0,
+        "level": 1
+      },
+      {
+        "xp": 0,
+        "level": 1
+      },
+      {
+        "xp": 0,
+        "level": 1
+      },
+      {
+        "xp": 0,
+        "level": 0
+      }
+    ],
+    "backpack": [
+      [
+        4151,
+        1
+      ],
+      [
+        1171,
+        1
+      ],
+      [
+        1117,
+        1
+      ],
+      [
+        1075,
+        1
+      ],
+      [
+        45431,
+        1
+      ],
+      [
+        4119,
+        1
+      ],
+      [
+        952,
+        1
+      ],
+      [
+        385,
+        1
+      ],
+      [
+        385,
+        1
+      ],
+      [
+        385,
+        1
+      ],
+      [
+        385,
+        1
+      ],
+      [
+        385,
+        1
+      ],
+      [
+        385,
+        1
+      ],
+      [
+        385,
+        1
+      ],
+      [
+        385,
+        1
+      ],
+      [
+        385,
+        1
+      ],
+      [
+        385,
+        1
+      ],
+      [
+        385,
+        1
+      ],
+      [
+        385,
+        1
+      ],
+      [
+        385,
+        1
+      ],
+      [
+        385,
+        1
+      ],
+      [
+        385,
+        1
+      ],
+      [
+        385,
+        1
+      ],
+      [
+        385,
+        1
+      ],
+      [
+        385,
+        1
+      ],
+      [
+        385,
+        1
+      ],
+      [
+        385,
+        1
+      ],
+      [
+        35551,
+        1,
+        {
+          "key": "02e6d66b-f46d-413c-8c95-41f427ae9069",
+          "charges": 50000
+        }
+      ]
+    ],
+    "worn": [
+      [
+        1155,
+        1
+      ],
+      [
+        -1,
+        0
+      ],
+      [
+        -1,
+        0
+      ],
+      [
+        -1,
+        0
+      ],
+      [
+        -1,
+        0
+      ],
+      [
+        -1,
+        0
+      ],
+      [
+        -1,
+        0
+      ],
+      [
+        -1,
+        0
+      ],
+      [
+        -1,
+        0
+      ],
+      [
+        -1,
+        0
+      ],
+      [
+        -1,
+        0
+      ],
+      [
+        -1,
+        0
+      ],
+      [
+        -1,
+        0
+      ],
+      [
+        -1,
+        0
+      ],
+      [
+        -1,
+        0
+      ],
+      [
+        -1,
+        0
+      ],
+      [
+        -1,
+        0
+      ],
+      [
+        -1,
+        0
+      ],
+      [
+        -1,
+        0
+      ]
+    ],
+    "house": {
+      "location": 1,
+      "buildMode": false,
+      "rooms": [
+        {
+          "room": 8415,
+          "x": 3,
+          "z": 3,
+          "floor": 1,
+          "rotation": 0,
+          "furniture": [
+            {
+              "hotspot": 0,
+              "obj": 8168
+            }
+          ]
+        },
+        {
+          "room": 8395,
+          "x": 3,
+          "z": 4,
+          "floor": 1,
+          "rotation": 0,
+          "furniture": []
+        },
+        {
+          "room": 8406,
+          "x": 3,
+          "z": 2,
+          "floor": 1,
+          "rotation": 0,
+          "furniture": [
+            {
+              "hotspot": 9,
+              "obj": 8391
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "repair": {
+    "format": 1,
+    "sourceOnlyInitialFixture": true,
+    "hood": {
+      "name": "Ahrim's hood",
+      "key": "02e6d66b-f46d-413c-8c95-41f427ae9069",
+      "family": {
+        "item": 4708,
+        "equipment": {
+          "name": "Ahrim's hood",
+          "slot": 0,
+          "covers": [
+            0,
+            8
+          ],
+          "occupancy": [
+            0
+          ],
+          "kind": "tank",
+          "active": true,
+          "tier": 70,
+          "armourStyle": "magic",
+          "reductionLevel": 70,
+          "requirements": [
+            {
+              "stat": 1,
+              "level": 70
+            }
+          ]
+        },
+        "capacity": 100000,
+        "freshCharges": 100000,
+        "usedItem": 35551,
+        "coinRepair": {
+          "fullCost": 138000,
+          "output": 4708
+        },
+        "wearPerTick": 1,
+        "depleted": {
+          "kind": "identity",
+          "item": 4860
+        },
+        "checkHeld": 3,
+        "dischargeHeld": null,
+        "creation": [],
+        "repair": [],
+        "qualification": [
+          "Ahrim's hood oldid30649797: degrades and repair_cost agree with all three current native identities",
+          "Barrows equipment oldid30649719: percentage-state mechanism retired in September 2015; current related-item chain bypasses those identities",
+          "Fresh output installs one physical balance; used identity always requires the same saved UUID and charge balance",
+          "Default missing-charge NPC repair price rounds upward as an explicit local policy; qualified armour-stand pricing is captured separately"
+        ]
+      }
+    },
+    "bob": {
+      "npc": 519,
+      "talkOperation": 1,
+      "allOperation": 4,
+      "operation": "Repair-all",
+      "spawn": {
+        "npc": 519,
+        "level": 0,
+        "x": 3228,
+        "z": 3203,
+        "dir": 2,
+        "source": "wiki-current"
+      }
+    },
+    "wear": {
+      "spawn": {
+        "npc": 47,
+        "level": 0,
+        "x": 3207,
+        "z": 3203,
+        "dir": 4,
+        "source": "wiki-current"
+      },
+      "profile": {
+        "npc": 47,
+        "name": "Rat",
+        "level": 1,
+        "hitpoints": 50,
+        "maxHit": 4,
+        "attackSpeed": 4,
+        "attackLevel": 1,
+        "defenceLevel": 1,
+        "accuracy": 110,
+        "armour": 110,
+        "meleeAffinity": 55,
+        "rangedAffinity": 45,
+        "magicAffinity": 65,
+        "weakness": "earth",
+        "weaknessAffinity": 90,
+        "experience": 24.9,
+        "aggressive": false,
+        "anims": null,
+        "deathTicks": 3,
+        "respawnTicks": 60,
+        "dropTable": "npc:47",
+        "source": {
+          "level": "cache",
+          "hitpoints": "wiki",
+          "maxHit": "cache",
+          "attackSpeed": "cache",
+          "accuracy": "cache",
+          "armour": "cache",
+          "attackLevel": "wiki",
+          "defenceLevel": "wiki",
+          "meleeAffinity": "wiki",
+          "rangedAffinity": "wiki",
+          "magicAffinity": "wiki",
+          "weaknessAffinity": "cache",
+          "weakness": "cache",
+          "experience": "wiki",
+          "respawnTicks": "other-server-unverified",
+          "deathTicks": "placeholder",
+          "anims": "placeholder",
+          "aggressive": "wiki"
+        }
+      },
+      "operation": "Attack"
+    },
+    "house": {
+      "portal": {
+        "location": 1,
+        "name": "Taverley",
+        "loc": 15477,
+        "exit": {
+          "level": 0,
+          "x": 2883,
+          "z": 3453,
+          "packed": 47238525
+        },
+        "level": 1
+      },
+      "saved": {
+        "location": 1,
+        "buildMode": false,
+        "rooms": [
+          {
+            "room": 8415,
+            "x": 3,
+            "z": 3,
+            "floor": 1,
+            "rotation": 0,
+            "furniture": [
+              {
+                "hotspot": 0,
+                "obj": 8168
+              }
+            ]
+          },
+          {
+            "room": 8395,
+            "x": 3,
+            "z": 4,
+            "floor": 1,
+            "rotation": 0,
+            "furniture": []
+          },
+          {
+            "room": 8406,
+            "x": 3,
+            "z": 2,
+            "floor": 1,
+            "rotation": 0,
+            "furniture": [
+              {
+                "hotspot": 9,
+                "obj": 8391
+              }
+            ]
+          }
+        ]
+      },
+      "stand": {
+        "furniture": 8391,
+        "loc": 13715,
+        "allOperation": 1,
+        "smithingStat": 13,
+        "smithingDenominator": 200
+      }
+    },
+    "travel": {
+      "lumbridge": {
+        "level": 0,
+        "x": 3233,
+        "z": 3222,
+        "packed": 52972694
+      },
+      "burthorpe": {
+        "level": 0,
+        "x": 2899,
+        "z": 3545,
+        "packed": 47500761
+      }
+    },
+    "smithing": {
+      "stat": 13,
+      "initialLevel": 60
+    },
+    "originalFoodCount": 20,
+    "originalEquipment": [
+      4151,
+      1171,
+      1155,
+      1117,
+      1075,
+      45431,
+      4119
+    ],
+    "initiallyWorn": 1155,
+    "qualification": [
+      "Bob/Rat placements retain their generated spawn provenance, not pinned-2019 coordinates",
+      "Initial owned house uses the existing starter-room policy and the previously tested south Workshop connection",
+      "No lodestone/quest unlock variable is seeded: Lumbridge and Burthorpe are normal start-unlocked destinations",
+      "No charge, account, position, item or skill mutation occurs after login"
+    ]
+  },
+  "source": {
+    "runtimeRoot": "/Users/robert/.codex/worktrees/legacy-bosses/alto",
+    "basePlanSha256": "f8f038be2e3c1522fc49e7fc550c3e0c2e7367a46bf145f6f2a637fc3af57700"
+  }
+}

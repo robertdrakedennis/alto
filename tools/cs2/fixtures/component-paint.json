@@ -1,0 +1,472 @@
+{
+  "format": 1,
+  "build": {
+    "major": 950,
+    "minor": 1
+  },
+  "client_md5": "290cb3489d088d145741f1734f53b0fc",
+  "scope": "Original component consumer kernels; component lookup, active selection, class query and change services supplied. Calls recorded, no rendering or queue timing emulated.",
+  "kernels": {
+    "transparency": "ca7a2d34798eafd667ab88b4336855def7a905a443e381975b25c5841cf3d80e",
+    "fill": "46fa50325216ab86852849c8b95cf2b024acf01cf753cffb2640211408f42fd6",
+    "colour": "fa2b5fd4f7669abde19752bb79fbcdc2756206923f91f17cfa01dff2250efaf4"
+  },
+  "cases": [
+    {
+      "name": "colour_static",
+      "operation": "colour",
+      "input": {
+        "value": -2147483648,
+        "colour": 305419896,
+        "alpha": 255,
+        "fill": false,
+        "runtime_class": 1,
+        "group": 7,
+        "file": 3,
+        "child": -1,
+        "transient": false
+      },
+      "output": {
+        "colour": -2147483648,
+        "alpha": 255,
+        "fill": false,
+        "int_count": 0,
+        "calls": [
+          [
+            "change",
+            6,
+            458755
+          ],
+          [
+            "schedule"
+          ]
+        ]
+      }
+    },
+    {
+      "name": "colour_unchanged",
+      "operation": "colour",
+      "input": {
+        "value": 305419896,
+        "colour": 305419896,
+        "alpha": 255,
+        "fill": false,
+        "runtime_class": 1,
+        "group": 7,
+        "file": 3,
+        "child": -1,
+        "transient": false
+      },
+      "output": {
+        "colour": 305419896,
+        "alpha": 255,
+        "fill": false,
+        "int_count": 0,
+        "calls": [
+          [
+            "change",
+            6,
+            458755
+          ],
+          [
+            "schedule"
+          ]
+        ]
+      }
+    },
+    {
+      "name": "colour_child",
+      "operation": "colour",
+      "input": {
+        "value": -1,
+        "colour": 305419896,
+        "alpha": 255,
+        "fill": false,
+        "runtime_class": 1,
+        "group": 7,
+        "file": 3,
+        "child": 0,
+        "transient": false
+      },
+      "output": {
+        "colour": -1,
+        "alpha": 255,
+        "fill": false,
+        "int_count": 0,
+        "calls": []
+      }
+    },
+    {
+      "name": "colour_transient",
+      "operation": "colour",
+      "input": {
+        "value": 0,
+        "colour": 305419896,
+        "alpha": 255,
+        "fill": false,
+        "runtime_class": 1,
+        "group": 7,
+        "file": 3,
+        "child": -1,
+        "transient": true
+      },
+      "output": {
+        "colour": 0,
+        "alpha": 255,
+        "fill": false,
+        "int_count": 0,
+        "calls": []
+      }
+    },
+    {
+      "name": "colour_reserved_group",
+      "operation": "colour",
+      "input": {
+        "value": 1,
+        "colour": 305419896,
+        "alpha": 255,
+        "fill": false,
+        "runtime_class": 1,
+        "group": 65535,
+        "file": 3,
+        "child": -1,
+        "transient": false
+      },
+      "output": {
+        "colour": 1,
+        "alpha": 255,
+        "fill": false,
+        "int_count": 0,
+        "calls": [
+          [
+            "change",
+            6,
+            -65533
+          ],
+          [
+            "schedule"
+          ]
+        ]
+      }
+    },
+    {
+      "name": "colour_reserved_file",
+      "operation": "colour",
+      "input": {
+        "value": 1,
+        "colour": 305419896,
+        "alpha": 255,
+        "fill": false,
+        "runtime_class": 1,
+        "group": 7,
+        "file": 65535,
+        "child": -1,
+        "transient": false
+      },
+      "output": {
+        "colour": 1,
+        "alpha": 255,
+        "fill": false,
+        "int_count": 0,
+        "calls": [
+          [
+            "change",
+            6,
+            -1
+          ],
+          [
+            "schedule"
+          ]
+        ]
+      }
+    },
+    {
+      "name": "fill_true",
+      "operation": "fill",
+      "input": {
+        "value": 1,
+        "colour": 305419896,
+        "alpha": 255,
+        "fill": false,
+        "runtime_class": 1,
+        "group": 7,
+        "file": 3,
+        "child": -1,
+        "transient": false
+      },
+      "output": {
+        "colour": 305419896,
+        "alpha": 255,
+        "fill": true,
+        "int_count": 0,
+        "calls": []
+      }
+    },
+    {
+      "name": "fill_false",
+      "operation": "fill",
+      "input": {
+        "value": 0,
+        "colour": 305419896,
+        "alpha": 255,
+        "fill": true,
+        "runtime_class": 1,
+        "group": 7,
+        "file": 3,
+        "child": -1,
+        "transient": false
+      },
+      "output": {
+        "colour": 305419896,
+        "alpha": 255,
+        "fill": false,
+        "int_count": 0,
+        "calls": []
+      }
+    },
+    {
+      "name": "fill_two",
+      "operation": "fill",
+      "input": {
+        "value": 2,
+        "colour": 305419896,
+        "alpha": 255,
+        "fill": true,
+        "runtime_class": 1,
+        "group": 7,
+        "file": 3,
+        "child": -1,
+        "transient": false
+      },
+      "output": {
+        "colour": 305419896,
+        "alpha": 255,
+        "fill": false,
+        "int_count": 0,
+        "calls": []
+      }
+    },
+    {
+      "name": "fill_negative",
+      "operation": "fill",
+      "input": {
+        "value": -1,
+        "colour": 305419896,
+        "alpha": 255,
+        "fill": true,
+        "runtime_class": 1,
+        "group": 7,
+        "file": 3,
+        "child": -1,
+        "transient": false
+      },
+      "output": {
+        "colour": 305419896,
+        "alpha": 255,
+        "fill": false,
+        "int_count": 0,
+        "calls": []
+      }
+    },
+    {
+      "name": "fill_other_class",
+      "operation": "fill",
+      "input": {
+        "value": 0,
+        "colour": 305419896,
+        "alpha": 255,
+        "fill": true,
+        "runtime_class": 0,
+        "group": 7,
+        "file": 3,
+        "child": -1,
+        "transient": false
+      },
+      "output": {
+        "colour": 305419896,
+        "alpha": 255,
+        "fill": true,
+        "int_count": 0,
+        "calls": []
+      }
+    },
+    {
+      "name": "transparency_0",
+      "operation": "transparency",
+      "input": {
+        "value": 0,
+        "colour": 305419896,
+        "alpha": 255,
+        "fill": false,
+        "runtime_class": 1,
+        "group": 7,
+        "file": 3,
+        "child": -1,
+        "transient": false
+      },
+      "output": {
+        "colour": 305419896,
+        "alpha": 255,
+        "fill": false,
+        "int_count": 0,
+        "calls": []
+      }
+    },
+    {
+      "name": "transparency_1",
+      "operation": "transparency",
+      "input": {
+        "value": 1,
+        "colour": 305419896,
+        "alpha": 255,
+        "fill": false,
+        "runtime_class": 1,
+        "group": 7,
+        "file": 3,
+        "child": -1,
+        "transient": false
+      },
+      "output": {
+        "colour": 305419896,
+        "alpha": 254,
+        "fill": false,
+        "int_count": 0,
+        "calls": []
+      }
+    },
+    {
+      "name": "transparency_255",
+      "operation": "transparency",
+      "input": {
+        "value": 255,
+        "colour": 305419896,
+        "alpha": 255,
+        "fill": false,
+        "runtime_class": 1,
+        "group": 7,
+        "file": 3,
+        "child": -1,
+        "transient": false
+      },
+      "output": {
+        "colour": 305419896,
+        "alpha": 0,
+        "fill": false,
+        "int_count": 0,
+        "calls": []
+      }
+    },
+    {
+      "name": "transparency_256",
+      "operation": "transparency",
+      "input": {
+        "value": 256,
+        "colour": 305419896,
+        "alpha": 255,
+        "fill": false,
+        "runtime_class": 1,
+        "group": 7,
+        "file": 3,
+        "child": -1,
+        "transient": false
+      },
+      "output": {
+        "colour": 305419896,
+        "alpha": 255,
+        "fill": false,
+        "int_count": 0,
+        "calls": []
+      }
+    },
+    {
+      "name": "transparency_-1",
+      "operation": "transparency",
+      "input": {
+        "value": -1,
+        "colour": 305419896,
+        "alpha": 255,
+        "fill": false,
+        "runtime_class": 1,
+        "group": 7,
+        "file": 3,
+        "child": -1,
+        "transient": false
+      },
+      "output": {
+        "colour": 305419896,
+        "alpha": 0,
+        "fill": false,
+        "int_count": 0,
+        "calls": []
+      }
+    },
+    {
+      "name": "transparency_-256",
+      "operation": "transparency",
+      "input": {
+        "value": -256,
+        "colour": 305419896,
+        "alpha": 255,
+        "fill": false,
+        "runtime_class": 1,
+        "group": 7,
+        "file": 3,
+        "child": -1,
+        "transient": false
+      },
+      "output": {
+        "colour": 305419896,
+        "alpha": 255,
+        "fill": false,
+        "int_count": 0,
+        "calls": []
+      }
+    },
+    {
+      "name": "transparency_2147483647",
+      "operation": "transparency",
+      "input": {
+        "value": 2147483647,
+        "colour": 305419896,
+        "alpha": 255,
+        "fill": false,
+        "runtime_class": 1,
+        "group": 7,
+        "file": 3,
+        "child": -1,
+        "transient": false
+      },
+      "output": {
+        "colour": 305419896,
+        "alpha": 0,
+        "fill": false,
+        "int_count": 0,
+        "calls": []
+      }
+    },
+    {
+      "name": "transparency_-2147483648",
+      "operation": "transparency",
+      "input": {
+        "value": -2147483648,
+        "colour": 305419896,
+        "alpha": 255,
+        "fill": false,
+        "runtime_class": 1,
+        "group": 7,
+        "file": 3,
+        "child": -1,
+        "transient": false
+      },
+      "output": {
+        "colour": 305419896,
+        "alpha": 255,
+        "fill": false,
+        "int_count": 0,
+        "calls": []
+      }
+    }
+  ],
+  "rectangle_runtime_class": 1,
+  "non_rectangle_type": 0
+}

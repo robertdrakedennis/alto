@@ -1,0 +1,31 @@
+[package]
+name = "rs910-core"
+version = "0.1.0"
+edition = "2021"
+publish = false
+description = "Std-only leaf utilities of the 910 client port: Java Packet reads, trig, colour, cp1252, map noise, checksums, clock."
+
+# rs910-core is std only (tools/refactor/layers.txt `[externals]`,
+# target-architecture.md §2.2): no [dependencies], ever. Doc code blocks are
+# not compiled, like client910's (`doctest = false`).
+[lib]
+doctest = false
+
+[features]
+# Every workspace crate has `no-pack` (CI has no server/data/pack; tests that
+# read it are `#[cfg_attr(feature = "no-pack", ignore)]`). client910's
+# `no-pack` forwards here. rs910-core has no pack-dependent tests today.
+no-pack = []
+# Test hooks other crates' tests use (`logic_clock::set_test_now`,
+# `test_support::reader_digest`): the items
+# are `#[cfg(any(test, feature = "test-hooks"))]`. client910 enables it
+# through its [dev-dependencies] only, so no production build contains them.
+test-hooks = []
+# The engine profiler's scopes (`profile` module, lane E-A4): compiled out
+# unless enabled. client910's `profile` feature forwards here, and its
+# tests enable it through [dev-dependencies] (the inertness replay); no
+# default build contains it.
+profile = []
+
+[lints]
+workspace = true

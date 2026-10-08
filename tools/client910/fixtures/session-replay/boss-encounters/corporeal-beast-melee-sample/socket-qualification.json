@@ -1,0 +1,238 @@
+{
+  "base": "02b92521e9ee3d82d90018bae8a572660fc07d67",
+  "clientAdmissionClaimed": false,
+  "evidence": {
+    "originalCohort": {
+      "log": {
+        "path": "/Users/robert/projects/alto-target-corporeal-beast/proof/socket4/socket.log",
+        "sha256": "7290fbc23d4c02b70e2e9aef1dc0f3dab116efd4ee800442946d1569f79536d5"
+      },
+      "overallPassed": false,
+      "result": {
+        "path": "/Users/robert/projects/alto-target-corporeal-beast/proof/socket4/result.json",
+        "sha256": "aaa372279dd7a555b30efb0e7fd7db2bea9a23d39dc8fcce872c287bd3c8f47b"
+      },
+      "soleFailure": "Hard-case old expired/core-ashes token selection; no kit failure"
+    },
+    "targetedRepair": {
+      "casesPassed": 3,
+      "log": {
+        "path": "/Users/robert/projects/alto-target-corporeal-beast/proof/socket-hard4/socket.log",
+        "sha256": "408e60e6ee5e32957b6474f77ccf67af13d3d6ed4ab38c4aa3c7facccc9ac8c9"
+      },
+      "result": {
+        "path": "/Users/robert/projects/alto-target-corporeal-beast/proof/socket-hard4/result.json",
+        "sha256": "e830721ada964083de7485082b8e39868536ed4b812c905b87e3f217993b9bea"
+      }
+    }
+  },
+  "kits": [
+    {
+      "acceptedBossLoss": 101576,
+      "acceptedHealing": 1576,
+      "bossLaunches": 138,
+      "choice": {
+        "armour": "power",
+        "hands": "dual-wield",
+        "style": "melee",
+        "tier": 90
+      },
+      "coreLaunches": 6,
+      "coreSeen": true,
+      "fullLife": 100000,
+      "qualification": "natural core present"
+    },
+    {
+      "acceptedBossLoss": 100883,
+      "acceptedHealing": 883,
+      "bossLaunches": 142,
+      "choice": {
+        "armour": "tank",
+        "hands": "dual-wield",
+        "style": "melee",
+        "tier": 90
+      },
+      "coreLaunches": 3,
+      "coreSeen": true,
+      "fullLife": 100000,
+      "qualification": "natural core present"
+    },
+    {
+      "acceptedBossLoss": 100185,
+      "acceptedHealing": 185,
+      "bossLaunches": 106,
+      "choice": {
+        "armour": "power",
+        "hands": "dual-wield",
+        "style": "ranged",
+        "tier": 90
+      },
+      "coreLaunches": 1,
+      "coreSeen": true,
+      "fullLife": 100000,
+      "qualification": "natural core present"
+    },
+    {
+      "acceptedBossLoss": 102332,
+      "acceptedHealing": 2332,
+      "bossLaunches": 145,
+      "choice": {
+        "armour": "tank",
+        "hands": "dual-wield",
+        "style": "ranged",
+        "tier": 90
+      },
+      "coreLaunches": 9,
+      "coreSeen": true,
+      "fullLife": 100000,
+      "qualification": "natural core present"
+    },
+    {
+      "acceptedBossLoss": 101401,
+      "acceptedHealing": 1401,
+      "bossLaunches": 133,
+      "choice": {
+        "armour": "power",
+        "hands": "dual-wield",
+        "style": "magic",
+        "tier": 90
+      },
+      "coreLaunches": 4,
+      "coreSeen": true,
+      "fullLife": 100000,
+      "qualification": "natural core present"
+    },
+    {
+      "acceptedBossLoss": 101157,
+      "acceptedHealing": 1157,
+      "bossLaunches": 125,
+      "choice": {
+        "armour": "tank",
+        "hands": "dual-wield",
+        "style": "magic",
+        "tier": 90
+      },
+      "coreLaunches": 3,
+      "coreSeen": true,
+      "fullLife": 100000,
+      "qualification": "natural core present"
+    },
+    {
+      "acceptedBossLoss": 102866,
+      "acceptedHealing": 2866,
+      "bossLaunches": 123,
+      "choice": {
+        "armour": "power",
+        "hands": "dual-wield",
+        "style": "magic",
+        "tier": 92
+      },
+      "coreLaunches": 6,
+      "coreSeen": true,
+      "fullLife": 100000,
+      "qualification": "natural core present"
+    },
+    {
+      "acceptedBossLoss": 100203,
+      "acceptedHealing": 203,
+      "bossLaunches": 118,
+      "choice": {
+        "armour": "power",
+        "armourTier": 90,
+        "hands": "two-handed",
+        "style": "melee",
+        "tier": 92
+      },
+      "coreLaunches": 1,
+      "coreSeen": true,
+      "fullLife": 100000,
+      "qualification": "natural core present"
+    },
+    {
+      "acceptedBossLoss": 100859,
+      "acceptedHealing": 859,
+      "bossLaunches": 119,
+      "choice": {
+        "armour": "power",
+        "armourTier": 90,
+        "hands": "dual-wield",
+        "style": "melee",
+        "tier": 92
+      },
+      "coreLaunches": 4,
+      "coreSeen": true,
+      "fullLife": 100000,
+      "qualification": "natural core present"
+    },
+    {
+      "acceptedBossLoss": 102432,
+      "acceptedHealing": 2432,
+      "bossLaunches": 133,
+      "choice": {
+        "armour": "tank",
+        "armourTier": 90,
+        "hands": "two-handed",
+        "style": "melee",
+        "tier": 92
+      },
+      "coreLaunches": 8,
+      "coreSeen": true,
+      "fullLife": 100000,
+      "qualification": "natural core present"
+    },
+    {
+      "acceptedBossLoss": 100089,
+      "acceptedHealing": 89,
+      "bossLaunches": 121,
+      "choice": {
+        "armour": "tank",
+        "armourTier": 90,
+        "hands": "dual-wield",
+        "style": "melee",
+        "tier": 92
+      },
+      "coreLaunches": 1,
+      "coreSeen": true,
+      "fullLife": 100000,
+      "qualification": "natural core present"
+    },
+    {
+      "acceptedBossLoss": 100525,
+      "acceptedHealing": 525,
+      "bossLaunches": 103,
+      "choice": {
+        "armour": "power",
+        "armourTier": 90,
+        "hands": "dual-wield",
+        "style": "magic",
+        "tier": 92
+      },
+      "coreLaunches": 1,
+      "coreSeen": true,
+      "fullLife": 100000,
+      "qualification": "natural core present"
+    },
+    {
+      "acceptedBossLoss": 100988,
+      "acceptedHealing": 988,
+      "bossLaunches": 127,
+      "choice": {
+        "armour": "tank",
+        "armourTier": 90,
+        "hands": "dual-wield",
+        "style": "magic",
+        "tier": 92
+      },
+      "coreLaunches": 4,
+      "coreSeen": true,
+      "fullLife": 100000,
+      "qualification": "natural core present"
+    }
+  ],
+  "originalCohortPassed": false,
+  "originalCoverageSha256": "7b0bcde42eacf5f716c8732a0e1fb0a1ffea0fc7568fda5c9ab2ba88b5f79ae5",
+  "qualificationReceiptSha256": "95ffb1ac79a0f781770778f35261a320c3b07bb0b0508ab0d70d7aa642278526",
+  "soleOriginalFailure": "Hard-case old expired/core-ashes token selection; no kit failure",
+  "status": "separate_ordinary_socket_qualification_not_native_admission",
+  "targetedHardRepairPassed": true
+}

@@ -1,0 +1,6 @@
+# dag-check.py ratchet baseline (lower only; regenerate with --update).
+# modules 292, module edges 1801, non-trivial SCCs 4 (sizes 26 2 2 2), layer violations 0, fence violations 0, package fence 0, package edges 0
+scc 26 ui_backend ui_bas ui_components ui_draw ui_hook_host ui_hooks ui_host ui_interaction ui_layout ui_leaf ui_lifecycle ui_loop ui_menu_render ui_minimenu ui_model_animation ui_models ui_obj_queries ui_player_options ui_player_state ui_preferences ui_properties ui_resources ui_runtime ui_social ui_vars ui_window
+scc 2 cutscene game_runtime
+scc 2 floor hardshadow
+scc 2 gpumodel particle

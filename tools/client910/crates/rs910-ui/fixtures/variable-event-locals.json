@@ -1,0 +1,367 @@
+{
+  "client_md5": "290cb3489d088d145741f1734f53b0fc",
+  "kernels": {
+    "loader": "c956183a6bc0408453b4fc5056ad4d74141363a44471278cb56a5da821be28f7",
+    "request": "f16ec34e75434f9a2cacb3933f602cd9c454c57cd916014f4da1fe78c77bb87d"
+  },
+  "scope": "Original preallocated variable-event queue constructor and original integer argument loader execute to the script execution boundary. Hook value copying, script lookup, state acquisition and integer tag lookup are supplied; all values carry integer tag zero. Records request integer defaults, component word projection, token routing and local order; does not execute the callback or record other object tags, allocator growth or the busy-script deferral path.",
+  "cases": [
+    {
+      "name": "ordinary_static",
+      "input": {
+        "arguments": [
+          -2147483647,
+          -2147483646,
+          -2147483645,
+          -2147483644,
+          -2147483643,
+          -2147483642,
+          -2147483641,
+          -2147483640,
+          -2147483639,
+          -2147483638,
+          -2147483637,
+          3814,
+          -1,
+          16750623
+        ],
+        "parent": 65537,
+        "child": 65535,
+        "component": true
+      },
+      "result": {
+        "request_integer_defaults": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "locals": [
+          0,
+          0,
+          65537,
+          0,
+          -1,
+          -1,
+          -1,
+          0,
+          0,
+          0,
+          0,
+          3814,
+          -1,
+          16750623
+        ]
+      }
+    },
+    {
+      "name": "ordinary_runtime",
+      "input": {
+        "arguments": [
+          -2147483647,
+          -2147483646,
+          -2147483645,
+          -2147483644,
+          -2147483643,
+          -2147483642,
+          -2147483641,
+          -2147483640,
+          -2147483639,
+          -2147483638,
+          -2147483637,
+          3814,
+          -1,
+          16750623
+        ],
+        "parent": 65537,
+        "child": 4098,
+        "component": true
+      },
+      "result": {
+        "request_integer_defaults": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "locals": [
+          0,
+          0,
+          65537,
+          0,
+          4098,
+          -1,
+          -1,
+          0,
+          0,
+          0,
+          0,
+          3814,
+          -1,
+          16750623
+        ]
+      }
+    },
+    {
+      "name": "missing_component",
+      "input": {
+        "arguments": [
+          -2147483647,
+          -2147483646,
+          -2147483645,
+          -2147483644,
+          -2147483643,
+          -2147483642,
+          -2147483641,
+          -2147483640,
+          -2147483639,
+          -2147483638,
+          -2147483637,
+          3814,
+          -1,
+          16750623
+        ],
+        "parent": 65537,
+        "child": 65535,
+        "component": false
+      },
+      "result": {
+        "request_integer_defaults": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "locals": [
+          0,
+          0,
+          -1,
+          0,
+          -1,
+          -1,
+          -1,
+          0,
+          0,
+          0,
+          0,
+          3814,
+          -1,
+          16750623
+        ]
+      }
+    },
+    {
+      "name": "missing_file",
+      "input": {
+        "arguments": [
+          -2147483647,
+          -2147483646,
+          -2147483645,
+          -2147483644,
+          -2147483643,
+          -2147483642,
+          -2147483641,
+          -2147483640,
+          -2147483639,
+          -2147483638,
+          -2147483637,
+          3814,
+          -1,
+          16750623
+        ],
+        "parent": 131071,
+        "child": 7,
+        "component": true
+      },
+      "result": {
+        "request_integer_defaults": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "locals": [
+          0,
+          0,
+          -1,
+          0,
+          7,
+          -1,
+          -1,
+          0,
+          0,
+          0,
+          0,
+          3814,
+          -1,
+          16750623
+        ]
+      }
+    },
+    {
+      "name": "missing_group",
+      "input": {
+        "arguments": [
+          -2147483647,
+          -2147483646,
+          -2147483645,
+          -2147483644,
+          -2147483643,
+          -2147483642,
+          -2147483641,
+          -2147483640,
+          -2147483639,
+          -2147483638,
+          -2147483637,
+          3814,
+          -1,
+          16750623
+        ],
+        "parent": 4294901761,
+        "child": 7,
+        "component": true
+      },
+      "result": {
+        "request_integer_defaults": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "locals": [
+          0,
+          0,
+          -65535,
+          0,
+          7,
+          -1,
+          -1,
+          0,
+          0,
+          0,
+          0,
+          3814,
+          -1,
+          16750623
+        ]
+      }
+    },
+    {
+      "name": "cascade_parent_to_child_token",
+      "input": {
+        "arguments": [
+          -2147483647,
+          -2147483646,
+          -2147483645,
+          -2147483644,
+          -2147483643,
+          -2147483642,
+          -2147483641,
+          -2147483640,
+          -2147483639,
+          -2147483638,
+          -2147483637,
+          3814,
+          -1,
+          16750623
+        ],
+        "parent": 2147483653,
+        "child": 4660,
+        "component": true
+      },
+      "result": {
+        "request_integer_defaults": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "locals": [
+          0,
+          0,
+          4660,
+          0,
+          4660,
+          -1,
+          -1,
+          0,
+          0,
+          0,
+          0,
+          3814,
+          -1,
+          16750623
+        ]
+      }
+    },
+    {
+      "name": "cascade_parent_to_auxiliary",
+      "input": {
+        "arguments": [
+          -2147483647,
+          -2147483646,
+          -2147483645,
+          -2147483644,
+          -2147483643,
+          -2147483642,
+          -2147483641,
+          -2147483640,
+          -2147483639,
+          -2147483638,
+          -2147483637,
+          3814,
+          -1,
+          16750623
+        ],
+        "parent": 2147483658,
+        "child": 4660,
+        "component": true
+      },
+      "result": {
+        "request_integer_defaults": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "locals": [
+          0,
+          0,
+          0,
+          0,
+          4660,
+          -1,
+          -1,
+          0,
+          0,
+          0,
+          0,
+          3814,
+          -1,
+          16750623
+        ]
+      }
+    }
+  ]
+}

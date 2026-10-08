@@ -1,0 +1,686 @@
+{
+  "account": {
+    "backpack": [
+      [
+        1155,
+        1
+      ],
+      [
+        1117,
+        1
+      ],
+      [
+        1075,
+        1
+      ],
+      [
+        45431,
+        1
+      ],
+      [
+        4119,
+        1
+      ],
+      [
+        11696,
+        1
+      ],
+      [
+        2347,
+        1
+      ],
+      [
+        385,
+        1
+      ],
+      [
+        385,
+        1
+      ],
+      [
+        385,
+        1
+      ],
+      [
+        385,
+        1
+      ],
+      [
+        385,
+        1
+      ],
+      [
+        385,
+        1
+      ],
+      [
+        385,
+        1
+      ],
+      [
+        385,
+        1
+      ],
+      [
+        385,
+        1
+      ],
+      [
+        385,
+        1
+      ],
+      [
+        385,
+        1
+      ],
+      [
+        385,
+        1
+      ],
+      [
+        385,
+        1
+      ],
+      [
+        385,
+        1
+      ],
+      [
+        385,
+        1
+      ],
+      [
+        385,
+        1
+      ],
+      [
+        385,
+        1
+      ],
+      [
+        385,
+        1
+      ],
+      [
+        385,
+        1
+      ],
+      [
+        385,
+        1
+      ],
+      [
+        385,
+        1
+      ]
+    ],
+    "level": 0,
+    "members": true,
+    "savedVarps": [
+      [
+        3017,
+        0
+      ],
+      [
+        3018,
+        39
+      ]
+    ],
+    "skills": [
+      {
+        "level": 99,
+        "xp": 13034431
+      },
+      {
+        "level": 99,
+        "xp": 13034431
+      },
+      {
+        "level": 99,
+        "xp": 13034431
+      },
+      {
+        "level": 99,
+        "xp": 13034431
+      },
+      {
+        "level": 99,
+        "xp": 13034431
+      },
+      {
+        "level": 99,
+        "xp": 13034431
+      },
+      {
+        "level": 1,
+        "xp": 0
+      },
+      {
+        "level": 1,
+        "xp": 0
+      },
+      {
+        "level": 1,
+        "xp": 0
+      },
+      {
+        "level": 1,
+        "xp": 0
+      },
+      {
+        "level": 1,
+        "xp": 0
+      },
+      {
+        "level": 1,
+        "xp": 0
+      },
+      {
+        "level": 1,
+        "xp": 0
+      },
+      {
+        "level": 1,
+        "xp": 0
+      },
+      {
+        "level": 1,
+        "xp": 0
+      },
+      {
+        "level": 1,
+        "xp": 0
+      },
+      {
+        "level": 99,
+        "xp": 13034431
+      },
+      {
+        "level": 1,
+        "xp": 0
+      },
+      {
+        "level": 1,
+        "xp": 0
+      },
+      {
+        "level": 1,
+        "xp": 0
+      },
+      {
+        "level": 1,
+        "xp": 0
+      },
+      {
+        "level": 1,
+        "xp": 0
+      },
+      {
+        "level": 1,
+        "xp": 0
+      },
+      {
+        "level": 1,
+        "xp": 0
+      },
+      {
+        "level": 1,
+        "xp": 0
+      },
+      {
+        "level": 1,
+        "xp": 0
+      },
+      {
+        "level": 0,
+        "xp": 0
+      }
+    ],
+    "version": 2,
+    "worn": [
+      [
+        -1,
+        0
+      ],
+      [
+        -1,
+        0
+      ],
+      [
+        -1,
+        0
+      ],
+      [
+        -1,
+        0
+      ],
+      [
+        -1,
+        0
+      ],
+      [
+        -1,
+        0
+      ],
+      [
+        -1,
+        0
+      ],
+      [
+        -1,
+        0
+      ],
+      [
+        -1,
+        0
+      ],
+      [
+        -1,
+        0
+      ],
+      [
+        -1,
+        0
+      ],
+      [
+        -1,
+        0
+      ],
+      [
+        -1,
+        0
+      ],
+      [
+        -1,
+        0
+      ],
+      [
+        -1,
+        0
+      ],
+      [
+        -1,
+        0
+      ],
+      [
+        -1,
+        0
+      ],
+      [
+        -1,
+        0
+      ],
+      [
+        -1,
+        0
+      ]
+    ],
+    "x": 2852,
+    "z": 5334
+  },
+  "accountSha256": "5020d8af881fa70c101e45735d8b27cdf7063d450c20c1f1349265f231eb05c3",
+  "plan": {
+    "accountKey": "alice",
+    "altarEquipment": [
+      11696
+    ],
+    "ammunition": null,
+    "arenaId": "gwd-bandos",
+    "campSelection": {
+      "policy": "Current native base level plus generated requirement; conservatively exclude task/protection/gear/special-attack restricted camp rows",
+      "slayerStat": 18
+    },
+    "combatEquipment": [
+      11696
+    ],
+    "combatStyle": "melee",
+    "equipment": [
+      1155,
+      1117,
+      1075,
+      45431,
+      4119,
+      11696
+    ],
+    "equipmentFacts": [
+      {
+        "inventoryOperations": [
+          null,
+          "Wear",
+          null,
+          null,
+          "Drop"
+        ],
+        "item": 1155,
+        "name": "Bronze full helm",
+        "qualified": {
+          "covers": [
+            0,
+            8
+          ],
+          "kind": "tank",
+          "name": "Bronze full helm",
+          "occupancy": [
+            0
+          ],
+          "reductionLevel": 1,
+          "requirement": {
+            "level": 1,
+            "skill": "defence"
+          },
+          "slot": 0,
+          "tier": 5
+        }
+      },
+      {
+        "inventoryOperations": [
+          null,
+          "Wear",
+          null,
+          null,
+          "Drop"
+        ],
+        "item": 1117,
+        "name": "Bronze platebody",
+        "qualified": {
+          "covers": [
+            4,
+            6
+          ],
+          "kind": "tank",
+          "name": "Bronze platebody",
+          "occupancy": [
+            4
+          ],
+          "reductionLevel": 1,
+          "requirement": {
+            "level": 1,
+            "skill": "defence"
+          },
+          "slot": 4,
+          "tier": 5
+        }
+      },
+      {
+        "inventoryOperations": [
+          null,
+          "Wear",
+          null,
+          null,
+          "Drop"
+        ],
+        "item": 1075,
+        "name": "Bronze platelegs",
+        "qualified": {
+          "covers": [
+            7
+          ],
+          "kind": "tank",
+          "name": "Bronze platelegs",
+          "occupancy": [
+            7
+          ],
+          "reductionLevel": 1,
+          "requirement": {
+            "level": 1,
+            "skill": "defence"
+          },
+          "slot": 7,
+          "tier": 5
+        }
+      },
+      {
+        "inventoryOperations": [
+          null,
+          "Wear",
+          null,
+          null,
+          "Drop"
+        ],
+        "item": 45431,
+        "name": "Bronze gauntlets",
+        "qualified": {
+          "covers": [
+            9
+          ],
+          "kind": "tank",
+          "name": "Bronze gauntlets",
+          "occupancy": [
+            9
+          ],
+          "reductionLevel": 1,
+          "requirement": {
+            "level": 1,
+            "skill": "defence"
+          },
+          "slot": 9,
+          "tier": 5
+        }
+      },
+      {
+        "inventoryOperations": [
+          null,
+          "Wear",
+          null,
+          null,
+          "Drop"
+        ],
+        "item": 4119,
+        "name": "Bronze armoured boots",
+        "qualified": {
+          "covers": [
+            10
+          ],
+          "kind": "tank",
+          "name": "Bronze armoured boots",
+          "occupancy": [
+            10
+          ],
+          "reductionLevel": 1,
+          "requirement": {
+            "level": 1,
+            "skill": "defence"
+          },
+          "slot": 10,
+          "tier": 5
+        }
+      },
+      {
+        "inventoryOperations": [
+          null,
+          "Wield",
+          "Remove-hilt",
+          null,
+          "Drop"
+        ],
+        "item": 11696,
+        "name": "Bandos godsword",
+        "qualified": {
+          "covers": [
+            3,
+            5
+          ],
+          "kind": "melee-main",
+          "name": "Bandos godsword",
+          "occupancy": [
+            3,
+            5
+          ],
+          "requirement": {
+            "level": 75,
+            "skill": "attack"
+          },
+          "slot": 3
+        }
+      }
+    ],
+    "faction": "bandos",
+    "food": {
+      "count": 21,
+      "item": 385
+    },
+    "format": 1,
+    "initialCount": 39,
+    "initialFixture": {
+      "armadyl": "Godsword supplies travel/altar protection only; actual shortbow+compatible arrows are wielded before camp fight and every arena role",
+      "armour": "Only currently qualified Bronze armour; no invented high-tier worn state. Actual melee-armour ranged penalty remains active",
+      "counts": "Previously earned 39 are declared; one actual camp kill must supply the fortieth",
+      "entry": "Starts inside the accessible dungeon; first surface quest progression is held",
+      "qualification": "declared-before-login-only",
+      "random": "World ordinary RNG unchanged; no fixture stream",
+      "skillFacts": [
+        {
+          "level": 99,
+          "name": "Attack",
+          "stat": 0,
+          "xp": 13034431
+        },
+        {
+          "level": 99,
+          "name": "Strength",
+          "stat": 2,
+          "xp": 13034431
+        },
+        {
+          "level": 99,
+          "name": "Defence",
+          "stat": 1,
+          "xp": 13034431
+        },
+        {
+          "level": 99,
+          "name": "Constitution",
+          "stat": 3,
+          "xp": 13034431
+        },
+        {
+          "level": 99,
+          "name": "Prayer",
+          "stat": 5,
+          "xp": 13034431
+        },
+        {
+          "level": 99,
+          "name": "Ranged",
+          "stat": 4,
+          "xp": 13034431
+        },
+        {
+          "level": 99,
+          "name": "Agility",
+          "stat": 16,
+          "xp": 13034431
+        }
+      ],
+      "worn": "empty; actual Wield/Wear required after authentication"
+    },
+    "initialLocation": {
+      "level": 0,
+      "packed": 46732502,
+      "x": 2852,
+      "z": 5334
+    },
+    "prayerPolicy": {
+      "campDrain": "unchanged",
+      "depleted": "No live refill/fixture restore; incoming fight can proceed with genuinely empty Prayer until actual altar"
+    },
+    "prayers": [
+      {
+        "action": 15,
+        "activationBit": 16747,
+        "button": 13,
+        "damageBonusPercent": 0,
+        "drainFinePerTick": 15,
+        "group": "protect-melee",
+        "level": 43,
+        "levelBonus": 0,
+        "name": "Protect from Melee",
+        "reductionPercent": 50
+      },
+      {
+        "action": 11,
+        "activationBit": 16740,
+        "button": 1,
+        "damageBonusPercent": 6,
+        "drainFinePerTick": 10,
+        "group": "melee-damage",
+        "level": 31,
+        "levelBonus": 0,
+        "name": "Ultimate Strength",
+        "reductionPercent": 0
+      },
+      {
+        "action": 12,
+        "activationBit": 16741,
+        "button": 2,
+        "damageBonusPercent": 0,
+        "drainFinePerTick": 10,
+        "group": "melee-accuracy",
+        "level": 34,
+        "levelBonus": 6,
+        "name": "Incredible Reflexes",
+        "reductionPercent": 0
+      }
+    ],
+    "route": {
+      "camp": [
+        "gwd_bandos_enter"
+      ],
+      "campReturn": [
+        "gwd_bandos_return"
+      ]
+    },
+    "toolbar": {
+      "backpackDestination": 2,
+      "combatDestination": 6,
+      "prayerDestination": 4,
+      "retaliationVarp": 462,
+      "settings": {
+        "layout": {
+          "category": 31,
+          "definition": 41667,
+          "selectionPath": [
+            {
+              "category": 31,
+              "index": 5,
+              "parent": 5
+            },
+            {
+              "category": 31,
+              "index": 31,
+              "parent": 5
+            }
+          ],
+          "slot": 1
+        },
+        "slim": {
+          "category": 7,
+          "definition": 41659,
+          "selectionPath": [
+            {
+              "category": 6,
+              "index": 0,
+              "parent": 0
+            },
+            {
+              "category": 7,
+              "index": 7,
+              "parent": 0
+            }
+          ],
+          "slot": 3
+        }
+      }
+    },
+    "transportPolicy": "Ordinary Settings enables Slim headers and preserves original layout before native retaliation OFF; no seeded preferences; explicit Attack unchanged"
+  },
+  "source": {
+    "inputs": {
+      "combat/rules.json": "e22e22e5495041b4c0030e5ae94acfa0f765ba7ab96f57bd13dde9ec8639fce2",
+      "food/foods.json": "24d0155aca0ff14a5fe426bd95f9aff4a34edf743dd8ac5dc10264936a042ae1",
+      "instances/gwd.json": "b1f7c590422f916d1e073ee33ced35ad03df18d82f539a72b0d98d352111eb8c",
+      "slayer/rules.json": "3f026435fe558e7de7ac60833dabd2f7995f6bb66db9baeef1f487d503398eb7"
+    },
+    "seedSha256": "e42feadc74e278fd22ff417a1690351e04866504a3d53bb89a3d5f798c70bf44"
+  }
+}

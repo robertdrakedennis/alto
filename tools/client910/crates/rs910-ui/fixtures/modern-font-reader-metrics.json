@@ -1,0 +1,394 @@
+{
+  "client_md5": "290cb3489d088d145741f1734f53b0fc",
+  "scope": "Original registered active/explicit font reader wrappers, invocation, selection, text projection and full-width reader; final case executes the original font setter and reader twice on one object. Synthetic component/interface identity and virtual class return, lookup and scheduling services supplied. Text class 2 and nontext class 20 only; other text projections unsealed.",
+  "kernels": [
+    {
+      "address": "0x00321c20",
+      "sha256": "0aaf80d0f21bbf8d40317e6a287f6e9647e02516296d2b8744edc9332ab1d493"
+    },
+    {
+      "address": "0x0030ee40",
+      "sha256": "073c901753f2319fff52f83296878cadca8649a79b88adc0bd805b4cfd1d37f9"
+    },
+    {
+      "address": "0x003184c0",
+      "sha256": "e254feb1b7afae4bb720054d16e1a5c8bd129075e63bb0df10a98f13f52c30c5"
+    }
+  ],
+  "cases": [
+    {
+      "name": "font_read_static",
+      "input": {
+        "font": 17,
+        "property": "read_font_metrics",
+        "values": [],
+        "explicit": false,
+        "selector": 0,
+        "runtime_class": 2,
+        "child_id": -1,
+        "transient": false,
+        "present": true,
+        "packed": 65536
+      },
+      "result": {
+        "success": true,
+        "stack": [
+          91,
+          17
+        ],
+        "font": 17,
+        "line_height": 17,
+        "max_lines": 17,
+        "horizontal_align": 17,
+        "vertical_align": 17,
+        "calls": [],
+        "reads_after_writes": []
+      }
+    },
+    {
+      "name": "font_read_full_width",
+      "input": {
+        "font": 1985229328,
+        "property": "read_font_metrics",
+        "values": [],
+        "explicit": false,
+        "selector": 0,
+        "runtime_class": 2,
+        "child_id": -1,
+        "transient": false,
+        "present": true,
+        "packed": 65536
+      },
+      "result": {
+        "success": true,
+        "stack": [
+          91,
+          1985229328
+        ],
+        "font": 1985229328,
+        "line_height": 17,
+        "max_lines": 17,
+        "horizontal_align": 17,
+        "vertical_align": 17,
+        "calls": [],
+        "reads_after_writes": []
+      }
+    },
+    {
+      "name": "font_read_negative",
+      "input": {
+        "font": -123456789,
+        "property": "read_font_metrics",
+        "values": [],
+        "explicit": false,
+        "selector": 0,
+        "runtime_class": 2,
+        "child_id": -1,
+        "transient": false,
+        "present": true,
+        "packed": 65536
+      },
+      "result": {
+        "success": true,
+        "stack": [
+          91,
+          -123456789
+        ],
+        "font": -123456789,
+        "line_height": 17,
+        "max_lines": 17,
+        "horizontal_align": 17,
+        "vertical_align": 17,
+        "calls": [],
+        "reads_after_writes": []
+      }
+    },
+    {
+      "name": "font_read_absent",
+      "input": {
+        "font": -1,
+        "property": "read_font_metrics",
+        "values": [],
+        "explicit": false,
+        "selector": 0,
+        "runtime_class": 2,
+        "child_id": -1,
+        "transient": false,
+        "present": true,
+        "packed": 65536
+      },
+      "result": {
+        "success": true,
+        "stack": [
+          91,
+          -1
+        ],
+        "font": -1,
+        "line_height": 17,
+        "max_lines": 17,
+        "horizontal_align": 17,
+        "vertical_align": 17,
+        "calls": [],
+        "reads_after_writes": []
+      }
+    },
+    {
+      "name": "font_read_secondary",
+      "input": {
+        "selector": 2,
+        "child_id": 7,
+        "property": "read_font_metrics",
+        "values": [],
+        "explicit": false,
+        "runtime_class": 2,
+        "transient": false,
+        "present": true,
+        "font": 17,
+        "packed": 65536
+      },
+      "result": {
+        "success": true,
+        "stack": [
+          91,
+          17
+        ],
+        "font": 17,
+        "line_height": 17,
+        "max_lines": 17,
+        "horizontal_align": 17,
+        "vertical_align": 17,
+        "calls": [],
+        "reads_after_writes": []
+      }
+    },
+    {
+      "name": "font_read_nontext",
+      "input": {
+        "runtime_class": 20,
+        "property": "read_font_metrics",
+        "values": [],
+        "explicit": false,
+        "selector": 0,
+        "child_id": -1,
+        "transient": false,
+        "present": true,
+        "font": 17,
+        "packed": 65536
+      },
+      "result": {
+        "success": true,
+        "stack": [
+          91,
+          -1
+        ],
+        "font": 17,
+        "line_height": 17,
+        "max_lines": 17,
+        "horizontal_align": 17,
+        "vertical_align": 17,
+        "calls": [],
+        "reads_after_writes": []
+      }
+    },
+    {
+      "name": "font_read_missing_active",
+      "input": {
+        "present": false,
+        "property": "read_font_metrics",
+        "values": [],
+        "explicit": false,
+        "selector": 0,
+        "runtime_class": 2,
+        "child_id": -1,
+        "transient": false,
+        "font": 17,
+        "packed": 65536
+      },
+      "result": {
+        "success": true,
+        "stack": [
+          91,
+          -1
+        ],
+        "font": 17,
+        "line_height": 17,
+        "max_lines": 17,
+        "horizontal_align": 17,
+        "vertical_align": 17,
+        "calls": [],
+        "reads_after_writes": []
+      }
+    },
+    {
+      "name": "font_read_explicit",
+      "input": {
+        "explicit": true,
+        "property": "read_font_metrics",
+        "values": [],
+        "selector": 0,
+        "runtime_class": 2,
+        "child_id": -1,
+        "transient": false,
+        "present": true,
+        "font": 17,
+        "packed": 65536
+      },
+      "result": {
+        "success": true,
+        "stack": [
+          91,
+          17
+        ],
+        "font": 17,
+        "line_height": 17,
+        "max_lines": 17,
+        "horizontal_align": 17,
+        "vertical_align": 17,
+        "calls": [
+          [
+            "component",
+            65536
+          ],
+          [
+            "interface",
+            1
+          ]
+        ],
+        "reads_after_writes": []
+      }
+    },
+    {
+      "name": "font_read_missing_explicit",
+      "input": {
+        "explicit": true,
+        "present": false,
+        "property": "read_font_metrics",
+        "values": [],
+        "selector": 0,
+        "runtime_class": 2,
+        "child_id": -1,
+        "transient": false,
+        "font": 17,
+        "packed": 65536
+      },
+      "result": {
+        "success": true,
+        "stack": [
+          91,
+          -1
+        ],
+        "font": 17,
+        "line_height": 17,
+        "max_lines": 17,
+        "horizontal_align": 17,
+        "vertical_align": 17,
+        "calls": [
+          [
+            "component",
+            65536
+          ],
+          [
+            "interface",
+            1
+          ]
+        ],
+        "reads_after_writes": []
+      }
+    },
+    {
+      "name": "font_read_reserved_file",
+      "input": {
+        "explicit": true,
+        "file_id": 65535,
+        "property": "read_font_metrics",
+        "values": [],
+        "selector": 0,
+        "runtime_class": 2,
+        "child_id": -1,
+        "transient": false,
+        "present": true,
+        "font": 17,
+        "packed": 131071
+      },
+      "result": {
+        "success": true,
+        "stack": [
+          91,
+          17
+        ],
+        "font": 17,
+        "line_height": 17,
+        "max_lines": 17,
+        "horizontal_align": 17,
+        "vertical_align": 17,
+        "calls": [
+          [
+            "component",
+            131071
+          ],
+          [
+            "interface",
+            1
+          ]
+        ],
+        "reads_after_writes": []
+      }
+    },
+    {
+      "name": "font_read_after_writes",
+      "input": {
+        "writes": [
+          23,
+          17
+        ],
+        "property": "read_font_metrics",
+        "values": [],
+        "explicit": false,
+        "selector": 0,
+        "runtime_class": 2,
+        "child_id": -1,
+        "transient": false,
+        "present": true,
+        "font": 17,
+        "packed": 65536
+      },
+      "result": {
+        "success": true,
+        "stack": [
+          91,
+          17
+        ],
+        "font": 17,
+        "line_height": 17,
+        "max_lines": 17,
+        "horizontal_align": 17,
+        "vertical_align": 17,
+        "calls": [
+          [
+            "change",
+            15,
+            65536
+          ],
+          [
+            "schedule"
+          ],
+          [
+            "change",
+            15,
+            65536
+          ],
+          [
+            "schedule"
+          ]
+        ],
+        "reads_after_writes": [
+          23,
+          17
+        ]
+      }
+    }
+  ],
+  "target_text_type": 4,
+  "initial_scalars": 17,
+  "text_runtime_class": 2
+}

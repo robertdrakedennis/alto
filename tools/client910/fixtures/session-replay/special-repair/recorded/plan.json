@@ -1,0 +1,897 @@
+{
+  "equipment": [
+    37640,
+    35169,
+    35172,
+    35173,
+    35170,
+    35171
+  ],
+  "equipmentFacts": [
+    {
+      "blocked": [],
+      "equipment": {
+        "active": true,
+        "covers": [
+          3,
+          5
+        ],
+        "kind": "melee-main",
+        "name": "Zaros godsword",
+        "occupancy": [
+          3,
+          5
+        ],
+        "requirements": [
+          {
+            "level": 92,
+            "stat": 0
+          }
+        ],
+        "slot": 3,
+        "tier": 92
+      },
+      "forms": [
+        37640,
+        37642,
+        37643
+      ],
+      "item": 37640,
+      "name": "Zaros godsword",
+      "native": {
+        "accuracy": 2577,
+        "armourFine": 0,
+        "augmentedItem": 37675,
+        "capacity": 60000,
+        "damageFine": 20562,
+        "lifeBonus": 0,
+        "prayerBonus": 0,
+        "repairCost": 4800000,
+        "set": -1,
+        "speed": 6
+      },
+      "qualification": [
+        "Identity, requirements, occupancy and stats from native cache; tier/style/existence from pinned Wiki history"
+      ],
+      "source": {
+        "pin": "2019-12-10",
+        "revid": 30676389,
+        "timestamp": "2019-12-03T23:43:40Z",
+        "title": "Zaros godsword"
+      },
+      "style": "melee",
+      "tier": 92,
+      "type": "weapon"
+    },
+    {
+      "blocked": [],
+      "equipment": {
+        "active": true,
+        "armourStyle": "melee",
+        "covers": [
+          0,
+          8,
+          11
+        ],
+        "kind": "tank",
+        "name": "Teralith Helmet",
+        "occupancy": [
+          0
+        ],
+        "pvpReductionMultiplier": 1,
+        "reductionLevel": 90,
+        "requirements": [
+          {
+            "level": 90,
+            "stat": 1
+          }
+        ],
+        "slot": 0,
+        "tier": 90
+      },
+      "forms": [
+        35169
+      ],
+      "item": 35169,
+      "name": "Teralith Helmet",
+      "native": {
+        "accuracy": 0,
+        "armourFine": 4916,
+        "augmentedItem": -1,
+        "capacity": 100000,
+        "damageFine": 0,
+        "lifeBonus": 320,
+        "prayerBonus": 0,
+        "repairCost": -1,
+        "set": 33050,
+        "speed": 0
+      },
+      "qualification": [
+        "Identity, requirements, occupancy and stats from native cache; tier/style/existence from pinned Wiki history",
+        "The defensive-ability reset has no Legacy trigger; the shield-dependent damage bonus requires a separately qualified shield loadout"
+      ],
+      "source": {
+        "pin": "2019-12-10",
+        "revid": 28422259,
+        "timestamp": "2019-05-19T21:58:05Z",
+        "title": "Teralith helmet"
+      },
+      "style": "melee",
+      "tier": 90,
+      "type": "tank"
+    },
+    {
+      "blocked": [],
+      "equipment": {
+        "active": true,
+        "armourStyle": "melee",
+        "covers": [
+          4,
+          6
+        ],
+        "kind": "tank",
+        "name": "Teralith Cuirass",
+        "occupancy": [
+          4
+        ],
+        "pvpReductionMultiplier": 1,
+        "reductionLevel": 90,
+        "requirements": [
+          {
+            "level": 90,
+            "stat": 1
+          }
+        ],
+        "slot": 4,
+        "tier": 90
+      },
+      "forms": [
+        35172
+      ],
+      "item": 35172,
+      "name": "Teralith Cuirass",
+      "native": {
+        "accuracy": 0,
+        "armourFine": 5653,
+        "augmentedItem": -1,
+        "capacity": 100000,
+        "damageFine": 0,
+        "lifeBonus": 640,
+        "prayerBonus": 0,
+        "repairCost": -1,
+        "set": 33050,
+        "speed": 0
+      },
+      "qualification": [
+        "Identity, requirements, occupancy and stats from native cache; tier/style/existence from pinned Wiki history",
+        "The defensive-ability reset has no Legacy trigger; the shield-dependent damage bonus requires a separately qualified shield loadout"
+      ],
+      "source": {
+        "pin": "2019-12-10",
+        "revid": 28422263,
+        "timestamp": "2019-05-19T21:58:12Z",
+        "title": "Teralith cuirass"
+      },
+      "style": "melee",
+      "tier": 90,
+      "type": "tank"
+    },
+    {
+      "blocked": [],
+      "equipment": {
+        "active": true,
+        "armourStyle": "melee",
+        "covers": [
+          7
+        ],
+        "kind": "tank",
+        "name": "Teralith Leggings",
+        "occupancy": [
+          7
+        ],
+        "pvpReductionMultiplier": 1,
+        "reductionLevel": 90,
+        "requirements": [
+          {
+            "level": 90,
+            "stat": 1
+          }
+        ],
+        "slot": 7,
+        "tier": 90
+      },
+      "forms": [
+        35173
+      ],
+      "item": 35173,
+      "name": "Teralith Leggings",
+      "native": {
+        "accuracy": 0,
+        "armourFine": 5407,
+        "augmentedItem": -1,
+        "capacity": 100000,
+        "damageFine": 0,
+        "lifeBonus": 480,
+        "prayerBonus": 0,
+        "repairCost": -1,
+        "set": 33050,
+        "speed": 0
+      },
+      "qualification": [
+        "Identity, requirements, occupancy and stats from native cache; tier/style/existence from pinned Wiki history",
+        "The defensive-ability reset has no Legacy trigger; the shield-dependent damage bonus requires a separately qualified shield loadout"
+      ],
+      "source": {
+        "pin": "2019-12-10",
+        "revid": 28422264,
+        "timestamp": "2019-05-19T21:58:15Z",
+        "title": "Teralith leggings"
+      },
+      "style": "melee",
+      "tier": 90,
+      "type": "tank"
+    },
+    {
+      "blocked": [],
+      "equipment": {
+        "active": true,
+        "armourStyle": "melee",
+        "covers": [
+          9
+        ],
+        "kind": "tank",
+        "name": "Teralith Gauntlets",
+        "occupancy": [
+          9
+        ],
+        "pvpReductionMultiplier": 1,
+        "reductionLevel": 90,
+        "requirements": [
+          {
+            "level": 90,
+            "stat": 1
+          }
+        ],
+        "slot": 9,
+        "tier": 90
+      },
+      "forms": [
+        35170
+      ],
+      "item": 35170,
+      "name": "Teralith Gauntlets",
+      "native": {
+        "accuracy": 0,
+        "armourFine": 1229,
+        "augmentedItem": -1,
+        "capacity": 100000,
+        "damageFine": 0,
+        "lifeBonus": 0,
+        "prayerBonus": 0,
+        "repairCost": -1,
+        "set": 33050,
+        "speed": 0
+      },
+      "qualification": [
+        "Identity, requirements, occupancy and stats from native cache; tier/style/existence from pinned Wiki history",
+        "The defensive-ability reset has no Legacy trigger; the shield-dependent damage bonus requires a separately qualified shield loadout"
+      ],
+      "source": {
+        "pin": "2019-12-10",
+        "revid": 28422261,
+        "timestamp": "2019-05-19T21:58:07Z",
+        "title": "Teralith gauntlets"
+      },
+      "style": "melee",
+      "tier": 90,
+      "type": "tank"
+    },
+    {
+      "blocked": [],
+      "equipment": {
+        "active": true,
+        "armourStyle": "melee",
+        "covers": [
+          10
+        ],
+        "kind": "tank",
+        "name": "Teralith Boots",
+        "occupancy": [
+          10
+        ],
+        "pvpReductionMultiplier": 1,
+        "reductionLevel": 90,
+        "requirements": [
+          {
+            "level": 90,
+            "stat": 1
+          }
+        ],
+        "slot": 10,
+        "tier": 90
+      },
+      "forms": [
+        35171
+      ],
+      "item": 35171,
+      "name": "Teralith Boots",
+      "native": {
+        "accuracy": 0,
+        "armourFine": 1229,
+        "augmentedItem": -1,
+        "capacity": 100000,
+        "damageFine": 0,
+        "lifeBonus": 0,
+        "prayerBonus": 0,
+        "repairCost": -1,
+        "set": 33050,
+        "speed": 0
+      },
+      "qualification": [
+        "Identity, requirements, occupancy and stats from native cache; tier/style/existence from pinned Wiki history",
+        "The defensive-ability reset has no Legacy trigger; the shield-dependent damage bonus requires a separately qualified shield loadout"
+      ],
+      "source": {
+        "pin": "2019-12-10",
+        "revid": 28422262,
+        "timestamp": "2019-05-19T21:58:10Z",
+        "title": "Teralith boots"
+      },
+      "style": "melee",
+      "tier": 90,
+      "type": "tank"
+    }
+  ],
+  "food": {
+    "item": 385,
+    "maximumHealing": 2000
+  },
+  "format": 1,
+  "gwd": {
+    "counts": [
+      {
+        "backing": 3017,
+        "clientTemporaryAddend": 2763,
+        "displayMaximumAt": 4000,
+        "end": 30,
+        "faction": "armadyl",
+        "start": 19,
+        "varbit": 15163
+      },
+      {
+        "backing": 3018,
+        "clientTemporaryAddend": 2764,
+        "displayMaximumAt": 4000,
+        "end": 11,
+        "faction": "bandos",
+        "start": 0,
+        "varbit": 15165
+      },
+      {
+        "backing": 3017,
+        "clientTemporaryAddend": 2766,
+        "displayMaximumAt": 4000,
+        "end": 18,
+        "faction": "saradomin",
+        "start": 7,
+        "varbit": 15162
+      },
+      {
+        "backing": 3018,
+        "clientTemporaryAddend": 2765,
+        "displayMaximumAt": 4000,
+        "end": 23,
+        "faction": "zamorak",
+        "start": 12,
+        "varbit": 15166
+      }
+    ],
+    "initialCount": 40,
+    "initialSavedVarps": [
+      [
+        3017,
+        20976640
+      ],
+      [
+        3018,
+        163880
+      ]
+    ]
+  },
+  "loadout": {
+    "armour": "tank",
+    "armourTier": 90,
+    "blocked": [],
+    "equipment": [
+      37640,
+      35169,
+      35172,
+      35173,
+      35170,
+      35171
+    ],
+    "hands": "two-handed",
+    "style": "melee",
+    "tier": 92
+  },
+  "prayers": [
+    {
+      "action": 10,
+      "activationBit": 16739,
+      "button": 0,
+      "damageBonusPercent": 0,
+      "drainFinePerTick": 10,
+      "group": "defence",
+      "level": 28,
+      "levelBonus": 6,
+      "name": "Steel Skin",
+      "reductionPercent": 0
+    },
+    {
+      "action": 11,
+      "activationBit": 16740,
+      "button": 1,
+      "damageBonusPercent": 6,
+      "drainFinePerTick": 10,
+      "group": "melee-damage",
+      "level": 31,
+      "levelBonus": 0,
+      "name": "Ultimate Strength",
+      "reductionPercent": 0
+    },
+    {
+      "action": 12,
+      "activationBit": 16741,
+      "button": 2,
+      "damageBonusPercent": 0,
+      "drainFinePerTick": 10,
+      "group": "melee-accuracy",
+      "level": 34,
+      "levelBonus": 6,
+      "name": "Incredible Reflexes",
+      "reductionPercent": 0
+    }
+  ],
+  "repair": {
+    "bob": {
+      "allOperation": 4,
+      "npc": 519,
+      "operation": "Repair-all",
+      "spawn": {
+        "dir": 2,
+        "level": 0,
+        "npc": 519,
+        "source": "wiki-current",
+        "x": 3228,
+        "z": 3203
+      },
+      "talkOperation": 1
+    },
+    "family": {
+      "capacity": 100000,
+      "checkHeld": 3,
+      "coinRepair": {
+        "fullCost": 138000,
+        "output": 4708
+      },
+      "creation": [],
+      "depleted": {
+        "item": 4860,
+        "kind": "identity"
+      },
+      "dischargeHeld": null,
+      "equipment": {
+        "active": true,
+        "armourStyle": "magic",
+        "covers": [
+          0,
+          8
+        ],
+        "kind": "tank",
+        "name": "Ahrim's hood",
+        "occupancy": [
+          0
+        ],
+        "reductionLevel": 70,
+        "requirements": [
+          {
+            "level": 70,
+            "stat": 1
+          }
+        ],
+        "slot": 0,
+        "tier": 70
+      },
+      "freshCharges": 100000,
+      "item": 4708,
+      "qualification": [
+        "Ahrim's hood oldid30649797: degrades and repair_cost agree with all three current native identities",
+        "Barrows equipment oldid30649719: percentage-state mechanism retired in September 2015; current related-item chain bypasses those identities",
+        "Fresh output installs one physical balance; used identity always requires the same saved UUID and charge balance",
+        "Default missing-charge NPC repair price rounds upward as an explicit local policy; qualified armour-stand pricing is captured separately"
+      ],
+      "repair": [],
+      "usedItem": 35551,
+      "wearPerTick": 1
+    },
+    "initialCharges": 50000,
+    "key": "76ea2d9a-8562-4e29-b57b-3e9e5a0dc8ea"
+  },
+  "source": {
+    "blockedResources": [
+      "The server has protection potions but no qualified ordinary stat-boost potion consumer; no synthetic overload boost is seeded",
+      "Native prayer bonuses are decoded and shown by cache UI; the existing standard-prayer drain does not yet consume equipment prayer bonuses",
+      "New bows reuse the ordinary recovery owner; native ammunition-recovery rates are not newly qualified"
+    ],
+    "gearChoice": {
+      "armour": "tank",
+      "armourTier": 90,
+      "hands": "two-handed",
+      "style": "melee",
+      "tier": 92
+    },
+    "qualification": [
+      "Placements preserve existing generated provenance; no dated geometry upgrade",
+      "Special presentation/weapon-damage projection remain explicitly unverified",
+      "No post-login count/position/skill/account/resource/RNG assistance"
+    ]
+  },
+  "special": {
+    "activationOrder": "self-before-Attack",
+    "field": {
+      "basis": "auto",
+      "boost": {
+        "excludedFamilies": [
+          "bleed"
+        ],
+        "overriddenByDefinitions": [
+          14707
+        ],
+        "percent": 25,
+        "style": "melee"
+      },
+      "cancelOnWeaponChange": false,
+      "center": "source",
+      "durationTicks": 34,
+      "kind": "special-field",
+      "maximumRecipients": 1,
+      "presentation": null,
+      "pulses": [
+        {
+          "accuracyPercent": 100,
+          "areaRequired": true,
+          "dueTicks": 3,
+          "family": "damage-over-time",
+          "maximumFinePercent": 500,
+          "minimumFinePercent": 250,
+          "recipients": "primary"
+        },
+        {
+          "accuracyPercent": 100,
+          "areaRequired": true,
+          "dueTicks": 6,
+          "family": "damage-over-time",
+          "maximumFinePercent": 500,
+          "minimumFinePercent": 250,
+          "recipients": "primary"
+        },
+        {
+          "accuracyPercent": 100,
+          "areaRequired": true,
+          "dueTicks": 9,
+          "family": "damage-over-time",
+          "maximumFinePercent": 500,
+          "minimumFinePercent": 250,
+          "recipients": "primary"
+        },
+        {
+          "accuracyPercent": 100,
+          "areaRequired": true,
+          "dueTicks": 12,
+          "family": "damage-over-time",
+          "maximumFinePercent": 500,
+          "minimumFinePercent": 250,
+          "recipients": "primary"
+        },
+        {
+          "accuracyPercent": 100,
+          "areaRequired": true,
+          "dueTicks": 15,
+          "family": "damage-over-time",
+          "maximumFinePercent": 500,
+          "minimumFinePercent": 250,
+          "recipients": "primary"
+        },
+        {
+          "accuracyPercent": 100,
+          "areaRequired": true,
+          "dueTicks": 18,
+          "family": "damage-over-time",
+          "maximumFinePercent": 500,
+          "minimumFinePercent": 250,
+          "recipients": "primary"
+        },
+        {
+          "accuracyPercent": 100,
+          "areaRequired": true,
+          "dueTicks": 21,
+          "family": "damage-over-time",
+          "maximumFinePercent": 500,
+          "minimumFinePercent": 250,
+          "recipients": "primary"
+        },
+        {
+          "accuracyPercent": 100,
+          "areaRequired": true,
+          "dueTicks": 24,
+          "family": "damage-over-time",
+          "maximumFinePercent": 500,
+          "minimumFinePercent": 250,
+          "recipients": "primary"
+        },
+        {
+          "accuracyPercent": 100,
+          "areaRequired": true,
+          "dueTicks": 27,
+          "family": "damage-over-time",
+          "maximumFinePercent": 500,
+          "minimumFinePercent": 250,
+          "recipients": "primary"
+        },
+        {
+          "accuracyPercent": 100,
+          "areaRequired": true,
+          "dueTicks": 30,
+          "family": "damage-over-time",
+          "maximumFinePercent": 500,
+          "minimumFinePercent": 250,
+          "recipients": "primary"
+        },
+        {
+          "accuracyPercent": 100,
+          "areaRequired": true,
+          "dueTicks": 33,
+          "family": "damage-over-time",
+          "maximumFinePercent": 500,
+          "minimumFinePercent": 250,
+          "recipients": "primary"
+        }
+      ],
+      "qualification": [
+        "cast-time ratings and independent cast-time accuracy/damage samples; future ordinary impact mitigation stays live",
+        "cast primary first, then stable initial admitted cohort; no future newly selected or newly entering recipient is invented",
+        "ceil seconds into server ticks; periodic first phase is one interval; fixed source field target may exit/re-enter",
+        "native temporary actor/spot/icon identity unresolved; ordinary hits alone do not establish visible summons or field graphics",
+        "Any-footprint square intersection and ordinary admission/LOS are local geometry policies",
+        "Native tooltip weapon-damage basis outranks dated ability-damage wording; projection to detached ordinary Legacy auto ratings is an unverified local interpretation"
+      ],
+      "radiusTiles": 3
+    },
+    "rule": {
+      "accuracyPercent": 100,
+      "activation": "self",
+      "bounce": null,
+      "chargeFraction": null,
+      "chargeTargets": "cast",
+      "consumesAmmunition": true,
+      "cooldownReadyMessage": null,
+      "cooldownTicks": 100,
+      "costFine": 500,
+      "damage": null,
+      "effects": [
+        {
+          "basis": "auto",
+          "boost": {
+            "excludedFamilies": [
+              "bleed"
+            ],
+            "overriddenByDefinitions": [
+              14707
+            ],
+            "percent": 25,
+            "style": "melee"
+          },
+          "cancelOnWeaponChange": false,
+          "center": "source",
+          "durationTicks": 34,
+          "kind": "special-field",
+          "maximumRecipients": 1,
+          "presentation": null,
+          "pulses": [
+            {
+              "accuracyPercent": 100,
+              "areaRequired": true,
+              "dueTicks": 3,
+              "family": "damage-over-time",
+              "maximumFinePercent": 500,
+              "minimumFinePercent": 250,
+              "recipients": "primary"
+            },
+            {
+              "accuracyPercent": 100,
+              "areaRequired": true,
+              "dueTicks": 6,
+              "family": "damage-over-time",
+              "maximumFinePercent": 500,
+              "minimumFinePercent": 250,
+              "recipients": "primary"
+            },
+            {
+              "accuracyPercent": 100,
+              "areaRequired": true,
+              "dueTicks": 9,
+              "family": "damage-over-time",
+              "maximumFinePercent": 500,
+              "minimumFinePercent": 250,
+              "recipients": "primary"
+            },
+            {
+              "accuracyPercent": 100,
+              "areaRequired": true,
+              "dueTicks": 12,
+              "family": "damage-over-time",
+              "maximumFinePercent": 500,
+              "minimumFinePercent": 250,
+              "recipients": "primary"
+            },
+            {
+              "accuracyPercent": 100,
+              "areaRequired": true,
+              "dueTicks": 15,
+              "family": "damage-over-time",
+              "maximumFinePercent": 500,
+              "minimumFinePercent": 250,
+              "recipients": "primary"
+            },
+            {
+              "accuracyPercent": 100,
+              "areaRequired": true,
+              "dueTicks": 18,
+              "family": "damage-over-time",
+              "maximumFinePercent": 500,
+              "minimumFinePercent": 250,
+              "recipients": "primary"
+            },
+            {
+              "accuracyPercent": 100,
+              "areaRequired": true,
+              "dueTicks": 21,
+              "family": "damage-over-time",
+              "maximumFinePercent": 500,
+              "minimumFinePercent": 250,
+              "recipients": "primary"
+            },
+            {
+              "accuracyPercent": 100,
+              "areaRequired": true,
+              "dueTicks": 24,
+              "family": "damage-over-time",
+              "maximumFinePercent": 500,
+              "minimumFinePercent": 250,
+              "recipients": "primary"
+            },
+            {
+              "accuracyPercent": 100,
+              "areaRequired": true,
+              "dueTicks": 27,
+              "family": "damage-over-time",
+              "maximumFinePercent": 500,
+              "minimumFinePercent": 250,
+              "recipients": "primary"
+            },
+            {
+              "accuracyPercent": 100,
+              "areaRequired": true,
+              "dueTicks": 30,
+              "family": "damage-over-time",
+              "maximumFinePercent": 500,
+              "minimumFinePercent": 250,
+              "recipients": "primary"
+            },
+            {
+              "accuracyPercent": 100,
+              "areaRequired": true,
+              "dueTicks": 33,
+              "family": "damage-over-time",
+              "maximumFinePercent": 500,
+              "minimumFinePercent": 250,
+              "recipients": "primary"
+            }
+          ],
+          "qualification": [
+            "cast-time ratings and independent cast-time accuracy/damage samples; future ordinary impact mitigation stays live",
+            "cast primary first, then stable initial admitted cohort; no future newly selected or newly entering recipient is invented",
+            "ceil seconds into server ticks; periodic first phase is one interval; fixed source field target may exit/re-enter",
+            "native temporary actor/spot/icon identity unresolved; ordinary hits alone do not establish visible summons or field graphics",
+            "Any-footprint square intersection and ordinary admission/LOS are local geometry policies",
+            "Native tooltip weapon-damage basis outranks dated ability-damage wording; projection to detached ordinary Legacy auto ratings is an unverified local interpretation"
+          ],
+          "radiusTiles": 3
+        }
+      ],
+      "expirationMessage": null,
+      "name": "Blackhole",
+      "pairedWeapons": [],
+      "protection": "ordinary",
+      "qualification": [
+        "cast-time ratings and independent cast-time accuracy/damage samples; future ordinary impact mitigation stays live",
+        "cast primary first, then stable initial admitted cohort; no future newly selected or newly entering recipient is invented",
+        "ceil seconds into server ticks; periodic first phase is one interval; fixed source field target may exit/re-enter",
+        "native temporary actor/spot/icon identity unresolved; ordinary hits alone do not establish visible summons or field graphics",
+        "Any-footprint square intersection and ordinary admission/LOS are local geometry policies",
+        "Native tooltip weapon-damage basis outranks dated ability-damage wording; projection to detached ordinary Legacy auto ratings is an unverified local interpretation",
+        "No qualified special asset role; ordinary attack-sequence fallback with no special spot"
+      ],
+      "quests": [],
+      "radiusTiles": 0,
+      "resetCooldownOnDeath": false,
+      "resource": "none",
+      "sequence": null,
+      "target": "primary",
+      "targetSpot": null,
+      "unavailable": null,
+      "userSpot": null,
+      "weapon": 37640
+    },
+    "scope": "Cost, boost lifetime and ordinary queued/landed damage; no captured primary and therefore no scheduled periodic target pulses in this sample"
+  },
+  "target": {
+    "npc": 47,
+    "profile": {
+      "accuracy": 110,
+      "aggressive": false,
+      "anims": null,
+      "armour": 110,
+      "attackLevel": 1,
+      "attackSpeed": 4,
+      "deathTicks": 3,
+      "defenceLevel": 1,
+      "dropTable": "npc:47",
+      "experience": 24.9,
+      "hitpoints": 50,
+      "level": 1,
+      "magicAffinity": 65,
+      "maxHit": 4,
+      "meleeAffinity": 55,
+      "name": "Rat",
+      "npc": 47,
+      "rangedAffinity": 45,
+      "respawnTicks": 60,
+      "source": {
+        "accuracy": "cache",
+        "aggressive": "wiki",
+        "anims": "placeholder",
+        "armour": "cache",
+        "attackLevel": "wiki",
+        "attackSpeed": "cache",
+        "deathTicks": "placeholder",
+        "defenceLevel": "wiki",
+        "experience": "wiki",
+        "hitpoints": "wiki",
+        "level": "cache",
+        "magicAffinity": "wiki",
+        "maxHit": "cache",
+        "meleeAffinity": "wiki",
+        "rangedAffinity": "wiki",
+        "respawnTicks": "other-server-unverified",
+        "weakness": "cache",
+        "weaknessAffinity": "cache"
+      },
+      "weakness": "earth",
+      "weaknessAffinity": 90
+    },
+    "spawn": {
+      "dir": 4,
+      "level": 0,
+      "npc": 47,
+      "source": "wiki-current",
+      "x": 3207,
+      "z": 3203
+    }
+  },
+  "toolbar": {
+    "backpackDestination": 2,
+    "combatDestination": 6,
+    "prayerDestination": 4
+  }
+}

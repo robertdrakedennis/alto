@@ -1,0 +1,142 @@
+# Replay gate: the existing runtime replays and golden traces that every
+# refactor must keep green (tools/refactor/README.md, "Replay gate"). Exact
+# libtest names in the client910 lib (`cargo test --lib`).
+# gate.sh runs them with `--exact` and fails unless every one ran and passed
+# (a renamed, moved-away or newly ignored entry fails the gate; update this
+# list in the same change as the move). They need server/data/pack.
+#
+# Session / scenario replays (recorded server frames through the production
+# owners: outbound bytes, var state, minimap/menu state).
+app::session_replay::recorded_session_replays_through_the_production_owners
+app::session_replay::loc_changes_refresh_the_minimap_loc_queue
+app::scenario_woodcutting::recorded_woodcutting_session_chops_levels_up_fells_and_respawns
+app::scenario_woodcutting::recorded_woodcutting_stump_has_no_chop_down_and_keeps_the_minimap_queue
+app::scenario_skills::recorded_skills_session_mines_copper_swing_by_swing
+app::scenario_skills::recorded_skills_session_cooks_four_shrimps_through_make_x
+app::scenario_production::recorded_production_session_smelts_smiths_fletches_and_mixes
+app::scenario_gathering::recorded_gathering_session_chops_the_willow_twice_and_it_grows_back
+app::scenario_gathering::recorded_gathering_stump_cannot_be_chopped
+app::scenario_entities::recorded_entity_session_reaches_every_presentation_state
+app::scenario_npc_combat::recorded_npc_session_populates_wanders_and_fights
+app::scenario_world::recorded_store_session_talks_buys_and_teleports
+app::scenario_tests::backpack_item_right_click_drop_writes_if_button8
+app::scenario_tests::loc_under_the_mouse_builds_the_menu_and_writes_oploc1
+app::scenario_tests::settings_click_saves_the_recorded_preferences_block_and_rebuilds
+app::scenario_tests::title_login_types_credentials_and_installs_the_lobby_reply
+app::scenario_tests::typed_chat_sends_message_public_with_the_cache_huffman_and_the_send_gate
+app::scenario_tests::world_map_opens_from_the_globe_paints_lumbridge_and_offers_element_ops
+# Retained-UI replays (CS2 hooks, var state, saved preferences).
+ui_goldens::ui_authoring_replay::authored_ui_build_reaches_packet_hooks_pointer_input_and_paint
+ui_goldens::ui_settings_replay::settings_all_tabs_replay
+ui_goldens::ui_settings_replay::settings_normal_navigation_replay
+ui_goldens::ui_settings_replay::graphics_controls_change_saved_preferences_through_cache_hooks
+ui_goldens::ui_settings_replay::game_interface_survives_window_resize_burst
+ui_goldens::ui_settings_replay::settings_controls_conflict_camera_replay
+ui_goldens::ui_settings_replay::settings_controls_modifier_guard_replay
+ui_goldens::ui_settings_replay::settings_controls_rebind_replay
+ui_goldens::ui_settings_replay::settings_controls_reset_camera_replay
+ui_equipment_replay::equipment_session_replay
+ui_goldens::ui_consumable_replay::consumable_drink_replay_updates_dose_and_run_energy
+ui_goldens::ui_consumable_replay::inventory_destroy_empty_siblings_use_shared_toggle
+ui_goldens::ui_consumable_replay::potion_preferences_replay_uses_cache_checkbox
+ui_goldens::ui_run_replay::run_toggle_and_resource_cache_replay
+ui_goldens::player_picking_tests::player_pick_to_follow_wire_replay
+equipment_observer_replay::tests::equipment_observer_replay
+equipment_observer_replay::tests::follow_observer_replay
+equipment_observer_replay::tests::navigation_observer_replay
+player_animation_replay::tests::server_animation_frames_replay_into_player_state
+# DRW1 draw traces and recorded goldens (scene draw decisions, occlusion raster,
+# minimap, particles, scene build).
+scene_goldens::draw_trace::detects_mutated_missing_reordered_and_malformed_sections
+scene_goldens::draw::lumbridge_draw_decisions_match_the_recording
+scene_goldens::draw::underwater_lists_follow_build_draw_lists
+scene_goldens::occlusion_fixtures::tests::raster_rows_match_the_recording
+scene_goldens::minimap::lumbridge_base_marks_match_the_recording
+model_goldens::particle::torch_emitter_trace_matches_the_recording
+model_goldens::particle::slot_ring_eviction_and_pool_reuse_match_the_recording
+scene_golden::lumbridge_scene_build_matches_the_recording
+#
+# Determinism gates (Phase 0 injected clock): identical frame state / cycle
+# digests on a fixed clock (renderer-neutral since lane DROP-SW).
+render_goldens::fixed_clock::fixed_clock_offline_scene_is_deterministic_and_clock_driven
+app::session_replay::two_replays_on_the_injected_clock_have_identical_cycle_digests
+#
+# Renderer inertness (renderer plan A3): the recorded session replayed under
+# every `--renderer` choice gives the same outbound bytes, state, ClientOptions
+# and CS2 hook executions, for the hardware toolkit and a toolkit-0 session.
+app::session_replay::renderer_choice_is_observationally_inert
+#
+# Engine profiler inertness (lane E-A4): the recorded sessions replayed with
+# the profiler recording give the same outbound bytes, state and CS2 hook
+# executions as with it off (one test per session).
+app::session_replay::profiler_is_observationally_inert
+app::session_replay::profiler_is_observationally_inert_in_the_woodcutting_session
+#
+# Phase 5 core/shell split: the recorded sessions through ClientCore +
+# ReplayIo equal the old hand-stepped loopback harness cycle by cycle, and
+# the headless client runs the full phase list (one test per session).
+app::session_replay::client_core_replays_match_the_frozen_loopback_harness
+app::session_replay::client_core_replays_match_the_frozen_loopback_harness_in_the_woodcutting_session
+app::session_replay::client_core_replays_match_the_frozen_loopback_harness_in_the_bank_session
+app::session_replay::client_core_replays_match_the_frozen_loopback_harness_in_the_shop_session
+app::session_replay::client_core_replays_match_the_frozen_loopback_harness_in_the_trade_session
+app::session_replay::headless_client_core_runs_the_recorded_session_phase_by_phase
+#
+# Lane E-A1 redraw cadence: one full redraw per frame with logic cycles,
+# presents otherwise; 1 vs 3 redraws per cycle give identical per-cycle
+# bytes and state (both recorded sessions, one test each).
+app::session_replay::present_rate_is_observationally_inert
+app::session_replay::present_rate_is_observationally_inert_in_the_woodcutting_session
+
+# Instance-session first users: real house and Death's Office client input.
+app::scenario_house::recorded_house_session_enters_the_house_builds_a_parlour_and_a_chair
+app::scenario_death_office::recorded_death_office_rebuild_reclaim_and_bridged_hourglass_exit
+
+# First finished boss on instance sessions: setup, normal fight, kill and loot.
+app::scenario_king_black_dragon::recorded_king_black_dragon_setup_fight_kill_and_loot
+
+# Native action-bar contracts and ordinary ability/status publications.
+app::scenario_abilities::recorded_ability_bar_session_drags_native_book_switches_layouts_and_activates_keys
+app::scenario_abilities::recorded_ability_gameplay_spends_adrenaline_stuns_and_shows_native_buffs
+
+# Authoritative Legacy login variable through ordinary ClientCore and native UI procedures.
+app::scenario_abilities::recorded_legacy_login_mode_is_consumed_by_native_combat_ui_in_the_normal_client
+
+# Legacy ordinary melee/ranged/magic, native training controls and corpse-time XP.
+app::scenario_legacy_combat::recorded_legacy_melee_ranged_magic_training_resources_and_corpse_rewards
+app::scenario_npc_audit::recorded_npc_audit_death_loot_pickup_and_corpse_rewards
+
+# Native Slayer reward, finishing tool and Wilderness pad travel.
+app::scenario_slayer_wilderness::recorded_native_slayer_reward_finisher_and_wilderness_obelisk
+
+# Full-health Mole instance, native food/loot and rebuilt exit/rejoin.
+app::scenario_giant_mole::recorded_giant_mole_full_fight_loot_exit_and_rejoin
+
+# Native Legacy special pointer activation, real combat and scheduled bar refill.
+app::scenario_legacy_specials::recorded_native_legacy_special_bar_toggles_spends_hits_and_refills
+
+# Recorded fixed Legacy HUD, native training/retaliation and item-window selection.
+app::scenario_legacy_interface::recorded_legacy_hud_native_training_retaliation_layout_resources_and_xp
+
+# Native Slayer helmet upgrades, rewards, fused resources and worn travel.
+app::scenario_slayer_equipment::recorded_native_slayer_equipment_upgrades_rewards_fusion_and_travel
+app::scenario_endgame::recorded_endgame_melee_equipment_stats_and_ordinary_impacts
+
+# Full-life ordinary Slayer credit, native Get-task and durable reward purchase.
+app::scenario_slayer_catalog::recorded_slayer_catalog_ordinary_kill_task_and_purchase
+
+
+# Native T90/T92 Dagannoth encounter, actual full life, food, loot and rebuilt exit/rejoin.
+app::scenario_boss_encounters::recorded_dagannoth_kings_native_full_fight_loot_exit_and_rejoin
+
+# Two full Queen lives, native gear switch, actual loot and graceful exit/rejoin.
+app::scenario_boss_encounters::recorded_kalphite_queen_native_two_lives_switch_loot_exit_and_rejoin
+
+# Whole ordinary Corp melee sample; full-health start and naturally observed core.
+app::scenario_corporeal_beast::recorded_corporeal_beast_native_ordinary_melee_sample
+
+# Whole native live-service repair, cold outside counts and timed Legacy melee field.
+app::scenario_special_repair::special_recorded_native_bob_repair_outside_gwd_and_timed_melee_sample
+
+# Ordinary public Chaos: full life, actual loot or null, and retreat.
+app::scenario_chaos_elemental::recorded_chaos_elemental_public_full_life_loot_and_retreat

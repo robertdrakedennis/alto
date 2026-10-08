@@ -1,0 +1,15 @@
+{
+  "laneLaunches": [
+    {
+      "binary": {
+        "path": "/Users/robert/projects/alto-target-legacy-specials-gaps/debug/deps/client910-c15188a94426efa7",
+        "sha256": "8841f788fd04e5a61de5a40a04104a9446c86416e63ade62f4bc56f06d99c218"
+      },
+      "ordinal": 1,
+      "out": "/Users/robert/projects/alto-target-legacy-specials-gaps/proof/s1",
+      "root": "/Users/robert/.codex/worktrees/legacy-specials-gaps/alto",
+      "time": 1791326688.106417
+    }
+  ],
+  "priorCaptureDirectories": []
+}

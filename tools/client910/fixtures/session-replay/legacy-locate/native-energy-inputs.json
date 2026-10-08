@@ -1,0 +1,45 @@
+{
+  "variableName": "adrenaline_fine",
+  "variable": 679,
+  "framing": "revisions/910/protocol/server.tsv",
+  "fieldLayout": "SocketE2E.testkit.ts decodeVar: VARP_LARGE little-endian id and signed big-endian value; VARP_SMALL signed byte then g2_alt2 id",
+  "sourceTraceSha256": "fbc21da06f34caec63133e0b8bac0891b126563a3d78ddfab42162b1b97bbe13",
+  "parsedPackets": 1614,
+  "consumedEveryInputByte": true,
+  "inputFrames": [
+    {
+      "cycle": 1,
+      "value": 1000
+    },
+    {
+      "cycle": 1404,
+      "value": 1000
+    },
+    {
+      "cycle": 1404,
+      "value": 500
+    },
+    {
+      "cycle": 2482,
+      "value": 600
+    },
+    {
+      "cycle": 3982,
+      "value": 700
+    }
+  ],
+  "expectedNativeValuesFromReady": [
+    1000,
+    500,
+    600,
+    700
+  ],
+  "independentServerValues": [
+    1000,
+    500,
+    600,
+    700,
+    800
+  ],
+  "readyCycle": 1000
+}

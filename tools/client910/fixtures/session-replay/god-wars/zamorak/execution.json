@@ -1,0 +1,14 @@
+{
+  "executionMode": "headless_gwd_faction_route",
+  "faction": "zamorak",
+  "monotonicClock": "scoped-v1",
+  "recordingBackend": "authenticated_headless",
+  "rendered": false,
+  "roleDefinitions": [
+    6203,
+    6208,
+    6204,
+    6206
+  ],
+  "status": "ordinary_headless_four_role_route_pass_requires_native_proof"
+}

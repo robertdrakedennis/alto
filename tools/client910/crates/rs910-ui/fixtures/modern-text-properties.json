@@ -1,0 +1,568 @@
+{
+  "client_md5": "290cb3489d088d145741f1734f53b0fc",
+  "scope": "Original registered active/explicit wrappers, functor invocation, selection, text projection, fallback projection and scalar setters. Synthetic component/interface identity and virtual class return; component/interface provider, delayed-entry and scheduling services supplied. Other text classes and full pixels remain unsealed.",
+  "kernels": [
+    {
+      "address": "0x00321810",
+      "sha256": "82935f4e944a20fb560f53a9fcfc8ecd1b11012af63ada89504fe6eeac8cb622"
+    },
+    {
+      "address": "0x003217c0",
+      "sha256": "8181f23c36609aeafa256152ddd0b1693582da40a7246d15b0cd52ae6a10d6c8"
+    },
+    {
+      "address": "0x00321750",
+      "sha256": "9a4ee13e8ad83318d74d1adb96a34b23beaa4806c3d48f3ca716e24ae0944b96"
+    },
+    {
+      "address": "0x00c2cb20",
+      "sha256": "4ae813ce802bc31c38eef7d55e10db870a0c60398240b948b2c39d3f944ccec1"
+    },
+    {
+      "address": "0x003319d0",
+      "sha256": "6f257523717b337387bec78667d9c51f9a594997ef2cb959c735a9572e44a2f4"
+    },
+    {
+      "address": "0x0030eeb0",
+      "sha256": "8aae7f26046727cf11fc1ced9c1b9bde0670f3bc00b40d7cbb464d6a8cd5611e"
+    },
+    {
+      "address": "0x00318530",
+      "sha256": "59ecf63a112fa4dd3e72f4e98c368ea023f10979ba286e05ea5009b963533b6d"
+    },
+    {
+      "address": "0x0030edd0",
+      "sha256": "612e15ac2a89cf4297e3651b43262089bb3b0d22744f2949f75a0cf1078c3946"
+    },
+    {
+      "address": "0x00318450",
+      "sha256": "e928b148efc683dd741ed31ce1731a0b50f37addc8c3ebb19e3b1ee3a1a33a82"
+    },
+    {
+      "address": "0x0030ec10",
+      "sha256": "03d11320979fad73dda4fc0424e2296bde6d18e7665c0dd6badbd4b2c3e03557"
+    },
+    {
+      "address": "0x00318290",
+      "sha256": "b193e76e688be8e355a83599bfd8f8a1fa9b86cbdc627dfe63cad767bc6dbe13"
+    },
+    {
+      "address": "0x00c2bcc0",
+      "sha256": "a4db81ae73966d1f4a142904f7dd272a6139438e6a6fb2af24a17d8786e2ccfe"
+    },
+    {
+      "address": "0x00c2bc10",
+      "sha256": "5840d4610de8910d23309fc06e22341c30a0ed07198a3099090d7c8640a8a347"
+    },
+    {
+      "address": "0x00275170",
+      "sha256": "217885fbced39f04873479a0af4d1cdc4251b82acc244f2f8ca3f45f5afdf724"
+    },
+    {
+      "address": "0x00275190",
+      "sha256": "11f3bdab1e1627c45fb29b9fdfe1947bdcccbfc3133814437c0ac411d918f084"
+    }
+  ],
+  "cases": [
+    {
+      "name": "font_static",
+      "input": {
+        "property": "font",
+        "values": [
+          23
+        ],
+        "explicit": false,
+        "selector": 0,
+        "runtime_class": 2,
+        "child_id": -1,
+        "transient": false,
+        "present": true,
+        "font": 17,
+        "file_id": 0,
+        "packed": 65536
+      },
+      "result": {
+        "success": true,
+        "stack": [
+          91
+        ],
+        "font": 23,
+        "line_height": 17,
+        "max_lines": 17,
+        "horizontal_align": 17,
+        "vertical_align": 17,
+        "calls": [
+          [
+            "change",
+            15,
+            65536
+          ],
+          [
+            "schedule"
+          ]
+        ]
+      }
+    },
+    {
+      "name": "font_repeated",
+      "input": {
+        "property": "font",
+        "values": [
+          17
+        ],
+        "explicit": false,
+        "selector": 0,
+        "runtime_class": 2,
+        "child_id": -1,
+        "transient": false,
+        "present": true,
+        "font": 17,
+        "file_id": 0,
+        "packed": 65536
+      },
+      "result": {
+        "success": true,
+        "stack": [
+          91
+        ],
+        "font": 17,
+        "line_height": 17,
+        "max_lines": 17,
+        "horizontal_align": 17,
+        "vertical_align": 17,
+        "calls": [
+          [
+            "change",
+            15,
+            65536
+          ],
+          [
+            "schedule"
+          ]
+        ]
+      }
+    },
+    {
+      "name": "font_runtime_secondary",
+      "input": {
+        "property": "font",
+        "values": [
+          23
+        ],
+        "selector": 2,
+        "child_id": 7,
+        "explicit": false,
+        "runtime_class": 2,
+        "transient": false,
+        "present": true,
+        "font": 17,
+        "file_id": 0,
+        "packed": 65536
+      },
+      "result": {
+        "success": true,
+        "stack": [
+          91
+        ],
+        "font": 23,
+        "line_height": 17,
+        "max_lines": 17,
+        "horizontal_align": 17,
+        "vertical_align": 17,
+        "calls": []
+      }
+    },
+    {
+      "name": "font_transient",
+      "input": {
+        "property": "font",
+        "values": [
+          23
+        ],
+        "transient": true,
+        "explicit": false,
+        "selector": 0,
+        "runtime_class": 2,
+        "child_id": -1,
+        "present": true,
+        "font": 17,
+        "file_id": 0,
+        "packed": 65536
+      },
+      "result": {
+        "success": true,
+        "stack": [
+          91
+        ],
+        "font": 23,
+        "line_height": 17,
+        "max_lines": 17,
+        "horizontal_align": 17,
+        "vertical_align": 17,
+        "calls": []
+      }
+    },
+    {
+      "name": "font_nontext",
+      "input": {
+        "property": "font",
+        "values": [
+          23
+        ],
+        "runtime_class": 20,
+        "explicit": false,
+        "selector": 0,
+        "child_id": -1,
+        "transient": false,
+        "present": true,
+        "font": 17,
+        "file_id": 0,
+        "packed": 65536
+      },
+      "result": {
+        "success": true,
+        "stack": [
+          91
+        ],
+        "font": 17,
+        "line_height": 17,
+        "max_lines": 17,
+        "horizontal_align": 17,
+        "vertical_align": 17,
+        "calls": []
+      }
+    },
+    {
+      "name": "font_missing_active",
+      "input": {
+        "property": "font",
+        "values": [
+          23
+        ],
+        "present": false,
+        "explicit": false,
+        "selector": 0,
+        "runtime_class": 2,
+        "child_id": -1,
+        "transient": false,
+        "font": 17,
+        "file_id": 0,
+        "packed": 65536
+      },
+      "result": {
+        "success": true,
+        "stack": [
+          91
+        ],
+        "font": 17,
+        "line_height": 17,
+        "max_lines": 17,
+        "horizontal_align": 17,
+        "vertical_align": 17,
+        "calls": []
+      }
+    },
+    {
+      "name": "font_explicit",
+      "input": {
+        "property": "font",
+        "values": [
+          -1
+        ],
+        "explicit": true,
+        "selector": 0,
+        "runtime_class": 2,
+        "child_id": -1,
+        "transient": false,
+        "present": true,
+        "font": 17,
+        "file_id": 0,
+        "packed": 65536
+      },
+      "result": {
+        "success": true,
+        "stack": [
+          91
+        ],
+        "font": -1,
+        "line_height": 17,
+        "max_lines": 17,
+        "horizontal_align": 17,
+        "vertical_align": 17,
+        "calls": [
+          [
+            "component",
+            65536
+          ],
+          [
+            "interface",
+            1
+          ],
+          [
+            "change",
+            15,
+            65536
+          ],
+          [
+            "schedule"
+          ]
+        ]
+      }
+    },
+    {
+      "name": "font_missing_explicit",
+      "input": {
+        "property": "font",
+        "values": [
+          23
+        ],
+        "present": false,
+        "explicit": true,
+        "selector": 0,
+        "runtime_class": 2,
+        "child_id": -1,
+        "transient": false,
+        "font": 17,
+        "file_id": 0,
+        "packed": 65536
+      },
+      "result": {
+        "success": true,
+        "stack": [
+          91
+        ],
+        "font": 17,
+        "line_height": 17,
+        "max_lines": 17,
+        "horizontal_align": 17,
+        "vertical_align": 17,
+        "calls": [
+          [
+            "component",
+            65536
+          ],
+          [
+            "interface",
+            1
+          ]
+        ]
+      }
+    },
+    {
+      "name": "font_reserved_file",
+      "input": {
+        "property": "font",
+        "values": [
+          23
+        ],
+        "file_id": 65535,
+        "explicit": false,
+        "selector": 0,
+        "runtime_class": 2,
+        "child_id": -1,
+        "transient": false,
+        "present": true,
+        "font": 17,
+        "packed": 131071
+      },
+      "result": {
+        "success": true,
+        "stack": [
+          91
+        ],
+        "font": 23,
+        "line_height": 17,
+        "max_lines": 17,
+        "horizontal_align": 17,
+        "vertical_align": 17,
+        "calls": [
+          [
+            "change",
+            15,
+            4294967295
+          ],
+          [
+            "schedule"
+          ]
+        ]
+      }
+    },
+    {
+      "name": "alignment_low_bytes",
+      "input": {
+        "property": "alignment",
+        "values": [
+          -1,
+          257,
+          258
+        ],
+        "selector": 2,
+        "explicit": false,
+        "runtime_class": 2,
+        "child_id": -1,
+        "transient": false,
+        "present": true,
+        "font": 17,
+        "file_id": 0,
+        "packed": 65536
+      },
+      "result": {
+        "success": true,
+        "stack": [
+          91
+        ],
+        "font": 17,
+        "line_height": 2,
+        "max_lines": 17,
+        "horizontal_align": 255,
+        "vertical_align": 1,
+        "calls": []
+      }
+    },
+    {
+      "name": "alignment_explicit",
+      "input": {
+        "property": "alignment",
+        "values": [
+          2,
+          1,
+          16
+        ],
+        "explicit": true,
+        "selector": 0,
+        "runtime_class": 2,
+        "child_id": -1,
+        "transient": false,
+        "present": true,
+        "font": 17,
+        "file_id": 0,
+        "packed": 65536
+      },
+      "result": {
+        "success": true,
+        "stack": [
+          91
+        ],
+        "font": 17,
+        "line_height": 16,
+        "max_lines": 17,
+        "horizontal_align": 2,
+        "vertical_align": 1,
+        "calls": [
+          [
+            "component",
+            65536
+          ],
+          [
+            "interface",
+            1
+          ]
+        ]
+      }
+    },
+    {
+      "name": "alignment_nontext",
+      "input": {
+        "property": "alignment",
+        "values": [
+          2,
+          1,
+          16
+        ],
+        "runtime_class": 20,
+        "explicit": false,
+        "selector": 0,
+        "child_id": -1,
+        "transient": false,
+        "present": true,
+        "font": 17,
+        "file_id": 0,
+        "packed": 65536
+      },
+      "result": {
+        "success": true,
+        "stack": [
+          91
+        ],
+        "font": 17,
+        "line_height": 17,
+        "max_lines": 17,
+        "horizontal_align": 17,
+        "vertical_align": 17,
+        "calls": []
+      }
+    },
+    {
+      "name": "max_lines_low_byte",
+      "input": {
+        "property": "max_lines",
+        "values": [
+          65535
+        ],
+        "explicit": false,
+        "selector": 0,
+        "runtime_class": 2,
+        "child_id": -1,
+        "transient": false,
+        "present": true,
+        "font": 17,
+        "file_id": 0,
+        "packed": 65536
+      },
+      "result": {
+        "success": true,
+        "stack": [
+          91
+        ],
+        "font": 17,
+        "line_height": 17,
+        "max_lines": 255,
+        "horizontal_align": 17,
+        "vertical_align": 17,
+        "calls": []
+      }
+    },
+    {
+      "name": "max_lines_explicit",
+      "input": {
+        "property": "max_lines",
+        "values": [
+          258
+        ],
+        "explicit": true,
+        "selector": 0,
+        "runtime_class": 2,
+        "child_id": -1,
+        "transient": false,
+        "present": true,
+        "font": 17,
+        "file_id": 0,
+        "packed": 65536
+      },
+      "result": {
+        "success": true,
+        "stack": [
+          91
+        ],
+        "font": 17,
+        "line_height": 17,
+        "max_lines": 2,
+        "horizontal_align": 17,
+        "vertical_align": 17,
+        "calls": [
+          [
+            "component",
+            65536
+          ],
+          [
+            "interface",
+            1
+          ]
+        ]
+      }
+    }
+  ],
+  "target_text_type": 4,
+  "initial_scalars": 17,
+  "text_runtime_class": 2
+}

@@ -1,0 +1,107 @@
+{
+  "allOriginalChildrenWaited": true,
+  "captureOwnerPassed": true,
+  "launchesSpent": 1,
+  "owningReplayPassed": false,
+  "publications": {
+    "npc_info": 373,
+    "orderedPublicationLineageSha256": "1d0dccc4456a6d5eb76297d397693a9d4a1176fbed9b35ff8346d352596015cb",
+    "player_info": 373
+  },
+  "rendered": false,
+  "sourceBindings": {
+    "binary": {
+      "path": "/Users/robert/projects/alto-target-kalphite-queen/debug/deps/client910-c15188a94426efa7",
+      "sha256": "646dd7ca16dfad7bb21d7df69fde08fdbd81aaa613de3d7588d80817614c30b7"
+    },
+    "binaryManifest": {
+      "path": "/Users/robert/projects/alto-target-kalphite-queen/proof/build1/binary-manifest.json",
+      "sha256": "85ee96707be53518bf98d81179a0788ecf8fdddb545c7b53c92f4227908d6bae"
+    },
+    "bossDriver": {
+      "path": "/Users/robert/.codex/worktrees/legacy-kalphite-queen/alto/tools/client910/fixtures/session-replay/boss-encounters/driver.py",
+      "sha256": "ddcf83c88bc4b1c758c9a67dd06d2959afc6ef9e4bd5647e4e38c8b1098cc0ab"
+    },
+    "broker": {
+      "path": "/Users/robert/.codex/worktrees/legacy-kalphite-queen/alto/tools/client910/fixtures/session-replay/god-wars/peer_broker.mjs",
+      "sha256": "e4d403a67745dbce9a0ec84522a98194d2fb48e6926d5c6851276212639a1568"
+    },
+    "control": {
+      "path": "/Users/robert/.codex/worktrees/legacy-kalphite-queen/alto/tools/client910/scripts/control.py",
+      "sha256": "f48413b91db69b5c02d29257c70e66ec55e59f18f3d2f4d53a3ece80d63a045f"
+    },
+    "deviceEnvelope": {
+      "path": "/Users/robert/.codex/worktrees/legacy-kalphite-queen/alto/tools/client910/fixtures/session-replay/legacy-interface/session.rtr",
+      "sha256": "acb90c0c962ddec1b8c413af0c2df13e63b922ef71d4bfc1aa9412ff22c5a341"
+    },
+    "driver": {
+      "path": "/Users/robert/.codex/worktrees/legacy-kalphite-queen/alto/tools/client910/fixtures/session-replay/kalphite-queen/driver.py",
+      "sha256": "b93d39e26bc7e5a66c99cb5ddf0f3b31e495ce27b6214cb67ef8ff76f32406b1"
+    },
+    "foodObserver": {
+      "path": "/Users/robert/.codex/worktrees/legacy-kalphite-queen/alto/tools/client910/fixtures/session-replay/barrows/food-receipts.mjs",
+      "sha256": "bca606f0a95668a6e3936f561d3e6e56770ed1a0b65e64dd98896cfd6c999c9b"
+    },
+    "foodRules": {
+      "path": "/Users/robert/.codex/worktrees/legacy-kalphite-queen/alto/server/data/generated/food/foods.json",
+      "sha256": "24d0155aca0ff14a5fe426bd95f9aff4a34edf743dd8ac5dc10264936a042ae1"
+    },
+    "freeze": {
+      "path": "/Users/robert/.codex/worktrees/legacy-kalphite-queen/alto/tools/client910/fixtures/session-replay/kalphite-queen/freeze.py",
+      "sha256": "148395bf007203a085b607f31b5ced5ecb9c9da03935687f61d1ec3a51af914e"
+    },
+    "loginCrypto": {
+      "path": "/Users/robert/.codex/worktrees/legacy-kalphite-queen/alto/server/src/lostcity/network/LoginCrypto.ts",
+      "sha256": "df172e5c3f2ecfffca689a7133c2f004b0c28ddb93fd175326a7638804288bb9"
+    },
+    "loginProvider": {
+      "path": "/Users/robert/.codex/worktrees/legacy-kalphite-queen/alto/tools/client910/fixtures/session-replay/god-wars/login_provider.mjs",
+      "sha256": "b8a96e1548141f19ca3b036d96c961018897c5f825ceda6c08dea3d9bf865b50"
+    },
+    "loginTestkit": {
+      "path": "/Users/robert/.codex/worktrees/legacy-kalphite-queen/alto/server/src/lostcity/network/SkillsE2E.testkit.ts",
+      "sha256": "39a797dec044580f1ee6f2282b9a339c10df072632f0abd3d0562c7704f68800"
+    },
+    "owner": {
+      "path": "/Users/robert/.codex/worktrees/legacy-kalphite-queen/alto/tools/client910/fixtures/session-replay/barrows/record.py",
+      "sha256": "4a6afc86520acbb2e71867cfc9d99726bea9d167804817ed1b9f43e275121350"
+    },
+    "peerAdapter": {
+      "path": "/Users/robert/.codex/worktrees/legacy-kalphite-queen/alto/tools/client910/fixtures/session-replay/god-wars/peer_adapter.mjs",
+      "sha256": "e37f3587ed18e6d53b89f1829d1bd29bc911aeb40e8fa0cefbfabd89c7f33d48"
+    },
+    "publications": {
+      "path": "/Users/robert/.codex/worktrees/legacy-kalphite-queen/alto/tools/client910/fixtures/session-replay/god-wars/publications.py",
+      "sha256": "768dd55f68d315aa4cbae4dbb3c0e4a13dea2cc541a4d891948a148b347bf889"
+    },
+    "record": {
+      "path": "/Users/robert/.codex/worktrees/legacy-kalphite-queen/alto/tools/client910/fixtures/session-replay/boss-encounters/record.py",
+      "sha256": "084333e75ce0d9545d57769577e945971e5870e3c2780e8cd3d83d9a63b2539c"
+    },
+    "seed": {
+      "path": "/Users/robert/.codex/worktrees/legacy-kalphite-queen/alto/tools/client910/fixtures/session-replay/kalphite-queen/seed.mjs",
+      "sha256": "4d84f4011c6841e18ec74afff75c8870b44429593f87bf0608cf9f30b9e4a7f2"
+    },
+    "server": {
+      "path": "/Users/robert/.codex/worktrees/legacy-kalphite-queen/alto/tools/client910/fixtures/session-replay/kalphite-queen/server.mjs",
+      "sha256": "d3fe0388f6a742f8f9ed81c9867f9c4b184926396ed26c9babd26f25be33b684"
+    },
+    "sharedDriver": {
+      "path": "/Users/robert/.codex/worktrees/legacy-kalphite-queen/alto/tools/client910/fixtures/session-replay/barrows/driver.py",
+      "sha256": "d5377a3458af568e527852b9b87d3c529c09a168428dcd363a36c19e85d38508"
+    },
+    "socketTestkit": {
+      "path": "/Users/robert/.codex/worktrees/legacy-kalphite-queen/alto/server/src/lostcity/network/SocketE2E.testkit.ts",
+      "sha256": "55ffd1e43c77fd3c99fba6850688c4e6e5c10c9c88228b1e6d977a8effc4e4f8"
+    },
+    "wiredGuard": {
+      "path": "/Users/robert/.codex/worktrees/legacy-kalphite-queen/alto/ref/independence/wired-guard.sh",
+      "sha256": "aabce1f59b80a316f882d4afb8c30a1fd677740533c3f773a80ebcdef0ad37fd"
+    }
+  },
+  "sourceEpochSha256": "6c2a7e79813bf8737417158f93c4c47df51df3e63272aef832dcb75a2e472258",
+  "status": "completed_ordinary_queen_full_route",
+  "wholeBytes": 1548154,
+  "wholeRecords": 28866,
+  "wholeSha256": "932e8be52da54a66896237f23e917bc9027ed486536d86ef3abb1c1c7c8ada42"
+}

@@ -1,0 +1,1967 @@
+{
+  "backend": {
+    "account": "alice",
+    "closed": true,
+    "coreClosed": true,
+    "errors": [],
+    "kind": "peer-finally-closed",
+    "rendered": false,
+    "socketPromises": {
+      "completed": 6518,
+      "pending": []
+    }
+  },
+  "binaryManifestOriginalSha256": "d59244d8e2fe6bed0a0d7c2561ad3f5e7b85423c9b24720dfb4be6260da3d49f",
+  "processes": [
+    {
+      "arguments": [
+        "/Users/robert/Library/Application Support/Herd/config/nvm/versions/node/v24.18.0/bin/node",
+        "/Users/robert/.codex/worktrees/legacy-corporeal-beast/alto/tools/client910/fixtures/session-replay/corporeal-beast/seed.mjs",
+        "/Users/robert/projects/alto-target-corporeal-beast/proof/s2/runtime/w",
+        "corporeal-beast"
+      ],
+      "deadlineSeconds": 45,
+      "exit": 0,
+      "name": "seed",
+      "pid": 83168,
+      "query": false,
+      "startIdentity": "Tue Oct  6 22:05:21 2026",
+      "startedMonotonic": 0.288856666,
+      "startedWallTime": 1791338721.680502,
+      "waited": true
+    },
+    {
+      "arguments": [
+        "ps",
+        "-axo",
+        "pid=,ppid=,lstart="
+      ],
+      "deadlineSeconds": 10,
+      "exit": 0,
+      "name": "process-identities",
+      "pid": 83169,
+      "query": true,
+      "startIdentity": "Tue Oct  6 22:05:21 2026",
+      "startedMonotonic": 0.29254675,
+      "startedWallTime": 1791338721.6841931,
+      "waited": true
+    },
+    {
+      "arguments": [
+        "ps",
+        "-axo",
+        "pid=,ppid=,lstart="
+      ],
+      "deadlineSeconds": 10,
+      "exit": 0,
+      "name": "process-identities",
+      "pid": 83170,
+      "query": true,
+      "startIdentity": "Tue Oct  6 22:05:21 2026",
+      "startedMonotonic": 0.318475166,
+      "startedWallTime": 1791338721.71013,
+      "waited": true
+    },
+    {
+      "arguments": [
+        "ps",
+        "-axo",
+        "pid=,ppid=,lstart="
+      ],
+      "deadlineSeconds": 10,
+      "exit": 0,
+      "name": "process-identities",
+      "pid": 83172,
+      "query": true,
+      "startIdentity": "Tue Oct  6 22:05:21 2026",
+      "startedMonotonic": 0.551463375,
+      "startedWallTime": 1791338721.943116,
+      "waited": true
+    },
+    {
+      "arguments": [
+        "ps",
+        "-axo",
+        "pid=,ppid=,lstart="
+      ],
+      "deadlineSeconds": 10,
+      "exit": 0,
+      "name": "process-identities",
+      "pid": 83173,
+      "query": true,
+      "startIdentity": "Tue Oct  6 22:05:22 2026",
+      "startedMonotonic": 0.782872,
+      "startedWallTime": 1791338722.174527,
+      "waited": true
+    },
+    {
+      "arguments": [
+        "ps",
+        "-axo",
+        "pid=,ppid=,lstart="
+      ],
+      "deadlineSeconds": 10,
+      "exit": 0,
+      "name": "process-identities",
+      "pid": 83175,
+      "query": true,
+      "startIdentity": "Tue Oct  6 22:05:22 2026",
+      "startedMonotonic": 1.016078208,
+      "startedWallTime": 1791338722.407739,
+      "waited": true
+    },
+    {
+      "arguments": [
+        "ps",
+        "-axo",
+        "pid=,ppid=,lstart="
+      ],
+      "deadlineSeconds": 10,
+      "exit": 0,
+      "name": "process-identities",
+      "pid": 83176,
+      "query": true,
+      "startIdentity": "Tue Oct  6 22:05:22 2026",
+      "startedMonotonic": 1.249568916,
+      "startedWallTime": 1791338722.641228,
+      "waited": true
+    },
+    {
+      "arguments": [
+        "ps",
+        "-axo",
+        "pid=,ppid=,lstart="
+      ],
+      "deadlineSeconds": 10,
+      "exit": 0,
+      "name": "process-identities",
+      "pid": 83178,
+      "query": true,
+      "startIdentity": "Tue Oct  6 22:05:22 2026",
+      "startedMonotonic": 1.4828965,
+      "startedWallTime": 1791338722.874557,
+      "waited": true
+    },
+    {
+      "arguments": [
+        "ps",
+        "-axo",
+        "pid=,ppid=,lstart="
+      ],
+      "deadlineSeconds": 10,
+      "exit": 0,
+      "name": "process-identities",
+      "pid": 83179,
+      "query": true,
+      "startIdentity": "Tue Oct  6 22:05:23 2026",
+      "startedMonotonic": 1.716270083,
+      "startedWallTime": 1791338723.107924,
+      "waited": true
+    },
+    {
+      "arguments": [
+        "ps",
+        "-axo",
+        "pid=,ppid=,lstart="
+      ],
+      "deadlineSeconds": 10,
+      "exit": 0,
+      "name": "process-identities",
+      "pid": 83181,
+      "query": true,
+      "startIdentity": "Tue Oct  6 22:05:23 2026",
+      "startedMonotonic": 1.949395083,
+      "startedWallTime": 1791338723.3410602,
+      "waited": true
+    },
+    {
+      "arguments": [
+        "ps",
+        "-axo",
+        "pid=,ppid=,lstart="
+      ],
+      "deadlineSeconds": 10,
+      "exit": 0,
+      "name": "process-identities",
+      "pid": 83182,
+      "query": true,
+      "startIdentity": "Tue Oct  6 22:05:23 2026",
+      "startedMonotonic": 2.174490041,
+      "startedWallTime": 1791338723.566148,
+      "waited": true
+    },
+    {
+      "arguments": [
+        "ps",
+        "-axo",
+        "pid=,ppid=,lstart="
+      ],
+      "deadlineSeconds": 10,
+      "exit": 0,
+      "name": "process-identities",
+      "pid": 83183,
+      "query": true,
+      "startIdentity": "Tue Oct  6 22:05:23 2026",
+      "startedMonotonic": 2.409814958,
+      "startedWallTime": 1791338723.801482,
+      "waited": true
+    },
+    {
+      "arguments": [
+        "ps",
+        "-axo",
+        "pid=,ppid=,lstart="
+      ],
+      "deadlineSeconds": 10,
+      "exit": 0,
+      "name": "process-identities",
+      "pid": 83185,
+      "query": true,
+      "startIdentity": "Tue Oct  6 22:05:24 2026",
+      "startedMonotonic": 2.636872916,
+      "startedWallTime": 1791338724.028533,
+      "waited": true
+    },
+    {
+      "arguments": [
+        "ps",
+        "-axo",
+        "pid=,ppid=,lstart="
+      ],
+      "deadlineSeconds": 10,
+      "exit": 0,
+      "name": "process-identities",
+      "pid": 83186,
+      "query": true,
+      "startIdentity": "Tue Oct  6 22:05:24 2026",
+      "startedMonotonic": 2.862054333,
+      "startedWallTime": 1791338724.253719,
+      "waited": true
+    },
+    {
+      "arguments": [
+        "ps",
+        "-axo",
+        "pid=,ppid=,lstart="
+      ],
+      "deadlineSeconds": 10,
+      "exit": 0,
+      "name": "process-identities",
+      "pid": 83188,
+      "query": true,
+      "startIdentity": "Tue Oct  6 22:05:24 2026",
+      "startedMonotonic": 3.095489625,
+      "startedWallTime": 1791338724.4871511,
+      "waited": true
+    },
+    {
+      "arguments": [
+        "ps",
+        "-axo",
+        "pid=,ppid=,lstart="
+      ],
+      "deadlineSeconds": 10,
+      "exit": 0,
+      "name": "process-identities",
+      "pid": 83189,
+      "query": true,
+      "startIdentity": "Tue Oct  6 22:05:24 2026",
+      "startedMonotonic": 3.328699291,
+      "startedWallTime": 1791338724.7203672,
+      "waited": true
+    },
+    {
+      "arguments": [
+        "ps",
+        "-axo",
+        "pid=,ppid=,lstart="
+      ],
+      "deadlineSeconds": 10,
+      "exit": 0,
+      "name": "process-identities",
+      "pid": 83191,
+      "query": true,
+      "startIdentity": "Tue Oct  6 22:05:24 2026",
+      "startedMonotonic": 3.561081583,
+      "startedWallTime": 1791338724.952746,
+      "waited": true
+    },
+    {
+      "arguments": [
+        "ps",
+        "-axo",
+        "pid=,ppid=,lstart="
+      ],
+      "deadlineSeconds": 10,
+      "exit": 0,
+      "name": "process-identities",
+      "pid": 83192,
+      "query": true,
+      "startIdentity": "Tue Oct  6 22:05:25 2026",
+      "startedMonotonic": 3.787099708,
+      "startedWallTime": 1791338725.178771,
+      "waited": true
+    },
+    {
+      "arguments": [
+        "ps",
+        "-axo",
+        "pid=,ppid=,lstart="
+      ],
+      "deadlineSeconds": 10,
+      "exit": 0,
+      "name": "process-identities",
+      "pid": 83194,
+      "query": true,
+      "startIdentity": "Tue Oct  6 22:05:25 2026",
+      "startedMonotonic": 4.023505416,
+      "startedWallTime": 1791338725.415183,
+      "waited": true
+    },
+    {
+      "arguments": [
+        "ps",
+        "-axo",
+        "pid=,ppid=,lstart="
+      ],
+      "deadlineSeconds": 10,
+      "exit": 0,
+      "name": "process-identities",
+      "pid": 83195,
+      "query": true,
+      "startIdentity": "Tue Oct  6 22:05:25 2026",
+      "startedMonotonic": 4.254265708,
+      "startedWallTime": 1791338725.64594,
+      "waited": true
+    },
+    {
+      "arguments": [
+        "/Users/robert/Library/Application Support/Herd/config/nvm/versions/node/v24.18.0/bin/node",
+        "src/lostcity/lobby.ts"
+      ],
+      "deadlineSeconds": 600,
+      "exit": -15,
+      "name": "lobby",
+      "pid": 83197,
+      "query": false,
+      "signalAuthority": "currently live unreaped owned Popen",
+      "startIdentity": "Tue Oct  6 22:05:25 2026",
+      "startedMonotonic": 4.492667458,
+      "startedWallTime": 1791338725.884341,
+      "termGraceSeconds": 30,
+      "termSentMonotonic": 165.221362,
+      "termination": "exact owned PID SIGTERM",
+      "waited": true
+    },
+    {
+      "arguments": [
+        "ps",
+        "-axo",
+        "pid=,ppid=,lstart="
+      ],
+      "deadlineSeconds": 10,
+      "exit": 0,
+      "name": "process-identities",
+      "pid": 83199,
+      "query": true,
+      "startIdentity": "Tue Oct  6 22:05:25 2026",
+      "startedMonotonic": 4.4966035,
+      "startedWallTime": 1791338725.888279,
+      "waited": true
+    },
+    {
+      "arguments": [
+        "/Users/robert/Library/Application Support/Herd/config/nvm/versions/node/v24.18.0/bin/node",
+        "/Users/robert/.codex/worktrees/legacy-corporeal-beast/alto/tools/client910/fixtures/session-replay/corporeal-beast/server.mjs",
+        "/Users/robert/projects/alto-target-corporeal-beast/proof/s2/runtime/w"
+      ],
+      "deadlineSeconds": 600,
+      "exit": -15,
+      "name": "world",
+      "pid": 83201,
+      "query": false,
+      "signalAuthority": "currently live unreaped owned Popen",
+      "startIdentity": "Tue Oct  6 22:05:25 2026",
+      "startedMonotonic": 4.522480416,
+      "startedWallTime": 1791338725.914149,
+      "termGraceSeconds": 30,
+      "termSentMonotonic": 165.097039083,
+      "termination": "exact owned PID SIGTERM",
+      "waited": true
+    },
+    {
+      "arguments": [
+        "ps",
+        "-axo",
+        "pid=,ppid=,lstart="
+      ],
+      "deadlineSeconds": 10,
+      "exit": 0,
+      "name": "process-identities",
+      "pid": 83202,
+      "query": true,
+      "startIdentity": "Tue Oct  6 22:05:25 2026",
+      "startedMonotonic": 4.526212166,
+      "startedWallTime": 1791338725.917886,
+      "waited": true
+    },
+    {
+      "arguments": [
+        "ps",
+        "-axo",
+        "pid=,ppid=,lstart="
+      ],
+      "deadlineSeconds": 10,
+      "exit": 0,
+      "name": "process-identities",
+      "pid": 83203,
+      "query": true,
+      "startIdentity": "Tue Oct  6 22:05:25 2026",
+      "startedMonotonic": 4.552692625,
+      "startedWallTime": 1791338725.94437,
+      "waited": true
+    },
+    {
+      "arguments": [
+        "ps",
+        "-axo",
+        "pid=,ppid=,lstart="
+      ],
+      "deadlineSeconds": 10,
+      "exit": 0,
+      "name": "process-identities",
+      "pid": 83208,
+      "query": true,
+      "startIdentity": "Tue Oct  6 22:05:28 2026",
+      "startedMonotonic": 6.655804125,
+      "startedWallTime": 1791338728.0474849,
+      "waited": true
+    },
+    {
+      "arguments": [
+        "ps",
+        "-axo",
+        "pid=,ppid=,lstart="
+      ],
+      "deadlineSeconds": 10,
+      "exit": 0,
+      "name": "process-identities",
+      "pid": 83215,
+      "query": true,
+      "startIdentity": "Tue Oct  6 22:05:30 2026",
+      "startedMonotonic": 8.764880916,
+      "startedWallTime": 1791338730.1565802,
+      "waited": true
+    },
+    {
+      "arguments": [
+        "ps",
+        "-axo",
+        "pid=,ppid=,lstart="
+      ],
+      "deadlineSeconds": 10,
+      "exit": 0,
+      "name": "process-identities",
+      "pid": 83220,
+      "query": true,
+      "startIdentity": "Tue Oct  6 22:05:32 2026",
+      "startedMonotonic": 10.85936925,
+      "startedWallTime": 1791338732.251078,
+      "waited": true
+    },
+    {
+      "arguments": [
+        "ps",
+        "-axo",
+        "pid=,ppid=,lstart="
+      ],
+      "deadlineSeconds": 10,
+      "exit": 0,
+      "name": "process-identities",
+      "pid": 83225,
+      "query": true,
+      "startIdentity": "Tue Oct  6 22:05:34 2026",
+      "startedMonotonic": 12.970996958,
+      "startedWallTime": 1791338734.362716,
+      "waited": true
+    },
+    {
+      "arguments": [
+        "ps",
+        "-axo",
+        "pid=,ppid=,lstart="
+      ],
+      "deadlineSeconds": 10,
+      "exit": 0,
+      "name": "process-identities",
+      "pid": 83230,
+      "query": true,
+      "startIdentity": "Tue Oct  6 22:05:36 2026",
+      "startedMonotonic": 15.073606666,
+      "startedWallTime": 1791338736.465327,
+      "waited": true
+    },
+    {
+      "arguments": [
+        "ps",
+        "-axo",
+        "pid=,ppid=,lstart="
+      ],
+      "deadlineSeconds": 10,
+      "exit": 0,
+      "name": "process-identities",
+      "pid": 83237,
+      "query": true,
+      "startIdentity": "Tue Oct  6 22:05:38 2026",
+      "startedMonotonic": 17.173172791,
+      "startedWallTime": 1791338738.564914,
+      "waited": true
+    },
+    {
+      "arguments": [
+        "/Users/robert/Library/Application Support/Herd/config/nvm/versions/node/v24.18.0/bin/node",
+        "/Users/robert/.codex/worktrees/legacy-corporeal-beast/alto/tools/client910/fixtures/session-replay/god-wars/peer_adapter.mjs",
+        "/Users/robert/projects/alto-target-corporeal-beast/proof/s2/one-peer.json"
+      ],
+      "deadlineSeconds": 600,
+      "exit": 0,
+      "name": "broker",
+      "pid": 83239,
+      "query": false,
+      "signalAuthority": "currently live unreaped owned Popen",
+      "startIdentity": "Tue Oct  6 22:05:39 2026",
+      "startedMonotonic": 17.812392958,
+      "startedWallTime": 1791338739.204128,
+      "termGraceSeconds": 50,
+      "termSentMonotonic": 164.778147375,
+      "termination": "exact owned PID SIGTERM",
+      "waited": true
+    },
+    {
+      "arguments": [
+        "ps",
+        "-axo",
+        "pid=,ppid=,lstart="
+      ],
+      "deadlineSeconds": 10,
+      "exit": 0,
+      "name": "process-identities",
+      "pid": 83240,
+      "query": true,
+      "startIdentity": "Tue Oct  6 22:05:39 2026",
+      "startedMonotonic": 17.817063583,
+      "startedWallTime": 1791338739.208798,
+      "waited": true
+    },
+    {
+      "arguments": [
+        "ps",
+        "-axo",
+        "pid=,ppid=,lstart="
+      ],
+      "deadlineSeconds": 10,
+      "exit": 0,
+      "name": "process-identities",
+      "pid": 83241,
+      "query": true,
+      "startIdentity": "Tue Oct  6 22:05:39 2026",
+      "startedMonotonic": 17.843541458,
+      "startedWallTime": 1791338739.235277,
+      "waited": true
+    },
+    {
+      "arguments": [
+        "bash",
+        "ref/independence/wired-guard.sh"
+      ],
+      "deadlineSeconds": 45,
+      "exit": 0,
+      "name": "wired-guard",
+      "pid": 83244,
+      "query": false,
+      "startIdentity": "Tue Oct  6 22:05:39 2026",
+      "startedMonotonic": 18.502051291,
+      "startedWallTime": 1791338739.893791,
+      "waited": true
+    },
+    {
+      "arguments": [
+        "ps",
+        "-axo",
+        "pid=,ppid=,lstart="
+      ],
+      "deadlineSeconds": 10,
+      "exit": 0,
+      "name": "process-identities",
+      "pid": 83246,
+      "query": true,
+      "startIdentity": "Tue Oct  6 22:05:39 2026",
+      "startedMonotonic": 18.509007583,
+      "startedWallTime": 1791338739.900754,
+      "waited": true
+    },
+    {
+      "arguments": [
+        "ps",
+        "-axo",
+        "pid=,ppid=,lstart="
+      ],
+      "deadlineSeconds": 10,
+      "exit": 0,
+      "name": "process-identities",
+      "pid": 83249,
+      "query": true,
+      "startIdentity": "Tue Oct  6 22:05:39 2026",
+      "startedMonotonic": 18.539966666,
+      "startedWallTime": 1791338739.9317062,
+      "waited": true
+    },
+    {
+      "arguments": [
+        "/Users/robert/projects/alto-target-corporeal-beast/debug/deps/client910-c15188a94426efa7",
+        "--ignored",
+        "--exact",
+        "app::session_replay::observed_session::authenticated_observed_session",
+        "--nocapture",
+        "--test-threads=1"
+      ],
+      "deadlineSeconds": 600,
+      "exit": 0,
+      "name": "core",
+      "pid": 83250,
+      "query": false,
+      "startIdentity": "Tue Oct  6 22:05:40 2026",
+      "startedMonotonic": 18.774538791,
+      "startedWallTime": 1791338740.166282,
+      "waited": true
+    },
+    {
+      "arguments": [
+        "ps",
+        "-axo",
+        "pid=,ppid=,lstart="
+      ],
+      "deadlineSeconds": 10,
+      "exit": 0,
+      "name": "process-identities",
+      "pid": 83251,
+      "query": true,
+      "startIdentity": "Tue Oct  6 22:05:40 2026",
+      "startedMonotonic": 18.778896375,
+      "startedWallTime": 1791338740.1706371,
+      "waited": true
+    },
+    {
+      "arguments": [
+        "ps",
+        "-axo",
+        "pid=,ppid=,lstart="
+      ],
+      "deadlineSeconds": 10,
+      "exit": 0,
+      "name": "process-identities",
+      "pid": 83253,
+      "query": true,
+      "startIdentity": "Tue Oct  6 22:05:40 2026",
+      "startedMonotonic": 18.808172,
+      "startedWallTime": 1791338740.1999202,
+      "waited": true
+    },
+    {
+      "arguments": [
+        "/usr/bin/python3",
+        "/Users/robert/.codex/worktrees/legacy-corporeal-beast/alto/tools/client910/fixtures/session-replay/corporeal-beast/driver.py",
+        "--socket",
+        "/Users/robert/projects/alto-target-corporeal-beast/proof/s2/runtime/c.sock",
+        "--control-module",
+        "/Users/robert/.codex/worktrees/legacy-corporeal-beast/alto/tools/client910/scripts/control.py",
+        "--plan",
+        "/Users/robert/projects/alto-target-corporeal-beast/proof/s2/runtime/w/plan.json",
+        "--food-rules",
+        "/Users/robert/.codex/worktrees/legacy-corporeal-beast/alto/server/data/generated/food/foods.json",
+        "--symbols",
+        "/Users/robert/.codex/worktrees/legacy-corporeal-beast/alto/revisions/910/symbols",
+        "--receipts",
+        "/Users/robert/projects/alto-target-corporeal-beast/proof/s2/runtime/w/combat-receipts.jsonl",
+        "--journal",
+        "/Users/robert/projects/alto-target-corporeal-beast/proof/s2/driver-journal.jsonl"
+      ],
+      "deadlineSeconds": 400,
+      "exit": 0,
+      "name": "driver",
+      "pid": 83270,
+      "query": false,
+      "startIdentity": "Tue Oct  6 22:05:46 2026",
+      "startedMonotonic": 24.639095458,
+      "startedWallTime": 1791338746.030865,
+      "waited": true
+    },
+    {
+      "arguments": [
+        "ps",
+        "-axo",
+        "pid=,ppid=,lstart="
+      ],
+      "deadlineSeconds": 10,
+      "exit": 0,
+      "name": "process-identities",
+      "pid": 83271,
+      "query": true,
+      "startIdentity": "Tue Oct  6 22:05:46 2026",
+      "startedMonotonic": 24.644533583,
+      "startedWallTime": 1791338746.036303,
+      "waited": true
+    },
+    {
+      "arguments": [
+        "ps",
+        "-axo",
+        "pid=,ppid=,lstart="
+      ],
+      "deadlineSeconds": 10,
+      "exit": 0,
+      "name": "process-identities",
+      "pid": 83272,
+      "query": true,
+      "startIdentity": "Tue Oct  6 22:05:46 2026",
+      "startedMonotonic": 24.674786041,
+      "startedWallTime": 1791338746.0665548,
+      "waited": true
+    },
+    {
+      "arguments": [
+        "ps",
+        "-axo",
+        "pid=,ppid=,lstart="
+      ],
+      "deadlineSeconds": 10,
+      "exit": 0,
+      "name": "process-identities",
+      "pid": 83287,
+      "query": true,
+      "startIdentity": "Tue Oct  6 22:05:48 2026",
+      "startedMonotonic": 26.776433125,
+      "startedWallTime": 1791338748.168213,
+      "waited": true
+    },
+    {
+      "arguments": [
+        "ps",
+        "-axo",
+        "pid=,ppid=,lstart="
+      ],
+      "deadlineSeconds": 10,
+      "exit": 0,
+      "name": "process-identities",
+      "pid": 83292,
+      "query": true,
+      "startIdentity": "Tue Oct  6 22:05:50 2026",
+      "startedMonotonic": 28.8733855,
+      "startedWallTime": 1791338750.2651782,
+      "waited": true
+    },
+    {
+      "arguments": [
+        "ps",
+        "-axo",
+        "pid=,ppid=,lstart="
+      ],
+      "deadlineSeconds": 10,
+      "exit": 0,
+      "name": "process-identities",
+      "pid": 83318,
+      "query": true,
+      "startIdentity": "Tue Oct  6 22:05:52 2026",
+      "startedMonotonic": 30.967728416,
+      "startedWallTime": 1791338752.359539,
+      "waited": true
+    },
+    {
+      "arguments": [
+        "ps",
+        "-axo",
+        "pid=,ppid=,lstart="
+      ],
+      "deadlineSeconds": 10,
+      "exit": 0,
+      "name": "process-identities",
+      "pid": 83323,
+      "query": true,
+      "startIdentity": "Tue Oct  6 22:05:54 2026",
+      "startedMonotonic": 33.06154775,
+      "startedWallTime": 1791338754.4533608,
+      "waited": true
+    },
+    {
+      "arguments": [
+        "ps",
+        "-axo",
+        "pid=,ppid=,lstart="
+      ],
+      "deadlineSeconds": 10,
+      "exit": 0,
+      "name": "process-identities",
+      "pid": 83347,
+      "query": true,
+      "startIdentity": "Tue Oct  6 22:05:56 2026",
+      "startedMonotonic": 35.15896525,
+      "startedWallTime": 1791338756.550793,
+      "waited": true
+    },
+    {
+      "arguments": [
+        "ps",
+        "-axo",
+        "pid=,ppid=,lstart="
+      ],
+      "deadlineSeconds": 10,
+      "exit": 0,
+      "name": "process-identities",
+      "pid": 83374,
+      "query": true,
+      "startIdentity": "Tue Oct  6 22:05:58 2026",
+      "startedMonotonic": 37.24743725,
+      "startedWallTime": 1791338758.639273,
+      "waited": true
+    },
+    {
+      "arguments": [
+        "ps",
+        "-axo",
+        "pid=,ppid=,lstart="
+      ],
+      "deadlineSeconds": 10,
+      "exit": 0,
+      "name": "process-identities",
+      "pid": 83389,
+      "query": true,
+      "startIdentity": "Tue Oct  6 22:06:00 2026",
+      "startedMonotonic": 39.34029175,
+      "startedWallTime": 1791338760.7321448,
+      "waited": true
+    },
+    {
+      "arguments": [
+        "ps",
+        "-axo",
+        "pid=,ppid=,lstart="
+      ],
+      "deadlineSeconds": 10,
+      "exit": 0,
+      "name": "process-identities",
+      "pid": 83394,
+      "query": true,
+      "startIdentity": "Tue Oct  6 22:06:02 2026",
+      "startedMonotonic": 41.457921208,
+      "startedWallTime": 1791338762.849779,
+      "waited": true
+    },
+    {
+      "arguments": [
+        "ps",
+        "-axo",
+        "pid=,ppid=,lstart="
+      ],
+      "deadlineSeconds": 10,
+      "exit": 0,
+      "name": "process-identities",
+      "pid": 83399,
+      "query": true,
+      "startIdentity": "Tue Oct  6 22:06:04 2026",
+      "startedMonotonic": 43.549804125,
+      "startedWallTime": 1791338764.9416692,
+      "waited": true
+    },
+    {
+      "arguments": [
+        "ps",
+        "-axo",
+        "pid=,ppid=,lstart="
+      ],
+      "deadlineSeconds": 10,
+      "exit": 0,
+      "name": "process-identities",
+      "pid": 83404,
+      "query": true,
+      "startIdentity": "Tue Oct  6 22:06:07 2026",
+      "startedMonotonic": 45.646815666,
+      "startedWallTime": 1791338767.0386932,
+      "waited": true
+    },
+    {
+      "arguments": [
+        "ps",
+        "-axo",
+        "pid=,ppid=,lstart="
+      ],
+      "deadlineSeconds": 10,
+      "exit": 0,
+      "name": "process-identities",
+      "pid": 83409,
+      "query": true,
+      "startIdentity": "Tue Oct  6 22:06:09 2026",
+      "startedMonotonic": 47.750677833,
+      "startedWallTime": 1791338769.142563,
+      "waited": true
+    },
+    {
+      "arguments": [
+        "ps",
+        "-axo",
+        "pid=,ppid=,lstart="
+      ],
+      "deadlineSeconds": 10,
+      "exit": 0,
+      "name": "process-identities",
+      "pid": 83415,
+      "query": true,
+      "startIdentity": "Tue Oct  6 22:06:11 2026",
+      "startedMonotonic": 49.863341541,
+      "startedWallTime": 1791338771.255239,
+      "waited": true
+    },
+    {
+      "arguments": [
+        "ps",
+        "-axo",
+        "pid=,ppid=,lstart="
+      ],
+      "deadlineSeconds": 10,
+      "exit": 0,
+      "name": "process-identities",
+      "pid": 83420,
+      "query": true,
+      "startIdentity": "Tue Oct  6 22:06:13 2026",
+      "startedMonotonic": 51.974805333,
+      "startedWallTime": 1791338773.366712,
+      "waited": true
+    },
+    {
+      "arguments": [
+        "ps",
+        "-axo",
+        "pid=,ppid=,lstart="
+      ],
+      "deadlineSeconds": 10,
+      "exit": 0,
+      "name": "process-identities",
+      "pid": 83426,
+      "query": true,
+      "startIdentity": "Tue Oct  6 22:06:15 2026",
+      "startedMonotonic": 54.074917,
+      "startedWallTime": 1791338775.466835,
+      "waited": true
+    },
+    {
+      "arguments": [
+        "ps",
+        "-axo",
+        "pid=,ppid=,lstart="
+      ],
+      "deadlineSeconds": 10,
+      "exit": 0,
+      "name": "process-identities",
+      "pid": 83431,
+      "query": true,
+      "startIdentity": "Tue Oct  6 22:06:17 2026",
+      "startedMonotonic": 56.180513125,
+      "startedWallTime": 1791338777.5724428,
+      "waited": true
+    },
+    {
+      "arguments": [
+        "ps",
+        "-axo",
+        "pid=,ppid=,lstart="
+      ],
+      "deadlineSeconds": 10,
+      "exit": 0,
+      "name": "process-identities",
+      "pid": 83457,
+      "query": true,
+      "startIdentity": "Tue Oct  6 22:06:19 2026",
+      "startedMonotonic": 58.271246708,
+      "startedWallTime": 1791338779.663187,
+      "waited": true
+    },
+    {
+      "arguments": [
+        "ps",
+        "-axo",
+        "pid=,ppid=,lstart="
+      ],
+      "deadlineSeconds": 10,
+      "exit": 0,
+      "name": "process-identities",
+      "pid": 83462,
+      "query": true,
+      "startIdentity": "Tue Oct  6 22:06:21 2026",
+      "startedMonotonic": 60.366044,
+      "startedWallTime": 1791338781.757992,
+      "waited": true
+    },
+    {
+      "arguments": [
+        "ps",
+        "-axo",
+        "pid=,ppid=,lstart="
+      ],
+      "deadlineSeconds": 10,
+      "exit": 0,
+      "name": "process-identities",
+      "pid": 83468,
+      "query": true,
+      "startIdentity": "Tue Oct  6 22:06:23 2026",
+      "startedMonotonic": 62.457581166,
+      "startedWallTime": 1791338783.8495429,
+      "waited": true
+    },
+    {
+      "arguments": [
+        "ps",
+        "-axo",
+        "pid=,ppid=,lstart="
+      ],
+      "deadlineSeconds": 10,
+      "exit": 0,
+      "name": "process-identities",
+      "pid": 83473,
+      "query": true,
+      "startIdentity": "Tue Oct  6 22:06:25 2026",
+      "startedMonotonic": 64.550112458,
+      "startedWallTime": 1791338785.9420822,
+      "waited": true
+    },
+    {
+      "arguments": [
+        "ps",
+        "-axo",
+        "pid=,ppid=,lstart="
+      ],
+      "deadlineSeconds": 10,
+      "exit": 0,
+      "name": "process-identities",
+      "pid": 83499,
+      "query": true,
+      "startIdentity": "Tue Oct  6 22:06:28 2026",
+      "startedMonotonic": 66.622249583,
+      "startedWallTime": 1791338788.0142322,
+      "waited": true
+    },
+    {
+      "arguments": [
+        "ps",
+        "-axo",
+        "pid=,ppid=,lstart="
+      ],
+      "deadlineSeconds": 10,
+      "exit": 0,
+      "name": "process-identities",
+      "pid": 83506,
+      "query": true,
+      "startIdentity": "Tue Oct  6 22:06:30 2026",
+      "startedMonotonic": 68.759460166,
+      "startedWallTime": 1791338790.1514509,
+      "waited": true
+    },
+    {
+      "arguments": [
+        "ps",
+        "-axo",
+        "pid=,ppid=,lstart="
+      ],
+      "deadlineSeconds": 10,
+      "exit": 0,
+      "name": "process-identities",
+      "pid": 83511,
+      "query": true,
+      "startIdentity": "Tue Oct  6 22:06:32 2026",
+      "startedMonotonic": 70.876822041,
+      "startedWallTime": 1791338792.268825,
+      "waited": true
+    },
+    {
+      "arguments": [
+        "ps",
+        "-axo",
+        "pid=,ppid=,lstart="
+      ],
+      "deadlineSeconds": 10,
+      "exit": 0,
+      "name": "process-identities",
+      "pid": 83516,
+      "query": true,
+      "startIdentity": "Tue Oct  6 22:06:34 2026",
+      "startedMonotonic": 73.008291166,
+      "startedWallTime": 1791338794.4003031,
+      "waited": true
+    },
+    {
+      "arguments": [
+        "ps",
+        "-axo",
+        "pid=,ppid=,lstart="
+      ],
+      "deadlineSeconds": 10,
+      "exit": 0,
+      "name": "process-identities",
+      "pid": 83522,
+      "query": true,
+      "startIdentity": "Tue Oct  6 22:06:36 2026",
+      "startedMonotonic": 75.11852575,
+      "startedWallTime": 1791338796.510551,
+      "waited": true
+    },
+    {
+      "arguments": [
+        "ps",
+        "-axo",
+        "pid=,ppid=,lstart="
+      ],
+      "deadlineSeconds": 10,
+      "exit": 0,
+      "name": "process-identities",
+      "pid": 83527,
+      "query": true,
+      "startIdentity": "Tue Oct  6 22:06:38 2026",
+      "startedMonotonic": 77.202758125,
+      "startedWallTime": 1791338798.594791,
+      "waited": true
+    },
+    {
+      "arguments": [
+        "ps",
+        "-axo",
+        "pid=,ppid=,lstart="
+      ],
+      "deadlineSeconds": 10,
+      "exit": 0,
+      "name": "process-identities",
+      "pid": 83532,
+      "query": true,
+      "startIdentity": "Tue Oct  6 22:06:40 2026",
+      "startedMonotonic": 79.307627125,
+      "startedWallTime": 1791338800.6996732,
+      "waited": true
+    },
+    {
+      "arguments": [
+        "ps",
+        "-axo",
+        "pid=,ppid=,lstart="
+      ],
+      "deadlineSeconds": 10,
+      "exit": 0,
+      "name": "process-identities",
+      "pid": 83560,
+      "query": true,
+      "startIdentity": "Tue Oct  6 22:06:42 2026",
+      "startedMonotonic": 81.392602625,
+      "startedWallTime": 1791338802.784657,
+      "waited": true
+    },
+    {
+      "arguments": [
+        "ps",
+        "-axo",
+        "pid=,ppid=,lstart="
+      ],
+      "deadlineSeconds": 10,
+      "exit": 0,
+      "name": "process-identities",
+      "pid": 83565,
+      "query": true,
+      "startIdentity": "Tue Oct  6 22:06:44 2026",
+      "startedMonotonic": 83.482361791,
+      "startedWallTime": 1791338804.8744278,
+      "waited": true
+    },
+    {
+      "arguments": [
+        "ps",
+        "-axo",
+        "pid=,ppid=,lstart="
+      ],
+      "deadlineSeconds": 10,
+      "exit": 0,
+      "name": "process-identities",
+      "pid": 83573,
+      "query": true,
+      "startIdentity": "Tue Oct  6 22:06:46 2026",
+      "startedMonotonic": 85.579428875,
+      "startedWallTime": 1791338806.9715042,
+      "waited": true
+    },
+    {
+      "arguments": [
+        "ps",
+        "-axo",
+        "pid=,ppid=,lstart="
+      ],
+      "deadlineSeconds": 10,
+      "exit": 0,
+      "name": "process-identities",
+      "pid": 83586,
+      "query": true,
+      "startIdentity": "Tue Oct  6 22:06:49 2026",
+      "startedMonotonic": 87.683195583,
+      "startedWallTime": 1791338809.075283,
+      "waited": true
+    },
+    {
+      "arguments": [
+        "ps",
+        "-axo",
+        "pid=,ppid=,lstart="
+      ],
+      "deadlineSeconds": 10,
+      "exit": 0,
+      "name": "process-identities",
+      "pid": 83613,
+      "query": true,
+      "startIdentity": "Tue Oct  6 22:06:51 2026",
+      "startedMonotonic": 89.804843291,
+      "startedWallTime": 1791338811.19694,
+      "waited": true
+    },
+    {
+      "arguments": [
+        "ps",
+        "-axo",
+        "pid=,ppid=,lstart="
+      ],
+      "deadlineSeconds": 10,
+      "exit": 0,
+      "name": "process-identities",
+      "pid": 83618,
+      "query": true,
+      "startIdentity": "Tue Oct  6 22:06:53 2026",
+      "startedMonotonic": 91.894408583,
+      "startedWallTime": 1791338813.286518,
+      "waited": true
+    },
+    {
+      "arguments": [
+        "ps",
+        "-axo",
+        "pid=,ppid=,lstart="
+      ],
+      "deadlineSeconds": 10,
+      "exit": 0,
+      "name": "process-identities",
+      "pid": 83624,
+      "query": true,
+      "startIdentity": "Tue Oct  6 22:06:55 2026",
+      "startedMonotonic": 94.00154775,
+      "startedWallTime": 1791338815.393665,
+      "waited": true
+    },
+    {
+      "arguments": [
+        "ps",
+        "-axo",
+        "pid=,ppid=,lstart="
+      ],
+      "deadlineSeconds": 10,
+      "exit": 0,
+      "name": "process-identities",
+      "pid": 83631,
+      "query": true,
+      "startIdentity": "Tue Oct  6 22:06:57 2026",
+      "startedMonotonic": 96.104747083,
+      "startedWallTime": 1791338817.496877,
+      "waited": true
+    },
+    {
+      "arguments": [
+        "ps",
+        "-axo",
+        "pid=,ppid=,lstart="
+      ],
+      "deadlineSeconds": 10,
+      "exit": 0,
+      "name": "process-identities",
+      "pid": 83659,
+      "query": true,
+      "startIdentity": "Tue Oct  6 22:06:59 2026",
+      "startedMonotonic": 98.21549575,
+      "startedWallTime": 1791338819.6076338,
+      "waited": true
+    },
+    {
+      "arguments": [
+        "ps",
+        "-axo",
+        "pid=,ppid=,lstart="
+      ],
+      "deadlineSeconds": 10,
+      "exit": 0,
+      "name": "process-identities",
+      "pid": 83676,
+      "query": true,
+      "startIdentity": "Tue Oct  6 22:07:01 2026",
+      "startedMonotonic": 100.310704833,
+      "startedWallTime": 1791338821.702854,
+      "waited": true
+    },
+    {
+      "arguments": [
+        "ps",
+        "-axo",
+        "pid=,ppid=,lstart="
+      ],
+      "deadlineSeconds": 10,
+      "exit": 0,
+      "name": "process-identities",
+      "pid": 83681,
+      "query": true,
+      "startIdentity": "Tue Oct  6 22:07:03 2026",
+      "startedMonotonic": 102.412071583,
+      "startedWallTime": 1791338823.804231,
+      "waited": true
+    },
+    {
+      "arguments": [
+        "ps",
+        "-axo",
+        "pid=,ppid=,lstart="
+      ],
+      "deadlineSeconds": 10,
+      "exit": 0,
+      "name": "process-identities",
+      "pid": 83709,
+      "query": true,
+      "startIdentity": "Tue Oct  6 22:07:05 2026",
+      "startedMonotonic": 104.515854375,
+      "startedWallTime": 1791338825.908031,
+      "waited": true
+    },
+    {
+      "arguments": [
+        "ps",
+        "-axo",
+        "pid=,ppid=,lstart="
+      ],
+      "deadlineSeconds": 10,
+      "exit": 0,
+      "name": "process-identities",
+      "pid": 83733,
+      "query": true,
+      "startIdentity": "Tue Oct  6 22:07:08 2026",
+      "startedMonotonic": 106.637887541,
+      "startedWallTime": 1791338828.030068,
+      "waited": true
+    },
+    {
+      "arguments": [
+        "ps",
+        "-axo",
+        "pid=,ppid=,lstart="
+      ],
+      "deadlineSeconds": 10,
+      "exit": 0,
+      "name": "process-identities",
+      "pid": 83740,
+      "query": true,
+      "startIdentity": "Tue Oct  6 22:07:10 2026",
+      "startedMonotonic": 108.733257041,
+      "startedWallTime": 1791338830.125448,
+      "waited": true
+    },
+    {
+      "arguments": [
+        "ps",
+        "-axo",
+        "pid=,ppid=,lstart="
+      ],
+      "deadlineSeconds": 10,
+      "exit": 0,
+      "name": "process-identities",
+      "pid": 83747,
+      "query": true,
+      "startIdentity": "Tue Oct  6 22:07:12 2026",
+      "startedMonotonic": 110.842816791,
+      "startedWallTime": 1791338832.235019,
+      "waited": true
+    },
+    {
+      "arguments": [
+        "ps",
+        "-axo",
+        "pid=,ppid=,lstart="
+      ],
+      "deadlineSeconds": 10,
+      "exit": 0,
+      "name": "process-identities",
+      "pid": 83752,
+      "query": true,
+      "startIdentity": "Tue Oct  6 22:07:14 2026",
+      "startedMonotonic": 112.937503666,
+      "startedWallTime": 1791338834.329718,
+      "waited": true
+    },
+    {
+      "arguments": [
+        "ps",
+        "-axo",
+        "pid=,ppid=,lstart="
+      ],
+      "deadlineSeconds": 10,
+      "exit": 0,
+      "name": "process-identities",
+      "pid": 83757,
+      "query": true,
+      "startIdentity": "Tue Oct  6 22:07:16 2026",
+      "startedMonotonic": 115.045514083,
+      "startedWallTime": 1791338836.437737,
+      "waited": true
+    },
+    {
+      "arguments": [
+        "ps",
+        "-axo",
+        "pid=,ppid=,lstart="
+      ],
+      "deadlineSeconds": 10,
+      "exit": 0,
+      "name": "process-identities",
+      "pid": 83762,
+      "query": true,
+      "startIdentity": "Tue Oct  6 22:07:18 2026",
+      "startedMonotonic": 117.156937333,
+      "startedWallTime": 1791338838.5491781,
+      "waited": true
+    },
+    {
+      "arguments": [
+        "ps",
+        "-axo",
+        "pid=,ppid=,lstart="
+      ],
+      "deadlineSeconds": 10,
+      "exit": 0,
+      "name": "process-identities",
+      "pid": 83767,
+      "query": true,
+      "startIdentity": "Tue Oct  6 22:07:20 2026",
+      "startedMonotonic": 119.275383208,
+      "startedWallTime": 1791338840.667628,
+      "waited": true
+    },
+    {
+      "arguments": [
+        "ps",
+        "-axo",
+        "pid=,ppid=,lstart="
+      ],
+      "deadlineSeconds": 10,
+      "exit": 0,
+      "name": "process-identities",
+      "pid": 83772,
+      "query": true,
+      "startIdentity": "Tue Oct  6 22:07:22 2026",
+      "startedMonotonic": 121.38851475,
+      "startedWallTime": 1791338842.7807722,
+      "waited": true
+    },
+    {
+      "arguments": [
+        "ps",
+        "-axo",
+        "pid=,ppid=,lstart="
+      ],
+      "deadlineSeconds": 10,
+      "exit": 0,
+      "name": "process-identities",
+      "pid": 83777,
+      "query": true,
+      "startIdentity": "Tue Oct  6 22:07:24 2026",
+      "startedMonotonic": 123.506835625,
+      "startedWallTime": 1791338844.899101,
+      "waited": true
+    },
+    {
+      "arguments": [
+        "ps",
+        "-axo",
+        "pid=,ppid=,lstart="
+      ],
+      "deadlineSeconds": 10,
+      "exit": 0,
+      "name": "process-identities",
+      "pid": 83802,
+      "query": true,
+      "startIdentity": "Tue Oct  6 22:07:26 2026",
+      "startedMonotonic": 125.603346958,
+      "startedWallTime": 1791338846.995625,
+      "waited": true
+    },
+    {
+      "arguments": [
+        "ps",
+        "-axo",
+        "pid=,ppid=,lstart="
+      ],
+      "deadlineSeconds": 10,
+      "exit": 0,
+      "name": "process-identities",
+      "pid": 83808,
+      "query": true,
+      "startIdentity": "Tue Oct  6 22:07:29 2026",
+      "startedMonotonic": 127.695386916,
+      "startedWallTime": 1791338849.0876758,
+      "waited": true
+    },
+    {
+      "arguments": [
+        "ps",
+        "-axo",
+        "pid=,ppid=,lstart="
+      ],
+      "deadlineSeconds": 10,
+      "exit": 0,
+      "name": "process-identities",
+      "pid": 83815,
+      "query": true,
+      "startIdentity": "Tue Oct  6 22:07:31 2026",
+      "startedMonotonic": 129.795424916,
+      "startedWallTime": 1791338851.187724,
+      "waited": true
+    },
+    {
+      "arguments": [
+        "ps",
+        "-axo",
+        "pid=,ppid=,lstart="
+      ],
+      "deadlineSeconds": 10,
+      "exit": 0,
+      "name": "process-identities",
+      "pid": 83820,
+      "query": true,
+      "startIdentity": "Tue Oct  6 22:07:33 2026",
+      "startedMonotonic": 131.900122,
+      "startedWallTime": 1791338853.2924302,
+      "waited": true
+    },
+    {
+      "arguments": [
+        "ps",
+        "-axo",
+        "pid=,ppid=,lstart="
+      ],
+      "deadlineSeconds": 10,
+      "exit": 0,
+      "name": "process-identities",
+      "pid": 83825,
+      "query": true,
+      "startIdentity": "Tue Oct  6 22:07:35 2026",
+      "startedMonotonic": 133.979191208,
+      "startedWallTime": 1791338855.3715148,
+      "waited": true
+    },
+    {
+      "arguments": [
+        "ps",
+        "-axo",
+        "pid=,ppid=,lstart="
+      ],
+      "deadlineSeconds": 10,
+      "exit": 0,
+      "name": "process-identities",
+      "pid": 83832,
+      "query": true,
+      "startIdentity": "Tue Oct  6 22:07:37 2026",
+      "startedMonotonic": 136.086091208,
+      "startedWallTime": 1791338857.47842,
+      "waited": true
+    },
+    {
+      "arguments": [
+        "ps",
+        "-axo",
+        "pid=,ppid=,lstart="
+      ],
+      "deadlineSeconds": 10,
+      "exit": 0,
+      "name": "process-identities",
+      "pid": 83837,
+      "query": true,
+      "startIdentity": "Tue Oct  6 22:07:39 2026",
+      "startedMonotonic": 138.166143291,
+      "startedWallTime": 1791338859.558484,
+      "waited": true
+    },
+    {
+      "arguments": [
+        "ps",
+        "-axo",
+        "pid=,ppid=,lstart="
+      ],
+      "deadlineSeconds": 10,
+      "exit": 0,
+      "name": "process-identities",
+      "pid": 83842,
+      "query": true,
+      "startIdentity": "Tue Oct  6 22:07:41 2026",
+      "startedMonotonic": 140.258525458,
+      "startedWallTime": 1791338861.6508749,
+      "waited": true
+    },
+    {
+      "arguments": [
+        "ps",
+        "-axo",
+        "pid=,ppid=,lstart="
+      ],
+      "deadlineSeconds": 10,
+      "exit": 0,
+      "name": "process-identities",
+      "pid": 83848,
+      "query": true,
+      "startIdentity": "Tue Oct  6 22:07:43 2026",
+      "startedMonotonic": 142.367085208,
+      "startedWallTime": 1791338863.759451,
+      "waited": true
+    },
+    {
+      "arguments": [
+        "ps",
+        "-axo",
+        "pid=,ppid=,lstart="
+      ],
+      "deadlineSeconds": 10,
+      "exit": 0,
+      "name": "process-identities",
+      "pid": 83853,
+      "query": true,
+      "startIdentity": "Tue Oct  6 22:07:45 2026",
+      "startedMonotonic": 144.491017583,
+      "startedWallTime": 1791338865.883391,
+      "waited": true
+    },
+    {
+      "arguments": [
+        "ps",
+        "-axo",
+        "pid=,ppid=,lstart="
+      ],
+      "deadlineSeconds": 10,
+      "exit": 0,
+      "name": "process-identities",
+      "pid": 83870,
+      "query": true,
+      "startIdentity": "Tue Oct  6 22:07:47 2026",
+      "startedMonotonic": 146.582244916,
+      "startedWallTime": 1791338867.9746282,
+      "waited": true
+    },
+    {
+      "arguments": [
+        "ps",
+        "-axo",
+        "pid=,ppid=,lstart="
+      ],
+      "deadlineSeconds": 10,
+      "exit": 0,
+      "name": "process-identities",
+      "pid": 83875,
+      "query": true,
+      "startIdentity": "Tue Oct  6 22:07:50 2026",
+      "startedMonotonic": 148.677580166,
+      "startedWallTime": 1791338870.069972,
+      "waited": true
+    },
+    {
+      "arguments": [
+        "ps",
+        "-axo",
+        "pid=,ppid=,lstart="
+      ],
+      "deadlineSeconds": 10,
+      "exit": 0,
+      "name": "process-identities",
+      "pid": 83880,
+      "query": true,
+      "startIdentity": "Tue Oct  6 22:07:52 2026",
+      "startedMonotonic": 150.80666675,
+      "startedWallTime": 1791338872.199072,
+      "waited": true
+    },
+    {
+      "arguments": [
+        "ps",
+        "-axo",
+        "pid=,ppid=,lstart="
+      ],
+      "deadlineSeconds": 10,
+      "exit": 0,
+      "name": "process-identities",
+      "pid": 83885,
+      "query": true,
+      "startIdentity": "Tue Oct  6 22:07:54 2026",
+      "startedMonotonic": 152.929632875,
+      "startedWallTime": 1791338874.322048,
+      "waited": true
+    },
+    {
+      "arguments": [
+        "ps",
+        "-axo",
+        "pid=,ppid=,lstart="
+      ],
+      "deadlineSeconds": 10,
+      "exit": 0,
+      "name": "process-identities",
+      "pid": 83890,
+      "query": true,
+      "startIdentity": "Tue Oct  6 22:07:56 2026",
+      "startedMonotonic": 155.048011583,
+      "startedWallTime": 1791338876.440438,
+      "waited": true
+    },
+    {
+      "arguments": [
+        "ps",
+        "-axo",
+        "pid=,ppid=,lstart="
+      ],
+      "deadlineSeconds": 10,
+      "exit": 0,
+      "name": "process-identities",
+      "pid": 83895,
+      "query": true,
+      "startIdentity": "Tue Oct  6 22:07:58 2026",
+      "startedMonotonic": 157.159086916,
+      "startedWallTime": 1791338878.551522,
+      "waited": true
+    },
+    {
+      "arguments": [
+        "ps",
+        "-axo",
+        "pid=,ppid=,lstart="
+      ],
+      "deadlineSeconds": 10,
+      "exit": 0,
+      "name": "process-identities",
+      "pid": 83926,
+      "query": true,
+      "startIdentity": "Tue Oct  6 22:08:00 2026",
+      "startedMonotonic": 159.265639458,
+      "startedWallTime": 1791338880.658087,
+      "waited": true
+    },
+    {
+      "arguments": [
+        "ps",
+        "-axo",
+        "pid=,ppid=,lstart="
+      ],
+      "deadlineSeconds": 10,
+      "exit": 0,
+      "name": "process-identities",
+      "pid": 83932,
+      "query": true,
+      "startIdentity": "Tue Oct  6 22:08:02 2026",
+      "startedMonotonic": 161.377804041,
+      "startedWallTime": 1791338882.770262,
+      "waited": true
+    },
+    {
+      "arguments": [
+        "ps",
+        "-axo",
+        "pid=,ppid=,lstart="
+      ],
+      "deadlineSeconds": 10,
+      "exit": 0,
+      "name": "process-identities",
+      "pid": 83943,
+      "query": true,
+      "startIdentity": "Tue Oct  6 22:08:04 2026",
+      "startedMonotonic": 163.503378041,
+      "startedWallTime": 1791338884.895848,
+      "waited": true
+    },
+    {
+      "arguments": [
+        "ps",
+        "-axo",
+        "pid=,ppid=,lstart="
+      ],
+      "deadlineSeconds": 10,
+      "exit": 0,
+      "name": "process-identities",
+      "pid": 83946,
+      "query": true,
+      "startIdentity": "Tue Oct  6 22:08:06 2026",
+      "startedMonotonic": 164.830511375,
+      "startedWallTime": 1791338886.222985,
+      "waited": true
+    },
+    {
+      "arguments": [
+        "ps",
+        "-axo",
+        "pid=,ppid=,lstart="
+      ],
+      "deadlineSeconds": 10,
+      "exit": 0,
+      "name": "process-identities",
+      "pid": 83948,
+      "query": true,
+      "startIdentity": "Tue Oct  6 22:08:06 2026",
+      "startedMonotonic": 165.072526208,
+      "startedWallTime": 1791338886.465,
+      "waited": true
+    },
+    {
+      "arguments": [
+        "ps",
+        "-axo",
+        "pid=,ppid=,lstart="
+      ],
+      "deadlineSeconds": 10,
+      "exit": 0,
+      "name": "process-identities",
+      "pid": 83949,
+      "query": true,
+      "startIdentity": "Tue Oct  6 22:08:06 2026",
+      "startedMonotonic": 165.236929666,
+      "startedWallTime": 1791338886.629405,
+      "waited": true
+    }
+  ],
+  "result": {
+    "actualClientLaunchesThisRun": 1,
+    "actualRecording": {
+      "bytes": 1074771,
+      "path": "/Users/robert/projects/alto-target-corporeal-beast/proof/s2/session.rtr",
+      "sha256": "ca562529388294788462897f51770237378c593272ac4d68f011ecf3dded2ecf"
+    },
+    "allDirectChildrenWaited": true,
+    "captureQualification": "bounded ordinary native melee sample; full kill/loot not claimed; pixels unqualified",
+    "cleanupErrors": [],
+    "compiledSourceManifest": {
+      "path": "/Users/robert/projects/alto-target-corporeal-beast/proof/build1/binary-manifest.json",
+      "sha256": "d59244d8e2fe6bed0a0d7c2561ad3f5e7b85423c9b24720dfb4be6260da3d49f"
+    },
+    "descendantQualification": "live-start observed identities; descendants are not direct waitable children",
+    "expectedPriorLaunches": 1,
+    "files": {
+      "adoptionManifest": {
+        "path": "/Users/robert/.codex/worktrees/legacy-corporeal-beast/alto/.cache/corp-execution-20261007-v2/actual-adoption-native3.json",
+        "sha256": "e942286ee80e55ebb03366c6a266f408abdd88e6ae912a0aee78e55c8759e25f"
+      },
+      "baseDriver": {
+        "path": "/Users/robert/.codex/worktrees/legacy-corporeal-beast/alto/tools/client910/fixtures/session-replay/boss-encounters/driver.py",
+        "sha256": "ddcf83c88bc4b1c758c9a67dd06d2959afc6ef9e4bd5647e4e38c8b1098cc0ab"
+      },
+      "binary": {
+        "path": "/Users/robert/projects/alto-target-corporeal-beast/debug/deps/client910-c15188a94426efa7",
+        "sha256": "0a02a6d1ae3fe43a6cdb132f90f97b5d8f740d0736832048dcd07bda78695fa8"
+      },
+      "binaryManifest": {
+        "path": "/Users/robert/projects/alto-target-corporeal-beast/proof/build1/binary-manifest.json",
+        "sha256": "d59244d8e2fe6bed0a0d7c2561ad3f5e7b85423c9b24720dfb4be6260da3d49f"
+      },
+      "broker": {
+        "path": "/Users/robert/.codex/worktrees/legacy-corporeal-beast/alto/tools/client910/fixtures/session-replay/god-wars/peer_broker.mjs",
+        "sha256": "e4d403a67745dbce9a0ec84522a98194d2fb48e6926d5c6851276212639a1568"
+      },
+      "contract": {
+        "path": "/Users/robert/.codex/worktrees/legacy-corporeal-beast/alto/tools/client910/fixtures/session-replay/corporeal-beast/contract.py",
+        "sha256": "3706003314b638e5e00b3d76ae08ddd961db27cae83928890c9f77c71baa4770"
+      },
+      "control": {
+        "path": "/Users/robert/.codex/worktrees/legacy-corporeal-beast/alto/tools/client910/scripts/control.py",
+        "sha256": "f48413b91db69b5c02d29257c70e66ec55e59f18f3d2f4d53a3ece80d63a045f"
+      },
+      "deviceEnvelope": {
+        "path": "/Users/robert/.codex/worktrees/legacy-corporeal-beast/alto/tools/client910/fixtures/session-replay/legacy-interface/session.rtr",
+        "sha256": "acb90c0c962ddec1b8c413af0c2df13e63b922ef71d4bfc1aa9412ff22c5a341"
+      },
+      "driver": {
+        "path": "/Users/robert/.codex/worktrees/legacy-corporeal-beast/alto/tools/client910/fixtures/session-replay/corporeal-beast/driver.py",
+        "sha256": "e58fc40d16ea9f21f8743c214ef48022e3c650726646b91794aa92bf45718cd6"
+      },
+      "foodObserver": {
+        "path": "/Users/robert/.codex/worktrees/legacy-corporeal-beast/alto/tools/client910/fixtures/session-replay/barrows/food-receipts.mjs",
+        "sha256": "bca606f0a95668a6e3936f561d3e6e56770ed1a0b65e64dd98896cfd6c999c9b"
+      },
+      "foodRules": {
+        "path": "/Users/robert/.codex/worktrees/legacy-corporeal-beast/alto/server/data/generated/food/foods.json",
+        "sha256": "24d0155aca0ff14a5fe426bd95f9aff4a34edf743dd8ac5dc10264936a042ae1"
+      },
+      "freeze": {
+        "path": "/Users/robert/.codex/worktrees/legacy-corporeal-beast/alto/tools/client910/fixtures/session-replay/corporeal-beast/freeze.py",
+        "sha256": "bedef162b07e035582748776e98230c54a8752616cbe60163e5e5e156d4738d2"
+      },
+      "loginCrypto": {
+        "path": "/Users/robert/.codex/worktrees/legacy-corporeal-beast/alto/server/src/lostcity/network/LoginCrypto.ts",
+        "sha256": "df172e5c3f2ecfffca689a7133c2f004b0c28ddb93fd175326a7638804288bb9"
+      },
+      "loginProvider": {
+        "path": "/Users/robert/.codex/worktrees/legacy-corporeal-beast/alto/tools/client910/fixtures/session-replay/god-wars/login_provider.mjs",
+        "sha256": "b8a96e1548141f19ca3b036d96c961018897c5f825ceda6c08dea3d9bf865b50"
+      },
+      "loginTestkit": {
+        "path": "/Users/robert/.codex/worktrees/legacy-corporeal-beast/alto/server/src/lostcity/network/SkillsE2E.testkit.ts",
+        "sha256": "39a797dec044580f1ee6f2282b9a339c10df072632f0abd3d0562c7704f68800"
+      },
+      "owner": {
+        "path": "/Users/robert/.codex/worktrees/legacy-corporeal-beast/alto/tools/client910/fixtures/session-replay/barrows/record.py",
+        "sha256": "4a6afc86520acbb2e71867cfc9d99726bea9d167804817ed1b9f43e275121350"
+      },
+      "peerAdapter": {
+        "path": "/Users/robert/.codex/worktrees/legacy-corporeal-beast/alto/tools/client910/fixtures/session-replay/god-wars/peer_adapter.mjs",
+        "sha256": "e37f3587ed18e6d53b89f1829d1bd29bc911aeb40e8fa0cefbfabd89c7f33d48"
+      },
+      "publications": {
+        "path": "/Users/robert/.codex/worktrees/legacy-corporeal-beast/alto/tools/client910/fixtures/session-replay/god-wars/publications.py",
+        "sha256": "768dd55f68d315aa4cbae4dbb3c0e4a13dea2cc541a4d891948a148b347bf889"
+      },
+      "record": {
+        "path": "/Users/robert/.codex/worktrees/legacy-corporeal-beast/alto/tools/client910/fixtures/session-replay/corporeal-beast/record.py",
+        "sha256": "0b959008d3f7422cbc5b24b1da767e422674d48ce27dca4d87134da04d331231"
+      },
+      "seed": {
+        "path": "/Users/robert/.codex/worktrees/legacy-corporeal-beast/alto/tools/client910/fixtures/session-replay/corporeal-beast/seed.mjs",
+        "sha256": "1f6bf4762d4b2e725a3800d3bcdaacd0a1fd5c97ce870c2419dca24362de65b5"
+      },
+      "server": {
+        "path": "/Users/robert/.codex/worktrees/legacy-corporeal-beast/alto/tools/client910/fixtures/session-replay/corporeal-beast/server.mjs",
+        "sha256": "2eefb5b1b5ade9732ee8638d0a9e06edbb670f78270d6bf5f0d6511a0f6187f0"
+      },
+      "sharedDriver": {
+        "path": "/Users/robert/.codex/worktrees/legacy-corporeal-beast/alto/tools/client910/fixtures/session-replay/barrows/driver.py",
+        "sha256": "d5377a3458af568e527852b9b87d3c529c09a168428dcd363a36c19e85d38508"
+      },
+      "socketTestkit": {
+        "path": "/Users/robert/.codex/worktrees/legacy-corporeal-beast/alto/server/src/lostcity/network/SocketE2E.testkit.ts",
+        "sha256": "55ffd1e43c77fd3c99fba6850688c4e6e5c10c9c88228b1e6d977a8effc4e4f8"
+      },
+      "wiredGuard": {
+        "path": "/Users/robert/.codex/worktrees/legacy-corporeal-beast/alto/ref/independence/wired-guard.sh",
+        "sha256": "aabce1f59b80a316f882d4afb8c30a1fd677740533c3f773a80ebcdef0ad37fd"
+      }
+    },
+    "limitations": [
+      "No pixels or FPS proof",
+      "Initial fixture only; no live state assistance"
+    ],
+    "maximumClientLaunches": 4,
+    "ownedSurvivors": [],
+    "owningReplayPassed": false,
+    "passed": true,
+    "ports": {
+      "lobby": 48720,
+      "world": 48721
+    },
+    "rendered": false,
+    "scratch": "/Users/robert/projects/alto-target-corporeal-beast/proof/s2/runtime",
+    "sourceInputsUnchanged": true,
+    "work": "/Users/robert/projects/alto-target-corporeal-beast/proof/s2/runtime/w"
+  }
+}

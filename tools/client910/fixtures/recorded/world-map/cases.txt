@@ -1,0 +1,547 @@
+# World-map script: one step per line (run by ui_runtime/world_map_golden_tests.rs).
+#   load <area> <members> <hue> <light> [<source x> <source z>]   area load without the random choices
+#   update <cycles> | state | elements | draw <x> <y> <w> <h> | overview <x> <y> <w> <h>
+#   cs2 <command> <ints...>                                        a worldmap_* or mec_* command
+# Coordinates in commands are packed: level << 28 | x << 14 | z.
+
+# --- surface, Lumbridge: first view, element listing, element filters
+load 28 1 0 0 3222 3218
+state
+elements
+draw 0 0 800 600
+cs2 worldmap_disableelement 595 1
+cs2 worldmap_getdisableelement 595
+draw 0 0 800 600
+cs2 worldmap_disableelement 595 0
+cs2 worldmap_disableelementcategory 1189 1
+cs2 worldmap_getdisableelementcategory 1189
+draw 0 0 800 600
+cs2 worldmap_disableelementcategory 1189 0
+cs2 worldmap_disableelements 1
+cs2 worldmap_getdisableelements
+draw 0 0 800 600
+cs2 worldmap_disableelements 0
+cs2 worldmap_disabletextsize 0 1
+cs2 worldmap_getdisabletextsize 0
+draw 0 0 800 600
+cs2 worldmap_disabletextsize 0 0
+cs2 worldmap_disabletextsize 1 1
+draw 0 0 800 600
+cs2 worldmap_disabletextsize 1 0
+cs2 worldmap_getdisabletextsize 3
+cs2 worldmap_disabletextsize 3 1
+# --- terrain layers
+cs2 worldmap_disabletype 1 1
+cs2 worldmap_getdisabletype 1
+draw 0 0 800 600
+cs2 worldmap_disabletype 1 0
+cs2 worldmap_disabletype 2 1
+cs2 worldmap_getdisabletype 2
+draw 0 0 800 600
+cs2 worldmap_disabletype 2 0
+cs2 worldmap_disabletype 0 1
+cs2 worldmap_getdisabletype 0
+cs2 worldmap_getdisabletype 7
+cs2 worldmap_disabletype 7 1
+cs2 worldmap_disabletype 0 0
+# --- zoom levels (animated from the area zoom)
+cs2 worldmap_setzoom 100
+cs2 worldmap_getzoom
+update 12
+draw 0 0 800 600
+update 80
+draw 0 0 800 600
+cs2 worldmap_setzoom 200
+cs2 worldmap_getzoom
+update 12
+draw 0 0 800 600
+update 80
+draw 0 0 800 600
+cs2 worldmap_setzoom 50
+cs2 worldmap_getzoom
+update 12
+draw 0 0 800 600
+update 80
+draw 0 0 800 600
+cs2 worldmap_setzoom 37
+cs2 worldmap_getzoom
+update 12
+draw 0 0 800 600
+update 80
+draw 0 0 800 600
+cs2 worldmap_setzoom 25
+cs2 worldmap_getzoom
+update 12
+draw 0 0 800 600
+update 80
+draw 0 0 800 600
+cs2 worldmap_setzoom 75
+cs2 worldmap_getzoom
+update 12
+draw 0 0 800 600
+update 80
+draw 0 0 800 600
+cs2 worldmap_setzoom 60
+cs2 worldmap_getzoom
+# --- jumps: animated and instant, source and display coordinates
+cs2 worldmap_jumptosourcecoord 52645220
+update 3
+update 60
+draw 0 0 800 600
+cs2 worldmap_jumptosourcecoord_instant 48565554
+state
+draw 0 0 512 334
+cs2 worldmap_jumptodisplaycoord 52120885
+update 200
+draw 0 0 800 600
+cs2 worldmap_jumptodisplaycoord_instant 49155000
+draw 0 0 1024 768
+cs2 worldmap_jumptodisplaycoord_instant 0
+state
+draw 0 0 800 600
+cs2 worldmap_jumptodisplaycoord_instant 262160000
+state
+draw 0 0 800 600
+
+# --- flashing elements and categories (element 595 and category 1189 are Lumbridge map icons)
+load 28 1 0 0 3222 3218
+cs2 worldmap_setzoom 100
+update 40
+cs2 worldmap_flashelement 595
+update 3
+state
+draw 0 0 800 600
+update 20
+draw 0 0 800 600
+update 40
+state
+cs2 worldmap_setflashtics 10
+cs2 worldmap_setflashloops 2
+cs2 worldmap_flashelement 596
+cs2 worldmap_flashelementcategory 1189
+state
+update 4
+draw 0 0 800 600
+update 7
+state
+update 30
+state
+cs2 worldmap_setflashtics 0
+cs2 worldmap_setflashloops 0
+cs2 worldmap_flashelement 587
+cs2 worldmap_flashelementcategory 1163
+cs2 worldmap_perpetualflash 1
+update 120
+state
+cs2 worldmap_perpetualflash 0
+cs2 worldmap_setflashtics_default
+cs2 worldmap_setflashloops_default
+cs2 worldmap_flashelement 491
+update 10
+draw 0 0 800 600
+cs2 worldmap_stopcurrentflashes
+state
+draw 0 0 800 600
+
+# --- polygons, arrows and labels (display 3181,3381 lies in the polygon map elements of the north-west)
+load 28 1 0 0 3181 3381
+cs2 worldmap_setzoom 50
+update 90
+draw 0 0 800 600
+draw 100 50 300 200
+cs2 worldmap_jumptodisplaycoord_instant 47517100
+draw 0 0 1024 768
+cs2 worldmap_jumptodisplaycoord_instant 54070400
+draw 0 0 1024 768
+
+# --- a non-member account sees the members regions shaded
+load 28 0 3 -4 2880 3450
+draw 0 0 800 600
+cs2 worldmap_setzoom 25
+update 90
+draw 0 0 800 600
+cs2 worldmap_setzoom 200
+update 120
+draw 0 0 800 600
+overview 0 0 512 334
+
+# --- overview of the surface map (member) and a small area
+load 28 1 -2 5 3222 3218
+overview 0 0 512 334
+cs2 worldmap_flashelement 587
+update 10
+overview 10 20 400 400
+load 21 1 0 0
+state
+draw 0 0 800 600
+overview 0 0 512 334
+load 26 1 4 -6
+draw 0 0 800 600
+overview 0 0 300 500
+
+# --- other areas at their own zoom
+load 1 1 0 0
+draw 0 0 640 480
+load 12 1 0 0
+draw 0 0 640 480
+load 15 1 0 0
+draw 0 0 640 480
+load 16 1 0 0
+draw 0 0 640 480
+load 0 1 0 0
+draw 0 0 640 480
+load 7 1 0 0
+draw 0 0 640 480
+load 29 1 0 0
+draw 0 0 640 480
+load 32 1 0 0
+draw 0 0 640 480
+
+# --- queries over the real area table
+cs2 worldmap_getcurrentmap
+load 28 1 0 0 3222 3218
+cs2 worldmap_getcurrentmap
+cs2 worldmap_isloaded
+cs2 worldmap_getsize
+draw 0 0 800 600
+cs2 worldmap_getsize
+cs2 worldmap_getdisplayposition
+cs2 worldmap_getsourceposition
+cs2 worldmap_getmap 52792466
+cs2 worldmap_getmap 40178032
+cs2 worldmap_getmap 52438700
+cs2 worldmap_getmap 47523790
+cs2 worldmap_getmap 16385
+cs2 worldmap_getmap 0
+cs2 worldmap_getmap 262160000
+cs2 worldmap_getmap 46927315
+cs2 worldmap_getmap 50964100
+cs2 worldmap_getmapname 28
+cs2 worldmap_getconfigorigin 28
+cs2 worldmap_getconfigsize 28
+cs2 worldmap_getconfigbounds 28
+cs2 worldmap_getconfigzoom 28
+cs2 worldmap_getmapname 21
+cs2 worldmap_getconfigorigin 21
+cs2 worldmap_getconfigsize 21
+cs2 worldmap_getconfigbounds 21
+cs2 worldmap_getconfigzoom 21
+cs2 worldmap_getmapname 0
+cs2 worldmap_getconfigorigin 0
+cs2 worldmap_getconfigsize 0
+cs2 worldmap_getconfigbounds 0
+cs2 worldmap_getconfigzoom 0
+cs2 worldmap_getmapname 1
+cs2 worldmap_getconfigorigin 1
+cs2 worldmap_getconfigsize 1
+cs2 worldmap_getconfigbounds 1
+cs2 worldmap_getconfigzoom 1
+cs2 worldmap_getmapname 7
+cs2 worldmap_getconfigorigin 7
+cs2 worldmap_getconfigsize 7
+cs2 worldmap_getconfigbounds 7
+cs2 worldmap_getconfigzoom 7
+cs2 worldmap_getmapname 10
+cs2 worldmap_getconfigorigin 10
+cs2 worldmap_getconfigsize 10
+cs2 worldmap_getconfigbounds 10
+cs2 worldmap_getconfigzoom 10
+cs2 worldmap_getmapname 999
+cs2 worldmap_getconfigorigin 999
+cs2 worldmap_getconfigsize 999
+cs2 worldmap_getconfigbounds 999
+cs2 worldmap_getconfigzoom 999
+cs2 worldmap_getmapname -1
+cs2 worldmap_getconfigorigin -1
+cs2 worldmap_getconfigsize -1
+cs2 worldmap_getconfigbounds -1
+cs2 worldmap_getconfigzoom -1
+cs2 worldmap_coordinmap 52792466 28
+cs2 worldmap_coordinmap 52792466 21
+cs2 worldmap_coordinmap 40178032 1
+cs2 worldmap_coordinmap 40178032 28
+cs2 worldmap_coordinmap 0 28
+cs2 worldmap_coordinmap 52438700 31
+cs2 worldmap_getdisplaycoord 52792466
+cs2 worldmap_getdisplaycoord 52796562
+cs2 worldmap_getdisplaycoord 40178032
+cs2 worldmap_getdisplaycoord 0
+cs2 worldmap_getdisplaycoord 321227922
+cs2 worldmap_getdisplaycoord 321232018
+cs2 worldmap_getdisplaycoord 308613488
+cs2 worldmap_getdisplaycoord 268435456
+cs2 worldmap_getdisplaycoord 589663378
+cs2 worldmap_getdisplaycoord 589667474
+cs2 worldmap_getdisplaycoord 577048944
+cs2 worldmap_getdisplaycoord 536870912
+cs2 worldmap_getdisplaycoord 858098834
+cs2 worldmap_getdisplaycoord 858102930
+cs2 worldmap_getdisplaycoord 845484400
+cs2 worldmap_getdisplaycoord 805306368
+cs2 worldmap_getsourcecoord 52792466
+cs2 worldmap_getsourcecoord 30411200
+cs2 worldmap_getsourcecoord 1638500
+cs2 worldmap_getsourcecoord 65540000
+cs2 worldmap_getsourcecoord 262160000
+cs2 worldmap_listelement_start
+cs2 worldmap_listelement_next
+cs2 worldmap_listelement_next
+cs2 worldmap_listelement_next
+cs2 worldmap_listelement_next
+cs2 worldmap_listelement_next
+cs2 worldmap_listelement_next
+cs2 worldmap_listelement_next
+cs2 worldmap_listelement_next
+cs2 worldmap_findnearestelement 595 52792466
+cs2 worldmap_findnearestelement 595 49155000
+cs2 worldmap_findnearestelement 595 0
+cs2 worldmap_findnearestelement 587 52792466
+cs2 worldmap_findnearestelement 999999 52792466
+cs2 worldmap_findnearestelement -5 52792466
+cs2 mec_text 0
+cs2 mec_sprite 0
+cs2 mec_textsize 0
+cs2 mec_category 0
+cs2 mec_text 595
+cs2 mec_sprite 595
+cs2 mec_textsize 595
+cs2 mec_category 595
+cs2 mec_text 596
+cs2 mec_sprite 596
+cs2 mec_textsize 596
+cs2 mec_category 596
+cs2 mec_text 101
+cs2 mec_sprite 101
+cs2 mec_textsize 101
+cs2 mec_category 101
+cs2 mec_text 63
+cs2 mec_sprite 63
+cs2 mec_textsize 63
+cs2 mec_category 63
+cs2 mec_text 4252
+cs2 mec_sprite 4252
+cs2 mec_textsize 4252
+cs2 mec_category 4252
+cs2 mec_text 4708
+cs2 mec_sprite 4708
+cs2 mec_textsize 4708
+cs2 mec_category 4708
+cs2 mec_text 4709
+cs2 mec_sprite 4709
+cs2 mec_textsize 4709
+cs2 mec_category 4709
+cs2 mec_text -1
+cs2 mec_sprite -1
+cs2 mec_textsize -1
+cs2 mec_category -1
+cs2 mec_param 0 4148
+cs2 mec_param 5 4148
+cs2 mec_param 318 4147
+cs2 mec_param 674 4149
+cs2 mec_param 838 4150
+cs2 mec_param 3175 478
+cs2 mec_param 4252 7778
+cs2 mec_param 4252 7777
+cs2 mec_param 595 4148
+cs2 mec_param 0 4149
+cs2 mec_param 674 4148
+cs2 worldmap_3dview_active
+cs2 worldmap_getcategorypriority 5
+cs2 worldmap_setcategorypriority 5 3
+cs2 worldmap_3dview_getloddistance
+cs2 worldmap_3dview_getscreenposition 5 6
+cs2 worldmap_3dview_gettextfont 4
+cs2 worldmap_3dview_settextfont 4 5
+cs2 worldmap_3dview_enable
+cs2 worldmap_3dview_disable
+cs2 worldmap_3dview_setlighting 1
+cs2 worldmap_3dview_getcoordfine 1
+cs2 worldmap_3dview_setloddistance 1
+
+# --- switching areas: the map is unloaded until it has loaded again
+cs2 worldmap_setmap 21
+cs2 worldmap_getcurrentmap
+cs2 worldmap_isloaded
+cs2 worldmap_findnearestelement 595 52792466
+cs2 worldmap_listelement_start
+finish 1 0 0
+cs2 worldmap_isloaded
+cs2 worldmap_getdisplayposition
+draw 0 0 800 600
+cs2 worldmap_setmap_coord 28 51842462
+cs2 worldmap_getcurrentmap
+finish 1 0 0
+cs2 worldmap_getdisplayposition
+draw 0 0 800 600
+cs2 worldmap_setmap_coord 28 48565554
+cs2 worldmap_isloaded
+cs2 worldmap_setmap_coord_override 28 52792466
+cs2 worldmap_isloaded
+cs2 worldmap_setmap 28
+cs2 worldmap_setmap_coord_override 28 48565554
+finish 1 0 0 3222 3218
+cs2 worldmap_getdisplayposition
+cs2 worldmap_setmap_coord 28 48565554
+finish 1 0 0 3222 3218
+cs2 worldmap_setmap_coord 28 262160000
+cs2 worldmap_setmap 999
+cs2 worldmap_getcurrentmap
+cs2 worldmap_setmap 1
+finish 0 0 0 3222 3218
+cs2 worldmap_getdisplayposition
+draw 0 0 800 600
+cs2 worldmap_closemap
+
+# --- element types that follow player variables (varbit 22874 selects or hides most static icons)
+load 28 1 0 0 3242 3380
+cs2 worldmap_setzoom 50
+update 90
+draw 0 0 800 600
+varbit 22874 1
+draw 0 0 800 600
+varbit 22874 2
+draw 0 0 800 600
+varbit 22874 0
+varbit 3260 1
+draw 0 0 800 600
+varbit 3260 3
+draw 0 0 800 600
+varp 2618 1
+draw 0 0 800 600
+varbit 9324 1
+varbit 31173 1
+draw 0 0 800 600
+cs2 worldmap_jumptodisplaycoord_instant 52727181
+draw 0 0 800 600
+# element and loc lists read the variables again when the map loads
+varbit 22874 1
+varbit 3260 2
+varbit 36140 1
+load 28 1 0 0 3242 3380
+elements
+cs2 worldmap_listelement_start
+cs2 worldmap_listelement_next
+draw 0 0 800 600
+varbit 22874 5
+load 28 1 0 0 3242 3380
+draw 0 0 800 600
+
+# --- the loading bar while an area loads
+cs2 worldmap_setmap 28
+draw 0 0 800 600
+draw 10 20 300 200
+cs2 worldmap_setmap 1
+overview 0 0 300 200
+finish 1 0 0 3222 3218
+
+# --- more areas (caves, dungeons, cities) at their own zoom, with extreme colour jitter
+
+load 2 1 8 16
+draw 0 0 700 500
+overview 0 0 400 300
+load 3 1 -8 -16
+draw 0 0 700 500
+load 4 1 0 0
+draw 0 0 700 500
+load 5 1 4 -8
+draw 0 0 700 500
+overview 0 0 400 300
+load 6 1 -3 9
+draw 0 0 700 500
+load 8 1 7 -15
+draw 0 0 700 500
+load 9 1 8 16
+draw 0 0 700 500
+overview 0 0 400 300
+load 11 1 -8 -16
+draw 0 0 700 500
+load 13 1 0 0
+draw 0 0 700 500
+load 14 1 4 -8
+draw 0 0 700 500
+overview 0 0 400 300
+load 17 1 -3 9
+draw 0 0 700 500
+load 18 1 7 -15
+draw 0 0 700 500
+load 19 1 8 16
+draw 0 0 700 500
+overview 0 0 400 300
+load 20 1 -8 -16
+draw 0 0 700 500
+load 22 1 0 0
+draw 0 0 700 500
+load 23 1 4 -8
+draw 0 0 700 500
+overview 0 0 400 300
+load 24 1 -3 9
+draw 0 0 700 500
+load 25 1 7 -15
+draw 0 0 700 500
+load 26 1 8 16
+draw 0 0 700 500
+overview 0 0 400 300
+load 27 1 -8 -16
+draw 0 0 700 500
+load 30 1 0 0
+draw 0 0 700 500
+load 31 1 4 -8
+draw 0 0 700 500
+overview 0 0 400 300
+load 32 1 -3 9
+draw 0 0 700 500
+load 33 1 7 -15
+draw 0 0 700 500
+load 34 1 8 16
+draw 0 0 700 500
+overview 0 0 400 300
+load 35 1 -8 -16
+draw 0 0 700 500
+load 36 1 0 0
+draw 0 0 700 500
+load 37 1 4 -8
+draw 0 0 700 500
+overview 0 0 400 300
+load 28 1 8 16 3222 3218
+draw 0 0 800 600
+load 28 1 -8 -16 2964 3378
+draw 0 0 800 600
+overview 0 0 500 400
+
+# --- element polygons (quest areas) follow their variables
+load 28 1 0 0 3200 3200
+cs2 worldmap_setzoom 100
+update 80
+draw 0 0 800 600
+varbit 3260 11
+draw 0 0 800 600
+varbit 3260 1
+draw 0 0 800 600
+varbit 3260 246
+varbit 43337 55
+draw 0 0 800 600
+cs2 worldmap_setzoom 200
+update 80
+draw 0 0 800 600
+varbit 3260 224
+varbit 33059 2
+cs2 worldmap_jumptodisplaycoord_instant 51760244
+cs2 worldmap_setzoom 50
+update 90
+draw 0 0 1024 768
+varbit 3260 0
+varbit 14532 9
+cs2 worldmap_jumptodisplaycoord_instant 52120885
+draw 0 0 800 600
+cs2 worldmap_flashelement 755
+update 12
+draw 0 0 800 600
+varbit 14532 0
+varbit 3260 60
+varbit 3852 0
+cs2 worldmap_jumptodisplaycoord_instant 53120308
+draw 0 0 800 600
+varbit 3260 220
+varbit 31173 215
+cs2 worldmap_jumptodisplaycoord_instant 52727181
+draw 0 0 800 600

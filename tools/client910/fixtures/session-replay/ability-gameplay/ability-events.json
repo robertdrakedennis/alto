@@ -1,0 +1,72 @@
+[
+  {
+    "tick": 41,
+    "pid": 1,
+    "definition": 14677,
+    "beforeFine": 1000,
+    "afterFine": 1000,
+    "damage": 166,
+    "accurate": true,
+    "critical": false,
+    "controlled": false,
+    "targetLife": 1,
+    "targetHitpoints": 99330,
+    "weaponBase": 222
+  },
+  {
+    "tick": 46,
+    "pid": 1,
+    "definition": 28505,
+    "beforeFine": 1000,
+    "afterFine": 850,
+    "damage": 266,
+    "accurate": true,
+    "critical": false,
+    "controlled": true,
+    "targetLife": 1,
+    "targetHitpoints": 98896,
+    "weaponBase": 222
+  },
+  {
+    "tick": 49,
+    "pid": 1,
+    "definition": 14677,
+    "beforeFine": 850,
+    "afterFine": 930,
+    "damage": 251,
+    "accurate": true,
+    "critical": false,
+    "controlled": true,
+    "targetLife": 1,
+    "targetHitpoints": 98645,
+    "weaponBase": 222
+  },
+  {
+    "tick": 58,
+    "pid": 1,
+    "definition": 14677,
+    "beforeFine": 960,
+    "afterFine": 1000,
+    "damage": 166,
+    "accurate": true,
+    "critical": false,
+    "controlled": false,
+    "targetLife": 1,
+    "targetHitpoints": 98311,
+    "weaponBase": 222
+  },
+  {
+    "tick": 63,
+    "pid": 1,
+    "definition": 14686,
+    "beforeFine": 1000,
+    "afterFine": 0,
+    "damage": 666,
+    "accurate": true,
+    "critical": false,
+    "controlled": false,
+    "targetLife": 1,
+    "targetHitpoints": 97477,
+    "weaponBase": 222
+  }
+]

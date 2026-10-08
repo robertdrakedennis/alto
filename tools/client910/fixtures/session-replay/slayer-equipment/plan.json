@@ -1,0 +1,328 @@
+{
+  "accountKey": "slayer-equipment",
+  "interfacePreference": {
+    "kind": "normal",
+    "bit": 27169,
+    "value": 0,
+    "slimBit": 19924,
+    "slimValue": 1
+  },
+  "commands": [
+    "retaliate off",
+    "notimeout",
+    "notimeout",
+    "notimeout",
+    "notimeout",
+    "notimeout",
+    "notimeout",
+    "notimeout",
+    "npcadd 8274 -1 0",
+    "opnpc 5 8274",
+    "notimeout",
+    "notimeout",
+    "notimeout",
+    "notimeout",
+    "notimeout",
+    "notimeout",
+    "notimeout",
+    "notimeout",
+    "notimeout",
+    "notimeout",
+    "notimeout",
+    "notimeout",
+    "notimeout",
+    "notimeout",
+    "notimeout",
+    "notimeout",
+    "opnpc 5 8274",
+    "notimeout",
+    "notimeout",
+    "notimeout",
+    "notimeout",
+    "notimeout",
+    "notimeout",
+    "notimeout",
+    "notimeout",
+    "notimeout",
+    "notimeout",
+    "notimeout",
+    "notimeout",
+    "notimeout",
+    "notimeout",
+    "notimeout",
+    "notimeout",
+    "notimeout",
+    "notimeout"
+  ],
+  "clicks": "l,827,358,620;l,827,358,640;l,827,358,660;l,854,358,700;l,750,241,2200;l,854,358,2400;l,750,241,3300;l,854,358,3500;l,898,358,3800",
+  "hover": "500,400,1299,1301;500,400,2899,2901",
+  "wheel": "1300,4;2900,4",
+  "controlOperations": [
+    {
+      "cycle": 800,
+      "parent": 96534535,
+      "child": 0,
+      "operation": 1
+    },
+    {
+      "cycle": 1100,
+      "parent": 85721180,
+      "child": -1,
+      "operation": 1
+    },
+    {
+      "cycle": 1150,
+      "parent": 85721145,
+      "child": -1,
+      "operation": 1
+    },
+    {
+      "cycle": 1200,
+      "parent": 85721215,
+      "child": -1,
+      "operation": 1
+    },
+    {
+      "cycle": 1400,
+      "parent": 85721250,
+      "child": -1,
+      "operation": 1
+    },
+    {
+      "cycle": 1600,
+      "parent": 85721285,
+      "child": -1,
+      "operation": 1
+    },
+    {
+      "cycle": 1800,
+      "parent": 85721303,
+      "child": -1,
+      "operation": 1
+    },
+    {
+      "cycle": 2000,
+      "parent": 85721267,
+      "child": -1,
+      "operation": 1
+    },
+    {
+      "cycle": 2500,
+      "parent": 96534535,
+      "child": 1,
+      "operation": 1
+    },
+    {
+      "cycle": 2800,
+      "parent": 85721115,
+      "child": -1,
+      "operation": 1
+    },
+    {
+      "cycle": 3100,
+      "parent": 85721526,
+      "child": -1,
+      "operation": 1
+    },
+    {
+      "cycle": 3600,
+      "parent": 96534535,
+      "child": 1,
+      "operation": 1
+    },
+    {
+      "cycle": 3900,
+      "parent": 95944719,
+      "child": 0,
+      "operation": 3
+    },
+    {
+      "cycle": 4100,
+      "parent": 77856776,
+      "child": -1,
+      "operation": 0
+    }
+  ],
+  "operations": "800,96534535,0,1;1100,85721180,-1,1;1150,85721145,-1,1;1200,85721215,-1,1;1400,85721250,-1,1;1600,85721285,-1,1;1800,85721303,-1,1;2000,85721267,-1,1;2500,96534535,1,1;2800,85721115,-1,1;3100,85721526,-1,1;3600,96534535,1,1;3900,95944719,0,3;4100,77856776,-1,0",
+  "keys": "",
+  "lastCycle": 4500,
+  "initialInstance": {
+    "key": "32e3846d-1534-4b8e-901a-0e8a47a77b53",
+    "charges": 0,
+    "resources": {
+      "slayingTeleports": 1,
+      "ferociousTeleports": 1
+    }
+  },
+  "initialHelmet": 30641,
+  "regularHelmet": 15492,
+  "upgrades": [
+    {
+      "button": 85721215,
+      "bit": 21749,
+      "input": 15492,
+      "output": 30656,
+      "cost": 100,
+      "repeatCost": 10,
+      "unlock": "slayer-helmet-upgrade-1",
+      "requirements": [
+        {
+          "stat": 12,
+          "level": 55
+        },
+        {
+          "stat": 1,
+          "level": 30
+        }
+      ],
+      "materials": [],
+      "fusedOutput": 30671
+    },
+    {
+      "button": 85721250,
+      "bit": 21750,
+      "input": 30656,
+      "output": 30686,
+      "cost": 400,
+      "repeatCost": 40,
+      "unlock": "slayer-helmet-upgrade-2",
+      "requirements": [
+        {
+          "stat": 12,
+          "level": 55
+        },
+        {
+          "stat": 1,
+          "level": 50
+        }
+      ],
+      "materials": [],
+      "fusedOutput": 30701
+    },
+    {
+      "button": 85721285,
+      "bit": 21751,
+      "input": 30686,
+      "output": 30716,
+      "cost": 600,
+      "repeatCost": 60,
+      "unlock": "slayer-helmet-upgrade-3",
+      "requirements": [
+        {
+          "stat": 12,
+          "level": 55
+        },
+        {
+          "stat": 1,
+          "level": 70
+        }
+      ],
+      "materials": [],
+      "fusedOutput": 30731
+    },
+    {
+      "button": 85721303,
+      "bit": 36284,
+      "input": 30716,
+      "output": 40377,
+      "cost": 1000,
+      "repeatCost": 100,
+      "unlock": "slayer-helmet-upgrade-4",
+      "requirements": [
+        {
+          "stat": 12,
+          "level": 55
+        },
+        {
+          "stat": 1,
+          "level": 70
+        }
+      ],
+      "materials": [
+        {
+          "item": 40334,
+          "count": 1
+        }
+      ],
+      "fusedOutput": 40392
+    }
+  ],
+  "materials": [
+    {
+      "item": 40334,
+      "count": 1
+    }
+  ],
+  "initialPoints": 6000,
+  "expectedPoints": 2930,
+  "expectedItems": [
+    {
+      "item": 560,
+      "count": 250
+    },
+    {
+      "item": 556,
+      "count": 750
+    },
+    {
+      "item": 4160,
+      "count": 250
+    }
+  ],
+  "expectedXp": 13044431,
+  "destination": {
+    "name": "Sumona in Pollnivneach",
+    "resource": "slayingTeleports",
+    "to": {
+      "level": 0,
+      "x": 3374,
+      "z": 2984
+    },
+    "quests": [],
+    "unlock": null
+  },
+  "fixedInputs": {
+    "close": [
+      750,
+      241,
+      2200
+    ],
+    "secondClose": [
+      750,
+      241,
+      3300
+    ],
+    "scroll": [
+      500,
+      400
+    ],
+    "wheel": [
+      [
+        1300,
+        4
+      ],
+      [
+        2900,
+        4
+      ]
+    ],
+    "learnCycle": 2800,
+    "teleportCycle": 3900,
+    "chooseCycle": 4100
+  },
+  "semanticShots": [
+    850,
+    1250,
+    1450,
+    1650,
+    1850,
+    2050,
+    2600,
+    3150,
+    3650,
+    4000,
+    4300,
+    4500
+  ],
+  "qualification": "Pre-login skills, Smoking Kills progress, reward points, an ordinary saved normal-interface preference and one charged fused helmet are fixture state. The server Legacy combat flag remains active; this fixture does not claim fixed-interface dock tabs. Actual native Wear, upgrade/reward/fusion buttons, worn teleport and dialogue acceptance must drive gameplay through the normal UI/input/network owners. Named waypoint geometry and tier limits retain generated source qualifications. The private headless candidate qualified the cold-login tab strip: three brief native left-arrow clicks take its scroll from99 to0 before Backpack/Worn selection; both reward viewports scroll0 to180 with four wheel steps. All fourteen native operations and both modal closes emitted independent ordinary TCP bytes with attached, visible and unclipped control centres. These diagnostics qualify the recipe; only the separately recorded live session establishes rendered gameplay."
+}

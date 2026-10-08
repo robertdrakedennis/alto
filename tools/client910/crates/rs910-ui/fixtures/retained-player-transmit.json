@@ -1,0 +1,914 @@
+{
+  "descriptor_preprocessing": {
+    "client_md5": "290cb3489d088d145741f1734f53b0fc",
+    "kernels": {
+      "installer": "5efe08e3763b65b422ef235b3e02bfdc29d295d06e6fab6f878567d8a5c2325f",
+      "trigger": "a0fb098a0a2ecfb6ff42cf9431305ea0233329efbc384e4580605decd00bc9c3"
+    },
+    "scope": "Original transmit installer and trigger-list setter run on synthetic preallocated retained state, stopping at the callback builder boundary. Fixed-string construction is supplied. Records only descriptor preprocessing, input consumption and persistent triggers, not argument parsing or map installation.",
+    "cases": [
+      {
+        "name": "positive",
+        "input": {
+          "descriptor": "iiiiiY",
+          "count": 1,
+          "prior": [],
+          "new": [
+            3814
+          ]
+        },
+        "result": {
+          "descriptor": [
+            105,
+            105,
+            105,
+            105,
+            105
+          ],
+          "ints": [
+            91
+          ],
+          "triggers": [
+            3814
+          ],
+          "objects": 0
+        }
+      },
+      {
+        "name": "replace",
+        "input": {
+          "descriptor": "iY",
+          "count": 2,
+          "prior": [
+            3814
+          ],
+          "new": [
+            9,
+            3814
+          ]
+        },
+        "result": {
+          "descriptor": [
+            105
+          ],
+          "ints": [
+            91
+          ],
+          "triggers": [
+            9,
+            3814
+          ],
+          "objects": 0
+        }
+      },
+      {
+        "name": "zero_empty",
+        "input": {
+          "descriptor": "iY",
+          "count": 0,
+          "prior": [],
+          "new": []
+        },
+        "result": {
+          "descriptor": [
+            105,
+            89
+          ],
+          "ints": [
+            91
+          ],
+          "triggers": [],
+          "objects": 0
+        }
+      },
+      {
+        "name": "negative_empty",
+        "input": {
+          "descriptor": "iY",
+          "count": -1,
+          "prior": [],
+          "new": []
+        },
+        "result": {
+          "descriptor": [
+            105,
+            89
+          ],
+          "ints": [
+            91
+          ],
+          "triggers": [],
+          "objects": 0
+        }
+      },
+      {
+        "name": "zero_retained",
+        "input": {
+          "descriptor": "iY",
+          "count": 0,
+          "prior": [
+            3814
+          ],
+          "new": []
+        },
+        "result": {
+          "descriptor": [
+            105
+          ],
+          "ints": [
+            91
+          ],
+          "triggers": [
+            3814
+          ],
+          "objects": 0
+        }
+      },
+      {
+        "name": "negative_retained",
+        "input": {
+          "descriptor": "iY",
+          "count": -1,
+          "prior": [
+            3814
+          ],
+          "new": []
+        },
+        "result": {
+          "descriptor": [
+            105
+          ],
+          "ints": [
+            91
+          ],
+          "triggers": [
+            3814
+          ],
+          "objects": 0
+        }
+      },
+      {
+        "name": "no_suffix_empty",
+        "input": {
+          "descriptor": "iii",
+          "count": null,
+          "prior": [],
+          "new": []
+        },
+        "result": {
+          "descriptor": [
+            105,
+            105,
+            105
+          ],
+          "ints": [
+            91
+          ],
+          "triggers": [],
+          "objects": 0
+        }
+      },
+      {
+        "name": "no_suffix_retained",
+        "input": {
+          "descriptor": "iii",
+          "count": null,
+          "prior": [
+            3814
+          ],
+          "new": []
+        },
+        "result": {
+          "descriptor": [
+            105,
+            105
+          ],
+          "ints": [
+            91
+          ],
+          "triggers": [
+            3814
+          ],
+          "objects": 0
+        }
+      },
+      {
+        "name": "empty_retained",
+        "input": {
+          "descriptor": "",
+          "count": null,
+          "prior": [
+            3814
+          ],
+          "new": []
+        },
+        "result": {
+          "descriptor": [],
+          "ints": [
+            91
+          ],
+          "triggers": [
+            3814
+          ],
+          "objects": 0
+        }
+      },
+      {
+        "name": "utf8_suffix",
+        "input": {
+          "descriptor": "\u00e9iY",
+          "count": 1,
+          "prior": [],
+          "new": [
+            3814
+          ]
+        },
+        "result": {
+          "descriptor": [
+            195,
+            169,
+            105
+          ],
+          "ints": [
+            91
+          ],
+          "triggers": [
+            3814
+          ],
+          "objects": 0
+        }
+      },
+      {
+        "name": "utf8_retained",
+        "input": {
+          "descriptor": "\u00e9",
+          "count": null,
+          "prior": [
+            3814
+          ],
+          "new": []
+        },
+        "result": {
+          "descriptor": [
+            195
+          ],
+          "ints": [
+            91
+          ],
+          "triggers": [
+            3814
+          ],
+          "objects": 0
+        }
+      }
+    ]
+  },
+  "player_event_walk": {
+    "client_md5": "290cb3489d088d145741f1734f53b0fc",
+    "kernel_sha256": "28bd51c0d0c07b9ddebb3305fba7829be71672cb0b47a3accfc082bf85130f0f",
+    "scope": "Original component event walk executes from entry through all six transmit families. Hook lookup and queue append services are supplied, with synthetic owner data. Observes source event identity, queue identity, filter, ring and cursor behavior; does not execute queued callbacks, preceding operation dispatch or following miscellaneous events.",
+    "cases": [
+      {
+        "name": "no_change",
+        "input": {
+          "seen": 5,
+          "current": 5,
+          "triggers": [
+            3814
+          ],
+          "changes": []
+        },
+        "result": {
+          "queued": [],
+          "seen": 5,
+          "lookups": [
+            36,
+            23,
+            24,
+            25,
+            26,
+            27,
+            30,
+            29,
+            31,
+            32,
+            33,
+            41,
+            34
+          ]
+        }
+      },
+      {
+        "name": "matching",
+        "input": {
+          "seen": 5,
+          "current": 6,
+          "triggers": [
+            3814
+          ],
+          "changes": [
+            3814
+          ]
+        },
+        "result": {
+          "queued": [
+            {
+              "hook": 17,
+              "queue": 416
+            }
+          ],
+          "seen": 6,
+          "lookups": [
+            36,
+            17,
+            23,
+            24,
+            25,
+            26,
+            27,
+            30,
+            29,
+            31,
+            32,
+            33,
+            41,
+            34
+          ]
+        }
+      },
+      {
+        "name": "nonmatching",
+        "input": {
+          "seen": 5,
+          "current": 6,
+          "triggers": [
+            3814
+          ],
+          "changes": [
+            9
+          ]
+        },
+        "result": {
+          "queued": [],
+          "seen": 6,
+          "lookups": [
+            36,
+            17,
+            23,
+            24,
+            25,
+            26,
+            27,
+            30,
+            29,
+            31,
+            32,
+            33,
+            41,
+            34
+          ]
+        }
+      },
+      {
+        "name": "repeated_matches",
+        "input": {
+          "seen": 5,
+          "current": 8,
+          "triggers": [
+            3814
+          ],
+          "changes": [
+            3814,
+            9,
+            3814
+          ]
+        },
+        "result": {
+          "queued": [
+            {
+              "hook": 17,
+              "queue": 416
+            }
+          ],
+          "seen": 8,
+          "lookups": [
+            36,
+            17,
+            23,
+            24,
+            25,
+            26,
+            27,
+            30,
+            29,
+            31,
+            32,
+            33,
+            41,
+            34
+          ]
+        }
+      },
+      {
+        "name": "empty_list",
+        "input": {
+          "seen": 5,
+          "current": 6,
+          "triggers": [],
+          "changes": [
+            9
+          ]
+        },
+        "result": {
+          "queued": [
+            {
+              "hook": 17,
+              "queue": 416
+            }
+          ],
+          "seen": 6,
+          "lookups": [
+            36,
+            17,
+            23,
+            24,
+            25,
+            26,
+            27,
+            30,
+            29,
+            31,
+            32,
+            33,
+            41,
+            34
+          ]
+        }
+      },
+      {
+        "name": "ring_edge_match",
+        "input": {
+          "seen": 63,
+          "current": 65,
+          "triggers": [
+            3814
+          ],
+          "changes": [
+            9,
+            3814
+          ]
+        },
+        "result": {
+          "queued": [
+            {
+              "hook": 17,
+              "queue": 416
+            }
+          ],
+          "seen": 65,
+          "lookups": [
+            36,
+            17,
+            23,
+            24,
+            25,
+            26,
+            27,
+            30,
+            29,
+            31,
+            32,
+            33,
+            41,
+            34
+          ]
+        }
+      },
+      {
+        "name": "exact_capacity_miss",
+        "input": {
+          "seen": 5,
+          "current": 69,
+          "triggers": [
+            3814
+          ],
+          "changes": [
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9
+          ]
+        },
+        "result": {
+          "queued": [],
+          "seen": 69,
+          "lookups": [
+            36,
+            17,
+            23,
+            24,
+            25,
+            26,
+            27,
+            30,
+            29,
+            31,
+            32,
+            33,
+            41,
+            34
+          ]
+        }
+      },
+      {
+        "name": "overflow_miss",
+        "input": {
+          "seen": 5,
+          "current": 70,
+          "triggers": [
+            3814
+          ],
+          "changes": [
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9
+          ]
+        },
+        "result": {
+          "queued": [
+            {
+              "hook": 17,
+              "queue": 416
+            }
+          ],
+          "seen": 70,
+          "lookups": [
+            36,
+            17,
+            23,
+            24,
+            25,
+            26,
+            27,
+            30,
+            29,
+            31,
+            32,
+            33,
+            41,
+            34
+          ]
+        }
+      },
+      {
+        "name": "absent_hook",
+        "input": {
+          "seen": 5,
+          "current": 6,
+          "triggers": [
+            3814
+          ],
+          "changes": [
+            3814
+          ],
+          "installed": false
+        },
+        "result": {
+          "queued": [],
+          "seen": 5,
+          "lookups": [
+            36,
+            17,
+            23,
+            24,
+            25,
+            26,
+            27,
+            30,
+            29,
+            31,
+            32,
+            33,
+            41,
+            34
+          ]
+        }
+      },
+      {
+        "name": "suppressed",
+        "input": {
+          "seen": 5,
+          "current": 6,
+          "triggers": [
+            3814
+          ],
+          "changes": [
+            3814
+          ],
+          "suppress": true
+        },
+        "result": {
+          "queued": [],
+          "seen": 5,
+          "lookups": [
+            36
+          ]
+        }
+      },
+      {
+        "name": "family_order",
+        "input": {
+          "seen": 0,
+          "current": 1,
+          "triggers": [
+            3814
+          ],
+          "changes": [
+            3814
+          ],
+          "other_families": true
+        },
+        "result": {
+          "queued": [
+            {
+              "hook": 20,
+              "queue": 416
+            },
+            {
+              "hook": 21,
+              "queue": 416
+            },
+            {
+              "hook": 22,
+              "queue": 416
+            },
+            {
+              "hook": 17,
+              "queue": 416
+            },
+            {
+              "hook": 18,
+              "queue": 416
+            },
+            {
+              "hook": 19,
+              "queue": 416
+            }
+          ],
+          "seen": 1,
+          "lookups": [
+            36,
+            20,
+            21,
+            22,
+            17,
+            18,
+            19,
+            23,
+            24,
+            25,
+            26,
+            27,
+            30,
+            29,
+            31,
+            32,
+            33,
+            41,
+            34
+          ]
+        }
+      },
+      {
+        "name": "signed_boundary",
+        "input": {
+          "seen": 2147483647,
+          "current": 2147483648,
+          "triggers": [
+            3814
+          ],
+          "changes": [
+            3814
+          ]
+        },
+        "result": {
+          "queued": [
+            {
+              "hook": 17,
+              "queue": 416
+            }
+          ],
+          "seen": 2147483648,
+          "lookups": [
+            36,
+            17,
+            23,
+            24,
+            25,
+            26,
+            27,
+            30,
+            29,
+            31,
+            32,
+            33,
+            41,
+            34
+          ]
+        }
+      },
+      {
+        "name": "unsigned_backward",
+        "input": {
+          "seen": 4294967295,
+          "current": 0,
+          "triggers": [
+            3814
+          ],
+          "changes": [
+            3814
+          ]
+        },
+        "result": {
+          "queued": [],
+          "seen": 4294967295,
+          "lookups": [
+            36,
+            23,
+            24,
+            25,
+            26,
+            27,
+            30,
+            29,
+            31,
+            32,
+            33,
+            41,
+            34
+          ]
+        }
+      },
+      {
+        "name": "high_cursor",
+        "input": {
+          "seen": 4294967294,
+          "current": 4294967295,
+          "triggers": [
+            3814
+          ],
+          "changes": [
+            3814
+          ]
+        },
+        "result": {
+          "queued": [
+            {
+              "hook": 17,
+              "queue": 416
+            }
+          ],
+          "seen": 4294967295,
+          "lookups": [
+            36,
+            17,
+            23,
+            24,
+            25,
+            26,
+            27,
+            30,
+            29,
+            31,
+            32,
+            33,
+            41,
+            34
+          ]
+        }
+      }
+    ]
+  },
+  "player_hook": 17
+}

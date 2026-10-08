@@ -1,0 +1,14 @@
+{
+  "executionMode": "headless_gwd_faction_route",
+  "faction": "armadyl",
+  "monotonicClock": "scoped-v1",
+  "recordingBackend": "authenticated_headless",
+  "rendered": false,
+  "roleDefinitions": [
+    6222,
+    6223,
+    6225,
+    6227
+  ],
+  "status": "ordinary_headless_four_role_route_pass_requires_native_proof"
+}

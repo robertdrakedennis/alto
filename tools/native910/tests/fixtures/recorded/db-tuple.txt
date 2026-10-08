@@ -1,0 +1,12 @@
+# Database tuple contract, recorded once from the original client's database decoders
+# (the working handlers and the retail jar gave identical output).
+# key<TAB>value; `|` stands for a newline in the recorded outputs.
+table_id	15
+row_id	805
+column	5
+tuple_index	0
+table_hex	010a00010001010002010003012404012405032424010603242401070324240108032424018901240100ff00
+row_hex	040f030a0503242401017777770066616365626f6f6b0000000000ff00
+row_tuple_output	1,2,0|[0]|777777|66616365626f6f6b|
+defaults_row_hex	040f00
+defaults_tuple_output	1,2,0|[0]|||

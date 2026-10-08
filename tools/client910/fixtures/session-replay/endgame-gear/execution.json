@@ -1,0 +1,15 @@
+{
+  "allOriginalChildrenWaited": true,
+  "launchesSpent": 3,
+  "limitation": "Completed gameplay followed by abrupt broker shutdown; original Core reported Broken pipe. Original capture FAIL remains immutable. Whole strict replay is independently required.",
+  "originalCaptureOwnerPassed": false,
+  "originalCoreExit": 101,
+  "originalRecording": {
+    "bytes": 333119,
+    "sha256": "6f572b2881b94053f271ba5bb8535adade911474b41e6f6d3fbbf477c9dd3c50"
+  },
+  "recordingBackend": "authenticated_headless",
+  "rendered": false,
+  "sourceEpochSha256": "78a6188c995222375d00f330692bfbbfe591bad48d507fe6135e7520dd24ab98",
+  "status": "completed_ordinary_endgame_training"
+}

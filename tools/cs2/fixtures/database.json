@@ -1,0 +1,1234 @@
+{
+  "client_md5": "290cb3489d088d145741f1734f53b0fc",
+  "scope": "Original field/count, effective-column and typed scalar-push routines; definition lookups receive synthetic tables and rows. No string or coordinate stack consumer is emulated.",
+  "kernels": {
+    "0": "b2aa545036ffb5e541792f4d7173d9417c331f2fef45ee1a87115d394db092cb",
+    "1": "8c59343517befea2b457f20cd6cfc8992921669176c14e63a0aed5a0601bbf5d",
+    "3": "8ff56335f88440046bbe339f229381b61d758d3d8bc16a5e6337b91ad97ccf2a",
+    "push": "2720c4c51ffd3ceae43cfef8a121668ff572c2602ee7eb9586cc343419de38ee"
+  },
+  "cases": [
+    {
+      "name": "whole_tuple",
+      "input": {
+        "table": 7,
+        "column": 1,
+        "row": 29,
+        "types": [
+          0,
+          133,
+          49
+        ],
+        "defaults": [
+          {
+            "kind": "int",
+            "value": 5
+          },
+          {
+            "kind": "int",
+            "value": 6
+          },
+          {
+            "kind": "long",
+            "value": 7
+          }
+        ],
+        "values": [
+          {
+            "kind": "int",
+            "value": 11
+          },
+          {
+            "kind": "int",
+            "value": 12
+          },
+          {
+            "kind": "long",
+            "value": 13
+          },
+          {
+            "kind": "int",
+            "value": 21
+          },
+          {
+            "kind": "int",
+            "value": 22
+          },
+          {
+            "kind": "long",
+            "value": 23
+          }
+        ],
+        "selector": 0,
+        "index": 1
+      },
+      "field": {
+        "ints": [
+          21,
+          22
+        ],
+        "longs": [
+          23
+        ],
+        "failed": false,
+        "lookups": [
+          [
+            "row",
+            29
+          ],
+          [
+            "table",
+            7
+          ]
+        ]
+      },
+      "count": {
+        "ints": [
+          2
+        ],
+        "longs": [],
+        "failed": false,
+        "lookups": [
+          [
+            "row",
+            29
+          ],
+          [
+            "table",
+            7
+          ]
+        ]
+      },
+      "packed_field": 28688
+    },
+    {
+      "name": "first_element",
+      "input": {
+        "table": 7,
+        "column": 1,
+        "row": 29,
+        "types": [
+          0,
+          133,
+          49
+        ],
+        "defaults": [
+          {
+            "kind": "int",
+            "value": 5
+          },
+          {
+            "kind": "int",
+            "value": 6
+          },
+          {
+            "kind": "long",
+            "value": 7
+          }
+        ],
+        "values": [
+          {
+            "kind": "int",
+            "value": 11
+          },
+          {
+            "kind": "int",
+            "value": 12
+          },
+          {
+            "kind": "long",
+            "value": 13
+          },
+          {
+            "kind": "int",
+            "value": 21
+          },
+          {
+            "kind": "int",
+            "value": 22
+          },
+          {
+            "kind": "long",
+            "value": 23
+          }
+        ],
+        "selector": 1,
+        "index": 1
+      },
+      "field": {
+        "ints": [
+          21
+        ],
+        "longs": [],
+        "failed": false,
+        "lookups": [
+          [
+            "row",
+            29
+          ],
+          [
+            "table",
+            7
+          ]
+        ]
+      },
+      "count": {
+        "ints": [
+          2
+        ],
+        "longs": [],
+        "failed": false,
+        "lookups": [
+          [
+            "row",
+            29
+          ],
+          [
+            "table",
+            7
+          ]
+        ]
+      },
+      "packed_field": 28689
+    },
+    {
+      "name": "second_element",
+      "input": {
+        "table": 7,
+        "column": 1,
+        "row": 29,
+        "types": [
+          0,
+          133,
+          49
+        ],
+        "defaults": [
+          {
+            "kind": "int",
+            "value": 5
+          },
+          {
+            "kind": "int",
+            "value": 6
+          },
+          {
+            "kind": "long",
+            "value": 7
+          }
+        ],
+        "values": [
+          {
+            "kind": "int",
+            "value": 11
+          },
+          {
+            "kind": "int",
+            "value": 12
+          },
+          {
+            "kind": "long",
+            "value": 13
+          },
+          {
+            "kind": "int",
+            "value": 21
+          },
+          {
+            "kind": "int",
+            "value": 22
+          },
+          {
+            "kind": "long",
+            "value": 23
+          }
+        ],
+        "selector": 2,
+        "index": 1
+      },
+      "field": {
+        "ints": [
+          22
+        ],
+        "longs": [],
+        "failed": false,
+        "lookups": [
+          [
+            "row",
+            29
+          ],
+          [
+            "table",
+            7
+          ]
+        ]
+      },
+      "count": {
+        "ints": [
+          2
+        ],
+        "longs": [],
+        "failed": false,
+        "lookups": [
+          [
+            "row",
+            29
+          ],
+          [
+            "table",
+            7
+          ]
+        ]
+      },
+      "packed_field": 28690
+    },
+    {
+      "name": "long_element",
+      "input": {
+        "table": 7,
+        "column": 1,
+        "row": 29,
+        "types": [
+          0,
+          133,
+          49
+        ],
+        "defaults": [
+          {
+            "kind": "int",
+            "value": 5
+          },
+          {
+            "kind": "int",
+            "value": 6
+          },
+          {
+            "kind": "long",
+            "value": 7
+          }
+        ],
+        "values": [
+          {
+            "kind": "int",
+            "value": 11
+          },
+          {
+            "kind": "int",
+            "value": 12
+          },
+          {
+            "kind": "long",
+            "value": 13
+          },
+          {
+            "kind": "int",
+            "value": 21
+          },
+          {
+            "kind": "int",
+            "value": 22
+          },
+          {
+            "kind": "long",
+            "value": 23
+          }
+        ],
+        "selector": 3,
+        "index": 1
+      },
+      "field": {
+        "ints": [],
+        "longs": [
+          23
+        ],
+        "failed": false,
+        "lookups": [
+          [
+            "row",
+            29
+          ],
+          [
+            "table",
+            7
+          ]
+        ]
+      },
+      "count": {
+        "ints": [
+          2
+        ],
+        "longs": [],
+        "failed": false,
+        "lookups": [
+          [
+            "row",
+            29
+          ],
+          [
+            "table",
+            7
+          ]
+        ]
+      },
+      "packed_field": 28691
+    },
+    {
+      "name": "bad_selector",
+      "input": {
+        "table": 7,
+        "column": 1,
+        "row": 29,
+        "types": [
+          0,
+          133,
+          49
+        ],
+        "defaults": [
+          {
+            "kind": "int",
+            "value": 5
+          },
+          {
+            "kind": "int",
+            "value": 6
+          },
+          {
+            "kind": "long",
+            "value": 7
+          }
+        ],
+        "values": [
+          {
+            "kind": "int",
+            "value": 11
+          },
+          {
+            "kind": "int",
+            "value": 12
+          },
+          {
+            "kind": "long",
+            "value": 13
+          },
+          {
+            "kind": "int",
+            "value": 21
+          },
+          {
+            "kind": "int",
+            "value": 22
+          },
+          {
+            "kind": "long",
+            "value": 23
+          }
+        ],
+        "selector": 4,
+        "index": 1
+      },
+      "field": {
+        "ints": [],
+        "longs": [],
+        "failed": true,
+        "lookups": [
+          [
+            "row",
+            29
+          ],
+          [
+            "table",
+            7
+          ]
+        ]
+      },
+      "count": {
+        "ints": [
+          2
+        ],
+        "longs": [],
+        "failed": false,
+        "lookups": [
+          [
+            "row",
+            29
+          ],
+          [
+            "table",
+            7
+          ]
+        ]
+      },
+      "packed_field": 28692
+    },
+    {
+      "name": "negative_index",
+      "input": {
+        "table": 7,
+        "column": 1,
+        "row": 29,
+        "types": [
+          0,
+          133,
+          49
+        ],
+        "defaults": [
+          {
+            "kind": "int",
+            "value": 5
+          },
+          {
+            "kind": "int",
+            "value": 6
+          },
+          {
+            "kind": "long",
+            "value": 7
+          }
+        ],
+        "values": [
+          {
+            "kind": "int",
+            "value": 11
+          },
+          {
+            "kind": "int",
+            "value": 12
+          },
+          {
+            "kind": "long",
+            "value": 13
+          },
+          {
+            "kind": "int",
+            "value": 21
+          },
+          {
+            "kind": "int",
+            "value": 22
+          },
+          {
+            "kind": "long",
+            "value": 23
+          }
+        ],
+        "selector": 0,
+        "index": -1
+      },
+      "field": {
+        "ints": [],
+        "longs": [],
+        "failed": true,
+        "lookups": [
+          [
+            "row",
+            29
+          ],
+          [
+            "table",
+            7
+          ]
+        ]
+      },
+      "count": {
+        "ints": [
+          2
+        ],
+        "longs": [],
+        "failed": false,
+        "lookups": [
+          [
+            "row",
+            29
+          ],
+          [
+            "table",
+            7
+          ]
+        ]
+      },
+      "packed_field": 28688
+    },
+    {
+      "name": "past_end",
+      "input": {
+        "table": 7,
+        "column": 1,
+        "row": 29,
+        "types": [
+          0,
+          133,
+          49
+        ],
+        "defaults": [
+          {
+            "kind": "int",
+            "value": 5
+          },
+          {
+            "kind": "int",
+            "value": 6
+          },
+          {
+            "kind": "long",
+            "value": 7
+          }
+        ],
+        "values": [
+          {
+            "kind": "int",
+            "value": 11
+          },
+          {
+            "kind": "int",
+            "value": 12
+          },
+          {
+            "kind": "long",
+            "value": 13
+          },
+          {
+            "kind": "int",
+            "value": 21
+          },
+          {
+            "kind": "int",
+            "value": 22
+          },
+          {
+            "kind": "long",
+            "value": 23
+          }
+        ],
+        "selector": 0,
+        "index": 2
+      },
+      "field": {
+        "ints": [],
+        "longs": [],
+        "failed": true,
+        "lookups": [
+          [
+            "row",
+            29
+          ],
+          [
+            "table",
+            7
+          ]
+        ]
+      },
+      "count": {
+        "ints": [
+          2
+        ],
+        "longs": [],
+        "failed": false,
+        "lookups": [
+          [
+            "row",
+            29
+          ],
+          [
+            "table",
+            7
+          ]
+        ]
+      },
+      "packed_field": 28688
+    },
+    {
+      "name": "empty_row_defaults",
+      "input": {
+        "table": 7,
+        "column": 1,
+        "row": 29,
+        "types": [
+          0,
+          133,
+          49
+        ],
+        "defaults": [
+          {
+            "kind": "int",
+            "value": 5
+          },
+          {
+            "kind": "int",
+            "value": 6
+          },
+          {
+            "kind": "long",
+            "value": 7
+          }
+        ],
+        "values": [],
+        "selector": 0,
+        "index": 0
+      },
+      "field": {
+        "ints": [
+          5,
+          6
+        ],
+        "longs": [
+          7
+        ],
+        "failed": false,
+        "lookups": [
+          [
+            "row",
+            29
+          ],
+          [
+            "table",
+            7
+          ]
+        ]
+      },
+      "count": {
+        "ints": [
+          1
+        ],
+        "longs": [],
+        "failed": false,
+        "lookups": [
+          [
+            "row",
+            29
+          ],
+          [
+            "table",
+            7
+          ]
+        ]
+      },
+      "packed_field": 28688
+    },
+    {
+      "name": "typed_defaults_ignore_index",
+      "input": {
+        "table": 7,
+        "column": 1,
+        "row": 29,
+        "types": [
+          0,
+          133,
+          49
+        ],
+        "defaults": [],
+        "values": [],
+        "selector": 0,
+        "index": -1
+      },
+      "field": {
+        "ints": [
+          0,
+          -1
+        ],
+        "longs": [
+          -1
+        ],
+        "failed": false,
+        "lookups": [
+          [
+            "row",
+            29
+          ],
+          [
+            "table",
+            7
+          ]
+        ]
+      },
+      "count": {
+        "ints": [
+          0
+        ],
+        "longs": [],
+        "failed": false,
+        "lookups": [
+          [
+            "row",
+            29
+          ],
+          [
+            "table",
+            7
+          ]
+        ]
+      },
+      "packed_field": 28688
+    },
+    {
+      "name": "zero_width",
+      "input": {
+        "table": 7,
+        "column": 1,
+        "row": 29,
+        "types": [],
+        "defaults": [],
+        "values": [],
+        "selector": 0,
+        "index": 1
+      },
+      "field": {
+        "ints": [],
+        "longs": [],
+        "failed": true,
+        "lookups": [
+          [
+            "row",
+            29
+          ],
+          [
+            "table",
+            7
+          ]
+        ]
+      },
+      "count": {
+        "ints": [
+          0
+        ],
+        "longs": [],
+        "failed": false,
+        "lookups": [
+          [
+            "row",
+            29
+          ],
+          [
+            "table",
+            7
+          ]
+        ]
+      },
+      "packed_field": 28688
+    },
+    {
+      "name": "partial_push_unknown_base",
+      "input": {
+        "table": 7,
+        "column": 1,
+        "row": 29,
+        "types": [
+          0,
+          133,
+          49
+        ],
+        "defaults": [
+          {
+            "kind": "int",
+            "value": 5
+          },
+          {
+            "kind": "int",
+            "value": 6
+          },
+          {
+            "kind": "long",
+            "value": 7
+          }
+        ],
+        "values": [
+          {
+            "kind": "int",
+            "value": 11
+          },
+          {
+            "kind": "int",
+            "value": 12
+          },
+          {
+            "kind": "long",
+            "value": 13
+          },
+          {
+            "kind": "int",
+            "value": 21
+          },
+          {
+            "kind": "int",
+            "value": 22
+          },
+          {
+            "kind": "long",
+            "value": 23
+          }
+        ],
+        "selector": 0,
+        "index": 1,
+        "unknown_base": 1
+      },
+      "field": {
+        "ints": [
+          21
+        ],
+        "longs": [],
+        "failed": true,
+        "lookups": [
+          [
+            "row",
+            29
+          ],
+          [
+            "table",
+            7
+          ]
+        ]
+      },
+      "count": {
+        "ints": [
+          2
+        ],
+        "longs": [],
+        "failed": false,
+        "lookups": [
+          [
+            "row",
+            29
+          ],
+          [
+            "table",
+            7
+          ]
+        ]
+      },
+      "packed_field": 28688
+    }
+  ],
+  "codec": {
+    "table": [
+      1,
+      83,
+      99,
+      104,
+      101,
+      109,
+      97,
+      128,
+      129,
+      0,
+      2,
+      1,
+      2,
+      3,
+      4,
+      2,
+      0,
+      1,
+      5,
+      0,
+      36,
+      49,
+      50,
+      128,
+      133,
+      3,
+      67,
+      111,
+      108,
+      117,
+      109,
+      110,
+      128,
+      129,
+      0,
+      2,
+      1,
+      0,
+      0,
+      0,
+      17,
+      65,
+      129,
+      128,
+      0,
+      128,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      2,
+      1,
+      0,
+      0,
+      1,
+      128,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      37,
+      255,
+      255,
+      255,
+      255,
+      0,
+      1,
+      1,
+      1,
+      129,
+      44,
+      2,
+      0,
+      0,
+      255,
+      0
+    ],
+    "row": [
+      3,
+      2,
+      0,
+      5,
+      0,
+      36,
+      49,
+      50,
+      128,
+      133,
+      1,
+      0,
+      0,
+      0,
+      17,
+      65,
+      129,
+      128,
+      0,
+      128,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      2,
+      1,
+      0,
+      0,
+      1,
+      128,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      37,
+      255,
+      255,
+      255,
+      255,
+      1,
+      1,
+      129,
+      44,
+      0,
+      255,
+      4,
+      172,
+      2,
+      0
+    ],
+    "table_name": "Schema\u20ac",
+    "column_name": "Column\u20ac",
+    "types": [
+      0,
+      36,
+      49,
+      50,
+      133
+    ],
+    "unknown_type": 300,
+    "reserved": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "row_table": 300,
+    "values": [
+      {
+        "kind": "int",
+        "value": 17
+      },
+      {
+        "kind": "text",
+        "value": "A\u20ac"
+      },
+      {
+        "kind": "long",
+        "value": -9223372036854775808
+      },
+      {
+        "kind": "coordinate",
+        "level": 2,
+        "position_bits": [
+          1266679808,
+          3472883712,
+          1108606976
+        ]
+      },
+      {
+        "kind": "int",
+        "value": -1
+      }
+    ],
+    "scope": "Synthetic definition bytes for the verified decoder grammar; these are not cached game definitions.",
+    "reset_table": [
+      1,
+      83,
+      99,
+      104,
+      101,
+      109,
+      97,
+      128,
+      129,
+      0,
+      2,
+      1,
+      2,
+      3,
+      4,
+      2,
+      0,
+      1,
+      5,
+      0,
+      36,
+      49,
+      50,
+      128,
+      133,
+      3,
+      67,
+      111,
+      108,
+      117,
+      109,
+      110,
+      128,
+      129,
+      0,
+      2,
+      1,
+      0,
+      0,
+      0,
+      17,
+      65,
+      129,
+      128,
+      0,
+      128,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      2,
+      1,
+      0,
+      0,
+      1,
+      128,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      37,
+      255,
+      255,
+      255,
+      255,
+      0,
+      1,
+      1,
+      1,
+      129,
+      44,
+      2,
+      0,
+      0,
+      255,
+      2,
+      0,
+      0,
+      0,
+      0,
+      2,
+      255,
+      0
+    ],
+    "reset_row": [
+      3,
+      2,
+      0,
+      5,
+      0,
+      36,
+      49,
+      50,
+      128,
+      133,
+      1,
+      0,
+      0,
+      0,
+      17,
+      65,
+      129,
+      128,
+      0,
+      128,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      2,
+      1,
+      0,
+      0,
+      1,
+      128,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      37,
+      255,
+      255,
+      255,
+      255,
+      1,
+      1,
+      129,
+      44,
+      0,
+      255,
+      4,
+      172,
+      2,
+      3,
+      2,
+      255,
+      0
+    ]
+  }
+}

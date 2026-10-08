@@ -1,0 +1,39 @@
+[package]
+name = "rs910-js5"
+version = "0.1.0"
+edition = "2021"
+publish = false
+description = "The 910 client's cache and JS5 network: pack/overlay reads, XTEA, the JS5 TCP/HTTP clients, disk store and resource providers."
+
+# Allowed dependencies (tools/refactor/layers.txt, target-architecture.md
+# §2.2): rs910-core, native910 and tokio; externals are listed in
+# layers.txt `[externals]`. Doc code blocks are not compiled, like
+# client910's (`doctest = false`).
+[lib]
+doctest = false
+
+[dependencies]
+native910 = { path = "../../../native910" }
+rs910-core = { path = "../rs910-core" }
+anyhow = "1.0"
+thiserror = "2.0"
+log = "0.4"
+
+[dev-dependencies]
+# js5's own tests use the shared repository-path helpers.
+rs910-core = { path = "../rs910-core", features = ["test-hooks"] }
+# The js5net tests run a local JS5 server on a tokio runtime. Production
+# code is std threads + std::net (no tokio dependency).
+tokio = { version = "1", features = ["full"] }
+
+[features]
+# Every workspace crate has `no-pack` (tools/README.md); client910's
+# `no-pack` forwards here.
+no-pack = []
+# Test helpers other crates' tests use (`test_support::require_pack`): the
+# module is `#[cfg(any(test, feature = "test-hooks"))]`. client910 and the
+# rs910-* crates enable it through [dev-dependencies] only.
+test-hooks = ["rs910-core/test-hooks"]
+
+[lints]
+workspace = true

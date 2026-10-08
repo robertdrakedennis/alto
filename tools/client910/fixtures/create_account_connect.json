@@ -1,0 +1,35 @@
+{
+  "about": "CREATE_ACCOUNT_CONNECT bytes the Rust client sends (net::create_account_connect_packet), equal to the frame written out by hand in the net tests. Decoded by server/src/lostcity/engine/LobbyAccountCreation.test.ts.",
+  "hex": "1c00a2038e00010a0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001020304fffffffe0000000102030405060708090a0b0c0d0e0f10111213141516171800080000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+  "inputs": {
+    "uid192": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "userFlow1": -2,
+    "userFlow2": 16909060
+  },
+  "regenerate": "cd tools/client910 && cargo test --lib net::tests::regenerate_create_account_connect_fixture -- --ignored"
+}

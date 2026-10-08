@@ -1,0 +1,19 @@
+# Model corpus digest: see src/corpus.rs. Columns: run, type, rows, rows that panicked, digest. Hashes and counts only.
+sample	frameset	326	0	c7f7ec186132b3e6
+sample	keyframes	50	0	48d6cf8b9638e42d
+sample	lit	587	0	774c89784ff4f037
+sample	pose	326	0	983a998bc6b84964
+sample	posed	587	0	cbadf7163a69295c
+sample	raw	587	0	eabd6f9f635e7f80
+sample	unlit	587	0	34b7ce8cf8865570
+sample	unlit-edit	587	0	a868ff91fecae32b
+sample	unlit-merge	587	0	1847e386231e77a3
+full	frameset	32541	0	ba05cf82ff33d689
+full	keyframes	398	0	45686ef5e5730bae
+full	lit	117217	0	bc76e8cd50ac94a4
+full	pose	32541	0	d470b38908af1216
+full	posed	117217	0	b79cb446f84b1e29
+full	raw	117217	0	265e000c9865feed
+full	unlit	117217	0	cd89f80f438dab76
+full	unlit-edit	117217	0	d42dd7bc03332bb2
+full	unlit-merge	117217	0	f1c0ca5cdf795a44

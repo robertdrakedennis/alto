@@ -1,0 +1,851 @@
+[
+  {
+    "tick": 19,
+    "index": 1,
+    "definition": 16044,
+    "life": 100000,
+    "maximum": 100000,
+    "hits": [],
+    "headbars": []
+  },
+  {
+    "tick": 20,
+    "index": 1,
+    "definition": 16044,
+    "life": 100000,
+    "maximum": 100000,
+    "hits": [],
+    "headbars": []
+  },
+  {
+    "tick": 21,
+    "index": 1,
+    "definition": 16044,
+    "life": 100000,
+    "maximum": 100000,
+    "hits": [],
+    "headbars": []
+  },
+  {
+    "tick": 22,
+    "index": 1,
+    "definition": 16044,
+    "life": 100000,
+    "maximum": 100000,
+    "hits": [],
+    "headbars": []
+  },
+  {
+    "tick": 23,
+    "index": 1,
+    "definition": 16044,
+    "life": 99832,
+    "maximum": 100000,
+    "hits": [
+      {
+        "source": 1,
+        "damage": 168,
+        "delay": 0
+      }
+    ],
+    "headbars": [
+      {
+        "id": 0,
+        "duration": 0,
+        "delay": 0,
+        "start": 254,
+        "end": 254
+      }
+    ]
+  },
+  {
+    "tick": 24,
+    "index": 1,
+    "definition": 16044,
+    "life": 99832,
+    "maximum": 100000,
+    "hits": [],
+    "headbars": []
+  },
+  {
+    "tick": 25,
+    "index": 1,
+    "definition": 16044,
+    "life": 99832,
+    "maximum": 100000,
+    "hits": [],
+    "headbars": []
+  },
+  {
+    "tick": 26,
+    "index": 1,
+    "definition": 16044,
+    "life": 99832,
+    "maximum": 100000,
+    "hits": [],
+    "headbars": []
+  },
+  {
+    "tick": 27,
+    "index": 1,
+    "definition": 16044,
+    "life": 99832,
+    "maximum": 100000,
+    "hits": [],
+    "headbars": []
+  },
+  {
+    "tick": 28,
+    "index": 1,
+    "definition": 16044,
+    "life": 99832,
+    "maximum": 100000,
+    "hits": [],
+    "headbars": []
+  },
+  {
+    "tick": 29,
+    "index": 1,
+    "definition": 16044,
+    "life": 99664,
+    "maximum": 100000,
+    "hits": [
+      {
+        "source": 1,
+        "damage": 168,
+        "delay": 0
+      }
+    ],
+    "headbars": [
+      {
+        "id": 0,
+        "duration": 0,
+        "delay": 0,
+        "start": 254,
+        "end": 254
+      }
+    ]
+  },
+  {
+    "tick": 30,
+    "index": 1,
+    "definition": 16044,
+    "life": 99664,
+    "maximum": 100000,
+    "hits": [],
+    "headbars": []
+  },
+  {
+    "tick": 31,
+    "index": 1,
+    "definition": 16044,
+    "life": 99664,
+    "maximum": 100000,
+    "hits": [],
+    "headbars": []
+  },
+  {
+    "tick": 32,
+    "index": 1,
+    "definition": 16044,
+    "life": 99664,
+    "maximum": 100000,
+    "hits": [],
+    "headbars": []
+  },
+  {
+    "tick": 33,
+    "index": 1,
+    "definition": 16044,
+    "life": 99664,
+    "maximum": 100000,
+    "hits": [],
+    "headbars": []
+  },
+  {
+    "tick": 34,
+    "index": 1,
+    "definition": 16044,
+    "life": 99664,
+    "maximum": 100000,
+    "hits": [],
+    "headbars": []
+  },
+  {
+    "tick": 35,
+    "index": 1,
+    "definition": 16044,
+    "life": 99496,
+    "maximum": 100000,
+    "hits": [
+      {
+        "source": 1,
+        "damage": 168,
+        "delay": 0
+      }
+    ],
+    "headbars": [
+      {
+        "id": 0,
+        "duration": 0,
+        "delay": 0,
+        "start": 253,
+        "end": 253
+      }
+    ]
+  },
+  {
+    "tick": 36,
+    "index": 1,
+    "definition": 16044,
+    "life": 99496,
+    "maximum": 100000,
+    "hits": [],
+    "headbars": []
+  },
+  {
+    "tick": 37,
+    "index": 1,
+    "definition": 16044,
+    "life": 99496,
+    "maximum": 100000,
+    "hits": [],
+    "headbars": []
+  },
+  {
+    "tick": 38,
+    "index": 1,
+    "definition": 16044,
+    "life": 99496,
+    "maximum": 100000,
+    "hits": [],
+    "headbars": []
+  },
+  {
+    "tick": 39,
+    "index": 1,
+    "definition": 16044,
+    "life": 99496,
+    "maximum": 100000,
+    "hits": [],
+    "headbars": []
+  },
+  {
+    "tick": 40,
+    "index": 1,
+    "definition": 16044,
+    "life": 99496,
+    "maximum": 100000,
+    "hits": [],
+    "headbars": []
+  },
+  {
+    "tick": 41,
+    "index": 1,
+    "definition": 16044,
+    "life": 99330,
+    "maximum": 100000,
+    "hits": [
+      {
+        "source": 1,
+        "damage": 166,
+        "delay": 0
+      }
+    ],
+    "headbars": [
+      {
+        "id": 0,
+        "duration": 0,
+        "delay": 0,
+        "start": 253,
+        "end": 253
+      }
+    ]
+  },
+  {
+    "tick": 42,
+    "index": 1,
+    "definition": 16044,
+    "life": 99330,
+    "maximum": 100000,
+    "hits": [],
+    "headbars": []
+  },
+  {
+    "tick": 43,
+    "index": 1,
+    "definition": 16044,
+    "life": 99330,
+    "maximum": 100000,
+    "hits": [],
+    "headbars": []
+  },
+  {
+    "tick": 44,
+    "index": 1,
+    "definition": 16044,
+    "life": 99162,
+    "maximum": 100000,
+    "hits": [
+      {
+        "source": 1,
+        "damage": 168,
+        "delay": 0
+      }
+    ],
+    "headbars": [
+      {
+        "id": 0,
+        "duration": 0,
+        "delay": 0,
+        "start": 252,
+        "end": 252
+      }
+    ]
+  },
+  {
+    "tick": 45,
+    "index": 1,
+    "definition": 16044,
+    "life": 99162,
+    "maximum": 100000,
+    "hits": [],
+    "headbars": []
+  },
+  {
+    "tick": 46,
+    "index": 1,
+    "definition": 16044,
+    "life": 98896,
+    "maximum": 100000,
+    "hits": [
+      {
+        "source": 1,
+        "damage": 266,
+        "delay": 0
+      }
+    ],
+    "headbars": [
+      {
+        "id": 0,
+        "duration": 0,
+        "delay": 0,
+        "start": 252,
+        "end": 252
+      }
+    ]
+  },
+  {
+    "tick": 47,
+    "index": 1,
+    "definition": 16044,
+    "life": 98896,
+    "maximum": 100000,
+    "hits": [],
+    "headbars": []
+  },
+  {
+    "tick": 48,
+    "index": 1,
+    "definition": 16044,
+    "life": 98896,
+    "maximum": 100000,
+    "hits": [],
+    "headbars": []
+  },
+  {
+    "tick": 49,
+    "index": 1,
+    "definition": 16044,
+    "life": 98645,
+    "maximum": 100000,
+    "hits": [
+      {
+        "source": 1,
+        "damage": 251,
+        "delay": 0
+      }
+    ],
+    "headbars": [
+      {
+        "id": 0,
+        "duration": 0,
+        "delay": 0,
+        "start": 251,
+        "end": 251
+      }
+    ]
+  },
+  {
+    "tick": 50,
+    "index": 1,
+    "definition": 16044,
+    "life": 98645,
+    "maximum": 100000,
+    "hits": [],
+    "headbars": []
+  },
+  {
+    "tick": 51,
+    "index": 1,
+    "definition": 16044,
+    "life": 98645,
+    "maximum": 100000,
+    "hits": [],
+    "headbars": []
+  },
+  {
+    "tick": 52,
+    "index": 1,
+    "definition": 16044,
+    "life": 98477,
+    "maximum": 100000,
+    "hits": [
+      {
+        "source": 1,
+        "damage": 168,
+        "delay": 0
+      }
+    ],
+    "headbars": [
+      {
+        "id": 0,
+        "duration": 0,
+        "delay": 0,
+        "start": 251,
+        "end": 251
+      }
+    ]
+  },
+  {
+    "tick": 53,
+    "index": 1,
+    "definition": 16044,
+    "life": 98477,
+    "maximum": 100000,
+    "hits": [],
+    "headbars": []
+  },
+  {
+    "tick": 54,
+    "index": 1,
+    "definition": 16044,
+    "life": 98477,
+    "maximum": 100000,
+    "hits": [],
+    "headbars": []
+  },
+  {
+    "tick": 55,
+    "index": 1,
+    "definition": 16044,
+    "life": 98477,
+    "maximum": 100000,
+    "hits": [],
+    "headbars": []
+  },
+  {
+    "tick": 56,
+    "index": 1,
+    "definition": 16044,
+    "life": 98477,
+    "maximum": 100000,
+    "hits": [],
+    "headbars": []
+  },
+  {
+    "tick": 57,
+    "index": 1,
+    "definition": 16044,
+    "life": 98477,
+    "maximum": 100000,
+    "hits": [],
+    "headbars": []
+  },
+  {
+    "tick": 58,
+    "index": 1,
+    "definition": 16044,
+    "life": 98311,
+    "maximum": 100000,
+    "hits": [
+      {
+        "source": 1,
+        "damage": 166,
+        "delay": 0
+      }
+    ],
+    "headbars": [
+      {
+        "id": 0,
+        "duration": 0,
+        "delay": 0,
+        "start": 250,
+        "end": 250
+      }
+    ]
+  },
+  {
+    "tick": 59,
+    "index": 1,
+    "definition": 16044,
+    "life": 98311,
+    "maximum": 100000,
+    "hits": [],
+    "headbars": []
+  },
+  {
+    "tick": 60,
+    "index": 1,
+    "definition": 16044,
+    "life": 98311,
+    "maximum": 100000,
+    "hits": [],
+    "headbars": []
+  },
+  {
+    "tick": 61,
+    "index": 1,
+    "definition": 16044,
+    "life": 98143,
+    "maximum": 100000,
+    "hits": [
+      {
+        "source": 1,
+        "damage": 168,
+        "delay": 0
+      }
+    ],
+    "headbars": [
+      {
+        "id": 0,
+        "duration": 0,
+        "delay": 0,
+        "start": 250,
+        "end": 250
+      }
+    ]
+  },
+  {
+    "tick": 62,
+    "index": 1,
+    "definition": 16044,
+    "life": 98143,
+    "maximum": 100000,
+    "hits": [],
+    "headbars": []
+  },
+  {
+    "tick": 63,
+    "index": 1,
+    "definition": 16044,
+    "life": 97477,
+    "maximum": 100000,
+    "hits": [
+      {
+        "source": 1,
+        "damage": 666,
+        "delay": 0
+      }
+    ],
+    "headbars": [
+      {
+        "id": 0,
+        "duration": 0,
+        "delay": 0,
+        "start": 248,
+        "end": 248
+      }
+    ]
+  },
+  {
+    "tick": 64,
+    "index": 1,
+    "definition": 16044,
+    "life": 97477,
+    "maximum": 100000,
+    "hits": [],
+    "headbars": []
+  },
+  {
+    "tick": 65,
+    "index": 1,
+    "definition": 16044,
+    "life": 97477,
+    "maximum": 100000,
+    "hits": [],
+    "headbars": []
+  },
+  {
+    "tick": 66,
+    "index": 1,
+    "definition": 16044,
+    "life": 97309,
+    "maximum": 100000,
+    "hits": [
+      {
+        "source": 1,
+        "damage": 168,
+        "delay": 0
+      }
+    ],
+    "headbars": [
+      {
+        "id": 0,
+        "duration": 0,
+        "delay": 0,
+        "start": 248,
+        "end": 248
+      }
+    ]
+  },
+  {
+    "tick": 67,
+    "index": 1,
+    "definition": 16044,
+    "life": 97309,
+    "maximum": 100000,
+    "hits": [],
+    "headbars": []
+  },
+  {
+    "tick": 68,
+    "index": 1,
+    "definition": 16044,
+    "life": 97309,
+    "maximum": 100000,
+    "hits": [],
+    "headbars": []
+  },
+  {
+    "tick": 69,
+    "index": 1,
+    "definition": 16044,
+    "life": 97309,
+    "maximum": 100000,
+    "hits": [],
+    "headbars": []
+  },
+  {
+    "tick": 70,
+    "index": 1,
+    "definition": 16044,
+    "life": 97309,
+    "maximum": 100000,
+    "hits": [],
+    "headbars": []
+  },
+  {
+    "tick": 71,
+    "index": 1,
+    "definition": 16044,
+    "life": 97141,
+    "maximum": 100000,
+    "hits": [
+      {
+        "source": 1,
+        "damage": 168,
+        "delay": 0
+      }
+    ],
+    "headbars": [
+      {
+        "id": 0,
+        "duration": 0,
+        "delay": 0,
+        "start": 247,
+        "end": 247
+      }
+    ]
+  },
+  {
+    "tick": 72,
+    "index": 1,
+    "definition": 16044,
+    "life": 97141,
+    "maximum": 100000,
+    "hits": [],
+    "headbars": []
+  },
+  {
+    "tick": 73,
+    "index": 1,
+    "definition": 16044,
+    "life": 97141,
+    "maximum": 100000,
+    "hits": [],
+    "headbars": []
+  },
+  {
+    "tick": 74,
+    "index": 1,
+    "definition": 16044,
+    "life": 97141,
+    "maximum": 100000,
+    "hits": [],
+    "headbars": []
+  },
+  {
+    "tick": 75,
+    "index": 1,
+    "definition": 16044,
+    "life": 97141,
+    "maximum": 100000,
+    "hits": [],
+    "headbars": []
+  },
+  {
+    "tick": 76,
+    "index": 1,
+    "definition": 16044,
+    "life": 97141,
+    "maximum": 100000,
+    "hits": [],
+    "headbars": []
+  },
+  {
+    "tick": 77,
+    "index": 1,
+    "definition": 16044,
+    "life": 96973,
+    "maximum": 100000,
+    "hits": [
+      {
+        "source": 1,
+        "damage": 168,
+        "delay": 0
+      }
+    ],
+    "headbars": [
+      {
+        "id": 0,
+        "duration": 0,
+        "delay": 0,
+        "start": 247,
+        "end": 247
+      }
+    ]
+  },
+  {
+    "tick": 78,
+    "index": 1,
+    "definition": 16044,
+    "life": 96973,
+    "maximum": 100000,
+    "hits": [],
+    "headbars": []
+  },
+  {
+    "tick": 79,
+    "index": 1,
+    "definition": 16044,
+    "life": 96973,
+    "maximum": 100000,
+    "hits": [],
+    "headbars": []
+  },
+  {
+    "tick": 80,
+    "index": 1,
+    "definition": 16044,
+    "life": 96973,
+    "maximum": 100000,
+    "hits": [],
+    "headbars": []
+  },
+  {
+    "tick": 81,
+    "index": 1,
+    "definition": 16044,
+    "life": 96973,
+    "maximum": 100000,
+    "hits": [],
+    "headbars": []
+  },
+  {
+    "tick": 82,
+    "index": 1,
+    "definition": 16044,
+    "life": 96973,
+    "maximum": 100000,
+    "hits": [],
+    "headbars": []
+  },
+  {
+    "tick": 83,
+    "index": 1,
+    "definition": 16044,
+    "life": 96805,
+    "maximum": 100000,
+    "hits": [
+      {
+        "source": 1,
+        "damage": 168,
+        "delay": 0
+      }
+    ],
+    "headbars": [
+      {
+        "id": 0,
+        "duration": 0,
+        "delay": 0,
+        "start": 246,
+        "end": 246
+      }
+    ]
+  },
+  {
+    "tick": 84,
+    "index": 1,
+    "definition": 16044,
+    "life": 96805,
+    "maximum": 100000,
+    "hits": [],
+    "headbars": []
+  },
+  {
+    "tick": 85,
+    "index": 1,
+    "definition": 16044,
+    "life": 96805,
+    "maximum": 100000,
+    "hits": [],
+    "headbars": []
+  },
+  {
+    "tick": 86,
+    "index": 1,
+    "definition": 16044,
+    "life": 96805,
+    "maximum": 100000,
+    "hits": [],
+    "headbars": []
+  },
+  {
+    "tick": 87,
+    "index": 1,
+    "definition": 16044,
+    "life": 96805,
+    "maximum": 100000,
+    "hits": [],
+    "headbars": []
+  },
+  {
+    "tick": 88,
+    "index": 1,
+    "definition": 16044,
+    "life": 96805,
+    "maximum": 100000,
+    "hits": [],
+    "headbars": []
+  },
+  {
+    "tick": 89,
+    "index": 1,
+    "definition": 16044,
+    "life": 96805,
+    "maximum": 100000,
+    "hits": [],
+    "headbars": []
+  }
+]

@@ -1,0 +1,112 @@
+{
+  "allOriginalChildrenWaited": true,
+  "captureOwnerPassed": true,
+  "launchesSpent": 3,
+  "owningReplay": {
+    "allDirectChildrenWaited": true,
+    "exit": 0,
+    "test": "app::scenario_slayer_catalog::recorded_slayer_catalog_ordinary_kill_task_and_purchase"
+  },
+  "owningReplayPassed": true,
+  "publications": {
+    "npc_info": 395,
+    "orderedPublicationLineageSha256": "23e256a987afbd155a4366207d4708a8e5ce537fe06b9b75af88045149f379ae",
+    "player_info": 395
+  },
+  "rendered": false,
+  "sourceBindings": {
+    "binary": {
+      "path": "/Users/robert/projects/alto-target-slayer-gaps/debug/deps/client910-c15188a94426efa7",
+      "sha256": "e83852ed8e3fd9f026908c53fc561612bc3201797f8864f17fe7c136396d87e0"
+    },
+    "binaryManifest": {
+      "path": "/Users/robert/projects/alto-target-slayer-gaps/proof/core1/binary-manifest.json",
+      "sha256": "b3cf6e0c3d2593c61fc240ea75f60fb647017ef0385499f348a6bd3cc06aa704"
+    },
+    "broker": {
+      "path": "/Users/robert/.codex/worktrees/slayer-gaps/alto/.cache/slayer-recovery/helpers/peer_broker.mjs",
+      "sha256": "e4d403a67745dbce9a0ec84522a98194d2fb48e6926d5c6851276212639a1568"
+    },
+    "control": {
+      "path": "/Users/robert/.codex/worktrees/slayer-gaps/alto/tools/client910/scripts/control.py",
+      "sha256": "f48413b91db69b5c02d29257c70e66ec55e59f18f3d2f4d53a3ece80d63a045f"
+    },
+    "deviceEnvelope": {
+      "path": "/Users/robert/.codex/worktrees/slayer-gaps/alto/tools/client910/fixtures/session-replay/legacy-interface/session.rtr",
+      "sha256": "acb90c0c962ddec1b8c413af0c2df13e63b922ef71d4bfc1aa9412ff22c5a341"
+    },
+    "driver": {
+      "path": "/Users/robert/.codex/worktrees/slayer-gaps/alto/tools/client910/fixtures/session-replay/slayer-catalog/driver.py",
+      "sha256": "09c9c40c6d9ba51e57e49ee25e717697f708a8da7e70eec3fa5b1533e340908a"
+    },
+    "endgameFixture": {
+      "path": "/Users/robert/.codex/worktrees/slayer-gaps/alto/server/src/lostcity/systems/equipment/EndgameFixture.testkit.ts",
+      "sha256": "8afae0d67fa02852c56b01e5f4d5bed833b78edfc13835ee4f90c28548ba3b55"
+    },
+    "foodReceipts": {
+      "path": "/Users/robert/.codex/worktrees/slayer-gaps/alto/tools/client910/fixtures/session-replay/barrows/food-receipts.mjs",
+      "sha256": "bca606f0a95668a6e3936f561d3e6e56770ed1a0b65e64dd98896cfd6c999c9b"
+    },
+    "freeze": {
+      "path": "/Users/robert/.codex/worktrees/slayer-gaps/alto/.cache/slayer-recovery/helpers/freeze.py",
+      "sha256": "a823721f2b8e0d9062ecda186aec50bd8956fbedcf9bbc6d3b7c70f398919578"
+    },
+    "loginCrypto": {
+      "path": "/Users/robert/.codex/worktrees/slayer-gaps/alto/server/src/lostcity/network/LoginCrypto.ts",
+      "sha256": "df172e5c3f2ecfffca689a7133c2f004b0c28ddb93fd175326a7638804288bb9"
+    },
+    "loginProvider": {
+      "path": "/Users/robert/.codex/worktrees/slayer-gaps/alto/tools/client910/fixtures/session-replay/god-wars/login_provider.mjs",
+      "sha256": "b8a96e1548141f19ca3b036d96c961018897c5f825ceda6c08dea3d9bf865b50"
+    },
+    "loginTestkit": {
+      "path": "/Users/robert/.codex/worktrees/slayer-gaps/alto/server/src/lostcity/network/SkillsE2E.testkit.ts",
+      "sha256": "39a797dec044580f1ee6f2282b9a339c10df072632f0abd3d0562c7704f68800"
+    },
+    "owner": {
+      "path": "/Users/robert/.codex/worktrees/slayer-gaps/alto/tools/client910/fixtures/session-replay/barrows/record.py",
+      "sha256": "4a6afc86520acbb2e71867cfc9d99726bea9d167804817ed1b9f43e275121350"
+    },
+    "peerAdapter": {
+      "path": "/Users/robert/.codex/worktrees/slayer-gaps/alto/tools/client910/fixtures/session-replay/god-wars/peer_adapter.mjs",
+      "sha256": "e37f3587ed18e6d53b89f1829d1bd29bc911aeb40e8fa0cefbfabd89c7f33d48"
+    },
+    "publications": {
+      "path": "/Users/robert/.codex/worktrees/slayer-gaps/alto/tools/client910/fixtures/session-replay/god-wars/publications.py",
+      "sha256": "768dd55f68d315aa4cbae4dbb3c0e4a13dea2cc541a4d891948a148b347bf889"
+    },
+    "record": {
+      "path": "/Users/robert/.codex/worktrees/slayer-gaps/alto/.cache/slayer-recovery/helpers/record.py",
+      "sha256": "9065a0fac534368c79dccdd712084d59bca86879f7d6fb482d4cd116b2b87336"
+    },
+    "seed": {
+      "path": "/Users/robert/.codex/worktrees/slayer-gaps/alto/tools/client910/fixtures/session-replay/slayer-catalog/seed.mjs",
+      "sha256": "42a379907e4469f0a89f2177ae662bb53a3681cff9c7e39940df4473b8622a84"
+    },
+    "server": {
+      "path": "/Users/robert/.codex/worktrees/slayer-gaps/alto/tools/client910/fixtures/session-replay/slayer-catalog/server.mjs",
+      "sha256": "1b81cc9844a9d63c017b829d5130f27c5f93d38e778c25e4025faeb759dcd899"
+    },
+    "sharedDriver": {
+      "path": "/Users/robert/.codex/worktrees/slayer-gaps/alto/tools/client910/fixtures/session-replay/barrows/driver.py",
+      "sha256": "d5377a3458af568e527852b9b87d3c529c09a168428dcd363a36c19e85d38508"
+    },
+    "slayerFixture": {
+      "path": "/Users/robert/.codex/worktrees/slayer-gaps/alto/server/src/lostcity/systems/slayer/SlayerFixture.testkit.ts",
+      "sha256": "7dec3b3cda103d4a8fe5502cdfb9457d6a877c86a008f528d0093c8fd774c204"
+    },
+    "socketTestkit": {
+      "path": "/Users/robert/.codex/worktrees/slayer-gaps/alto/server/src/lostcity/network/SocketE2E.testkit.ts",
+      "sha256": "55ffd1e43c77fd3c99fba6850688c4e6e5c10c9c88228b1e6d977a8effc4e4f8"
+    },
+    "wiredGuard": {
+      "path": "/Users/robert/projects/alto/ref/independence/wired-guard.sh",
+      "sha256": "aabce1f59b80a316f882d4afb8c30a1fd677740533c3f773a80ebcdef0ad37fd"
+    }
+  },
+  "sourceEpochSha256": "402fea9740b904d1f89868b9d1982bbeecdc59b30b19b907f37119972444a0a0",
+  "status": "completed_ordinary_slayer_catalog",
+  "wholeBytes": 1538044,
+  "wholeRecords": 30575,
+  "wholeSha256": "8a05bfa737f9c526a3101634f206434e93b785dc49d5ded7e363c6d802140652"
+}

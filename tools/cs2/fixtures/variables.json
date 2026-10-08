@@ -1,0 +1,1060 @@
+{
+  "client_md5": "290cb3489d088d145741f1734f53b0fc",
+  "scope": "Original decoder loop/blocks, smart-id control flow, player and client getters and push_varbit handler execute with synthetic data. Packet word reads, config provider base lookup, base-value virtual read, reference lifecycle, opcode-error and domain getter services are supplied. Domain registry routing is observed independently of domain implementation. Full cache constructor/lifetime, service modes and abort failure classification remain unsealed. Original kernels/harness stay local. Base-variable decoder blocks execute under the original generic loop, with packet g2 and ScriptVarType lookup supplied. Constructor initial fields are supplied from verified initialization instructions. Player/client default selectors execute against synthetic type identities; catalog default payloads are covered by the existing type catalog recording. Sparse service modes and full constructors remain unsealed.",
+  "kernels": {
+    "decoder": "5cfebaf7b751b9c65be6fb2c6497f2c43c2b3ad068798077bc323e609afe5cd5",
+    "loop": "c1f06f078122b913ce3d9736a93c912b724f183fad2c2a2c4474163ae5855291",
+    "smart": "72254fedf399be4d87ae2c894a071d2f56c6c2bdeee5a7a7ed86918acdbb5ce3",
+    "player_get": "a4dadc835c9417be8a7c19bce7572e356a8c976d1f326a3108a39848b9447e7c",
+    "client_get": "d452ed044b59ff89096b43301be5223138ed74386769c80d8a1527f6d43cbf87",
+    "push": "fb4ffa2c6f839e02a4a473c51603b90bebaf963a497763a8becbb7070799f62e",
+    "base_decoder": "be4f36c1deb77eed89b9aad7064c18b9e92ae91a6fef39475a793ce0f79eb8a4",
+    "player_default": "bdb1d8d8d249c8c1965e5e50a6ba833c625b60d823f31bf059d1a3f5be337aba",
+    "client_default": "3758bbcb22da9f9befe3a455670d5f796d2b14fee547d0792ea4a9c039e88d6e"
+  },
+  "decodes": [
+    {
+      "name": "empty",
+      "wire": [
+        0
+      ],
+      "options": {},
+      "result": {
+        "start": 0,
+        "end": 0,
+        "flag": false,
+        "binding": "absent",
+        "consumed": 1,
+        "error": false,
+        "events": []
+      }
+    },
+    {
+      "name": "range",
+      "wire": [
+        2,
+        5,
+        11,
+        0
+      ],
+      "options": {},
+      "result": {
+        "start": 5,
+        "end": 11,
+        "flag": false,
+        "binding": "absent",
+        "consumed": 4,
+        "error": false,
+        "events": []
+      }
+    },
+    {
+      "name": "one_bit",
+      "wire": [
+        2,
+        12,
+        12,
+        0
+      ],
+      "options": {},
+      "result": {
+        "start": 12,
+        "end": 12,
+        "flag": false,
+        "binding": "absent",
+        "consumed": 4,
+        "error": false,
+        "events": []
+      }
+    },
+    {
+      "name": "server_binding",
+      "wire": [
+        1,
+        0,
+        14,
+        230,
+        2,
+        5,
+        11,
+        0
+      ],
+      "options": {},
+      "result": {
+        "start": 5,
+        "end": 11,
+        "flag": false,
+        "binding": "resolved",
+        "consumed": 8,
+        "error": false,
+        "events": [
+          [
+            "base_lookup",
+            0,
+            3814
+          ]
+        ]
+      }
+    },
+    {
+      "name": "client_binding",
+      "wire": [
+        1,
+        2,
+        14,
+        115,
+        2,
+        5,
+        11,
+        0
+      ],
+      "options": {},
+      "result": {
+        "start": 5,
+        "end": 11,
+        "flag": false,
+        "binding": "resolved",
+        "consumed": 8,
+        "error": false,
+        "events": [
+          [
+            "base_lookup",
+            2,
+            3699
+          ]
+        ]
+      }
+    },
+    {
+      "name": "smart_wide",
+      "wire": [
+        1,
+        0,
+        128,
+        1,
+        2,
+        3,
+        0
+      ],
+      "options": {},
+      "result": {
+        "start": 0,
+        "end": 0,
+        "flag": false,
+        "binding": "resolved",
+        "consumed": 7,
+        "error": false,
+        "events": [
+          [
+            "base_lookup",
+            0,
+            66051
+          ]
+        ]
+      }
+    },
+    {
+      "name": "null_id",
+      "wire": [
+        1,
+        0,
+        127,
+        255,
+        0
+      ],
+      "options": {},
+      "result": {
+        "start": 0,
+        "end": 0,
+        "flag": false,
+        "binding": "resolved",
+        "consumed": 5,
+        "error": false,
+        "events": [
+          [
+            "base_lookup",
+            0,
+            -1
+          ]
+        ]
+      }
+    },
+    {
+      "name": "flag",
+      "wire": [
+        16,
+        0
+      ],
+      "options": {},
+      "result": {
+        "start": 0,
+        "end": 0,
+        "flag": true,
+        "binding": "absent",
+        "consumed": 2,
+        "error": false,
+        "events": []
+      }
+    },
+    {
+      "name": "ignored_flag",
+      "wire": [
+        77,
+        0,
+        88,
+        99
+      ],
+      "options": {},
+      "result": {
+        "start": 0,
+        "end": 0,
+        "flag": false,
+        "binding": "absent",
+        "consumed": 2,
+        "error": false,
+        "events": []
+      }
+    },
+    {
+      "name": "missing_domain_retains",
+      "wire": [
+        1,
+        11,
+        0,
+        5,
+        0
+      ],
+      "options": {
+        "prior_binding": true
+      },
+      "result": {
+        "start": 0,
+        "end": 0,
+        "flag": false,
+        "binding": "retained",
+        "consumed": 5,
+        "error": false,
+        "events": []
+      }
+    },
+    {
+      "name": "missing_base_clears",
+      "wire": [
+        1,
+        0,
+        0,
+        5,
+        2,
+        5,
+        11,
+        0
+      ],
+      "options": {
+        "returned_base": false,
+        "prior_binding": true
+      },
+      "result": {
+        "start": 0,
+        "end": 0,
+        "flag": false,
+        "binding": "absent",
+        "consumed": 4,
+        "error": true,
+        "events": [
+          [
+            "base_lookup",
+            0,
+            5
+          ]
+        ]
+      }
+    },
+    {
+      "name": "replace_range",
+      "wire": [
+        2,
+        5,
+        11,
+        2,
+        12,
+        12,
+        0
+      ],
+      "options": {},
+      "result": {
+        "start": 12,
+        "end": 12,
+        "flag": false,
+        "binding": "absent",
+        "consumed": 7,
+        "error": false,
+        "events": []
+      }
+    }
+  ],
+  "gets": [
+    {
+      "name": "player_theme",
+      "input": {
+        "base": 32,
+        "start": 5,
+        "end": 11,
+        "client": false
+      },
+      "result": {
+        "value": 1,
+        "events": [
+          [
+            "base_read"
+          ]
+        ]
+      }
+    },
+    {
+      "name": "client_theme",
+      "input": {
+        "base": 32,
+        "start": 5,
+        "end": 11,
+        "client": true
+      },
+      "result": {
+        "value": 1,
+        "events": [
+          [
+            "base_read"
+          ]
+        ]
+      }
+    },
+    {
+      "name": "player_one_bit",
+      "input": {
+        "base": 4096,
+        "start": 12,
+        "end": 12,
+        "client": false
+      },
+      "result": {
+        "value": 1,
+        "events": [
+          [
+            "base_read"
+          ]
+        ]
+      }
+    },
+    {
+      "name": "client_one_bit",
+      "input": {
+        "base": 4096,
+        "start": 12,
+        "end": 12,
+        "client": true
+      },
+      "result": {
+        "value": 1,
+        "events": [
+          [
+            "base_read"
+          ]
+        ]
+      }
+    },
+    {
+      "name": "player_signed",
+      "input": {
+        "base": -1,
+        "start": 5,
+        "end": 11,
+        "client": false
+      },
+      "result": {
+        "value": 127,
+        "events": [
+          [
+            "base_read"
+          ]
+        ]
+      }
+    },
+    {
+      "name": "client_signed",
+      "input": {
+        "base": -1,
+        "start": 5,
+        "end": 11,
+        "client": true
+      },
+      "result": {
+        "value": 127,
+        "events": [
+          [
+            "base_read"
+          ]
+        ]
+      }
+    },
+    {
+      "name": "player_full_word",
+      "input": {
+        "base": -1,
+        "start": 0,
+        "end": 31,
+        "client": false
+      },
+      "result": {
+        "value": 0,
+        "events": [
+          [
+            "base_read"
+          ]
+        ]
+      }
+    },
+    {
+      "name": "client_full_word",
+      "input": {
+        "base": -1,
+        "start": 0,
+        "end": 31,
+        "client": true
+      },
+      "result": {
+        "value": 0,
+        "events": [
+          [
+            "base_read"
+          ]
+        ]
+      }
+    },
+    {
+      "name": "player_width_31",
+      "input": {
+        "base": -1,
+        "start": 0,
+        "end": 30,
+        "client": false
+      },
+      "result": {
+        "value": 2147483647,
+        "events": [
+          [
+            "base_read"
+          ]
+        ]
+      }
+    },
+    {
+      "name": "client_width_31",
+      "input": {
+        "base": -1,
+        "start": 0,
+        "end": 30,
+        "client": true
+      },
+      "result": {
+        "value": 2147483647,
+        "events": [
+          [
+            "base_read"
+          ]
+        ]
+      }
+    },
+    {
+      "name": "player_wrapped_start",
+      "input": {
+        "base": 3,
+        "start": 32,
+        "end": 32,
+        "client": false
+      },
+      "result": {
+        "value": 1,
+        "events": [
+          [
+            "base_read"
+          ]
+        ]
+      }
+    },
+    {
+      "name": "client_wrapped_start",
+      "input": {
+        "base": 3,
+        "start": 32,
+        "end": 32,
+        "client": true
+      },
+      "result": {
+        "value": 1,
+        "events": [
+          [
+            "base_read"
+          ]
+        ]
+      }
+    },
+    {
+      "name": "player_reversed",
+      "input": {
+        "base": -1,
+        "start": 12,
+        "end": 5,
+        "client": false
+      },
+      "result": {
+        "value": 67108863,
+        "events": [
+          [
+            "base_read"
+          ]
+        ]
+      }
+    },
+    {
+      "name": "client_reversed",
+      "input": {
+        "base": -1,
+        "start": 12,
+        "end": 5,
+        "client": true
+      },
+      "result": {
+        "value": 67108863,
+        "events": [
+          [
+            "base_read"
+          ]
+        ]
+      }
+    },
+    {
+      "name": "player_invalid_tag",
+      "input": {
+        "base": 3,
+        "start": 0,
+        "end": 1,
+        "tag": 1,
+        "client": false
+      },
+      "result": {
+        "value": null,
+        "events": [
+          [
+            "base_read"
+          ],
+          [
+            "abort"
+          ]
+        ]
+      }
+    },
+    {
+      "name": "client_invalid_tag",
+      "input": {
+        "base": 3,
+        "start": 0,
+        "end": 1,
+        "tag": 1,
+        "client": true
+      },
+      "result": {
+        "value": null,
+        "events": [
+          [
+            "base_read"
+          ],
+          [
+            "abort"
+          ]
+        ]
+      }
+    }
+  ],
+  "pushes": [
+    {
+      "name": "primary",
+      "input": {},
+      "result": {
+        "ints": [
+          91,
+          11
+        ],
+        "events": [
+          [
+            "domain_get",
+            2,
+            false
+          ]
+        ]
+      }
+    },
+    {
+      "name": "secondary",
+      "input": {
+        "secondary": true
+      },
+      "result": {
+        "ints": [
+          91,
+          17
+        ],
+        "events": [
+          [
+            "domain_get",
+            2,
+            true
+          ]
+        ]
+      }
+    },
+    {
+      "name": "operand_high_bits",
+      "input": {
+        "operand": 65537
+      },
+      "result": {
+        "ints": [
+          91,
+          11
+        ],
+        "events": [
+          [
+            "domain_get",
+            2,
+            false
+          ]
+        ]
+      }
+    },
+    {
+      "name": "missing_constant",
+      "input": {
+        "bound_constant": false
+      },
+      "result": {
+        "ints": [
+          91
+        ],
+        "events": [
+          [
+            "abort"
+          ]
+        ]
+      }
+    },
+    {
+      "name": "wrong_tag",
+      "input": {
+        "tag": 0
+      },
+      "result": {
+        "ints": [
+          91
+        ],
+        "events": [
+          [
+            "abort"
+          ]
+        ]
+      }
+    },
+    {
+      "name": "missing_varbit",
+      "input": {
+        "varbit_present": false
+      },
+      "result": {
+        "ints": [
+          91
+        ],
+        "events": [
+          [
+            "opcode_error"
+          ]
+        ]
+      }
+    },
+    {
+      "name": "missing_domain",
+      "input": {
+        "domain_present": false
+      },
+      "result": {
+        "ints": [
+          91
+        ],
+        "events": [
+          [
+            "opcode_error"
+          ]
+        ]
+      }
+    }
+  ],
+  "base_decodes": [
+    {
+      "name": "empty",
+      "wire": [
+        0
+      ],
+      "result": {
+        "data_type": null,
+        "lifetime": 0,
+        "transmit_level": 0,
+        "client_code": 0,
+        "legacy": true,
+        "flag": false,
+        "consumed": 1,
+        "events": []
+      }
+    },
+    {
+      "name": "player_theme",
+      "wire": [
+        3,
+        0,
+        4,
+        1,
+        110,
+        0,
+        0,
+        0
+      ],
+      "result": {
+        "data_type": 0,
+        "lifetime": 1,
+        "transmit_level": 0,
+        "client_code": 0,
+        "legacy": true,
+        "flag": false,
+        "consumed": 8,
+        "events": [
+          [
+            "type_lookup",
+            0
+          ]
+        ]
+      }
+    },
+    {
+      "name": "client_theme",
+      "wire": [
+        3,
+        0,
+        7,
+        0
+      ],
+      "result": {
+        "data_type": 0,
+        "lifetime": 0,
+        "transmit_level": 0,
+        "client_code": 0,
+        "legacy": false,
+        "flag": false,
+        "consumed": 4,
+        "events": [
+          [
+            "type_lookup",
+            0
+          ]
+        ]
+      }
+    },
+    {
+      "name": "all_fields",
+      "wire": [
+        3,
+        1,
+        4,
+        2,
+        5,
+        3,
+        110,
+        255,
+        255,
+        7,
+        8,
+        0
+      ],
+      "result": {
+        "data_type": 1,
+        "lifetime": 2,
+        "transmit_level": 3,
+        "client_code": 65535,
+        "legacy": false,
+        "flag": true,
+        "consumed": 12,
+        "events": [
+          [
+            "type_lookup",
+            1
+          ]
+        ]
+      }
+    },
+    {
+      "name": "repeated_fields",
+      "wire": [
+        3,
+        0,
+        3,
+        36,
+        4,
+        1,
+        4,
+        2,
+        110,
+        1,
+        2,
+        110,
+        3,
+        4,
+        0
+      ],
+      "result": {
+        "data_type": 36,
+        "lifetime": 2,
+        "transmit_level": 0,
+        "client_code": 772,
+        "legacy": true,
+        "flag": false,
+        "consumed": 15,
+        "events": [
+          [
+            "type_lookup",
+            0
+          ],
+          [
+            "type_lookup",
+            36
+          ]
+        ]
+      }
+    },
+    {
+      "name": "null_type",
+      "wire": [
+        3,
+        255,
+        0
+      ],
+      "result": {
+        "data_type": null,
+        "lifetime": 0,
+        "transmit_level": 0,
+        "client_code": 0,
+        "legacy": true,
+        "flag": false,
+        "consumed": 3,
+        "events": [
+          [
+            "type_lookup",
+            255
+          ]
+        ]
+      }
+    },
+    {
+      "name": "clear_type",
+      "wire": [
+        3,
+        0,
+        3,
+        255,
+        0
+      ],
+      "result": {
+        "data_type": null,
+        "lifetime": 0,
+        "transmit_level": 0,
+        "client_code": 0,
+        "legacy": true,
+        "flag": false,
+        "consumed": 5,
+        "events": [
+          [
+            "type_lookup",
+            0
+          ],
+          [
+            "type_lookup",
+            255
+          ]
+        ]
+      }
+    },
+    {
+      "name": "ignored_tags",
+      "wire": [
+        1,
+        2,
+        6,
+        77,
+        0,
+        88
+      ],
+      "result": {
+        "data_type": null,
+        "lifetime": 0,
+        "transmit_level": 0,
+        "client_code": 0,
+        "legacy": true,
+        "flag": false,
+        "consumed": 5,
+        "events": []
+      }
+    }
+  ],
+  "default_selectors": [
+    {
+      "input": {
+        "type": 0,
+        "legacy": false,
+        "client": false
+      },
+      "result": {
+        "selected": "type_default"
+      }
+    },
+    {
+      "input": {
+        "type": 0,
+        "legacy": false,
+        "client": true
+      },
+      "result": {
+        "selected": "type_default"
+      }
+    },
+    {
+      "input": {
+        "type": 0,
+        "legacy": true,
+        "client": false
+      },
+      "result": {
+        "selected": "type_default"
+      }
+    },
+    {
+      "input": {
+        "type": 0,
+        "legacy": true,
+        "client": true
+      },
+      "result": {
+        "selected": "legacy"
+      }
+    },
+    {
+      "input": {
+        "type": 1,
+        "legacy": false,
+        "client": false
+      },
+      "result": {
+        "selected": "type_default"
+      }
+    },
+    {
+      "input": {
+        "type": 1,
+        "legacy": false,
+        "client": true
+      },
+      "result": {
+        "selected": "type_default"
+      }
+    },
+    {
+      "input": {
+        "type": 1,
+        "legacy": true,
+        "client": false
+      },
+      "result": {
+        "selected": "legacy"
+      }
+    },
+    {
+      "input": {
+        "type": 1,
+        "legacy": true,
+        "client": true
+      },
+      "result": {
+        "selected": "legacy"
+      }
+    },
+    {
+      "input": {
+        "type": 36,
+        "legacy": false,
+        "client": false
+      },
+      "result": {
+        "selected": "type_default"
+      }
+    },
+    {
+      "input": {
+        "type": 36,
+        "legacy": false,
+        "client": true
+      },
+      "result": {
+        "selected": "type_default"
+      }
+    },
+    {
+      "input": {
+        "type": 36,
+        "legacy": true,
+        "client": false
+      },
+      "result": {
+        "selected": "type_default"
+      }
+    },
+    {
+      "input": {
+        "type": 36,
+        "legacy": true,
+        "client": true
+      },
+      "result": {
+        "selected": "type_default"
+      }
+    }
+  ],
+  "authored_palette": [
+    {
+      "player": 0,
+      "client": 0,
+      "key": 0,
+      "colour": 16777215
+    },
+    {
+      "player": 1,
+      "client": 0,
+      "key": 0,
+      "colour": 65280
+    },
+    {
+      "player": 0,
+      "client": 1,
+      "key": 0,
+      "colour": 65280
+    },
+    {
+      "player": 1,
+      "client": 1,
+      "key": 0,
+      "colour": 16711680
+    }
+  ]
+}

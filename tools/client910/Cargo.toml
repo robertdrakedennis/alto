@@ -1,0 +1,156 @@
+[package]
+name = "client910"
+version = "0.1.0"
+edition = "2021"
+# The crate has no `tests/` targets; every test is a unit test of the lib.
+autotests = false
+
+# The client is a library (src/lib.rs owns the module tree) plus a thin bin.
+# Doc code blocks were never compiled as doctests while the crate was a bin,
+# so the lib keeps them off. The bins have no tests of their own: `cargo test`
+# compiles the crate once, as the lib test harness (`cargo test --lib`).
+[lib]
+name = "client910"
+path = "src/lib.rs"
+doctest = false
+
+[[bin]]
+name = "client910"
+path = "src/main.rs"
+test = false
+
+# Trace, floor and scene dump diff tools.
+[[bin]]
+name = "drawdiff"
+path = "src/bin/drawdiff.rs"
+test = false
+
+[[bin]]
+name = "floordiff"
+path = "src/bin/floordiff.rs"
+test = false
+
+[[bin]]
+name = "scenediff"
+path = "src/bin/scenediff.rs"
+test = false
+
+[dependencies]
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+native910 = { path = "../native910" }
+# Std-only leaf utilities (Phase 2.1): readers, trig, colour, cp1252, perlin,
+# clock. Modules moved there keep `pub use` facades in src/lib.rs.
+rs910-core = { path = "crates/rs910-core" }
+rs910-symbols = { path = "crates/rs910-symbols" }
+# Cache + JS5 network (Phase 2.3): Pack, DiskOverlay/DiskStore, Js5System.
+# `cache`/`js5net` keep `use` facades in src/lib.rs.
+rs910-js5 = { path = "crates/rs910-js5" }
+# Wire protocol (Phase 2.2): opcode tables, framing, packet builders and
+# server packet parsing; `pub use` facades in src/lib.rs, session.rs, net.rs.
+rs910-protocol = { path = "crates/rs910-protocol" }
+# The native audio stack (Phase 2.5): decoder, voices, busses, mixer,
+# AudioApi and the output Sink; the only crate that names cpal.
+rs910-audio = { path = "crates/rs910-audio" }
+# Config types (Phase 2.4): config stores, flo/texture, anims, idk,
+# billboards, font metrics, sprites, ClientOptions. The modules keep `use`
+# facades in src/lib.rs.
+rs910-config = { path = "crates/rs910-config" }
+# CPU model layer (Phase 2.7): ModelUnlit/Model, GpuModel CPU side,
+# particles, floors, hard shadows, water, material state, font layout,
+# icon raster. The modules keep `use` facades in src/lib.rs.
+rs910-model = { path = "crates/rs910-model" }
+# Game state (Phase 2.6): entities, packet appliers, actor logic, client var
+# domains, login states. The modules keep `use` facades in src/lib.rs.
+rs910-game = { path = "crates/rs910-game" }
+# CPU scene layer (Phase 2.8): map build, scene graph, draw planner,
+# occlusion, camera, minimap CPU half, picking, entity models. The
+# modules keep `use` facades in src/lib.rs.
+rs910-scene = { path = "crates/rs910-scene" }
+# The toolkit boundary (Phase 3.1): the display lists (`ui_paint`,
+# `sprite_draw`, `text_render`), the `Toolkit` trait, the CPU font and the
+# FramePlan. The modules keep `use` facades in src/lib.rs.
+rs910-toolkit = { path = "crates/rs910-toolkit" }
+# The retained UI (Phase 3.2): interfaces, the CS2 host, minimenu, loading,
+# console, world map, preferences. The modules keep `use` facades in
+# src/lib.rs.
+rs910-ui = { path = "crates/rs910-ui" }
+# The renderers (Phase 3.3/3.4): the GPU device layer and the faithful GPU
+# toolkit. The modules keep `use` facades in
+# src/lib.rs; the shell's `active_toolkit` chooses the backend.
+rs910-gpu-device = { path = "crates/rs910-gpu-device" }
+rs910-render-gpu = { path = "crates/rs910-render-gpu" }
+# The default modern scene renderer (`--renderer modern`, renderer plan M1);
+# the shell composes the faithful UI around it.
+rs910-render-modern = { path = "crates/rs910-render-modern" }
+# The client layer (Phase 4): login and session IO over tokio, the login
+# workers, the session recorder, the input injectors. The modules keep `use`
+# facades in src/lib.rs; tokio is fenced there.
+rs910-client = { path = "crates/rs910-client" }
+anyhow = "1.0"
+thiserror = "2.0"
+clap = { version = "4", features = ["derive"] }
+glam = "0.27"
+winit = "0.30"
+# `winit::dpi` (ui_window names it directly: no winit in the UI).
+dpi = "0.1"
+pollster = "0.3"
+bytemuck = { version = "1", features = ["derive"] }
+libc = "0.2"
+# JPEG decoding of the loading sprites.
+jpeg-decoder = { version = "0.3", default-features = false }
+# Leveled diagnostics (logging.rs installs a minimal stderr logger).
+log = "0.4"
+
+# AppKit process defaults before the window opens (src/macos_defaults.rs:
+# AutoFill off, which otherwise leaks a SafariPlatformSupport helper per
+# launch). The version winit already uses.
+[target.'cfg(target_os = "macos")'.dependencies]
+objc2 = "0.5.2"
+
+[dev-dependencies]
+cs2 = { path = "../cs2", features = ["test-hooks"] }
+# The rs910-core/-js5 test hooks (`logic_clock::set_test_now`, the shared
+# `test_support` helpers) for this crate's tests; production builds never
+# enable `test-hooks`.
+rs910-core = { path = "crates/rs910-core", features = ["test-hooks", "profile"] }
+# The test-only parsers (`server_prot::parse_if_*`) this crate's tests call.
+rs910-protocol = { path = "crates/rs910-protocol", features = ["test-hooks"] }
+# rs910-audio's test hooks (RecordingSink, Output::Lines, stepped tasks).
+rs910-audio = { path = "crates/rs910-audio", features = ["test-hooks"] }
+rs910-js5 = { path = "crates/rs910-js5", features = ["test-hooks"] }
+rs910-config = { path = "crates/rs910-config", features = ["test-hooks"] }
+rs910-model = { path = "crates/rs910-model", features = ["test-hooks"] }
+rs910-game = { path = "crates/rs910-game", features = ["test-hooks"] }
+rs910-scene = { path = "crates/rs910-scene", features = ["test-hooks"] }
+rs910-ui = { path = "crates/rs910-ui", features = ["test-hooks"] }
+# The GPU crates' test seams (`require_gpu`, `ui_model_gpu::Capture`) and
+# wgpu for client910's GPU oracles; production wgpu is the renderers'.
+rs910-gpu-device = { path = "crates/rs910-gpu-device", features = ["test-hooks"] }
+rs910-render-gpu = { path = "crates/rs910-render-gpu", features = ["test-hooks"] }
+# The RTR1 reader (`session_record::read`) and tokio for the session replay
+# and the app tests; production tokio is rs910-client's.
+rs910-client = { path = "crates/rs910-client", features = ["test-hooks"] }
+# tokio for the session replay and the app tests
+tokio = { version = "1", features = ["full"] }
+wgpu = "30"
+
+[features]
+# CI has no revision-910 cache (server/data/pack is 14 GB and gitignored).
+# `--features no-pack` reports the tests that read it as ignored instead of
+# failing; without the feature they still fail loudly when the pack is absent.
+no-pack = ["rs910-core/no-pack", "rs910-symbols/no-pack", "rs910-js5/no-pack", "rs910-protocol/no-pack", "rs910-audio/no-pack", "rs910-config/no-pack", "rs910-model/no-pack", "rs910-game/no-pack", "rs910-scene/no-pack", "rs910-toolkit/no-pack", "rs910-ui/no-pack", "rs910-gpu-device/no-pack", "rs910-render-gpu/no-pack", "rs910-render-modern/no-pack", "rs910-client/no-pack"]
+# The engine profiler (`rs910_core::profile`: P0-P11/R0-R14, scene build,
+# region change and GPU pass scopes, the console's `prof`,
+# `CLIENT910_PROFILE_OUT`): `cargo build --release --features profile`.
+# Compiled out otherwise. The lib tests always compile it in (the rs910-core
+# dev-dependency above) for the inertness replay.
+profile = ["rs910-core/profile"]
+
+# `[profile.test]` (opt-level 1) and the release-profile note live in the
+# workspace root, tools/Cargo.toml: cargo ignores profiles in members.
+
+# Lint levels are shared with the rs910-* crates (tools/Cargo.toml
+# `[workspace.lints]`); native910 stays strict.
+[lints]
+workspace = true

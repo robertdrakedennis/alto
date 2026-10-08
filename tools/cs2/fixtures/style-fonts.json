@@ -1,0 +1,849 @@
+{
+  "client_md5": "290cb3489d088d145741f1734f53b0fc",
+  "scope": {
+    "decode": "Original style numeric loader instructions; supplied preallocatedpool/cache, heap allocation/free, mutex and release services. Data endian branches are original embedded conditions. No inherited weakparent linking or lifetime behavior claims. Authored numeric bytes only.",
+    "lookup": "Original property lookup, depth and reference-release instructions; authored numeric documents and supplied live parent links. Font application executes only through the font write before other style fields. Missing or expired parents fault in the original lookup. Parent link construction and destruction are excluded. No original asset bytes."
+  },
+  "kernels": {
+    "0x002a6d60": "e3f68d85bd2b97b6dc92accb7742248059d74d65a59c61eb7a8166f8e2fb713a",
+    "0x002a7d60": "bd24bb548d5b80988b69cc056e5dda7f6f678a4b7172fca1a0f7a74195838b22",
+    "0x0039add0": "b42852dff50ceccfeaaaf7bfd0718bd81133ec8025ed38307c2d418bb9b62efa",
+    "0x003acce0": "33193ef5b0326f743fda4b520b48faa318b8252aee278ad7315b319be30ea77c",
+    "0x00351670": "f1ac9290792ca19982f972fe1370ea5727d6e68b903a44cea46552bdec96fd0e",
+    "0x003acf00": "f062dd78286212acefa4ff30b67eb2f1eb929158cd7cec92dbeab3d15474988e",
+    "0x000b5c7c": "ec752a762d8cbb20b08a7cc8b9514012ee2dc37a85b18d92544a84268211277f"
+  },
+  "decoder_cases": [
+    {
+      "name": "empty",
+      "wire": [
+        255,
+        255,
+        0,
+        0
+      ],
+      "result": {
+        "parent": -1,
+        "entries": [],
+        "consumed": 4,
+        "published": 1,
+        "parent_control": 0,
+        "parent_document": 0
+      }
+    },
+    {
+      "name": "sort_full_width",
+      "wire": [
+        0,
+        55,
+        0,
+        4,
+        0,
+        255,
+        255,
+        255,
+        255,
+        0,
+        0,
+        0,
+        0,
+        0,
+        191,
+        111,
+        52,
+        112,
+        248,
+        164,
+        50,
+        235,
+        0,
+        127,
+        255,
+        255,
+        255,
+        0,
+        0,
+        0,
+        17,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        23
+      ],
+      "result": {
+        "parent": 55,
+        "entries": [
+          [
+            0,
+            23
+          ],
+          [
+            2147483647,
+            17
+          ],
+          [
+            3211736176,
+            4171510507
+          ],
+          [
+            4294967295,
+            0
+          ]
+        ],
+        "consumed": 40,
+        "published": 1,
+        "parent_control": 0,
+        "parent_document": 0
+      }
+    },
+    {
+      "name": "duplicate_first_wins",
+      "wire": [
+        128,
+        0,
+        0,
+        3,
+        0,
+        191,
+        111,
+        52,
+        112,
+        0,
+        0,
+        0,
+        17,
+        0,
+        191,
+        111,
+        52,
+        112,
+        0,
+        0,
+        0,
+        23,
+        0,
+        191,
+        111,
+        52,
+        112,
+        255,
+        255,
+        255,
+        255
+      ],
+      "result": {
+        "parent": -32768,
+        "entries": [
+          [
+            3211736176,
+            17
+          ]
+        ],
+        "consumed": 31,
+        "published": 1,
+        "parent_control": 0,
+        "parent_document": 0
+      }
+    },
+    {
+      "name": "unknown_tag_abort",
+      "wire": [
+        255,
+        255,
+        0,
+        3,
+        0,
+        191,
+        111,
+        52,
+        112,
+        0,
+        0,
+        0,
+        17,
+        1,
+        255,
+        255,
+        255,
+        255,
+        0,
+        0,
+        0,
+        23,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        9
+      ],
+      "result": {
+        "parent": -1,
+        "entries": [
+          [
+            3211736176,
+            17
+          ]
+        ],
+        "consumed": 18,
+        "published": 0,
+        "parent_control": 0,
+        "parent_document": 0
+      }
+    }
+  ],
+  "lookup_cases": [
+    {
+      "name": "unsigned_zero",
+      "mode": "lookup",
+      "documents": [
+        {
+          "parent": -1,
+          "entries": [
+            [
+              0,
+              23
+            ],
+            [
+              2147483647,
+              17
+            ],
+            [
+              3211736176,
+              -123456789
+            ],
+            [
+              4294967295,
+              0
+            ]
+          ],
+          "link": null,
+          "strong": 1
+        }
+      ],
+      "key": 0,
+      "inherit": 1,
+      "initial_font": 26,
+      "result": {
+        "status": "complete",
+        "owner": 0,
+        "value": 23,
+        "depth": 1,
+        "strong_counts": [
+          1
+        ]
+      }
+    },
+    {
+      "name": "unsigned_high",
+      "mode": "lookup",
+      "documents": [
+        {
+          "parent": -1,
+          "entries": [
+            [
+              0,
+              23
+            ],
+            [
+              2147483647,
+              17
+            ],
+            [
+              3211736176,
+              -123456789
+            ],
+            [
+              4294967295,
+              0
+            ]
+          ],
+          "link": null,
+          "strong": 1
+        }
+      ],
+      "key": 4294967295,
+      "inherit": 1,
+      "initial_font": 26,
+      "result": {
+        "status": "complete",
+        "owner": 0,
+        "value": 0,
+        "depth": 1,
+        "strong_counts": [
+          1
+        ]
+      }
+    },
+    {
+      "name": "direct_full_width",
+      "mode": "lookup",
+      "documents": [
+        {
+          "parent": -1,
+          "entries": [
+            [
+              3211736176,
+              -123456789
+            ]
+          ],
+          "link": null,
+          "strong": 1
+        }
+      ],
+      "key": 3211736176,
+      "inherit": 1,
+      "initial_font": 26,
+      "result": {
+        "status": "complete",
+        "owner": 0,
+        "value": -123456789,
+        "depth": 1,
+        "strong_counts": [
+          1
+        ]
+      }
+    },
+    {
+      "name": "absent_root",
+      "mode": "lookup",
+      "documents": [
+        {
+          "parent": -1,
+          "entries": [],
+          "link": null,
+          "strong": 1
+        }
+      ],
+      "key": 3211736176,
+      "inherit": 1,
+      "initial_font": 26,
+      "result": {
+        "status": "complete",
+        "owner": null,
+        "value": null,
+        "depth": 0,
+        "strong_counts": [
+          1
+        ]
+      }
+    },
+    {
+      "name": "inherit_disabled",
+      "mode": "lookup",
+      "documents": [
+        {
+          "parent": 55,
+          "entries": [],
+          "link": null,
+          "strong": 1
+        }
+      ],
+      "key": 3211736176,
+      "inherit": 0,
+      "initial_font": 26,
+      "result": {
+        "status": "complete",
+        "owner": null,
+        "value": null,
+        "depth": 0,
+        "strong_counts": [
+          1
+        ]
+      }
+    },
+    {
+      "name": "parent_hit",
+      "mode": "lookup",
+      "documents": [
+        {
+          "parent": 55,
+          "entries": [],
+          "link": 1,
+          "strong": 1
+        },
+        {
+          "parent": -1,
+          "entries": [
+            [
+              3211736176,
+              17
+            ]
+          ],
+          "link": null,
+          "strong": 1
+        }
+      ],
+      "key": 3211736176,
+      "inherit": 1,
+      "initial_font": 26,
+      "result": {
+        "status": "complete",
+        "owner": 1,
+        "value": 17,
+        "depth": 1,
+        "strong_counts": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "name": "grandparent_hit",
+      "mode": "lookup",
+      "documents": [
+        {
+          "parent": 55,
+          "entries": [],
+          "link": 1,
+          "strong": 1
+        },
+        {
+          "parent": 63,
+          "entries": [],
+          "link": 2,
+          "strong": 1
+        },
+        {
+          "parent": -1,
+          "entries": [
+            [
+              3211736176,
+              23
+            ]
+          ],
+          "link": null,
+          "strong": 1
+        }
+      ],
+      "key": 3211736176,
+      "inherit": 1,
+      "initial_font": 26,
+      "result": {
+        "status": "complete",
+        "owner": 2,
+        "value": 23,
+        "depth": 1,
+        "strong_counts": [
+          1,
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "name": "own_shadows_parent",
+      "mode": "lookup",
+      "documents": [
+        {
+          "parent": 55,
+          "entries": [
+            [
+              3211736176,
+              0
+            ]
+          ],
+          "link": 1,
+          "strong": 1
+        },
+        {
+          "parent": -1,
+          "entries": [
+            [
+              3211736176,
+              17
+            ]
+          ],
+          "link": null,
+          "strong": 1
+        }
+      ],
+      "key": 3211736176,
+      "inherit": 1,
+      "initial_font": 26,
+      "result": {
+        "status": "complete",
+        "owner": 0,
+        "value": 0,
+        "depth": 2,
+        "strong_counts": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "name": "deep_hit",
+      "mode": "lookup",
+      "documents": [
+        {
+          "parent": 55,
+          "entries": [],
+          "link": 1,
+          "strong": 1
+        },
+        {
+          "parent": 63,
+          "entries": [],
+          "link": 2,
+          "strong": 1
+        },
+        {
+          "parent": 71,
+          "entries": [],
+          "link": 3,
+          "strong": 1
+        },
+        {
+          "parent": -1,
+          "entries": [
+            [
+              3211736176,
+              -1
+            ]
+          ],
+          "link": null,
+          "strong": 1
+        }
+      ],
+      "key": 3211736176,
+      "inherit": 1,
+      "initial_font": 26,
+      "result": {
+        "status": "complete",
+        "owner": 3,
+        "value": -1,
+        "depth": 1,
+        "strong_counts": [
+          1,
+          1,
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "name": "unlinked_parent",
+      "mode": "lookup",
+      "documents": [
+        {
+          "parent": 55,
+          "entries": [],
+          "link": null,
+          "strong": 1
+        }
+      ],
+      "key": 3211736176,
+      "inherit": 1,
+      "initial_font": 26,
+      "result": {
+        "status": "fault",
+        "owner": null,
+        "value": null,
+        "depth": 0,
+        "strong_counts": [
+          1
+        ],
+        "faults": [
+          {
+            "address": 16,
+            "instruction": 3853549,
+            "access": 19
+          }
+        ]
+      }
+    },
+    {
+      "name": "expired_parent",
+      "mode": "lookup",
+      "documents": [
+        {
+          "parent": 55,
+          "entries": [],
+          "link": 1,
+          "strong": 1
+        },
+        {
+          "parent": -1,
+          "entries": [
+            [
+              3211736176,
+              17
+            ]
+          ],
+          "link": null,
+          "strong": 0
+        }
+      ],
+      "key": 3211736176,
+      "inherit": 1,
+      "initial_font": 26,
+      "result": {
+        "status": "fault",
+        "owner": null,
+        "value": null,
+        "depth": 0,
+        "strong_counts": [
+          1,
+          0
+        ],
+        "faults": [
+          {
+            "address": 16,
+            "instruction": 3853549,
+            "access": 19
+          }
+        ]
+      }
+    },
+    {
+      "name": "font_absent_preserves_wire",
+      "mode": "font",
+      "documents": [
+        {
+          "parent": -1,
+          "entries": [],
+          "link": null,
+          "strong": 1
+        }
+      ],
+      "initial_font": 26,
+      "result": {
+        "status": "complete",
+        "font": 26,
+        "strong_counts": [
+          1
+        ]
+      }
+    },
+    {
+      "name": "font_present_zero",
+      "mode": "font",
+      "documents": [
+        {
+          "parent": -1,
+          "entries": [
+            [
+              3211736176,
+              0
+            ]
+          ],
+          "link": null,
+          "strong": 1
+        }
+      ],
+      "initial_font": 26,
+      "result": {
+        "status": "complete",
+        "font": 0,
+        "strong_counts": [
+          1
+        ]
+      }
+    },
+    {
+      "name": "font_present_absent_sentinel",
+      "mode": "font",
+      "documents": [
+        {
+          "parent": -1,
+          "entries": [
+            [
+              3211736176,
+              -1
+            ]
+          ],
+          "link": null,
+          "strong": 1
+        }
+      ],
+      "initial_font": 26,
+      "result": {
+        "status": "complete",
+        "font": -1,
+        "strong_counts": [
+          1
+        ]
+      }
+    },
+    {
+      "name": "font_present_full_width",
+      "mode": "font",
+      "documents": [
+        {
+          "parent": -1,
+          "entries": [
+            [
+              3211736176,
+              -123456789
+            ]
+          ],
+          "link": null,
+          "strong": 1
+        }
+      ],
+      "initial_font": 26,
+      "result": {
+        "status": "complete",
+        "font": -123456789,
+        "strong_counts": [
+          1
+        ]
+      }
+    },
+    {
+      "name": "font_linked_parent",
+      "mode": "font",
+      "documents": [
+        {
+          "parent": 55,
+          "entries": [],
+          "link": 1,
+          "strong": 1
+        },
+        {
+          "parent": -1,
+          "entries": [
+            [
+              3211736176,
+              17
+            ]
+          ],
+          "link": null,
+          "strong": 1
+        }
+      ],
+      "initial_font": 26,
+      "result": {
+        "status": "complete",
+        "font": 17,
+        "strong_counts": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "name": "font_unlinked_parent",
+      "mode": "font",
+      "documents": [
+        {
+          "parent": 55,
+          "entries": [],
+          "link": null,
+          "strong": 1
+        }
+      ],
+      "initial_font": 26,
+      "result": {
+        "status": "fault",
+        "font": 26,
+        "strong_counts": [
+          1
+        ],
+        "faults": [
+          {
+            "address": 16,
+            "instruction": 3853549,
+            "access": 19
+          }
+        ]
+      }
+    },
+    {
+      "name": "font_present_cache_id",
+      "mode": "font",
+      "documents": [
+        {
+          "parent": -1,
+          "entries": [
+            [
+              3211736176,
+              26
+            ]
+          ],
+          "link": null,
+          "strong": 1
+        }
+      ],
+      "initial_font": -1,
+      "result": {
+        "status": "complete",
+        "font": 26,
+        "strong_counts": [
+          1
+        ]
+      }
+    }
+  ],
+  "font_key": 3211736176,
+  "authored_frame": {
+    "interface": 6,
+    "file": 6
+  },
+  "authored_wire": [
+    6,
+    4,
+    0,
+    0,
+    255,
+    247,
+    0,
+    13,
+    0,
+    240,
+    0,
+    35,
+    0,
+    0,
+    0,
+    0,
+    255,
+    255,
+    0,
+    127,
+    255,
+    1,
+    0,
+    19,
+    2,
+    3,
+    1,
+    145,
+    162,
+    179,
+    196,
+    0,
+    7,
+    0,
+    0,
+    0,
+    17
+  ],
+  "authored_styles": {
+    "17": [
+      255,
+      255,
+      0,
+      1,
+      0,
+      191,
+      111,
+      52,
+      112,
+      0,
+      0,
+      0,
+      26
+    ]
+  },
+  "authored_initial_font": 26
+}

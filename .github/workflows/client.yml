@@ -1,0 +1,101 @@
+name: Client
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: client-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  # Rust client (tools/client910 and the rs910-* crates) and the native910
+  # cache/CS2 library. Runs on a fresh clone: no game cache (server/data/pack),
+  # no JDK and no local-only reference material. Tests that read the cache are
+  # reported as ignored by the `no-pack` feature. No secrets are used.
+  # The toolchain is pinned so clippy baseline counts stay comparable.
+  rust:
+    name: Rust client
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          lfs: true
+      - uses: dtolnay/rust-toolchain@master
+        with:
+          toolchain: 1.96.0  # keep in sync with rust-toolchain.toml
+          components: clippy, rustfmt
+      - uses: Swatinem/rust-cache@v2
+        with:
+          # tools/Cargo.toml is the workspace of native910, client910 and the
+          # rs910-* crates (one lockfile, target dir tools/target).
+          workspaces: |
+            tools
+            tools/refactor/rsscan
+      - name: Install audio dependencies
+        run: sudo apt-get update && sudo apt-get install -y libasound2-dev pkg-config
+      - name: native910 fmt
+        run: cargo fmt --manifest-path tools/native910/Cargo.toml --check
+      - name: Generated registry files are current (revisions/*/protocol -> server, client and test tables)
+        run: python3 tools/revision/gen_protocol.py --check
+      - name: client910 and rs910-* fmt ratchet (files in tools/refactor/fmt-pending.txt may stay unformatted)
+        run: python3 tools/refactor/fmt-ratchet.py
+      - name: refactor-gate helper fmt
+        run: cargo fmt --manifest-path tools/refactor/rsscan/Cargo.toml --check
+      - name: Provenance ratchet (no trace of the original implementation may be added)
+        # Counts obfuscated names, source cites and similar residue per crate
+        # against tools/refactor/provenance-baseline.tsv; any rise fails.
+        run: python3 tools/refactor/provenance.py check
+      - name: Module DAG and fence ratchet (tools/refactor/dag-baseline.txt may only shrink)
+        # New cycles, upward/sideways layer edges, wgpu/winit/tokio/cpal uses
+        # outside their fence (tools/refactor/layers.txt) or unclassified
+        # modules fail; see tools/refactor/README.md.
+        run: python3 tools/refactor/dag-check.py
+      - name: client910 and rs910-* clippy ratchet (baseline is 0; any new warning fails)
+        run: python3 tools/refactor/clippy-ratchet.py -- --features no-pack
+      - name: client910 and rs910-* clippy (deny all warnings)
+        # tools/refactor/workspace.py --pkg-args: -p client910 -p rs910-core ...
+        run: cargo clippy --manifest-path tools/Cargo.toml $(python3 tools/refactor/workspace.py --pkg-args) --all-targets --features no-pack -- -D warnings
+      - name: native910 clippy (deny-all policy in its Cargo.toml)
+        run: cargo clippy --manifest-path tools/native910/Cargo.toml --all-targets -- -D warnings
+      - name: native910 tests
+        run: cargo test --manifest-path tools/native910/Cargo.toml --features no-pack
+      - name: client910 and rs910-* tests
+        # no-pack reports the tests that read server/data/pack as ignored
+        # ("needs server/data/pack"); locally they run by default.
+        run: cargo test --manifest-path tools/Cargo.toml $(python3 tools/refactor/workspace.py --pkg-args) --features no-pack
+      - name: rsscan tests (refactor-gate helper)
+        run: cargo test --manifest-path tools/refactor/rsscan/Cargo.toml
+      - name: Test inventory lock (no test may disappear; tools/refactor/test-inventory.txt)
+        # CI has no pack, so it lists the no-pack configuration: every baseline
+        # test must still exist and no `run` test may become ignored. The
+        # run/nopack split is recorded locally (--mode both).
+        run: python3 tools/refactor/test-inventory.py --mode no-pack --no-server --native-profile dev --quiet
+      - name: golden sessions from the private cache overlay
+        # Phase 5: the recorded RTR1 sessions replay through ClientCore +
+        # ReplayIo from ~13.5 MB of cache excerpts. That is revision-910
+        # cache data, so it is never committed; CI downloads it from a
+        # private location (see tools/refactor/replay-overlay.sh). Skipped
+        # with a notice when the secret is not configured.
+        env:
+          REPLAY_OVERLAY_URL: ${{ secrets.REPLAY_OVERLAY_URL }}
+          REPLAY_OVERLAY_TOKEN: ${{ secrets.REPLAY_OVERLAY_TOKEN }}
+        run: |
+          if [ -z "$REPLAY_OVERLAY_URL" ]; then
+            echo "::notice::REPLAY_OVERLAY_URL not set; golden sessions skipped"
+            exit 0
+          fi
+          mkdir -p "$RUNNER_TEMP/replay-overlay"
+          if [ -n "$REPLAY_OVERLAY_TOKEN" ]; then
+            curl -fsSL -H "Authorization: Bearer $REPLAY_OVERLAY_TOKEN" -H "Accept: application/octet-stream" "$REPLAY_OVERLAY_URL" -o "$RUNNER_TEMP/overlay.tar.gz"
+          else
+            curl -fsSL "$REPLAY_OVERLAY_URL" -o "$RUNNER_TEMP/overlay.tar.gz"
+          fi
+          tar -C "$RUNNER_TEMP/replay-overlay" -xzf "$RUNNER_TEMP/overlay.tar.gz"
+          CLIENT910_REPLAY_OVERLAY="$RUNNER_TEMP/replay-overlay" cargo test --manifest-path tools/client910/Cargo.toml --lib --features no-pack app::session_replay::recorded_sessions_replay_from_the_pack_free_overlay -- --ignored --exact

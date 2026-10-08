@@ -1,0 +1,41 @@
+[package]
+name = "rs910-game"
+version = "0.1.0"
+edition = "2021"
+publish = false
+description = "Game state of the 910 client port: entities, PLAYER_INFO/NPC_INFO/zone/var packet appliers, actor logic, client var domains and the login state machine. No render, UI or network IO."
+
+# Allowed dependencies (tools/refactor/layers.txt `[crates]`,
+# target-architecture.md §2.2): rs910-core, rs910-protocol, rs910-config (and
+# rs910-js5/native910, which rs910-config depends on: `cache::Pack` for the
+# pack loaders, native910's `Packet`/VM values for the client var domain).
+# Externals: layers.txt `[externals]`. Doc code blocks are not compiled, like
+# client910's (`doctest = false`).
+[lib]
+doctest = false
+
+[dependencies]
+native910 = { path = "../../../native910" }
+rs910-core = { path = "../rs910-core" }
+rs910-js5 = { path = "../rs910-js5" }
+rs910-protocol = { path = "../rs910-protocol" }
+rs910-config = { path = "../rs910-config" }
+anyhow = "1.0"
+log = "0.4"
+
+[features]
+# Every workspace crate has `no-pack` (CI has no server/data/pack); client910's
+# `no-pack` forwards here. The pack-reading entity tests stay in client910.
+no-pack = []
+# Test seams client910's tests call (`protocol910::decode_at`, `live::Feed::
+# queued`, `entity_runtime::Inputs::load_region_terrain`, ...): the items are
+# `#[cfg(any(test, feature = "test-hooks"))]`. client910 enables it through
+# its [dev-dependencies] only, so no production build contains them.
+test-hooks = []
+
+[dev-dependencies]
+# The recorded fixtures (`rs910_core::test_support::frozen`).
+rs910-core = { path = "../rs910-core", features = ["test-hooks"] }
+
+[lints]
+workspace = true

@@ -1,0 +1,858 @@
+{
+  "client_md5": "290cb3489d088d145741f1734f53b0fc",
+  "handler_kernel_sha256": "f254f9356117709bfde4d09a6234875f576f6de16fd82a093b1ddd58ef9fc88c",
+  "child_limit": 64256,
+  "root_slots": 4096,
+  "bank_slots": 256,
+  "selector": 2,
+  "lookup_kernel_sha256": "321124bef41272768229d1125b28952a663f40f225f959bfb20e8bfb0e839bb0",
+  "selection_kernel_sha256": "148df7a84ecc7ed14e312f33b5fc359116159deb2dbe6e9e20cada4b4c55b85b",
+  "scope": "Original cc_find handler, flat-child lookup and active reference selection kernels. Static-child virtual collection, container class predicate, interface provider and reference release are supplied. Sorted collections and complete bank descriptors are synthetic. Records static-before-banked lookup, encoded bank routing, nonzero selector2 secondary target, stack prefix, selected reference replacement/clearing and invalid-id preservation before loading. Does not seal provider loading failures or the child creator.",
+  "cases": [
+    {
+      "name": "static_precedes_runtime",
+      "input": {
+        "child": 7,
+        "static": [
+          [
+            7,
+            "static"
+          ],
+          [
+            11,
+            "later"
+          ],
+          [
+            65535,
+            "ignored"
+          ]
+        ],
+        "banks": {
+          "0": [
+            [
+              7,
+              "runtime"
+            ],
+            [
+              11,
+              "later_runtime"
+            ]
+          ],
+          "2": [
+            [
+              3,
+              "nested"
+            ]
+          ],
+          "235": [
+            [
+              255,
+              "last"
+            ]
+          ]
+        }
+      },
+      "result": {
+        "found": true,
+        "ints": [
+          91,
+          1
+        ],
+        "primary_component": "previous",
+        "primary_interface": "previous",
+        "component": "static",
+        "interface": "selected",
+        "old_component_refs": 0,
+        "old_interface_refs": 0,
+        "calls": [
+          [
+            "interface",
+            1,
+            0
+          ],
+          [
+            "release",
+            "component"
+          ],
+          [
+            "interface",
+            1,
+            0
+          ],
+          [
+            "release",
+            "interface"
+          ]
+        ]
+      }
+    },
+    {
+      "name": "runtime_root",
+      "input": {
+        "child": 7,
+        "static": [],
+        "banks": {
+          "0": [
+            [
+              7,
+              "runtime"
+            ],
+            [
+              11,
+              "later_runtime"
+            ]
+          ],
+          "2": [
+            [
+              3,
+              "nested"
+            ]
+          ],
+          "235": [
+            [
+              255,
+              "last"
+            ]
+          ]
+        }
+      },
+      "result": {
+        "found": true,
+        "ints": [
+          91,
+          1
+        ],
+        "primary_component": "previous",
+        "primary_interface": "previous",
+        "component": "runtime",
+        "interface": "selected",
+        "old_component_refs": 0,
+        "old_interface_refs": 0,
+        "calls": [
+          [
+            "interface",
+            1,
+            0
+          ],
+          [
+            "release",
+            "component"
+          ],
+          [
+            "interface",
+            1,
+            0
+          ],
+          [
+            "release",
+            "interface"
+          ]
+        ]
+      }
+    },
+    {
+      "name": "static_miss_runtime_found",
+      "input": {
+        "child": 7,
+        "static": [
+          [
+            8,
+            "other"
+          ]
+        ],
+        "banks": {
+          "0": [
+            [
+              7,
+              "runtime"
+            ],
+            [
+              11,
+              "later_runtime"
+            ]
+          ],
+          "2": [
+            [
+              3,
+              "nested"
+            ]
+          ],
+          "235": [
+            [
+              255,
+              "last"
+            ]
+          ]
+        }
+      },
+      "result": {
+        "found": true,
+        "ints": [
+          91,
+          1
+        ],
+        "primary_component": "previous",
+        "primary_interface": "previous",
+        "component": "runtime",
+        "interface": "selected",
+        "old_component_refs": 0,
+        "old_interface_refs": 0,
+        "calls": [
+          [
+            "interface",
+            1,
+            0
+          ],
+          [
+            "release",
+            "component"
+          ],
+          [
+            "interface",
+            1,
+            0
+          ],
+          [
+            "release",
+            "interface"
+          ]
+        ]
+      }
+    },
+    {
+      "name": "absent",
+      "input": {
+        "child": 6,
+        "static": [
+          [
+            7,
+            "static"
+          ],
+          [
+            11,
+            "later"
+          ],
+          [
+            65535,
+            "ignored"
+          ]
+        ],
+        "banks": {
+          "0": [
+            [
+              7,
+              "runtime"
+            ],
+            [
+              11,
+              "later_runtime"
+            ]
+          ],
+          "2": [
+            [
+              3,
+              "nested"
+            ]
+          ],
+          "235": [
+            [
+              255,
+              "last"
+            ]
+          ]
+        }
+      },
+      "result": {
+        "found": false,
+        "ints": [
+          91,
+          0
+        ],
+        "primary_component": "previous",
+        "primary_interface": "previous",
+        "component": "absent",
+        "interface": "absent",
+        "old_component_refs": 0,
+        "old_interface_refs": 0,
+        "calls": [
+          [
+            "interface",
+            1,
+            0
+          ],
+          [
+            "release",
+            "component"
+          ],
+          [
+            "release",
+            "interface"
+          ]
+        ]
+      }
+    },
+    {
+      "name": "nested_bank",
+      "input": {
+        "child": 4355,
+        "static": [
+          [
+            7,
+            "static"
+          ],
+          [
+            11,
+            "later"
+          ],
+          [
+            65535,
+            "ignored"
+          ]
+        ],
+        "banks": {
+          "0": [
+            [
+              7,
+              "runtime"
+            ],
+            [
+              11,
+              "later_runtime"
+            ]
+          ],
+          "2": [
+            [
+              3,
+              "nested"
+            ]
+          ],
+          "235": [
+            [
+              255,
+              "last"
+            ]
+          ]
+        }
+      },
+      "result": {
+        "found": true,
+        "ints": [
+          91,
+          1
+        ],
+        "primary_component": "previous",
+        "primary_interface": "previous",
+        "component": "nested",
+        "interface": "selected",
+        "old_component_refs": 0,
+        "old_interface_refs": 0,
+        "calls": [
+          [
+            "interface",
+            1,
+            0
+          ],
+          [
+            "release",
+            "component"
+          ],
+          [
+            "interface",
+            1,
+            0
+          ],
+          [
+            "release",
+            "interface"
+          ]
+        ]
+      }
+    },
+    {
+      "name": "last_flat_child",
+      "input": {
+        "child": 64255,
+        "static": [
+          [
+            7,
+            "static"
+          ],
+          [
+            11,
+            "later"
+          ],
+          [
+            65535,
+            "ignored"
+          ]
+        ],
+        "banks": {
+          "0": [
+            [
+              7,
+              "runtime"
+            ],
+            [
+              11,
+              "later_runtime"
+            ]
+          ],
+          "2": [
+            [
+              3,
+              "nested"
+            ]
+          ],
+          "235": [
+            [
+              255,
+              "last"
+            ]
+          ]
+        }
+      },
+      "result": {
+        "found": true,
+        "ints": [
+          91,
+          1
+        ],
+        "primary_component": "previous",
+        "primary_interface": "previous",
+        "component": "last",
+        "interface": "selected",
+        "old_component_refs": 0,
+        "old_interface_refs": 0,
+        "calls": [
+          [
+            "interface",
+            1,
+            0
+          ],
+          [
+            "release",
+            "component"
+          ],
+          [
+            "interface",
+            1,
+            0
+          ],
+          [
+            "release",
+            "interface"
+          ]
+        ]
+      }
+    },
+    {
+      "name": "reserved_child",
+      "input": {
+        "child": 64256,
+        "static": [
+          [
+            7,
+            "static"
+          ],
+          [
+            11,
+            "later"
+          ],
+          [
+            65535,
+            "ignored"
+          ]
+        ],
+        "banks": {
+          "0": [
+            [
+              7,
+              "runtime"
+            ],
+            [
+              11,
+              "later_runtime"
+            ]
+          ],
+          "2": [
+            [
+              3,
+              "nested"
+            ]
+          ],
+          "235": [
+            [
+              255,
+              "last"
+            ]
+          ]
+        }
+      },
+      "result": {
+        "found": false,
+        "ints": [
+          91,
+          0
+        ],
+        "primary_component": "previous",
+        "primary_interface": "previous",
+        "component": "previous",
+        "interface": "previous",
+        "old_component_refs": 1,
+        "old_interface_refs": 1,
+        "calls": []
+      }
+    },
+    {
+      "name": "negative_child",
+      "input": {
+        "child": -1,
+        "static": [
+          [
+            7,
+            "static"
+          ],
+          [
+            11,
+            "later"
+          ],
+          [
+            65535,
+            "ignored"
+          ]
+        ],
+        "banks": {
+          "0": [
+            [
+              7,
+              "runtime"
+            ],
+            [
+              11,
+              "later_runtime"
+            ]
+          ],
+          "2": [
+            [
+              3,
+              "nested"
+            ]
+          ],
+          "235": [
+            [
+              255,
+              "last"
+            ]
+          ]
+        }
+      },
+      "result": {
+        "found": false,
+        "ints": [
+          91,
+          0
+        ],
+        "primary_component": "previous",
+        "primary_interface": "previous",
+        "component": "previous",
+        "interface": "previous",
+        "old_component_refs": 1,
+        "old_interface_refs": 1,
+        "calls": []
+      }
+    },
+    {
+      "name": "missing_parent",
+      "input": {
+        "child": 7,
+        "static": [
+          [
+            7,
+            "static"
+          ],
+          [
+            11,
+            "later"
+          ],
+          [
+            65535,
+            "ignored"
+          ]
+        ],
+        "banks": {
+          "0": [
+            [
+              7,
+              "runtime"
+            ],
+            [
+              11,
+              "later_runtime"
+            ]
+          ],
+          "2": [
+            [
+              3,
+              "nested"
+            ]
+          ],
+          "235": [
+            [
+              255,
+              "last"
+            ]
+          ]
+        },
+        "parent": false
+      },
+      "result": {
+        "found": false,
+        "ints": [
+          91,
+          0
+        ],
+        "primary_component": "previous",
+        "primary_interface": "previous",
+        "component": "absent",
+        "interface": "absent",
+        "old_component_refs": 0,
+        "old_interface_refs": 0,
+        "calls": [
+          [
+            "interface",
+            1,
+            0
+          ],
+          [
+            "release",
+            "component"
+          ],
+          [
+            "release",
+            "interface"
+          ]
+        ]
+      }
+    },
+    {
+      "name": "noncontainer",
+      "input": {
+        "child": 7,
+        "static": [
+          [
+            7,
+            "static"
+          ],
+          [
+            11,
+            "later"
+          ],
+          [
+            65535,
+            "ignored"
+          ]
+        ],
+        "banks": {
+          "0": [
+            [
+              7,
+              "runtime"
+            ],
+            [
+              11,
+              "later_runtime"
+            ]
+          ],
+          "2": [
+            [
+              3,
+              "nested"
+            ]
+          ],
+          "235": [
+            [
+              255,
+              "last"
+            ]
+          ]
+        },
+        "container": false
+      },
+      "result": {
+        "found": false,
+        "ints": [
+          91,
+          0
+        ],
+        "primary_component": "previous",
+        "primary_interface": "previous",
+        "component": "absent",
+        "interface": "absent",
+        "old_component_refs": 0,
+        "old_interface_refs": 0,
+        "calls": [
+          [
+            "interface",
+            1,
+            0
+          ],
+          [
+            "release",
+            "component"
+          ],
+          [
+            "release",
+            "interface"
+          ]
+        ]
+      }
+    },
+    {
+      "name": "absent_parent_sentinel",
+      "input": {
+        "child": 7,
+        "static": [
+          [
+            7,
+            "static"
+          ],
+          [
+            11,
+            "later"
+          ],
+          [
+            65535,
+            "ignored"
+          ]
+        ],
+        "banks": {
+          "0": [
+            [
+              7,
+              "runtime"
+            ],
+            [
+              11,
+              "later_runtime"
+            ]
+          ],
+          "2": [
+            [
+              3,
+              "nested"
+            ]
+          ],
+          "235": [
+            [
+              255,
+              "last"
+            ]
+          ]
+        },
+        "packed": -1
+      },
+      "result": {
+        "found": false,
+        "ints": [
+          91,
+          0
+        ],
+        "primary_component": "previous",
+        "primary_interface": "previous",
+        "component": "absent",
+        "interface": "absent",
+        "old_component_refs": 0,
+        "old_interface_refs": 0,
+        "calls": [
+          [
+            "release",
+            "component"
+          ],
+          [
+            "release",
+            "interface"
+          ]
+        ]
+      }
+    },
+    {
+      "name": "unsigned_group",
+      "input": {
+        "child": 7,
+        "static": [
+          [
+            7,
+            "static"
+          ],
+          [
+            11,
+            "later"
+          ],
+          [
+            65535,
+            "ignored"
+          ]
+        ],
+        "banks": {
+          "0": [
+            [
+              7,
+              "runtime"
+            ],
+            [
+              11,
+              "later_runtime"
+            ]
+          ],
+          "2": [
+            [
+              3,
+              "nested"
+            ]
+          ],
+          "235": [
+            [
+              255,
+              "last"
+            ]
+          ]
+        },
+        "packed": -2147418111
+      },
+      "result": {
+        "found": true,
+        "ints": [
+          91,
+          1
+        ],
+        "primary_component": "previous",
+        "primary_interface": "previous",
+        "component": "static",
+        "interface": "selected",
+        "old_component_refs": 0,
+        "old_interface_refs": 0,
+        "calls": [
+          [
+            "interface",
+            32769,
+            0
+          ],
+          [
+            "release",
+            "component"
+          ],
+          [
+            "interface",
+            32769,
+            0
+          ],
+          [
+            "release",
+            "interface"
+          ]
+        ]
+      }
+    }
+  ],
+  "parent_component": 65537
+}
