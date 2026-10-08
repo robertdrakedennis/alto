@@ -1,0 +1,220 @@
+server/src/lostcity/systems/loot/PendingClaim.ts
+  s_3f4b5347620927::t_b9ce0a3e79c332 1-68
+server/src/lostcity/systems/session/AccountFile.ts
+  s_3f4b5347620927::t_c64bb7b3e46326 1,119-120,156-157,184-190
+server/src/lostcity/systems/npc/NpcPopulation.ts
+  s_3f4b5347620927::t_754d3da67781cd 114-121
+server/src/lostcity/systems/npc/NpcCombat.ts
+  s_3f4b5347620927::t_186b34bb67b97a 1,74-75,101-122,144,178-179,379,408,456-461,481-482
+server/src/lostcity/content/world/bosses/QbdWindows.ts
+  s_3f4b5347620927::t_3d083a1c748f01 1-76
+server/src/lostcity/data/BossRoomData.ts
+  s_3f4b5347620927::t_40e920e406645f 1,24,148-163
+server/src/lostcity/systems/inventory/Inventories.ts
+  s_3f4b5347620927::t_bad05481827f8e 295
+server/src/lostcity/content/world/bosses/QbdMechanics.ts
+  s_3f4b5347620927::t_7b3c7df0c1f6a3 1-612
+tools/client910/fixtures/session-replay/queen-black-dragon/driver.py
+  s_3f4b5347620927::t_0ac913753407dc 1-140
+server/src/lostcity/systems/movement/Teleporting.ts
+  s_3f4b5347620927::t_be221ab1850d40 45,56
+tools/client910/fixtures/session-replay/queen-black-dragon/freeze.py
+  s_3f4b5347620927::t_cc09941f211f7e 1-150
+tools/client910/fixtures/session-replay/queen-black-dragon/contract.py
+  s_3f4b5347620927::t_8fe96a6fac06ac 1-107
+server/src/lostcity/data/QbdMechanicData.ts
+  s_3f4b5347620927::t_4e12135ec2142a 1-83
+server/src/lostcity/content/world/bosses/QbdRewards.ts
+  s_3f4b5347620927::t_64133e8ccf1a09 1-275
+server/src/lostcity/tools/data/domains/instances/index.ts
+  s_3f4b5347620927::t_b369599ea8fff0 1,22,26-35,37,53,57,61
+tools/client910/fixtures/session-replay/queen-black-dragon/prepare-spec.py
+  s_3f4b5347620927::t_a7c9998d266750 1-86
+server/src/lostcity/systems/combat/Combatant.ts
+  s_3f4b5347620927::t_ce0c999e7a7f39 202-204
+server/src/lostcity/content/world/bosses/BossRooms.ts
+  s_3f4b5347620927::t_6a30ce63d96cb3 4,117-122
+tools/client910/fixtures/session-replay/queen-black-dragon/record.py
+  s_3f4b5347620927::t_7e5217f59cd558 1-52
+server/src/lostcity/systems/combat/CombatStatuses.ts
+  s_3f4b5347620927::t_cb5165f5b31258 34-46,50-74,108,201,366,424,706
+  s_c202351b3d1826::t_530fa40fe2c8a3 202,425
+  s_3f4b5347620927::t_edf029d1a0ec02 365,707
+server/src/lostcity/data/QbdData.ts
+  s_3f4b5347620927::t_b6b1bba557e31f 1-95
+server/src/lostcity/systems/consumables/Consumables.ts
+  s_3f4b5347620927::t_75dada97a25ee6 52,87,115
+tools/client910/src/app.rs
+  s_3f4b5347620927::t_a213d43b54cde2 420
+  s_3f4b5347620927::t_e03b9aaeb713f3 421-423
+server/src/lostcity/systems/movement/Standing.ts
+  s_bf99a93e97ab76::t_863bfd853d5d40 19-20,22,28
+  s_3f4b5347620927::t_bb477161628c64 3-8,14-18
+server/src/lostcity/systems/loot/PendingClaimAccount.test.ts
+  s_3f4b5347620927::t_b29c64b22fb80b 1-15
+server/src/lostcity/systems/npc/NpcDepletionPolicy.ts
+  s_3f4b5347620927::t_ffe64f426fd5c7 1-6
+tools/client910/fixtures/session-replay/queen-black-dragon/seed.mjs
+  s_3f4b5347620927::t_2a3927a3360a4b 1-118
+server/src/lostcity/network/QbdE2E.integration.test.ts
+  s_3f4b5347620927::t_c5670957840dcb 1-1014
+server/src/lostcity/tools/data/domains/instances/QueenBlackDragon.ts
+  s_3f4b5347620927::t_14d6680a802425 2-547
+  s_3f4b5347620927::t_1eebe3057bb9ea 1
+server/src/lostcity/content/world/bosses/QbdEncounter.ts
+  s_3f4b5347620927::t_8855327ea73aca 1-346
+server/src/lostcity/systems/combat/Combat.ts
+  s_3f4b5347620927::t_f096bc08b42bdd 153,155-156,208,266-267,273,411-422,490-492,675-681,726
+server/src/lostcity/systems/session/Account.ts
+  s_3f4b5347620927::t_919d10cdb7cd9e 1,53-54,97-99,139-140,213-215
+  s_bf99a93e97ab76::t_e722a587027e69 216
+tools/client910/src/scenario_corporeal_beast.rs
+  s_3f4b5347620927::t_96f08fe6c4fbca 64-68
+server/src/lostcity/entity/Player.ts
+  s_3f4b5347620927::t_342eca083fae9e 1-2,61-62
+server/src/lostcity/network/SkillsE2E.testkit.ts
+  s_3f4b5347620927::t_91f8e4d773a3ed 52,145
+docs/server-architecture.md
+  s_3f4b5347620927::t_e4a565e66f40e9 1121-1131
+  s_3f4b5347620927::t_4a8f9afe7d85a1 1132-1133
+server/src/lostcity/content/world/bosses/QbdLair.ts
+  s_3f4b5347620927::t_0d1867193fed58 1-196
+server/src/lostcity/systems/movement/Movement.ts
+  s_3f4b5347620927::t_3a0cfc00857c77 139,158,180-181,189-190,215
+server/src/lostcity/network/QbdMechanicObservation.testkit.ts
+  s_3f4b5347620927::t_afb17e69897c08 1-156
+server/src/lostcity/systems/combat/OrdinaryVolley.ts
+  s_3f4b5347620927::t_1cc23299724ff3 24,39-40
+tools/client910/fixtures/session-replay/queen-black-dragon/server.mjs
+  s_3f4b5347620927::t_507d073c2d6b18 1-168
+server/src/lostcity/systems/combat/HitQueue.ts
+  s_3f4b5347620927::t_cdc81370cbd857 3-6,10,24,35-42,46,51,56,75-81
+docs/client-status.md
+  s_3f4b5347620927::t_f6abe1108afd58 47-48
+packages/domain/src/symbols/dbrow.ts
+  s_3f4b5347620927::t_acd03d20ea0310 8
+packages/domain/src/symbols/interface.ts
+  s_3f4b5347620927::t_3caf6a62785d10 130
+packages/domain/src/symbols/inv.ts
+  s_3f4b5347620927::t_11cb5478753f9d 16
+packages/domain/src/symbols/loc.ts
+  s_3f4b5347620927::t_ae915bb2bc918d 224-241
+packages/domain/src/symbols/location.ts
+  s_3f4b5347620927::t_47939fa79a0848 250-264
+packages/domain/src/symbols/npc.ts
+  s_3f4b5347620927::t_6f2a03d538e5a6 92-97
+packages/domain/src/symbols/obj.ts
+  s_3f4b5347620927::t_d2b167448ca3d8 393
+packages/domain/src/symbols/script.ts
+  s_3f4b5347620927::t_226f149e43bfbd 47
+packages/domain/src/symbols/varbit.ts
+  s_3f4b5347620927::t_4b51fb3c14bead 253
+packages/domain/src/symbols/varc.ts
+  s_3f4b5347620927::t_809ad684bd4216 74-76
+revisions/910/symbols/dbrow.sym
+  s_3f4b5347620927::t_df7175ce995ac2 6
+revisions/910/symbols/interface.sym
+  s_3f4b5347620927::t_459fcaee89ade1 128
+revisions/910/symbols/inv.sym
+  s_3f4b5347620927::t_80d58136636ddf 14
+revisions/910/symbols/loc.sym
+  s_3f4b5347620927::t_502b6ebd40408b 222-239
+revisions/910/symbols/location.sym
+  s_3f4b5347620927::t_03eb2dc1536b8a 240-254
+revisions/910/symbols/npc.sym
+  s_3f4b5347620927::t_85a2b6e6383325 90-95
+revisions/910/symbols/obj.sym
+  s_3f4b5347620927::t_5b49840e4a48ec 391
+revisions/910/symbols/script.sym
+  s_3f4b5347620927::t_05814c51956bd5 45
+revisions/910/symbols/varbit.sym
+  s_3f4b5347620927::t_d8cbdde4def38d 251
+revisions/910/symbols/varc.sym
+  s_3f4b5347620927::t_0914c710921ec7 72-74
+tools/client910/crates/rs910-symbols/src/dbrow.rs
+  s_3f4b5347620927::t_17d435aa047378 12-13
+tools/client910/crates/rs910-symbols/src/interface.rs
+  s_3f4b5347620927::t_c2189bf599f656 256-257
+tools/client910/crates/rs910-symbols/src/inv.rs
+  s_3f4b5347620927::t_11a6f96c78868b 28-29
+tools/client910/crates/rs910-symbols/src/loc.rs
+  s_3f4b5347620927::t_46a9981e0edb79 444-479
+tools/client910/crates/rs910-symbols/src/location.rs
+  s_3f4b5347620927::t_131b52cd121ecb 480-509
+tools/client910/crates/rs910-symbols/src/npc.rs
+  s_3f4b5347620927::t_dd6cecdb3ec1d9 180-191
+tools/client910/crates/rs910-symbols/src/obj.rs
+  s_3f4b5347620927::t_9461b19060fd59 782-783
+tools/client910/crates/rs910-symbols/src/script.rs
+  s_3f4b5347620927::t_10e42fb350e023 90-91
+tools/client910/crates/rs910-symbols/src/varbit.rs
+  s_3f4b5347620927::t_ccdef66d8ec0b1 502-503
+tools/client910/crates/rs910-symbols/src/varc.rs
+  s_3f4b5347620927::t_b04910a9e93af6 144-149
+tools/client910/fixtures/session-replay/queen-black-dragon/recorded-first-full-phase-melee/adoption.json
+  s_3f4b5347620927::t_280b8cd69cf451 1-167
+tools/client910/fixtures/session-replay/queen-black-dragon/recorded-first-full-phase-melee/backend-inputs.json
+  s_3f4b5347620927::t_e2ea5820a1b79d 1-1635
+tools/client910/fixtures/session-replay/queen-black-dragon/recorded-first-full-phase-melee/combat-receipts.jsonl
+  s_3f4b5347620927::t_b7e11a7e52b67c 1-225
+tools/client910/fixtures/session-replay/queen-black-dragon/recorded-first-full-phase-melee/driver-journal.jsonl
+  s_3f4b5347620927::t_699173420e0a5e 1-483
+tools/client910/fixtures/session-replay/queen-black-dragon/recorded-first-full-phase-melee/execution.json
+  s_3f4b5347620927::t_637c1d42609c88 1-145
+tools/client910/fixtures/session-replay/queen-black-dragon/recorded-first-full-phase-melee/final-saved-state.json
+  s_3f4b5347620927::t_d4d90d950badfd 1-7336
+tools/client910/fixtures/session-replay/queen-black-dragon/recorded-first-full-phase-melee/fixture-hashes.json
+  s_3f4b5347620927::t_6f1aec7e9d9b24 1-16
+tools/client910/fixtures/session-replay/queen-black-dragon/recorded-first-full-phase-melee/initial-fixture.json
+  s_3f4b5347620927::t_fa59795528b5b5 1-321
+tools/client910/fixtures/session-replay/queen-black-dragon/recorded-first-full-phase-melee/native-build.json
+  s_3f4b5347620927::t_d553297045d0e2 1-1054
+tools/client910/fixtures/session-replay/queen-black-dragon/recorded-first-full-phase-melee/plan.json
+  s_3f4b5347620927::t_b3b3c8542acf40 1-1605
+tools/client910/fixtures/session-replay/queen-black-dragon/recorded-first-full-phase-melee/process-closure.json
+  s_3f4b5347620927::t_a8785c912fff6b 1-1273
+tools/client910/fixtures/session-replay/queen-black-dragon/recorded-first-full-phase-melee/qualification.json
+  s_3f4b5347620927::t_93a2d45ddc05e3 1-24
+tools/client910/fixtures/session-replay/queen-black-dragon/recorded-first-full-phase-melee/server-trace.jsonl
+  s_3f4b5347620927::t_b57bed6380f05a 1-158
+tools/client910/fixtures/session-replay/queen-black-dragon/recorded-first-full-phase-melee/source-epoch.json
+  s_3f4b5347620927::t_ecab1cc6fbdf05 1-2214
+tools/client910/src/scenario_queen_black_dragon.rs
+  s_3f4b5347620927::t_7e88bd8e7be363 1-825
+tools/refactor/replay-gate.txt
+  s_3f4b5347620927::t_01a52acff3ec49 143
+tools/refactor/test-inventory.txt
+  s_3f4b5347620927::t_c9e4f2830261bc 2782-2787
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "8b7a90b72cb91abe6cf29351ee2450cc7917cd5f",
+  "prompts": {},
+  "sessions": {
+    "s_3f4b5347620927": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1052f-291b-7aa2-897e-1b9a6fb3f082",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    },
+    "s_bf99a93e97ab76": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "3306d217-ef25-4a58-aa1a-8bdfdb5da12f",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    },
+    "s_c202351b3d1826": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0fe2d-4e63-7e41-b719-caa999b24fd9",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
