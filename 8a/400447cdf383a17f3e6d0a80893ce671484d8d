@@ -1,0 +1,61 @@
+revisions/910/symbols/component.sym
+  s_01f4a6969ae96f::t_bdb16dab52461c 432,625
+revisions/910/symbols/interface.sym
+  s_01f4a6969ae96f::t_643b8553b2ca21 136-137
+revisions/910/symbols/npc.sym
+  s_01f4a6969ae96f::t_259f2d4328245b 73
+revisions/910/symbols/param.sym
+  s_01f4a6969ae96f::t_b6bcce77084f6f 35,60,116
+revisions/910/symbols/struct.sym
+  s_01f4a6969ae96f::t_4cce648e9483e2 59,68
+tools/client910/crates/rs910-symbols/src/component.rs
+  s_01f4a6969ae96f::t_6338c54882c188 1020-1021,1603-1609
+tools/client910/crates/rs910-symbols/src/interface.rs
+  s_01f4a6969ae96f::t_c4406c81a40142 272-275
+tools/client910/crates/rs910-symbols/src/npc.rs
+  s_01f4a6969ae96f::t_23601c13c4599d 146-147
+tools/client910/crates/rs910-symbols/src/param.rs
+  s_01f4a6969ae96f::t_64386126795405 70-71,120-121,232-233
+tools/client910/crates/rs910-symbols/src/structs.rs
+  s_01f4a6969ae96f::t_d9e78f5abed0cc 118-119,137-138
+tools/client910/fixtures/session-replay/legacy-startup/server-trace.jsonl
+  s_5ccbe0514e574f::t_c89401eb7c7678 1-222
+tools/client910/src/scenario_death_office.rs
+  s_5ccbe0514e574f::t_cfcdaee00a6ece 7,22-35,198-332
+tools/refactor/replay-gate.txt
+  s_5ccbe0514e574f::t_359b04a5af2c83 94
+docs/client-status.md
+  s_0c944485e2b6c4::t_9c8bae857188ec 15-16
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "8a400447cdf383a17f3e6d0a80893ce671484d8d",
+  "prompts": {},
+  "sessions": {
+    "s_01f4a6969ae96f": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a11a09-bbb9-7cc3-ab54-abdc83e48bd3",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    },
+    "s_0c944485e2b6c4": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a11a23-6f58-78b0-8842-af0ab2184e06",
+        "model": "unknown"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    },
+    "s_5ccbe0514e574f": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a11a07-dec9-7e10-a21b-5a6158186599",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
