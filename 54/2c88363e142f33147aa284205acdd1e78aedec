@@ -1,0 +1,111 @@
+docs/client-status.md
+  s_3f4b5347620927::t_c75be95c2a7775 47-48
+revisions/910/symbols/dbrow.sym
+  s_3f4b5347620927::t_0e653b4fe3c8a2 6
+revisions/910/symbols/interface.sym
+  s_3f4b5347620927::t_8f72b3396896ef 128
+revisions/910/symbols/inv.sym
+  s_3f4b5347620927::t_0b50f1629496fd 14
+revisions/910/symbols/loc.sym
+  s_3f4b5347620927::t_f3a5ae46452276 222-239
+revisions/910/symbols/location.sym
+  s_3f4b5347620927::t_2e0e1f8e95de50 240-254
+revisions/910/symbols/npc.sym
+  s_3f4b5347620927::t_b62fa98564739b 90-95
+revisions/910/symbols/obj.sym
+  s_3f4b5347620927::t_6cc835930e2e36 391
+revisions/910/symbols/script.sym
+  s_3f4b5347620927::t_7dd1800dd1ab8b 45
+revisions/910/symbols/varbit.sym
+  s_3f4b5347620927::t_f6a6f24d40d139 251
+revisions/910/symbols/varc.sym
+  s_3f4b5347620927::t_98c0e71747cbed 72-74
+tools/client910/crates/rs910-symbols/src/dbrow.rs
+  s_3f4b5347620927::t_c970597fcc9471 12-13
+tools/client910/crates/rs910-symbols/src/interface.rs
+  s_3f4b5347620927::t_c6bffdb1caf185 256-257
+tools/client910/crates/rs910-symbols/src/inv.rs
+  s_3f4b5347620927::t_0e9968ea6c3118 28-29
+tools/client910/crates/rs910-symbols/src/loc.rs
+  s_3f4b5347620927::t_5d125fd7d350ef 444-479
+tools/client910/crates/rs910-symbols/src/location.rs
+  s_3f4b5347620927::t_59145a7fab0ed2 480-509
+tools/client910/crates/rs910-symbols/src/npc.rs
+  s_3f4b5347620927::t_1deeaffc23a723 180-191
+tools/client910/crates/rs910-symbols/src/obj.rs
+  s_3f4b5347620927::t_685205eb2a6932 782-783
+tools/client910/crates/rs910-symbols/src/script.rs
+  s_3f4b5347620927::t_a720910dd17132 90-91
+tools/client910/crates/rs910-symbols/src/varbit.rs
+  s_3f4b5347620927::t_87825e6db452f9 502-503
+tools/client910/crates/rs910-symbols/src/varc.rs
+  s_3f4b5347620927::t_f94a9307807f85 144-149
+tools/client910/fixtures/session-replay/queen-black-dragon/contract.py
+  s_3f4b5347620927::t_5db739106ea5af 1-107
+tools/client910/fixtures/session-replay/queen-black-dragon/driver.py
+  s_3f4b5347620927::t_9cbb102b102bfe 1-140
+tools/client910/fixtures/session-replay/queen-black-dragon/freeze.py
+  s_3f4b5347620927::t_c97fb68f1d0e49 1-150
+tools/client910/fixtures/session-replay/queen-black-dragon/prepare-spec.py
+  s_3f4b5347620927::t_d7e530cd215062 1-86
+tools/client910/fixtures/session-replay/queen-black-dragon/record.py
+  s_3f4b5347620927::t_e41ee8f1294248 1-52
+tools/client910/fixtures/session-replay/queen-black-dragon/recorded-first-full-phase-melee/adoption.json
+  s_3f4b5347620927::t_fef605f1004a9c 1-167
+tools/client910/fixtures/session-replay/queen-black-dragon/recorded-first-full-phase-melee/backend-inputs.json
+  s_3f4b5347620927::t_f934c9bffdf168 1-1635
+tools/client910/fixtures/session-replay/queen-black-dragon/recorded-first-full-phase-melee/combat-receipts.jsonl
+  s_3f4b5347620927::t_6bc1fa4a28650b 1-225
+tools/client910/fixtures/session-replay/queen-black-dragon/recorded-first-full-phase-melee/driver-journal.jsonl
+  s_3f4b5347620927::t_b23c968b02e651 1-483
+tools/client910/fixtures/session-replay/queen-black-dragon/recorded-first-full-phase-melee/execution.json
+  s_3f4b5347620927::t_de169c521d14ac 1-145
+tools/client910/fixtures/session-replay/queen-black-dragon/recorded-first-full-phase-melee/final-saved-state.json
+  s_3f4b5347620927::t_0830a158c50dfd 1-7336
+tools/client910/fixtures/session-replay/queen-black-dragon/recorded-first-full-phase-melee/fixture-hashes.json
+  s_3f4b5347620927::t_824c38f25e212b 1-16
+tools/client910/fixtures/session-replay/queen-black-dragon/recorded-first-full-phase-melee/initial-fixture.json
+  s_3f4b5347620927::t_7ff0e5f73c5adc 1-321
+tools/client910/fixtures/session-replay/queen-black-dragon/recorded-first-full-phase-melee/native-build.json
+  s_3f4b5347620927::t_1fd28862e02df7 1-1054
+tools/client910/fixtures/session-replay/queen-black-dragon/recorded-first-full-phase-melee/plan.json
+  s_3f4b5347620927::t_02b662018c15ed 1-1605
+tools/client910/fixtures/session-replay/queen-black-dragon/recorded-first-full-phase-melee/process-closure.json
+  s_3f4b5347620927::t_86460c9611454f 1-1273
+tools/client910/fixtures/session-replay/queen-black-dragon/recorded-first-full-phase-melee/qualification.json
+  s_3f4b5347620927::t_7f91c2968dd458 1-24
+tools/client910/fixtures/session-replay/queen-black-dragon/recorded-first-full-phase-melee/server-trace.jsonl
+  s_3f4b5347620927::t_609c3b01187718 1-158
+tools/client910/fixtures/session-replay/queen-black-dragon/recorded-first-full-phase-melee/source-epoch.json
+  s_3f4b5347620927::t_145ea031cc2ab6 1-2214
+tools/client910/fixtures/session-replay/queen-black-dragon/seed.mjs
+  s_3f4b5347620927::t_456a5ec7047eba 1-118
+tools/client910/fixtures/session-replay/queen-black-dragon/server.mjs
+  s_3f4b5347620927::t_86e02580869397 1-168
+tools/client910/src/app.rs
+  s_3f4b5347620927::t_90d944c775b685 420-423
+tools/client910/src/scenario_corporeal_beast.rs
+  s_3f4b5347620927::t_b3c13d73006b36 64-68
+tools/client910/src/scenario_queen_black_dragon.rs
+  s_3f4b5347620927::t_3191d1e41034d7 1-825
+tools/refactor/replay-gate.txt
+  s_3f4b5347620927::t_09b07748afc34a 143
+tools/refactor/test-inventory.txt
+  s_3f4b5347620927::t_c314e42d108c7b 1668
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "542c88363e142f33147aa284205acdd1e78aedec",
+  "prompts": {},
+  "sessions": {
+    "s_3f4b5347620927": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1052f-291b-7aa2-897e-1b9a6fb3f082",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
