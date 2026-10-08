@@ -1,0 +1,199 @@
+docs/client-status.md
+  s_3f4b5347620927::t_5d3a27d747be4b 47-48
+docs/server-architecture.md
+  s_3f4b5347620927::t_edeb5e47c3d6f5 1121-1133
+packages/domain/src/symbols/dbrow.ts
+  s_3f4b5347620927::t_38d8bfda50f3af 8
+packages/domain/src/symbols/interface.ts
+  s_3f4b5347620927::t_ca3b58fe1b9fcd 130
+packages/domain/src/symbols/inv.ts
+  s_3f4b5347620927::t_426510a865a97e 16
+packages/domain/src/symbols/loc.ts
+  s_3f4b5347620927::t_9f908a24ea71b8 224-241
+packages/domain/src/symbols/location.ts
+  s_3f4b5347620927::t_f2c7f05602fa16 250-264
+packages/domain/src/symbols/npc.ts
+  s_3f4b5347620927::t_50e5ca67ef2f57 92-97
+packages/domain/src/symbols/obj.ts
+  s_3f4b5347620927::t_f5eb1885eb6615 393
+packages/domain/src/symbols/script.ts
+  s_3f4b5347620927::t_7a4417063d3a7e 47
+packages/domain/src/symbols/varbit.ts
+  s_3f4b5347620927::t_b40c1f09a9800a 253
+packages/domain/src/symbols/varc.ts
+  s_3f4b5347620927::t_aad8bdb7312130 74-76
+revisions/910/symbols/dbrow.sym
+  s_3f4b5347620927::t_980e2e41ae76b5 6
+revisions/910/symbols/interface.sym
+  s_3f4b5347620927::t_a640eea172ce19 128
+revisions/910/symbols/inv.sym
+  s_3f4b5347620927::t_f58d51e48fb554 14
+revisions/910/symbols/loc.sym
+  s_3f4b5347620927::t_0a19069b72a6a4 222-239
+revisions/910/symbols/location.sym
+  s_3f4b5347620927::t_43d5b842566f34 240-254
+revisions/910/symbols/npc.sym
+  s_3f4b5347620927::t_ac6a1c9150d2b9 90-95
+revisions/910/symbols/obj.sym
+  s_3f4b5347620927::t_491ac95f25867e 391
+revisions/910/symbols/script.sym
+  s_3f4b5347620927::t_d97b44648a782e 45
+revisions/910/symbols/varbit.sym
+  s_3f4b5347620927::t_6288008a82e631 251
+revisions/910/symbols/varc.sym
+  s_3f4b5347620927::t_e8eea809d7c72b 72-74
+server/src/lostcity/content/world/bosses/BossRooms.ts
+  s_3f4b5347620927::t_536ea579cb727b 4,117-122
+server/src/lostcity/content/world/bosses/QbdEncounter.ts
+  s_3f4b5347620927::t_45e23e5d4235ac 1-346
+server/src/lostcity/content/world/bosses/QbdLair.ts
+  s_3f4b5347620927::t_1acc0a94389a70 1-196
+server/src/lostcity/content/world/bosses/QbdMechanics.ts
+  s_3f4b5347620927::t_89c5f6ca76741a 1-612
+server/src/lostcity/content/world/bosses/QbdRewards.ts
+  s_3f4b5347620927::t_49b84350824fa4 1-275
+server/src/lostcity/content/world/bosses/QbdWindows.ts
+  s_3f4b5347620927::t_be02fdd8eb445f 1-76
+server/src/lostcity/data/BossRoomData.ts
+  s_3f4b5347620927::t_cc7f05a2a89667 1,24,148-163
+server/src/lostcity/data/QbdData.ts
+  s_3f4b5347620927::t_6872749ed78029 1-95
+server/src/lostcity/data/QbdMechanicData.ts
+  s_3f4b5347620927::t_fe2a3b159b9001 1-83
+server/src/lostcity/entity/Player.ts
+  s_3f4b5347620927::t_33479ba16badf5 1-2,61-62
+server/src/lostcity/network/ChaosElementalE2E.integration.test.ts
+  s_3f4b5347620927::t_6daa4a528d996d 21,430-438,442-453
+server/src/lostcity/network/QbdE2E.integration.test.ts
+  s_3f4b5347620927::t_896350c4fd428d 1-1191
+server/src/lostcity/network/QbdMechanicObservation.testkit.ts
+  s_3f4b5347620927::t_c01ba4033958ba 1-156
+server/src/lostcity/network/SkillsE2E.testkit.ts
+  s_3f4b5347620927::t_4e91e0baf3a0c0 52,145
+server/src/lostcity/systems/combat/Combat.ts
+  s_3f4b5347620927::t_3a0891d6019f29 153,155-156,208,266-267,273,411-422,490-492,675-681,726
+server/src/lostcity/systems/combat/CombatStatuses.ts
+  s_3f4b5347620927::t_b5e3c6f924a837 34-46,50-74,108,201-202,365-366,424-425,706-707
+server/src/lostcity/systems/combat/Combatant.ts
+  s_3f4b5347620927::t_57195685e5fcbb 202-204
+server/src/lostcity/systems/combat/HitQueue.ts
+  s_3f4b5347620927::t_5362365a4ba00b 3-6,10,24,35-42,46,51,56,75-81
+server/src/lostcity/systems/combat/OrdinaryVolley.ts
+  s_3f4b5347620927::t_53c85efc2c7a2e 24,39-40
+server/src/lostcity/systems/consumables/Consumables.ts
+  s_3f4b5347620927::t_2df63af3591a23 52,87,115
+server/src/lostcity/systems/inventory/Inventories.ts
+  s_3f4b5347620927::t_39e56632908338 295
+server/src/lostcity/systems/loot/PendingClaim.ts
+  s_3f4b5347620927::t_3b5e4b77c545ee 1-68
+server/src/lostcity/systems/loot/PendingClaimAccount.test.ts
+  s_3f4b5347620927::t_f4d7c275cc1d14 1-15
+server/src/lostcity/systems/movement/Movement.ts
+  s_3f4b5347620927::t_df79dffb89d069 139,158,180-181,189-190,215
+server/src/lostcity/systems/movement/Standing.ts
+  s_3f4b5347620927::t_76a530d0c74b98 3-8,14-20,22,28
+server/src/lostcity/systems/movement/Teleporting.ts
+  s_3f4b5347620927::t_ebfe4176472e11 45,56
+server/src/lostcity/systems/npc/NpcCombat.ts
+  s_3f4b5347620927::t_666ad564b26dd1 1,74-75,101-122,144,178-179,379,408,456-461,481-482
+server/src/lostcity/systems/npc/NpcDepletionPolicy.ts
+  s_3f4b5347620927::t_6fb54ac0e21c51 1-6
+server/src/lostcity/systems/npc/NpcPopulation.ts
+  s_3f4b5347620927::t_ad5c8bd708b99b 114-121
+server/src/lostcity/systems/session/Account.ts
+  s_3f4b5347620927::t_664e1b136b160a 1,53-54,97-99,139-140,213-216
+server/src/lostcity/systems/session/AccountFile.ts
+  s_3f4b5347620927::t_e115680827b057 1,119-120,156-157,184-190
+server/src/lostcity/tools/data/domains/instances/QueenBlackDragon.ts
+  s_3f4b5347620927::t_9612bede344b36 1-547
+server/src/lostcity/tools/data/domains/instances/index.ts
+  s_3f4b5347620927::t_c42c9553ac37d6 1,22,26-35,37,53,57,61
+tools/client910/crates/rs910-symbols/src/dbrow.rs
+  s_3f4b5347620927::t_cffd19178823c4 12-13
+tools/client910/crates/rs910-symbols/src/interface.rs
+  s_3f4b5347620927::t_204965d89b27b8 256-257
+tools/client910/crates/rs910-symbols/src/inv.rs
+  s_3f4b5347620927::t_510434e0bed251 28-29
+tools/client910/crates/rs910-symbols/src/loc.rs
+  s_3f4b5347620927::t_67803feae6717f 444-479
+tools/client910/crates/rs910-symbols/src/location.rs
+  s_3f4b5347620927::t_56cf07292ef9cd 480-509
+tools/client910/crates/rs910-symbols/src/npc.rs
+  s_3f4b5347620927::t_ee52dbf5f751b4 180-191
+tools/client910/crates/rs910-symbols/src/obj.rs
+  s_3f4b5347620927::t_9dccaa21b566e8 782-783
+tools/client910/crates/rs910-symbols/src/script.rs
+  s_3f4b5347620927::t_29b37ac887a4a3 90-91
+tools/client910/crates/rs910-symbols/src/varbit.rs
+  s_3f4b5347620927::t_086dbe8a0f049e 502-503
+tools/client910/crates/rs910-symbols/src/varc.rs
+  s_3f4b5347620927::t_d6f027cc3fa5e2 144-149
+tools/client910/fixtures/session-replay/queen-black-dragon/contract.py
+  s_3f4b5347620927::t_8bcbf82482ba8a 1-107
+tools/client910/fixtures/session-replay/queen-black-dragon/driver.py
+  s_3f4b5347620927::t_902de581d37ed6 1-140
+tools/client910/fixtures/session-replay/queen-black-dragon/freeze.py
+  s_3f4b5347620927::t_203c8dffdc9149 1-150
+tools/client910/fixtures/session-replay/queen-black-dragon/prepare-spec.py
+  s_3f4b5347620927::t_bb6df41b8b67d8 1-86
+tools/client910/fixtures/session-replay/queen-black-dragon/record.py
+  s_3f4b5347620927::t_7d548321c70171 1-52
+tools/client910/fixtures/session-replay/queen-black-dragon/recorded-first-full-phase-melee/adoption.json
+  s_3f4b5347620927::t_22f582a27fa12c 1-167
+tools/client910/fixtures/session-replay/queen-black-dragon/recorded-first-full-phase-melee/backend-inputs.json
+  s_3f4b5347620927::t_134dc1e081b247 1-1635
+tools/client910/fixtures/session-replay/queen-black-dragon/recorded-first-full-phase-melee/combat-receipts.jsonl
+  s_3f4b5347620927::t_0aae620faf3777 1-225
+tools/client910/fixtures/session-replay/queen-black-dragon/recorded-first-full-phase-melee/driver-journal.jsonl
+  s_3f4b5347620927::t_ac8c57c84326e6 1-483
+tools/client910/fixtures/session-replay/queen-black-dragon/recorded-first-full-phase-melee/execution.json
+  s_3f4b5347620927::t_d40dafad7cd072 1-145
+tools/client910/fixtures/session-replay/queen-black-dragon/recorded-first-full-phase-melee/final-saved-state.json
+  s_3f4b5347620927::t_355f0bfb423d23 1-7336
+tools/client910/fixtures/session-replay/queen-black-dragon/recorded-first-full-phase-melee/fixture-hashes.json
+  s_3f4b5347620927::t_2117e0c591bfc2 1-16
+tools/client910/fixtures/session-replay/queen-black-dragon/recorded-first-full-phase-melee/initial-fixture.json
+  s_3f4b5347620927::t_e40a3890a1a09a 1-321
+tools/client910/fixtures/session-replay/queen-black-dragon/recorded-first-full-phase-melee/native-build.json
+  s_3f4b5347620927::t_41f460921ffcb2 1-1054
+tools/client910/fixtures/session-replay/queen-black-dragon/recorded-first-full-phase-melee/plan.json
+  s_3f4b5347620927::t_af38696881e950 1-1605
+tools/client910/fixtures/session-replay/queen-black-dragon/recorded-first-full-phase-melee/process-closure.json
+  s_3f4b5347620927::t_3eca90754f32e5 1-1273
+tools/client910/fixtures/session-replay/queen-black-dragon/recorded-first-full-phase-melee/qualification.json
+  s_3f4b5347620927::t_a241237b978bcc 1-24
+tools/client910/fixtures/session-replay/queen-black-dragon/recorded-first-full-phase-melee/server-trace.jsonl
+  s_3f4b5347620927::t_d2875314d1baaa 1-158
+tools/client910/fixtures/session-replay/queen-black-dragon/recorded-first-full-phase-melee/source-epoch.json
+  s_3f4b5347620927::t_7506e9625636a1 1-2214
+tools/client910/fixtures/session-replay/queen-black-dragon/seed.mjs
+  s_3f4b5347620927::t_e0a15628fbf1da 1-118
+tools/client910/fixtures/session-replay/queen-black-dragon/server.mjs
+  s_3f4b5347620927::t_752cd41142c7db 1-168
+tools/client910/src/app.rs
+  s_3f4b5347620927::t_9289d5f9425d14 420-423
+tools/client910/src/scenario_corporeal_beast.rs
+  s_3f4b5347620927::t_6d55d69df38d83 64-68
+tools/client910/src/scenario_queen_black_dragon.rs
+  s_3f4b5347620927::t_6b5f83cbb74129 1-825
+tools/refactor/replay-gate.txt
+  s_3f4b5347620927::t_ead55b7dd7c3f0 143
+tools/refactor/test-inventory.txt
+  s_3f4b5347620927::t_57e0bd6637fdeb 2782-2788
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "4051692dd149d6a0344d92dece0173d62bd383f6",
+  "prompts": {},
+  "sessions": {
+    "s_3f4b5347620927": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1052f-291b-7aa2-897e-1b9a6fb3f082",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
