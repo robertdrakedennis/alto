@@ -1,0 +1,73 @@
+docs/renderer/modern-renderer.md
+  s_41fcdb93953164::t_631642f3be76a5 12-25,45-48,489-491,670-694,706-718,1014-1020
+tools/client910/crates/rs910-jobs/src/lib.rs
+  s_41fcdb93953164::t_ae3f8e6c17a4f0 3-4,8,13-15,30,43-45,49-74
+tools/client910/crates/rs910-render-gpu/src/render/composition.rs
+  s_41fcdb93953164::t_6b4f2f2816ec8d 42-49,107-109
+tools/client910/crates/rs910-render-modern/src/frame/draw_commands.rs
+  s_41fcdb93953164::t_a4e3118b0e24ed 1-84
+tools/client910/crates/rs910-render-modern/src/frame/dynamic_meshes.rs
+  s_5ccbe0514e574f::t_4f6ddf9a15d4b3 1-79
+tools/client910/crates/rs910-render-modern/src/frame/encoding.rs
+  s_5ccbe0514e574f::t_7c4355dbf6be37 22,68
+tools/client910/crates/rs910-render-modern/src/frame/gpu/far.rs
+  s_5ccbe0514e574f::t_4eb8a863a77623 450
+tools/client910/crates/rs910-render-modern/src/frame/gpu/shadow_cache.rs
+  s_5ccbe0514e574f::t_a1c87e03ceabd9 492-494
+tools/client910/crates/rs910-render-modern/src/frame/jobs.rs
+  s_41fcdb93953164::t_534ef3a9386ccf 6-7,9,14-15,51-53
+tools/client910/crates/rs910-render-modern/src/frame/mod.rs
+  s_41fcdb93953164::t_186f5d5b837ba3 250-254,718,746,1425-1427,1440,1450-1452,1773-1774
+tools/client910/crates/rs910-render-modern/src/frame/posing.rs
+  s_5ccbe0514e574f::t_cce4e904b6c237 5,15-17,40,90-103
+tools/client910/crates/rs910-render-modern/src/frame/resources.rs
+  s_41fcdb93953164::t_3e94cc69c1363d 185-191,219-221,254,556-590,629-633,644,646-647,656-665
+tools/client910/crates/rs910-render-modern/src/frame/state.rs
+  s_5ccbe0514e574f::t_02e53e8eeea990 43-44,96
+tools/client910/crates/rs910-render-modern/src/frame/submit.rs
+  s_41fcdb93953164::t_a9bb5a69342317 46,53,56,84-85,150-152,157-164,166,202-221,306-308,316-318
+tools/client910/crates/rs910-render-modern/src/frame/tests/far.rs
+  s_41fcdb93953164::t_f9061bae964674 452,459-461
+tools/client910/crates/rs910-render-modern/src/frame/underwater.rs
+  s_5ccbe0514e574f::t_766cafaae14fdc 175-181,183-186,200-227
+tools/client910/crates/rs910-scene/src/scene_snapshot/owned.rs
+  s_5ccbe0514e574f::t_18c9345cd4a03b 114-116,185-195
+tools/client910/src/active_toolkit.rs
+  s_41fcdb93953164::t_deb5136bb9423a 29,31-32,103-104,144,203-204,607-612,623-625,744-745,766,771-780,804,933,954-955,957,962,972-973,984,1203-1204,1212,1214-1219,1223,1225-1226,1345,1441
+tools/client910/src/active_toolkit/render_tests.rs
+  s_41fcdb93953164::t_c2668c7b1a3aa9 555-557
+tools/client910/src/active_toolkit/render_thread.rs
+  s_41fcdb93953164::t_5a7fee2a742f6a 6,12-52,63-64,130-135,168-170
+tools/client910/src/app.rs
+  s_41fcdb93953164::t_0e1e8c97b403e4 932-933,1278-1283,1296,1367
+tools/client910/src/app/frame_clock.rs
+  s_41fcdb93953164::t_9c8d3e04272555 4-8,19-20,26-40,42-70,82-95,107-112
+tools/client910/src/app/mainloop.rs
+  s_41fcdb93953164::t_190f75e37accc8 407-408
+tools/client910/src/app/redraw.rs
+  s_41fcdb93953164::t_6430be45a0c15d 74-79,199-209
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "4798077b132d0c6f228607bad18e2eff0467cef6",
+  "prompts": {},
+  "sessions": {
+    "s_41fcdb93953164": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1195e-1a00-7b71-b5cb-0d4497ecd2d8",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    },
+    "s_5ccbe0514e574f": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a11a07-dec9-7e10-a21b-5a6158186599",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
