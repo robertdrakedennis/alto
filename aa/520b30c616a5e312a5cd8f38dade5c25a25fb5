@@ -1,0 +1,31 @@
+docs/renderer/modern-renderer.md
+  s_41fcdb93953164::t_06c9538b162063 571,769,774-776
+tools/client910/crates/rs910-render-gpu/src/text_render_gpu.rs
+  s_41fcdb93953164::t_bd22e545cc9cc8 433,436-437,445,483-484
+tools/client910/crates/rs910-render-gpu/src/ui_paint_gpu.rs
+  s_41fcdb93953164::t_f0481b0362cce5 143,153,177
+tools/client910/crates/rs910-render-gpu/src/ui_paint_tests.rs
+  s_41fcdb93953164::t_bdcc65743d5e18 34-48,51,203-260
+tools/client910/crates/rs910-ui/src/ui_draw.rs
+  s_41fcdb93953164::t_826a4098c0ba0c 138-140,156,329,394-396
+tools/client910/crates/rs910-ui/src/ui_runtime.rs
+  s_41fcdb93953164::t_73f9fb723228ee 1406-1409,1791
+tools/client910/crates/rs910-ui/src/ui_runtime/renderer_settings.rs
+  s_41fcdb93953164::t_87c685536e111c 86-90,92-100,102,104-105,164-170,173,182,189,239-245,247,262-271,286,289,300,384-478,491-494,504,508,515
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "aa520b30c616a5e312a5cd8f38dade5c25a25fb5",
+  "prompts": {},
+  "sessions": {
+    "s_41fcdb93953164": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1195e-1a00-7b71-b5cb-0d4497ecd2d8",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
