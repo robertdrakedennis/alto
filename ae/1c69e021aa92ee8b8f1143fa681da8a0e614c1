@@ -1,0 +1,53 @@
+docs/renderer/modern-renderer.md
+  s_41fcdb93953164::t_6e9c11c6fa4317 680-683,686-688
+tools/client910/crates/rs910-render-modern/src/frame/mod.rs
+  s_41fcdb93953164::t_1951f90f4bbc78 1447
+tools/client910/crates/rs910-render-modern/src/frame/submit.rs
+  s_41fcdb93953164::t_74e129f60ff46a 150-152,159,166-169
+tools/client910/crates/rs910-render-modern/src/frame/tests/far.rs
+  s_41fcdb93953164::t_14dcac21211f2b 455,463
+tools/client910/crates/rs910-render-modern/src/frame/tests/mod.rs
+  s_41fcdb93953164::t_89d16115c220b3 356
+tools/client910/crates/rs910-render-modern/src/frame/tests/models.rs
+  s_41fcdb93953164::t_7b382f13eec8b4 527,532-543,551,560-564,569-574
+tools/client910/crates/rs910-render-modern/src/frame/tests/scene.rs
+  s_41fcdb93953164::t_c0c4ee746abe15 281-287,307,311,317,331-344
+tools/client910/crates/rs910-render-modern/src/frame/tests/underwater.rs
+  s_41fcdb93953164::t_34e6cfb1a046b6 44-45,72
+tools/client910/crates/rs910-render-modern/src/frame/underwater.rs
+  s_41fcdb93953164::t_5a0b5a821668ea 100,174
+tools/client910/crates/rs910-scene/src/scene_snapshot.rs
+  s_41fcdb93953164::t_2068d39c6d1981 151-197
+tools/client910/src/app.rs
+  s_41fcdb93953164::t_a5b8547ca30ca8 882-887
+tools/client910/src/app/redraw.rs
+  s_41fcdb93953164::t_a7509bfb0e25f4 671-675
+tools/client910/src/app/scene_host.rs
+  s_41fcdb93953164::t_fc262a3ec0c7a8 26-27,288-293,302-316,1161,1365-1376,1680-1685
+tools/client910/crates/rs910-scene/src/scene_snapshot/owned.rs
+  s_29c1dcbfc5e3c0::t_ee7d7d97fb56bd 175,213,418-423
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "ae1c69e021aa92ee8b8f1143fa681da8a0e614c1",
+  "prompts": {},
+  "sessions": {
+    "s_29c1dcbfc5e3c0": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a11e7a-d89d-7c11-9e91-ce77c71d5348",
+        "model": "unknown"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    },
+    "s_41fcdb93953164": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1195e-1a00-7b71-b5cb-0d4497ecd2d8",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
