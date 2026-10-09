@@ -1,0 +1,93 @@
+docs/renderer/modern-renderer.md
+  s_41fcdb93953164::t_7f816a5940e4f7 177-182,647-664
+tools/client910/crates/rs910-game/src/protocol910/pack_runtime.rs
+  s_41fcdb93953164::t_743fe494f5873a 127,133-149,431,433-434
+tools/client910/crates/rs910-jobs/src/lib.rs
+  s_41fcdb93953164::t_580b723cc2f01e 42-60,113-137
+tools/client910/crates/rs910-render-modern/src/frame/gpu/far.rs
+  s_41fcdb93953164::t_8cd97c7756316c 2453
+tools/client910/crates/rs910-render-modern/src/frame/gpu/interior.rs
+  s_41fcdb93953164::t_ec751429888a7e 1-4,8,10-11,24,46-47,51,86,98-100,107-114
+tools/client910/crates/rs910-render-modern/src/frame/gpu/probes.rs
+  s_41fcdb93953164::t_5ec8b593cbc4a2 792,794-808,816-818,867,988,990-992,1234,1400,1707,1715-1718,1751-1760,1785
+tools/client910/crates/rs910-render-modern/src/frame/gpu/shadow_cache.rs
+  s_41fcdb93953164::t_f76aebafdcba31 31,284,311-312,352,522-523,525,573-578,581-582
+tools/client910/crates/rs910-render-modern/src/frame/jobs.rs
+  s_41fcdb93953164::t_628b2b3908c35c 29,33-39
+tools/client910/crates/rs910-render-modern/src/frame/mod.rs
+  s_899a0f63af105e::t_48ca24183ccb7d 685-686,692,819-821,1125-1130,1341,1365-1367
+tools/client910/crates/rs910-render-modern/src/frame/prebuild.rs
+  s_41fcdb93953164::t_14968f8d4cd24b 1-6,26-32,34-35,40-50,52-59,61-133,175-178,274-365,395-403,414-417
+tools/client910/crates/rs910-render-modern/src/frame/resources.rs
+  s_41fcdb93953164::t_edf2be8c4b06a6 253,462-467,476-478
+tools/client910/crates/rs910-render-modern/src/frame/tests/lifecycle.rs
+  s_01f4a6969ae96f::t_026438cc30eec9 127-128,511-595
+tools/client910/crates/rs910-render-modern/src/frame/tests/mod.rs
+  s_41fcdb93953164::t_eaf3b3a265d5e7 64-65
+tools/client910/crates/rs910-render-modern/src/frame/tests/models.rs
+  s_41fcdb93953164::t_cf8f8e91f21f29 576-840
+tools/client910/crates/rs910-render-modern/src/models/materials.rs
+  s_01f4a6969ae96f::t_b9075d73955ffd 99-101,321-325,726-728,895-898,905-951,975-980,1027-1043,1062-1069,1091-1092,1094-1129,1156,1165
+tools/client910/crates/rs910-render-modern/src/models/materials/tests.rs
+  s_899a0f63af105e::t_10da3d0792c07f 64
+tools/client910/crates/rs910-render-modern/src/models/rt7.rs
+  s_41fcdb93953164::t_545644a1bee036 252-262,404-437
+tools/client910/crates/rs910-render-modern/src/models/surface.wgsl
+  s_41fcdb93953164::t_81ae1537130c4e 1-2,175-180,282-287
+tools/client910/crates/rs910-render-modern/src/shadows/casters.rs
+  s_899a0f63af105e::t_74d8e1dd3f0f5d 17-19,156,162,176-177
+tools/client910/src/app.rs
+  s_41fcdb93953164::t_fa26c39f6eb960 473,720,853,951
+tools/client910/src/app/diagnostics.rs
+  s_41fcdb93953164::t_ce08ae2bbd2049 10-11
+tools/client910/src/app/map_build.rs
+  s_41fcdb93953164::t_dcb0a06eb01bfe 1-183
+tools/client910/src/app/redraw.rs
+  s_41fcdb93953164::t_9ef5afb2f21e08 588,590
+tools/client910/src/app/session_controller.rs
+  s_01f4a6969ae96f::t_b69c7a6b72216d 1639-1640,1642,1683-1686
+tools/client910/src/app/startup.rs
+  s_41fcdb93953164::t_1d940c5f3e6e12 83,87,90-162,517-522
+tools/client910/crates/rs910-render-modern/src/frame/gpu/ambient.rs
+  s_bf7fe1064803a3::t_598a127655c11b 609-612
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "af109b1a55b7a2333088ac08535c900d31679fe4",
+  "prompts": {},
+  "sessions": {
+    "s_01f4a6969ae96f": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a11a09-bbb9-7cc3-ab54-abdc83e48bd3",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    },
+    "s_41fcdb93953164": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1195e-1a00-7b71-b5cb-0d4497ecd2d8",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    },
+    "s_899a0f63af105e": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "8bef9f85-7c42-49ee-9971-3079043b9d10",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    },
+    "s_bf7fe1064803a3": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a11ed5-2ec6-7211-b4f3-2f25dd113abd",
+        "model": "unknown"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
