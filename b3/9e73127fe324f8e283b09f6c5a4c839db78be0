@@ -1,0 +1,121 @@
+docs/cache.md
+  s_0245afe5a8bab8::t_896d4ae3367f3b 20,33-114
+docs/client-status.md
+  s_0245afe5a8bab8::t_acbd2a4ef66abf 174-185
+tools/Cargo.lock
+  s_0245afe5a8bab8::t_c6d31f9f55afbe 1328-1329
+tools/client910/Cargo.toml
+  s_0245afe5a8bab8::t_b799cf9becc79f 38-42
+tools/client910/crates/rs910-config/src/config.rs
+  s_0245afe5a8bab8::t_b7f1fbfbc1741f 30,142,169
+tools/client910/crates/rs910-config/src/config/loc.rs
+  s_0245afe5a8bab8::t_27cab152d8717b 5-6,10,39-41,214-215,466-568,780-802,853-861,863,877-897,927-959
+tools/client910/crates/rs910-config/src/config/loc/variants.rs
+  s_0245afe5a8bab8::t_71dc52ab4d1bb0 1-147
+tools/client910/crates/rs910-config/src/landscape_packet.rs
+  s_0245afe5a8bab8::t_a3f77ef8093824 16,25-37,64-73
+tools/client910/crates/rs910-config/src/login_configs.rs
+  s_0245afe5a8bab8::t_1af18af21a4f28 41-46
+tools/client910/crates/rs910-config/src/nxt/content_tests.rs
+  s_0245afe5a8bab8::t_f3f48fb5794f61 1-145
+tools/client910/crates/rs910-config/src/nxt/map_environment.rs
+  s_0245afe5a8bab8::t_45de4f0e0b38ef 39-42,109-115,130-134,148-152,160,168-177,184-187
+tools/client910/crates/rs910-config/src/nxt/map_lights.rs
+  s_0245afe5a8bab8::t_cde201ed275891 104-106
+tools/client910/crates/rs910-config/src/nxt/map_lights/content.rs
+  s_0245afe5a8bab8::t_412089580780dc 1-94
+tools/client910/crates/rs910-config/src/nxt/map_terrain.rs
+  s_0245afe5a8bab8::t_c6f9d7df1ff9bd 43,46,120-131,135-138,143-147,156-160
+tools/client910/crates/rs910-config/src/nxt/material.rs
+  s_0245afe5a8bab8::t_00ec08aee462e3 54-57,116,140-155,172,198-201
+tools/client910/crates/rs910-config/src/nxt/mod.rs
+  s_0245afe5a8bab8::t_736d59132803a7 33,182-184
+tools/client910/crates/rs910-config/src/nxt/model_rt7.rs
+  s_0245afe5a8bab8::t_c67954756c2238 39,70,77-79,106,114,123,198-268,271-279,346-352,411,421-425,432
+tools/client910/crates/rs910-config/src/nxt/model_rt7/shared.rs
+  s_0245afe5a8bab8::t_7fad92c8010603 1-229
+tools/client910/crates/rs910-config/src/nxt/terrain_bridge.rs
+  s_0245afe5a8bab8::t_1f5cae41592deb 1-116
+tools/client910/crates/rs910-config/src/nxt/tests.rs
+  s_0245afe5a8bab8::t_eacb023c305280 714,892
+tools/client910/crates/rs910-config/src/nxt/water_type.rs
+  s_0245afe5a8bab8::t_52d6babaf3cbe9 105-108,122-133,175-189,209-216
+tools/client910/crates/rs910-config/src/opcode_table.rs
+  s_0245afe5a8bab8::t_d3e0bcad5a4f2b 213-216,244-254,261-264
+tools/client910/crates/rs910-config/src/skybox_types.rs
+  s_0245afe5a8bab8::t_89b9dd9133ff3e 99-113,193-207
+tools/client910/crates/rs910-config/src/texture.rs
+  s_0245afe5a8bab8::t_163f2159bda59c 1543,1575-1579,1639-1658,1684-1686,1715,1739-1750,1777-1779,1810-1815,1817-1825,1827-1829,1831,1860-1866
+tools/client910/crates/rs910-far-scene/src/far_terrain.rs
+  s_0245afe5a8bab8::t_5a72e5fc3314f5 31
+tools/client910/crates/rs910-game/src/protocol910/pack_terrain.rs
+  s_0245afe5a8bab8::t_ba76b82fbe63ee 59,123,185-191
+tools/client910/crates/rs910-game/src/protocol910/terrain.rs
+  s_0245afe5a8bab8::t_8a86e60aa5d1c4 123-128,130-132,171-175,516-569
+tools/client910/crates/rs910-js5/src/cache.rs
+  s_0245afe5a8bab8::t_b38a377d929bdc 699,1092,1099-1213,1263-1274,1336-1342,1363-1376,1419-1421,1445-1447
+tools/client910/crates/rs910-js5/tests/content_overlay.rs
+  s_0245afe5a8bab8::t_7bcc26a9900f06 1-225
+tools/client910/crates/rs910-model/src/modelunlit.rs
+  s_0245afe5a8bab8::t_13d841b7734d86 14,190-200
+tools/client910/crates/rs910-model/src/modelunlit/content.rs
+  s_0245afe5a8bab8::t_eb0a87eeb94fd6 1-118
+tools/client910/crates/rs910-render-modern/src/far/lod.rs
+  s_0245afe5a8bab8::t_996b4b58548b4e 243-247,324-328
+tools/client910/crates/rs910-render-modern/src/frame/tests/models.rs
+  s_0245afe5a8bab8::t_07ac35879dfc3a 175-179
+tools/client910/crates/rs910-render-modern/src/lighting/environment.rs
+  s_0245afe5a8bab8::t_b03aa9337f1c35 233-237
+tools/client910/crates/rs910-render-modern/src/models/rt7.rs
+  s_0245afe5a8bab8::t_479be0d1c64761 711-715
+tools/client910/crates/rs910-render-modern/src/models/rt7_anim.rs
+  s_0245afe5a8bab8::t_4733f132003d8d 393-397
+tools/client910/crates/rs910-render-modern/src/water_body/mod.rs
+  s_0245afe5a8bab8::t_d233db79351d6a 268,270,293
+tools/client910/crates/rs910-scene/src/env.rs
+  s_0245afe5a8bab8::t_6c2bdc4c1b6f18 1453-1455
+tools/client910/crates/rs910-scene/src/env/content.rs
+  s_0245afe5a8bab8::t_487ea05b6259d2 1-201
+tools/client910/crates/rs910-scene/src/map.rs
+  s_0245afe5a8bab8::t_f5a843710830e2 87,92-96,347,349-357,428-433,435,897,904-905
+tools/client910/crates/rs910-scene/src/maploader/landscape.rs
+  s_0245afe5a8bab8::t_c2e9a9addfdeea 273,316
+tools/client910/crates/rs910-scene/src/rebuild.rs
+  s_0245afe5a8bab8::t_0b5225e239e09f 129,291-293,303-305,308-312,316,321,428-430,432-436,493-495,497-501,594-618,842-858,1385,1406
+tools/client910/src/app.rs
+  s_0245afe5a8bab8::t_d04c2826fecfe9 138-140,518,552,561,617-624,637
+tools/client910/src/app/startup.rs
+  s_0245afe5a8bab8::t_76848b5d27f2fe 746-748,764-766,783-785,831-833
+tools/client910/src/bin/world-overlay.rs
+  s_0245afe5a8bab8::t_df8195c6f26576 1-381
+tools/native910/Cargo.toml
+  s_0245afe5a8bab8::t_e5a1aa1e7b8c49 14-15
+tools/native910/README.md
+  s_0245afe5a8bab8::t_60a905a611c43c 1,272-285
+tools/native910/src/cli.rs
+  s_0245afe5a8bab8::t_4ed6d23a6e624f 1,5-6,33-44,242-261
+tools/native910/src/content_overlay.rs
+  s_0245afe5a8bab8::t_78cb7c4af873ed 1-438
+tools/native910/src/content_overlay/source.rs
+  s_0245afe5a8bab8::t_4c03498ca25615 1-169
+tools/native910/src/js5.rs
+  s_0245afe5a8bab8::t_855537bb5a31a0 62-172
+tools/native910/src/lib.rs
+  s_0245afe5a8bab8::t_358594f71c5700 10-12,69-70
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "b39e73127fe324f8e283b09f6c5a4c839db78be0",
+  "prompts": {},
+  "sessions": {
+    "s_0245afe5a8bab8": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "26789806-9708-42d5-8749-1fe6fbfb9e5c",
+        "model": "unknown"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
