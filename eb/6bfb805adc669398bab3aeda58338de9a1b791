@@ -1,0 +1,815 @@
+docs/client-status.md
+  s_01f4a6969ae96f::t_8aeae8c3a6d331 17,19-29,35,41-42,47,49,51,61-79,174-180,184-187
+revisions/910/symbols/component.sym
+  s_f14820c7533d54::t_927b9dcc4e045d 197-200,421-423,524,601,620-634
+revisions/910/symbols/dbrow.sym
+  s_01f4a6969ae96f::t_dfa7b1a2ec4061 4
+revisions/910/symbols/enum.sym
+  s_01f4a6969ae96f::t_2998a9f6762089 25,49
+revisions/910/symbols/interface.sym
+  s_01f4a6969ae96f::t_2429dda3c09db6 11,48,134
+revisions/910/symbols/inv.sym
+  s_01f4a6969ae96f::t_0274d97144a337 4
+revisions/910/symbols/loc.sym
+  s_01f4a6969ae96f::t_9c6860fb883724 24-28,36-55,144,149-153,178-182,202-205,247-252,312,334-335,337-338
+revisions/910/symbols/location.sym
+  s_01f4a6969ae96f::t_1a88a61d617bae 43-87,92-93,167-214,230-244,304-315,353-363,365-366,393,410-420,423-431
+revisions/910/symbols/npc.sym
+  s_01f4a6969ae96f::t_ba7ebf8413f983 9-24,31,46-47,54-55,65-83,86,94,98-102,120-137,139-140,156-162,184,186-187
+revisions/910/symbols/obj.sym
+  s_41fcdb93953164::t_cf85eba61f19ed 17-21,27-34,58-59,119-122,136,145,159-161,177,187-191,233-238,323,325,327-330,338-342,349,393-396,408,410,425,431-433,469-472,475-479,481,490-496,498,520,526,529-530
+revisions/910/symbols/param.sym
+  s_01f4a6969ae96f::t_fe52901a4a9ff3 60-67,144
+revisions/910/symbols/quest.sym
+  s_01f4a6969ae96f::t_8fdf88b722850c 5,13-14,17
+revisions/910/symbols/script.sym
+  s_f14820c7533d54::t_15f2952af5c5c4 26,37,47
+revisions/910/symbols/seq.sym
+  s_01f4a6969ae96f::t_25f9a1aaf5bc37 5-28,37-46,79-81,103-152,169-178,180,182-189,230-243,245-252,281-286,291-292,296-304
+revisions/910/symbols/spot.sym
+  s_01f4a6969ae96f::t_01cb1875fca8da 4-15,17-18,27-36,44-58,78-93,99-104,106-109,111-116
+revisions/910/symbols/struct.sym
+  s_01f4a6969ae96f::t_2a0ec8a69ddcd5 11,19,30-33,48-49,55-62,83-84,87-88
+revisions/910/symbols/varbit.sym
+  s_01f4a6969ae96f::t_42acd55d791f75 19-27,30-33,40-41,45,50-57,132,151-152,167,179-191,208,210,266-267,293-294,299-326,417,421,423
+revisions/910/symbols/varc.sym
+  s_f14820c7533d54::t_66e73f74094c9b 8-13,74
+revisions/910/symbols/varp.sym
+  s_01f4a6969ae96f::t_a65be111279e9e 370,373-376,394,396,411-412,418,420-426,431,460,465-484
+tools/client910/crates/rs910-client/src/client_debug_flags.rs
+  s_f493535ac28c9e::t_b6b6e705773ecb 25-27,61
+tools/client910/crates/rs910-symbols/src/component.rs
+  s_f14820c7533d54::t_6ba74dddf40851 422-434,1003-1008,1281-1287,1523-1524,1583-1617
+tools/client910/crates/rs910-symbols/src/dbrow.rs
+  s_01f4a6969ae96f::t_cc37c6e70b1e82 8-9
+tools/client910/crates/rs910-symbols/src/enums.rs
+  s_01f4a6969ae96f::t_6e82858684f579 51-52,98-99
+tools/client910/crates/rs910-symbols/src/interface.rs
+  s_01f4a6969ae96f::t_c0ffae48c1ccff 22-23,96-97,268-269
+tools/client910/crates/rs910-symbols/src/inv.rs
+  s_01f4a6969ae96f::t_15a226940cbf74 8-9
+tools/client910/crates/rs910-symbols/src/loc.rs
+  s_01f4a6969ae96f::t_4729f599a3951d 48-57,72-111,288-289,298-307,356-365,404-411,494-505,624-625,668-671,674-677
+tools/client910/crates/rs910-symbols/src/location.rs
+  s_01f4a6969ae96f::t_eabf5d6cce0726 86-175,184-187,334-429,460-489,608-631,706-727,730-733,786-787,820-841,846-863
+tools/client910/crates/rs910-symbols/src/npc.rs
+  s_01f4a6969ae96f::t_327048911bd2ee 18-49,62-63,92-95,108-111,130-167,172-173,188-189,196-205,240-275,278-281,312-325,368-369,372-375
+tools/client910/crates/rs910-symbols/src/obj.rs
+  s_41fcdb93953164::t_369a9649633fa4 34-43,54-69,116-119,238-245,272-273,290-291,318-323,354-355,374-383,466-477,646-647,650-651,654-661,676-685,698-699,786-793,816-817,820-821,850-851,862-867,938-945,950-959,962-963,980-993,996-997,1040-1041,1052-1053,1058-1061
+tools/client910/crates/rs910-symbols/src/param.rs
+  s_01f4a6969ae96f::t_4c59517d6cc466 120-135,288-289
+tools/client910/crates/rs910-symbols/src/quest.rs
+  s_01f4a6969ae96f::t_c8fc51dde4dfef 10-11,26-29,34-35
+tools/client910/crates/rs910-symbols/src/script.rs
+  s_f14820c7533d54::t_d691e2775f80ab 52-53,74-75,94-95
+tools/client910/crates/rs910-symbols/src/seq.rs
+  s_01f4a6969ae96f::t_8d0016e256a29c 10-57,74-93,158-163,206-305,338-357,360-361,364-379,460-487,490-505,562-573,582-585,592-609
+tools/client910/crates/rs910-symbols/src/spot.rs
+  s_01f4a6969ae96f::t_9f4cae9c43fab2 8-31,34-37,54-73,88-117,156-187,198-209,212-219,222-233
+tools/client910/crates/rs910-symbols/src/structs.rs
+  s_01f4a6969ae96f::t_922a2e87c97b4a 22-23,38-39,60-67,96-99,110-125,166-169,174-177
+tools/client910/crates/rs910-symbols/src/varbit.rs
+  s_01f4a6969ae96f::t_3f06edd4c9d30a 38-55,60-67,80-83,90-91,100-115,264-265,302-305,334-335,358-383,416-417,420-421,532-535,586-589,598-653,834-835,842-843,846-847
+tools/client910/crates/rs910-symbols/src/varc.rs
+  s_f14820c7533d54::t_0920584109f8e7 17-28,148-149
+tools/client910/crates/rs910-symbols/src/varp.rs
+  s_01f4a6969ae96f::t_acba3e6c735682 740-741,747-754,789-790,793-794,823-826,837-838,841-854,863-864,921-922,931-970
+tools/client910/crates/rs910-ui/src/ui_components.rs
+  s_0245afe5a8bab8::t_4c17afb2db4ed1 140-179,214
+tools/client910/crates/rs910-ui/src/ui_loop.rs
+  s_01f4a6969ae96f::t_24e46362918f76 433-438
+tools/client910/crates/rs910-ui/src/ui_minimenu.rs
+  s_0245afe5a8bab8::t_80b6f18f111d6c 20-29,186,190,392,431-443,457,501-509,560-566,600-654,747-834,856,876,879-880,883-886,888,893,925,928-942
+tools/client910/crates/rs910-ui/src/ui_runtime/menu_builder.rs
+  s_01f4a6969ae96f::t_b67eea603a497a 1808,1815-1820
+tools/client910/fixtures/session-replay/ancient-curses/actions.json
+  s_01f4a6969ae96f::t_5d95e9d2a4e559 1-492
+tools/client910/fixtures/session-replay/ancient-curses/backend-inputs.json
+  s_01f4a6969ae96f::t_98955e386570bb 1-728
+tools/client910/fixtures/session-replay/ancient-curses/capture.json
+  s_01f4a6969ae96f::t_b51552fe63c61d 1-26
+tools/client910/fixtures/session-replay/ancient-curses/plan.json
+  s_01f4a6969ae96f::t_d03a667017cb17 1-137
+tools/client910/fixtures/session-replay/ancient-curses/snapshots.json
+  s_01f4a6969ae96f::t_e00e883f238ec9 1-8232
+tools/client910/fixtures/session-replay/desert-strykewyrm/backend-inputs.json
+  s_01f4a6969ae96f::t_ee66d889fda7b4 1-1520
+tools/client910/fixtures/session-replay/desert-strykewyrm/burrow-cue.json
+  s_01f4a6969ae96f::t_fe69298d15beb2 1-1639
+tools/client910/fixtures/session-replay/desert-strykewyrm/burrow-proof.json
+  s_01f4a6969ae96f::t_9f09dff24f0909 1-1873
+tools/client910/fixtures/session-replay/desert-strykewyrm/capture.json
+  s_01f4a6969ae96f::t_ef852508773f6e 1-182
+tools/client910/fixtures/session-replay/desert-strykewyrm/combat-receipts.jsonl
+  s_01f4a6969ae96f::t_881377617428b1 1-387
+tools/client910/fixtures/session-replay/desert-strykewyrm/driver-journal.jsonl
+  s_01f4a6969ae96f::t_e02746d86ba622 1-986
+tools/client910/fixtures/session-replay/desert-strykewyrm/earned-death.json
+  s_01f4a6969ae96f::t_af61f344c87455 1-1640
+tools/client910/fixtures/session-replay/desert-strykewyrm/final-saved-state.json
+  s_01f4a6969ae96f::t_712425ebf3a4e2 1-1856
+tools/client910/fixtures/session-replay/desert-strykewyrm/fixture-hashes.json
+  s_01f4a6969ae96f::t_25c8b34c2f038d 1-17
+tools/client910/fixtures/session-replay/desert-strykewyrm/full-health.json
+  s_01f4a6969ae96f::t_928308d11b5233 1-1627
+tools/client910/fixtures/session-replay/desert-strykewyrm/initial-fixture.json
+  s_01f4a6969ae96f::t_7a8d6ed78c5a00 1-343
+tools/client910/fixtures/session-replay/desert-strykewyrm/mound-ready.json
+  s_01f4a6969ae96f::t_104e4003c3890f 1-1587
+tools/client910/fixtures/session-replay/desert-strykewyrm/native-final.json
+  s_01f4a6969ae96f::t_c03ddcf66ed4c2 1-1633
+tools/client910/fixtures/session-replay/desert-strykewyrm/plan.json
+  s_01f4a6969ae96f::t_51a249808a9c40 1-1072
+tools/client910/fixtures/session-replay/desert-strykewyrm/server-trace.jsonl
+  s_01f4a6969ae96f::t_92c99ad189ab08 1-294
+tools/client910/fixtures/session-replay/eldritch-crafting/actions.json
+  s_01f4a6969ae96f::t_423ab1eb97d182 1-209
+tools/client910/fixtures/session-replay/eldritch-crafting/assembly-initial.json
+  s_01f4a6969ae96f::t_b3ecd9f2339c85 1-1146
+tools/client910/fixtures/session-replay/eldritch-crafting/assembly-made.json
+  s_01f4a6969ae96f::t_f978c3736ae605 1-1185
+tools/client910/fixtures/session-replay/eldritch-crafting/assembly-selected.json
+  s_01f4a6969ae96f::t_860b5e3f9abf7e 1-1185
+tools/client910/fixtures/session-replay/eldritch-crafting/backend-inputs.json
+  s_01f4a6969ae96f::t_d0fe841bfcbb59 1-791
+tools/client910/fixtures/session-replay/eldritch-crafting/backend-receipts.jsonl
+  s_01f4a6969ae96f::t_eb5dd18af9c909 1-401
+tools/client910/fixtures/session-replay/eldritch-crafting/capture.json
+  s_01f4a6969ae96f::t_9c288430e28349 1-24
+tools/client910/fixtures/session-replay/eldritch-crafting/component-scans.json
+  s_01f4a6969ae96f::t_7dcd34bf85a571 1-7663
+tools/client910/fixtures/session-replay/eldritch-crafting/native-final.json
+  s_01f4a6969ae96f::t_be407d59526518 1-1157
+tools/client910/fixtures/session-replay/eldritch-crafting/plan.json
+  s_01f4a6969ae96f::t_3f9ece9eb94897 1-229
+tools/client910/fixtures/session-replay/eldritch-crafting/refusals.json
+  s_01f4a6969ae96f::t_99f53a27b09139 1
+tools/client910/fixtures/session-replay/eldritch-crafting/snapshots.json
+  s_01f4a6969ae96f::t_dc54049e37bfe6 1-3346
+tools/client910/fixtures/session-replay/eldritch-split-lifecycle/actions.json
+  s_01f4a6969ae96f::t_71765f1ca333f3 1-100
+tools/client910/fixtures/session-replay/eldritch-split-lifecycle/backend-inputs.json
+  s_01f4a6969ae96f::t_8ef5223f57e2e0 1-148
+tools/client910/fixtures/session-replay/eldritch-split-lifecycle/backend-receipts.jsonl
+  s_01f4a6969ae96f::t_9e534cca264711 1-896
+tools/client910/fixtures/session-replay/eldritch-split-lifecycle/capture.json
+  s_01f4a6969ae96f::t_4cc359bb053d4d 1-26
+tools/client910/fixtures/session-replay/eldritch-split-lifecycle/combat-receipts.jsonl
+  s_01f4a6969ae96f::t_953070deb9e47c 1-11
+tools/client910/fixtures/session-replay/eldritch-split-lifecycle/component-scans.json
+  s_01f4a6969ae96f::t_55c54a785c8be9 1-418
+tools/client910/fixtures/session-replay/eldritch-split-lifecycle/native-final.json
+  s_01f4a6969ae96f::t_b07444b6e0772b 1-1542
+tools/client910/fixtures/session-replay/eldritch-split-lifecycle/plan.json
+  s_01f4a6969ae96f::t_f4ef3d166248c7 1-217
+tools/client910/fixtures/session-replay/eldritch-split-lifecycle/refusals.json
+  s_01f4a6969ae96f::t_6556995e5600ce 1
+tools/client910/fixtures/session-replay/eldritch-split-lifecycle/snapshots.json
+  s_01f4a6969ae96f::t_76e990baef1bed 1-3530
+tools/client910/fixtures/session-replay/eldritch-split-lifecycle/split-lifecycle-expired.json
+  s_01f4a6969ae96f::t_5795df4cda6809 1-1532
+tools/client910/fixtures/session-replay/eldritch-split-lifecycle/split-lifecycle-first.json
+  s_01f4a6969ae96f::t_3b3a56d5dc4f43 1-1314
+tools/client910/fixtures/session-replay/eldritch-split-lifecycle/split-lifecycle-initial.json
+  s_01f4a6969ae96f::t_9917db5b9bad73 1-1087
+tools/client910/fixtures/session-replay/eldritch-split-lifecycle/split-lifecycle-refresh.json
+  s_01f4a6969ae96f::t_33eb3a97302b02 1-1539
+tools/client910/fixtures/session-replay/eldritch-split-removal/actions.json
+  s_01f4a6969ae96f::t_d738c334bff115 1-249
+tools/client910/fixtures/session-replay/eldritch-split-removal/backend-inputs.json
+  s_01f4a6969ae96f::t_ed5bffa88f8b0e 1-364
+tools/client910/fixtures/session-replay/eldritch-split-removal/backend-receipts.jsonl
+  s_01f4a6969ae96f::t_da4bedba326f6b 1-286
+tools/client910/fixtures/session-replay/eldritch-split-removal/capture.json
+  s_01f4a6969ae96f::t_654c940223326a 1-26
+tools/client910/fixtures/session-replay/eldritch-split-removal/combat-receipts.jsonl
+  s_01f4a6969ae96f::t_4e48cf2eb7375c 1-9
+tools/client910/fixtures/session-replay/eldritch-split-removal/component-scans.json
+  s_01f4a6969ae96f::t_8a169a0824695c 1-7146
+tools/client910/fixtures/session-replay/eldritch-split-removal/native-final.json
+  s_01f4a6969ae96f::t_1d648bd5002e84 1-1348
+tools/client910/fixtures/session-replay/eldritch-split-removal/plan.json
+  s_01f4a6969ae96f::t_2d67be66fde080 1-219
+tools/client910/fixtures/session-replay/eldritch-split-removal/refusals.json
+  s_01f4a6969ae96f::t_b0ea910f62febe 1
+tools/client910/fixtures/session-replay/eldritch-split-removal/snapshots.json
+  s_01f4a6969ae96f::t_0e7e4b505efa9a 1-3654
+tools/client910/fixtures/session-replay/eldritch-split-removal/split-lifecycle-first.json
+  s_01f4a6969ae96f::t_326e5172709f21 1-1345
+tools/client910/fixtures/session-replay/eldritch-split-removal/split-lifecycle-initial.json
+  s_01f4a6969ae96f::t_e964bf599ac983 1-1118
+tools/client910/fixtures/session-replay/eldritch-split-removal/split-lifecycle-removed.json
+  s_01f4a6969ae96f::t_5841a8392591b4 1-1342
+tools/client910/fixtures/session-replay/eldritch-split-soul/actions.json
+  s_01f4a6969ae96f::t_0b573569ca58ca 1-388
+tools/client910/fixtures/session-replay/eldritch-split-soul/backend-inputs.json
+  s_01f4a6969ae96f::t_d0204e2ea4320d 1-990
+tools/client910/fixtures/session-replay/eldritch-split-soul/backend-receipts.jsonl
+  s_01f4a6969ae96f::t_fb5d5163a4db01 1-523
+tools/client910/fixtures/session-replay/eldritch-split-soul/capture.json
+  s_01f4a6969ae96f::t_ad41406d306c0b 1-25
+tools/client910/fixtures/session-replay/eldritch-split-soul/combat-receipts.jsonl
+  s_01f4a6969ae96f::t_fe74f1bc94663e 1-17
+tools/client910/fixtures/session-replay/eldritch-split-soul/component-scans.json
+  s_01f4a6969ae96f::t_5d6a96df2eec2d 1-8825
+tools/client910/fixtures/session-replay/eldritch-split-soul/native-final.json
+  s_01f4a6969ae96f::t_497aa02cda5879 1-1250
+tools/client910/fixtures/session-replay/eldritch-split-soul/plan.json
+  s_01f4a6969ae96f::t_1eac0729cb944a 1-228
+tools/client910/fixtures/session-replay/eldritch-split-soul/refusals.json
+  s_01f4a6969ae96f::t_96c7b45c9cd90e 1
+tools/client910/fixtures/session-replay/eldritch-split-soul/snapshots.json
+  s_01f4a6969ae96f::t_33311e977b727f 1-4412
+tools/client910/fixtures/session-replay/eldritch-split-soul/split-active.json
+  s_01f4a6969ae96f::t_e7f06ce926767a 1-1324
+tools/client910/fixtures/session-replay/eldritch-split-soul/split-impact.json
+  s_01f4a6969ae96f::t_4290dc49cfbbb7 1-1212
+tools/client910/fixtures/session-replay/eldritch-split-soul/split-initial.json
+  s_01f4a6969ae96f::t_7861cde237960e 1-1101
+tools/client910/fixtures/session-replay/eldritch-split-soul/split-prayer.json
+  s_01f4a6969ae96f::t_49786531a106e6 1-1101
+tools/client910/fixtures/session-replay/gregorovic/backend-inputs.json
+  s_01f4a6969ae96f::t_1ab1ba48dccccc 1-12960
+tools/client910/fixtures/session-replay/gregorovic/capture.json
+  s_01f4a6969ae96f::t_ad87bab95ecce6 1-177
+tools/client910/fixtures/session-replay/gregorovic/combat-receipts.jsonl
+  s_01f4a6969ae96f::t_263a051e60c07a 1-1860
+tools/client910/fixtures/session-replay/gregorovic/driver-journal.jsonl
+  s_01f4a6969ae96f::t_7565f8d645cca7 1-4096
+tools/client910/fixtures/session-replay/gregorovic/earned-death.json
+  s_01f4a6969ae96f::t_b2a62588cae16a 1-29390
+tools/client910/fixtures/session-replay/gregorovic/earned-reward.json
+  s_01f4a6969ae96f::t_859d49bc8e3a51 1-3525
+tools/client910/fixtures/session-replay/gregorovic/entry.json
+  s_01f4a6969ae96f::t_8228b1bb0bf26c 1-3457
+tools/client910/fixtures/session-replay/gregorovic/final-saved-state.json
+  s_01f4a6969ae96f::t_6e0ae3b58c94bf 1-1857
+tools/client910/fixtures/session-replay/gregorovic/full-health.json
+  s_01f4a6969ae96f::t_0350dc3a49a026 1-3517
+tools/client910/fixtures/session-replay/gregorovic/initial-fixture.json
+  s_01f4a6969ae96f::t_a4d89c18ca0e24 1-333
+tools/client910/fixtures/session-replay/gregorovic/native-final.json
+  s_01f4a6969ae96f::t_7fbadee6750c55 1-2799
+tools/client910/fixtures/session-replay/gregorovic/plan.json
+  s_01f4a6969ae96f::t_bca489c4e2c646 1-3368
+tools/client910/fixtures/session-replay/gregorovic/server-trace.jsonl
+  s_01f4a6969ae96f::t_bf03c9be469838 1-868
+tools/client910/fixtures/session-replay/helwyr/backend-inputs.json
+  s_01f4a6969ae96f::t_e0f1a8de6bd1a8 1-6329
+tools/client910/fixtures/session-replay/helwyr/capture.json
+  s_01f4a6969ae96f::t_9d2b16a628190a 1-146
+tools/client910/fixtures/session-replay/helwyr/combat-receipts.jsonl
+  s_01f4a6969ae96f::t_fcc7def8851732 1-1086
+tools/client910/fixtures/session-replay/helwyr/driver-journal.jsonl
+  s_01f4a6969ae96f::t_c8c0568b7bb677 1-3081
+tools/client910/fixtures/session-replay/helwyr/earned-death.json
+  s_01f4a6969ae96f::t_b8e317132bdffe 1-36674
+tools/client910/fixtures/session-replay/helwyr/earned-reward.json
+  s_01f4a6969ae96f::t_7c3a67a6e28a44 1-3504
+tools/client910/fixtures/session-replay/helwyr/entry.json
+  s_01f4a6969ae96f::t_7bede5513e3a8c 1-3442
+tools/client910/fixtures/session-replay/helwyr/final-saved-state.json
+  s_01f4a6969ae96f::t_7071c02fa6e8d7 1-1859
+tools/client910/fixtures/session-replay/helwyr/fixture-hashes.json
+  s_01f4a6969ae96f::t_5b0aff576dba75 1-16
+tools/client910/fixtures/session-replay/helwyr/full-health.json
+  s_01f4a6969ae96f::t_658b00a8e330a5 1-3502
+tools/client910/fixtures/session-replay/helwyr/initial-fixture.json
+  s_01f4a6969ae96f::t_bd05ddb4c1d4dd 1-329
+tools/client910/fixtures/session-replay/helwyr/native-final.json
+  s_01f4a6969ae96f::t_e1e08dcf77db20 1-2788
+tools/client910/fixtures/session-replay/helwyr/plan.json
+  s_01f4a6969ae96f::t_6f89a8e539f165 1-3135
+tools/client910/fixtures/session-replay/helwyr/server-trace.jsonl
+  s_01f4a6969ae96f::t_e85e6aa44d496a 1-716
+tools/client910/fixtures/session-replay/ice-strykewyrm/backend-inputs.json
+  s_01f4a6969ae96f::t_1fb74ea3d2b884 1-1719
+tools/client910/fixtures/session-replay/ice-strykewyrm/burrow-cue.json
+  s_01f4a6969ae96f::t_e29ecf06057780 1-1690
+tools/client910/fixtures/session-replay/ice-strykewyrm/burrow-proof.json
+  s_01f4a6969ae96f::t_402b45042a4f8a 1-2203
+tools/client910/fixtures/session-replay/ice-strykewyrm/capture.json
+  s_01f4a6969ae96f::t_f47df78a8dd031 1-182
+tools/client910/fixtures/session-replay/ice-strykewyrm/combat-receipts.jsonl
+  s_01f4a6969ae96f::t_26169d40b4b9fc 1-524
+tools/client910/fixtures/session-replay/ice-strykewyrm/driver-journal.jsonl
+  s_01f4a6969ae96f::t_cc39abe15cc3da 1-1150
+tools/client910/fixtures/session-replay/ice-strykewyrm/earned-death.json
+  s_01f4a6969ae96f::t_a49c2a137413c1 1-1682
+tools/client910/fixtures/session-replay/ice-strykewyrm/final-saved-state.json
+  s_01f4a6969ae96f::t_073c9f2d48fd4d 1-1856
+tools/client910/fixtures/session-replay/ice-strykewyrm/fixture-hashes.json
+  s_01f4a6969ae96f::t_4861a983d2e8c9 1-17
+tools/client910/fixtures/session-replay/ice-strykewyrm/full-health.json
+  s_01f4a6969ae96f::t_dde98b7c1f7245 1-1678
+tools/client910/fixtures/session-replay/ice-strykewyrm/initial-fixture.json
+  s_01f4a6969ae96f::t_d49cee054d15aa 1-343
+tools/client910/fixtures/session-replay/ice-strykewyrm/mound-ready.json
+  s_01f4a6969ae96f::t_b2d817aa4551a0 1-1638
+tools/client910/fixtures/session-replay/ice-strykewyrm/native-final.json
+  s_01f4a6969ae96f::t_94da3db4a2df20 1-1684
+tools/client910/fixtures/session-replay/ice-strykewyrm/plan.json
+  s_01f4a6969ae96f::t_075e513a0b179e 1-1156
+tools/client910/fixtures/session-replay/ice-strykewyrm/server-trace.jsonl
+  s_01f4a6969ae96f::t_c11a14ed73f27a 1-372
+tools/client910/fixtures/session-replay/ice-strykewyrm/spell-freeze/backend-inputs.json
+  s_01f4a6969ae96f::t_97c6d4e7a07ea7 1-2349
+tools/client910/fixtures/session-replay/ice-strykewyrm/spell-freeze/capture.json
+  s_01f4a6969ae96f::t_c5258906171a10 1-164
+tools/client910/fixtures/session-replay/ice-strykewyrm/spell-freeze/combat-receipts.jsonl
+  s_01f4a6969ae96f::t_0d4cdccdfe9832 1-143
+tools/client910/fixtures/session-replay/ice-strykewyrm/spell-freeze/driver-journal.jsonl
+  s_01f4a6969ae96f::t_e9c9deab692c1c 1-477
+tools/client910/fixtures/session-replay/ice-strykewyrm/spell-freeze/final-saved-state.json
+  s_01f4a6969ae96f::t_c27b3a4404f6fc 1-1848
+tools/client910/fixtures/session-replay/ice-strykewyrm/spell-freeze/fire-proof.json
+  s_01f4a6969ae96f::t_deff51360bb2f9 1-1831
+tools/client910/fixtures/session-replay/ice-strykewyrm/spell-freeze/fixture-hashes.json
+  s_01f4a6969ae96f::t_3f5613ce877dd7 1-20
+tools/client910/fixtures/session-replay/ice-strykewyrm/spell-freeze/freeze-interrupted.json
+  s_01f4a6969ae96f::t_da807b7053d338 1-1869
+tools/client910/fixtures/session-replay/ice-strykewyrm/spell-freeze/freeze-resumed.json
+  s_01f4a6969ae96f::t_9955fad24c81d7 1-1799
+tools/client910/fixtures/session-replay/ice-strykewyrm/spell-freeze/freeze-walk.json
+  s_01f4a6969ae96f::t_cf94162221f40f 1-1790
+tools/client910/fixtures/session-replay/ice-strykewyrm/spell-freeze/full-health.json
+  s_01f4a6969ae96f::t_6286677ace25ca 1-1783
+tools/client910/fixtures/session-replay/ice-strykewyrm/spell-freeze/initial-fixture.json
+  s_01f4a6969ae96f::t_a47b94ba8b7875 1-343
+tools/client910/fixtures/session-replay/ice-strykewyrm/spell-freeze/mound-ready.json
+  s_01f4a6969ae96f::t_ac5056866629be 1-1743
+tools/client910/fixtures/session-replay/ice-strykewyrm/spell-freeze/native-final.json
+  s_01f4a6969ae96f::t_5a8d225e1e3191 1-1793
+tools/client910/fixtures/session-replay/ice-strykewyrm/spell-freeze/plan.json
+  s_01f4a6969ae96f::t_2e054680573a7b 1-1101
+tools/client910/fixtures/session-replay/ice-strykewyrm/spell-freeze/server-trace.jsonl
+  s_01f4a6969ae96f::t_914ab742048942 1-136
+tools/client910/fixtures/session-replay/ice-strykewyrm/spell-freeze/spell-air.json
+  s_01f4a6969ae96f::t_c81b10aaf558f7 1-1840
+tools/client910/fixtures/session-replay/ice-strykewyrm/spell-freeze/spell-fire.json
+  s_01f4a6969ae96f::t_39cfb78eac745e 1-1801
+tools/client910/fixtures/session-replay/legacy-consumables/actions.json
+  s_01f4a6969ae96f::t_dfbced1494392e 1-151
+tools/client910/fixtures/session-replay/legacy-consumables/backend-inputs.json
+  s_01f4a6969ae96f::t_686c1c23c3a748 1-218
+tools/client910/fixtures/session-replay/legacy-consumables/capture.json
+  s_01f4a6969ae96f::t_a0985a1c148810 1-21
+tools/client910/fixtures/session-replay/legacy-consumables/initial-account.json
+  s_01f4a6969ae96f::t_82ff905ba29d57 1-145
+tools/client910/fixtures/session-replay/legacy-consumables/plan.json
+  s_01f4a6969ae96f::t_52e7a7696ed6f5 1-169
+tools/client910/fixtures/session-replay/legacy-consumables/recorded-four-doses/actions.json
+  s_01f4a6969ae96f::t_049aef66077134 1-301
+tools/client910/fixtures/session-replay/legacy-consumables/recorded-four-doses/backend-inputs.json
+  s_01f4a6969ae96f::t_9eb8b67b64d54a 1-434
+tools/client910/fixtures/session-replay/legacy-consumables/recorded-four-doses/capture.json
+  s_01f4a6969ae96f::t_97e6eeea25a6fe 1-21
+tools/client910/fixtures/session-replay/legacy-consumables/recorded-four-doses/initial-account.json
+  s_01f4a6969ae96f::t_11131a80dde31d 1-145
+tools/client910/fixtures/session-replay/legacy-consumables/recorded-four-doses/plan.json
+  s_01f4a6969ae96f::t_5d2ec6e125bb7f 1-170
+tools/client910/fixtures/session-replay/legacy-consumables/recorded-four-doses/snapshots.json
+  s_01f4a6969ae96f::t_e3ceb3d0ee99bb 1-4472
+tools/client910/fixtures/session-replay/legacy-consumables/snapshots.json
+  s_01f4a6969ae96f::t_c6bc4ed34f81c1 1-2892
+tools/client910/fixtures/session-replay/native-autocast/actions.json
+  s_01f4a6969ae96f::t_7aa89e6a41841d 1-149
+tools/client910/fixtures/session-replay/native-autocast/autocast-initial.json
+  s_01f4a6969ae96f::t_e5c92e4c285936 1-1117
+tools/client910/fixtures/session-replay/native-autocast/autocast-magic.json
+  s_01f4a6969ae96f::t_49a97a0b035878 1-1117
+tools/client910/fixtures/session-replay/native-autocast/autocast-selected.json
+  s_01f4a6969ae96f::t_66f79cff2cb5d0 1-1162
+tools/client910/fixtures/session-replay/native-autocast/backend-inputs.json
+  s_01f4a6969ae96f::t_2fd92642c3d827 1-221
+tools/client910/fixtures/session-replay/native-autocast/capture.json
+  s_01f4a6969ae96f::t_0ae1c7fb0ac843 1-25
+tools/client910/fixtures/session-replay/native-autocast/native-controls.json
+  s_01f4a6969ae96f::t_6839a0291041d6 1-14386
+tools/client910/fixtures/session-replay/native-autocast/native-final.json
+  s_01f4a6969ae96f::t_03feed2aaa05c2 1-1162
+tools/client910/fixtures/session-replay/native-autocast/plan.json
+  s_01f4a6969ae96f::t_bbd74000fea064 1-197
+tools/client910/fixtures/session-replay/native-autocast/snapshots.json
+  s_01f4a6969ae96f::t_9199ac0e5f5f4d 1-3654
+tools/client910/fixtures/session-replay/noxious-crafting/actions.json
+  s_01f4a6969ae96f::t_f2bd7372e29c8b 1-249
+tools/client910/fixtures/session-replay/noxious-crafting/backend-inputs.json
+  s_01f4a6969ae96f::t_309dbed9f9dab2 1-363
+tools/client910/fixtures/session-replay/noxious-crafting/capture.json
+  s_01f4a6969ae96f::t_6477754003a577 1-30
+tools/client910/fixtures/session-replay/noxious-crafting/plan.json
+  s_01f4a6969ae96f::t_7e13e1642b6e93 1-256
+tools/client910/fixtures/session-replay/noxious-crafting/snapshots.json
+  s_01f4a6969ae96f::t_a4a4d4d34f30a0 1-4442
+tools/client910/fixtures/session-replay/noxious-longbow-crafting/actions.json
+  s_01f4a6969ae96f::t_c7fad64614b3a1 1-249
+tools/client910/fixtures/session-replay/noxious-longbow-crafting/backend-inputs.json
+  s_01f4a6969ae96f::t_55fb6c477185d2 1-363
+tools/client910/fixtures/session-replay/noxious-longbow-crafting/backend-receipts.jsonl
+  s_01f4a6969ae96f::t_7edbb0772e4ff9 1-613
+tools/client910/fixtures/session-replay/noxious-longbow-crafting/capture.json
+  s_01f4a6969ae96f::t_4ff72a4d6fa01b 1-31
+tools/client910/fixtures/session-replay/noxious-longbow-crafting/plan.json
+  s_01f4a6969ae96f::t_3e0f4d48025265 1-263
+tools/client910/fixtures/session-replay/noxious-longbow-crafting/snapshots.json
+  s_01f4a6969ae96f::t_b8f86eb95892a1 1-4442
+tools/client910/fixtures/session-replay/noxious-ordinary/longbow/actions.json
+  s_01f4a6969ae96f::t_7426f483efe4f9 1-386
+tools/client910/fixtures/session-replay/noxious-ordinary/longbow/backend-inputs.json
+  s_01f4a6969ae96f::t_5bb8af59c8d5ef 1-1204
+tools/client910/fixtures/session-replay/noxious-ordinary/longbow/capture.json
+  s_01f4a6969ae96f::t_9f863bdc8cd5f2 1-17
+tools/client910/fixtures/session-replay/noxious-ordinary/longbow/combat-receipts.jsonl
+  s_01f4a6969ae96f::t_a3a32fd5597b09 1-24
+tools/client910/fixtures/session-replay/noxious-ordinary/longbow/mirrorback-refusal.json
+  s_01f4a6969ae96f::t_1620dec52c7b8f 1-1277
+tools/client910/fixtures/session-replay/noxious-ordinary/longbow/native-final.json
+  s_01f4a6969ae96f::t_6950971ca85a26 1-1197
+tools/client910/fixtures/session-replay/noxious-ordinary/longbow/plan.json
+  s_01f4a6969ae96f::t_5fea80cf067cd2 1-150
+tools/client910/fixtures/session-replay/noxious-ordinary/longbow/second-target.json
+  s_01f4a6969ae96f::t_e2515771317333 1-1327
+tools/client910/fixtures/session-replay/noxious-ordinary/longbow/snapshots.json
+  s_01f4a6969ae96f::t_589bb0533fcf6b 1-4187
+tools/client910/fixtures/session-replay/noxious-ordinary/longbow/wield.json
+  s_01f4a6969ae96f::t_e1b9282810262a 1-1070
+tools/client910/fixtures/session-replay/noxious-ordinary/longbow/within-range.json
+  s_01f4a6969ae96f::t_ef3f47e0a67034 1-1327
+tools/client910/fixtures/session-replay/noxious-ordinary/nearby-stop/actions.json
+  s_01f4a6969ae96f::t_59b59438aa861e 1-336
+tools/client910/fixtures/session-replay/noxious-ordinary/nearby-stop/approach.json
+  s_01f4a6969ae96f::t_cb845b45bcf0b0 1-1321
+tools/client910/fixtures/session-replay/noxious-ordinary/nearby-stop/backend-inputs.json
+  s_01f4a6969ae96f::t_f2ba3d3c915499 1-1132
+tools/client910/fixtures/session-replay/noxious-ordinary/nearby-stop/capture.json
+  s_01f4a6969ae96f::t_ac8c0a46e2d3ff 1-17
+tools/client910/fixtures/session-replay/noxious-ordinary/nearby-stop/combat-receipts.jsonl
+  s_01f4a6969ae96f::t_94b2f0cac2f787 1-19
+tools/client910/fixtures/session-replay/noxious-ordinary/nearby-stop/mirrorback-refusal.json
+  s_01f4a6969ae96f::t_c4c41de6a820a5 1-1270
+tools/client910/fixtures/session-replay/noxious-ordinary/nearby-stop/native-final.json
+  s_01f4a6969ae96f::t_8a73d113fc314f 1-1185
+tools/client910/fixtures/session-replay/noxious-ordinary/nearby-stop/plan.json
+  s_01f4a6969ae96f::t_87cf9a9e025208 1-144
+tools/client910/fixtures/session-replay/noxious-ordinary/nearby-stop/snapshots.json
+  s_01f4a6969ae96f::t_c7888864791535 1-4162
+tools/client910/fixtures/session-replay/noxious-ordinary/nearby-stop/two-tile.json
+  s_01f4a6969ae96f::t_1168a41aec34b6 1-1321
+tools/client910/fixtures/session-replay/noxious-ordinary/nearby-stop/wield.json
+  s_01f4a6969ae96f::t_72e8cb5b4b28f9 1-1061
+tools/client910/fixtures/session-replay/noxious-ordinary/staff/actions.json
+  s_01f4a6969ae96f::t_34f4af3cee6a81 1-336
+tools/client910/fixtures/session-replay/noxious-ordinary/staff/backend-inputs.json
+  s_01f4a6969ae96f::t_28cba2f7133207 1-1132
+tools/client910/fixtures/session-replay/noxious-ordinary/staff/capture.json
+  s_01f4a6969ae96f::t_85ea4dfe08d5bf 1-17
+tools/client910/fixtures/session-replay/noxious-ordinary/staff/combat-receipts.jsonl
+  s_01f4a6969ae96f::t_ab30994af46b68 1-23
+tools/client910/fixtures/session-replay/noxious-ordinary/staff/mirrorback-refusal.json
+  s_01f4a6969ae96f::t_a910b93c226f27 1-1277
+tools/client910/fixtures/session-replay/noxious-ordinary/staff/native-final.json
+  s_01f4a6969ae96f::t_35f908dd934752 1-1197
+tools/client910/fixtures/session-replay/noxious-ordinary/staff/plan.json
+  s_01f4a6969ae96f::t_c61378c74bac7c 1-169
+tools/client910/fixtures/session-replay/noxious-ordinary/staff/second-target.json
+  s_01f4a6969ae96f::t_3ae67399644067 1-1327
+tools/client910/fixtures/session-replay/noxious-ordinary/staff/snapshots.json
+  s_01f4a6969ae96f::t_10527b72c5fdd3 1-4187
+tools/client910/fixtures/session-replay/noxious-ordinary/staff/wield.json
+  s_01f4a6969ae96f::t_6fefde01a5d4be 1-1070
+tools/client910/fixtures/session-replay/noxious-ordinary/staff/within-range.json
+  s_01f4a6969ae96f::t_fb4f59018e213c 1-1327
+tools/client910/fixtures/session-replay/noxious-ordinary/stop-deadline/actions.json
+  s_01f4a6969ae96f::t_c4e0870c755e7d 1-336
+tools/client910/fixtures/session-replay/noxious-ordinary/stop-deadline/approach.json
+  s_01f4a6969ae96f::t_3577a2418a9997 1-1321
+tools/client910/fixtures/session-replay/noxious-ordinary/stop-deadline/backend-inputs.json
+  s_01f4a6969ae96f::t_3f618136d3ef98 1-1132
+tools/client910/fixtures/session-replay/noxious-ordinary/stop-deadline/capture.json
+  s_01f4a6969ae96f::t_ff2e95d4479728 1-17
+tools/client910/fixtures/session-replay/noxious-ordinary/stop-deadline/combat-receipts.jsonl
+  s_01f4a6969ae96f::t_b108934dac4900 1-50
+tools/client910/fixtures/session-replay/noxious-ordinary/stop-deadline/deadline-movement.json
+  s_01f4a6969ae96f::t_fc357a93caf3e0 1-831
+tools/client910/fixtures/session-replay/noxious-ordinary/stop-deadline/mirrorback-refusal.json
+  s_01f4a6969ae96f::t_d27a694aea335b 1-1270
+tools/client910/fixtures/session-replay/noxious-ordinary/stop-deadline/plan.json
+  s_01f4a6969ae96f::t_e8643aeaa62393 1-144
+tools/client910/fixtures/session-replay/noxious-ordinary/stop-deadline/snapshots.json
+  s_01f4a6969ae96f::t_8749a5bc4c823c 1-4162
+tools/client910/fixtures/session-replay/noxious-ordinary/stop-deadline/two-tile.json
+  s_01f4a6969ae96f::t_da2b9c1d533858 1-1321
+tools/client910/fixtures/session-replay/noxious-ordinary/stop-deadline/wield.json
+  s_01f4a6969ae96f::t_c202785231d350 1-1061
+tools/client910/fixtures/session-replay/noxious-repair/actions.json
+  s_01f4a6969ae96f::t_22f5237824533f 1-96
+tools/client910/fixtures/session-replay/noxious-repair/backend-inputs.json
+  s_01f4a6969ae96f::t_83062574b1f775 1-343
+tools/client910/fixtures/session-replay/noxious-repair/capture.json
+  s_01f4a6969ae96f::t_0abf91d2c61be4 1-28
+tools/client910/fixtures/session-replay/noxious-repair/plan.json
+  s_01f4a6969ae96f::t_58879db70ed47a 1-226
+tools/client910/fixtures/session-replay/noxious-repair/quote-controls.json
+  s_01f4a6969ae96f::t_9303e0cd5abb6b 1-2049
+tools/client910/fixtures/session-replay/noxious-repair/repair-proof.json
+  s_01f4a6969ae96f::t_52f228528bb654 1-1498
+tools/client910/fixtures/session-replay/noxious-repair/snapshots.json
+  s_01f4a6969ae96f::t_5a0658681baf25 1-2703
+tools/client910/fixtures/session-replay/noxious-scythe-crafting/actions.json
+  s_01f4a6969ae96f::t_a52d0bda7ac4ca 1-249
+tools/client910/fixtures/session-replay/noxious-scythe-crafting/backend-inputs.json
+  s_01f4a6969ae96f::t_38eee4f1b32af5 1-363
+tools/client910/fixtures/session-replay/noxious-scythe-crafting/backend-receipts.jsonl
+  s_01f4a6969ae96f::t_72977d2438fbe1 1-614
+tools/client910/fixtures/session-replay/noxious-scythe-crafting/capture.json
+  s_01f4a6969ae96f::t_b40cb0a75ae26a 1-31
+tools/client910/fixtures/session-replay/noxious-scythe-crafting/plan.json
+  s_01f4a6969ae96f::t_eae5ebc98daabc 1-261
+tools/client910/fixtures/session-replay/noxious-scythe-crafting/snapshots.json
+  s_01f4a6969ae96f::t_f96a764e19efdc 1-4442
+tools/client910/fixtures/session-replay/quick-prayers-deactivate/actions.json
+  s_01f4a6969ae96f::t_501e5537d1bd9b 1-345
+tools/client910/fixtures/session-replay/quick-prayers-deactivate/backend-inputs.json
+  s_01f4a6969ae96f::t_1914275a65d949 1-514
+tools/client910/fixtures/session-replay/quick-prayers-deactivate/backend-receipts.jsonl
+  s_01f4a6969ae96f::t_1152fd5a916868 1-318
+tools/client910/fixtures/session-replay/quick-prayers-deactivate/capture.json
+  s_01f4a6969ae96f::t_b3c70916b1edab 1-22
+tools/client910/fixtures/session-replay/quick-prayers-deactivate/plan.json
+  s_01f4a6969ae96f::t_58d1d6d48b00a4 1-1067
+tools/client910/fixtures/session-replay/quick-prayers-deactivate/refusals.json
+  s_01f4a6969ae96f::t_4c58a6b1de1e8c 1-39
+tools/client910/fixtures/session-replay/quick-prayers-deactivate/snapshots.json
+  s_01f4a6969ae96f::t_550deeab17bd9d 1-5654
+tools/client910/fixtures/session-replay/quick-prayers-reconnect/actions.json
+  s_01f4a6969ae96f::t_003ef6816fbd0f 1-247
+tools/client910/fixtures/session-replay/quick-prayers-reconnect/backend-inputs.json
+  s_01f4a6969ae96f::t_9413f64d1c1d29 1-368
+tools/client910/fixtures/session-replay/quick-prayers-reconnect/backend-receipts.jsonl
+  s_01f4a6969ae96f::t_688604ab168217 1-248
+tools/client910/fixtures/session-replay/quick-prayers-reconnect/capture.json
+  s_01f4a6969ae96f::t_5286222ceffd7a 1-25
+tools/client910/fixtures/session-replay/quick-prayers-reconnect/plan.json
+  s_01f4a6969ae96f::t_09eda355096553 1-1067
+tools/client910/fixtures/session-replay/quick-prayers-reconnect/refusals.json
+  s_01f4a6969ae96f::t_7eddc28537bb71 1
+tools/client910/fixtures/session-replay/quick-prayers-reconnect/snapshots.json
+  s_01f4a6969ae96f::t_26c45c00820d08 1-3472
+tools/client910/fixtures/session-replay/quick-prayers-remove/actions.json
+  s_01f4a6969ae96f::t_8929a946147b8a 1-345
+tools/client910/fixtures/session-replay/quick-prayers-remove/backend-inputs.json
+  s_01f4a6969ae96f::t_f88c5a8de21e43 1-515
+tools/client910/fixtures/session-replay/quick-prayers-remove/backend-receipts.jsonl
+  s_01f4a6969ae96f::t_f85f8ab5203951 1-332
+tools/client910/fixtures/session-replay/quick-prayers-remove/capture.json
+  s_01f4a6969ae96f::t_5b5f9fb18e958f 1-25
+tools/client910/fixtures/session-replay/quick-prayers-remove/component-scans.json
+  s_01f4a6969ae96f::t_0073d95d38f6ae 1-2400
+tools/client910/fixtures/session-replay/quick-prayers-remove/plan.json
+  s_01f4a6969ae96f::t_f5422b175c7a67 1-1068
+tools/client910/fixtures/session-replay/quick-prayers-remove/quick-persisted.json
+  s_01f4a6969ae96f::t_32a69d4d5a8a12 1-2743
+tools/client910/fixtures/session-replay/quick-prayers-remove/quick-remove-empty.json
+  s_01f4a6969ae96f::t_6a51111acef9b8 1-1345
+tools/client910/fixtures/session-replay/quick-prayers-remove/quick-remove-final.json
+  s_01f4a6969ae96f::t_6d773b620b4388 1-1098
+tools/client910/fixtures/session-replay/quick-prayers-remove/quick-remove-initial.json
+  s_01f4a6969ae96f::t_bf8b1ba83a1d01 1-1098
+tools/client910/fixtures/session-replay/quick-prayers-remove/quick-remove-reopened.json
+  s_01f4a6969ae96f::t_e38b32e25d3523 1-1315
+tools/client910/fixtures/session-replay/quick-prayers-remove/quick-remove-selected.json
+  s_01f4a6969ae96f::t_d383a48e91a507 1-1315
+tools/client910/fixtures/session-replay/quick-prayers-remove/refusals.json
+  s_01f4a6969ae96f::t_29f558873d5348 1
+tools/client910/fixtures/session-replay/quick-prayers-remove/snapshots.json
+  s_01f4a6969ae96f::t_1b4b8b76566096 1-6163
+tools/client910/fixtures/session-replay/quick-prayers-selection/actions.json
+  s_01f4a6969ae96f::t_af997f6a87de80 1-639
+tools/client910/fixtures/session-replay/quick-prayers-selection/backend-inputs.json
+  s_01f4a6969ae96f::t_45fa8965be4adb 1-955
+tools/client910/fixtures/session-replay/quick-prayers-selection/capture.json
+  s_01f4a6969ae96f::t_e9a5dc39ca3703 1-1015
+tools/client910/fixtures/session-replay/quick-prayers-selection/plan.json
+  s_01f4a6969ae96f::t_eb48264152ef16 1-1054
+tools/client910/fixtures/session-replay/quick-prayers-selection/snapshots.json
+  s_01f4a6969ae96f::t_2b5babba3b51e2 1-7533
+tools/client910/fixtures/session-replay/quick-prayers/actions.json
+  s_01f4a6969ae96f::t_f0ed8516b7c709 1-394
+tools/client910/fixtures/session-replay/quick-prayers/backend-inputs.json
+  s_01f4a6969ae96f::t_f95431f24ae74c 1-588
+tools/client910/fixtures/session-replay/quick-prayers/capture.json
+  s_01f4a6969ae96f::t_885aa695e7b424 1-42
+tools/client910/fixtures/session-replay/quick-prayers/plan.json
+  s_01f4a6969ae96f::t_3a1bb4d82e597a 1-1040
+tools/client910/fixtures/session-replay/quick-prayers/snapshots.json
+  s_01f4a6969ae96f::t_7ebcb76a27ec3e 1-3669
+tools/client910/fixtures/session-replay/seren-crafting/actions.json
+  s_01f4a6969ae96f::t_a548d12240fc79 1-209
+tools/client910/fixtures/session-replay/seren-crafting/assembly-made.json
+  s_01f4a6969ae96f::t_b5072ebd60f082 1-1193
+tools/client910/fixtures/session-replay/seren-crafting/backend-inputs.json
+  s_01f4a6969ae96f::t_42e0e511ad9d67 1-786
+tools/client910/fixtures/session-replay/seren-crafting/capture.json
+  s_01f4a6969ae96f::t_c7f2b734b8e681 1-90
+tools/client910/fixtures/session-replay/seren-crafting/component-scans.json
+  s_01f4a6969ae96f::t_9fc4750bf72b85 1-7685
+tools/client910/fixtures/session-replay/seren-crafting/final-saved-state.json
+  s_01f4a6969ae96f::t_89b3b11e7627ce 1-1815
+tools/client910/fixtures/session-replay/seren-crafting/native-final.json
+  s_01f4a6969ae96f::t_bf0b6cba09ab37 1-1157
+tools/client910/fixtures/session-replay/seren-crafting/plan.json
+  s_01f4a6969ae96f::t_e73cfcd5ae16df 1-170
+tools/client910/fixtures/session-replay/seren-crafting/refusals.json
+  s_01f4a6969ae96f::t_3e63d8861db892 1
+tools/client910/fixtures/session-replay/seren-crafting/snapshots.json
+  s_01f4a6969ae96f::t_629f3653c413c6 1-3346
+tools/client910/fixtures/session-replay/souls-material-repair/actions.json
+  s_01f4a6969ae96f::t_915850485e2c58 1-209
+tools/client910/fixtures/session-replay/souls-material-repair/backend-inputs.json
+  s_01f4a6969ae96f::t_a51600dc7feb77 1-755
+tools/client910/fixtures/session-replay/souls-material-repair/capture.json
+  s_01f4a6969ae96f::t_3ee57bf5441d85 1-94
+tools/client910/fixtures/session-replay/souls-material-repair/component-scans.json
+  s_01f4a6969ae96f::t_5503191f6a3ccb 1-5457
+tools/client910/fixtures/session-replay/souls-material-repair/final-saved-state.json
+  s_01f4a6969ae96f::t_a8dcc73f90ba65 1-1811
+tools/client910/fixtures/session-replay/souls-material-repair/initial-fixture.json
+  s_01f4a6969ae96f::t_2eff832658559b 1-136
+tools/client910/fixtures/session-replay/souls-material-repair/native-final.json
+  s_01f4a6969ae96f::t_381ed0476ce24d 1-1046
+tools/client910/fixtures/session-replay/souls-material-repair/plan.json
+  s_01f4a6969ae96f::t_91bfdac70690b6 1-82
+tools/client910/fixtures/session-replay/souls-material-repair/refusals.json
+  s_01f4a6969ae96f::t_c4f0038f7c8c4b 1
+tools/client910/fixtures/session-replay/souls-material-repair/repair-initial.json
+  s_01f4a6969ae96f::t_8e1f182690fbab 1-1040
+tools/client910/fixtures/session-replay/souls-material-repair/repair-made.json
+  s_01f4a6969ae96f::t_a5185a08b414b0 1-1083
+tools/client910/fixtures/session-replay/souls-material-repair/repair-selected.json
+  s_01f4a6969ae96f::t_5f95183d8f4d38 1-1079
+tools/client910/fixtures/session-replay/souls-material-repair/snapshots.json
+  s_01f4a6969ae96f::t_5e7b7fa7075c4a 1-3346
+tools/client910/fixtures/session-replay/standard-prayers/actions.json
+  s_01f4a6969ae96f::t_fa4f406bc2d7bb 1-591
+tools/client910/fixtures/session-replay/standard-prayers/backend-inputs.json
+  s_01f4a6969ae96f::t_4192df28928a2f 1-873
+tools/client910/fixtures/session-replay/standard-prayers/capture.json
+  s_01f4a6969ae96f::t_8c718c4cefedb7 1-32
+tools/client910/fixtures/session-replay/standard-prayers/plan.json
+  s_01f4a6969ae96f::t_219b2a78b332c0 1-132
+tools/client910/fixtures/session-replay/standard-prayers/snapshots.json
+  s_01f4a6969ae96f::t_c4ff9b26019565 1-7391
+tools/client910/fixtures/session-replay/strykewyrm/backend-inputs.json
+  s_01f4a6969ae96f::t_9337c0dda3fb47 1-823
+tools/client910/fixtures/session-replay/strykewyrm/capture.json
+  s_01f4a6969ae96f::t_5a78d1eb9e77b6 1-146
+tools/client910/fixtures/session-replay/strykewyrm/combat-receipts.jsonl
+  s_01f4a6969ae96f::t_52e165211e61e1 1-130
+tools/client910/fixtures/session-replay/strykewyrm/driver-journal.jsonl
+  s_01f4a6969ae96f::t_d4728f869bb93c 1-439
+tools/client910/fixtures/session-replay/strykewyrm/earned-death.json
+  s_01f4a6969ae96f::t_f3f700b7aefea1 1-1652
+tools/client910/fixtures/session-replay/strykewyrm/final-saved-state.json
+  s_01f4a6969ae96f::t_c91e52a45c201c 1-7844
+tools/client910/fixtures/session-replay/strykewyrm/fixture-hashes.json
+  s_01f4a6969ae96f::t_d4a21f0f4cd3a6 1-15
+tools/client910/fixtures/session-replay/strykewyrm/full-health.json
+  s_01f4a6969ae96f::t_86a6b9056e160b 1-1639
+tools/client910/fixtures/session-replay/strykewyrm/initial-fixture.json
+  s_01f4a6969ae96f::t_0d400de4f436d7 1-343
+tools/client910/fixtures/session-replay/strykewyrm/mound-ready.json
+  s_01f4a6969ae96f::t_1b41f61dfdb8ee 1-1599
+tools/client910/fixtures/session-replay/strykewyrm/native-final.json
+  s_01f4a6969ae96f::t_c740f5fc82f1a8 1-1645
+tools/client910/fixtures/session-replay/strykewyrm/plan.json
+  s_01f4a6969ae96f::t_57ae31f66b09bc 1-1044
+tools/client910/fixtures/session-replay/strykewyrm/server-trace.jsonl
+  s_01f4a6969ae96f::t_49e0c52ec446b0 1-124
+tools/client910/fixtures/session-replay/twin-furies/backend-inputs.json
+  s_01f4a6969ae96f::t_5c41a4b000fa1e 1-11067
+tools/client910/fixtures/session-replay/twin-furies/capture.json
+  s_01f4a6969ae96f::t_e0ff718b9c34c7 1-172
+tools/client910/fixtures/session-replay/twin-furies/combat-receipts.jsonl
+  s_01f4a6969ae96f::t_c76d189842f14c 1-1228
+tools/client910/fixtures/session-replay/twin-furies/driver-journal.jsonl
+  s_01f4a6969ae96f::t_8eb94084c885d3 1-2495
+tools/client910/fixtures/session-replay/twin-furies/earned-death.json
+  s_01f4a6969ae96f::t_618324d051addc 1-4606
+tools/client910/fixtures/session-replay/twin-furies/earned-reward.json
+  s_01f4a6969ae96f::t_67793977896809 1-3515
+tools/client910/fixtures/session-replay/twin-furies/entry.json
+  s_01f4a6969ae96f::t_219ac1cc5b241d 1-3476
+tools/client910/fixtures/session-replay/twin-furies/final-saved-state.json
+  s_01f4a6969ae96f::t_bd64850256a0e1 1-1857
+tools/client910/fixtures/session-replay/twin-furies/full-health.json
+  s_01f4a6969ae96f::t_d80385e8071e7d 1-3568
+tools/client910/fixtures/session-replay/twin-furies/initial-fixture.json
+  s_01f4a6969ae96f::t_4c6140be382724 1-333
+tools/client910/fixtures/session-replay/twin-furies/native-final.json
+  s_01f4a6969ae96f::t_9b9fa1bde31eec 1-2793
+tools/client910/fixtures/session-replay/twin-furies/plan.json
+  s_01f4a6969ae96f::t_74ee2e4f12576a 1-3881
+tools/client910/fixtures/session-replay/twin-furies/server-trace.jsonl
+  s_01f4a6969ae96f::t_b476e63cdabd74 1-778
+tools/client910/fixtures/session-replay/vindicta/backend-inputs.json
+  s_01f4a6969ae96f::t_078b80118ef583 1-14583
+tools/client910/fixtures/session-replay/vindicta/capture.json
+  s_01f4a6969ae96f::t_819c631a36bb31 1-185
+tools/client910/fixtures/session-replay/vindicta/combat-receipts.jsonl
+  s_01f4a6969ae96f::t_43d892c15e7cd7 1-1388
+tools/client910/fixtures/session-replay/vindicta/driver-journal.jsonl
+  s_01f4a6969ae96f::t_104724b7abe2b2 1-3519
+tools/client910/fixtures/session-replay/vindicta/earned-death.json
+  s_01f4a6969ae96f::t_b3871f98a385ea 1-4144
+tools/client910/fixtures/session-replay/vindicta/earned-reward.json
+  s_01f4a6969ae96f::t_3b669868f1562e 1-3504
+tools/client910/fixtures/session-replay/vindicta/entry.json
+  s_01f4a6969ae96f::t_536836f24137b1 1-3433
+tools/client910/fixtures/session-replay/vindicta/final-saved-state.json
+  s_01f4a6969ae96f::t_dc7848c490c121 1-1857
+tools/client910/fixtures/session-replay/vindicta/full-health.json
+  s_01f4a6969ae96f::t_493134c2a39911 1-3502
+tools/client910/fixtures/session-replay/vindicta/initial-fixture.json
+  s_01f4a6969ae96f::t_bd8f8b0b4a5739 1-329
+tools/client910/fixtures/session-replay/vindicta/mounted.json
+  s_01f4a6969ae96f::t_3b852e993b60b7 1-3512
+tools/client910/fixtures/session-replay/vindicta/native-final.json
+  s_01f4a6969ae96f::t_32c11d62ba2eea 1-2788
+tools/client910/fixtures/session-replay/vindicta/plan.json
+  s_01f4a6969ae96f::t_cd939c000ed9aa 1-2841
+tools/client910/fixtures/session-replay/vindicta/server-trace.jsonl
+  s_01f4a6969ae96f::t_1e211b328dcf3e 1-898
+tools/client910/src/app.rs
+  s_41fcdb93953164::t_87030c27afede6 412-419
+tools/client910/src/live_control.rs
+  s_0245afe5a8bab8::t_b50e4b0c132a16 81-95,176-184,835,874-905,1186-1253,1487,1604,1671-1702
+tools/client910/src/observed_session.rs
+  s_01f4a6969ae96f::t_4b24bd42c1899f 18-21
+tools/client910/src/scenario_boss_encounters.rs
+  s_01f4a6969ae96f::t_b04fb1de78648f 8,26-45,69-1483,1634-1949,1963,1967-1972,1984,2098,2206-2209,2281-2283,2440
+tools/client910/src/scenario_consumables.rs
+  s_01f4a6969ae96f::t_ac533440eb628d 1-395
+tools/client910/src/scenario_curses.rs
+  s_01f4a6969ae96f::t_9086cb4f7b744f 1-1250
+tools/client910/src/scenario_endgame.rs
+  s_0245afe5a8bab8::t_fc7545e5fc2921 1,8,24-92,129-148,153-1485,1732-2117
+tools/client910/src/scenario_tests.rs
+  s_41fcdb93953164::t_702603531dfeb6 582,651-727,748-765
+tools/refactor/test-inventory.txt
+  s_0245afe5a8bab8::t_6dfae2b2d6637d 4,34,39,43-44,47,75,81-85,87-88,93-94,96-102,104,106-120,149,268,282,368,918,1042-1043,1181,1216,1218,1222-1223,1229,1231,1307,1581,1657-1658
+tools/client910/crates/rs910-client/src/client_core/phases.rs
+  s_01f4a6969ae96f::t_482445fc85893e 172,188,195,200,204,207,210,213,216,222,231,236
+tools/client910/crates/rs910-client/src/client_core/session_core.rs
+  s_01f4a6969ae96f::t_78b8c0c927331b 1038-1045,1073,1080,1111,1128,1130,1137,1142,1195
+tools/client910/fixtures/session-replay/boss-encounters/encounter_controls.py
+  s_01f4a6969ae96f::t_bc7f88d36f697f 16,28-29,57-87
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "eb6bfb805adc669398bab3aeda58338de9a1b791",
+  "prompts": {},
+  "sessions": {
+    "s_01f4a6969ae96f": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a11a09-bbb9-7cc3-ab54-abdc83e48bd3",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    },
+    "s_0245afe5a8bab8": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "26789806-9708-42d5-8749-1fe6fbfb9e5c",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    },
+    "s_41fcdb93953164": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1195e-1a00-7b71-b5cb-0d4497ecd2d8",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    },
+    "s_f14820c7533d54": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1223f-7be3-79c1-81cc-e2e1830df58d",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    },
+    "s_f493535ac28c9e": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "7b45da4e-94a7-416d-8bcf-4fa59b1d54b5",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
