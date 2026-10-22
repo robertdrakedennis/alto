@@ -1,0 +1,32 @@
+revisions/910/symbols/component.sym
+  h_d26e211304196f 649
+revisions/910/symbols/enum.sym
+  h_d26e211304196f 65
+revisions/910/symbols/param.sym
+  h_d26e211304196f 183
+revisions/910/symbols/spot.sym
+  h_d26e211304196f 76,98
+revisions/910/symbols/varbit.sym
+  h_d26e211304196f 194-199,421-447
+tools/client910/crates/rs910-symbols/src/component.rs
+  h_d26e211304196f 1666-1672
+tools/client910/crates/rs910-symbols/src/enums.rs
+  h_d26e211304196f 131-132
+tools/client910/crates/rs910-symbols/src/param.rs
+  h_d26e211304196f 366-367
+tools/client910/crates/rs910-symbols/src/spot.rs
+  h_d26e211304196f 152-153,196-197
+tools/client910/crates/rs910-symbols/src/varbit.rs
+  h_d26e211304196f 388-399,842-895
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "b90ed8b0d73550273372ba7fdef44a5d6f07f2b5",
+  "prompts": {},
+  "humans": {
+    "h_d26e211304196f": {
+      "author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
