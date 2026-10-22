@@ -1,0 +1,20 @@
+revisions/910/symbols/seq.sym
+  h_d26e211304196f 60-62,76-78,281-286
+revisions/910/symbols/spot.sym
+  h_d26e211304196f 100-101
+tools/client910/crates/rs910-symbols/src/seq.rs
+  h_d26e211304196f 120-125,152-157,562-573
+tools/client910/crates/rs910-symbols/src/spot.rs
+  h_d26e211304196f 200-203
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "0cfcebcf1bcb5f6dbb400f9c8a1fac4e7d7da4cf",
+  "prompts": {},
+  "humans": {
+    "h_d26e211304196f": {
+      "author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
