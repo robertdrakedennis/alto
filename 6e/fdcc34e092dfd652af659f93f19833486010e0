@@ -1,0 +1,36 @@
+tools/client910/crates/rs910-client/src/client_core/session_core.rs
+  h_d26e211304196f 759-762,1145
+tools/client910/crates/rs910-ui/src/ui_command_spec.rs
+  h_d26e211304196f 159
+tools/client910/crates/rs910-ui/src/ui_command_spec/client_cases.rs
+  h_d26e211304196f 236
+tools/client910/crates/rs910-ui/src/ui_command_spec/engine_cases.rs
+  h_d26e211304196f 172,200,226-227
+tools/client910/crates/rs910-ui/src/ui_host_builtins.rs
+  h_d26e211304196f 1535,1923
+tools/client910/crates/rs910-ui/src/ui_runtime.rs
+  h_d26e211304196f 1727-1728
+tools/client910/crates/rs910-ui/src/ui_runtime/commands/account_creation.rs
+  h_d26e211304196f 48,82,110,150,180
+tools/client910/crates/rs910-ui/src/ui_runtime/commands/login.rs
+  h_d26e211304196f 94
+tools/client910/crates/rs910-ui/src/ui_runtime/commands/world_list.rs
+  h_d26e211304196f 25,123,144
+tools/client910/crates/rs910-ui/src/ui_runtime/engine.rs
+  h_d26e211304196f 454-455,462-489,519
+tools/client910/crates/rs910-ui/src/ui_runtime/no_op_host_tests.rs
+  h_d26e211304196f 145,201,240,255,322-326
+tools/client910/src/ui_goldens/ui_settings_replay.rs
+  h_d26e211304196f 298,300
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "6efdcc34e092dfd652af659f93f19833486010e0",
+  "prompts": {},
+  "humans": {
+    "h_d26e211304196f": {
+      "author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
