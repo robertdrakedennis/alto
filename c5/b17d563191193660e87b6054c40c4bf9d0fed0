@@ -1,0 +1,90 @@
+.github/workflows/client.yml
+  h_d26e211304196f 17-19,23,34,37-38
+AGENTS.md
+  h_d26e211304196f 23,26-27,43-45
+CONTRIBUTING.md
+  h_d26e211304196f 11,18,27-30,37,40-41,53-54
+README.md
+  h_d26e211304196f 19,83
+THIRD_PARTY_LICENSES.md
+  h_d26e211304196f 4-5,14,18,35,1513,10994,12443
+docs/architecture.md
+  h_d26e211304196f 4-5,50
+docs/client-status.md
+  h_d26e211304196f 144
+docs/engine-and-studio.md
+  h_d26e211304196f 27-28
+docs/engineering.md
+  h_d26e211304196f 18,27-28,49-56,59-61,65,67-69
+docs/renderer/modern-renderer.md
+  h_d26e211304196f 10,78,957,1006
+docs/setup.md
+  h_d26e211304196f 59
+docs/symbols.md
+  h_d26e211304196f 32-33
+tools/.config/nextest.toml
+  h_d26e211304196f 1-2
+tools/Cargo.toml
+  h_d26e211304196f 44-45,50
+tools/README.md
+  h_d26e211304196f 37,39,46,49,60-61
+tools/check.sh
+  h_d26e211304196f 2-4,6,8-23,25-26
+tools/client910/crates/rs910-audio/Cargo.toml
+  h_d26e211304196f 8
+tools/client910/crates/rs910-audio/src/audio_sink.rs
+  h_d26e211304196f 9
+tools/client910/crates/rs910-client/Cargo.toml
+  h_d26e211304196f 8
+tools/client910/crates/rs910-config/Cargo.toml
+  h_d26e211304196f 8
+tools/client910/crates/rs910-core/Cargo.toml
+  h_d26e211304196f 8
+tools/client910/crates/rs910-core/src/lib.rs
+  h_d26e211304196f 6
+tools/client910/crates/rs910-far-scene/Cargo.toml
+  h_d26e211304196f 8
+tools/client910/crates/rs910-game/Cargo.toml
+  h_d26e211304196f 8
+tools/client910/crates/rs910-gpu-device/Cargo.toml
+  h_d26e211304196f 8
+tools/client910/crates/rs910-js5/Cargo.toml
+  h_d26e211304196f 8
+tools/client910/crates/rs910-model/Cargo.toml
+  h_d26e211304196f 8
+tools/client910/crates/rs910-protocol/Cargo.toml
+  h_d26e211304196f 9
+tools/client910/crates/rs910-protocol/src/framing.rs
+  h_d26e211304196f 6
+tools/client910/crates/rs910-protocol/src/server_prot.rs
+  h_d26e211304196f 7
+tools/client910/crates/rs910-render-gpu/Cargo.toml
+  h_d26e211304196f 8
+tools/client910/crates/rs910-render-modern/Cargo.toml
+  h_d26e211304196f 8
+tools/client910/crates/rs910-scene/Cargo.toml
+  h_d26e211304196f 8
+tools/client910/crates/rs910-toolkit/Cargo.toml
+  h_d26e211304196f 8
+tools/client910/crates/rs910-ui/Cargo.toml
+  h_d26e211304196f 8
+tools/client910/src/lib.rs
+  h_d26e211304196f 200
+tools/client910/src/scene_goldens.rs
+  h_d26e211304196f 2
+tools/licenses.py
+  h_d26e211304196f 11,286-287
+tools/provenance/provenance.py
+  h_d26e211304196f 373
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "c5b17d563191193660e87b6054c40c4bf9d0fed0",
+  "prompts": {},
+  "humans": {
+    "h_d26e211304196f": {
+      "author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
