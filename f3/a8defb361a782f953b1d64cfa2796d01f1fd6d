@@ -1,0 +1,154 @@
+docs/renderer/modern-renderer.md
+  h_d26e211304196f 894-898,901-915
+tools/client910/crates/rs910-client/src/session/tests.rs
+  h_d26e211304196f 689
+tools/client910/crates/rs910-config/src/nxt/tests.rs
+  h_d26e211304196f 14
+tools/client910/crates/rs910-model/src/cache_faults.rs
+  h_d26e211304196f 1-3,7-9,13-56,64-74,81,83-86,91,93-100,104-105,122-123,135,138,141-142,147,166,169,171,174,186,189-190,195,208-212
+tools/client910/crates/rs910-model/src/lib.rs
+  h_d26e211304196f 43
+tools/client910/crates/rs910-protocol/src/server_prot/event_decode.rs
+  h_d26e211304196f 680-682,685-686
+tools/client910/crates/rs910-render-gpu/Cargo.toml
+  h_d26e211304196f 34-35
+tools/client910/crates/rs910-render-gpu/src/floor_render.rs
+  h_d26e211304196f 43
+tools/client910/crates/rs910-render-modern/src/frame/gpu/ambient.rs
+  h_d26e211304196f 368
+tools/client910/crates/rs910-render-modern/src/frame/tests/mod.rs
+  h_d26e211304196f 453,498
+tools/client910/crates/rs910-render-modern/src/frame/tests/point_shadows.rs
+  h_d26e211304196f 1-2
+tools/client910/crates/rs910-render-modern/src/frame/tests/scene.rs
+  h_d26e211304196f 1-2
+tools/client910/crates/rs910-render-modern/src/frame/tests/shadows.rs
+  h_d26e211304196f 1,3
+tools/client910/crates/rs910-render-modern/src/frame/tests/water.rs
+  h_d26e211304196f 1
+tools/client910/crates/rs910-render-modern/src/models/materials/tests.rs
+  h_d26e211304196f 1-3
+tools/client910/crates/rs910-render-modern/src/water_body/tests.rs
+  h_d26e211304196f 1-2
+tools/client910/crates/rs910-scene/src/sky_decor/tests.rs
+  h_d26e211304196f 4
+tools/client910/crates/rs910-ui/src/loading.rs
+  h_d26e211304196f 20
+tools/client910/crates/rs910-ui/src/ui_runtime.rs
+  h_d26e211304196f 31
+tools/client910/src/scenario_abilities.rs
+  h_d26e211304196f 156,901,1433
+tools/client910/src/scenario_barrows.rs
+  h_d26e211304196f 843
+tools/client910/src/scenario_boss_encounters.rs
+  h_d26e211304196f 70,509,893,1240,1485,1639,1651,1663,2295
+tools/client910/src/scenario_chaos_elemental.rs
+  h_d26e211304196f 51
+tools/client910/src/scenario_combat.rs
+  h_d26e211304196f 46
+tools/client910/src/scenario_combat_clues.rs
+  h_d26e211304196f 37
+tools/client910/src/scenario_combat_gaps.rs
+  h_d26e211304196f 22
+tools/client910/src/scenario_consumables.rs
+  h_d26e211304196f 96,151
+tools/client910/src/scenario_corporeal_beast.rs
+  h_d26e211304196f 170
+tools/client910/src/scenario_curses.rs
+  h_d26e211304196f 83,197,330,459,630,636,643
+tools/client910/src/scenario_death_office.rs
+  h_d26e211304196f 54,200
+tools/client910/src/scenario_endgame.rs
+  h_d26e211304196f 154,275,437,644,660,685,1039,1155,1282,1288,1298,1487,1734,1744,1754,1764
+tools/client910/src/scenario_entities.rs
+  h_d26e211304196f 20
+tools/client910/src/scenario_exchange.rs
+  h_d26e211304196f 111
+tools/client910/src/scenario_gathering.rs
+  h_d26e211304196f 263,471
+tools/client910/src/scenario_gathering_gaps.rs
+  h_d26e211304196f 150
+tools/client910/src/scenario_giant_mole.rs
+  h_d26e211304196f 189
+tools/client910/src/scenario_god_wars.rs
+  h_d26e211304196f 1400,1433,1466,1499
+tools/client910/src/scenario_house.rs
+  h_d26e211304196f 110
+tools/client910/src/scenario_inventory.rs
+  h_d26e211304196f 179,258,341
+tools/client910/src/scenario_king_black_dragon.rs
+  h_d26e211304196f 34
+tools/client910/src/scenario_legacy_combat.rs
+  h_d26e211304196f 174
+tools/client910/src/scenario_legacy_interface.rs
+  h_d26e211304196f 163
+tools/client910/src/scenario_legacy_specials.rs
+  h_d26e211304196f 123,662
+tools/client910/src/scenario_make_abyss.rs
+  h_d26e211304196f 128
+tools/client910/src/scenario_nature.rs
+  h_d26e211304196f 134
+tools/client910/src/scenario_npc_audit.rs
+  h_d26e211304196f 276
+tools/client910/src/scenario_npc_combat.rs
+  h_d26e211304196f 75
+tools/client910/src/scenario_npc_styles.rs
+  h_d26e211304196f 19
+tools/client910/src/scenario_player_correctness.rs
+  h_d26e211304196f 90,128,149
+tools/client910/src/scenario_production.rs
+  h_d26e211304196f 116
+tools/client910/src/scenario_queen_black_dragon.rs
+  h_d26e211304196f 138
+tools/client910/src/scenario_quest.rs
+  h_d26e211304196f 130
+tools/client910/src/scenario_skills.rs
+  h_d26e211304196f 577,820
+tools/client910/src/scenario_slayer.rs
+  h_d26e211304196f 39
+tools/client910/src/scenario_slayer_catalog.rs
+  h_d26e211304196f 118
+tools/client910/src/scenario_slayer_equipment.rs
+  h_d26e211304196f 187
+tools/client910/src/scenario_slayer_wilderness.rs
+  h_d26e211304196f 197
+tools/client910/src/scenario_special_repair.rs
+  h_d26e211304196f 94
+tools/client910/src/scenario_support.rs
+  h_d26e211304196f 89
+tools/client910/src/scenario_tests.rs
+  h_d26e211304196f 2776
+tools/client910/src/scenario_trails.rs
+  h_d26e211304196f 95
+tools/client910/src/scenario_woodcutting.rs
+  h_d26e211304196f 498,812
+tools/client910/src/scenario_world.rs
+  h_d26e211304196f 147
+tools/client910/src/scenario_world_travel.rs
+  h_d26e211304196f 154
+tools/client910/src/ui_goldens/stat_packet_tests.rs
+  h_d26e211304196f 182
+tools/native910/README.md
+  h_d26e211304196f 204-205
+tools/native910/src/cs2_stack_contracts.rs
+  h_d26e211304196f 3-4
+tools/native910/tests/config_corpus.rs
+  h_d26e211304196f 13-16
+tools/native910/tests/dbindex_corpus.rs
+  h_d26e211304196f 2
+tools/native910/tests/dbtable_corpus.rs
+  h_d26e211304196f 14-15
+tools/native910/tests/sprite_corpus.rs
+  h_d26e211304196f 13
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "f3a8defb361a782f953b1d64cfa2796d01f1fd6d",
+  "prompts": {},
+  "humans": {
+    "h_d26e211304196f": {
+      "author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
