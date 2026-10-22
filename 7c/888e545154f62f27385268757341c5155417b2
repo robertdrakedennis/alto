@@ -1,0 +1,16 @@
+revisions/910/symbols/seq.sym
+  h_d26e211304196f 283-284,290,292,295
+tools/client910/crates/rs910-symbols/src/seq.rs
+  h_d26e211304196f 566-569,580-581,584-585,590-591
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "7c888e545154f62f27385268757341c5155417b2",
+  "prompts": {},
+  "humans": {
+    "h_d26e211304196f": {
+      "author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
