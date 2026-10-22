@@ -1,0 +1,21 @@
+docs/client-status.md
+  s_84d5bb87f6afbf::t_bf3633943eeea2 127
+docs/setup.md
+  s_84d5bb87f6afbf::t_ba89da71d6f293 44-47
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "c49e0136a089c18064a2f6c2ddbc72171416bf7b",
+  "prompts": {},
+  "sessions": {
+    "s_84d5bb87f6afbf": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "917bcedf-d4bc-491d-99aa-5ffb541f998c",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
