@@ -1,0 +1,16 @@
+tools/client910/crates/rs910-client/src/session/tests.rs
+  h_d26e211304196f 872-882
+tools/client910/crates/rs910-protocol/src/server_prot/event_decode.rs
+  h_d26e211304196f 896-897
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "c570b3978df6acbbb2d0d45229114d296d5449cb",
+  "prompts": {},
+  "humans": {
+    "h_d26e211304196f": {
+      "author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
