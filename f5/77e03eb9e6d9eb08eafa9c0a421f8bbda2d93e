@@ -1,0 +1,20 @@
+tools/Cargo.lock
+  h_d26e211304196f 2185
+tools/client910/crates/rs910-render-modern/Cargo.toml
+  h_d26e211304196f 18
+tools/client910/crates/rs910-render-modern/src/frame/gpu/ambient.rs
+  h_d26e211304196f 48,579
+tools/client910/crates/rs910-render-modern/src/frame/gpu/probes.rs
+  h_d26e211304196f 629-633,1408-1427
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "f577e03eb9e6d9eb08eafa9c0a421f8bbda2d93e",
+  "prompts": {},
+  "humans": {
+    "h_d26e211304196f": {
+      "author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
