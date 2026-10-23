@@ -1,0 +1,21 @@
+tools/client910/crates/rs910-ui/src/ui_runtime/menu_builder.rs
+  s_138180257ec4e3::t_b35d8aca644f27 288,294,296,306-310,392,429
+tools/client910/src/app/redraw.rs
+  s_138180257ec4e3::t_c846c243101706 502-503,506-509
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "792c5eb2f4a82e909827da3fdc99fb7b58e7f78c",
+  "prompts": {},
+  "sessions": {
+    "s_138180257ec4e3": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "a348dc04-f385-4eb8-a7b4-5a1846ef01ec",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
