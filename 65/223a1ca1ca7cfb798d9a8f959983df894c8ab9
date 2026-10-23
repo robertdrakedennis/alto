@@ -1,0 +1,16 @@
+tools/client910/crates/rs910-render-gpu/src/render/camera.rs
+  h_d26e211304196f 4-10,99,106-125
+tools/client910/src/app/redraw.rs
+  h_d26e211304196f 63-83,590-600,604,630-635
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "65223a1ca1ca7cfb798d9a8f959983df894c8ab9",
+  "prompts": {},
+  "humans": {
+    "h_d26e211304196f": {
+      "author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
