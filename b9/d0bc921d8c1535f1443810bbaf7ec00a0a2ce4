@@ -1,0 +1,16 @@
+.gitignore
+  h_d26e211304196f 110-111
+AGENTS.md
+  h_d26e211304196f 63
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "b9d0bc921d8c1535f1443810bbaf7ec00a0a2ce4",
+  "prompts": {},
+  "humans": {
+    "h_d26e211304196f": {
+      "author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
