@@ -1,0 +1,22 @@
+tools/client910/crates/rs910-client/src/connection_upkeep.rs
+  h_d26e211304196f 70-71,96-102,150
+tools/client910/crates/rs910-ui/src/debug_overlay.rs
+  h_d26e211304196f 55-56
+tools/client910/crates/rs910-ui/src/lib.rs
+  h_d26e211304196f 114
+tools/client910/crates/rs910-ui/src/ui_preferences_autosetup.rs
+  h_d26e211304196f 174-177,179-181
+tools/client910/src/app/mainloop.rs
+  h_d26e211304196f 217,222-223
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "51980ab90fcd68ace84050f7d4646110252918d4",
+  "prompts": {},
+  "humans": {
+    "h_d26e211304196f": {
+      "author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
