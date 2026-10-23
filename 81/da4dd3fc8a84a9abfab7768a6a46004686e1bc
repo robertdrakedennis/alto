@@ -1,0 +1,22 @@
+tools/client910/crates/rs910-render-modern/src/frame/gpu/probes.rs
+  h_d26e211304196f 632-635,787-792
+tools/client910/crates/rs910-render-modern/src/frame/mod.rs
+  h_d26e211304196f 1638,1643
+tools/client910/crates/rs910-render-modern/src/frame/tests/mod.rs
+  h_d26e211304196f 282-317
+tools/client910/crates/rs910-render-modern/src/lighting/probe_filter.wgsl
+  h_d26e211304196f 79-80,82-83,96-97,111
+tools/client910/crates/rs910-render-modern/src/lighting/probes.rs
+  h_d26e211304196f 102-103,119-122,124
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "81da4dd3fc8a84a9abfab7768a6a46004686e1bc",
+  "prompts": {},
+  "humans": {
+    "h_d26e211304196f": {
+      "author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
