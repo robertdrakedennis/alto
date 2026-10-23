@@ -1,0 +1,32 @@
+tools/client910/crates/rs910-render-modern/src/frame/benchmark.rs
+  h_d26e211304196f 223
+tools/client910/crates/rs910-render-modern/src/frame/gpu/far.rs
+  h_d26e211304196f 447-449,1403,1777-1799,1836-1868,2271,2273
+tools/client910/crates/rs910-render-modern/src/frame/gpu/probes.rs
+  h_d26e211304196f 1535
+tools/client910/crates/rs910-render-modern/src/frame/gpu/sky_cube.rs
+  h_d26e211304196f 605
+tools/client910/crates/rs910-render-modern/src/frame/gpu/water.rs
+  h_d26e211304196f 1481-1484,1580-1583
+tools/client910/crates/rs910-render-modern/src/frame/gpu/water_reflection.rs
+  h_d26e211304196f 43-50,52-54
+tools/client910/crates/rs910-render-modern/src/frame/mod.rs
+  h_d26e211304196f 291-294,1254-1258,1303,1363,1999-2002
+tools/client910/crates/rs910-render-modern/src/frame/resources.rs
+  h_d26e211304196f 242
+tools/client910/crates/rs910-render-modern/src/frame/submit.rs
+  h_d26e211304196f 131
+tools/client910/crates/rs910-render-modern/src/frame/underwater.rs
+  h_d26e211304196f 134,248
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "ecf49f381b9515024369a202925eef694563083b",
+  "prompts": {},
+  "humans": {
+    "h_d26e211304196f": {
+      "author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
