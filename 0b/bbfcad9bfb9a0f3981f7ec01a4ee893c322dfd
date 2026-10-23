@@ -1,0 +1,16 @@
+tools/client910/crates/rs910-render-modern/src/far/lod.rs
+  h_d26e211304196f 29,197,274,332
+tools/client910/crates/rs910-render-modern/src/models/rt7.rs
+  h_d26e211304196f 624-634,708,783
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "0bbbfcad9bfb9a0f3981f7ec01a4ee893c322dfd",
+  "prompts": {},
+  "humans": {
+    "h_d26e211304196f": {
+      "author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
