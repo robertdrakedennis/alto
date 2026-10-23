@@ -1,0 +1,16 @@
+docs/renderer/modern-renderer.md
+  h_d26e211304196f 563-565
+tools/client910/crates/rs910-render-modern/src/post/upscale.wgsl
+  h_d26e211304196f 2-9,17-31,38-61
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "d121f601dd54b298e3f91921368427c900e4971d",
+  "prompts": {},
+  "humans": {
+    "h_d26e211304196f": {
+      "author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
