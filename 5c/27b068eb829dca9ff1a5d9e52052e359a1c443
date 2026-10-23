@@ -1,0 +1,28 @@
+tools/.config/nextest.toml
+  h_d26e211304196f 13,17,21,25
+tools/client910/build.rs
+  h_d26e211304196f 1-9
+tools/client910/crates/rs910-client/src/session/tests.rs
+  h_d26e211304196f 1096
+tools/client910/crates/rs910-core/src/profile.rs
+  h_d26e211304196f 21
+tools/client910/src/app.rs
+  h_d26e211304196f 31,521,1228-1232
+tools/client910/src/lib.rs
+  h_d26e211304196f 239-240,262-265
+tools/client910/src/live_control.rs
+  h_d26e211304196f 316,794,803,813,822
+tools/client910/src/test_support.rs
+  h_d26e211304196f 28,68,70,75
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "5c27b068eb829dca9ff1a5d9e52052e359a1c443",
+  "prompts": {},
+  "humans": {
+    "h_d26e211304196f": {
+      "author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
