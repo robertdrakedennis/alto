@@ -1,0 +1,34 @@
+docs/renderer/modern-renderer.md
+  h_d26e211304196f 108-122
+tools/client910/crates/rs910-far-scene/src/far_level.rs
+  h_d26e211304196f 6-7,65-73,120-137
+tools/client910/crates/rs910-far-scene/src/far_locs.rs
+  h_d26e211304196f 18-23,56,145-166,224,238-240,293,298-305,325,346-349
+tools/client910/crates/rs910-far-scene/src/far_terrain.rs
+  h_d26e211304196f 24-26,38,49,94-107,109-122,124,126-147,151,157-166,170-183,187-188,194,200,221
+tools/client910/crates/rs910-far-scene/src/lib.rs
+  h_d26e211304196f 18-19,28-29,31-34
+tools/client910/crates/rs910-render-modern/src/far/jobs.rs
+  h_d26e211304196f 18-22,194-196,202-203,229,287-288,505-509
+tools/client910/crates/rs910-render-modern/src/frame/gpu/far.rs
+  h_d26e211304196f 18,122-135,169-170,248,250,255-258,275-279,349-360,477-479,519-520,550-552,554-558,561-587,748-754,764,912-913,916-923,925-928,932-937,942-944,949-950,1046-1049,1055-1063,1065-1072,1080-1084,1101-1121,1124,1131,1243,1248-1254,1257,1259-1264,1268-1281,1284,1286,1292,1295-1296,1376,1380-1392,1401-1402,1414,1416,1419,1430-1449,1828,1980,2022-2023,2031-2034,2036-2044,2052-2053,2116-2167,2448-2453,2490-2531,2585-2586,2630
+tools/client910/crates/rs910-render-modern/src/frame/gpu/water.rs
+  h_d26e211304196f 68-71,84-85,818,822-824,844-847,850-856,898
+tools/client910/crates/rs910-render-modern/src/frame/mod.rs
+  h_d26e211304196f 1323-1331
+tools/client910/crates/rs910-render-modern/src/terrain/mod.rs
+  h_d26e211304196f 60-62,130-132,1060,1111,1177,1182-1186,1192-1216,1218-1225,1247-1277
+tools/client910/src/active_toolkit.rs
+  h_d26e211304196f 233
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "19d3b4662cbd83eb233514e3a890bdc03fe7c00c",
+  "prompts": {},
+  "humans": {
+    "h_d26e211304196f": {
+      "author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
