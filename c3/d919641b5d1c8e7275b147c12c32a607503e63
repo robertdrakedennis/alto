@@ -1,0 +1,20 @@
+tools/client910/crates/rs910-config/src/renderer_preferences.rs
+  h_d26e211304196f 178-179,188-190,194,196
+tools/client910/crates/rs910-render-modern/src/frame/gpu/water_reflection.rs
+  h_d26e211304196f 13-16,20-23,45-47
+tools/client910/crates/rs910-render-modern/src/models/bounds.rs
+  h_d26e211304196f 20-25
+tools/client910/crates/rs910-render-modern/src/settings.rs
+  h_d26e211304196f 22,126,129
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "c3d919641b5d1c8e7275b147c12c32a607503e63",
+  "prompts": {},
+  "humans": {
+    "h_d26e211304196f": {
+      "author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
