@@ -1,0 +1,48 @@
+tools/Cargo.lock
+  h_d26e211304196f 2207
+tools/client910/crates/rs910-far-scene/src/far_locs.rs
+  h_d26e211304196f 489,505,521,537
+tools/client910/crates/rs910-render-modern/src/frame/gpu/far.rs
+  h_d26e211304196f 1609-1610
+tools/client910/crates/rs910-render-modern/src/frame/tests/mod.rs
+  h_d26e211304196f 245
+tools/client910/crates/rs910-render-modern/src/frame/tests/models.rs
+  h_d26e211304196f 418-419,422-425
+tools/client910/crates/rs910-render-modern/src/shadows/interior.rs
+  h_d26e211304196f 149-150
+tools/client910/crates/rs910-scene/Cargo.toml
+  h_d26e211304196f 18
+tools/client910/crates/rs910-scene/src/draw.rs
+  h_d26e211304196f 1255-1259
+tools/client910/crates/rs910-scene/src/dynamic_scene.rs
+  h_d26e211304196f 668,691-692,742,753-757
+tools/client910/crates/rs910-scene/src/locs.rs
+  h_d26e211304196f 1078,1125,1172,1221
+tools/client910/crates/rs910-scene/src/player_bodies.rs
+  h_d26e211304196f 469
+tools/client910/crates/rs910-scene/src/player_picking.rs
+  h_d26e211304196f 436,543,595
+tools/client910/crates/rs910-scene/src/rebuild.rs
+  h_d26e211304196f 246
+tools/client910/crates/rs910-scene/src/scene.rs
+  h_d26e211304196f 91,173,196,219,241,278-280,323-325,350-352,362-367,455,473,476-487,641,643,662-663,666,669,703-705,708,711,739,741,812,822,1262,1294,1322,1357
+tools/client910/crates/rs910-scene/src/scene_snapshot/owned.rs
+  h_d26e211304196f 3-7,323-326
+tools/client910/src/app/entity_renderer.rs
+  h_d26e211304196f 1086,1276,1389,1525,1540,1733
+tools/client910/src/app/particle_host.rs
+  h_d26e211304196f 102,110,117,121,304,311,323,335
+tools/client910/src/app/scene_host.rs
+  h_d26e211304196f 109,200,580-584,918
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "aa51ff551c49a590953c4226280cfa0426adeba6",
+  "prompts": {},
+  "humans": {
+    "h_d26e211304196f": {
+      "author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
