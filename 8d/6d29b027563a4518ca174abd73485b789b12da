@@ -1,0 +1,28 @@
+tools/client910/crates/rs910-render-modern/src/atmosphere/fog.rs
+  h_d26e211304196f 64-99
+tools/client910/crates/rs910-render-modern/src/atmosphere/mod.rs
+  h_d26e211304196f 71-74,120-125,127,129-141
+tools/client910/crates/rs910-render-modern/src/atmosphere/sky.wgsl
+  h_d26e211304196f 19-76,81-82,116
+tools/client910/crates/rs910-render-modern/src/frame/gpu/atmosphere.rs
+  h_d26e211304196f 463,515-518
+tools/client910/crates/rs910-render-modern/src/frame/mod.rs
+  h_d26e211304196f 1728-1734
+tools/client910/crates/rs910-render-modern/src/lighting/environment_record.rs
+  h_d26e211304196f 227
+tools/client910/crates/rs910-render-modern/src/post/grading.rs
+  h_d26e211304196f 241-243,271
+tools/client910/crates/rs910-render-modern/src/post/post.wgsl
+  h_d26e211304196f 29,290-320,352
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "8d6d29b027563a4518ca174abd73485b789b12da",
+  "prompts": {},
+  "humans": {
+    "h_d26e211304196f": {
+      "author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
