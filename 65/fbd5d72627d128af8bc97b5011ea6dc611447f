@@ -1,0 +1,24 @@
+docs/engine-and-studio.md
+  h_d26e211304196f 187
+tools/client910/Cargo.toml
+  h_d26e211304196f 131-133
+tools/client910/scripts/control.py
+  h_d26e211304196f 2
+tools/client910/src/app.rs
+  h_d26e211304196f 373,437,543,681
+tools/client910/src/app/mainloop.rs
+  h_d26e211304196f 125,389
+tools/client910/src/lib.rs
+  h_d26e211304196f 12
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "65fbd5d72627d128af8bc97b5011ea6dc611447f",
+  "prompts": {},
+  "humans": {
+    "h_d26e211304196f": {
+      "author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
