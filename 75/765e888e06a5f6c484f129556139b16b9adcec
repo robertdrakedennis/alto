@@ -1,0 +1,18 @@
+tools/client910/crates/rs910-render-modern/src/frame/gpu/far.rs
+  h_d26e211304196f 476-477,869,1871,1874-1876,1918-1923,1928-1930,2461-2467
+tools/client910/src/active_toolkit.rs
+  h_d26e211304196f 157-158,236-238,356,551-556
+tools/client910/src/app/scene_host.rs
+  h_d26e211304196f 248-253,284-292,294
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "75765e888e06a5f6c484f129556139b16b9adcec",
+  "prompts": {},
+  "humans": {
+    "h_d26e211304196f": {
+      "author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
