@@ -1,0 +1,16 @@
+tools/client910/crates/rs910-render-modern/src/atmosphere/mod.rs
+  h_d26e211304196f 116-130
+tools/client910/crates/rs910-render-modern/src/frame/gpu/atmosphere.rs
+  h_d26e211304196f 458,461-464
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "810ff3de999f7c8e72f5560261b96e5a367f6fdd",
+  "prompts": {},
+  "humans": {
+    "h_d26e211304196f": {
+      "author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
