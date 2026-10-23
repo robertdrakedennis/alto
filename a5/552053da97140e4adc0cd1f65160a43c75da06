@@ -1,0 +1,28 @@
+tools/client910/crates/rs910-render-modern/src/frame/gpu/post.rs
+  h_d26e211304196f 12-13,298,563,583,591,599,822,1101,1129-1134
+tools/client910/crates/rs910-render-modern/src/frame/gpu/terrain.rs
+  h_d26e211304196f 224
+tools/client910/crates/rs910-render-modern/src/post/ao.wgsl
+  h_d26e211304196f 28,50
+tools/client910/crates/rs910-render-modern/src/post/geometry.wgsl
+  h_d26e211304196f 2-4,6,24
+tools/client910/crates/rs910-render-modern/src/post/mod.rs
+  h_d26e211304196f 377-379
+tools/client910/crates/rs910-render-modern/src/post/post.wgsl
+  h_d26e211304196f 16,68-76,86,100,117,131
+tools/client910/crates/rs910-render-modern/src/terrain/terrain.wgsl
+  h_d26e211304196f 235-236,238,248
+tools/perf/modern_stage.py
+  h_d26e211304196f 180
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "a5552053da97140e4adc0cd1f65160a43c75da06",
+  "prompts": {},
+  "humans": {
+    "h_d26e211304196f": {
+      "author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
