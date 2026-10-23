@@ -1,0 +1,184 @@
+AGENTS.md
+  h_d26e211304196f 30
+README.md
+  h_d26e211304196f 66
+docs/architecture.md
+  h_d26e211304196f 40,61
+docs/client-status.md
+  h_d26e211304196f 91,120,126,132
+docs/renderer/modern-renderer.md
+  h_d26e211304196f 3-10,43-46,695,745,777,826,836,858-859,864,889,894,918,1027,1029
+docs/setup.md
+  h_d26e211304196f 49
+tools/README.md
+  h_d26e211304196f 28,30
+tools/client910/Cargo.toml
+  h_d26e211304196f 62-63,66
+tools/client910/crates/rs910-game/src/entities910/mod.rs
+  h_d26e211304196f 3
+tools/client910/crates/rs910-gpu-device/src/gpu_device.rs
+  h_d26e211304196f 7-9,117-118
+tools/client910/crates/rs910-gpu-device/src/lib.rs
+  h_d26e211304196f 3
+tools/client910/crates/rs910-render-gpu/Cargo.toml
+  h_d26e211304196f 6
+tools/client910/crates/rs910-render-gpu/src/floor_render.rs
+  h_d26e211304196f 1,50
+tools/client910/crates/rs910-render-gpu/src/floor_render/mesh.rs
+  h_d26e211304196f 92-93
+tools/client910/crates/rs910-render-gpu/src/floor_render/pipeline.rs
+  h_d26e211304196f 326
+tools/client910/crates/rs910-render-gpu/src/floor_render/shader.rs
+  h_d26e211304196f 1
+tools/client910/crates/rs910-render-gpu/src/frame_profile.rs
+  h_d26e211304196f 1-2,4-7
+tools/client910/crates/rs910-render-gpu/src/lib.rs
+  h_d26e211304196f 1-5,7-9,12-18,20,38-39,42-43,48-49
+tools/client910/crates/rs910-render-gpu/src/particle_render.rs
+  h_d26e211304196f 1-5,11-13,17
+tools/client910/crates/rs910-render-gpu/src/pipelines.rs
+  h_d26e211304196f 1-2,17,22,32
+tools/client910/crates/rs910-render-gpu/src/postprocess.rs
+  h_d26e211304196f 1-6,320,326-327,336-338
+tools/client910/crates/rs910-render-gpu/src/render.rs
+  h_d26e211304196f 1-7,9-12,16-19,22,38
+tools/client910/crates/rs910-render-gpu/src/render/device.rs
+  h_d26e211304196f 3-5,11-14,30,74,209,233,274,276
+tools/client910/crates/rs910-render-gpu/src/render/frame.rs
+  h_d26e211304196f 2-3,96,100,167,306-344,408,598
+tools/client910/crates/rs910-render-gpu/src/render/minimap.rs
+  h_d26e211304196f 6-8,11-12,23-24,35-36,91-92,94-98,100-114,147-148
+tools/client910/crates/rs910-render-gpu/src/render/post.rs
+  h_d26e211304196f 2
+tools/client910/crates/rs910-render-gpu/src/render/resources.rs
+  h_d26e211304196f 1,3,7-10,12,14,19-21,28,44,46-47,49,51-52,57-58,68-69
+tools/client910/crates/rs910-render-gpu/src/render_debug_flags.rs
+  h_d26e211304196f 1-2,12
+tools/client910/crates/rs910-render-gpu/src/ui_model_gpu.rs
+  h_d26e211304196f 24
+tools/client910/crates/rs910-render-modern/Cargo.toml
+  h_d26e211304196f 8,11
+tools/client910/crates/rs910-render-modern/src/frame/gpu/far.rs
+  h_d26e211304196f 232
+tools/client910/crates/rs910-render-modern/src/frame/gpu/post.rs
+  h_d26e211304196f 700
+tools/client910/crates/rs910-render-modern/src/frame/gpu/sprites.rs
+  h_d26e211304196f 25,28,31,39,115-116,200,242,493-494
+tools/client910/crates/rs910-render-modern/src/frame/mod.rs
+  h_d26e211304196f 2-3,28,77-78,92,365,787,889,902-903,914-918,1335-1339,1405,1945,2047
+tools/client910/crates/rs910-render-modern/src/frame/resources.rs
+  h_d26e211304196f 646-647
+tools/client910/crates/rs910-render-modern/src/frame/scale.rs
+  h_d26e211304196f 1,3
+tools/client910/crates/rs910-render-modern/src/frame/state.rs
+  h_d26e211304196f 139-140
+tools/client910/crates/rs910-render-modern/src/frame/submit.rs
+  h_d26e211304196f 13
+tools/client910/crates/rs910-render-modern/src/frame/tests/models.rs
+  h_d26e211304196f 1-3,7-9,12,20,34,37
+tools/client910/crates/rs910-render-modern/src/lib.rs
+  h_d26e211304196f 1,3-8
+tools/client910/crates/rs910-render-modern/src/lighting/environment.rs
+  h_d26e211304196f 60
+tools/client910/crates/rs910-render-modern/src/models/draw_list.rs
+  h_d26e211304196f 1-2,4-6,16-18,27,133,165,200
+tools/client910/crates/rs910-render-modern/src/models/mod.rs
+  h_d26e211304196f 2
+tools/client910/crates/rs910-render-modern/src/models/rt7.rs
+  h_d26e211304196f 27,387
+tools/client910/crates/rs910-render-modern/src/models/rt7_anim.rs
+  h_d26e211304196f 106,784,918
+tools/client910/crates/rs910-render-modern/src/post/grading.rs
+  h_d26e211304196f 9-10,40
+tools/client910/crates/rs910-render-modern/src/post/mod.rs
+  h_d26e211304196f 77-78,85,101-102,107,111
+tools/client910/crates/rs910-render-modern/src/settings.rs
+  h_d26e211304196f 9-10,98
+tools/client910/crates/rs910-render-modern/src/shadows/mod.rs
+  h_d26e211304196f 81,83
+tools/client910/crates/rs910-render-modern/src/sprites/billboards.rs
+  h_d26e211304196f 1-4,6,16,30-31,34-36,97,107,113,189-190
+tools/client910/crates/rs910-render-modern/src/sprites/mod.rs
+  h_d26e211304196f 2
+tools/client910/crates/rs910-render-modern/src/sprites/particles.rs
+  h_d26e211304196f 1-2,4,6-13,15,17-19,25-28,35-37,42,51-53,70
+tools/client910/crates/rs910-render-modern/src/terrain/mod.rs
+  h_d26e211304196f 245
+tools/client910/crates/rs910-scene/src/draw.rs
+  h_d26e211304196f 1248,1466
+tools/client910/crates/rs910-scene/src/floor_uniforms.rs
+  h_d26e211304196f 3-7
+tools/client910/crates/rs910-scene/src/interface_model.rs
+  h_d26e211304196f 9-11
+tools/client910/crates/rs910-scene/src/lib.rs
+  h_d26e211304196f 4-5,27,30-31,79-80
+tools/client910/crates/rs910-scene/src/particle_quads.rs
+  h_d26e211304196f 1-8,10,12-20,22-30,32-42,44-54,56-66,68-72,74-79,81-87,89-99,102-110,113-125,127-128,130-133,135-137,139,141-152,154-158,160-164,167,169-173,175-192,194,197-205,207-214,218-221,223-226,228-270,272-283,287-357,359,361-363
+tools/client910/crates/rs910-scene/src/player_bodies.rs
+  h_d26e211304196f 1-5,32,47,50,57,60,62,64,147,156,171,183,247,327,337-338,364,367-371,403,406,409-415,417-420,431,479,671-689
+tools/client910/crates/rs910-scene/src/player_draw.rs
+  h_d26e211304196f 3-5,10
+tools/client910/crates/rs910-scene/src/scene_debug_flags.rs
+  h_d26e211304196f 23-25,48
+tools/client910/crates/rs910-scene/src/scene_snapshot.rs
+  h_d26e211304196f 28,30-32,36,44,57-58,67,78-79,86-88,95-96,112,123
+tools/client910/crates/rs910-scene/src/sky_frame.rs
+  h_d26e211304196f 2-3,7-8
+tools/client910/crates/rs910-scene/src/skybox.rs
+  h_d26e211304196f 184-185
+tools/client910/crates/rs910-toolkit/src/capability.rs
+  h_d26e211304196f 10-11,13-15
+tools/client910/crates/rs910-toolkit/src/lib.rs
+  h_d26e211304196f 39,42,75,77,79,81
+tools/client910/crates/rs910-ui/src/ui_backend.rs
+  h_d26e211304196f 1354
+tools/client910/src/active_toolkit.rs
+  h_d26e211304196f 2-5,7-15,17-18,20-21,23-26,72-73,76-77,79,86-89,95,100,102-103,106,108,127,137-139,141,302-303,359,389-391,396,402,435,455,558,568,600,603-604,631-632,644-648,656,666-667,689-691,697-699,703-706,708-714,716-721,732,746,749-751,772-774,777-779,781,830-832,848,892,916,921-922,925-926,928-931,988-989,1006,1027,1030,1032
+tools/client910/src/active_toolkit/render_tests.rs
+  h_d26e211304196f 32,165-166,446,449,459,512,521,526,545,559,566,577,584-585,593
+tools/client910/src/app.rs
+  h_d26e211304196f 155,228-230,449,532,572,649,868
+tools/client910/src/app/device_recovery.rs
+  h_d26e211304196f 6,19,37-39,85,98-99,104,112
+tools/client910/src/app/entity_renderer.rs
+  h_d26e211304196f 57,212,214-239,241
+tools/client910/src/app/environment.rs
+  h_d26e211304196f 224,230-231
+tools/client910/src/app/mainloop.rs
+  h_d26e211304196f 277,284
+tools/client910/src/app/particle_host.rs
+  h_d26e211304196f 4,19-20,355,432,526
+tools/client910/src/app/redraw.rs
+  h_d26e211304196f 31-32,65,384,458,482-492,606,648-649,663-664,732
+tools/client910/src/app/scene_host.rs
+  h_d26e211304196f 1,4-5,13,38-39,160-200,205-212,214,217-226,239-245,263,449,496-499,514,538,548-551,562,581,607,668,837,921,935-937,1164,1252-1254,1257-1263,1441,1475
+tools/client910/src/app/session_controller.rs
+  h_d26e211304196f 450-454
+tools/client910/src/app/session_core.rs
+  h_d26e211304196f 104
+tools/client910/src/app/startup.rs
+  h_d26e211304196f 656,669,715,741,762,793,834
+tools/client910/src/app_loading.rs
+  h_d26e211304196f 758-760
+tools/perf/README.md
+  h_d26e211304196f 29
+tools/perf/instrument.py
+  h_d26e211304196f 254,257-267
+tools/perf/online.sh
+  h_d26e211304196f 13-14
+tools/perf/online_session.py
+  h_d26e211304196f 147
+tools/perf/views.sh
+  h_d26e211304196f 12-13,40
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "971661af4d3ca4e436defb418d1a8b79d1c8b2d1",
+  "prompts": {},
+  "humans": {
+    "h_d26e211304196f": {
+      "author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
