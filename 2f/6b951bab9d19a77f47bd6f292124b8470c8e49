@@ -1,0 +1,1109 @@
+LICENSE
+  s_bf99a93e97ab76::t_1360fda255887a 1-22
+NOTICE
+  s_41fcdb93953164::t_2cbac204dbceae 1-51
+docs/cache.md
+  s_41fcdb93953164::t_bb36afe5ca1596 1-32
+revisions/910/protocol/client.tsv
+  s_bf99a93e97ab76::t_64f171fc36996a 1-129
+revisions/910/protocol/login.tsv
+  s_bf99a93e97ab76::t_3a0eceaee7f5bb 1-17
+revisions/910/protocol/server.tsv
+  s_bf99a93e97ab76::t_eb3c7dc80a57e4 1-200
+revisions/910/symbols/dbrow.sym
+  s_01f4a6969ae96f::t_3e6c5fb2d0de3a 1-7
+revisions/910/symbols/dbtable.sym
+  s_bf99a93e97ab76::t_b6abf39be7c21c 1-3
+revisions/910/symbols/interface.sym
+  s_01f4a6969ae96f::t_ed96e2f7fd0e50 1-157
+revisions/910/symbols/inv.sym
+  s_01f4a6969ae96f::t_932f6c639248a3 1-20
+revisions/910/symbols/loc.sym
+  s_01f4a6969ae96f::t_01d429211968fb 1-347
+revisions/910/symbols/location.sym
+  s_01f4a6969ae96f::t_a6113e141b02fe 1-442
+revisions/910/symbols/npc.sym
+  s_01f4a6969ae96f::t_6b9a82f660aeb3 1-194
+revisions/910/symbols/obj.sym
+  s_41fcdb93953164::t_a4e34b7044be69 1-532
+revisions/910/symbols/quest.sym
+  s_01f4a6969ae96f::t_f1692ee7049aab 1-18
+revisions/910/symbols/script.sym
+  s_f14820c7533d54::t_f0a1ed5953ccfc 1-65
+revisions/910/symbols/struct.sym
+  s_01f4a6969ae96f::t_4a584c5fd6905c 1-92
+revisions/910/symbols/varc.sym
+  s_f14820c7533d54::t_f80004232d38bd 1-90
+revisions/910/symbols/varp.sym
+  s_01f4a6969ae96f::t_26b9b2d8862e1d 1-511
+rust-toolchain.toml
+  s_bf99a93e97ab76::t_c196d335aa29ec 1-8
+tools/Cargo.lock
+  s_b924ff932db79a::t_98f622df9904a7 1-3523
+tools/client910/crates/rs910-audio/src/audio_api.rs
+  s_bf99a93e97ab76::t_b2955625fda87e 1-973
+tools/client910/crates/rs910-audio/src/audio_stream.rs
+  s_bf99a93e97ab76::t_0bebd19fe97ad4 1-667
+tools/client910/crates/rs910-audio/src/audio_voice.rs
+  s_bf99a93e97ab76::t_61725f08ad3999 1-632
+tools/client910/crates/rs910-audio/src/audio_vorbis/block.rs
+  s_bf99a93e97ab76::t_362e64cd4bf298 1-302
+tools/client910/crates/rs910-audio/src/audio_vorbis/codebook.rs
+  s_bf99a93e97ab76::t_ab95be42c02a84 1-340
+tools/client910/crates/rs910-audio/src/audio_vorbis/decoder.rs
+  s_bf99a93e97ab76::t_67c90e1b2be8f8 1-665
+tools/client910/crates/rs910-audio/src/audio_vorbis/floor.rs
+  s_bf99a93e97ab76::t_f77be7ca59faa3 1-365
+tools/client910/crates/rs910-audio/src/audio_vorbis/imdct.rs
+  s_bf99a93e97ab76::t_e4777e67d42f5a 1-206
+tools/client910/crates/rs910-audio/src/audio_vorbis/mapping.rs
+  s_bf99a93e97ab76::t_fd048464e786c9 1-69
+tools/client910/crates/rs910-audio/src/audio_vorbis/mod.rs
+  s_bf99a93e97ab76::t_736f6833e609ab 1-92
+tools/client910/crates/rs910-audio/src/audio_vorbis/residue.rs
+  s_bf99a93e97ab76::t_df62c4c1fb18d6 1-180
+tools/client910/crates/rs910-audio/src/audio_vorbis/setup.rs
+  s_bf99a93e97ab76::t_72e5a0dde0131c 1-165
+tools/client910/crates/rs910-audio/src/lib.rs
+  s_bf99a93e97ab76::t_de0ad03ce3fb56 1-32
+tools/client910/crates/rs910-client/src/client_core.rs
+  s_3f4b5347620927::t_3eb2663612ed24 1-61
+tools/client910/crates/rs910-client/src/client_core/effects.rs
+  s_bf99a93e97ab76::t_34bd46e8a59ded 1-114
+tools/client910/crates/rs910-client/src/client_core/environment.rs
+  s_bf99a93e97ab76::t_fb163882002ef5 1-380
+tools/client910/crates/rs910-client/src/client_core/persistence.rs
+  s_bf99a93e97ab76::t_b541da8e48ac88 1-143
+tools/client910/crates/rs910-client/src/client_core/session_io.rs
+  s_bf99a93e97ab76::t_95d48a86cfd8ef 1-50
+tools/client910/crates/rs910-client/src/client_core/session_slot.rs
+  s_bf99a93e97ab76::t_23dd220de2bd80 1-30
+tools/client910/crates/rs910-client/src/client_debug_flags.rs
+  s_f493535ac28c9e::t_34b99d06ae3d42 1-72
+tools/client910/crates/rs910-client/src/lib.rs
+  s_bf99a93e97ab76::t_5ee26b071a8a03 1-60
+tools/client910/crates/rs910-client/src/login_worker.rs
+  s_bf99a93e97ab76::t_bfdf2eb5975357 1-251
+tools/client910/crates/rs910-client/src/net.rs
+  s_bf99a93e97ab76::t_07b015ede20820 1-842
+tools/client910/crates/rs910-client/src/net/login_packets.rs
+  s_bf99a93e97ab76::t_63be8b8eea93db 1-626
+tools/client910/crates/rs910-client/src/net/tests/network_packets.rs
+  s_bf99a93e97ab76::t_aaee1e09857709 1-182
+tools/client910/crates/rs910-client/src/session/client_debug_packet_tests.rs
+  s_bf99a93e97ab76::t_a48e4cbc295220 1-107
+tools/client910/crates/rs910-client/src/session_record.rs
+  s_3f4b5347620927::t_98c13e95505f39 1-246
+tools/client910/crates/rs910-client/src/toolkit_caps.rs
+  s_bf99a93e97ab76::t_fb13b361a18e00 1-14
+tools/client910/crates/rs910-client/tests/phase-g/session-checks.rs
+  s_bf99a93e97ab76::t_3062b58f4ff599 1-99
+tools/client910/crates/rs910-config/src/animation_curve.rs
+  s_bf99a93e97ab76::t_04f31f03401064 1-399
+tools/client910/crates/rs910-config/src/animation_sequences.rs
+  s_c202351b3d1826::t_4a195872701b5f 1-39
+tools/client910/crates/rs910-config/src/client_options.rs
+  s_bf99a93e97ab76::t_46e8c90920563a 1-1326
+tools/client910/crates/rs910-config/src/client_options_codec.rs
+  s_bf99a93e97ab76::t_c142dd6afbc285 1-335
+tools/client910/crates/rs910-config/src/client_options_oracle.rs
+  s_bf99a93e97ab76::t_dd81e1426a2e94 1-122
+tools/client910/crates/rs910-config/src/client_options_presets.rs
+  s_bf99a93e97ab76::t_b3673bc4f59ff3 1-163
+tools/client910/crates/rs910-config/src/config.rs
+  s_c202351b3d1826::t_95098a26ac6649 1-183
+tools/client910/crates/rs910-config/src/config/inv.rs
+  s_bf99a93e97ab76::t_1262f33e236ba6 1-100
+tools/client910/crates/rs910-config/src/config/loc.rs
+  s_c202351b3d1826::t_f4c259b96cb31f 1-765
+tools/client910/crates/rs910-config/src/config/members_tests.rs
+  s_bf99a93e97ab76::t_e12ec2c93a1cf2 1-100
+tools/client910/crates/rs910-config/src/config/npc.rs
+  s_c202351b3d1826::t_1f9bca942d0101 1-610
+tools/client910/crates/rs910-config/src/config/obj.rs
+  s_c202351b3d1826::t_9941a4becf9840 1-510
+tools/client910/crates/rs910-config/src/config/seq.rs
+  s_c202351b3d1826::t_6dbeca3f42951b 1-185
+tools/client910/crates/rs910-config/src/cutscene_file.rs
+  s_bf99a93e97ab76::t_d50147b94eb62b 1-788
+tools/client910/crates/rs910-config/src/font_atlas.rs
+  s_bf99a93e97ab76::t_c6d8b913dd09b2 1-89
+tools/client910/crates/rs910-config/src/loc_sound.rs
+  s_bf99a93e97ab76::t_30ba7ad855e4f4 1-153
+tools/client910/crates/rs910-config/src/login_configs.rs
+  s_c202351b3d1826::t_8602608c886d23 1-76
+tools/client910/crates/rs910-config/src/npc_customisation.rs
+  s_bf99a93e97ab76::t_d59608c964650d 1-75
+tools/client910/crates/rs910-config/src/nxt/map_environment.rs
+  s_bf99a93e97ab76::t_896474ad5c100e 1-172
+tools/client910/crates/rs910-config/src/nxt/map_lights.rs
+  s_bf99a93e97ab76::t_af50ef060ff229 1-103
+tools/client910/crates/rs910-config/src/nxt/map_terrain.rs
+  s_bf99a93e97ab76::t_b0dc17923a9449 1-161
+tools/client910/crates/rs910-config/src/nxt/map_water.rs
+  s_bf99a93e97ab76::t_7b43d72608ad92 1-91
+tools/client910/crates/rs910-config/src/nxt/material.rs
+  s_bf99a93e97ab76::t_a97c3bddeaf520 1-244
+tools/client910/crates/rs910-config/src/nxt/mod.rs
+  s_bf99a93e97ab76::t_8aba9af18ca73b 1-180
+tools/client910/crates/rs910-config/src/nxt/model_rt7.rs
+  s_bf99a93e97ab76::t_a593f90b3e7b39 1-344
+tools/client910/crates/rs910-config/src/nxt/texture_header.rs
+  s_bf99a93e97ab76::t_f0a0996661870b 1-367
+tools/client910/crates/rs910-config/src/opcode_table.rs
+  s_bf99a93e97ab76::t_9f5ad5b9655ee2 1-423
+tools/client910/crates/rs910-config/src/scenery_varbits.rs
+  s_bf99a93e97ab76::t_6917e074111ed1 1-104
+tools/client910/crates/rs910-config/src/skybox_types.rs
+  s_bf99a93e97ab76::t_c6244f85fbc311 1-284
+tools/client910/crates/rs910-config/src/sprite_data.rs
+  s_bf99a93e97ab76::t_152a748c7e2242 1-552
+tools/client910/crates/rs910-config/src/texture.rs
+  s_b924ff932db79a::t_4227164f806a1d 1-2092
+tools/client910/crates/rs910-config/src/types910/animation_state.rs
+  s_bf99a93e97ab76::t_3b0990820af7b5 1-18
+tools/client910/crates/rs910-config/src/types910/appearance.rs
+  s_bf99a93e97ab76::t_1c6c9e681fd078 1-23
+tools/client910/crates/rs910-config/src/types910/bas_types.rs
+  s_bf99a93e97ab76::t_2f5505a51b3dd5 1-286
+tools/client910/crates/rs910-config/src/types910/combat.rs
+  s_bf99a93e97ab76::t_b62bc98857f0c6 1-11
+tools/client910/crates/rs910-config/src/types910/combat_types.rs
+  s_bf99a93e97ab76::t_11981d745d05c5 1-256
+tools/client910/crates/rs910-config/src/types910/config_types.rs
+  s_bf99a93e97ab76::t_05c87072d5909c 1-690
+tools/client910/crates/rs910-config/src/types910/customisation.rs
+  s_bf99a93e97ab76::t_81f7712b312298 1-12
+tools/client910/crates/rs910-config/src/types910/defaults.rs
+  s_bf99a93e97ab76::t_846eeb164284b8 1-486
+tools/client910/crates/rs910-config/src/types910/effect_types.rs
+  s_bf99a93e97ab76::t_67ee423c71b07a 1-161
+tools/client910/crates/rs910-config/src/types910/error.rs
+  s_bf99a93e97ab76::t_82fa72ef89c107 1-23
+tools/client910/crates/rs910-config/src/types910/idk_types.rs
+  s_bf99a93e97ab76::t_4b71f7dcd183c7 1-70
+tools/client910/crates/rs910-config/src/types910/mod.rs
+  s_bf99a93e97ab76::t_22667ad9354f78 1-41
+tools/client910/crates/rs910-config/src/types910/movement.rs
+  s_bf99a93e97ab76::t_a46b1efa161129 1-29
+tools/client910/crates/rs910-config/src/types910/npc.rs
+  s_bf99a93e97ab76::t_5d685fdabdd925 1-19
+tools/client910/crates/rs910-config/src/types910/npc_custom.rs
+  s_bf99a93e97ab76::t_0564b2ab93fd1a 1-8
+tools/client910/crates/rs910-config/src/types910/pack_defaults.rs
+  s_bf99a93e97ab76::t_f0c13c7732d50f 1-39
+tools/client910/crates/rs910-config/src/types910/pack_types.rs
+  s_c202351b3d1826::t_b81146993f9ca8 1-127
+tools/client910/crates/rs910-config/src/types910/script_types.rs
+  s_bf99a93e97ab76::t_1a2d6fcfa2e04f 1-16
+tools/client910/crates/rs910-config/src/types910/sequence_types.rs
+  s_bf99a93e97ab76::t_e0be5fe1e6d661 1-326
+tools/client910/crates/rs910-config/src/types910/titles.rs
+  s_bf99a93e97ab76::t_bfe470b670a7de 1-169
+tools/client910/crates/rs910-config/src/types910/varbits.rs
+  s_bf99a93e97ab76::t_17517abddc4961 1-192
+tools/client910/crates/rs910-config/src/types910/variable_types.rs
+  s_bf99a93e97ab76::t_acbfd2f7955da4 1-142
+tools/client910/crates/rs910-config/src/types910/variables.rs
+  s_bf99a93e97ab76::t_322dcbf6365321 1-10
+tools/client910/crates/rs910-config/src/types910/zone.rs
+  s_bf99a93e97ab76::t_4d0ce31d90c4c4 1-6
+tools/client910/crates/rs910-config/src/ui_configs.rs
+  s_bf99a93e97ab76::t_8ba1970e7acbb1 1-413
+tools/client910/crates/rs910-config/src/ui_legacy_types.rs
+  s_bf99a93e97ab76::t_bee7410ede558f 1-195
+tools/client910/crates/rs910-config/src/utf16_text.rs
+  s_bf99a93e97ab76::t_443e56d7ced615 1-5
+tools/client910/crates/rs910-core/src/animation_matrix.rs
+  s_bf99a93e97ab76::t_3f23a3032600c0 1-215
+tools/client910/crates/rs910-core/src/animation_random.rs
+  s_bf99a93e97ab76::t_074470c96c53bf 1-33
+tools/client910/crates/rs910-core/src/client_state.rs
+  s_bf99a93e97ab76::t_ce52e0d204db7a 1-49
+tools/client910/crates/rs910-core/src/log_repeat.rs
+  s_bf99a93e97ab76::t_c3d9bb799dce72 1-33
+tools/client910/crates/rs910-core/src/png_out.rs
+  s_bf99a93e97ab76::t_817942ac6cf77c 1-67
+tools/client910/crates/rs910-core/src/texts_table.rs
+  s_bf99a93e97ab76::t_ff40f460429239 1-360
+tools/client910/crates/rs910-core/src/ui_text_compare.rs
+  s_bf99a93e97ab76::t_3784b42be8b079 1-149
+tools/client910/crates/rs910-core/src/vector_math.rs
+  s_bf99a93e97ab76::t_1f1d39ad269597 1-290
+tools/client910/crates/rs910-core/src/whirlpool.rs
+  s_bf99a93e97ab76::t_9518a2f24f809e 1-241
+tools/client910/crates/rs910-far-scene/src/far_debug_flags.rs
+  s_bf99a93e97ab76::t_da4ce5e77b771e 1-24
+tools/client910/crates/rs910-game/src/animation_playback.rs
+  s_bf99a93e97ab76::t_5769b74aa3a12f 1-248
+tools/client910/crates/rs910-game/src/camera_follow.rs
+  s_bf99a93e97ab76::t_bc55db930433c0 1-248
+tools/client910/crates/rs910-game/src/client_vars.rs
+  s_bf99a93e97ab76::t_dbe2ab3203c0ed 1-113
+tools/client910/crates/rs910-game/src/cutscene.rs
+  s_bf99a93e97ab76::t_f3b39c0ef9ce09 1-1404
+tools/client910/crates/rs910-game/src/entities910/appearance.rs
+  s_bf99a93e97ab76::t_a9b3162b2ddff9 1-106
+tools/client910/crates/rs910-game/src/entities910/chat.rs
+  s_bf99a93e97ab76::t_3f761bbb52c3bf 1-28
+tools/client910/crates/rs910-game/src/entities910/combat.rs
+  s_bf99a93e97ab76::t_e1237b6c1a16c6 1-21
+tools/client910/crates/rs910-game/src/entities910/movement.rs
+  s_bf99a93e97ab76::t_7ace6e6b0da1dd 1-455
+tools/client910/crates/rs910-game/src/entities910/npc_custom.rs
+  s_bf99a93e97ab76::t_024cf79aacb254 1-11
+tools/client910/crates/rs910-game/src/entities910/scene_state.rs
+  s_bf99a93e97ab76::t_4f08265318c625 1-33
+tools/client910/crates/rs910-game/src/entities910/transient.rs
+  s_bf99a93e97ab76::t_5a252a86c0355b 1-114
+tools/client910/crates/rs910-game/src/entities910/varps.rs
+  s_bf99a93e97ab76::t_9f2b2cf05ebf8f 1-149
+tools/client910/crates/rs910-game/src/entities910/walk_animation.rs
+  s_bf99a93e97ab76::t_c278e9997297ca 1-11
+tools/client910/crates/rs910-game/src/game_debug_flags.rs
+  s_bf99a93e97ab76::t_19b31c54ffaa65 1-38
+tools/client910/crates/rs910-game/src/game_runtime.rs
+  s_c202351b3d1826::t_9952d6936dd35f 1-735
+tools/client910/crates/rs910-game/src/lib.rs
+  s_bf99a93e97ab76::t_00fee4ae4650cd 1-49
+tools/client910/crates/rs910-game/src/protocol910/animation.rs
+  s_bf99a93e97ab76::t_cdfdb009a86504 1-83
+tools/client910/crates/rs910-game/src/protocol910/appearance.rs
+  s_bf99a93e97ab76::t_9da0a3e90a08da 1-334
+tools/client910/crates/rs910-game/src/protocol910/chat.rs
+  s_bf99a93e97ab76::t_335b7712ab40b8 1-34
+tools/client910/crates/rs910-game/src/protocol910/combat.rs
+  s_bf99a93e97ab76::t_f6797ed89f9340 1-217
+tools/client910/crates/rs910-game/src/protocol910/live.rs
+  s_bf99a93e97ab76::t_2b8f3baffce384 1-634
+tools/client910/crates/rs910-game/src/protocol910/masks.rs
+  s_bf99a93e97ab76::t_1c49496afd1c7a 1-72
+tools/client910/crates/rs910-game/src/protocol910/mod.rs
+  s_bf99a93e97ab76::t_d8abef3ebc1ab9 1-812
+tools/client910/crates/rs910-game/src/protocol910/npc.rs
+  s_bf99a93e97ab76::t_6e6424c7a273ea 1-574
+tools/client910/crates/rs910-game/src/protocol910/npc_custom.rs
+  s_bf99a93e97ab76::t_14ed2b4786b153 1-85
+tools/client910/crates/rs910-game/src/protocol910/pack_animation.rs
+  s_c202351b3d1826::t_50f76d1bc32fb5 1-48
+tools/client910/crates/rs910-game/src/protocol910/pack_appearance.rs
+  s_c202351b3d1826::t_d279dc08425e60 1-79
+tools/client910/crates/rs910-game/src/protocol910/pack_bas.rs
+  s_bf99a93e97ab76::t_c04c7edec042c8 1-17
+tools/client910/crates/rs910-game/src/protocol910/pack_combat.rs
+  s_bf99a93e97ab76::t_705fb0aacc66ee 1-59
+tools/client910/crates/rs910-game/src/protocol910/pack_locs.rs
+  s_c202351b3d1826::t_b65a704d55a45b 1-19
+tools/client910/crates/rs910-game/src/protocol910/pack_runtime.rs
+  s_41fcdb93953164::t_84f9670040a0c1 1-463
+tools/client910/crates/rs910-game/src/protocol910/pack_terrain.rs
+  s_bf99a93e97ab76::t_f1ca903371f7c0 1-185
+tools/client910/crates/rs910-game/src/protocol910/pack_variables.rs
+  s_bf99a93e97ab76::t_618905b465a4d4 1-56
+tools/client910/crates/rs910-game/src/protocol910/rebuild_state.rs
+  s_3f4b5347620927::t_69fdfeeadec5ca 1-540
+tools/client910/crates/rs910-game/src/protocol910/terrain.rs
+  s_3f4b5347620927::t_5be8f7439f6184 1-502
+tools/client910/crates/rs910-game/src/protocol910/transient.rs
+  s_bf99a93e97ab76::t_22fbf3b531db4c 1-351
+tools/client910/crates/rs910-game/src/protocol910/variables.rs
+  s_bf99a93e97ab76::t_71b33a0293be6d 1-60
+tools/client910/crates/rs910-game/src/protocol910/walk_animation.rs
+  s_bf99a93e97ab76::t_5b89ac403434d1 1-141
+tools/client910/crates/rs910-game/src/protocol910/zone.rs
+  s_3f4b5347620927::t_aecf7b3edd1a5e 1-162
+tools/client910/crates/rs910-game/src/protocol910/zone_state.rs
+  s_3f4b5347620927::t_1c95713ba8a851 1-666
+tools/client910/crates/rs910-game/src/screen_fade.rs
+  s_bf99a93e97ab76::t_1a99149e61887e 1-28
+tools/client910/crates/rs910-game/src/sequence_sound.rs
+  s_bf99a93e97ab76::t_6195f4fd401d24 1-240
+tools/client910/crates/rs910-game/src/ui_changes.rs
+  s_bf99a93e97ab76::t_e006e851b1e53a 1-86
+tools/client910/crates/rs910-gpu-device/src/client_watch_gpu.rs
+  s_bf99a93e97ab76::t_3ee52fe143eecc 1-21
+tools/client910/crates/rs910-gpu-device/src/health.rs
+  s_bf99a93e97ab76::t_909d9f7d98e43f 1-179
+tools/client910/crates/rs910-gpu-device/src/test_support.rs
+  s_bf99a93e97ab76::t_f22b8b12ab028a 1-16
+tools/client910/crates/rs910-gpu-device/src/uploads.rs
+  s_3f4b5347620927::t_bbeb6d5e42ca14 1-275
+tools/client910/crates/rs910-js5/src/js5_fetch.rs
+  s_bf99a93e97ab76::t_975a449e00f36a 1-25
+tools/client910/crates/rs910-js5/src/js5net/archive.rs
+  s_bf99a93e97ab76::t_7ae73e157f0d5d 1-344
+tools/client910/crates/rs910-js5/src/js5net/disk.rs
+  s_bf99a93e97ab76::t_b389fe4fe1e07f 1-226
+tools/client910/crates/rs910-js5/src/js5net/http.rs
+  s_bf99a93e97ab76::t_c9b2f3812238e1 1-289
+tools/client910/crates/rs910-js5/src/js5net/provider.rs
+  s_bf99a93e97ab76::t_ac58ace4ed98d8 1-665
+tools/client910/crates/rs910-js5/src/js5net/requests.rs
+  s_bf99a93e97ab76::t_5592489ad95b3e 1-155
+tools/client910/crates/rs910-js5/src/js5net/resources.rs
+  s_bf99a93e97ab76::t_074556c1161566 1-117
+tools/client910/crates/rs910-js5/src/js5net/tcp.rs
+  s_bf99a93e97ab76::t_000d39cff2091d 1-529
+tools/client910/crates/rs910-js5/src/lib.rs
+  s_bf99a93e97ab76::t_5b8c464ae1a1bc 1-21
+tools/client910/crates/rs910-js5/src/test_support.rs
+  s_bf99a93e97ab76::t_1f7cdd6a4f4ec3 1-34
+tools/client910/crates/rs910-model/src/animation_skeletal.rs
+  s_bf99a93e97ab76::t_92d6dcb0799f26 1-185
+tools/client910/crates/rs910-model/src/font_layout.rs
+  s_bf99a93e97ab76::t_06d1c77e497099 1-975
+tools/client910/crates/rs910-model/src/gpumodel/animation.rs
+  s_bf99a93e97ab76::t_2f8e225814bbd7 1-560
+tools/client910/crates/rs910-model/src/gpumodel/attachments.rs
+  s_bf99a93e97ab76::t_3fd6026848f105 1-111
+tools/client910/crates/rs910-model/src/gpumodel/bounds.rs
+  s_bf99a93e97ab76::t_a7029943e86600 1-148
+tools/client910/crates/rs910-model/src/gpumodel/build.rs
+  s_bf99a93e97ab76::t_b776b1a5a91545 1-684
+tools/client910/crates/rs910-model/src/gpumodel/colour.rs
+  s_bf99a93e97ab76::t_cebc32e20a0cb4 1-147
+tools/client910/crates/rs910-model/src/gpumodel/normals.rs
+  s_bf99a93e97ab76::t_5ac632ea88a709 1-139
+tools/client910/crates/rs910-model/src/gpumodel/shadow.rs
+  s_bf99a93e97ab76::t_096f7bad94d63e 1-84
+tools/client910/crates/rs910-model/src/gpumodel/sort.rs
+  s_bf99a93e97ab76::t_9dc15414c88ed5 1-41
+tools/client910/crates/rs910-model/src/gpumodel/streams.rs
+  s_bf99a93e97ab76::t_f10e9fbb09384b 1-124
+tools/client910/crates/rs910-model/src/gpumodel/texture_mapping.rs
+  s_bf99a93e97ab76::t_0e8002ee01f018 1-559
+tools/client910/crates/rs910-model/src/gpumodel/transform.rs
+  s_bf99a93e97ab76::t_2d322863c2c621 1-432
+tools/client910/crates/rs910-model/src/icon_raster/attributes.rs
+  s_bf99a93e97ab76::t_aca0184f4d21fd 1-217
+tools/client910/crates/rs910-model/src/icon_raster/fill.rs
+  s_bf99a93e97ab76::t_07e55f1798f309 1-184
+tools/client910/crates/rs910-model/src/icon_raster/scan.rs
+  s_bf99a93e97ab76::t_76e00b4bdc3882 1-229
+tools/client910/crates/rs910-model/src/icon_raster/textured.rs
+  s_bf99a93e97ab76::t_6bd82a06c4316b 1-125
+tools/client910/crates/rs910-model/src/material.rs
+  s_bf99a93e97ab76::t_d0a9c3918f2edb 1-225
+tools/client910/crates/rs910-model/src/mesh_billboards.rs
+  s_bf99a93e97ab76::t_ab754a680aae4e 1-94
+tools/client910/crates/rs910-model/src/sprite.rs
+  s_bf99a93e97ab76::t_2ab6092f779344 1-64
+tools/client910/crates/rs910-protocol/src/client_command.rs
+  s_bf99a93e97ab76::t_53363ba941f7bb 1-38
+tools/client910/crates/rs910-protocol/src/lib.rs
+  s_bf99a93e97ab76::t_4a827501b12239 1-23
+tools/client910/crates/rs910-protocol/src/payload_reader.rs
+  s_bf99a93e97ab76::t_b8dab814b8104f 1-193
+tools/client910/crates/rs910-protocol/src/proto/tables.rs
+  s_bf99a93e97ab76::t_0caa20937d14e7 1-1068
+tools/client910/crates/rs910-protocol/src/reflection_platform_packages.txt
+  s_bf99a93e97ab76::t_f4fbd97dca85a0 1-5
+tools/client910/crates/rs910-protocol/src/server_prot/audio_packets.rs
+  s_bf99a93e97ab76::t_cdba64dbe71acd 1-239
+tools/client910/crates/rs910-protocol/src/server_prot/environment.rs
+  s_bf99a93e97ab76::t_c4b5784e919432 1-152
+tools/client910/crates/rs910-protocol/src/server_prot/interface_packets.rs
+  s_bf99a93e97ab76::t_90259ccaacad7a 1-193
+tools/client910/crates/rs910-protocol/src/server_prot/rebuild.rs
+  s_bf99a93e97ab76::t_5fa28bd081945a 1-118
+tools/client910/crates/rs910-protocol/src/tiny_cipher.rs
+  s_bf99a93e97ab76::t_5107f68cb30f31 1-104
+tools/client910/crates/rs910-render-gpu/src/console_render.rs
+  s_3f4b5347620927::t_16b6ec2990b266 1-298
+tools/client910/crates/rs910-render-gpu/src/floor_render/material_bindings.rs
+  s_bf99a93e97ab76::t_877bb382cfdc62 1-241
+tools/client910/crates/rs910-render-gpu/src/floor_render/textures.rs
+  s_bf99a93e97ab76::t_5c18bc86423ff7 1-306
+tools/client910/crates/rs910-render-gpu/src/render/ui.rs
+  s_3f4b5347620927::t_71556a4b737f2d 1-449
+tools/client910/crates/rs910-render-gpu/src/scene_target.rs
+  s_bf99a93e97ab76::t_373e743cea0456 1-272
+tools/client910/crates/rs910-render-gpu/src/sprite_draw_gpu.rs
+  s_bf99a93e97ab76::t_bf101303f0f0e7 1-54
+tools/client910/crates/rs910-render-gpu/src/text_render_gpu.rs
+  s_41fcdb93953164::t_cb8aad71ec6e2f 1-546
+tools/client910/crates/rs910-render-gpu/src/ui_paint_gpu.rs
+  s_41fcdb93953164::t_ed6b8073dbdd10 1-356
+tools/client910/crates/rs910-render-gpu/src/window_canvas.rs
+  s_bf99a93e97ab76::t_757664e123146f 1-216
+tools/client910/crates/rs910-render-modern/src/frame/gpu/planar_reflection.rs
+  s_b924ff932db79a::t_9f561a5d99249a 1-353
+tools/client910/crates/rs910-render-modern/src/frame/gpu/terrain.rs
+  s_b924ff932db79a::t_e52b82b3f348c9 1-847
+tools/client910/crates/rs910-render-modern/src/frame/gpu/water.rs
+  s_b924ff932db79a::t_9dc30abd1468a0 1-1624
+tools/client910/crates/rs910-render-modern/src/lighting/light_probes.wgsl
+  s_b924ff932db79a::t_db346497eeb13f 1-248
+tools/client910/crates/rs910-render-modern/src/lighting/point_lights.wgsl
+  s_b924ff932db79a::t_b541c31b7077bc 1-109
+tools/client910/crates/rs910-render-modern/src/models/shading.wgsl
+  s_b924ff932db79a::t_3fb630a1030965 1-93
+tools/client910/crates/rs910-render-modern/src/terrain/terrain.wgsl
+  s_b924ff932db79a::t_90e00a6c4436f4 1-265
+tools/client910/crates/rs910-scene/fixtures/map-npcs.tsv
+  s_bf99a93e97ab76::t_35b0c27bd3f2b2 1-45
+tools/client910/crates/rs910-scene/fixtures/pick-corpus.jsonl
+  s_bf99a93e97ab76::t_feba9b3095dc4e 1-54
+tools/client910/crates/rs910-scene/fixtures/scene-corpus.tsv
+  s_bf99a93e97ab76::t_630466e3c9dfb4 1-161
+tools/client910/crates/rs910-scene/fixtures/sky-decor.tsv
+  s_bf99a93e97ab76::t_ad09456d1b21e5 1-4
+tools/client910/crates/rs910-scene/src/cam2_scene.rs
+  s_bf99a93e97ab76::t_f46b026897568a 1-135
+tools/client910/crates/rs910-scene/src/corpus.rs
+  s_bf99a93e97ab76::t_ad4fb968e71e9b 1-1176
+tools/client910/crates/rs910-scene/src/draw_entity.rs
+  s_bf99a93e97ab76::t_571ab54f443ccd 1-217
+tools/client910/crates/rs910-scene/src/draw_trace.rs
+  s_bf99a93e97ab76::t_b63bfb68391f52 1-111
+tools/client910/crates/rs910-scene/src/dynamic_loc.rs
+  s_bf99a93e97ab76::t_adf8533498e6ed 1-235
+tools/client910/crates/rs910-scene/src/game_scene.rs
+  s_bf99a93e97ab76::t_a48ecba51fb0ea 1-130
+tools/client910/crates/rs910-scene/src/light_animation.rs
+  s_bf99a93e97ab76::t_9e86f293d17b33 1-110
+tools/client910/crates/rs910-scene/src/light_animation_tests.rs
+  s_bf99a93e97ab76::t_11bf5e1356ee44 1-32
+tools/client910/crates/rs910-scene/src/live_scene.rs
+  s_0245afe5a8bab8::t_f1dc358521ca14 1-489
+tools/client910/crates/rs910-scene/src/loctype.rs
+  s_bf99a93e97ab76::t_1813d29b8d32d6 1-651
+tools/client910/crates/rs910-scene/src/map_npcs.rs
+  s_bf99a93e97ab76::t_af2ba26fe3e873 1-172
+tools/client910/crates/rs910-scene/src/maploader/floor_types.rs
+  s_bf99a93e97ab76::t_3ba3e2ba1ecf28 1-201
+tools/client910/crates/rs910-scene/src/maploader/ground.rs
+  s_bf99a93e97ab76::t_5acbb32be298a0 1-649
+tools/client910/crates/rs910-scene/src/maploader/landscape.rs
+  s_bf99a93e97ab76::t_d22401db94f646 1-366
+tools/client910/crates/rs910-scene/src/maploader/shape_tables.rs
+  s_bf99a93e97ab76::t_874274d11ae671 1-354
+tools/client910/crates/rs910-scene/src/maploader/tile_mesh.rs
+  s_bf99a93e97ab76::t_f6cf9067449452 1-777
+tools/client910/crates/rs910-scene/src/minimap.rs
+  s_bf99a93e97ab76::t_9186cd24d51e37 1-2094
+tools/client910/crates/rs910-scene/src/occlusion_raster.rs
+  s_bf99a93e97ab76::t_4f72af6e3c0fd7 1-389
+tools/client910/crates/rs910-scene/src/player_body.rs
+  s_bf99a93e97ab76::t_f20f58c37d152c 1-344
+tools/client910/crates/rs910-scene/src/player_pose.rs
+  s_bf99a93e97ab76::t_ef3f472b9a5cc3 1-228
+tools/client910/crates/rs910-scene/src/player_shadow.rs
+  s_bf99a93e97ab76::t_a68bcccf604522 1-300
+tools/client910/crates/rs910-scene/src/roof.rs
+  s_bf99a93e97ab76::t_a92442212eaec1 1-444
+tools/client910/crates/rs910-scene/src/roof_fixtures.rs
+  s_bf99a93e97ab76::t_0672f589a3c08e 1-455
+tools/client910/crates/rs910-scene/src/scene_player_pick.rs
+  s_bf99a93e97ab76::t_c9a68f98f48f5b 1-500
+tools/client910/crates/rs910-scene/src/sky_decor.rs
+  s_bf99a93e97ab76::t_dd4e9942418b04 1-355
+tools/client910/crates/rs910-scene/src/sky_texture.rs
+  s_bf99a93e97ab76::t_f51bd8493160d8 1-87
+tools/client910/crates/rs910-scene/src/ui_icon_model.rs
+  s_bf99a93e97ab76::t_5e5b5357207340 1-453
+tools/client910/crates/rs910-symbols/src/dbrow.rs
+  s_01f4a6969ae96f::t_5edf2eec765c0c 1-15
+tools/client910/crates/rs910-symbols/src/dbtable.rs
+  s_bf99a93e97ab76::t_e3eb069dece2e5 1-4
+tools/client910/crates/rs910-symbols/src/interface.rs
+  s_01f4a6969ae96f::t_40a2ac3ab46d25 1-315
+tools/client910/crates/rs910-symbols/src/inv.rs
+  s_01f4a6969ae96f::t_17711d8d32e60d 1-41
+tools/client910/crates/rs910-symbols/src/lib.rs
+  s_bf99a93e97ab76::t_13e2da2997d448 1-298
+tools/client910/crates/rs910-symbols/src/loc.rs
+  s_01f4a6969ae96f::t_a2370ce4faf321 1-695
+tools/client910/crates/rs910-symbols/src/location.rs
+  s_01f4a6969ae96f::t_6a2cf9b6e7f411 1-885
+tools/client910/crates/rs910-symbols/src/npc.rs
+  s_01f4a6969ae96f::t_ea074199abc1bc 1-389
+tools/client910/crates/rs910-symbols/src/obj.rs
+  s_41fcdb93953164::t_329abab35f5d8c 1-1065
+tools/client910/crates/rs910-symbols/src/quest.rs
+  s_01f4a6969ae96f::t_c6f2bbaed3fe95 1-37
+tools/client910/crates/rs910-symbols/src/script.rs
+  s_f14820c7533d54::t_7f11b0c6540393 1-131
+tools/client910/crates/rs910-symbols/src/structs.rs
+  s_01f4a6969ae96f::t_8225ed43869988 1-185
+tools/client910/crates/rs910-symbols/src/varc.rs
+  s_f14820c7533d54::t_b0f921345ee62f 1-181
+tools/client910/crates/rs910-symbols/src/varp.rs
+  s_01f4a6969ae96f::t_4d49e985657989 1-1023
+tools/client910/crates/rs910-toolkit/src/compressed_texture_format.rs
+  s_bf99a93e97ab76::t_ac0c5df1d7c8b1 1-11
+tools/client910/crates/rs910-toolkit/src/console_draw.rs
+  s_bf99a93e97ab76::t_02425acc4a7884 1-57
+tools/client910/crates/rs910-toolkit/src/font.rs
+  s_bf99a93e97ab76::t_02fce829b507b4 1-48
+tools/client910/crates/rs910-toolkit/src/game_canvas.rs
+  s_bf99a93e97ab76::t_b18656c7fbcbce 1-45
+tools/client910/crates/rs910-toolkit/src/performance_metric.rs
+  s_bf99a93e97ab76::t_bb466038527bd3 1-140
+tools/client910/crates/rs910-toolkit/src/sprite_draw.rs
+  s_bf99a93e97ab76::t_cec494066866d6 1-343
+tools/client910/crates/rs910-toolkit/src/text_render.rs
+  s_bf99a93e97ab76::t_df450c9fea78fe 1-112
+tools/client910/crates/rs910-toolkit/src/toolkit_debug_flags.rs
+  s_bf99a93e97ab76::t_5315751431e8c3 1-49
+tools/client910/crates/rs910-toolkit/src/ui_output.rs
+  s_bf99a93e97ab76::t_71ea5aed0bc60a 1-47
+tools/client910/crates/rs910-toolkit/src/ui_paint.rs
+  s_bf99a93e97ab76::t_192f6cf88f4e41 1-575
+tools/client910/crates/rs910-ui/fixtures/action-bar-drag-events.json
+  s_3f4b5347620927::t_7a4c54e2da5363 1-84
+tools/client910/crates/rs910-ui/src/bloom_settings_tests.rs
+  s_bf99a93e97ab76::t_ea0fca86bc482d 1-31
+tools/client910/crates/rs910-ui/src/client_game.rs
+  s_c202351b3d1826::t_6571760f574bbc 1-185
+tools/client910/crates/rs910-ui/src/clipboard.rs
+  s_bf99a93e97ab76::t_df5db6825d17e0 1-106
+tools/client910/crates/rs910-ui/src/console.rs
+  s_bf99a93e97ab76::t_76eb239bf5e87d 1-391
+tools/client910/crates/rs910-ui/src/loading/elements.rs
+  s_bf99a93e97ab76::t_0418013bdcacd5 1-639
+tools/client910/crates/rs910-ui/src/loading/images.rs
+  s_bf99a93e97ab76::t_06293e3614fc7d 1-166
+tools/client910/crates/rs910-ui/src/loading/progress_bar.rs
+  s_bf99a93e97ab76::t_af118f78dc0b56 1-86
+tools/client910/crates/rs910-ui/src/loading/resources.rs
+  s_bf99a93e97ab76::t_fd648b3d3fb1ac 1-264
+tools/client910/crates/rs910-ui/src/loading/startup.rs
+  s_bf99a93e97ab76::t_41a27cab7861d8 1-472
+tools/client910/crates/rs910-ui/src/ui_action_bar_drag_tests.rs
+  s_3f4b5347620927::t_963608b0ef6444 1-232
+tools/client910/crates/rs910-ui/src/ui_cache.rs
+  s_bf99a93e97ab76::t_2ff13301030ff2 1-163
+tools/client910/crates/rs910-ui/src/ui_cam2/focus.rs
+  s_bf99a93e97ab76::t_2cfa7f6d87c8a8 1-388
+tools/client910/crates/rs910-ui/src/ui_cam2/free_camera.rs
+  s_bf99a93e97ab76::t_558b8129a18394 1-110
+tools/client910/crates/rs910-ui/src/ui_cam2/legacy.rs
+  s_bf99a93e97ab76::t_6cfd505a74fe56 1-291
+tools/client910/crates/rs910-ui/src/ui_cam2/movement.rs
+  s_bf99a93e97ab76::t_c2bc2d5b11722b 1-369
+tools/client910/crates/rs910-ui/src/ui_cam2/position.rs
+  s_bf99a93e97ab76::t_acb320983e3d07 1-284
+tools/client910/crates/rs910-ui/src/ui_cam2/scene.rs
+  s_bf99a93e97ab76::t_190e0a3f6d9345 1-128
+tools/client910/crates/rs910-ui/src/ui_cam2/spline.rs
+  s_bf99a93e97ab76::t_f7c8d72f41e0bd 1-361
+tools/client910/crates/rs910-ui/src/ui_chat_oracle.rs
+  s_bf99a93e97ab76::t_27752495b74893 1-63
+tools/client910/crates/rs910-ui/src/ui_command_spec/camera_cases.rs
+  s_bf99a93e97ab76::t_2866b5f69b0d35 1-421
+tools/client910/crates/rs910-ui/src/ui_command_spec/component_cases.rs
+  s_bf99a93e97ab76::t_87e9668983754a 1-501
+tools/client910/crates/rs910-ui/src/ui_command_spec/partition.rs
+  s_bf99a93e97ab76::t_124d5c7a01f3b9 1-328
+tools/client910/crates/rs910-ui/src/ui_command_spec/platform_cases.rs
+  s_bf99a93e97ab76::t_1ad45dcde5966a 1-421
+tools/client910/crates/rs910-ui/src/ui_components.rs
+  s_b924ff932db79a::t_48d447b3500a53 1-1037
+tools/client910/crates/rs910-ui/src/ui_cursor.rs
+  s_bf99a93e97ab76::t_ded04cdbc8b720 1-175
+tools/client910/crates/rs910-ui/src/ui_debug_flags.rs
+  s_bf99a93e97ab76::t_bbbbed425b7d52 1-79
+tools/client910/crates/rs910-ui/src/ui_fonts.rs
+  s_bf99a93e97ab76::t_9321cce62fbc8a 1-607
+tools/client910/crates/rs910-ui/src/ui_hook_host.rs
+  s_b924ff932db79a::t_6b00dcb2e9ec62 1-771
+tools/client910/crates/rs910-ui/src/ui_host.rs
+  s_bf99a93e97ab76::t_bd631269760c25 1-106
+tools/client910/crates/rs910-ui/src/ui_icons.rs
+  s_bf99a93e97ab76::t_c2907698aa82a2 1-304
+tools/client910/crates/rs910-ui/src/ui_icons/tests.rs
+  s_bf99a93e97ab76::t_a7acff1298f2d9 1-164
+tools/client910/crates/rs910-ui/src/ui_interaction.rs
+  s_3f4b5347620927::t_50e2e8b84e2881 1-582
+tools/client910/crates/rs910-ui/src/ui_leaf.rs
+  s_bf99a93e97ab76::t_2eb52a242cc5e8 1-570
+tools/client910/crates/rs910-ui/src/ui_menu_input.rs
+  s_bf99a93e97ab76::t_cffab68d0c35d7 1-318
+tools/client910/crates/rs910-ui/src/ui_menu_render.rs
+  s_bf99a93e97ab76::t_750ae79aa30d04 1-265
+tools/client910/crates/rs910-ui/src/ui_model_transform.rs
+  s_bf99a93e97ab76::t_af5522918fb22b 1-142
+tools/client910/crates/rs910-ui/src/ui_obj_queries.rs
+  s_bf99a93e97ab76::t_1d28d27730cc1a 1-205
+tools/client910/crates/rs910-ui/src/ui_player_options_oracle.rs
+  s_bf99a93e97ab76::t_6863386c456118 1-121
+tools/client910/crates/rs910-ui/src/ui_player_state.rs
+  s_bf99a93e97ab76::t_55e9bc07baa735 1-106
+tools/client910/crates/rs910-ui/src/ui_preferences_queries.rs
+  s_bf99a93e97ab76::t_9d1348060d77cd 1-221
+tools/client910/crates/rs910-ui/src/ui_resources.rs
+  s_bf99a93e97ab76::t_24ed49bd0460a6 1-190
+tools/client910/crates/rs910-ui/src/ui_runtime/cache_configs.rs
+  s_c202351b3d1826::t_6850b7ff4a2ea7 1-214
+tools/client910/crates/rs910-ui/src/ui_runtime/chat_host_tests.rs
+  s_bf99a93e97ab76::t_ed85933a4705d7 1-121
+tools/client910/crates/rs910-ui/src/ui_runtime/commands.rs
+  s_bf99a93e97ab76::t_0f8d9cc237e85f 1-584
+tools/client910/crates/rs910-ui/src/ui_runtime/commands/account.rs
+  s_bf99a93e97ab76::t_5822adee9c5d01 1-106
+tools/client910/crates/rs910-ui/src/ui_runtime/commands/chat.rs
+  s_bf99a93e97ab76::t_6f1f96edcd492e 1-382
+tools/client910/crates/rs910-ui/src/ui_runtime/commands/config.rs
+  s_bf99a93e97ab76::t_a2b41ef2603b11 1-246
+tools/client910/crates/rs910-ui/src/ui_runtime/commands/coord.rs
+  s_bf99a93e97ab76::t_ea954ad8a31eb6 1-120
+tools/client910/crates/rs910-ui/src/ui_runtime/commands/dialogue.rs
+  s_bf99a93e97ab76::t_99e3fc81833acb 1-108
+tools/client910/crates/rs910-ui/src/ui_runtime/commands/entity.rs
+  s_bf99a93e97ab76::t_c72af634b6ea28 1-224
+tools/client910/crates/rs910-ui/src/ui_runtime/commands/inventory.rs
+  s_bf99a93e97ab76::t_b053a5ad4ed529 1-95
+tools/client910/crates/rs910-ui/src/ui_runtime/commands/minimenu.rs
+  s_bf99a93e97ab76::t_573aade18ef04a 1-115
+tools/client910/crates/rs910-ui/src/ui_runtime/commands/platform.rs
+  s_bf99a93e97ab76::t_4e7d2a8a02cd76 1-239
+tools/client910/crates/rs910-ui/src/ui_runtime/commands/quickchat.rs
+  s_bf99a93e97ab76::t_d50a39677e7b56 1-480
+tools/client910/crates/rs910-ui/src/ui_runtime/commands/social.rs
+  s_bf99a93e97ab76::t_e093c62cc6ccf7 1-129
+tools/client910/crates/rs910-ui/src/ui_runtime/commands/sound.rs
+  s_bf99a93e97ab76::t_a2cb2d2467088c 1-77
+tools/client910/crates/rs910-ui/src/ui_runtime/commands/stockmarket.rs
+  s_bf99a93e97ab76::t_c2a8ac92bf6e4d 1-57
+tools/client910/crates/rs910-ui/src/ui_runtime/commands/tests.rs
+  s_bf99a93e97ab76::t_19911fcfa58f6a 1-16
+tools/client910/crates/rs910-ui/src/ui_runtime/commands/text.rs
+  s_bf99a93e97ab76::t_1ca62b79a7cfc1 1-138
+tools/client910/crates/rs910-ui/src/ui_runtime/commands/world_map.rs
+  s_bf99a93e97ab76::t_01ed2382dce8bb 1-35
+tools/client910/crates/rs910-ui/src/ui_runtime/menu_builder.rs
+  s_138180257ec4e3::t_3754740b494378 1-2085
+tools/client910/crates/rs910-ui/src/ui_runtime/packets.rs
+  s_bf99a93e97ab76::t_da06b4623b0885 1-166
+tools/client910/crates/rs910-ui/src/ui_runtime/packets/camera.rs
+  s_bf99a93e97ab76::t_be4bb0caaab6df 1-134
+tools/client910/crates/rs910-ui/src/ui_runtime/packets/chat.rs
+  s_bf99a93e97ab76::t_179f0866a9f532 1-563
+tools/client910/crates/rs910-ui/src/ui_runtime/packets/menu.rs
+  s_bf99a93e97ab76::t_3d2e23efbe75c5 1-28
+tools/client910/crates/rs910-ui/src/ui_runtime/packets/platform.rs
+  s_bf99a93e97ab76::t_12bc4e2b0f1f4b 1-40
+tools/client910/crates/rs910-ui/src/ui_runtime/packets/scene.rs
+  s_bf99a93e97ab76::t_61add3bb73fb50 1-87
+tools/client910/crates/rs910-ui/src/ui_runtime/packets/session.rs
+  s_bf99a93e97ab76::t_f3cc55d8bd72a2 1-111
+tools/client910/crates/rs910-ui/src/ui_runtime/packets/social.rs
+  s_bf99a93e97ab76::t_de5a73099cfe69 1-152
+tools/client910/crates/rs910-ui/src/ui_runtime/packets/vars.rs
+  s_bf99a93e97ab76::t_26aa693ecc9713 1-115
+tools/client910/crates/rs910-ui/src/ui_runtime/player_target_tests.rs
+  s_bf99a93e97ab76::t_94795a980a7cfe 1-67
+tools/client910/crates/rs910-ui/src/ui_runtime/world_map.rs
+  s_bf99a93e97ab76::t_b2d33a7803e67d 1-419
+tools/client910/crates/rs910-ui/src/ui_runtime/world_map_golden_tests.rs
+  s_bf99a93e97ab76::t_547080c89dc4ff 1-432
+tools/client910/crates/rs910-ui/src/ui_scripts.rs
+  s_294fc1c2a0f8ed::t_cbf4e3d20ee173 1-238
+tools/client910/crates/rs910-ui/src/ui_social.rs
+  s_bf99a93e97ab76::t_12f7d7702795fa 1-293
+tools/client910/crates/rs910-ui/src/ui_social/channels.rs
+  s_bf99a93e97ab76::t_dbd633cc5e0531 1-289
+tools/client910/crates/rs910-ui/src/ui_social/clan_settings.rs
+  s_bf99a93e97ab76::t_8d98f0c0a54d2f 1-333
+tools/client910/crates/rs910-ui/src/ui_social/friends.rs
+  s_bf99a93e97ab76::t_b4b7459314910d 1-160
+tools/client910/crates/rs910-ui/src/ui_social/mutations.rs
+  s_bf99a93e97ab76::t_bbe66072685e11 1-316
+tools/client910/crates/rs910-ui/src/ui_social/names.rs
+  s_bf99a93e97ab76::t_de454975a874c1 1-239
+tools/client910/crates/rs910-ui/src/ui_social/player_groups.rs
+  s_bf99a93e97ab76::t_b559e53c0416e7 1-403
+tools/client910/crates/rs910-ui/src/ui_social/queries.rs
+  s_bf99a93e97ab76::t_f2314ea1e585fc 1-754
+tools/client910/crates/rs910-ui/src/ui_social/quick_chat.rs
+  s_bf99a93e97ab76::t_ba9dd87d4473a5 1-411
+tools/client910/crates/rs910-ui/src/ui_sprites.rs
+  s_bf99a93e97ab76::t_f02427048ddb00 1-230
+tools/client910/crates/rs910-ui/src/ui_time.rs
+  s_bf99a93e97ab76::t_5c0ce20c9886b0 1-107
+tools/client910/crates/rs910-ui/src/ui_vars.rs
+  s_b924ff932db79a::t_35d77bb2c9a914 1-589
+tools/client910/crates/rs910-ui/src/world_map/area.rs
+  s_bf99a93e97ab76::t_93254baaebc4a4 1-145
+tools/client910/crates/rs910-ui/src/world_map/chunk_cache.rs
+  s_bf99a93e97ab76::t_49ffcd0396241d 1-122
+tools/client910/crates/rs910-ui/src/world_map/chunk_painter.rs
+  s_bf99a93e97ab76::t_5251ba4369c5b6 1-800
+tools/client910/crates/rs910-ui/src/world_map/map_scenes.rs
+  s_bf99a93e97ab76::t_1eaa4c34b70b24 1-126
+tools/client910/crates/rs910-ui/src/world_map/tile_shapes.rs
+  s_bf99a93e97ab76::t_e40715ea70611f 1-88
+tools/client910/fixtures/account_creation_lobby_frames.json
+  s_bf99a93e97ab76::t_7e5facc095c47c 1-49
+tools/client910/fixtures/audio/corpus-digest.tsv
+  s_bf99a93e97ab76::t_2ceea50ab269c1 1-53253
+tools/client910/fixtures/create_account_connect.json
+  s_bf99a93e97ab76::t_3d06486fb191f5 1-35
+tools/client910/fixtures/cs2-commands/README.md
+  s_bf99a93e97ab76::t_16f50fecd32e18 1-28
+tools/client910/fixtures/cs2-commands/fault-classes.tsv
+  s_bf99a93e97ab76::t_fb14cf6f97a6f2 1-8
+tools/client910/fixtures/cs2-commands/recorded.tsv
+  s_bf99a93e97ab76::t_3f8d887113c077 1-365
+tools/client910/fixtures/game_login_variants.json
+  s_bf99a93e97ab76::t_82ab8221763dfd 1-41
+tools/client910/fixtures/icon-goldens/icons.txt
+  s_bf99a93e97ab76::t_28a96dceaa2b34 1-418
+tools/client910/fixtures/icon-goldens/pipeline.txt
+  s_bf99a93e97ab76::t_01ee69f30f8d63 1-205
+tools/client910/fixtures/phase-g/npcs.txt
+  s_bf99a93e97ab76::t_e976c7613ff2df 1-43
+tools/client910/fixtures/phase-g/players.txt
+  s_bf99a93e97ab76::t_a1774182d813b9 1-69
+tools/client910/fixtures/phase-g/rebuild-login.txt
+  s_bf99a93e97ab76::t_3e495914416006 1
+tools/client910/fixtures/recorded/animation-sound/cases.txt
+  s_bf99a93e97ab76::t_2aaf3806c46f9e 1-747
+tools/client910/fixtures/recorded/animation-sound/expected.txt
+  s_bf99a93e97ab76::t_2d7fac15558626 1-746
+tools/client910/fixtures/recorded/audio-sequence-sound/cases.tsv
+  s_bf99a93e97ab76::t_1637b681eea815 1-281
+tools/client910/fixtures/recorded/audio-sequence-sound/expected.tsv
+  s_bf99a93e97ab76::t_828a100db086f8 1-280
+tools/client910/fixtures/recorded/audio-vorbis/effect-356.blk
+  s_bf99a93e97ab76::t_6b95aac8c09b5b 1-499
+tools/client910/fixtures/recorded/audio-vorbis/song-2.blk
+  s_bf99a93e97ab76::t_e88a9e3b77eaa3 1-45
+tools/client910/fixtures/recorded/bloom-passes/passes.txt
+  s_bf99a93e97ab76::t_2bf9be53c21939 1-24
+tools/client910/fixtures/recorded/bloom-settings/reference.txt
+  s_bf99a93e97ab76::t_6db9969c59fa39 1-24
+tools/client910/fixtures/recorded/chat-history/recorded.txt
+  s_bf99a93e97ab76::t_6fa01abf7e771b 1-5
+tools/client910/fixtures/recorded/client-options/input.bin
+  s_bf99a93e97ab76::t_3f7a26799e000c 1-4284
+tools/client910/fixtures/recorded/client-options/particles-input.bin
+  s_bf99a93e97ab76::t_60be1515a663e9 1-532
+tools/client910/fixtures/recorded/client-options/particles-state.blk
+  s_bf99a93e97ab76::t_8852273ed29ec0 1-22
+tools/client910/fixtures/recorded/client-options/state.blk
+  s_bf99a93e97ab76::t_a3ec757c807f3d 1-309
+tools/client910/fixtures/recorded/cursors/assets.blk
+  s_bf99a93e97ab76::t_3ec2daa191e8ec 1-47
+tools/client910/fixtures/recorded/cursors/menu.blk
+  s_bf99a93e97ab76::t_3d32c30240b66b 1-285
+tools/client910/fixtures/recorded/cutscene-viewport/recording.bin
+  s_bf99a93e97ab76::t_d5a487c3751599 1-120
+tools/client910/fixtures/recorded/framing/recording.blk
+  s_bf99a93e97ab76::t_1e330f68aa7232 1-225
+tools/client910/fixtures/recorded/graphics-settings/canvas.csv
+  s_bf99a93e97ab76::t_f74fed337a372f 1-90
+tools/client910/fixtures/recorded/graphics-settings/expected.txt
+  s_bf99a93e97ab76::t_419c3cfb9362c6 1-260
+tools/client910/fixtures/recorded/graphics-settings/input.txt
+  s_bf99a93e97ab76::t_fb7676d97e8bbe 1-260
+tools/client910/fixtures/recorded/login-auth/rsa-blocks.txt
+  s_bf99a93e97ab76::t_f25a141a67c796 1-6
+tools/client910/fixtures/recorded/login-crypto/TEST-ONLY-rsa-key.json
+  s_bf99a93e97ab76::t_808b17839cd717 1-12
+tools/client910/fixtures/recorded/login-crypto/logins.txt
+  s_bf99a93e97ab76::t_06ed98040ed9b9 1-29
+tools/client910/fixtures/recorded/login-crypto/primitives.txt
+  s_bf99a93e97ab76::t_c38438c6c2d927 1-13
+tools/client910/fixtures/recorded/network-packets/client-packets.txt
+  s_bf99a93e97ab76::t_e9b0a48fc5bc83 1-19
+tools/client910/fixtures/recorded/network-packets/login-bodies.txt
+  s_bf99a93e97ab76::t_0641a5061042d5 1-4
+tools/client910/fixtures/recorded/player-options/packets.bin
+  s_bf99a93e97ab76::t_deb76590b03909 1
+tools/client910/fixtures/recorded/scene-pick/recording.bin
+  s_bf99a93e97ab76::t_40810ec18a50ab 1-286
+tools/client910/fixtures/recorded/server-teleports/recording.blk
+  s_bf99a93e97ab76::t_8c4d37b729a30d 1-180
+tools/client910/fixtures/recorded/sky-decor-placement/recording.bin
+  s_bf99a93e97ab76::t_84ec0c8370d0e9 1-1500
+tools/client910/fixtures/recorded/social-login/account.txt
+  s_bf99a93e97ab76::t_82b4995f247904 1-2
+tools/client910/fixtures/recorded/social-login/connect.txt
+  s_bf99a93e97ab76::t_e485bed4e3f7da 1-3
+tools/client910/fixtures/recorded/social-login/rsa-blocks.txt
+  s_bf99a93e97ab76::t_e6b1a98b434bb1 1-3
+tools/client910/fixtures/recorded/ui-bas-query/recorded.blk
+  s_bf99a93e97ab76::t_5fbbc971f1bff8 1-4
+tools/client910/fixtures/recorded/ui-component-models/kind-one-sample.bin
+  s_bf99a93e97ab76::t_87cb70895ca10a 1-886
+tools/client910/fixtures/recorded/ui-interaction/recorded.bin
+  s_bf99a93e97ab76::t_111ed191607ba6 1-320
+tools/client910/fixtures/recorded/world-map/cases.txt
+  s_bf99a93e97ab76::t_6b102c8441dfcb 1-547
+tools/client910/fixtures/recorded/world-map/trace.blk
+  s_bf99a93e97ab76::t_0566a1dfe77fc8 1-95
+tools/client910/fixtures/social_login_variants.json
+  s_bf99a93e97ab76::t_2654a5c9b1f9f0 1-66
+tools/client910/fixtures/world_list_1_2.hex
+  s_bf99a93e97ab76::t_94a35393f9956c 1
+tools/client910/src/app/diagnostics.rs
+  s_41fcdb93953164::t_4ab1bb562f1d4a 1-42
+tools/client910/src/app/effects.rs
+  s_bf99a93e97ab76::t_a4fe2883931b02 1-57
+tools/client910/src/audio_corpus.rs
+  s_bf99a93e97ab76::t_86ea6ba1bfb34d 1-364
+tools/client910/src/live_control.rs
+  s_b924ff932db79a::t_d4843bcb3b6049 1-1660
+tools/client910/src/macos_defaults.rs
+  s_bf99a93e97ab76::t_d581b2ff82ea5d 1-37
+tools/client910/src/main.rs
+  s_bf99a93e97ab76::t_3b2217a847f8a1 1-6
+tools/client910/src/phase_g_checks.rs
+  s_bf99a93e97ab76::t_557a57504735c7 1-22
+tools/client910/src/shutdown_signal.rs
+  s_bf99a93e97ab76::t_df06892d012927 1-45
+tools/client910/src/ui_keyboard_winit.rs
+  s_bf99a93e97ab76::t_fda78af0ec5a8a 1-105
+tools/client910/src/ui_mouse.rs
+  s_bf99a93e97ab76::t_9f4ca4ad0e9031 1-46
+tools/native910/Cargo.toml
+  s_b924ff932db79a::t_c7dc4784630573 1-58
+tools/native910/data/opcodes-910.txt
+  s_bf99a93e97ab76::t_530c7119ff1020 1-1789
+tools/native910/data/var-domains.tsv
+  s_bf99a93e97ab76::t_d927d0cf948c9a 1-11
+tools/native910/src/config.rs
+  s_bf99a93e97ab76::t_bba7ab10f99369 1-1104
+tools/native910/src/dbtable.rs
+  s_bf99a93e97ab76::t_a830a6600922ac 1-632
+tools/native910/src/jstr.rs
+  s_bf99a93e97ab76::t_a59fc4e21568d0 1-124
+tools/native910/src/lib.rs
+  s_b924ff932db79a::t_b7ae7c1a5eb0cc 1-37
+tools/native910/src/opcode.rs
+  s_bf99a93e97ab76::t_81e900bce61bdb 1-260
+tools/native910/src/runtime.rs
+  s_b924ff932db79a::t_04017e6af58e1a 1-194
+tools/native910/src/sprite.rs
+  s_bf99a93e97ab76::t_eac62c41c26888 1-547
+tools/native910/src/vars.rs
+  s_bf99a93e97ab76::t_037e5011573b67 1-136
+tools/native910/src/vm.rs
+  s_b924ff932db79a::t_87783ab9149309 1-2643
+tools/native910/tests/common/mod.rs
+  s_bf99a93e97ab76::t_13bfce91b83b81 1-169
+tools/native910/tests/cs2_traces.rs
+  s_bf99a93e97ab76::t_2480a206207567 1-242
+tools/native910/tests/db_differential.rs
+  s_bf99a93e97ab76::t_7eec562ec14e4f 1-104
+tools/native910/tests/decode_golden.rs
+  s_bf99a93e97ab76::t_4dadd1ce02f8bb 1-874
+tools/native910/tests/fixtures/cs2-traces/cache-scripts.txt
+  s_bf99a93e97ab76::t_504b36750c8117 1-31
+tools/native910/tests/fixtures/cs2-traces/cases.txt
+  s_bf99a93e97ab76::t_834c3bde05881e 1-29
+tools/native910/tests/fixtures/cs2-traces/null-objects.tsv
+  s_bf99a93e97ab76::t_821ce6f2672558 1-17
+tools/native910/tests/fixtures/cs2-traces/traces/edge.trace
+  s_bf99a93e97ab76::t_0254c7671d5d09 1-658
+tools/native910/tests/fixtures/cs2-traces/traces/script10848.dig
+  s_bf99a93e97ab76::t_15dc768b56a6cd 1-41
+tools/native910/tests/fixtures/cs2-traces/traces/script11076.dig
+  s_bf99a93e97ab76::t_4840e6323842d7 1-62
+tools/native910/tests/fixtures/cs2-traces/traces/script11836.dig
+  s_bf99a93e97ab76::t_ba26f2c63e2841 1-75
+tools/native910/tests/fixtures/cs2-traces/traces/script12292.dig
+  s_bf99a93e97ab76::t_235489fbbe211b 1-24
+tools/native910/tests/fixtures/cs2-traces/traces/script12377.dig
+  s_bf99a93e97ab76::t_2f2ff155648c28 1-10
+tools/native910/tests/fixtures/cs2-traces/traces/script13291.dig
+  s_bf99a93e97ab76::t_1331e7d95b96f6 1-16
+tools/native910/tests/fixtures/cs2-traces/traces/script13566.dig
+  s_bf99a93e97ab76::t_45fdfb5c0bf84c 1-32
+tools/native910/tests/fixtures/cs2-traces/traces/script14058.dig
+  s_bf99a93e97ab76::t_9ffee8f6cb848c 1-33
+tools/native910/tests/fixtures/cs2-traces/traces/script1602.dig
+  s_bf99a93e97ab76::t_1c7e7f983df808 1-45
+tools/native910/tests/fixtures/cs2-traces/traces/script1814.dig
+  s_bf99a93e97ab76::t_59891d93fee712 1-535
+tools/native910/tests/fixtures/cs2-traces/traces/script2332.dig
+  s_bf99a93e97ab76::t_5bdd7e5af9a89b 1-37
+tools/native910/tests/fixtures/cs2-traces/traces/script3382.dig
+  s_bf99a93e97ab76::t_a933bed7c4591d 1-48
+tools/native910/tests/fixtures/cs2-traces/traces/script362.dig
+  s_bf99a93e97ab76::t_4f31e2e3864fbe 1-29
+tools/native910/tests/fixtures/cs2-traces/traces/script4338.dig
+  s_bf99a93e97ab76::t_e16158fef27444 1-16
+tools/native910/tests/fixtures/cs2-traces/traces/script4582.dig
+  s_bf99a93e97ab76::t_b99436da9e8390 1-25
+tools/native910/tests/fixtures/cs2-traces/traces/script5564.dig
+  s_bf99a93e97ab76::t_ccf2b0ec061d6d 1-32
+tools/native910/tests/fixtures/cs2-traces/traces/script669.dig
+  s_bf99a93e97ab76::t_b80e821f4bc7f3 1-43
+tools/native910/tests/fixtures/cs2-traces/traces/script6702.dig
+  s_bf99a93e97ab76::t_3b90fcea16a914 1-14
+tools/native910/tests/fixtures/cs2-traces/traces/script694.dig
+  s_bf99a93e97ab76::t_4956ad5c4ecd8d 1-192
+tools/native910/tests/fixtures/cs2-traces/traces/script7442.dig
+  s_bf99a93e97ab76::t_abb14a48d8353c 1-38
+tools/native910/tests/fixtures/cs2-traces/traces/script8941.dig
+  s_bf99a93e97ab76::t_853e991b8c0e4e 1-489
+tools/native910/tests/fixtures/cs2-traces/traces/script9507.dig
+  s_bf99a93e97ab76::t_b7ce07e805dc02 1-43
+tools/native910/tests/fixtures/decode-golden/configs.golden
+  s_bf99a93e97ab76::t_dc4b9df77448a7 1-116
+tools/native910/tests/fixtures/decode-golden/interfaces.golden
+  s_bf99a93e97ab76::t_50090a661a663a 1-46
+tools/native910/tests/fixtures/decode-golden/scripts.golden
+  s_bf99a93e97ab76::t_30b49ebb5d4fbd 1-758
+tools/native910/tests/fixtures/decode-golden/sprites.golden
+  s_bf99a93e97ab76::t_a4dcfb59af3cb3 1-20
+tools/native910/tests/fixtures/recorded/cs2-instruction-mix.trace
+  s_bf99a93e97ab76::t_404bc74241b231 1-31
+tools/native910/tests/fixtures/recorded/db-tuple.txt
+  s_bf99a93e97ab76::t_239eb65d8c37cd 1-12
+tools/native910/tests/fixtures/recorded/script-1258-setting-0.dig
+  s_bf99a93e97ab76::t_32a7e1bcf1207c 1-5
+tools/native910/tests/fixtures/recorded/script-1258-setting-10858.dig
+  s_bf99a93e97ab76::t_d17e556d9a5cc6 1-10
+tools/native910/tests/fixtures/recorded/timer-baseline.dig
+  s_bf99a93e97ab76::t_0b91de35995e23 1-64
+tools/native910/tests/fixtures/recorded/timer-edited.dig
+  s_bf99a93e97ab76::t_f5f0cc6bb101b4 1-64
+tools/native910/tests/interface_corpus.rs
+  s_bf99a93e97ab76::t_3e74900ee06c1b 1-99
+tools/native910/tests/recorded_differential.rs
+  s_bf99a93e97ab76::t_c260c00cf6d2bc 1-169
+tools/perf/abtest.sh
+  s_bf99a93e97ab76::t_034bb6180f0e7d 1-26
+tools/perf/bench.sh
+  s_bf99a93e97ab76::t_0f2f5030f9f267 1-24
+tools/perf/build.sh
+  s_bf99a93e97ab76::t_7963bfb4c45bab 1-57
+tools/perf/captures.sh
+  s_bf99a93e97ab76::t_feb3fce1cd00ec 1-25
+tools/perf/look_stats.py
+  s_bf99a93e97ab76::t_1b8dd4b02564e3 1-48
+tools/perf/modern_bench.sh
+  s_bf99a93e97ab76::t_9dd14b96e2c90b 1-126
+tools/perf/modern_bench_sum.py
+  s_bf99a93e97ab76::t_09927aa4985164 1-222
+tools/perf/modern_hitch_sum.py
+  s_bf99a93e97ab76::t_92f3f593e9ef5c 1-86
+tools/perf/modern_online.sh
+  s_0245afe5a8bab8::t_646911552b149f 1-24
+tools/perf/modern_online_sum.py
+  s_bf99a93e97ab76::t_ee4c87eac4806b 1-49
+tools/perf/modern_perf_bench.rs
+  s_b924ff932db79a::t_eb0743e291781e 1-1783
+tools/perf/modern_views_diff.py
+  s_3f4b5347620927::t_a559b79ca42a80 1-139
+tools/perf/profile-online.sh
+  s_bf99a93e97ab76::t_a7bdf23c4420fa 1-33
+tools/perf/profsum.py
+  s_bf99a93e97ab76::t_f0aa21b6a6d72e 1-218
+tools/perf/pxdiff.py
+  s_bf99a93e97ab76::t_0aa557cb48a956 1-26
+tools/perf/sample_tree.py
+  s_bf99a93e97ab76::t_43299ad831e1fb 1-139
+tools/perf/substream.py
+  s_bf99a93e97ab76::t_8ac3f69a2d322a 1-45
+tools/perf/summarize.py
+  s_bf99a93e97ab76::t_9f7d89a84a6dd2 1-123
+tools/perf/trcmp.py
+  s_bf99a93e97ab76::t_28a083fc36629e 1-71
+tools/protocol-reference/protocol-reference.json
+  s_bf99a93e97ab76::t_d7267120032471 1-1664
+tools/provenance/java-class-names.txt
+  s_bf99a93e97ab76::t_632d8cb485055d 1-1131
+tools/revision/gen_protocol.py
+  s_41fcdb93953164::t_becdd255d414f9 1-236
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "2f6b951bab9d19a77f47bd6f292124b8470c8e49",
+  "prompts": {},
+  "sessions": {
+    "s_01f4a6969ae96f": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a11a09-bbb9-7cc3-ab54-abdc83e48bd3",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    },
+    "s_0245afe5a8bab8": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "26789806-9708-42d5-8749-1fe6fbfb9e5c",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    },
+    "s_138180257ec4e3": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "a348dc04-f385-4eb8-a7b4-5a1846ef01ec",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    },
+    "s_294fc1c2a0f8ed": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "a9ff09df-8dce-4cd5-a038-9dbb7fb7cefb",
+        "model": "unknown"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    },
+    "s_3f4b5347620927": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1052f-291b-7aa2-897e-1b9a6fb3f082",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    },
+    "s_41fcdb93953164": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1195e-1a00-7b71-b5cb-0d4497ecd2d8",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    },
+    "s_b924ff932db79a": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "53d3e025-a4d4-4126-b2fe-b6d3beb22b08",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    },
+    "s_bf99a93e97ab76": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "3306d217-ef25-4a58-aa1a-8bdfdb5da12f",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    },
+    "s_c202351b3d1826": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0fe2d-4e63-7e41-b719-caa999b24fd9",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    },
+    "s_f14820c7533d54": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1223f-7be3-79c1-81cc-e2e1830df58d",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    },
+    "s_f493535ac28c9e": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "7b45da4e-94a7-416d-8bcf-4fa59b1d54b5",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
