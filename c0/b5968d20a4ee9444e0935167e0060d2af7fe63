@@ -1,0 +1,16 @@
+tools/client910/crates/rs910-render-modern/src/frame/gpu/shadow_cache.rs
+  h_d26e211304196f 145-147,175-176,718-724
+tools/client910/crates/rs910-render-modern/src/frame/submit.rs
+  h_d26e211304196f 120-138
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "c0b5968d20a4ee9444e0935167e0060d2af7fe63",
+  "prompts": {},
+  "humans": {
+    "h_d26e211304196f": {
+      "author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
