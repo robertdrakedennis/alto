@@ -1,0 +1,18 @@
+[package]
+name = "rs910-jobs"
+version = "0.1.0"
+edition = "2021"
+publish = false
+description = "Scoped CPU jobs with ordered results and an inline execution mode."
+
+[lib]
+doctest = false
+
+[dependencies]
+rayon = "1.12"
+
+[features]
+no-pack = []
+
+[lints]
+workspace = true

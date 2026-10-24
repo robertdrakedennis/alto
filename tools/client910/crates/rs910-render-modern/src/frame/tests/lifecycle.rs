@@ -1,0 +1,602 @@
+//! The renderer's lifecycle (performance plan P5): creating it off the
+//! render thread (`frame::startup`) and building a scene's meshes, maps and
+//! materials ahead of their draws on the threads (`frame::prebuild`). Both
+//! only move work: the frames must be the ones of doing it in place.
+
+use std::sync::Arc;
+
+use super::*;
+
+/// Settings edits reach the real frame consumers and resetting restores the
+/// settled image of a fresh renderer. The existing repeat-noise bound applies
+/// to these independently rendered images.
+#[test]
+#[ignore = "needs a GPU (headless wgpu device) and server/data/pack"]
+fn live_quality_changes_and_reset_draw_the_frames_of_fresh_renderers() {
+    use rs910_config::renderer_preferences::{QualityPreset, RendererPreferences};
+    const SIZE: [u32; 2] = [480, 300];
+    const SAMPLES: u32 = 4;
+    const RIVER_PITCH: f32 = 1400.0;
+    const RIVER_ZOOM: f32 = 1.2;
+    let _clock = fixed_clock();
+    let pack = crate::test_support::require_pack("client.mapsv2.js5");
+    let (device, queue) = crate::test_support::require_gpu();
+    let scene = river_scene(&pack, SIZE, RIVER_PITCH, RIVER_ZOOM);
+    let snapshot = scene.snapshot(&pack);
+    let mut live = renderer(&device, &queue, SAMPLES, ModernSettings::DEFAULT);
+    for preferences in QualityPreset::ALL
+        .iter()
+        .map(|p| p.preferences())
+        .chain(std::iter::once(RendererPreferences::DEFAULT))
+    {
+        let settings = ModernSettings::from_preferences_with_vars(preferences, |_| None);
+        live.set_quality(settings);
+        let actual = settled(&device, &queue, &mut live, &snapshot, SIZE);
+        let mut fresh = renderer(&device, &queue, SAMPLES, settings);
+        let expected = settled(&device, &queue, &mut fresh, &snapshot, SIZE);
+        assert!(Noise::of(&actual.pixels, &expected.pixels).is_repeat_noise(SIZE));
+        assert_eq!(live.stats.draws, fresh.stats.draws);
+        assert_eq!(live.preparation.settings.preferences(), preferences);
+    }
+}
+
+/// The builds ahead of the draws give the frame of building each loc mesh
+/// and material at its draw, with the same RT7 counters and loc pages:
+/// Lumbridge with posed models and ultra shadows (off-screen casters), 4x,
+/// settled (the probes' capture builds its locs ahead too).
+#[test]
+#[ignore = "needs a GPU (headless wgpu device) and server/data/pack"]
+fn builds_ahead_of_the_draws_leave_the_frame_unchanged() {
+    let _clock = fixed_clock();
+    let pack = crate::test_support::require_pack("client.mapsv2.js5");
+    let (device, queue) = crate::test_support::require_gpu();
+    let size = [480, 300];
+    let mut offline = OfflineScene::new(&pack, (3222, 3222), (480, 300));
+    let posed = offline.add_posed_models(6);
+    const ANIMATION_CYCLE: i32 = 50;
+    assert!(
+        offline.animate(ANIMATION_CYCLE) > 0,
+        "animated locs are posed too"
+    );
+    let snapshot = offline.snapshot(&pack);
+    let frame = |inline: bool| {
+        let mut r = renderer(&device, &queue, 4, ModernSettings::DEFAULT);
+        r.set_shadow_settings(crate::shadows::Settings::from_options(2, 3, 1));
+        r.preparation.test_inline_builds = inline;
+        let frame = settled(&device, &queue, &mut r, &snapshot, size);
+        (frame.pixels, r)
+    };
+    // Warm-up (see the module docs).
+    frame(true);
+    let (inline, at_draws) = frame(true);
+    let (ahead, threads) = frame(false);
+    let differ = Noise::of(&inline, &ahead);
+    eprintln!(
+        "{posed} posed models; {} loc meshes built ahead, {} at their draws; {:?}; {differ:?}",
+        threads.preparation.prebuilds.taken,
+        at_draws.preparation.prebuilds.taken,
+        threads.rt7.stats
+    );
+    assert!(
+        threads.preparation.prebuilds.taken > 1000 && at_draws.preparation.prebuilds.taken == 0
+    );
+    assert!(
+        threads.rt7.anim.stats.maps > 0,
+        "the posed models have RT7 maps"
+    );
+    assert_eq!(differ, Noise::default());
+    assert_eq!(threads.rt7.stats, at_draws.rt7.stats);
+    assert_eq!(threads.rt7.anim.stats, at_draws.rt7.anim.stats);
+    assert_eq!(
+        threads.scene_resources.loc_arena.used(),
+        at_draws.scene_resources.loc_arena.used()
+    );
+    assert_eq!(threads.textures().len(), at_draws.textures().len());
+}
+
+/// A renderer made on its startup thread is the one made here: its settled
+/// frame is a fresh renderer's at the count it was started with, and at
+/// another count (the anti-aliasing level changed before the renderer was
+/// taken: its sets built ahead on the thread when the shader cache is warm,
+/// else when it is taken) a fresh renderer's at that count.
+#[test]
+#[ignore = "needs a GPU (headless wgpu device) and server/data/pack"]
+fn a_renderer_made_on_its_startup_thread_draws_the_frames_of_one_made_here() {
+    let _clock = fixed_clock();
+    let pack = crate::test_support::require_pack("client.mapsv2.js5");
+    let (device, queue) = crate::test_support::require_gpu();
+    let (device, queue) = (Arc::new(device), Arc::new(queue));
+    let size = [480, 300];
+    let offline = OfflineScene::new(&pack, (3222, 3222), (480, 300));
+    let snapshot = offline.snapshot(&pack);
+    let fresh = |samples: u32| {
+        let mut r = renderer(&device, &queue, samples, ModernSettings::DEFAULT);
+        settled(&device, &queue, &mut r, &snapshot, size).pixels
+    };
+    let started = |samples: u32| {
+        let startup = crate::frame::startup::Startup::spawn(
+            device.clone(),
+            queue.clone(),
+            wgpu::TextureFormat::Rgba8Unorm,
+            4,
+            &[1],
+            ModernSettings::DEFAULT,
+        );
+        let mut r = startup.finish(&device, &queue, samples);
+        r.scene_resources.far.sync = true;
+        r.preparation.prebuilds.sync = true;
+        r.device_resources.textures.set_stream_queue(None);
+        assert_eq!(r.samples(), samples);
+        settled(&device, &queue, &mut r, &snapshot, size).pixels
+    };
+    // Warm-up (see the module docs).
+    fresh(4);
+    let (d4, d1) = (
+        Noise::of(&fresh(4), &started(4)),
+        Noise::of(&fresh(1), &started(1)),
+    );
+    eprintln!("4x {d4:?}, 1x {d1:?}");
+    assert_eq!(d4, Noise::default());
+    assert!(d1.is_repeat_noise(size), "{d1:?}");
+}
+
+/// Acquiring after preparation and submitting the units with the post chain
+/// produces the same captured scene as the existing eager submission API.
+#[test]
+#[ignore = "needs a GPU (headless wgpu device) and server/data/pack"]
+fn deferred_scene_commands_match_eager_submissions() {
+    const SIZE: [u32; 2] = [480, 300];
+    const SAMPLE_COUNT: u32 = 4;
+    const SETTLE_FRAMES: usize = 40;
+    const RGBA_BYTES: u32 = 4;
+    const COLOR_CHANNELS: usize = 3;
+    const SKIPPED_FRAMES: [usize; 3] = [0, 10, 20];
+    const START_ANIMATION_CYCLE: i32 = 0;
+    const ANIMATION_CYCLES_PER_RETRY: i32 = 5;
+    let _clock = fixed_clock();
+    let pack = crate::test_support::require_pack("client.mapsv2.js5");
+    let gpu = pollster::block_on(rs910_gpu_device::gpu_device::Device::headless(
+        (SIZE[0], SIZE[1]),
+        rs910_gpu_device::gpu_device::DeviceOptions::default(),
+        wgpu::Features::empty(),
+    ))
+    .expect("headless GPU device");
+    let (device, queue) = (gpu.device.clone(), gpu.queue.clone());
+    let location = rs910_symbols::location::DEV_PLAYER_SPAWN;
+    let mut offline = OfflineScene::new(
+        &pack,
+        (location.x(), location.z()),
+        (SIZE[0] as i32, SIZE[1] as i32),
+    );
+    let mut eager = renderer(&device, &queue, SAMPLE_COUNT, ModernSettings::DEFAULT);
+    let mut deferred = renderer(&device, &queue, SAMPLE_COUNT, ModernSettings::DEFAULT);
+    let output = device.create_texture(&wgpu::TextureDescriptor {
+        label: Some("deferred scene output"),
+        size: wgpu::Extent3d {
+            width: SIZE[0],
+            height: SIZE[1],
+            depth_or_array_layers: 1,
+        },
+        mip_level_count: 1,
+        sample_count: 1,
+        dimension: wgpu::TextureDimension::D2,
+        format: wgpu::TextureFormat::Rgba8Unorm,
+        usage: wgpu::TextureUsages::RENDER_ATTACHMENT | wgpu::TextureUsages::COPY_SRC,
+        view_formats: &[],
+    });
+    let [width, height] = SIZE.map(|v| v as i32);
+    let viewport = [0, 0, width, height];
+    let target = |clip| crate::frame::PrepareTarget {
+        device: &device,
+        queue: &gpu,
+        size: SIZE,
+        rect: viewport,
+        clip,
+    };
+    const OUTSIDE_CLIP_SCALE: i32 = 2;
+    for clip in [
+        [0, 0, 0, height],
+        [
+            width,
+            height,
+            width * OUTSIDE_CLIP_SCALE,
+            height * OUTSIDE_CLIP_SCALE,
+        ],
+    ] {
+        let frames = deferred.frames();
+        let exposure = (
+            deferred.history.post.adapted_slot,
+            deferred.history.post.last_ms,
+        );
+        assert!(deferred
+            .prepare_frame(target(clip), &offline.snapshot(&pack))
+            .is_none());
+        assert_eq!(deferred.frames(), frames);
+        assert_eq!(
+            (
+                deferred.history.post.adapted_slot,
+                deferred.history.post.last_ms
+            ),
+            exposure
+        );
+        assert_eq!(deferred.history.probes.captured, None);
+    }
+    let mut expected = Vec::new();
+    let mut animation_cycle = START_ANIMATION_CYCLE;
+    for cycle in 0..SETTLE_FRAMES {
+        if SKIPPED_FRAMES.contains(&cycle) {
+            let snapshot = offline.snapshot(&pack);
+            let frames = deferred.frames();
+            let exposure = (
+                deferred.history.post.adapted_slot,
+                deferred.history.post.last_ms,
+            );
+            let probes = (
+                deferred.history.probes.captured,
+                deferred.history.probes.last_env,
+            );
+            let order = deferred
+                .history
+                .probes
+                .job
+                .as_ref()
+                .map(|job| job.order.clone());
+            let unsent = deferred.prepare_frame(target(viewport), &snapshot).unwrap();
+            deferred.frame_skipped(unsent);
+            gpu.submit(std::iter::empty());
+            assert_eq!(deferred.frames(), frames);
+            assert_eq!(
+                (
+                    deferred.history.post.adapted_slot,
+                    deferred.history.post.last_ms
+                ),
+                exposure
+            );
+            assert_eq!(
+                (
+                    deferred.history.probes.captured,
+                    deferred.history.probes.last_env
+                ),
+                probes
+            );
+            assert_eq!(
+                deferred.history.probes.job.as_ref().map(|job| &job.order),
+                order.as_ref()
+            );
+            // The retry reuses the renderer frame number after the game advances.
+            animation_cycle += ANIMATION_CYCLES_PER_RETRY;
+            assert!(offline.animate(animation_cycle) > 0);
+        }
+        let snapshot = offline.snapshot(&pack);
+        expected = render(&device, &queue, &mut eager, &snapshot, SIZE).pixels;
+        let prepared = deferred.prepare_frame(target(viewport), &snapshot).unwrap();
+        // The surface view and final encoder need not exist during preparation.
+        let view = output.create_view(&Default::default());
+        let mut encoder = device.create_command_encoder(&Default::default());
+        let commands = deferred.record_frame(&device, &mut encoder, &view, prepared);
+        gpu.submit(commands.into_iter().chain([encoder.finish()]));
+        deferred.frame_submitted();
+        let _ = device.poll(wgpu::PollType::wait_indefinitely());
+    }
+    let actual = read_back(&device, &queue, &output, RGBA_BYTES);
+    assert!(eager.stats.opaque > 0 && eager.stats.draws > 0);
+    assert!(
+        expected.chunks_exact(RGBA_BYTES as usize).any(|pixel| {
+            pixel[..COLOR_CHANNELS] != expected[..COLOR_CHANNELS]
+                && pixel[..COLOR_CHANNELS].iter().any(|&channel| channel != 0)
+        }),
+        "the real scene must contain varied nonblack colour"
+    );
+    assert_eq!(Noise::of(&expected, &actual), Noise::default());
+    assert_eq!(eager.frames(), deferred.frames());
+}
+
+/// Borrowed and owned frames produce the same pixels; moving preparation onto
+/// another thread and changing pool width retains packet/counter order.
+#[test]
+#[ignore = "needs a GPU (headless wgpu device) and server/data/pack"]
+fn owned_scene_worker_keeps_pixels_and_job_result_order() {
+    const SIZE: [u32; 2] = [320, 200];
+    const SAMPLE_COUNT: u32 = 4;
+    const INLINE_THREADS: usize = 1;
+    const WORKER_THREADS: usize = 4;
+    const ANIMATION_CYCLE: i32 = 50;
+    const POSED_MODELS: usize = 4;
+    const ALTERNATING_FRAMES: usize = 6;
+    const FRAME_SLOTS: usize = 2;
+    const FIRST_LIGHT: usize = 0;
+    const FIRST_SLOT: usize = 0;
+    const SECOND_SLOT: usize = 1;
+    const LIGHT_INTENSITY_DELTA: f32 = 0.25;
+    const FADE_GROUP: i32 = 0;
+    const FADE_DURATION_MS: i32 = 0;
+    const FADE_COLOUR: i32 = 0xff40a0;
+    const NEXT_ANIMATION_CYCLE: i32 = ANIMATION_CYCLE + 1;
+    let _clock = fixed_clock();
+    let pack = crate::test_support::require_pack("client.mapsv2.js5");
+    let (device, queue) = crate::test_support::require_gpu();
+    let location = rs910_symbols::location::DEV_PLAYER_SPAWN;
+    let mut offline = OfflineScene::new(
+        &pack,
+        (location.x(), location.z()),
+        (SIZE[0] as i32, SIZE[1] as i32),
+    );
+    // Group membership is non-spatial; use one real cache light to exercise
+    // the ordinary colour-fade consumer without replacing its tile grid.
+    offline.live.model_lights.lights[FIRST_LIGHT].group = FADE_GROUP;
+    offline.add_posed_models(POSED_MODELS);
+    offline.animate(ANIMATION_CYCLE);
+    let snapshot = offline.snapshot(&pack);
+    let mut builder = rs910_scene::scene_snapshot::owned::SnapshotBuilder::default();
+    let owned = builder.capture(&snapshot, None);
+    let mut inline = renderer(&device, &queue, SAMPLE_COUNT, ModernSettings::DEFAULT);
+    inline.set_threads(INLINE_THREADS);
+    let mut worker = renderer(&device, &queue, SAMPLE_COUNT, ModernSettings::DEFAULT);
+    worker.set_threads(WORKER_THREADS);
+    let reference = settled(&device, &queue, &mut inline, &snapshot, SIZE).pixels;
+    let (pixels, mut worker, owned) = std::thread::scope(|scope| {
+        let device = &device;
+        let queue = &queue;
+        scope
+            .spawn(move || {
+                let pixels = settled(device, queue, &mut worker, &owned.snapshot(), SIZE).pixels;
+                (pixels, worker, owned)
+            })
+            .join()
+            .unwrap()
+    });
+    assert_eq!(Noise::of(&reference, &pixels), Noise::default());
+    assert_eq!(inline.stats.draws, worker.stats.draws);
+    assert_eq!(
+        inline.stats.shadow_cascade_casters,
+        worker.stats.shadow_cascade_casters
+    );
+    assert_eq!(inline.rt7.stats, worker.rt7.stats);
+    assert_eq!(inline.rt7.anim.stats, worker.rt7.anim.stats);
+    assert_eq!(
+        inline.scene_resources.loc_arena.used(),
+        worker.scene_resources.loc_arena.used()
+    );
+    assert!(
+        !worker.history.shadow.point.active.is_empty(),
+        "real cache lights must exercise point slots"
+    );
+    let installed_grid = worker.scene_resources.lights.grid.clone();
+    let installed_key = worker.scene_resources.lights.key();
+    let point_keys = worker.history.shadow.point.keys;
+    let point_redraws = worker
+        .history
+        .shadow
+        .point
+        .plan
+        .slots
+        .iter()
+        .map(|slot| slot.redraw.count_ones())
+        .sum::<u32>();
+    let mut slots = [Some(owned), None];
+    for index in 0..ALTERNATING_FRAMES {
+        let slot = index % FRAME_SLOTS;
+        let next = builder.capture(&snapshot, slots[slot].take());
+        let output = render(&device, &queue, &mut worker, &next.snapshot(), SIZE);
+        assert_eq!(Noise::of(&pixels, &output.pixels), Noise::default());
+        assert_eq!(
+            worker.scene_resources.lights.grid, installed_grid,
+            "an owned slot must reuse the installed GPU light grid"
+        );
+        assert_eq!(worker.scene_resources.lights.key(), installed_key);
+        assert_eq!(
+            worker.history.shadow.point.keys, point_keys,
+            "slot alternation must not reset point faces"
+        );
+        assert!(worker
+            .history
+            .shadow
+            .point
+            .plan
+            .slots
+            .iter()
+            .all(|slot| !slot.clear_block));
+        assert_eq!(
+            worker
+                .history
+                .shadow
+                .point
+                .plan
+                .slots
+                .iter()
+                .map(|slot| slot.redraw.count_ones())
+                .sum::<u32>(),
+            point_redraws
+        );
+        slots[slot] = Some(next);
+    }
+    drop(snapshot);
+    let original_intensity = offline.live.model_lights.intensities[FIRST_LIGHT];
+    offline.live.model_lights.intensities[FIRST_LIGHT] += LIGHT_INTENSITY_DELTA;
+    let changed = builder.capture(&offline.snapshot(&pack), slots[FIRST_SLOT].take());
+    render(&device, &queue, &mut worker, &changed.snapshot(), SIZE);
+    assert_eq!(worker.scene_resources.lights.grid, installed_grid);
+    assert_eq!(worker.scene_resources.lights.key(), installed_key);
+    assert_eq!(
+        worker.scene_resources.lights.frame[FIRST_LIGHT].intensity,
+        original_intensity + LIGHT_INTENSITY_DELTA
+    );
+    assert_eq!(
+        slots[SECOND_SLOT]
+            .as_ref()
+            .unwrap()
+            .snapshot()
+            .live_frame()
+            .unwrap()
+            .model_lights
+            .intensities[FIRST_LIGHT],
+        original_intensity
+    );
+    let frozen_colour = slots[SECOND_SLOT]
+        .as_ref()
+        .unwrap()
+        .snapshot()
+        .live_frame()
+        .unwrap()
+        .model_lights
+        .colour(FIRST_LIGHT)
+        .unwrap();
+    offline.live.model_lights.point_light_colour(
+        FADE_GROUP,
+        FADE_DURATION_MS,
+        FADE_COLOUR,
+        ANIMATION_CYCLE,
+    );
+    offline
+        .live
+        .model_lights
+        .animate(NEXT_ANIMATION_CYCLE, false);
+    let faded = builder.capture(&offline.snapshot(&pack), Some(changed));
+    let expected = render(&device, &queue, &mut inline, &offline.snapshot(&pack), SIZE).pixels;
+    let actual = render(&device, &queue, &mut worker, &faded.snapshot(), SIZE).pixels;
+    assert_eq!(Noise::of(&expected, &actual), Noise::default());
+    assert_eq!(worker.scene_resources.lights.grid, installed_grid);
+    assert_eq!(
+        worker.scene_resources.lights.frame[FIRST_LIGHT].colour,
+        crate::models::shading::colour_term(
+            FADE_COLOUR,
+            offline.live.model_lights.intensities[FIRST_LIGHT]
+        )
+    );
+    assert_ne!(frozen_colour, FADE_COLOUR);
+    assert_eq!(
+        slots[SECOND_SLOT]
+            .as_ref()
+            .unwrap()
+            .snapshot()
+            .live_frame()
+            .unwrap()
+            .model_lights
+            .colour(FIRST_LIGHT),
+        Some(frozen_colour)
+    );
+    let scene = offline.world.scene_graph.as_ref().unwrap();
+    offline.live.model_lights = rs910_scene::model_lights::ModelLights::new(
+        scene,
+        &offline.live.model_lights.lights,
+        offline.live.entities.len(),
+    );
+    let replacement = builder.capture(&offline.snapshot(&pack), slots[SECOND_SLOT].take());
+    render(&device, &queue, &mut worker, &replacement.snapshot(), SIZE);
+    assert_ne!(
+        worker.scene_resources.lights.grid, installed_grid,
+        "fresh table installation must rebuild the grid"
+    );
+    assert_ne!(worker.scene_resources.lights.key(), installed_key);
+    assert_eq!(
+        worker.history.shadow.point.scene,
+        Some(worker.scene_resources.lights.key())
+    );
+    assert!(
+        worker
+            .history
+            .shadow
+            .point
+            .plan
+            .slots
+            .iter()
+            .any(|slot| slot.clear_block),
+        "fresh installation must invalidate point slots"
+    );
+
+    assert!(pixels
+        .chunks_exact(4)
+        .any(|pixel| pixel[..3].iter().any(|&channel| channel > 0)));
+}
+
+/// Production background meshes and textures must converge to the fully
+/// resident frame, including the scene generation that replaces queued work.
+#[test]
+#[ignore = "needs a GPU (headless wgpu device) and server/data/pack"]
+fn streamed_assets_and_superseded_jobs_converge_to_resident_frames() {
+    const SIZE: [u32; 2] = [480, 300];
+    const SAMPLES: u32 = 4;
+    const MAX_SETTLE_TIME: std::time::Duration = std::time::Duration::from_secs(30);
+    const SWITCH_FRAMES: usize = 2;
+    const RIVER_PITCH: f32 = 1400.0;
+    const RIVER_ZOOM: f32 = 1.2;
+    let _clock = fixed_clock();
+    let pack = crate::test_support::require_pack("client.mapsv2.js5");
+    let (device, queue) = crate::test_support::require_gpu();
+    let spawn = rs910_symbols::location::DEV_PLAYER_SPAWN;
+    let scene = OfflineScene::new(
+        &pack,
+        (spawn.x(), spawn.z()),
+        (SIZE[0] as i32, SIZE[1] as i32),
+    );
+    let next = river_scene(&pack, SIZE, RIVER_PITCH, RIVER_ZOOM);
+    let settings = ModernSettings {
+        far: None,
+        ..ModernSettings::DEFAULT
+    };
+    let mut streamed = renderer(&device, &queue, SAMPLES, settings);
+    streamed.preparation.prebuilds.sync = false;
+    streamed
+        .device_resources
+        .textures
+        .set_stream_queue(Some(streamed.jobs.assets()));
+
+    let mut now = crate::logic_clock::monotonic_millis();
+    const FRAME_STEP_MS: i64 = 40;
+    let mut compare = |streamed: &mut ModernRenderer, snapshot: &SceneSnapshot<'_>| {
+        let mut resident = renderer(&device, &queue, SAMPLES, settings);
+        let started = std::time::Instant::now();
+        loop {
+            now += FRAME_STEP_MS;
+            crate::logic_clock::set_test_now(Some(now));
+            render(&device, &queue, &mut resident, snapshot, SIZE);
+            render(&device, &queue, streamed, snapshot, SIZE);
+            if !streamed.probe_capture_pending()
+                && !resident.probe_capture_pending()
+                && streamed.preparation.prebuilds.pending_counts() == (0, 0)
+                && !streamed.scene_resources.terrain.stream.pending()
+                && streamed.scene_resources.terrain.scene.is_some()
+                && streamed
+                    .frame_resources
+                    .instances
+                    .iter()
+                    .all(|instance| !instance.transitioning())
+            {
+                break;
+            }
+            assert!(started.elapsed() < MAX_SETTLE_TIME, "streaming did not settle: meshes {}/{}, materials {}/{}, probes {}, jobs {:?}, ambient {:?}",
+                streamed.scene_resources.statics.len(), resident.scene_resources.statics.len(),
+                streamed.textures().len(), resident.textures().len(), streamed.probe_capture_pending(),
+                streamed.preparation.prebuilds.pending_counts(), streamed.ambient_stats());
+        }
+        // Compare at one time with adaptation initialized from the completed
+        // scene, independent of the incomplete frames seen while streaming.
+        streamed.history.post.last_ms = None;
+        resident.history.post.last_ms = None;
+        let actual = render(&device, &queue, streamed, snapshot, SIZE);
+        let expected = render(&device, &queue, &mut resident, snapshot, SIZE);
+        let differ = Noise::of(&actual.pixels, &expected.pixels);
+        eprintln!(
+            "streamed convergence in {:?}: {differ:?}",
+            started.elapsed()
+        );
+        assert!(
+            differ.is_repeat_noise(SIZE),
+            "streamed image differs: {differ:?}"
+        );
+    };
+    // Turn while the initial view's jobs complete, then return to it. Ready
+    // meshes outside the new view must not occupy the bounded queue forever.
+    const HALF_TURN_UNITS: f32 = 8192.0;
+    for yaw in [HALF_TURN_UNITS, 0.0, HALF_TURN_UNITS] {
+        let mut turning = scene.snapshot(&pack);
+        turning.camera.yaw += yaw;
+        render(&device, &queue, &mut streamed, &turning, SIZE);
+    }
+    compare(&mut streamed, &scene.snapshot(&pack));
+    for _ in 0..SWITCH_FRAMES {
+        render(&device, &queue, &mut streamed, &next.snapshot(&pack), SIZE);
+    }
+    // Replace this scene while its jobs are still outstanding.
+    compare(&mut streamed, &scene.snapshot(&pack));
+}

@@ -1,0 +1,8 @@
+# Pinned for tools/client910 and tools/native910. rustc 1.94.1 (LLVM 21.1.8)
+# miscompiled a cross-codegen-unit call under ThinLTO / opt-level >= 1 (the
+# since removed software toolkit's scaled blit; see tools/Cargo.toml); 1.96.0
+# does not. Bump deliberately: run the release test suite with default
+# codegen units and refresh tools/refactor/clippy-baseline.txt.
+[toolchain]
+channel = "1.96.0"
+components = ["clippy", "rustfmt"]

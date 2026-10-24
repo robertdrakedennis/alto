@@ -1,0 +1,25 @@
+root = true
+
+[*]
+charset = utf-8
+end_of_line = lf
+insert_final_newline = true
+trim_trailing_whitespace = true
+
+[*.{java,gradle}]
+indent_style = spaces
+indent_size = 4
+
+[*.{ts,js,cjs,mts,cts,json}]
+indent_style = spaces
+indent_size = 4
+quote_type = single
+
+[*.{rs2,pack,defaults,sym}]
+charset = utf-8
+end_of_line = lf
+insert_final_newline = true
+trim_trailing_whitespace = false
+
+[*.{bat}]
+end_of_line = crlf

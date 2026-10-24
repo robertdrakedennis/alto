@@ -1,0 +1,8 @@
+missing value	NullPointerException
+index out of range	ArrayIndexOutOfBoundsException
+wrong value type	ClassCastException
+division by zero	ArithmeticException
+negative size	NegativeArraySizeException
+invalid state	RuntimeException
+index out of range	StringIndexOutOfBoundsException
+index out of range	IndexOutOfBoundsException

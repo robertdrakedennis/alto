@@ -1,0 +1,19 @@
+verify-id-game 0 1600000000
+verify-id-lobby 0 1600000000
+verify-id-game 1 1600000001
+verify-id-lobby 1 1600000001
+verify-id-game 255 16000000ff
+verify-id-lobby 255 16000000ff
+verify-id-game 16909060 1601020304
+verify-id-lobby 16909060 1601020304
+verify-id-game -1 16ffffffff
+verify-id-lobby -1 16ffffffff
+ping-statistics 0 0 -1 4a000080ff
+ping-statistics 1000 50 -1 4ae8034eff
+ping-statistics 37 25 12 4a2500670c
+ping-statistics 65535 300 100 4affff5464
+ping-statistics 1 1 0 4a01007f00
+map-build-stuck 1234 5678 12 3 0 0 false false 0 008000800c00030000d2042e16000080
+map-build-stuck 70000 -1 70000 5 300 -2 true false 999 0082ff81ffff0501007011ffffffff81
+map-build-stuck -1 99 65535 0 255 -1 false true 255 0081fe81ffff00ffffffff6300000081
+map-build-stuck 38760 4096 1 7 2 1 true true 17 007ffd7e01000700006897001000006f

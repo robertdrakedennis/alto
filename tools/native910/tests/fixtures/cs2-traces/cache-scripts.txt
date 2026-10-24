@@ -1,0 +1,31 @@
+# Ids of the cache scripts the cases need: every root and its transitive gosub callees.
+# Their bytes are read from server/data/pack/client.scripts.js5 at test time, never stored here.
+362
+669
+693
+694
+940
+1602
+1814
+2332
+2413
+3382
+4338
+4582
+4583
+4705
+5564
+6702
+7442
+8941
+9507
+10848
+11076
+11836
+12292
+12377
+12421
+12422
+13291
+13566
+14058

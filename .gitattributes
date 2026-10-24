@@ -1,0 +1,21 @@
+/gradlew        text eol=lf
+*.bat           text eol=crlf
+
+# binary refs — never diff, never normalize
+ref/client/*.jar binary
+ref/client/*.patched.jar binary
+lib/*.jar binary
+*.js5 binary
+*.dat binary
+*.dat2 binary
+*.idx* binary
+
+# generated cache output is gitignored, but mark it binary if ever forced in
+server/data/pack/** binary
+server/data/cache/** binary
+
+# RuneScript sources stay diffable as text
+*.rs2 text eol=lf
+*.pack text eol=lf
+*.defaults text eol=lf
+*.sym text eol=lf

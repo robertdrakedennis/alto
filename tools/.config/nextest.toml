@@ -1,0 +1,26 @@
+# cargo-nextest settings for the tools/ workspace. Plain `cargo test` and
+# `cargo nextest run` run the same tests.
+
+[profile.default]
+fail-fast = false
+slow-timeout = { period = "60s" }
+
+# Replay tests that run their replays on several threads
+# (client910 `session_replay::ReplayPlan`): one test slot per replay thread,
+# so a run never holds more replays (about 1.2 GB each) than it has slots.
+# Overrides of the default profile apply to every profile.
+[[profile.default.overrides]]
+filter = 'package(client910) and test(=app::sessions::session_replay::renderer_choice_is_observationally_inert)'
+threads-required = 4
+
+[[profile.default.overrides]]
+filter = 'package(client910) and test(/^app::sessions::session_replay::present_rate_is_observationally_inert/)'
+threads-required = 3
+
+[[profile.default.overrides]]
+filter = 'package(client910) and test(/^app::sessions::session_replay::client_core_replays_match_the_frozen_loopback_harness/)'
+threads-required = 2
+
+[[profile.default.overrides]]
+filter = 'package(client910) and test(=app::sessions::session_replay::two_replays_on_the_injected_clock_have_identical_cycle_digests)'
+threads-required = 2

@@ -1,0 +1,17 @@
+# Login-stage opcodes of revision 910: the first byte on a new connection.
+# Fields: name, opcode, size. Size is a byte count for a fixed payload, var-byte (one length byte follows the opcode) or var-short (a big-endian u16 length follows).
+# Sorted by opcode. Opcodes nothing sends or handles are named UNUSED_<opcode> (client) and UNHANDLED_<opcode> (server).
+# Edit this table, then run: python3 tools/revision/gen_protocol.py. A layout column (the packet fields) is reserved for a later change; generators read only the first three columns.
+name	opcode	size
+INIT_GAME_CONNECTION	14	0
+INIT_JS5REMOTE_CONNECTION	15	var-byte
+GAMELOGIN	16	var-short
+LOBBYLOGIN	19	var-short
+REQUEST_WORLDLIST	23	4
+CHECK_WORLD_SUITABILITY	24	var-byte
+GAMELOGIN_CONTINUE	26	0
+SSL_WEBCONNECTION	27	0
+CREATE_ACCOUNT_CONNECT	28	var-short
+INIT_SOCIAL_NETWORK_CONNECTION	29	var-short
+SOCIAL_NETWORK_LOGIN	30	var-short
+INIT_DEBUG_CONNECTION	31	4

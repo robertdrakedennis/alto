@@ -1,0 +1,17 @@
+# Recorded once from the revision-910 runtime: command<TAB>result.
+# e:null_object normalizes the recorded NullPointerException category.
+push_string_local	n
+pop_string_local	n
+pop_string_discard	none
+string_length	i:0
+join_string	s:006e0075006c006c
+append	s:006e0075006c006c0021
+append_num	s:006e0075006c006c0037
+append_signnum	s:006e0075006c006c002b0037
+append_char	s:006e0075006c006c0078
+substring	e:null_object
+string_indexof_char	e:null_object
+string_indexof_string	e:null_object
+cc_gettext	n
+cc_setopbase	n
+hook_string_argument	n
