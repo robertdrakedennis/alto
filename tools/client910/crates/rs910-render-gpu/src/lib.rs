@@ -37,10 +37,10 @@ pub mod window_canvas;
 
 // The modules name their dependencies through `crate::`.
 use rs910_config::{billboard, font_atlas, font_metrics, sprite_data, sprite_sheet, texture};
-#[cfg(any(test, feature = "test-hooks"))]
-use rs910_core::png_out;
 use rs910_core::{actor_matrix, logic_clock, trig};
 use rs910_game::protocol910;
+#[cfg(any(test, feature = "test-hooks"))]
+use rs910_gpu_device::png_out;
 use rs910_gpu_device::{gpu_device, uploads};
 use rs910_js5::{cache, js5_fetch};
 #[cfg(test)]

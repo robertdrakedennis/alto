@@ -19,48 +19,6 @@ const GRAY_ALPHA_2X3: &[u8] = &[
     153, 198, 207, 196, 36, 2, 132, 0, 16, 176, 1, 163, 206, 98, 253, 149, 0, 0, 0, 0, 73, 69, 78,
     68, 174, 66, 96, 130,
 ];
-const RAW_PAYLOAD: &[u8] =
-    b"hello 910 textures hello 910 textures hello 910 textures hello 910 textures ";
-const ZLIB_STORED: &[u8] = &[
-    120, 1, 1, 76, 0, 179, 255, 104, 101, 108, 108, 111, 32, 57, 49, 48, 32, 116, 101, 120, 116,
-    117, 114, 101, 115, 32, 104, 101, 108, 108, 111, 32, 57, 49, 48, 32, 116, 101, 120, 116, 117,
-    114, 101, 115, 32, 104, 101, 108, 108, 111, 32, 57, 49, 48, 32, 116, 101, 120, 116, 117, 114,
-    101, 115, 32, 104, 101, 108, 108, 111, 32, 57, 49, 48, 32, 116, 101, 120, 116, 117, 114, 101,
-    115, 32, 241, 133, 26, 73,
-];
-const ZLIB_FIXED: &[u8] = &[
-    24, 25, 203, 72, 205, 201, 201, 87, 176, 52, 52, 80, 40, 73, 173, 40, 41, 45, 74, 45, 86, 200,
-    32, 87, 8, 0, 241, 133, 26, 73,
-];
-const ZLIB_DYNAMIC: &[u8] = &[
-    120, 156, 203, 72, 205, 201, 201, 87, 176, 52, 52, 80, 40, 73, 173, 40, 41, 45, 74, 45, 86,
-    200, 32, 87, 8, 0, 241, 133, 26, 73,
-];
-
-#[test]
-fn zlib_stored_block_roundtrips() {
-    assert_eq!(
-        inflate_zlib(ZLIB_STORED, RAW_PAYLOAD.len()).unwrap(),
-        RAW_PAYLOAD
-    );
-}
-
-#[test]
-fn zlib_fixed_huffman_roundtrips() {
-    assert_eq!(
-        inflate_zlib(ZLIB_FIXED, RAW_PAYLOAD.len()).unwrap(),
-        RAW_PAYLOAD
-    );
-}
-
-#[test]
-fn zlib_dynamic_huffman_roundtrips() {
-    assert_eq!(
-        inflate_zlib(ZLIB_DYNAMIC, RAW_PAYLOAD.len()).unwrap(),
-        RAW_PAYLOAD
-    );
-}
-
 #[test]
 fn png_indexed_applies_trns_alpha() {
     let img = decode_png(INDEXED_2X2).unwrap();

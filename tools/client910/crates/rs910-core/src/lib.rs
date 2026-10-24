@@ -26,7 +26,6 @@ pub mod hardware;
 pub mod log_repeat;
 pub mod logic_clock;
 pub mod perlin;
-pub mod png_out;
 pub mod profile;
 pub mod reader;
 pub mod soft_cache;

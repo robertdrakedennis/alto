@@ -1,12 +1,5 @@
-//! Checksums, one copy each for the whole client (Phase 2.1).
-//!
-//! - [`crc32`]: `Packet.getcrc`, the IEEE CRC-32 (JS5 group/index checks,
-//!   reflection-check and uid frames, PNG chunks). It was `js5net::getcrc`'s
-//!   body; the bitwise `session::crc32` and the per-call-table copies in
-//!   `png_out` and `texture` computed the same function
-//!   (standard IEEE CRC-32).
-//! - [`adler32`]: the zlib trailer (`png_out` writes it, `texture`'s inflate
-//!   checks it); the two copies were identical.
+//! The IEEE CRC-32 the JS5 group and index checks, the reflection-check
+//! replies and the uid frames use.
 
 use std::sync::OnceLock;
 
@@ -36,14 +29,4 @@ pub fn crc32(data: &[u8]) -> u32 {
         crc = crc >> 8 ^ table[((crc ^ u32::from(b)) & 0xFF) as usize];
     }
     !crc
-}
-
-/// Adler-32 over `data` (RFC 1950 zlib trailer).
-pub fn adler32(data: &[u8]) -> u32 {
-    let (mut a, mut b) = (1_u32, 0_u32);
-    for &x in data {
-        a = (a + u32::from(x)) % 65521;
-        b = (b + a) % 65521;
-    }
-    (b << 16) | a
 }

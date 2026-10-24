@@ -22,11 +22,12 @@ pub mod client_watch_gpu;
 pub mod desc;
 pub mod gpu_device;
 pub mod health;
+pub mod png_out;
 #[cfg(any(test, feature = "test-hooks"))]
 pub mod test_support;
 pub mod ui_preferences_metric_gpu;
 pub mod uploads;
 
 // The moved code names these through `crate::` (like client910's facades).
-use rs910_core::{logic_clock, png_out};
+use rs910_core::logic_clock;
 use rs910_toolkit::{compressed_texture_format, performance_metric};

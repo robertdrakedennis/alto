@@ -17,6 +17,7 @@ native910 = { path = "../../../native910" }
 rs910-core = { path = "../rs910-core" }
 rs910-js5 = { path = "../rs910-js5" }
 anyhow = "1.0"
+png = "0.18"
 thiserror = "2.0"
 
 [dev-dependencies]

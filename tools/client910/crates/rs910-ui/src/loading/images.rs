@@ -4,8 +4,6 @@ use crate::ui_sprites::Sprite;
 
 use anyhow::{Context as _, Result};
 
-use rs910_core::fault::Fault;
-
 // ---------------------------------------------------------------------------
 // Element resources
 // ---------------------------------------------------------------------------
@@ -44,18 +42,11 @@ pub(super) const IMAGE_PROBE: [u8; 455] = [
     0x1b, 0xe4, 0x0a, 0x6e, 0x02, 0x00, 0x00,
 ];
 
-/// GZip decode: the size is the trailing little-endian int; the raw deflate
-/// stream starts after the fixed 10-byte header and ends before the 8-byte
-/// trailer.
+/// GZip decode; the trailer's size must match what inflated.
 pub(super) fn gunzip(data: &[u8]) -> Result<Vec<u8>> {
-    anyhow::ensure!(
-        data.len() >= 18 && data[0] == 31 && data[1] == 0x8b,
-        "GZip header"
-    );
-    let size = i32::from_le_bytes(data[data.len() - 4..].try_into()?);
-    let size = usize::try_from(size).with_context(|| Fault::NegativeSize.message("GZip size"))?;
-    let (out, _) = crate::texture::inflate_raw(&data[10..data.len() - 8], size)?;
-    anyhow::ensure!(out.len() == size, "GZip inflated {} of {size}", out.len());
+    let mut out = Vec::new();
+    std::io::Read::read_to_end(&mut flate2::read::GzDecoder::new(data), &mut out)
+        .context("GZip")?;
     Ok(out)
 }
 
