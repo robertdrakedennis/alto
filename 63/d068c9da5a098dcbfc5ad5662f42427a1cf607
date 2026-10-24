@@ -1,0 +1,14 @@
+tools/client910/crates/rs910-render-modern/src/frame/gpu/far.rs
+  h_d26e211304196f 339,346,354-357,366-371,377-390,402-405,500-503,596,598-603,608-609,615-645,1178-1183,1194,1397-1399,1430,1439-1447,1458,1465,1505-1528,1569-1571,1995-2000,2006-2007,2155-2164,2193,2361,2363,2414-2513,2533,2535-2540,2545-2550,2553,2563,2568-2572,2594,2598-2605,2782-2890
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "63d068c9da5a098dcbfc5ad5662f42427a1cf607",
+  "prompts": {},
+  "humans": {
+    "h_d26e211304196f": {
+      "author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
