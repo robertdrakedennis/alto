@@ -1,0 +1,36 @@
+name: Client
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: client-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  # Rust client (tools/client910 and the rs910-* crates), the native910
+  # cache/CS2 library: the same checks as tools/check.sh. Runs on a
+  # fresh clone without the game cache; no secrets are used.
+  rust:
+    name: Rust client
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@master
+        with:
+          toolchain: 1.96.0  # keep in sync with rust-toolchain.toml
+          components: clippy, rustfmt
+      - uses: Swatinem/rust-cache@v2
+        with:
+          workspaces: tools
+      - name: Install audio dependencies
+        run: sudo apt-get update && sudo apt-get install -y libasound2-dev pkg-config
+      - name: Check (fmt, clippy)
+        run: CHECK_ONLINE=1 tools/check.sh

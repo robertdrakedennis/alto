@@ -1,0 +1,49 @@
+{
+  "about": "Lobby-stream bytes the Rust client queues for the CS2 account-creation commands. Equal to the frames derived by hand from the account-creation message layout (see no_op_host_tests.rs expected_account_creation_frames). Decoded by server/src/lostcity/engine/LobbyAccountCreation.test.ts.",
+  "frames": [
+    {
+      "command": "create_availablerequest",
+      "hex": "1c000b6140620000000000000000",
+      "ints": [],
+      "objs": [
+        "a@b"
+      ]
+    },
+    {
+      "command": "create_name_availablerequest",
+      "hex": "410c52756ee90000000000000000",
+      "ints": [],
+      "objs": [
+        "Runé"
+      ]
+    },
+    {
+      "command": "create_suggest_name_request",
+      "hex": "45",
+      "ints": [],
+      "objs": []
+    },
+    {
+      "command": "create_createrequest",
+      "hex": "14001575736572007077000c016140620000000000000000",
+      "ints": [
+        12,
+        1
+      ],
+      "objs": [
+        "user",
+        "pw",
+        "a@b"
+      ]
+    },
+    {
+      "command": "create_step_reached",
+      "hex": "7607",
+      "ints": [
+        7
+      ],
+      "objs": []
+    }
+  ],
+  "regenerate": "cd tools/client910 && cargo test --lib ui_runtime::no_op_host_tests::regenerate_account_creation_lobby_frames_fixture -- --ignored"
+}

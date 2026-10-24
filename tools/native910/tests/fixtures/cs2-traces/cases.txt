@@ -1,0 +1,29 @@
+# CS2 trace cases: name<TAB>root id<TAB>typed args (see tests/cs2_traces.rs).
+# Real cases: scripts whose gosub closure is VM-core only, args chosen by a
+# corpus scan to reach every such command and the order-sensitive operands
+# (asymmetric/negative divide+modulo, branch_less_than on equal ints, both
+# testbit outcomes, gosubs whose same-lane args differ). The trailing comment
+# column records the readable args and scan features.
+script694	694	i:3,i:33	# i:3,i:33 steps=192 feats=div_asym gosub_multi gt_eq lt lt_eq mod_asym
+script1814	1814	s:006100620063003c00620072003e006400650066	# s:"abc<br>def" steps=535 feats=gosub_multi
+script8941	8941	i:1,i:-100,i:3	# i:1,i:-100,i:3 steps=489 feats=div_asym divide_neg lt lt_eq modulo_neg testbit0 testbit1
+script362	362	i:-2147483648,i:2	# i:-2147483648,i:2 steps=29 feats=div_asym lt mod_asym pow
+script14058	14058	i:13,i:1	# i:13,i:1 steps=33 feats=ge_eq
+script13566	13566	i:1	# i:1 steps=32 feats=div_asym gt_eq mod_asym
+script12292	12292	s:00480065006c006c006f00200057006f0072006c0064	# s:"Hello World" steps=24 feats=lt
+script6702	6702	i:5	# i:5 steps=14 feats=le_eq lt
+script4338	4338	i:10	# i:10 steps=16 feats=lt lt_eq
+script12377	12377	i:-2147483648,i:13,i:65535	# i:-2147483648,i:13,i:65535 steps=10 feats=
+script3382	3382	i:0,i:-100,i:7,i:3,i:-1	# i:0,i:-100,i:7,i:3,i:-1 steps=48 feats=gosub_multi gt_eq
+script9507	9507	i:100	# i:100 steps=43 feats=div_asym gosub_multi mod_asym
+script11076	11076	i:-100	# i:-100 steps=62 feats=div_asym divide_neg gosub_multi gt_eq modulo_neg
+script669	669	i:2147483647,i:1000,i:3	# i:2147483647,i:1000,i:3 steps=43 feats=div_asym mod_asym
+script2332	2332	s:006100620063003c00620072003e006400650066,s:0061,s:0031002c003200330034	# s:"abc<br>def",s:"a",s:"1,234" steps=37 feats=
+script13291	13291	i:5,i:255,s:,s:00480065006c006c006f00200057006f0072006c0064	# i:5,i:255,s:"",s:"Hello World" steps=16 feats=gt_eq
+script7442	7442	i:5,i:-2147483648	# i:5,i:-2147483648 steps=38 feats=lt testbit0 testbit1
+script11836	11836	i:33,i:2147483647	# i:33,i:2147483647 steps=75 feats=div_asym gosub_multi lt
+script4582	4582	i:0,i:-2147483648,i:1	# i:0,i:-2147483648,i:1 steps=25 feats=gosub_multi gt_eq
+script10848	10848	i:1000	# i:1000 steps=41 feats=div_asym ge_eq gt_eq lt mod_asym
+script1602	1602	s:006100620063003c00620072003e006400650066	# s:"abc<br>def" steps=45 feats=gosub_multi
+script5564	5564	i:65535	# i:65535 steps=32 feats=div_asym lt
+edge	900000	-	# synthetic: 32-bit int edge cases, long branches, arrays, bit ranges, mixed-lane gosub
