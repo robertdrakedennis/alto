@@ -1,0 +1,16 @@
+docs/README.md
+  h_d26e211304196f 16
+docs/engine-and-studio.md
+  h_d26e211304196f 57-60,68,70-71,92-93
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "dbc7cf2c453811727703efb7e177552923d77d55",
+  "prompts": {},
+  "humans": {
+    "h_d26e211304196f": {
+      "author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
