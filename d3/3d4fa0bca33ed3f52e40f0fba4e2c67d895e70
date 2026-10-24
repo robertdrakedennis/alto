@@ -1,0 +1,25 @@
+tools/client910/crates/rs910-render-modern/src/frame/gpu/terrain.rs
+  s_b924ff932db79a::t_8c9eb443ae8bf5 254-263,308-323,369,376-377,385,398
+tools/client910/crates/rs910-render-modern/src/frame/gpu/water.rs
+  s_b924ff932db79a::t_8b7b7fad68a427 466-467,471
+tools/client910/crates/rs910-render-modern/src/lighting/light_probes.wgsl
+  s_b924ff932db79a::t_bddb4876c02bc6 122-125,137,153-156,236-247
+tools/client910/crates/rs910-render-modern/src/terrain/terrain.wgsl
+  s_b924ff932db79a::t_ddfccdfe166d8d 152-155,165,193,211-214,231-241
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "d33d4fa0bca33ed3f52e40f0fba4e2c67d895e70",
+  "prompts": {},
+  "sessions": {
+    "s_b924ff932db79a": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "53d3e025-a4d4-4126-b2fe-b6d3beb22b08",
+        "model": "unknown"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
