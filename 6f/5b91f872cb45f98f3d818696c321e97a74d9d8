@@ -1,0 +1,37 @@
+tools/Cargo.lock
+  s_294fc1c2a0f8ed::t_d2ada087a7530a 734-742,756,1192-1201,1819-1831,2036,2080,2211
+tools/client910/crates/rs910-config/Cargo.toml
+  s_294fc1c2a0f8ed::t_fef6524de013dd 20
+tools/client910/crates/rs910-config/src/texture.rs
+  s_294fc1c2a0f8ed::t_c59c9971b8511d 41,45,273,283-285,287-292,304-317
+tools/client910/crates/rs910-core/src/checksum.rs
+  s_294fc1c2a0f8ed::t_96eb758ff4c50f 1-2
+tools/client910/crates/rs910-gpu-device/Cargo.toml
+  s_294fc1c2a0f8ed::t_8d1b7d82387216 22
+tools/client910/crates/rs910-gpu-device/src/lib.rs
+  s_294fc1c2a0f8ed::t_649fd4bd6377a4 25,32
+tools/client910/crates/rs910-gpu-device/src/png_out.rs
+  s_294fc1c2a0f8ed::t_dc33991152a36c 1,4-6,9-13
+tools/client910/crates/rs910-render-gpu/src/lib.rs
+  s_294fc1c2a0f8ed::t_2e9c16ff3e8c01 42-43
+tools/client910/crates/rs910-ui/Cargo.toml
+  s_294fc1c2a0f8ed::t_f24b3a066b8709 19
+tools/client910/crates/rs910-ui/src/loading/images.rs
+  s_294fc1c2a0f8ed::t_f27a3e4a07577a 45,47-49
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "6f5b91f872cb45f98f3d818696c321e97a74d9d8",
+  "prompts": {},
+  "sessions": {
+    "s_294fc1c2a0f8ed": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "a9ff09df-8dce-4cd5-a038-9dbb7fb7cefb",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
