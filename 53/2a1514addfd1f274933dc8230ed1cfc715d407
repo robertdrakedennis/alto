@@ -1,0 +1,31 @@
+.github/workflows/client.yml
+  s_b924ff932db79a::t_8e323a168befc2 18
+tools/Cargo.lock
+  s_b924ff932db79a::t_523e8636ec9cfd 34,1037,1983
+tools/Cargo.toml
+  s_b924ff932db79a::t_e0ae0b690bbef9 16
+tools/README.md
+  s_b924ff932db79a::t_93c5e2e87504aa 3
+tools/client910/crates/rs910-ui/src/ui_components.rs
+  s_b924ff932db79a::t_ccb27dc73fa02b 2251-2252,2503-2504,2721-2722,2967-2968,3984
+tools/client910/crates/rs910-ui/src/ui_hooks.rs
+  s_b924ff932db79a::t_dddd630ef8f69a 532-533
+tools/client910/crates/rs910-ui/src/ui_properties.rs
+  s_b924ff932db79a::t_8ee83120843ee3 1842-1843
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "532a1514addfd1f274933dc8230ed1cfc715d407",
+  "prompts": {},
+  "sessions": {
+    "s_b924ff932db79a": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "53d3e025-a4d4-4126-b2fe-b6d3beb22b08",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
