@@ -95,8 +95,8 @@ use rs910_core::log_repeat as logging;
 use rs910_audio::{audio_api, audio_backend, audio_stream};
 use rs910_config::{
     avatar, billboard, client_options, config, flo, font_metrics, scenery_varbits, sprite_data,
-    sprite_sheet, texture, ui_bytes, ui_component_fields, ui_configs, ui_db, ui_defaults,
-    ui_quests, utf16_text, wordpack,
+    sprite_sheet, texture, ui_component_fields, ui_configs, ui_db, ui_defaults, ui_quests,
+    utf16_text, wordpack,
 };
 use rs910_core::{
     actor_matrix, animation_matrix, applet_params, char_case, client_state, colour, logic_clock,

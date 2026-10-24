@@ -1,20 +1,20 @@
 //! Decoder of the camera update packet: modes, settings, effects and the
 //! point/entity/spline target readers.
 use super::*;
-use crate::ui_bytes::Cursor;
 use anyhow::{bail, ensure, Result};
+use rs910_core::reader::Reader;
 
-fn float(r: &mut Cursor<'_>) -> Result<f32> {
+fn float(r: &mut Reader<'_>) -> Result<f32> {
     Ok(f32::from_bits(r.g4s()? as u32))
 }
-fn vector(r: &mut Cursor<'_>) -> Result<Vec3> {
+fn vector(r: &mut Reader<'_>) -> Result<Vec3> {
     Ok(Vec3::new(float(r)?, float(r)?, float(r)?))
 }
-fn array(r: &mut Cursor<'_>) -> Result<[f32; 3]> {
+fn array(r: &mut Reader<'_>) -> Result<[f32; 3]> {
     let v = vector(r)?;
     Ok([v.x, v.y, v.z])
 }
-fn trackable(r: &mut Cursor<'_>, scene: &Scene) -> Result<Option<TrackableRef>> {
+fn trackable(r: &mut Reader<'_>, scene: &Scene) -> Result<Option<TrackableRef>> {
     let reference = TrackableRef {
         kind: r.g1()? as i32,
         index: r.g2()? as i32,
@@ -24,7 +24,7 @@ fn trackable(r: &mut Cursor<'_>, scene: &Scene) -> Result<Option<TrackableRef>> 
 
 impl Cam2 {
     pub fn decode(&mut self, bytes: &[u8]) -> Result<()> {
-        let mut r = Cursor::new(bytes);
+        let mut r = Reader::new(bytes);
         let flags = r.g1()?;
         self.control_mode = i32::from(flags & 1);
         if flags & 8 != 0 {
@@ -191,7 +191,7 @@ mod tests {
     #[test]
     fn camera_packets_match_recording() -> Result<()> {
         let input = rs910_core::test_support::frozen::bytes("camera-packets/input.bin");
-        let mut r = Cursor::new(&input);
+        let mut r = Reader::new(&input);
         let mut out = Vec::new();
         let mut cam = Cam2::new(false);
         fn int(out: &mut Vec<u8>, value: i32) {

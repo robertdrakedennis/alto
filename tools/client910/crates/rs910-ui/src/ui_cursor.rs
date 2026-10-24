@@ -1,12 +1,12 @@
-//! Cursor definitions (config group 33) and the custom-cursor update.
+//! Reader definitions (config group 33) and the custom-cursor update.
 //! Selection and cache pixels stay independent of the native window boundary.
 use crate::{
     cache::{CacheError, Pack},
     sprite_data::Data,
-    ui_bytes::Cursor,
     ui_cache::Cache,
 };
 use anyhow::{Context, Result};
+use rs910_core::reader::Reader;
 use std::{collections::BTreeMap, rc::Rc};
 
 #[derive(Clone, Debug, Default, PartialEq, Eq)]
@@ -16,7 +16,7 @@ pub struct Definition {
 }
 impl Definition {
     pub fn decode(bytes: &[u8]) -> Result<Self> {
-        let mut c = Cursor::new(bytes);
+        let mut c = Reader::new(bytes);
         let mut out = Self::default();
         loop {
             match c.g1()? {

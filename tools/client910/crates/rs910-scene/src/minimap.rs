@@ -27,9 +27,9 @@ use crate::{
     scene::Scene,
     sprite::Sprite,
     sprite_data::Data,
-    ui_bytes::Cursor,
 };
 use anyhow::{Context, Result};
+use rs910_core::reader::Reader;
 use std::{collections::BTreeMap, rc::Rc};
 
 /// Map scene icon config: sprite id (opcode 1, -1 on opcode 4), tint (opcode 2) and
@@ -42,7 +42,7 @@ pub struct MsiType {
 }
 impl MsiType {
     pub fn decode(bytes: &[u8]) -> Result<Self> {
-        let mut c = Cursor::new(bytes);
+        let mut c = Reader::new(bytes);
         let mut t = Self::default();
         loop {
             match c.g1()? {
@@ -235,7 +235,7 @@ pub struct MapElement {
 }
 impl MapElement {
     pub fn decode(bytes: &[u8]) -> Result<Self> {
-        let mut c = Cursor::new(bytes);
+        let mut c = Reader::new(bytes);
         let mut t = Self {
             sprite: -1,
             sprite2: -1,
@@ -257,7 +257,7 @@ impl MapElement {
             ops: vec![None; 5],
             ..Self::default()
         };
-        let id16 = |c: &mut Cursor| -> Result<i32> {
+        let id16 = |c: &mut Reader| -> Result<i32> {
             Ok(match c.g2()? {
                 65535 => -1,
                 v => i32::from(v),
@@ -297,11 +297,11 @@ impl MapElement {
                     let n = usize::from(c.g1()?);
                     t.polygon = (0..n * 2)
                         .map(|_| c.g2().map(|v| i32::from(v as i16)))
-                        .collect::<Result<_>>()?;
+                        .collect::<Result<_, _>>()?;
                     t.polygon_fill = c.g4s()?;
                     let m = usize::from(c.g1()?);
-                    t.line_colours = (0..m).map(|_| c.g4s()).collect::<Result<_>>()?;
-                    t.line_index = (0..n).map(|_| c.g1b()).collect::<Result<_>>()?;
+                    t.line_colours = (0..m).map(|_| c.g4s()).collect::<Result<_, _>>()?;
+                    t.line_index = (0..n).map(|_| c.g1b()).collect::<Result<_, _>>()?;
                 }
                 16 => t.show_on_world_map = false,
                 17 => t.target = Some(c.gjstr()?),
@@ -322,7 +322,7 @@ impl MapElement {
                     t.varp = id16(&mut c)?;
                     let fallback = if op == 27 { id16(&mut c)? } else { -1 };
                     let n = usize::from(c.g1()?);
-                    t.multime = (0..=n).map(|_| id16(&mut c)).collect::<Result<_>>()?;
+                    t.multime = (0..=n).map(|_| id16(&mut c)).collect::<Result<_, _>>()?;
                     t.multime.push(fallback);
                 }
                 28 => t.scale = i32::from(c.g1()?),
@@ -524,7 +524,7 @@ pub struct AreaMetadata {
 }
 impl AreaMetadata {
     pub fn decode(id: u32, bytes: &[u8]) -> Result<Self> {
-        let mut c = Cursor::new(bytes);
+        let mut c = Reader::new(bytes);
         let name = c.gjstr()?;
         let map_name = c.gjstr()?;
         let config_origin = c.g4s()?;
@@ -634,7 +634,7 @@ impl WorldMapElements {
         let Some(bytes) = files.remove(&1) else {
             return Ok(Self::default());
         };
-        let mut c = Cursor::new(&bytes);
+        let mut c = Reader::new(&bytes);
         let count = usize::from(c.g2()?);
         let mut out = Self::default();
         for _ in 0..count {
@@ -958,7 +958,7 @@ impl Minimap {
     pub fn apply_hint_arrow(&mut self, bytes: &[u8], base: [i32; 2]) -> Result<()> {
         anyhow::ensure!(bytes.len() == 14, "HINT_ARROW length");
         self.rebase_hint_arrows(base);
-        let mut c = Cursor::new(bytes);
+        let mut c = Reader::new(bytes);
         let header = c.g1()?;
         let slot = usize::from(header >> 5);
         anyhow::ensure!(slot < self.hint_arrow_state.len(), "HINT_ARROW slot");

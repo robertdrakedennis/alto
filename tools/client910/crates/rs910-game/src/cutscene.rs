@@ -15,9 +15,9 @@
 //! * Cutscene NPC/player entities are real [`crate::entities910`] actors
 //!   stored in the manager's own `Players`/`Npcs` collections and advanced by
 //!   `actor::tick_cutscene`.
-use crate::ui_bytes::Cursor;
 use anyhow::{Context, Result};
 use rs910_core::fault::Fault;
+use rs910_core::reader::Reader;
 use std::collections::BTreeMap;
 
 // The file-format half moved to rs910-config (Phase 2.6).
@@ -268,7 +268,7 @@ impl Default for Manager {
 /// Decode the cutscene defaults from the
 /// `defaults` archive's cutscene group (8) file.
 pub fn decode_defaults(bytes: &[u8]) -> Result<Option<crate::ui_defaults::Binding>> {
-    let mut p = Cursor::new(bytes);
+    let mut p = Reader::new(bytes);
     let mut binding = None;
     loop {
         match p.g1()? {

@@ -26,10 +26,9 @@ pub use map_scenes::MapScenes;
 mod chunk_painter;
 use chunk_painter::ChunkLayers;
 pub use chunk_painter::ChunkPainter;
+use rs910_core::reader::Reader;
 
-use crate::{
-    cache::Pack, config::LocStore, minimap::MsiStore, ui_bytes::Cursor, ui_sprites::Sprite,
-};
+use crate::{cache::Pack, config::LocStore, minimap::MsiStore, ui_sprites::Sprite};
 
 use anyhow::{Context, Result};
 
@@ -104,7 +103,7 @@ pub struct Defaults {
 impl Defaults {
     /// Decodes the defaults record.
     pub fn decode(bytes: &[u8]) -> Result<Self> {
-        let mut c = Cursor::new(bytes);
+        let mut c = Reader::new(bytes);
         let mut d = Self::default();
         loop {
             let op = c.g1()?;
@@ -452,13 +451,13 @@ impl WorldMap {
             } else {
                 Rc::new(tile_file(&pack, &meta.name)?)
             };
-            let mut c = Cursor::new(&bytes);
+            let mut c = Reader::new(&bytes);
             let underlays = (0..c.g1()?)
                 .map(|_| c.gsmart1or2())
-                .collect::<Result<Vec<_>>>()?;
+                .collect::<Result<Vec<_>, _>>()?;
             let overlays = (0..c.g1()?)
                 .map(|_| c.gsmart1or2())
-                .collect::<Result<Vec<_>>>()?;
+                .collect::<Result<Vec<_>, _>>()?;
             let pos = c.pos();
             self.decoder = Some(Decoder {
                 bytes,
@@ -473,7 +472,7 @@ impl WorldMap {
             .as_mut()
             .context("world-map decode without an allocated area")?;
         let bytes = decoder.bytes.clone();
-        let mut c = Cursor::new(&bytes[decoder.pos..]);
+        let mut c = Reader::new(&bytes[decoder.pos..]);
         while c.remaining() > 0
             && (!incremental || crate::logic_clock::now().duration_since(start) < slice)
         {

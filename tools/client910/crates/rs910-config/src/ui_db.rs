@@ -6,10 +6,11 @@
 //! backs the finder commands `db_find`/`db_find_with_count`, `db_listall`,
 //! `db_findnext`, `db_find_get`, `db_find_refine` and `db_getrowtable`,
 //! which work over the shared [`Finder`] state.
-use crate::{cache::Pack, ui_bytes::Cursor};
+use crate::cache::Pack;
 use anyhow::{anyhow, Context, Result};
 use native910::vm::{Value, VmError, VmResult};
 use rs910_core::fault::Fault;
+use rs910_core::reader::Reader;
 use std::collections::BTreeMap;
 
 /// A decoded database column value (integer, long, string or fine coordinate).
@@ -40,7 +41,7 @@ pub enum ComponentHookArg {
 pub type Types = Vec<u8>;
 
 /// Unpack a column's values: a row count, then one value per column and row.
-fn unpack_values(c: &mut Cursor<'_>, types: &[u8]) -> Result<Vec<DbValue>> {
+fn unpack_values(c: &mut Reader<'_>, types: &[u8]) -> Result<Vec<DbValue>> {
     let rows = c.gsmart1or2()?;
     anyhow::ensure!(rows >= 0, "negative DB row count");
     let mut values = Vec::with_capacity(types.len() * rows as usize);
@@ -62,7 +63,7 @@ fn unpack_values(c: &mut Cursor<'_>, types: &[u8]) -> Result<Vec<DbValue>> {
     Ok(values)
 }
 
-fn read_types(c: &mut Cursor<'_>, count: usize) -> Result<Types> {
+fn read_types(c: &mut Reader<'_>, count: usize) -> Result<Types> {
     let mut types = Vec::with_capacity(count);
     for _ in 0..count {
         let id = c.gsmart1or2()?;
@@ -86,7 +87,7 @@ pub struct Index {
 }
 impl Index {
     pub fn decode(bytes: &[u8]) -> Result<Self> {
-        let mut c = Cursor::new(bytes);
+        let mut c = Reader::new(bytes);
         let key_serial = c.g1()?;
         let count = c.gvarint2()?;
         anyhow::ensure!(count >= 0, "negative DB index size");
@@ -176,7 +177,7 @@ pub struct Table {
 impl Table {
     /// Decode one database table definition.
     pub fn decode(bytes: &[u8]) -> Result<Self> {
-        let mut c = Cursor::new(bytes);
+        let mut c = Reader::new(bytes);
         let mut t = Self::default();
         loop {
             let opcode = c.g1()?;
@@ -222,7 +223,7 @@ pub struct Row {
 impl Row {
     /// Decode one database row.
     pub fn decode(bytes: &[u8]) -> Result<Self> {
-        let mut c = Cursor::new(bytes);
+        let mut c = Reader::new(bytes);
         let mut r = Self::default();
         loop {
             let opcode = c.g1()?;

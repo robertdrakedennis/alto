@@ -1,6 +1,7 @@
 //! Placed map elements, loc records and source/display coordinate conversion.
+use rs910_core::reader::Reader;
 
-use crate::{cache::Pack, ui_bytes::Cursor};
+use crate::cache::Pack;
 
 use anyhow::Result;
 
@@ -90,7 +91,7 @@ impl StaticElements {
     /// Every members-only entry a non-member skips decrements the entry
     /// count, so the loop stops `skipped` entries early.
     pub fn decode(bytes: &[u8], members: bool) -> Result<Self> {
-        let mut c = Cursor::new(bytes);
+        let mut c = Reader::new(bytes);
         let mut count = usize::from(c.g2()?);
         let mut out = Self::default();
         while out.coords.len() < count {

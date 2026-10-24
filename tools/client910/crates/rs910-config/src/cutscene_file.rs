@@ -2,9 +2,9 @@
 //! its templates, splines, entity and location definitions, routes and the
 //! scrambled action list. client910's `cutscene` re-exports it and keeps the
 //! logic half (the cutscene manager state and the action clock).
-use crate::ui_bytes::Cursor;
 use anyhow::{bail, Context, Result};
 use rs910_core::fault::Fault;
+use rs910_core::reader::Reader;
 /// JS5 archive name of the cutscenes archive (id 35).
 pub const ARCHIVE: &str = "cutscenes";
 
@@ -24,7 +24,7 @@ pub struct Template {
     pub rotation: i32,
 }
 impl Template {
-    fn decode(p: &mut Cursor<'_>) -> Result<Self> {
+    fn decode(p: &mut Reader<'_>) -> Result<Self> {
         let packed = p.g4s()?;
         Ok(Self {
             src_level: ((packed as u32) >> 28) as i32,
@@ -48,7 +48,7 @@ pub struct Spline {
     pub to: Vec<[i32; 3]>,
 }
 impl Spline {
-    fn decode(p: &mut Cursor<'_>) -> Result<Self> {
+    fn decode(p: &mut Reader<'_>) -> Result<Self> {
         let n = p.gsmart1or2()?;
         let n =
             usize::try_from(n).with_context(|| Fault::NegativeSize.message("cutscene spline"))?;
@@ -309,7 +309,7 @@ impl Action {
     /// Decode one action. Commands 17/18/43 (`UNKNOWN_*`, scramble 3/2/7)
     /// construct no action in the original client; the missing entry then fails
     /// the cutscene load at its readiness check, so they are load errors here.
-    pub fn decode(p: &mut Cursor<'_>) -> Result<Self> {
+    pub fn decode(p: &mut Reader<'_>) -> Result<Self> {
         let command = p.g1()?;
         let scramble = scramble_id(command).with_context(|| {
             Fault::MissingValue.message(format_args!("cutscene command {command}"))
@@ -559,7 +559,7 @@ impl Action {
 
 /// `gSmart1or2s`: `g1() - 64` when the first
 /// byte is below 128, otherwise `g2() - 49152`.
-fn gsmart1or2s(p: &mut Cursor<'_>) -> Result<i32> {
+fn gsmart1or2s(p: &mut Reader<'_>) -> Result<i32> {
     let first = i32::from(p.g1()?);
     if first < 128 {
         Ok(first - 64)
@@ -601,7 +601,7 @@ impl Definition {
     /// [`Self::decode`] plus the unread trailing byte count (the client never
     /// checks it; the cache test proves every file is consumed exactly).
     pub fn decode_counted(bytes: &[u8]) -> Result<(Self, usize)> {
-        let mut p = Cursor::new(bytes);
+        let mut p = Reader::new(bytes);
         let (mut viewport_width, mut viewport_height) = (0, 0);
         // Header: unknown opcodes consume only their byte.
         loop {
@@ -617,14 +617,14 @@ impl Definition {
         let n = p.g1()?;
         let templates = (0..n)
             .map(|_| Template::decode(&mut p))
-            .collect::<Result<_>>()?;
-        let count = |p: &mut Cursor<'_>, what: &str| -> Result<usize> {
+            .collect::<Result<_, _>>()?;
+        let count = |p: &mut Reader<'_>, what: &str| -> Result<usize> {
             usize::try_from(p.gsmart1or2()?).with_context(|| Fault::NegativeSize.message(what))
         };
         let n = count(&mut p, "splines")?;
         let splines = (0..n)
             .map(|_| Spline::decode(&mut p))
-            .collect::<Result<_>>()?;
+            .collect::<Result<_, _>>()?;
         let n = count(&mut p, "entities")?;
         let mut entities = Vec::with_capacity(n);
         for index in 0..n {
@@ -672,7 +672,7 @@ impl Definition {
         let n = count(&mut p, "actions")?;
         let actions = (0..n)
             .map(|_| Action::decode(&mut p))
-            .collect::<Result<_>>()?;
+            .collect::<Result<_, _>>()?;
         Ok((
             Self {
                 viewport_width,

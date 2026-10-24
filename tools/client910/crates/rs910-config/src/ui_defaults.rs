@@ -1,9 +1,10 @@
 //! The right-click menu defaults (defaults archive group 7, the menu group):
 //! input bindings, member/free colours and the modifier keys. The bindings
 //! themselves belong to the input owner and are only consumed here.
-use crate::{cache::Pack, ui_bytes::Cursor};
+use crate::cache::Pack;
 use anyhow::{Context, Result};
 use rs910_core::fault::Fault;
+use rs910_core::reader::Reader;
 
 /// Input bindings, by type byte 0/1/2: a mouse binding (button action, click
 /// count, held keys), a key binding (key code + modifier mask) and a
@@ -27,7 +28,7 @@ pub enum Binding {
 }
 impl Binding {
     /// Decode one binding; an unknown type consumes only its type byte.
-    fn decode(c: &mut Cursor<'_>) -> Result<Option<Self>> {
+    fn decode(c: &mut Reader<'_>) -> Result<Option<Self>> {
         Ok(match c.g1()? {
             0 => {
                 let action = i32::from(c.g1()?);
@@ -47,7 +48,7 @@ impl Binding {
         })
     }
     /// Decode one binding, for the other `defaults` groups.
-    pub fn decode_from(c: &mut Cursor<'_>) -> Result<Option<Self>> {
+    pub fn decode_from(c: &mut Reader<'_>) -> Result<Option<Self>> {
         Self::decode(c)
     }
     /// Whether the binding is satisfied. `held` tells whether a key is
@@ -87,9 +88,11 @@ pub struct MouseEvent {
     pub count: i32,
 }
 
-fn key_list(c: &mut Cursor<'_>) -> Result<Vec<i32>> {
+fn key_list(c: &mut Reader<'_>) -> Result<Vec<i32>> {
     let n = c.g1()?;
-    (0..n).map(|_| c.g1().map(i32::from)).collect()
+    Ok((0..n)
+        .map(|_| c.g1().map(i32::from))
+        .collect::<Result<_, _>>()?)
 }
 
 #[derive(Clone, Debug, Default, PartialEq, Eq)]
@@ -128,7 +131,7 @@ impl MiniMenuDefaults {
     /// Decode the menu defaults file.
     pub fn decode(bytes: &[u8]) -> Result<Self> {
         let mut d = Self::default();
-        let mut c = Cursor::new(bytes);
+        let mut c = Reader::new(bytes);
         loop {
             match c.g1()? {
                 0 => return Ok(d),

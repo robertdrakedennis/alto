@@ -305,7 +305,7 @@ impl CoupledSplineFocus {
     }
     pub(super) fn decode(
         &mut self,
-        reader: &mut crate::ui_bytes::Cursor<'_>,
+        reader: &mut rs910_core::reader::Reader<'_>,
     ) -> anyhow::Result<()> {
         self.path = Some(CameraSplinePath::decode(reader)?);
         self.parameter = 0.0;

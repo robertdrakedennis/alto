@@ -3,9 +3,10 @@
 //! and the login reset of the session state.
 //! `UPDATE_STAT` (server packet 33) is the live post-login mutation; fresh values
 //! below are installed by the login reset before feed updates arrive.
-use crate::{cache::Pack, ui_bytes::Cursor};
+use crate::cache::Pack;
 use anyhow::{anyhow, Context, Result};
 use rs910_core::fault::Fault;
+use rs910_core::reader::Reader;
 
 #[derive(Clone, Debug, PartialEq, Eq)]
 pub struct XpTable {
@@ -120,7 +121,7 @@ impl SkillDefaults {
         let Some(bytes) = bytes else {
             return Ok(d);
         };
-        let mut c = Cursor::new(bytes);
+        let mut c = Reader::new(bytes);
         loop {
             let opcode = c.g1()?;
             match opcode {

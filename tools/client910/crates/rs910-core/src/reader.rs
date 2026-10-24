@@ -221,6 +221,16 @@ impl<'a> Reader<'a> {
         }
     }
 
+    /// `gjstr`: a NUL-terminated Windows-1252 string.
+    pub fn gjstr(&mut self) -> Result<String, Eof> {
+        let bytes = self.gjstr_bytes()?;
+        Ok(bytes
+            .iter()
+            .copied()
+            .map(crate::cp1252::cp1252_decode_byte)
+            .collect())
+    }
+
     /// `gSmart1or2s`.
     #[inline]
     pub fn gsmart1or2s(&mut self) -> Result<i32, Eof> {

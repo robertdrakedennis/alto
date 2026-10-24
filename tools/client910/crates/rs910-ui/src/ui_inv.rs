@@ -5,6 +5,7 @@
 //! 6/16) feed the cache and inventory transmit hooks.
 use crate::protocol910::{script_types::script_type, varbits::Binding, variables::Value};
 use anyhow::{Context, Result};
+use rs910_core::reader::Reader;
 use std::collections::BTreeMap;
 pub type SlotVars = BTreeMap<i32, Value>;
 
@@ -153,8 +154,8 @@ pub struct Update {
 /// read. Decode the complete packet
 /// before committing it so malformed input never leaves a half-updated cache.
 pub fn decode(opcode: u8, bytes: &[u8], defs: &BTreeMap<i32, Binding>) -> Result<Update> {
-    use crate::{proto::server as p, ui_bytes::Cursor};
-    let mut r = Cursor::new(bytes);
+    use crate::proto::server as p;
+    let mut r = Reader::new(bytes);
     if opcode == p::UPDATE_INV_STOP_TRANSMIT {
         let flags = r.g1()?.wrapping_sub(128);
         let inv = i32::from(r.g2()?);

@@ -43,7 +43,7 @@ pub mod ui_changes;
 pub mod ui_var_store;
 
 // The moved code names these through `crate::` (like client910's facades).
-use rs910_config::{animation_sequences, config, ui_bytes, ui_defaults};
+use rs910_config::{animation_sequences, config, ui_defaults};
 use rs910_core::{logic_clock, trig};
 use rs910_js5::{cache, js5_fetch};
 use rs910_protocol::proto;

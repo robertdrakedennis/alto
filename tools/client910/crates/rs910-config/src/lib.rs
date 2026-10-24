@@ -9,7 +9,7 @@
 //!   evaluator), [`avatar`] (identity kits and the kit palette),
 //!   [`billboard`].
 //! - [`font_metrics`], [`sprite_data`]: font and sprite resources.
-//! - [`ui_bytes`] (the UI decoders' `anyhow` reader), [`ui_component_fields`],
+//! - [`ui_component_fields`],
 //!   [`ui_legacy_types`], [`ui_quests`], [`ui_defaults`] (menu defaults and
 //!   the bindings decoder).
 //! - [`types910`]: the entity-config decoders (`*_types`), their pack
@@ -54,7 +54,6 @@ pub mod sprite_data;
 pub mod sprite_sheet;
 pub mod texture;
 pub mod types910;
-pub mod ui_bytes;
 pub mod ui_component_fields;
 pub mod ui_configs;
 pub mod ui_db;

@@ -1,6 +1,6 @@
 //! Area tile decoding and floor colour blending.
 
-use crate::ui_bytes::Cursor;
+use rs910_core::reader::Reader;
 
 use anyhow::{Context, Result};
 
@@ -98,7 +98,7 @@ impl Area {
     /// Out-of-area writes are dropped after the record is consumed.
     pub(super) fn decode_tile(
         &mut self,
-        c: &mut Cursor<'_>,
+        c: &mut Reader<'_>,
         region: [i32; 2],
         x: i32,
         z: i32,

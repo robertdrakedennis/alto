@@ -4,7 +4,7 @@ use rs910_core::fault::Fault;
 
 pub use rs910_core::vector_math::*;
 
-pub(super) fn read_float(reader: &mut crate::ui_bytes::Cursor<'_>) -> anyhow::Result<f32> {
+pub(super) fn read_float(reader: &mut rs910_core::reader::Reader<'_>) -> anyhow::Result<f32> {
     Ok(f32::from_bits(reader.g4s()? as u32))
 }
 
@@ -104,7 +104,7 @@ impl CameraSplinePath {
         self.sample_segment(self.controls.len() as f32)
     }
 
-    pub(super) fn decode(reader: &mut crate::ui_bytes::Cursor<'_>) -> anyhow::Result<Self> {
+    pub(super) fn decode(reader: &mut rs910_core::reader::Reader<'_>) -> anyhow::Result<Self> {
         let segment_count = reader.gsmart1or2()?.max(1) as usize;
         let mut controls = Vec::with_capacity(segment_count);
         let first0 = [
@@ -210,7 +210,7 @@ impl SplineTrack {
 
     pub(super) fn decode(
         &mut self,
-        reader: &mut crate::ui_bytes::Cursor<'_>,
+        reader: &mut rs910_core::reader::Reader<'_>,
     ) -> anyhow::Result<()> {
         let count = reader.g1()? as usize;
         self.paths.clear();
