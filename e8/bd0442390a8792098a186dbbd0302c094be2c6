@@ -1,0 +1,16 @@
+tools/client910/crates/rs910-client/src/net/login_transport.rs
+  h_d26e211304196f 32-38,1150-1154,1156-1158,1204
+tools/client910/crates/rs910-client/src/net/tests.rs
+  h_d26e211304196f 492-503
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "e8bd0442390a8792098a186dbbd0302c094be2c6",
+  "prompts": {},
+  "humans": {
+    "h_d26e211304196f": {
+      "author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
