@@ -1,0 +1,20 @@
+docs/renderer/modern-renderer.md
+  h_d26e211304196f 184-187
+tools/client910/crates/rs910-render-modern/src/frame/gpu/planar_reflection.rs
+  h_d26e211304196f 19-24,27,119-122,124-125,128,134,160-171,187-227,231-235,242,245-249,268,270-286,289,293-294,298,308-312,332-334,336-341
+tools/client910/crates/rs910-render-modern/src/frame/gpu/water.rs
+  h_d26e211304196f 1072-1073
+tools/client910/crates/rs910-render-modern/src/models/bounds.rs
+  h_d26e211304196f 82-105,107
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "8429c14ebecac462cd289ed7e796e4ac240a3019",
+  "prompts": {},
+  "humans": {
+    "h_d26e211304196f": {
+      "author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
