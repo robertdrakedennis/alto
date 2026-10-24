@@ -1,0 +1,18 @@
+tools/client910/crates/rs910-render-modern/src/frame/gpu/interior.rs
+  h_d26e211304196f 32-34,36-41,49-53,72
+tools/client910/crates/rs910-render-modern/src/frame/tests/models.rs
+  h_d26e211304196f 551
+tools/client910/crates/rs910-render-modern/src/shadows/interior.rs
+  h_d26e211304196f 81-83,85,135-137
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "faee55c7d11e94f6b81f926647661e64d5e11fa6",
+  "prompts": {},
+  "humans": {
+    "h_d26e211304196f": {
+      "author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
