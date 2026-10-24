@@ -5,6 +5,7 @@
 //! second. Split out of `ui_preferences_metric` in Phase 3.2 (wgpu stays in
 //! the GPU renderer); the shell's active toolkit runs [`measure`] on its own
 //! device when the interface host asks its `RendererProbe` for a benchmark.
+use crate::desc;
 use crate::performance_metric::{Benchmark, MetricVertex};
 use anyhow::Result;
 const SHADER: &str = r#"
@@ -82,20 +83,8 @@ pub fn run(device: &wgpu::Device, queue: &wgpu::Queue, request: &Benchmark<'_>) 
     let size = [canvas[0].max(1), canvas[1].max(1)];
     let format = wgpu::TextureFormat::Rgba8Unorm;
     let target = |format, usage, label| {
-        let texture = device.create_texture(&wgpu::TextureDescriptor {
-            label: Some(label),
-            size: wgpu::Extent3d {
-                width: size[0],
-                height: size[1],
-                depth_or_array_layers: 1,
-            },
-            mip_level_count: 1,
-            sample_count: 1,
-            dimension: wgpu::TextureDimension::D2,
-            format,
-            usage,
-            view_formats: &[],
-        });
+        let texture =
+            device.create_texture(&desc::texture_2d(label, [size[0], size[1]], format, usage));
         let view = texture.create_view(&Default::default());
         (texture, view)
     };
@@ -141,42 +130,31 @@ pub fn run(device: &wgpu::Device, queue: &wgpu::Queue, request: &Benchmark<'_>) 
         contents: &uniforms,
         usage: wgpu::BufferUsages::UNIFORM,
     });
-    let layout = device.create_bind_group_layout(&wgpu::BindGroupLayoutDescriptor {
-        label: Some("metric draw"),
-        entries: &[wgpu::BindGroupLayoutEntry {
-            binding: 0,
-            visibility: wgpu::ShaderStages::VERTEX,
-            ty: wgpu::BindingType::Buffer {
-                ty: wgpu::BufferBindingType::Uniform,
-                has_dynamic_offset: true,
-                min_binding_size: wgpu::BufferSize::new(64),
-            },
-            count: None,
-        }],
-    });
-    let bind = device.create_bind_group(&wgpu::BindGroupDescriptor {
-        label: Some("metric draw"),
-        layout: &layout,
-        entries: &[wgpu::BindGroupEntry {
-            binding: 0,
-            resource: wgpu::BindingResource::Buffer(wgpu::BufferBinding {
+    let layout = desc::layout(
+        device,
+        "metric draw",
+        &[desc::uniform_sized(0, wgpu::ShaderStages::VERTEX, true, 64)],
+    );
+    let bind = desc::bind_group(
+        device,
+        "metric draw",
+        &layout,
+        &[(
+            0,
+            wgpu::BindingResource::Buffer(wgpu::BufferBinding {
                 buffer: &uniform,
                 offset: 0,
                 size: wgpu::BufferSize::new(64),
             }),
-        }],
-    });
+        )],
+    );
     let shader = device.create_shader_module(wgpu::ShaderModuleDescriptor {
         label: Some("metric"),
         source: wgpu::ShaderSource::Wgsl(SHADER.into()),
     });
     let pipeline = device.create_render_pipeline(&wgpu::RenderPipelineDescriptor {
         label: Some("metric"),
-        layout: Some(&device.create_pipeline_layout(&wgpu::PipelineLayoutDescriptor {
-            label: Some("metric"),
-            bind_group_layouts: &[Some(&layout)],
-            immediate_size: 0,
-        })),
+        layout: Some(&desc::pipeline_layout(device, "metric", &[Some(&layout)])),
         vertex: wgpu::VertexState {
             module: &shader,
             entry_point: Some("vs"),
@@ -194,13 +172,7 @@ pub fn run(device: &wgpu::Device, queue: &wgpu::Queue, request: &Benchmark<'_>) 
             compilation_options: Default::default(),
         }),
         primitive: wgpu::PrimitiveState::default(),
-        depth_stencil: Some(wgpu::DepthStencilState {
-            format: wgpu::TextureFormat::Depth32Float,
-            depth_write_enabled: Some(true),
-            depth_compare: Some(wgpu::CompareFunction::LessEqual),
-            stencil: Default::default(),
-            bias: Default::default(),
-        }),
+        depth_stencil: Some(desc::depth_state(wgpu::TextureFormat::Depth32Float, true, wgpu::CompareFunction::LessEqual)),
         multisample: Default::default(),
         multiview_mask: None,
         cache: None,
@@ -212,29 +184,15 @@ pub fn run(device: &wgpu::Device, queue: &wgpu::Queue, request: &Benchmark<'_>) 
         // toolkit.clear(3, 0)
         let mut encoder = device.create_command_encoder(&Default::default());
         {
-            let mut pass = encoder.begin_render_pass(&wgpu::RenderPassDescriptor {
-                label: Some("metric frame"),
-                color_attachments: &[Some(wgpu::RenderPassColorAttachment {
-                    view: &colour,
-                    resolve_target: None,
-                    depth_slice: None,
-                    ops: wgpu::Operations {
-                        load: wgpu::LoadOp::Clear(wgpu::Color::BLACK),
-                        store: wgpu::StoreOp::Store,
-                    },
-                })],
-                depth_stencil_attachment: Some(wgpu::RenderPassDepthStencilAttachment {
-                    view: &depth,
-                    depth_ops: Some(wgpu::Operations {
-                        load: wgpu::LoadOp::Clear(1.0),
-                        store: wgpu::StoreOp::Store,
-                    }),
-                    stencil_ops: None,
-                }),
-                timestamp_writes: None,
-                occlusion_query_set: None,
-                multiview_mask: None,
-            });
+            let mut pass = desc::pass(
+                &mut encoder,
+                "metric frame",
+                &[desc::colour(
+                    &colour,
+                    wgpu::LoadOp::Clear(wgpu::Color::BLACK),
+                )],
+                desc::depth(&depth, wgpu::LoadOp::Clear(1.0), wgpu::StoreOp::Store),
+            );
             pass.set_pipeline(&pipeline);
             pass.set_vertex_buffer(0, vertices.slice(..));
             pass.set_index_buffer(indices.slice(..), wgpu::IndexFormat::Uint32);

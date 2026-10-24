@@ -9,6 +9,7 @@
 //! identical inputs by a few foliage pixels (a warm-up variant of the
 //! compiled shaders; renderer plan M4/M6), so [`Noise`] measures and bounds
 //! repeat differences instead of assuming bit equality.
+use rs910_gpu_device::desc;
 
 mod far;
 mod lifecycle;
@@ -454,12 +455,12 @@ pub(super) fn read_back(
     let (w, h) = (texture.width(), texture.height());
     let unpadded = w * bytes;
     let padded = unpadded.div_ceil(256) * 256;
-    let buffer = device.create_buffer(&wgpu::BufferDescriptor {
-        label: Some("read back"),
-        size: u64::from(padded * h),
-        usage: wgpu::BufferUsages::COPY_DST | wgpu::BufferUsages::MAP_READ,
-        mapped_at_creation: false,
-    });
+    let buffer = desc::buffer(
+        device,
+        "read back",
+        u64::from(padded * h),
+        wgpu::BufferUsages::COPY_DST | wgpu::BufferUsages::MAP_READ,
+    );
     let mut encoder = device.create_command_encoder(&Default::default());
     encoder.copy_texture_to_buffer(
         texture.as_image_copy(),
@@ -499,20 +500,12 @@ pub(super) fn render(
     snapshot: &SceneSnapshot<'_>,
     size: [u32; 2],
 ) -> Frame {
-    let output = device.create_texture(&wgpu::TextureDescriptor {
-        label: Some("offscreen frame"),
-        size: wgpu::Extent3d {
-            width: size[0],
-            height: size[1],
-            depth_or_array_layers: 1,
-        },
-        mip_level_count: 1,
-        sample_count: 1,
-        dimension: wgpu::TextureDimension::D2,
-        format: wgpu::TextureFormat::Rgba8Unorm,
-        usage: wgpu::TextureUsages::RENDER_ATTACHMENT | wgpu::TextureUsages::COPY_SRC,
-        view_formats: &[],
-    });
+    let output = device.create_texture(&desc::texture_2d(
+        "offscreen frame",
+        [size[0], size[1]],
+        wgpu::TextureFormat::Rgba8Unorm,
+        wgpu::TextureUsages::RENDER_ATTACHMENT | wgpu::TextureUsages::COPY_SRC,
+    ));
     let view = output.create_view(&Default::default());
     let mut encoder = device.create_command_encoder(&Default::default());
     let [w, h] = size.map(|v| v as i32);

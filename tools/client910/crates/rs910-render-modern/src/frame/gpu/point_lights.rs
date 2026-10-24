@@ -3,6 +3,7 @@
 //! its uniforms), rebuilt when the scene's light table changes and
 //! rewritten every frame (positions follow the camera origin, intensities
 //! flicker).
+use rs910_gpu_device::desc;
 
 use wgpu::util::DeviceExt;
 
@@ -20,39 +21,13 @@ pub(crate) fn point_light_layout(device: &wgpu::Device) -> wgpu::BindGroupLayout
     let [s8, s9] = crate::frame::gpu::point_shadows::layout_entries();
     // The global environment cube (bindings 10-12).
     let [g10, g11, g12] = crate::frame::gpu::global_env_mapping::layout_entries();
-    device.create_bind_group_layout(&wgpu::BindGroupLayoutDescriptor {
-        label: Some("modern point lights"),
-        entries: &[
-            wgpu::BindGroupLayoutEntry {
-                binding: 0,
-                visibility: wgpu::ShaderStages::FRAGMENT,
-                ty: wgpu::BindingType::Buffer {
-                    ty: wgpu::BufferBindingType::Storage { read_only: true },
-                    has_dynamic_offset: false,
-                    min_binding_size: None,
-                },
-                count: None,
-            },
-            wgpu::BindGroupLayoutEntry {
-                binding: 1,
-                visibility: wgpu::ShaderStages::FRAGMENT,
-                ty: wgpu::BindingType::Buffer {
-                    ty: wgpu::BufferBindingType::Storage { read_only: true },
-                    has_dynamic_offset: false,
-                    min_binding_size: None,
-                },
-                count: None,
-            },
-            wgpu::BindGroupLayoutEntry {
-                binding: 2,
-                visibility: wgpu::ShaderStages::FRAGMENT,
-                ty: wgpu::BindingType::Buffer {
-                    ty: wgpu::BufferBindingType::Uniform,
-                    has_dynamic_offset: false,
-                    min_binding_size: None,
-                },
-                count: None,
-            },
+    desc::layout(
+        device,
+        "modern point lights",
+        &[
+            desc::storage(0, wgpu::ShaderStages::FRAGMENT),
+            desc::storage(1, wgpu::ShaderStages::FRAGMENT),
+            desc::uniform(2, wgpu::ShaderStages::FRAGMENT),
             p3,
             p4,
             p5,
@@ -65,7 +40,7 @@ pub(crate) fn point_light_layout(device: &wgpu::Device) -> wgpu::BindGroupLayout
             g12,
             p13,
         ],
-    })
+    )
 }
 
 /// The retained installation identity, light count and grid size of a table; the
@@ -117,12 +92,12 @@ pub(crate) fn grid_buffer(device: &wgpu::Device, grid: &PointLightGrid) -> wgpu:
 }
 
 pub(crate) fn light_buffer(device: &wgpu::Device, capacity: usize) -> wgpu::Buffer {
-    device.create_buffer(&wgpu::BufferDescriptor {
-        label: Some("modern point lights"),
-        size: (capacity.max(1) * std::mem::size_of::<PointLight>()) as u64,
-        usage: wgpu::BufferUsages::STORAGE | wgpu::BufferUsages::COPY_DST,
-        mapped_at_creation: false,
-    })
+    desc::buffer(
+        device,
+        "modern point lights",
+        (capacity.max(1) * std::mem::size_of::<PointLight>()) as u64,
+        wgpu::BufferUsages::STORAGE | wgpu::BufferUsages::COPY_DST,
+    )
 }
 
 pub(crate) fn bind_group(
@@ -141,18 +116,9 @@ pub(crate) fn bind_group(
         label: Some("modern point lights"),
         layout,
         entries: &[
-            wgpu::BindGroupEntry {
-                binding: 0,
-                resource: buffer.as_entire_binding(),
-            },
-            wgpu::BindGroupEntry {
-                binding: 1,
-                resource: grid.as_entire_binding(),
-            },
-            wgpu::BindGroupEntry {
-                binding: 2,
-                resource: uniforms.as_entire_binding(),
-            },
+            desc::bind(0, buffer.as_entire_binding()),
+            desc::bind(1, grid.as_entire_binding()),
+            desc::bind(2, uniforms.as_entire_binding()),
             p3,
             p4,
             p5,

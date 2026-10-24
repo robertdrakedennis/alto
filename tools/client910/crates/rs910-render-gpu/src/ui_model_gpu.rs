@@ -5,6 +5,7 @@ use crate::{
     interface_model::{Draw, DrawSpace},
 };
 use anyhow::Result;
+use rs910_gpu_device::desc;
 use std::collections::HashMap;
 struct Entry {
     owner: usize,
@@ -397,26 +398,16 @@ impl ModelFrame {
         range: std::ops::Range<usize>,
         clear: bool,
     ) {
-        let mut pass = encoder.begin_render_pass(&wgpu::RenderPassDescriptor {
-            label: Some("UI quads"),
-            color_attachments: &[Some(wgpu::RenderPassColorAttachment {
-                view,
-                resolve_target: None,
-                depth_slice: None,
-                ops: wgpu::Operations {
-                    load: if clear {
-                        wgpu::LoadOp::Clear(wgpu::Color::BLACK)
-                    } else {
-                        wgpu::LoadOp::Load
-                    },
-                    store: wgpu::StoreOp::Store,
-                },
-            })],
-            depth_stencil_attachment: None,
-            occlusion_query_set: None,
-            multiview_mask: None,
-            timestamp_writes: None,
-        });
+        let mut pass = desc::colour_pass(
+            encoder,
+            "UI quads",
+            view,
+            if clear {
+                wgpu::LoadOp::Clear(wgpu::Color::BLACK)
+            } else {
+                wgpu::LoadOp::Load
+            },
+        );
         paint.draw_range(&mut pass, range);
     }
 }

@@ -1,4 +1,5 @@
 //! Floor and model pipeline variants and frame uniform resources.
+use rs910_gpu_device::desc;
 
 use std::collections::HashMap;
 
@@ -175,12 +176,7 @@ pub(super) fn floor_pipelines(
             })],
             compilation_options: Default::default(),
         }),
-        primitive: wgpu::PrimitiveState {
-            topology: wgpu::PrimitiveTopology::TriangleList,
-            front_face: wgpu::FrontFace::Ccw,
-            cull_mode: Some(wgpu::Face::Back),
-            ..Default::default()
-        },
+        primitive: desc::triangles(wgpu::FrontFace::Ccw, Some(wgpu::Face::Back)),
         depth_stencil: Some(wgpu::DepthStencilState {
             format: depth_format,
             depth_write_enabled: Some(true),
@@ -338,109 +334,76 @@ impl FloorPipeline {
             label: Some("floor (Model.glsl ShaderMode 0)"),
             source: wgpu::ShaderSource::Wgsl(source),
         });
-        let uniform_layout = device.create_bind_group_layout(&wgpu::BindGroupLayoutDescriptor {
-            label: Some("floor uniforms"),
-            entries: &[
-                wgpu::BindGroupLayoutEntry {
-                    binding: 0,
-                    visibility: wgpu::ShaderStages::VERTEX_FRAGMENT,
-                    ty: wgpu::BindingType::Buffer {
-                        ty: wgpu::BufferBindingType::Uniform,
-                        has_dynamic_offset: false,
-                        min_binding_size: None,
-                    },
-                    count: None,
-                },
-                wgpu::BindGroupLayoutEntry {
-                    binding: 1,
-                    visibility: wgpu::ShaderStages::FRAGMENT,
-                    ty: wgpu::BindingType::Texture {
-                        sample_type: wgpu::TextureSampleType::Float { filterable: true },
-                        view_dimension: wgpu::TextureViewDimension::D2Array,
-                        multisampled: false,
-                    },
-                    count: None,
-                },
-                wgpu::BindGroupLayoutEntry {
-                    binding: 2,
-                    visibility: wgpu::ShaderStages::FRAGMENT,
-                    ty: wgpu::BindingType::Sampler(wgpu::SamplerBindingType::Filtering),
-                    count: None,
-                },
-                wgpu::BindGroupLayoutEntry {
-                    binding: 3,
-                    visibility: wgpu::ShaderStages::FRAGMENT,
-                    ty: wgpu::BindingType::Texture {
-                        sample_type: wgpu::TextureSampleType::Float { filterable: true },
-                        view_dimension: wgpu::TextureViewDimension::D3,
-                        multisampled: false,
-                    },
-                    count: None,
-                },
-                wgpu::BindGroupLayoutEntry {
-                    binding: 4,
-                    visibility: wgpu::ShaderStages::FRAGMENT,
-                    ty: wgpu::BindingType::Sampler(wgpu::SamplerBindingType::Filtering),
-                    count: None,
-                },
-                wgpu::BindGroupLayoutEntry {
-                    binding: 5,
-                    visibility: wgpu::ShaderStages::FRAGMENT,
-                    ty: wgpu::BindingType::Texture {
-                        sample_type: wgpu::TextureSampleType::Float { filterable: true },
-                        view_dimension: wgpu::TextureViewDimension::D3,
-                        multisampled: false,
-                    },
-                    count: None,
-                },
-                wgpu::BindGroupLayoutEntry {
-                    binding: 6,
-                    visibility: wgpu::ShaderStages::FRAGMENT,
-                    ty: wgpu::BindingType::Sampler(wgpu::SamplerBindingType::Filtering),
-                    count: None,
-                },
+        let uniform_layout = desc::layout(
+            device,
+            "floor uniforms",
+            &[
+                desc::uniform(0, wgpu::ShaderStages::VERTEX_FRAGMENT),
+                desc::float_texture(
+                    1,
+                    wgpu::ShaderStages::FRAGMENT,
+                    true,
+                    wgpu::TextureViewDimension::D2Array,
+                ),
+                desc::sampler(
+                    2,
+                    wgpu::ShaderStages::FRAGMENT,
+                    wgpu::SamplerBindingType::Filtering,
+                ),
+                desc::float_texture(
+                    3,
+                    wgpu::ShaderStages::FRAGMENT,
+                    true,
+                    wgpu::TextureViewDimension::D3,
+                ),
+                desc::sampler(
+                    4,
+                    wgpu::ShaderStages::FRAGMENT,
+                    wgpu::SamplerBindingType::Filtering,
+                ),
+                desc::float_texture(
+                    5,
+                    wgpu::ShaderStages::FRAGMENT,
+                    true,
+                    wgpu::TextureViewDimension::D3,
+                ),
+                desc::sampler(
+                    6,
+                    wgpu::ShaderStages::FRAGMENT,
+                    wgpu::SamplerBindingType::Filtering,
+                ),
             ],
-        });
-        let batch_layout = device.create_bind_group_layout(&wgpu::BindGroupLayoutDescriptor {
-            label: Some("floor batch"),
-            entries: &[
-                wgpu::BindGroupLayoutEntry {
-                    binding: 0,
-                    visibility: wgpu::ShaderStages::FRAGMENT,
-                    ty: wgpu::BindingType::Texture {
-                        sample_type: wgpu::TextureSampleType::Float { filterable: true },
-                        view_dimension: wgpu::TextureViewDimension::D2,
-                        multisampled: false,
-                    },
-                    count: None,
-                },
-                wgpu::BindGroupLayoutEntry {
-                    binding: 1,
-                    visibility: wgpu::ShaderStages::FRAGMENT,
-                    ty: wgpu::BindingType::Sampler(wgpu::SamplerBindingType::Filtering),
-                    count: None,
-                },
-                wgpu::BindGroupLayoutEntry {
-                    binding: 2,
-                    visibility: if fragment_uniform {
+        );
+        let batch_layout = desc::layout(
+            device,
+            "floor batch",
+            &[
+                desc::float_texture(
+                    0,
+                    wgpu::ShaderStages::FRAGMENT,
+                    true,
+                    wgpu::TextureViewDimension::D2,
+                ),
+                desc::sampler(
+                    1,
+                    wgpu::ShaderStages::FRAGMENT,
+                    wgpu::SamplerBindingType::Filtering,
+                ),
+                desc::uniform(
+                    2,
+                    if fragment_uniform {
                         wgpu::ShaderStages::VERTEX_FRAGMENT
                     } else {
                         wgpu::ShaderStages::VERTEX
                     },
-                    ty: wgpu::BindingType::Buffer {
-                        ty: wgpu::BufferBindingType::Uniform,
-                        has_dynamic_offset: false,
-                        min_binding_size: None,
-                    },
-                    count: None,
-                },
+                ),
             ],
-        });
-        let layout = device.create_pipeline_layout(&wgpu::PipelineLayoutDescriptor {
-            label: Some("floor layout"),
-            bind_group_layouts: &[Some(&uniform_layout), Some(&batch_layout)],
-            immediate_size: 0,
-        });
+        );
+        let layout = desc::pipeline_layout(
+            device,
+            "floor layout",
+            &[Some(&uniform_layout), Some(&batch_layout)],
+        );
         let base = pipelines.get(
             1,
             surface_format,

@@ -13,6 +13,7 @@
 //! Each frame, [`ModernRenderer::plan_sky_cubes`] feeds the environment's cube (the snapshot's
 //! [`rs910_scene::sky_frame::SkyFrame::target`]) to the fade ([`SkyState`]) and plans the bakes
 //! that are due; [`ModernRenderer::bind_sky_cubes`] binds the two cubes the picture mixes.
+use rs910_gpu_device::desc;
 
 use crate::atmosphere::sky_fade::{Blend, SkyInput, SkyState};
 use crate::frame::encoding::EncodeInputs;
@@ -198,20 +199,12 @@ impl CubeGpu {
         let dummy = device
             .create_texture_with_data(
                 queue.queue(),
-                &wgpu::TextureDescriptor {
-                    label: Some("modern sky cube dummy"),
-                    size: wgpu::Extent3d {
-                        width: 1,
-                        height: 1,
-                        depth_or_array_layers: 6,
-                    },
-                    mip_level_count: 1,
-                    sample_count: 1,
-                    dimension: wgpu::TextureDimension::D2,
-                    format: CUBE_FORMAT,
-                    usage: wgpu::TextureUsages::TEXTURE_BINDING,
-                    view_formats: &[],
-                },
+                &desc::texture_layers(
+                    "modern sky cube dummy",
+                    [1, 1, 6],
+                    CUBE_FORMAT,
+                    wgpu::TextureUsages::TEXTURE_BINDING,
+                ),
                 wgpu::util::TextureDataOrder::LayerMajor,
                 &[0; 8 * 6],
             )
@@ -234,45 +227,36 @@ impl FacePipeline {
         queue: &dyn rs910_gpu_device::uploads::Uploader,
         module: &wgpu::ShaderModule,
     ) -> Self {
-        let uniform = |dynamic, size: u64| wgpu::BindGroupLayoutEntry {
-            binding: 0,
-            visibility: wgpu::ShaderStages::VERTEX_FRAGMENT,
-            ty: wgpu::BindingType::Buffer {
-                ty: wgpu::BufferBindingType::Uniform,
-                has_dynamic_offset: dynamic,
-                min_binding_size: wgpu::BufferSize::new(size),
-            },
-            count: None,
+        let uniform = |dynamic, size: u64| {
+            desc::uniform_sized(0, wgpu::ShaderStages::VERTEX_FRAGMENT, dynamic, size)
         };
-        let frame_layout = device.create_bind_group_layout(&wgpu::BindGroupLayoutDescriptor {
-            label: Some("modern sky face frame"),
-            entries: &[uniform(false, std::mem::size_of::<FrameUniforms>() as u64)],
-        });
-        let pass_layout = device.create_bind_group_layout(&wgpu::BindGroupLayoutDescriptor {
-            label: Some("modern sky face pass"),
-            entries: &[
+        let frame_layout = desc::layout(
+            device,
+            "modern sky face frame",
+            &[uniform(false, std::mem::size_of::<FrameUniforms>() as u64)],
+        );
+        let pass_layout = desc::layout(
+            device,
+            "modern sky face pass",
+            &[
                 uniform(
                     false,
                     std::mem::size_of::<crate::atmosphere::sky::PassUniforms>() as u64,
                 ),
-                wgpu::BindGroupLayoutEntry {
-                    binding: 1,
-                    visibility: wgpu::ShaderStages::FRAGMENT,
-                    ty: wgpu::BindingType::Texture {
-                        sample_type: wgpu::TextureSampleType::Float { filterable: false },
-                        view_dimension: wgpu::TextureViewDimension::D2,
-                        multisampled: false,
-                    },
-                    count: None,
-                },
+                desc::float_texture(
+                    1,
+                    wgpu::ShaderStages::FRAGMENT,
+                    false,
+                    wgpu::TextureViewDimension::D2,
+                ),
             ],
-        });
+        );
         let cubes = cube_layout(device);
-        let layout = device.create_pipeline_layout(&wgpu::PipelineLayoutDescriptor {
-            label: Some("modern sky face"),
-            bind_group_layouts: &[Some(&frame_layout), Some(&pass_layout), None, Some(&cubes)],
-            immediate_size: 0,
-        });
+        let layout = desc::pipeline_layout(
+            device,
+            "modern sky face",
+            &[Some(&frame_layout), Some(&pass_layout), None, Some(&cubes)],
+        );
         let pipeline = device.create_render_pipeline(&wgpu::RenderPipelineDescriptor {
             label: Some("modern sky face"),
             layout: Some(&layout),
@@ -289,13 +273,11 @@ impl FacePipeline {
                 compilation_options: Default::default(),
             }),
             primitive: wgpu::PrimitiveState::default(),
-            depth_stencil: Some(wgpu::DepthStencilState {
-                format: DEPTH_FORMAT,
-                depth_write_enabled: Some(false),
-                depth_compare: Some(wgpu::CompareFunction::Always),
-                stencil: Default::default(),
-                bias: Default::default(),
-            }),
+            depth_stencil: Some(desc::depth_state(
+                DEPTH_FORMAT,
+                false,
+                wgpu::CompareFunction::Always,
+            )),
             multisample: wgpu::MultisampleState::default(),
             multiview_mask: None,
             cache: None,
@@ -303,20 +285,12 @@ impl FacePipeline {
         let decor = device
             .create_texture_with_data(
                 queue.queue(),
-                &wgpu::TextureDescriptor {
-                    label: Some("modern sky face decor"),
-                    size: wgpu::Extent3d {
-                        width: 1,
-                        height: 1,
-                        depth_or_array_layers: 1,
-                    },
-                    mip_level_count: 1,
-                    sample_count: 1,
-                    dimension: wgpu::TextureDimension::D2,
-                    format: HDR_FORMAT,
-                    usage: wgpu::TextureUsages::TEXTURE_BINDING,
-                    view_formats: &[],
-                },
+                &desc::texture_2d(
+                    "modern sky face decor",
+                    [1, 1],
+                    HDR_FORMAT,
+                    wgpu::TextureUsages::TEXTURE_BINDING,
+                ),
                 wgpu::util::TextureDataOrder::LayerMajor,
                 &[0; 8],
             )
@@ -333,29 +307,27 @@ impl FacePipeline {
 /// The bind group layout of the sky shading's cubes (group 3: the previous and current cube and
 /// their sampler).
 pub(crate) fn cube_layout(device: &wgpu::Device) -> wgpu::BindGroupLayout {
-    let cube = |binding| wgpu::BindGroupLayoutEntry {
-        binding,
-        visibility: wgpu::ShaderStages::FRAGMENT,
-        ty: wgpu::BindingType::Texture {
-            sample_type: wgpu::TextureSampleType::Float { filterable: true },
-            view_dimension: wgpu::TextureViewDimension::Cube,
-            multisampled: false,
-        },
-        count: None,
+    let cube = |binding| {
+        desc::float_texture(
+            binding,
+            wgpu::ShaderStages::FRAGMENT,
+            true,
+            wgpu::TextureViewDimension::Cube,
+        )
     };
-    device.create_bind_group_layout(&wgpu::BindGroupLayoutDescriptor {
-        label: Some("modern sky cubes"),
-        entries: &[
+    desc::layout(
+        device,
+        "modern sky cubes",
+        &[
             cube(0),
             cube(1),
-            wgpu::BindGroupLayoutEntry {
-                binding: 2,
-                visibility: wgpu::ShaderStages::FRAGMENT,
-                ty: wgpu::BindingType::Sampler(wgpu::SamplerBindingType::Filtering),
-                count: None,
-            },
+            desc::sampler(
+                2,
+                wgpu::ShaderStages::FRAGMENT,
+                wgpu::SamplerBindingType::Filtering,
+            ),
         ],
-    })
+    )
 }
 
 impl ModernRenderer {
@@ -432,28 +404,21 @@ impl ModernRenderer {
             .expect("the face pipeline")
             .decor;
         SkyFace {
-            frame: device.create_bind_group(&wgpu::BindGroupDescriptor {
-                label: Some("modern sky face frame"),
-                layout: &frame_layout,
-                entries: &[wgpu::BindGroupEntry {
-                    binding: 0,
-                    resource: frame_buffer.as_entire_binding(),
-                }],
-            }),
-            pass: device.create_bind_group(&wgpu::BindGroupDescriptor {
-                label: Some("modern sky face pass"),
-                layout: &pass_layout,
-                entries: &[
-                    wgpu::BindGroupEntry {
-                        binding: 0,
-                        resource: pass_buffer.as_entire_binding(),
-                    },
-                    wgpu::BindGroupEntry {
-                        binding: 1,
-                        resource: wgpu::BindingResource::TextureView(decor),
-                    },
+            frame: desc::bind_group(
+                device,
+                "modern sky face frame",
+                &frame_layout,
+                &[(0, frame_buffer.as_entire_binding())],
+            ),
+            pass: desc::bind_group(
+                device,
+                "modern sky face pass",
+                &pass_layout,
+                &[
+                    (0, pass_buffer.as_entire_binding()),
+                    (1, wgpu::BindingResource::TextureView(decor)),
                 ],
-            }),
+            ),
         }
     }
 
@@ -735,24 +700,22 @@ impl ModernRenderer {
         let frame_layout = self.pipes().forward.get_bind_group_layout(0);
         let frame_binds: Vec<wgpu::BindGroup> = (0..6)
             .map(|face| {
-                device.create_bind_group(&wgpu::BindGroupDescriptor {
-                    label: Some("modern sky cube frame"),
-                    layout: &frame_layout,
-                    entries: &[
-                        wgpu::BindGroupEntry {
-                            binding: 0,
-                            resource: wgpu::BindingResource::Buffer(wgpu::BufferBinding {
+                desc::bind_group(
+                    device,
+                    "modern sky cube frame",
+                    &frame_layout,
+                    &[
+                        (
+                            0,
+                            wgpu::BindingResource::Buffer(wgpu::BufferBinding {
                                 buffer: &frame_buffer,
                                 offset: face * slot,
                                 size: wgpu::BufferSize::new(slot),
                             }),
-                        },
-                        wgpu::BindGroupEntry {
-                            binding: 1,
-                            resource: wgpu::BindingResource::TextureView(&pipes.ao_white),
-                        },
+                        ),
+                        (1, wgpu::BindingResource::TextureView(&pipes.ao_white)),
                     ],
-                })
+                )
             })
             .collect();
         let layer_bind = (!layer_uniforms.is_empty()).then(|| {
@@ -761,56 +724,40 @@ impl ModernRenderer {
                 contents: bytemuck::cast_slice(&layer_uniforms),
                 usage: wgpu::BufferUsages::UNIFORM,
             });
-            let bind = device.create_bind_group(&wgpu::BindGroupDescriptor {
-                label: Some("modern sky cube layers"),
-                layout: &self.device_resources.sky_layer_layout,
-                entries: &[wgpu::BindGroupEntry {
-                    binding: 0,
-                    resource: wgpu::BindingResource::Buffer(wgpu::BufferBinding {
+            let bind = desc::bind_group(
+                device,
+                "modern sky cube layers",
+                &self.device_resources.sky_layer_layout,
+                &[(
+                    0,
+                    wgpu::BindingResource::Buffer(wgpu::BufferBinding {
                         buffer: &buffer,
                         offset: 0,
                         size: wgpu::BufferSize::new(std::mem::size_of::<SkyLayerUniforms>() as u64),
                     }),
-                }],
-            });
+                )],
+            );
             (buffer, bind)
         });
         let depth = device
-            .create_texture(&wgpu::TextureDescriptor {
-                label: Some("modern sky cube depth"),
-                size: wgpu::Extent3d {
-                    width: CUBE_RES,
-                    height: CUBE_RES,
-                    depth_or_array_layers: 1,
-                },
-                mip_level_count: 1,
-                sample_count: 1,
-                dimension: wgpu::TextureDimension::D2,
-                format: DEPTH_FORMAT,
-                usage: wgpu::TextureUsages::RENDER_ATTACHMENT,
-                view_formats: &[],
-            })
+            .create_texture(&desc::texture_2d(
+                "modern sky cube depth",
+                [CUBE_RES, CUBE_RES],
+                DEPTH_FORMAT,
+                wgpu::TextureUsages::RENDER_ATTACHMENT,
+            ))
             .create_view(&Default::default());
         let mut encoder = device.create_command_encoder(&wgpu::CommandEncoderDescriptor {
             label: Some("modern sky cubes"),
         });
         let mut baked = Vec::new();
         for bake in &pending {
-            let texture = device.create_texture(&wgpu::TextureDescriptor {
-                label: Some("modern sky cube"),
-                size: wgpu::Extent3d {
-                    width: CUBE_RES,
-                    height: CUBE_RES,
-                    depth_or_array_layers: 6,
-                },
-                mip_level_count: 1,
-                sample_count: 1,
-                dimension: wgpu::TextureDimension::D2,
-                format: CUBE_FORMAT,
-                usage: wgpu::TextureUsages::RENDER_ATTACHMENT
-                    | wgpu::TextureUsages::TEXTURE_BINDING,
-                view_formats: &[],
-            });
+            let texture = device.create_texture(&desc::texture_layers(
+                "modern sky cube",
+                [CUBE_RES, CUBE_RES, 6],
+                CUBE_FORMAT,
+                wgpu::TextureUsages::RENDER_ATTACHMENT | wgpu::TextureUsages::TEXTURE_BINDING,
+            ));
             for face in 0..6_usize {
                 let view = texture.create_view(&wgpu::TextureViewDescriptor {
                     dimension: Some(wgpu::TextureViewDimension::D2),
@@ -818,29 +765,12 @@ impl ModernRenderer {
                     array_layer_count: Some(1),
                     ..Default::default()
                 });
-                let mut pass = encoder.begin_render_pass(&wgpu::RenderPassDescriptor {
-                    label: Some("modern sky cube face"),
-                    color_attachments: &[Some(wgpu::RenderPassColorAttachment {
-                        view: &view,
-                        resolve_target: None,
-                        depth_slice: None,
-                        ops: wgpu::Operations {
-                            load: wgpu::LoadOp::Clear(clear),
-                            store: wgpu::StoreOp::Store,
-                        },
-                    })],
-                    depth_stencil_attachment: Some(wgpu::RenderPassDepthStencilAttachment {
-                        view: &depth,
-                        depth_ops: Some(wgpu::Operations {
-                            load: wgpu::LoadOp::Clear(1.0),
-                            store: wgpu::StoreOp::Discard,
-                        }),
-                        stencil_ops: None,
-                    }),
-                    occlusion_query_set: None,
-                    multiview_mask: None,
-                    timestamp_writes: None,
-                });
+                let mut pass = desc::pass(
+                    &mut encoder,
+                    "modern sky cube face",
+                    &[desc::colour(&view, wgpu::LoadOp::Clear(clear))],
+                    desc::depth(&depth, wgpu::LoadOp::Clear(1.0), wgpu::StoreOp::Discard),
+                );
                 if let Some((_, layers)) = layer_bind.as_ref() {
                     pass.set_pipeline(&pipes.sky_layer);
                     for &(index, texture) in &bake.layers[face] {
@@ -933,24 +863,16 @@ impl ModernRenderer {
                     k.and_then(|k| cubes.cubes.get(&k))
                         .map_or(&gpu.dummy, |c| &c.view)
                 };
-                device.create_bind_group(&wgpu::BindGroupDescriptor {
-                    label: Some("modern sky cubes"),
-                    layout: &layout,
-                    entries: &[
-                        wgpu::BindGroupEntry {
-                            binding: 0,
-                            resource: wgpu::BindingResource::TextureView(view(wanted[0])),
-                        },
-                        wgpu::BindGroupEntry {
-                            binding: 1,
-                            resource: wgpu::BindingResource::TextureView(view(wanted[1])),
-                        },
-                        wgpu::BindGroupEntry {
-                            binding: 2,
-                            resource: wgpu::BindingResource::Sampler(&gpu.sampler),
-                        },
+                desc::bind_group(
+                    device,
+                    "modern sky cubes",
+                    &layout,
+                    &[
+                        (0, wgpu::BindingResource::TextureView(view(wanted[0]))),
+                        (1, wgpu::BindingResource::TextureView(view(wanted[1]))),
+                        (2, wgpu::BindingResource::Sampler(&gpu.sampler)),
                     ],
-                })
+                )
             };
             gpu.bind = Some((bind, wanted, epoch));
             #[cfg(test)]

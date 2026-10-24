@@ -2,6 +2,7 @@
 //! frame's `ui_output::Output`), its offscreen framebuffer sprites, the
 //! message-box frame over the retained game frame, and the developer
 //! console's GPU renderer.
+use rs910_gpu_device::desc;
 
 use super::*;
 
@@ -274,22 +275,12 @@ impl Renderer {
                 label: Some("message box frame"),
             });
         {
-            let mut pass = encoder.begin_render_pass(&wgpu::RenderPassDescriptor {
-                label: Some("message box"),
-                color_attachments: &[Some(wgpu::RenderPassColorAttachment {
-                    view,
-                    resolve_target: None,
-                    depth_slice: None,
-                    ops: wgpu::Operations {
-                        load: wgpu::LoadOp::Clear(wgpu::Color::BLACK),
-                        store: wgpu::StoreOp::Store,
-                    },
-                })],
-                depth_stencil_attachment: None,
-                occlusion_query_set: None,
-                multiview_mask: None,
-                timestamp_writes: None,
-            });
+            let mut pass = desc::colour_pass(
+                &mut encoder,
+                "message box",
+                view,
+                wgpu::LoadOp::Clear(wgpu::Color::BLACK),
+            );
             self.overlay.as_ref().unwrap().draw(&mut pass);
         }
         if let Some(console) = &self.console {
@@ -370,22 +361,12 @@ impl Renderer {
                     label: Some("framebuffer sprite"),
                 });
             {
-                let mut pass = encoder.begin_render_pass(&wgpu::RenderPassDescriptor {
-                    label: Some("framebuffer sprite"),
-                    color_attachments: &[Some(wgpu::RenderPassColorAttachment {
-                        view: &view,
-                        resolve_target: None,
-                        depth_slice: None,
-                        ops: wgpu::Operations {
-                            load: wgpu::LoadOp::Clear(wgpu::Color::TRANSPARENT),
-                            store: wgpu::StoreOp::Store,
-                        },
-                    })],
-                    depth_stencil_attachment: None,
-                    occlusion_query_set: None,
-                    multiview_mask: None,
-                    timestamp_writes: None,
-                });
+                let mut pass = desc::colour_pass(
+                    &mut encoder,
+                    "framebuffer sprite",
+                    &view,
+                    wgpu::LoadOp::Clear(wgpu::Color::TRANSPARENT),
+                );
                 paint.draw(&mut pass);
             }
             gpu.submit(std::iter::once(encoder.finish()));

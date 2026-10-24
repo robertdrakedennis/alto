@@ -443,6 +443,7 @@ impl Renderer {
 #[cfg(test)]
 mod tests {
     use super::*;
+    use rs910_gpu_device::desc;
 
     /// Presenting copies the complete canvas, including transparent texels,
     /// rather than sampling or blending the retained frame again.
@@ -474,20 +475,12 @@ mod tests {
             wgpu::TextureFormat::Rgba8UnormSrgb,
         ] {
             let texture = |label| {
-                gpu.device.create_texture(&wgpu::TextureDescriptor {
-                    label: Some(label),
-                    size: wgpu::Extent3d {
-                        width: WIDTH,
-                        height: HEIGHT,
-                        depth_or_array_layers: 1,
-                    },
-                    mip_level_count: 1,
-                    sample_count: 1,
-                    dimension: wgpu::TextureDimension::D2,
+                gpu.device.create_texture(&desc::texture_2d(
+                    label,
+                    [WIDTH, HEIGHT],
                     format,
-                    usage: wgpu::TextureUsages::COPY_SRC | wgpu::TextureUsages::COPY_DST,
-                    view_formats: &[],
-                })
+                    wgpu::TextureUsages::COPY_SRC | wgpu::TextureUsages::COPY_DST,
+                ))
             };
             let source = texture("full frame");
             let output = texture("presented frame");
@@ -515,12 +508,12 @@ mod tests {
                 gpu.submit([encoder.finish()]);
                 for _ in 0..REPEAT_PRESENTS {
                     let retained = renderer.retained_frame.as_ref().unwrap();
-                    let readback = gpu.device.create_buffer(&wgpu::BufferDescriptor {
-                        label: Some("retained present readback"),
-                        size: u64::from(ROW_BYTES * HEIGHT),
-                        usage: wgpu::BufferUsages::COPY_DST | wgpu::BufferUsages::MAP_READ,
-                        mapped_at_creation: false,
-                    });
+                    let readback = desc::buffer(
+                        &gpu.device,
+                        "retained present readback",
+                        u64::from(ROW_BYTES * HEIGHT),
+                        wgpu::BufferUsages::COPY_DST | wgpu::BufferUsages::MAP_READ,
+                    );
                     let mut encoder = gpu.device.create_command_encoder(&Default::default());
                     copy_retained_canvas(&mut encoder, retained, &output);
                     encoder.copy_texture_to_buffer(

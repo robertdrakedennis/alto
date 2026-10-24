@@ -9,6 +9,7 @@ use crate::{
     text_render::{self, Vertex},
     text_render_gpu::{Mesh, Pipeline, Texture},
 };
+use rs910_gpu_device::desc;
 #[derive(Clone)]
 struct Batch {
     texture: usize,
@@ -232,22 +233,7 @@ impl Renderer {
         if self.batches.is_empty() {
             return;
         }
-        let mut pass = encoder.begin_render_pass(&wgpu::RenderPassDescriptor {
-            label: Some("developer console"),
-            color_attachments: &[Some(wgpu::RenderPassColorAttachment {
-                view,
-                resolve_target: None,
-                depth_slice: None,
-                ops: wgpu::Operations {
-                    load: wgpu::LoadOp::Load,
-                    store: wgpu::StoreOp::Store,
-                },
-            })],
-            depth_stencil_attachment: None,
-            occlusion_query_set: None,
-            multiview_mask: None,
-            timestamp_writes: None,
-        });
+        let mut pass = desc::colour_pass(encoder, "developer console", view, wgpu::LoadOp::Load);
         for b in &self.batches {
             self.pipeline
                 .draw(&mut pass, &self.textures[b.texture], (&b.mesh).into());

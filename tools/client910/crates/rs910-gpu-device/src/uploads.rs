@@ -129,6 +129,7 @@ impl Uploads {
 #[cfg(test)]
 mod tests {
     use super::Uploads;
+    use crate::desc;
 
     fn read(device: &wgpu::Device, buffer: &wgpu::Buffer) -> Vec<u8> {
         let slice = buffer.slice(..);
@@ -155,12 +156,12 @@ mod tests {
             mapped_at_creation: false,
         });
         let readback = |label| {
-            device.create_buffer(&wgpu::BufferDescriptor {
-                label: Some(label),
-                size: 16,
-                usage: wgpu::BufferUsages::COPY_DST | wgpu::BufferUsages::MAP_READ,
-                mapped_at_creation: false,
-            })
+            desc::buffer(
+                &device,
+                label,
+                16,
+                wgpu::BufferUsages::COPY_DST | wgpu::BufferUsages::MAP_READ,
+            )
         };
         let (first, second) = (readback("first"), readback("second"));
         let mut uploads = Uploads::new(device.clone());
@@ -213,18 +214,18 @@ mod tests {
             wgpu::Features::empty(),
         ))
         .expect("headless device");
-        let target = gpu.device.create_buffer(&wgpu::BufferDescriptor {
-            label: Some("skipped frame cached resource"),
-            size: BUFFER_BYTES,
-            usage: wgpu::BufferUsages::COPY_DST | wgpu::BufferUsages::COPY_SRC,
-            mapped_at_creation: false,
-        });
-        let readback = gpu.device.create_buffer(&wgpu::BufferDescriptor {
-            label: Some("later internal submission readback"),
-            size: BUFFER_BYTES,
-            usage: wgpu::BufferUsages::COPY_DST | wgpu::BufferUsages::MAP_READ,
-            mapped_at_creation: false,
-        });
+        let target = desc::buffer(
+            &gpu.device,
+            "skipped frame cached resource",
+            BUFFER_BYTES,
+            wgpu::BufferUsages::COPY_DST | wgpu::BufferUsages::COPY_SRC,
+        );
+        let readback = desc::buffer(
+            &gpu.device,
+            "later internal submission readback",
+            BUFFER_BYTES,
+            wgpu::BufferUsages::COPY_DST | wgpu::BufferUsages::MAP_READ,
+        );
         let mut encoder = gpu.device.create_command_encoder(&Default::default());
         encoder.copy_buffer_to_buffer(&target, 0, &readback, 0, BUFFER_BYTES);
         let uploads: &dyn Uploader = &gpu;

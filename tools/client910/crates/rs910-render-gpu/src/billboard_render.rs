@@ -22,6 +22,7 @@
 //! colour carries the billboard colour. The fogged variant mixes towards the
 //! distance fog colour by the per-draw amount, which rides in a vertex
 //! attribute equal on all four corners (0 = unfogged).
+use rs910_gpu_device::desc;
 
 use std::collections::HashMap;
 use std::ops::Range;
@@ -322,42 +323,29 @@ impl BillboardPipelines {
             label: Some("billboards"),
             source: wgpu::ShaderSource::Wgsl(std::borrow::Cow::Borrowed(BILLBOARD_SHADER)),
         });
-        let layout = device.create_bind_group_layout(&wgpu::BindGroupLayoutDescriptor {
-            label: Some("billboard material"),
-            entries: &[
-                wgpu::BindGroupLayoutEntry {
-                    binding: 0,
-                    visibility: wgpu::ShaderStages::FRAGMENT,
-                    ty: wgpu::BindingType::Texture {
-                        sample_type: wgpu::TextureSampleType::Float { filterable: true },
-                        view_dimension: wgpu::TextureViewDimension::D2,
-                        multisampled: false,
-                    },
-                    count: None,
-                },
-                wgpu::BindGroupLayoutEntry {
-                    binding: 1,
-                    visibility: wgpu::ShaderStages::FRAGMENT,
-                    ty: wgpu::BindingType::Sampler(wgpu::SamplerBindingType::Filtering),
-                    count: None,
-                },
-                wgpu::BindGroupLayoutEntry {
-                    binding: 2,
-                    visibility: wgpu::ShaderStages::FRAGMENT,
-                    ty: wgpu::BindingType::Buffer {
-                        ty: wgpu::BufferBindingType::Uniform,
-                        has_dynamic_offset: false,
-                        min_binding_size: None,
-                    },
-                    count: None,
-                },
+        let layout = desc::layout(
+            device,
+            "billboard material",
+            &[
+                desc::float_texture(
+                    0,
+                    wgpu::ShaderStages::FRAGMENT,
+                    true,
+                    wgpu::TextureViewDimension::D2,
+                ),
+                desc::sampler(
+                    1,
+                    wgpu::ShaderStages::FRAGMENT,
+                    wgpu::SamplerBindingType::Filtering,
+                ),
+                desc::uniform(2, wgpu::ShaderStages::FRAGMENT),
             ],
-        });
-        let pipeline_layout = device.create_pipeline_layout(&wgpu::PipelineLayoutDescriptor {
-            label: Some("billboard layout"),
-            bind_group_layouts: &[Some(floor.uniform_layout()), Some(&layout)],
-            immediate_size: 0,
-        });
+        );
+        let pipeline_layout = desc::pipeline_layout(
+            device,
+            "billboard layout",
+            &[Some(floor.uniform_layout()), Some(&layout)],
+        );
         let pipeline = |cutout: bool, depth_write: bool| {
             // Alpha blend + alpha test, or (cutout) alpha test only.
             let blend = (!cutout).then_some(wgpu::BlendState {
@@ -402,13 +390,11 @@ impl BillboardPipelines {
                     cull_mode: None,
                     ..Default::default()
                 },
-                depth_stencil: Some(wgpu::DepthStencilState {
-                    format: depth_format,
-                    depth_write_enabled: Some(depth_write),
-                    depth_compare: Some(wgpu::CompareFunction::LessEqual),
-                    stencil: Default::default(),
-                    bias: Default::default(),
-                }),
+                depth_stencil: Some(desc::depth_state(
+                    depth_format,
+                    depth_write,
+                    wgpu::CompareFunction::LessEqual,
+                )),
                 multisample: wgpu::MultisampleState {
                     count: samples,
                     ..Default::default()
@@ -467,12 +453,12 @@ impl BillboardPass {
         }
         if self.vertex_capacity < frame.vertices.len() {
             self.vertex_capacity = frame.vertices.len().next_power_of_two();
-            self.vertex_buffer = Some(device.create_buffer(&wgpu::BufferDescriptor {
-                label: Some("billboard vertices"),
-                size: (self.vertex_capacity * std::mem::size_of::<BillboardVertex>()) as u64,
-                usage: wgpu::BufferUsages::VERTEX | wgpu::BufferUsages::COPY_DST,
-                mapped_at_creation: false,
-            }));
+            self.vertex_buffer = Some(desc::buffer(
+                device,
+                "billboard vertices",
+                (self.vertex_capacity * std::mem::size_of::<BillboardVertex>()) as u64,
+                wgpu::BufferUsages::VERTEX | wgpu::BufferUsages::COPY_DST,
+            ));
         }
         queue.write_buffer(
             self.vertex_buffer.as_ref().expect("allocated above"),
@@ -504,24 +490,16 @@ impl BillboardPass {
                     contents: bytemuck::cast_slice(&alpha),
                     usage: wgpu::BufferUsages::UNIFORM,
                 });
-                let bind_group = device.create_bind_group(&wgpu::BindGroupDescriptor {
-                    label: Some("billboard material"),
-                    layout: &self.pipelines.layout,
-                    entries: &[
-                        wgpu::BindGroupEntry {
-                            binding: 0,
-                            resource: wgpu::BindingResource::TextureView(texture.0),
-                        },
-                        wgpu::BindGroupEntry {
-                            binding: 1,
-                            resource: wgpu::BindingResource::Sampler(texture.1),
-                        },
-                        wgpu::BindGroupEntry {
-                            binding: 2,
-                            resource: buffer.as_entire_binding(),
-                        },
+                let bind_group = desc::bind_group(
+                    device,
+                    "billboard material",
+                    &self.pipelines.layout,
+                    &[
+                        (0, wgpu::BindingResource::TextureView(texture.0)),
+                        (1, wgpu::BindingResource::Sampler(texture.1)),
+                        (2, buffer.as_entire_binding()),
                     ],
-                });
+                );
                 self.bindings.insert(key, bind_group);
             }
         }

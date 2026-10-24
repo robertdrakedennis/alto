@@ -3,6 +3,7 @@
 //! their display colours through the inverse tonemap. The frame draws only the decor sprites
 //! from them; the rest of the box is baked into the sky's cube ([`super::sky_box`]), and the
 //! probe capture draws the layers and models itself.
+use rs910_gpu_device::desc;
 use wgpu::util::DeviceExt;
 
 use crate::frame::*;
@@ -77,41 +78,32 @@ impl ModernRenderer {
             rgba.resize((tw * th * 4) as usize, 0);
             let tex = device.create_texture_with_data(
                 queue.queue(),
-                &wgpu::TextureDescriptor {
-                    label: Some("modern sky material"),
-                    size: wgpu::Extent3d {
-                        width: tw,
-                        height: th,
-                        depth_or_array_layers: 1,
-                    },
-                    mip_level_count: 1,
-                    sample_count: 1,
-                    dimension: wgpu::TextureDimension::D2,
-                    format: wgpu::TextureFormat::Rgba8UnormSrgb,
-                    usage: wgpu::TextureUsages::TEXTURE_BINDING | wgpu::TextureUsages::COPY_DST,
-                    view_formats: &[],
-                },
+                &desc::texture_2d(
+                    "modern sky material",
+                    [tw, th],
+                    wgpu::TextureFormat::Rgba8UnormSrgb,
+                    wgpu::TextureUsages::TEXTURE_BINDING | wgpu::TextureUsages::COPY_DST,
+                ),
                 wgpu::util::TextureDataOrder::LayerMajor,
                 &rgba,
             );
-            let bind_group = device.create_bind_group(&wgpu::BindGroupDescriptor {
-                label: Some("modern sky material"),
-                layout: &self.device_resources.sky_texture_layout,
-                entries: &[
-                    wgpu::BindGroupEntry {
-                        binding: 0,
-                        resource: wgpu::BindingResource::TextureView(
+            let bind_group = desc::bind_group(
+                device,
+                "modern sky material",
+                &self.device_resources.sky_texture_layout,
+                &[
+                    (
+                        0,
+                        wgpu::BindingResource::TextureView(
                             &tex.create_view(&wgpu::TextureViewDescriptor::default()),
                         ),
-                    },
-                    wgpu::BindGroupEntry {
-                        binding: 1,
-                        resource: wgpu::BindingResource::Sampler(
-                            &self.device_resources.sky_sampler,
-                        ),
-                    },
+                    ),
+                    (
+                        1,
+                        wgpu::BindingResource::Sampler(&self.device_resources.sky_sampler),
+                    ),
                 ],
-            });
+            );
             self.preparation.sky_sources.insert(key, texture.clone());
             self.scene_resources.sky_textures.insert(
                 key,

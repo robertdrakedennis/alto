@@ -39,6 +39,7 @@
 //! the HDR target before the tonemap. The alpha tests are the classic ones
 //! (`> ref` for an alpha-tested billboard or an `ALPHA_TESTED` particle
 //! material, else `> 0`; the modern shaders test `> 0.5 / 255`).
+use rs910_gpu_device::desc;
 
 use crate::frame::*;
 
@@ -423,13 +424,11 @@ impl SpriteGpu {
                 ..Default::default()
             },
             // BuiltinStates+564: the test on (LESS), no depth writes.
-            depth_stencil: Some(wgpu::DepthStencilState {
-                format: DEPTH_FORMAT,
-                depth_write_enabled: Some(false),
-                depth_compare: Some(wgpu::CompareFunction::Less),
-                stencil: Default::default(),
-                bias: Default::default(),
-            }),
+            depth_stencil: Some(desc::depth_state(
+                DEPTH_FORMAT,
+                false,
+                wgpu::CompareFunction::Less,
+            )),
             multisample: wgpu::MultisampleState {
                 count: samples,
                 mask: !0,
@@ -504,12 +503,12 @@ impl SpriteGpu {
         if self.vertices.as_ref().is_none_or(|(_, cap)| *cap < need) {
             let cap = need.next_power_of_two();
             self.vertices = Some((
-                device.create_buffer(&wgpu::BufferDescriptor {
-                    label: Some("modern sprite vertices"),
-                    size: cap,
-                    usage: wgpu::BufferUsages::VERTEX | wgpu::BufferUsages::COPY_DST,
-                    mapped_at_creation: false,
-                }),
+                desc::buffer(
+                    device,
+                    "modern sprite vertices",
+                    cap,
+                    wgpu::BufferUsages::VERTEX | wgpu::BufferUsages::COPY_DST,
+                ),
                 cap,
             ));
         }

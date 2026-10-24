@@ -63,6 +63,7 @@
 //! Materials come from the snapshot's `MaterialStore`; textures from its
 //! pack. A material that does not load draws with the white texture (the
 //! faithful texture provider does the same).
+use rs910_gpu_device::desc;
 
 use std::collections::HashMap;
 
@@ -381,43 +382,15 @@ pub(crate) fn upload(
 ) -> wgpu::TextureView {
     let (w, h, _) = &levels[0];
     let texture = device.create_texture(&wgpu::TextureDescriptor {
-        label: Some(label),
-        size: wgpu::Extent3d {
-            width: *w,
-            height: *h,
-            depth_or_array_layers: 1,
-        },
         mip_level_count: levels.len() as u32,
-        sample_count: 1,
-        dimension: wgpu::TextureDimension::D2,
-        format,
-        usage: wgpu::TextureUsages::TEXTURE_BINDING | wgpu::TextureUsages::COPY_DST,
-        view_formats: &[],
+        ..desc::texture_2d(
+            label,
+            [*w, *h],
+            format,
+            wgpu::TextureUsages::TEXTURE_BINDING | wgpu::TextureUsages::COPY_DST,
+        )
     });
-    let (bw, bh) = format.block_dimensions();
-    let block_bytes = format.block_copy_size(None).unwrap_or(4);
-    for (level, (w, h, data)) in levels.iter().enumerate() {
-        let (blocks_x, blocks_y) = (w.div_ceil(bw), h.div_ceil(bh));
-        queue.write_texture(
-            wgpu::TexelCopyTextureInfo {
-                texture: &texture,
-                mip_level: level as u32,
-                origin: wgpu::Origin3d::ZERO,
-                aspect: wgpu::TextureAspect::All,
-            },
-            data,
-            wgpu::TexelCopyBufferLayout {
-                offset: 0,
-                bytes_per_row: Some(blocks_x * block_bytes),
-                rows_per_image: Some(blocks_y),
-            },
-            wgpu::Extent3d {
-                width: blocks_x * bw,
-                height: blocks_y * bh,
-                depth_or_array_layers: 1,
-            },
-        );
-    }
+    desc::write_mips(queue, &texture, 0, levels);
     texture.create_view(&wgpu::TextureViewDescriptor::default())
 }
 
@@ -801,43 +774,35 @@ pub fn material_info(material: Option<&Material>) -> MaterialInfo {
 
 impl Textures {
     pub fn new(device: &wgpu::Device, queue: &dyn rs910_gpu_device::uploads::Uploader) -> Self {
-        let texture_entry = |binding| wgpu::BindGroupLayoutEntry {
-            binding,
-            visibility: wgpu::ShaderStages::FRAGMENT,
-            ty: wgpu::BindingType::Texture {
-                sample_type: wgpu::TextureSampleType::Float { filterable: true },
-                view_dimension: wgpu::TextureViewDimension::D2,
-                multisampled: false,
-            },
-            count: None,
+        let texture_entry = |binding| {
+            desc::float_texture(
+                binding,
+                wgpu::ShaderStages::FRAGMENT,
+                true,
+                wgpu::TextureViewDimension::D2,
+            )
         };
-        let layout = device.create_bind_group_layout(&wgpu::BindGroupLayoutDescriptor {
-            label: Some("modern material"),
-            entries: &[
+        let layout = desc::layout(
+            device,
+            "modern material",
+            &[
                 texture_entry(0),
                 texture_entry(1),
-                wgpu::BindGroupLayoutEntry {
-                    binding: 2,
-                    visibility: wgpu::ShaderStages::FRAGMENT,
-                    ty: wgpu::BindingType::Sampler(wgpu::SamplerBindingType::Filtering),
-                    count: None,
-                },
+                desc::sampler(
+                    2,
+                    wgpu::ShaderStages::FRAGMENT,
+                    wgpu::SamplerBindingType::Filtering,
+                ),
                 texture_entry(3),
                 texture_entry(4),
-                wgpu::BindGroupLayoutEntry {
-                    binding: 5,
-                    visibility: wgpu::ShaderStages::FRAGMENT,
-                    ty: wgpu::BindingType::Buffer {
-                        ty: wgpu::BufferBindingType::Uniform,
-                        has_dynamic_offset: false,
-                        min_binding_size: wgpu::BufferSize::new(
-                            std::mem::size_of::<MaterialMeta>() as u64,
-                        ),
-                    },
-                    count: None,
-                },
+                desc::uniform_sized(
+                    5,
+                    wgpu::ShaderStages::FRAGMENT,
+                    false,
+                    std::mem::size_of::<MaterialMeta>() as u64,
+                ),
             ],
-        });
+        );
         let white = upload(
             device,
             queue,
@@ -908,26 +873,18 @@ impl Textures {
             },
         );
         let neutral = {
-            let view = |binding, view| wgpu::BindGroupEntry {
-                binding,
-                resource: wgpu::BindingResource::TextureView(view),
-            };
+            let view =
+                |binding, view| desc::bind(binding, wgpu::BindingResource::TextureView(view));
             device.create_bind_group(&wgpu::BindGroupDescriptor {
                 label: Some("modern neutral material"),
                 layout: &layout,
                 entries: &[
                     view(0, &white),
                     view(1, &no_aux),
-                    wgpu::BindGroupEntry {
-                        binding: 2,
-                        resource: wgpu::BindingResource::Sampler(&samplers[3]),
-                    },
+                    desc::bind(2, wgpu::BindingResource::Sampler(&samplers[3])),
                     view(3, &flat_normal),
                     view(4, &no_compound),
-                    wgpu::BindGroupEntry {
-                        binding: 5,
-                        resource: neutral_meta.as_entire_binding(),
-                    },
+                    desc::bind(5, neutral_meta.as_entire_binding()),
                 ],
             })
         };
@@ -1402,10 +1359,7 @@ impl Textures {
             },
         );
         fn view(binding: u32, view: &wgpu::TextureView) -> wgpu::BindGroupEntry<'_> {
-            wgpu::BindGroupEntry {
-                binding,
-                resource: wgpu::BindingResource::TextureView(view),
-            }
+            desc::bind(binding, wgpu::BindingResource::TextureView(view))
         }
         let bind_group = device.create_bind_group(&wgpu::BindGroupDescriptor {
             label: Some("modern material"),
@@ -1413,16 +1367,10 @@ impl Textures {
             entries: &[
                 view(0, diffuse.as_ref().unwrap_or(&self.white)),
                 view(1, aux.as_ref().unwrap_or(&self.no_aux)),
-                wgpu::BindGroupEntry {
-                    binding: 2,
-                    resource: wgpu::BindingResource::Sampler(&self.samplers[repeat]),
-                },
+                desc::bind(2, wgpu::BindingResource::Sampler(&self.samplers[repeat])),
                 view(3, normal.as_ref().unwrap_or(&self.flat_normal)),
                 view(4, compound.as_ref().unwrap_or(&self.no_compound)),
-                wgpu::BindGroupEntry {
-                    binding: 5,
-                    resource: meta_buffer.as_entire_binding(),
-                },
+                desc::bind(5, meta_buffer.as_entire_binding()),
             ],
         });
         let slot_bits = placed.map_or(0, |(layer, tiled)| slot_bits(layer, tiled));

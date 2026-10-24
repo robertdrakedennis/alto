@@ -1,6 +1,7 @@
 //! Offscreen logical-canvas target used when the game canvas is bounded inside
 //! a larger native window. World and UI projections remain in canvas space;
 //! this compositor performs the final physical placement and clipping.
+use rs910_gpu_device::desc;
 
 use anyhow::{ensure, Result};
 
@@ -41,23 +42,15 @@ impl CanvasTarget {
     ) -> Result<Self> {
         ensure!(surface.iter().all(|v| *v > 0), "invalid surface size");
         ensure!(rect[2] > 0 && rect[3] > 0, "invalid canvas rectangle");
-        let texture = device.create_texture(&wgpu::TextureDescriptor {
-            label: Some("bounded canvas"),
-            size: wgpu::Extent3d {
-                width: rect[2] as u32,
-                height: rect[3] as u32,
-                depth_or_array_layers: 1,
-            },
-            mip_level_count: 1,
-            sample_count: 1,
-            dimension: wgpu::TextureDimension::D2,
+        let texture = device.create_texture(&desc::texture_2d(
+            "bounded canvas",
+            [rect[2] as u32, rect[3] as u32],
             format,
-            usage: wgpu::TextureUsages::RENDER_ATTACHMENT
+            wgpu::TextureUsages::RENDER_ATTACHMENT
                 | wgpu::TextureUsages::TEXTURE_BINDING
                 | wgpu::TextureUsages::COPY_SRC
                 | wgpu::TextureUsages::COPY_DST,
-            view_formats: &[],
-        });
+        ));
         let view = texture.create_view(&Default::default());
         let presenter_view = texture.create_view(&Default::default());
         let mut presenter = crate::ui_paint_gpu::Renderer::with_pipeline(pipeline);
@@ -95,22 +88,12 @@ impl CanvasTarget {
 
     /// Clear the native surface and composite the bounded canvas into it.
     pub fn encode(&self, encoder: &mut wgpu::CommandEncoder, surface_view: &wgpu::TextureView) {
-        let mut pass = encoder.begin_render_pass(&wgpu::RenderPassDescriptor {
-            label: Some("present bounded canvas"),
-            color_attachments: &[Some(wgpu::RenderPassColorAttachment {
-                view: surface_view,
-                resolve_target: None,
-                depth_slice: None,
-                ops: wgpu::Operations {
-                    load: wgpu::LoadOp::Clear(wgpu::Color::BLACK),
-                    store: wgpu::StoreOp::Store,
-                },
-            })],
-            depth_stencil_attachment: None,
-            occlusion_query_set: None,
-            multiview_mask: None,
-            timestamp_writes: None,
-        });
+        let mut pass = desc::colour_pass(
+            encoder,
+            "present bounded canvas",
+            surface_view,
+            wgpu::LoadOp::Clear(wgpu::Color::BLACK),
+        );
         self.presenter.draw(&mut pass);
     }
 }
@@ -150,20 +133,12 @@ mod tests {
                 },
                 canvas.texture.size(),
             );
-            let target = device.create_texture(&wgpu::TextureDescriptor {
-                label: Some("canvas test surface"),
-                size: wgpu::Extent3d {
-                    width: 12,
-                    height: 8,
-                    depth_or_array_layers: 1,
-                },
-                mip_level_count: 1,
-                sample_count: 1,
-                dimension: wgpu::TextureDimension::D2,
+            let target = device.create_texture(&desc::texture_2d(
+                "canvas test surface",
+                [12, 8],
                 format,
-                usage: wgpu::TextureUsages::RENDER_ATTACHMENT | wgpu::TextureUsages::COPY_SRC,
-                view_formats: &[],
-            });
+                wgpu::TextureUsages::RENDER_ATTACHMENT | wgpu::TextureUsages::COPY_SRC,
+            ));
             let mut encoder = device.create_command_encoder(&Default::default());
             canvas.encode(&mut encoder, &target.create_view(&Default::default()));
             let buffer = device.create_buffer(&wgpu::BufferDescriptor {

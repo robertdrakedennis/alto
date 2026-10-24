@@ -4,6 +4,7 @@
 //! Split out in Phase 3.1; the CPU quad geometry (`Vertex`, `quad`, `glyph`)
 //! is rs910-toolkit's `text_render`.
 use crate::{font_atlas::Atlas, text_render::Vertex};
+use rs910_gpu_device::desc;
 use wgpu::util::DeviceExt;
 
 pub const SHADER: &str = r#"
@@ -117,12 +118,12 @@ impl QuadBuffer {
                 .flat_map(|i| [i * 4, i * 4 + 2, i * 4 + 1, i * 4 + 2, i * 4 + 3, i * 4 + 1])
                 .collect();
             *slot = Some(Self {
-                vertices: device.create_buffer(&wgpu::BufferDescriptor {
-                    label: Some("text vertices"),
-                    size: u64::from(capacity) * 4 * std::mem::size_of::<Vertex>() as u64,
-                    usage: wgpu::BufferUsages::VERTEX | wgpu::BufferUsages::COPY_DST,
-                    mapped_at_creation: false,
-                }),
+                vertices: desc::buffer(
+                    device,
+                    "text vertices",
+                    u64::from(capacity) * 4 * std::mem::size_of::<Vertex>() as u64,
+                    wgpu::BufferUsages::VERTEX | wgpu::BufferUsages::COPY_DST,
+                ),
                 indices: device.create_buffer_init(&wgpu::util::BufferInitDescriptor {
                     label: Some("text quad indices"),
                     contents: bytemuck::cast_slice(&indices),
@@ -188,68 +189,47 @@ impl Pipeline {
         })
     }
     pub fn new(device: &wgpu::Device, format: wgpu::TextureFormat) -> Self {
-        let layout = device.create_bind_group_layout(&wgpu::BindGroupLayoutDescriptor {
-            label: Some("text atlas"),
-            entries: &[
-                wgpu::BindGroupLayoutEntry {
-                    binding: 0,
-                    visibility: wgpu::ShaderStages::FRAGMENT,
-                    ty: wgpu::BindingType::Texture {
-                        sample_type: wgpu::TextureSampleType::Float { filterable: true },
-                        view_dimension: wgpu::TextureViewDimension::D2,
-                        multisampled: false,
-                    },
-                    count: None,
-                },
-                wgpu::BindGroupLayoutEntry {
-                    binding: 1,
-                    visibility: wgpu::ShaderStages::FRAGMENT,
-                    ty: wgpu::BindingType::Sampler(wgpu::SamplerBindingType::Filtering),
-                    count: None,
-                },
+        let layout = desc::layout(
+            device,
+            "text atlas",
+            &[
+                desc::float_texture(
+                    0,
+                    wgpu::ShaderStages::FRAGMENT,
+                    true,
+                    wgpu::TextureViewDimension::D2,
+                ),
+                desc::sampler(
+                    1,
+                    wgpu::ShaderStages::FRAGMENT,
+                    wgpu::SamplerBindingType::Filtering,
+                ),
             ],
-        });
-        let mask_layout = device.create_bind_group_layout(&wgpu::BindGroupLayoutDescriptor {
-            label: Some("sprite mask"),
-            entries: &[
-                wgpu::BindGroupLayoutEntry {
-                    binding: 0,
-                    visibility: wgpu::ShaderStages::FRAGMENT,
-                    ty: wgpu::BindingType::Texture {
-                        sample_type: wgpu::TextureSampleType::Float { filterable: true },
-                        view_dimension: wgpu::TextureViewDimension::D2,
-                        multisampled: false,
-                    },
-                    count: None,
-                },
-                wgpu::BindGroupLayoutEntry {
-                    binding: 1,
-                    visibility: wgpu::ShaderStages::FRAGMENT,
-                    ty: wgpu::BindingType::Sampler(wgpu::SamplerBindingType::Filtering),
-                    count: None,
-                },
-                wgpu::BindGroupLayoutEntry {
-                    binding: 2,
-                    visibility: wgpu::ShaderStages::FRAGMENT,
-                    ty: wgpu::BindingType::Buffer {
-                        ty: wgpu::BufferBindingType::Uniform,
-                        has_dynamic_offset: false,
-                        min_binding_size: None,
-                    },
-                    count: None,
-                },
+        );
+        let mask_layout = desc::layout(
+            device,
+            "sprite mask",
+            &[
+                desc::float_texture(
+                    0,
+                    wgpu::ShaderStages::FRAGMENT,
+                    true,
+                    wgpu::TextureViewDimension::D2,
+                ),
+                desc::sampler(
+                    1,
+                    wgpu::ShaderStages::FRAGMENT,
+                    wgpu::SamplerBindingType::Filtering,
+                ),
+                desc::uniform(2, wgpu::ShaderStages::FRAGMENT),
             ],
-        });
-        let pl = device.create_pipeline_layout(&wgpu::PipelineLayoutDescriptor {
-            label: Some("text"),
-            bind_group_layouts: &[Some(&layout)],
-            immediate_size: 0,
-        });
-        let masked_pl = device.create_pipeline_layout(&wgpu::PipelineLayoutDescriptor {
-            label: Some("masked sprite"),
-            bind_group_layouts: &[Some(&layout), Some(&mask_layout)],
-            immediate_size: 0,
-        });
+        );
+        let pl = desc::pipeline_layout(device, "text", &[Some(&layout)]);
+        let masked_pl = desc::pipeline_layout(
+            device,
+            "masked sprite",
+            &[Some(&layout), Some(&mask_layout)],
+        );
         let shader = device.create_shader_module(wgpu::ShaderModuleDescriptor {
             label: Some("BatchedSprite"),
             source: wgpu::ShaderSource::Wgsl(SHADER.into()),
@@ -340,20 +320,15 @@ impl Pipeline {
             min_filter: wgpu::FilterMode::Linear,
             ..Default::default()
         });
-        let bind = device.create_bind_group(&wgpu::BindGroupDescriptor {
-            label: Some("wrapped 2D texture"),
-            layout: &self.layout,
-            entries: &[
-                wgpu::BindGroupEntry {
-                    binding: 0,
-                    resource: wgpu::BindingResource::TextureView(&view),
-                },
-                wgpu::BindGroupEntry {
-                    binding: 1,
-                    resource: wgpu::BindingResource::Sampler(&sampler),
-                },
+        let bind = desc::bind_group(
+            device,
+            "wrapped 2D texture",
+            &self.layout,
+            &[
+                (0, wgpu::BindingResource::TextureView(&view)),
+                (1, wgpu::BindingResource::Sampler(&sampler)),
             ],
-        });
+        );
         Texture {
             bind,
             _texture: None,
@@ -387,24 +362,16 @@ impl Pipeline {
             contents: bytemuck::cast_slice(&params),
             usage: wgpu::BufferUsages::UNIFORM,
         });
-        device.create_bind_group(&wgpu::BindGroupDescriptor {
-            label: Some("sprite mask"),
-            layout: &self.mask_layout,
-            entries: &[
-                wgpu::BindGroupEntry {
-                    binding: 0,
-                    resource: wgpu::BindingResource::TextureView(&mask.view),
-                },
-                wgpu::BindGroupEntry {
-                    binding: 1,
-                    resource: wgpu::BindingResource::Sampler(&mask.sampler),
-                },
-                wgpu::BindGroupEntry {
-                    binding: 2,
-                    resource: buffer.as_entire_binding(),
-                },
+        desc::bind_group(
+            device,
+            "sprite mask",
+            &self.mask_layout,
+            &[
+                (0, wgpu::BindingResource::TextureView(&mask.view)),
+                (1, wgpu::BindingResource::Sampler(&mask.sampler)),
+                (2, buffer.as_entire_binding()),
             ],
-        })
+        )
     }
     pub fn draw_masked<'a>(
         &'a self,
@@ -487,20 +454,15 @@ impl Pipeline {
             ..Default::default()
         });
         let view = texture.create_view(&Default::default());
-        let bind = device.create_bind_group(&wgpu::BindGroupDescriptor {
-            label: Some("2D texture"),
-            layout: &self.layout,
-            entries: &[
-                wgpu::BindGroupEntry {
-                    binding: 0,
-                    resource: wgpu::BindingResource::TextureView(&view),
-                },
-                wgpu::BindGroupEntry {
-                    binding: 1,
-                    resource: wgpu::BindingResource::Sampler(&sampler),
-                },
+        let bind = desc::bind_group(
+            device,
+            "2D texture",
+            &self.layout,
+            &[
+                (0, wgpu::BindingResource::TextureView(&view)),
+                (1, wgpu::BindingResource::Sampler(&sampler)),
             ],
-        });
+        );
         Texture {
             bind,
             _texture: Some(texture),

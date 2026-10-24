@@ -16,6 +16,7 @@
 //! Resources are built lazily from the forward pipeline's layouts
 //! (`get_bind_group_layout`), so the renderer's constructor only holds the
 //! empty state.
+use rs910_gpu_device::desc;
 
 use crate::frame::encoding::EncodeInputs;
 use std::collections::HashMap;
@@ -195,20 +196,12 @@ pub(crate) fn texture_2d(
     format: wgpu::TextureFormat,
     usage: wgpu::TextureUsages,
 ) -> wgpu::Texture {
-    device.create_texture(&wgpu::TextureDescriptor {
-        label: Some(label),
-        size: wgpu::Extent3d {
-            width: size[0].max(1),
-            height: size[1].max(1),
-            depth_or_array_layers: 1,
-        },
-        mip_level_count: 1,
-        sample_count: 1,
-        dimension: wgpu::TextureDimension::D2,
+    device.create_texture(&desc::texture_2d(
+        label,
+        [size[0].max(1), size[1].max(1)],
         format,
         usage,
-        view_formats: &[],
-    })
+    ))
 }
 
 /// A normal map's texels with a box-filtered mip chain (`Rgba8Unorm`,
@@ -220,41 +213,18 @@ pub(crate) fn upload_normal_map(
 ) -> wgpu::TextureView {
     let levels = 32 - img.w.min(img.h).max(1).leading_zeros();
     let texture = device.create_texture(&wgpu::TextureDescriptor {
-        label: Some("modern water normal map"),
-        size: wgpu::Extent3d {
-            width: img.w,
-            height: img.h,
-            depth_or_array_layers: 1,
-        },
         mip_level_count: levels,
-        sample_count: 1,
-        dimension: wgpu::TextureDimension::D2,
-        format: wgpu::TextureFormat::Rgba8Unorm,
-        usage: wgpu::TextureUsages::TEXTURE_BINDING | wgpu::TextureUsages::COPY_DST,
-        view_formats: &[],
+        ..desc::texture_2d(
+            "modern water normal map",
+            [img.w, img.h],
+            wgpu::TextureFormat::Rgba8Unorm,
+            wgpu::TextureUsages::TEXTURE_BINDING | wgpu::TextureUsages::COPY_DST,
+        )
     });
     let (mut w, mut h) = (img.w, img.h);
     let mut px = img.px.clone();
     for level in 0..levels {
-        queue.write_texture(
-            wgpu::TexelCopyTextureInfo {
-                texture: &texture,
-                mip_level: level,
-                origin: wgpu::Origin3d::ZERO,
-                aspect: wgpu::TextureAspect::All,
-            },
-            &px,
-            wgpu::TexelCopyBufferLayout {
-                offset: 0,
-                bytes_per_row: Some(w * 4),
-                rows_per_image: Some(h),
-            },
-            wgpu::Extent3d {
-                width: w,
-                height: h,
-                depth_or_array_layers: 1,
-            },
-        );
+        desc::write_level(queue, &texture, level, 0, [w, h], &px);
         if w == 1 || h == 1 {
             break;
         }
@@ -324,80 +294,85 @@ impl Pipelines {
         let group = |i| forward.get_bind_group_layout(i);
         let (g0, g1, g3, g4) = (group(0), group(1), group(3), group(4));
         let receive = group(2);
-        let fragment_entry = |binding, ty| wgpu::BindGroupLayoutEntry {
-            binding,
-            visibility: wgpu::ShaderStages::FRAGMENT,
-            ty,
-            count: None,
-        };
         let float_texture = |filterable, dim| wgpu::BindingType::Texture {
             sample_type: wgpu::TextureSampleType::Float { filterable },
             view_dimension: dim,
             multisampled: false,
-        };
-        let uniform = wgpu::BindingType::Buffer {
-            ty: wgpu::BufferBindingType::Uniform,
-            has_dynamic_offset: false,
-            min_binding_size: None,
         };
         // Group 2: the shadow receive bindings (0-2, as `shadow_receive_
         // layout`) and the water's (10-18).
         let group2 = device.create_bind_group_layout(&wgpu::BindGroupLayoutDescriptor {
             label: Some("modern water group 2"),
             entries: &[
-                fragment_entry(0, uniform),
-                fragment_entry(
+                desc::uniform(0, wgpu::ShaderStages::FRAGMENT),
+                desc::texture(
                     1,
-                    wgpu::BindingType::Texture {
-                        sample_type: wgpu::TextureSampleType::Depth,
-                        view_dimension: wgpu::TextureViewDimension::D2,
-                        multisampled: false,
-                    },
+                    wgpu::ShaderStages::FRAGMENT,
+                    wgpu::TextureSampleType::Depth,
+                    wgpu::TextureViewDimension::D2,
+                    false,
                 ),
-                fragment_entry(
+                desc::sampler(
                     2,
-                    wgpu::BindingType::Sampler(wgpu::SamplerBindingType::Comparison),
+                    wgpu::ShaderStages::FRAGMENT,
+                    wgpu::SamplerBindingType::Comparison,
                 ),
-                wgpu::BindGroupLayoutEntry {
-                    binding: 10,
-                    visibility: wgpu::ShaderStages::VERTEX_FRAGMENT,
-                    ty: uniform,
-                    count: None,
-                },
-                fragment_entry(11, float_texture(false, wgpu::TextureViewDimension::D2)),
-                fragment_entry(
+                desc::uniform(10, wgpu::ShaderStages::VERTEX_FRAGMENT),
+                desc::entry(
+                    11,
+                    wgpu::ShaderStages::FRAGMENT,
+                    float_texture(false, wgpu::TextureViewDimension::D2),
+                ),
+                desc::texture(
                     12,
-                    wgpu::BindingType::Texture {
-                        sample_type: wgpu::TextureSampleType::Depth,
-                        view_dimension: wgpu::TextureViewDimension::D2,
-                        multisampled: samples > 1,
-                    },
+                    wgpu::ShaderStages::FRAGMENT,
+                    wgpu::TextureSampleType::Depth,
+                    wgpu::TextureViewDimension::D2,
+                    samples > 1,
                 ),
-                fragment_entry(13, float_texture(true, wgpu::TextureViewDimension::D2)),
-                fragment_entry(14, float_texture(true, wgpu::TextureViewDimension::D2)),
-                fragment_entry(15, float_texture(true, wgpu::TextureViewDimension::D2)),
+                desc::entry(
+                    13,
+                    wgpu::ShaderStages::FRAGMENT,
+                    float_texture(true, wgpu::TextureViewDimension::D2),
+                ),
+                desc::entry(
+                    14,
+                    wgpu::ShaderStages::FRAGMENT,
+                    float_texture(true, wgpu::TextureViewDimension::D2),
+                ),
+                desc::entry(
+                    15,
+                    wgpu::ShaderStages::FRAGMENT,
+                    float_texture(true, wgpu::TextureViewDimension::D2),
+                ),
                 // The foam map (water_body::effects).
-                fragment_entry(16, float_texture(true, wgpu::TextureViewDimension::D2)),
-                fragment_entry(
-                    17,
-                    wgpu::BindingType::Sampler(wgpu::SamplerBindingType::Filtering),
+                desc::entry(
+                    16,
+                    wgpu::ShaderStages::FRAGMENT,
+                    float_texture(true, wgpu::TextureViewDimension::D2),
                 ),
-                fragment_entry(
+                desc::sampler(
+                    17,
+                    wgpu::ShaderStages::FRAGMENT,
+                    wgpu::SamplerBindingType::Filtering,
+                ),
+                desc::sampler(
                     18,
-                    wgpu::BindingType::Sampler(wgpu::SamplerBindingType::Filtering),
+                    wgpu::ShaderStages::FRAGMENT,
+                    wgpu::SamplerBindingType::Filtering,
                 ),
             ],
         });
-        let water_layout = device.create_pipeline_layout(&wgpu::PipelineLayoutDescriptor {
-            label: Some("modern water"),
-            bind_group_layouts: &[Some(&g0), Some(&g1), Some(&group2), Some(&g3), Some(&g4)],
-            immediate_size: 0,
-        });
-        let forward_layout = device.create_pipeline_layout(&wgpu::PipelineLayoutDescriptor {
-            label: Some("modern water reflection"),
-            bind_group_layouts: &[Some(&g0), Some(&g1), Some(&receive), Some(&g3), Some(&g4)],
-            immediate_size: 0,
-        });
+        let water_layout = desc::pipeline_layout(
+            device,
+            "modern water",
+            &[Some(&g0), Some(&g1), Some(&group2), Some(&g3), Some(&g4)],
+        );
+        let forward_layout = desc::pipeline_layout(
+            device,
+            "modern water reflection",
+            &[Some(&g0), Some(&g1), Some(&receive), Some(&g3), Some(&g4)],
+        );
         let [v, c, i] = vertex_layouts();
         const ATTRS: [wgpu::VertexAttribute; 3] =
             wgpu::vertex_attr_array![12 => Float32x4, 13 => Float32x4, 14 => Float32x4];
@@ -442,13 +417,11 @@ impl Pipelines {
                     cull_mode: None,
                     ..Default::default()
                 },
-                depth_stencil: Some(wgpu::DepthStencilState {
-                    format: DEPTH_FORMAT,
-                    depth_write_enabled: Some(false),
-                    depth_compare: Some(wgpu::CompareFunction::LessEqual),
-                    stencil: Default::default(),
-                    bias: Default::default(),
-                }),
+                depth_stencil: Some(desc::depth_state(
+                    DEPTH_FORMAT,
+                    false,
+                    wgpu::CompareFunction::LessEqual,
+                )),
                 multisample: wgpu::MultisampleState {
                     count: samples,
                     mask: !0,
@@ -490,19 +463,12 @@ impl Pipelines {
                     })],
                     compilation_options: Default::default(),
                 }),
-                primitive: wgpu::PrimitiveState {
-                    topology: wgpu::PrimitiveTopology::TriangleList,
-                    front_face: wgpu::FrontFace::Cw,
-                    cull_mode: Some(wgpu::Face::Back),
-                    ..Default::default()
-                },
-                depth_stencil: Some(wgpu::DepthStencilState {
-                    format: DEPTH_FORMAT,
-                    depth_write_enabled: Some(write),
-                    depth_compare: Some(wgpu::CompareFunction::LessEqual),
-                    stencil: Default::default(),
-                    bias: Default::default(),
-                }),
+                primitive: desc::triangles(wgpu::FrontFace::Cw, Some(wgpu::Face::Back)),
+                depth_stencil: Some(desc::depth_state(
+                    DEPTH_FORMAT,
+                    write,
+                    wgpu::CompareFunction::LessEqual,
+                )),
                 multisample: wgpu::MultisampleState::default(),
                 multiview_mask: None,
                 cache: None,
@@ -520,14 +486,7 @@ impl Pipelines {
                 )
             },
         );
-        let buffer = |label: &str, size: usize| {
-            device.create_buffer(&wgpu::BufferDescriptor {
-                label: Some(label),
-                size: size as u64,
-                usage: wgpu::BufferUsages::UNIFORM | wgpu::BufferUsages::COPY_DST,
-                mapped_at_creation: false,
-            })
-        };
+        let buffer = |label: &str, size: usize| desc::uniform_buffer(device, label, size as u64);
         let reflect_frame = buffer(
             "modern water reflection frame",
             std::mem::size_of::<FrameUniforms>(),
@@ -1201,67 +1160,36 @@ impl ModernRenderer {
         };
         let [na, nb] = self.frame_resources.water.normal_pair;
         let tex = wgpu::BindingResource::TextureView;
-        self.frame_resources.water.bind = Some(
-            device.create_bind_group(&wgpu::BindGroupDescriptor {
-                label: Some("modern water"),
-                layout: &pipes.group2,
-                entries: &[
-                    wgpu::BindGroupEntry {
-                        binding: 0,
-                        resource: self.history.shadow.uniforms.as_entire_binding(),
-                    },
-                    wgpu::BindGroupEntry {
-                        binding: 1,
-                        resource: tex(&self.history.shadow.atlas.1),
-                    },
-                    wgpu::BindGroupEntry {
-                        binding: 2,
-                        resource: wgpu::BindingResource::Sampler(&self.history.shadow.sampler),
-                    },
-                    wgpu::BindGroupEntry {
-                        binding: 10,
-                        resource: pipes.uniforms.as_entire_binding(),
-                    },
-                    wgpu::BindGroupEntry {
-                        binding: 11,
-                        resource: tex(&targets.scratch_view),
-                    },
-                    wgpu::BindGroupEntry {
-                        binding: 12,
-                        resource: tex(&targets.depth),
-                    },
-                    wgpu::BindGroupEntry {
-                        binding: 13,
-                        resource: tex(&wt.reflection_view),
-                    },
-                    wgpu::BindGroupEntry {
-                        binding: 14,
-                        resource: tex(normal(na)),
-                    },
-                    wgpu::BindGroupEntry {
-                        binding: 15,
-                        resource: tex(normal(nb.or(na))),
-                    },
-                    wgpu::BindGroupEntry {
-                        binding: 16,
-                        resource: tex(self
-                            .frame_resources
-                            .water
-                            .foam
-                            .and_then(|m| self.frame_resources.water.foam_maps.get(&m))
-                            .unwrap_or(&pipes.flat_normal)),
-                    },
-                    wgpu::BindGroupEntry {
-                        binding: 17,
-                        resource: wgpu::BindingResource::Sampler(&pipes.water_sampler),
-                    },
-                    wgpu::BindGroupEntry {
-                        binding: 18,
-                        resource: wgpu::BindingResource::Sampler(&pipes.clamp_sampler),
-                    },
-                ],
-            }),
-        );
+        self.frame_resources.water.bind = Some(desc::bind_group(
+            device,
+            "modern water",
+            &pipes.group2,
+            &[
+                (0, self.history.shadow.uniforms.as_entire_binding()),
+                (1, tex(&self.history.shadow.atlas.1)),
+                (
+                    2,
+                    wgpu::BindingResource::Sampler(&self.history.shadow.sampler),
+                ),
+                (10, pipes.uniforms.as_entire_binding()),
+                (11, tex(&targets.scratch_view)),
+                (12, tex(&targets.depth)),
+                (13, tex(&wt.reflection_view)),
+                (14, tex(normal(na))),
+                (15, tex(normal(nb.or(na)))),
+                (
+                    16,
+                    tex(self
+                        .frame_resources
+                        .water
+                        .foam
+                        .and_then(|m| self.frame_resources.water.foam_maps.get(&m))
+                        .unwrap_or(&pipes.flat_normal)),
+                ),
+                (17, wgpu::BindingResource::Sampler(&pipes.water_sampler)),
+                (18, wgpu::BindingResource::Sampler(&pipes.clamp_sampler)),
+            ],
+        ));
         if self.frame_resources.water.log_next || self.history.frame.is_multiple_of(600) {
             self.frame_resources.water.log_next = false;
             log::info!("[modern] water: {:?}", self.frame_resources.water.stats);
@@ -1315,29 +1243,19 @@ impl<'a> EncodeInputs<'a> {
             // Transparent black: the water shader puts the sky behind the
             // reflected scene (premultiplied by the `ALPHA_BLEND` draws).
             let clear = wgpu::Color::TRANSPARENT;
-            let mut pass = encoder.begin_render_pass(&wgpu::RenderPassDescriptor {
-                label: Some(self.begin_pass(crate::frame::passes::Pass::PlanarReflection)),
-                color_attachments: &[Some(wgpu::RenderPassColorAttachment {
-                    view: &wt.reflection_view,
-                    resolve_target: None,
-                    depth_slice: None,
-                    ops: wgpu::Operations {
-                        load: wgpu::LoadOp::Clear(clear),
-                        store: wgpu::StoreOp::Store,
-                    },
-                })],
-                depth_stencil_attachment: Some(wgpu::RenderPassDepthStencilAttachment {
-                    view: &wt.reflection_depth,
-                    depth_ops: Some(wgpu::Operations {
-                        load: wgpu::LoadOp::Clear(1.0),
-                        store: wgpu::StoreOp::Discard,
-                    }),
-                    stencil_ops: None,
-                }),
-                occlusion_query_set: None,
-                multiview_mask: None,
-                timestamp_writes: None,
-            });
+            let mut pass = desc::pass(
+                encoder,
+                self.begin_pass(crate::frame::passes::Pass::PlanarReflection),
+                &[desc::colour(
+                    &wt.reflection_view,
+                    wgpu::LoadOp::Clear(clear),
+                )],
+                desc::depth(
+                    &wt.reflection_depth,
+                    wgpu::LoadOp::Clear(1.0),
+                    wgpu::StoreOp::Discard,
+                ),
+            );
             pass.set_bind_group(0, &pipes.reflect_frame_bind, &[]);
             pass.set_bind_group(2, receive, &[]);
             pass.set_bind_group(3, &self.lights.bind, &[]);

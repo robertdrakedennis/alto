@@ -24,6 +24,7 @@
 //! the first frame of a scene 3 of them per mesh (2,000-4,700 meshes). The
 //! runs keep the writes' order per buffer, so the buffers end up as writing
 //! each mesh at once leaves them.
+use rs910_gpu_device::desc;
 
 use crate::frame::{ModelStreams, Vertex};
 
@@ -272,12 +273,7 @@ impl LocArena {
         }
         let (vc, ic) = (vertices.max(PAGE_VERTICES), pairs.max(PAGE_INDEX_PAIRS));
         let buffer = |label: &str, size: u64, usage: wgpu::BufferUsages| {
-            device.create_buffer(&wgpu::BufferDescriptor {
-                label: Some(label),
-                size,
-                usage: usage | wgpu::BufferUsages::COPY_DST,
-                mapped_at_creation: false,
-            })
+            desc::buffer(device, label, size, usage | wgpu::BufferUsages::COPY_DST)
         };
         let mut page = Page {
             vertices: buffer(

@@ -26,6 +26,7 @@
 //!   `shadows::cache`). What the face holds is then exactly what drawing it
 //!   from scratch gives, so the frame is the frame of redrawing every face
 //!   every frame. A still scene with an unchanged light set redraws nothing.
+use rs910_gpu_device::desc;
 
 use crate::frame::encoding::EncodeInputs;
 use crate::frame::gpu::shadow_cache::CasterClass;
@@ -47,26 +48,14 @@ pub(crate) const MARGIN: f32 = 1536.0;
 /// Group 3's point-shadow entries (bindings 8-9).
 pub(crate) fn layout_entries() -> [wgpu::BindGroupLayoutEntry; 2] {
     [
-        wgpu::BindGroupLayoutEntry {
-            binding: 8,
-            visibility: wgpu::ShaderStages::FRAGMENT,
-            ty: wgpu::BindingType::Buffer {
-                ty: wgpu::BufferBindingType::Uniform,
-                has_dynamic_offset: false,
-                min_binding_size: None,
-            },
-            count: None,
-        },
-        wgpu::BindGroupLayoutEntry {
-            binding: 9,
-            visibility: wgpu::ShaderStages::FRAGMENT,
-            ty: wgpu::BindingType::Texture {
-                sample_type: wgpu::TextureSampleType::Depth,
-                view_dimension: wgpu::TextureViewDimension::D2,
-                multisampled: false,
-            },
-            count: None,
-        },
+        desc::uniform(8, wgpu::ShaderStages::FRAGMENT),
+        desc::texture(
+            9,
+            wgpu::ShaderStages::FRAGMENT,
+            wgpu::TextureSampleType::Depth,
+            wgpu::TextureViewDimension::D2,
+            false,
+        ),
     ]
 }
 
@@ -88,12 +77,11 @@ impl PointShadowMaps {
         device: &wgpu::Device,
         queue: &dyn rs910_gpu_device::uploads::Uploader,
     ) -> Self {
-        let uniforms = device.create_buffer(&wgpu::BufferDescriptor {
-            label: Some("modern point shadows"),
-            size: std::mem::size_of::<PointShadowUniforms>() as u64,
-            usage: wgpu::BufferUsages::UNIFORM | wgpu::BufferUsages::COPY_DST,
-            mapped_at_creation: false,
-        });
+        let uniforms = desc::uniform_buffer(
+            device,
+            "modern point shadows",
+            std::mem::size_of::<PointShadowUniforms>() as u64,
+        );
         queue.write_buffer(
             &uniforms,
             0,
@@ -114,27 +102,15 @@ impl PointShadowMaps {
 
     pub(crate) fn entries(&self) -> [wgpu::BindGroupEntry<'_>; 2] {
         [
-            wgpu::BindGroupEntry {
-                binding: 8,
-                resource: self.uniforms.as_entire_binding(),
-            },
-            wgpu::BindGroupEntry {
-                binding: 9,
-                resource: wgpu::BindingResource::TextureView(&self.view),
-            },
+            desc::bind(8, self.uniforms.as_entire_binding()),
+            desc::bind(9, wgpu::BindingResource::TextureView(&self.view)),
         ]
     }
 
     /// The entries with the block of no shadowed lights.
     pub(crate) fn entries_off(&self) -> [wgpu::BindGroupEntry<'_>; 2] {
         let [_, atlas] = self.entries();
-        [
-            wgpu::BindGroupEntry {
-                binding: 8,
-                resource: self.none.as_entire_binding(),
-            },
-            atlas,
-        ]
+        [desc::bind(8, self.none.as_entire_binding()), atlas]
     }
 
     /// Resize the atlas to `width` x `height` (true: recreated, so the bind
@@ -300,51 +276,46 @@ impl PointCasterGpu {
         arrays_layout: &wgpu::BindGroupLayout,
         vertex_layouts: &[Option<wgpu::VertexBufferLayout<'_>>],
     ) -> Self {
-        let caster_layout = device.create_bind_group_layout(&wgpu::BindGroupLayoutDescriptor {
-            label: Some("modern point shadow caster"),
-            entries: &[wgpu::BindGroupLayoutEntry {
-                binding: 4,
-                visibility: wgpu::ShaderStages::VERTEX_FRAGMENT,
-                ty: wgpu::BindingType::Buffer {
-                    ty: wgpu::BufferBindingType::Uniform,
-                    has_dynamic_offset: true,
-                    min_binding_size: wgpu::BufferSize::new(
-                        std::mem::size_of::<PointCasterUniforms>() as u64,
-                    ),
-                },
-                count: None,
-            }],
-        });
-        let casters = device.create_buffer(&wgpu::BufferDescriptor {
-            label: Some("modern point shadow casters"),
-            size: CASTER_SLOT * (6 * MAX_SHADOWED) as u64,
-            usage: wgpu::BufferUsages::UNIFORM | wgpu::BufferUsages::COPY_DST,
-            mapped_at_creation: false,
-        });
-        let caster_bind = device.create_bind_group(&wgpu::BindGroupDescriptor {
-            label: Some("modern point shadow caster"),
-            layout: &caster_layout,
-            entries: &[wgpu::BindGroupEntry {
-                binding: 4,
-                resource: wgpu::BindingResource::Buffer(wgpu::BufferBinding {
+        let caster_layout = desc::layout(
+            device,
+            "modern point shadow caster",
+            &[desc::uniform_sized(
+                4,
+                wgpu::ShaderStages::VERTEX_FRAGMENT,
+                true,
+                std::mem::size_of::<PointCasterUniforms>() as u64,
+            )],
+        );
+        let casters = desc::uniform_buffer(
+            device,
+            "modern point shadow casters",
+            CASTER_SLOT * (6 * MAX_SHADOWED) as u64,
+        );
+        let caster_bind = desc::bind_group(
+            device,
+            "modern point shadow caster",
+            &caster_layout,
+            &[(
+                4,
+                wgpu::BindingResource::Buffer(wgpu::BufferBinding {
                     buffer: &casters,
                     offset: 0,
                     size: wgpu::BufferSize::new(std::mem::size_of::<PointCasterUniforms>() as u64),
                 }),
-            }],
-        });
+            )],
+        );
         let pipeline = {
-            let layout = device.create_pipeline_layout(&wgpu::PipelineLayoutDescriptor {
-                label: Some("modern point shadow caster"),
-                bind_group_layouts: &[
+            let layout = desc::pipeline_layout(
+                device,
+                "modern point shadow caster",
+                &[
                     Some(frame_layout),
                     Some(material_layout),
                     Some(&caster_layout),
                     None,
                     Some(arrays_layout),
                 ],
-                immediate_size: 0,
-            });
+            );
             // Two-sided like the sun's casters (the classic models are often open
             // meshes); the bias is the receiver's.
             device.create_render_pipeline(&wgpu::RenderPipelineDescriptor {
@@ -367,13 +338,11 @@ impl PointCasterGpu {
                     cull_mode: None,
                     ..Default::default()
                 },
-                depth_stencil: Some(wgpu::DepthStencilState {
-                    format: crate::shadows::SHADOW_FORMAT,
-                    depth_write_enabled: Some(true),
-                    depth_compare: Some(wgpu::CompareFunction::LessEqual),
-                    stencil: Default::default(),
-                    bias: Default::default(),
-                }),
+                depth_stencil: Some(desc::depth_state(
+                    crate::shadows::SHADOW_FORMAT,
+                    true,
+                    wgpu::CompareFunction::LessEqual,
+                )),
                 multisample: wgpu::MultisampleState::default(),
                 multiview_mask: None,
                 cache: None,
@@ -746,25 +715,16 @@ impl<'a> EncodeInputs<'a> {
             return;
         };
         let plan = &point.plan;
-        let mut pass = encoder.begin_render_pass(&wgpu::RenderPassDescriptor {
-            label: Some(self.begin_pass(crate::frame::passes::Pass::PointShadows)),
-            color_attachments: &[],
-            depth_stencil_attachment: Some(wgpu::RenderPassDepthStencilAttachment {
-                view: &self.lights.shadow_maps.view,
-                depth_ops: Some(wgpu::Operations {
-                    load: if plan.clear_atlas {
-                        wgpu::LoadOp::Clear(1.0)
-                    } else {
-                        wgpu::LoadOp::Load
-                    },
-                    store: wgpu::StoreOp::Store,
-                }),
-                stencil_ops: None,
-            }),
-            occlusion_query_set: None,
-            multiview_mask: None,
-            timestamp_writes: None,
-        });
+        let mut pass = desc::depth_pass(
+            encoder,
+            self.begin_pass(crate::frame::passes::Pass::PointShadows),
+            &self.lights.shadow_maps.view,
+            if plan.clear_atlas {
+                wgpu::LoadOp::Clear(1.0)
+            } else {
+                wgpu::LoadOp::Load
+            },
+        );
         let fill = &self.shadow.sun.fill;
         for pending in &plan.slots {
             if pending.clear_block && !plan.clear_atlas {

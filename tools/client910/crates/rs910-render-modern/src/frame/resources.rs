@@ -2,6 +2,7 @@
 //! module's "Resources"): uploaded meshes, the loc model cache by
 //! `EntityKey`, the floors per level with their tile selection, the
 //! per-frame arena, and the frame's draw records built from them.
+use rs910_gpu_device::desc;
 use std::sync::Arc;
 
 use wgpu::util::DeviceExt;
@@ -214,12 +215,7 @@ impl Arena {
         if grow {
             let cap = need.map(|n| n.next_power_of_two());
             let buffer = |label: &str, size: u64, usage: wgpu::BufferUsages| {
-                device.create_buffer(&wgpu::BufferDescriptor {
-                    label: Some(label),
-                    size,
-                    usage: usage | wgpu::BufferUsages::COPY_DST,
-                    mapped_at_creation: false,
-                })
+                desc::buffer(device, label, size, usage | wgpu::BufferUsages::COPY_DST)
             };
             self.gpu = Some((
                 buffer("modern arena vertices", cap[0], wgpu::BufferUsages::VERTEX),

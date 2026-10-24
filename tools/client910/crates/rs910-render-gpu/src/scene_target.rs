@@ -1,5 +1,6 @@
 //! Scene-only colour/depth attachments. Resolve multisampling before post
 //! processing and copy only the viewport clip, preserving the surrounding UI.
+use rs910_gpu_device::desc;
 
 pub struct Target {
     pub colour: wgpu::Texture,
@@ -38,19 +39,16 @@ impl CopyPipelines {
     }
 
     pub fn new(device: &wgpu::Device, format: wgpu::TextureFormat, samples: u32) -> Self {
-        let layout = device.create_bind_group_layout(&wgpu::BindGroupLayoutDescriptor {
-            label: Some("scene copy"),
-            entries: &[wgpu::BindGroupLayoutEntry {
-                binding: 0,
-                visibility: wgpu::ShaderStages::FRAGMENT,
-                ty: wgpu::BindingType::Texture {
-                    sample_type: wgpu::TextureSampleType::Float { filterable: false },
-                    view_dimension: wgpu::TextureViewDimension::D2,
-                    multisampled: false,
-                },
-                count: None,
-            }],
-        });
+        let layout = desc::layout(
+            device,
+            "scene copy",
+            &[desc::float_texture(
+                0,
+                wgpu::ShaderStages::FRAGMENT,
+                false,
+                wgpu::TextureViewDimension::D2,
+            )],
+        );
         let shader = device.create_shader_module(wgpu::ShaderModuleDescriptor {
             label: Some("scene copy"),
             source: wgpu::ShaderSource::Wgsl(std::borrow::Cow::Borrowed(
@@ -66,11 +64,7 @@ impl CopyPipelines {
 "#,
             )),
         });
-        let pl = device.create_pipeline_layout(&wgpu::PipelineLayoutDescriptor {
-            label: Some("scene copy"),
-            bind_group_layouts: &[Some(&layout)],
-            immediate_size: 0,
-        });
+        let pl = desc::pipeline_layout(device, "scene copy", &[Some(&layout)]);
         let descriptor = wgpu::RenderPipelineDescriptor {
             label: Some("scene copy"),
             layout: Some(&pl),
@@ -136,18 +130,8 @@ impl Target {
     ) -> Self {
         let make = |label, format, samples, usage| {
             device.create_texture(&wgpu::TextureDescriptor {
-                label: Some(label),
-                size: wgpu::Extent3d {
-                    width: size[0],
-                    height: size[1],
-                    depth_or_array_layers: 1,
-                },
-                mip_level_count: 1,
                 sample_count: samples,
-                dimension: wgpu::TextureDimension::D2,
-                format,
-                usage,
-                view_formats: &[],
+                ..desc::texture_2d(label, [size[0], size[1]], format, usage)
             })
         };
         let colour = make(
@@ -176,14 +160,12 @@ impl Target {
             wgpu::TextureUsages::RENDER_ATTACHMENT,
         )
         .create_view(&Default::default());
-        let binding = device.create_bind_group(&wgpu::BindGroupDescriptor {
-            label: Some("scene copy"),
-            layout: &pipelines.layout,
-            entries: &[wgpu::BindGroupEntry {
-                binding: 0,
-                resource: wgpu::BindingResource::TextureView(&view),
-            }],
-        });
+        let binding = desc::bind_group(
+            device,
+            "scene copy",
+            &pipelines.layout,
+            &[(0, wgpu::BindingResource::TextureView(&view))],
+        );
         Self {
             colour,
             view,
@@ -211,30 +193,18 @@ impl Target {
         encoder: &mut wgpu::CommandEncoder,
         source: &wgpu::TextureView,
     ) {
-        let binding = device.create_bind_group(&wgpu::BindGroupDescriptor {
-            label: Some("UI MSAA background"),
-            layout: &self.pipelines.layout,
-            entries: &[wgpu::BindGroupEntry {
-                binding: 0,
-                resource: wgpu::BindingResource::TextureView(source),
-            }],
-        });
-        let mut pass = encoder.begin_render_pass(&wgpu::RenderPassDescriptor {
-            label: Some("seed UI model samples"),
-            color_attachments: &[Some(wgpu::RenderPassColorAttachment {
-                view: self.attachment(),
-                resolve_target: None,
-                depth_slice: None,
-                ops: wgpu::Operations {
-                    load: wgpu::LoadOp::Clear(wgpu::Color::BLACK),
-                    store: wgpu::StoreOp::Store,
-                },
-            })],
-            depth_stencil_attachment: None,
-            timestamp_writes: None,
-            occlusion_query_set: None,
-            multiview_mask: None,
-        });
+        let binding = desc::bind_group(
+            device,
+            "UI MSAA background",
+            &self.pipelines.layout,
+            &[(0, wgpu::BindingResource::TextureView(source))],
+        );
+        let mut pass = desc::colour_pass(
+            encoder,
+            "seed UI model samples",
+            self.attachment(),
+            wgpu::LoadOp::Clear(wgpu::Color::BLACK),
+        );
         pass.set_pipeline(&self.pipelines.seed_pipeline);
         pass.set_bind_group(0, &binding, &[]);
         pass.draw(0..3, 0..1);
@@ -248,22 +218,12 @@ impl Target {
         if clip[2] == 0 || clip[3] == 0 {
             return;
         }
-        let mut pass = encoder.begin_render_pass(&wgpu::RenderPassDescriptor {
-            label: Some("compose scene before UI"),
-            color_attachments: &[Some(wgpu::RenderPassColorAttachment {
-                view: target,
-                resolve_target: None,
-                depth_slice: None,
-                ops: wgpu::Operations {
-                    load: wgpu::LoadOp::Load,
-                    store: wgpu::StoreOp::Store,
-                },
-            })],
-            depth_stencil_attachment: None,
-            timestamp_writes: None,
-            occlusion_query_set: None,
-            multiview_mask: None,
-        });
+        let mut pass = desc::colour_pass(
+            encoder,
+            "compose scene before UI",
+            target,
+            wgpu::LoadOp::Load,
+        );
         pass.set_pipeline(&self.pipelines.presenter);
         pass.set_bind_group(0, &self.binding, &[]);
         pass.set_scissor_rect(clip[0], clip[1], clip[2], clip[3]);

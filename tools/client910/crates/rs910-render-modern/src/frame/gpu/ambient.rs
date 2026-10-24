@@ -37,6 +37,7 @@
 //! and no SSAO, at the near scene's model detail (the reference forces the
 //! low detail), with the point lights the frame has (the reference turns
 //! their shadows off); the far scene and the water are not drawn.
+use rs910_gpu_device::desc;
 
 use crate::frame::encoding::EncodeInputs;
 use std::sync::atomic::{AtomicU8, Ordering};
@@ -533,12 +534,12 @@ impl ModernRenderer {
             self.history.ambient.target = Some(face_target(device));
             self.history.ambient.readbacks = (0..READBACKS)
                 .map(|_| Readback {
-                    buffer: device.create_buffer(&wgpu::BufferDescriptor {
-                        label: Some("modern ambient readback"),
-                        size: u64::from(FACE_RES) * u64::from(FACE_RES) * 8,
-                        usage: wgpu::BufferUsages::MAP_READ | wgpu::BufferUsages::COPY_DST,
-                        mapped_at_creation: false,
-                    }),
+                    buffer: desc::buffer(
+                        device,
+                        "modern ambient readback",
+                        u64::from(FACE_RES) * u64::from(FACE_RES) * 8,
+                        wgpu::BufferUsages::MAP_READ | wgpu::BufferUsages::COPY_DST,
+                    ),
                     stage: Stage::Free,
                 })
                 .collect();
@@ -620,24 +621,22 @@ impl ModernRenderer {
             .as_ref()
             .expect("capture pipelines");
         let frame_layout = self.pipes().forward.get_bind_group_layout(0);
-        let bind = device.create_bind_group(&wgpu::BindGroupDescriptor {
-            label: Some("modern ambient frame"),
-            layout: &frame_layout,
-            entries: &[
-                wgpu::BindGroupEntry {
-                    binding: 0,
-                    resource: wgpu::BindingResource::Buffer(wgpu::BufferBinding {
+        let bind = desc::bind_group(
+            device,
+            "modern ambient frame",
+            &frame_layout,
+            &[
+                (
+                    0,
+                    wgpu::BindingResource::Buffer(wgpu::BufferBinding {
                         buffer: &frames,
                         offset: 0,
                         size: wgpu::BufferSize::new(SLOT),
                     }),
-                },
-                wgpu::BindGroupEntry {
-                    binding: 1,
-                    resource: wgpu::BindingResource::TextureView(&pipes.ao_white),
-                },
+                ),
+                (1, wgpu::BindingResource::TextureView(&pipes.ao_white)),
             ],
-        });
+        );
         self.history.ambient.draws = seen.len();
         self.history.ambient.record_ms = started.elapsed().as_secs_f32() * 1000.0;
         self.history.ambient.faces += 1;
@@ -749,29 +748,16 @@ impl<'a> EncodeInputs<'a> {
             a: 1.0,
         };
         {
-            let mut pass = encoder.begin_render_pass(&wgpu::RenderPassDescriptor {
-                label: Some(self.begin_pass(crate::frame::passes::Pass::AmbientCapture)),
-                color_attachments: &[Some(wgpu::RenderPassColorAttachment {
-                    view: &target.view,
-                    resolve_target: None,
-                    depth_slice: None,
-                    ops: wgpu::Operations {
-                        load: wgpu::LoadOp::Clear(clear),
-                        store: wgpu::StoreOp::Store,
-                    },
-                })],
-                depth_stencil_attachment: Some(wgpu::RenderPassDepthStencilAttachment {
-                    view: &target.depth,
-                    depth_ops: Some(wgpu::Operations {
-                        load: wgpu::LoadOp::Clear(1.0),
-                        store: wgpu::StoreOp::Discard,
-                    }),
-                    stencil_ops: None,
-                }),
-                occlusion_query_set: None,
-                multiview_mask: None,
-                timestamp_writes: None,
-            });
+            let mut pass = desc::pass(
+                encoder,
+                self.begin_pass(crate::frame::passes::Pass::AmbientCapture),
+                &[desc::colour(&target.view, wgpu::LoadOp::Clear(clear))],
+                desc::depth(
+                    &target.depth,
+                    wgpu::LoadOp::Clear(1.0),
+                    wgpu::StoreOp::Discard,
+                ),
+            );
             self.draw_sky_face(&mut pass, &capture.sky);
             pass.set_bind_group(0, &capture.bind, &[]);
             pass.set_bind_group(2, &pipes.no_shadow, &[]);

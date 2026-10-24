@@ -9,6 +9,7 @@
 //! it covers (their draws are not recorded); the water batches stay the
 //! water pass's (M7).
 use crate::frame::encoding::EncodeInputs;
+use rs910_gpu_device::desc;
 use wgpu::util::DeviceExt;
 
 use crate::frame::*;
@@ -167,90 +168,35 @@ impl Pipes {
         caustics: bool,
         module: std::sync::Arc<wgpu::ShaderModule>,
     ) -> Self {
-        let entry = |binding, visibility, ty| wgpu::BindGroupLayoutEntry {
-            binding,
-            visibility,
-            ty,
-            count: None,
-        };
-        let storage = wgpu::BindingType::Buffer {
-            ty: wgpu::BufferBindingType::Storage { read_only: true },
-            has_dynamic_offset: false,
-            min_binding_size: None,
-        };
+        let fragment = wgpu::ShaderStages::FRAGMENT;
         // The caustics' uniforms and resolved light.
-        let caustic_entries = [
-            entry(
-                12,
-                wgpu::ShaderStages::FRAGMENT,
-                wgpu::BindingType::Buffer {
-                    ty: wgpu::BufferBindingType::Uniform,
-                    has_dynamic_offset: false,
-                    min_binding_size: None,
-                },
-            ),
-            entry(13, wgpu::ShaderStages::FRAGMENT, storage),
-        ];
+        let caustic_entries = [desc::uniform(12, fragment), desc::storage(13, fragment)];
         let mut entries = vec![
-            entry(
-                8,
-                wgpu::ShaderStages::VERTEX_FRAGMENT,
-                wgpu::BindingType::Buffer {
-                    ty: wgpu::BufferBindingType::Uniform,
-                    has_dynamic_offset: false,
-                    min_binding_size: None,
-                },
-            ),
-            entry(
-                9,
-                wgpu::ShaderStages::FRAGMENT,
-                wgpu::BindingType::Texture {
-                    sample_type: wgpu::TextureSampleType::Float { filterable: true },
-                    view_dimension: wgpu::TextureViewDimension::D2Array,
-                    multisampled: false,
-                },
-            ),
-            entry(
-                10,
-                wgpu::ShaderStages::FRAGMENT,
-                wgpu::BindingType::Sampler(wgpu::SamplerBindingType::Filtering),
-            ),
-            entry(11, wgpu::ShaderStages::FRAGMENT, storage),
+            desc::uniform(8, wgpu::ShaderStages::VERTEX_FRAGMENT),
+            desc::float_texture(9, fragment, true, wgpu::TextureViewDimension::D2Array),
+            desc::sampler(10, fragment, wgpu::SamplerBindingType::Filtering),
+            desc::storage(11, fragment),
         ];
         if caustics {
             entries.extend(caustic_entries);
         }
-        let layout = device.create_bind_group_layout(&wgpu::BindGroupLayoutDescriptor {
-            label: Some("modern terrain"),
-            entries: &entries,
-        });
+        let layout = desc::layout(device, "modern terrain", &entries);
         let g = |i| forward.get_bind_group_layout(i);
         let (g0, g2, g3) = (g(0), g(2), g(3));
-        let forward_layout = device.create_pipeline_layout(&wgpu::PipelineLayoutDescriptor {
-            label: Some("modern terrain"),
-            bind_group_layouts: &[Some(&g0), Some(&layout), Some(&g2), Some(&g3)],
-            immediate_size: 0,
-        });
+        let forward_layout = desc::pipeline_layout(
+            device,
+            "modern terrain",
+            &[Some(&g0), Some(&layout), Some(&g2), Some(&g3)],
+        );
         let caster_group = caster.get_bind_group_layout(2);
-        let shadow_layout = device.create_pipeline_layout(&wgpu::PipelineLayoutDescriptor {
-            label: Some("modern terrain caster"),
-            bind_group_layouts: &[Some(&g0), Some(&layout), Some(&caster_group)],
-            immediate_size: 0,
-        });
+        let shadow_layout = desc::pipeline_layout(
+            device,
+            "modern terrain caster",
+            &[Some(&g0), Some(&layout), Some(&caster_group)],
+        );
         let buffers = [Some(vertex_layout())];
-        let depth = |format, write| wgpu::DepthStencilState {
-            format,
-            depth_write_enabled: Some(write),
-            depth_compare: Some(wgpu::CompareFunction::LessEqual),
-            stencil: Default::default(),
-            bias: Default::default(),
-        };
-        let primitive = |front_face, cull_mode| wgpu::PrimitiveState {
-            topology: wgpu::PrimitiveTopology::TriangleList,
-            front_face,
-            cull_mode,
-            ..Default::default()
-        };
+        let depth =
+            |format, write| desc::depth_state(format, write, wgpu::CompareFunction::LessEqual);
         let lit = |label, samples, front_face, fragment| {
             lit_pipeline(
                 device,
@@ -273,7 +219,7 @@ impl Pipes {
                     compilation_options: Default::default(),
                 },
                 fragment: None,
-                primitive: primitive(wgpu::FrontFace::Ccw, None),
+                primitive: desc::triangles(wgpu::FrontFace::Ccw, None),
                 depth_stencil: Some(depth(crate::shadows::SHADOW_FORMAT, true)),
                 multisample: wgpu::MultisampleState::default(),
                 multiview_mask: None,
@@ -296,7 +242,7 @@ impl Pipes {
                     targets: &[Some(crate::frame::gpu::post::NORMAL_FORMAT.into())],
                     compilation_options: Default::default(),
                 }),
-                primitive: primitive(wgpu::FrontFace::Ccw, Some(wgpu::Face::Back)),
+                primitive: desc::triangles(wgpu::FrontFace::Ccw, Some(wgpu::Face::Back)),
                 depth_stencil: Some(depth(crate::frame::gpu::post::GEOMETRY_DEPTH, true)),
                 multisample: wgpu::MultisampleState::default(),
                 multiview_mask: None,
@@ -403,19 +349,12 @@ pub(crate) fn lit_pipeline(
             })],
             compilation_options: Default::default(),
         }),
-        primitive: wgpu::PrimitiveState {
-            topology: wgpu::PrimitiveTopology::TriangleList,
-            front_face,
-            cull_mode: Some(wgpu::Face::Back),
-            ..Default::default()
-        },
-        depth_stencil: Some(wgpu::DepthStencilState {
-            format: DEPTH_FORMAT,
-            depth_write_enabled: Some(true),
-            depth_compare: Some(wgpu::CompareFunction::LessEqual),
-            stencil: Default::default(),
-            bias: Default::default(),
-        }),
+        primitive: desc::triangles(front_face, Some(wgpu::Face::Back)),
+        depth_stencil: Some(desc::depth_state(
+            DEPTH_FORMAT,
+            true,
+            wgpu::CompareFunction::LessEqual,
+        )),
         multisample: wgpu::MultisampleState {
             count: samples,
             mask: !0,
@@ -437,18 +376,13 @@ pub(crate) fn upload_layers(
     let count = layers.len().max(1) as u32;
     let mips = size.ilog2() + 1;
     let texture = device.create_texture(&wgpu::TextureDescriptor {
-        label: Some("modern terrain layers"),
-        size: wgpu::Extent3d {
-            width: size,
-            height: size,
-            depth_or_array_layers: count,
-        },
         mip_level_count: mips,
-        sample_count: 1,
-        dimension: wgpu::TextureDimension::D2,
-        format: wgpu::TextureFormat::Rgba8UnormSrgb,
-        usage: wgpu::TextureUsages::TEXTURE_BINDING | wgpu::TextureUsages::COPY_DST,
-        view_formats: &[],
+        ..desc::texture_layers(
+            "modern terrain layers",
+            [size, size, count],
+            wgpu::TextureFormat::Rgba8UnormSrgb,
+            wgpu::TextureUsages::TEXTURE_BINDING | wgpu::TextureUsages::COPY_DST,
+        )
     });
     let white: crate::terrain::atlas::LayerLevels = (0..mips)
         .map(|m| {
@@ -463,29 +397,7 @@ pub(crate) fn upload_layers(
     };
     for (layer, levels) in all.iter().enumerate() {
         for (mip, (w, h, px)) in levels.iter().enumerate().take(mips as usize) {
-            queue.write_texture(
-                wgpu::TexelCopyTextureInfo {
-                    texture: &texture,
-                    mip_level: mip as u32,
-                    origin: wgpu::Origin3d {
-                        x: 0,
-                        y: 0,
-                        z: layer as u32,
-                    },
-                    aspect: wgpu::TextureAspect::All,
-                },
-                px,
-                wgpu::TexelCopyBufferLayout {
-                    offset: 0,
-                    bytes_per_row: Some(w * 4),
-                    rows_per_image: Some(*h),
-                },
-                wgpu::Extent3d {
-                    width: *w,
-                    height: *h,
-                    depth_or_array_layers: 1,
-                },
-            );
+            desc::write_level(queue, &texture, mip as u32, layer as u32, [*w, *h], px);
         }
     }
     texture.create_view(&wgpu::TextureViewDescriptor {
@@ -591,12 +503,7 @@ impl ModernRenderer {
         if let Some((cpu, staged)) = built {
             log::info!("[modern] terrain: {}", cpu.summary());
             let uniform_block = |label| {
-                device.create_buffer(&wgpu::BufferDescriptor {
-                    label: Some(label),
-                    size: std::mem::size_of::<TerrainUniforms>() as u64,
-                    usage: wgpu::BufferUsages::UNIFORM | wgpu::BufferUsages::COPY_DST,
-                    mapped_at_creation: false,
-                })
+                desc::uniform_buffer(device, label, std::mem::size_of::<TerrainUniforms>() as u64)
             };
             if t.uniforms.is_none() {
                 t.uniforms = Some(uniform_block("modern far terrain"));
@@ -619,35 +526,17 @@ impl ModernRenderer {
                 usage: wgpu::BufferUsages::STORAGE,
             });
             let mut entries = vec![
-                wgpu::BindGroupEntry {
-                    binding: 8,
-                    resource: uniforms.as_entire_binding(),
-                },
-                wgpu::BindGroupEntry {
-                    binding: 9,
-                    resource: wgpu::BindingResource::TextureView(&layers),
-                },
-                wgpu::BindGroupEntry {
-                    binding: 10,
-                    resource: wgpu::BindingResource::Sampler(&pipes.sampler),
-                },
-                wgpu::BindGroupEntry {
-                    binding: 11,
-                    resource: materials_buffer.as_entire_binding(),
-                },
+                desc::bind(8, uniforms.as_entire_binding()),
+                desc::bind(9, wgpu::BindingResource::TextureView(&layers)),
+                desc::bind(10, wgpu::BindingResource::Sampler(&pipes.sampler)),
+                desc::bind(11, materials_buffer.as_entire_binding()),
             ];
             if let (true, Some(b)) = (
                 pipes.caustics,
                 self.frame_resources.water.caustics.buffers.as_ref(),
             ) {
-                entries.push(wgpu::BindGroupEntry {
-                    binding: 12,
-                    resource: b.uniforms.as_entire_binding(),
-                });
-                entries.push(wgpu::BindGroupEntry {
-                    binding: 13,
-                    resource: b.light.as_entire_binding(),
-                });
+                entries.push(desc::bind(12, b.uniforms.as_entire_binding()));
+                entries.push(desc::bind(13, b.light.as_entire_binding()));
             }
             let bind = device.create_bind_group(&wgpu::BindGroupDescriptor {
                 label: Some("modern terrain"),

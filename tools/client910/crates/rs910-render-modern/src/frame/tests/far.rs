@@ -2,6 +2,7 @@
 //! locs are the classic placement's outside the window, never the window's;
 //! streamed on workers it becomes the synchronous frame; the near
 //! extension's containers draw the per-loc frame with fewer draws.
+use rs910_gpu_device::desc;
 use std::collections::{HashMap, HashSet};
 use std::sync::Arc;
 
@@ -476,20 +477,12 @@ fn far_multi_draw_matches_direct_packets_with_staged_arguments() {
         .take(PACKET_COUNT)
         .skip(1)
         .all(|arg| arg.first_instance > 0 && arg.base_vertex > 0 && arg.first_index > 0));
-    let output = device.create_texture(&wgpu::TextureDescriptor {
-        label: Some("far packet proof"),
-        size: wgpu::Extent3d {
-            width: SIZE[0],
-            height: SIZE[1],
-            depth_or_array_layers: 1,
-        },
-        mip_level_count: 1,
-        sample_count: 1,
-        dimension: wgpu::TextureDimension::D2,
-        format: wgpu::TextureFormat::Rgba8Unorm,
-        usage: wgpu::TextureUsages::RENDER_ATTACHMENT | wgpu::TextureUsages::COPY_SRC,
-        view_formats: &[],
-    });
+    let output = device.create_texture(&desc::texture_2d(
+        "far packet proof",
+        [SIZE[0], SIZE[1]],
+        wgpu::TextureFormat::Rgba8Unorm,
+        wgpu::TextureUsages::RENDER_ATTACHMENT | wgpu::TextureUsages::COPY_SRC,
+    ));
     let view = output.create_view(&Default::default());
     let capture = |r: &ModernRenderer| {
         let mut encoder = device.create_command_encoder(&Default::default());

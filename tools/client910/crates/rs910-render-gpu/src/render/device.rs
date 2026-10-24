@@ -3,6 +3,7 @@
 //! target, resize and toolkit changes, the anti-aliasing and bloom settings
 //! and the capability answers (bloom and anti-aliasing support, the
 //! capability profile).
+use rs910_gpu_device::desc;
 
 use super::*;
 use std::collections::HashMap;
@@ -82,20 +83,12 @@ impl Renderer {
         width: u32,
         height: u32,
     ) -> wgpu::TextureView {
-        let texture = device.create_texture(&wgpu::TextureDescriptor {
-            label: Some("depth"),
-            size: wgpu::Extent3d {
-                width,
-                height,
-                depth_or_array_layers: 1,
-            },
-            mip_level_count: 1,
-            sample_count: 1,
-            dimension: wgpu::TextureDimension::D2,
-            format: DEPTH_FORMAT,
-            usage: wgpu::TextureUsages::RENDER_ATTACHMENT,
-            view_formats: &[],
-        });
+        let texture = device.create_texture(&desc::texture_2d(
+            "depth",
+            [width, height],
+            DEPTH_FORMAT,
+            wgpu::TextureUsages::RENDER_ATTACHMENT,
+        ));
         texture.create_view(&wgpu::TextureViewDescriptor::default())
     }
 

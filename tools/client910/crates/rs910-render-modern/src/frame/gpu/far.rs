@@ -65,6 +65,7 @@
 //! in instances (the near terrain's own test: a scene whose ground is not
 //! its squares' map file 5) and underground (squares from row 100), and
 //! while the modern terrain is off.
+use rs910_gpu_device::desc;
 
 use crate::frame::encoding::EncodeInputs;
 use std::collections::{BTreeMap, HashMap, VecDeque};
@@ -1770,21 +1771,16 @@ impl ModernRenderer {
             let capacity = count.next_power_of_two().max(16);
             let size = crate::terrain::atlas::LAYER_SIZE;
             let texture = device.create_texture(&wgpu::TextureDescriptor {
-                label: Some("modern far terrain layers"),
-                size: wgpu::Extent3d {
-                    width: size,
-                    height: size,
-                    depth_or_array_layers: capacity,
-                },
                 mip_level_count: size.ilog2() + 1,
-                sample_count: 1,
-                dimension: wgpu::TextureDimension::D2,
-                format: wgpu::TextureFormat::Rgba8UnormSrgb,
-                usage: wgpu::TextureUsages::TEXTURE_BINDING | wgpu::TextureUsages::COPY_DST,
-                view_formats: &[],
+                ..desc::texture_layers(
+                    "modern far terrain layers",
+                    [size, size, capacity],
+                    wgpu::TextureFormat::Rgba8UnormSrgb,
+                    wgpu::TextureUsages::TEXTURE_BINDING | wgpu::TextureUsages::COPY_DST,
+                )
             });
             for (layer, levels) in layers.texels.iter().enumerate() {
-                write_layer(queue, &texture, layer as u32, levels);
+                desc::write_mips(queue, &texture, layer as u32, levels);
             }
             let view = texture.create_view(&wgpu::TextureViewDescriptor {
                 dimension: Some(wgpu::TextureViewDimension::D2Array),
@@ -1795,7 +1791,7 @@ impl ModernRenderer {
         } else if let Some((texture, _, _, written)) = self.scene_resources.far.layer_array.as_mut()
         {
             for (layer, levels) in layers.texels.iter().enumerate().skip(*written) {
-                write_layer(queue, texture, layer as u32, levels);
+                desc::write_mips(queue, texture, layer as u32, levels);
             }
             *written = layers.texels.len();
         }
@@ -1813,35 +1809,17 @@ impl ModernRenderer {
             usage: wgpu::BufferUsages::STORAGE,
         });
         let mut entries = vec![
-            wgpu::BindGroupEntry {
-                binding: 8,
-                resource: uniforms.as_entire_binding(),
-            },
-            wgpu::BindGroupEntry {
-                binding: 9,
-                resource: wgpu::BindingResource::TextureView(view),
-            },
-            wgpu::BindGroupEntry {
-                binding: 10,
-                resource: wgpu::BindingResource::Sampler(&pipes.sampler),
-            },
-            wgpu::BindGroupEntry {
-                binding: 11,
-                resource: materials_buffer.as_entire_binding(),
-            },
+            desc::bind(8, uniforms.as_entire_binding()),
+            desc::bind(9, wgpu::BindingResource::TextureView(view)),
+            desc::bind(10, wgpu::BindingResource::Sampler(&pipes.sampler)),
+            desc::bind(11, materials_buffer.as_entire_binding()),
         ];
         if let (true, Some(b)) = (
             pipes.caustics,
             self.frame_resources.water.caustics.buffers.as_ref(),
         ) {
-            entries.push(wgpu::BindGroupEntry {
-                binding: 12,
-                resource: b.uniforms.as_entire_binding(),
-            });
-            entries.push(wgpu::BindGroupEntry {
-                binding: 13,
-                resource: b.light.as_entire_binding(),
-            });
+            entries.push(desc::bind(12, b.uniforms.as_entire_binding()));
+            entries.push(desc::bind(13, b.light.as_entire_binding()));
         }
         self.scene_resources.far.bind =
             Some(device.create_bind_group(&wgpu::BindGroupDescriptor {
@@ -2742,40 +2720,6 @@ impl ModernRenderer {
     pub fn far_plane(&self) -> Option<f32> {
         let far = &self.scene_resources.far;
         far.stats.level.map(|_| far.far_plane)
-    }
-}
-
-/// Write layer `layer`'s mips `levels` into the far layers' `texture`.
-fn write_layer(
-    queue: &dyn rs910_gpu_device::uploads::Uploader,
-    texture: &wgpu::Texture,
-    layer: u32,
-    levels: &crate::terrain::atlas::LayerLevels,
-) {
-    for (mip, (w, h, px)) in levels.iter().enumerate() {
-        queue.write_texture(
-            wgpu::TexelCopyTextureInfo {
-                texture,
-                mip_level: mip as u32,
-                origin: wgpu::Origin3d {
-                    x: 0,
-                    y: 0,
-                    z: layer,
-                },
-                aspect: wgpu::TextureAspect::All,
-            },
-            px,
-            wgpu::TexelCopyBufferLayout {
-                offset: 0,
-                bytes_per_row: Some(w * 4),
-                rows_per_image: Some(*h),
-            },
-            wgpu::Extent3d {
-                width: *w,
-                height: *h,
-                depth_or_array_layers: 1,
-            },
-        );
     }
 }
 

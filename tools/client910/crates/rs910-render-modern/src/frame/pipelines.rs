@@ -9,6 +9,7 @@
 //! probes, shadows) does not depend on the count and stays; the targets
 //! follow the count on the next frame (`ensure_targets`, the atmosphere's
 //! by key).
+use rs910_gpu_device::desc;
 
 use crate::frame::encoding::EncodeInputs;
 use std::hash::Hash;
@@ -94,12 +95,7 @@ impl SamplePipelines {
             mask: !0,
             alpha_to_coverage_enabled: false,
         };
-        let primitive = wgpu::PrimitiveState {
-            topology: wgpu::PrimitiveTopology::TriangleList,
-            front_face: wgpu::FrontFace::Ccw,
-            cull_mode: Some(wgpu::Face::Back),
-            ..Default::default()
-        };
+        let primitive = desc::triangles(wgpu::FrontFace::Ccw, Some(wgpu::Face::Back));
         let layouts = vertex_layouts();
         let module = &inputs.forward_module;
         let model_pipeline = |label: &str,
@@ -127,13 +123,8 @@ impl SamplePipelines {
                     compilation_options: Default::default(),
                 }),
                 primitive,
-                depth_stencil: depth.map(|(write, compare)| wgpu::DepthStencilState {
-                    format: DEPTH_FORMAT,
-                    depth_write_enabled: Some(write),
-                    depth_compare: Some(compare),
-                    stencil: Default::default(),
-                    bias: Default::default(),
-                }),
+                depth_stencil: depth
+                    .map(|(write, compare)| desc::depth_state(DEPTH_FORMAT, write, compare)),
                 multisample,
                 multiview_mask: None,
                 cache: None,

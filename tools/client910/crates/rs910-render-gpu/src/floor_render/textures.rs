@@ -1,4 +1,5 @@
 //! Floor material texture caching, gamma conversion and mip uploads.
+use rs910_gpu_device::desc;
 
 use std::collections::HashMap;
 
@@ -167,18 +168,13 @@ pub(super) fn upload_argb(
         1
     };
     let texture = device.create_texture(&wgpu::TextureDescriptor {
-        label: Some(label),
-        size: wgpu::Extent3d {
-            width: w,
-            height: h,
-            depth_or_array_layers: 1,
-        },
         mip_level_count: levels,
-        sample_count: 1,
-        dimension: wgpu::TextureDimension::D2,
-        format: wgpu::TextureFormat::Rgba8Unorm,
-        usage: wgpu::TextureUsages::TEXTURE_BINDING | wgpu::TextureUsages::COPY_DST,
-        view_formats: &[],
+        ..desc::texture_2d(
+            label,
+            [w, h],
+            wgpu::TextureFormat::Rgba8Unorm,
+            wgpu::TextureUsages::TEXTURE_BINDING | wgpu::TextureUsages::COPY_DST,
+        )
     });
     let mut level_px = argb;
     let (mut lw, mut lh) = (w as usize, h as usize);
@@ -197,25 +193,7 @@ pub(super) fn upload_argb(
                 ((p >> 24) & 0xFF) as u8,
             ]);
         }
-        queue.write_texture(
-            wgpu::TexelCopyTextureInfo {
-                texture: &texture,
-                mip_level: level,
-                origin: wgpu::Origin3d::ZERO,
-                aspect: wgpu::TextureAspect::All,
-            },
-            &bytes,
-            wgpu::TexelCopyBufferLayout {
-                offset: 0,
-                bytes_per_row: Some(4 * lw as u32),
-                rows_per_image: Some(lh as u32),
-            },
-            wgpu::Extent3d {
-                width: lw as u32,
-                height: lh as u32,
-                depth_or_array_layers: 1,
-            },
-        );
+        desc::write_level(queue, &texture, level, 0, [lw as u32, lh as u32], &bytes);
     }
     texture.create_view(&wgpu::TextureViewDescriptor::default())
 }

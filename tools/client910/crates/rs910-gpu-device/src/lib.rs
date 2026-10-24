@@ -19,6 +19,7 @@
 //! (tools/README.md "Crate conventions").
 
 pub mod client_watch_gpu;
+pub mod desc;
 pub mod gpu_device;
 pub mod health;
 #[cfg(any(test, feature = "test-hooks"))]

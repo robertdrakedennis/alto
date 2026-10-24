@@ -1,5 +1,6 @@
 //! The minimap base on the GPU: the base sprites drawn through the floor
 //! pipeline and registered with the UI painter as external images.
+use rs910_gpu_device::desc;
 
 use super::*;
 
@@ -119,29 +120,12 @@ impl Renderer {
                 label: Some("minimap base"),
             });
         {
-            let mut pass = encoder.begin_render_pass(&wgpu::RenderPassDescriptor {
-                label: Some("minimap floors"),
-                color_attachments: &[Some(wgpu::RenderPassColorAttachment {
-                    view: &view,
-                    resolve_target: None,
-                    depth_slice: None,
-                    ops: wgpu::Operations {
-                        load: wgpu::LoadOp::Clear(wgpu::Color::BLACK),
-                        store: wgpu::StoreOp::Store,
-                    },
-                })],
-                depth_stencil_attachment: Some(wgpu::RenderPassDepthStencilAttachment {
-                    view: &depth_view,
-                    depth_ops: Some(wgpu::Operations {
-                        load: wgpu::LoadOp::Clear(1.0),
-                        store: wgpu::StoreOp::Store,
-                    }),
-                    stencil_ops: None,
-                }),
-                occlusion_query_set: None,
-                multiview_mask: None,
-                timestamp_writes: None,
-            });
+            let mut pass = desc::pass(
+                &mut encoder,
+                "minimap floors",
+                &[desc::colour(&view, wgpu::LoadOp::Clear(wgpu::Color::BLACK))],
+                desc::depth(&depth_view, wgpu::LoadOp::Clear(1.0), wgpu::StoreOp::Store),
+            );
             pass.set_pipeline(self.floor.base_pipeline());
             pass.set_bind_group(0, &self.floor.uniform_bind_group, &[]);
             for mesh in meshes.iter().filter(|mesh| mesh.vertex_count != 0) {
@@ -172,22 +156,8 @@ impl Renderer {
                 ),
             );
             marks.prepare(&gpu.device, gpu, plan2d)?;
-            let mut pass = encoder.begin_render_pass(&wgpu::RenderPassDescriptor {
-                label: Some("minimap marks"),
-                color_attachments: &[Some(wgpu::RenderPassColorAttachment {
-                    view: &view,
-                    resolve_target: None,
-                    depth_slice: None,
-                    ops: wgpu::Operations {
-                        load: wgpu::LoadOp::Load,
-                        store: wgpu::StoreOp::Store,
-                    },
-                })],
-                depth_stencil_attachment: None,
-                occlusion_query_set: None,
-                multiview_mask: None,
-                timestamp_writes: None,
-            });
+            let mut pass =
+                desc::colour_pass(&mut encoder, "minimap marks", &view, wgpu::LoadOp::Load);
             marks.draw(&mut pass);
             drop(pass);
             gpu.submit(std::iter::once(encoder.finish()));

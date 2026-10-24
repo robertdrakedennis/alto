@@ -1,4 +1,5 @@
 //! Environment, noise and water texture uploads and frame bindings.
+use rs910_gpu_device::desc;
 
 use crate::cache::Pack;
 
@@ -9,20 +10,12 @@ use crate::texture::Material;
 use super::box_mip;
 
 pub(super) fn empty_cube(device: &wgpu::Device) -> wgpu::TextureView {
-    let texture = device.create_texture(&wgpu::TextureDescriptor {
-        label: Some("null environment sampler"),
-        size: wgpu::Extent3d {
-            width: 1,
-            height: 1,
-            depth_or_array_layers: 6,
-        },
-        mip_level_count: 1,
-        sample_count: 1,
-        dimension: wgpu::TextureDimension::D2,
-        format: wgpu::TextureFormat::Rgba8Unorm,
-        usage: wgpu::TextureUsages::TEXTURE_BINDING,
-        view_formats: &[],
-    });
+    let texture = device.create_texture(&desc::texture_layers(
+        "null environment sampler",
+        [1, 1, 6],
+        wgpu::TextureFormat::Rgba8Unorm,
+        wgpu::TextureUsages::TEXTURE_BINDING,
+    ));
     texture.create_view(&wgpu::TextureViewDescriptor {
         dimension: Some(wgpu::TextureViewDimension::D2Array),
         ..Default::default()
@@ -55,35 +48,14 @@ pub(super) fn material_frame_bindings(
         label: Some("material frame"),
         layout,
         entries: &[
-            wgpu::BindGroupEntry {
-                binding: 0,
-                resource: uniforms.as_entire_binding(),
-            },
-            wgpu::BindGroupEntry {
-                binding: 1,
-                resource: wgpu::BindingResource::TextureView(cube),
-            },
-            wgpu::BindGroupEntry {
-                binding: 2,
-                resource: wgpu::BindingResource::Sampler(sampler),
-            },
-            wgpu::BindGroupEntry {
-                binding: 3,
-                resource: wgpu::BindingResource::TextureView(noise),
-            },
-            wgpu::BindGroupEntry {
-                binding: 4,
-                resource: wgpu::BindingResource::Sampler(noise_sampler),
-            },
-            wgpu::BindGroupEntry {
-                binding: 5,
-                resource: wgpu::BindingResource::TextureView(water_normals),
-            },
+            desc::bind(0, uniforms.as_entire_binding()),
+            desc::bind(1, wgpu::BindingResource::TextureView(cube)),
+            desc::bind(2, wgpu::BindingResource::Sampler(sampler)),
+            desc::bind(3, wgpu::BindingResource::TextureView(noise)),
+            desc::bind(4, wgpu::BindingResource::Sampler(noise_sampler)),
+            desc::bind(5, wgpu::BindingResource::TextureView(water_normals)),
             // The noise sampler is the same repeat/trilinear state.
-            wgpu::BindGroupEntry {
-                binding: 6,
-                resource: wgpu::BindingResource::Sampler(noise_sampler),
-            },
+            desc::bind(6, wgpu::BindingResource::Sampler(noise_sampler)),
         ],
     })
 }
@@ -187,46 +159,26 @@ pub(super) fn upload_environment_cube(
         1
     };
     let texture = device.create_texture(&wgpu::TextureDescriptor {
-        label: Some("environment cube"),
-        size: wgpu::Extent3d {
-            width: size,
-            height: size,
-            depth_or_array_layers: 6,
-        },
         mip_level_count: levels,
-        sample_count: 1,
-        dimension: wgpu::TextureDimension::D2,
-        format: wgpu::TextureFormat::Rgba8Unorm,
-        usage: wgpu::TextureUsages::TEXTURE_BINDING | wgpu::TextureUsages::COPY_DST,
-        view_formats: &[],
+        ..desc::texture_layers(
+            "environment cube",
+            [size, size, 6],
+            wgpu::TextureFormat::Rgba8Unorm,
+            wgpu::TextureUsages::TEXTURE_BINDING | wgpu::TextureUsages::COPY_DST,
+        )
     });
     for face in 0..6 {
         let count = (size * size) as usize;
         let mut pixels = all_pixels[face * count..(face + 1) * count].to_vec();
         let mut width = size;
         for mip in 0..levels {
-            queue.write_texture(
-                wgpu::TexelCopyTextureInfo {
-                    texture: &texture,
-                    mip_level: mip,
-                    origin: wgpu::Origin3d {
-                        x: 0,
-                        y: 0,
-                        z: face as u32,
-                    },
-                    aspect: wgpu::TextureAspect::All,
-                },
+            desc::write_level(
+                queue,
+                &texture,
+                mip,
+                face as u32,
+                [width, width],
                 bytemuck::cast_slice(&pixels),
-                wgpu::TexelCopyBufferLayout {
-                    offset: 0,
-                    bytes_per_row: Some(width * 4),
-                    rows_per_image: Some(width),
-                },
-                wgpu::Extent3d {
-                    width,
-                    height: width,
-                    depth_or_array_layers: 1,
-                },
             );
             if mip + 1 < levels {
                 pixels = box_mip(&pixels, width as usize, width as usize);

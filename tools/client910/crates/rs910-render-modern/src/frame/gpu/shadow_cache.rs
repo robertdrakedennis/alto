@@ -6,6 +6,7 @@ use crate::frame::encoding::EncodeInputs;
 use crate::frame::*;
 use crate::shadows::cache::{draw_hash, selection_word, Mix, Signature, SunCache, TilePlan};
 use crate::shadows::MAX_CASCADES;
+use rs910_gpu_device::desc;
 
 /// A caster draw's class this frame (`shadows::cache`).
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
@@ -52,26 +53,20 @@ pub(crate) struct FillGpu {
 
 impl FillGpu {
     pub(crate) fn new(device: &wgpu::Device, module: &wgpu::ShaderModule) -> Self {
-        let restore_layout = device.create_bind_group_layout(&wgpu::BindGroupLayoutDescriptor {
-            label: Some("modern shadow restore"),
-            entries: &[wgpu::BindGroupLayoutEntry {
-                binding: 0,
-                visibility: wgpu::ShaderStages::FRAGMENT,
-                ty: wgpu::BindingType::Texture {
-                    sample_type: wgpu::TextureSampleType::Depth,
-                    view_dimension: wgpu::TextureViewDimension::D2,
-                    multisampled: false,
-                },
-                count: None,
-            }],
-        });
+        let restore_layout = desc::layout(
+            device,
+            "modern shadow restore",
+            &[desc::texture(
+                0,
+                wgpu::ShaderStages::FRAGMENT,
+                wgpu::TextureSampleType::Depth,
+                wgpu::TextureViewDimension::D2,
+                false,
+            )],
+        );
         let pipeline =
             |label, layouts: &[Option<&wgpu::BindGroupLayout>], fragment: Option<&str>| {
-                let layout = device.create_pipeline_layout(&wgpu::PipelineLayoutDescriptor {
-                    label: Some(label),
-                    bind_group_layouts: layouts,
-                    immediate_size: 0,
-                });
+                let layout = desc::pipeline_layout(device, label, layouts);
                 device.create_render_pipeline(&wgpu::RenderPipelineDescriptor {
                     label: Some(label),
                     layout: Some(&layout),
@@ -88,13 +83,11 @@ impl FillGpu {
                         compilation_options: Default::default(),
                     }),
                     primitive: wgpu::PrimitiveState::default(),
-                    depth_stencil: Some(wgpu::DepthStencilState {
-                        format: crate::shadows::SHADOW_FORMAT,
-                        depth_write_enabled: Some(true),
-                        depth_compare: Some(wgpu::CompareFunction::Always),
-                        stencil: Default::default(),
-                        bias: Default::default(),
-                    }),
+                    depth_stencil: Some(desc::depth_state(
+                        crate::shadows::SHADOW_FORMAT,
+                        true,
+                        wgpu::CompareFunction::Always,
+                    )),
                     multisample: wgpu::MultisampleState::default(),
                     multiview_mask: None,
                     cache: None,
@@ -191,29 +184,19 @@ fn static_atlas(
     layout: &wgpu::BindGroupLayout,
     size: u32,
 ) -> (u32, wgpu::TextureView, wgpu::BindGroup) {
-    let texture = device.create_texture(&wgpu::TextureDescriptor {
-        label: Some("modern shadow static atlas"),
-        size: wgpu::Extent3d {
-            width: size,
-            height: size,
-            depth_or_array_layers: 1,
-        },
-        mip_level_count: 1,
-        sample_count: 1,
-        dimension: wgpu::TextureDimension::D2,
-        format: crate::shadows::SHADOW_FORMAT,
-        usage: wgpu::TextureUsages::RENDER_ATTACHMENT | wgpu::TextureUsages::TEXTURE_BINDING,
-        view_formats: &[],
-    });
+    let texture = device.create_texture(&desc::texture_2d(
+        "modern shadow static atlas",
+        [size, size],
+        crate::shadows::SHADOW_FORMAT,
+        wgpu::TextureUsages::RENDER_ATTACHMENT | wgpu::TextureUsages::TEXTURE_BINDING,
+    ));
     let view = texture.create_view(&wgpu::TextureViewDescriptor::default());
-    let bind = device.create_bind_group(&wgpu::BindGroupDescriptor {
-        label: Some("modern shadow restore"),
+    let bind = desc::bind_group(
+        device,
+        "modern shadow restore",
         layout,
-        entries: &[wgpu::BindGroupEntry {
-            binding: 0,
-            resource: wgpu::BindingResource::TextureView(&view),
-        }],
-    });
+        &[(0, wgpu::BindingResource::TextureView(&view))],
+    );
     (size, view, bind)
 }
 
@@ -756,25 +739,16 @@ impl<'a> EncodeInputs<'a> {
         if let Some((_, view, _)) = sun.statics.as_ref() {
             let redraw: Vec<usize> = (0..n).filter(|&k| plans[k].statics_to_cache).collect();
             if !redraw.is_empty() {
-                let mut pass = encoder.begin_render_pass(&wgpu::RenderPassDescriptor {
-                    label: Some(self.begin_pass(crate::frame::passes::Pass::SunlightShadowsStatic)),
-                    color_attachments: &[],
-                    depth_stencil_attachment: Some(wgpu::RenderPassDepthStencilAttachment {
-                        view,
-                        depth_ops: Some(wgpu::Operations {
-                            load: if redraw.len() == n {
-                                wgpu::LoadOp::Clear(1.0)
-                            } else {
-                                wgpu::LoadOp::Load
-                            },
-                            store: wgpu::StoreOp::Store,
-                        }),
-                        stencil_ops: None,
-                    }),
-                    occlusion_query_set: None,
-                    multiview_mask: None,
-                    timestamp_writes: None,
-                });
+                let mut pass = desc::depth_pass(
+                    encoder,
+                    self.begin_pass(crate::frame::passes::Pass::SunlightShadowsStatic),
+                    view,
+                    if redraw.len() == n {
+                        wgpu::LoadOp::Clear(1.0)
+                    } else {
+                        wgpu::LoadOp::Load
+                    },
+                );
                 for &k in &redraw {
                     set_tile(&mut pass, k, res);
                     if redraw.len() != n {
@@ -789,25 +763,16 @@ impl<'a> EncodeInputs<'a> {
         }
         // Every tile redrawn from scratch: one clear of the atlas.
         let whole = plans.iter().all(|p| p.statics_to_atlas);
-        let mut pass = encoder.begin_render_pass(&wgpu::RenderPassDescriptor {
-            label: Some(self.begin_pass(crate::frame::passes::Pass::SunlightShadows)),
-            color_attachments: &[],
-            depth_stencil_attachment: Some(wgpu::RenderPassDepthStencilAttachment {
-                view: &self.shadow.atlas.1,
-                depth_ops: Some(wgpu::Operations {
-                    load: if whole {
-                        wgpu::LoadOp::Clear(1.0)
-                    } else {
-                        wgpu::LoadOp::Load
-                    },
-                    store: wgpu::StoreOp::Store,
-                }),
-                stencil_ops: None,
-            }),
-            occlusion_query_set: None,
-            multiview_mask: None,
-            timestamp_writes: None,
-        });
+        let mut pass = desc::depth_pass(
+            encoder,
+            self.begin_pass(crate::frame::passes::Pass::SunlightShadows),
+            &self.shadow.atlas.1,
+            if whole {
+                wgpu::LoadOp::Clear(1.0)
+            } else {
+                wgpu::LoadOp::Load
+            },
+        );
         for (k, plan) in plans.iter().enumerate() {
             if !plan.touches_atlas() {
                 continue;

@@ -1,4 +1,5 @@
 //! Floor and model GPU mesh uploads, material batches and draw resources.
+use rs910_gpu_device::desc;
 
 use wgpu::util::DeviceExt;
 
@@ -113,24 +114,16 @@ pub(super) fn batch_bind_group_full(
         contents: bytemuck::bytes_of(&values),
         usage: wgpu::BufferUsages::UNIFORM | wgpu::BufferUsages::COPY_DST,
     });
-    let group = device.create_bind_group(&wgpu::BindGroupDescriptor {
-        label: Some(label),
-        layout: &pipeline.batch_layout,
-        entries: &[
-            wgpu::BindGroupEntry {
-                binding: 0,
-                resource: wgpu::BindingResource::TextureView(&tex.view),
-            },
-            wgpu::BindGroupEntry {
-                binding: 1,
-                resource: wgpu::BindingResource::Sampler(&tex.sampler),
-            },
-            wgpu::BindGroupEntry {
-                binding: 2,
-                resource: batch_uniform.as_entire_binding(),
-            },
+    let group = desc::bind_group(
+        device,
+        label,
+        &pipeline.batch_layout,
+        &[
+            (0, wgpu::BindingResource::TextureView(&tex.view)),
+            (1, wgpu::BindingResource::Sampler(&tex.sampler)),
+            (2, batch_uniform.as_entire_binding()),
         ],
-    });
+    );
     (group, batch_uniform, values)
 }
 

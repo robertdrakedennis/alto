@@ -5,41 +5,30 @@
 //! forward pass's receive bindings (the `Shadow` block, the atlas and a
 //! `LESS_EQUAL` comparison sampler with clamp-to-edge).
 use crate::frame::*;
+use rs910_gpu_device::desc;
 
 /// The forward pass's group 2: the `Shadow` block, the atlas and its
 /// comparison sampler.
 pub(crate) fn shadow_receive_layout(device: &wgpu::Device) -> wgpu::BindGroupLayout {
-    device.create_bind_group_layout(&wgpu::BindGroupLayoutDescriptor {
-        label: Some("modern shadow receive"),
-        entries: &[
-            wgpu::BindGroupLayoutEntry {
-                binding: 0,
-                visibility: wgpu::ShaderStages::FRAGMENT,
-                ty: wgpu::BindingType::Buffer {
-                    ty: wgpu::BufferBindingType::Uniform,
-                    has_dynamic_offset: false,
-                    min_binding_size: None,
-                },
-                count: None,
-            },
-            wgpu::BindGroupLayoutEntry {
-                binding: 1,
-                visibility: wgpu::ShaderStages::FRAGMENT,
-                ty: wgpu::BindingType::Texture {
-                    sample_type: wgpu::TextureSampleType::Depth,
-                    view_dimension: wgpu::TextureViewDimension::D2,
-                    multisampled: false,
-                },
-                count: None,
-            },
-            wgpu::BindGroupLayoutEntry {
-                binding: 2,
-                visibility: wgpu::ShaderStages::FRAGMENT,
-                ty: wgpu::BindingType::Sampler(wgpu::SamplerBindingType::Comparison),
-                count: None,
-            },
+    desc::layout(
+        device,
+        "modern shadow receive",
+        &[
+            desc::uniform(0, wgpu::ShaderStages::FRAGMENT),
+            desc::texture(
+                1,
+                wgpu::ShaderStages::FRAGMENT,
+                wgpu::TextureSampleType::Depth,
+                wgpu::TextureViewDimension::D2,
+                false,
+            ),
+            desc::sampler(
+                2,
+                wgpu::ShaderStages::FRAGMENT,
+                wgpu::SamplerBindingType::Comparison,
+            ),
         ],
-    })
+    )
 }
 
 impl ShadowGpu {
@@ -55,56 +44,50 @@ impl ShadowGpu {
         vertex_layouts: &[Option<wgpu::VertexBufferLayout<'_>>],
         fill_module: &wgpu::ShaderModule,
     ) -> Self {
-        let caster_layout = device.create_bind_group_layout(&wgpu::BindGroupLayoutDescriptor {
-            label: Some("modern shadow caster"),
-            entries: &[wgpu::BindGroupLayoutEntry {
-                binding: 3,
-                visibility: wgpu::ShaderStages::VERTEX,
-                ty: wgpu::BindingType::Buffer {
-                    ty: wgpu::BufferBindingType::Uniform,
-                    has_dynamic_offset: true,
-                    min_binding_size: wgpu::BufferSize::new(
-                        std::mem::size_of::<CasterUniforms>() as u64
-                    ),
-                },
-                count: None,
-            }],
-        });
-        let uniforms = device.create_buffer(&wgpu::BufferDescriptor {
-            label: Some("modern shadow uniforms"),
-            size: std::mem::size_of::<ShadowUniforms>() as u64,
-            usage: wgpu::BufferUsages::UNIFORM | wgpu::BufferUsages::COPY_DST,
-            mapped_at_creation: false,
-        });
-        let casters = device.create_buffer(&wgpu::BufferDescriptor {
-            label: Some("modern shadow casters"),
-            size: crate::shadows::CASTER_SLOT * crate::shadows::MAX_CASCADES as u64,
-            usage: wgpu::BufferUsages::UNIFORM | wgpu::BufferUsages::COPY_DST,
-            mapped_at_creation: false,
-        });
-        let caster_bind = device.create_bind_group(&wgpu::BindGroupDescriptor {
-            label: Some("modern shadow caster"),
-            layout: &caster_layout,
-            entries: &[wgpu::BindGroupEntry {
-                binding: 3,
-                resource: wgpu::BindingResource::Buffer(wgpu::BufferBinding {
+        let caster_layout = desc::layout(
+            device,
+            "modern shadow caster",
+            &[desc::uniform_sized(
+                3,
+                wgpu::ShaderStages::VERTEX,
+                true,
+                std::mem::size_of::<CasterUniforms>() as u64,
+            )],
+        );
+        let uniforms = desc::uniform_buffer(
+            device,
+            "modern shadow uniforms",
+            std::mem::size_of::<ShadowUniforms>() as u64,
+        );
+        let casters = desc::uniform_buffer(
+            device,
+            "modern shadow casters",
+            crate::shadows::CASTER_SLOT * crate::shadows::MAX_CASCADES as u64,
+        );
+        let caster_bind = desc::bind_group(
+            device,
+            "modern shadow caster",
+            &caster_layout,
+            &[(
+                3,
+                wgpu::BindingResource::Buffer(wgpu::BufferBinding {
                     buffer: &casters,
                     offset: 0,
                     size: wgpu::BufferSize::new(std::mem::size_of::<CasterUniforms>() as u64),
                 }),
-            }],
-        });
-        let layout = device.create_pipeline_layout(&wgpu::PipelineLayoutDescriptor {
-            label: Some("modern shadow caster"),
-            bind_group_layouts: &[
+            )],
+        );
+        let layout = desc::pipeline_layout(
+            device,
+            "modern shadow caster",
+            &[
                 Some(frame_layout),
                 Some(&textures.layout),
                 Some(&caster_layout),
                 None,
                 Some(&textures.arrays.layout),
             ],
-            immediate_size: 0,
-        });
+        );
         // Two-sided casters (see `shadows` "What this crate does"); the
         // bias is the receiver's, per cascade.
         let caster = || {
@@ -128,13 +111,11 @@ impl ShadowGpu {
                     cull_mode: None,
                     ..Default::default()
                 },
-                depth_stencil: Some(wgpu::DepthStencilState {
-                    format: crate::shadows::SHADOW_FORMAT,
-                    depth_write_enabled: Some(true),
-                    depth_compare: Some(wgpu::CompareFunction::LessEqual),
-                    stencil: Default::default(),
-                    bias: Default::default(),
-                }),
+                depth_stencil: Some(desc::depth_state(
+                    crate::shadows::SHADOW_FORMAT,
+                    true,
+                    wgpu::CompareFunction::LessEqual,
+                )),
                 multisample: wgpu::MultisampleState::default(),
                 multiview_mask: None,
                 cache: None,
@@ -190,39 +171,23 @@ pub(crate) fn atlas(
     sampler: &wgpu::Sampler,
     size: u32,
 ) -> (u32, wgpu::TextureView, wgpu::BindGroup) {
-    let texture = device.create_texture(&wgpu::TextureDescriptor {
-        label: Some("modern shadow atlas"),
-        size: wgpu::Extent3d {
-            width: size,
-            height: size,
-            depth_or_array_layers: 1,
-        },
-        mip_level_count: 1,
-        sample_count: 1,
-        dimension: wgpu::TextureDimension::D2,
-        format: crate::shadows::SHADOW_FORMAT,
-        usage: wgpu::TextureUsages::RENDER_ATTACHMENT | wgpu::TextureUsages::TEXTURE_BINDING,
-        view_formats: &[],
-    });
+    let texture = device.create_texture(&desc::texture_2d(
+        "modern shadow atlas",
+        [size, size],
+        crate::shadows::SHADOW_FORMAT,
+        wgpu::TextureUsages::RENDER_ATTACHMENT | wgpu::TextureUsages::TEXTURE_BINDING,
+    ));
     let view = texture.create_view(&wgpu::TextureViewDescriptor::default());
-    let bind = device.create_bind_group(&wgpu::BindGroupDescriptor {
-        label: Some("modern shadow receive"),
+    let bind = desc::bind_group(
+        device,
+        "modern shadow receive",
         layout,
-        entries: &[
-            wgpu::BindGroupEntry {
-                binding: 0,
-                resource: uniforms.as_entire_binding(),
-            },
-            wgpu::BindGroupEntry {
-                binding: 1,
-                resource: wgpu::BindingResource::TextureView(&view),
-            },
-            wgpu::BindGroupEntry {
-                binding: 2,
-                resource: wgpu::BindingResource::Sampler(sampler),
-            },
+        &[
+            (0, uniforms.as_entire_binding()),
+            (1, wgpu::BindingResource::TextureView(&view)),
+            (2, wgpu::BindingResource::Sampler(sampler)),
         ],
-    });
+    );
     (size, view, bind)
 }
 

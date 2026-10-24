@@ -7,6 +7,7 @@
 use crate::frame::encoding::EncodeInputs;
 use crate::frame::*;
 use crate::water_body::caustics::{CausticUniforms, COMPUTE_RES, MAP_RES};
+use rs910_gpu_device::desc;
 
 /// The ray map, the resolved light and the uniforms (created once, when the
 /// terrain module takes the caustics).
@@ -38,99 +39,73 @@ pub(crate) struct CausticsGpu {
 impl CausticBuffers {
     pub(crate) fn new(device: &wgpu::Device, module: &wgpu::ShaderModule) -> Self {
         let texels = u64::from(MAP_RES * MAP_RES);
-        let rays = device.create_buffer(&wgpu::BufferDescriptor {
-            label: Some("modern caustic rays"),
-            size: texels * 8,
-            usage: wgpu::BufferUsages::STORAGE | wgpu::BufferUsages::COPY_DST,
-            mapped_at_creation: false,
-        });
-        let light = device.create_buffer(&wgpu::BufferDescriptor {
-            label: Some("modern caustic light"),
-            size: texels * 4,
-            usage: wgpu::BufferUsages::STORAGE | wgpu::BufferUsages::COPY_SRC,
-            mapped_at_creation: false,
-        });
-        let uniforms = device.create_buffer(&wgpu::BufferDescriptor {
-            label: Some("modern caustics"),
-            size: std::mem::size_of::<CausticUniforms>() as u64,
-            usage: wgpu::BufferUsages::UNIFORM | wgpu::BufferUsages::COPY_DST,
-            mapped_at_creation: false,
-        });
+        let rays = desc::buffer(
+            device,
+            "modern caustic rays",
+            texels * 8,
+            wgpu::BufferUsages::STORAGE | wgpu::BufferUsages::COPY_DST,
+        );
+        let light = desc::buffer(
+            device,
+            "modern caustic light",
+            texels * 4,
+            wgpu::BufferUsages::STORAGE | wgpu::BufferUsages::COPY_SRC,
+        );
+        let uniforms = desc::uniform_buffer(
+            device,
+            "modern caustics",
+            std::mem::size_of::<CausticUniforms>() as u64,
+        );
         let target = device
-            .create_texture(&wgpu::TextureDescriptor {
-                label: Some("modern caustic ray raster"),
-                size: wgpu::Extent3d {
-                    width: COMPUTE_RES,
-                    height: COMPUTE_RES,
-                    depth_or_array_layers: 1,
-                },
-                mip_level_count: 1,
-                sample_count: 1,
-                dimension: wgpu::TextureDimension::D2,
-                format: wgpu::TextureFormat::R8Unorm,
-                usage: wgpu::TextureUsages::RENDER_ATTACHMENT,
-                view_formats: &[],
-            })
+            .create_texture(&desc::texture_2d(
+                "modern caustic ray raster",
+                [COMPUTE_RES, COMPUTE_RES],
+                wgpu::TextureFormat::R8Unorm,
+                wgpu::TextureUsages::RENDER_ATTACHMENT,
+            ))
             .create_view(&Default::default());
-        let storage = |binding, read_only| wgpu::BindGroupLayoutEntry {
-            binding,
-            visibility: wgpu::ShaderStages::COMPUTE,
-            ty: wgpu::BindingType::Buffer {
-                ty: wgpu::BufferBindingType::Storage { read_only },
-                has_dynamic_offset: false,
-                min_binding_size: None,
-            },
-            count: None,
+        let storage = |binding, read_only| {
+            desc::entry(
+                binding,
+                wgpu::ShaderStages::COMPUTE,
+                wgpu::BindingType::Buffer {
+                    ty: wgpu::BufferBindingType::Storage { read_only },
+                    has_dynamic_offset: false,
+                    min_binding_size: None,
+                },
+            )
         };
-        let layout = device.create_bind_group_layout(&wgpu::BindGroupLayoutDescriptor {
-            label: Some("modern caustics resolve"),
-            entries: &[
+        let layout = desc::layout(
+            device,
+            "modern caustics resolve",
+            &[
                 storage(0, true),
                 storage(1, false),
-                wgpu::BindGroupLayoutEntry {
-                    binding: 2,
-                    visibility: wgpu::ShaderStages::COMPUTE,
-                    ty: wgpu::BindingType::Buffer {
-                        ty: wgpu::BufferBindingType::Uniform,
-                        has_dynamic_offset: false,
-                        min_binding_size: None,
-                    },
-                    count: None,
-                },
+                desc::uniform(2, wgpu::ShaderStages::COMPUTE),
             ],
-        });
+        );
         let resolve = device.create_compute_pipeline(&wgpu::ComputePipelineDescriptor {
             label: Some("modern caustics resolve"),
-            layout: Some(
-                &device.create_pipeline_layout(&wgpu::PipelineLayoutDescriptor {
-                    label: Some("modern caustics resolve"),
-                    bind_group_layouts: &[Some(&layout)],
-                    immediate_size: 0,
-                }),
-            ),
+            layout: Some(&desc::pipeline_layout(
+                device,
+                "modern caustics resolve",
+                &[Some(&layout)],
+            )),
             module,
             entry_point: Some("cs_resolve"),
             compilation_options: Default::default(),
             cache: None,
         });
-        let resolve_bind = device.create_bind_group(&wgpu::BindGroupDescriptor {
-            label: Some("modern caustics resolve"),
-            layout: &layout,
-            entries: &[
-                wgpu::BindGroupEntry {
-                    binding: 0,
-                    resource: rays.as_entire_binding(),
-                },
-                wgpu::BindGroupEntry {
-                    binding: 1,
-                    resource: light.as_entire_binding(),
-                },
-                wgpu::BindGroupEntry {
-                    binding: 2,
-                    resource: uniforms.as_entire_binding(),
-                },
+        let resolve_bind = desc::bind_group(
+            device,
+            "modern caustics resolve",
+            &layout,
+            &[
+                (0, rays.as_entire_binding()),
+                (1, light.as_entire_binding()),
+                (2, uniforms.as_entire_binding()),
             ],
-        });
+        );
         Self {
             rays,
             light,
@@ -153,38 +128,19 @@ impl CausticPipes {
         g1: &wgpu::BindGroupLayout,
         buffers: [Option<wgpu::VertexBufferLayout<'static>>; 4],
     ) -> Self {
-        let entry = |binding, visibility, ty| wgpu::BindGroupLayoutEntry {
-            binding,
-            visibility,
-            ty,
-            count: None,
-        };
-        let uniform = wgpu::BindingType::Buffer {
-            ty: wgpu::BufferBindingType::Uniform,
-            has_dynamic_offset: false,
-            min_binding_size: None,
-        };
-        let texture = wgpu::BindingType::Texture {
-            sample_type: wgpu::TextureSampleType::Float { filterable: true },
-            view_dimension: wgpu::TextureViewDimension::D2,
-            multisampled: false,
-        };
         let both = wgpu::ShaderStages::VERTEX_FRAGMENT;
         let fragment = wgpu::ShaderStages::FRAGMENT;
         // The water bindings the rays read (its uniforms, the normal maps,
         // their sampler) and the ray map and caustics uniforms.
-        let group2 = device.create_bind_group_layout(&wgpu::BindGroupLayoutDescriptor {
-            label: Some("modern caustic rays group 2"),
-            entries: &[
-                entry(10, both, uniform),
-                entry(14, fragment, texture),
-                entry(15, fragment, texture),
-                entry(
-                    17,
-                    fragment,
-                    wgpu::BindingType::Sampler(wgpu::SamplerBindingType::Filtering),
-                ),
-                entry(
+        let group2 = desc::layout(
+            device,
+            "modern caustic rays group 2",
+            &[
+                desc::uniform(10, both),
+                desc::float_texture(14, fragment, true, wgpu::TextureViewDimension::D2),
+                desc::float_texture(15, fragment, true, wgpu::TextureViewDimension::D2),
+                desc::sampler(17, fragment, wgpu::SamplerBindingType::Filtering),
+                desc::entry(
                     19,
                     fragment,
                     wgpu::BindingType::Buffer {
@@ -193,14 +149,14 @@ impl CausticPipes {
                         min_binding_size: None,
                     },
                 ),
-                entry(20, both, uniform),
+                desc::uniform(20, both),
             ],
-        });
-        let layout = device.create_pipeline_layout(&wgpu::PipelineLayoutDescriptor {
-            label: Some("modern caustic rays"),
-            bind_group_layouts: &[Some(g0), Some(g1), Some(&group2)],
-            immediate_size: 0,
-        });
+        );
+        let layout = desc::pipeline_layout(
+            device,
+            "modern caustic rays",
+            &[Some(g0), Some(g1), Some(&group2)],
+        );
         let pipeline = device.create_render_pipeline(&wgpu::RenderPipelineDescriptor {
             label: Some("modern caustic rays"),
             layout: Some(&layout),
@@ -276,37 +232,19 @@ impl ModernRenderer {
         };
         let [na, nb] = self.frame_resources.water.normal_pair;
         let tex = wgpu::BindingResource::TextureView;
-        self.frame_resources.water.caustics.bind =
-            Some(device.create_bind_group(&wgpu::BindGroupDescriptor {
-                label: Some("modern caustic rays"),
-                layout: &rays.group2,
-                entries: &[
-                    wgpu::BindGroupEntry {
-                        binding: 10,
-                        resource: pipes.uniforms.as_entire_binding(),
-                    },
-                    wgpu::BindGroupEntry {
-                        binding: 14,
-                        resource: tex(normal(na)),
-                    },
-                    wgpu::BindGroupEntry {
-                        binding: 15,
-                        resource: tex(normal(nb.or(na))),
-                    },
-                    wgpu::BindGroupEntry {
-                        binding: 17,
-                        resource: wgpu::BindingResource::Sampler(&pipes.water_sampler),
-                    },
-                    wgpu::BindGroupEntry {
-                        binding: 19,
-                        resource: buffers.rays.as_entire_binding(),
-                    },
-                    wgpu::BindGroupEntry {
-                        binding: 20,
-                        resource: buffers.uniforms.as_entire_binding(),
-                    },
-                ],
-            }));
+        self.frame_resources.water.caustics.bind = Some(desc::bind_group(
+            device,
+            "modern caustic rays",
+            &rays.group2,
+            &[
+                (10, pipes.uniforms.as_entire_binding()),
+                (14, tex(normal(na))),
+                (15, tex(normal(nb.or(na)))),
+                (17, wgpu::BindingResource::Sampler(&pipes.water_sampler)),
+                (19, buffers.rays.as_entire_binding()),
+                (20, buffers.uniforms.as_entire_binding()),
+            ],
+        ));
         self.frame_resources.water.caustics.frames += 1;
         if self.frame_resources.water.caustics.frames == 1
             || self

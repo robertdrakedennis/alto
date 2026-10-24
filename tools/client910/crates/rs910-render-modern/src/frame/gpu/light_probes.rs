@@ -14,6 +14,7 @@
 //! bound cube. It runs when the scene or the settled environment changes
 //! (`lighting::light_probes` "When"), never per frame.
 use crate::frame::encoding::EncodeInputs;
+use rs910_gpu_device::desc;
 use std::collections::HashMap;
 use std::hash::{Hash, Hasher};
 
@@ -65,56 +66,29 @@ pub(crate) const SLOT: u64 = 256;
 /// The group 3 entries of the probes (bindings 3-7) and the per-square
 /// ambient blocks (binding 13).
 pub(crate) fn layout_entries() -> [wgpu::BindGroupLayoutEntry; 6] {
-    let fragment = |binding, ty| wgpu::BindGroupLayoutEntry {
-        binding,
-        visibility: wgpu::ShaderStages::FRAGMENT,
-        ty,
-        count: None,
-    };
     [
-        fragment(
-            3,
-            wgpu::BindingType::Buffer {
-                ty: wgpu::BufferBindingType::Storage { read_only: true },
-                has_dynamic_offset: false,
-                min_binding_size: None,
-            },
-        ),
-        fragment(
-            4,
-            wgpu::BindingType::Buffer {
-                ty: wgpu::BufferBindingType::Uniform,
-                has_dynamic_offset: false,
-                min_binding_size: None,
-            },
-        ),
-        fragment(
+        desc::storage(3, wgpu::ShaderStages::FRAGMENT),
+        desc::uniform(4, wgpu::ShaderStages::FRAGMENT),
+        desc::float_texture(
             5,
-            wgpu::BindingType::Texture {
-                sample_type: wgpu::TextureSampleType::Float { filterable: true },
-                view_dimension: wgpu::TextureViewDimension::Cube,
-                multisampled: false,
-            },
+            wgpu::ShaderStages::FRAGMENT,
+            true,
+            wgpu::TextureViewDimension::Cube,
         ),
-        fragment(
+        desc::float_texture(
             6,
-            wgpu::BindingType::Texture {
-                sample_type: wgpu::TextureSampleType::Float { filterable: true },
-                view_dimension: wgpu::TextureViewDimension::D2,
-                multisampled: false,
-            },
+            wgpu::ShaderStages::FRAGMENT,
+            true,
+            wgpu::TextureViewDimension::D2,
         ),
-        fragment(
+        desc::sampler(
             7,
-            wgpu::BindingType::Sampler(wgpu::SamplerBindingType::Filtering),
+            wgpu::ShaderStages::FRAGMENT,
+            wgpu::SamplerBindingType::Filtering,
         ),
-        fragment(
+        desc::storage(
             crate::frame::gpu::ambient::BINDING,
-            wgpu::BindingType::Buffer {
-                ty: wgpu::BufferBindingType::Storage { read_only: true },
-                has_dynamic_offset: false,
-                min_binding_size: None,
-            },
+            wgpu::ShaderStages::FRAGMENT,
         ),
     ]
 }
@@ -141,18 +115,8 @@ pub(crate) fn cube_texture(
     usage: wgpu::TextureUsages,
 ) -> wgpu::Texture {
     device.create_texture(&wgpu::TextureDescriptor {
-        label: Some(label),
-        size: wgpu::Extent3d {
-            width: size,
-            height: size,
-            depth_or_array_layers: 6,
-        },
         mip_level_count: mips,
-        sample_count: 1,
-        dimension: wgpu::TextureDimension::D2,
-        format: ENV_FORMAT,
-        usage,
-        view_formats: &[],
+        ..desc::texture_layers(label, [size, size, 6], ENV_FORMAT, usage)
     })
 }
 
@@ -193,70 +157,41 @@ pub(crate) struct FilterGpu {
 impl FilterGpu {
     pub(crate) fn new(device: &wgpu::Device, shaders: &crate::shaders::Library) -> Self {
         let module = shaders.get(device, crate::shaders::Module::ProbeFilters);
-        let layout = device.create_bind_group_layout(&wgpu::BindGroupLayoutDescriptor {
-            label: Some("modern probe filter"),
-            entries: &[
-                wgpu::BindGroupLayoutEntry {
-                    binding: 0,
-                    visibility: wgpu::ShaderStages::FRAGMENT,
-                    ty: wgpu::BindingType::Buffer {
-                        ty: wgpu::BufferBindingType::Uniform,
-                        has_dynamic_offset: true,
-                        min_binding_size: wgpu::BufferSize::new(
-                            std::mem::size_of::<FilterUniforms>() as u64,
-                        ),
-                    },
-                    count: None,
-                },
-                wgpu::BindGroupLayoutEntry {
-                    binding: 1,
-                    visibility: wgpu::ShaderStages::FRAGMENT,
-                    ty: wgpu::BindingType::Texture {
-                        sample_type: wgpu::TextureSampleType::Float { filterable: true },
-                        view_dimension: wgpu::TextureViewDimension::Cube,
-                        multisampled: false,
-                    },
-                    count: None,
-                },
-                wgpu::BindGroupLayoutEntry {
-                    binding: 2,
-                    visibility: wgpu::ShaderStages::FRAGMENT,
-                    ty: wgpu::BindingType::Sampler(wgpu::SamplerBindingType::Filtering),
-                    count: None,
-                },
+        let layout = desc::layout(
+            device,
+            "modern probe filter",
+            &[
+                desc::uniform_sized(
+                    0,
+                    wgpu::ShaderStages::FRAGMENT,
+                    true,
+                    std::mem::size_of::<FilterUniforms>() as u64,
+                ),
+                desc::float_texture(
+                    1,
+                    wgpu::ShaderStages::FRAGMENT,
+                    true,
+                    wgpu::TextureViewDimension::Cube,
+                ),
+                desc::sampler(
+                    2,
+                    wgpu::ShaderStages::FRAGMENT,
+                    wgpu::SamplerBindingType::Filtering,
+                ),
             ],
-        });
-        let pipeline_layout = device.create_pipeline_layout(&wgpu::PipelineLayoutDescriptor {
-            label: Some("modern probe filter"),
-            bind_group_layouts: &[Some(&layout)],
-            immediate_size: 0,
-        });
-        let pipeline = |entry: &str, format| {
-            device.create_render_pipeline(&wgpu::RenderPipelineDescriptor {
-                label: Some(entry),
-                layout: Some(&pipeline_layout),
-                vertex: wgpu::VertexState {
-                    module: &module,
-                    entry_point: Some("vs_full"),
-                    buffers: &[],
-                    compilation_options: Default::default(),
-                },
-                fragment: Some(wgpu::FragmentState {
-                    module: &module,
-                    entry_point: Some(entry),
-                    targets: &[Some(wgpu::ColorTargetState {
-                        format,
-                        blend: None,
-                        write_mask: wgpu::ColorWrites::ALL,
-                    })],
-                    compilation_options: Default::default(),
-                }),
-                primitive: wgpu::PrimitiveState::default(),
-                depth_stencil: None,
-                multisample: wgpu::MultisampleState::default(),
-                multiview_mask: None,
-                cache: None,
-            })
+        );
+        let pipeline_layout =
+            desc::pipeline_layout(device, "modern probe filter", &[Some(&layout)]);
+        let pipeline = |entry: &str, format: wgpu::TextureFormat| {
+            desc::fullscreen_pipeline(
+                device,
+                entry,
+                &pipeline_layout,
+                &module,
+                entry,
+                format.into(),
+                1,
+            )
         };
         let sampler = device.create_sampler(&wgpu::SamplerDescriptor {
             label: Some("modern probe filter"),
@@ -307,28 +242,23 @@ impl FilterGpu {
         slots: &wgpu::Buffer,
         source: &wgpu::TextureView,
     ) -> wgpu::BindGroup {
-        device.create_bind_group(&wgpu::BindGroupDescriptor {
-            label: Some("modern probe filter"),
-            layout: &self.layout,
-            entries: &[
-                wgpu::BindGroupEntry {
-                    binding: 0,
-                    resource: wgpu::BindingResource::Buffer(wgpu::BufferBinding {
+        desc::bind_group(
+            device,
+            "modern probe filter",
+            &self.layout,
+            &[
+                (
+                    0,
+                    wgpu::BindingResource::Buffer(wgpu::BufferBinding {
                         buffer: slots,
                         offset: 0,
                         size: wgpu::BufferSize::new(std::mem::size_of::<FilterUniforms>() as u64),
                     }),
-                },
-                wgpu::BindGroupEntry {
-                    binding: 1,
-                    resource: wgpu::BindingResource::TextureView(source),
-                },
-                wgpu::BindGroupEntry {
-                    binding: 2,
-                    resource: wgpu::BindingResource::Sampler(&self.sampler),
-                },
+                ),
+                (1, wgpu::BindingResource::TextureView(source)),
+                (2, wgpu::BindingResource::Sampler(&self.sampler)),
             ],
-        })
+        )
     }
 
     /// One fullscreen pass of `pipeline` with filter slot `slot` into
@@ -340,22 +270,12 @@ impl FilterGpu {
         slot: usize,
         target: &wgpu::TextureView,
     ) {
-        let mut pass = encoder.begin_render_pass(&wgpu::RenderPassDescriptor {
-            label: Some(crate::frame::passes::Pass::ProbeFilter.label()),
-            color_attachments: &[Some(wgpu::RenderPassColorAttachment {
-                view: target,
-                resolve_target: None,
-                depth_slice: None,
-                ops: wgpu::Operations {
-                    load: wgpu::LoadOp::Clear(wgpu::Color::BLACK),
-                    store: wgpu::StoreOp::Store,
-                },
-            })],
-            depth_stencil_attachment: None,
-            occlusion_query_set: None,
-            multiview_mask: None,
-            timestamp_writes: None,
-        });
+        let mut pass = desc::colour_pass(
+            encoder,
+            crate::frame::passes::Pass::ProbeFilter.label(),
+            target,
+            wgpu::LoadOp::Clear(wgpu::Color::BLACK),
+        );
         pass.set_pipeline(pipeline);
         pass.set_bind_group(0, bind, &[(slot as u64 * SLOT) as u32]);
         pass.draw(0..3, 0..1);
@@ -415,20 +335,12 @@ impl LightProbeBindings {
         } else {
             1
         };
-        let lut = device.create_texture(&wgpu::TextureDescriptor {
-            label: Some("modern BRDF LUT"),
-            size: wgpu::Extent3d {
-                width: lut_size,
-                height: lut_size,
-                depth_or_array_layers: 1,
-            },
-            mip_level_count: 1,
-            sample_count: 1,
-            dimension: wgpu::TextureDimension::D2,
-            format: LUT_FORMAT,
-            usage: wgpu::TextureUsages::TEXTURE_BINDING | wgpu::TextureUsages::RENDER_ATTACHMENT,
-            view_formats: &[],
-        });
+        let lut = device.create_texture(&desc::texture_2d(
+            "modern BRDF LUT",
+            [lut_size, lut_size],
+            LUT_FORMAT,
+            wgpu::TextureUsages::TEXTURE_BINDING | wgpu::TextureUsages::RENDER_ATTACHMENT,
+        ));
         let lut_view = lut.create_view(&wgpu::TextureViewDescriptor::default());
         if on {
             let filters = FilterGpu::new(device, shaders);
@@ -465,30 +377,15 @@ impl LightProbeBindings {
     /// The group 3 entries (bindings 3-7, 13).
     pub(crate) fn entries(&self) -> [wgpu::BindGroupEntry<'_>; 6] {
         [
-            wgpu::BindGroupEntry {
-                binding: 3,
-                resource: self.sh.as_entire_binding(),
-            },
-            wgpu::BindGroupEntry {
-                binding: 4,
-                resource: self.uniforms.as_entire_binding(),
-            },
-            wgpu::BindGroupEntry {
-                binding: 5,
-                resource: wgpu::BindingResource::TextureView(&self.env_view),
-            },
-            wgpu::BindGroupEntry {
-                binding: 6,
-                resource: wgpu::BindingResource::TextureView(&self.lut_view),
-            },
-            wgpu::BindGroupEntry {
-                binding: 7,
-                resource: wgpu::BindingResource::Sampler(&self.sampler),
-            },
-            wgpu::BindGroupEntry {
-                binding: crate::frame::gpu::ambient::BINDING,
-                resource: self.squares.as_entire_binding(),
-            },
+            desc::bind(3, self.sh.as_entire_binding()),
+            desc::bind(4, self.uniforms.as_entire_binding()),
+            desc::bind(5, wgpu::BindingResource::TextureView(&self.env_view)),
+            desc::bind(6, wgpu::BindingResource::TextureView(&self.lut_view)),
+            desc::bind(7, wgpu::BindingResource::Sampler(&self.sampler)),
+            desc::bind(
+                crate::frame::gpu::ambient::BINDING,
+                self.squares.as_entire_binding(),
+            ),
         ]
     }
 }
@@ -1075,24 +972,22 @@ impl ModernRenderer {
         let frame_layout = self.pipes().forward.get_bind_group_layout(0);
         let binds = (0..slots.len())
             .map(|i| {
-                device.create_bind_group(&wgpu::BindGroupDescriptor {
-                    label: Some("modern probe frame"),
-                    layout: &frame_layout,
-                    entries: &[
-                        wgpu::BindGroupEntry {
-                            binding: 0,
-                            resource: wgpu::BindingResource::Buffer(wgpu::BufferBinding {
+                desc::bind_group(
+                    device,
+                    "modern probe frame",
+                    &frame_layout,
+                    &[
+                        (
+                            0,
+                            wgpu::BindingResource::Buffer(wgpu::BufferBinding {
                                 buffer: &frames,
                                 offset: i as u64 * SLOT,
                                 size: wgpu::BufferSize::new(SLOT),
                             }),
-                        },
-                        wgpu::BindGroupEntry {
-                            binding: 1,
-                            resource: wgpu::BindingResource::TextureView(&pipes.ao_white),
-                        },
+                        ),
+                        (1, wgpu::BindingResource::TextureView(&pipes.ao_white)),
                     ],
-                })
+                )
             })
             .collect();
         // Each face's winding against the frame's (a mirrored face draws
@@ -1102,13 +997,14 @@ impl ModernRenderer {
         // The sky: the layers per target and face.
         let (sky_layers, sky_draws) = self.capture_sky_layers(device, snapshot);
 
-        let project = device.create_bind_group(&wgpu::BindGroupDescriptor {
-            label: Some("modern probe projection"),
-            layout: &pipes.project_layout,
-            entries: &[
-                wgpu::BindGroupEntry {
-                    binding: 0,
-                    resource: wgpu::BindingResource::TextureView(
+        let project = desc::bind_group(
+            device,
+            "modern probe projection",
+            &pipes.project_layout,
+            &[
+                (
+                    0,
+                    wgpu::BindingResource::TextureView(
                         &self
                             .history
                             .probes
@@ -1118,14 +1014,11 @@ impl ModernRenderer {
                             .colour
                             .create_view(&Default::default()),
                     ),
-                },
-                wgpu::BindGroupEntry {
-                    binding: 1,
-                    resource: self.scene_resources.lights.probes.sh.as_entire_binding(),
-                },
-                wgpu::BindGroupEntry {
-                    binding: 2,
-                    resource: device
+                ),
+                (1, self.scene_resources.lights.probes.sh.as_entire_binding()),
+                (
+                    2,
+                    device
                         .create_buffer_init(&wgpu::util::BufferInitDescriptor {
                             label: Some("modern probe projection"),
                             contents: bytemuck::bytes_of(&ProjectUniforms {
@@ -1140,19 +1033,19 @@ impl ModernRenderer {
                             usage: wgpu::BufferUsages::UNIFORM,
                         })
                         .as_entire_binding(),
-                },
-                wgpu::BindGroupEntry {
-                    binding: 3,
-                    resource: device
+                ),
+                (
+                    3,
+                    device
                         .create_buffer_init(&wgpu::util::BufferInitDescriptor {
                             label: Some("modern probe targets"),
                             contents: bytemuck::cast_slice(&targets),
                             usage: wgpu::BufferUsages::STORAGE,
                         })
                         .as_entire_binding(),
-                },
+                ),
             ],
-        });
+        );
 
         // The environment cube's filter passes (slots: the downsample's
         // faces per level, then the prefilter's; the roughness per level
@@ -1351,18 +1244,19 @@ impl ModernRenderer {
             contents: bytemuck::cast_slice(&layers),
             usage: wgpu::BufferUsages::UNIFORM,
         });
-        let bind = device.create_bind_group(&wgpu::BindGroupDescriptor {
-            label: Some("modern probe sky layers"),
-            layout: &self.device_resources.sky_layer_layout,
-            entries: &[wgpu::BindGroupEntry {
-                binding: 0,
-                resource: wgpu::BindingResource::Buffer(wgpu::BufferBinding {
+        let bind = desc::bind_group(
+            device,
+            "modern probe sky layers",
+            &self.device_resources.sky_layer_layout,
+            &[(
+                0,
+                wgpu::BindingResource::Buffer(wgpu::BufferBinding {
                     buffer: &buffer,
                     offset: 0,
                     size: wgpu::BufferSize::new(std::mem::size_of::<SkyLayerUniforms>() as u64),
                 }),
-            }],
-        });
+            )],
+        );
         (Some((buffer, bind)), draws)
     }
 }
@@ -1807,17 +1701,17 @@ impl CapturePipes {
     ) -> Self {
         // The forward module (compiled once, `crate::frame::pipelines::PipelineInputs`).
         let module = &r.pipeline_inputs.forward_module;
-        let layout = device.create_pipeline_layout(&wgpu::PipelineLayoutDescriptor {
-            label: Some("modern probe capture"),
-            bind_group_layouts: &[
+        let layout = desc::pipeline_layout(
+            device,
+            "modern probe capture",
+            &[
                 Some(&r.pipes().forward.get_bind_group_layout(0)),
                 Some(&r.pipes().forward.get_bind_group_layout(1)),
                 Some(&r.pipes().forward.get_bind_group_layout(2)),
                 Some(&r.pipes().forward.get_bind_group_layout(3)),
                 Some(&r.pipes().forward.get_bind_group_layout(4)),
             ],
-            immediate_size: 0,
-        });
+        );
         let layouts = vertex_layouts();
         // The capture shades with the ambient (the probes it fills are
         // not read while they are captured).
@@ -1842,38 +1736,34 @@ impl CapturePipes {
                     })],
                     compilation_options: Default::default(),
                 }),
-                primitive: wgpu::PrimitiveState {
-                    topology: wgpu::PrimitiveTopology::TriangleList,
-                    front_face: if cw {
+                primitive: desc::triangles(
+                    if cw {
                         wgpu::FrontFace::Cw
                     } else {
                         wgpu::FrontFace::Ccw
                     },
-                    cull_mode: Some(wgpu::Face::Back),
-                    ..Default::default()
-                },
-                depth_stencil: Some(wgpu::DepthStencilState {
-                    format: DEPTH_FORMAT,
-                    depth_write_enabled: Some(depth.unwrap_or(false)),
-                    depth_compare: Some(if depth.is_some() {
+                    Some(wgpu::Face::Back),
+                ),
+                depth_stencil: Some(desc::depth_state(
+                    DEPTH_FORMAT,
+                    depth.unwrap_or(false),
+                    if depth.is_some() {
                         wgpu::CompareFunction::LessEqual
                     } else {
                         wgpu::CompareFunction::Always
-                    }),
-                    stencil: Default::default(),
-                    bias: Default::default(),
-                }),
+                    },
+                )),
                 multisample: wgpu::MultisampleState::default(),
                 multiview_mask: None,
                 cache: None,
             })
         };
         let sky_module = r.shaders.get(device, crate::shaders::Module::SkyLayers);
-        let sky_layout = device.create_pipeline_layout(&wgpu::PipelineLayoutDescriptor {
-            label: Some("modern probe sky"),
-            bind_group_layouts: &[Some(r.sky_layer_layout), Some(r.sky_texture_layout)],
-            immediate_size: 0,
-        });
+        let sky_layout = desc::pipeline_layout(
+            device,
+            "modern probe sky",
+            &[Some(r.sky_layer_layout), Some(r.sky_texture_layout)],
+        );
         let sky_layer = || {
             device.create_render_pipeline(&wgpu::RenderPipelineDescriptor {
                 label: Some("modern probe sky layer"),
@@ -1895,13 +1785,11 @@ impl CapturePipes {
                     compilation_options: Default::default(),
                 }),
                 primitive: wgpu::PrimitiveState::default(),
-                depth_stencil: Some(wgpu::DepthStencilState {
-                    format: DEPTH_FORMAT,
-                    depth_write_enabled: Some(false),
-                    depth_compare: Some(wgpu::CompareFunction::Always),
-                    stencil: Default::default(),
-                    bias: Default::default(),
-                }),
+                depth_stencil: Some(desc::depth_state(
+                    DEPTH_FORMAT,
+                    false,
+                    wgpu::CompareFunction::Always,
+                )),
                 multisample: wgpu::MultisampleState::default(),
                 multiview_mask: None,
                 cache: None,
@@ -1910,61 +1798,37 @@ impl CapturePipes {
         let project_module = r
             .shaders
             .get(device, crate::shaders::Module::ProbeProjection);
-        let project_layout = device.create_bind_group_layout(&wgpu::BindGroupLayoutDescriptor {
-            label: Some("modern probe projection"),
-            entries: &[
-                wgpu::BindGroupLayoutEntry {
-                    binding: 0,
-                    visibility: wgpu::ShaderStages::COMPUTE,
-                    ty: wgpu::BindingType::Texture {
-                        sample_type: wgpu::TextureSampleType::Float { filterable: false },
-                        view_dimension: wgpu::TextureViewDimension::D2,
-                        multisampled: false,
-                    },
-                    count: None,
-                },
-                wgpu::BindGroupLayoutEntry {
-                    binding: 1,
-                    visibility: wgpu::ShaderStages::COMPUTE,
-                    ty: wgpu::BindingType::Buffer {
+        let project_layout = desc::layout(
+            device,
+            "modern probe projection",
+            &[
+                desc::float_texture(
+                    0,
+                    wgpu::ShaderStages::COMPUTE,
+                    false,
+                    wgpu::TextureViewDimension::D2,
+                ),
+                desc::entry(
+                    1,
+                    wgpu::ShaderStages::COMPUTE,
+                    wgpu::BindingType::Buffer {
                         ty: wgpu::BufferBindingType::Storage { read_only: false },
                         has_dynamic_offset: false,
                         min_binding_size: None,
                     },
-                    count: None,
-                },
-                wgpu::BindGroupLayoutEntry {
-                    binding: 2,
-                    visibility: wgpu::ShaderStages::COMPUTE,
-                    ty: wgpu::BindingType::Buffer {
-                        ty: wgpu::BufferBindingType::Uniform,
-                        has_dynamic_offset: false,
-                        min_binding_size: None,
-                    },
-                    count: None,
-                },
-                wgpu::BindGroupLayoutEntry {
-                    binding: 3,
-                    visibility: wgpu::ShaderStages::COMPUTE,
-                    ty: wgpu::BindingType::Buffer {
-                        ty: wgpu::BufferBindingType::Storage { read_only: true },
-                        has_dynamic_offset: false,
-                        min_binding_size: None,
-                    },
-                    count: None,
-                },
+                ),
+                desc::uniform(2, wgpu::ShaderStages::COMPUTE),
+                desc::storage(3, wgpu::ShaderStages::COMPUTE),
             ],
-        });
+        );
         let project = || {
             device.create_compute_pipeline(&wgpu::ComputePipelineDescriptor {
                 label: Some("modern probe projection"),
-                layout: Some(
-                    &device.create_pipeline_layout(&wgpu::PipelineLayoutDescriptor {
-                        label: Some("modern probe projection"),
-                        bind_group_layouts: &[Some(&project_layout)],
-                        immediate_size: 0,
-                    }),
-                ),
+                layout: Some(&desc::pipeline_layout(
+                    device,
+                    "modern probe projection",
+                    &[Some(&project_layout)],
+                )),
                 module: &project_module,
                 entry_point: Some("cs_project"),
                 compilation_options: Default::default(),
@@ -1999,57 +1863,33 @@ impl CapturePipes {
             contents: bytemuck::bytes_of(&ShadowUniforms::default()),
             usage: wgpu::BufferUsages::UNIFORM,
         });
-        let no_shadow = device.create_bind_group(&wgpu::BindGroupDescriptor {
-            label: Some("modern probe no shadow"),
-            layout: &r.pipes().forward.get_bind_group_layout(2),
-            entries: &[
-                wgpu::BindGroupEntry {
-                    binding: 0,
-                    resource: no_shadow_buffer.as_entire_binding(),
-                },
-                wgpu::BindGroupEntry {
-                    binding: 1,
-                    resource: wgpu::BindingResource::TextureView(&r.shadow.atlas.1),
-                },
-                wgpu::BindGroupEntry {
-                    binding: 2,
-                    resource: wgpu::BindingResource::Sampler(&r.shadow.sampler),
-                },
+        let no_shadow = desc::bind_group(
+            device,
+            "modern probe no shadow",
+            &r.pipes().forward.get_bind_group_layout(2),
+            &[
+                (0, no_shadow_buffer.as_entire_binding()),
+                (1, wgpu::BindingResource::TextureView(&r.shadow.atlas.1)),
+                (2, wgpu::BindingResource::Sampler(&r.shadow.sampler)),
             ],
-        });
+        );
         let depth = |label, w, h| {
             device
-                .create_texture(&wgpu::TextureDescriptor {
-                    label: Some(label),
-                    size: wgpu::Extent3d {
-                        width: w,
-                        height: h,
-                        depth_or_array_layers: 1,
-                    },
-                    mip_level_count: 1,
-                    sample_count: 1,
-                    dimension: wgpu::TextureDimension::D2,
-                    format: DEPTH_FORMAT,
-                    usage: wgpu::TextureUsages::RENDER_ATTACHMENT,
-                    view_formats: &[],
-                })
+                .create_texture(&desc::texture_2d(
+                    label,
+                    [w, h],
+                    DEPTH_FORMAT,
+                    wgpu::TextureUsages::RENDER_ATTACHMENT,
+                ))
                 .create_view(&Default::default())
         };
         let res = crate::lighting::light_probes::CAPTURE_RES;
-        let sky_atlas = device.create_texture(&wgpu::TextureDescriptor {
-            label: Some("modern probe sky"),
-            size: wgpu::Extent3d {
-                width: 6 * res,
-                height: res,
-                depth_or_array_layers: 1,
-            },
-            mip_level_count: 1,
-            sample_count: 1,
-            dimension: wgpu::TextureDimension::D2,
-            format: CAPTURE_FORMAT,
-            usage: wgpu::TextureUsages::RENDER_ATTACHMENT | wgpu::TextureUsages::COPY_SRC,
-            view_formats: &[],
-        });
+        let sky_atlas = device.create_texture(&desc::texture_2d(
+            "modern probe sky",
+            [6 * res, res],
+            CAPTURE_FORMAT,
+            wgpu::TextureUsages::RENDER_ATTACHMENT | wgpu::TextureUsages::COPY_SRC,
+        ));
         Self {
             forward,
             sky_model,
@@ -2153,29 +1993,16 @@ impl<'a> EncodeInputs<'a> {
         // 1. The sky's six faces at the probe size.
         {
             let view = pipes.sky_atlas.create_view(&Default::default());
-            let mut pass = encoder.begin_render_pass(&wgpu::RenderPassDescriptor {
-                label: Some(self.begin_pass(crate::frame::passes::Pass::ProbeSky)),
-                color_attachments: &[Some(wgpu::RenderPassColorAttachment {
-                    view: &view,
-                    resolve_target: None,
-                    depth_slice: None,
-                    ops: wgpu::Operations {
-                        load: wgpu::LoadOp::Clear(clear),
-                        store: wgpu::StoreOp::Store,
-                    },
-                })],
-                depth_stencil_attachment: Some(wgpu::RenderPassDepthStencilAttachment {
-                    view: &pipes.sky_depth,
-                    depth_ops: Some(wgpu::Operations {
-                        load: wgpu::LoadOp::Clear(1.0),
-                        store: wgpu::StoreOp::Discard,
-                    }),
-                    stencil_ops: None,
-                }),
-                occlusion_query_set: None,
-                multiview_mask: None,
-                timestamp_writes: None,
-            });
+            let mut pass = desc::pass(
+                encoder,
+                self.begin_pass(crate::frame::passes::Pass::ProbeSky),
+                &[desc::colour(&view, wgpu::LoadOp::Clear(clear))],
+                desc::depth(
+                    &pipes.sky_depth,
+                    wgpu::LoadOp::Clear(1.0),
+                    wgpu::StoreOp::Discard,
+                ),
+            );
             for face in 0..6 {
                 let x = face as u32 * res;
                 pass.set_viewport(x as f32, 0.0, res as f32, res as f32, 0.0, 1.0);
@@ -2206,29 +2033,16 @@ impl<'a> EncodeInputs<'a> {
         }
         {
             let view = atlas.colour.create_view(&Default::default());
-            let mut pass = encoder.begin_render_pass(&wgpu::RenderPassDescriptor {
-                label: Some(self.begin_pass(crate::frame::passes::Pass::ProbeCapture)),
-                color_attachments: &[Some(wgpu::RenderPassColorAttachment {
-                    view: &view,
-                    resolve_target: None,
-                    depth_slice: None,
-                    ops: wgpu::Operations {
-                        load: wgpu::LoadOp::Load,
-                        store: wgpu::StoreOp::Store,
-                    },
-                })],
-                depth_stencil_attachment: Some(wgpu::RenderPassDepthStencilAttachment {
-                    view: &atlas.depth,
-                    depth_ops: Some(wgpu::Operations {
-                        load: wgpu::LoadOp::Clear(1.0),
-                        store: wgpu::StoreOp::Discard,
-                    }),
-                    stencil_ops: None,
-                }),
-                occlusion_query_set: None,
-                multiview_mask: None,
-                timestamp_writes: None,
-            });
+            let mut pass = desc::pass(
+                encoder,
+                self.begin_pass(crate::frame::passes::Pass::ProbeCapture),
+                &[desc::colour(&view, wgpu::LoadOp::Load)],
+                desc::depth(
+                    &atlas.depth,
+                    wgpu::LoadOp::Clear(1.0),
+                    wgpu::StoreOp::Discard,
+                ),
+            );
             pass.set_bind_group(2, &pipes.no_shadow, &[]);
             pass.set_bind_group(3, &self.lights.bind, &[]);
             for (row, faces) in capture.faces.iter().enumerate() {
@@ -2262,29 +2076,16 @@ impl<'a> EncodeInputs<'a> {
         let env_slot = capture.faces.len() * 6;
         for face in 0..6 {
             let view = face_view(&pipes.env_source, face as u32, 0);
-            let mut pass = encoder.begin_render_pass(&wgpu::RenderPassDescriptor {
-                label: Some(self.begin_pass(crate::frame::passes::Pass::EnvironmentCapture)),
-                color_attachments: &[Some(wgpu::RenderPassColorAttachment {
-                    view: &view,
-                    resolve_target: None,
-                    depth_slice: None,
-                    ops: wgpu::Operations {
-                        load: wgpu::LoadOp::Clear(clear),
-                        store: wgpu::StoreOp::Store,
-                    },
-                })],
-                depth_stencil_attachment: Some(wgpu::RenderPassDepthStencilAttachment {
-                    view: &pipes.env_depth,
-                    depth_ops: Some(wgpu::Operations {
-                        load: wgpu::LoadOp::Clear(1.0),
-                        store: wgpu::StoreOp::Discard,
-                    }),
-                    stencil_ops: None,
-                }),
-                occlusion_query_set: None,
-                multiview_mask: None,
-                timestamp_writes: None,
-            });
+            let mut pass = desc::pass(
+                encoder,
+                self.begin_pass(crate::frame::passes::Pass::EnvironmentCapture),
+                &[desc::colour(&view, wgpu::LoadOp::Clear(clear))],
+                desc::depth(
+                    &pipes.env_depth,
+                    wgpu::LoadOp::Clear(1.0),
+                    wgpu::StoreOp::Discard,
+                ),
+            );
             self.draw_capture_sky(&mut pass, &capture.scene, capture.sky_bind(face), 1, face);
             pass.set_bind_group(0, &capture.binds[env_slot + face], &[]);
             pass.set_bind_group(2, &pipes.no_shadow, &[]);

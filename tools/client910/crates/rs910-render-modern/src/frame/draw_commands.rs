@@ -1,6 +1,7 @@
 //! Portable indexed draw commands shared by every scene pass. Three reusable
 //! argument buffers separate consecutive submissions; unsupported first-instance
 //! hardware uses the same ordered direct packets.
+use rs910_gpu_device::desc;
 
 use crate::frame::Draw;
 
@@ -66,12 +67,12 @@ impl DrawCommands {
         if slot.as_ref().is_none_or(|(_, capacity)| *capacity < need) {
             let capacity = need.next_power_of_two();
             *slot = Some((
-                device.create_buffer(&wgpu::BufferDescriptor {
-                    label: Some("modern draw commands"),
-                    size: capacity,
-                    usage: wgpu::BufferUsages::INDIRECT | wgpu::BufferUsages::COPY_DST,
-                    mapped_at_creation: false,
-                }),
+                desc::buffer(
+                    device,
+                    "modern draw commands",
+                    capacity,
+                    wgpu::BufferUsages::INDIRECT | wgpu::BufferUsages::COPY_DST,
+                ),
                 capacity,
             ));
         }

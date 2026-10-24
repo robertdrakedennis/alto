@@ -8,6 +8,7 @@
 use crate::atmosphere::sky::PassUniforms;
 use crate::frame::encoding::EncodeInputs;
 use crate::frame::*;
+use rs910_gpu_device::desc;
 
 /// A pass slot's size (dynamic offsets are 256-byte aligned).
 pub(crate) const SLOT: u64 = 256;
@@ -188,18 +189,8 @@ pub(crate) fn view_of(
     usage: wgpu::TextureUsages,
 ) -> (wgpu::Texture, wgpu::TextureView) {
     let t = device.create_texture(&wgpu::TextureDescriptor {
-        label: Some(label),
-        size: wgpu::Extent3d {
-            width: size[0].max(1),
-            height: size[1].max(1),
-            depth_or_array_layers: 1,
-        },
-        mip_level_count: 1,
         sample_count: samples,
-        dimension: wgpu::TextureDimension::D2,
-        format,
-        usage,
-        view_formats: &[],
+        ..desc::texture_2d(label, [size[0].max(1), size[1].max(1)], format, usage)
     });
     let v = t.create_view(&wgpu::TextureViewDescriptor::default());
     (t, v)
@@ -214,136 +205,81 @@ impl Pipes {
         receive_layout: &wgpu::BindGroupLayout,
         module: std::sync::Arc<wgpu::ShaderModule>,
     ) -> Self {
-        let layout0 = device.create_bind_group_layout(&wgpu::BindGroupLayoutDescriptor {
-            label: Some("modern atmosphere frame"),
-            entries: &[wgpu::BindGroupLayoutEntry {
-                binding: 0,
-                visibility: wgpu::ShaderStages::VERTEX_FRAGMENT,
-                ty: wgpu::BindingType::Buffer {
-                    ty: wgpu::BufferBindingType::Uniform,
-                    has_dynamic_offset: false,
-                    min_binding_size: None,
-                },
-                count: None,
-            }],
-        });
-        let texture = |binding| wgpu::BindGroupLayoutEntry {
-            binding,
-            visibility: wgpu::ShaderStages::FRAGMENT,
-            ty: wgpu::BindingType::Texture {
-                sample_type: wgpu::TextureSampleType::Float { filterable: false },
-                view_dimension: wgpu::TextureViewDimension::D2,
-                multisampled: false,
-            },
-            count: None,
+        let layout0 = desc::layout(
+            device,
+            "modern atmosphere frame",
+            &[desc::uniform(0, wgpu::ShaderStages::VERTEX_FRAGMENT)],
+        );
+        let texture = |binding| {
+            desc::float_texture(
+                binding,
+                wgpu::ShaderStages::FRAGMENT,
+                false,
+                wgpu::TextureViewDimension::D2,
+            )
         };
-        let layout1 = device.create_bind_group_layout(&wgpu::BindGroupLayoutDescriptor {
-            label: Some("modern atmosphere pass"),
-            entries: &[
-                wgpu::BindGroupLayoutEntry {
-                    binding: 0,
-                    visibility: wgpu::ShaderStages::FRAGMENT,
-                    ty: wgpu::BindingType::Buffer {
-                        ty: wgpu::BufferBindingType::Uniform,
-                        has_dynamic_offset: true,
-                        min_binding_size: wgpu::BufferSize::new(
-                            std::mem::size_of::<PassUniforms>() as u64,
-                        ),
-                    },
-                    count: None,
-                },
+        let layout1 = desc::layout(
+            device,
+            "modern atmosphere pass",
+            &[
+                desc::uniform_sized(
+                    0,
+                    wgpu::ShaderStages::FRAGMENT,
+                    true,
+                    std::mem::size_of::<PassUniforms>() as u64,
+                ),
                 texture(1),
                 texture(2),
                 texture(3),
                 texture(4),
-                wgpu::BindGroupLayoutEntry {
-                    binding: 5,
-                    visibility: wgpu::ShaderStages::FRAGMENT,
-                    ty: wgpu::BindingType::Texture {
-                        sample_type: wgpu::TextureSampleType::Depth,
-                        view_dimension: wgpu::TextureViewDimension::D2,
-                        multisampled: samples > 1,
-                    },
-                    count: None,
-                },
+                desc::texture(
+                    5,
+                    wgpu::ShaderStages::FRAGMENT,
+                    wgpu::TextureSampleType::Depth,
+                    wgpu::TextureViewDimension::D2,
+                    samples > 1,
+                ),
             ],
-        });
-        let plain = device.create_pipeline_layout(&wgpu::PipelineLayoutDescriptor {
-            label: Some("modern atmosphere"),
-            bind_group_layouts: &[Some(&layout0), Some(&layout1)],
-            immediate_size: 0,
-        });
-        let shadowed = device.create_pipeline_layout(&wgpu::PipelineLayoutDescriptor {
-            label: Some("modern volumetrics"),
-            bind_group_layouts: &[Some(&layout0), Some(&layout1), Some(receive_layout)],
-            immediate_size: 0,
-        });
+        );
+        let plain = desc::pipeline_layout(
+            device,
+            "modern atmosphere",
+            &[Some(&layout0), Some(&layout1)],
+        );
+        let shadowed = desc::pipeline_layout(
+            device,
+            "modern volumetrics",
+            &[Some(&layout0), Some(&layout1), Some(receive_layout)],
+        );
         let sky_cubes = crate::frame::gpu::sky_box::cube_layout(device);
-        let sky = device.create_pipeline_layout(&wgpu::PipelineLayoutDescriptor {
-            label: Some("modern sky shading"),
-            bind_group_layouts: &[Some(&layout0), Some(&layout1), None, Some(&sky_cubes)],
-            immediate_size: 0,
-        });
+        let sky = desc::pipeline_layout(
+            device,
+            "modern sky shading",
+            &[Some(&layout0), Some(&layout1), None, Some(&sky_cubes)],
+        );
         let pipeline = |entry: &str,
                         layout: &wgpu::PipelineLayout,
                         format: wgpu::TextureFormat,
                         count: u32| {
-            device.create_render_pipeline(&wgpu::RenderPipelineDescriptor {
-                label: Some(entry),
-                layout: Some(layout),
-                vertex: wgpu::VertexState {
-                    module: &module,
-                    entry_point: Some("vs_full"),
-                    buffers: &[],
-                    compilation_options: Default::default(),
-                },
-                fragment: Some(wgpu::FragmentState {
-                    module: &module,
-                    entry_point: Some(entry),
-                    targets: &[Some(format.into())],
-                    compilation_options: Default::default(),
-                }),
-                primitive: wgpu::PrimitiveState::default(),
-                depth_stencil: None,
-                multisample: wgpu::MultisampleState {
-                    count,
-                    ..Default::default()
-                },
-                multiview_mask: None,
-                cache: None,
-            })
+            desc::fullscreen_pipeline(device, entry, layout, &module, entry, format.into(), count)
         };
-        let frame_bind = device.create_bind_group(&wgpu::BindGroupDescriptor {
-            label: Some("modern atmosphere frame"),
-            layout: &layout0,
-            entries: &[wgpu::BindGroupEntry {
-                binding: 0,
-                resource: frame_buffer.as_entire_binding(),
-            }],
-        });
-        let slots = device.create_buffer(&wgpu::BufferDescriptor {
-            label: Some("modern atmosphere slots"),
-            size: SLOT * u64::from(SLOTS),
-            usage: wgpu::BufferUsages::UNIFORM | wgpu::BufferUsages::COPY_DST,
-            mapped_at_creation: false,
-        });
+        let frame_bind = desc::bind_group(
+            device,
+            "modern atmosphere frame",
+            &layout0,
+            &[(0, frame_buffer.as_entire_binding())],
+        );
+        let slots =
+            desc::uniform_buffer(device, "modern atmosphere slots", SLOT * u64::from(SLOTS));
         let dummy = device
             .create_texture_with_data(
                 queue.queue(),
-                &wgpu::TextureDescriptor {
-                    label: Some("modern atmosphere dummy"),
-                    size: wgpu::Extent3d {
-                        width: 1,
-                        height: 1,
-                        depth_or_array_layers: 1,
-                    },
-                    mip_level_count: 1,
-                    sample_count: 1,
-                    dimension: wgpu::TextureDimension::D2,
-                    format: wgpu::TextureFormat::Rgba16Float,
-                    usage: wgpu::TextureUsages::TEXTURE_BINDING,
-                    view_formats: &[],
-                },
+                &desc::texture_2d(
+                    "modern atmosphere dummy",
+                    [1, 1],
+                    wgpu::TextureFormat::Rgba16Float,
+                    wgpu::TextureUsages::TEXTURE_BINDING,
+                ),
                 wgpu::util::TextureDataOrder::LayerMajor,
                 &[0; 8],
             )
@@ -753,22 +689,19 @@ impl ModernRenderer {
         let pipes = self.frame_resources.atmos.pipes.current()?;
         let depth = &self.frame_resources.targets.as_ref()?.depth;
         let t = |v: Option<&'a wgpu::TextureView>| v.unwrap_or(&pipes.dummy);
-        let entry = |binding, view| wgpu::BindGroupEntry {
-            binding,
-            resource: wgpu::BindingResource::TextureView(view),
-        };
+        let entry = |binding, view| desc::bind(binding, wgpu::BindingResource::TextureView(view));
         Some(device.create_bind_group(&wgpu::BindGroupDescriptor {
             label: Some("modern atmosphere pass"),
             layout: &pipes.layout1,
             entries: &[
-                wgpu::BindGroupEntry {
-                    binding: 0,
-                    resource: wgpu::BindingResource::Buffer(wgpu::BufferBinding {
+                desc::bind(
+                    0,
+                    wgpu::BindingResource::Buffer(wgpu::BufferBinding {
                         buffer: &pipes.slots,
                         offset: 0,
                         size: wgpu::BufferSize::new(std::mem::size_of::<PassUniforms>() as u64),
                     }),
-                },
+                ),
                 entry(1, t(textures[0])),
                 entry(2, t(textures[1])),
                 entry(3, t(textures[2])),
@@ -834,29 +767,19 @@ impl<'a> EncodeInputs<'a> {
         if r <= l || b <= t {
             return;
         }
-        let mut pass = encoder.begin_render_pass(&wgpu::RenderPassDescriptor {
-            label: Some(self.begin_pass(which)),
-            color_attachments: &[Some(wgpu::RenderPassColorAttachment {
-                view,
-                resolve_target: None,
-                depth_slice: None,
-                ops: wgpu::Operations {
-                    load: clear.map_or(wgpu::LoadOp::Load, |c| {
-                        wgpu::LoadOp::Clear(wgpu::Color {
-                            r: f64::from(c[0]),
-                            g: f64::from(c[1]),
-                            b: f64::from(c[2]),
-                            a: 1.0,
-                        })
-                    }),
-                    store: wgpu::StoreOp::Store,
-                },
-            })],
-            depth_stencil_attachment: None,
-            occlusion_query_set: None,
-            multiview_mask: None,
-            timestamp_writes: None,
-        });
+        let mut pass = desc::colour_pass(
+            encoder,
+            self.begin_pass(which),
+            view,
+            clear.map_or(wgpu::LoadOp::Load, |c| {
+                wgpu::LoadOp::Clear(wgpu::Color {
+                    r: f64::from(c[0]),
+                    g: f64::from(c[1]),
+                    b: f64::from(c[2]),
+                    a: 1.0,
+                })
+            }),
+        );
         pass.set_viewport(x, y, w, h, 0.0, 1.0);
         pass.set_scissor_rect(l, t, r - l, b - t);
         pass.set_pipeline(pipeline);

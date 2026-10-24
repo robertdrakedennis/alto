@@ -29,6 +29,7 @@
 //! run time: choosing between textures or samplers by a value that differs
 //! from draw to draw costs the GPU more than the frame's 5,000 bind group
 //! changes cost the CPU (about 0.4 ms of the Lumbridge frame's 8).
+use rs910_gpu_device::desc;
 
 /// One mip level: width, height, bytes (`models::materials::Level`).
 type Level = (u32, u32, Vec<u8>);
@@ -78,55 +79,14 @@ fn texture(
     format: wgpu::TextureFormat,
 ) -> wgpu::Texture {
     device.create_texture(&wgpu::TextureDescriptor {
-        label: Some(label),
-        size: wgpu::Extent3d {
-            width: SIZE,
-            height: SIZE,
-            depth_or_array_layers: layers,
-        },
         mip_level_count: LEVELS,
-        sample_count: 1,
-        dimension: wgpu::TextureDimension::D2,
-        format,
-        usage: wgpu::TextureUsages::TEXTURE_BINDING | wgpu::TextureUsages::COPY_DST,
-        view_formats: &[],
+        ..desc::texture_layers(
+            label,
+            [SIZE, SIZE, layers],
+            format,
+            wgpu::TextureUsages::TEXTURE_BINDING | wgpu::TextureUsages::COPY_DST,
+        )
     })
-}
-
-/// Write `levels` (level 0 first, `texel_bytes` a texel) into layer `layer`
-/// of `texture`.
-fn write_layer(
-    queue: &dyn rs910_gpu_device::uploads::Uploader,
-    texture: &wgpu::Texture,
-    layer: u32,
-    texel_bytes: u32,
-    levels: &[Level],
-) {
-    for (level, (w, h, data)) in levels.iter().enumerate() {
-        queue.write_texture(
-            wgpu::TexelCopyTextureInfo {
-                texture,
-                mip_level: level as u32,
-                origin: wgpu::Origin3d {
-                    x: 0,
-                    y: 0,
-                    z: layer,
-                },
-                aspect: wgpu::TextureAspect::All,
-            },
-            data,
-            wgpu::TexelCopyBufferLayout {
-                offset: 0,
-                bytes_per_row: Some(w * texel_bytes),
-                rows_per_image: Some(*h),
-            },
-            wgpu::Extent3d {
-                width: *w,
-                height: *h,
-                depth_or_array_layers: 1,
-            },
-        );
-    }
 }
 
 /// The 64 texel mip chain `levels` (7 levels) tiled twice over each way: the
@@ -176,29 +136,27 @@ impl MaterialArrays {
             layers,
             wgpu::TextureFormat::R8Unorm,
         );
-        let entry = |binding| wgpu::BindGroupLayoutEntry {
-            binding,
-            visibility: wgpu::ShaderStages::FRAGMENT,
-            ty: wgpu::BindingType::Texture {
-                sample_type: wgpu::TextureSampleType::Float { filterable: true },
-                view_dimension: wgpu::TextureViewDimension::D2Array,
-                multisampled: false,
-            },
-            count: None,
+        let entry = |binding| {
+            desc::float_texture(
+                binding,
+                wgpu::ShaderStages::FRAGMENT,
+                true,
+                wgpu::TextureViewDimension::D2Array,
+            )
         };
-        let layout = device.create_bind_group_layout(&wgpu::BindGroupLayoutDescriptor {
-            label: Some("modern material arrays"),
-            entries: &[
+        let layout = desc::layout(
+            device,
+            "modern material arrays",
+            &[
                 entry(0),
                 entry(1),
-                wgpu::BindGroupLayoutEntry {
-                    binding: 2,
-                    visibility: wgpu::ShaderStages::FRAGMENT,
-                    ty: wgpu::BindingType::Sampler(wgpu::SamplerBindingType::Filtering),
-                    count: None,
-                },
+                desc::sampler(
+                    2,
+                    wgpu::ShaderStages::FRAGMENT,
+                    wgpu::SamplerBindingType::Filtering,
+                ),
             ],
-        });
+        );
         let view = |t: &wgpu::Texture| {
             t.create_view(&wgpu::TextureViewDescriptor {
                 dimension: Some(wgpu::TextureViewDimension::D2Array),
@@ -206,24 +164,16 @@ impl MaterialArrays {
             })
         };
         let (diffuse_view, aux_view) = (view(&diffuse), view(&aux));
-        let bind = device.create_bind_group(&wgpu::BindGroupDescriptor {
-            label: Some("modern material arrays"),
-            layout: &layout,
-            entries: &[
-                wgpu::BindGroupEntry {
-                    binding: 0,
-                    resource: wgpu::BindingResource::TextureView(&diffuse_view),
-                },
-                wgpu::BindGroupEntry {
-                    binding: 1,
-                    resource: wgpu::BindingResource::TextureView(&aux_view),
-                },
-                wgpu::BindGroupEntry {
-                    binding: 2,
-                    resource: wgpu::BindingResource::Sampler(sampler),
-                },
+        let bind = desc::bind_group(
+            device,
+            "modern material arrays",
+            &layout,
+            &[
+                (0, wgpu::BindingResource::TextureView(&diffuse_view)),
+                (1, wgpu::BindingResource::TextureView(&aux_view)),
+                (2, wgpu::BindingResource::Sampler(sampler)),
             ],
-        });
+        );
         let mut arrays = Self {
             layout,
             bind,
@@ -242,7 +192,7 @@ impl MaterialArrays {
                     (side, side, vec![255; (side * side * 4) as usize])
                 })
                 .collect();
-            write_layer(queue, &arrays.diffuse, 1, 4, &levels);
+            desc::write_mips(queue, &arrays.diffuse, 1, &levels);
             arrays.next = 2;
             arrays.white = 1;
         }
@@ -277,14 +227,14 @@ impl MaterialArrays {
         let layer = self.next;
         self.next += 1;
         if tiles {
-            write_layer(queue, &self.diffuse, layer, 4, &tiled(diffuse, 4));
+            desc::write_mips(queue, &self.diffuse, layer, &tiled(diffuse, 4));
             if let Some(aux) = aux {
-                write_layer(queue, &self.aux, layer, 1, &tiled(aux, 1));
+                desc::write_mips(queue, &self.aux, layer, &tiled(aux, 1));
             }
         } else {
-            write_layer(queue, &self.diffuse, layer, 4, diffuse);
+            desc::write_mips(queue, &self.diffuse, layer, diffuse);
             if let Some(aux) = aux {
-                write_layer(queue, &self.aux, layer, 1, aux);
+                desc::write_mips(queue, &self.aux, layer, aux);
             }
         }
         Some((layer, tiles))

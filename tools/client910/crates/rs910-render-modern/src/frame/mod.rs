@@ -59,6 +59,7 @@
 //! the sky models (their fade changes their alphas) go through a per-frame
 //! arena. Every pipeline is created with the renderer (`frame::pipelines`);
 //! nothing borrows the snapshot or the device past the call.
+use rs910_gpu_device::desc;
 
 pub(crate) use std::collections::HashMap;
 
@@ -487,28 +488,12 @@ impl ModernRenderer {
         let frame_layout = device.create_bind_group_layout(&wgpu::BindGroupLayoutDescriptor {
             label: Some("modern frame"),
             entries: &[
-                wgpu::BindGroupLayoutEntry {
-                    binding: 0,
-                    visibility: wgpu::ShaderStages::VERTEX_FRAGMENT,
-                    ty: wgpu::BindingType::Buffer {
-                        ty: wgpu::BufferBindingType::Uniform,
-                        has_dynamic_offset: false,
-                        min_binding_size: None,
-                    },
-                    count: None,
-                },
+                desc::uniform(0, wgpu::ShaderStages::VERTEX_FRAGMENT),
                 // M8: the ambient occlusion map (`post`).
                 crate::frame::gpu::post::AO_ENTRY,
             ],
         });
-        let uniform = |label: &str, size: u64| {
-            device.create_buffer(&wgpu::BufferDescriptor {
-                label: Some(label),
-                size,
-                usage: wgpu::BufferUsages::UNIFORM | wgpu::BufferUsages::COPY_DST,
-                mapped_at_creation: false,
-            })
-        };
+        let uniform = |label: &str, size: u64| desc::uniform_buffer(device, label, size);
         let frame_size = std::mem::size_of::<FrameUniforms>() as u64;
         let frame_buffer = uniform("modern frame", frame_size);
         let ao_white = crate::frame::gpu::post::white_view(device, queue);
@@ -524,62 +509,52 @@ impl ModernRenderer {
         let forward_module = shaders.get(device, crate::shaders::Module::Forward);
         let receive_layout = shadow_receive_layout(device);
         let point_layout = point_light_layout(device);
-        let forward_layout = device.create_pipeline_layout(&wgpu::PipelineLayoutDescriptor {
-            label: Some("modern forward"),
-            bind_group_layouts: &[
+        let forward_layout = desc::pipeline_layout(
+            device,
+            "modern forward",
+            &[
                 Some(&frame_layout),
                 Some(&textures.layout),
                 Some(&receive_layout),
                 Some(&point_layout),
                 Some(&textures.arrays.layout),
             ],
-            immediate_size: 0,
-        });
+        );
         let layouts = vertex_layouts();
 
         let sky_module = shaders.get(device, crate::shaders::Module::SkyLayers);
-        let sky_layer_layout = device.create_bind_group_layout(&wgpu::BindGroupLayoutDescriptor {
-            label: Some("modern sky layer"),
-            entries: &[wgpu::BindGroupLayoutEntry {
-                binding: 0,
-                visibility: wgpu::ShaderStages::FRAGMENT,
-                ty: wgpu::BindingType::Buffer {
-                    ty: wgpu::BufferBindingType::Uniform,
-                    has_dynamic_offset: true,
-                    min_binding_size: wgpu::BufferSize::new(
-                        std::mem::size_of::<SkyLayerUniforms>() as u64,
-                    ),
-                },
-                count: None,
-            }],
-        });
-        let sky_texture_layout =
-            device.create_bind_group_layout(&wgpu::BindGroupLayoutDescriptor {
-                label: Some("modern sky texture"),
-                entries: &[
-                    wgpu::BindGroupLayoutEntry {
-                        binding: 0,
-                        visibility: wgpu::ShaderStages::FRAGMENT,
-                        ty: wgpu::BindingType::Texture {
-                            sample_type: wgpu::TextureSampleType::Float { filterable: true },
-                            view_dimension: wgpu::TextureViewDimension::D2,
-                            multisampled: false,
-                        },
-                        count: None,
-                    },
-                    wgpu::BindGroupLayoutEntry {
-                        binding: 1,
-                        visibility: wgpu::ShaderStages::FRAGMENT,
-                        ty: wgpu::BindingType::Sampler(wgpu::SamplerBindingType::Filtering),
-                        count: None,
-                    },
-                ],
-            });
-        let sky_layout = device.create_pipeline_layout(&wgpu::PipelineLayoutDescriptor {
-            label: Some("modern sky"),
-            bind_group_layouts: &[Some(&sky_layer_layout), Some(&sky_texture_layout)],
-            immediate_size: 0,
-        });
+        let sky_layer_layout = desc::layout(
+            device,
+            "modern sky layer",
+            &[desc::uniform_sized(
+                0,
+                wgpu::ShaderStages::FRAGMENT,
+                true,
+                std::mem::size_of::<SkyLayerUniforms>() as u64,
+            )],
+        );
+        let sky_texture_layout = desc::layout(
+            device,
+            "modern sky texture",
+            &[
+                desc::float_texture(
+                    0,
+                    wgpu::ShaderStages::FRAGMENT,
+                    true,
+                    wgpu::TextureViewDimension::D2,
+                ),
+                desc::sampler(
+                    1,
+                    wgpu::ShaderStages::FRAGMENT,
+                    wgpu::SamplerBindingType::Filtering,
+                ),
+            ],
+        );
+        let sky_layout = desc::pipeline_layout(
+            device,
+            "modern sky",
+            &[Some(&sky_layer_layout), Some(&sky_texture_layout)],
+        );
         let inputs = crate::frame::pipelines::PipelineInputs {
             forward_module,
             forward_layout,
@@ -639,58 +614,43 @@ impl ModernRenderer {
         });
         let white = device.create_texture_with_data(
             queue.queue(),
-            &wgpu::TextureDescriptor {
-                label: Some("modern sky white"),
-                size: wgpu::Extent3d {
-                    width: 1,
-                    height: 1,
-                    depth_or_array_layers: 1,
-                },
-                mip_level_count: 1,
-                sample_count: 1,
-                dimension: wgpu::TextureDimension::D2,
-                format: wgpu::TextureFormat::Rgba8UnormSrgb,
-                usage: wgpu::TextureUsages::TEXTURE_BINDING | wgpu::TextureUsages::COPY_DST,
-                view_formats: &[],
-            },
+            &desc::texture_2d(
+                "modern sky white",
+                [1, 1],
+                wgpu::TextureFormat::Rgba8UnormSrgb,
+                wgpu::TextureUsages::TEXTURE_BINDING | wgpu::TextureUsages::COPY_DST,
+            ),
             wgpu::util::TextureDataOrder::LayerMajor,
             &[255; 4],
         );
-        let sky_white = device.create_bind_group(&wgpu::BindGroupDescriptor {
-            label: Some("modern sky white"),
-            layout: &sky_texture_layout,
-            entries: &[
-                wgpu::BindGroupEntry {
-                    binding: 0,
-                    resource: wgpu::BindingResource::TextureView(
+        let sky_white = desc::bind_group(
+            device,
+            "modern sky white",
+            &sky_texture_layout,
+            &[
+                (
+                    0,
+                    wgpu::BindingResource::TextureView(
                         &white.create_view(&wgpu::TextureViewDescriptor::default()),
                     ),
-                },
-                wgpu::BindGroupEntry {
-                    binding: 1,
-                    resource: wgpu::BindingResource::Sampler(&sky_sampler),
-                },
+                ),
+                (1, wgpu::BindingResource::Sampler(&sky_sampler)),
             ],
-        });
+        );
 
         let post_buffer = uniform(
             "modern post",
             std::mem::size_of::<crate::post::colour_grading::PostUniforms>() as u64,
         );
-        let lut_texture = device.create_texture(&wgpu::TextureDescriptor {
-            label: Some("modern grading LUTs"),
-            size: wgpu::Extent3d {
-                width: crate::post::colour_grading::LUT_WIDTH,
-                height: 3 * crate::post::colour_grading::LUT_SIZE as u32,
-                depth_or_array_layers: 1,
-            },
-            mip_level_count: 1,
-            sample_count: 1,
-            dimension: wgpu::TextureDimension::D2,
-            format: wgpu::TextureFormat::Rgba8Unorm,
-            usage: wgpu::TextureUsages::TEXTURE_BINDING | wgpu::TextureUsages::COPY_DST,
-            view_formats: &[],
-        });
+        let lut_texture = device.create_texture(&desc::texture_2d(
+            "modern grading LUTs",
+            [
+                crate::post::colour_grading::LUT_WIDTH,
+                3 * crate::post::colour_grading::LUT_SIZE as u32,
+            ],
+            wgpu::TextureFormat::Rgba8Unorm,
+            wgpu::TextureUsages::TEXTURE_BINDING | wgpu::TextureUsages::COPY_DST,
+        ));
         let lut_view = lut_texture.create_view(&wgpu::TextureViewDescriptor::default());
         let lights = PointLightGpu::new(device, queue, point_layout, &shaders);
         let jobs = crate::frame::jobs::Jobs::new(crate::frame::jobs::default_threads());
@@ -1507,12 +1467,12 @@ impl ModernRenderer {
             {
                 let cap = need.next_power_of_two();
                 self.frame_resources.instance_buffer = Some((
-                    device.create_buffer(&wgpu::BufferDescriptor {
-                        label: Some("modern instances"),
-                        size: cap,
-                        usage: wgpu::BufferUsages::VERTEX | wgpu::BufferUsages::COPY_DST,
-                        mapped_at_creation: false,
-                    }),
+                    desc::buffer(
+                        device,
+                        "modern instances",
+                        cap,
+                        wgpu::BufferUsages::VERTEX | wgpu::BufferUsages::COPY_DST,
+                    ),
                     cap,
                 ));
             }
@@ -1536,26 +1496,22 @@ impl ModernRenderer {
                 .is_none_or(|(_, _, cap)| *cap < need)
             {
                 let cap = need.next_power_of_two();
-                let buffer = device.create_buffer(&wgpu::BufferDescriptor {
-                    label: Some("modern sky layers"),
-                    size: cap,
-                    usage: wgpu::BufferUsages::UNIFORM | wgpu::BufferUsages::COPY_DST,
-                    mapped_at_creation: false,
-                });
-                let bind = device.create_bind_group(&wgpu::BindGroupDescriptor {
-                    label: Some("modern sky layers"),
-                    layout: &self.device_resources.sky_layer_layout,
-                    entries: &[wgpu::BindGroupEntry {
-                        binding: 0,
-                        resource: wgpu::BindingResource::Buffer(wgpu::BufferBinding {
+                let buffer = desc::uniform_buffer(device, "modern sky layers", cap);
+                let bind = desc::bind_group(
+                    device,
+                    "modern sky layers",
+                    &self.device_resources.sky_layer_layout,
+                    &[(
+                        0,
+                        wgpu::BindingResource::Buffer(wgpu::BufferBinding {
                             buffer: &buffer,
                             offset: 0,
                             size: wgpu::BufferSize::new(
                                 std::mem::size_of::<SkyLayerUniforms>() as u64
                             ),
                         }),
-                    }],
-                });
+                    )],
+                );
                 self.frame_resources.sky_layer_buffer = Some((buffer, bind, cap));
             }
             let (buffer, _, _) = self

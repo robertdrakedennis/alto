@@ -9,6 +9,7 @@
 //! measurement starts after one warm-up frame so shader compiles are not
 //! timed. The frames are offscreen; nothing is presented.
 use super::*;
+use rs910_gpu_device::desc;
 use rs910_toolkit::performance_metric::{Benchmark, MetricModel};
 
 /// Placements in a frame: rows 15 down to 0 with `row + 1` models each.
@@ -110,20 +111,12 @@ pub fn run(
         underwater: None,
         sky: None,
     };
-    let output = device.create_texture(&wgpu::TextureDescriptor {
-        label: Some("benchmark frame"),
-        size: wgpu::Extent3d {
-            width: size[0],
-            height: size[1],
-            depth_or_array_layers: 1,
-        },
-        mip_level_count: 1,
-        sample_count: 1,
-        dimension: wgpu::TextureDimension::D2,
+    let output = device.create_texture(&desc::texture_2d(
+        "benchmark frame",
+        [size[0], size[1]],
         format,
-        usage: wgpu::TextureUsages::RENDER_ATTACHMENT | wgpu::TextureUsages::COPY_SRC,
-        view_formats: &[],
-    });
+        wgpu::TextureUsages::RENDER_ATTACHMENT | wgpu::TextureUsages::COPY_SRC,
+    ));
     let view = output.create_view(&Default::default());
     let [w, h] = size.map(|v| v as i32);
     let mut frame = || {

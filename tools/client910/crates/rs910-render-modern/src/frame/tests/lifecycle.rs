@@ -2,6 +2,7 @@
 //! render thread (`frame::startup`) and building a scene's meshes, maps and
 //! materials ahead of their draws on the threads (`frame::prebuild`). Both
 //! only move work: the frames must be the ones of doing it in place.
+use rs910_gpu_device::desc;
 
 use std::sync::Arc;
 
@@ -170,20 +171,12 @@ fn deferred_scene_commands_match_eager_submissions() {
     );
     let mut eager = renderer(&device, &queue, SAMPLE_COUNT, ModernSettings::DEFAULT);
     let mut deferred = renderer(&device, &queue, SAMPLE_COUNT, ModernSettings::DEFAULT);
-    let output = device.create_texture(&wgpu::TextureDescriptor {
-        label: Some("deferred scene output"),
-        size: wgpu::Extent3d {
-            width: SIZE[0],
-            height: SIZE[1],
-            depth_or_array_layers: 1,
-        },
-        mip_level_count: 1,
-        sample_count: 1,
-        dimension: wgpu::TextureDimension::D2,
-        format: wgpu::TextureFormat::Rgba8Unorm,
-        usage: wgpu::TextureUsages::RENDER_ATTACHMENT | wgpu::TextureUsages::COPY_SRC,
-        view_formats: &[],
-    });
+    let output = device.create_texture(&desc::texture_2d(
+        "deferred scene output",
+        [SIZE[0], SIZE[1]],
+        wgpu::TextureFormat::Rgba8Unorm,
+        wgpu::TextureUsages::RENDER_ATTACHMENT | wgpu::TextureUsages::COPY_SRC,
+    ));
     let [width, height] = SIZE.map(|v| v as i32);
     let viewport = [0, 0, width, height];
     let target = |clip| crate::frame::PrepareTarget {

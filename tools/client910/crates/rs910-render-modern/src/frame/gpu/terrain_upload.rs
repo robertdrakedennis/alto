@@ -4,6 +4,7 @@ use super::terrain::LevelGpu;
 use crate::scene_snapshot::SceneSnapshot;
 use crate::streaming::UploadBudget;
 use crate::terrain::{SceneKey, TerrainInputs, TerrainScene};
+use rs910_gpu_device::desc;
 use rs910_jobs::assets::{AssetHandle, AssetPriority, AssetQueue};
 
 const MILLIS_PER_SECOND: f64 = 1_000.0;
@@ -137,18 +138,14 @@ impl Upload {
             );
         }
         let texture = device.create_texture(&wgpu::TextureDescriptor {
-            label: Some("modern streamed terrain layers"),
-            size: wgpu::Extent3d {
-                width: size,
-                height: size,
-                depth_or_array_layers: cpu.layer_texels.len() as u32,
-            },
             mip_level_count: mips,
             sample_count: SINGLE_SAMPLE,
-            dimension: wgpu::TextureDimension::D2,
-            format: wgpu::TextureFormat::Rgba8UnormSrgb,
-            usage: wgpu::TextureUsages::TEXTURE_BINDING | wgpu::TextureUsages::COPY_DST,
-            view_formats: &[],
+            ..desc::texture_layers(
+                "modern streamed terrain layers",
+                [size, size, cpu.layer_texels.len() as u32],
+                wgpu::TextureFormat::Rgba8UnormSrgb,
+                wgpu::TextureUsages::TEXTURE_BINDING | wgpu::TextureUsages::COPY_DST,
+            )
         });
         let levels = cpu.levels.iter().map(|_| None).collect();
         Self {
@@ -216,12 +213,12 @@ impl Upload {
                     return false;
                 };
                 let buffer = |label, size, usage| {
-                    device.create_buffer(&wgpu::BufferDescriptor {
-                        label: Some(label),
-                        size: size as u64,
-                        usage: usage | wgpu::BufferUsages::COPY_DST,
-                        mapped_at_creation: false,
-                    })
+                    desc::buffer(
+                        device,
+                        label,
+                        size as u64,
+                        usage | wgpu::BufferUsages::COPY_DST,
+                    )
                 };
                 self.levels[self.level] = Some(LevelGpu {
                     vertices: buffer(

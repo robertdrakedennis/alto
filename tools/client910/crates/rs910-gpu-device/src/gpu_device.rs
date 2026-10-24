@@ -17,6 +17,7 @@
 //! half, with the old expressions in the old order; `client_watch_gpu` and
 //! `ui_preferences_metric_gpu` are the device answers the UI asks for
 //! (the input telemetry's texture formats, the performance metric).
+use crate::desc;
 
 use std::collections::HashSet;
 
@@ -419,12 +420,12 @@ impl Device {
         let (w, h) = (texture.width(), texture.height());
         let unpadded = w * 4;
         let padded = unpadded.div_ceil(256) * 256;
-        let buffer = self.device.create_buffer(&wgpu::BufferDescriptor {
-            label: Some("screenshot"),
-            size: u64::from(padded) * u64::from(h),
-            usage: wgpu::BufferUsages::COPY_DST | wgpu::BufferUsages::MAP_READ,
-            mapped_at_creation: false,
-        });
+        let buffer = desc::buffer(
+            &self.device,
+            "screenshot",
+            u64::from(padded) * u64::from(h),
+            wgpu::BufferUsages::COPY_DST | wgpu::BufferUsages::MAP_READ,
+        );
         encoder.copy_texture_to_buffer(
             wgpu::TexelCopyTextureInfo {
                 texture,

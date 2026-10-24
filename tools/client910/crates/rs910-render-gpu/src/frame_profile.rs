@@ -1,5 +1,6 @@
 //! GPU profiling: the per-pass timer of the engine profiler ([`PassTimer`])
 //! and whether the `CLIENT910_PROFILE` diagnostics are on ([`enabled`]).
+use rs910_gpu_device::desc;
 
 /// `CLIENT910_PROFILE`: the diagnostic pipeline variants and the device's
 /// profiling options.
@@ -58,12 +59,12 @@ impl PassTimer {
         if !device.features().contains(Self::FEATURES) {
             return None;
         }
-        let resolve = device.create_buffer(&wgpu::BufferDescriptor {
-            label: Some("profile pass resolve"),
-            size: Self::STRIDE * Self::SLOTS as u64,
-            usage: wgpu::BufferUsages::QUERY_RESOLVE | wgpu::BufferUsages::COPY_SRC,
-            mapped_at_creation: false,
-        });
+        let resolve = desc::buffer(
+            device,
+            "profile pass resolve",
+            Self::STRIDE * Self::SLOTS as u64,
+            wgpu::BufferUsages::QUERY_RESOLVE | wgpu::BufferUsages::COPY_SRC,
+        );
         let slots = (0..Self::SLOTS)
             .map(|_| TimerSlot {
                 queries: device.create_query_set(&wgpu::QuerySetDescriptor {
@@ -71,12 +72,12 @@ impl PassTimer {
                     ty: wgpu::QueryType::Timestamp,
                     count: Self::MARKS as u32,
                 }),
-                readback: device.create_buffer(&wgpu::BufferDescriptor {
-                    label: Some("profile pass readback"),
-                    size: (Self::MARKS * 8) as u64,
-                    usage: wgpu::BufferUsages::COPY_DST | wgpu::BufferUsages::MAP_READ,
-                    mapped_at_creation: false,
-                }),
+                readback: desc::buffer(
+                    device,
+                    "profile pass readback",
+                    (Self::MARKS * 8) as u64,
+                    wgpu::BufferUsages::COPY_DST | wgpu::BufferUsages::MAP_READ,
+                ),
                 state: Default::default(),
                 frame: 0,
                 names: [""; Self::MARKS],
@@ -84,20 +85,12 @@ impl PassTimer {
             })
             .collect();
         let marker = device
-            .create_texture(&wgpu::TextureDescriptor {
-                label: Some("profile mark target"),
-                size: wgpu::Extent3d {
-                    width: 1,
-                    height: 1,
-                    depth_or_array_layers: 1,
-                },
-                mip_level_count: 1,
-                sample_count: 1,
-                dimension: wgpu::TextureDimension::D2,
-                format: wgpu::TextureFormat::R8Unorm,
-                usage: wgpu::TextureUsages::RENDER_ATTACHMENT,
-                view_formats: &[],
-            })
+            .create_texture(&desc::texture_2d(
+                "profile mark target",
+                [1, 1],
+                wgpu::TextureFormat::R8Unorm,
+                wgpu::TextureUsages::RENDER_ATTACHMENT,
+            ))
             .create_view(&Default::default());
         Some(Self {
             resolve,

@@ -2,6 +2,7 @@
 //! alternates their GPU storage; the render thread owns encoding and presentation.
 use super::frame::{copy_retained_canvas, note_frame_acquired, note_skipped_frame, retain_frame};
 use super::*;
+use rs910_gpu_device::desc;
 
 pub(super) struct LayerFrame {
     view: wgpu::TextureView,
@@ -154,22 +155,12 @@ impl Composition {
     ) {
         if let Some(ui) = &self.ui {
             for layer in &ui.layers {
-                let mut pass = encoder.begin_render_pass(&wgpu::RenderPassDescriptor {
-                    label: Some("framebuffer sprite"),
-                    color_attachments: &[Some(wgpu::RenderPassColorAttachment {
-                        view: &layer.view,
-                        resolve_target: None,
-                        depth_slice: None,
-                        ops: wgpu::Operations {
-                            load: wgpu::LoadOp::Clear(wgpu::Color::TRANSPARENT),
-                            store: wgpu::StoreOp::Store,
-                        },
-                    })],
-                    depth_stencil_attachment: None,
-                    occlusion_query_set: None,
-                    multiview_mask: None,
-                    timestamp_writes: None,
-                });
+                let mut pass = desc::colour_pass(
+                    encoder,
+                    "framebuffer sprite",
+                    &layer.view,
+                    wgpu::LoadOp::Clear(wgpu::Color::TRANSPARENT),
+                );
                 layer.paint.draw(&mut pass);
             }
             ui.models.encode(
@@ -211,22 +202,12 @@ impl Composition {
     }
     fn present_canvas(&self, encoder: &mut wgpu::CommandEncoder, frame: &Frame) {
         if let Some(canvas) = &self.canvas {
-            let mut pass = encoder.begin_render_pass(&wgpu::RenderPassDescriptor {
-                label: Some("present bounded canvas"),
-                color_attachments: &[Some(wgpu::RenderPassColorAttachment {
-                    view: &frame.surface_view,
-                    resolve_target: None,
-                    depth_slice: None,
-                    ops: wgpu::Operations {
-                        load: wgpu::LoadOp::Clear(wgpu::Color::BLACK),
-                        store: wgpu::StoreOp::Store,
-                    },
-                })],
-                depth_stencil_attachment: None,
-                occlusion_query_set: None,
-                multiview_mask: None,
-                timestamp_writes: None,
-            });
+            let mut pass = desc::colour_pass(
+                encoder,
+                "present bounded canvas",
+                &frame.surface_view,
+                wgpu::LoadOp::Clear(wgpu::Color::BLACK),
+            );
             canvas.presenter.draw(&mut pass);
         }
     }

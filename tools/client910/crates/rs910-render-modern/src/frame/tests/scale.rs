@@ -1,6 +1,7 @@
 //! The render scale (`frame::scale`): a scaled scene is upscaled into the
 //! frame's viewport where the full-resolution frame puts it.
 use super::*;
+use rs910_gpu_device::desc;
 
 /// One frame of `snapshot` with `models` into a `size` target first cleared
 /// to magenta, the scene in `rect` and its scissor `clip`: the output
@@ -14,20 +15,12 @@ pub(super) fn framed(
     size: [u32; 2],
     (rect, clip): ([i32; 4], [i32; 4]),
 ) -> Vec<u8> {
-    let output = device.create_texture(&wgpu::TextureDescriptor {
-        label: Some("scaled frame"),
-        size: wgpu::Extent3d {
-            width: size[0],
-            height: size[1],
-            depth_or_array_layers: 1,
-        },
-        mip_level_count: 1,
-        sample_count: 1,
-        dimension: wgpu::TextureDimension::D2,
-        format: wgpu::TextureFormat::Rgba8Unorm,
-        usage: wgpu::TextureUsages::RENDER_ATTACHMENT | wgpu::TextureUsages::COPY_SRC,
-        view_formats: &[],
-    });
+    let output = device.create_texture(&desc::texture_2d(
+        "scaled frame",
+        [size[0], size[1]],
+        wgpu::TextureFormat::Rgba8Unorm,
+        wgpu::TextureUsages::RENDER_ATTACHMENT | wgpu::TextureUsages::COPY_SRC,
+    ));
     let view = output.create_view(&Default::default());
     let mut encoder = device.create_command_encoder(&Default::default());
     encoder.begin_render_pass(&wgpu::RenderPassDescriptor {

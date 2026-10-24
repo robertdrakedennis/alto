@@ -8,6 +8,7 @@ use crate::frame::compile::Job;
 use crate::frame::encoding::EncodeInputs;
 use crate::frame::*;
 use crate::post::{Effects, PassParams, PostFrame};
+use rs910_gpu_device::desc;
 
 /// The geometry pass outputs: the view-space normal and the depth the
 /// occlusion passes rebuild view positions from.
@@ -57,20 +58,12 @@ pub(crate) fn white_view(
     device
         .create_texture_with_data(
             queue.queue(),
-            &wgpu::TextureDescriptor {
-                label: Some("modern ao white"),
-                size: wgpu::Extent3d {
-                    width: 1,
-                    height: 1,
-                    depth_or_array_layers: 1,
-                },
-                mip_level_count: 1,
-                sample_count: 1,
-                dimension: wgpu::TextureDimension::D2,
-                format: AO_FORMAT,
-                usage: wgpu::TextureUsages::TEXTURE_BINDING,
-                view_formats: &[],
-            },
+            &desc::texture_2d(
+                "modern ao white",
+                [1, 1],
+                AO_FORMAT,
+                wgpu::TextureUsages::TEXTURE_BINDING,
+            ),
             wgpu::util::TextureDataOrder::LayerMajor,
             &one,
         )
@@ -85,33 +78,24 @@ pub(crate) fn frame_bind(
     buffer: &wgpu::Buffer,
     ao: &wgpu::TextureView,
 ) -> wgpu::BindGroup {
-    device.create_bind_group(&wgpu::BindGroupDescriptor {
-        label: Some("modern frame"),
+    desc::bind_group(
+        device,
+        "modern frame",
         layout,
-        entries: &[
-            wgpu::BindGroupEntry {
-                binding: 0,
-                resource: buffer.as_entire_binding(),
-            },
-            wgpu::BindGroupEntry {
-                binding: 1,
-                resource: wgpu::BindingResource::TextureView(ao),
-            },
+        &[
+            (0, buffer.as_entire_binding()),
+            (1, wgpu::BindingResource::TextureView(ao)),
         ],
-    })
+    )
 }
 
 /// The forward frame group's ambient occlusion entry (binding 1).
-pub(crate) const AO_ENTRY: wgpu::BindGroupLayoutEntry = wgpu::BindGroupLayoutEntry {
-    binding: 1,
-    visibility: wgpu::ShaderStages::FRAGMENT,
-    ty: wgpu::BindingType::Texture {
-        sample_type: wgpu::TextureSampleType::Float { filterable: false },
-        view_dimension: wgpu::TextureViewDimension::D2,
-        multisampled: false,
-    },
-    count: None,
-};
+pub(crate) const AO_ENTRY: wgpu::BindGroupLayoutEntry = desc::float_texture(
+    1,
+    wgpu::ShaderStages::FRAGMENT,
+    false,
+    wgpu::TextureViewDimension::D2,
+);
 
 pub(crate) fn texture(
     device: &wgpu::Device,
@@ -120,20 +104,12 @@ pub(crate) fn texture(
     format: wgpu::TextureFormat,
     usage: wgpu::TextureUsages,
 ) -> wgpu::Texture {
-    device.create_texture(&wgpu::TextureDescriptor {
-        label: Some(label),
-        size: wgpu::Extent3d {
-            width: size[0].max(1),
-            height: size[1].max(1),
-            depth_or_array_layers: 1,
-        },
-        mip_level_count: 1,
-        sample_count: 1,
-        dimension: wgpu::TextureDimension::D2,
+    device.create_texture(&desc::texture_2d(
+        label,
+        [size[0].max(1), size[1].max(1)],
         format,
         usage,
-        view_formats: &[],
-    })
+    ))
 }
 
 /// A render target that later passes read (and tests copy back).
@@ -298,48 +274,33 @@ impl PostGpu {
                     targets: &[Some(NORMAL_FORMAT.into())],
                     compilation_options: Default::default(),
                 }),
-                primitive: wgpu::PrimitiveState {
-                    topology: wgpu::PrimitiveTopology::TriangleList,
-                    front_face: wgpu::FrontFace::Ccw,
-                    cull_mode: Some(wgpu::Face::Back),
-                    ..Default::default()
-                },
-                depth_stencil: Some(wgpu::DepthStencilState {
-                    format: GEOMETRY_DEPTH,
-                    depth_write_enabled: Some(true),
-                    depth_compare: Some(wgpu::CompareFunction::LessEqual),
-                    stencil: Default::default(),
-                    bias: Default::default(),
-                }),
+                primitive: desc::triangles(wgpu::FrontFace::Ccw, Some(wgpu::Face::Back)),
+                depth_stencil: Some(desc::depth_state(
+                    GEOMETRY_DEPTH,
+                    true,
+                    wgpu::CompareFunction::LessEqual,
+                )),
                 multisample: wgpu::MultisampleState::default(),
                 multiview_mask: None,
                 cache: None,
             })
         };
 
-        let texture_entry = |binding| wgpu::BindGroupLayoutEntry {
-            binding,
-            visibility: wgpu::ShaderStages::FRAGMENT,
-            ty: wgpu::BindingType::Texture {
-                sample_type: wgpu::TextureSampleType::Float { filterable: false },
-                view_dimension: wgpu::TextureViewDimension::D2,
-                multisampled: false,
-            },
-            count: None,
+        let texture_entry = |binding| {
+            desc::float_texture(
+                binding,
+                wgpu::ShaderStages::FRAGMENT,
+                false,
+                wgpu::TextureViewDimension::D2,
+            )
         };
-        let uniform_entry = |binding, dynamic, size: u64| wgpu::BindGroupLayoutEntry {
-            binding,
-            visibility: wgpu::ShaderStages::FRAGMENT,
-            ty: wgpu::BindingType::Buffer {
-                ty: wgpu::BufferBindingType::Uniform,
-                has_dynamic_offset: dynamic,
-                min_binding_size: wgpu::BufferSize::new(size),
-            },
-            count: None,
+        let uniform_entry = |binding, dynamic, size: u64| {
+            desc::uniform_sized(binding, wgpu::ShaderStages::FRAGMENT, dynamic, size)
         };
-        let layout = device.create_bind_group_layout(&wgpu::BindGroupLayoutDescriptor {
-            label: Some("modern post"),
-            entries: &[
+        let layout = desc::layout(
+            device,
+            "modern post",
+            &[
                 uniform_entry(0, false, std::mem::size_of::<PostFrame>() as u64),
                 uniform_entry(1, true, std::mem::size_of::<PassParams>() as u64),
                 texture_entry(2),
@@ -352,43 +313,20 @@ impl PostGpu {
                     std::mem::size_of::<crate::post::colour_grading::PostUniforms>() as u64,
                 ),
             ],
-        });
-        let pipeline_layout = device.create_pipeline_layout(&wgpu::PipelineLayoutDescriptor {
-            label: Some("modern post"),
-            bind_group_layouts: &[Some(&layout)],
-            immediate_size: 0,
-        });
+        );
+        let pipeline_layout = desc::pipeline_layout(device, "modern post", &[Some(&layout)]);
         let pipeline = |entry: &str, format: wgpu::TextureFormat| {
-            device.create_render_pipeline(&wgpu::RenderPipelineDescriptor {
-                label: Some(entry),
-                layout: Some(&pipeline_layout),
-                vertex: wgpu::VertexState {
-                    module: &module,
-                    entry_point: Some("vs_full"),
-                    buffers: &[],
-                    compilation_options: Default::default(),
-                },
-                fragment: Some(wgpu::FragmentState {
-                    module: &module,
-                    entry_point: Some(entry),
-                    targets: &[Some(format.into())],
-                    compilation_options: Default::default(),
-                }),
-                primitive: wgpu::PrimitiveState::default(),
-                depth_stencil: None,
-                multisample: wgpu::MultisampleState::default(),
-                multiview_mask: None,
-                cache: None,
-            })
+            desc::fullscreen_pipeline(
+                device,
+                entry,
+                &pipeline_layout,
+                &module,
+                entry,
+                format.into(),
+                1,
+            )
         };
-        let buffer = |label: &str, size: u64| {
-            device.create_buffer(&wgpu::BufferDescriptor {
-                label: Some(label),
-                size,
-                usage: wgpu::BufferUsages::UNIFORM | wgpu::BufferUsages::COPY_DST,
-                mapped_at_creation: false,
-            })
-        };
+        let buffer = |label: &str, size: u64| desc::uniform_buffer(device, label, size);
         let frame = buffer("modern post frame", std::mem::size_of::<PostFrame>() as u64);
         let ao_frame = buffer(
             "modern occlusion frame",
@@ -421,31 +359,20 @@ impl PostGpu {
             )
         });
         let blended = |blend: Option<wgpu::BlendState>| {
-            device.create_render_pipeline(&wgpu::RenderPipelineDescriptor {
-                label: Some("fs_hbao"),
-                layout: Some(&pipeline_layout),
-                vertex: wgpu::VertexState {
-                    module: &module,
-                    entry_point: Some("vs_full"),
-                    buffers: &[],
-                    compilation_options: Default::default(),
-                },
-                fragment: Some(wgpu::FragmentState {
-                    module: &module,
-                    entry_point: Some("fs_hbao"),
-                    targets: &[Some(wgpu::ColorTargetState {
-                        format: AO_FORMAT,
-                        blend,
-                        write_mask: wgpu::ColorWrites::ALL,
-                    })],
-                    compilation_options: Default::default(),
-                }),
-                primitive: wgpu::PrimitiveState::default(),
-                depth_stencil: None,
-                multisample: wgpu::MultisampleState::default(),
-                multiview_mask: None,
-                cache: None,
-            })
+            let target = wgpu::ColorTargetState {
+                format: AO_FORMAT,
+                blend,
+                write_mask: wgpu::ColorWrites::ALL,
+            };
+            desc::fullscreen_pipeline(
+                device,
+                "fs_hbao",
+                &pipeline_layout,
+                &module,
+                "fs_hbao",
+                target,
+                1,
+            )
         };
         // Every pipeline of the chain, created at once (`frame::compile`).
         let pipeline = &pipeline;
@@ -645,30 +572,18 @@ pub(crate) fn post_bind(
         offset: 0,
         size: wgpu::BufferSize::new(std::mem::size_of::<PassParams>() as u64),
     };
-    let texture = |binding, view| wgpu::BindGroupEntry {
-        binding,
-        resource: wgpu::BindingResource::TextureView(view),
-    };
+    let texture = |binding, view| desc::bind(binding, wgpu::BindingResource::TextureView(view));
     device.create_bind_group(&wgpu::BindGroupDescriptor {
         label: Some("modern post"),
         layout,
         entries: &[
-            wgpu::BindGroupEntry {
-                binding: 0,
-                resource: frame.as_entire_binding(),
-            },
-            wgpu::BindGroupEntry {
-                binding: 1,
-                resource: wgpu::BindingResource::Buffer(pass),
-            },
+            desc::bind(0, frame.as_entire_binding()),
+            desc::bind(1, wgpu::BindingResource::Buffer(pass)),
             texture(2, a),
             texture(3, b),
             texture(4, c),
             texture(5, d),
-            wgpu::BindGroupEntry {
-                binding: 6,
-                resource: grading.unwrap_or(frame).as_entire_binding(),
-            },
+            desc::bind(6, grading.unwrap_or(frame).as_entire_binding()),
         ],
     })
 }
@@ -891,29 +806,19 @@ impl<'a> EncodeInputs<'a> {
             area,
             clear,
         } = draw;
-        let mut pass = encoder.begin_render_pass(&wgpu::RenderPassDescriptor {
-            label: Some(self.begin_pass(which)),
-            color_attachments: &[Some(wgpu::RenderPassColorAttachment {
-                view,
-                resolve_target: None,
-                depth_slice: None,
-                ops: wgpu::Operations {
-                    load: clear.map_or(wgpu::LoadOp::Load, |c| {
-                        wgpu::LoadOp::Clear(wgpu::Color {
-                            r: c,
-                            g: c,
-                            b: c,
-                            a: 1.0,
-                        })
-                    }),
-                    store: wgpu::StoreOp::Store,
-                },
-            })],
-            depth_stencil_attachment: None,
-            occlusion_query_set: None,
-            multiview_mask: None,
-            timestamp_writes: None,
-        });
+        let mut pass = desc::colour_pass(
+            encoder,
+            self.begin_pass(which),
+            view,
+            clear.map_or(wgpu::LoadOp::Load, |c| {
+                wgpu::LoadOp::Clear(wgpu::Color {
+                    r: c,
+                    g: c,
+                    b: c,
+                    a: 1.0,
+                })
+            }),
+        );
         if let Some(([x, y, w, h], [l, t, r, b])) = area {
             pass.set_viewport(x, y, w, h, 0.0, 1.0);
             pass.set_scissor_rect(l, t, r - l, b - t);

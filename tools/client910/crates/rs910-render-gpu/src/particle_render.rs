@@ -3,6 +3,7 @@
 //! group-0 camera/fog uniforms, depth test `LEQUAL` with depth writes off,
 //! `SRC_ALPHA, ONE_MINUS_SRC_ALPHA` with the alpha test `> 0`, or the
 //! replace path with the material threshold for alpha-tested materials.
+use rs910_gpu_device::desc;
 
 use std::collections::HashMap;
 
@@ -137,42 +138,29 @@ impl ParticlePipelines {
             label: Some("particles (Particle.glsl)"),
             source: wgpu::ShaderSource::Wgsl(std::borrow::Cow::Borrowed(PARTICLE_SHADER)),
         });
-        let layout = device.create_bind_group_layout(&wgpu::BindGroupLayoutDescriptor {
-            label: Some("particle material"),
-            entries: &[
-                wgpu::BindGroupLayoutEntry {
-                    binding: 0,
-                    visibility: wgpu::ShaderStages::FRAGMENT,
-                    ty: wgpu::BindingType::Texture {
-                        sample_type: wgpu::TextureSampleType::Float { filterable: true },
-                        view_dimension: wgpu::TextureViewDimension::D2,
-                        multisampled: false,
-                    },
-                    count: None,
-                },
-                wgpu::BindGroupLayoutEntry {
-                    binding: 1,
-                    visibility: wgpu::ShaderStages::FRAGMENT,
-                    ty: wgpu::BindingType::Sampler(wgpu::SamplerBindingType::Filtering),
-                    count: None,
-                },
-                wgpu::BindGroupLayoutEntry {
-                    binding: 2,
-                    visibility: wgpu::ShaderStages::FRAGMENT,
-                    ty: wgpu::BindingType::Buffer {
-                        ty: wgpu::BufferBindingType::Uniform,
-                        has_dynamic_offset: false,
-                        min_binding_size: None,
-                    },
-                    count: None,
-                },
+        let layout = desc::layout(
+            device,
+            "particle material",
+            &[
+                desc::float_texture(
+                    0,
+                    wgpu::ShaderStages::FRAGMENT,
+                    true,
+                    wgpu::TextureViewDimension::D2,
+                ),
+                desc::sampler(
+                    1,
+                    wgpu::ShaderStages::FRAGMENT,
+                    wgpu::SamplerBindingType::Filtering,
+                ),
+                desc::uniform(2, wgpu::ShaderStages::FRAGMENT),
             ],
-        });
-        let pipeline_layout = device.create_pipeline_layout(&wgpu::PipelineLayoutDescriptor {
-            label: Some("particle layout"),
-            bind_group_layouts: &[Some(floor.uniform_layout()), Some(&layout)],
-            immediate_size: 0,
-        });
+        );
+        let pipeline_layout = desc::pipeline_layout(
+            device,
+            "particle layout",
+            &[Some(floor.uniform_layout()), Some(&layout)],
+        );
         let pipeline = |label: &str, blend: Option<wgpu::BlendState>| {
             device.create_render_pipeline(&wgpu::RenderPipelineDescriptor {
                 label: Some(label),
@@ -203,13 +191,11 @@ impl ParticlePipelines {
                     cull_mode: None,
                     ..Default::default()
                 },
-                depth_stencil: Some(wgpu::DepthStencilState {
-                    format: depth_format,
-                    depth_write_enabled: Some(false),
-                    depth_compare: Some(wgpu::CompareFunction::LessEqual),
-                    stencil: Default::default(),
-                    bias: Default::default(),
-                }),
+                depth_stencil: Some(desc::depth_state(
+                    depth_format,
+                    false,
+                    wgpu::CompareFunction::LessEqual,
+                )),
                 multisample: wgpu::MultisampleState {
                     count: samples,
                     ..Default::default()
@@ -295,12 +281,12 @@ impl ParticlePass {
         };
         if self.vertex_capacity < frame.vertices.len() {
             self.vertex_capacity = frame.vertices.len().next_power_of_two();
-            self.vertex_buffer = Some(device.create_buffer(&wgpu::BufferDescriptor {
-                label: Some("particle vertices"),
-                size: (self.vertex_capacity * std::mem::size_of::<ParticleVertex>()) as u64,
-                usage: wgpu::BufferUsages::VERTEX | wgpu::BufferUsages::COPY_DST,
-                mapped_at_creation: false,
-            }));
+            self.vertex_buffer = Some(desc::buffer(
+                device,
+                "particle vertices",
+                (self.vertex_capacity * std::mem::size_of::<ParticleVertex>()) as u64,
+                wgpu::BufferUsages::VERTEX | wgpu::BufferUsages::COPY_DST,
+            ));
         }
         queue.write_buffer(
             self.vertex_buffer.as_ref().unwrap(),
@@ -334,24 +320,16 @@ impl ParticlePass {
                     contents: bytemuck::cast_slice(&alpha),
                     usage: wgpu::BufferUsages::UNIFORM,
                 });
-                let bind_group = device.create_bind_group(&wgpu::BindGroupDescriptor {
-                    label: Some("particle material"),
-                    layout: &self.pipelines.layout,
-                    entries: &[
-                        wgpu::BindGroupEntry {
-                            binding: 0,
-                            resource: wgpu::BindingResource::TextureView(texture.0),
-                        },
-                        wgpu::BindGroupEntry {
-                            binding: 1,
-                            resource: wgpu::BindingResource::Sampler(texture.1),
-                        },
-                        wgpu::BindGroupEntry {
-                            binding: 2,
-                            resource: buffer.as_entire_binding(),
-                        },
+                let bind_group = desc::bind_group(
+                    device,
+                    "particle material",
+                    &self.pipelines.layout,
+                    &[
+                        (0, wgpu::BindingResource::TextureView(texture.0)),
+                        (1, wgpu::BindingResource::Sampler(texture.1)),
+                        (2, buffer.as_entire_binding()),
                     ],
-                });
+                );
                 self.materials.insert(
                     batch.texture,
                     MaterialBinding {

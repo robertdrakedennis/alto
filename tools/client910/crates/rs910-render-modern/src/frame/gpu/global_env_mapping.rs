@@ -3,6 +3,7 @@
 //! bindings 10-12 (the cube faded from, the cube faded to, their block),
 //! the camera square's cube material loaded on first use and cross-faded
 //! over 5000 ms when it changes.
+use rs910_gpu_device::desc;
 use std::collections::HashMap;
 
 use crate::frame::*;
@@ -18,29 +19,18 @@ pub(crate) struct GlobalEnvMappingUniforms {
 
 /// The group 3 entries (bindings 10-12).
 pub(crate) fn layout_entries() -> [wgpu::BindGroupLayoutEntry; 3] {
-    let cube = |binding| wgpu::BindGroupLayoutEntry {
-        binding,
-        visibility: wgpu::ShaderStages::FRAGMENT,
-        ty: wgpu::BindingType::Texture {
-            sample_type: wgpu::TextureSampleType::Float { filterable: true },
-            view_dimension: wgpu::TextureViewDimension::Cube,
-            multisampled: false,
-        },
-        count: None,
+    let cube = |binding| {
+        desc::float_texture(
+            binding,
+            wgpu::ShaderStages::FRAGMENT,
+            true,
+            wgpu::TextureViewDimension::Cube,
+        )
     };
     [
         cube(10),
         cube(11),
-        wgpu::BindGroupLayoutEntry {
-            binding: 12,
-            visibility: wgpu::ShaderStages::FRAGMENT,
-            ty: wgpu::BindingType::Buffer {
-                ty: wgpu::BufferBindingType::Uniform,
-                has_dynamic_offset: false,
-                min_binding_size: None,
-            },
-            count: None,
-        },
+        desc::uniform(12, wgpu::ShaderStages::FRAGMENT),
     ]
 }
 
@@ -51,44 +41,14 @@ pub(crate) fn cube(
     size: u32,
     faces: &[&[u8]],
 ) -> wgpu::TextureView {
-    let texture = device.create_texture(&wgpu::TextureDescriptor {
-        label: Some("modern global environment cube"),
-        size: wgpu::Extent3d {
-            width: size,
-            height: size,
-            depth_or_array_layers: 6,
-        },
-        mip_level_count: 1,
-        sample_count: 1,
-        dimension: wgpu::TextureDimension::D2,
-        format: wgpu::TextureFormat::Rgba8Unorm,
-        usage: wgpu::TextureUsages::TEXTURE_BINDING | wgpu::TextureUsages::COPY_DST,
-        view_formats: &[],
-    });
+    let texture = device.create_texture(&desc::texture_layers(
+        "modern global environment cube",
+        [size, size, 6],
+        wgpu::TextureFormat::Rgba8Unorm,
+        wgpu::TextureUsages::TEXTURE_BINDING | wgpu::TextureUsages::COPY_DST,
+    ));
     for (face, px) in faces.iter().enumerate() {
-        queue.write_texture(
-            wgpu::TexelCopyTextureInfo {
-                texture: &texture,
-                mip_level: 0,
-                origin: wgpu::Origin3d {
-                    x: 0,
-                    y: 0,
-                    z: face as u32,
-                },
-                aspect: wgpu::TextureAspect::All,
-            },
-            px,
-            wgpu::TexelCopyBufferLayout {
-                offset: 0,
-                bytes_per_row: Some(size * 4),
-                rows_per_image: Some(size),
-            },
-            wgpu::Extent3d {
-                width: size,
-                height: size,
-                depth_or_array_layers: 1,
-            },
-        );
+        desc::write_level(queue, &texture, 0, face as u32, [size, size], px);
     }
     texture.create_view(&wgpu::TextureViewDescriptor {
         dimension: Some(wgpu::TextureViewDimension::Cube),
@@ -118,12 +78,11 @@ impl GlobalEnvMappingGpu {
     ) -> Self {
         let black: &[u8] = &[0, 0, 0, 255];
         let empty = cube(device, queue, 1, &[black; 6]);
-        let uniforms = device.create_buffer(&wgpu::BufferDescriptor {
-            label: Some("modern global environment"),
-            size: std::mem::size_of::<GlobalEnvMappingUniforms>() as u64,
-            usage: wgpu::BufferUsages::UNIFORM | wgpu::BufferUsages::COPY_DST,
-            mapped_at_creation: false,
-        });
+        let uniforms = desc::uniform_buffer(
+            device,
+            "modern global environment",
+            std::mem::size_of::<GlobalEnvMappingUniforms>() as u64,
+        );
         Self {
             uniforms,
             empty,
@@ -144,18 +103,9 @@ impl GlobalEnvMappingGpu {
     pub(crate) fn entries(&self) -> [wgpu::BindGroupEntry<'_>; 3] {
         let (a, b) = self.bound;
         [
-            wgpu::BindGroupEntry {
-                binding: 10,
-                resource: wgpu::BindingResource::TextureView(self.view(a)),
-            },
-            wgpu::BindGroupEntry {
-                binding: 11,
-                resource: wgpu::BindingResource::TextureView(self.view(b)),
-            },
-            wgpu::BindGroupEntry {
-                binding: 12,
-                resource: self.uniforms.as_entire_binding(),
-            },
+            desc::bind(10, wgpu::BindingResource::TextureView(self.view(a))),
+            desc::bind(11, wgpu::BindingResource::TextureView(self.view(b))),
+            desc::bind(12, self.uniforms.as_entire_binding()),
         ]
     }
 
