@@ -1,0 +1,52 @@
+tools/client910/crates/rs910-config/src/cutscene_file.rs
+  h_d26e211304196f 7,27,51,312,562,604,620-621,627,675
+tools/client910/crates/rs910-config/src/lib.rs
+  h_d26e211304196f 12
+tools/client910/crates/rs910-config/src/ui_db.rs
+  h_d26e211304196f 9,13,44,66,90,180,226
+tools/client910/crates/rs910-config/src/ui_defaults.rs
+  h_d26e211304196f 4,7,31,51,91,93-95,134
+tools/client910/crates/rs910-core/src/reader.rs
+  h_d26e211304196f 224-233
+tools/client910/crates/rs910-game/src/cutscene.rs
+  h_d26e211304196f 20,271
+tools/client910/crates/rs910-game/src/lib.rs
+  h_d26e211304196f 46
+tools/client910/crates/rs910-scene/src/lib.rs
+  h_d26e211304196f 112
+tools/client910/crates/rs910-scene/src/minimap.rs
+  h_d26e211304196f 32,45,238,260,300,303-304,325,527,637,961
+tools/client910/crates/rs910-ui/src/lib.rs
+  h_d26e211304196f 98-99
+tools/client910/crates/rs910-ui/src/ui_cam2/focus.rs
+  h_d26e211304196f 308
+tools/client910/crates/rs910-ui/src/ui_cam2/spline.rs
+  h_d26e211304196f 7,107,213
+tools/client910/crates/rs910-ui/src/ui_cam2/tests.rs
+  h_d26e211304196f 12
+tools/client910/crates/rs910-ui/src/ui_cam2_packet.rs
+  h_d26e211304196f 5,7,10,13,17,27,194
+tools/client910/crates/rs910-ui/src/ui_cursor.rs
+  h_d26e211304196f 1,9,19
+tools/client910/crates/rs910-ui/src/ui_inv.rs
+  h_d26e211304196f 8,157-158
+tools/client910/crates/rs910-ui/src/ui_stats.rs
+  h_d26e211304196f 6,9,124
+tools/client910/crates/rs910-ui/src/world_map.rs
+  h_d26e211304196f 29,31,106,454,457,460,475
+tools/client910/crates/rs910-ui/src/world_map/area.rs
+  h_d26e211304196f 2,4,94
+tools/client910/crates/rs910-ui/src/world_map/area_tiles.rs
+  h_d26e211304196f 3,101
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "f0b5f108a9b47a0c5343d5a6461d89e9d7adcf5b",
+  "prompts": {},
+  "humans": {
+    "h_d26e211304196f": {
+      "author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
