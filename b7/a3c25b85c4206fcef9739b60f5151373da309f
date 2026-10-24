@@ -1,0 +1,31 @@
+docs/client-status.md
+  s_b924ff932db79a::t_14fa407e0e4252 133
+tools/README.md
+  s_b924ff932db79a::t_0654580e56e2ae 12
+tools/client910/crates/rs910-core/src/checksum.rs
+  s_b924ff932db79a::t_94b2cad11b22e3 7
+tools/client910/crates/rs910-js5/src/js5net/tests.rs
+  s_b924ff932db79a::t_a4c05511c571e4 18
+tools/native910/README.md
+  s_b924ff932db79a::t_6f2adfbcc06cd4 1,3-5,7-9,12
+tools/native910/src/error.rs
+  s_b924ff932db79a::t_c114b5b3bcb4a0 1
+tools/native910/src/lib.rs
+  s_b924ff932db79a::t_428863980310a0 8-10,12-13
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "b7a3c25b85c4206fcef9739b60f5151373da309f",
+  "prompts": {},
+  "sessions": {
+    "s_b924ff932db79a": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "53d3e025-a4d4-4126-b2fe-b6d3beb22b08",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
