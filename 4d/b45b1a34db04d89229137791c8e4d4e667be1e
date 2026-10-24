@@ -1,0 +1,26 @@
+tools/client910/crates/rs910-render-modern/src/frame/arenas.rs
+  h_d26e211304196f 15-17
+tools/client910/crates/rs910-render-modern/src/frame/dynamic_meshes.rs
+  h_d26e211304196f 68-74
+tools/client910/crates/rs910-render-modern/src/frame/mod.rs
+  h_d26e211304196f 733
+tools/client910/crates/rs910-render-modern/src/frame/prebuild.rs
+  h_d26e211304196f 274
+tools/client910/crates/rs910-render-modern/src/frame/resources.rs
+  h_d26e211304196f 60-125,318-321,349-376,379-432,642-643,722
+tools/client910/crates/rs910-render-modern/src/frame/state.rs
+  h_d26e211304196f 43-44
+tools/client910/crates/rs910-render-modern/src/frame/underwater.rs
+  h_d26e211304196f 24
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "4db45b1a34db04d89229137791c8e4d4e667be1e",
+  "prompts": {},
+  "humans": {
+    "h_d26e211304196f": {
+      "author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
