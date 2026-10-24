@@ -1,0 +1,28 @@
+tools/client910/crates/rs910-render-modern/src/frame/encoding.rs
+  h_d26e211304196f 29
+tools/client910/crates/rs910-render-modern/src/frame/gpu/point_lights.rs
+  h_d26e211304196f 11,76,87,93,105,171,181,185,215,266-267,301,337,362
+tools/client910/crates/rs910-render-modern/src/frame/gpu/point_shadows.rs
+  h_d26e211304196f 33,418-423
+tools/client910/crates/rs910-render-modern/src/frame/mod.rs
+  h_d26e211304196f 695,1816
+tools/client910/crates/rs910-render-modern/src/frame/state.rs
+  h_d26e211304196f 39,152-153
+tools/client910/crates/rs910-render-modern/src/frame/tests/point_shadows.rs
+  h_d26e211304196f 4,13,19,34,62
+tools/client910/crates/rs910-render-modern/src/lighting/point_lights.rs
+  h_d26e211304196f 64,100,109,122,168,176,178,185,220-221,237,245,248,277-278
+tools/client910/crates/rs910-render-modern/src/models/shading.rs
+  h_d26e211304196f 83,138,146
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "7f0307c3d7b27b777a16a891e8e4c02bc5d0977b",
+  "prompts": {},
+  "humans": {
+    "h_d26e211304196f": {
+      "author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
