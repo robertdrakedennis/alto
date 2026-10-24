@@ -1,0 +1,35 @@
+tools/client910/crates/rs910-config/src/texture.rs
+  s_b924ff932db79a::t_deaa12d3a95bd4 1460
+tools/client910/crates/rs910-ui/src/ui_components.rs
+  s_b924ff932db79a::t_712e859a95b5ae 6
+tools/client910/crates/rs910-ui/src/ui_scripts.rs
+  s_294fc1c2a0f8ed::t_2da56c423882cc 19-21,58,66,118,124-125,140
+tools/client910/src/live_control.rs
+  s_b924ff932db79a::t_f77f38bf875ea6 730,756,909,912
+tools/native910/src/vm.rs
+  s_b924ff932db79a::t_d4bb450249083c 412-415,428-435,437-440,453-458,1075,1112,1176,1998
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "4bd797840211d932d536180c9feff20a42959e09",
+  "prompts": {},
+  "sessions": {
+    "s_294fc1c2a0f8ed": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "a9ff09df-8dce-4cd5-a038-9dbb7fb7cefb",
+        "model": "unknown"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    },
+    "s_b924ff932db79a": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "53d3e025-a4d4-4126-b2fe-b6d3beb22b08",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
