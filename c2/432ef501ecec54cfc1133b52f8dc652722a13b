@@ -1,0 +1,14 @@
+tools/perf/modern_perf_bench.rs
+  h_d26e211304196f 390-445,454-459,467,481,591-595
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "c2432ef501ecec54cfc1133b52f8dc652722a13b",
+  "prompts": {},
+  "humans": {
+    "h_d26e211304196f": {
+      "author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
