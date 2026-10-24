@@ -1,0 +1,16 @@
+tools/client910/crates/rs910-render-modern/src/frame/gpu/far.rs
+  h_d26e211304196f 85,148-153,167-168,465-467,519,522-523,745-746,751,754-757,862,865,868,920-922,924-926,928-933,935-944,961-966,968,976-989,993-994,1783-1785,1806-1808,1814-1820,1822,1825,2630-2698,2719
+tools/client910/crates/rs910-render-modern/src/frame/gpu/terrain.rs
+  h_d26e211304196f 33-52,67-108,130-131,522-525,527-531,534,536-538,544-545,562,564-566,568-570,574-577,579,582,667,669-670,679-690,709-718,723
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "d17909c24f4cc09a32111f47c42658b385b16bff",
+  "prompts": {},
+  "humans": {
+    "h_d26e211304196f": {
+      "author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
