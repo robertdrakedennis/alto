@@ -8,6 +8,7 @@ use super::super::strip_chat_prefix;
 use super::super::truncate_utf16;
 use super::super::Engine;
 use native910::vm::InstructionContext;
+use native910::vm::Operands;
 use native910::vm::Value;
 use native910::vm::VmError;
 use native910::vm::VmResult;
@@ -16,11 +17,9 @@ impl Engine {
     pub(super) fn cmd_chat_setmode(
         &mut self,
         _c: &InstructionContext<'_>,
-        ints: &mut Vec<i32>,
-        _objs: &mut Vec<String>,
-        _longs: &mut Vec<i64>,
+        s: &mut Operands<'_>,
     ) -> VmResult<Option<Value>> {
-        let mode = ints.pop().ok_or(VmError::StackUnderflow { stack: "int" })?;
+        let mode = s.int()?;
         self.outgoing
             .extend([crate::proto::client::CHAT_SETMODE, mode as u8]);
         Ok(None)
@@ -29,18 +28,16 @@ impl Engine {
     pub(super) fn cmd_chat_sendabusereport(
         &mut self,
         c: &InstructionContext<'_>,
-        ints: &mut Vec<i32>,
-        objs: &mut Vec<String>,
-        _longs: &mut Vec<i64>,
+        s: &mut Operands<'_>,
     ) -> VmResult<Option<Value>> {
-        if ints.len() < 2 || objs.len() < 2 {
+        if s.ints.len() < 2 || s.objs.len() < 2 {
             return Err(VmError::StackUnderflow {
-                stack: if ints.len() < 2 { "int" } else { "object" },
+                stack: if s.ints.len() < 2 { "int" } else { "object" },
             });
         }
-        let args = ints.split_off(ints.len() - 2);
-        let reason = truncate_utf16(objs.pop().unwrap(), 80);
-        let target = objs.pop().unwrap();
+        let args = s.ints.split_off(s.ints.len() - 2);
+        let reason = truncate_utf16(s.objs.pop().unwrap(), 80);
+        let target = s.objs.pop().unwrap();
         let target = encode_pjstr(&target).ok_or_else(|| VmError::TrapFailed {
             command: c.command.into(),
             reason: "abuse-report target contains NUL".into(),
@@ -64,13 +61,9 @@ impl Engine {
     pub(super) fn cmd_chat_sendpublic(
         &mut self,
         c: &InstructionContext<'_>,
-        _ints: &mut Vec<i32>,
-        objs: &mut Vec<String>,
-        _longs: &mut Vec<i64>,
+        s: &mut Operands<'_>,
     ) -> VmResult<Option<Value>> {
-        let message = objs
-            .pop()
-            .ok_or(VmError::StackUnderflow { stack: "object" })?;
+        let message = s.obj()?;
         if self.account.staff_mod_level == 0
             && (self.account.dob_verified && !self.account.player_is_quickchat
                 || self.account.logged_in_quickchat)
@@ -143,16 +136,10 @@ impl Engine {
     pub(super) fn cmd_chat_sendprivate(
         &mut self,
         c: &InstructionContext<'_>,
-        _ints: &mut Vec<i32>,
-        objs: &mut Vec<String>,
-        _longs: &mut Vec<i64>,
+        s: &mut Operands<'_>,
     ) -> VmResult<Option<Value>> {
-        let message = objs
-            .pop()
-            .ok_or(VmError::StackUnderflow { stack: "object" })?;
-        let recipient = objs
-            .pop()
-            .ok_or(VmError::StackUnderflow { stack: "object" })?;
+        let message = s.obj()?;
+        let recipient = s.obj()?;
         if self.account.staff_mod_level == 0
             && (self.account.dob_verified && !self.account.player_is_quickchat
                 || self.account.logged_in_quickchat)
@@ -197,9 +184,7 @@ impl Engine {
     pub(super) fn cmd_chat_getfilter(
         &mut self,
         c: &InstructionContext<'_>,
-        _ints: &mut Vec<i32>,
-        _objs: &mut Vec<String>,
-        _longs: &mut Vec<i64>,
+        _s: &mut Operands<'_>,
     ) -> VmResult<Option<Value>> {
         let filter = match c.command {
             "chat_getfilter_public" => Some(0),
@@ -218,16 +203,11 @@ impl Engine {
     pub(super) fn cmd_chat_setfilter(
         &mut self,
         _c: &InstructionContext<'_>,
-        ints: &mut Vec<i32>,
-        _objs: &mut Vec<String>,
-        _longs: &mut Vec<i64>,
+        s: &mut Operands<'_>,
     ) -> VmResult<Option<Value>> {
         // The existing server frames opcode 88 and currently logs it as
         // unhandled; emitting the original packet does not invent server state.
-        if ints.len() < 3 {
-            return Err(VmError::StackUnderflow { stack: "int" });
-        }
-        let a = ints.split_off(ints.len() - 3);
+        let a = s.int_args::<3>()?;
         let private = if (0..=2).contains(&a[1]) { a[1] } else { 1 };
         self.messages.filters = [Some(a[0]), Some(private), Some(a[2])];
         self.outgoing
@@ -248,9 +228,7 @@ impl Engine {
     pub(super) fn cmd_chat_playername(
         &mut self,
         c: &InstructionContext<'_>,
-        _ints: &mut Vec<i32>,
-        _objs: &mut Vec<String>,
-        _longs: &mut Vec<i64>,
+        _s: &mut Operands<'_>,
     ) -> VmResult<Option<Value>> {
         // chat_playername is
         // getNameWithExtras(true) (title substituted); the unfiltered
@@ -269,24 +247,18 @@ impl Engine {
     pub(super) fn cmd_get_col_tag(
         &mut self,
         _c: &InstructionContext<'_>,
-        ints: &mut Vec<i32>,
-        _objs: &mut Vec<String>,
-        _longs: &mut Vec<i64>,
+        s: &mut Operands<'_>,
     ) -> VmResult<Option<Value>> {
-        let colour = ints.pop().ok_or(VmError::StackUnderflow { stack: "int" })?;
+        let colour = s.int()?;
         Ok(Some(Value::Str(format!("<col={:x}>", colour as u32))))
     }
 
     pub(super) fn cmd_mes(
         &mut self,
         _c: &InstructionContext<'_>,
-        _ints: &mut Vec<i32>,
-        objs: &mut Vec<String>,
-        _longs: &mut Vec<i64>,
+        s: &mut Operands<'_>,
     ) -> VmResult<Option<Value>> {
-        let message = objs
-            .pop()
-            .ok_or(VmError::StackUnderflow { stack: "object" })?;
+        let message = s.obj()?;
         self.messages.history.mes(message);
         self.messages.changed = true;
         Ok(None)
@@ -295,9 +267,7 @@ impl Engine {
     pub(super) fn cmd_chat_lastuid(
         &mut self,
         _c: &InstructionContext<'_>,
-        _ints: &mut Vec<i32>,
-        _objs: &mut Vec<String>,
-        _longs: &mut Vec<i64>,
+        _s: &mut Operands<'_>,
     ) -> VmResult<Option<Value>> {
         Ok(Some(Value::Int(self.messages.history.last_uid())))
     }
@@ -305,9 +275,7 @@ impl Engine {
     pub(super) fn cmd_chat_clear(
         &mut self,
         _c: &InstructionContext<'_>,
-        _ints: &mut Vec<i32>,
-        _objs: &mut Vec<String>,
-        _longs: &mut Vec<i64>,
+        _s: &mut Operands<'_>,
     ) -> VmResult<Option<Value>> {
         self.messages.history.clear();
         Ok(None)
@@ -316,11 +284,9 @@ impl Engine {
     pub(super) fn cmd_chat_get(
         &mut self,
         c: &InstructionContext<'_>,
-        ints: &mut Vec<i32>,
-        _objs: &mut Vec<String>,
-        _longs: &mut Vec<i64>,
+        s: &mut Operands<'_>,
     ) -> VmResult<Option<Value>> {
-        let id = ints.pop().ok_or(VmError::StackUnderflow { stack: "int" })?;
+        let id = s.int()?;
         let value = match c.command {
             "chat_gethistorylength" => self.messages.history.length(id) as i32,
             "chat_getnextuid" => self.messages.history.next_uid_of(id),
@@ -332,17 +298,15 @@ impl Engine {
     pub(super) fn cmd_chat_gethistory_by(
         &mut self,
         c: &InstructionContext<'_>,
-        ints: &mut Vec<i32>,
-        objs: &mut Vec<String>,
-        _longs: &mut Vec<i64>,
+        s: &mut Operands<'_>,
     ) -> VmResult<Option<Value>> {
         let typed = c.command == "chat_gethistory_bytypeandline";
-        if ints.len() < if typed { 2 } else { 1 } {
+        if s.ints.len() < if typed { 2 } else { 1 } {
             return Err(VmError::StackUnderflow { stack: "int" });
         }
-        let id = ints.pop().unwrap();
+        let id = s.ints.pop().unwrap();
         let row = if typed {
-            let kind = ints.pop().unwrap();
+            let kind = s.ints.pop().unwrap();
             if !self.messages.history.has_type(kind) {
                 return Err(VmError::TrapFailed {
                     command: c.command.into(),
@@ -359,13 +323,13 @@ impl Engine {
                     command: c.command.into(),
                     reason: "local calendar timestamp out of range".into(),
                 })?;
-            ints.extend([
+            s.ints.extend([
                 if typed { row.uid } else { row.chat_type },
                 row.flags,
                 row.phrase,
                 row.crown.unwrap_or(-1),
             ]);
-            objs.extend([
+            s.objs.extend([
                 time,
                 row.name.clone(),
                 row.name_unfiltered.clone(),
@@ -374,8 +338,8 @@ impl Engine {
                 row.message.clone(),
             ]);
         } else {
-            ints.extend([-1, 0, 0, -1]);
-            objs.extend(std::iter::repeat_n(String::new(), 6));
+            s.ints.extend([-1, 0, 0, -1]);
+            s.objs.extend(std::iter::repeat_n(String::new(), 6));
         }
         Ok(None)
     }

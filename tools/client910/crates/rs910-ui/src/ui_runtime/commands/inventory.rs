@@ -6,6 +6,7 @@ use super::super::absent;
 use super::super::Engine;
 use anyhow::Result;
 use native910::vm::InstructionContext;
+use native910::vm::Operands;
 use native910::vm::Value;
 use native910::vm::VmError;
 use native910::vm::VmResult;
@@ -16,14 +17,9 @@ impl Engine {
     pub(super) fn cmd_inv_getobj(
         &mut self,
         c: &InstructionContext<'_>,
-        ints: &mut Vec<i32>,
-        _objs: &mut Vec<String>,
-        _longs: &mut Vec<i64>,
+        s: &mut Operands<'_>,
     ) -> VmResult<Option<Value>> {
-        if ints.len() < 2 {
-            return Err(VmError::StackUnderflow { stack: "int" });
-        }
-        let a = ints.split_off(ints.len() - 2);
+        let a = s.int_args::<2>()?;
         let secondary = c.command.starts_with("invother_");
         let v = match c.command {
             "inv_getobj" | "invother_getobj" => self.inv_cache.slot_type(a[0], a[1], secondary),
@@ -36,14 +32,9 @@ impl Engine {
     pub(super) fn cmd_inv_getvar(
         &mut self,
         c: &InstructionContext<'_>,
-        ints: &mut Vec<i32>,
-        _objs: &mut Vec<String>,
-        _longs: &mut Vec<i64>,
+        s: &mut Operands<'_>,
     ) -> VmResult<Option<Value>> {
-        if ints.len() < 3 {
-            return Err(VmError::StackUnderflow { stack: "int" });
-        }
-        let a = ints.split_off(ints.len() - 3);
+        let a = s.int_args::<3>()?;
         let value = (|| -> Result<i32> {
             let defs = self
                 .configs
@@ -63,11 +54,9 @@ impl Engine {
     pub(super) fn cmd_inv_freespace(
         &mut self,
         c: &InstructionContext<'_>,
-        ints: &mut Vec<i32>,
-        _objs: &mut Vec<String>,
-        _longs: &mut Vec<i64>,
+        s: &mut Operands<'_>,
     ) -> VmResult<Option<Value>> {
-        let inv = ints.pop().ok_or(VmError::StackUnderflow { stack: "int" })?;
+        let inv = s.int()?;
         let Some(size) = self.configs.inv_sizes.get(&inv).copied() else {
             *self.unsupported.entry(c.command.into()).or_default() += 1;
             return Err(absent(c.command));
@@ -81,11 +70,9 @@ impl Engine {
     pub(super) fn cmd_inv_size(
         &mut self,
         c: &InstructionContext<'_>,
-        ints: &mut Vec<i32>,
-        _objs: &mut Vec<String>,
-        _longs: &mut Vec<i64>,
+        s: &mut Operands<'_>,
     ) -> VmResult<Option<Value>> {
-        let id = ints.pop().ok_or(VmError::StackUnderflow { stack: "int" })?;
+        let id = s.int()?;
         let Some(size) = self.configs.inv_sizes.get(&id).copied() else {
             *self.unsupported.entry(c.command.into()).or_default() += 1;
             return Err(absent(c.command));

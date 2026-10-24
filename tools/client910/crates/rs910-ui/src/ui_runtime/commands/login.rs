@@ -6,6 +6,7 @@ use super::super::Engine;
 use super::super::LobbyEnterGameRequest;
 use super::super::LoginRequest;
 use native910::vm::InstructionContext;
+use native910::vm::Operands;
 use native910::vm::Value;
 use native910::vm::VmError;
 use native910::vm::VmResult;
@@ -21,19 +22,17 @@ impl Engine {
     pub(super) fn cmd_login_request(
         &mut self,
         c: &InstructionContext<'_>,
-        ints: &mut Vec<i32>,
-        objs: &mut Vec<String>,
-        _longs: &mut Vec<i64>,
+        s: &mut Operands<'_>,
     ) -> VmResult<Option<Value>> {
-        if ints.is_empty() || objs.len() < 3 {
+        if s.ints.is_empty() || s.objs.len() < 3 {
             return Err(VmError::StackUnderflow {
-                stack: if ints.is_empty() { "int" } else { "object" },
+                stack: if s.ints.is_empty() { "int" } else { "object" },
             });
         }
-        let auth_dont_trust = ints.pop().unwrap() == 1;
-        let new_auth_preference = objs.pop().unwrap();
-        let password = objs.pop().unwrap();
-        let username = objs.pop().unwrap();
+        let auth_dont_trust = s.ints.pop().unwrap() == 1;
+        let new_auth_preference = s.objs.pop().unwrap();
+        let password = s.objs.pop().unwrap();
+        let username = s.objs.pop().unwrap();
         // requestLogin / enterLobby
         // return before touching state unless isLoginReady() holds.
         if username.encode_utf16().count() <= 320 && self.login.ready {
@@ -70,27 +69,20 @@ impl Engine {
     pub(super) fn cmd_lobby_enterlobby_sso(
         &mut self,
         _c: &InstructionContext<'_>,
-        ints: &mut Vec<i32>,
-        objs: &mut Vec<String>,
-        _longs: &mut Vec<i64>,
+        s: &mut Operands<'_>,
     ) -> VmResult<Option<Value>> {
-        ints.pop().ok_or(VmError::StackUnderflow { stack: "int" })?;
-        objs.pop()
-            .ok_or(VmError::StackUnderflow { stack: "object" })?;
+        s.int()?;
+        s.obj()?;
         Ok(None)
     }
 
     pub(super) fn cmd_lobby_entergame(
         &mut self,
         _c: &InstructionContext<'_>,
-        ints: &mut Vec<i32>,
-        objs: &mut Vec<String>,
-        _longs: &mut Vec<i64>,
+        s: &mut Operands<'_>,
     ) -> VmResult<Option<Value>> {
-        let auth_dont_trust = ints.pop().ok_or(VmError::StackUnderflow { stack: "int" })? == 1;
-        let new_auth_preference = objs
-            .pop()
-            .ok_or(VmError::StackUnderflow { stack: "object" })?;
+        let auth_dont_trust = s.int()? == 1;
+        let new_auth_preference = s.obj()?;
         if self.login.in_lobby() && !self.login.in_progress {
             self.login.lobby_enter_game = Some(LobbyEnterGameRequest {
                 new_auth_preference,
@@ -108,9 +100,7 @@ impl Engine {
     pub(super) fn cmd_sso_available(
         &mut self,
         _c: &InstructionContext<'_>,
-        _ints: &mut Vec<i32>,
-        _objs: &mut Vec<String>,
-        _longs: &mut Vec<i64>,
+        _s: &mut Operands<'_>,
     ) -> VmResult<Option<Value>> {
         Ok(Some(Value::Int(0)))
     }
@@ -118,9 +108,7 @@ impl Engine {
     pub(super) fn cmd_sso_displayname(
         &mut self,
         _c: &InstructionContext<'_>,
-        _ints: &mut Vec<i32>,
-        _objs: &mut Vec<String>,
-        _longs: &mut Vec<i64>,
+        _s: &mut Operands<'_>,
     ) -> VmResult<Option<Value>> {
         Ok(Some(Value::Str(String::new())))
     }
@@ -128,9 +116,7 @@ impl Engine {
     pub(super) fn cmd_login_inprogress(
         &mut self,
         _c: &InstructionContext<'_>,
-        _ints: &mut Vec<i32>,
-        _objs: &mut Vec<String>,
-        _longs: &mut Vec<i64>,
+        _s: &mut Operands<'_>,
     ) -> VmResult<Option<Value>> {
         Ok(Some(Value::Int(i32::from(self.login.in_progress))))
     }
@@ -138,9 +124,7 @@ impl Engine {
     pub(super) fn cmd_login_reply(
         &mut self,
         _c: &InstructionContext<'_>,
-        _ints: &mut Vec<i32>,
-        _objs: &mut Vec<String>,
-        _longs: &mut Vec<i64>,
+        _s: &mut Operands<'_>,
     ) -> VmResult<Option<Value>> {
         Ok(Some(Value::Int(self.login.reply)))
     }
@@ -148,9 +132,7 @@ impl Engine {
     pub(super) fn cmd_lobby_enterlobbyreply(
         &mut self,
         _c: &InstructionContext<'_>,
-        _ints: &mut Vec<i32>,
-        _objs: &mut Vec<String>,
-        _longs: &mut Vec<i64>,
+        _s: &mut Operands<'_>,
     ) -> VmResult<Option<Value>> {
         Ok(Some(Value::Int(self.login.lobby_reply)))
     }
@@ -158,9 +140,7 @@ impl Engine {
     pub(super) fn cmd_login_hoptime(
         &mut self,
         _c: &InstructionContext<'_>,
-        _ints: &mut Vec<i32>,
-        _objs: &mut Vec<String>,
-        _longs: &mut Vec<i64>,
+        _s: &mut Operands<'_>,
     ) -> VmResult<Option<Value>> {
         Ok(Some(Value::Int(self.login.hoptime)))
     }
@@ -168,9 +148,7 @@ impl Engine {
     pub(super) fn cmd_login_ban_duration(
         &mut self,
         _c: &InstructionContext<'_>,
-        _ints: &mut Vec<i32>,
-        _objs: &mut Vec<String>,
-        _longs: &mut Vec<i64>,
+        _s: &mut Operands<'_>,
     ) -> VmResult<Option<Value>> {
         Ok(Some(Value::Int(self.login.ban_duration)))
     }
@@ -178,9 +156,7 @@ impl Engine {
     pub(super) fn cmd_login_disallowresult(
         &mut self,
         _c: &InstructionContext<'_>,
-        _ints: &mut Vec<i32>,
-        _objs: &mut Vec<String>,
-        _longs: &mut Vec<i64>,
+        _s: &mut Operands<'_>,
     ) -> VmResult<Option<Value>> {
         Ok(Some(Value::Int(self.login.disallow_result)))
     }
@@ -188,9 +164,7 @@ impl Engine {
     pub(super) fn cmd_login_disallowtrigger(
         &mut self,
         _c: &InstructionContext<'_>,
-        _ints: &mut Vec<i32>,
-        _objs: &mut Vec<String>,
-        _longs: &mut Vec<i64>,
+        _s: &mut Operands<'_>,
     ) -> VmResult<Option<Value>> {
         Ok(Some(Value::Int(self.login.disallow_trigger)))
     }
@@ -200,33 +174,27 @@ impl Engine {
     pub(super) fn cmd_userflowflags(
         &mut self,
         _c: &InstructionContext<'_>,
-        ints: &mut Vec<i32>,
-        _objs: &mut Vec<String>,
-        _longs: &mut Vec<i64>,
+        s: &mut Operands<'_>,
     ) -> VmResult<Option<Value>> {
-        ints.extend(self.login.user_flow);
+        s.ints.extend(self.login.user_flow);
         Ok(None)
     }
 
     pub(super) fn cmd_automatedtestflags(
         &mut self,
         _c: &InstructionContext<'_>,
-        ints: &mut Vec<i32>,
-        _objs: &mut Vec<String>,
-        _longs: &mut Vec<i64>,
+        s: &mut Operands<'_>,
     ) -> VmResult<Option<Value>> {
-        ints.extend(self.login.automated_test_flags);
+        s.ints.extend(self.login.automated_test_flags);
         Ok(None)
     }
 
     pub(super) fn cmd_login_last_transfer_reply(
         &mut self,
         _c: &InstructionContext<'_>,
-        ints: &mut Vec<i32>,
-        _objs: &mut Vec<String>,
-        _longs: &mut Vec<i64>,
+        s: &mut Operands<'_>,
     ) -> VmResult<Option<Value>> {
-        ints.extend([
+        s.ints.extend([
             self.login.last_transfer_reply,
             self.login.last_transfer_disallow_result,
             self.login.last_transfer_disallow_trigger,
@@ -240,9 +208,7 @@ impl Engine {
     pub(super) fn cmd_login_resetreply(
         &mut self,
         _c: &InstructionContext<'_>,
-        _ints: &mut Vec<i32>,
-        _objs: &mut Vec<String>,
-        _longs: &mut Vec<i64>,
+        _s: &mut Operands<'_>,
     ) -> VmResult<Option<Value>> {
         // resetLoginState.
         if !self.login.in_progress {
@@ -259,9 +225,7 @@ impl Engine {
     pub(super) fn cmd_login_queue_position(
         &mut self,
         _c: &InstructionContext<'_>,
-        _ints: &mut Vec<i32>,
-        _objs: &mut Vec<String>,
-        _longs: &mut Vec<i64>,
+        _s: &mut Operands<'_>,
     ) -> VmResult<Option<Value>> {
         Ok(Some(Value::Int(self.login.queue_position)))
     }
@@ -269,9 +233,7 @@ impl Engine {
     pub(super) fn cmd_login_cancel(
         &mut self,
         _c: &InstructionContext<'_>,
-        _ints: &mut Vec<i32>,
-        _objs: &mut Vec<String>,
-        _longs: &mut Vec<i64>,
+        _s: &mut Operands<'_>,
     ) -> VmResult<Option<Value>> {
         // cancelLogin resets
         // both replies only while a login is in progress.
@@ -290,9 +252,7 @@ impl Engine {
     pub(super) fn cmd_lobby_leavelobby(
         &mut self,
         _c: &InstructionContext<'_>,
-        _ints: &mut Vec<i32>,
-        _objs: &mut Vec<String>,
-        _longs: &mut Vec<i64>,
+        _s: &mut Operands<'_>,
     ) -> VmResult<Option<Value>> {
         self.login.logout_requested = true;
         Ok(None)
@@ -302,14 +262,13 @@ impl Engine {
     pub(super) fn cmd_userdetail_lobby_membership(
         &mut self,
         _c: &InstructionContext<'_>,
-        ints: &mut Vec<i32>,
-        _objs: &mut Vec<String>,
-        _longs: &mut Vec<i64>,
+        s: &mut Operands<'_>,
     ) -> VmResult<Option<Value>> {
         let now = crate::logic_clock::monotonic_millis();
-        ints.push((self.lobby.membership / 60000) as i32);
-        ints.push(((self.lobby.membership - now - self.lobby.membership_offset) / 60000) as i32);
-        ints.push(i32::from(self.lobby.membership_flag));
+        s.ints.push((self.lobby.membership / 60000) as i32);
+        s.ints
+            .push(((self.lobby.membership - now - self.lobby.membership_offset) / 60000) as i32);
+        s.ints.push(i32::from(self.lobby.membership_flag));
         Ok(None)
     }
 
@@ -317,9 +276,7 @@ impl Engine {
     pub(super) fn cmd_userdetail_lobby_unreadmessages(
         &mut self,
         _c: &InstructionContext<'_>,
-        _ints: &mut Vec<i32>,
-        _objs: &mut Vec<String>,
-        _longs: &mut Vec<i64>,
+        _s: &mut Operands<'_>,
     ) -> VmResult<Option<Value>> {
         Ok(Some(Value::Int(self.lobby.unread_messages)))
     }
@@ -330,9 +287,7 @@ impl Engine {
     pub(super) fn cmd_userdetail_lobby_recoveryday(
         &mut self,
         _c: &InstructionContext<'_>,
-        _ints: &mut Vec<i32>,
-        _objs: &mut Vec<String>,
-        _longs: &mut Vec<i64>,
+        _s: &mut Operands<'_>,
     ) -> VmResult<Option<Value>> {
         Ok(Some(Value::Int(self.lobby.recovery_day)))
     }
@@ -340,9 +295,7 @@ impl Engine {
     pub(super) fn cmd_userdetail_lobby_ccexpiry(
         &mut self,
         _c: &InstructionContext<'_>,
-        _ints: &mut Vec<i32>,
-        _objs: &mut Vec<String>,
-        _longs: &mut Vec<i64>,
+        _s: &mut Operands<'_>,
     ) -> VmResult<Option<Value>> {
         Ok(Some(Value::Int(self.lobby.cc_expiry)))
     }
@@ -350,9 +303,7 @@ impl Engine {
     pub(super) fn cmd_userdetail_lobby_graceexpiry(
         &mut self,
         _c: &InstructionContext<'_>,
-        _ints: &mut Vec<i32>,
-        _objs: &mut Vec<String>,
-        _longs: &mut Vec<i64>,
+        _s: &mut Operands<'_>,
     ) -> VmResult<Option<Value>> {
         Ok(Some(Value::Int(self.lobby.grace_expiry)))
     }
@@ -360,9 +311,7 @@ impl Engine {
     pub(super) fn cmd_userdetail_lobby_dobrequested(
         &mut self,
         _c: &InstructionContext<'_>,
-        _ints: &mut Vec<i32>,
-        _objs: &mut Vec<String>,
-        _longs: &mut Vec<i64>,
+        _s: &mut Operands<'_>,
     ) -> VmResult<Option<Value>> {
         Ok(Some(Value::Int(i32::from(self.lobby.dob_requested))))
     }
@@ -370,9 +319,7 @@ impl Engine {
     pub(super) fn cmd_userdetail_lobby_membersstats(
         &mut self,
         _c: &InstructionContext<'_>,
-        _ints: &mut Vec<i32>,
-        _objs: &mut Vec<String>,
-        _longs: &mut Vec<i64>,
+        _s: &mut Operands<'_>,
     ) -> VmResult<Option<Value>> {
         Ok(Some(Value::Int(self.lobby.members_stats)))
     }
@@ -380,9 +327,7 @@ impl Engine {
     pub(super) fn cmd_userdetail_lobby_playage(
         &mut self,
         _c: &InstructionContext<'_>,
-        _ints: &mut Vec<i32>,
-        _objs: &mut Vec<String>,
-        _longs: &mut Vec<i64>,
+        _s: &mut Operands<'_>,
     ) -> VmResult<Option<Value>> {
         Ok(Some(Value::Int(self.lobby.play_age)))
     }
@@ -391,9 +336,7 @@ impl Engine {
     pub(super) fn cmd_userdetail_lobby_loyalty_balance(
         &mut self,
         _c: &InstructionContext<'_>,
-        _ints: &mut Vec<i32>,
-        _objs: &mut Vec<String>,
-        _longs: &mut Vec<i64>,
+        _s: &mut Operands<'_>,
     ) -> VmResult<Option<Value>> {
         Ok(Some(Value::Int(self.lobby.loyalty_balance)))
     }
@@ -402,9 +345,7 @@ impl Engine {
     pub(super) fn cmd_userdetail_lobby_jcoins_balance(
         &mut self,
         _c: &InstructionContext<'_>,
-        _ints: &mut Vec<i32>,
-        _objs: &mut Vec<String>,
-        _longs: &mut Vec<i64>,
+        _s: &mut Operands<'_>,
     ) -> VmResult<Option<Value>> {
         Ok(Some(Value::Int(self.lobby.jcoins_balance)))
     }
@@ -413,9 +354,7 @@ impl Engine {
     pub(super) fn cmd_userdetail_lobby_lastloginday(
         &mut self,
         _c: &InstructionContext<'_>,
-        _ints: &mut Vec<i32>,
-        _objs: &mut Vec<String>,
-        _longs: &mut Vec<i64>,
+        _s: &mut Operands<'_>,
     ) -> VmResult<Option<Value>> {
         Ok(Some(Value::Int(self.lobby.last_login_day)))
     }
@@ -425,12 +364,10 @@ impl Engine {
     pub(super) fn cmd_lastlogin(
         &mut self,
         _c: &InstructionContext<'_>,
-        _ints: &mut Vec<i32>,
-        objs: &mut Vec<String>,
-        _longs: &mut Vec<i64>,
+        s: &mut Operands<'_>,
     ) -> VmResult<Option<Value>> {
         let now = crate::logic_clock::monotonic_millis();
-        objs.push(
+        s.objs.push(
             self.login
                 .last_login
                 .as_mut()
@@ -444,9 +381,7 @@ impl Engine {
     pub(super) fn cmd_userdetail_lobby_emailstatus(
         &mut self,
         _c: &InstructionContext<'_>,
-        _ints: &mut Vec<i32>,
-        _objs: &mut Vec<String>,
-        _longs: &mut Vec<i64>,
+        _s: &mut Operands<'_>,
     ) -> VmResult<Option<Value>> {
         Ok(Some(Value::Int(self.lobby.email_status)))
     }
@@ -455,9 +390,7 @@ impl Engine {
     pub(super) fn cmd_map_world(
         &mut self,
         _c: &InstructionContext<'_>,
-        _ints: &mut Vec<i32>,
-        _objs: &mut Vec<String>,
-        _longs: &mut Vec<i64>,
+        _s: &mut Operands<'_>,
     ) -> VmResult<Option<Value>> {
         Ok(Some(Value::Int(self.login.world)))
     }

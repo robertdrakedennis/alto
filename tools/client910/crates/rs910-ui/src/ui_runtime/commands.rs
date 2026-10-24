@@ -9,6 +9,7 @@
 //! branch of that chain, and no owner claims a table name, so
 //! looking the name up first reaches the same handler as the old order.
 use super::{absent, host_game, ActiveEntity, Engine};
+use native910::vm::Operands;
 use native910::vm::{InstructionContext, Value, VmResult};
 
 mod account;
@@ -34,22 +35,12 @@ mod world_map;
 mod tests;
 
 /// One engine command: `trap_context`'s arguments.
-type Handler = fn(
-    &mut Engine,
-    &InstructionContext<'_>,
-    &mut Vec<i32>,
-    &mut Vec<String>,
-    &mut Vec<i64>,
-) -> VmResult<Option<Value>>;
+type Handler =
+    fn(&mut Engine, &InstructionContext<'_>, &mut Operands<'_>) -> VmResult<Option<Value>>;
 
 /// An owner dispatcher: `None` when the command is not one of its names.
-type Owner = fn(
-    &mut Engine,
-    &InstructionContext<'_>,
-    &mut Vec<i32>,
-    &mut Vec<String>,
-    &mut Vec<i64>,
-) -> Option<VmResult<Option<Value>>>;
+type Owner =
+    fn(&mut Engine, &InstructionContext<'_>, &mut Operands<'_>) -> Option<VmResult<Option<Value>>>;
 
 /// The engine commands with a handler here, sorted by name (byte order) for
 /// the binary search in [`Engine::dispatch_command`].
@@ -441,28 +432,24 @@ impl Engine {
     pub(super) fn dispatch_command(
         &mut self,
         c: &InstructionContext<'_>,
-        ints: &mut Vec<i32>,
-        objs: &mut Vec<String>,
-        longs: &mut Vec<i64>,
+        s: &mut Operands<'_>,
     ) -> VmResult<Option<Value>> {
         if let Ok(i) =
             COMMANDS.binary_search_by(|(name, _)| name.as_bytes().cmp(c.command.as_bytes()))
         {
-            return (COMMANDS[i].1)(self, c, ints, objs, longs);
+            return (COMMANDS[i].1)(self, c, s);
         }
-        self.dispatch_owners(c, ints, objs, longs)
+        self.dispatch_owners(c, s)
     }
 
     /// The owners in order, then the unsupported-command count and error.
     fn dispatch_owners(
         &mut self,
         c: &InstructionContext<'_>,
-        ints: &mut Vec<i32>,
-        objs: &mut Vec<String>,
-        longs: &mut Vec<i64>,
+        s: &mut Operands<'_>,
     ) -> VmResult<Option<Value>> {
         for (_, owner) in OWNERS {
-            if let Some(result) = owner(self, c, ints, objs, longs) {
+            if let Some(result) = owner(self, c, s) {
                 return result;
             }
         }
@@ -475,72 +462,58 @@ impl Engine {
     fn owner_social_mutation(
         &mut self,
         c: &InstructionContext<'_>,
-        ints: &mut Vec<i32>,
-        objs: &mut Vec<String>,
-        longs: &mut Vec<i64>,
+        s: &mut Operands<'_>,
     ) -> Option<VmResult<Option<Value>>> {
-        crate::ui_social::State::handles_mutation(c.command)
-            .then(|| self.cmd_social_mutation(c, ints, objs, longs))
+        crate::ui_social::State::handles_mutation(c.command).then(|| self.cmd_social_mutation(c, s))
     }
 
     fn owner_obj_queries(
         &mut self,
         c: &InstructionContext<'_>,
-        ints: &mut Vec<i32>,
-        _objs: &mut Vec<String>,
-        _longs: &mut Vec<i64>,
+        s: &mut Operands<'_>,
     ) -> Option<VmResult<Option<Value>>> {
-        crate::ui_obj_queries::dispatch(self, c.command, ints)
+        crate::ui_obj_queries::dispatch(self, c.command, s.ints)
     }
 
     fn owner_bas(
         &mut self,
         c: &InstructionContext<'_>,
-        ints: &mut Vec<i32>,
-        _objs: &mut Vec<String>,
-        _longs: &mut Vec<i64>,
+        s: &mut Operands<'_>,
     ) -> Option<VmResult<Option<Value>>> {
-        crate::ui_bas::dispatch(self, c.command, ints)
+        crate::ui_bas::dispatch(self, c.command, s.ints)
     }
 
     fn owner_stockmarket(
         &mut self,
         c: &InstructionContext<'_>,
-        ints: &mut Vec<i32>,
-        objs: &mut Vec<String>,
-        longs: &mut Vec<i64>,
+        s: &mut Operands<'_>,
     ) -> Option<VmResult<Option<Value>>> {
         c.command
             .starts_with("stockmarket_")
-            .then(|| self.cmd_stockmarket(c, ints, objs, longs))
+            .then(|| self.cmd_stockmarket(c, s))
     }
 
     fn owner_db(
         &mut self,
         c: &InstructionContext<'_>,
-        ints: &mut Vec<i32>,
-        objs: &mut Vec<String>,
-        _longs: &mut Vec<i64>,
+        s: &mut Operands<'_>,
     ) -> Option<VmResult<Option<Value>>> {
-        self.configs.db.dispatch(c.command, ints, objs)
+        self.configs.db.dispatch(c.command, s.ints, s.objs)
     }
 
     fn owner_world_map(
         &mut self,
         c: &InstructionContext<'_>,
-        ints: &mut Vec<i32>,
-        objs: &mut Vec<String>,
-        _longs: &mut Vec<i64>,
+        s: &mut Operands<'_>,
     ) -> Option<VmResult<Option<Value>>> {
-        self.world_map_command(c.command, ints, objs).transpose()
+        self.world_map_command(c.command, s.ints, s.objs)
+            .transpose()
     }
 
     fn owner_cam2(
         &mut self,
         c: &InstructionContext<'_>,
-        ints: &mut Vec<i32>,
-        objs: &mut Vec<String>,
-        _longs: &mut Vec<i64>,
+        s: &mut Operands<'_>,
     ) -> Option<VmResult<Option<Value>>> {
         let active_npc = match self.scene.active_entity.as_ref() {
             Some(ActiveEntity::Npc { index, .. }) => Some(*index),
@@ -548,37 +521,31 @@ impl Engine {
         };
         self.camera
             .cam2
-            .dispatch_active_with_objects(c.command, ints, objs, active_npc)
+            .dispatch_active_with_objects(c.command, s.ints, s.objs, active_npc)
     }
 
     fn owner_social(
         &mut self,
         c: &InstructionContext<'_>,
-        ints: &mut Vec<i32>,
-        objs: &mut Vec<String>,
-        _longs: &mut Vec<i64>,
+        s: &mut Operands<'_>,
     ) -> Option<VmResult<Option<Value>>> {
         crate::ui_social::State::handles(c.command)
-            .then(|| self.social.dispatch(c.command, ints, objs))
+            .then(|| self.social.dispatch(c.command, s.ints, s.objs))
     }
 
     fn owner_builtins(
         &mut self,
         c: &InstructionContext<'_>,
-        ints: &mut Vec<i32>,
-        objs: &mut Vec<String>,
-        longs: &mut Vec<i64>,
+        s: &mut Operands<'_>,
     ) -> Option<VmResult<Option<Value>>> {
-        self.host_builtin(c, ints, objs, longs)
+        self.host_builtin(c, s)
     }
 
     fn owner_host_game(
         &mut self,
         c: &InstructionContext<'_>,
-        ints: &mut Vec<i32>,
-        objs: &mut Vec<String>,
-        _longs: &mut Vec<i64>,
+        s: &mut Operands<'_>,
     ) -> Option<VmResult<Option<Value>>> {
-        host_game::dispatch(self, c, ints, objs)
+        host_game::dispatch(self, c, s.ints, s.objs)
     }
 }

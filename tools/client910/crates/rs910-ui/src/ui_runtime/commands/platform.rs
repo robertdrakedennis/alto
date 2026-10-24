@@ -6,6 +6,7 @@
 use super::super::absent;
 use super::super::Engine;
 use native910::vm::InstructionContext;
+use native910::vm::Operands;
 use native910::vm::Value;
 use native910::vm::VmError;
 use native910::vm::VmResult;
@@ -18,9 +19,7 @@ impl Engine {
     pub(super) fn cmd_marketing_init(
         &mut self,
         _c: &InstructionContext<'_>,
-        _ints: &mut Vec<i32>,
-        _objs: &mut Vec<String>,
-        _longs: &mut Vec<i64>,
+        _s: &mut Operands<'_>,
     ) -> VmResult<Option<Value>> {
         Ok(None)
     }
@@ -28,12 +27,9 @@ impl Engine {
     pub(super) fn cmd_marketing_sendevent(
         &mut self,
         _c: &InstructionContext<'_>,
-        _ints: &mut Vec<i32>,
-        objs: &mut Vec<String>,
-        _longs: &mut Vec<i64>,
+        s: &mut Operands<'_>,
     ) -> VmResult<Option<Value>> {
-        objs.pop()
-            .ok_or(VmError::StackUnderflow { stack: "object" })?;
+        s.obj()?;
         Ok(None)
     }
 
@@ -41,9 +37,7 @@ impl Engine {
     pub(super) fn cmd_keyheld(
         &mut self,
         c: &InstructionContext<'_>,
-        _ints: &mut Vec<i32>,
-        _objs: &mut Vec<String>,
-        _longs: &mut Vec<i64>,
+        _s: &mut Operands<'_>,
     ) -> VmResult<Option<Value>> {
         if let Some(key) = match c.command {
             "keyheld_alt" => Some(86),
@@ -60,11 +54,10 @@ impl Engine {
     pub(super) fn cmd_get_mousebuttons(
         &mut self,
         _c: &InstructionContext<'_>,
-        ints: &mut Vec<i32>,
-        _objs: &mut Vec<String>,
-        _longs: &mut Vec<i64>,
+        s: &mut Operands<'_>,
     ) -> VmResult<Option<Value>> {
-        ints.extend(self.platform.mouse_buttons.iter().map(|&b| i32::from(b)));
+        s.ints
+            .extend(self.platform.mouse_buttons.iter().map(|&b| i32::from(b)));
         Ok(None)
     }
 
@@ -72,9 +65,7 @@ impl Engine {
     pub(super) fn cmd_reboottimer(
         &mut self,
         _c: &InstructionContext<'_>,
-        _ints: &mut Vec<i32>,
-        _objs: &mut Vec<String>,
-        _longs: &mut Vec<i64>,
+        _s: &mut Operands<'_>,
     ) -> VmResult<Option<Value>> {
         Ok(Some(Value::Int(self.reboot_timer)))
     }
@@ -82,9 +73,7 @@ impl Engine {
     pub(super) fn cmd_detailget_chosesafemode(
         &mut self,
         _c: &InstructionContext<'_>,
-        _ints: &mut Vec<i32>,
-        _objs: &mut Vec<String>,
-        _longs: &mut Vec<i64>,
+        _s: &mut Operands<'_>,
     ) -> VmResult<Option<Value>> {
         Ok(Some(Value::Int(i32::from(self.platform.chose_safe_mode))))
     }
@@ -92,9 +81,7 @@ impl Engine {
     pub(super) fn cmd_detailget_safemode(
         &mut self,
         _c: &InstructionContext<'_>,
-        _ints: &mut Vec<i32>,
-        _objs: &mut Vec<String>,
-        _longs: &mut Vec<i64>,
+        _s: &mut Operands<'_>,
     ) -> VmResult<Option<Value>> {
         Ok(Some(Value::Int(i32::from(self.platform.safe_mode))))
     }
@@ -102,9 +89,7 @@ impl Engine {
     pub(super) fn cmd_fullscreen_lastmode(
         &mut self,
         c: &InstructionContext<'_>,
-        _ints: &mut Vec<i32>,
-        _objs: &mut Vec<String>,
-        _longs: &mut Vec<i64>,
+        _s: &mut Operands<'_>,
     ) -> VmResult<Option<Value>> {
         let index = if self.platform.fullscreen_allowed {
             let modes =
@@ -128,11 +113,9 @@ impl Engine {
     pub(super) fn cmd_fullscreen_getmode(
         &mut self,
         c: &InstructionContext<'_>,
-        ints: &mut Vec<i32>,
-        _objs: &mut Vec<String>,
-        _longs: &mut Vec<i64>,
+        s: &mut Operands<'_>,
     ) -> VmResult<Option<Value>> {
-        let index = ints.pop().ok_or(VmError::StackUnderflow { stack: "int" })?;
+        let index = s.int()?;
         if self.platform.fullscreen_allowed {
             let modes =
                 self.platform
@@ -145,7 +128,7 @@ impl Engine {
             // No mode inside the size limit: answered like a platform
             // without fullscreen (see `WindowState::dispatch`).
             if modes.is_empty() {
-                ints.extend([0, 0]);
+                s.ints.extend([0, 0]);
                 return Ok(None);
             }
             let mode = usize::try_from(index)
@@ -155,9 +138,9 @@ impl Engine {
                     command: c.command.into(),
                     reason: "fullscreen mode index outside array".into(),
                 })?;
-            ints.extend([mode.width, mode.height]);
+            s.ints.extend([mode.width, mode.height]);
         } else {
-            ints.extend([0, 0]);
+            s.ints.extend([0, 0]);
         }
         Ok(None)
     }
@@ -166,9 +149,7 @@ impl Engine {
     pub(super) fn cmd_fullscreen_modecount(
         &mut self,
         c: &InstructionContext<'_>,
-        _ints: &mut Vec<i32>,
-        _objs: &mut Vec<String>,
-        _longs: &mut Vec<i64>,
+        _s: &mut Operands<'_>,
     ) -> VmResult<Option<Value>> {
         if !self.platform.fullscreen_allowed {
             return Ok(Some(Value::Int(0)));
@@ -187,9 +168,7 @@ impl Engine {
     pub(super) fn cmd_getwindowmode(
         &mut self,
         _c: &InstructionContext<'_>,
-        _ints: &mut Vec<i32>,
-        _objs: &mut Vec<String>,
-        _longs: &mut Vec<i64>,
+        _s: &mut Operands<'_>,
     ) -> VmResult<Option<Value>> {
         Ok(Some(Value::Int(self.platform.window_mode)))
     }
@@ -198,9 +177,7 @@ impl Engine {
     pub(super) fn cmd_get_mousex(
         &mut self,
         _c: &InstructionContext<'_>,
-        _ints: &mut Vec<i32>,
-        _objs: &mut Vec<String>,
-        _longs: &mut Vec<i64>,
+        _s: &mut Operands<'_>,
     ) -> VmResult<Option<Value>> {
         Ok(Some(Value::Int(self.platform.mouse[0])))
     }
@@ -208,9 +185,7 @@ impl Engine {
     pub(super) fn cmd_get_mousey(
         &mut self,
         _c: &InstructionContext<'_>,
-        _ints: &mut Vec<i32>,
-        _objs: &mut Vec<String>,
-        _longs: &mut Vec<i64>,
+        _s: &mut Operands<'_>,
     ) -> VmResult<Option<Value>> {
         Ok(Some(Value::Int(self.platform.mouse[1])))
     }
@@ -220,9 +195,7 @@ impl Engine {
     pub(super) fn cmd_telemetry_get_group_count(
         &mut self,
         _c: &InstructionContext<'_>,
-        _ints: &mut Vec<i32>,
-        _objs: &mut Vec<String>,
-        _longs: &mut Vec<i64>,
+        _s: &mut Operands<'_>,
     ) -> VmResult<Option<Value>> {
         Ok(Some(Value::Int(self.builtins.telemetry.group_count())))
     }
@@ -230,9 +203,7 @@ impl Engine {
     pub(super) fn cmd_applet_hasfocus(
         &mut self,
         _c: &InstructionContext<'_>,
-        _ints: &mut Vec<i32>,
-        _objs: &mut Vec<String>,
-        _longs: &mut Vec<i64>,
+        _s: &mut Operands<'_>,
     ) -> VmResult<Option<Value>> {
         Ok(Some(Value::Int(i32::from(self.platform.app_focused))))
     }

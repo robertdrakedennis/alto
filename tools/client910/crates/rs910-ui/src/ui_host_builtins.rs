@@ -14,7 +14,7 @@
 //! no counterpart here fail loudly with `TODO(#gap)` instead of fabricating a
 //! value.
 use crate::ui_chat::NewChatLine;
-use native910::vm::{InstructionContext, Value, VmError, VmResult};
+use native910::vm::{InstructionContext, Operands, Value, VmError, VmResult};
 use rs910_core::fault::Fault;
 use rs910_core::reader::{Eof, Reader as CoreReader};
 use std::sync::Mutex;
@@ -1387,15 +1387,13 @@ impl super::Engine {
     pub(super) fn host_builtin(
         &mut self,
         c: &InstructionContext<'_>,
-        ints: &mut Vec<i32>,
-        objs: &mut Vec<String>,
-        longs: &mut Vec<i64>,
+        operands: &mut Operands<'_>,
     ) -> Option<VmResult<Option<Value>>> {
         let mut s = Stacks {
             command: c.command,
-            ints,
-            objs,
-            longs,
+            ints: operands.ints,
+            objs: operands.objs,
+            longs: operands.longs,
         };
         match self.builtin(&mut s) {
             Err(VmError::UnknownCommand { .. }) => None,

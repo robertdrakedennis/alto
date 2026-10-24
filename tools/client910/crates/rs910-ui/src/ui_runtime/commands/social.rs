@@ -7,6 +7,7 @@
 use super::super::Engine;
 use anyhow::Result;
 use native910::vm::InstructionContext;
+use native910::vm::Operands;
 use native910::vm::Value;
 use native910::vm::VmError;
 use native910::vm::VmResult;
@@ -15,11 +16,9 @@ impl Engine {
     pub(super) fn cmd_social_mutation(
         &mut self,
         c: &InstructionContext<'_>,
-        ints: &mut Vec<i32>,
-        objs: &mut Vec<String>,
-        _longs: &mut Vec<i64>,
+        s: &mut Operands<'_>,
     ) -> VmResult<Option<Value>> {
-        let packet = self.social.mutation(c.command, ints, objs)?;
+        let packet = self.social.mutation(c.command, s.ints, s.objs)?;
         self.outgoing.extend(packet);
         Ok(None)
     }
@@ -29,14 +28,9 @@ impl Engine {
     pub(super) fn cmd_player_group_member_get_join_xp(
         &mut self,
         c: &InstructionContext<'_>,
-        ints: &mut Vec<i32>,
-        _objs: &mut Vec<String>,
-        _longs: &mut Vec<i64>,
+        s: &mut Operands<'_>,
     ) -> VmResult<Option<Value>> {
-        if ints.len() < 3 {
-            return Err(VmError::StackUnderflow { stack: "int" });
-        }
-        let args = ints.split_off(ints.len() - 3);
+        let args = s.int_args::<3>()?;
         let fail = |reason: &str| VmError::TrapFailed {
             command: c.command.into(),
             reason: reason.into(),
@@ -71,7 +65,7 @@ impl Engine {
         } else {
             xp
         };
-        ints.push(value);
+        s.ints.push(value);
         Ok(None)
     }
 
@@ -81,15 +75,13 @@ impl Engine {
     pub(super) fn cmd_player_group_member_get_same_world_var(
         &mut self,
         c: &InstructionContext<'_>,
-        ints: &mut Vec<i32>,
-        objs: &mut Vec<String>,
-        longs: &mut Vec<i64>,
+        s: &mut Operands<'_>,
     ) -> VmResult<Option<Value>> {
         if c.command == "player_group_member_get_same_world_var"
-            && ints.len() >= 3
-            && ints[ints.len() - 2] != 1
+            && s.ints.len() >= 3
+            && s.ints[s.ints.len() - 2] != 1
         {
-            let args = ints.split_off(ints.len() - 3);
+            let args = s.ints.split_off(s.ints.len() - 3);
             let value = (|| -> Result<i32> {
                 let member = self
                     .social
@@ -124,6 +116,6 @@ impl Engine {
         }
         // The guard failed: the old chain went on to the owners
         // (`social` claims this name).
-        self.dispatch_owners(c, ints, objs, longs)
+        self.dispatch_owners(c, s)
     }
 }

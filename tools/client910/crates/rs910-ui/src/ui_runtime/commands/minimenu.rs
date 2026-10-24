@@ -4,6 +4,7 @@
 //! is the former `trap_context` branch for its names, moved verbatim.
 use super::super::Engine;
 use native910::vm::InstructionContext;
+use native910::vm::Operands;
 use native910::vm::Value;
 use native910::vm::VmError;
 use native910::vm::VmResult;
@@ -14,14 +15,12 @@ impl Engine {
     pub(super) fn cmd_sethardcodedopcursors(
         &mut self,
         _c: &InstructionContext<'_>,
-        ints: &mut Vec<i32>,
-        _objs: &mut Vec<String>,
-        _longs: &mut Vec<i64>,
+        s: &mut Operands<'_>,
     ) -> VmResult<Option<Value>> {
-        if ints.len() < 2 {
+        if s.ints.len() < 2 {
             return Err(VmError::StackUnderflow { stack: "int" });
         }
-        ints.truncate(ints.len() - 2);
+        s.ints.truncate(s.ints.len() - 2);
         Ok(None)
     }
 
@@ -29,14 +28,9 @@ impl Engine {
     pub(super) fn cmd_setdefaultcursors(
         &mut self,
         _c: &InstructionContext<'_>,
-        ints: &mut Vec<i32>,
-        _objs: &mut Vec<String>,
-        _longs: &mut Vec<i64>,
+        s: &mut Operands<'_>,
     ) -> VmResult<Option<Value>> {
-        if ints.len() < 2 {
-            return Err(VmError::StackUnderflow { stack: "int" });
-        }
-        let a = ints.split_off(ints.len() - 2);
+        let a = s.int_args::<2>()?;
         self.menu.default_cursors = [a[0], a[1]];
         Ok(None)
     }
@@ -46,41 +40,35 @@ impl Engine {
     pub(super) fn cmd_get_active_minimenu_entry(
         &mut self,
         c: &InstructionContext<'_>,
-        ints: &mut Vec<i32>,
-        objs: &mut Vec<String>,
-        _longs: &mut Vec<i64>,
+        s: &mut Operands<'_>,
     ) -> VmResult<Option<Value>> {
         let view = if c.command == "get_active_minimenu_entry" {
             &self.menu.active
         } else {
             &self.menu.secondary
         };
-        ints.push(view.entity_type);
-        objs.push(view.op.clone());
-        objs.push(view.op_base.clone());
-        objs.push(view.quest_text.clone().unwrap_or_default());
+        s.ints.push(view.entity_type);
+        s.objs.push(view.op.clone());
+        s.objs.push(view.op_base.clone());
+        s.objs.push(view.quest_text.clone().unwrap_or_default());
         Ok(None)
     }
 
     pub(super) fn cmd_get_minimenu_length(
         &mut self,
         _c: &InstructionContext<'_>,
-        ints: &mut Vec<i32>,
-        _objs: &mut Vec<String>,
-        _longs: &mut Vec<i64>,
+        s: &mut Operands<'_>,
     ) -> VmResult<Option<Value>> {
-        ints.extend(self.menu.counts);
+        s.ints.extend(self.menu.counts);
         Ok(None)
     }
 
     pub(super) fn cmd_oc_minimenu_colour(
         &mut self,
         c: &InstructionContext<'_>,
-        ints: &mut Vec<i32>,
-        _objs: &mut Vec<String>,
-        _longs: &mut Vec<i64>,
+        s: &mut Operands<'_>,
     ) -> VmResult<Option<Value>> {
-        let id = ints.pop().ok_or(VmError::StackUnderflow { stack: "int" })?;
+        let id = s.int()?;
         self.minimenu_colour(id)
             .map(|v| Some(Value::Int(v)))
             .map_err(|e| VmError::TrapFailed {
@@ -93,11 +81,9 @@ impl Engine {
     pub(super) fn cmd_oc_minimenu_colour_overridden(
         &mut self,
         c: &InstructionContext<'_>,
-        ints: &mut Vec<i32>,
-        _objs: &mut Vec<String>,
-        _longs: &mut Vec<i64>,
+        s: &mut Operands<'_>,
     ) -> VmResult<Option<Value>> {
-        let id = ints.pop().ok_or(VmError::StackUnderflow { stack: "int" })?;
+        let id = s.int()?;
         let objs = self
             .configs
             .objs

@@ -7,6 +7,7 @@ use super::super::absent;
 use super::super::Engine;
 use super::super::SoundRequest;
 use native910::vm::InstructionContext;
+use native910::vm::Operands;
 use native910::vm::Value;
 use native910::vm::VmError;
 use native910::vm::VmResult;
@@ -15,9 +16,7 @@ impl Engine {
     pub(super) fn cmd_sound(
         &mut self,
         c: &InstructionContext<'_>,
-        ints: &mut Vec<i32>,
-        _objs: &mut Vec<String>,
-        _longs: &mut Vec<i64>,
+        s: &mut Operands<'_>,
     ) -> VmResult<Option<Value>> {
         let sound_args = match c.command {
             "sound_synth" => Some(3),
@@ -38,10 +37,10 @@ impl Engine {
         };
 
         if let Some(count) = sound_args {
-            if ints.len() < count {
+            if s.ints.len() < count {
                 return Err(VmError::StackUnderflow { stack: "int" });
             }
-            let request = ints.split_off(ints.len() - count);
+            let request = s.ints.split_off(s.ints.len() - count);
             self.effects.sounds.push(SoundRequest {
                 command: c.command.to_string(),
                 args: request,
@@ -57,15 +56,13 @@ impl Engine {
     pub(super) fn cmd_random_sound_pitch(
         &mut self,
         _c: &InstructionContext<'_>,
-        ints: &mut Vec<i32>,
-        _objs: &mut Vec<String>,
-        _longs: &mut Vec<i64>,
+        s: &mut Operands<'_>,
     ) -> VmResult<Option<Value>> {
-        if ints.len() < 2 {
+        if s.ints.len() < 2 {
             return Err(VmError::StackUnderflow { stack: "int" });
         }
-        let b = ints.pop().unwrap();
-        let a = ints.pop().unwrap();
+        let b = s.ints.pop().unwrap();
+        let a = s.ints.pop().unwrap();
         let pitch = if a <= 700 && b <= 700 {
             (2f64.powf((self.next_double() * a.wrapping_add(b) as f64 - a as f64 + 800.0) / 100.0)
                 + 0.5) as i32

@@ -5,6 +5,7 @@
 //! is the former `trap_context` branch for its names, moved verbatim.
 use super::super::Engine;
 use native910::vm::InstructionContext;
+use native910::vm::Operands;
 use native910::vm::Value;
 use native910::vm::VmResult;
 
@@ -13,9 +14,7 @@ impl Engine {
     pub(super) fn cmd_staffmodlevel(
         &mut self,
         _c: &InstructionContext<'_>,
-        _ints: &mut Vec<i32>,
-        _objs: &mut Vec<String>,
-        _longs: &mut Vec<i64>,
+        _s: &mut Operands<'_>,
     ) -> VmResult<Option<Value>> {
         Ok(Some(Value::Int(if self.account.staff_mod_level >= 2 {
             self.account.staff_mod_level
@@ -29,9 +28,7 @@ impl Engine {
     pub(super) fn cmd_playermod(
         &mut self,
         c: &InstructionContext<'_>,
-        _ints: &mut Vec<i32>,
-        _objs: &mut Vec<String>,
-        _longs: &mut Vec<i64>,
+        _s: &mut Operands<'_>,
     ) -> VmResult<Option<Value>> {
         let level = if (5..=9).contains(&self.account.player_mod_level) {
             self.account.player_mod_level
@@ -49,9 +46,7 @@ impl Engine {
     pub(super) fn cmd_userdetail_quickchat(
         &mut self,
         _c: &InstructionContext<'_>,
-        _ints: &mut Vec<i32>,
-        _objs: &mut Vec<String>,
-        _longs: &mut Vec<i64>,
+        _s: &mut Operands<'_>,
     ) -> VmResult<Option<Value>> {
         Ok(Some(Value::Int(i32::from(
             self.account.dob_verified && !self.account.player_is_quickchat,
@@ -62,9 +57,7 @@ impl Engine {
     pub(super) fn cmd_userdetail_dob(
         &mut self,
         _c: &InstructionContext<'_>,
-        _ints: &mut Vec<i32>,
-        _objs: &mut Vec<String>,
-        _longs: &mut Vec<i64>,
+        _s: &mut Operands<'_>,
     ) -> VmResult<Option<Value>> {
         Ok(Some(Value::Int(self.account.dob)))
     }
@@ -73,9 +66,7 @@ impl Engine {
     pub(super) fn cmd_map_members(
         &mut self,
         _c: &InstructionContext<'_>,
-        _ints: &mut Vec<i32>,
-        _objs: &mut Vec<String>,
-        _longs: &mut Vec<i64>,
+        _s: &mut Operands<'_>,
     ) -> VmResult<Option<Value>> {
         Ok(Some(Value::Int(i32::from(self.account.logged_in_members))))
     }
@@ -85,9 +76,7 @@ impl Engine {
     pub(super) fn cmd_map_quickchat(
         &mut self,
         _c: &InstructionContext<'_>,
-        _ints: &mut Vec<i32>,
-        _objs: &mut Vec<String>,
-        _longs: &mut Vec<i64>,
+        _s: &mut Operands<'_>,
     ) -> VmResult<Option<Value>> {
         Ok(Some(Value::Int(i32::from(
             self.account.logged_in_quickchat,
@@ -97,9 +86,7 @@ impl Engine {
     pub(super) fn cmd_playermember(
         &mut self,
         _c: &InstructionContext<'_>,
-        _ints: &mut Vec<i32>,
-        _objs: &mut Vec<String>,
-        _longs: &mut Vec<i64>,
+        _s: &mut Operands<'_>,
     ) -> VmResult<Option<Value>> {
         Ok(Some(Value::Int(i32::from(self.account.player_is_members))))
     }

@@ -5,6 +5,7 @@
 use super::super::encode_pjstr;
 use super::super::Engine;
 use native910::vm::InstructionContext;
+use native910::vm::Operands;
 use native910::vm::Value;
 use native910::vm::VmError;
 use native910::vm::VmResult;
@@ -17,9 +18,7 @@ impl Engine {
     pub(super) fn cmd_create_connectrequest(
         &mut self,
         _c: &InstructionContext<'_>,
-        _ints: &mut Vec<i32>,
-        _objs: &mut Vec<String>,
-        _longs: &mut Vec<i64>,
+        _s: &mut Operands<'_>,
     ) -> VmResult<Option<Value>> {
         if self.login.ready && !self.creation.connect_in_progress {
             self.creation.connect_requested = true;
@@ -37,13 +36,9 @@ impl Engine {
     pub(super) fn cmd_create_availablerequest(
         &mut self,
         c: &InstructionContext<'_>,
-        _ints: &mut Vec<i32>,
-        objs: &mut Vec<String>,
-        _longs: &mut Vec<i64>,
+        s: &mut Operands<'_>,
     ) -> VmResult<Option<Value>> {
-        let email = objs
-            .pop()
-            .ok_or(VmError::StackUnderflow { stack: "object" })?;
+        let email = s.obj()?;
         // The operands are already popped.
         if !self.login.account_creation_connected() {
             return Ok(None);
@@ -71,13 +66,9 @@ impl Engine {
     pub(super) fn cmd_create_name_availablerequest(
         &mut self,
         c: &InstructionContext<'_>,
-        _ints: &mut Vec<i32>,
-        objs: &mut Vec<String>,
-        _longs: &mut Vec<i64>,
+        s: &mut Operands<'_>,
     ) -> VmResult<Option<Value>> {
-        let name = objs
-            .pop()
-            .ok_or(VmError::StackUnderflow { stack: "object" })?;
+        let name = s.obj()?;
         // requestDisplayNameAvailableCheck.
         if !self.login.account_creation_connected() {
             return Ok(None);
@@ -102,9 +93,7 @@ impl Engine {
     pub(super) fn cmd_create_suggest_name_request(
         &mut self,
         _c: &InstructionContext<'_>,
-        _ints: &mut Vec<i32>,
-        _objs: &mut Vec<String>,
-        _longs: &mut Vec<i64>,
+        _s: &mut Operands<'_>,
     ) -> VmResult<Option<Value>> {
         // requestDisplayNameSuggestion.
         if !self.login.account_creation_connected() {
@@ -120,9 +109,7 @@ impl Engine {
     pub(super) fn cmd_create_under13(
         &mut self,
         _c: &InstructionContext<'_>,
-        _ints: &mut Vec<i32>,
-        _objs: &mut Vec<String>,
-        _longs: &mut Vec<i64>,
+        _s: &mut Operands<'_>,
     ) -> VmResult<Option<Value>> {
         Ok(Some(Value::Int(i32::from(self.creation.is_under13))))
     }
@@ -130,9 +117,7 @@ impl Engine {
     pub(super) fn cmd_create_setunder13(
         &mut self,
         _c: &InstructionContext<'_>,
-        _ints: &mut Vec<i32>,
-        _objs: &mut Vec<String>,
-        _longs: &mut Vec<i64>,
+        _s: &mut Operands<'_>,
     ) -> VmResult<Option<Value>> {
         self.creation.is_under13 = true;
         Ok(None)
@@ -141,11 +126,9 @@ impl Engine {
     pub(super) fn cmd_create_step_reached(
         &mut self,
         _c: &InstructionContext<'_>,
-        ints: &mut Vec<i32>,
-        _objs: &mut Vec<String>,
-        _longs: &mut Vec<i64>,
+        s: &mut Operands<'_>,
     ) -> VmResult<Option<Value>> {
-        let step = ints.pop().ok_or(VmError::StackUnderflow { stack: "int" })?;
+        let step = s.int()?;
         // requestStatsLogging.
         if !self.login.account_creation_connected() {
             return Ok(None);
@@ -161,20 +144,18 @@ impl Engine {
     pub(super) fn cmd_create_createrequest(
         &mut self,
         c: &InstructionContext<'_>,
-        ints: &mut Vec<i32>,
-        objs: &mut Vec<String>,
-        _longs: &mut Vec<i64>,
+        s: &mut Operands<'_>,
     ) -> VmResult<Option<Value>> {
-        if ints.len() < 2 || objs.len() < 3 {
+        if s.ints.len() < 2 || s.objs.len() < 3 {
             return Err(VmError::StackUnderflow {
-                stack: if ints.len() < 2 { "int" } else { "object" },
+                stack: if s.ints.len() < 2 { "int" } else { "object" },
             });
         }
-        let email = objs.pop().unwrap();
-        let password = objs.pop().unwrap();
-        let username = objs.pop().unwrap();
-        let verified = ints.pop().unwrap() == 1;
-        let stage = ints.pop().unwrap();
+        let email = s.objs.pop().unwrap();
+        let password = s.objs.pop().unwrap();
+        let username = s.objs.pop().unwrap();
+        let verified = s.ints.pop().unwrap() == 1;
+        let stage = s.ints.pop().unwrap();
         // requestAccountCreation: nothing, not even the under-13
         // flag, happens outside state 0.
         if !self.login.account_creation_connected() {
@@ -220,9 +201,7 @@ impl Engine {
     pub(super) fn cmd_create_email_validate_reply(
         &mut self,
         _c: &InstructionContext<'_>,
-        _ints: &mut Vec<i32>,
-        _objs: &mut Vec<String>,
-        _longs: &mut Vec<i64>,
+        _s: &mut Operands<'_>,
     ) -> VmResult<Option<Value>> {
         Ok(Some(Value::Int(self.creation.email_reply)))
     }
@@ -231,9 +210,7 @@ impl Engine {
     pub(super) fn cmd_create_reply(
         &mut self,
         _c: &InstructionContext<'_>,
-        _ints: &mut Vec<i32>,
-        _objs: &mut Vec<String>,
-        _longs: &mut Vec<i64>,
+        _s: &mut Operands<'_>,
     ) -> VmResult<Option<Value>> {
         Ok(Some(Value::Int(self.creation.account_reply)))
     }
@@ -242,9 +219,7 @@ impl Engine {
     pub(super) fn cmd_create_name_validate_reply(
         &mut self,
         _c: &InstructionContext<'_>,
-        _ints: &mut Vec<i32>,
-        _objs: &mut Vec<String>,
-        _longs: &mut Vec<i64>,
+        _s: &mut Operands<'_>,
     ) -> VmResult<Option<Value>> {
         Ok(Some(Value::Int(self.creation.name_reply)))
     }
@@ -254,21 +229,18 @@ impl Engine {
     pub(super) fn cmd_create_suggest_name_reply(
         &mut self,
         _c: &InstructionContext<'_>,
-        ints: &mut Vec<i32>,
-        objs: &mut Vec<String>,
-        _longs: &mut Vec<i64>,
+        s: &mut Operands<'_>,
     ) -> VmResult<Option<Value>> {
-        ints.push(self.creation.suggest_reply);
-        objs.push(self.creation.suggested_name.clone().unwrap_or_default());
+        s.ints.push(self.creation.suggest_reply);
+        s.objs
+            .push(self.creation.suggested_name.clone().unwrap_or_default());
         Ok(None)
     }
 
     pub(super) fn cmd_create_connect_reply(
         &mut self,
         _c: &InstructionContext<'_>,
-        _ints: &mut Vec<i32>,
-        _objs: &mut Vec<String>,
-        _longs: &mut Vec<i64>,
+        _s: &mut Operands<'_>,
     ) -> VmResult<Option<Value>> {
         Ok(Some(Value::Int(self.creation.connect_reply)))
     }

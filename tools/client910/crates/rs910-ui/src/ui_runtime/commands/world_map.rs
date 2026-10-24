@@ -5,6 +5,7 @@
 //! is the former `trap_context` branch for its names, moved verbatim.
 use super::super::Engine;
 use native910::vm::InstructionContext;
+use native910::vm::Operands;
 use native910::vm::Value;
 use native910::vm::VmResult;
 
@@ -14,9 +15,7 @@ impl Engine {
     pub(super) fn cmd_noop_world_map_command(
         &mut self,
         _c: &InstructionContext<'_>,
-        _ints: &mut Vec<i32>,
-        _objs: &mut Vec<String>,
-        _longs: &mut Vec<i64>,
+        _s: &mut Operands<'_>,
     ) -> VmResult<Option<Value>> {
         Ok(None)
     }
@@ -26,9 +25,7 @@ impl Engine {
     pub(super) fn cmd_worldmap_3dview_active(
         &mut self,
         _c: &InstructionContext<'_>,
-        _ints: &mut Vec<i32>,
-        _objs: &mut Vec<String>,
-        _longs: &mut Vec<i64>,
+        _s: &mut Operands<'_>,
     ) -> VmResult<Option<Value>> {
         Ok(Some(Value::Int(0)))
     }

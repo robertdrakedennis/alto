@@ -12,6 +12,7 @@ use crate::{
     ui_vars::Variables,
 };
 use anyhow::Result;
+use native910::vm::Operands;
 use native910::{
     vars::VarScope,
     vm::{Host, InstructionContext, Value, VmError, VmResult},
@@ -366,7 +367,7 @@ impl Host for Engine {
         objs: &mut Vec<String>,
         longs: &mut Vec<i64>,
     ) -> VmResult<Option<Value>> {
-        self.dispatch_command(c, ints, objs, longs)
+        self.dispatch_command(c, &mut Operands { ints, objs, longs })
     }
     fn var_get(&mut self, _: VarScope, _: u16, _: bool) -> VmResult<Value> {
         Err(absent("unbound variable"))

@@ -168,6 +168,50 @@ impl From<VmError> for NativeError {
     }
 }
 
+/// The operand stacks a host's engine command pops its arguments from (the
+/// last pushed argument first).
+pub struct Operands<'a> {
+    pub ints: &'a mut Vec<i32>,
+    pub objs: &'a mut Vec<String>,
+    pub longs: &'a mut Vec<i64>,
+}
+
+impl Operands<'_> {
+    /// Pop an int argument.
+    pub fn int(&mut self) -> VmResult<i32> {
+        self.ints
+            .pop()
+            .ok_or(VmError::StackUnderflow { stack: "int" })
+    }
+
+    /// Pop the top `N` int arguments, in the order they were pushed.
+    pub fn int_args<const N: usize>(&mut self) -> VmResult<[i32; N]> {
+        let start = self
+            .ints
+            .len()
+            .checked_sub(N)
+            .ok_or(VmError::StackUnderflow { stack: "int" })?;
+        let mut args = [0; N];
+        args.copy_from_slice(&self.ints[start..]);
+        self.ints.truncate(start);
+        Ok(args)
+    }
+
+    /// Pop a string argument.
+    pub fn obj(&mut self) -> VmResult<String> {
+        self.objs
+            .pop()
+            .ok_or(VmError::StackUnderflow { stack: "object" })
+    }
+
+    /// Pop a long argument.
+    pub fn long(&mut self) -> VmResult<i64> {
+        self.longs
+            .pop()
+            .ok_or(VmError::StackUnderflow { stack: "long" })
+    }
+}
+
 /// Instruction context supplied without discarding arguments.
 #[derive(Clone, Copy, Debug)]
 pub struct InstructionContext<'a> {

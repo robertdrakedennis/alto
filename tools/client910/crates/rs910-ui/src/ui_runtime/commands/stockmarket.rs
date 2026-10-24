@@ -5,6 +5,7 @@
 use super::super::absent;
 use super::super::Engine;
 use native910::vm::InstructionContext;
+use native910::vm::Operands;
 use native910::vm::Value;
 use native910::vm::VmError;
 use native910::vm::VmResult;
@@ -13,18 +14,16 @@ impl Engine {
     pub(super) fn cmd_stockmarket(
         &mut self,
         c: &InstructionContext<'_>,
-        ints: &mut Vec<i32>,
-        _objs: &mut Vec<String>,
-        _longs: &mut Vec<i64>,
+        s: &mut Operands<'_>,
     ) -> VmResult<Option<Value>> {
-        if ints.len() < 2 {
+        if s.ints.len() < 2 {
             return Err(VmError::StackUnderflow { stack: "int" });
         }
-        let market = usize::try_from(ints.pop().unwrap()).map_err(|_| VmError::TrapFailed {
+        let market = usize::try_from(s.ints.pop().unwrap()).map_err(|_| VmError::TrapFailed {
             command: c.command.into(),
             reason: "negative stockmarket market".into(),
         })?;
-        let slot = usize::try_from(ints.pop().unwrap()).map_err(|_| VmError::TrapFailed {
+        let slot = usize::try_from(s.ints.pop().unwrap()).map_err(|_| VmError::TrapFailed {
             command: c.command.into(),
             reason: "negative stockmarket slot".into(),
         })?;

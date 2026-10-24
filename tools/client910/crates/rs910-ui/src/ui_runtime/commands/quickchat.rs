@@ -7,6 +7,7 @@ use super::super::encode_pjstr;
 use super::super::ActiveChatPhrase;
 use super::super::Engine;
 use native910::vm::InstructionContext;
+use native910::vm::Operands;
 use native910::vm::Value;
 use native910::vm::VmError;
 use native910::vm::VmResult;
@@ -23,52 +24,46 @@ impl Engine {
     pub(super) fn cmd_chatphrase_getdynamiccommandcount(
         &mut self,
         _c: &InstructionContext<'_>,
-        ints: &mut Vec<i32>,
-        _objs: &mut Vec<String>,
-        _longs: &mut Vec<i64>,
+        s: &mut Operands<'_>,
     ) -> VmResult<Option<Value>> {
-        let id = ints.pop().ok_or(VmError::StackUnderflow { stack: "int" })? as u16;
+        let id = s.int()? as u16;
         let count = self
             .configs
             .quickchat
             .as_ref()
             .and_then(|store| store.dynamic_count(id))
             .unwrap_or(0);
-        ints.push(count as i32);
+        s.ints.push(count as i32);
         Ok(None)
     }
 
     pub(super) fn cmd_chatphrase_getdynamiccommand(
         &mut self,
         c: &InstructionContext<'_>,
-        ints: &mut Vec<i32>,
-        _objs: &mut Vec<String>,
-        _longs: &mut Vec<i64>,
+        s: &mut Operands<'_>,
     ) -> VmResult<Option<Value>> {
-        if ints.len() < 2 {
+        if s.ints.len() < 2 {
             return Err(VmError::StackUnderflow { stack: "int" });
         }
-        let index = usize::try_from(ints.pop().unwrap()).unwrap_or(usize::MAX);
-        let id = ints.pop().unwrap() as u16;
+        let index = usize::try_from(s.ints.pop().unwrap()).unwrap_or(usize::MAX);
+        let id = s.ints.pop().unwrap() as u16;
         let command = self
             .configs
             .quickchat
             .as_ref()
             .and_then(|store| store.dynamic_command(id, index))
             .ok_or_else(|| range_error(c.command))?;
-        ints.push(i32::from(command));
+        s.ints.push(i32::from(command));
         Ok(None)
     }
 
     pub(super) fn cmd_chatphrase_gettext(
         &mut self,
         _c: &InstructionContext<'_>,
-        ints: &mut Vec<i32>,
-        objs: &mut Vec<String>,
-        _longs: &mut Vec<i64>,
+        s: &mut Operands<'_>,
     ) -> VmResult<Option<Value>> {
-        let id = ints.pop().ok_or(VmError::StackUnderflow { stack: "int" })? as u16;
-        objs.push(
+        let id = s.int()? as u16;
+        s.objs.push(
             self.configs
                 .quickchat
                 .as_ref()
@@ -81,21 +76,17 @@ impl Engine {
     pub(super) fn cmd_chatphrase_find(
         &mut self,
         _c: &InstructionContext<'_>,
-        ints: &mut Vec<i32>,
-        objs: &mut Vec<String>,
-        _longs: &mut Vec<i64>,
+        s: &mut Operands<'_>,
     ) -> VmResult<Option<Value>> {
-        let query = objs
-            .pop()
-            .ok_or(VmError::StackUnderflow { stack: "object" })?;
-        let global = ints.pop().ok_or(VmError::StackUnderflow { stack: "int" })? == 1;
+        let query = s.obj()?;
+        let global = s.int()? == 1;
         self.messages.phrase_find_results = self
             .configs
             .quickchat
             .as_ref()
             .and_then(|store| store.find_phrases(&query, global));
         self.messages.phrase_find_index = 0;
-        ints.push(
+        s.ints.push(
             self.messages
                 .phrase_find_results
                 .as_ref()
@@ -107,9 +98,7 @@ impl Engine {
     pub(super) fn cmd_chatphrase_findnext(
         &mut self,
         _c: &InstructionContext<'_>,
-        ints: &mut Vec<i32>,
-        _objs: &mut Vec<String>,
-        _longs: &mut Vec<i64>,
+        s: &mut Operands<'_>,
     ) -> VmResult<Option<Value>> {
         let result = self
             .messages
@@ -120,16 +109,14 @@ impl Engine {
         if result != -1 {
             self.messages.phrase_find_index += 1;
         }
-        ints.push(result);
+        s.ints.push(result);
         Ok(None)
     }
 
     pub(super) fn cmd_chatphrase_findrestart(
         &mut self,
         _c: &InstructionContext<'_>,
-        _ints: &mut Vec<i32>,
-        _objs: &mut Vec<String>,
-        _longs: &mut Vec<i64>,
+        _s: &mut Operands<'_>,
     ) -> VmResult<Option<Value>> {
         self.messages.phrase_find_index = 0;
         Ok(None)
@@ -138,14 +125,9 @@ impl Engine {
     pub(super) fn cmd_chatphrase_getdynamiccommandparam_enum(
         &mut self,
         c: &InstructionContext<'_>,
-        ints: &mut Vec<i32>,
-        _objs: &mut Vec<String>,
-        _longs: &mut Vec<i64>,
+        s: &mut Operands<'_>,
     ) -> VmResult<Option<Value>> {
-        if ints.len() < 3 {
-            return Err(VmError::StackUnderflow { stack: "int" });
-        }
-        let args = ints.split_off(ints.len() - 3);
+        let args = s.int_args::<3>()?;
         let id = args[0] as u16;
         let dynamic = usize::try_from(args[1]).map_err(|_| VmError::TrapFailed {
             command: c.command.into(),
@@ -170,19 +152,17 @@ impl Engine {
                 reason: format!("quick-chat dynamic command {command} is not ENUM_STRING"),
             });
         }
-        ints.push(value);
+        s.ints.push(value);
         Ok(None)
     }
 
     pub(super) fn cmd_chatcat_getdesc(
         &mut self,
         _c: &InstructionContext<'_>,
-        ints: &mut Vec<i32>,
-        objs: &mut Vec<String>,
-        _longs: &mut Vec<i64>,
+        s: &mut Operands<'_>,
     ) -> VmResult<Option<Value>> {
-        let id = ints.pop().ok_or(VmError::StackUnderflow { stack: "int" })? as u16;
-        objs.push(
+        let id = s.int()? as u16;
+        s.objs.push(
             self.configs
                 .quickchat
                 .as_ref()
@@ -196,11 +176,9 @@ impl Engine {
     pub(super) fn cmd_chatcat_get(
         &mut self,
         c: &InstructionContext<'_>,
-        ints: &mut Vec<i32>,
-        _objs: &mut Vec<String>,
-        _longs: &mut Vec<i64>,
+        s: &mut Operands<'_>,
     ) -> VmResult<Option<Value>> {
-        let id = ints.pop().ok_or(VmError::StackUnderflow { stack: "int" })? as u16;
+        let id = s.int()? as u16;
         let count = self.configs.quickchat.as_ref().map_or(0, |store| {
             if c.command == "chatcat_getsubcatcount" {
                 store.category_sub_count(id)
@@ -208,22 +186,20 @@ impl Engine {
                 store.category_phrase_count(id)
             }
         });
-        ints.push(count as i32);
+        s.ints.push(count as i32);
         Ok(None)
     }
 
     pub(super) fn cmd_chatcat_getsubcat(
         &mut self,
         c: &InstructionContext<'_>,
-        ints: &mut Vec<i32>,
-        _objs: &mut Vec<String>,
-        _longs: &mut Vec<i64>,
+        s: &mut Operands<'_>,
     ) -> VmResult<Option<Value>> {
-        if ints.len() < 2 {
+        if s.ints.len() < 2 {
             return Err(VmError::StackUnderflow { stack: "int" });
         }
-        let index = usize::try_from(ints.pop().unwrap()).unwrap_or(usize::MAX);
-        let id = ints.pop().unwrap() as u16;
+        let index = usize::try_from(s.ints.pop().unwrap()).unwrap_or(usize::MAX);
+        let id = s.ints.pop().unwrap() as u16;
         let result = self
             .configs
             .quickchat
@@ -236,22 +212,20 @@ impl Engine {
                 }
             })
             .ok_or_else(|| range_error(c.command))?;
-        ints.push(i32::from(result));
+        s.ints.push(i32::from(result));
         Ok(None)
     }
 
     pub(super) fn cmd_chatcat_getsubcatshortcut(
         &mut self,
         c: &InstructionContext<'_>,
-        ints: &mut Vec<i32>,
-        _objs: &mut Vec<String>,
-        _longs: &mut Vec<i64>,
+        s: &mut Operands<'_>,
     ) -> VmResult<Option<Value>> {
-        if ints.len() < 2 {
+        if s.ints.len() < 2 {
             return Err(VmError::StackUnderflow { stack: "int" });
         }
-        let index = usize::try_from(ints.pop().unwrap()).unwrap_or(usize::MAX);
-        let id = ints.pop().unwrap() as u16;
+        let index = usize::try_from(s.ints.pop().unwrap()).unwrap_or(usize::MAX);
+        let id = s.ints.pop().unwrap() as u16;
         let result = self
             .configs
             .quickchat
@@ -264,22 +238,20 @@ impl Engine {
                 }
             })
             .ok_or_else(|| range_error(c.command))?;
-        ints.push(result as i32);
+        s.ints.push(result as i32);
         Ok(None)
     }
 
     pub(super) fn cmd_chatcat_find(
         &mut self,
         c: &InstructionContext<'_>,
-        ints: &mut Vec<i32>,
-        _objs: &mut Vec<String>,
-        _longs: &mut Vec<i64>,
+        s: &mut Operands<'_>,
     ) -> VmResult<Option<Value>> {
-        if ints.len() < 2 {
+        if s.ints.len() < 2 {
             return Err(VmError::StackUnderflow { stack: "int" });
         }
-        let shortcut = ints.pop().unwrap();
-        let id = ints.pop().unwrap() as u16;
+        let shortcut = s.ints.pop().unwrap();
+        let id = s.ints.pop().unwrap() as u16;
         let result = if shortcut == -1 {
             -1
         } else {
@@ -292,38 +264,36 @@ impl Engine {
                 }
             })
         };
-        ints.push(result);
+        s.ints.push(result);
         Ok(None)
     }
 
     pub(super) fn cmd_chatphrase_getautoresponse(
         &mut self,
         c: &InstructionContext<'_>,
-        ints: &mut Vec<i32>,
-        _objs: &mut Vec<String>,
-        _longs: &mut Vec<i64>,
+        s: &mut Operands<'_>,
     ) -> VmResult<Option<Value>> {
         if c.command == "chatphrase_getautoresponsecount" {
-            let id = ints.pop().ok_or(VmError::StackUnderflow { stack: "int" })? as u16;
-            ints.push(
+            let id = s.int()? as u16;
+            s.ints.push(
                 self.configs
                     .quickchat
                     .as_ref()
                     .map_or(0, |store| store.auto_response_count(id)) as i32,
             );
         } else {
-            if ints.len() < 2 {
+            if s.ints.len() < 2 {
                 return Err(VmError::StackUnderflow { stack: "int" });
             }
-            let index = usize::try_from(ints.pop().unwrap()).unwrap_or(usize::MAX);
-            let id = ints.pop().unwrap() as u16;
+            let index = usize::try_from(s.ints.pop().unwrap()).unwrap_or(usize::MAX);
+            let id = s.ints.pop().unwrap() as u16;
             let response = self
                 .configs
                 .quickchat
                 .as_ref()
                 .and_then(|store| store.auto_response(id, index))
                 .ok_or_else(|| range_error(c.command))?;
-            ints.push(i32::from(response));
+            s.ints.push(i32::from(response));
         }
         Ok(None)
     }
@@ -331,11 +301,9 @@ impl Engine {
     pub(super) fn cmd_activechatphrase_prepare(
         &mut self,
         _c: &InstructionContext<'_>,
-        ints: &mut Vec<i32>,
-        _objs: &mut Vec<String>,
-        _longs: &mut Vec<i64>,
+        s: &mut Operands<'_>,
     ) -> VmResult<Option<Value>> {
-        let id = ints.pop().ok_or(VmError::StackUnderflow { stack: "int" })? as u16;
+        let id = s.int()? as u16;
         let count = self
             .configs
             .quickchat
@@ -352,15 +320,13 @@ impl Engine {
     pub(super) fn cmd_activechatphrase_setdynamic(
         &mut self,
         c: &InstructionContext<'_>,
-        ints: &mut Vec<i32>,
-        _objs: &mut Vec<String>,
-        _longs: &mut Vec<i64>,
+        s: &mut Operands<'_>,
     ) -> VmResult<Option<Value>> {
-        if ints.len() < 2 {
+        if s.ints.len() < 2 {
             return Err(VmError::StackUnderflow { stack: "int" });
         }
-        let value = ints.pop().unwrap();
-        let index = usize::try_from(ints.pop().unwrap()).map_err(|_| VmError::TrapFailed {
+        let value = s.ints.pop().unwrap();
+        let index = usize::try_from(s.ints.pop().unwrap()).map_err(|_| VmError::TrapFailed {
             command: c.command.into(),
             reason: "negative quick-chat dynamic index".into(),
         })?;
@@ -386,11 +352,9 @@ impl Engine {
     pub(super) fn cmd_activechatphrase_send(
         &mut self,
         c: &InstructionContext<'_>,
-        ints: &mut Vec<i32>,
-        _objs: &mut Vec<String>,
-        _longs: &mut Vec<i64>,
+        s: &mut Operands<'_>,
     ) -> VmResult<Option<Value>> {
-        let mode = ints.pop().ok_or(VmError::StackUnderflow { stack: "int" })?;
+        let mode = s.int()?;
         let phrase =
             self.messages
                 .active_chat_phrase
@@ -429,13 +393,9 @@ impl Engine {
     pub(super) fn cmd_activechatphrase_sendprivate(
         &mut self,
         c: &InstructionContext<'_>,
-        _ints: &mut Vec<i32>,
-        objs: &mut Vec<String>,
-        _longs: &mut Vec<i64>,
+        s: &mut Operands<'_>,
     ) -> VmResult<Option<Value>> {
-        let recipient = objs
-            .pop()
-            .ok_or(VmError::StackUnderflow { stack: "object" })?;
+        let recipient = s.obj()?;
         let recipient = encode_pjstr(&recipient).ok_or_else(|| VmError::TrapFailed {
             command: c.command.into(),
             reason: "private quick-chat recipient contains NUL".into(),

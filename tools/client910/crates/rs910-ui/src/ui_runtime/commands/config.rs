@@ -6,6 +6,7 @@
 use super::super::absent;
 use super::super::Engine;
 use native910::vm::InstructionContext;
+use native910::vm::Operands;
 use native910::vm::Value;
 use native910::vm::VmError;
 use native910::vm::VmResult;
@@ -16,11 +17,9 @@ impl Engine {
     pub(super) fn cmd_oc_category(
         &mut self,
         c: &InstructionContext<'_>,
-        ints: &mut Vec<i32>,
-        _objs: &mut Vec<String>,
-        _longs: &mut Vec<i64>,
+        s: &mut Operands<'_>,
     ) -> VmResult<Option<Value>> {
-        let id = ints.pop().ok_or(VmError::StackUnderflow { stack: "int" })?;
+        let id = s.int()?;
         let objs = self
             .configs
             .objs
@@ -40,11 +39,9 @@ impl Engine {
     pub(super) fn cmd_oc_members(
         &mut self,
         c: &InstructionContext<'_>,
-        ints: &mut Vec<i32>,
-        _objs: &mut Vec<String>,
-        _longs: &mut Vec<i64>,
+        s: &mut Operands<'_>,
     ) -> VmResult<Option<Value>> {
-        let id = ints.pop().ok_or(VmError::StackUnderflow { stack: "int" })?;
+        let id = s.int()?;
         let objs = self
             .configs
             .objs
@@ -65,14 +62,9 @@ impl Engine {
     pub(super) fn cmd_inv_totalparam(
         &mut self,
         c: &InstructionContext<'_>,
-        ints: &mut Vec<i32>,
-        _objs: &mut Vec<String>,
-        _longs: &mut Vec<i64>,
+        s: &mut Operands<'_>,
     ) -> VmResult<Option<Value>> {
-        if ints.len() < 2 {
-            return Err(VmError::StackUnderflow { stack: "int" });
-        }
-        let a = ints.split_off(ints.len() - 2);
+        let a = s.int_args::<2>()?;
         let (inv, param) = (a[0], a[1]);
         let Some(inventory) = self.inv_cache.inventory(inv, false) else {
             return Ok(Some(Value::Int(0)));
@@ -137,15 +129,13 @@ impl Engine {
     pub(super) fn cmd_nc_param(
         &mut self,
         c: &InstructionContext<'_>,
-        ints: &mut Vec<i32>,
-        _objs: &mut Vec<String>,
-        _longs: &mut Vec<i64>,
+        s: &mut Operands<'_>,
     ) -> VmResult<Option<Value>> {
-        if ints.len() < 2 {
+        if s.ints.len() < 2 {
             return Err(VmError::StackUnderflow { stack: "int" });
         }
-        let param = ints.pop().unwrap();
-        let npc_id = ints.pop().unwrap();
+        let param = s.ints.pop().unwrap();
+        let npc_id = s.ints.pop().unwrap();
         if let Some(value) = match u32::try_from(npc_id) {
             Ok(id) => self
                 .configs
@@ -175,15 +165,13 @@ impl Engine {
     pub(super) fn cmd_lc_param(
         &mut self,
         c: &InstructionContext<'_>,
-        ints: &mut Vec<i32>,
-        _objs: &mut Vec<String>,
-        _longs: &mut Vec<i64>,
+        s: &mut Operands<'_>,
     ) -> VmResult<Option<Value>> {
-        if ints.len() < 2 {
+        if s.ints.len() < 2 {
             return Err(VmError::StackUnderflow { stack: "int" });
         }
-        let param = ints.pop().unwrap();
-        let type_id = ints.pop().unwrap();
+        let param = s.ints.pop().unwrap();
+        let type_id = s.ints.pop().unwrap();
         let override_value = u32::try_from(type_id).ok().and_then(|id| {
             let params = match c.command {
                 "oc_param" => self.configs.objs.as_ref()?.get(id)?.params.as_slice(),
@@ -214,15 +202,13 @@ impl Engine {
     pub(super) fn cmd_seq_param(
         &mut self,
         c: &InstructionContext<'_>,
-        ints: &mut Vec<i32>,
-        _objs: &mut Vec<String>,
-        _longs: &mut Vec<i64>,
+        s: &mut Operands<'_>,
     ) -> VmResult<Option<Value>> {
-        if ints.len() < 2 {
+        if s.ints.len() < 2 {
             return Err(VmError::StackUnderflow { stack: "int" });
         }
-        let param = ints.pop().unwrap();
-        let seq_id = ints.pop().unwrap();
+        let param = s.ints.pop().unwrap();
+        let seq_id = s.ints.pop().unwrap();
         let override_value = u32::try_from(seq_id)
             .ok()
             .and_then(|id| self.configs.seqs.as_ref()?.get(id))
