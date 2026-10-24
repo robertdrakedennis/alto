@@ -1,0 +1,18 @@
+tools/client910/crates/rs910-far-scene/src/far_locs.rs
+  h_d26e211304196f 31
+tools/client910/crates/rs910-render-modern/src/far/jobs.rs
+  h_d26e211304196f 235,285,458,481,490
+tools/client910/crates/rs910-render-modern/src/frame/gpu/far.rs
+  h_d26e211304196f 247,326,368,460,541,555,1293,1312,1326,1976-1978,2008,2043,2088,2130-2131,2204,2251,2253,2264,2332
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "87f2f0b5a2cb039f486ee7cad7f6646e1e544e92",
+  "prompts": {},
+  "humans": {
+    "h_d26e211304196f": {
+      "author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
