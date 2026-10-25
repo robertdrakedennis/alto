@@ -1,0 +1,14 @@
+tools/client910/crates/rs910-model/src/hardshadow.rs
+  h_d26e211304196f 81-84,86-100,103-105,107-109,113-115,117,120,122-154,156,158-170
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "ebad974252a25a86f170e469e836befb31915a52",
+  "prompts": {},
+  "humans": {
+    "h_d26e211304196f": {
+      "author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
