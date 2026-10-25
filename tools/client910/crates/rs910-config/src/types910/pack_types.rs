@@ -4,7 +4,7 @@
 //! a hard load error.
 use crate::{
     cache::Pack,
-    types910::config_types::{resolve_items, Item, Npc},
+    types910::config_types::{Item, Npc},
 };
 use anyhow::{Context, Result};
 use std::collections::BTreeMap;
@@ -65,15 +65,15 @@ pub fn load(pack: &Pack, members: bool) -> Result<Types> {
 /// The item and NPC types from already read obj and npc archives.
 pub fn decode(objs: &Records, npc_records: &Records, members: bool) -> Result<Types> {
     let item_count = objs.count;
-    let mut raw = BTreeMap::new();
-    for (&id, b) in &objs.files {
-        raw.insert(
-            id,
-            Item::decode(id, b).map_err(|e| anyhow::anyhow!("item {id}: {e:?}"))?,
-        );
-    }
-    let items = resolve_items(&raw, 0..item_count, members)
-        .map_err(|e| anyhow::anyhow!("item resolution: {e:?}"))?;
+    let store = crate::config::ObjStore::from_records(&objs.files)?;
+    let items = (0..item_count)
+        .map(|id| {
+            let item = store
+                .get(id as u32)
+                .map_or_else(|| Item::empty(id), |obj| Item::from_obj(obj, members));
+            (id, item)
+        })
+        .collect();
     let npc_count = npc_records.count;
     let bytes = &npc_records.files;
     let mut npcs = BTreeMap::new();

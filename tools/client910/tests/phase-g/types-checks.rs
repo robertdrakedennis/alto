@@ -2,26 +2,7 @@ use protocol910::{config_types::*, Error};
 #[allow(unused_imports)]
 use rs910_game::{entities910, protocol910};
 #[test]
-fn missing_records_and_invalid_existing_records_are_distinct() {
-    let raw = std::collections::BTreeMap::new();
-    let t = resolve_items(&raw, [77], false).unwrap();
-    assert_eq!(t[&77], Item::empty(77));
-    for bytes in [
-        &[][..],
-        &[12, 0, 0][..],
-        &[23, 128][..],
-        &[40, 1, 0, 1, 0][..],
-    ] {
-        assert!(Item::decode(77, bytes).is_err());
-    }
-    assert!(matches!(
-        Item::decode(7, &[250, 0]),
-        Err(Error::UnsupportedConfig {
-            kind: "item",
-            id: 7,
-            opcode: 250
-        })
-    ));
+fn unknown_npc_opcodes_name_the_record() {
     assert!(matches!(
         Npc::decode(7, &[250, 0]),
         Err(Error::UnsupportedConfig {
@@ -29,24 +10,6 @@ fn missing_records_and_invalid_existing_records_are_distinct() {
             id: 7,
             opcode: 250
         })
-    ));
-}
-#[test]
-fn derivation_cycles_and_zero_divisors_never_return_partial_types() {
-    let mut a = Item::empty(1);
-    a.derived[0] = [2, 2];
-    let mut b = Item::empty(2);
-    b.derived[0] = [1, 1];
-    let raw: std::collections::BTreeMap<i32, Item> = [(1, a), (2, b)].into_iter().collect();
-    let before = raw.clone();
-    assert!(resolve_items(&raw, [1, 2], true).is_err());
-    assert_eq!(raw, before);
-    let mut a = Item::empty(1);
-    a.derived[3] = [2, 2];
-    let raw = [(1, a), (2, Item::empty(2))].into_iter().collect();
-    assert!(matches!(
-        resolve_items(&raw, [1], true),
-        Err(Error::Invalid("zero shard count"))
     ));
 }
 #[test]

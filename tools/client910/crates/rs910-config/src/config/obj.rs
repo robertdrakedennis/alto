@@ -23,9 +23,15 @@ pub struct Obj {
     pub name: String,
     /// World model ids: zero or one entry, an unset model is dropped.
     pub models: Vec<u32>,
-    /// Head model pairs, indexed by gender (0 male, 1 female) and then by
-    /// head part.
+    /// Head models, indexed by head part and then by gender (0 male,
+    /// 1 female).
     pub head_models: [[i32; 2]; 2],
+    /// Worn models per gender (0 male, 1 female), three parts each.
+    pub worn: [[i32; 3]; 2],
+    /// Worn model offsets per gender, `(x, y, z)`.
+    pub worn_offsets: [[i32; 3]; 2],
+    /// Team cape id; 0 for none.
+    pub team: i32,
     /// Recolour sources.
     pub recol_s: Vec<u16>,
     /// Recolour destinations, parallel to `recol_s`.
@@ -142,6 +148,9 @@ impl Obj {
             name: "null".to_string(),
             models: Vec::new(),
             head_models: [[-1; 2]; 2],
+            worn: [[-1; 3]; 2],
+            worn_offsets: [[0; 3]; 2],
+            team: 0,
             recol_s: Vec::new(),
             recol_d: Vec::new(),
             retex_s: Vec::new(),
@@ -190,8 +199,11 @@ static OBJ_OPCODES: Table<Obj, anyhow::Error> = Table::new(
         ),
         Entry::new(at(15), Rule::Flag(|o, _| o.inventory.tradeable = false)),
         Entry::new(at(16), Rule::Flag(|o, _| o.members = true)),
-        // Worn model overrides, read and dropped.
-        Entry::new(span(23, 26), Rule::Skip(&[Field::SmartId])),
+        // Worn models: male, male, female, female.
+        Entry::new(
+            span(23, 26),
+            Rule::SmartId(|o, slot, v| o.worn[slot / 2][slot % 2] = v),
+        ),
         Entry::new(
             at(27),
             Rule::Byte(|o, _, v| o.inventory.wearpos[2] = i32::from(v)),
@@ -219,7 +231,10 @@ static OBJ_OPCODES: Table<Obj, anyhow::Error> = Table::new(
         Entry::new(at(43), Rule::Int(|o, _, v| o.minimenu_colour = Some(v))),
         Entry::new(span(44, 45), Rule::Skip(&[Field::Short])),
         Entry::new(at(65), Rule::Flag(|o, _| o.inventory.stockmarket = true)),
-        Entry::new(span(78, 79), Rule::Skip(&[Field::SmartId])),
+        Entry::new(
+            span(78, 79),
+            Rule::SmartId(|o, slot, v| o.worn[slot][2] = v),
+        ),
         Entry::new(
             span(90, 93),
             Rule::SmartId(|o, slot, v| o.head_models[slot / 2][slot % 2] = v),
@@ -250,15 +265,12 @@ static OBJ_OPCODES: Table<Obj, anyhow::Error> = Table::new(
             at(114),
             Rule::SignedByte(|o, _, v| o.inventory.contrast = i32::from(v)),
         ),
-        Entry::new(at(115), Rule::Skip(&[Field::Byte])),
+        Entry::new(at(115), Rule::Byte(|o, _, v| o.team = i32::from(v))),
         Entry::new(
             span(121, 122),
             Rule::Short(|o, slot, v| o.inventory.derived[1][slot] = i32::from(v)),
         ),
-        Entry::new(
-            span(125, 126),
-            Rule::Skip(&[Field::Byte, Field::Byte, Field::Byte]),
-        ),
+        Entry::new(span(125, 126), Rule::Custom(read_worn_offsets)),
         Entry::new(span(127, 130), Rule::Skip(&[Field::Byte, Field::Short])),
         Entry::new(at(132), Rule::Custom(read_quests)),
         Entry::new(at(134), Rule::Skip(&[Field::Byte])),
@@ -308,6 +320,14 @@ fn read_recolour_palette(source: Input<anyhow::Error>, obj: &mut Obj, _: Slot) -
     Ok(())
 }
 
+/// Worn model offsets for one gender: three signed bytes, scaled by four.
+fn read_worn_offsets(source: Input<anyhow::Error>, obj: &mut Obj, slot: Slot) -> Result<()> {
+    for value in &mut obj.worn_offsets[slot] {
+        *value = i32::from(source.signed_byte()?) << 2;
+    }
+    Ok(())
+}
+
 /// Stack-size variants: slot `n` is the model shown from count `n`.
 fn read_stack_variant(source: Input<anyhow::Error>, obj: &mut Obj, slot: Slot) -> Result<()> {
     let count = i32::from(source.short()?);
@@ -352,7 +372,6 @@ fn resolve_obj(
         let t = resolve_obj(template as u32, raw, out, visiting)?;
         let l = resolve_obj(link as u32, raw, out, visiting)?;
         obj.models = t.models.clone();
-        obj.head_models = t.head_models;
         obj.inventory.zoom = t.inventory.zoom;
         obj.inventory.angles = t.inventory.angles;
         obj.inventory.offset = t.inventory.offset;
@@ -397,6 +416,10 @@ fn resolve_obj(
                 obj.inventory.stackable = l.inventory.stackable;
                 obj.inventory.tradeable = false;
                 obj.inventory.wearpos = l.inventory.wearpos;
+                obj.worn = l.worn;
+                obj.worn_offsets = l.worn_offsets;
+                obj.head_models = l.head_models;
+                obj.team = l.team;
                 obj.category = l.category;
                 obj.ops = l.ops.clone();
                 obj.params = l.params.clone();

@@ -244,30 +244,9 @@ impl Engine {
             .objs
             .as_ref()
             .ok_or_else(|| anyhow::anyhow!("obj types not installed"))?;
-        // An absent file decodes to a default object type.
-        let default = crate::config::Obj {
-            inventory: Default::default(),
-            id: obj as u32,
-            name: "null".into(),
-            models: vec![],
-            head_models: [[-1; 2]; 2],
-            recol_s: vec![],
-            recol_d: vec![],
-            retex_s: vec![],
-            retex_d: vec![],
-            ops: Default::default(),
-            iops: Default::default(),
-            members: false,
-            minimenu_colour: None,
-            params: Vec::new(),
-            category: -1,
-            scattered_drop: false,
-        };
-        let o = u32::try_from(obj)
-            .ok()
-            .and_then(|id| objs.get(id))
-            .unwrap_or(&default);
-        if let Some(colour) = o.minimenu_colour {
+        // An absent file decodes to a default object type: no colour, not members.
+        let o = u32::try_from(obj).ok().and_then(|id| objs.get(id));
+        if let Some(colour) = o.and_then(|o| o.minimenu_colour) {
             return Ok(colour);
         }
         let defaults = self
@@ -275,7 +254,7 @@ impl Engine {
             .minimenu
             .as_ref()
             .ok_or_else(|| anyhow::anyhow!("minimenu defaults not installed"))?;
-        Ok(if o.members {
+        Ok(if o.is_some_and(|o| o.members) {
             defaults.members_colour
         } else {
             defaults.free_colour

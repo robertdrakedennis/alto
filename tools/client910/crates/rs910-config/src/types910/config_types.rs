@@ -6,7 +6,7 @@
 use super::{appearance, npc, npc_custom, zone, Error, Packet, Result};
 use crate::opcode_table::{at, span, Entry, Field, Input, Record, Rule, Slot, Table, Unknown};
 use crate::types910::customisation::Customisation;
-use std::collections::{BTreeMap, BTreeSet};
+use std::collections::BTreeMap;
 
 /// One item type.
 #[derive(Clone, Debug, PartialEq, Eq)]
@@ -23,13 +23,6 @@ pub struct Item {
     pub retexture_source: Option<Vec<i16>>,
     pub man_offset: [i32; 3],
     pub woman_offset: [i32; 3],
-    /// Noted, lent, bought and shard kinds, each `[template, link]`; the raw
-    /// 16-bit values are kept, so an absent id reads 65535.
-    pub derived: [[i32; 2]; 4],
-    pub shardcount: i32,
-    pub shardname: String,
-    pub consumed: usize,
-    pub raw: Vec<u8>,
 }
 
 impl Item {
@@ -54,25 +47,37 @@ impl Item {
             retexture_source: None,
             man_offset: [0; 3],
             woman_offset: [0; 3],
-            derived: [[-1; 2]; 4],
-            shardcount: 0,
-            shardname: "null".into(),
-            consumed: 0,
-            raw: vec![],
         }
     }
 
-    pub fn decode(id: i32, bytes: &[u8]) -> Result<Self> {
-        let mut item = Self::empty(id);
-        item.raw = bytes.to_vec();
-        let mut packet = Packet::new(bytes);
-        let record = Record {
-            kind: "item",
-            id: i64::from(id),
+    /// The entity view of a resolved obj type. Outside a members world a
+    /// members item loses its team.
+    pub fn from_obj(obj: &crate::config::Obj, members: bool) -> Self {
+        let present = |values: &[u16]| {
+            (!values.is_empty()).then(|| values.iter().map(|&v| v as i16).collect())
         };
-        ITEM_OPCODES.run(&mut packet, &mut item, record)?;
-        item.consumed = packet.pos;
-        Ok(item)
+        let [heads, heads2] = obj.head_models;
+        Self {
+            id: obj.id as i32,
+            name: obj.name.clone(),
+            cost: obj.inventory.cost,
+            stackable: obj.inventory.stackable,
+            members: obj.members,
+            team: if !members && obj.members { 0 } else { obj.team },
+            wear: obj.inventory.wearpos,
+            custom: Customisation {
+                man: obj.worn[0],
+                woman: obj.worn[1],
+                man_head: [heads[0], heads2[0]],
+                woman_head: [heads[1], heads2[1]],
+                recolour: present(&obj.recol_d),
+                retexture: present(&obj.retex_d),
+            },
+            recolour_source: present(&obj.recol_s),
+            retexture_source: present(&obj.retex_s),
+            man_offset: obj.worn_offsets[0],
+            woman_offset: obj.worn_offsets[1],
+        }
     }
 
     pub fn appearance(&self) -> appearance::Item {
@@ -90,156 +95,9 @@ impl Item {
     }
 }
 
-/// Item opcodes of this revision.
-static ITEM_OPCODES: Table<Item, Error> = Table::new(
-    &[
-        // World model, dropped.
-        Entry::new(at(1), Rule::Skip(&[Field::SmartId])),
-        Entry::new(at(2), Rule::Text(|t, _, v| t.name = v)),
-        // Inventory render parameters, dropped.
-        Entry::new(span(4, 8), Rule::Skip(&[Field::Short])),
-        Entry::new(at(11), Rule::Flag(|t, _| t.stackable = 1)),
-        Entry::new(at(12), Rule::Int(|t, _, v| t.cost = v)),
-        Entry::new(
-            span(13, 14),
-            Rule::Byte(|t, slot, v| t.wear[slot] = i32::from(v)),
-        ),
-        Entry::new(at(15), Rule::Skip(&[])),
-        Entry::new(at(16), Rule::Flag(|t, _| t.members = true)),
-        // Worn models: man, man, woman, woman.
-        Entry::new(
-            span(23, 26),
-            Rule::SmartId(|t, slot, v| {
-                if slot < 2 {
-                    t.custom.man[slot] = v;
-                } else {
-                    t.custom.woman[slot - 2] = v;
-                }
-            }),
-        ),
-        Entry::new(at(27), Rule::Byte(|t, _, v| t.wear[2] = i32::from(v))),
-        // Menu operations, dropped.
-        Entry::new(span(30, 39), Rule::Skip(&[Field::Text])),
-        Entry::new(
-            at(40),
-            Rule::Custom(|s, t, _| {
-                let (src, dst) = read_pairs(s)?;
-                t.recolour_source = Some(src);
-                t.custom.recolour = Some(dst);
-                Ok(())
-            }),
-        ),
-        Entry::new(
-            at(41),
-            Rule::Custom(|s, t, _| {
-                let (src, dst) = read_pairs(s)?;
-                t.retexture_source = Some(src);
-                t.custom.retexture = Some(dst);
-                Ok(())
-            }),
-        ),
-        Entry::new(at(42), Rule::Custom(skip_counted_bytes)),
-        Entry::new(at(43), Rule::Skip(&[Field::Int])),
-        Entry::new(span(44, 45), Rule::Skip(&[Field::Short])),
-        Entry::new(at(65), Rule::Skip(&[])),
-        Entry::new(at(78), Rule::SmartId(|t, _, v| t.custom.man[2] = v)),
-        Entry::new(at(79), Rule::SmartId(|t, _, v| t.custom.woman[2] = v)),
-        // Head models: man, woman, man, woman.
-        Entry::new(
-            span(90, 93),
-            Rule::SmartId(|t, slot, v| {
-                if slot % 2 == 0 {
-                    t.custom.man_head[slot / 2] = v;
-                } else {
-                    t.custom.woman_head[slot / 2] = v;
-                }
-            }),
-        ),
-        Entry::new(span(94, 95), Rule::Skip(&[Field::Short])),
-        Entry::new(at(96), Rule::Skip(&[Field::Byte])),
-        // Derived kinds store the link first, then the template.
-        Entry::new(
-            span(97, 98),
-            Rule::Short(|t, slot, v| t.derived[0][1 - slot] = i32::from(v)),
-        ),
-        Entry::new(span(100, 109), Rule::Skip(&[Field::Short, Field::Short])),
-        Entry::new(span(110, 112), Rule::Skip(&[Field::Short])),
-        Entry::new(span(113, 114), Rule::Skip(&[Field::Byte])),
-        Entry::new(at(115), Rule::Byte(|t, _, v| t.team = i32::from(v))),
-        Entry::new(
-            span(121, 122),
-            Rule::Short(|t, slot, v| t.derived[1][1 - slot] = i32::from(v)),
-        ),
-        Entry::new(span(125, 126), Rule::Custom(read_wear_offsets)),
-        Entry::new(span(127, 130), Rule::Skip(&[Field::Byte, Field::Short])),
-        Entry::new(at(132), Rule::Custom(skip_counted_shorts)),
-        Entry::new(at(134), Rule::Skip(&[Field::Byte])),
-        Entry::new(
-            span(139, 140),
-            Rule::Short(|t, slot, v| t.derived[2][1 - slot] = i32::from(v)),
-        ),
-        Entry::new(span(142, 146), Rule::Skip(&[Field::Short])),
-        Entry::new(span(150, 154), Rule::Skip(&[Field::Short])),
-        Entry::new(span(156, 157), Rule::Skip(&[])),
-        Entry::new(
-            span(161, 162),
-            Rule::Short(|t, slot, v| t.derived[3][1 - slot] = i32::from(v)),
-        ),
-        Entry::new(at(163), Rule::Short(|t, _, v| t.shardcount = i32::from(v))),
-        Entry::new(at(164), Rule::Text(|t, _, v| t.shardname = v)),
-        Entry::new(at(165), Rule::Flag(|t, _| t.stackable = 2)),
-        Entry::new(span(167, 168), Rule::Skip(&[])),
-        Entry::new(at(249), Rule::Custom(skip_params)),
-    ],
-    Unknown::Reject,
-);
-
-/// A count byte, then that many bytes.
-fn skip_counted_bytes(source: Input<Error>, _: &mut Item, _: Slot) -> Result<()> {
-    for _ in 0..source.byte()? {
-        source.byte()?;
-    }
-    Ok(())
-}
-
-/// A count byte, then that many 16-bit values.
-fn skip_counted_shorts(source: Input<Error>, _: &mut Item, _: Slot) -> Result<()> {
-    for _ in 0..source.byte()? {
-        source.short()?;
-    }
-    Ok(())
-}
-
-/// Wear offsets for the man (first opcode) or the woman: three signed bytes,
-/// scaled by four.
-fn read_wear_offsets(source: Input<Error>, item: &mut Item, slot: Slot) -> Result<()> {
-    let offsets = if slot == 0 {
-        &mut item.man_offset
-    } else {
-        &mut item.woman_offset
-    };
-    for value in offsets {
-        *value = i32::from(source.signed_byte()?) << 2;
-    }
-    Ok(())
-}
-
 /// A parameter table, read and dropped.
 fn skip_params<T>(source: Input<Error>, _: &mut T, _: Slot) -> Result<()> {
     crate::config::read_params(source, &mut Vec::new())
-}
-
-/// A count byte, then that many `(source, destination)` pairs of 16-bit
-/// values, as signed shorts.
-fn read_pairs(source: Input<Error>) -> Result<(Vec<i16>, Vec<i16>)> {
-    let count = source.byte()?;
-    let mut src = vec![];
-    let mut dst = vec![];
-    for _ in 0..count {
-        src.push(source.short()? as i16);
-        dst.push(source.short()? as i16);
-    }
-    Ok((src, dst))
 }
 
 /// A count byte, then that many `(source, destination)` pairs of which only
@@ -265,77 +123,6 @@ fn read_nullable(source: Input<Error>) -> Result<i32> {
     crate::opcode_table::payload::nullable_short(source)
 }
 
-/// Resolve derived items (noted, lent, bought, shard): copy the fields their
-/// kind takes from the template and the link, and apply the members filter.
-/// Missing files resolve to the default item, not a render placeholder.
-/// A derivation cycle, or a chain deeper than 128, is an error.
-pub fn resolve_items(
-    raw: &BTreeMap<i32, Item>,
-    ids: impl IntoIterator<Item = i32>,
-    members: bool,
-) -> Result<BTreeMap<i32, Item>> {
-    fn get(
-        id: i32,
-        raw: &BTreeMap<i32, Item>,
-        done: &mut BTreeMap<i32, Item>,
-        active: &mut BTreeSet<i32>,
-        members: bool,
-    ) -> Result<Item> {
-        if let Some(t) = done.get(&id) {
-            return Ok(t.clone());
-        }
-        if active.len() >= 128 || !active.insert(id) {
-            return Err(Error::UnsupportedContext("item derivation cycle/depth"));
-        }
-        let mut t = raw.get(&id).cloned().unwrap_or_else(|| Item::empty(id));
-        if let Some(kind) = (0..4).find(|&k| t.derived[k][0] != -1) {
-            let template = get(t.derived[kind][0], raw, done, active, members)?;
-            let link = get(t.derived[kind][1], raw, done, active, members)?;
-            let colour = if kind == 0 { &template } else { &link };
-            t.recolour_source = colour.recolour_source.clone();
-            t.retexture_source = colour.retexture_source.clone();
-            t.custom.recolour = colour.custom.recolour.clone();
-            t.custom.retexture = colour.custom.retexture.clone();
-            t.name = link.name.clone();
-            t.members = link.members;
-            match kind {
-                0 => {
-                    t.cost = link.cost;
-                    t.stackable = 1;
-                }
-                3 => {
-                    if link.shardcount == 0 {
-                        return Err(Error::Invalid("zero shard count"));
-                    }
-                    t.name = link.shardname;
-                    t.cost = link.cost.wrapping_div(link.shardcount);
-                    t.stackable = 1;
-                }
-                _ => {
-                    t.cost = 0;
-                    t.stackable = link.stackable;
-                    t.wear = link.wear;
-                    t.custom = link.custom;
-                    t.man_offset = link.man_offset;
-                    t.woman_offset = link.woman_offset;
-                    t.team = link.team;
-                }
-            }
-        }
-        if !members && t.members {
-            t.team = 0;
-        }
-        active.remove(&id);
-        done.insert(id, t.clone());
-        Ok(t)
-    }
-    let mut done = BTreeMap::new();
-    let mut active = BTreeSet::new();
-    for id in ids {
-        get(id, raw, &mut done, &mut active, members)?;
-    }
-    Ok(done)
-}
 /// One NPC type.
 #[derive(Clone, Debug, PartialEq, Eq)]
 pub struct Npc {
