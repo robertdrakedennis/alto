@@ -9,8 +9,8 @@
 //!   answers) and `OrbitCamera`.
 //! - 2D: [`ui_paint_gpu`], [`text_render_gpu`], [`sprite_draw_gpu`] (the wgpu
 //!   halves of rs910-toolkit's display lists), [`ui_model_gpu`] (interface
-//!   models, with their [`floor_render`] meshes, [`particle_render`] and
-//!   [`billboard_render`] passes and [`scene_target`] MSAA target),
+//!   models, with their [`floor_render`] meshes, [`quad_render`] particle
+//!   and billboard pass and [`scene_target`] MSAA target),
 //!   [`console_render`], [`window_canvas`] (the canvas scale-up).
 //! - [`postprocess`]: the post-process chain's game state (the capture
 //!   answer the UI reads).
@@ -18,14 +18,13 @@
 //!   from, keyed by (samples, format, variant).
 //! - [`frame_profile`] and [`render_debug_flags`]: profiling and the
 //!   diagnostic variables this toolkit reads.
-pub mod billboard_render;
 pub mod billow;
 pub mod console_render;
 pub mod floor_render;
 pub mod frame_profile;
-pub mod particle_render;
 pub mod pipelines;
 pub mod postprocess;
+pub mod quad_render;
 pub mod render;
 pub mod render_debug_flags;
 pub mod scene_target;

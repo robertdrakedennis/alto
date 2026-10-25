@@ -75,11 +75,9 @@ pub struct ModelFrame {
     pipeline: FloorPipeline,
     textures: FloorTextureCache,
     entries: Vec<Entry>,
-    /// The particles of the interface models.
-    particles: crate::particle_render::ParticlePass,
-    particle_builder: crate::particle_render::Builder,
-    /// Billboard quads of the interface models.
-    billboards: crate::billboard_render::BillboardPass,
+    /// The particle and billboard quads of the interface models.
+    quads: crate::quad_render::QuadPass,
+    particle_builder: crate::quad_render::Builder,
     /// Whether bloom is enabled (it hides flagged billboards).
     pub bloom: bool,
     format: wgpu::TextureFormat,
@@ -98,19 +96,9 @@ impl ModelFrame {
     ) -> Self {
         let pipeline =
             FloorPipeline::with_cache(device, format, wgpu::TextureFormat::Depth24Plus, pipelines);
-        let particles = crate::particle_render::ParticlePass::new(
+        let quads = crate::quad_render::QuadPass::new(
             device,
-            crate::particle_render::ParticlePipelines::cached(
-                pipeline.cache(),
-                device,
-                &pipeline,
-                format,
-                pipeline.sample_count,
-            ),
-        );
-        let billboards = crate::billboard_render::BillboardPass::new(
-            device,
-            crate::billboard_render::BillboardPipelines::cached(
+            crate::quad_render::QuadPipelines::cached(
                 pipeline.cache(),
                 device,
                 &pipeline,
@@ -123,9 +111,8 @@ impl ModelFrame {
             pipeline,
             textures: FloorTextureCache::default(),
             entries: vec![],
-            particles,
-            particle_builder: crate::particle_render::Builder::default(),
-            billboards,
+            quads,
+            particle_builder: crate::quad_render::Builder::default(),
             bloom: false,
             format,
         }
@@ -138,19 +125,9 @@ impl ModelFrame {
         samples: u32,
     ) {
         if self.pipeline.sample_count != samples || self.format != format {
-            self.particles = crate::particle_render::ParticlePass::new(
+            self.quads = crate::quad_render::QuadPass::new(
                 device,
-                crate::particle_render::ParticlePipelines::cached(
-                    self.pipeline.cache(),
-                    device,
-                    &self.pipeline,
-                    format,
-                    samples,
-                ),
-            );
-            self.billboards = crate::billboard_render::BillboardPass::new(
-                device,
-                crate::billboard_render::BillboardPipelines::cached(
+                crate::quad_render::QuadPipelines::cached(
                     self.pipeline.cache(),
                     device,
                     &self.pipeline,
@@ -197,10 +174,9 @@ impl ModelFrame {
             .collect();
         let millis = self.pipeline.begin_material_frame();
         let mut material_state = crate::material::MaterialState::default();
-        let mut particle_frame = crate::particle_render::Frame::default();
-        let mut particle_resources = None;
-        let mut billboard_frame = crate::billboard_render::Frame::default();
-        let mut billboard_resources = None;
+        let mut particle_frame = crate::quad_render::ParticleFrame::default();
+        let mut billboard_frame = crate::quad_render::BillboardFrame::default();
+        let mut quad_resources = None;
         for d in draws {
             let [l, t, r, b] = crate::ui_paint::framebuffer_bounds(d.clip, canvas, target);
             let [l, t, r, b] = [
@@ -261,19 +237,15 @@ impl ModelFrame {
             // The component's particles draw right after its model, in the
             // model's view space; its billboards follow the batches in the
             // same space, with the interface's fog off.
-            let billboards_before = billboard_frame.draws.len();
+            let billboards_before = billboard_frame.len();
             if let Some(b) = &mesh.billboards {
-                let view = crate::billboard_render::View::new(
-                    IDENTITY_VIEW,
-                    &d.space.projection,
-                    None,
-                    self.bloom,
-                );
-                billboard_frame.add(0, self.entries.len(), b, &d.space.matrix, &view);
+                let view =
+                    crate::quad_render::View::new(IDENTITY_VIEW, &d.space.projection, self.bloom);
+                billboard_frame.add(self.entries.len(), b, &d.space.matrix, &view);
             }
-            let has_billboards = billboard_frame.draws.len() > billboards_before;
+            let has_billboards = billboard_frame.len() > billboards_before;
             if has_billboards {
-                billboard_resources = Some(d.resources.clone());
+                quad_resources = Some(d.resources.clone());
             }
             let particles = (!d.particle_list.is_empty() || has_billboards).then(|| {
                 if !d.particle_list.is_empty() {
@@ -285,7 +257,7 @@ impl ModelFrame {
                         &IDENTITY_VIEW,
                         [0; 3],
                     );
-                    particle_resources = Some(d.resources.clone());
+                    quad_resources = Some(d.resources.clone());
                 }
                 self.pipeline.uniform_group(device, &particle_uniforms)
             });
@@ -300,30 +272,14 @@ impl ModelFrame {
                 particles,
             });
         }
-        if let Some(res) = particle_resources {
-            self.particles.prepare(
-                device,
-                queue,
-                &mut self.textures,
-                &res.pack,
-                &res.materials,
-                &particle_frame,
-            )?;
-        } else {
-            self.particles.clear();
-        }
-        if let Some(res) = billboard_resources {
-            self.billboards.prepare(
-                device,
-                queue,
-                &mut self.textures,
-                &res.pack,
-                &res.materials,
-                &billboard_frame,
-            )?;
-        } else {
-            self.billboards.clear();
-        }
+        self.quads.prepare(
+            device,
+            queue,
+            &mut self.textures,
+            quad_resources.as_deref(),
+            billboard_frame,
+            particle_frame,
+        )?;
         Ok(())
     }
     pub fn encode(
@@ -375,9 +331,7 @@ impl ModelFrame {
             pass.set_scissor_rect(e.clip[0], e.clip[1], e.clip[2], e.clip[3]);
             e.mesh.draw_model(&mut pass, &self.pipeline);
             if let Some((_, uniforms)) = &e.particles {
-                self.billboards
-                    .draw_at(&mut pass, uniforms, 0, index, usize::MAX);
-                self.particles.draw_entity(&mut pass, uniforms, 0, index);
+                self.quads.draw_model(&mut pass, uniforms, index);
             }
             drop(pass);
             start = e.quad;

@@ -14,7 +14,7 @@
 //! |---|---|
 //! | [`Variant::Batch2d`] (`text_render_gpu::Pipeline`: plain, masked and opaque 2D batch) | the retained UI painter, the message-box overlay, the framebuffer-sprite painter, every minimap base (one per `render_minimap_base`), every bounded canvas target (one per `set_game_canvas` change), the console |
 //! | [`Variant::FloorModels`] (`floor_render`'s four model pipelines) | the renderer's and the interface models' `FloorPipeline` (base at one sample), and each `set_sample_count` back to a count seen before |
-//! | [`Variant::Particles`], [`Variant::Billboards`] | the interface models (`ui_model_gpu::Models::set_samples`, rebuilt whenever a frame's interface switches between having models and not while MSAA is on) |
+//! | [`Variant::Quads`] | the interface models (`ui_model_gpu::Models::set_samples`, rebuilt whenever a frame's interface switches between having models and not while MSAA is on) |
 //! | [`Variant::SceneCopy`] (`scene_target`'s present and seed pipelines) | every scene target (per resize or sample change) and the interface models' MSAA target |
 //!
 //! Owners keep their per-instance state (buffers, bind groups, per-frame
@@ -39,10 +39,8 @@ pub enum Variant {
     Batch2d,
     /// `[wgpu::RenderPipeline; 4]` of `floor_render::floor_pipelines`.
     FloorModels,
-    /// `particle_render::ParticlePipelines`.
-    Particles,
-    /// `billboard_render::BillboardPipelines`.
-    Billboards,
+    /// `quad_render::QuadPipelines`.
+    Quads,
     /// `scene_target::CopyPipelines`.
     SceneCopy,
 }

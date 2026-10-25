@@ -62,7 +62,7 @@ pub struct FloorMesh {
     pub(super) model_uniform: Option<(wgpu::Buffer, wgpu::BindGroup, i32)>,
     pub(super) depth_write: bool,
     /// The billboards of an uploaded model: what is drawn after the batches
-    /// (`crate::billboard_render`).
+    /// (`crate::quad_render`).
     pub billboards: Option<crate::mesh_billboards::MeshBillboards>,
 }
 
