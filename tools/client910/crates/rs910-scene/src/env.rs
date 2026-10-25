@@ -16,8 +16,8 @@
 //! entity lighting are in `model_lights.rs`. The skybox object behind
 //! [`SkyboxRef`] is owned by `crate::skybox::SkyboxOwner`.
 
+use crate::byte_stream::Packet;
 use crate::floor::SunLighting;
-use crate::landscape_packet::Packet;
 use crate::protocol910::terrain::RegionCopy;
 
 /// Config group holding the light types.

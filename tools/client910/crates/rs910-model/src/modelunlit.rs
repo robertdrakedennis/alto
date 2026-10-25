@@ -10,7 +10,7 @@
 //! data never exceeds 32767 vertices.
 
 use crate::cache::Pack;
-use rs910_core::reader::{Eof, Reader as CoreReader};
+use rs910_config::byte_stream::Packet;
 
 /// The cache archive of the models (group = model id, file 0).
 pub const MODEL_ARCHIVE: &str = "models";
@@ -115,70 +115,6 @@ pub struct ModelUnlit {
     /// [`Self::merge_slots`]); `None` for a decoded or synthetic model. Read
     /// only by the NXT renderer's RT7 posing.
     pub source_ids: Option<std::sync::Arc<[u32]>>,
-}
-
-/// The reads the decoder uses.
-struct Packet<'a> {
-    data: &'a [u8],
-    pos: usize,
-}
-
-impl<'a> Packet<'a> {
-    fn new(data: &'a [u8]) -> Self {
-        Self { data, pos: 0 }
-    }
-
-    /// One `rs910_core::reader` read at `pos`. `pos` follows the read; a
-    /// failure names the offset of the missing byte.
-    fn read<T>(
-        &mut self,
-        read: impl FnOnce(&mut CoreReader<'a>) -> Result<T, Eof>,
-    ) -> anyhow::Result<T> {
-        let mut r = CoreReader::at(self.data, self.pos);
-        let out = read(&mut r);
-        self.pos = r.pos();
-        out.map_err(truncated)
-    }
-
-    fn g1(&mut self) -> anyhow::Result<i32> {
-        self.read(CoreReader::g1).map(i32::from)
-    }
-
-    fn g1b(&mut self) -> anyhow::Result<i8> {
-        self.read(CoreReader::g1b)
-    }
-
-    fn g2(&mut self) -> anyhow::Result<i32> {
-        self.read(CoreReader::g2).map(i32::from)
-    }
-
-    fn g2s(&mut self) -> anyhow::Result<i32> {
-        self.read(CoreReader::g2s).map(i32::from)
-    }
-
-    fn g3(&mut self) -> anyhow::Result<i32> {
-        self.read(CoreReader::g3).map(|v| v as i32)
-    }
-
-    /// A signed one-or-two byte value.
-    fn gsmart1or2s(&mut self) -> anyhow::Result<i32> {
-        self.read(CoreReader::gsmart1or2s)
-    }
-
-    /// An unsigned one-or-two byte value.
-    fn gsmart1or2(&mut self) -> anyhow::Result<i32> {
-        self.read(CoreReader::gsmart1or2)
-    }
-
-    /// An unsigned one-or-two byte value where the one-byte 255 is `-1`.
-    fn gsmart1or2null(&mut self) -> anyhow::Result<i32> {
-        self.read(CoreReader::gsmart1or2null)
-    }
-}
-
-/// The decoder's truncation error (the offset of the missing byte).
-fn truncated(e: Eof) -> anyhow::Error {
-    anyhow::anyhow!("model data truncated at {}", e.pos)
 }
 
 impl ModelUnlit {

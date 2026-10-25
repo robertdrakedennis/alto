@@ -8,7 +8,7 @@ use crate::protocol910::terrain::RegionCopy;
 
 use crate::tileflags::SceneLevelTileFlags;
 
-pub use rs910_config::landscape_packet::*;
+pub use rs910_config::byte_stream::*;
 
 use rs910_core::perlin::perlin;
 

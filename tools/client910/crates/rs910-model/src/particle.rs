@@ -18,7 +18,7 @@ use std::sync::Arc;
 
 use crate::animation_random::AnimationRandom;
 use crate::cache::Pack;
-use rs910_core::reader::{Eof, Reader as CoreReader};
+use rs910_config::byte_stream::Packet as Reader;
 
 /// The particle archive name in the pack.
 pub const PARTICLE_ARCHIVE: &str = "particles";
@@ -44,41 +44,10 @@ const PARTICLE_POOL: usize = 1024;
 /// its dead system).
 const UNOWNED: u64 = u64::MAX;
 
-struct Reader<'a> {
-    data: &'a [u8],
-    pos: usize,
-}
-
-impl<'a> Reader<'a> {
-    /// One `rs910_core::reader` read at `pos`; `pos` follows the read.
-    fn read<T>(
-        &mut self,
-        read: impl FnOnce(&mut CoreReader<'a>) -> Result<T, Eof>,
-    ) -> anyhow::Result<T> {
-        let mut r = CoreReader::at(self.data, self.pos);
-        let out = read(&mut r);
-        self.pos = r.pos();
-        out.map_err(|_| anyhow::anyhow!("particle config truncated"))
-    }
-    fn g1(&mut self) -> anyhow::Result<i32> {
-        self.read(CoreReader::g1).map(i32::from)
-    }
-    fn g1b(&mut self) -> anyhow::Result<i32> {
-        self.read(CoreReader::g1b).map(i32::from)
-    }
-    fn g2(&mut self) -> anyhow::Result<i32> {
-        self.read(CoreReader::g2).map(i32::from)
-    }
-    fn g2s(&mut self) -> anyhow::Result<i32> {
-        self.read(CoreReader::g2s).map(i32::from)
-    }
-    fn g4s(&mut self) -> anyhow::Result<i32> {
-        self.read(CoreReader::g4s)
-    }
-    fn list(&mut self) -> anyhow::Result<Vec<i32>> {
-        let n = self.g1()?;
-        (0..n).map(|_| self.g2()).collect()
-    }
+/// A `g1` count followed by that many `g2` values.
+fn read_list(r: &mut Reader<'_>) -> anyhow::Result<Vec<i32>> {
+    let n = r.g1()?;
+    (0..n).map(|_| r.g2()).collect()
 }
 
 /// An emitter type: the fields decoded from the emitter config file, with
@@ -279,7 +248,7 @@ impl Default for EmitterType {
 impl EmitterType {
     /// Decodes an emitter type and computes its derived fields.
     pub fn decode(data: &[u8]) -> anyhow::Result<Self> {
-        let mut r = Reader { data, pos: 0 };
+        let mut r = Reader::new(data);
         let mut t = Self::default();
         loop {
             let op = r.g1()?;
@@ -319,7 +288,7 @@ impl EmitterType {
             }
             4 => {
                 self.damping_mode = r.g1()?;
-                self.damping = r.g1b()?;
+                self.damping = i32::from(r.g1b()?);
             }
             5 => {
                 self.size_min = r.g2()? << 14;
@@ -337,10 +306,10 @@ impl EmitterType {
                 self.rate_min = r.g2()?;
                 self.rate_max = r.g2()?;
             }
-            9 => self.local_effectors = Some(r.list()?),
-            10 => self.constant_effectors = Some(r.list()?),
-            12 => self.ceiling_level = r.g1b()?,
-            13 => self.floor_level = r.g1b()?,
+            9 => self.local_effectors = Some(read_list(r)?),
+            10 => self.constant_effectors = Some(read_list(r)?),
+            12 => self.ceiling_level = i32::from(r.g1b()?),
+            13 => self.floor_level = i32::from(r.g1b()?),
             14 => self.initial_burst = r.g2()?,
             15 => self.texture = r.g2()?,
             16 => {
@@ -357,7 +326,7 @@ impl EmitterType {
             22 => self.target_speed = r.g4s()?,
             23 => self.target_speed_percent = r.g1()?,
             24 => self.uniform_colour = false,
-            25 => self.global_effectors = Some(r.list()?),
+            25 => self.global_effectors = Some(read_list(r)?),
             26 => self.unused_flag = false,
             27 => self.target_size = r.g2()? << 14,
             28 => self.target_size_percent = r.g1()?,
@@ -497,7 +466,7 @@ impl EffectorType {
             ..Self::default()
         };
         if let Some(data) = data {
-            let mut r = Reader { data, pos: 0 };
+            let mut r = Reader::new(data);
             loop {
                 match r.g1()? {
                     0 => break,

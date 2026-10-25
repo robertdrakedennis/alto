@@ -369,7 +369,7 @@ pub fn place_square(
         let (tx, tz) = (n.0 * SQUARE_TILES - base[0], n.1 * SQUARE_TILES - base[1]);
         let land = files.as_ref().and_then(|f| f.get(&LAND_FILE));
         let read = land.is_some_and(|land| {
-            let mut packet = rs910_config::landscape_packet::Packet::new(land);
+            let mut packet = rs910_config::byte_stream::Packet::new(land);
             loader
                 .read_normal_landscape(&mut packet, &mut flags, tx, tz, base[0], base[1])
                 .is_ok()

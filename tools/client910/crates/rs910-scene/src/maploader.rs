@@ -41,7 +41,7 @@ use crate::texture::MaterialStore;
 
 use crate::tileflags::SceneLevelTileFlags;
 
-pub use rs910_config::landscape_packet::*;
+pub use rs910_config::byte_stream::*;
 
 // ---------------------------------------------------------------------------
 // Height noise

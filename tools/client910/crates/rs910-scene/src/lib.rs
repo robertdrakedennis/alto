@@ -108,7 +108,7 @@ use scene_debug_flags as debug_flags;
 
 // The moved code names these through `crate::` (like client910's facades).
 use rs910_config::{
-    anim, animation_sequences, avatar, billboard, client_options, config, flo, landscape_packet,
+    anim, animation_sequences, avatar, billboard, byte_stream, client_options, config, flo,
     loc_sound, npc_customisation, scenery_varbits, sprite_data, texture,
 };
 use rs910_core::{actor_matrix, colour, logic_clock, trig, vector_math};

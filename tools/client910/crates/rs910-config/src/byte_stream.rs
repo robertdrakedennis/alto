@@ -1,24 +1,19 @@
-//! The byte-stream reads the landscape loader and the landscape-side config
-//! decoders (light types, environments, skybox types) use, over
-//! `rs910_core::reader`.
-//! Split out of client910's `maploader` (Phase 2.8), breaking the
-//! `env`/`floorlight`/`maploader` cycle; `maploader` re-exports it.
+//! The forward byte-stream reads the cache decoders share (landscape, light
+//! and environment configs, models, particle configs) over
+//! `rs910_core::reader`: big-endian widened to `i32`, `pos` public and
+//! following each read, truncation errors naming the offset.
 
 use rs910_core::reader::{Eof, Reader as CoreReader};
 
-// ---------------------------------------------------------------------------
-// Landscape packet reads
-// ---------------------------------------------------------------------------
-
-/// The stream reads the landscape loader uses.
+/// A read cursor over one cache file.
 pub struct Packet<'a> {
     data: &'a [u8],
-    /// Read position; the landscape loader bumps it directly.
+    /// Read position; decoders seek by setting it directly.
     pub pos: usize,
 }
 
 impl<'a> Packet<'a> {
-    /// Wrap a LAND stream.
+    /// Read `data` from the start.
     #[must_use]
     pub fn new(data: &'a [u8]) -> Self {
         Self { data, pos: 0 }
@@ -40,7 +35,7 @@ impl<'a> Packet<'a> {
         let mut r = CoreReader::at(self.data, self.pos);
         let out = read(&mut r);
         self.pos = r.pos();
-        out.map_err(|e| anyhow::anyhow!("landscape stream truncated at {}", e.pos))
+        out.map_err(|e| anyhow::anyhow!("byte stream truncated at {}", e.pos))
     }
 
     /// `g1()`.
@@ -76,5 +71,20 @@ impl<'a> Packet<'a> {
     /// `gSmart1or2()`: `peek < 128 ? g1() : g2() - 32768`.
     pub fn gsmart1or2(&mut self) -> anyhow::Result<i32> {
         self.read(CoreReader::gsmart1or2)
+    }
+
+    /// `gSmart1or2s()`: `peek < 128 ? g1() - 64 : g2() - 49152`.
+    pub fn gsmart1or2s(&mut self) -> anyhow::Result<i32> {
+        self.read(CoreReader::gsmart1or2s)
+    }
+
+    /// `gSmart1or2()` minus one: `-1` encodes null.
+    pub fn gsmart1or2null(&mut self) -> anyhow::Result<i32> {
+        self.read(CoreReader::gsmart1or2null)
+    }
+
+    /// Unsigned big-endian 24-bit int.
+    pub fn g3(&mut self) -> anyhow::Result<i32> {
+        self.read(CoreReader::g3).map(|v| v as i32)
     }
 }
