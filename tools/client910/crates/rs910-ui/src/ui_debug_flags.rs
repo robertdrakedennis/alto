@@ -4,7 +4,6 @@
 //! (client910's `debug_flags` keeps the rest; `main` forces every set at
 //! startup); readers name `crate::ui_debug_flags::flags().field`.
 
-use std::ffi::OsString;
 use std::sync::OnceLock;
 
 /// Parsed UI diagnostics. See the module docs.
@@ -31,24 +30,15 @@ pub struct DebugFlags {
     pub png_host: Option<String>,
 }
 
-static FLAGS: OnceLock<DebugFlags> = OnceLock::new();
-
 /// The process-wide flags, parsed from the environment on first use.
 pub fn flags() -> &'static DebugFlags {
-    FLAGS.get_or_init(DebugFlags::from_env)
-}
-
-impl DebugFlags {
-    pub fn from_env() -> Self {
-        Self::from_lookup(&|name| std::env::var_os(name))
-    }
-
-    /// Parse from any variable source (`std::env::var_os` in production).
-    pub fn from_lookup(var_os: &dyn Fn(&str) -> Option<OsString>) -> Self {
+    static FLAGS: OnceLock<DebugFlags> = OnceLock::new();
+    FLAGS.get_or_init(|| {
+        let var_os = |name: &str| std::env::var_os(name);
         let has = |name: &str| var_os(name).is_some();
         // `std::env::var(name).ok()`: absent or non-UTF-8 is `None`.
         let var = |name: &str| var_os(name).and_then(|v| v.into_string().ok());
-        Self {
+        DebugFlags {
             chat_trace: has("CLIENT910_CHAT_TRACE"),
             ui_trace_hide: has("CLIENT910_UI_TRACE_HIDE"),
             ui_trace_input: has("CLIENT910_UI_TRACE_INPUT"),
@@ -68,8 +58,10 @@ impl DebugFlags {
             }),
             png_host: var("CLIENT910_PNG_HOST"),
         }
-    }
+    })
+}
 
+impl DebugFlags {
     /// `CLIENT910_CS2_CMD_TRACE` lists `command`.
     pub fn traces_cs2_command(&self, command: &str) -> bool {
         self.cs2_cmd_trace

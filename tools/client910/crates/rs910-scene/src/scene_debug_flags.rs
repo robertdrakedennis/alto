@@ -25,27 +25,18 @@ pub struct DebugFlags {
     pub hint_trace: bool,
 }
 
-static FLAGS: OnceLock<DebugFlags> = OnceLock::new();
-
 /// The process-wide flags, parsed from the environment on first use.
 pub fn flags() -> &'static DebugFlags {
-    FLAGS.get_or_init(DebugFlags::from_env)
-}
-
-impl DebugFlags {
-    pub fn from_env() -> Self {
-        Self::from_lookup(&|name| std::env::var_os(name))
-    }
-
-    /// Parse from any variable source (`std::env::var_os` in production).
-    pub fn from_lookup(var_os: &dyn Fn(&str) -> Option<OsString>) -> Self {
+    static FLAGS: OnceLock<DebugFlags> = OnceLock::new();
+    FLAGS.get_or_init(|| {
+        let var_os = |name: &str| std::env::var_os(name);
         // `std::env::var(name).ok()`: absent or non-UTF-8 is `None`.
         let var = |name: &str| var_os(name).and_then(|v| v.into_string().ok());
-        Self {
+        DebugFlags {
             icon_model_out: var_os("CLIENT910_ICON_MODEL_OUT"),
             animation_seed: var("CLIENT910_ANIMATION_SEED").and_then(|s| s.parse().ok()),
             animation_cycle: var("CLIENT910_ANIMATION_CYCLE").and_then(|s| s.parse().ok()),
             hint_trace: var_os("CLIENT910_HINT_TRACE").is_some(),
         }
-    }
+    })
 }

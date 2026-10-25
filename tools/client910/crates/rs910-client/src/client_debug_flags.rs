@@ -7,7 +7,6 @@
 //! (`main` forces every set at startup); readers name
 //! `crate::client_debug_flags::flags().field`.
 
-use std::ffi::OsString;
 use std::path::PathBuf;
 use std::sync::OnceLock;
 
@@ -37,23 +36,14 @@ pub struct DebugFlags {
     pub input: InputScript,
 }
 
-static FLAGS: OnceLock<DebugFlags> = OnceLock::new();
-
 /// The process-wide flags, parsed from the environment on first use.
 pub fn flags() -> &'static DebugFlags {
-    FLAGS.get_or_init(DebugFlags::from_env)
-}
-
-impl DebugFlags {
-    pub fn from_env() -> Self {
-        Self::from_lookup(&|name| std::env::var_os(name))
-    }
-
-    /// Parse from any variable source (`std::env::var_os` in production).
-    pub fn from_lookup(var_os: &dyn Fn(&str) -> Option<OsString>) -> Self {
+    static FLAGS: OnceLock<DebugFlags> = OnceLock::new();
+    FLAGS.get_or_init(|| {
+        let var_os = |name: &str| std::env::var_os(name);
         let has = |name: &str| var_os(name).is_some();
         let path = |name: &str| var_os(name).map(PathBuf::from);
-        Self {
+        DebugFlags {
             record: path("CLIENT910_RECORD"),
             record_interactive: var_os("CLIENT910_RECORD_MODE")
                 .is_some_and(|mode| mode == "interactive"),
@@ -66,7 +56,7 @@ impl DebugFlags {
                 .and_then(|v| v.into_string().ok())
                 .and_then(|v| v.parse::<i32>().ok())
                 .filter(|&n| n > 0),
-            input: InputScript::from_lookup(var_os),
+            input: InputScript::from_lookup(&var_os),
         }
-    }
+    })
 }

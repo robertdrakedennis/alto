@@ -4,7 +4,6 @@
 //! Phase 3.2 with the same parse expression; readers name
 //! `crate::game_debug_flags::flags().cutscene_trace`.
 
-use std::ffi::OsString;
 use std::sync::OnceLock;
 
 /// Parsed game-layer diagnostics. See the module docs.
@@ -16,23 +15,14 @@ pub struct DebugFlags {
     pub cutscene_trace: bool,
 }
 
-static FLAGS: OnceLock<DebugFlags> = OnceLock::new();
-
 /// The process-wide flags, parsed from the environment on first use.
 pub fn flags() -> &'static DebugFlags {
-    FLAGS.get_or_init(DebugFlags::from_env)
-}
-
-impl DebugFlags {
-    pub fn from_env() -> Self {
-        Self::from_lookup(&|name| std::env::var_os(name))
-    }
-
-    /// Parse from any variable source (`std::env::var_os` in production).
-    pub fn from_lookup(var_os: &dyn Fn(&str) -> Option<OsString>) -> Self {
+    static FLAGS: OnceLock<DebugFlags> = OnceLock::new();
+    FLAGS.get_or_init(|| {
+        let var_os = |name: &str| std::env::var_os(name);
         let has = |name: &str| var_os(name).is_some();
-        Self {
+        DebugFlags {
             cutscene_trace: has("CLIENT910_CUTSCENE_TRACE"),
         }
-    }
+    })
 }

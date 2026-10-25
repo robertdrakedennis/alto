@@ -25,25 +25,16 @@ pub struct DebugFlags {
     pub minimap_dump: Option<OsString>,
 }
 
-static FLAGS: OnceLock<DebugFlags> = OnceLock::new();
-
 /// The process-wide flags, parsed from the environment on first use.
 pub fn flags() -> &'static DebugFlags {
-    FLAGS.get_or_init(DebugFlags::from_env)
-}
-
-impl DebugFlags {
-    pub fn from_env() -> Self {
-        Self::from_lookup(&|name| std::env::var_os(name))
-    }
-
-    /// Parse from any variable source (`std::env::var_os` in production).
-    pub fn from_lookup(var_os: &dyn Fn(&str) -> Option<OsString>) -> Self {
+    static FLAGS: OnceLock<DebugFlags> = OnceLock::new();
+    FLAGS.get_or_init(|| {
+        let var_os = |name: &str| std::env::var_os(name);
         let has = |name: &str| var_os(name).is_some();
-        Self {
+        DebugFlags {
             settings_trace: has("CLIENT910_SETTINGS_TRACE"),
             postfx_trace: has("CLIENT910_POSTFX_TRACE"),
             minimap_dump: var_os("CLIENT910_MINIMAP_DUMP"),
         }
-    }
+    })
 }

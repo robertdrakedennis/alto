@@ -23,7 +23,6 @@
 //! `rs910_client::client_debug_flags` (the session recorder
 //! and the input injectors; Phase 4). What is left here is the shell's.
 
-use std::ffi::OsString;
 use std::path::PathBuf;
 use std::sync::OnceLock;
 
@@ -72,25 +71,16 @@ pub struct DebugFlags {
     pub sky_decor: Vec<Vec<i32>>,
 }
 
-static FLAGS: OnceLock<DebugFlags> = OnceLock::new();
-
 /// The process-wide flags, parsed from the environment on first use.
 pub fn flags() -> &'static DebugFlags {
-    FLAGS.get_or_init(DebugFlags::from_env)
-}
-
-impl DebugFlags {
-    pub fn from_env() -> Self {
-        Self::from_lookup(&|name| std::env::var_os(name))
-    }
-
-    /// Parse from any variable source (`std::env::var_os` in production).
-    pub fn from_lookup(var_os: &dyn Fn(&str) -> Option<OsString>) -> Self {
+    static FLAGS: OnceLock<DebugFlags> = OnceLock::new();
+    FLAGS.get_or_init(|| {
+        let var_os = |name: &str| std::env::var_os(name);
         let has = |name: &str| var_os(name).is_some();
         // `std::env::var(name).ok()`: absent or non-UTF-8 is `None`.
         let var = |name: &str| var_os(name).and_then(|v| v.into_string().ok());
         let path = |name: &str| var_os(name).map(PathBuf::from);
-        Self {
+        DebugFlags {
             cursor_trace: has("CLIENT910_CURSOR_TRACE"),
             particle_trace: has("CLIENT910_PARTICLE_TRACE"),
             postfx_off: has("CLIENT910_POSTFX_OFF"),
@@ -128,5 +118,5 @@ impl DebugFlags {
                 })
                 .unwrap_or_default(),
         }
-    }
+    })
 }
