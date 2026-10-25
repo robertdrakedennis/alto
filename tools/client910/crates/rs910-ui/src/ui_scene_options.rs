@@ -99,135 +99,6 @@ pub struct ActiveTarget {
     pub id: i32,
 }
 
-/// The determinant of a 4x4 matrix. The expansion order is kept: it fixes the
-/// float rounding the ground pick sees.
-fn determinant(e: &[f32; 16]) -> f32 {
-    e[3] * e[6] * e[9] * e[12]
-        + (e[3] * e[5] * e[8] * e[14]
-            + e[3] * e[4] * e[10] * e[13]
-            + (e[2] * e[7] * e[8] * e[13]
-                + e[2] * e[5] * e[11] * e[12]
-                + (e[2] * e[4] * e[9] * e[15]
-                    + e[1] * e[7] * e[10] * e[12]
-                    + (e[1] * e[6] * e[8] * e[15]
-                        + e[1] * e[4] * e[11] * e[14]
-                        + (e[0] * e[7] * e[9] * e[14]
-                            + e[0] * e[6] * e[11] * e[13]
-                            + (e[0] * e[5] * e[10] * e[15]
-                                - e[0] * e[5] * e[11] * e[14]
-                                - e[0] * e[6] * e[9] * e[15])
-                            - e[0] * e[7] * e[10] * e[13]
-                            - e[1] * e[4] * e[10] * e[15])
-                        - e[1] * e[6] * e[11] * e[12]
-                        - e[1] * e[7] * e[8] * e[14])
-                    - e[2] * e[4] * e[11] * e[13]
-                    - e[2] * e[5] * e[8] * e[15])
-                - e[2] * e[7] * e[9] * e[12]
-                - e[3] * e[4] * e[9] * e[14])
-            - e[3] * e[5] * e[10] * e[12]
-            - e[3] * e[6] * e[8] * e[13])
-}
-/// Inverts a 4x4 matrix in place, one cofactor per entry. The expression
-/// order is kept for the same rounding reason.
-pub fn invert(e: &mut [f32; 16]) {
-    let inv_det = 1.0 / determinant(e);
-    let cofactor0 = (e[7] * e[9] * e[14]
-        + e[6] * e[11] * e[13]
-        + (e[5] * e[10] * e[15] - e[5] * e[11] * e[14] - e[6] * e[9] * e[15])
-        - e[7] * e[10] * e[13])
-        * inv_det;
-    let cofactor1 = (e[3] * e[10] * e[13]
-        + (e[2] * e[9] * e[15] + e[10] * -e[1] * e[15] + e[1] * e[11] * e[14]
-            - e[2] * e[11] * e[13]
-            - e[3] * e[9] * e[14]))
-        * inv_det;
-    let cofactor2 = (e[3] * e[5] * e[14]
-        + e[2] * e[7] * e[13]
-        + (e[1] * e[6] * e[15] - e[1] * e[7] * e[14] - e[2] * e[5] * e[15])
-        - e[3] * e[6] * e[13])
-        * inv_det;
-    let cofactor3 = (e[3] * e[6] * e[9]
-        + (e[2] * e[5] * e[11] + e[6] * -e[1] * e[11] + e[1] * e[7] * e[10]
-            - e[2] * e[7] * e[9]
-            - e[3] * e[5] * e[10]))
-        * inv_det;
-    let cofactor4 = (e[7] * e[10] * e[12]
-        + (e[6] * e[8] * e[15] + e[10] * -e[4] * e[15] + e[4] * e[11] * e[14]
-            - e[6] * e[11] * e[12]
-            - e[7] * e[8] * e[14]))
-        * inv_det;
-    let cofactor5 = (e[3] * e[8] * e[14]
-        + e[2] * e[11] * e[12]
-        + (e[0] * e[10] * e[15] - e[0] * e[11] * e[14] - e[2] * e[8] * e[15])
-        - e[3] * e[10] * e[12])
-        * inv_det;
-    let cofactor6 = (e[3] * e[6] * e[12]
-        + (e[2] * e[4] * e[15] + e[6] * -e[0] * e[15] + e[0] * e[7] * e[14]
-            - e[2] * e[7] * e[12]
-            - e[3] * e[4] * e[14]))
-        * inv_det;
-    let cofactor7 = (e[3] * e[4] * e[10]
-        + e[2] * e[7] * e[8]
-        + (e[0] * e[6] * e[11] - e[0] * e[7] * e[10] - e[2] * e[4] * e[11])
-        - e[3] * e[6] * e[8])
-        * inv_det;
-    let cofactor8 = (e[7] * e[8] * e[13]
-        + e[5] * e[11] * e[12]
-        + (e[4] * e[9] * e[15] - e[4] * e[11] * e[13] - e[5] * e[8] * e[15])
-        - e[7] * e[9] * e[12])
-        * inv_det;
-    let cofactor9 = (e[3] * e[9] * e[12]
-        + (e[1] * e[8] * e[15] + e[9] * -e[0] * e[15] + e[0] * e[11] * e[13]
-            - e[1] * e[11] * e[12]
-            - e[3] * e[8] * e[13]))
-        * inv_det;
-    let cofactor10 = (e[3] * e[4] * e[13]
-        + e[1] * e[7] * e[12]
-        + (e[0] * e[5] * e[15] - e[0] * e[7] * e[13] - e[1] * e[4] * e[15])
-        - e[3] * e[5] * e[12])
-        * inv_det;
-    let cofactor11 = (e[3] * e[5] * e[8]
-        + (e[1] * e[4] * e[11] + e[5] * -e[0] * e[11] + e[0] * e[7] * e[9]
-            - e[1] * e[7] * e[8]
-            - e[3] * e[4] * e[9]))
-        * inv_det;
-    let cofactor12 = (e[6] * e[9] * e[12]
-        + (e[5] * e[8] * e[14] + e[9] * -e[4] * e[14] + e[4] * e[10] * e[13]
-            - e[5] * e[10] * e[12]
-            - e[6] * e[8] * e[13]))
-        * inv_det;
-    let cofactor13 = (e[2] * e[8] * e[13]
-        + e[1] * e[10] * e[12]
-        + (e[0] * e[9] * e[14] - e[0] * e[10] * e[13] - e[1] * e[8] * e[14])
-        - e[2] * e[9] * e[12])
-        * inv_det;
-    let cofactor14 = (e[2] * e[5] * e[12]
-        + (e[1] * e[4] * e[14] + e[5] * -e[0] * e[14] + e[0] * e[6] * e[13]
-            - e[1] * e[6] * e[12]
-            - e[2] * e[4] * e[13]))
-        * inv_det;
-    let cofactor15 = (e[2] * e[4] * e[9]
-        + e[1] * e[6] * e[8]
-        + (e[0] * e[5] * e[10] - e[0] * e[6] * e[9] - e[1] * e[4] * e[10])
-        - e[2] * e[5] * e[8])
-        * inv_det;
-    e[0] = cofactor0;
-    e[1] = cofactor1;
-    e[2] = cofactor2;
-    e[3] = cofactor3;
-    e[4] = cofactor4;
-    e[5] = cofactor5;
-    e[6] = cofactor6;
-    e[7] = cofactor7;
-    e[8] = cofactor8;
-    e[9] = cofactor9;
-    e[10] = cofactor10;
-    e[11] = cofactor11;
-    e[12] = cofactor12;
-    e[13] = cofactor13;
-    e[14] = cofactor14;
-    e[15] = cofactor15;
-}
 pub use crate::animation_matrix::transform;
 
 /// The fine terrain height at `(x, z)` over the level heightmap (tile shift 9,
@@ -298,8 +169,8 @@ pub fn pick_walk_tile(
     level: i32,
     size: i32,
 ) -> Option<[i32; 2]> {
-    let mut inverse = crate::camera::multiply(&drawn.view, &drawn.projection);
-    invert(&mut inverse);
+    let inverse =
+        crate::animation_matrix::inverse(&crate::camera::multiply(&drawn.view, &drawn.projection));
     let rel_x = mouse[0] - viewport[0];
     let rel_y = mouse[1] - viewport[1];
     let ndc_x = rel_x as f32 * 2.0 / viewport[2] as f32 - 1.0;

@@ -75,61 +75,17 @@ pub type KeyMap = BTreeMap<(u32, u32), XteaKey>;
 /// XTEA block decrypt of a js5 container's payload, in place.
 ///
 /// Mirrors `server/src/formats/bytepacking/Packet.ts:582-612`
-/// `tinydec(key, offset, length)` as called from
-/// `server/src/formats/js5/Js5.ts:519` (`buf.tinydec(key, 5, buf.length)`):
-/// 32 rounds, delta `0x9E3779B9`, `sum` seeded at `delta * 32` (wrapping),
-/// big-endian `u32` pairs (`Packet.ts:381-383` `g4` / `:239-240` `p4` use
-/// `DataView.get/setInt32` with no little-endian flag, i.e. big-endian) from
-/// `offset = 5` — the 5-byte container header is never touched — over
-/// `blocks = (len - 5) / 8` whole pairs only, so a trailing partial block is
-/// left as-is exactly like the TS `(length - offset) / 8 | 0` count (a
-/// container shorter than the header decrypts to a no-op, matching the
-/// negative-count loop skip). JS `>>>` / `| 0` wrapping maps to `u32`
-/// `wrapping_*` here. Hand-rolled on purpose: no cipher crates.
+/// Decrypt a container's whole 8-byte blocks after its 5-byte header with
+/// the group's XTEA key (a trailing partial block stays as it is).
 pub fn tinydec(container: &mut [u8], key: XteaKey) {
-    const OFFSET: usize = 5;
-    const DELTA: u32 = 0x9E3779B9;
-    if container.len() <= OFFSET {
-        return;
-    }
-    let blocks = (container.len() - OFFSET) / 8;
-    for block in 0..blocks {
-        let base = OFFSET + block * 8;
-        let mut v0 = u32::from_be_bytes([
-            container[base],
-            container[base + 1],
-            container[base + 2],
-            container[base + 3],
-        ]);
-        let mut v1 = u32::from_be_bytes([
-            container[base + 4],
-            container[base + 5],
-            container[base + 6],
-            container[base + 7],
-        ]);
-        // `Packet.ts:593`: `sum = delta * num_rounds` evaluated as f64 then
-        // reduced mod 2^32 by the first `^`; `wrapping_mul(32)` is that value.
-        let mut sum: u32 = DELTA.wrapping_mul(32);
-        let mut rounds: u32 = 32;
-        // `Packet.ts:595` `while (num_rounds-- > 0)`.
-        while rounds > 0 {
-            rounds -= 1;
-            // `Packet.ts:596`.
-            v1 = v1.wrapping_sub(
-                (v0.wrapping_shl(4) ^ v0.wrapping_shr(5)).wrapping_add(v0)
-                    ^ sum.wrapping_add(key[((sum >> 11) & 0x3) as usize]),
-            );
-            // `Packet.ts:599-600` (`>>> 0` after the subtract).
-            sum = sum.wrapping_sub(DELTA);
-            // `Packet.ts:602` (reads the already-updated `sum` and `v1`).
-            v0 = v0.wrapping_sub(
-                (v1.wrapping_shl(4) ^ v1.wrapping_shr(5)).wrapping_add(v1)
-                    ^ sum.wrapping_add(key[(sum & 0x3) as usize]),
-            );
-        }
-        container[base..base + 4].copy_from_slice(&v0.to_be_bytes());
-        container[base + 4..base + 8].copy_from_slice(&v1.to_be_bytes());
-    }
+    const HEADER: usize = 5;
+    let end = container.len();
+    rs910_protocol::tiny_cipher::decrypt_range(
+        container,
+        HEADER,
+        end,
+        &key.map(|word| word as i32),
+    );
 }
 
 /// True when a key means "open" (no decryption).
