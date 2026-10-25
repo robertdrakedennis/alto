@@ -14,7 +14,11 @@ use crate::{
     },
 };
 use anyhow::{Context, Result};
-use std::collections::{BTreeMap, BTreeSet, HashMap, VecDeque};
+use rs910_core::lru::Lru;
+use std::collections::{BTreeMap, BTreeSet, HashMap};
+
+/// Built player body models kept in memory.
+const BODY_MODEL_CACHE_SIZE: usize = 260;
 
 /// How one body model is built: the render capability flags, whether the
 /// result enters the model cache, and the key of the last cached build (the
@@ -104,8 +108,7 @@ pub struct Models {
     pub identity: BTreeMap<i32, IdentityKit>,
     available: BTreeSet<u32>,
     raw: HashMap<u32, ModelUnlit>,
-    cache: HashMap<u64, GpuModel>,
-    order: VecDeque<u64>,
+    cache: Lru<u64, GpuModel, BODY_MODEL_CACHE_SIZE>,
     pub detail: i32,
     /// Unanimated NPC body bases for NPC-transformed
     /// players, keyed by resolved type and transmog BAS (the NPC factory's
@@ -121,7 +124,6 @@ impl Models {
         }
         self.detail = detail;
         self.cache.clear();
-        self.order.clear();
         self.npc_bodies.clear();
         true
     }
@@ -144,8 +146,7 @@ impl Models {
                 .into_iter()
                 .collect(),
             raw: HashMap::new(),
-            cache: HashMap::new(),
-            order: VecDeque::new(),
+            cache: Lru::default(),
             detail,
             npc_bodies: HashMap::new(),
         })
@@ -163,10 +164,6 @@ impl Models {
             slot.insert(raw);
         }
         Ok(self.raw[&id].clone())
-    }
-    fn touch(&mut self, key: u64) {
-        self.order.retain(|&k| k != key);
-        self.order.push_back(key);
     }
     fn ready(&self, id: i32) -> bool {
         u32::try_from(id)
@@ -304,9 +301,6 @@ impl Models {
         let selected = select(a, seq, c.wear)?;
         let key = selected.key;
         let previous = self.cache.get(&key).cloned();
-        if previous.is_some() {
-            self.touch(key);
-        }
         let mut model = previous;
         if model.as_ref().is_none_or(|m| (m.flags & flags) != flags) {
             if let Some(m) = &model {
@@ -357,9 +351,6 @@ impl Models {
             if !ready {
                 if *last_key != -1 {
                     model = self.cache.get(&(*last_key as u64)).cloned();
-                    if model.is_some() {
-                        self.touch(*last_key as u64);
-                    }
                 }
                 return Ok(model.filter(|m| (m.flags & flags) == flags).map(|mut m| {
                     m.flags = flags;
@@ -443,11 +434,6 @@ impl Models {
             if cache {
                 m.flags = flags;
                 self.cache.insert(key, m.clone());
-                self.touch(key);
-                while self.order.len() > 260 {
-                    let evicted = self.order.pop_front().unwrap();
-                    self.cache.remove(&evicted);
-                }
                 *last_key = key as i64;
             }
             model = Some(m);

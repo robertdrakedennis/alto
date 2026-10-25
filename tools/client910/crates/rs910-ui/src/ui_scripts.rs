@@ -10,11 +10,7 @@ use native910::{
     script::{CompiledScript, Operand},
     vm::{ScriptProvider, VmError, VmResult},
 };
-use std::{
-    cell::RefCell,
-    collections::{BTreeMap, VecDeque},
-    rc::Rc,
-};
+use std::{cell::RefCell, collections::BTreeMap, rc::Rc};
 
 /// A script group holds its bytecode in file zero.
 const SCRIPT_FILE: u32 = 0;
@@ -61,11 +57,9 @@ impl Source for PackSource {
         }
     }
 }
-#[derive(Default)]
-struct Cache {
-    values: BTreeMap<i32, Rc<CompiledScript>>,
-    order: VecDeque<i32>,
-}
+/// Decoded scripts kept in memory.
+const SCRIPT_CACHE_SIZE: usize = 128;
+type Cache = rs910_core::lru::Lru<i32, Rc<CompiledScript>, SCRIPT_CACHE_SIZE>;
 /// What fetching a script group found.
 enum Lookup {
     Script(Rc<CompiledScript>),
@@ -94,10 +88,6 @@ impl Scripts {
     pub fn clear(&self) {
         *self.cache.borrow_mut() = Cache::default();
     }
-    #[cfg(any(test, feature = "test-hooks"))] // test-only helpers
-    pub fn order(&self) -> Vec<i32> {
-        self.cache.borrow().order.iter().copied().collect()
-    }
     /// The binding callback runs only on decode, which captures
     /// variable-definition objects at load time.
     pub fn get(
@@ -114,10 +104,7 @@ impl Scripts {
     /// Fetches group `id`: the cached script, a decode, or why there is none.
     fn lookup(&self, id: i32, bind: impl FnOnce(&CompiledScript) -> Result<()>) -> Result<Lookup> {
         {
-            let mut c = self.cache.borrow_mut();
-            if let Some(script) = c.values.get(&id).cloned() {
-                c.order.retain(|v| *v != id);
-                c.order.push_back(id);
+            if let Some(script) = self.cache.borrow_mut().get(&id).cloned() {
                 return Ok(Lookup::Script(script));
             }
         }
@@ -132,13 +119,7 @@ impl Scripts {
             .with_context(|| format!("decode client script {id}"))?;
         bind(&script).with_context(|| format!("bind client script {id}"))?;
         let script = Rc::new(script);
-        let mut c = self.cache.borrow_mut();
-        if c.order.len() == 128 {
-            let old = c.order.pop_front().unwrap();
-            c.values.remove(&old);
-        }
-        c.values.insert(id, script.clone());
-        c.order.push_back(id);
+        self.cache.borrow_mut().insert(id, script.clone());
         Ok(Lookup::Script(script))
     }
 

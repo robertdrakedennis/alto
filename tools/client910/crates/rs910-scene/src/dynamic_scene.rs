@@ -15,7 +15,11 @@ use crate::{
     scene::{EntityRef, Scene},
     texture::MaterialStore,
 };
-use std::collections::{BTreeMap, HashMap, HashSet, VecDeque};
+use rs910_core::lru::Lru;
+use std::collections::{BTreeMap, HashMap, HashSet};
+
+/// Live loc placement entries in the placement model cache.
+const PLACEMENT_CACHE_SIZE: usize = 50;
 
 /// The loc a scene entity was placed as and the loc it currently resolves to
 /// (through its varbit or varp).
@@ -82,10 +86,9 @@ pub struct DynamicScene {
     bound_bits: BTreeMap<i32, crate::protocol910::varbits::Type>,
     billboards: crate::billboard::BillboardStore,
     emitters: crate::particle::EmitterStore,
-    // The placement model cache has 50 live entries. Eviction resets retained
-    // render capabilities, which can change later transparency decisions.
-    bases: HashMap<(u32, i32, i32), (i32, u64)>,
-    base_order: VecDeque<(u32, i32, i32)>,
+    // Eviction from the placement model cache resets retained render
+    // capabilities, which can change later transparency decisions.
+    bases: Lru<(u32, i32, i32), (i32, u64), PLACEMENT_CACHE_SIZE>,
     base_models: HashMap<(u32, i32, i32, i32), Option<GpuModel>>,
     raw_models: crate::loctype::SharedModelCache,
     next_base_revision: u64,
@@ -158,8 +161,7 @@ impl PreparedDynamicScene {
             bound_bits: BTreeMap::new(),
             billboards,
             emitters,
-            bases: HashMap::new(),
-            base_order: VecDeque::new(),
+            bases: Lru::default(),
             base_models: HashMap::new(),
             next_base_revision: 0,
             raw_models,
@@ -622,10 +624,10 @@ impl DynamicScene {
             if shape == 10 && angle > 3 {
                 requested |= 5;
             }
-            let previous = self.bases.get(&key).map_or(0, |b| b.0);
+            let previous = self.bases.peek(&key).map_or(0, |b| b.0);
             let flags = previous | requested;
             let physical = (loc.id, shape, angle, flags);
-            if !self.bases.contains_key(&key) || previous & requested != requested {
+            if self.bases.peek(&key).is_none() || previous & requested != requested {
                 self.base_models.insert(
                     physical,
                     crate::loctype::build_base_model(&source, loc, flags, shape, angle)?,
@@ -637,12 +639,6 @@ impl DynamicScene {
             }
             if let Some((_, revision)) = self.bases.get(&key) {
                 base_revision = *revision;
-                self.base_order.retain(|k| *k != key);
-                self.base_order.push_back(key);
-                while self.base_order.len() > 50 {
-                    let old = self.base_order.pop_front().unwrap();
-                    self.bases.remove(&old);
-                }
             }
             model_key = Some(physical);
             animation_pose = Some(pose);

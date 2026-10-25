@@ -25,6 +25,7 @@ pub mod fault;
 pub mod hardware;
 pub mod log_repeat;
 pub mod logic_clock;
+pub mod lru;
 pub mod perlin;
 pub mod profile;
 pub mod reader;

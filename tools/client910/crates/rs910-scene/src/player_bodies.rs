@@ -77,11 +77,12 @@ impl crate::player_draw::PlayerDraws for PlayerBodies {
         })
     }
 }
-/// A small LRU cache (4 entries) of hint-arrow models.
+/// Hint-arrow models kept in memory.
+const HINT_ARROW_CACHE_SIZE: usize = 4;
+/// A small LRU cache of hint-arrow models.
 #[derive(Default)]
 struct HintArrowModels {
-    models: BTreeMap<i32, crate::gpumodel::GpuModel>,
-    order: std::collections::VecDeque<i32>,
+    models: rs910_core::lru::Lru<i32, crate::gpumodel::GpuModel, HINT_ARROW_CACHE_SIZE>,
 }
 impl HintArrowModels {
     /// The cached 2055-flag model lit at 64/768, copied, turned to the
@@ -95,7 +96,7 @@ impl HintArrowModels {
         angle: i32,
         ground: [i32; 3],
     ) -> Result<Option<crate::gpumodel::GpuModel>> {
-        if let std::collections::btree_map::Entry::Vacant(slot) = self.models.entry(id) {
+        if self.models.get(&id).is_none() {
             let Some(mut raw) = u32::try_from(id)
                 .ok()
                 .and_then(|id| crate::modelunlit::ModelUnlit::load(r.pack, id).ok())
@@ -119,16 +120,13 @@ impl HintArrowModels {
                     detail,
                 },
             )?;
-            slot.insert(model);
+            self.models.insert(id, model);
         }
-        self.order.retain(|&k| k != id);
-        self.order.push_back(id);
-        while self.order.len() > 4 {
-            if let Some(evicted) = self.order.pop_front() {
-                self.models.remove(&evicted);
-            }
-        }
-        let mut model = self.models[&id].clone();
+        let mut model = self
+            .models
+            .peek(&id)
+            .cloned()
+            .expect("hint arrow model cached");
         if angle != 0 {
             model.rotate_y_keep_normals(angle);
         }

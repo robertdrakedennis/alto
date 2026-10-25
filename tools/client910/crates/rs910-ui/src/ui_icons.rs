@@ -7,11 +7,12 @@ use crate::{
     ui_sprites::Sprite,
 };
 use anyhow::{Context, Result};
-use std::{
-    collections::{BTreeMap, VecDeque},
-    rc::Rc,
-};
-#[derive(Clone, Copy, PartialEq, Eq, PartialOrd, Ord)]
+use rs910_core::lru::Lru;
+use std::rc::Rc;
+
+/// Inventory icons kept in memory.
+const ICON_CACHE_SIZE: usize = 250;
+#[derive(Clone, Copy, PartialEq, Eq, Hash)]
 struct Key {
     id: i32,
     count: i32,
@@ -27,11 +28,10 @@ pub struct Icons {
     models: crate::ui_icon_model::Models,
     font: Rc<Font>,
     colours: [i32; 3],
-    cache: BTreeMap<Key, Rc<Sprite>>,
+    cache: Lru<Key, Rc<Sprite>, ICON_CACHE_SIZE>,
     random: crate::font_layout::Random,
     palette: Option<crate::avatar::AvatarPalette>,
     defaults: crate::avatar::GraphicsDefaults,
-    order: VecDeque<Key>,
 }
 impl Icons {
     pub fn new(pack: Pack, objs: Rc<ObjStore>, fonts: &Fonts) -> Result<Self> {
@@ -62,23 +62,20 @@ impl Icons {
                 graphics.inv_thousand_color,
                 graphics.inv_million_color,
             ],
-            cache: BTreeMap::new(),
+            cache: Lru::default(),
             random,
             palette: None,
             defaults: crate::avatar::GraphicsDefaults::load(&pack)?,
-            order: VecDeque::new(),
         })
     }
     /// Clears the icon cache (the icon half of a cache reset).
     pub fn reset(&mut self) {
         self.cache.clear();
-        self.order.clear();
     }
     pub fn set_palette(&mut self, palette: Option<crate::avatar::AvatarPalette>) {
         if self.palette != palette {
             self.palette = palette;
-            self.cache.retain(|k, _| !k.wear);
-            self.order.retain(|k| !k.wear);
+            self.cache.retain(|k| !k.wear);
         }
     }
     pub fn sprite(&mut self, f: &Fields) -> Result<Rc<Sprite>> {
@@ -98,8 +95,6 @@ impl Icons {
     fn build(&mut self, key: Key, depth: usize) -> Result<Rc<Sprite>> {
         anyhow::ensure!(depth < 32, "cyclic inventory icon overlay");
         if let Some(sprite) = self.cache.get(&key) {
-            self.order.retain(|k| *k != key);
-            self.order.push_back(key);
             return Ok(sprite.clone());
         }
         let mut obj = self
@@ -214,12 +209,6 @@ impl Icons {
             padding: [0; 4],
             argb: pixels,
         });
-        if self.cache.len() >= 250 {
-            if let Some(old) = self.order.pop_front() {
-                self.cache.remove(&old);
-            }
-        }
-        self.order.push_back(key);
         self.cache.insert(key, sprite.clone());
         Ok(sprite)
     }

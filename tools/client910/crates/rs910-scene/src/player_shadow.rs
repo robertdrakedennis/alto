@@ -11,7 +11,10 @@ use crate::{
     texture::MaterialStore,
 };
 use anyhow::Result;
-use std::collections::{HashMap, VecDeque};
+use rs910_core::lru::Lru;
+
+/// Built player shadow models kept in memory.
+const SHADOW_MODEL_CACHE_SIZE: usize = 32;
 
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Shape {
@@ -195,15 +198,13 @@ impl<'a> From<&Resources<'a>> for ShadowSources<'a> {
     }
 }
 pub struct Shadows {
-    cache: HashMap<i64, GpuModel>,
-    order: VecDeque<i64>,
+    cache: Lru<i64, GpuModel, SHADOW_MODEL_CACHE_SIZE>,
     detail: i32,
 }
 impl Default for Shadows {
     fn default() -> Self {
         Self {
-            cache: HashMap::new(),
-            order: VecDeque::new(),
+            cache: Lru::default(),
             detail: crate::gpumodel::MODEL_DETAIL_FLAGS,
         }
     }
@@ -215,7 +216,6 @@ impl Shadows {
         }
         self.detail = detail;
         self.cache.clear();
-        self.order.clear();
         true
     }
 }
@@ -239,7 +239,7 @@ impl Shadows {
             .get(&key)
             .is_none_or(|m| m.flags & flags != flags)
         {
-            if let Some(old) = self.cache.get(&key) {
+            if let Some(old) = self.cache.peek(&key) {
                 flags |= old.flags;
             }
             // The model detail is selected the same way as for the player model.
@@ -261,12 +261,7 @@ impl Shadows {
                 )?,
             );
         }
-        self.order.retain(|&id| id != key);
-        self.order.push_back(key);
-        if self.order.len() > 32 {
-            self.cache.remove(&self.order.pop_front().unwrap());
-        }
-        let mut model = self.cache[&key].clone();
+        let mut model = self.cache.peek(&key).cloned().expect("shadow model cached");
         model.flags = flags;
         let (x0, x1, z0, z1) = (body.min_x(), body.max_x(), body.min_z(), body.max_z());
         model.scale(x1.wrapping_sub(x0) >> 1, 128, z1.wrapping_sub(z0) >> 1);

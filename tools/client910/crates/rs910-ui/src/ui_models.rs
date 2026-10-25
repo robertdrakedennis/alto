@@ -14,8 +14,12 @@ use crate::{
 use anyhow::{Context, Result};
 pub use rs910_config::npc_customisation::*;
 use rs910_core::fault::Fault;
+use rs910_core::lru::Lru;
 use rs910_core::soft_cache::SoftMap;
-use std::{collections::BTreeMap, collections::VecDeque, rc::Rc};
+use std::{collections::BTreeMap, rc::Rc};
+
+/// Inventory-built models kept in memory.
+const INVENTORY_MODEL_CACHE_SIZE: usize = 10;
 field_snapshot!(
     /// The scalars `Models::draw` branches and finishes on.
     ModelFields {
@@ -88,8 +92,7 @@ pub struct Models {
     inventories: BTreeMap<i32, Vec<i32>>,
     /// Inventory model cache (ten entries, least recently used evicted),
     /// keyed by [`inventory_crc64`].
-    inventory_models: BTreeMap<i64, GpuModel>,
-    inventory_order: VecDeque<i64>,
+    inventory_models: Lru<i64, GpuModel, INVENTORY_MODEL_CACHE_SIZE>,
 }
 
 /// A retained object model: the item type that supplies the mesh (after the
@@ -151,8 +154,7 @@ impl Models {
             model_detail: crate::gpumodel::MODEL_DETAIL_FLAGS,
             player_varps: Vec::new(),
             inventories: BTreeMap::new(),
-            inventory_models: BTreeMap::new(),
-            inventory_order: VecDeque::new(),
+            inventory_models: Lru::default(),
         }
     }
     /// Age the cached interface models by one clean (see
@@ -228,7 +230,6 @@ impl Models {
         self.last_keys.clear();
         // The inventory model cache is detail-dependent too.
         self.inventory_models.clear();
-        self.inventory_order.clear();
         true
     }
     pub fn sync(&mut self, scene: &crate::ui_cam2::SceneInput<'_>) {
@@ -962,13 +963,12 @@ impl Models {
             flags |= poses.iter().fold(0, |flags, p| flags | p.flags);
         }
         let key = inventory_crc64(&slots, bas_id, palette.as_ref().map(|p| &p.0), female);
-        let cached = self.inventory_models.get(&key).cloned();
+        let cached = self.inventory_models.peek(&key).cloned();
         let model = if let Some(model) = cached.filter(|m| m.flags & flags == flags) {
-            self.inventory_order.retain(|&k| k != key);
-            self.inventory_order.push_back(key);
+            self.inventory_models.touch(&key);
             model
         } else {
-            if let Some(old) = self.inventory_models.get(&key) {
+            if let Some(old) = self.inventory_models.peek(&key) {
                 flags |= old.flags;
             }
             let default_item = crate::protocol910::config_types::Item::empty(-1);
@@ -1060,13 +1060,6 @@ impl Models {
             }
             model.flags = flags;
             self.inventory_models.insert(key, model.clone());
-            self.inventory_order.retain(|&k| k != key);
-            self.inventory_order.push_back(key);
-            while self.inventory_order.len() > 10 {
-                if let Some(evicted) = self.inventory_order.pop_front() {
-                    self.inventory_models.remove(&evicted);
-                }
-            }
             model
         };
         let mut model = model;

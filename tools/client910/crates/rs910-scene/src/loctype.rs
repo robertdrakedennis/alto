@@ -5,8 +5,12 @@
 //! to placements own their arrays. The client palette table is all zero, so palette
 //! recolours map to 0.
 
+use rs910_core::lru::Lru;
 use std::cell::RefCell;
-use std::collections::{HashMap, VecDeque};
+use std::collections::HashMap;
+
+/// Lit loc geometry kept in memory.
+const LOC_MODEL_CACHE_SIZE: usize = 500;
 use std::sync::{Arc, Mutex};
 
 use crate::billboard::BillboardStore;
@@ -61,8 +65,7 @@ pub mod shape {
 /// survive cache hits; face sorting depends on its retained alpha capability.
 #[derive(Debug, Default)]
 pub struct ModelCache {
-    raw: HashMap<i64, GpuModel>,
-    order: VecDeque<i64>,
+    raw: Lru<i64, GpuModel, LOC_MODEL_CACHE_SIZE>,
 }
 pub type SharedModelCache = Arc<Mutex<ModelCache>>;
 
@@ -213,12 +216,7 @@ pub fn build_base_model_custom(
     }
     let old = {
         let mut cache = src.model_cache.lock().unwrap();
-        let old = cache.raw.get(&key).cloned();
-        if old.is_some() {
-            cache.order.retain(|&k| k != key);
-            cache.order.push_back(key);
-        }
-        old
+        cache.raw.get(&key).cloned()
     };
     if let Some(old) = &old {
         if i32::from(old.ambient) != light_ambient {
@@ -260,14 +258,11 @@ pub fn build_base_model_custom(
                     detail: src.detail_flags,
                 },
             )?;
-            let mut cache = src.model_cache.lock().unwrap();
-            cache.raw.insert(key, model.clone());
-            cache.order.retain(|&k| k != key);
-            cache.order.push_back(key);
-            while cache.order.len() > 500 {
-                let old = cache.order.pop_front().unwrap();
-                cache.raw.remove(&old);
-            }
+            src.model_cache
+                .lock()
+                .unwrap()
+                .raw
+                .insert(key, model.clone());
             model
         };
     // The clone's capabilities differ from those retained by the shared raw geometry.
