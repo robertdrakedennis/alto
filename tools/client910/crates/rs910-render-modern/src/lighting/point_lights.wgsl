@@ -31,22 +31,8 @@ fn point_light_sum_base(in: VsOut, n: vec3<f32>) -> vec3<f32> {
     if (point_grid.dims.w == 0u) {
         return vec3<f32>(0.0);
     }
-    let flags = u32(in.p0.w);
-    var slots: vec4<u32>;
-    let on_floor = (flags & 32u) != 0u;
-    if (on_floor) {
-        let p = in.world.xz + point_grid.origin.xz;
-        let tile = vec2<i32>(floor(p / 512.0));
-        let level = u32(in.p2.x);
-        if (tile.x < 0 || tile.y < 0 || u32(tile.x) >= point_grid.dims.x
-            || u32(tile.y) >= point_grid.dims.y || level >= point_grid.dims.z) {
-            return vec3<f32>(0.0);
-        }
-        let packed = light_grid[(level * point_grid.dims.y + u32(tile.y)) * point_grid.dims.x + u32(tile.x)];
-        slots = vec4<u32>(packed.x & 0xFFFFu, packed.x >> 16u, packed.y & 0xFFFFu, packed.y >> 16u);
-    } else {
-        slots = vec4<u32>(in.p2);
-    }
+    let on_floor = (u32(in.p0.w) & 32u) != 0u;
+    let slots = light_slots(in);
     var term = vec3<f32>(0.0);
     for (var i = 0; i < 4; i++) {
         if (slots[i] == 0u) {
@@ -83,21 +69,7 @@ fn point_light_sum(in: VsOut, n: vec3<f32>) -> vec3<f32> {
     if (point_grid.dims.w == 0u) {
         return vec3<f32>(0.0);
     }
-    let flags = u32(in.p0.w);
-    var slots: vec4<u32>;
-    if ((flags & 32u) != 0u) {
-        let p = in.world.xz + point_grid.origin.xz;
-        let tile = vec2<i32>(floor(p / 512.0));
-        let level = u32(in.p2.x);
-        if (tile.x < 0 || tile.y < 0 || u32(tile.x) >= point_grid.dims.x
-            || u32(tile.y) >= point_grid.dims.y || level >= point_grid.dims.z) {
-            return vec3<f32>(0.0);
-        }
-        let packed = light_grid[(level * point_grid.dims.y + u32(tile.y)) * point_grid.dims.x + u32(tile.x)];
-        slots = vec4<u32>(packed.x & 0xFFFFu, packed.x >> 16u, packed.y & 0xFFFFu, packed.y >> 16u);
-    } else {
-        slots = vec4<u32>(in.p2);
-    }
+    let slots = light_slots(in);
     var term = vec3<f32>(0.0);
     for (var i = 0; i < 4; i++) {
         if (slots[i] == 0u) {
@@ -106,4 +78,22 @@ fn point_light_sum(in: VsOut, n: vec3<f32>) -> vec3<f32> {
         term += point_light(slots[i], in.world, n);
     }
     return term;
+}
+
+// A fragment's light slots: a floor's (flag 32) from its tile's grid entry
+// at the floor's level (none outside the grid), a model's from its entity's
+// four slots; 0 ends the list.
+fn light_slots(in: VsOut) -> vec4<u32> {
+    if ((u32(in.p0.w) & 32u) == 0u) {
+        return vec4<u32>(in.p2);
+    }
+    let p = in.world.xz + point_grid.origin.xz;
+    let tile = vec2<i32>(floor(p / 512.0));
+    let level = u32(in.p2.x);
+    if (tile.x < 0 || tile.y < 0 || u32(tile.x) >= point_grid.dims.x
+        || u32(tile.y) >= point_grid.dims.y || level >= point_grid.dims.z) {
+        return vec4<u32>(0u);
+    }
+    let packed = light_grid[(level * point_grid.dims.y + u32(tile.y)) * point_grid.dims.x + u32(tile.x)];
+    return vec4<u32>(packed.x & 0xFFFFu, packed.x >> 16u, packed.y & 0xFFFFu, packed.y >> 16u);
 }

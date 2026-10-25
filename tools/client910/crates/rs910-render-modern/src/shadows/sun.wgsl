@@ -37,13 +37,7 @@ fn shadow_filter_base(c: vec3<f32>, ext: vec4<f32>) -> f32 {
         }
         return total * 0.0625;
     }
-    let uv = clamp(c.xy, ext.xy + vec2<f32>(5.0 * texel), ext.zw - vec2<f32>(5.0 * texel));
-    var total = 0.0;
-    for (var i = 0; i < 16; i++) {
-        let o = vec2<f32>(f32(i % 4) - 2.0, f32(i / 4) - 2.0);
-        total += shadow_tap(uv + o * texel, c.z);
-    }
-    return total * 0.0625;
+    return shadow_filter(c, ext);
 }
 
 // The amount of sun reaching camera-local `world` at
@@ -56,23 +50,9 @@ fn sun_visibility_base(world: vec3<f32>, depth: f32) -> f32 {
     let lv = (shadow.light_view * vec4<f32>(world, 1.0)).xyz;
     var k = count;
     if (shadow.lookup.x > 0.5) {
-        // Select by map: the first tile that holds the point.
-        for (var i = 0; i < count; i++) {
-            let c = lv * shadow.tex_scale[i].xyz + shadow.tex_offset[i].xyz;
-            let e = shadow.extents[i];
-            if (all(c.xy >= e.xy) && all(c.xy <= e.zw) && c.z >= 0.0 && c.z <= 1.0) {
-                k = i;
-                break;
-            }
-        }
+        k = cascade_by_map(lv, count);
     } else {
-        // Select by split: the view depth against the splits.
-        k = 0;
-        for (var i = 0; i < count; i++) {
-            if (depth > shadow.splits[i]) {
-                k = i + 1;
-            }
-        }
+        k = cascade_by_split(depth, count);
     }
     if (k >= count) {
         return 1.0;
@@ -88,13 +68,7 @@ fn sun_visibility_base(world: vec3<f32>, depth: f32) -> f32 {
     } else {
         lit = shadow_tap(clamp(c.xy, ext.xy, ext.zw), c.z);
     }
-    lit = min(1.0, lit + (1.0 - shadow.params.z));
-    if (shadow.fade.w > 0.5) {
-        lit = mix(lit, 1.0, smoothstep(shadow.fade.x, shadow.fade.y, depth));
-    } else {
-        lit = mix(lit, 1.0, clamp((depth - shadow.fade.x) * shadow.fade.z, 0.0, 1.0));
-    }
-    return lit;
+    return shadow_fade(lit, depth);
 }
 
 // The caster pass (pass type 0): the forward vertex
@@ -135,45 +109,9 @@ fn fs_shadow(in: VsOut) {
     }
 }
 
-// The 2x2 box: shifted half a texel, clamped 1.5 texels inside the tile, taps (-1,-1)..(0,0).
-fn shadow_box2(c: vec3<f32>, ext: vec4<f32>) -> f32 {
-    let texel = shadow.params.x;
-    let uv = clamp(c.xy + vec2<f32>(0.5 * texel), ext.xy + vec2<f32>(1.5 * texel), ext.zw - vec2<f32>(1.5 * texel));
-    var total = 0.0;
-    for (var i = 0; i < 4; i++) {
-        let o = vec2<f32>(f32(i % 2) - 1.0, f32(i / 2) - 1.0);
-        total += shadow_tap(uv + o * texel, c.z);
-    }
-    return total * 0.25;
-}
-
-// The quality's filter: the 2x2 box above; the approximate 4x4 box (shifted
-// half a texel, 2.5-texel border, four corner taps and all sixteen only when
-// they disagree; here the offsets are the 4x4 box's -2..1); the 4x4 box.
+// The quality's filter (kinds 0-2 of `shadow_filter_on`).
 fn shadow_filter(c: vec3<f32>, ext: vec4<f32>) -> f32 {
-    let texel = shadow.params.x;
-    let kind = u32(shadow.params.w);
-    if (kind == 0u) {
-        return shadow_box2(c, ext);
-    }
-    if (kind == 1u) {
-        let uv = clamp(c.xy + vec2<f32>(0.5 * texel), ext.xy + vec2<f32>(2.5 * texel), ext.zw - vec2<f32>(2.5 * texel));
-        var corners = 0.0;
-        for (var i = 0; i < 4; i++) {
-            let o = vec2<f32>(select(-2.0, 1.0, (i & 1) != 0), select(-2.0, 1.0, (i & 2) != 0));
-            corners += shadow_tap(uv + o * texel, c.z);
-        }
-        if (corners == 0.0 || corners >= 3.9) {
-            return corners * 0.25;
-        }
-        var total = 0.0;
-        for (var i = 0; i < 16; i++) {
-            let o = vec2<f32>(f32(i % 4) - 2.0, f32(i / 4) - 2.0);
-            total += shadow_tap(uv + o * texel, c.z);
-        }
-        return total * 0.0625;
-    }
-    return shadow_filter_base(c, ext);
+    return shadow_filter_on(shadow_map, shadow_sampler, u32(shadow.params.w), c, vec2<f32>(shadow.params.x), ext);
 }
 
 // The sun's shadow attenuation after the receiver's normal offset: the
@@ -188,15 +126,7 @@ fn sun_visibility(world: vec3<f32>, n: vec3<f32>, depth: f32) -> f32 {
     let mode = u32(shadow.bias_select.y);
     var k = count;
     if (mode == 1u) {
-        // Select by map: the first tile holding the point.
-        for (var i = 0; i < count; i++) {
-            let c = lv * shadow.tex_scale[i].xyz + shadow.tex_offset[i].xyz;
-            let e = shadow.extents[i];
-            if (all(c.xy >= e.xy) && all(c.xy <= e.zw) && c.z >= 0.0 && c.z <= 1.0) {
-                k = i;
-                break;
-            }
-        }
+        k = cascade_by_map(lv, count);
     } else if (mode == 2u) {
         // Select by sphere: the first bounding sphere holding
         // the point.
@@ -208,13 +138,7 @@ fn sun_visibility(world: vec3<f32>, n: vec3<f32>, depth: f32) -> f32 {
             }
         }
     } else {
-        // Select by split.
-        k = 0;
-        for (var i = 0; i < count; i++) {
-            if (depth > shadow.splits[i]) {
-                k = i + 1;
-            }
-        }
+        k = cascade_by_split(depth, count);
     }
     if (k >= count) {
         return 1.0;
@@ -228,13 +152,39 @@ fn sun_visibility(world: vec3<f32>, n: vec3<f32>, depth: f32) -> f32 {
     if (depth < shadow.lookup.y) {
         lit = shadow_filter(c, ext);
     } else {
-        lit = shadow_box2(c, ext);
+        lit = shadow_filter_on(shadow_map, shadow_sampler, 0u, c, vec2<f32>(shadow.params.x), ext);
     }
-    lit = min(1.0, lit + (1.0 - shadow.params.z));
+    return shadow_fade(lit, depth);
+}
+
+// The first cascade whose tile holds light-view `lv` (`count`: none).
+fn cascade_by_map(lv: vec3<f32>, count: i32) -> i32 {
+    for (var i = 0; i < count; i++) {
+        let c = lv * shadow.tex_scale[i].xyz + shadow.tex_offset[i].xyz;
+        let e = shadow.extents[i];
+        if (all(c.xy >= e.xy) && all(c.xy <= e.zw) && c.z >= 0.0 && c.z <= 1.0) {
+            return i;
+        }
+    }
+    return count;
+}
+
+// The cascade of view depth `depth` by the splits.
+fn cascade_by_split(depth: f32, count: i32) -> i32 {
+    var k = 0;
+    for (var i = 0; i < count; i++) {
+        if (depth > shadow.splits[i]) {
+            k = i + 1;
+        }
+    }
+    return k;
+}
+
+// The filtered visibility with the shadow strength and the distance fade.
+fn shadow_fade(filtered: f32, depth: f32) -> f32 {
+    let lit = min(1.0, filtered + (1.0 - shadow.params.z));
     if (shadow.fade.w > 0.5) {
-        lit = mix(lit, 1.0, smoothstep(shadow.fade.x, shadow.fade.y, depth));
-    } else {
-        lit = mix(lit, 1.0, clamp((depth - shadow.fade.x) * shadow.fade.z, 0.0, 1.0));
+        return mix(lit, 1.0, smoothstep(shadow.fade.x, shadow.fade.y, depth));
     }
-    return lit;
+    return mix(lit, 1.0, clamp((depth - shadow.fade.x) * shadow.fade.z, 0.0, 1.0));
 }
