@@ -1,0 +1,16 @@
+tools/client910/crates/rs910-render-modern/src/lighting/point_lights.wgsl
+  h_d26e211304196f 34-35,72,82-99
+tools/client910/crates/rs910-render-modern/src/shadows/sun.wgsl
+  h_d26e211304196f 40,53,55,71,112,114,129,141,155,157-185,187,189
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "0aabf2c51ce661ccfc9a1a3f3c97a1462b52b1bd",
+  "prompts": {},
+  "humans": {
+    "h_d26e211304196f": {
+      "author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
