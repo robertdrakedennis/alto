@@ -1,0 +1,26 @@
+tools/client910/crates/rs910-model/src/gpumodel/build.rs
+  h_d26e211304196f 227,229,231,234
+tools/client910/crates/rs910-model/src/gpumodel/mod.rs
+  h_d26e211304196f 39,304-323
+tools/client910/crates/rs910-model/src/modelunlit.rs
+  h_d26e211304196f 5-7
+tools/client910/crates/rs910-scene/src/lib.rs
+  h_d26e211304196f 118
+tools/client910/crates/rs910-scene/src/ui_icon_model.rs
+  h_d26e211304196f 7,11,53-55,57-58,68,70,72-73,78-89,92,94,109-112,124,126,143-146,172-175,178-180,217-220,224-231,244-249,256,262,267,273-275,327,329
+tools/client910/crates/rs910-scene/src/ui_icon_model/tests.rs
+  h_d26e211304196f 77,81-84,90,93
+tools/client910/fixtures/icon-goldens/icons.txt
+  h_d26e211304196f 320,418
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "82d0075d5b841860dc6533e637eee76436eb8646",
+  "prompts": {},
+  "humans": {
+    "h_d26e211304196f": {
+      "author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
