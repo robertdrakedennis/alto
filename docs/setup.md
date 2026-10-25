@@ -1,7 +1,6 @@
 # Setup
 
-Build the Rust client and native tools for revision 910 (10 December 2019).
-The development server is maintained separately and is not distributed here.
+Build the Rust client and native tools for revision 910.
 
 ## Prerequisites
 
@@ -20,9 +19,7 @@ cargo build --release --manifest-path tools/client910/Cargo.toml
 
 ## Supply your cache and run
 
-Alto ships no game data. Supply your own packed cache outside version control
-(see [`cache.md`](cache.md)) and pass its directory with `--pack-root`.
-The historical maintainer path `server/data/pack` remains supported and ignored.
+Pass your packed cache directory with `--pack-root` (see [`cache.md`](cache.md)).
 
 ```bash
 cargo run --release --manifest-path tools/client910/Cargo.toml -- \
