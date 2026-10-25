@@ -30,6 +30,7 @@ pub mod perlin;
 pub mod profile;
 pub mod reader;
 pub mod soft_cache;
+pub mod terrain;
 #[cfg(any(test, feature = "test-hooks"))]
 pub mod test_support;
 pub mod texts;

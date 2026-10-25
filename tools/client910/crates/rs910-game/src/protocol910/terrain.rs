@@ -4,6 +4,7 @@
 //! environment trailer ownership remain separate from this CPU surface.
 use super::{Context, Error, Packet, Result};
 use rs910_core::perlin::perlin;
+use rs910_core::terrain::{blend_corners, height_level, TILE_SHIFT};
 
 const LAND_SQUARE_TILES: usize = 64;
 const LAND_PLANES: usize = 4;
@@ -441,17 +442,11 @@ impl Terrain {
             .filter(|&l| l < 4)
             .ok_or(Error::Invalid("heightmap level"))?;
         let (tx, tz) = (tx as usize, tz as usize);
-        let fx = x & 511;
-        let fz = z & 511;
+        let fine = (1 << TILE_SHIFT) - 1;
+        let (fx, fz) = (x & fine, z & fine);
         let h = |dx, dz| self.heights[self.point(l, tx + dx, tz + dz)];
-        let mix = |a: i32, b: i32, t: i32| {
-            ((512 - t).wrapping_mul(a).wrapping_add(t.wrapping_mul(b))) >> 9
-        };
-        Ok(mix(
-            mix(h(0, 0), h(1, 0), fx),
-            mix(h(0, 1), h(1, 1), fx),
-            fz,
-        ))
+        let corners = [h(0, 0), h(1, 0), h(0, 1), h(1, 1)];
+        Ok(blend_corners(corners, fx, fz, TILE_SHIFT))
     }
 }
 pub fn height(scene: Option<&Terrain>, x: i32, z: i32, level: i32) -> Result<i32> {
@@ -462,12 +457,8 @@ pub fn height(scene: Option<&Terrain>, x: i32, z: i32, level: i32) -> Result<i32
     if tx < 0 || tz < 0 || tx >= s.width as i32 || tz >= s.height as i32 {
         return Ok(0);
     }
-    let level = if level < 3 && s.tiles[s.tile(1, tx as usize, tz as usize)].flags & 2 != 0 {
-        level.wrapping_add(1)
-    } else {
-        level
-    };
-    s.fine_height(x, z, level)
+    let bridge = s.tiles[s.tile(1, tx as usize, tz as usize)].flags & 2 != 0;
+    s.fine_height(x, z, height_level(level, bridge))
 }
 /// Footprint samples on a bridge boundary use the
 /// actor's reference tile when the two adjacent tiles disagree about the bridge.

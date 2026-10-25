@@ -34,6 +34,7 @@
 //!   `OPPLAYERT` (actions 15/16) live in `ui_player_options.rs`; their live
 //!   `IF_BUTTONT` dispatch in `ui_interaction.rs` is untouched.
 use crate::ui_cam2::Heightmap;
+use rs910_core::terrain::{blend_corners, height_level, TILE_SHIFT};
 
 /// Ground walking in the native minimenu action contract.
 pub const WALK_ACTION: i32 = 23;
@@ -104,16 +105,19 @@ pub use crate::animation_matrix::transform;
 /// The fine terrain height at `(x, z)` over the level heightmap (tile shift 9,
 /// 512 units per tile); 0 outside the tile grid.
 pub fn fine_height(h: &Heightmap, level: i32, x: i32, z: i32) -> i32 {
-    let (tx, tz) = (x >> 9, z >> 9);
+    let (tx, tz) = (x >> TILE_SHIFT, z >> TILE_SHIFT);
     if tx < 0 || tz < 0 || tx > h.width as i32 - 1 || tz > h.height as i32 - 1 {
         return 0;
     }
     let get = |x: i32, z: i32| h.get(level, x, z).map(|v| v as i32).unwrap_or(0);
-    let fx = x & 511;
-    let fz = z & 511;
-    let row0 = ((512 - fx) * get(tx, tz) + get(tx + 1, tz) * fx) >> 9;
-    let row1 = ((512 - fx) * get(tx, tz + 1) + get(tx + 1, tz + 1) * fx) >> 9;
-    ((512 - fz) * row0 + fz * row1) >> 9
+    let fine = (1 << TILE_SHIFT) - 1;
+    let corners = [
+        get(tx, tz),
+        get(tx + 1, tz),
+        get(tx, tz + 1),
+        get(tx + 1, tz + 1),
+    ];
+    blend_corners(corners, x & fine, z & fine, TILE_SHIFT)
 }
 
 /// Raycasts the ground from `a` to `b` in the
@@ -132,11 +136,8 @@ pub fn raycast_ground(h: &Heightmap, level: i32, a: [f32; 3], b: [f32; 3], depth
         let tile_x = (x as i32) >> 9;
         let tile_z = (z as i32) >> 9;
         if tile_x > 0 && tile_z > 0 && tile_x < h.width as i32 && tile_z < h.height as i32 {
-            let mut height_level = level;
-            if height_level < 3 && h.is_link_below(tile_x, tile_z) {
-                height_level += 1;
-            }
-            let ground = fine_height(h, height_level, x as i32, z as i32);
+            let level = height_level(level, h.is_link_below(tile_x, tile_z));
+            let ground = fine_height(h, level, x as i32, z as i32);
             if (ground as f32) < y {
                 if depth >= 2 {
                     return t - 0.1

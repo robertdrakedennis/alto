@@ -1272,11 +1272,8 @@ impl crate::game_runtime::Game {
             } => {
                 let x = tile_x * 512 + 256;
                 let z = tile_z * 512 + 256;
-                let occlude = if level < 3 && self.runtime.map.bridges.contains(&(tile_x, tile_z)) {
-                    level + 1
-                } else {
-                    level
-                };
+                let bridge = self.runtime.map.bridges.contains(&(tile_x, tile_z));
+                let occlude = rs910_core::terrain::height_level(level, bridge);
                 let effect = self
                     .inputs
                     .selection

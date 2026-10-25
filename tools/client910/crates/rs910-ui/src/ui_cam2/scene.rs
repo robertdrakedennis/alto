@@ -5,6 +5,7 @@ pub use crate::cam2_scene::*;
 use crate::protocol910::terrain::Terrain;
 
 use rs910_core::fault::Fault;
+use rs910_core::terrain::{blend_corners, height_level, TILE_SHIFT};
 
 /// The `(type, index)` pair the camera re-resolves against the scene snapshot.
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
@@ -57,20 +58,19 @@ impl Heightmap {
     }
     /// Interpolated terrain height at a fine coordinate (0 outside the grid).
     pub fn heightmap_y(&self, x: i32, z: i32, level: i32) -> i32 {
-        let (tx, tz) = (x >> 9, z >> 9);
+        let (tx, tz) = (x >> TILE_SHIFT, z >> TILE_SHIFT);
         if tx < 0 || tz < 0 || tx as usize >= self.width || tz as usize >= self.height {
             return 0;
         }
-        let level = if level < 3 && self.is_link_below(tx, tz) {
-            level + 1
-        } else {
-            level
-        };
+        let level = height_level(level, self.is_link_below(tx, tz));
         let h = |dx: i32, dz: i32| self.get(level, tx + dx, tz + dz).unwrap_or(0) as i32;
-        let (fx, fz) = (x & 511, z & 511);
-        let mix =
-            |a: i32, b: i32, t: i32| (512 - t).wrapping_mul(a).wrapping_add(t.wrapping_mul(b)) >> 9;
-        mix(mix(h(0, 0), h(1, 0), fx), mix(h(0, 1), h(1, 1), fx), fz)
+        let fine = (1 << TILE_SHIFT) - 1;
+        blend_corners(
+            [h(0, 0), h(1, 0), h(0, 1), h(1, 1)],
+            x & fine,
+            z & fine,
+            TILE_SHIFT,
+        )
     }
     /// Whether the tile links to the level below.
     pub fn is_link_below(&self, x: i32, z: i32) -> bool {

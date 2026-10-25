@@ -35,6 +35,7 @@
 //! 5. Missing materials are a hard error at batch creation instead of a
 //!    null dereference at finalise.
 
+use rs910_core::terrain::blend_corners;
 use std::collections::HashMap;
 
 use crate::colour;
@@ -175,10 +176,13 @@ impl FloorHeights {
         let (tx, tz) = (tx as usize, tz as usize);
         let sx = fx & (self.tile_size - 1);
         let sz = fz & (self.tile_size - 1);
-        let a = ((self.tile_size - sx) * self.h(tx, tz) + self.h(tx + 1, tz) * sx) >> self.shift;
-        let b = ((self.tile_size - sx) * self.h(tx, tz + 1) + self.h(tx + 1, tz + 1) * sx)
-            >> self.shift;
-        ((self.tile_size - sz) * a + sz * b) >> self.shift
+        let corners = [
+            self.h(tx, tz),
+            self.h(tx + 1, tz),
+            self.h(tx, tz + 1),
+            self.h(tx + 1, tz + 1),
+        ];
+        blend_corners(corners, sx, sz, self.shift)
     }
 
     /// [`Self::get_fine_height`]
@@ -193,9 +197,13 @@ impl FloorHeights {
         let z1 = (z0 + 1).min(self.tiles_z - 1);
         let sx = fx & (self.tile_size - 1);
         let sz = fz & (self.tile_size - 1);
-        let a = ((self.tile_size - sx) * self.h(x0, z0) + self.h(x1, z0) * sx) >> self.shift;
-        let b = ((self.tile_size - sx) * self.h(x0, z1) + self.h(x1, z1) * sx) >> self.shift;
-        ((self.tile_size - sz) * a + sz * b) >> self.shift
+        let corners = [
+            self.h(x0, z0),
+            self.h(x1, z0),
+            self.h(x0, z1),
+            self.h(x1, z1),
+        ];
+        blend_corners(corners, sx, sz, self.shift)
     }
 
     /// `getTileHeight(x, z)`: vertex height.

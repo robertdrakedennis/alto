@@ -188,11 +188,7 @@ fn height(
     if tx < 0 || tz < 0 || tx >= map.width || tz >= map.height {
         return Ok(0);
     }
-    let level = if level < 3 && map.bridges.contains(&(tx, tz)) {
-        level.wrapping_add(1)
-    } else {
-        level
-    };
+    let level = rs910_core::terrain::height_level(level, map.bridges.contains(&(tx, tz)));
     if !(0..4).contains(&level) {
         return Err(Error::Invalid("heightmap level"));
     }

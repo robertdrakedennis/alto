@@ -657,11 +657,8 @@ impl ViewerApp {
                         fx += t[4] as i32;
                         fz += t[6] as i32;
                     }
-                    let occlude_level = if level < 3 && live.tile_flags().is_link_below(x, z) {
-                        level + 1
-                    } else {
-                        level
-                    } as usize;
+                    let bridge = live.tile_flags().is_link_below(x, z);
+                    let occlude_level = rs910_core::terrain::height_level(level, bridge) as usize;
                     let is_static = (!loc.has_anim
                         || (loc.disable_anim_low_detail && prefs.anim_detail == 0))
                         && !loc.has_multiloc
