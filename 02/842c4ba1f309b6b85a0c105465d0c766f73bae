@@ -1,0 +1,24 @@
+tools/client910/crates/rs910-core/src/colour.rs
+  h_d26e211304196f 293-300
+tools/client910/crates/rs910-render-gpu/src/floor_render/textures.rs
+  h_d26e211304196f 245
+tools/client910/crates/rs910-render-modern/src/models/materials.rs
+  h_d26e211304196f 572,1546
+tools/client910/crates/rs910-render-modern/src/terrain/atlas.rs
+  h_d26e211304196f 67
+tools/client910/crates/rs910-scene/src/sky_decor.rs
+  h_d26e211304196f 69
+tools/client910/crates/rs910-scene/src/sky_texture.rs
+  h_d26e211304196f 43
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "02842c4ba1f309b6b85a0c105465d0c766f73bae",
+  "prompts": {},
+  "humans": {
+    "h_d26e211304196f": {
+      "author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
