@@ -1,0 +1,30 @@
+tools/client910/crates/rs910-core/src/lib.rs
+  h_d26e211304196f 33
+tools/client910/crates/rs910-core/src/terrain.rs
+  h_d26e211304196f 1-26
+tools/client910/crates/rs910-game/src/cutscene.rs
+  h_d26e211304196f 1275-1276
+tools/client910/crates/rs910-game/src/protocol910/pack_runtime.rs
+  h_d26e211304196f 191
+tools/client910/crates/rs910-game/src/protocol910/terrain.rs
+  h_d26e211304196f 7,445-446,448-449,460-461
+tools/client910/crates/rs910-model/src/floor.rs
+  h_d26e211304196f 38,179-185,200-206
+tools/client910/crates/rs910-ui/src/ui_cam2/scene.rs
+  h_d26e211304196f 8,61,65,67-73
+tools/client910/crates/rs910-ui/src/ui_scene_options.rs
+  h_d26e211304196f 37,108,113-120,139-140
+tools/client910/src/app/scene_host.rs
+  h_d26e211304196f 660-661
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "9a66d05b45f80768e36ac00e9331acac39e5958f",
+  "prompts": {},
+  "humans": {
+    "h_d26e211304196f": {
+      "author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
