@@ -1,0 +1,49 @@
+tools/client910/crates/rs910-audio/src/audio_adjust.rs
+  s_294fc1c2a0f8ed::t_1301466ed9625f 56-57,59-60
+tools/client910/crates/rs910-core/src/trig.rs
+  s_294fc1c2a0f8ed::t_81fea8a84e2bbb 14-16
+tools/client910/crates/rs910-game/src/actor.rs
+  s_294fc1c2a0f8ed::t_ad309397df1759 242
+tools/client910/crates/rs910-game/src/entities910/movement.rs
+  s_294fc1c2a0f8ed::t_06805caca629f6 315,332
+tools/client910/crates/rs910-model/src/gpumodel/transform.rs
+  s_294fc1c2a0f8ed::t_0280b2be22fc48 367,385
+tools/client910/crates/rs910-model/src/particle.rs
+  s_294fc1c2a0f8ed::t_743497a40e50c5 1914-1915,1920-1921
+tools/client910/crates/rs910-scene/src/camera.rs
+  s_294fc1c2a0f8ed::t_3b899c71c13e09 650,663
+tools/client910/crates/rs910-scene/src/obj_stack.rs
+  s_294fc1c2a0f8ed::t_63f12f6b74b8a5 65-66
+tools/client910/crates/rs910-scene/src/player_bodies.rs
+  s_294fc1c2a0f8ed::t_67d40edc11f7a5 390
+tools/client910/crates/rs910-scene/src/player_body.rs
+  s_294fc1c2a0f8ed::t_f5d4a94365f5b7 96-97
+tools/client910/crates/rs910-scene/src/skybox.rs
+  s_294fc1c2a0f8ed::t_1c82f5a8c5e5ad 148-153
+tools/client910/crates/rs910-ui/src/ui_cam2.rs
+  s_294fc1c2a0f8ed::t_db210f3cfc855e 57
+tools/client910/crates/rs910-ui/src/ui_cam2/legacy.rs
+  s_294fc1c2a0f8ed::t_e415da849e280f 125
+tools/client910/crates/rs910-ui/src/ui_host_game.rs
+  s_294fc1c2a0f8ed::t_5892e81f487aa5 401,1139
+tools/client910/crates/rs910-ui/src/ui_runtime.rs
+  s_294fc1c2a0f8ed::t_2dde4fe16c2499 1216-1217
+tools/client910/src/app/scene_host.rs
+  s_294fc1c2a0f8ed::t_6d6db55a22a372 1310
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "7ec0d643aa1f80219dae4ab3a9b25545df66aa3a",
+  "prompts": {},
+  "sessions": {
+    "s_294fc1c2a0f8ed": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "a9ff09df-8dce-4cd5-a038-9dbb7fb7cefb",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
