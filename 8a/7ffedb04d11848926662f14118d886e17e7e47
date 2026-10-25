@@ -1,0 +1,16 @@
+tools/client910/crates/rs910-config/src/font_metrics.rs
+  h_d26e211304196f 157,170-180,183-188,192-204,206,231-285
+tools/client910/crates/rs910-model/src/font_layout.rs
+  h_d26e211304196f 4,201-203,324-330,407-408,460-461,474-482,508-516,518,561,563,565-582,584,586-595,598-604,606-613,680-681
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "8a7ffedb04d11848926662f14118d886e17e7e47",
+  "prompts": {},
+  "humans": {
+    "h_d26e211304196f": {
+      "author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
