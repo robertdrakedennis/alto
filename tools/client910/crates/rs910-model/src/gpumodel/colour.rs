@@ -120,17 +120,7 @@ impl GpuModel {
                     colour = grey;
                 } else {
                     let keep = 256 - grey_blend;
-                    colour = (((colour & 0xFF00FF)
-                        .wrapping_mul(keep)
-                        .wrapping_add((grey & 0xFF00FF).wrapping_mul(grey_blend))
-                        & 0xFF00_FF00_u32 as i32)
-                        .wrapping_add(
-                            ((colour & 0xFF00)
-                                .wrapping_mul(keep)
-                                .wrapping_add((grey & 0xFF00).wrapping_mul(grey_blend)))
-                                & 0xFF0000,
-                        ))
-                        >> 8;
+                    colour = crate::colour::mix_rgb(colour, keep, grey, grey_blend);
                 }
             }
             let mut boost = i32::from(material.brightness_boost) & 0xFF;

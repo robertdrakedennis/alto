@@ -43,15 +43,7 @@ impl MapScenes {
             *p = if alpha == 255 {
                 v17
             } else {
-                let a = (v17 & 0xFF00FF)
-                    .wrapping_mul(inverse)
-                    .wrapping_add((px & 0xFF00FF).wrapping_mul(alpha))
-                    & 0xFF00FF00u32 as i32;
-                let c = (v17 & 0xFF00)
-                    .wrapping_mul(inverse)
-                    .wrapping_add((px & 0xFF00).wrapping_mul(alpha))
-                    & 0xFF0000;
-                alpha << 24 | a.wrapping_add(c) >> 8
+                alpha << 24 | rs910_core::colour::mix_rgb(v17, inverse, px, alpha)
             };
         }
     }

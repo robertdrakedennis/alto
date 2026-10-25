@@ -145,17 +145,7 @@ impl MsiStore {
                         let inverse_alpha = (256 - a) as i32;
                         let old = px as i32;
                         *p = ((a as i32) << 24)
-                            | ((((tinted & 0xFF00FF)
-                                .wrapping_mul(inverse_alpha)
-                                .wrapping_add((old & 0xFF00FF).wrapping_mul(a as i32)))
-                                & 0xFF00FF00u32 as i32)
-                                .wrapping_add(
-                                    ((tinted & 0xFF00)
-                                        .wrapping_mul(inverse_alpha)
-                                        .wrapping_add((old & 0xFF00).wrapping_mul(a as i32)))
-                                        & 0xFF0000,
-                                ))
-                                >> 8;
+                            | crate::colour::mix_rgb(tinted, inverse_alpha, old, a as i32);
                     }
                 }
             }

@@ -298,15 +298,7 @@ impl FloorBatch {
                     rgb = target;
                 } else {
                     let inv = 256 - grey;
-                    let low = (rgb & 0xFF00FF)
-                        .wrapping_mul(inv)
-                        .wrapping_add((target & 0xFF00FF).wrapping_mul(grey))
-                        & 0xFF00_FF00_u32 as i32;
-                    let mid = (rgb & 0xFF00)
-                        .wrapping_mul(inv)
-                        .wrapping_add((target & 0xFF00).wrapping_mul(grey))
-                        & 0xFF0000;
-                    rgb = low.wrapping_add(mid) >> 8;
+                    rgb = crate::colour::mix_rgb(rgb, inv, target, grey);
                 }
             }
             let boost = tint.brightness_boost;

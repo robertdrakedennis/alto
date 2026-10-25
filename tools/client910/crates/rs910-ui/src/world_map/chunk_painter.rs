@@ -446,18 +446,8 @@ impl ChunkPainter<'_> {
         if self.shade_cache.0 != under {
             let s = self.defaults.shade;
             self.shade_cache.0 = under;
-            self.shade_cache.1 = ((s & 0xFF00FF)
-                .wrapping_mul(a)
-                .wrapping_add((under & 0xFF00FF).wrapping_mul(inverse))
-                & -16_711_936)
-                .wrapping_add(
-                    (s & 0xFF00)
-                        .wrapping_mul(a)
-                        .wrapping_add((under & 0xFF00).wrapping_mul(inverse))
-                        & 0xFF0000,
-                )
-                >> 8
-                | 0xFF00_0000u32 as i32;
+            self.shade_cache.1 =
+                rs910_core::colour::mix_rgb(s, a, under, inverse) | 0xFF00_0000u32 as i32;
         }
         self.shade_cache.1
     }
@@ -777,18 +767,7 @@ pub(super) fn shaped(px: &mut [i32], size: i32, overlay: &ShapedOverlay<'_>) {
                     let a = (c as u32 >> 24) as i32;
                     let inverse = 255 - a;
                     let old = *slot;
-                    *slot = ((c & 0xFF00FF)
-                        .wrapping_mul(a)
-                        .wrapping_add((old & 0xFF00FF).wrapping_mul(inverse))
-                        & -16_711_936)
-                        .wrapping_add(
-                            (c & 0xFF00)
-                                .wrapping_mul(a)
-                                .wrapping_add((old & 0xFF00).wrapping_mul(inverse))
-                                & 0xFF0000,
-                        )
-                        >> 8
-                        | 0xFF00_0000u32 as i32;
+                    *slot = rs910_core::colour::mix_rgb(c, a, old, inverse) | 0xFF00_0000u32 as i32;
                 }
             }
             at_px += 1;

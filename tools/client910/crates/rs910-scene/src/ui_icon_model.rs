@@ -377,12 +377,7 @@ pub fn material_colour(hsl: i32, bright: i32, m: &crate::texture::Material) -> i
     if grey != 0 {
         let target = bright * 131586;
         let inv = 256 - grey;
-        rgb = (((rgb & 0xff00ff)
-            .wrapping_mul(inv)
-            .wrapping_add((target & 0xff00ff).wrapping_mul(grey))
-            & 0xff00ff00u32 as i32)
-            + (((rgb & 0xff00) * inv + (target & 0xff00) * grey) & 0xff0000))
-            >> 8;
+        rgb = crate::colour::mix_rgb(rgb, inv, target, grey);
     }
     if m.brightness_boost != 0 {
         let b = 256 + m.brightness_boost as i32;

@@ -161,6 +161,21 @@ pub fn blend_argb(under: i32, over: i32) -> i32 {
     (bottom as i32).wrapping_add(top as i32)
 }
 
+/// Mixes two RGB ints with integer weights `wa` and `wb` (summing to 255 or
+/// 256), red and blue in one multiply and green in another, then shifts the
+/// sum down by eight.
+pub fn mix_rgb(a: i32, wa: i32, b: i32, wb: i32) -> i32 {
+    let red_blue = (a & 0xFF00FF)
+        .wrapping_mul(wa)
+        .wrapping_add((b & 0xFF00FF).wrapping_mul(wb))
+        & 0xFF00FF00u32 as i32;
+    let green = (a & 0xFF00)
+        .wrapping_mul(wa)
+        .wrapping_add((b & 0xFF00).wrapping_mul(wb))
+        & 0xFF0000;
+    red_blue.wrapping_add(green) >> 8
+}
+
 /// Lerp two RGB ints
 /// by `t / 255`.
 #[must_use]
