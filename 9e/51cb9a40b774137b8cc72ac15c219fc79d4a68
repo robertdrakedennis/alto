@@ -1,0 +1,16 @@
+tools/client910/crates/rs910-config/src/config/seq.rs
+  h_d26e211304196f 1-3,11,29-31,33-46
+tools/client910/crates/rs910-config/src/types910/sequence_types.rs
+  h_d26e211304196f 94-95,125,209-212
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "9e51cb9a40b774137b8cc72ac15c219fc79d4a68",
+  "prompts": {},
+  "humans": {
+    "h_d26e211304196f": {
+      "author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
