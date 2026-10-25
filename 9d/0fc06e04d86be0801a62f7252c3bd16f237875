@@ -1,0 +1,26 @@
+tools/client910/crates/rs910-core/src/colour.rs
+  h_d26e211304196f 164-178
+tools/client910/crates/rs910-model/src/floor.rs
+  h_d26e211304196f 301
+tools/client910/crates/rs910-model/src/gpumodel/colour.rs
+  h_d26e211304196f 123
+tools/client910/crates/rs910-scene/src/minimap.rs
+  h_d26e211304196f 148
+tools/client910/crates/rs910-scene/src/ui_icon_model.rs
+  h_d26e211304196f 380
+tools/client910/crates/rs910-ui/src/world_map/chunk_painter.rs
+  h_d26e211304196f 449-450,770
+tools/client910/crates/rs910-ui/src/world_map/map_scenes.rs
+  h_d26e211304196f 46
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "9d0fc06e04d86be0801a62f7252c3bd16f237875",
+  "prompts": {},
+  "humans": {
+    "h_d26e211304196f": {
+      "author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
