@@ -154,21 +154,7 @@ impl Metrics {
 
     /// The supplied image widths correspond to the glyph x extents.
     pub fn width_utf16(&self, text: &[u16], images: Option<&[i32]>) -> anyhow::Result<i32> {
-        self.width_with_icons(text, images, None)
-    }
-
-    pub fn width_with_icons(
-        &self,
-        text: &[u16],
-        images: Option<&[i32]>,
-        icons: Option<&dyn Fn(i32) -> i32>,
-    ) -> anyhow::Result<i32> {
-        let provider = |id| Ok(icons.unwrap()(id));
-        self.width_with_provider(
-            text,
-            images,
-            icons.map(|_| &provider as &dyn Fn(i32) -> anyhow::Result<i32>),
-        )
+        self.width_with_provider(text, images, None)
     }
 
     /// FontMetrics:275-288 catches icon-provider exceptions before resetting
@@ -179,62 +165,45 @@ impl Metrics {
         images: Option<&[i32]>,
         icons: Option<&dyn Fn(i32) -> anyhow::Result<i32>>,
     ) -> anyhow::Result<i32> {
-        let mut open = None;
         let mut previous: Option<u16> = None;
         let mut width = 0i32;
-        for (i, &unit) in text.iter().enumerate() {
-            let mut ch = unit;
-            if ch == b'<' as u16 {
-                open = Some(i);
-                continue;
-            }
-            if ch == b'>' as u16 {
-                if let Some(start) = open.take() {
-                    let tag = String::from_utf16_lossy(&text[start + 1..i]);
-                    ch = match tag.as_str() {
-                        "lt" => 60,
-                        "gt" => 62,
-                        "nbsp" => 160,
-                        "shy" => 173,
-                        "times" => 215,
-                        "euro" => 128,
-                        "copy" => 169,
-                        "reg" => 174,
-                        _ => {
-                            if let (Some(id), Some(images)) = (tag.strip_prefix("img="), images) {
-                                if let Ok(index) = id.parse::<i32>() {
-                                    if let Some(w) = images.get(index as usize) {
-                                        width = width.wrapping_add(*w);
-                                        previous = None;
-                                    }
+        for piece in markup(text) {
+            let ch = match piece {
+                Markup::Unit(_, unit) => unit,
+                Markup::Tag { name, .. } => match entity(&name) {
+                    Some(ch) => ch,
+                    None => {
+                        if let (Some(id), Some(images)) = (name.strip_prefix("img="), images) {
+                            if let Ok(index) = id.parse::<i32>() {
+                                if let Some(w) = images.get(index as usize) {
+                                    width = width.wrapping_add(*w);
+                                    previous = None;
                                 }
                             }
-                            if let (Some(id), Some(icons)) = (tag.strip_prefix("sprite="), icons) {
-                                if let Ok(id) = id.split(',').next().unwrap().parse::<i32>() {
-                                    if let Ok(w) = icons(id) {
-                                        width = width.wrapping_add(w);
-                                        previous = None;
-                                    }
-                                }
-                            }
-                            continue;
                         }
-                    };
-                }
+                        if let (Some(id), Some(icons)) = (name.strip_prefix("sprite="), icons) {
+                            if let Ok(id) = id.split(',').next().unwrap().parse::<i32>() {
+                                if let Ok(w) = icons(id) {
+                                    width = width.wrapping_add(w);
+                                    previous = None;
+                                }
+                            }
+                        }
+                        continue;
+                    }
+                },
+            };
+            width = width.wrapping_add(
+                self.advances[rs910_core::cp1252::cp1252_encode_unit(ch) as usize] as i32,
+            );
+            if let (Some(table), Some(prev)) = (&self.kerning, previous) {
+                let v = table
+                    .get(prev as usize)
+                    .and_then(|row| row.get(ch as usize))
+                    .ok_or_else(|| anyhow::anyhow!("kerning index {prev}/{ch}"))?;
+                width = width.wrapping_add(*v as i32);
             }
-            if open.is_none() {
-                width = width.wrapping_add(
-                    self.advances[rs910_core::cp1252::cp1252_encode_unit(ch) as usize] as i32,
-                );
-                if let (Some(table), Some(prev)) = (&self.kerning, previous) {
-                    let v = table
-                        .get(prev as usize)
-                        .and_then(|row| row.get(ch as usize))
-                        .ok_or_else(|| anyhow::anyhow!("kerning index {prev}/{ch}"))?;
-                    width = width.wrapping_add(*v as i32);
-                }
-                previous = Some(ch);
-            }
+            previous = Some(ch);
         }
         Ok(width)
     }
@@ -258,4 +227,59 @@ impl Metrics {
             [w, 0., 0., u1, v0],
         ]
     }
+}
+
+const TAG_OPEN: u16 = b'<' as u16;
+const TAG_CLOSE: u16 = b'>' as u16;
+
+/// One piece of tagged text.
+pub enum Markup {
+    /// A text unit outside any tag, with its index.
+    Unit(usize, u16),
+    /// A closed `<name>` tag; `end` is the index of its `>`.
+    Tag {
+        start: usize,
+        end: usize,
+        name: String,
+    },
+}
+
+/// Splits tagged text into units and tags. A `<` starts a tag (a later `<`
+/// restarts it), units inside a tag are dropped until its `>`, a tag left open
+/// at the end is dropped, and a `>` outside a tag is an ordinary unit.
+pub fn markup(text: &[u16]) -> impl Iterator<Item = Markup> + '_ {
+    let mut open = None;
+    text.iter().enumerate().filter_map(move |(i, &unit)| {
+        if unit == TAG_OPEN {
+            open = Some(i);
+            return None;
+        }
+        match open {
+            Some(start) if unit == TAG_CLOSE => {
+                open = None;
+                Some(Markup::Tag {
+                    start,
+                    end: i,
+                    name: String::from_utf16_lossy(&text[start + 1..i]),
+                })
+            }
+            Some(_) => None,
+            None => Some(Markup::Unit(i, unit)),
+        }
+    })
+}
+
+/// The character a named entity tag (`<lt>`, `<nbsp>`, ...) stands for.
+pub fn entity(tag: &str) -> Option<u16> {
+    Some(match tag {
+        "lt" => 60,
+        "gt" => 62,
+        "nbsp" => 160,
+        "shy" => 173,
+        "times" => 215,
+        "euro" => 128,
+        "copy" => 169,
+        "reg" => 174,
+        _ => return None,
+    })
 }

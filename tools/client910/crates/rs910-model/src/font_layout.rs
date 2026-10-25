@@ -1,7 +1,7 @@
 //! Coordinates and
 //! retained strings use 32-bit integers and UTF-16; the terminal draw records
 //! carry identity and painter order for the shared graphics consumer.
-use crate::font_metrics::Metrics;
+use crate::font_metrics::{entity, markup, Markup, Metrics};
 use std::collections::BTreeMap;
 
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
@@ -27,15 +27,6 @@ impl Images {
             .and_then(|m| m.get(&id))
             .and_then(|v| v.first())
             .map_or(0, |i| i.width)
-    }
-    #[cfg(any(test, feature = "test-hooks"))] // test-only helper
-    pub fn width(&self, m: &Metrics, text: &[u16]) -> anyhow::Result<i32> {
-        let icon = |id| self.icon_width(id);
-        m.width_with_icons(
-            text,
-            self.widths().as_deref(),
-            self.icons.as_ref().map(|_| &icon as &dyn Fn(i32) -> i32),
-        )
     }
 }
 
@@ -207,16 +198,9 @@ impl Style {
         images: &Images,
         provider: Option<&dyn IconProvider>,
     ) -> anyhow::Result<()> {
-        let (mut tags, mut spaces) = (false, 0);
-        for &c in text {
-            if c == 60 {
-                tags = true;
-            } else if c == 62 {
-                tags = false;
-            } else if !tags && c == 32 {
-                spaces += 1;
-            }
-        }
+        let spaces = markup(text)
+            .filter(|piece| matches!(piece, Markup::Unit(_, 32)))
+            .count() as i32;
         if spaces > 0 {
             self.spacing = width
                 .wrapping_sub(images.measure(m, text, false, provider)?)
@@ -225,19 +209,6 @@ impl Style {
         }
         Ok(())
     }
-}
-fn entity(tag: &str) -> Option<u16> {
-    Some(match tag {
-        "lt" => 60,
-        "gt" => 62,
-        "nbsp" => 160,
-        "shy" => 173,
-        "times" => 215,
-        "euro" => 128,
-        "copy" => 169,
-        "reg" => 174,
-        _ => return None,
-    })
 }
 fn kern(m: &Metrics, previous: Option<u16>, c: u16) -> anyhow::Result<i32> {
     match (&m.kerning, previous) {
@@ -350,19 +321,13 @@ fn line_impl(
     let mut x = start_x;
     let TextResources { images, provider } = resources;
     let y = baseline.wrapping_sub(m.space_width);
-    let (mut open, mut previous, mut at) = (None, None, 0);
-    for (i, &unit) in text.iter().enumerate() {
-        let mut c = rs910_core::cp1252::cp1252_encode_unit(unit) as u16;
-        if c == 60 {
-            open = Some(i);
-            continue;
-        }
-        if c == 62 {
-            if let Some(start) = open.take() {
-                let tag = String::from_utf16_lossy(&text[start + 1..i]);
-                if let Some(ch) = entity(&tag) {
-                    c = ch;
-                } else {
+    let (mut previous, mut at) = (None, 0);
+    for piece in markup(text) {
+        let c = match piece {
+            Markup::Unit(_, unit) => rs910_core::cp1252::cp1252_encode_unit(unit) as u16,
+            Markup::Tag { name: tag, .. } => match entity(&tag) {
+                Some(ch) => ch,
+                None => {
                     if let Some(v) = tag.strip_prefix("img=") {
                         let _ = (|| -> anyhow::Result<()> {
                             let [dx, dy] = offset(offsets, &mut at)?;
@@ -439,11 +404,8 @@ fn line_impl(
                     }
                     continue;
                 }
-            }
-        }
-        if open.is_some() {
-            continue;
-        }
+            },
+        };
         x = x.wrapping_add(kern(m, previous, c)?);
         let [dx, dy] = offset(offsets, &mut at)?;
         if c == 32 {
@@ -495,22 +457,8 @@ fn line_impl(
     Ok(())
 }
 
-/// FontMetrics.truncString:297-394 retains the exact UTF-16 prefix and tags.
-#[cfg_attr(
-    not(test),
-    allow(
-        dead_code,
-        reason = "FontMetrics.truncString port without a production caller yet; tested"
-    )
-)]
-pub fn truncate(
-    m: &Metrics,
-    text: &[u16],
-    limit: i32,
-    images: &Images,
-) -> anyhow::Result<Vec<u16>> {
-    truncate_with_provider(m, text, limit, images, images.provider())
-}
+/// Truncates `text` to `limit` pixels with a trailing ellipsis, keeping the
+/// exact UTF-16 prefix and its tags.
 pub fn truncate_with_provider(
     m: &Metrics,
     text: &[u16],
@@ -523,19 +471,15 @@ pub fn truncate_with_provider(
     }
     let dots = [46, 46, 46];
     let limit = limit.wrapping_sub(m.width_utf16(&dots, None)?);
-    let (mut open, mut previous, mut width, mut keep) = (None, None, 0i32, 0);
-    for (i, &unit) in text.iter().enumerate() {
-        let mut c = unit;
-        if c == 60 {
-            open = Some(i);
-            continue;
-        }
-        if c == 62 {
-            if let Some(start) = open.take() {
-                let tag = String::from_utf16_lossy(&text[start + 1..i]);
-                if let Some(ch) = entity(&tag) {
-                    c = ch;
-                } else {
+    let (mut previous, mut width, mut keep) = (None, 0i32, 0);
+    for piece in markup(text) {
+        let (i, c) = match piece {
+            Markup::Unit(i, unit) => (i, unit),
+            Markup::Tag {
+                end: i, name: tag, ..
+            } => match entity(&tag) {
+                Some(ch) => (i, ch),
+                None => {
                     let w = if let Some(v) = tag.strip_prefix("img=") {
                         v.parse::<i32>()
                             .ok()
@@ -561,19 +505,17 @@ pub fn truncate_with_provider(
                     }
                     continue;
                 }
-            }
+            },
+        };
+        width = width
+            .wrapping_add(m.advances[rs910_core::cp1252::cp1252_encode_unit(c) as usize] as i32)
+            .wrapping_add(kern(m, previous, c)?);
+        previous = Some(c);
+        let with_dot = width.wrapping_add(kern(m, Some(c), 46)?);
+        if with_dot > limit {
+            return Ok([&text[..keep], &dots].concat());
         }
-        if open.is_none() {
-            width = width
-                .wrapping_add(m.advances[rs910_core::cp1252::cp1252_encode_unit(c) as usize] as i32)
-                .wrapping_add(kern(m, previous, c)?);
-            previous = Some(c);
-            let with_dot = width.wrapping_add(kern(m, Some(c), 46)?);
-            if with_dot > limit {
-                return Ok([&text[..keep], &dots].concat());
-            }
-            keep = i + 1;
-        }
+        keep = i + 1;
     }
     Ok(text.to_vec())
 }
@@ -616,60 +558,60 @@ pub fn split_with_provider(
 ) -> anyhow::Result<(Vec<Vec<u16>>, usize)> {
     let (mut width, mut start, mut breakpoint, mut break_width, mut drop) =
         (0i32, 0, None, 0i32, 0usize);
-    let (mut open, mut previous) = (None, None);
+    let mut previous = None;
     let mut lines = Vec::new();
-    for (i, &unit) in text.iter().enumerate() {
-        let mut c = rs910_core::cp1252::cp1252_encode_unit(unit) as i32;
+    for piece in markup(text) {
         let mut advance = 0i32;
-        let token_start;
-        if c == 60 {
-            open = Some(i);
-            continue;
-        }
-        if let Some(tag_start) = open {
-            if c != 62 {
-                continue;
-            }
-            token_start = tag_start;
-            let tag = String::from_utf16_lossy(&text[tag_start + 1..i]);
-            open = None;
-            if tag == "br" {
-                anyhow::ensure!(lines.len() < capacity, "split output index");
-                lines.push(text[start..i + 1].to_vec());
-                if lines.len() >= capacity {
-                    return Ok((lines, 0));
-                }
-                start = i + 1;
-                width = 0;
-                breakpoint = None;
-                previous = None;
-                continue;
-            }
-            if let Some(ch) = entity(&tag) {
-                advance = m.advances[ch as usize] as i32 + kern(m, previous, ch)?;
-                previous = Some(ch);
-            } else if let Some(v) = tag.strip_prefix("img=") {
-                if let Some(im) = v
-                    .parse::<i32>()
-                    .ok()
-                    .and_then(|id| images.images.as_ref()?.get(id as usize))
-                {
-                    advance = im.width;
+        let (i, token_start, c);
+        match piece {
+            Markup::Tag {
+                start: tag_start,
+                end,
+                name: tag,
+            } => {
+                i = end;
+                token_start = tag_start;
+                if tag == "br" {
+                    anyhow::ensure!(lines.len() < capacity, "split output index");
+                    lines.push(text[start..i + 1].to_vec());
+                    if lines.len() >= capacity {
+                        return Ok((lines, 0));
+                    }
+                    start = i + 1;
+                    width = 0;
+                    breakpoint = None;
                     previous = None;
+                    continue;
                 }
-            } else if let Some(icons) = icons.filter(|_| tag.starts_with("sprite=")) {
-                if let Ok(id) = tag[7..].split(',').next().unwrap().parse::<i32>() {
-                    if icons(id).is_ok() {
+                if let Some(ch) = entity(&tag) {
+                    advance = m.advances[ch as usize] as i32 + kern(m, previous, ch)?;
+                    previous = Some(ch);
+                } else if let Some(v) = tag.strip_prefix("img=") {
+                    if let Some(im) = v
+                        .parse::<i32>()
+                        .ok()
+                        .and_then(|id| images.images.as_ref()?.get(id as usize))
+                    {
+                        advance = im.width;
                         previous = None;
                     }
+                } else if let Some(icons) = icons.filter(|_| tag.starts_with("sprite=")) {
+                    if let Ok(id) = tag[7..].split(',').next().unwrap().parse::<i32>() {
+                        if icons(id).is_ok() {
+                            previous = None;
+                        }
+                    }
+                    continue;
                 }
-                continue;
+                c = -1;
             }
-            c = -1;
-        } else {
-            token_start = i;
-            advance = m.advances[c as usize] as i32 + kern(m, previous, c as u16)?;
-            previous = Some(c as u16);
+            Markup::Unit(at, unit) => {
+                i = at;
+                token_start = at;
+                c = rs910_core::cp1252::cp1252_encode_unit(unit) as i32;
+                advance = m.advances[c as usize] as i32 + kern(m, previous, c as u16)?;
+                previous = Some(c as u16);
+            }
         }
         if advance <= 0 {
             continue;
@@ -735,25 +677,8 @@ pub struct Paragraph {
     pub max_lines: i32,
     pub masked: bool,
 }
-/// Font.drawStringTaggable:79-145. All line/style state survives across lines
-/// in one call; a <br> resets it through the same drawChars tag consumer.
-#[cfg_attr(
-    not(test),
-    allow(
-        dead_code,
-        reason = "Font.drawStringTaggable port without a production caller yet; tested"
-    )
-)]
-pub fn paragraph(
-    m: &Metrics,
-    text: &[u16],
-    p: Paragraph,
-    images: &Images,
-    style: &mut Style,
-    out: &mut Vec<Draw>,
-) -> anyhow::Result<i32> {
-    paragraph_to(m, Some(text), p, images, images.provider(), style, out)
-}
+/// Draws tagged text into a box. All line and style state survives across
+/// lines in one call; a <br> resets it through the same tag consumer.
 pub fn paragraph_to(
     m: &Metrics,
     text: Option<&[u16]>,
