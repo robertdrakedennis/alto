@@ -28,7 +28,6 @@ pub mod icon_raster;
 pub mod line_dashes;
 pub mod material;
 pub mod mesh_billboards;
-pub mod model;
 pub mod modelunlit;
 pub mod particle;
 pub mod sprite;

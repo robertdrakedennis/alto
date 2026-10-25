@@ -36,7 +36,7 @@ mod transform;
 #[cfg(any(test, feature = "test-hooks"))] // the unselected forms are exercised by tests only
 pub use animation::{classic_transforms, classic_transforms_masked};
 pub use animation::{classic_transforms_selected, ClassicPose, PoseTarget, Transform};
-pub use build::{BuildParams, ModelStores};
+pub use build::{face_normals, BuildParams, FaceNormals, ModelStores};
 pub use transform::TerrainHeights;
 
 /// The build detail flags the client sets with lighting detail 1 and textures
@@ -300,4 +300,24 @@ fn find_material(materials: &MaterialStore, id: i16) -> anyhow::Result<&Material
     materials
         .get(idx)
         .ok_or_else(|| anyhow::anyhow!("material {idx} referenced by a model is missing"))
+}
+
+/// Per-corner texture coordinates of every face with a material, mapped as the
+/// lit model maps them; `None` for a face without a material or with a
+/// mapping the model cannot resolve.
+pub fn face_uvs(
+    source: &crate::modelunlit::ModelUnlit,
+) -> anyhow::Result<Vec<Option<[[f32; 2]; 3]>>> {
+    let faces: Vec<i32> = (0..source.face_count).collect();
+    let frames = texture_mapping::texture_frames(source, &faces)?;
+    let materials = source.face_material.as_deref();
+    Ok((0..faces.len())
+        .map(|face| {
+            materials
+                .is_some_and(|m| m[face] != -1)
+                .then(|| texture_mapping::face_texture(source, &frames, face).ok())
+                .flatten()
+                .map(|texture| texture.uv)
+        })
+        .collect())
 }

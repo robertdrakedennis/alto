@@ -224,14 +224,14 @@ fn billboard_table(
 
 /// The normals of the source faces: smooth faces add theirs to their three
 /// vertices, flat faces keep it.
-struct FaceNormals {
+pub struct FaceNormals {
     /// Per source vertex: summed `(x, y, z)` and the number of faces.
-    smooth: Vec<[i32; 4]>,
+    pub smooth: Vec<[i32; 4]>,
     /// Per source face: the normal of a flat face.
-    flat: Vec<Option<[i32; 3]>>,
+    pub flat: Vec<Option<[i32; 3]>>,
 }
 
-fn face_normals(source: &ModelUnlit) -> FaceNormals {
+pub fn face_normals(source: &ModelUnlit) -> FaceNormals {
     let (vx, vy, vz) = (&source.vertex_x, &source.vertex_y, &source.vertex_z);
     let mut smooth = vec![[0_i32; 4]; source.used_vertex_count as usize];
     let mut flat: Vec<Option<[i32; 3]>> = vec![None; source.face_count as usize];

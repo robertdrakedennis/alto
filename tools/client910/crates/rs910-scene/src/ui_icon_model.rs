@@ -4,10 +4,11 @@ use crate::{
     actor_matrix::Matrix,
     cache::Pack,
     config::Obj,
+    gpumodel::FaceNormals,
     icon_raster::{
         IconRaster, IconTexture, ScreenPoint, TextureAlpha, TexturedPoint, Translucency,
     },
-    model::RawModel,
+    modelunlit::ModelUnlit,
     texture::{AlphaMode, MaterialStore},
 };
 use anyhow::{Context, Result};
@@ -49,17 +50,12 @@ impl Models {
             .get(&0)
             .context("inventory model file missing")?
             .as_slice();
-        let mut raw = crate::model::decode(bytes)?;
-        let tex = crate::model::decode_tex(bytes)?;
-        if raw.version < 13 {
-            for v in &mut raw.verts {
-                for c in v {
-                    *c = (*c as i32).wrapping_shl(2) as f32;
-                }
-            }
+        let mut model = ModelUnlit::decode(bytes)?;
+        if model.version < 13 {
+            model.scale_by_power_of_two(2);
         }
-        for c in &mut raw.colors {
-            let mut value = (c[0] as u16) << 10 | (c[1] as u16) << 7 | c[2] as u16;
+        for c in &mut model.face_colour {
+            let mut value = *c as u16;
             for (i, (&s, &d)) in obj.recol_s.iter().zip(&obj.recol_d).enumerate() {
                 if value == s {
                     value = if i < obj.inventory.recol_palette.len() {
@@ -69,29 +65,33 @@ impl Models {
                     };
                 }
             }
-            *c = [
-                (value >> 10) as u8,
-                (value >> 7 & 7) as u8,
-                (value & 127) as u8,
-            ];
+            *c = value as i16;
         }
-        for m in &mut raw.materials {
+        for m in model.face_material.iter_mut().flatten() {
             for (&s, &d) in obj.retex_s.iter().zip(&obj.retex_d) {
-                if *m == s as i32 {
-                    *m = d as i32;
+                if *m != -1 && *m as u16 == s {
+                    *m = d as i16;
                 }
             }
         }
         // UVs are built at construction; normals are computed lazily after scale.
-        let uv = tex.corner_uvs_batch(&raw);
-        for v in &mut raw.verts {
-            for (c, &resize) in v.iter_mut().zip(&obj.inventory.resize) {
-                *c = ((*c as i32).wrapping_mul(resize) >> 7) as f32;
+        let uv = crate::gpumodel::face_uvs(&model)?;
+        let resize = obj.inventory.resize;
+        for (axis, scale) in [
+            &mut model.vertex_x,
+            &mut model.vertex_y,
+            &mut model.vertex_z,
+        ]
+        .into_iter()
+        .zip(resize)
+        {
+            for c in axis {
+                *c = c.wrapping_mul(scale) >> 7;
             }
         }
-        let normals = normals(&raw);
+        let normals = crate::gpumodel::face_normals(&model);
         let mesh = IconMesh {
-            raw: &raw,
+            model: &model,
             uv: &uv,
             normals: &normals,
         };
@@ -106,7 +106,10 @@ impl Models {
         enlarge: bool,
         light: [f32; 3],
     ) -> Result<Vec<i32>> {
-        let IconMesh { raw, uv, normals } = mesh;
+        let IconMesh { model, uv, normals } = mesh;
+        let face_count = model.face_count as usize;
+        let alpha = |f: usize| model.face_trans.as_ref().map_or(0, |t| t[f] as u8);
+        let face_type = |f: usize| model.face_type.as_ref().map_or(0, |t| t[f] as u8);
         let cfg = &obj.inventory;
         let zoom = (if enlarge {
             (cfg.zoom as f64 * 1.5) as i32
@@ -118,17 +121,9 @@ impl Models {
         let mut matrix = Matrix::axis(0., 0., 1., crate::trig::radians(-cfg.angles[2] << 3));
         matrix.rotate(0., 1., 0., crate::trig::radians(cfg.angles[1] << 3));
         let (sin, cos) = crate::minimap::trig1(cfg.angles[0] << 3);
-        let min_y = raw
-            .verts
+        let min_y = model.vertex_y[..model.used_vertex_count as usize]
             .iter()
-            .take(
-                raw.faces
-                    .iter()
-                    .flatten()
-                    .max()
-                    .map_or(0, |v| *v as usize + 1),
-            )
-            .map(|v| v[1] as i32)
+            .copied()
             .min()
             .unwrap_or(0) as i16 as i32;
         matrix.0[9] += (cfg.offset[0] << 2) as f32;
@@ -145,10 +140,10 @@ impl Models {
             size: [36., 32.],
         });
         let m = crate::camera::multiply(&matrix.entries(), &proj);
-        let points: Vec<[f32; 4]> = raw
-            .verts
-            .iter()
-            .map(|&[x, y, z]| {
+        let points: Vec<[f32; 4]> = (0..model.vertex_count as usize)
+            .map(|v| {
+                let [x, y, z] =
+                    [model.vertex_x[v], model.vertex_y[v], model.vertex_z[v]].map(|c| c as f32);
                 let p: [f32; 4] =
                     std::array::from_fn(|i| m[8 + i] * z + m[i] * x + m[4 + i] * y + m[12 + i]);
                 [
@@ -174,14 +169,15 @@ impl Models {
             )?;
         }
         let mut raster = IconRaster::new(36, 32);
-        let mats: Vec<_> = raw
-            .materials
-            .iter()
-            .map(|&id| {
-                if id < 0 {
+        let mats: Vec<_> = (0..face_count)
+            .map(|f| {
+                let id = model.face_material.as_ref().map_or(-1, |m| m[f]);
+                if id == -1 {
                     None
                 } else {
-                    self.materials.get(id as u32).filter(|m| !m.high_detail)
+                    self.materials
+                        .get(id as u16 as u32)
+                        .filter(|m| !m.high_detail)
                 }
             })
             .collect();
@@ -218,17 +214,21 @@ impl Models {
             (light[1] * 65535.) as i32 * 768 / contrast,
             (light[2] * 65535.) as i32 * 768 / contrast,
         ];
-        let mut order: Vec<usize> = (0..raw.faces.len()).collect();
-        let transparent = order.iter().any(|&i| {
-            raw.alphas[i] != 0 || mats[i].is_some_and(|m| m.alpha == AlphaMode::Multiply)
-        });
+        let mut order: Vec<usize> = (0..face_count).collect();
+        let transparent = order
+            .iter()
+            .any(|&i| alpha(i) != 0 || mats[i].is_some_and(|m| m.alpha == AlphaMode::Multiply));
         if transparent {
             order.sort_by_key(|&i| {
                 let mat = mats[i];
-                let alpha =
-                    raw.alphas[i] != 0 || mat.is_some_and(|m| m.alpha == AlphaMode::Multiply);
-                let high = if alpha {
-                    (raw.priorities[i] as i8 as i32) << 17 | 65536
+                let translucent =
+                    alpha(i) != 0 || mat.is_some_and(|m| m.alpha == AlphaMode::Multiply);
+                let priority = model
+                    .face_priority
+                    .as_ref()
+                    .map_or(model.default_priority, |p| p[i]);
+                let high = if translucent {
+                    (priority as i32) << 17 | 65536
                 } else {
                     0
                 };
@@ -241,36 +241,38 @@ impl Models {
             });
         }
         for i in order {
-            let face = raw.faces[i].map(|v| v as usize);
+            let face = [
+                model.face_vertex1[i],
+                model.face_vertex2[i],
+                model.face_vertex3[i],
+            ]
+            .map(|v| v as usize);
             let [a, b, c] = face.map(|v| points[v]);
             if [a, b, c].iter().any(|p| p[0] == -5000.)
                 || (a[0] - b[0]) * (c[1] - b[1]) - (c[0] - b[0]) * (a[1] - b[1]) <= 0.
             {
                 continue;
             }
-            let alpha = raw.alphas[i];
+            let alpha = alpha(i);
             let kind = if alpha == 254 {
                 3
             } else if alpha == 255 {
                 2
             } else {
-                raw.face_types[i]
+                face_type(i)
             };
             if kind == 2 || kind > 3 {
                 continue;
             }
-            let base = ((raw.colors[i][0] as i32) << 10)
-                | ((raw.colors[i][1] as i32) << 7)
-                | raw.colors[i][2] as i32;
+            let base = model.face_colour[i] as u16 as i32;
             let hsv = crate::colour::renormalise_saturation(
                 (base & !127) | (((base & 127) * (cfg.ambient + 64)) >> 7),
             );
             let mut colours = [0; 3];
             for corner in 0..3 {
-                let normal = if kind == 1 {
-                    normals.face[i]
-                } else {
-                    normals.vertex[face[corner]]
+                let normal = match normals.flat[i] {
+                    Some([x, y, z]) if kind == 1 => [x, y, z, 1],
+                    _ => normals.smooth[face[corner]],
                 };
                 let dot = (normal[2]
                     .wrapping_mul(sun[2])
@@ -322,48 +324,9 @@ impl Models {
 }
 /// The scaled model, its corner UVs and normals for one icon draw.
 struct IconMesh<'a> {
-    raw: &'a RawModel,
+    model: &'a ModelUnlit,
     uv: &'a [Option<[[f32; 2]; 3]>],
-    normals: &'a Normals,
-}
-struct Normals {
-    vertex: Vec<[i32; 4]>,
-    face: Vec<[i32; 4]>,
-}
-fn normals(raw: &RawModel) -> Normals {
-    let mut out = Normals {
-        vertex: vec![[0; 4]; raw.verts.len()],
-        face: vec![[0; 4]; raw.faces.len()],
-    };
-    for (i, f) in raw.faces.iter().enumerate() {
-        let [a, b, c] = f.map(|i| raw.verts[i as usize].map(|v| v as i32));
-        let u: [i32; 3] = std::array::from_fn(|i| b[i].wrapping_sub(a[i]));
-        let v: [i32; 3] = std::array::from_fn(|i| c[i].wrapping_sub(a[i]));
-        let mut n: [i32; 3] = std::array::from_fn(|i| {
-            u[(i + 1) % 3]
-                .wrapping_mul(v[(i + 2) % 3])
-                .wrapping_sub(u[(i + 2) % 3].wrapping_mul(v[(i + 1) % 3]))
-        });
-        while n.iter().any(|&v| !(-8192..=8192).contains(&v)) {
-            for v in &mut n {
-                *v >>= 1;
-            }
-        }
-        let len = ((n[2] * n[2] + n[0] * n[0] + n[1] * n[1]) as f64).sqrt() as i32;
-        for v in &mut n {
-            *v = *v * 256 / len.max(1);
-        }
-        out.face[i] = [n[0], n[1], n[2], 1];
-        if raw.face_types[i] == 0 {
-            for &v in f {
-                for (dst, &nk) in out.vertex[v as usize].iter_mut().zip(&n) {
-                    *dst += nk;
-                }
-                out.vertex[v as usize][3] += 1;
-            }
-        }
-    }
-    out
+    normals: &'a FaceNormals,
 }
 /// A material's diffuse map as the icon and software renderers sample it:
 /// gamma-adjusted (brightness 0.7), then softened with a 3x3 wrap-around blur

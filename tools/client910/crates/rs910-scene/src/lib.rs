@@ -115,7 +115,7 @@ use rs910_core::{actor_matrix, colour, logic_clock, trig, vector_math};
 use rs910_game::{animation_playback, entities910, entity_runtime, game_runtime, protocol910};
 use rs910_js5::cache;
 use rs910_model::{
-    animation_skeletal, floor, font_layout, gpumodel, hardshadow, icon_raster, material, model,
+    animation_skeletal, floor, font_layout, gpumodel, hardshadow, icon_raster, material,
     modelunlit, particle, sprite,
 };
 

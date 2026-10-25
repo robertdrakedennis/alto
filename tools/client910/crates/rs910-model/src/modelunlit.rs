@@ -2,11 +2,9 @@
 //! the merge of several parts into one model, and the edits (translate,
 //! rotate, recolour, rematerial, scale) applied before a lit model is built.
 //!
-//! This is a second decoder next to `model.rs` on purpose: the lit-model build
-//! branches on which streams are *absent* (no face types, no priorities, no
-//! translucency, no materials, no mappings, no vertex labels) and on the
-//! particle and billboard tables, none of which `model::RawModel` preserves.
-//! Optional streams are `Option`s.
+//! Optional streams are `Option`s: the lit-model build branches on which
+//! streams are absent (no face types, no priorities, no translucency, no
+//! materials, no mappings, no vertex labels).
 //!
 //! Face and vertex indices are stored as `i16` and used sign-extended; real
 //! data never exceeds 32767 vertices.

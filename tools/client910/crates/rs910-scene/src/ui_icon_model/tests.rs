@@ -74,22 +74,23 @@ fn features(fixture: &Fixture, obj: &Obj) -> u32 {
     let Some(bytes) = files.get(&0) else {
         return 0;
     };
-    let Ok(raw) = crate::model::decode(bytes) else {
+    let Ok(model) = crate::modelunlit::ModelUnlit::decode(bytes) else {
         return 0;
     };
     let mut bits = 0;
-    for face in 0..raw.faces.len() {
-        let alpha = raw.alphas[face];
-        let material = if raw.materials[face] < 0 {
+    for face in 0..model.face_count as usize {
+        let alpha = model.face_trans.as_ref().map_or(0, |t| t[face] as u8);
+        let id = model.face_material.as_ref().map_or(-1, |m| m[face]);
+        let material = if id == -1 {
             None
         } else {
             fixture
                 .models
                 .materials
-                .get(raw.materials[face] as u32)
+                .get(id as u16 as u32)
                 .filter(|m| !m.high_detail)
         };
-        bits |= match raw.face_types[face] {
+        bits |= match model.face_type.as_ref().map_or(0, |t| t[face]) {
             0 => 1,
             1 => 2,
             3 => 4,
