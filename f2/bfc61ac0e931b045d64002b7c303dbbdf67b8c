@@ -1,0 +1,19 @@
+tools/client910/crates/rs910-config/src/nxt/tests.rs
+  s_294fc1c2a0f8ed::t_2d0b2be3768b44 170-171,194-205
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "f2bfc61ac0e931b045d64002b7c303dbbdf67b8c",
+  "prompts": {},
+  "sessions": {
+    "s_294fc1c2a0f8ed": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "a9ff09df-8dce-4cd5-a038-9dbb7fb7cefb",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
