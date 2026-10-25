@@ -1,0 +1,30 @@
+tools/client910/crates/rs910-config/src/byte_stream.rs
+  h_d26e211304196f 1-4,8,11,16,38,75-89
+tools/client910/crates/rs910-config/src/lib.rs
+  h_d26e211304196f 38
+tools/client910/crates/rs910-far-scene/src/far_locs.rs
+  h_d26e211304196f 372
+tools/client910/crates/rs910-model/src/modelunlit.rs
+  h_d26e211304196f 13
+tools/client910/crates/rs910-model/src/particle.rs
+  h_d26e211304196f 21,47-50,251,291,309-312,329,469
+tools/client910/crates/rs910-scene/src/env.rs
+  h_d26e211304196f 19
+tools/client910/crates/rs910-scene/src/lib.rs
+  h_d26e211304196f 111
+tools/client910/crates/rs910-scene/src/maploader.rs
+  h_d26e211304196f 44
+tools/client910/crates/rs910-scene/src/maploader/landscape.rs
+  h_d26e211304196f 11
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "14af056f4e14bdeec6f237c64775fa757c36af6b",
+  "prompts": {},
+  "humans": {
+    "h_d26e211304196f": {
+      "author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
