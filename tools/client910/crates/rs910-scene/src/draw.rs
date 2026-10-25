@@ -578,7 +578,7 @@ impl DrawState {
             }
             sort_bucket(&mut opaque, false);
             sort_bucket(&mut transparent, true);
-            let planes = model_planes(cpu.combined);
+            let planes = rs910_model::mesh_billboards::frustum_planes(&cpu.combined);
             let visible = |id: &usize| entity_model_visible(&uw_entities[*id], &planes);
             self.plan.underwater_opaque = opaque
                 .iter()
@@ -767,7 +767,7 @@ impl DrawState {
             .map(|e| e.0 as usize)
             .collect();
         self.plan.dispatched_depth = opaque.iter().chain(&transparent).map(|e| e.1).collect();
-        let planes = model_planes(cpu.combined);
+        let planes = rs910_model::mesh_billboards::frustum_planes(&cpu.combined);
         self.plan.model_planes = planes;
         self.plan.dispatch_opaque = opaque.iter().map(|e| e.0 as usize).collect();
         self.plan.dispatch_transparent = transparent.iter().map(|e| e.0 as usize).collect();
@@ -1204,19 +1204,6 @@ pub fn frame_traces(
     })
 }
 
-/// Six view-frustum planes from a matrix: f32 sums, then f64 normalisation.
-fn model_planes(m: [f32; 16]) -> [[f32; 4]; 6] {
-    [(2, 1.), (2, -1.), (0, 1.), (0, -1.), (1, 1.), (1, -1.)].map(|(c, s)| {
-        let p = [
-            m[3] + s * m[c],
-            m[7] + s * m[c + 4],
-            m[11] + s * m[c + 8],
-            m[15] + s * m[c + 12],
-        ];
-        let length = ((p[2] * p[2] + p[0] * p[0] + p[1] * p[1]) as f64).sqrt();
-        p.map(|v| (v as f64 / length) as f32)
-    })
-}
 /// Translated vertical cylinder against the six frustum planes.
 pub fn model_visible(cylinder: Option<[i32; 6]>, planes: &[[f32; 4]; 6]) -> bool {
     let Some([x, y, z, y0, y1, r]) = cylinder else {

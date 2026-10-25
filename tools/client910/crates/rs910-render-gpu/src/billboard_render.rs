@@ -33,52 +33,6 @@ use crate::actor_matrix::Matrix;
 use crate::billboard::QUAD_CORNERS;
 pub use rs910_model::mesh_billboards::*;
 
-/// The six normalised frustum planes from the `view * projection` entries
-/// (the `z`, `-z`, `x`, `-x`, `y` and `-y` clip bounds).
-#[must_use]
-pub fn frustum_planes(vp: &[f32; 16]) -> [[f32; 4]; 6] {
-    let plane = |col: usize, sign: f32| -> [f32; 4] {
-        let e = vp;
-        let nx = e[3] + sign * e[col];
-        let ny = e[7] + sign * e[4 + col];
-        let nz = e[11] + sign * e[8 + col];
-        let length = f64::from(nz * nz + nx * nx + ny * ny).sqrt();
-        [
-            (f64::from(nx) / length) as f32,
-            (f64::from(ny) / length) as f32,
-            (f64::from(nz) / length) as f32,
-            (f64::from(e[15] + sign * e[12 + col]) / length) as f32,
-        ]
-    };
-    [
-        plane(2, 1.0),
-        plane(2, -1.0),
-        plane(0, 1.0),
-        plane(0, -1.0),
-        plane(1, 1.0),
-        plane(1, -1.0),
-    ]
-}
-
-/// The model draw's early-out: no unique vertices, or the bounding cylinder
-/// (`(0, min_y..max_y, 0)` plus its radius) outside one frustum plane.
-#[must_use]
-pub fn culled(b: &MeshBillboards, world: &[f32; 16], planes: &[[f32; 4]; 6]) -> bool {
-    if !b.drawn {
-        return true;
-    }
-    let (min_y, max_y, radius) = b.bounds;
-    // The cylinder axis point at height y: x' = e4 * y + e12 ...
-    let point = |y: f32| -> [f32; 3] { std::array::from_fn(|i| world[4 + i] * y + world[12 + i]) };
-    let [bottom_x, bottom_y, bottom_z] = point(min_y as f32);
-    let [top_x, top_y, top_z] = point(max_y as f32);
-    planes.iter().any(|p| {
-        let bottom = p[2] * bottom_z + p[0] * bottom_x + p[1] * bottom_y + p[3] + radius as f32;
-        let top = p[2] * top_z + p[0] * top_x + p[1] * top_y + p[3] + radius as f32;
-        bottom < 0.0 && top < 0.0
-    })
-}
-
 /// One quad corner (`VERTEX | COLOR | TEX_COORD_2` of the unit quad, plus
 /// the draw's fog amount).
 #[repr(C)]
@@ -162,31 +116,22 @@ impl Frame {
         if culled(b, world, &view.planes) {
             return;
         }
-        let mv = crate::camera::multiply(world, &view.view);
         let start = self.draws.len();
-        for instance in &b.instances {
-            if instance.face.bloom_hidden && view.bloom {
-                continue;
-            }
-            let placement = crate::billboard::place(instance, &mv);
-            let quad = Matrix(placement.quad);
+        for quad in b.placed_quads(world, &view.view, &view.inverse, view.bloom) {
             let fog = view.fog.map_or(0.0, |(s, e)| {
-                crate::billboard::fog_amount(placement.view[2], s, e)
+                crate::billboard::fog_amount(quad.view_depth, s, e)
             });
-            let c = instance.state.colour;
-            let colour = [(c >> 16) as u8, (c >> 8) as u8, c as u8, (c >> 24) as u8];
             let first_vertex = self.vertices.len() as u32;
-            for [x, y] in QUAD_CORNERS {
-                let v = quad.point(x, y, 0.0);
+            for (pos, [x, y]) in quad.corners.into_iter().zip(QUAD_CORNERS) {
                 self.vertices.push(BillboardVertex {
-                    pos: view.inverse.point(v[0], v[1], v[2]),
-                    colour,
+                    pos,
+                    colour: quad.colour,
                     uv: [x, y],
                     fog,
                 });
             }
             self.draws.push(Draw {
-                material: instance.face.material,
+                material: quad.material,
                 alpha_ref: b.alpha_ref,
                 depth_write: !b.has_transparency,
                 first_vertex,

@@ -42,57 +42,9 @@
 use std::ops::Range;
 
 use crate::actor_matrix::Matrix;
-use crate::billboard::QUAD_CORNERS;
-use crate::mesh_billboards::MeshBillboards;
+pub use crate::mesh_billboards::{culled, frustum_planes, MeshBillboards};
 use crate::models::draw_list::{DrawList, EntityDraw};
 use crate::scene_snapshot::SceneSnapshot;
-
-/// The classic toolkit's frustum planes of the `view * projection` entries:
-/// near, far, left, right, bottom, top, each normalised by its normal's
-/// length.
-#[must_use]
-pub fn frustum_planes(vp: &[f32; 16]) -> [[f32; 4]; 6] {
-    let plane = |col: usize, sign: f32| -> [f32; 4] {
-        let nx = vp[3] + sign * vp[col];
-        let ny = vp[7] + sign * vp[4 + col];
-        let nz = vp[11] + sign * vp[8 + col];
-        let length = f64::from(nz * nz + nx * nx + ny * ny).sqrt();
-        [
-            (f64::from(nx) / length) as f32,
-            (f64::from(ny) / length) as f32,
-            (f64::from(nz) / length) as f32,
-            (f64::from(vp[15] + sign * vp[12 + col]) / length) as f32,
-        ]
-    };
-    [
-        plane(2, 1.0),
-        plane(2, -1.0),
-        plane(0, 1.0),
-        plane(0, -1.0),
-        plane(1, 1.0),
-        plane(1, -1.0),
-    ]
-}
-
-/// The classic model draw's early-out: a model without
-/// drawn vertices, or whose bounding cylinder (the model's y range at its
-/// origin, the horizontal radius) lies outside one of `planes`, draws no
-/// billboard. `world` is the model matrix in the camera-local frame.
-#[must_use]
-pub fn culled(b: &MeshBillboards, world: &[f32; 16], planes: &[[f32; 4]; 6]) -> bool {
-    if !b.drawn {
-        return true;
-    }
-    let (min_y, max_y, radius) = b.bounds;
-    let point = |y: f32| -> [f32; 3] { std::array::from_fn(|i| world[4 + i] * y + world[12 + i]) };
-    let low = point(min_y as f32);
-    let high = point(max_y as f32);
-    planes.iter().any(|p| {
-        let a = p[2] * low[2] + p[0] * low[0] + p[1] * low[1] + p[3] + radius as f32;
-        let b = p[2] * high[2] + p[0] * high[0] + p[1] * high[1] + p[3] + radius as f32;
-        a < 0.0 && b < 0.0
-    })
-}
 
 /// The camera inputs of one frame's billboards.
 #[derive(Clone, Debug)]
@@ -130,7 +82,7 @@ impl View {
 /// One billboard quad.
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub struct Quad {
-    /// Camera-local corners in [`QUAD_CORNERS`] order (the fan the classic
+    /// Camera-local corners in `QUAD_CORNERS` order (the fan the classic
     /// toolkit uploads; each corner's texture coordinate is its unit-quad
     /// position).
     pub corners: [[f32; 3]; 4],
@@ -223,26 +175,15 @@ impl BillboardBatch {
         if culled(b, world, &view.planes) {
             return;
         }
-        let mv = crate::camera::multiply(world, &view.view);
         let start = self.quads.len();
-        for instance in &b.instances {
-            if instance.face.bloom_hidden && view.bloom {
-                continue;
-            }
-            let placement = crate::billboard::place(instance, &mv);
-            let quad = Matrix(placement.quad);
-            let c = instance.state.colour;
-            let corners = QUAD_CORNERS.map(|[x, y]| {
-                let v = quad.point(x, y, 0.0);
-                view.inverse.point(v[0], v[1], v[2])
-            });
+        for quad in b.placed_quads(world, &view.view, &view.inverse, view.bloom) {
             self.quads.push(Quad {
-                corners,
-                colour: [(c >> 16) as u8, (c >> 8) as u8, c as u8, (c >> 24) as u8],
-                material: instance.face.material,
+                corners: quad.corners,
+                colour: quad.colour,
+                material: quad.material,
                 alpha_ref: b.alpha_ref,
                 depth_write: !b.has_transparency,
-                view_depth: placement.view[2],
+                view_depth: quad.view_depth,
             });
         }
         if self.quads.len() > start {
