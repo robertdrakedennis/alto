@@ -1,6 +1,9 @@
 //! Texture pixels built from the first font sprite. This is the
 //! CPU resource consumed by the forthcoming shared GPU interface renderer.
-use crate::{font_metrics::Metrics, sprite_sheet::SpriteSheet};
+use crate::{
+    font_metrics::Metrics,
+    sprite_sheet::{FullSheet, PalettedSheet, SpriteSheet},
+};
 
 #[derive(Clone, Debug)]
 pub struct Atlas {
@@ -14,9 +17,14 @@ impl Atlas {
     pub fn new(m: &Metrics, sheet: &SpriteSheet, monochrome: bool) -> anyhow::Result<Self> {
         let mut pixels = vec![0u32; m.atlas_width as usize * m.atlas_height as usize];
         match sheet {
-            SpriteSheet::Paletted {
+            SpriteSheet::Paletted(PalettedSheet {
                 palette, sprites, ..
-            } => {
+            }) => {
+                // A stored 0 entry draws as 1; index 0 is transparent.
+                let colour = |index: u8| match index {
+                    0 => 0,
+                    i => palette[usize::from(i)].max(1),
+                };
                 let s = sprites
                     .first()
                     .ok_or_else(|| anyhow::anyhow!("font sprite missing"))?;
@@ -28,15 +36,15 @@ impl Atlas {
                         let a = alpha.map_or(if index == 0 { 0 } else { 255 }, |p| p[i]);
                         (a as u32) << 24 | 0xffffff
                     } else if let Some(a) = alpha {
-                        (a[i] as u32) << 24 | palette[index as usize]
+                        (a[i] as u32) << 24 | colour(index)
                     } else if index == 0 {
                         0
                     } else {
-                        0xff000000 | palette[index as usize]
+                        0xff000000 | colour(index)
                     };
                 }
             }
-            SpriteSheet::Full { sprites, .. } => {
+            SpriteSheet::Full(FullSheet { sprites, .. }) => {
                 let s = sprites
                     .first()
                     .ok_or_else(|| anyhow::anyhow!("font sprite missing"))?;

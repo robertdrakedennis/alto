@@ -2,7 +2,11 @@
 //! and the sheet's paletted/translucent class. Every toolkit creates its own
 //! font from it (the GPU atlas upload). Split out of client910's
 //! `ui_fonts` (Phase 3.1); `ui_fonts` (the font cache) re-exports it.
-use crate::{font_atlas::Atlas, font_metrics::Metrics, sprite_sheet::SpriteSheet};
+use crate::{
+    font_atlas::Atlas,
+    font_metrics::Metrics,
+    sprite_sheet::{decode_sprite, FullSheet, PalettedSheet, SpriteSheet},
+};
 use anyhow::{Context, Result};
 use std::rc::Rc;
 
@@ -23,19 +27,19 @@ impl Font {
         metrics: Option<Rc<Metrics>>,
         monochrome: bool,
     ) -> Result<Rc<Self>> {
-        let sheet = SpriteSheet::decode(&bytes.context("missing font sprites")?)?;
+        let sheet = decode_sprite(&bytes.context("missing font sprites")?)?;
         let metrics = metrics.context("missing font metrics")?;
         let atlas = Atlas::new(&metrics, &sheet, monochrome)?;
         let (paletted, translucent) = match &sheet {
             // An all-255 alpha plane is discarded.
-            SpriteSheet::Paletted { sprites, .. } => (
+            SpriteSheet::Paletted(PalettedSheet { sprites, .. }) => (
                 true,
                 sprites
                     .first()
                     .and_then(|s| s.alpha.as_ref())
                     .is_some_and(|a| a.iter().any(|v| *v != 255)),
             ),
-            SpriteSheet::Full { has_alpha, .. } => (false, *has_alpha),
+            SpriteSheet::Full(FullSheet { has_alpha, .. }) => (false, *has_alpha),
         };
         Ok(Rc::new(Self {
             metrics,

@@ -1,7 +1,6 @@
 //! Decoded sprite data, paletted and full-colour. Preserve palettes and alpha independently through transforms. Palette
 //! references are shared between decoded frames until a palette is extended.
 use anyhow::{Context, Result};
-use rs910_core::reader::{Eof, Reader as CoreReader};
 use std::{cell::RefCell, rc::Rc};
 #[derive(Clone, Debug)]
 pub enum Pixels {
@@ -31,134 +30,83 @@ fn zeros<T: Default + Clone>(n: usize) -> Result<Vec<T>> {
     v.resize(n, T::default());
     Ok(v)
 }
-struct Read<'a> {
-    data: &'a [u8],
-    at: i32,
-}
-impl<'a> Read<'a> {
-    /// One `rs910_core::reader` read at `at` (the arithmetic
-    /// lives there; a negative `at` reads nothing, as before).
-    fn read<T>(
-        &mut self,
-        read: impl FnOnce(&mut CoreReader<'a>) -> std::result::Result<T, Eof>,
-    ) -> Result<T> {
-        let mut r = CoreReader::at(self.data, self.at as usize);
-        let out = read(&mut r);
-        self.at = r.pos() as i32;
-        out.map_err(|_| anyhow::anyhow!("sprite EOF"))
-    }
-    fn g1(&mut self) -> Result<u8> {
-        self.read(CoreReader::g1)
-    }
-    fn g2(&mut self) -> Result<i32> {
-        self.read(CoreReader::g2).map(i32::from)
-    }
-    fn g3(&mut self) -> Result<i32> {
-        self.read(CoreReader::g3).map(|v| v as i32)
-    }
-}
-fn plane(r: &mut Read<'_>, w: i32, h: i32, column: bool) -> Result<Vec<u8>> {
-    let mut v = zeros(area(w, h)?)?;
-    if column {
-        for x in 0..w {
-            for y in 0..h {
-                v[(w * y + x) as usize] = r.g1()?;
-            }
-        }
-    } else {
-        for b in &mut v {
-            *b = r.g1()?;
-        }
-    }
-    Ok(v)
-}
 impl Data {
     pub fn decode(bytes: &[u8]) -> Result<Vec<Self>> {
-        let mut r = Read {
-            data: bytes,
-            at: (bytes.len() as i32).wrapping_sub(2),
-        };
-        let tail = r.g2()?;
-        let count = (tail & 32767) as usize;
-        if tail >> 15 == 0 {
-            r.at = (bytes.len() as i32)
-                .wrapping_sub(7)
-                .wrapping_sub(count as i32 * 8);
-            let cw = r.g2()?;
-            let ch = r.g2()?;
-            let colours = r.g1()? as usize + 1;
-            let mut dims = vec![[0; 4]; count];
-            for a in 0..4 {
-                for d in &mut dims {
-                    d[a] = r.g2()?;
-                }
+        use native910::sprite::{decode_sprite, FullSheet, PalettedSheet, SpriteSheet};
+        match decode_sprite(bytes)? {
+            SpriteSheet::Paletted(PalettedSheet {
+                canvas_width,
+                canvas_height,
+                palette,
+                sprites,
+            }) => {
+                // A stored 0 entry draws as 1; index 0 is transparent.
+                let palette: Vec<i32> = palette
+                    .iter()
+                    .enumerate()
+                    .map(|(i, &rgb)| if i == 0 { 0 } else { rgb.max(1) as i32 })
+                    .collect();
+                let palette = Rc::new(RefCell::new(palette));
+                let (cw, ch) = (i32::from(canvas_width), i32::from(canvas_height));
+                Ok(sprites
+                    .into_iter()
+                    .map(|sprite| {
+                        let (width, height) = (i32::from(sprite.width), i32::from(sprite.height));
+                        let (left, top) = (
+                            i32::from(sprite.padding_left),
+                            i32::from(sprite.padding_top),
+                        );
+                        Self {
+                            width,
+                            height,
+                            padding: [left, top, cw - width - left, ch - height - top],
+                            pixels: Pixels::Paletted {
+                                palette: palette.clone(),
+                                indices: sprite.colour,
+                                // An all-opaque alpha plane is dropped.
+                                alpha: sprite.alpha.filter(|a| a.iter().any(|v| *v != 255)),
+                            },
+                        }
+                    })
+                    .collect())
             }
-            r.at = (bytes.len() as i32)
-                .wrapping_sub(7)
-                .wrapping_sub(count as i32 * 8)
-                .wrapping_sub((colours as i32 - 1) * 3);
-            let mut p = vec![0; colours];
-            for v in &mut p[1..] {
-                *v = r.g3()?;
-                if *v == 0 {
-                    *v = 1;
-                }
-            }
-            let palette = Rc::new(RefCell::new(p));
-            r.at = 0;
-            let mut result = vec![];
-            for [left, top, width, height] in dims {
-                let flags = r.g1()?;
-                let indices = plane(&mut r, width, height, flags & 1 != 0)?;
-                let alpha = if flags & 2 != 0 {
-                    let a = plane(&mut r, width, height, flags & 1 != 0)?;
-                    a.iter().any(|v| *v != 255).then_some(a)
-                } else {
-                    None
-                };
-                result.push(Self {
-                    width,
-                    height,
-                    padding: [left, top, cw - width - left, ch - height - top],
-                    pixels: Pixels::Paletted {
-                        palette: palette.clone(),
-                        indices,
-                        alpha,
-                    },
-                });
-            }
-            Ok(result)
-        } else {
-            r.at = 0;
-            anyhow::ensure!(r.g1()? == 0, "unsupported full sprite format");
-            let alpha = r.g1()? == 1;
-            let width = r.g2()?;
-            let height = r.g2()?;
-            let mut result = vec![];
-            for _ in 0..count {
-                let mut argb = zeros(area(width, height)?)?;
-                for p in &mut argb {
-                    let rgb = r.g3()?;
-                    *p = if rgb == 0xff00ff {
-                        0
-                    } else {
-                        rgb | 0xff000000u32 as i32
-                    };
-                }
-                if alpha {
-                    for p in &mut argb {
-                        *p = (*p & 0xffffff) | ((r.g1()? as i32) << 24);
+            SpriteSheet::Full(FullSheet {
+                width,
+                height,
+                sprites,
+                ..
+            }) => Ok(sprites
+                .into_iter()
+                .map(|sprite| {
+                    let argb: Vec<i32> = sprite
+                        .rgb
+                        .chunks_exact(3)
+                        .enumerate()
+                        .map(|(i, c)| {
+                            let rgb =
+                                i32::from(c[0]) << 16 | i32::from(c[1]) << 8 | i32::from(c[2]);
+                            // Magenta is transparent; an alpha plane then
+                            // replaces the alpha byte.
+                            let p = if rgb == 0xff00ff {
+                                0
+                            } else {
+                                rgb | 0xff000000u32 as i32
+                            };
+                            sprite
+                                .alpha
+                                .as_ref()
+                                .map_or(p, |a| (p & 0xffffff) | i32::from(a[i]) << 24)
+                        })
+                        .collect();
+                    let translucent = argb.iter().any(|p| *p as u32 >> 24 != 255);
+                    Self {
+                        width: i32::from(width),
+                        height: i32::from(height),
+                        padding: [0; 4],
+                        pixels: Pixels::Full { argb, translucent },
                     }
-                }
-                let translucent = argb.iter().any(|p| *p as u32 >> 24 != 255);
-                result.push(Self {
-                    width,
-                    height,
-                    padding: [0; 4],
-                    pixels: Pixels::Full { argb, translucent },
-                });
-            }
-            Ok(result)
+                })
+                .collect()),
         }
     }
     pub fn full_size(&self) -> [i32; 2] {

@@ -59,7 +59,7 @@ impl Renderer {
                 &crate::js5_fetch::fetch_file(pack, "fontmetrics", id as u32)?
                     .ok_or_else(|| anyhow::anyhow!("font metrics {id} absent"))?,
             )?;
-            let sheet = crate::sprite_sheet::SpriteSheet::decode(
+            let sheet = crate::sprite_sheet::decode_sprite(
                 &crate::js5_fetch::fetch_file(pack, "sprites", id as u32)?
                     .ok_or_else(|| anyhow::anyhow!("font sprite {id} absent"))?,
             )?;

@@ -6,7 +6,7 @@ use crate::{
     cache::{CacheError, Pack},
     font_layout::{Image, Images},
     font_metrics::Metrics,
-    sprite_sheet::SpriteSheet,
+    sprite_sheet::{self, SpriteSheet},
 };
 use anyhow::{Context, Result};
 pub use rs910_toolkit::font::*;
@@ -508,13 +508,13 @@ pub fn sprite_dimensions(bytes: &[u8]) -> Result<Vec<Image>> {
             return Ok(vec![]);
         }
     }
-    match SpriteSheet::decode(bytes)? {
-        SpriteSheet::Paletted {
-            canvas_w,
-            canvas_h,
+    match sprite_sheet::decode_sprite(bytes)? {
+        SpriteSheet::Paletted(sprite_sheet::PalettedSheet {
+            canvas_width: canvas_w,
+            canvas_height: canvas_h,
             sprites,
             ..
-        } => Ok(sprites
+        }) => Ok(sprites
             .iter()
             .map(|s| {
                 let empty = s.width == 0 || s.height == 0;
@@ -524,12 +524,12 @@ pub fn sprite_dimensions(bytes: &[u8]) -> Result<Vec<Image>> {
                 }
             })
             .collect()),
-        SpriteSheet::Full {
+        SpriteSheet::Full(sprite_sheet::FullSheet {
             width,
             height,
             sprites,
             ..
-        } => Ok(vec![
+        }) => Ok(vec![
             Image {
                 width: if width == 0 || height == 0 {
                     1
