@@ -1,0 +1,26 @@
+tools/client910/crates/rs910-client/src/client_debug_flags.rs
+  h_d26e211304196f 41-43,46,59,61
+tools/client910/crates/rs910-game/src/game_debug_flags.rs
+  h_d26e211304196f 20-22,24,27
+tools/client910/crates/rs910-render-gpu/src/render_debug_flags.rs
+  h_d26e211304196f 22-24,28,36
+tools/client910/crates/rs910-scene/src/scene_debug_flags.rs
+  h_d26e211304196f 30-32,35,41
+tools/client910/crates/rs910-toolkit/src/toolkit_debug_flags.rs
+  h_d26e211304196f 30-32,34,39
+tools/client910/crates/rs910-ui/src/ui_debug_flags.rs
+  h_d26e211304196f 35-37,41,61-62,64
+tools/client910/src/debug_flags.rs
+  h_d26e211304196f 76-78,83,121
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "a8e1a8d747db303eaea63b89a06ddf12c48dd98d",
+  "prompts": {},
+  "humans": {
+    "h_d26e211304196f": {
+      "author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
