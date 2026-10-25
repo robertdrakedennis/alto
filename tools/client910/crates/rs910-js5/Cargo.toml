@@ -22,6 +22,7 @@ thiserror = "2.0"
 log = "0.4"
 serde = { version = "1", features = ["derive"] }
 serde_json = "1"
+whirlpool = "0.10"
 
 [dev-dependencies]
 # js5's own tests use the shared repository-path helpers.

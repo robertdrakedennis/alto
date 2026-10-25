@@ -8,7 +8,7 @@ use std::sync::Arc;
 
 use anyhow::Context;
 
-use rs910_core::{logic_clock, whirlpool};
+use rs910_core::logic_clock;
 
 use crate::cache::{DiskStore, Stored};
 
@@ -420,7 +420,7 @@ impl NetResourceProvider {
             .as_ref()
             .and_then(|d| d[g].as_ref())
         {
-            Some(expected) => whirlpool::compute(body) == *expected,
+            Some(expected) => super::indexes::whirlpool_digest(body) == *expected,
             None => true,
         }
     }

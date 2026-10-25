@@ -2,7 +2,6 @@
 
 use anyhow::Context;
 
-use rs910_core::whirlpool;
 use rs910_protocol::rsa_block::RsaPublicKey;
 
 use super::getcrc;
@@ -52,7 +51,7 @@ impl MasterIndex {
             "js5 master index: trailer block {} != {SIGNED_BLOCK_LEN}",
             block.len()
         );
-        let digest = whirlpool::compute(&data[5..table_end]);
+        let digest = whirlpool_digest(&data[5..table_end]);
         anyhow::ensure!(
             block[1..] == digest[..],
             "js5 master index: whirlpool mismatch"
@@ -88,7 +87,7 @@ impl Js5Index {
     pub fn new(bytes: &[u8], crc: i32, whirlpool: Option<&[u8; 64]>) -> anyhow::Result<Self> {
         let actual = getcrc(bytes);
         anyhow::ensure!(actual == crc, "js5 index crc {actual} != {crc}");
-        let digest = whirlpool::compute(bytes);
+        let digest = whirlpool_digest(bytes);
         if let Some(expected) = whirlpool {
             anyhow::ensure!(digest == *expected, "js5 index whirlpool mismatch");
         }
@@ -101,4 +100,12 @@ impl Js5Index {
             index,
         })
     }
+}
+
+/// The Whirlpool digest JS5 checks indexes and groups with.
+pub(crate) fn whirlpool_digest(data: &[u8]) -> [u8; 64] {
+    use whirlpool::Digest;
+    let mut digest = [0; 64];
+    digest.copy_from_slice(&whirlpool::Whirlpool::digest(data));
+    digest
 }

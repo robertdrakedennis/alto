@@ -2103,6 +2103,7 @@ dependencies = [
  "serde",
  "serde_json",
  "thiserror 2.0.20",
+ "whirlpool",
 ]
 
 [[package]]
@@ -3099,6 +3100,15 @@ dependencies = [
  "raw-window-handle",
  "static_assertions",
  "web-sys",
+]
+
+[[package]]
+name = "whirlpool"
+version = "0.10.4"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "f1ae50671d985c15b3214c7d969b8b520759fb3c8682444bec15ef775335a05c"
+dependencies = [
+ "digest",
 ]
 
 [[package]]

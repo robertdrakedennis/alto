@@ -36,7 +36,6 @@ mod texts_table;
 pub mod trig;
 pub mod ui_text_compare;
 pub mod vector_math;
-pub mod whirlpool;
 
 use std::fmt;
 
