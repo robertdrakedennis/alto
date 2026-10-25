@@ -290,3 +290,11 @@ pub fn build_hsv_table() -> Vec<i32> {
     }
     out
 }
+
+/// The classic per-channel texture gamma.
+const TEXTURE_GAMMA: f64 = 0.7;
+
+/// The classic texture gamma table: `floor((i / 255)^0.7 * 255)` per channel.
+pub fn texture_gamma_table() -> [u8; 256] {
+    std::array::from_fn(|i| ((i as f64 / 255.0).powf(TEXTURE_GAMMA) * 255.0) as u8)
+}

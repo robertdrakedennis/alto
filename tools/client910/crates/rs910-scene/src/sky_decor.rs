@@ -48,15 +48,6 @@ pub fn bake(
     })
 }
 
-/// The gamma 0.7 table of the sky's textures.
-fn gamma_table() -> [u8; 256] {
-    let mut lut = [0_u8; 256];
-    for (i, slot) in lut.iter_mut().enumerate() {
-        *slot = (((i as f64 / 255.0).powf(0.7) * 255.0) as i32).min(255) as u8;
-    }
-    lut
-}
-
 fn pack_argb(r: u8, g: u8, b: u8, a: u8) -> i32 {
     ((u32::from(a) << 24) | (u32::from(r) << 16) | (u32::from(g) << 8) | u32::from(b)) as i32
 }
@@ -75,7 +66,7 @@ fn texture_sprite(
         }
     };
     let count = (size * size) as usize;
-    let lut = gamma_table();
+    let lut = rs910_core::colour::texture_gamma_table();
     anyhow::ensure!(
         image.px.len() / 4 >= count,
         "decor texture {id} has {} texels, the sprite needs {count}",

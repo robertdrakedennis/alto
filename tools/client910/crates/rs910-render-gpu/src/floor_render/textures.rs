@@ -108,16 +108,6 @@ impl FloorTextureCache {
     }
 }
 
-/// The gamma look-up table (0.7 for material textures).
-pub(super) fn gamma_lut(gamma: f64) -> [u8; 256] {
-    let mut lut = [0_u8; 256];
-    for (i, slot) in lut.iter_mut().enumerate() {
-        let v = ((i as f64 / 255.0).powf(gamma) * 255.0) as i32;
-        *slot = if v > 255 { 255 } else { v as u8 };
-    }
-    lut
-}
-
 /// Exact 2x2 integer box mip from ARGB ints.
 pub(super) fn box_mip(src: &[u32], w: usize, h: usize) -> Vec<u32> {
     let (w2, h2) = (w >> 1, h >> 1);
@@ -252,7 +242,7 @@ pub(super) fn material_texture(
         .diffuse_texture
         .ok_or_else(|| anyhow::anyhow!("material {} has no diffuse texture", m.id))?;
     let image = crate::texture::load_png(pack, id, 0)?;
-    let lut = gamma_lut(0.7);
+    let lut = rs910_core::colour::texture_gamma_table();
     let opaque_path = m.alpha == AlphaMode::None && m.effect != 1 && m.effect != 7;
     let mut argb = Vec::with_capacity((image.w * image.h) as usize);
     for px in image.px.chunks_exact(4) {

@@ -442,15 +442,6 @@ pub(crate) fn mip_chain(w: u32, h: u32, channels: usize, srgb: bool, px: Vec<u8>
     levels
 }
 
-/// The classic texture gamma (0.7 on RGB): `floor((i / 255)^0.7 * 255)`.
-pub(crate) fn gamma_lut() -> [u8; 256] {
-    let mut lut = [0_u8; 256];
-    for (i, slot) in lut.iter_mut().enumerate() {
-        *slot = ((i as f64 / 255.0).powf(0.7) * 255.0).min(255.0) as u8;
-    }
-    lut
-}
-
 /// Apply `lut` to the two colour endpoints of every BC3 block (RGB565,
 /// each channel widened to 8 bits, mapped, and rounded back). The modern
 /// client does the same to its DXT colour textures at load. A BC3 colour block always decodes in four-colour
@@ -578,7 +569,7 @@ pub fn load_map(
     let id = r.texture as u32;
     let inner = r.size();
     let srgb = kind == MapKind::Diffuse;
-    let lut = gamma_lut();
+    let lut = rs910_core::colour::texture_gamma_table();
     let one_face = |faces: usize| -> anyhow::Result<()> {
         anyhow::ensure!(faces == 1, "texture {id} has {faces} faces");
         Ok(())
@@ -1552,7 +1543,7 @@ fn decode_diffuse(pack: &Pack, m: &Material) -> anyhow::Result<Vec<Level>> {
     // The classic texture gamma (0.7 on
     // RGB): the 910 textures are authored for it, so the modern pass keeps the
     // faithful albedo and changes only the lighting.
-    let lut = gamma_lut();
+    let lut = rs910_core::colour::texture_gamma_table();
     let opaque = m.alpha == AlphaMode::None && !reflective;
     for p in image.px.chunks_exact_mut(4) {
         if opaque {

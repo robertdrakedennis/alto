@@ -64,7 +64,7 @@ pub fn layer_texels(pack: &Pack, material: &Material) -> anyhow::Result<LayerLev
         image.w > 0 && image.h > 0 && image.px.len() >= (image.w * image.h * 4) as usize,
         "texture {id}: empty or short"
     );
-    let lut = crate::models::materials::gamma_lut();
+    let lut = rs910_core::colour::texture_gamma_table();
     for p in image.px.chunks_exact_mut(4) {
         for c in &mut p[..3] {
             *c = lut[usize::from(*c)];

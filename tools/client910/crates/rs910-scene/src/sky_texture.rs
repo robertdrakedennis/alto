@@ -40,11 +40,7 @@ pub(crate) fn load_texture(assets: &SkyAssets<'_>, material_id: i32) -> anyhow::
             .ok_or_else(|| anyhow::anyhow!("texture {texture_id}: empty cube"))?,
     };
     let multiply = material.alpha == crate::texture::AlphaMode::Multiply;
-    let mut lut = [0_u8; 256];
-    for (i, slot) in lut.iter_mut().enumerate() {
-        let v = ((i as f64 / 255.0).powf(0.7) * 255.0) as i32;
-        *slot = v.min(255) as u8;
-    }
+    let lut = rs910_core::colour::texture_gamma_table();
     let mut px = image.px.clone();
     for p in px.chunks_exact_mut(4) {
         p[0] = lut[p[0] as usize];
