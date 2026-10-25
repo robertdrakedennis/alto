@@ -1,10 +1,7 @@
-//! CPU-side item and NPC configs: the fields entity code needs (names, worn
-//! models, palettes, morph list, ambient sound), decoded from complete opcode
-//! tables so no byte is misaligned. Fields not needed by CPU entities stay
-//! available in `raw`; this is not the renderer's config schema. An opcode
-//! outside the table is an error naming the id and the opcode.
-use super::{appearance, npc, npc_custom, zone, Error, Packet, Result};
-use crate::opcode_table::{at, span, Entry, Field, Input, Record, Rule, Slot, Table, Unknown};
+//! Entity views of the item and NPC types: the fields entity code needs
+//! (names, worn models, palettes, morph list, ambient sound), taken from the
+//! types `crate::config` decodes.
+use super::{appearance, npc, npc_custom, zone};
 use crate::types910::customisation::Customisation;
 use std::collections::BTreeMap;
 
@@ -95,34 +92,6 @@ impl Item {
     }
 }
 
-/// A parameter table, read and dropped.
-fn skip_params<T>(source: Input<Error>, _: &mut T, _: Slot) -> Result<()> {
-    crate::config::read_params(source, &mut Vec::new())
-}
-
-/// A count byte, then that many `(source, destination)` pairs of which only
-/// the destinations are kept.
-fn read_destinations(source: Input<Error>) -> Result<Vec<i16>> {
-    let count = source.byte()?;
-    let mut out = vec![];
-    for _ in 0..count {
-        source.short()?;
-        out.push(source.short()? as i16);
-    }
-    Ok(out)
-}
-
-/// A count byte, then that many 16-bit-or-wider ids.
-fn read_id_list(source: Input<Error>) -> Result<Vec<i32>> {
-    let count = source.byte()?;
-    (0..count).map(|_| source.smart_id()).collect()
-}
-
-/// A 16-bit id where 65535 means "none" (`-1`).
-fn read_nullable(source: Input<Error>) -> Result<i32> {
-    crate::opcode_table::payload::nullable_short(source)
-}
-
 /// One NPC type.
 #[derive(Clone, Debug, PartialEq, Eq)]
 pub struct Npc {
@@ -154,15 +123,6 @@ pub struct Npc {
     pub walkflags: i32,
     pub fade: i32,
     pub tint: [i8; 4],
-    pub consumed: usize,
-    pub raw: Vec<u8>,
-}
-
-/// An NPC while its opcodes are being read.
-struct NpcDraft {
-    npc: Npc,
-    /// Set by the model list opcode; per-model offsets need it first.
-    models_present: bool,
 }
 
 impl Npc {
@@ -195,25 +155,48 @@ impl Npc {
             walkflags: 0,
             fade: 0,
             tint: [0; 4],
-            consumed: 0,
-            raw: vec![],
         }
     }
 
-    pub fn decode(id: i32, bytes: &[u8]) -> Result<Self> {
-        let mut draft = NpcDraft {
-            npc: Self::empty(id),
-            models_present: false,
+    /// The entity view of an NPC type.
+    pub fn from_config(npc: &crate::config::Npc) -> Self {
+        let present = |values: &[u16]| {
+            (!values.is_empty()).then(|| values.iter().map(|&v| v as i16).collect())
         };
-        draft.npc.raw = bytes.to_vec();
-        let mut packet = Packet::new(bytes);
-        let record = Record {
-            kind: "NPC",
-            id: i64::from(id),
-        };
-        NPC_OPCODES.run(&mut packet, &mut draft, record)?;
-        draft.npc.consumed = packet.pos;
-        Ok(draft.npc)
+        Self {
+            id: npc.id as i32,
+            name: npc.name.clone(),
+            size: i32::from(npc.size),
+            turnspeed: npc.turnspeed,
+            vislevel: npc.vislevel,
+            bas: npc.bas,
+            models: npc.model_slots.clone(),
+            heads: npc.head_slots.clone(),
+            modeloffset: npc.modeloffset.clone(),
+            recolour: present(&npc.recol_d),
+            retexture: present(&npc.retex_d),
+            headicons: npc.head_icons.clone(),
+            covermarker: npc.covermarker,
+            multivarbit: npc.multivarbit,
+            multivarp: npc.multivarp,
+            multinpc: (!npc.multinpc.is_empty()).then(|| npc.multinpc.clone()),
+            sounds: npc.sounds,
+            sound_range: npc.sound_range,
+            sound_dropoff: npc.sound_dropoff,
+            sound_volume: npc.sound_volume,
+            sound_rates: npc.sound_rates,
+            active: npc.active,
+            walksmoothing: npc.walksmoothing,
+            respawndir: npc.respawndir,
+            walkflags: npc.walkflags,
+            fade: npc.fade_in,
+            tint: [
+                npc.tint_hue,
+                npc.tint_saturation,
+                npc.tint_luminence,
+                npc.tint_weight,
+            ],
+        }
     }
 
     /// Whether the NPC plays a background sound of its own. The crawl-only
@@ -251,227 +234,4 @@ impl Npc {
             retexture: self.retexture.as_ref().map(Vec::len),
         }
     }
-}
-
-/// NPC opcodes of this revision.
-static NPC_OPCODES: Table<NpcDraft, Error> = Table::new(
-    &[
-        Entry::new(
-            at(1),
-            Rule::Custom(|s, d, _| {
-                d.npc.models = read_id_list(s)?;
-                d.models_present = true;
-                Ok(())
-            }),
-        ),
-        Entry::new(at(2), Rule::Text(|d, _, v| d.npc.name = v)),
-        Entry::new(at(12), Rule::Byte(|d, _, v| d.npc.size = i32::from(v))),
-        // Menu operations, dropped.
-        Entry::new(span(30, 34), Rule::Skip(&[Field::Text])),
-        Entry::new(
-            at(40),
-            Rule::Custom(|s, d, _| {
-                d.npc.recolour = Some(read_destinations(s)?);
-                Ok(())
-            }),
-        ),
-        Entry::new(
-            at(41),
-            Rule::Custom(|s, d, _| {
-                d.npc.retexture = Some(read_destinations(s)?);
-                Ok(())
-            }),
-        ),
-        Entry::new(
-            at(42),
-            Rule::Custom(|s, _, _| {
-                for _ in 0..s.byte()? {
-                    s.byte()?;
-                }
-                Ok(())
-            }),
-        ),
-        Entry::new(span(44, 45), Rule::Skip(&[Field::Short])),
-        Entry::new(
-            at(60),
-            Rule::Custom(|s, d, _| {
-                d.npc.heads = Some(read_id_list(s)?);
-                Ok(())
-            }),
-        ),
-        Entry::new(at(93), Rule::Skip(&[])),
-        Entry::new(at(95), Rule::Short(|d, _, v| d.npc.vislevel = i32::from(v))),
-        Entry::new(span(97, 98), Rule::Skip(&[Field::Short])),
-        Entry::new(at(99), Rule::Skip(&[])),
-        Entry::new(span(100, 101), Rule::Skip(&[Field::Byte])),
-        Entry::new(at(102), Rule::Custom(read_head_icons)),
-        Entry::new(
-            at(103),
-            Rule::Short(|d, _, v| d.npc.turnspeed = i32::from(v)),
-        ),
-        Entry::new(
-            at(106),
-            Rule::Custom(|s, d, _| read_morphs(s, &mut d.npc, false)),
-        ),
-        Entry::new(at(107), Rule::Flag(|d, _| d.npc.active = false)),
-        Entry::new(at(109), Rule::Flag(|d, _| d.npc.walksmoothing = false)),
-        Entry::new(at(111), Rule::Skip(&[])),
-        Entry::new(at(113), Rule::Skip(&[Field::Short, Field::Short])),
-        Entry::new(at(114), Rule::Skip(&[Field::Byte, Field::Byte])),
-        Entry::new(
-            at(118),
-            Rule::Custom(|s, d, _| read_morphs(s, &mut d.npc, true)),
-        ),
-        Entry::new(
-            at(119),
-            Rule::SignedByte(|d, _, v| d.npc.walkflags = i32::from(v)),
-        ),
-        Entry::new(at(121), Rule::Custom(read_model_offsets)),
-        Entry::new(at(123), Rule::Skip(&[Field::Short])),
-        Entry::new(
-            at(125),
-            Rule::SignedByte(|d, _, v| {
-                let direction = i32::from(v);
-                d.npc.respawndir = if (0..8).contains(&direction) {
-                    Some(direction)
-                } else {
-                    None
-                };
-            }),
-        ),
-        Entry::new(at(127), Rule::Short(|d, _, v| d.npc.bas = i32::from(v))),
-        Entry::new(at(128), Rule::Skip(&[Field::Byte])),
-        Entry::new(
-            at(134),
-            Rule::Custom(|s, d, _| {
-                for sound in &mut d.npc.sounds {
-                    *sound = read_nullable(s)?;
-                }
-                d.npc.sound_range = i32::from(s.byte()?);
-                Ok(())
-            }),
-        ),
-        Entry::new(span(135, 136), Rule::Skip(&[Field::Byte, Field::Short])),
-        Entry::new(at(137), Rule::Skip(&[Field::Short])),
-        Entry::new(at(138), Rule::SmartId(|d, _, v| d.npc.covermarker = v)),
-        Entry::new(
-            at(140),
-            Rule::Byte(|d, _, v| d.npc.sound_volume = i32::from(v)),
-        ),
-        Entry::new(at(141), Rule::Skip(&[])),
-        Entry::new(at(142), Rule::Skip(&[Field::Short])),
-        Entry::new(at(143), Rule::Skip(&[])),
-        Entry::new(span(150, 154), Rule::Skip(&[Field::Text])),
-        Entry::new(
-            at(155),
-            Rule::Custom(|s, d, _| {
-                for value in &mut d.npc.tint {
-                    *value = s.byte()? as i8;
-                }
-                Ok(())
-            }),
-        ),
-        Entry::new(span(158, 159), Rule::Skip(&[])),
-        Entry::new(
-            at(160),
-            Rule::Custom(|s, _, _| {
-                for _ in 0..s.byte()? {
-                    s.short()?;
-                }
-                Ok(())
-            }),
-        ),
-        Entry::new(at(162), Rule::Skip(&[])),
-        Entry::new(at(163), Rule::Skip(&[Field::Byte])),
-        Entry::new(
-            at(164),
-            Rule::Custom(|s, d, _| {
-                d.npc.sound_rates = [i32::from(s.short()?), i32::from(s.short()?)];
-                Ok(())
-            }),
-        ),
-        Entry::new(at(165), Rule::Skip(&[Field::Byte])),
-        Entry::new(
-            at(168),
-            Rule::Byte(|d, _, v| d.npc.sound_dropoff = i32::from(v)),
-        ),
-        Entry::new(at(169), Rule::Skip(&[])),
-        Entry::new(span(170, 175), Rule::Skip(&[Field::Short])),
-        Entry::new(at(178), Rule::Skip(&[])),
-        Entry::new(
-            at(179),
-            Rule::Skip(&[
-                Field::Smart,
-                Field::Smart,
-                Field::Smart,
-                Field::Smart,
-                Field::Smart,
-                Field::Smart,
-            ]),
-        ),
-        Entry::new(at(180), Rule::Byte(|d, _, v| d.npc.fade = i32::from(v))),
-        Entry::new(at(181), Rule::Skip(&[Field::Short, Field::Byte])),
-        Entry::new(at(182), Rule::Skip(&[])),
-        Entry::new(at(249), Rule::Custom(skip_params)),
-    ],
-    Unknown::Reject,
-);
-
-/// Head-icon table: a bit mask, then per set bit a model id and an icon id.
-/// Clear bits stay as `(-1, -1)`.
-fn read_head_icons(source: Input<Error>, draft: &mut NpcDraft, _: Slot) -> Result<()> {
-    let mask = u32::from(source.byte()?);
-    let width = 32 - mask.leading_zeros();
-    let mut icons = vec![];
-    for bit in 0..width {
-        icons.push(if mask & (1 << bit) == 0 {
-            (-1, -1)
-        } else {
-            (source.smart_id()?, (source.smart()? - 1) as i16)
-        });
-    }
-    draft.npc.headicons = Some(icons);
-    Ok(())
-}
-
-/// Morph list: varbit, varp, an optional explicit fallback, a count, then
-/// the targets; the fallback goes last.
-fn read_morphs(source: Input<Error>, npc: &mut Npc, has_fallback: bool) -> Result<()> {
-    npc.multivarbit = read_nullable(source)?;
-    npc.multivarp = read_nullable(source)?;
-    let fallback = if has_fallback {
-        read_nullable(source)?
-    } else {
-        -1
-    };
-    let count = source.smart()?;
-    let mut list = vec![];
-    for _ in 0..=count {
-        list.push(read_nullable(source)?);
-    }
-    list.push(fallback);
-    npc.multinpc = Some(list);
-    Ok(())
-}
-
-/// Per-model offsets, indexed by model slot; needs the model list first.
-fn read_model_offsets(source: Input<Error>, draft: &mut NpcDraft, _: Slot) -> Result<()> {
-    if !draft.models_present {
-        return Err(Error::Invalid("NPC offset before models"));
-    }
-    let mut offsets = vec![None; draft.npc.models.len()];
-    let count = source.byte()?;
-    for _ in 0..count {
-        let index = usize::from(source.byte()?);
-        let offset = [
-            i32::from(source.signed_byte()?),
-            i32::from(source.signed_byte()?),
-            i32::from(source.signed_byte()?),
-        ];
-        *offsets
-            .get_mut(index)
-            .ok_or(Error::Invalid("NPC model offset index"))? = Some(offset);
-    }
-    draft.npc.modeloffset = Some(offsets);
-    Ok(())
 }

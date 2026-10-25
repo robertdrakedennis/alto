@@ -75,18 +75,15 @@ pub fn decode(objs: &Records, npc_records: &Records, members: bool) -> Result<Ty
         })
         .collect();
     let npc_count = npc_records.count;
-    let bytes = &npc_records.files;
-    let mut npcs = BTreeMap::new();
-    for id in 0..npc_count {
-        npcs.insert(
-            id,
-            if let Some(b) = bytes.get(&id) {
-                Npc::decode(id, b).map_err(|e| anyhow::anyhow!("NPC {id}: {e:?}"))?
-            } else {
-                Npc::empty(id)
-            },
-        );
-    }
+    let store = crate::config::NpcStore::from_records(&npc_records.files)?;
+    let npcs = (0..npc_count)
+        .map(|id| {
+            let npc = store
+                .get(id as u32)
+                .map_or_else(|| Npc::empty(id), Npc::from_config);
+            (id, npc)
+        })
+        .collect();
     Ok(Types {
         items,
         npcs,

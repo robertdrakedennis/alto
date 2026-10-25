@@ -136,6 +136,23 @@ pub struct Npc {
     /// Replaces the model in picking: `[min x, min y, min z, max x, max y,
     /// max z]`.
     pub clickbox: Option<[i32; 6]>,
+    /// Turn speed of the body.
+    pub turnspeed: i32,
+    /// Head icons as `(sprite group, icon)` per slot; clear slots are
+    /// `(-1, -1)`.
+    pub head_icons: Option<Vec<(i32, i16)>>,
+    /// Whether movement between tiles is smoothed.
+    pub walksmoothing: bool,
+    /// Direction a respawned NPC faces; `None` for an out-of-range value.
+    pub respawndir: Option<i32>,
+    /// Background sounds: idle, crawl, walk and run; `-1` for none.
+    pub sounds: [i32; 4],
+    /// Background sound range in tiles.
+    pub sound_range: i32,
+    pub sound_volume: i32,
+    /// Background sound playback rate range.
+    pub sound_rates: [i32; 2],
+    pub sound_dropoff: i32,
 }
 
 impl Npc {
@@ -196,6 +213,15 @@ impl Npc {
             picksize: -1,
             picksizeshift: 0,
             clickbox: None,
+            turnspeed: 32,
+            head_icons: None,
+            walksmoothing: true,
+            respawndir: Some(4),
+            sounds: [-1; 4],
+            sound_range: 0,
+            sound_volume: 255,
+            sound_rates: [256; 2],
+            sound_dropoff: 0,
         }
     }
 }
@@ -243,11 +269,11 @@ static NPC_OPCODES: Table<Npc, anyhow::Error> = Table::new(
             at(101),
             Rule::SignedByte(|n, _, v| n.contrast = i32::from(v)),
         ),
-        Entry::new(at(102), Rule::Custom(skip_head_icons)),
-        Entry::new(at(103), Rule::Skip(&[Field::Short])),
+        Entry::new(at(102), Rule::Custom(read_head_icons)),
+        Entry::new(at(103), Rule::Short(|n, _, v| n.turnspeed = i32::from(v))),
         Entry::new(at(106), Rule::Custom(read_morphs)),
         Entry::new(at(107), Rule::Flag(|n, _| n.active = false)),
-        Entry::new(at(109), Rule::Skip(&[])),
+        Entry::new(at(109), Rule::Flag(|n, _| n.walksmoothing = false)),
         Entry::new(at(111), Rule::Flag(|n, _| n.spotshadow = false)),
         Entry::new(
             at(113),
@@ -273,26 +299,31 @@ static NPC_OPCODES: Table<Npc, anyhow::Error> = Table::new(
             at(123),
             Rule::Short(|n, _, v| n.overlayheight = i32::from(v)),
         ),
-        Entry::new(at(125), Rule::Skip(&[Field::Byte])),
+        Entry::new(
+            at(125),
+            Rule::SignedByte(|n, _, v| {
+                n.respawndir = (0..8).contains(&v).then_some(i32::from(v));
+            }),
+        ),
         Entry::new(at(127), Rule::Short(|n, _, v| n.bas = i32::from(v))),
         Entry::new(at(128), Rule::Skip(&[Field::Byte])),
         Entry::new(
             at(134),
-            Rule::Skip(&[
-                Field::Short,
-                Field::Short,
-                Field::Short,
-                Field::Short,
-                Field::Byte,
-            ]),
+            Rule::Custom(|source, n, _| {
+                for sound in &mut n.sounds {
+                    *sound = payload::nullable_short(source)?;
+                }
+                n.sound_range = i32::from(source.byte()?);
+                Ok(())
+            }),
         ),
         Entry::new(span(135, 136), Rule::Skip(&[Field::Byte, Field::Short])),
         Entry::new(
             at(137),
             Rule::Short(|n, _, v| n.cursorattack = i32::from(v)),
         ),
-        Entry::new(at(138), Rule::Custom(read_cover_marker)),
-        Entry::new(at(140), Rule::Skip(&[Field::Byte])),
+        Entry::new(at(138), Rule::SmartId(|n, _, v| n.covermarker = v)),
+        Entry::new(at(140), Rule::Byte(|n, _, v| n.sound_volume = i32::from(v))),
         Entry::new(at(141), Rule::Flag(|n, _| n.follower = true)),
         Entry::new(at(142), Rule::Short(|n, _, v| n.mapelement = i32::from(v))),
         Entry::new(at(143), Rule::Flag(|n, _| n.drawbelow = true)),
@@ -309,12 +340,21 @@ static NPC_OPCODES: Table<Npc, anyhow::Error> = Table::new(
         Entry::new(at(160), Rule::Custom(read_quests)),
         Entry::new(at(162), Rule::Skip(&[])),
         Entry::new(at(163), Rule::Byte(|n, _, v| n.picksize = i32::from(v))),
-        Entry::new(at(164), Rule::Skip(&[Field::Short, Field::Short])),
+        Entry::new(
+            at(164),
+            Rule::Custom(|source, n, _| {
+                n.sound_rates = [i32::from(source.short()?), i32::from(source.short()?)];
+                Ok(())
+            }),
+        ),
         Entry::new(
             at(165),
             Rule::Byte(|n, _, v| n.picksizeshift = i32::from(v)),
         ),
-        Entry::new(at(168), Rule::Skip(&[Field::Byte])),
+        Entry::new(
+            at(168),
+            Rule::Byte(|n, _, v| n.sound_dropoff = i32::from(v)),
+        ),
         Entry::new(at(169), Rule::Flag(|n, _| n.antimacro = false)),
         Entry::new(
             span(170, 175),
@@ -420,23 +460,20 @@ fn read_index_mask(source: Input<anyhow::Error>, npc: &mut Npc, slot: Slot) -> R
     Ok(())
 }
 
-/// Head-icon table: a bit mask, then per set bit a model id and an icon id.
-/// Nothing is kept.
-fn skip_head_icons(source: Input<anyhow::Error>, _: &mut Npc, _: Slot) -> Result<()> {
-    let mask = source.byte()?;
-    let mut width = 0_u32;
-    let mut rest = mask;
-    while rest != 0 {
-        width += 1;
-        rest >>= 1;
-    }
+/// Head-icon table: a bit mask, then per set bit a sprite group and an icon.
+/// Clear bits stay as `(-1, -1)`.
+fn read_head_icons(source: Input<anyhow::Error>, npc: &mut Npc, _: Slot) -> Result<()> {
+    let mask = u32::from(source.byte()?);
+    let width = u32::BITS - mask.leading_zeros();
+    let mut icons = Vec::with_capacity(width as usize);
     for bit in 0..width {
-        if u32::from(mask) & (1_u32 << bit) == 0 {
-            continue;
-        }
-        let _model = source.smart_id()?;
-        let _icon = source.smart_nullable()?;
+        icons.push(if mask & (1 << bit) == 0 {
+            (-1, -1)
+        } else {
+            (source.smart_id()?, source.smart_nullable()? as i16)
+        });
     }
+    npc.head_icons = Some(icons);
     Ok(())
 }
 
@@ -488,17 +525,6 @@ fn read_model_offsets(source: Input<anyhow::Error>, npc: &mut Npc, _: Slot) -> R
             Some(offset);
     }
     npc.modeloffset = Some(offsets);
-    Ok(())
-}
-
-/// A 16-bit id, or a 31-bit one when the first byte has its top bit set. Unlike
-/// [`Source::smart_id`], 32767 is an ordinary value here.
-fn read_cover_marker(source: Input<anyhow::Error>, npc: &mut Npc, _: Slot) -> Result<()> {
-    npc.covermarker = if (source.peek()? as i8) >= 0 {
-        i32::from(source.short()?)
-    } else {
-        source.int()? & i32::MAX
-    };
     Ok(())
 }
 
