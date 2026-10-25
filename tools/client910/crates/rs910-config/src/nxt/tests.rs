@@ -11,7 +11,6 @@ use super::map_lights::decode_point_lights;
 use super::map_terrain::{decode_terrain, TERRAIN_SIDE};
 use super::map_water::decode_water;
 use super::material::{decode_rt7_extra, Rt7MaterialExtraStore, Rt7TextureRef};
-use super::texture_header::{load_texture_header, PixelFormat, TextureArchive, TextureHeader};
 use super::{MAP_ARCHIVE, TERRAIN_FILE};
 use crate::cache::Pack;
 use crate::test_support::require_pack;
@@ -168,8 +167,8 @@ fn water_decodes_by_hand() {
 // Whole-corpus tests (pack).
 // ---------------------------------------------------------------------------
 
-fn texture_ids(pack: &Pack, archive: TextureArchive) -> BTreeSet<u32> {
-    pack.read_archive_index(archive.name())
+fn texture_ids(pack: &Pack, archive: &str) -> BTreeSet<u32> {
+    pack.read_archive_index(archive)
         .unwrap()
         .group_id
         .into_iter()
@@ -192,10 +191,18 @@ fn rt7_extras_decode_resolve_and_agree_with_the_910_material_store() {
     let pack = require_pack("client.materials.js5");
     let store = Rt7MaterialExtraStore::load(&pack).unwrap();
     assert!(!store.is_empty());
-    let archives: Vec<BTreeSet<u32>> = TextureArchive::ALL
-        .iter()
-        .map(|&a| texture_ids(&pack, a))
-        .collect();
+    use crate::texture::{
+        TEXTURES_DXT_ARCHIVE, TEXTURES_ETC_ARCHIVE, TEXTURES_PNG_ARCHIVE,
+        TEXTURES_PNG_MIPPED_ARCHIVE,
+    };
+    let archives: Vec<BTreeSet<u32>> = [
+        TEXTURES_DXT_ARCHIVE,
+        TEXTURES_PNG_ARCHIVE,
+        TEXTURES_PNG_MIPPED_ARCHIVE,
+        TEXTURES_ETC_ARCHIVE,
+    ]
+    .map(|a| texture_ids(&pack, a))
+    .to_vec();
     let store910 = crate::texture::MaterialStore::load(&pack).unwrap();
     for extra in store.iter() {
         let id = extra.id;
@@ -406,121 +413,6 @@ impl NxtLightRest {
             l.light_type,
         )
     }
-}
-
-/// Every PNG texture header (archive 53) parses: square, one mip, a single
-/// image or a 6-face cube. Every 97th id of the block archives (DXT 52, ETC
-/// 55) matches it: same faces, the DXT and ETC copies the same width, a
-/// full DXT mip chain, ETC2 RGBA8.
-#[test]
-#[cfg_attr(feature = "no-pack", ignore)]
-fn texture_headers_png_corpus_and_a_block_format_sample() {
-    let pack = require_pack("client.textures.png.js5");
-    let png = texture_ids(&pack, TextureArchive::Png);
-    assert!(!png.is_empty());
-    for &id in &png {
-        let h = load_texture_header(&pack, TextureArchive::Png, id).unwrap();
-        assert_eq!((h.width, h.mip_levels), (h.height, 1), "png {id}");
-        assert!(matches!(h.faces, 1 | 6), "png {id}: {} faces", h.faces);
-    }
-    for &id in png.iter().step_by(97) {
-        let png = load_texture_header(&pack, TextureArchive::Png, id).unwrap();
-        let dxt = load_texture_header(&pack, TextureArchive::Dxt, id).unwrap();
-        let etc = load_texture_header(&pack, TextureArchive::Etc, id).unwrap();
-        assert_eq!(
-            (dxt.width, dxt.faces),
-            (etc.width, etc.faces),
-            "texture {id}"
-        );
-        assert_eq!(dxt.faces, png.faces, "texture {id}");
-        assert_eq!(dxt.mip_levels, dxt.width.ilog2() + 1, "texture {id}");
-        assert_eq!(etc.format, PixelFormat::Etc2Rgba8);
-    }
-}
-
-/// The whole-corpus census of archives 52, 54 and 55 (3.7 GB compressed:
-/// minutes at the test profile's opt-level, so it runs on demand with
-/// `--ignored`). Pins every (format, size, mips) class.
-#[test]
-#[ignore = "heavy: decompresses archives 52, 54 and 55 (3.7 GB); run with --ignored"]
-fn texture_headers_block_archive_census() {
-    let pack = require_pack("client.textures.dxt.js5");
-    let png: BTreeSet<u32> = texture_ids(&pack, TextureArchive::Png);
-    let mut classes = BTreeMap::<(TextureArchive, u8, u8, u32), usize>::new();
-    let mut headers = BTreeMap::<(TextureArchive, u32), TextureHeader>::new();
-    for archive in [
-        TextureArchive::Dxt,
-        TextureArchive::PngMipped,
-        TextureArchive::Etc,
-    ] {
-        let ids = texture_ids(&pack, archive);
-        for id in ids {
-            let h = load_texture_header(&pack, archive, id).unwrap();
-            assert!(png.contains(&id));
-            assert_eq!(h.width, h.height, "{archive:?} {id}");
-            assert_eq!(h.mip_levels, h.width.ilog2() + 1, "{archive:?} {id}");
-            let expected_format = match (archive, h.faces) {
-                (TextureArchive::Dxt, 1) => PixelFormat::Dxt5,
-                (TextureArchive::Dxt, _) => PixelFormat::Dxt1,
-                (TextureArchive::Etc, _) => PixelFormat::Etc2Rgba8,
-                _ => h.format,
-            };
-            assert_eq!(h.format, expected_format, "{archive:?} {id}");
-            *classes
-                .entry((archive, h.version, h.faces, h.width))
-                .or_default() += 1;
-            headers.insert((archive, id), h);
-        }
-    }
-    let count = |a| headers.keys().filter(|(x, _)| *x == a).count();
-    assert_eq!(
-        (
-            count(TextureArchive::Dxt),
-            count(TextureArchive::PngMipped),
-            count(TextureArchive::Etc)
-        ),
-        (14_305, 14_253, 14_305)
-    );
-    for ((archive, id), h) in &headers {
-        if *archive != TextureArchive::Dxt {
-            let dxt = headers[&(TextureArchive::Dxt, *id)];
-            assert_eq!(
-                (h.width, h.faces),
-                (dxt.width, dxt.faces),
-                "{archive:?} {id}"
-            );
-        }
-    }
-    // RT7 size codes name the guttered size: width == (64 << k) + 64.
-    let store = Rt7MaterialExtraStore::load(&pack).unwrap();
-    for extra in store.iter() {
-        for r in [extra.diffuse, extra.normal, extra.compound]
-            .into_iter()
-            .flatten()
-        {
-            let dxt = headers[&(TextureArchive::Dxt, r.texture as u32)];
-            assert_eq!(dxt.width, r.size() + 64, "material {}", extra.id);
-        }
-    }
-    // (archive, version, faces, width) -> textures. DXT cubemaps are one
-    // 6-face DDS in a version-1 frame; ETC and PNG cubemaps are 6 frames.
-    let sizes = [64, 128, 192, 256, 320, 576, 1088];
-    let single = [2, 1625, 6415, 12, 3656, 2146, 339];
-    let mipped = [2, 1615, 6410, 12, 3644, 2125, 335];
-    let mut expected = BTreeMap::new();
-    for (archive, version, counts) in [
-        (TextureArchive::Dxt, 1, single),
-        (TextureArchive::Etc, 1, single),
-        (TextureArchive::PngMipped, 1, mipped),
-    ] {
-        for (width, count) in sizes.into_iter().zip(counts) {
-            expected.insert((archive, version, 1, width), count);
-        }
-        let cube_version = if archive == TextureArchive::Dxt { 1 } else { 6 };
-        expected.insert((archive, cube_version, 6, 128), 68);
-        expected.insert((archive, cube_version, 6, 512), 42);
-    }
-    assert_eq!(classes, expected);
 }
 
 // ---------------------------------------------------------------------------

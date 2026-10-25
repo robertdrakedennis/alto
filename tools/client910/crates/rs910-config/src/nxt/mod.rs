@@ -19,7 +19,6 @@
 //! - [`map_environment`]: map file 6 (per-square environment).
 //! - [`map_lights`]: map file 7 (static point lights).
 //! - [`map_water`]: map file 8 (water patches).
-//! - [`texture_header`]: dimensions, format and mip count of archives 52-55.
 //! - [`water_type`]: `WATERTYPE` (config group 76), the types file 8 names.
 //! - [`model_rt7`]: RT7 models (archive 47), the GPU-ready copies of the
 //!   910 models.
@@ -30,7 +29,6 @@ pub mod map_terrain;
 pub mod map_water;
 pub mod material;
 pub mod model_rt7;
-pub mod texture_header;
 pub mod water_type;
 
 #[cfg(test)]
@@ -146,11 +144,6 @@ impl<'a> Cur<'a> {
         let mut array = [0; N];
         array.copy_from_slice(bytes);
         Ok(array)
-    }
-
-    pub(crate) fn skip(&mut self, n: usize, field: &str) -> anyhow::Result<()> {
-        let out = self.reader.skip(n);
-        self.map(field, out)
     }
 
     pub(crate) fn floats<const N: usize>(&mut self, field: &str) -> anyhow::Result<[f32; N]> {
