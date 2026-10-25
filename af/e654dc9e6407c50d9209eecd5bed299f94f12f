@@ -1,0 +1,22 @@
+tools/client910/crates/rs910-config/src/config/obj.rs
+  h_d26e211304196f 26-27,29-34,151-153,202-206,234-237,268,273,323-330,419-422
+tools/client910/crates/rs910-config/src/types910/config_types.rs
+  h_d26e211304196f 9,53-57,59-80
+tools/client910/crates/rs910-config/src/types910/pack_types.rs
+  h_d26e211304196f 7,68-76
+tools/client910/crates/rs910-ui/src/ui_runtime/menu_builder.rs
+  h_d26e211304196f 247-249,257
+tools/client910/tests/phase-g/types-checks.rs
+  h_d26e211304196f 5
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "afe654dc9e6407c50d9209eecd5bed299f94f12f",
+  "prompts": {},
+  "humans": {
+    "h_d26e211304196f": {
+      "author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
