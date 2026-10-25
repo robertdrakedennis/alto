@@ -331,7 +331,7 @@ pub struct TextureStats {
 /// See the module docs.
 pub struct Textures {
     pub layout: wgpu::BindGroupLayout,
-    entries: crate::fast_hash::FastMap<i32, MaterialEntry>,
+    entries: rustc_hash::FxHashMap<i32, MaterialEntry>,
     /// The RT5 maps as texture arrays (group 4 of the model pipelines).
     pub arrays: MaterialArrays,
     /// Whether material `id - 1` has a layer, by index (the draw's hot path

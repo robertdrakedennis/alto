@@ -143,11 +143,11 @@ pub(crate) struct SunCacheGpu {
     pub(crate) draw_classes: Vec<CasterClass>,
     pub(crate) only_classes: Vec<CasterClass>,
     /// The dynamic locs seen: their key and the frame it last changed.
-    pub(crate) dynamic_locs: crate::fast_hash::FastMap<LocSlot, (EntityKey, u64)>,
+    pub(crate) dynamic_locs: rustc_hash::FxHashMap<LocSlot, (EntityKey, u64)>,
     /// The scene those keys belong to (`ModernRenderer::scene_token`).
     pub(crate) scene: Option<(usize, usize)>,
     /// The off-screen casters prepared so far, by scene slot.
-    pub(crate) prepared: crate::fast_hash::FastMap<LocSlot, PreparedCaster>,
+    pub(crate) prepared: rustc_hash::FxHashMap<LocSlot, PreparedCaster>,
     /// Tests: draw every caster into every tile each frame, static and
     /// dynamic in one pass over a cleared atlas (the frame before the
     /// caches).
@@ -213,7 +213,7 @@ fn fingerprint(entity: &crate::models::draw_list::EntityDraw<'_>) -> (usize, i32
 /// Whether the dynamic loc of `key` counts as a dynamic caster this frame
 /// (its model changed within `DYNAMIC_SETTLE` frames), recording its key.
 fn animating(
-    dynamic_locs: &mut crate::fast_hash::FastMap<LocSlot, (EntityKey, u64)>,
+    dynamic_locs: &mut rustc_hash::FxHashMap<LocSlot, (EntityKey, u64)>,
     key: EntityKey,
     now: u64,
 ) -> bool {

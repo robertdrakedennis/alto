@@ -4,12 +4,16 @@
 pub use crate::payload_reader::*;
 
 use super::{
-    crc32, decode_g1_alt1, decode_g1_alt2, decode_g1_alt3, decode_g2_alt2_u16, decode_g4_alt1,
+    decode_g1_alt1, decode_g1_alt2, decode_g1_alt3, decode_g2_alt2_u16, decode_g4_alt1,
     is_telemetry_opcode, parse_audio_event, parse_client_debug_event, parse_environment_override,
     parse_if_setposition, parse_if_setscrollpos, parse_if_settext, parse_runclientscript,
     ActiveBinding, ActiveVariant, InterfaceCoord, UiEvent,
 };
 
+/// Route one server frame to a [`UiEvent`]: `Ok(None)` for non-interface
+/// frames (`REBUILD_NORMAL`/`PLAYER_INFO`/`NO_TIMEOUT`/`SERVER_TICK_END`/
+/// zone/varcache), `Ok(Some(_))` for the UI operations above,
+/// and `Err` for a malformed UI payload. The caller owns error policy.
 pub fn parse_ui_event(opcode: u8, payload: &[u8]) -> anyhow::Result<Option<UiEvent>> {
     if is_telemetry_opcode(opcode) {
         return Ok(Some(UiEvent::Telemetry {
@@ -96,7 +100,7 @@ pub fn parse_ui_event(opcode: u8, payload: &[u8]) -> anyhow::Result<Option<UiEve
         let mut value = [0u8; 24];
         value.copy_from_slice(&payload[..24]);
         let expected = u32::from_be_bytes(payload[24..].try_into().unwrap());
-        let value = (crc32(&value) == expected).then_some(value);
+        let value = (rs910_core::checksum::crc32(&value) == expected).then_some(value);
         return Ok(Some(UiEvent::Uid192 { value }));
     }
     if opcode == crate::proto::server::LAST_LOGIN_INFO {

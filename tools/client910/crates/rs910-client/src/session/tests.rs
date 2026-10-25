@@ -517,7 +517,7 @@ fn parse_ui_event_dispatches_all_live_ops() {
     );
     let uid: [u8; 24] = std::array::from_fn(|index| index as u8 + 1);
     let mut uid_frame = uid.to_vec();
-    uid_frame.extend_from_slice(&crc32(&uid).to_be_bytes());
+    uid_frame.extend_from_slice(&rs910_core::checksum::crc32(&uid).to_be_bytes());
     assert_eq!(
         parse_ui_event(crate::proto::server::UPDATE_UID192, &uid_frame).unwrap(),
         Some(UiEvent::Uid192 { value: Some(uid) })

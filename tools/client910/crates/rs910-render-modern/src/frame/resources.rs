@@ -79,19 +79,19 @@ pub(crate) const PREVIOUS_SCENE_FRAMES: u64 = 300;
 /// they draw as they are.
 #[derive(Default)]
 pub(crate) struct PreviousScene {
-    pub(crate) meshes: crate::fast_hash::FastMap<Placement, StaticModel>,
+    pub(crate) meshes: rustc_hash::FxHashMap<Placement, StaticModel>,
     /// The frame the scene changed.
     pub(crate) since: u64,
     /// The new scene's slots looked up and not found (with the model they
     /// were looked up for).
-    pub(crate) missed: crate::fast_hash::FastMap<LocSlot, (usize, i32, i32)>,
+    pub(crate) missed: rustc_hash::FxHashMap<LocSlot, (usize, i32, i32)>,
 }
 
 /// A hash of what `model`'s mesh is built from: its geometry, normals,
 /// texture coordinates, face colours and materials.
 pub(crate) fn model_content(model: &crate::gpumodel::GpuModel) -> u64 {
     use std::hash::Hasher;
-    let mut h = crate::fast_hash::FastHasher::default();
+    let mut h = rustc_hash::FxHasher::default();
     h.write_u64(model.unique_count as u64);
     h.write_u64(model.face_count as u64);
     h.write_u64(model.draw_face_count as u64);

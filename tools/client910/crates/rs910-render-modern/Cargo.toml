@@ -32,6 +32,8 @@ bytemuck = { version = "1", features = ["derive"] }
 glam = "0.27"
 log = "0.4"
 wgpu = "30"
+half = "2"
+rustc-hash = "1"
 
 [dev-dependencies]
 rs910-symbols = { path = "../rs910-symbols" }

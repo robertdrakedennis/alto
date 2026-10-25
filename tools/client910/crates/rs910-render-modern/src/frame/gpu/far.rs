@@ -2734,7 +2734,7 @@ fn light_identities(lights: &[rs910_scene::env::StaticLight], base: [i32; 2]) ->
     lights
         .iter()
         .map(|l| {
-            let mut h = crate::fast_hash::FastHasher::default();
+            let mut h = rustc_hash::FxHasher::default();
             for word in [
                 i32::from(l.level),
                 i32::from(l.above),
@@ -2803,7 +2803,7 @@ fn ext_loc_identity<'a>(
     draws: &mut Vec<crate::models::draw_list::EntityDraw<'a>>,
 ) -> (u64, Option<(u32, i32)>) {
     use std::hash::Hasher;
-    let mut h = crate::fast_hash::FastHasher::default();
+    let mut h = rustc_hash::FxHasher::default();
     let source = live
         .entities
         .get(eid)

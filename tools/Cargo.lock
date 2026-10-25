@@ -2156,6 +2156,7 @@ dependencies = [
  "bytemuck",
  "foldhash",
  "glam",
+ "half",
  "log",
  "pollster",
  "rs910-config",
@@ -2168,6 +2169,7 @@ dependencies = [
  "rs910-scene",
  "rs910-symbols",
  "rs910-toolkit",
+ "rustc-hash",
  "wgpu",
 ]
 

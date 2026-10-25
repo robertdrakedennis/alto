@@ -24,15 +24,15 @@ pub(crate) struct Prebuilt {
 /// This frame's meshes built ahead, by loc slot.
 #[derive(Default)]
 pub(crate) struct Prebuilds {
-    pending: crate::fast_hash::FastMap<LocSlot, Pending>,
+    pending: rustc_hash::FxHashMap<LocSlot, Pending>,
     generation: std::sync::Arc<std::sync::atomic::AtomicU64>,
     sources: std::sync::Arc<crate::models::rt7::StreamSources>,
     materials: Option<std::sync::Arc<crate::texture::MaterialStore>>,
     pub(crate) uploads: crate::streaming::UploadBudget,
     pub(crate) sync: bool,
-    ready: crate::fast_hash::FastMap<LocSlot, Prebuilt>,
+    ready: rustc_hash::FxHashMap<LocSlot, Prebuilt>,
     /// Slots requested by earlier passes this frame, with visible draws first.
-    requested: crate::fast_hash::FastMap<LocSlot, ()>,
+    requested: rustc_hash::FxHashMap<LocSlot, ()>,
     /// Meshes built ahead and taken by their draws so far (tests).
     pub(crate) taken: u64,
 }

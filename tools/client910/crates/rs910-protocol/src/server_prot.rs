@@ -806,15 +806,6 @@ pub fn is_telemetry_opcode(opcode: u8) -> bool {
     )
 }
 
-/// Route one server frame to a [`UiEvent`]: `Ok(None)` for non-interface
-/// frames (`REBUILD_NORMAL`/`PLAYER_INFO`/`NO_TIMEOUT`/`SERVER_TICK_END`/
-/// zone/varcache), `Ok(Some(_))` for the UI operations above,
-/// and `Err` for a malformed UI payload. The caller owns error policy.
-pub fn crc32(data: &[u8]) -> u32 {
-    // The IEEE CRC-32 lives in rs910-core.
-    rs910_core::checksum::crc32(data)
-}
-
 /// Debug/transport packets that are not interface
 /// updates: `REFLECTION_CHECKER`, `JS5_RELOAD`, `EXECUTE_CLIENT_CHEAT`,
 /// `DO_CHEAT`, `DEBUG_SERVER_TRIGGERS` and the two table entries that are

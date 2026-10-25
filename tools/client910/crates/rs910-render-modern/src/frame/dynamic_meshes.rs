@@ -23,7 +23,7 @@ struct Entry {
 }
 #[derive(Default)]
 pub(crate) struct DynamicMeshes {
-    meshes: crate::fast_hash::FastMap<MeshKey, Entry>,
+    meshes: rustc_hash::FxHashMap<MeshKey, Entry>,
 }
 
 pub(crate) struct MeshInput<'a> {

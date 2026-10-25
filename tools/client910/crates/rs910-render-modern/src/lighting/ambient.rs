@@ -296,25 +296,6 @@ pub fn texel_byte_colour(hdr: [f32; 3]) -> [f32; 3] {
     crate::post::tone_map::display_colour(hdr).map(|c| (c.clamp(0.0, 1.0) * 255.0).round() / 256.0)
 }
 
-/// An IEEE half float's value.
-#[must_use]
-pub fn half_to_f32(bits: u16) -> f32 {
-    let sign = if bits & 0x8000 != 0 { -1.0 } else { 1.0 };
-    let exp = i32::from((bits >> 10) & 0x1f);
-    let frac = f32::from(bits & 0x3ff);
-    match exp {
-        0 => sign * frac * 2f32.powi(-24),
-        31 => {
-            if frac == 0.0 {
-                sign * f32::INFINITY
-            } else {
-                f32::NAN
-            }
-        }
-        _ => sign * (1.0 + frac / 1024.0) * 2f32.powi(exp - 15),
-    }
-}
-
 /// One captured face from its readback: `size * size` RGBA half-float texels
 /// (`bytes`, row-major, `row_bytes` per row) as [`texel_byte_colour`]s.
 #[must_use]
@@ -323,7 +304,7 @@ pub fn face_from_rgba16f(bytes: &[u8], row_bytes: usize, size: usize) -> Vec<[f3
     for j in 0..size {
         let row = &bytes[j * row_bytes..j * row_bytes + size * 8];
         for texel in row.chunks_exact(8) {
-            let c = |k: usize| half_to_f32(u16::from_le_bytes([texel[2 * k], texel[2 * k + 1]]));
+            let c = |k: usize| half::f16::from_le_bytes([texel[2 * k], texel[2 * k + 1]]).to_f32();
             out.push(texel_byte_colour([c(0), c(1), c(2)]));
         }
     }

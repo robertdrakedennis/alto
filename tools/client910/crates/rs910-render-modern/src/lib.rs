@@ -40,7 +40,6 @@
 pub mod atmosphere;
 pub mod device_features;
 pub(crate) mod far;
-pub(crate) mod fast_hash;
 pub mod frame;
 pub mod lighting;
 pub mod models;

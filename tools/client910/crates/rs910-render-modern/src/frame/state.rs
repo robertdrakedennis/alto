@@ -39,7 +39,7 @@ pub(crate) struct SceneResources {
     pub(crate) lights: PointLightGpu,
     pub(crate) floors: Vec<Option<TerrainPatch>>,
     /// The loc meshes, one per scene slot (`resources`).
-    pub(crate) statics: crate::fast_hash::FastMap<LocSlot, StaticModel>,
+    pub(crate) statics: rustc_hash::FxHashMap<LocSlot, StaticModel>,
     /// The previous scene's, until the new scene takes them over.
     pub(crate) previous: crate::frame::resources::PreviousScene,
     /// Actor and attachment geometry retained by authoritative scene revision.
