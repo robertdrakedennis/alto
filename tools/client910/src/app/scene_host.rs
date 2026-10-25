@@ -1307,7 +1307,7 @@ impl ViewerApp {
         let anticheat = self.minimap.anticheat_angle;
         let (map_angle, compass_yaw, overlay_angle) = match cam2_yaw {
             Some(yaw) => {
-                let units = (f64::from(yaw) * 2607.5945876176133) as i32;
+                let units = (f64::from(yaw) * rs910_core::trig::UNITS_PER_RADIAN) as i32;
                 (
                     (-units + anticheat) & 0x3FFF,
                     -units,

@@ -93,7 +93,8 @@ pub fn ground(
         .map_err(|error| anyhow::anyhow!("player footprint height: {error:?}"))?;
     }
     let angle = |a: i32, b: i32, limit: i32| {
-        let mut v = ((a as f64).atan2(b as f64) * 2607.5945876176133) as i32 & 16383;
+        let mut v =
+            ((a as f64).atan2(b as f64) * rs910_core::trig::UNITS_PER_RADIAN) as i32 & 16383;
         if v != 0 && limit != 0 {
             if v > 8192 {
                 v = v.max(16384i32.wrapping_sub(limit));

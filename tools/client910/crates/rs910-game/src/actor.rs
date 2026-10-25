@@ -239,7 +239,7 @@ fn wear_angle(e: &mut Player, b: &Bas, slots: usize, slot: usize, target: i32) -
     Ok(true)
 }
 fn atan(x: i32, z: i32) -> i32 {
-    ((x as f64).atan2(z as f64) * 2607.5945876176133) as i32 & 16383
+    ((x as f64).atan2(z as f64) * rs910_core::trig::UNITS_PER_RADIAN) as i32 & 16383
 }
 fn wear(
     e: &mut Player,

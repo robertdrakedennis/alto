@@ -53,9 +53,11 @@ pub(crate) fn length(v: [f32; 3]) -> f32 {
 fn pan(delta: [f32; 3], distance: f32, ctx: &AdjustContext) -> i32 {
     let mut pan = 8192;
     if delta[0] != 0.0 || delta[2] != 0.0 {
-        let angle = (f64::from(delta[0]).atan2(f64::from(delta[2])) * 2607.5945876176133) as i32;
+        let angle = (f64::from(delta[0]).atan2(f64::from(delta[2]))
+            * rs910_core::trig::UNITS_PER_RADIAN) as i32;
         let mut relative = if ctx.camera_state == 3 {
-            ((f64::from(-ctx.cam2_yaw) * 2607.5945876176133) as i32 - angle - 4096) & 0x3FFF
+            ((f64::from(-ctx.cam2_yaw) * rs910_core::trig::UNITS_PER_RADIAN) as i32 - angle - 4096)
+                & 0x3FFF
         } else {
             (-ctx.camera_yaw - angle - 4096) & 0x3FFF
         };

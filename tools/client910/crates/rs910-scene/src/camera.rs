@@ -647,7 +647,7 @@ impl SceneCamera {
         }
         if let Some(c) = &self.cam2 {
             // Radians to 14-bit angle units (16384 / 2π = 2607.59...).
-            return (f64::from(c.pitch) * 2607.5945876176133) as i32 & 0x3FFF;
+            return (f64::from(c.pitch) * rs910_core::trig::UNITS_PER_RADIAN) as i32 & 0x3FFF;
         }
         self.pitch.clamp(ORBIT_PITCH_MIN, ORBIT_PITCH_MAX) as i32
     }
@@ -660,7 +660,7 @@ impl SceneCamera {
         }
         if let Some(c) = &self.cam2 {
             // Radians to 14-bit angle units.
-            return (f64::from(c.yaw) * 2607.5945876176133) as i32 & 0x3FFF;
+            return (f64::from(c.yaw) * rs910_core::trig::UNITS_PER_RADIAN) as i32 & 0x3FFF;
         }
         (self.yaw as i32) & 0x3FFF
     }

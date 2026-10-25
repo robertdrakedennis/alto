@@ -122,7 +122,7 @@ pub fn random_unit() -> f64 {
 }
 
 /// Angle units (16384 per turn) per radian, for the classic camera angles.
-pub(super) const ANGLE_UNITS_PER_RADIAN: f64 = 2607.5945876176133;
+pub(super) const ANGLE_UNITS_PER_RADIAN: f64 = rs910_core::trig::UNITS_PER_RADIAN;
 
 impl LegacyCamera {
     /// The shared part of a camera reset and a smooth reset: modifiers off, spline

@@ -11,6 +11,9 @@ use std::sync::OnceLock;
 /// Table step: `2π / 16384`, as the exact double literal.
 pub const STEP: f64 = 3.834_951_969_714_103E-4;
 
+/// Angle units per radian: `16384 / 2π`.
+pub const UNITS_PER_RADIAN: f64 = 2_607.594_587_617_613_3;
+
 struct Tables {
     sin: Vec<i32>,
     cos: Vec<i32>,

@@ -54,7 +54,7 @@ pub const MODE_ENTITY: i32 = 1;
 pub const MODE_ORIENTATION: i32 = 3;
 
 /// Angle units (16384 per turn) per radian.
-const RADIANS_TO_UNITS: f64 = 2607.5945876176133;
+const RADIANS_TO_UNITS: f64 = rs910_core::trig::UNITS_PER_RADIAN;
 
 /// Private object-stack representation of coordinate values.
 ///

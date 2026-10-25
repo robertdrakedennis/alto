@@ -387,7 +387,7 @@ impl PlayerBodies {
                     if distance < 262_144 || distance > range {
                         continue;
                     }
-                    let turn = ((dx as f64).atan2(dz as f64) * 2607.5945876176133
+                    let turn = ((dx as f64).atan2(dz as f64) * rs910_core::trig::UNITS_PER_RADIAN
                         - f64::from(angle)) as i32
                         & 0x3FFF;
                     if let Some(model) = self.hint_arrow_models.get(

@@ -364,7 +364,7 @@ impl GpuModel {
         let low_x_edge = h00.min(h01);
         if depth != 0 {
             let mut pitch = (f64::from(low_z_edge - high_z_edge).atan2(f64::from(depth))
-                * 2607.5945876176133) as i32
+                * rs910_core::trig::UNITS_PER_RADIAN) as i32
                 & 0x3FFF;
             if pitch != 0 {
                 if pitch_limit != 0 {
@@ -382,7 +382,7 @@ impl GpuModel {
         }
         if width != 0 {
             let mut roll = (f64::from(low_x_edge - high_x_edge).atan2(f64::from(width))
-                * 2607.5945876176133) as i32
+                * rs910_core::trig::UNITS_PER_RADIAN) as i32
                 & 0x3FFF;
             if roll != 0 {
                 if roll_limit != 0 {

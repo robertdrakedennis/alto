@@ -1911,12 +1911,14 @@ impl Emitter {
             n = n.map(|v| v * 32767 / len);
             self.normal = n;
             if ty.yaw_max > 0 || ty.pitch_max > 0 {
-                let yaw = (f64::from(n[2]).atan2(f64::from(n[0])) * 2607.5945876176133) as i32;
+                let yaw = (f64::from(n[2]).atan2(f64::from(n[0]))
+                    * rs910_core::trig::UNITS_PER_RADIAN) as i32;
                 let flat = f64::from(
                     n[2].wrapping_mul(n[2])
                         .wrapping_add(n[0].wrapping_mul(n[0])),
                 );
-                let pitch = (f64::from(n[1]).atan2(flat.sqrt()) * 2607.5945876176133) as i32;
+                let pitch = (f64::from(n[1]).atan2(flat.sqrt())
+                    * rs910_core::trig::UNITS_PER_RADIAN) as i32;
                 self.yaw_range = i32::from(ty.yaw_max) - i32::from(ty.yaw_min);
                 self.yaw_base = i32::from(ty.yaw_min) + yaw - (self.yaw_range >> 1);
                 self.pitch_range = i32::from(ty.pitch_max) - i32::from(ty.pitch_min);

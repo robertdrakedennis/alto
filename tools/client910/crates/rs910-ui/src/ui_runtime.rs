@@ -1213,7 +1213,8 @@ impl Runtime {
                     ],
                     player_size: self.engine.camera.cam2.scene.local_size,
                     camera_state: self.engine.camera.cam2.camera_state,
-                    camera_yaw: (f64::from(self.engine.camera.cam2.yaw()) * 2607.594587617613)
+                    camera_yaw: (f64::from(self.engine.camera.cam2.yaw())
+                        * rs910_core::trig::UNITS_PER_RADIAN)
                         as i32,
                     orbit_yaw: self.engine.minimap.orbit_yaw,
                     anticheat_angle: self.engine.minimap.angle,

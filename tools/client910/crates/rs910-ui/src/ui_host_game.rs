@@ -398,7 +398,7 @@ impl State {
         let dy = -(look[1] - eye[1]);
         let dz = look[2] - eye[2];
         let horizontal = f64::from(dx * dx + dz * dz).sqrt();
-        const UNITS: f64 = 2607.5945876176133;
+        const UNITS: f64 = rs910_core::trig::UNITS_PER_RADIAN;
         let pitch = ((f64::from(dy).atan2(horizontal) * UNITS) as i32) & 0x3FFF;
         let yaw = ((-f64::from(dx).atan2(f64::from(dz)) * UNITS) as i32) & 0x3FFF;
         let roll_row = |row: usize| -> anyhow::Result<i32> {
@@ -1136,7 +1136,7 @@ fn run(
         }
         "cam_getangle_xa" => int(engine.game_host.orbit_pitch as i32 >> 3),
         "cam_getangle_ya" => int(if engine.camera.cam2.camera_state == 3 {
-            (f64::from(engine.camera.cam2.yaw()) * 2607.5945876176133) as i32 >> 3
+            (f64::from(engine.camera.cam2.yaw()) * rs910_core::trig::UNITS_PER_RADIAN) as i32 >> 3
         } else {
             engine.game_host.orbit_yaw as i32 >> 3
         }),

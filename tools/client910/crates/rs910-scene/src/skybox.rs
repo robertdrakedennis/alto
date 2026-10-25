@@ -145,10 +145,12 @@ impl SkyboxDecor {
             fitted_size = 512;
         }
         self.sprite_size = fitted_size;
-        self.pitch =
-            ((f64::from(dir_y as f32 / 256.0)).asin() * 2607.5945876176133) as i32 & 0x3FFF;
-        self.yaw =
-            ((f64::from(dir_x)).atan2(f64::from(-dir_z)) * 2607.5945876176133) as i32 & 0x3FFF;
+        self.pitch = ((f64::from(dir_y as f32 / 256.0)).asin() * rs910_core::trig::UNITS_PER_RADIAN)
+            as i32
+            & 0x3FFF;
+        self.yaw = ((f64::from(dir_x)).atan2(f64::from(-dir_z))
+            * rs910_core::trig::UNITS_PER_RADIAN) as i32
+            & 0x3FFF;
         true
     }
 }

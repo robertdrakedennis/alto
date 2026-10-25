@@ -312,7 +312,7 @@ pub fn advance_facing(
         if x != 0 || z != 0 {
             turn(
                 &mut e,
-                ((x as f64).atan2(z as f64) * 2607.5945876176133) as i32 & 16383,
+                ((x as f64).atan2(z as f64) * rs910_core::trig::UNITS_PER_RADIAN) as i32 & 16383,
                 c,
             )
         }
@@ -329,7 +329,7 @@ pub fn advance_facing(
         if x != 0 || z != 0 {
             turn(
                 &mut e,
-                ((x as f64).atan2(z as f64) * 2607.5945876176133) as i32 & 16383,
+                ((x as f64).atan2(z as f64) * rs910_core::trig::UNITS_PER_RADIAN) as i32 & 16383,
                 c,
             )
         }

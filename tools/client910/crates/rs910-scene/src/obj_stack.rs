@@ -62,7 +62,8 @@ pub fn tilt(radius: i32, ground: i32, height: impl Fn(i32, i32) -> i32) -> Tilt 
     let north_west = height(lo, hi);
     let north_east = height(hi, hi);
     let angle = |a: i32, b: i32| {
-        ((f64::from(a - b).atan2(f64::from(span)) * 2607.5945876176133) as i32) & 0x3fff
+        ((f64::from(a - b).atan2(f64::from(span)) * rs910_core::trig::UNITS_PER_RADIAN) as i32)
+            & 0x3fff
     };
     let (pitch, roll) = if span != 0 {
         (
