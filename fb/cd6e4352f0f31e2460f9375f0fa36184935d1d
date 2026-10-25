@@ -1,0 +1,25 @@
+tools/client910/crates/rs910-model/src/mesh_billboards.rs
+  s_134732bba6237a::t_7705a1c54b811c 95-182
+tools/client910/crates/rs910-render-gpu/src/billboard_render.rs
+  s_134732bba6237a::t_f27d53d707476c 120,122,125,127-128,134
+tools/client910/crates/rs910-render-modern/src/sprites/billboards.rs
+  s_134732bba6237a::t_43ab14a530f7dc 45,85,179,181-183,186
+tools/client910/crates/rs910-scene/src/draw.rs
+  s_134732bba6237a::t_c52c405c9482f6 581,770
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "fbcd6e4352f0f31e2460f9375f0fa36184935d1d",
+  "prompts": {},
+  "sessions": {
+    "s_134732bba6237a": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "34330542-161b-41ea-85b3-c403b99ea804",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
