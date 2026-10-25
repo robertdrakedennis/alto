@@ -78,406 +78,96 @@ impl HardShadow {
         self.data.fill(0);
     }
 
-    /// Fixed-point (16.16)
-    /// scanline rasteriser. Argument order is the three **y**s then the
-    /// three **x**s. Rows are filled with [`fill_span`] at `width * y`.
-    /// Every branch of the original is kept; only the loop shape is rewritten
-    /// (`while(true){ n--; if (n < 0) {...} }` → counted loops).
-    #[allow(clippy::too_many_lines, clippy::cognitive_complexity)]
-    pub fn raster_triangle(
-        &mut self,
-        mut y0: i32,
-        mut y1: i32,
-        mut y2: i32,
-        x0: i32,
-        x1: i32,
-        x2: i32,
-    ) {
+    /// Fixed-point (16.16) scanline rasteriser. Argument order is the three
+    /// **y**s then the three **x**s. Rows are filled with [`fill_span`] at
+    /// `width * y`; rows above 0 are clipped.
+    pub fn raster_triangle(&mut self, y0: i32, y1: i32, y2: i32, x0: i32, x1: i32, x2: i32) {
         // Edge slopes, 16.16 dx/dy.
-        let mut s01 = 0;
-        if y0 != y1 {
-            s01 = ((x1 - x0) << 16) / (y1 - y0);
-        }
-        let mut s12 = 0;
-        if y1 != y2 {
-            s12 = ((x2 - x1) << 16) / (y2 - y1);
-        }
-        let mut s20 = 0;
-        if y0 != y2 {
-            s20 = ((x0 - x2) << 16) / (y0 - y2);
-        }
-        let w = self.width;
-        let data = &mut self.data;
+        let slope = |xa: i32, ya: i32, xb: i32, yb: i32| {
+            if ya == yb {
+                0
+            } else {
+                ((xb - xa) << 16) / (yb - ya)
+            }
+        };
+        let (s01, s12, s20) = (
+            slope(x0, y0, x1, y1),
+            slope(x1, y1, x2, y2),
+            slope(x2, y2, x0, y0),
+        );
+        // Each vertex order keeps its own rule for which side the long edge
+        // takes when slopes tie (`flat`: the clipped top and middle rows
+        // coincide).
         if y0 <= y1 && y0 <= y2 {
             if y1 < y2 {
-                // Y0 top, y1 middle, y2 bottom.
-                let mut xa = x0 << 16; // long edge 0->2
-                let mut xb = x0 << 16; // edge 0->1
-                if y0 < 0 {
-                    xa -= y0 * s20;
-                    xb -= y0 * s01;
-                    y0 = 0;
-                }
-                let mut xc = x1 << 16; // edge 1->2
-                if y1 < 0 {
-                    xc -= y1 * s12;
-                    y1 = 0;
-                }
-                if (y0 == y1 || s20 >= s01) && (y0 != y1 || s20 <= s12) {
-                    let mut lower = y2 - y1;
-                    let mut upper = y1 - y0;
-                    let mut row = w * y0;
-                    loop {
-                        upper -= 1;
-                        if upper < 0 {
-                            loop {
-                                lower -= 1;
-                                if lower < 0 {
-                                    return;
-                                }
-                                fill_span(data, row, xc >> 16, xa >> 16);
-                                xa += s20;
-                                xc += s12;
-                                row += w;
-                            }
-                        }
-                        fill_span(data, row, xb >> 16, xa >> 16);
-                        xa += s20;
-                        xb += s01;
-                        row += w;
-                    }
-                } else {
-                    let mut lower = y2 - y1;
-                    let mut upper = y1 - y0;
-                    let mut row = w * y0;
-                    loop {
-                        upper -= 1;
-                        if upper < 0 {
-                            loop {
-                                lower -= 1;
-                                if lower < 0 {
-                                    return;
-                                }
-                                fill_span(data, row, xa >> 16, xc >> 16);
-                                xa += s20;
-                                xc += s12;
-                                row += w;
-                            }
-                        }
-                        fill_span(data, row, xa >> 16, xb >> 16);
-                        xa += s20;
-                        xb += s01;
-                        row += w;
-                    }
-                }
+                self.raster_sorted([y0, y1, y2], [x0, x1], [s01, s12, s20], |flat| {
+                    (flat || s20 >= s01) && (!flat || s20 <= s12)
+                });
             } else {
-                // Y0 top, y2 middle, y1 bottom.
-                let mut xa = x0 << 16; // edge 0->2
-                let mut xb = x0 << 16; // long edge 0->1
-                if y0 < 0 {
-                    xa -= y0 * s20;
-                    xb -= y0 * s01;
-                    y0 = 0;
-                }
-                let mut xc = x2 << 16; // edge 2->1
-                if y2 < 0 {
-                    xc -= y2 * s12;
-                    y2 = 0;
-                }
-                if (y0 == y2 || s20 >= s01) && (y0 != y2 || s12 <= s01) {
-                    let mut lower = y1 - y2;
-                    let mut upper = y2 - y0;
-                    let mut row = w * y0;
-                    loop {
-                        upper -= 1;
-                        if upper < 0 {
-                            loop {
-                                lower -= 1;
-                                if lower < 0 {
-                                    return;
-                                }
-                                fill_span(data, row, xb >> 16, xc >> 16);
-                                xc += s12;
-                                xb += s01;
-                                row += w;
-                            }
-                        }
-                        fill_span(data, row, xb >> 16, xa >> 16);
-                        xa += s20;
-                        xb += s01;
-                        row += w;
-                    }
-                } else {
-                    let mut lower = y1 - y2;
-                    let mut upper = y2 - y0;
-                    let mut row = w * y0;
-                    loop {
-                        upper -= 1;
-                        if upper < 0 {
-                            loop {
-                                lower -= 1;
-                                if lower < 0 {
-                                    return;
-                                }
-                                fill_span(data, row, xc >> 16, xb >> 16);
-                                xc += s12;
-                                xb += s01;
-                                row += w;
-                            }
-                        }
-                        fill_span(data, row, xa >> 16, xb >> 16);
-                        xa += s20;
-                        xb += s01;
-                        row += w;
-                    }
-                }
+                self.raster_sorted([y0, y2, y1], [x0, x2], [s20, s12, s01], |flat| {
+                    (!flat && s20 < s01) || (flat && s12 > s01)
+                });
             }
         } else if y1 <= y2 {
             if y2 < y0 {
-                // Y1 top, y2 middle, y0 bottom.
-                let mut xa = x1 << 16; // long edge 1->0
-                let mut xb = x1 << 16; // edge 1->2
-                if y1 < 0 {
-                    xa -= y1 * s01;
-                    xb -= y1 * s12;
-                    y1 = 0;
-                }
-                let mut xc = x2 << 16; // edge 2->0
-                if y2 < 0 {
-                    xc -= y2 * s20;
-                    y2 = 0;
-                }
-                if (y1 != y2 && s01 < s12) || (y1 == y2 && s01 > s20) {
-                    let mut lower = y0 - y2;
-                    let mut upper = y2 - y1;
-                    let mut row = w * y1;
-                    loop {
-                        upper -= 1;
-                        if upper < 0 {
-                            loop {
-                                lower -= 1;
-                                if lower < 0 {
-                                    return;
-                                }
-                                fill_span(data, row, xa >> 16, xc >> 16);
-                                xa += s01;
-                                xc += s20;
-                                row += w;
-                            }
-                        }
-                        fill_span(data, row, xa >> 16, xb >> 16);
-                        xa += s01;
-                        xb += s12;
-                        row += w;
-                    }
-                } else {
-                    let mut lower = y0 - y2;
-                    let mut upper = y2 - y1;
-                    let mut row = w * y1;
-                    loop {
-                        upper -= 1;
-                        if upper < 0 {
-                            loop {
-                                lower -= 1;
-                                if lower < 0 {
-                                    return;
-                                }
-                                fill_span(data, row, xc >> 16, xa >> 16);
-                                xa += s01;
-                                xc += s20;
-                                row += w;
-                            }
-                        }
-                        fill_span(data, row, xb >> 16, xa >> 16);
-                        xa += s01;
-                        xb += s12;
-                        row += w;
-                    }
-                }
+                self.raster_sorted([y1, y2, y0], [x1, x2], [s12, s20, s01], |flat| {
+                    !((!flat && s01 < s12) || (flat && s01 > s20))
+                });
             } else {
-                // Y1 top, y0 middle, y2 bottom.
-                let mut xa = x1 << 16; // edge 1->0
-                let mut xb = x1 << 16; // long edge 1->2
-                if y1 < 0 {
-                    xa -= y1 * s01;
-                    xb -= y1 * s12;
-                    y1 = 0;
-                }
-                let mut xc = x0 << 16; // edge 0->2
-                if y0 < 0 {
-                    xc -= y0 * s20;
-                    y0 = 0;
-                }
-                if s01 < s12 {
-                    let mut lower = y2 - y0;
-                    let mut upper = y0 - y1;
-                    let mut row = w * y1;
-                    loop {
-                        upper -= 1;
-                        if upper < 0 {
-                            loop {
-                                lower -= 1;
-                                if lower < 0 {
-                                    return;
-                                }
-                                fill_span(data, row, xc >> 16, xb >> 16);
-                                xc += s20;
-                                xb += s12;
-                                row += w;
-                            }
-                        }
-                        fill_span(data, row, xa >> 16, xb >> 16);
-                        xa += s01;
-                        xb += s12;
-                        row += w;
-                    }
-                } else {
-                    let mut lower = y2 - y0;
-                    let mut upper = y0 - y1;
-                    let mut row = w * y1;
-                    loop {
-                        upper -= 1;
-                        if upper < 0 {
-                            loop {
-                                lower -= 1;
-                                if lower < 0 {
-                                    return;
-                                }
-                                fill_span(data, row, xb >> 16, xc >> 16);
-                                xc += s20;
-                                xb += s12;
-                                row += w;
-                            }
-                        }
-                        fill_span(data, row, xb >> 16, xa >> 16);
-                        xa += s01;
-                        xb += s12;
-                        row += w;
-                    }
-                }
+                self.raster_sorted([y1, y0, y2], [x1, x0], [s01, s20, s12], |_| s01 < s12);
             }
         } else if y0 < y1 {
-            // Y2 top, y0 middle, y1 bottom.
-            let mut xa = x2 << 16; // long edge 2->1
-            let mut xb = x2 << 16; // edge 2->0
-            if y2 < 0 {
-                xa -= y2 * s12;
-                xb -= y2 * s20;
-                y2 = 0;
-            }
-            let mut xc = x0 << 16; // edge 0->1
-            if y0 < 0 {
-                xc -= y0 * s01;
-                y0 = 0;
-            }
-            if s12 < s20 {
-                let mut lower = y1 - y0;
-                let mut upper = y0 - y2;
-                let mut row = w * y2;
-                loop {
-                    upper -= 1;
-                    if upper < 0 {
-                        loop {
-                            lower -= 1;
-                            if lower < 0 {
-                                return;
-                            }
-                            fill_span(data, row, xa >> 16, xc >> 16);
-                            xa += s12;
-                            xc += s01;
-                            row += w;
-                        }
-                    }
-                    fill_span(data, row, xa >> 16, xb >> 16);
-                    xa += s12;
-                    xb += s20;
-                    row += w;
-                }
-            } else {
-                let mut lower = y1 - y0;
-                let mut upper = y0 - y2;
-                let mut row = w * y2;
-                loop {
-                    upper -= 1;
-                    if upper < 0 {
-                        loop {
-                            lower -= 1;
-                            if lower < 0 {
-                                return;
-                            }
-                            fill_span(data, row, xc >> 16, xa >> 16);
-                            xa += s12;
-                            xc += s01;
-                            row += w;
-                        }
-                    }
-                    fill_span(data, row, xb >> 16, xa >> 16);
-                    xa += s12;
-                    xb += s20;
-                    row += w;
-                }
-            }
+            self.raster_sorted([y2, y0, y1], [x2, x0], [s20, s01, s12], |_| s12 >= s20);
         } else {
-            // Y2 top, y1 middle, y0 bottom.
-            let mut xa = x2 << 16; // edge 2->1
-            let mut xb = x2 << 16; // long edge 2->0
-            if y2 < 0 {
-                xa -= y2 * s12;
-                xb -= y2 * s20;
-                y2 = 0;
-            }
-            let mut xc = x1 << 16; // edge 1->0
-            if y1 < 0 {
-                xc -= y1 * s01;
-                y1 = 0;
-            }
-            if s12 < s20 {
-                let mut lower = y0 - y1;
-                let mut upper = y1 - y2;
-                let mut row = w * y2;
-                loop {
-                    upper -= 1;
-                    if upper < 0 {
-                        loop {
-                            lower -= 1;
-                            if lower < 0 {
-                                return;
-                            }
-                            fill_span(data, row, xc >> 16, xb >> 16);
-                            xc += s01;
-                            xb += s20;
-                            row += w;
-                        }
-                    }
-                    fill_span(data, row, xa >> 16, xb >> 16);
-                    xa += s12;
-                    xb += s20;
-                    row += w;
-                }
+            self.raster_sorted([y2, y1, y0], [x2, x1], [s12, s01, s20], |_| s12 < s20);
+        }
+    }
+
+    /// Fill the triangle with vertices sorted top, middle, bottom (`ys`;
+    /// `xs` of the top and middle) from its top-middle, middle-bottom and
+    /// top-bottom slopes. `long_right(flat)` says whether the long
+    /// top-bottom edge bounds the spans on the right.
+    fn raster_sorted(
+        &mut self,
+        [mut top, mut middle, bottom]: [i32; 3],
+        [top_x, middle_x]: [i32; 2],
+        [s_top_middle, s_middle_bottom, s_long]: [i32; 3],
+        long_right: impl FnOnce(bool) -> bool,
+    ) {
+        let mut long = top_x << 16;
+        let mut short = top_x << 16;
+        if top < 0 {
+            long -= top * s_long;
+            short -= top * s_top_middle;
+            top = 0;
+        }
+        let mut lower = middle_x << 16;
+        if middle < 0 {
+            lower -= middle * s_middle_bottom;
+            middle = 0;
+        }
+        let right = long_right(top == middle);
+        let w = self.width;
+        let data = &mut self.data;
+        let mut span = |row: i32, edge: i32, long: i32| {
+            if right {
+                fill_span(data, row, edge >> 16, long >> 16);
             } else {
-                let mut lower = y0 - y1;
-                let mut upper = y1 - y2;
-                let mut row = w * y2;
-                loop {
-                    upper -= 1;
-                    if upper < 0 {
-                        loop {
-                            lower -= 1;
-                            if lower < 0 {
-                                return;
-                            }
-                            fill_span(data, row, xb >> 16, xc >> 16);
-                            xc += s01;
-                            xb += s20;
-                            row += w;
-                        }
-                    }
-                    fill_span(data, row, xb >> 16, xa >> 16);
-                    xa += s12;
-                    xb += s20;
-                    row += w;
-                }
+                fill_span(data, row, long >> 16, edge >> 16);
             }
+        };
+        let mut row = w * top;
+        for _ in top..middle {
+            span(row, short, long);
+            long += s_long;
+            short += s_top_middle;
+            row += w;
+        }
+        for _ in middle..bottom {
+            span(row, lower, long);
+            long += s_long;
+            lower += s_middle_bottom;
+            row += w;
         }
     }
 }
