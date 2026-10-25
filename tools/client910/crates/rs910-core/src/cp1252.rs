@@ -1,129 +1,40 @@
-//! The client's Windows-1252
-//! byte <-> UTF-16 unit mapping, one copy for the whole client (Phase 2.1).
-//!
-//! - [`cp1252_decode_byte`]: decode one byte
-//!   (exact: the five bytes the client leaves unassigned decode to `?`).
-//!   It replaced `session::cp1252_byte` and the inline table of
-//!   `protocol910`'s `Packet::string` (both identical on all 256 bytes).
-//! - [`cp1252_encode_unit`]: encode one UTF-16 unit. It
-//!   replaced `client_command::byte` and `ui_var_store`'s inline table search
-//!   (both identical on all 65536 units).
-//! - [`cp1252`]: the same table as an `Option`, `None` for the five
-//!   unassigned bytes, for callers that need charset membership. Runtime
-//!   string readers use [`cp1252_decode_byte`]'s `?` policy.
-//!
-//! Loading-screen text uses the same mapping. Native codecs apply this
-//! unassigned-byte policy over their Windows-1252 decoder.
+//! The client's Windows-1252 byte <-> UTF-16 unit mapping, one copy for the
+//! whole client. Bytes `0x80-0x9F` go through [`EXTENSION`]; the five bytes
+//! it leaves unassigned decode to `?` in runtime string readers.
 
-/// Decode one byte: `0x80-0x9F` via the extension table, unassigned
-/// entries map to `?`; all other bytes map directly.
-pub fn cp1252_decode_byte(byte: u8) -> char {
-    match byte {
-        0x80 => '€',
-        0x82 => '‚',
-        0x83 => 'ƒ',
-        0x84 => '„',
-        0x85 => '…',
-        0x86 => '†',
-        0x87 => '‡',
-        0x88 => 'ˆ',
-        0x89 => '‰',
-        0x8A => 'Š',
-        0x8B => '‹',
-        0x8C => 'Œ',
-        0x8E => 'Ž',
-        0x91 => '‘',
-        0x92 => '’',
-        0x93 => '“',
-        0x94 => '”',
-        0x95 => '•',
-        0x96 => '–',
-        0x97 => '—',
-        0x98 => '˜',
-        0x99 => '™',
-        0x9A => 'š',
-        0x9B => '›',
-        0x9C => 'œ',
-        0x9E => 'ž',
-        0x9F => 'Ÿ',
-        0x81 | 0x8D | 0x8F | 0x90 | 0x9D => '?',
-        _ => byte as char,
+/// The UTF-16 units of bytes `0x80-0x9F`; 0 marks an unassigned byte.
+pub const EXTENSION: [u16; 32] = [
+    8364, 0, 8218, 402, 8222, 8230, 8224, 8225, 710, 8240, 352, 8249, 338, 0, 381, 0, 0, 8216,
+    8217, 8220, 8221, 8226, 8211, 8212, 732, 8482, 353, 8250, 339, 0, 382, 376,
+];
+
+/// The first byte [`EXTENSION`] covers.
+const EXTENSION_START: u8 = 0x80;
+
+/// One Windows-1252 byte to `char`; `None` for the five unassigned bytes.
+pub fn cp1252(byte: u8) -> Option<char> {
+    match byte.checked_sub(EXTENSION_START) {
+        Some(i) if usize::from(i) < EXTENSION.len() => match EXTENSION[usize::from(i)] {
+            0 => None,
+            unit => char::from_u32(u32::from(unit)),
+        },
+        _ => Some(char::from(byte)),
     }
 }
 
-/// Encode one UTF-16 unit: ASCII
-/// `1..128` and `160..=255` map directly, the named specials map to
-/// `0x80-0x9F`, everything else (including surrogates and unpaired
-/// units) maps to `?` (`63`).
+/// Decode one byte; the unassigned bytes decode to `?`.
+pub fn cp1252_decode_byte(byte: u8) -> char {
+    cp1252(byte).unwrap_or('?')
+}
+
+/// Encode one UTF-16 unit: `1..128` and `160..=255` map directly, the
+/// [`EXTENSION`] units to their byte, everything else to `?`.
 pub fn cp1252_encode_unit(unit: u16) -> u8 {
     if (1..128).contains(&unit) || (160..=255).contains(&unit) {
         return unit as u8;
     }
-    match unit {
-        8364 => 0x80,
-        8218 => 0x82,
-        402 => 0x83,
-        8222 => 0x84,
-        8230 => 0x85,
-        8224 => 0x86,
-        8225 => 0x87,
-        710 => 0x88,
-        8240 => 0x89,
-        352 => 0x8A,
-        8249 => 0x8B,
-        338 => 0x8C,
-        381 => 0x8E,
-        8216 => 0x91,
-        8217 => 0x92,
-        8220 => 0x93,
-        8221 => 0x94,
-        8226 => 0x95,
-        8211 => 0x96,
-        8212 => 0x97,
-        732 => 0x98,
-        8482 => 0x99,
-        353 => 0x9A,
-        8250 => 0x9B,
-        339 => 0x9C,
-        382 => 0x9E,
-        376 => 0x9F,
-        _ => b'?',
-    }
-}
-
-/// One Windows-1252 byte to `char`. `0x00-0x7F` and `0xA0-0xFF` map directly;
-/// `0x80-0x9F` follow the Windows-1252 table; the five unassigned bytes
-/// (`0x81 0x8D 0x8F 0x90 0x9D`) are `None`.
-pub fn cp1252(byte: u8) -> Option<char> {
-    match byte {
-        0x80 => Some('€'),
-        0x82 => Some('‚'),
-        0x83 => Some('ƒ'),
-        0x84 => Some('„'),
-        0x85 => Some('…'),
-        0x86 => Some('†'),
-        0x87 => Some('‡'),
-        0x88 => Some('ˆ'),
-        0x89 => Some('‰'),
-        0x8A => Some('Š'),
-        0x8B => Some('‹'),
-        0x8C => Some('Œ'),
-        0x8E => Some('Ž'),
-        0x91 => Some('‘'),
-        0x92 => Some('’'),
-        0x93 => Some('“'),
-        0x94 => Some('”'),
-        0x95 => Some('•'),
-        0x96 => Some('–'),
-        0x97 => Some('—'),
-        0x98 => Some('˜'),
-        0x99 => Some('™'),
-        0x9A => Some('š'),
-        0x9B => Some('›'),
-        0x9C => Some('œ'),
-        0x9E => Some('ž'),
-        0x9F => Some('Ÿ'),
-        0x81 | 0x8D | 0x8F | 0x90 | 0x9D => None,
-        _ => Some(byte as char),
+    match EXTENSION.iter().position(|&u| u != 0 && u == unit) {
+        Some(i) => EXTENSION_START + i as u8,
+        None => b'?',
     }
 }

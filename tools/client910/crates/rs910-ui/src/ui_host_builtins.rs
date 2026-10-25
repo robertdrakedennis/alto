@@ -1007,14 +1007,10 @@ pub fn char_is_printable(c: u16) -> bool {
 /// Whether a code unit is a valid Cp1252 character (the 0x80..0x9F range
 /// goes through the extension table).
 pub fn cp1252_char_is_valid(c: u16) -> bool {
-    const TABLE: [u16; 32] = [
-        8364, 0, 8218, 402, 8222, 8230, 8224, 8225, 710, 8240, 352, 8249, 338, 0, 381, 0, 0, 8216,
-        8217, 8220, 8221, 8226, 8211, 8212, 732, 8482, 353, 8250, 339, 0, 382, 376,
-    ];
     (33..127).contains(&c)
         || (128..160).contains(&c)
         || (161..=255).contains(&c)
-        || (c != 0 && TABLE.contains(&c))
+        || (c != 0 && rs910_core::cp1252::EXTENSION.contains(&c))
 }
 /// Simple upper- or lower-case mapping of one UTF-16 unit.
 fn unit_case(c: u16, upper: bool) -> u16 {
