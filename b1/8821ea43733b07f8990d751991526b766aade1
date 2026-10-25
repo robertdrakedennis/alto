@@ -1,0 +1,20 @@
+tools/Cargo.lock
+  h_d26e211304196f 2106,3105-3113
+tools/client910/crates/rs910-js5/Cargo.toml
+  h_d26e211304196f 25
+tools/client910/crates/rs910-js5/src/js5net/indexes.rs
+  h_d26e211304196f 54,90,104-111
+tools/client910/crates/rs910-js5/src/js5net/provider.rs
+  h_d26e211304196f 11,423
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "b18821ea43733b07f8990d751991526b766aade1",
+  "prompts": {},
+  "humans": {
+    "h_d26e211304196f": {
+      "author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
