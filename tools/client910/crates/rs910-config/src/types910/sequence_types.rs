@@ -91,6 +91,8 @@ pub struct Sequence {
     pub volume: Option<Vec<i32>>,
     pub minrate: Option<Vec<i32>>,
     pub maxrate: Option<Vec<i32>>,
+    /// Parameter overrides.
+    pub params: Vec<(i32, crate::config::ParamValue)>,
     pub consumed: usize,
     pub raw: Vec<u8>,
 }
@@ -120,6 +122,7 @@ impl Sequence {
             volume: None,
             minrate: None,
             maxrate: None,
+            params: Vec::new(),
             consumed: 0,
             raw: vec![],
         }
@@ -203,7 +206,10 @@ static SEQUENCE_OPCODES: Table<Sequence, Error> = Table::new(
         ),
         Entry::new(at(119), Rule::Custom(|src, s, _| read_volume(src, s, true))),
         Entry::new(at(120), Rule::Custom(|src, s, _| read_rates(src, s, true))),
-        Entry::new(at(249), Rule::Custom(skip_params)),
+        Entry::new(
+            at(249),
+            Rule::Custom(|src, s, _| crate::config::read_params(src, &mut s.params)),
+        ),
     ],
     Unknown::Reject,
 );
@@ -305,11 +311,6 @@ fn read_rates(source: Input<Error>, sequence: &mut Sequence, wide: bool) -> Resu
         .get_mut(index)
         .ok_or(Error::Invalid("sequence rate index"))? = high;
     Ok(())
-}
-
-/// A parameter table, read and dropped.
-fn skip_params(source: Input<Error>, _: &mut Sequence, _: Slot) -> Result<()> {
-    crate::config::read_params(source, &mut Vec::new())
 }
 
 fn read_words(source: Input<Error>, count: usize) -> Result<Vec<i32>> {
