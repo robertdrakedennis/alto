@@ -1,0 +1,46 @@
+tools/client910/crates/rs910-render-modern/src/frame/prebuild.rs
+  h_d26e211304196f 27,33,35
+tools/client910/crates/rs910-render-modern/src/frame/gpu/far.rs
+  h_d26e211304196f 2737,2806
+tools/client910/crates/rs910-render-modern/src/frame/state.rs
+  h_d26e211304196f 42
+tools/client910/crates/rs910-render-modern/src/models/materials.rs
+  h_d26e211304196f 334
+tools/client910/crates/rs910-protocol/src/server_prot/event_decode.rs
+  h_d26e211304196f 7,13-16,103
+tools/client910/crates/rs910-render-modern/src/lighting/ambient.rs
+  h_d26e211304196f 307
+tools/client910/crates/rs910-render-modern/src/frame/gpu/shadow_cache.rs
+  h_d26e211304196f 146,150,216
+tools/client910/crates/rs910-render-modern/Cargo.toml
+  h_d26e211304196f 35-36
+tools/client910/crates/rs910-render-modern/src/frame/resources.rs
+  h_d26e211304196f 82,87,94
+tools/client910/crates/rs910-render-modern/src/frame/dynamic_meshes.rs
+  h_d26e211304196f 26
+tools/Cargo.lock
+  h_d26e211304196f 2159,2172
+tools/client910/crates/rs910-client/src/session/tests.rs
+  s_134732bba6237a::t_1c8865eed02180 520
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "96fb3896435bc0727a28c72acbe93fc1ad558c38",
+  "prompts": {},
+  "humans": {
+    "h_d26e211304196f": {
+      "author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  },
+  "sessions": {
+    "s_134732bba6237a": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "34330542-161b-41ea-85b3-c403b99ea804",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "robert dennis <31261583+robertdrakedennis@users.noreply.github.com>"
+    }
+  }
+}
