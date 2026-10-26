@@ -14,6 +14,10 @@ use std::os::unix::net::{UnixListener, UnixStream};
 use std::path::PathBuf;
 
 const CONTROL_VARIABLE: &str = "CLIENT910_CONTROL";
+/// Set to `1` to apply controller input while the window is in the background.
+const UNFOCUSED_VARIABLE: &str = "CLIENT910_CONTROL_UNFOCUSED";
+const MAX_SERVER_COMMAND_BYTES: usize = 512;
+const DEFAULT_CHAT_LINES: usize = 32;
 const SOCKET_MODE: u32 = 0o600;
 const MAX_REQUEST_BYTES: usize = 16 * 1024;
 const MAX_RESPONSE_BYTES: usize = 512 * 1024;
@@ -240,6 +244,23 @@ enum Command {
         observed_cycle: i32,
         action: Action,
     },
+    /// A developer command sent to the server now, as `CLIENT_CHEAT`.
+    Cheat {
+        line: String,
+    },
+    /// Write the next presented frame to `path` (PNG); poll the file.
+    Screenshot {
+        path: PathBuf,
+    },
+    /// The newest chat lines, newest first.
+    Chat {
+        #[serde(default = "chat_lines")]
+        limit: usize,
+    },
+}
+
+const fn chat_lines() -> usize {
+    DEFAULT_CHAT_LINES
 }
 
 #[derive(Debug, Deserialize)]
@@ -303,6 +324,8 @@ pub struct LiveControl {
     peer: Option<Peer>,
     last_request: Option<u64>,
     pending: Option<u64>,
+    ignore_focus: bool,
+    screenshot: Option<PathBuf>,
 }
 
 impl LiveControl {
@@ -347,6 +370,8 @@ impl LiveControl {
             peer: None,
             last_request: None,
             pending: None,
+            ignore_focus: std::env::var(UNFOCUSED_VARIABLE).is_ok_and(|value| value == "1"),
+            screenshot: None,
         })
     }
 
@@ -439,6 +464,7 @@ impl LiveControl {
                     observed_cycle,
                     action,
                 } => {
+                    let focused = focused || self.ignore_focus;
                     match resolve_action(session, cycle, focused, time, observed_cycle, map, action)
                     {
                         Ok(mut action) => {
@@ -454,6 +480,18 @@ impl LiveControl {
                             json!({"reason":error.to_string()}),
                         )?,
                     }
+                }
+                Command::Screenshot { path } => {
+                    let data = json!({"requested": path});
+                    self.screenshot = Some(path);
+                    self.answer(Some(request.id), cycle, "accepted", data)?;
+                }
+                Command::Cheat { line } => {
+                    let (status, data) = match send_server_command(session, &line) {
+                        Ok(()) => ("accepted", json!({"sent": line})),
+                        Err(error) => ("refused", json!({"reason": error.to_string()})),
+                    };
+                    self.answer(Some(request.id), cycle, status, data)?;
                 }
                 command => match query(session, cycle, focused, command) {
                     Ok(data) => self.answer(Some(request.id), cycle, "observed", data)?,
@@ -474,6 +512,11 @@ impl LiveControl {
             self.peer = None;
         }
         Ok(None)
+    }
+
+    /// A frame capture the controller asked for, taken by the renderer owner.
+    pub fn take_screenshot(&mut self) -> Option<PathBuf> {
+        self.screenshot.take()
     }
 
     pub fn complete(
@@ -544,6 +587,32 @@ impl Drop for LiveControl {
             let _ = std::fs::remove_file(&self.path);
         }
     }
+}
+
+fn send_server_command(session: &mut Session, command: &str) -> Result<()> {
+    ensure!(
+        !command.trim().is_empty() && command.len() <= MAX_SERVER_COMMAND_BYTES,
+        "server command must be 1..={MAX_SERVER_COMMAND_BYTES} bytes"
+    );
+    ensure!(session.game.is_some(), "not in a game");
+    let packet =
+        rs910_protocol::client_command::remote(command.trim_start_matches("::"), false, false)?;
+    session.io.world.pending_writes.extend(packet);
+    Ok(())
+}
+
+fn chat_snapshot(session: &Session, limit: usize) -> Value {
+    let history = &session.ui.engine.messages.history;
+    let mut uid = history.last_uid();
+    let mut lines = Vec::new();
+    while lines.len() < limit.min(MAX_QUERY_ENTRIES) {
+        let Some(line) = history.get_by_uid(uid) else {
+            break;
+        };
+        lines.push(json!({"uid":line.uid,"type":line.chat_type,"flags":line.flags,"name":line.name,"clan":line.clan,"message":line.message}));
+        uid = history.previous_uid(uid);
+    }
+    json!({"lines": lines})
 }
 
 fn same_socket(path: &std::path::Path, identity: (u64, u64)) -> bool {
@@ -1474,6 +1543,9 @@ fn animation_node_snapshot(node: &rs910_game::entities910::animation_state::Node
 }
 
 fn query(session: &Session, cycle: i32, focused: bool, command: Command) -> Result<Value> {
+    if let Command::Chat { limit } = command {
+        return Ok(chat_snapshot(session, limit));
+    }
     let map = match map_stamp(session) {
         Ok(map) => map,
         Err(error) if matches!(&command, Command::Snapshot { .. }) => {
@@ -1651,7 +1723,10 @@ fn query(session: &Session, cycle: i32, focused: bool, command: Command) -> Resu
                 json!({"map":map,"object_revision":objects.revision,"scan":page(rows,scan.offset,scan.limit)}),
             )
         }
-        Command::Action { .. } => anyhow::bail!("action must use the recorded input owner"),
+        Command::Action { .. }
+        | Command::Cheat { .. }
+        | Command::Screenshot { .. }
+        | Command::Chat { .. } => anyhow::bail!("command is answered by the controller owner"),
     }
 }
 

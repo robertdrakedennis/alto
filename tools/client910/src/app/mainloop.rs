@@ -148,6 +148,11 @@ impl ViewerApp {
             }
             Ok(())
         });
+        if let Some(path) = control.take_screenshot() {
+            if let Some(renderer) = self.renderer.as_mut() {
+                renderer.request_screenshot(path);
+            }
+        }
         match result {
             Ok(()) => self.control = Some(control),
             Err(error) => log::warn!("[client910] live control stopped: {error:#}"),
